@@ -8967,6 +8967,38 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_families_a_number_is_below_ten_to_its_own_successor": {
+  "key": "lean_families_a_number_is_below_ten_to_its_own_successor",
+  "file": "families.lean",
+  "name": "a_number_is_below_ten_to_its_own_successor",
+  "statementHash": "a78ca99b036672f5",
+  "searched": "2026-09-25T15:23:21.192Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic below successor",
+   "openalex": "modular arithmetic below successor",
+   "crossref": "modular arithmetic below successor",
+   "arxiv": "modular AND arithmetic AND below AND successor"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
  "lean_families_a_sum_over_one_to_n_plus_one_adds_the_last_term": {
   "key": "lean_families_a_sum_over_one_to_n_plus_one_adds_the_last_term",
   "file": "families.lean",
@@ -9379,6 +9411,37 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k_for_every_n": {
+  "key": "lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k_for_every_n",
+  "file": "families.lean",
+  "name": "choose_is_invariant_under_the_involution_k_to_n_minus_k_for_every_n",
+  "statementHash": "8fe2dc5045d6adc5",
+  "searched": "2026-09-25T15:19:59.106Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic choose invariant involution",
+   "openalex": "modular arithmetic choose invariant involution",
+   "crossref": "modular arithmetic choose invariant involution",
+   "arxiv": "modular AND arithmetic AND choose AND invariant AND involution"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_families_demorgan_holds_at_every_arity_to_eight": {
   "key": "lean_families_demorgan_holds_at_every_arity_to_eight",
   "file": "families.lean",
@@ -9488,6 +9551,38 @@
   "catalogued": false,
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_foldl_add_start": {
+  "key": "lean_families_foldl_add_start",
+  "file": "families.lean",
+  "name": "foldl_add_start",
+  "statementHash": "cc7abf1fdb65ce64",
+  "searched": "2026-09-25T15:22:11.900Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic foldl start",
+   "openalex": "modular arithmetic foldl start",
+   "crossref": "modular arithmetic foldl start",
+   "arxiv": "modular AND arithmetic AND foldl AND start"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 404",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
  },
  "lean_families_geometric_series_across_bases_and_exponents": {
   "key": "lean_families_geometric_series_across_bases_and_exponents",
@@ -9970,6 +10065,37 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_families_the_closed_forms_difference_back_to_the_next_power_for_every_n": {
+  "key": "lean_families_the_closed_forms_difference_back_to_the_next_power_for_every_n",
+  "file": "families.lean",
+  "name": "the_closed_forms_difference_back_to_the_next_power_for_every_n",
+  "statementHash": "3983e1367b642726",
+  "searched": "2026-09-25T15:20:14.048Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic closed difference power",
+   "openalex": "modular arithmetic closed difference power",
+   "crossref": "modular arithmetic closed difference power",
+   "arxiv": "modular AND arithmetic AND closed AND difference AND power"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_families_the_cubes_sum_to_their_closed_form_for_every_n": {
   "key": "lean_families_the_cubes_sum_to_their_closed_form_for_every_n",
   "file": "families.lean",
@@ -10064,6 +10190,47 @@
   "candidates": [],
   "verdict": "NOT_MEASURED"
  },
+ "lean_families_the_digit_sum_rules_for_three_and_nine_hold_for_every_n": {
+  "key": "lean_families_the_digit_sum_rules_for_three_and_nine_hold_for_every_n",
+  "file": "families.lean",
+  "name": "the_digit_sum_rules_for_three_and_nine_hold_for_every_n",
+  "statementHash": "1c286223d5c2f60d",
+  "searched": "2026-09-25T15:23:29.255Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic digit rules",
+   "openalex": "modular arithmetic digit rules",
+   "crossref": "modular arithmetic digit rules",
+   "arxiv": "modular AND arithmetic AND digit AND rules"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "WaterMod: Modular Token-Rank Partitioning for Probability-Balanced LLM Watermarking",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2511.07863v2",
+    "relevance": 1,
+    "text": "WaterMod: Modular Token-Rank Partitioning for Probability-Balanced LLM Watermarking Large language models now draft news, legal analyses, and software code with human-level fluency. At the same time, regulations such as the EU AI Act mandate that each synthetic passage carry an imperceptible, machin"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
  "lean_families_the_digital_root_is_invariant_under_digit_reversal": {
   "key": "lean_families_the_digital_root_is_invariant_under_digit_reversal",
   "file": "families.lean",
@@ -10100,6 +10267,63 @@
     "url": "http://arxiv.org/abs/2609.26119v1",
     "relevance": 0.6666666666666666,
     "text": "Boyd's conductor-11 Mahler measure conjecture: proof of the split-integral identity (C3), with an exact structural analysis of the family S_k Boyd's 1998 tables of conjectural identities $m(P)=r\\,|L'(E,0)|$ between Mahler measures of two-variable polynomials and $L$-values of elliptic curves begin w"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them": {
+  "key": "lean_families_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them",
+  "file": "families.lean",
+  "name": "the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them",
+  "statementHash": "b4b19db88b8dfe88",
+  "searched": "2026-09-25T15:23:02.794Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic digits covers",
+   "openalex": "modular arithmetic digits covers",
+   "crossref": "modular arithmetic digits covers",
+   "arxiv": "modular AND arithmetic AND digits AND covers"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "DSA Nonce Vulnerabilities: An Interactive Analysis",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2607.17107v1",
+    "relevance": 1,
+    "text": "DSA Nonce Vulnerabilities: An Interactive Analysis Digital signatures are fundamental to identity authentication and data integrity in cybersecurity, and the NIST-standardized Digital Signature Algorithm (DSA) frequently appears in the cryptography track of CTF competitions. However, DSA relies on n"
+   },
+   {
+    "source": "arxiv",
+    "title": "MoveScanner: Analysis of Security Risks of Move Smart Contracts",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2508.17964v3",
+    "relevance": 1,
+    "text": "MoveScanner: Analysis of Security Risks of Move Smart Contracts As blockchain technology continues to evolve, the security of smart contracts has increasingly drawn attention from both academia and industry. The Move language, with its unique resource model and linear type system, provides a solid f"
+   },
+   {
+    "source": "arxiv",
+    "title": "A certified continuation machine for Mahler measure identities at CM points, with twelve new proofs of conjectures of Samart",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2609.26120v1",
+    "relevance": 1,
+    "text": "A certified continuation machine for Mahler measure identities at CM points, with twelve new proofs of conjectures of Samart We axiomatize the differential-comparison continuation method of [Zf] into a general machine for proving Mahler measure identities at CM points: a modular parametrization with"
    }
   ],
   "verdict": "CANDIDATES"
@@ -10523,6 +10747,71 @@
   "candidates": [],
   "verdict": "NOT_MEASURED"
  },
+ "lean_families_the_odd_numbers_difference_back_to_the_next_odd_number_for_every_n": {
+  "key": "lean_families_the_odd_numbers_difference_back_to_the_next_odd_number_for_every_n",
+  "file": "families.lean",
+  "name": "the_odd_numbers_difference_back_to_the_next_odd_number_for_every_n",
+  "statementHash": "0f4f0c5a27c3b9e1",
+  "searched": "2026-09-25T15:21:38.168Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic difference",
+   "openalex": "modular arithmetic difference",
+   "crossref": "modular arithmetic difference",
+   "arxiv": "modular AND arithmetic AND difference"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Fast Integer Multiplication using Modular Arithmetic",
+    "year": "2008",
+    "url": "http://arxiv.org/abs/0801.1416v3",
+    "relevance": 0.6666666666666666,
+    "text": "Fast Integer Multiplication using Modular Arithmetic We give an $O(N\\cdot \\log N\\cdot 2^{O(\\log^*N)})$ algorithm for multiplying two $N$-bit integers that improves the $O(N\\cdot \\log N\\cdot \\log\\log N)$ algorithm by Schönhage-Strassen. Both these algorithms use modular arithmetic. Recently, Fürer ga"
+   },
+   {
+    "source": "arxiv",
+    "title": "The variance of arithmetic measures associated to closed geodesics on the modular surface",
+    "year": "2008",
+    "url": "http://arxiv.org/abs/0810.3331v2",
+    "relevance": 0.6666666666666666,
+    "text": "The variance of arithmetic measures associated to closed geodesics on the modular surface We determine the variance for the fluctuations of the arithmetic measures obtained by collecting all closed geodesics on the modular surface with the same discriminant and ordering them by the latter. This arit"
+   },
+   {
+    "source": "arxiv",
+    "title": "Notes on the arithmetic of Hilbert modular forms",
+    "year": "2011",
+    "url": "http://arxiv.org/abs/1102.1864v1",
+    "relevance": 0.6666666666666666,
+    "text": "Notes on the arithmetic of Hilbert modular forms The purpose of this semi-expository article is to give another proof of a classical theorem of Shimura on the critical values of the standard L-function attached to a Hilbert modular form. Our proof is along the lines of previous work of Harder and Hi"
+   },
+   {
+    "source": "arxiv",
+    "title": "Modular Arithmetic: Language Models Solve Math Digit by Digit",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2508.02513v1",
+    "relevance": 0.6666666666666666,
+    "text": "Modular Arithmetic: Language Models Solve Math Digit by Digit While recent work has begun to uncover the internal strategies that Large Language Models (LLMs) employ for simple arithmetic tasks, a unified understanding of their underlying mechanisms is still lacking. We extend recent findings showin"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
  "lean_families_the_order_of_every_unit_mod_nine_divides_six": {
   "key": "lean_families_the_order_of_every_unit_mod_nine_divides_six",
   "file": "families.lean",
@@ -10664,6 +10953,86 @@
   "catalogued": false,
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_the_powers_of_two_difference_back_to_the_next_power_for_every_n": {
+  "key": "lean_families_the_powers_of_two_difference_back_to_the_next_power_for_every_n",
+  "file": "families.lean",
+  "name": "the_powers_of_two_difference_back_to_the_next_power_for_every_n",
+  "statementHash": "b85eab3b577e0998",
+  "searched": "2026-09-25T15:21:12.763Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic powers difference power",
+   "openalex": "modular arithmetic powers difference power",
+   "crossref": "modular arithmetic powers difference power",
+   "arxiv": "modular AND arithmetic AND powers AND difference AND power"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Proceedings of the 1997 international symposium on symbolic and algebraic computation, ISSAC '97, Maui, HI, USA, July 21--23, 1997",
+    "year": "1997",
+    "url": "https://zbmath.org/1232829",
+    "relevance": 0.8,
+    "text": "Proceedings of the 1997 international symposium on symbolic and algebraic computation, ISSAC '97, Maui, HI, USA, July 21--23, 1997 [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"The articles of this volume will be reviewed individually. The "
+   },
+   {
+    "source": "arxiv",
+    "title": "Knots, Perturbative Series and Quantum Modularity",
+    "year": "2021",
+    "url": "http://arxiv.org/abs/2111.06645v3",
+    "relevance": 1,
+    "text": "Knots, Perturbative Series and Quantum Modularity We introduce an invariant of a hyperbolic knot which is a map $α\\mapsto \\boldsymbolΦ_α(h)$ from $\\mathbb{Q}/\\mathbb{Z}$ to matrices with entries in $\\overline{\\mathbb{Q}}[[h]]$ and with rows and columns indexed by the boundary parabolic ${\\rm SL}_2(\\"
+   },
+   {
+    "source": "arxiv",
+    "title": "A Simple and Fast Algorithm for Computing the $N$-th Term of a Linearly Recurrent Sequence",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2008.08822v1",
+    "relevance": 0.8,
+    "text": "A Simple and Fast Algorithm for Computing the $N$-th Term of a Linearly Recurrent Sequence We present a simple and fast algorithm for computing the $N$-th term of a given linearly recurrent sequence. Our new algorithm uses $O(\\mathsf{M}(d) \\log N)$ arithmetic operations, where $d$ is the order of th"
+   },
+   {
+    "source": "arxiv",
+    "title": "Design and implementation of a modular interior-point solver for linear optimization",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2006.08814v2",
+    "relevance": 0.8,
+    "text": "Design and implementation of a modular interior-point solver for linear optimization This paper introduces the algorithmic design and implementation of Tulip, an open-source interior-point solver for linear optimization. It implements a regularized homogeneous interior-point algorithm with multiple "
+   },
+   {
+    "source": "arxiv",
+    "title": "PPU: Design and Implementation of a Pipelined Full Posit Processing Unit",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2308.03425v2",
+    "relevance": 0.8,
+    "text": "PPU: Design and Implementation of a Pipelined Full Posit Processing Unit By exploiting the modular RISC-V ISA this paper presents the customization of instruction set with posit\\textsuperscript{\\texttrademark} arithmetic instructions to provide improved numerical accuracy, well-defined behavior and "
+   },
+   {
+    "source": "arxiv",
+    "title": "An Efficient Algorithm for Modulus Operation and Its Hardware Implementation in Prime Number Calculation",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2407.12541v2",
+    "relevance": 1,
+    "text": "An Efficient Algorithm for Modulus Operation and Its Hardware Implementation in Prime Number Calculation This paper presents a novel algorithm for the modulus operation for FPGA implementation. The proposed algorithm use only addition, subtraction, logical, and bit shift operations, avoiding the com"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_families_the_powers_of_two_sum_to_one_less_than_the_next": {
   "key": "lean_families_the_powers_of_two_sum_to_one_less_than_the_next",
@@ -11007,6 +11376,38 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_families_the_tetrahedral_numbers_difference_back_to_the_triangular_numbers_for_every_n": {
+  "key": "lean_families_the_tetrahedral_numbers_difference_back_to_the_triangular_numbers_for_every_n",
+  "file": "families.lean",
+  "name": "the_tetrahedral_numbers_difference_back_to_the_triangular_numbers_for_every_n",
+  "statementHash": "67c3b3d2f1fb7230",
+  "searched": "2026-09-25T15:20:31.740Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic tetrahedral difference triangular",
+   "openalex": "modular arithmetic tetrahedral difference triangular",
+   "crossref": "modular arithmetic tetrahedral difference triangular",
+   "arxiv": "modular AND arithmetic AND tetrahedral AND difference AND triangular"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 404",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
  "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli": {
   "key": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli",
   "file": "families.lean",
@@ -11343,20 +11744,468 @@
   ],
   "verdict": "CANDIDATES"
  },
+ "lean_flow_a_bond_sum_reads_the_same_from_either_end": {
+  "key": "lean_flow_a_bond_sum_reads_the_same_from_either_end",
+  "file": "flow.lean",
+  "name": "a_bond_sum_reads_the_same_from_either_end",
+  "statementHash": "ca605daf516fb145",
+  "searched": "2026-09-25T15:25:13.695Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo reads",
+   "openalex": "multiplicative modulo reads",
+   "crossref": "multiplicative modulo reads",
+   "arxiv": "multiplicative AND modulo AND reads"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Tolerance to Asynchrony in Algorithms for Multiplication and Modulo",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2302.07207v5",
+    "relevance": 0.6666666666666666,
+    "text": "Tolerance to Asynchrony in Algorithms for Multiplication and Modulo In this article, we study some parallel processing algorithms for multiplication and modulo operations. We demonstrate that the state transitions that are formed under these algorithms satisfy lattice-linearity, where these algorith"
+   },
+   {
+    "source": "arxiv",
+    "title": "Parameterised Counting in Logspace",
+    "year": "2019",
+    "url": "http://arxiv.org/abs/1904.12156v5",
+    "relevance": 0.6666666666666666,
+    "text": "Parameterised Counting in Logspace In this paper, we introduce a new framework for parameterised counting in logspace, inspired by the parameterised space bounded models developed by Elberfeld, Stockhusen and Tantau (IPEC 2013, Algorithmica 2015). They defined the operators paraW and paraBeta for pa"
+   },
+   {
+    "source": "arxiv",
+    "title": "On Menon-Sury's identity with several Dirichlet characters",
+    "year": "2018",
+    "url": "http://arxiv.org/abs/1807.07241v2",
+    "relevance": 0.6666666666666666,
+    "text": "On Menon-Sury's identity with several Dirichlet characters The Menon-Sury's identity is as follows: \\begin{equation*} \\sum_{\\substack{1 \\leq a, b_1, b_2, \\ldots, b_r \\leq n\\\\\\mathrm{gcd}(a,n)=1}} \\mathrm{gcd}(a-1,b_1, b_2, \\ldots, b_r,n)=\\varphi(n) σ_r(n), \\end{equation*} where $\\varphi$ is Euler's "
+   },
+   {
+    "source": "arxiv",
+    "title": "Weighted Sup-Norms at Infinity: Exhaustion Functions, Decay Classes, and Anisotropic Ends",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2512.11810v2",
+    "relevance": 0.6666666666666666,
+    "text": "Weighted Sup-Norms at Infinity: Exhaustion Functions, Decay Classes, and Anisotropic Ends For a non-compact, locally compact, sigma-compact Hausdorff space with a continuous proper exhaustion function, and an admissible weight, we study the weighted supremum norms measuring how fast a function appro"
+   },
+   {
+    "source": "arxiv",
+    "title": "Sparse Suffix Tree Construction in Optimal Time and Space",
+    "year": "2016",
+    "url": "http://arxiv.org/abs/1608.00865v1",
+    "relevance": 1,
+    "text": "Sparse Suffix Tree Construction in Optimal Time and Space Suffix tree (and the closely related suffix array) are fundamental structures capturing all substrings of a given text essentially by storing all its suffixes in the lexicographical order. In some applications, we work with a subset of $b$ in"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_flow_a_cyclic_sum_is_unchanged_by_one_step_of_rotation": {
+  "key": "lean_flow_a_cyclic_sum_is_unchanged_by_one_step_of_rotation",
+  "file": "flow.lean",
+  "name": "a_cyclic_sum_is_unchanged_by_one_step_of_rotation",
+  "statementHash": "e8dec6229479dece",
+  "searched": "2026-09-25T15:24:56.241Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo cyclic unchanged rotation",
+   "openalex": "multiplicative modulo cyclic unchanged rotation",
+   "crossref": "multiplicative modulo cyclic unchanged rotation",
+   "arxiv": "multiplicative AND modulo AND cyclic AND unchanged AND rotation"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_flow_a_ring_sum_of_negatives_is_the_negated_sum": {
+  "key": "lean_flow_a_ring_sum_of_negatives_is_the_negated_sum",
+  "file": "flow.lean",
+  "name": "a_ring_sum_of_negatives_is_the_negated_sum",
+  "statementHash": "118c81c2f35b916a",
+  "searched": "2026-09-25T15:24:29.951Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo negatives negated",
+   "openalex": "multiplicative modulo negatives negated",
+   "crossref": "multiplicative modulo negatives negated",
+   "arxiv": "multiplicative AND modulo AND negatives AND negated"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_flow_a_ring_sum_peels_its_first_term": {
+  "key": "lean_flow_a_ring_sum_peels_its_first_term",
+  "file": "flow.lean",
+  "name": "a_ring_sum_peels_its_first_term",
+  "statementHash": "2730508edb829d4e",
+  "searched": "2026-09-25T15:24:47.881Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo peels",
+   "openalex": "multiplicative modulo peels",
+   "crossref": "multiplicative modulo peels",
+   "arxiv": "multiplicative AND modulo AND peels"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Compiling Quantum Circuits for Dynamically Field-Programmable Neutral Atoms Array Processors",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2306.03487v5",
+    "relevance": 0.6666666666666666,
+    "text": "Compiling Quantum Circuits for Dynamically Field-Programmable Neutral Atoms Array Processors Dynamically field-programmable qubit arrays (DPQA) have recently emerged as a promising platform for quantum information processing. In DPQA, atomic qubits are selectively loaded into arrays of optical traps"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_flow_a_ring_sum_splits_over_a_sum": {
+  "key": "lean_flow_a_ring_sum_splits_over_a_sum",
+  "file": "flow.lean",
+  "name": "a_ring_sum_splits_over_a_sum",
+  "statementHash": "3380ced5c4d15c8e",
+  "searched": "2026-09-25T15:24:21.673Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo splits",
+   "openalex": "multiplicative modulo splits",
+   "crossref": "multiplicative modulo splits",
+   "arxiv": "multiplicative AND modulo AND splits"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Multiplicative and linear dependence in finite fields and on elliptic curves modulo primes",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2008.00389v2",
+    "relevance": 1,
+    "text": "Multiplicative and linear dependence in finite fields and on elliptic curves modulo primes For positive integers $K$ and $L$, we introduce and study the notion of $K$-multiplicative dependence over the algebraic closure $\\overline{\\mathbb{F}}_p$ of a finite prime field $\\mathbb{F}_p$, as well as $L$"
+   },
+   {
+    "source": "arxiv",
+    "title": "On Ribet's Lemma for $\\mathrm{GL}_2$ modulo prime powers",
+    "year": "2021",
+    "url": "http://arxiv.org/abs/2111.01559v3",
+    "relevance": 0.6666666666666666,
+    "text": "On Ribet's Lemma for $\\mathrm{GL}_2$ modulo prime powers Let $ρ\\colon G\\to \\mathrm{GL}_2(K)$ be a continuous representation of a compact group $G$ over a complete discretely valued field $K$, with ring of integers $\\mathcal O$ and uniformiser $π$. We prove that $\\operatorname{tr}ρ$ is reducible modu"
+   },
+   {
+    "source": "arxiv",
+    "title": "On totally split primes in high-degree torsion fields of elliptic curves",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2009.13119v2",
+    "relevance": 1,
+    "text": "On totally split primes in high-degree torsion fields of elliptic curves Analogously to primes in arithmetic progressions to large moduli, we can study primes that are totally split in extensions of $\\mathbb{Q}$ of high degree. Motivated by a question of Kowalski we focus on the extensions $\\mathbb{"
+   },
+   {
+    "source": "arxiv",
+    "title": "Non-split Cartan curves and a characterization of fake elliptic curves",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2608.03934v2",
+    "relevance": 0.6666666666666666,
+    "text": "Non-split Cartan curves and a characterization of fake elliptic curves The $\\ell$-adic Tate module of an abelian surface with quaternionic multiplication (QM) decomposes as two copies of a two-dimensional $\\mathbb{Q}$-rational representation. To this day, there is no criterion to distinguish these r"
+   },
+   {
+    "source": "arxiv",
+    "title": "Exterior-Model Spinors in Split Rank: Exact Levi Images and Square-Determinant Obstructions",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2604.26155v1",
+    "relevance": 0.6666666666666666,
+    "text": "Exterior-Model Spinors in Split Rank: Exact Levi Images and Square-Determinant Obstructions Let $K$ be a field with $2 \\in K^\\times$, and let $H_W$ denote the standard hyperbolic form on $W \\oplus W^*$. We study the exterior spinor model $S = \\bigwedge V(W)$ together with the spin-to-orthogonal map "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_flow_a_sum_of_squares_is_never_negative": {
+  "key": "lean_flow_a_sum_of_squares_is_never_negative",
+  "file": "flow.lean",
+  "name": "a_sum_of_squares_is_never_negative",
+  "statementHash": "4651babc9cbbb2d2",
+  "searched": "2026-09-25T15:25:39.474Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo squares never negative",
+   "openalex": "multiplicative modulo squares never negative",
+   "crossref": "multiplicative modulo squares never negative",
+   "arxiv": "multiplicative AND modulo AND squares AND never AND negative"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_flow_every_state_of_the_flow_returns_within_six_steps": {
+  "key": "lean_flow_every_state_of_the_flow_returns_within_six_steps",
+  "file": "flow.lean",
+  "name": "every_state_of_the_flow_returns_within_six_steps",
+  "statementHash": "68c54792eb69959c",
+  "searched": "2026-09-25T15:24:13.076Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo state returns within",
+   "openalex": "multiplicative modulo state returns within",
+   "crossref": "multiplicative modulo state returns within",
+   "arxiv": "multiplicative AND modulo AND state AND returns AND within"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
  "lean_flow_navier_stokes_flow_is_bounded_for_every_step": {
   "key": "lean_flow_navier_stokes_flow_is_bounded_for_every_step",
   "file": "flow.lean",
   "name": "navier_stokes_flow_is_bounded_for_every_step",
   "statementHash": "5507f4d0706d60e9",
-  "searched": "2026-09-15T04:20:12.898Z",
+  "searched": "2026-09-25T15:23:55.525Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
-   "zbmath": "flow bounded step multiplicative order modulo",
-   "openalex": "flow bounded step multiplicative order modulo",
-   "crossref": "flow bounded step multiplicative order modulo",
-   "arxiv": "flow AND bounded AND step"
+   "zbmath": "multiplicative modulo bounded",
+   "openalex": "multiplicative modulo bounded",
+   "crossref": "multiplicative modulo bounded",
+   "arxiv": "multiplicative AND modulo AND bounded"
   },
   "notMeasured": [
-   "arxiv: rate-limited after backoff"
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Rigidity Theorems for Multiplicative Functions",
+    "year": "2017",
+    "url": "http://arxiv.org/abs/1707.07817v2",
+    "relevance": 1,
+    "text": "Rigidity Theorems for Multiplicative Functions We establish several results concerning the expected general phenomenon that, given a multiplicative function $f:\\mathbb{N}\\to\\mathbb{C}$, the values of $f(n)$ and $f(n+a)$ are \"generally\" independent unless $f$ is of a \"special\" form. First, we classif"
+   },
+   {
+    "source": "arxiv",
+    "title": "Effective bounds on multiplicatively dependent orbits of integer polynomials modulo S-integers",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2001.09721v1",
+    "relevance": 0.6666666666666666,
+    "text": "Effective bounds on multiplicatively dependent orbits of integer polynomials modulo S-integers We obtain effective bounds on the heights of algebraic integers whose orbits contain multiplicatively dependent values modulo S-integers. Our method is based on a new upper bound on the so-called S-height "
+   },
+   {
+    "source": "arxiv",
+    "title": "Congruences involving product of intervals and sets with small multiplicative doubling modulo a prime and applications",
+    "year": "2014",
+    "url": "http://arxiv.org/abs/1404.5070v2",
+    "relevance": 0.6666666666666666,
+    "text": "Congruences involving product of intervals and sets with small multiplicative doubling modulo a prime and applications In the present paper we obtain new upper bound estimates for the number of solutions of the congruence $$ x\\equiv y r\\pmod p;\\quad x,y\\in \\mathbb{N},\\quad x,y\\le H,\\quad r\\in\\cU, $$"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_flow_ring_sums_agree_where_their_terms_agree": {
+  "key": "lean_flow_ring_sums_agree_where_their_terms_agree",
+  "file": "flow.lean",
+  "name": "ring_sums_agree_where_their_terms_agree",
+  "statementHash": "8b414110d0dda14a",
+  "searched": "2026-09-25T15:24:39.238Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo agree their terms",
+   "openalex": "multiplicative modulo agree their terms",
+   "crossref": "multiplicative modulo agree their terms",
+   "arxiv": "multiplicative AND modulo AND agree AND their AND terms"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_flow_the_discrete_energy_never_increases_on_every_ring": {
+  "key": "lean_flow_the_discrete_energy_never_increases_on_every_ring",
+  "file": "flow.lean",
+  "name": "the_discrete_energy_never_increases_on_every_ring",
+  "statementHash": "87a019a26313ed06",
+  "searched": "2026-09-25T15:25:48.148Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo discrete energy never",
+   "openalex": "multiplicative modulo discrete energy never",
+   "crossref": "multiplicative modulo discrete energy never",
+   "arxiv": "multiplicative AND modulo AND discrete AND energy AND never"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_flow_the_discrete_laplacian_dissipates_exactly_the_squared_differences": {
+  "key": "lean_flow_the_discrete_laplacian_dissipates_exactly_the_squared_differences",
+  "file": "flow.lean",
+  "name": "the_discrete_laplacian_dissipates_exactly_the_squared_differences",
+  "statementHash": "f4b28b63e0ad379a",
+  "searched": "2026-09-25T15:25:30.757Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo discrete laplacian dissipates",
+   "openalex": "multiplicative modulo discrete laplacian dissipates",
+   "crossref": "multiplicative modulo discrete laplacian dissipates",
+   "arxiv": "multiplicative AND modulo AND discrete AND laplacian AND dissipates"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -11368,15 +12217,27 @@
   "file": "flow.lean",
   "name": "the_doubling_flow_is_its_first_six_steps",
   "statementHash": "f3535270611672a4",
-  "searched": "2026-09-15T04:18:50.273Z",
+  "searched": "2026-09-25T15:23:46.422Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
-   "zbmath": "doubling flow steps multiplicative order modulo",
-   "openalex": "doubling flow steps multiplicative order modulo",
-   "crossref": "doubling flow steps multiplicative order modulo",
-   "arxiv": "doubling AND flow AND steps"
+   "zbmath": "multiplicative modulo doubling steps",
+   "openalex": "multiplicative modulo doubling steps",
+   "crossref": "multiplicative modulo doubling steps",
+   "arxiv": "multiplicative AND modulo AND doubling AND steps"
   },
   "notMeasured": [
-   "arxiv: rate-limited after backoff"
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -11388,18 +12249,1342 @@
   "file": "flow.lean",
   "name": "the_doubling_flow_repeats_every_six_steps",
   "statementHash": "30a13ca709cc2212",
-  "searched": "2026-09-15T04:18:07.030Z",
+  "searched": "2026-09-25T15:23:37.656Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
-   "zbmath": "doubling flow repeats steps multiplicative order modulo",
-   "openalex": "doubling flow repeats steps multiplicative order modulo",
-   "crossref": "doubling flow repeats steps multiplicative order modulo",
-   "arxiv": "doubling AND flow AND repeats AND steps"
+   "zbmath": "multiplicative modulo doubling repeats steps",
+   "openalex": "multiplicative modulo doubling repeats steps",
+   "crossref": "multiplicative modulo doubling repeats steps",
+   "arxiv": "multiplicative AND modulo AND doubling AND repeats AND steps"
   },
   "notMeasured": [
-   "arxiv: rate-limited after backoff"
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_flow_the_reverse_flow_undoes_every_step": {
+  "key": "lean_flow_the_reverse_flow_undoes_every_step",
+  "file": "flow.lean",
+  "name": "the_reverse_flow_undoes_every_step",
+  "statementHash": "b88a44a63e2a9687",
+  "searched": "2026-09-25T15:24:04.037Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo reverse undoes",
+   "openalex": "multiplicative modulo reverse undoes",
+   "crossref": "multiplicative modulo reverse undoes",
+   "arxiv": "multiplicative AND modulo AND reverse AND undoes"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_flow_the_site_before_the_next_is_the_site": {
+  "key": "lean_flow_the_site_before_the_next_is_the_site",
+  "file": "flow.lean",
+  "name": "the_site_before_the_next_is_the_site",
+  "statementHash": "5631a7302c7a2cf9",
+  "searched": "2026-09-25T15:25:04.851Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo before",
+   "openalex": "multiplicative modulo before",
+   "crossref": "multiplicative modulo before",
+   "arxiv": "multiplicative AND modulo AND before"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Random multiplicative walks on the residues modulo n",
+    "year": "2016",
+    "url": "http://arxiv.org/abs/1608.05898v1",
+    "relevance": 1,
+    "text": "Random multiplicative walks on the residues modulo n We introduce a new arithmetic function $a(n)$ defined to be the number of random multiplications by residues modulo $n$ before the running product is congruent to 0 modulo $n$. We give several formulas for computing the values of this function and"
+   },
+   {
+    "source": "arxiv",
+    "title": "Homotopy methods for multiplication modulo triangular sets",
+    "year": "2009",
+    "url": "http://arxiv.org/abs/0901.3657v1",
+    "relevance": 0.6666666666666666,
+    "text": "Homotopy methods for multiplication modulo triangular sets We study the cost of multiplication modulo triangular families of polynomials. Following previous work by Li, Moreno Maza and Schost, we propose an algorithm that relies on homotopy and fast evaluation-interpolation techniques. We obtain a q"
+   },
+   {
+    "source": "arxiv",
+    "title": "Speculative SAT Modulo SAT",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2306.17765v1",
+    "relevance": 0.6666666666666666,
+    "text": "Speculative SAT Modulo SAT State-of-the-art model-checking algorithms like IC3/PDR are based on uni-directional modular SAT solving for finding and/or blocking counterexamples. Modular SAT solvers divide a SAT-query into multiple sub-queries, each solved by a separate SAT solver (called a module), a"
+   },
+   {
+    "source": "arxiv",
+    "title": "Linnik's problem for multiplicative functions",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2605.27833v1",
+    "relevance": 1,
+    "text": "Linnik's problem for multiplicative functions We study a multiplicative function analogue of Linnik's problem on the least prime in an arithmetic progression. Let $h\\colon \\mathbb{N}\\to\\mathbb{R}\\setminus\\{0\\}$ be a multiplicative function, and let $a \\pmod q$ be a reduced residue class. We ask how "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_flow_the_skew_symmetric_burgers_term_does_no_work_on_every_ring": {
+  "key": "lean_flow_the_skew_symmetric_burgers_term_does_no_work_on_every_ring",
+  "file": "flow.lean",
+  "name": "the_skew_symmetric_burgers_term_does_no_work_on_every_ring",
+  "statementHash": "8b66760fb0e90668",
+  "searched": "2026-09-25T15:25:22.107Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "multiplicative modulo symmetric burgers",
+   "openalex": "multiplicative modulo symmetric burgers",
+   "crossref": "multiplicative modulo symmetric burgers",
+   "arxiv": "multiplicative AND modulo AND symmetric AND burgers"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_fnv_hash_a_seed_golden": {
+  "key": "lean_fnv_hash_a_seed_golden",
+  "file": "fnv.lean",
+  "name": "hash_a_seed_golden",
+  "statementHash": "9afd82d4777aa910",
+  "searched": "2026-09-25T15:26:13.674Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing golden",
+   "openalex": "non cryptographic hashing golden",
+   "crossref": "non cryptographic hashing golden",
+   "arxiv": "non AND cryptographic AND hashing AND golden"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_fnv_hash_a_seed_zero": {
+  "key": "lean_fnv_hash_a_seed_zero",
+  "file": "fnv.lean",
+  "name": "hash_a_seed_zero",
+  "statementHash": "cb4508ca51008290",
+  "searched": "2026-09-25T15:25:56.334Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing",
+   "openalex": "non cryptographic hashing",
+   "crossref": "non cryptographic hashing",
+   "arxiv": "non AND cryptographic AND hashing"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "crossref",
+    "title": "GXHash: High-Performance Non-Cryptographic Hashing",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/icacte62428.2024.10871603",
+    "relevance": 1,
+    "text": "GXHash: High-Performance Non-Cryptographic Hashing "
+   },
+   {
+    "source": "crossref",
+    "title": "COMPARATIVE ANALYSIS OF CRYPTOGRAPHIC AND NON-CRYPTOGRAPHIC HASHING FUNCTIONS IN PROBABILISTIC ALGORITHMS OF APPROXIMATE ESTIMATION AND FILTERING",
+    "year": 2025,
+    "url": "https://doi.org/10.25206/2311-4908-2025-12-4-14-23",
+    "relevance": 1,
+    "text": "COMPARATIVE ANALYSIS OF CRYPTOGRAPHIC AND NON-CRYPTOGRAPHIC HASHING FUNCTIONS IN PROBABILISTIC ALGORITHMS OF APPROXIMATE ESTIMATION AND FILTERING This paper investigates the problem of minimizing the false positive rate and relative error in key probabilistic data structures. With the explosive grow"
+   },
+   {
+    "source": "crossref",
+    "title": "Chapter 10: Hashing Functions and Cryptographic Maps",
+    "year": 2021,
+    "url": "https://doi.org/10.1515/9781683927624-011",
+    "relevance": 1,
+    "text": "Chapter 10: Hashing Functions and Cryptographic Maps "
+   },
+   {
+    "source": "arxiv",
+    "title": "Towards a Better Approximation of Full Domain Hash - or - The Reef and Shoal Integrity Arrangement",
+    "year": "2013",
+    "url": "http://arxiv.org/abs/1305.2426v1",
+    "relevance": 1,
+    "text": "Towards a Better Approximation of Full Domain Hash - or - The Reef and Shoal Integrity Arrangement For RSA and Rabin-Williams public key digital signatures, proper message hashing and padding procedures are critical to the overall digital signature security. The theoretical work in this field coined"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_fnv_hash_ab_seed_zero": {
+  "key": "lean_fnv_hash_ab_seed_zero",
+  "file": "fnv.lean",
+  "name": "hash_ab_seed_zero",
+  "statementHash": "60622d7682e2a4a5",
+  "searched": "2026-09-25T15:26:05.086Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing",
+   "openalex": "non cryptographic hashing",
+   "crossref": "non cryptographic hashing",
+   "arxiv": "non AND cryptographic AND hashing"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "crossref",
+    "title": "GXHash: High-Performance Non-Cryptographic Hashing",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/icacte62428.2024.10871603",
+    "relevance": 1,
+    "text": "GXHash: High-Performance Non-Cryptographic Hashing "
+   },
+   {
+    "source": "crossref",
+    "title": "COMPARATIVE ANALYSIS OF CRYPTOGRAPHIC AND NON-CRYPTOGRAPHIC HASHING FUNCTIONS IN PROBABILISTIC ALGORITHMS OF APPROXIMATE ESTIMATION AND FILTERING",
+    "year": 2025,
+    "url": "https://doi.org/10.25206/2311-4908-2025-12-4-14-23",
+    "relevance": 1,
+    "text": "COMPARATIVE ANALYSIS OF CRYPTOGRAPHIC AND NON-CRYPTOGRAPHIC HASHING FUNCTIONS IN PROBABILISTIC ALGORITHMS OF APPROXIMATE ESTIMATION AND FILTERING This paper investigates the problem of minimizing the false positive rate and relative error in key probabilistic data structures. With the explosive grow"
+   },
+   {
+    "source": "crossref",
+    "title": "Chapter 10: Hashing Functions and Cryptographic Maps",
+    "year": 2021,
+    "url": "https://doi.org/10.1515/9781683927624-011",
+    "relevance": 1,
+    "text": "Chapter 10: Hashing Functions and Cryptographic Maps "
+   },
+   {
+    "source": "arxiv",
+    "title": "Towards a Better Approximation of Full Domain Hash - or - The Reef and Shoal Integrity Arrangement",
+    "year": "2013",
+    "url": "http://arxiv.org/abs/1305.2426v1",
+    "relevance": 1,
+    "text": "Towards a Better Approximation of Full Domain Hash - or - The Reef and Shoal Integrity Arrangement For RSA and Rabin-Williams public key digital signatures, proper message hashing and padding procedures are critical to the overall digital signature security. The theoretical work in this field coined"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_fnv_hash_is_deterministic": {
+  "key": "lean_fnv_hash_is_deterministic",
+  "file": "fnv.lean",
+  "name": "hash_is_deterministic",
+  "statementHash": "5828c5c6e932cc14",
+  "searched": "2026-09-25T15:26:30.531Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing deterministic",
+   "openalex": "non cryptographic hashing deterministic",
+   "crossref": "non cryptographic hashing deterministic",
+   "arxiv": "non AND cryptographic AND hashing AND deterministic"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "crossref",
+    "title": "COMPARATIVE ANALYSIS OF CRYPTOGRAPHIC AND NON-CRYPTOGRAPHIC HASHING FUNCTIONS IN PROBABILISTIC ALGORITHMS OF APPROXIMATE ESTIMATION AND FILTERING",
+    "year": 2025,
+    "url": "https://doi.org/10.25206/2311-4908-2025-12-4-14-23",
+    "relevance": 1,
+    "text": "COMPARATIVE ANALYSIS OF CRYPTOGRAPHIC AND NON-CRYPTOGRAPHIC HASHING FUNCTIONS IN PROBABILISTIC ALGORITHMS OF APPROXIMATE ESTIMATION AND FILTERING This paper investigates the problem of minimizing the false positive rate and relative error in key probabilistic data structures. With the explosive grow"
+   },
+   {
+    "source": "arxiv",
+    "title": "Canonicalization Failures as a Recurring Vulnerability Class: Representation Divergence in Cryptographic Systems and Its Avoidance",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2608.06508v1",
+    "relevance": 0.6666666666666666,
+    "text": "Canonicalization Failures as a Recurring Vulnerability Class: Representation Divergence in Cryptographic Systems and Its Avoidance Cryptographic systems operate on bytes but mean semantic objects. The translation between the two is rarely unique. Where this uniqueness is not enforced, an attack surf"
+   },
+   {
+    "source": "arxiv",
+    "title": "Protecting Context and Prompts: Deterministic Security for Non-Deterministic AI",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2602.10481v1",
+    "relevance": 0.6666666666666666,
+    "text": "Protecting Context and Prompts: Deterministic Security for Non-Deterministic AI Large Language Model (LLM) applications are vulnerable to prompt injection and context manipulation attacks that traditional security models cannot prevent. We introduce two novel primitives--authenticated prompts and au"
+   },
+   {
+    "source": "arxiv",
+    "title": "VCT: A Verifiable Transcript System for LLM Conversations",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2606.23003v1",
+    "relevance": 0.6666666666666666,
+    "text": "VCT: A Verifiable Transcript System for LLM Conversations Large language model (LLM) interaction records are increasingly vital in digital forensics and compliance auditing. However, traditional linear tamper-evident logs fail to capture the inherent non-linear evolution of LLM conversations, such a"
+   },
+   {
+    "source": "arxiv",
+    "title": "Refracted Light Interaction in Turbulent Bubbling Water (RLITBW): A Macroscopic Fluid-Optic Entropy Source",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2609.13147v1",
+    "relevance": 1,
+    "text": "Refracted Light Interaction in Turbulent Bubbling Water (RLITBW): A Macroscopic Fluid-Optic Entropy Source The demand for high quality, unpredictable random numbers is a fundamental requirement in cryptography, stochastic simulation, and optimization. While pseudo-random number generators (PRNGs) ar"
+   },
+   {
+    "source": "arxiv",
+    "title": "Toward Thermodynamic Reservoir Computing: Exploring SHA-256 ASICs as Potential Physical Substrates",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2601.01916v1",
+    "relevance": 1,
+    "text": "Toward Thermodynamic Reservoir Computing: Exploring SHA-256 ASICs as Potential Physical Substrates We propose a theoretical framework--Holographic Reservoir Computing (HRC)--which hypothesizes that the thermodynamic noise and timing dynamics in voltage-stressed Bitcoin mining ASICs (BM1366) could po"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_fnv_hash_is_injective_on_single_characters": {
+  "key": "lean_fnv_hash_is_injective_on_single_characters",
+  "file": "fnv.lean",
+  "name": "hash_is_injective_on_single_characters",
+  "statementHash": "93720e978abd7e9d",
+  "searched": "2026-09-25T15:26:39.648Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing injective single characters",
+   "openalex": "non cryptographic hashing injective single characters",
+   "crossref": "non cryptographic hashing injective single characters",
+   "arxiv": "non AND cryptographic AND hashing AND injective AND single"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_fnv_hash_is_not_constant": {
+  "key": "lean_fnv_hash_is_not_constant",
+  "file": "fnv.lean",
+  "name": "hash_is_not_constant",
+  "statementHash": "20d50cb98ded7447",
+  "searched": "2026-09-25T15:27:04.844Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing constant",
+   "openalex": "non cryptographic hashing constant",
+   "crossref": "non cryptographic hashing constant",
+   "arxiv": "non AND cryptographic AND hashing AND constant"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Using fuzzy bits and neural networks to partially invert few rounds of some cryptographic hash functions",
+    "year": "2019",
+    "url": "http://arxiv.org/abs/1901.02438v1",
+    "relevance": 0.6666666666666666,
+    "text": "Using fuzzy bits and neural networks to partially invert few rounds of some cryptographic hash functions We consider fuzzy, or continuous, bits, which take values in [0;1] and (-1;1] instead of {0;1}, and operations on them (NOT, XOR etc.) and on their sequences (ADD), to obtain the generalization o"
+   },
+   {
+    "source": "arxiv",
+    "title": "Constant-Size Cryptographic Evidence Structures for Regulated AI Workflows",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2511.17118v2",
+    "relevance": 1,
+    "text": "Constant-Size Cryptographic Evidence Structures for Regulated AI Workflows Regulated AI workflows (such as clinical trials, medical decision support, and financial compliance) must satisfy strict auditability and integrity requirements. Existing audit-trail mechanisms rely on variable-length records"
+   },
+   {
+    "source": "arxiv",
+    "title": "Towards Separating Computational and Statistical Differential Privacy",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2301.00104v2",
+    "relevance": 0.6666666666666666,
+    "text": "Towards Separating Computational and Statistical Differential Privacy Computational differential privacy (CDP) is a natural relaxation of the standard notion of (statistical) differential privacy (SDP) proposed by Beimel, Nissim, and Omri (CRYPTO 2008) and Mironov, Pandey, Reingold, and Vadhan (CRYP"
+   },
+   {
+    "source": "arxiv",
+    "title": "Invertible Bloom Lookup Tables with Less Memory and Randomness",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2306.07583v3",
+    "relevance": 1,
+    "text": "Invertible Bloom Lookup Tables with Less Memory and Randomness In this work we study Invertible Bloom Lookup Tables (IBLTs) with small failure probabilities. IBLTs are highly versatile data structures that have found applications in set reconciliation protocols, error-correcting codes, and even the "
+   },
+   {
+    "source": "arxiv",
+    "title": "Commitments to Quantum States",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2210.05138v2",
+    "relevance": 1,
+    "text": "Commitments to Quantum States What does it mean to commit to a quantum state? In this work, we propose a simple answer: a commitment to quantum messages is binding if, after the commit phase, the committed state is hidden from the sender's view. We accompany this new definition with several instanti"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_fnv_hash_is_not_the_identity": {
+  "key": "lean_fnv_hash_is_not_the_identity",
+  "file": "fnv.lean",
+  "name": "hash_is_not_the_identity",
+  "statementHash": "f0ebcb5594f36c81",
+  "searched": "2026-09-25T15:26:56.613Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing",
+   "openalex": "non cryptographic hashing",
+   "crossref": "non cryptographic hashing",
+   "arxiv": "non AND cryptographic AND hashing"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "crossref",
+    "title": "GXHash: High-Performance Non-Cryptographic Hashing",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/icacte62428.2024.10871603",
+    "relevance": 1,
+    "text": "GXHash: High-Performance Non-Cryptographic Hashing "
+   },
+   {
+    "source": "crossref",
+    "title": "COMPARATIVE ANALYSIS OF CRYPTOGRAPHIC AND NON-CRYPTOGRAPHIC HASHING FUNCTIONS IN PROBABILISTIC ALGORITHMS OF APPROXIMATE ESTIMATION AND FILTERING",
+    "year": 2025,
+    "url": "https://doi.org/10.25206/2311-4908-2025-12-4-14-23",
+    "relevance": 1,
+    "text": "COMPARATIVE ANALYSIS OF CRYPTOGRAPHIC AND NON-CRYPTOGRAPHIC HASHING FUNCTIONS IN PROBABILISTIC ALGORITHMS OF APPROXIMATE ESTIMATION AND FILTERING This paper investigates the problem of minimizing the false positive rate and relative error in key probabilistic data structures. With the explosive grow"
+   },
+   {
+    "source": "crossref",
+    "title": "Chapter 10: Hashing Functions and Cryptographic Maps",
+    "year": 2021,
+    "url": "https://doi.org/10.1515/9781683927624-011",
+    "relevance": 1,
+    "text": "Chapter 10: Hashing Functions and Cryptographic Maps "
+   },
+   {
+    "source": "arxiv",
+    "title": "Towards a Better Approximation of Full Domain Hash - or - The Reef and Shoal Integrity Arrangement",
+    "year": "2013",
+    "url": "http://arxiv.org/abs/1305.2426v1",
+    "relevance": 1,
+    "text": "Towards a Better Approximation of Full Domain Hash - or - The Reef and Shoal Integrity Arrangement For RSA and Rabin-Williams public key digital signatures, proper message hashing and padding procedures are critical to the overall digital signature security. The theoretical work in this field coined"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_fnv_hash_is_thirty_two_bit": {
+  "key": "lean_fnv_hash_is_thirty_two_bit",
+  "file": "fnv.lean",
+  "name": "hash_is_thirty_two_bit",
+  "statementHash": "da3ff1705890e018",
+  "searched": "2026-09-25T15:27:13.297Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing thirty",
+   "openalex": "non cryptographic hashing thirty",
+   "crossref": "non cryptographic hashing thirty",
+   "arxiv": "non AND cryptographic AND hashing AND thirty"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_fnv_hash_uuidna_seed_zero": {
+  "key": "lean_fnv_hash_uuidna_seed_zero",
+  "file": "fnv.lean",
+  "name": "hash_uuidna_seed_zero",
+  "statementHash": "067e2076ca484b54",
+  "searched": "2026-09-25T15:26:22.046Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing uuidna",
+   "openalex": "non cryptographic hashing uuidna",
+   "crossref": "non cryptographic hashing uuidna",
+   "arxiv": "non AND cryptographic AND hashing AND uuidna"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_fnv_multiplying_by_the_fnv_prime_is_undone_by_its_inverse_for_every_h": {
+  "key": "lean_fnv_multiplying_by_the_fnv_prime_is_undone_by_its_inverse_for_every_h",
+  "file": "fnv.lean",
+  "name": "multiplying_by_the_fnv_prime_is_undone_by_its_inverse_for_every_h",
+  "statementHash": "91077e5e82c73be1",
+  "searched": "2026-09-25T15:27:47.375Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing multiplying prime undone",
+   "openalex": "non cryptographic hashing multiplying prime undone",
+   "crossref": "non cryptographic hashing multiplying prime undone",
+   "arxiv": "non AND cryptographic AND hashing AND multiplying AND prime"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_fnv_the_empty_input_is_still_mixed": {
+  "key": "lean_fnv_the_empty_input_is_still_mixed",
+  "file": "fnv.lean",
+  "name": "the_empty_input_is_still_mixed",
+  "statementHash": "59278da8cdd9df9d",
+  "searched": "2026-09-25T15:27:30.362Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing empty input still",
+   "openalex": "non cryptographic hashing empty input still",
+   "crossref": "non cryptographic hashing empty input still",
+   "arxiv": "non AND cryptographic AND hashing AND empty AND input"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_fnv_the_hash_is_order_sensitive": {
+  "key": "lean_fnv_the_hash_is_order_sensitive",
+  "file": "fnv.lean",
+  "name": "the_hash_is_order_sensitive",
+  "statementHash": "e80f4a8cd2ea956b",
+  "searched": "2026-09-25T15:27:21.655Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing sensitive",
+   "openalex": "non cryptographic hashing sensitive",
+   "crossref": "non cryptographic hashing sensitive",
+   "arxiv": "non AND cryptographic AND hashing AND sensitive"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Cryptographic Data Exchange for Nuclear Warheads",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2507.20074v2",
+    "relevance": 0.6666666666666666,
+    "text": "Cryptographic Data Exchange for Nuclear Warheads Nuclear arms control treaties have historically focused on strategic nuclear delivery systems, indirectly restricting strategic nuclear warhead numbers and leaving nonstrategic nuclear warheads (NSNWs) outside formal verification frameworks. This pape"
+   },
+   {
+    "source": "arxiv",
+    "title": "Locality-Preserving Hashing for Shifts with Connections to Cryptography",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2201.03041v1",
+    "relevance": 1,
+    "text": "Locality-Preserving Hashing for Shifts with Connections to Cryptography Can we sense our location in an unfamiliar environment by taking a sublinear-size sample of our surroundings? Can we efficiently encrypt a message that only someone physically close to us can decrypt? To solve this kind of probl"
+   },
+   {
+    "source": "arxiv",
+    "title": "LightFAt: Mitigating Control-flow Explosion via Lightweight PMU-based Control-flow Attestation",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2404.02608v2",
+    "relevance": 0.6666666666666666,
+    "text": "LightFAt: Mitigating Control-flow Explosion via Lightweight PMU-based Control-flow Attestation With the continuous evolution of computational devices, more and more applications are being executed remotely. The applications operate on a wide spectrum of devices, ranging from IoT nodes with low compu"
+   },
+   {
+    "source": "arxiv",
+    "title": "SpexPay: A Privacy-Preserving Pay-As-You-Go System for Dynamic Spectrum Sharing",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2607.17218v1",
+    "relevance": 0.6666666666666666,
+    "text": "SpexPay: A Privacy-Preserving Pay-As-You-Go System for Dynamic Spectrum Sharing Dynamic Spectrum Sharing (DSS) is a cornerstone of next-generation wireless systems, yet existing solutions such as Spectrum Access Systems (SAS) rely on centralized administrators that expose sensitive operational metad"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_fnv_the_seed_separates": {
+  "key": "lean_fnv_the_seed_separates",
+  "file": "fnv.lean",
+  "name": "the_seed_separates",
+  "statementHash": "e8f696fca4f4f51c",
+  "searched": "2026-09-25T15:26:47.903Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing separates",
+   "openalex": "non cryptographic hashing separates",
+   "crossref": "non cryptographic hashing separates",
+   "arxiv": "non AND cryptographic AND hashing AND separates"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Mandato: Protocol-Level Enforcement of Digitally Signed Mandates on AI Agent Actions with Cryptographically Chained Audit Trails",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2608.14074v1",
+    "relevance": 0.6666666666666666,
+    "text": "Mandato: Protocol-Level Enforcement of Digitally Signed Mandates on AI Agent Actions with Cryptographically Chained Audit Trails AI agents increasingly act on external systems through standardized tool-calling protocols such as the Model Context Protocol (MCP), yet no infrastructure layer constrains"
+   },
+   {
+    "source": "arxiv",
+    "title": "Towards the Impossibility of Non-Signalling Privacy Amplification from Time-Like Ordering Constraints",
+    "year": "2012",
+    "url": "http://arxiv.org/abs/1205.3736v2",
+    "relevance": 0.6666666666666666,
+    "text": "Towards the Impossibility of Non-Signalling Privacy Amplification from Time-Like Ordering Constraints In the past few years there was a growing interest in proving the security of cryptographic protocols, such as key distribution protocols, from the sole assumption that the systems of Alice and Bob "
+   },
+   {
+    "source": "arxiv",
+    "title": "MathLedger: A Verifiable Learning Substrate with Ledger-Attested Feedback",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2601.00816v1",
+    "relevance": 0.6666666666666666,
+    "text": "MathLedger: A Verifiable Learning Substrate with Ledger-Attested Feedback Contemporary AI systems achieve extraordinary performance yet remain opaque and non-verifiable, creating a crisis of trust for safety-critical deployment. We introduce MathLedger, a substrate for verifiable machine cognition t"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_fnv_the_split_multiply_is_the_exact_thirty_two_bit_product": {
+  "key": "lean_fnv_the_split_multiply_is_the_exact_thirty_two_bit_product",
+  "file": "fnv.lean",
+  "name": "the_split_multiply_is_the_exact_thirty_two_bit_product",
+  "statementHash": "2052fd7c2483840f",
+  "searched": "2026-09-25T15:27:38.987Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "non cryptographic hashing split multiply exact",
+   "openalex": "non cryptographic hashing split multiply exact",
+   "crossref": "non cryptographic hashing split multiply exact",
+   "arxiv": "non AND cryptographic AND hashing AND split AND multiply"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_addgen_iff_coprime_all": {
+  "key": "lean_generated_addgen_iff_coprime_all",
+  "file": "generated.lean",
+  "name": "addgen_iff_coprime_all",
+  "statementHash": "d35c5c04254e84e1",
+  "searched": "2026-09-25T15:28:31.650Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "doubling orbit addgen coprime",
+   "openalex": "doubling orbit addgen coprime",
+   "crossref": "doubling orbit addgen coprime",
+   "arxiv": "doubling AND orbit AND addgen AND coprime"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_cyclic_units_have_a_primitive_root": {
+  "key": "lean_generated_cyclic_units_have_a_primitive_root",
+  "file": "generated.lean",
+  "name": "cyclic_units_have_a_primitive_root",
+  "statementHash": "2e627aacb27fc259",
+  "searched": "2026-09-25T15:29:23.866Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 2,3,5,7,11,13": "2,3,5,7,11,13",
+   "zbmath": "doubling orbit cyclic primitive",
+   "openalex": "doubling orbit cyclic primitive",
+   "crossref": "doubling orbit cyclic primitive",
+   "arxiv": "doubling AND orbit AND cyclic AND primitive"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A000040",
+    "name": "The prime numbers.",
+    "query": "2,3,5,7,11,13"
+   },
+   {
+    "a": "A007500",
+    "name": "Primes whose reversal in base 10 is also prime (called \"palindromic primes\" by David Wells, although that name usually refers to A002385). Also called reversibl",
+    "query": "2,3,5,7,11,13"
+   },
+   {
+    "a": "A109611",
+    "name": "Chen primes: primes p such that p + 2 is either a prime or a semiprime.",
+    "query": "2,3,5,7,11,13"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_demorgan_all_widths": {
+  "key": "lean_generated_demorgan_all_widths",
+  "file": "generated.lean",
+  "name": "demorgan_all_widths",
+  "statementHash": "470058066942c8a3",
+  "searched": "2026-09-25T15:28:48.937Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "doubling orbit demorgan widths",
+   "openalex": "doubling orbit demorgan widths",
+   "crossref": "doubling orbit demorgan widths",
+   "arxiv": "doubling AND orbit AND demorgan AND widths"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_hasinv_iff_unit_all": {
+  "key": "lean_generated_hasinv_iff_unit_all",
+  "file": "generated.lean",
+  "name": "hasinv_iff_unit_all",
+  "statementHash": "9bdc453b890407a0",
+  "searched": "2026-09-25T15:28:40.224Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "doubling orbit hasinv",
+   "openalex": "doubling orbit hasinv",
+   "crossref": "doubling orbit hasinv",
+   "arxiv": "doubling AND orbit AND hasinv"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_invpow_fails_off_the_units": {
+  "key": "lean_generated_invpow_fails_off_the_units",
+  "file": "generated.lean",
+  "name": "invpow_fails_off_the_units",
+  "statementHash": "b4e207ae93bca63f",
+  "searched": "2026-09-25T15:29:15.073Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "doubling orbit invpow fails",
+   "openalex": "doubling orbit invpow fails",
+   "crossref": "doubling orbit invpow fails",
+   "arxiv": "doubling AND orbit AND invpow AND fails"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_invpow_is_fifth_power_all_units": {
+  "key": "lean_generated_invpow_is_fifth_power_all_units",
+  "file": "generated.lean",
+  "name": "invpow_is_fifth_power_all_units",
+  "statementHash": "48163d669a4f8a7c",
+  "searched": "2026-09-25T15:29:06.283Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "doubling orbit invpow fifth power",
+   "openalex": "doubling orbit invpow fifth power",
+   "crossref": "doubling orbit invpow fifth power",
+   "arxiv": "doubling AND orbit AND invpow AND fifth AND power"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_mulperm_fails_at_the_triad": {
+  "key": "lean_generated_mulperm_fails_at_the_triad",
+  "file": "generated.lean",
+  "name": "mulperm_fails_at_the_triad",
+  "statementHash": "f266fc72c808e391",
+  "searched": "2026-09-25T15:28:23.063Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "doubling orbit mulperm fails triad",
+   "openalex": "doubling orbit mulperm fails triad",
+   "crossref": "doubling orbit mulperm fails triad",
+   "arxiv": "doubling AND orbit AND mulperm AND fails AND triad"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_mulperm_iff_unit_all": {
+  "key": "lean_generated_mulperm_iff_unit_all",
+  "file": "generated.lean",
+  "name": "mulperm_iff_unit_all",
+  "statementHash": "dc92d12a8c5c1258",
+  "searched": "2026-09-25T15:28:14.452Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "doubling orbit mulperm",
+   "openalex": "doubling orbit mulperm",
+   "crossref": "doubling orbit mulperm",
+   "arxiv": "doubling AND orbit AND mulperm"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_power_sum_closed_forms": {
+  "key": "lean_generated_power_sum_closed_forms",
+  "file": "generated.lean",
+  "name": "power_sum_closed_forms",
+  "statementHash": "455c29ea2f9e4cae",
+  "searched": "2026-09-25T15:28:57.503Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "doubling orbit power closed",
+   "openalex": "doubling orbit power closed",
+   "crossref": "doubling orbit power closed",
+   "arxiv": "doubling AND orbit AND power AND closed"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_powsum_nonzero_at_even_exponents": {
+  "key": "lean_generated_powsum_nonzero_at_even_exponents",
+  "file": "generated.lean",
+  "name": "powsum_nonzero_at_even_exponents",
+  "statementHash": "31619dc34fe0268c",
+  "searched": "2026-09-25T15:28:05.974Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "doubling orbit powsum nonzero exponents",
+   "openalex": "doubling orbit powsum nonzero exponents",
+   "crossref": "doubling orbit powsum nonzero exponents",
+   "arxiv": "doubling AND orbit AND powsum AND nonzero AND exponents"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_generated_powsum_zero_odd_exponents": {
+  "key": "lean_generated_powsum_zero_odd_exponents",
+  "file": "generated.lean",
+  "name": "powsum_zero_odd_exponents",
+  "statementHash": "25e1ce56157b3a47",
+  "searched": "2026-09-25T15:27:56.816Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "doubling orbit powsum exponents",
+   "openalex": "doubling orbit powsum exponents",
+   "crossref": "doubling orbit powsum exponents",
+   "arxiv": "doubling AND orbit AND powsum AND exponents"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
   "candidates": [],
   "verdict": "NOT_MEASURED"
  },

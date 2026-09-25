@@ -269,6 +269,10 @@ export default defineConfig({
           { text: 'Workflows', link: '/WORKFLOWS' },
           { text: 'The (concepts)', link: '/the' },
           { text: 'Theorems', link: '/THEOREMS' },
+          // Added with the pages themselves. gaps.ts refused the publish for exactly this: both were put
+          // in the nav and not the sidebar, so a reader arriving by the sidebar could not reach either.
+          { text: 'Formulas', link: '/formulas' },
+          { text: 'End-to-end', link: '/E2E' },
           { text: 'Challenges', link: '/CHALLENGES' },
           { text: 'Heart', link: '/HEART' },
           { text: 'Rules', link: '/RULES' },
