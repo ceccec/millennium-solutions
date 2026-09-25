@@ -19630,5 +19630,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "0d20a400-1ea3-8707-bddf-f48fc75293e2"
+  },
+  {
+    "key": "lean_verdict_every_input_receives_one_of_the_five_verdicts",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "80063d49-878c-8847-8ba2-df2b959abf5b"
+  },
+  {
+    "key": "lean_verdict_the_five_classes_do_not_overlap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6ecc042b-7e86-8443-9fb6-b9ab2a46195b"
+  },
+  {
+    "key": "lean_verdict_a_source_going_silent_never_cleans_the_verdict",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d860b86e-998c-8322-bfb9-10db30b9b661"
+  },
+  {
+    "key": "lean_verdict_the_clean_verdict_is_reachable_only_from_complete_evidence",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "927bf1a4-f7e9-84b1-b52a-90a94fec6616"
+  },
+  {
+    "key": "lean_verdict_a_relevant_hit_outranks_any_amount_of_silence",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "197de671-e54e-803d-9ee5-b240b7b71332"
+  },
+  {
+    "key": "lean_verdict_all_five_verdicts_occur",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c52fd3dd-90d0-8d98-baad-fef88241482f"
+  },
+  {
+    "key": "lean_verdict_too_few_terms_precedes_every_other_test",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e78cee44-284e-8b26-8622-c39db3426902"
+  },
+  {
+    "key": "lean_verdict_the_rule_is_decided_and_the_search_quality_is_not",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fbf9e09d-c64e-89c2-8adf-40961abc3ecd"
+  },
+  {
+    "key": "lean_ranking_turning_a_signal_on_never_lowers_the_score",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "19b28918-b1e8-8b07-8e41-b1bd5177f397"
+  },
+  {
+    "key": "lean_ranking_every_signal_strictly_raises_the_score",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e84e0759-2071-8d3a-b46d-b2999f96d06b"
+  },
+  {
+    "key": "lean_ranking_the_score_runs_from_zero_to_eleven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "96b30d19-3f93-8af6-95f1-7ab1e01b2397"
+  },
+  {
+    "key": "lean_ranking_the_ranking_holds_nine_distinguishable_states_as_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5995d53b-72d5-8708-863e-f58f99c26d4a"
+  },
+  {
+    "key": "lean_ranking_only_the_top_and_the_bottom_identify_their_evidence",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ef785a00-ef89-8ff9-b5d0-05a0833e1429"
+  },
+  {
+    "key": "lean_ranking_distinct_powers_would_separate_every_state",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e857c1d1-2da2-87b9-a396-4f9617d85344"
+  },
+  {
+    "key": "lean_ranking_the_two_heaviest_signals_outweigh_all_the_others",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3de521f2-a598-856e-a1b3-0b63ee9236ee"
+  },
+  {
+    "key": "lean_ranking_a_high_score_orders_attention_and_settles_nothing",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f220388b-524c-8ca0-a7e9-b10da45df0ba"
   }
 ]

@@ -17819,8 +17819,8 @@
     "name": "lean coin.lean: this_file_makes_no_physical_claim — physicalClaims = 0 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "be643cd8-b421-88ff-9d60-df980e8daa54",
     "revoked": true,
-    "reason": "carried: this key was sealed from a theorem no longer in src/proof. lean_coin_the_digits_are_ten now expresses the same checked statement — for the three renames, the identical proposition under a name that does not assert more than it decides; for the rest, the conjunct that was read off a real list, the vacuous one having been deleted. Marked in place; the receipt stays in the append-only chain.",
-    "supersededBy": "lean_coin_the_digits_are_ten"
+    "reason": "carried: this key was sealed from \"physicalClaims = 0 AND digits.length = 10\", and its first conjunct was a SELF-CERTIFYING LITERAL — a count decided against its own typed value, which would have stayed zero while the file filled with claims about the sky. It was removed from src/proof/coin.lean for exactly that reason and the refusal moved to contradictions.ts, which reads the propositions and can go red. What survives is the second conjunct, and lean_coin_the_nines_complement_pairs_the_ten_digits carries it properly: the ten is DERIVED from the pairing (five pairs, twice over) rather than typed beside it. The heir named here before was lean_coin_the_digits_are_ten, which is a withdrawn key with no theorem behind it — so following this pointer landed on another withdrawal instead of on a proof. It lands on a standing theorem now.",
+    "supersededBy": "lean_coin_the_nines_complement_pairs_the_ten_digits"
   },
   {
     "key": "lean_coin_the_fall_fixes_every_digit_but_the_void",

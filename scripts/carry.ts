@@ -22,7 +22,7 @@
 // STATEMENT rather than its name. Marking a claim proved when it is not would be the one error this ledger
 // cannot take back.
 import { writeFileSync} from 'node:fs'
-import { ledger as __ledger, leanTheorems, statusOf, theoremOfKey } from '../src/api/index.ts'
+import { ledger as __ledger, leanTheorems, statusOf, theoremOfKey, live as __live } from '../src/api/index.ts'
 
 // THE HEIR IS A LEDGER KEY, NOT `lean_` + THE THEOREM NAME. A theorem's live key is an address and is often
 // namespaced — lean_z9_euler_units_pow_six, not lean_euler_units_pow_six. Building it by concatenation set
@@ -125,4 +125,36 @@ if (candidates.length) {
   console.log(`\n  ○ ${candidates.length} further token-match candidate(s), NOT carried — each needs its statement read:`)
   for (const [k, n] of candidates) console.log(`      ${k}  →  ${n}`)
 }
-process.exit(missing.length ? 1 : 0)
+// ── AND EVERY CARRIED ENTRY MUST LAND ON A THEOREM THAT STANDS ───────────────────────────────────────────
+// `supersededBy` is the ledger's promise that a withdrawn claim is still proved, somewhere else. Nothing
+// checked that the somewhere else EXISTS. Measured 2026-09-25: of 526 carried entries, 18 pointed at an
+// heir that was itself withdrawn — 17 of those resolved in further hops and ONE did not.
+// `lean_coin_this_file_makes_no_physical_claim` pointed at `lean_coin_the_digits_are_ten`, a withdrawn key
+// with no theorem behind it, so a reader following the pointer landed on another withdrawal instead of on
+// a proof. A promise that the claim still stands, leading nowhere.
+//
+// The chain is followed to its end here, not one hop: a multi-hop chain that terminates at a live theorem
+// is correct, and only a chain that terminates nowhere is a defect. A cycle is a defect too and is counted
+// as one rather than looping.
+const byKey = new Map(ledger.map((e: { key: string }) => [e.key, e]))
+const liveNow = new Set(__live(ledger).map((e: { key: string }) => e.key))
+const dangling: string[] = []
+for (const e of ledger as { key: string; revoked?: boolean; supersededBy?: string }[]) {
+  if (!e.revoked || !e.supersededBy) continue
+  const seen = new Set([e.key])
+  let cur: string | undefined = e.supersededBy, hops = 0
+  while (cur && !liveNow.has(cur) && byKey.has(cur) && !seen.has(cur) && hops < 32) {
+    seen.add(cur); cur = (byKey.get(cur) as { supersededBy?: string }).supersededBy; hops++
+  }
+  if (!cur || !liveNow.has(cur)) dangling.push(`${e.key} → ${e.supersededBy}`)
+}
+if (dangling.length) {
+  console.log(`\n✗ carry: ${dangling.length} carried entr(y/ies) promise a surviving proof and lead nowhere:`)
+  for (const d of dangling.slice(0, 10)) console.log(`      ${d}`)
+  console.log(`  A withdrawn claim marked \`supersededBy\` says the statement STILL STANDS at that address.`)
+  console.log(`  Point it at a live theorem, or withdraw it with no heir — which is honest and this is not.`)
+}
+const carriedCount = (ledger as { revoked?: boolean; supersededBy?: string }[]).filter((e) => e.revoked && e.supersededBy).length
+if (!dangling.length) console.log(`\n  ✓ all ${carriedCount} carried entries resolve, in one hop or several, to a theorem that stands`)
+
+process.exit(missing.length || dangling.length ? 1 : 0)

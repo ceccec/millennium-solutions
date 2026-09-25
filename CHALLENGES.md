@@ -1385,7 +1385,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 
 
-## Revoked — 1594 entries that no longer stand
+## Revoked — 1593 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
@@ -1397,9 +1397,8 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **7** — renamed to what it decides (2026-09-18, by the author's order)
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
-- **1** — carried: this key was sealed from a theorem no longer in src/proof
 
-## Carried — 525 withdrawn entries whose statement a proof now carries
+## Carried — 526 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -1444,9 +1443,9 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`hasinv_d1`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d2`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 485 more.
+…and 486 more.
 
-<details><summary>List all 1594 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1593 withdrawn keys — nothing proves these</summary>
 
 - ~~`qr_u7`~~  ·  `2a422f9b-761a…`
 - ~~`powinv_k5`~~  ·  `8e327990-c88f…`
@@ -3029,7 +3028,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`lean_split_accounting_the_coins_on_the_last_pair`~~  ·  `758b6f0c-0b43…`
 - ~~`lean_split_the_seal_affords_sixty_four_payments_of_two`~~  ·  `983dd276-c1a1…`
 - ~~`lean_split_the_budget_and_the_period_are_one_turn`~~  ·  `c595d67b-fa66…`
-- ~~`lean_coin_this_file_makes_no_physical_claim`~~  ·  `be643cd8-b421…`
 - ~~`lean_light_the_si_fixes_exactly_seven_constants`~~  ·  `34b3da62-a7f5…`
 - ~~`lean_phenomena_this_deposit_explains_predicts_and_constrains_nothing`~~  ·  `f3f2dd32-107d…`
 - ~~`lean_phenomena_arithmetic_on_a_definition_returns_the_definition`~~  ·  `2f338a89-2ef5…`

@@ -2080,7 +2080,7 @@
   "file": "coils.lean",
   "name": "the_address_coil_first_holds_at_every_reservation",
   "statementHash": "15df3d0495f79f38",
-  "searched": "2026-09-25T13:41:17.629Z",
+  "searched": "2026-09-25T14:33:27.898Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2093,13 +2093,13 @@
    ]
   },
   "queries": {
-   "zbmath": "address coil reservation extensional equality predicates",
-   "openalex": "address coil reservation extensional equality predicates",
-   "crossref": "address coil reservation extensional equality predicates",
-   "arxiv": "address AND coil AND reservation"
+   "zbmath": "extensional equality predicates finite reservation",
+   "openalex": "extensional equality predicates finite reservation",
+   "crossref": "extensional equality predicates finite reservation",
+   "arxiv": "extensional AND equality AND predicates AND finite AND reservation"
   },
   "notMeasured": [
-   "openalex: rate-limited after backoff"
+   "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2111,7 +2111,7 @@
   "file": "coils.lean",
   "name": "the_address_coil_second_holds_at_every_reservation",
   "statementHash": "b30d61a3d3cb8350",
-  "searched": "2026-09-25T13:43:12.709Z",
+  "searched": "2026-09-25T14:33:38.170Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2124,10 +2124,10 @@
    ]
   },
   "queries": {
-   "zbmath": "address coil reservation extensional equality predicates",
-   "openalex": "address coil reservation extensional equality predicates",
-   "crossref": "address coil reservation extensional equality predicates",
-   "arxiv": "address AND coil AND reservation"
+   "zbmath": "extensional equality predicates finite reservation",
+   "openalex": "extensional equality predicates finite reservation",
+   "crossref": "extensional equality predicates finite reservation",
+   "arxiv": "extensional AND equality AND predicates AND finite AND reservation"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -2142,7 +2142,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_eight_has_3_expressions",
   "statementHash": "87d2c0512b25b5da",
-  "searched": "2026-09-25T13:35:53.184Z",
+  "searched": "2026-09-25T14:31:28.641Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2155,23 +2155,25 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_five_has_3_expressions": {
   "key": "lean_coils_the_coil_on_five_has_3_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_five_has_3_expressions",
   "statementHash": "85d5082109e9cb44",
-  "searched": "2026-09-25T13:34:27.791Z",
+  "searched": "2026-09-25T14:30:29.812Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2184,23 +2186,25 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_four_five_has_2_expressions": {
   "key": "lean_coils_the_coil_on_four_five_has_2_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_four_five_has_2_expressions",
   "statementHash": "777c0314c98cc9e4",
-  "searched": "2026-09-25T13:36:47.274Z",
+  "searched": "2026-09-25T14:32:39.441Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2213,23 +2217,25 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_four_has_2_expressions": {
   "key": "lean_coils_the_coil_on_four_has_2_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_four_has_2_expressions",
   "statementHash": "8bec01bae7497cc5",
-  "searched": "2026-09-25T13:36:59.843Z",
+  "searched": "2026-09-25T14:32:49.541Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2242,16 +2248,18 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_one_eight_has_6_expressions": {
   "key": "lean_coils_the_coil_on_one_eight_has_6_expressions",
@@ -2376,7 +2384,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_one_has_3_expressions",
   "statementHash": "f1b01e545cb7c0eb",
-  "searched": "2026-09-25T13:34:40.661Z",
+  "searched": "2026-09-25T14:30:40.132Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2389,16 +2397,18 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_one_two_four_five_seven_eight_has_14_expressions": {
   "key": "lean_coils_the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
@@ -2465,7 +2475,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_seven_has_2_expressions",
   "statementHash": "a5267a005393213a",
-  "searched": "2026-09-25T13:39:25.586Z",
+  "searched": "2026-09-25T14:33:11.737Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2478,13 +2488,13 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: rate-limited after backoff"
+   "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2496,7 +2506,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_six_has_3_expressions",
   "statementHash": "2dbd3ff69af66919",
-  "searched": "2026-09-25T13:35:18.530Z",
+  "searched": "2026-09-25T14:31:00.316Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2509,23 +2519,25 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_three_has_3_expressions": {
   "key": "lean_coils_the_coil_on_three_has_3_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_three_has_3_expressions",
   "statementHash": "43ebf5bdb85c6b96",
-  "searched": "2026-09-25T13:35:01.905Z",
+  "searched": "2026-09-25T14:30:50.292Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2538,16 +2550,18 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_three_six_has_6_expressions": {
   "key": "lean_coils_the_coil_on_three_six_has_6_expressions",
@@ -2644,7 +2658,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_two_seven_has_2_expressions",
   "statementHash": "38d2001b4f8338fc",
-  "searched": "2026-09-25T13:36:19.130Z",
+  "searched": "2026-09-25T14:32:10.517Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2657,23 +2671,25 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_four_five_has_2_expressions": {
   "key": "lean_coils_the_coil_on_zero_four_five_has_2_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_zero_four_five_has_2_expressions",
   "statementHash": "1e30634f376e972f",
-  "searched": "2026-09-25T13:36:35.510Z",
+  "searched": "2026-09-25T14:32:20.567Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2686,16 +2702,18 @@
    ]
   },
   "queries": {
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_has_10_expressions": {
   "key": "lean_coils_the_coil_on_zero_has_10_expressions",
@@ -2807,7 +2825,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_one_has_3_expressions",
   "statementHash": "72171413d8c19edc",
-  "searched": "2026-09-25T13:35:32.378Z",
+  "searched": "2026-09-25T14:31:14.121Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2821,12 +2839,14 @@
   },
   "queries": {
    "oeis 0,1,4,7": "0,1,4,7",
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [
    {
     "a": "A160120",
@@ -2841,7 +2861,7 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_one_two_three_four_five_six_seven_eight_has_8_expressions": {
   "key": "lean_coils_the_coil_on_zero_one_two_three_four_five_six_seven_eight_has_8_expressions",
@@ -2910,7 +2930,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_two_five_eight_has_4_expressions",
   "statementHash": "aa32e25a57f83560",
-  "searched": "2026-09-25T13:34:11.911Z",
+  "searched": "2026-09-25T14:30:12.959Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2925,12 +2945,14 @@
   "queries": {
    "oeis 0,1,4,7": "0,1,4,7",
    "oeis 0,2,5,8": "0,2,5,8",
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [
    {
     "a": "A160120",
@@ -2955,14 +2977,14 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_two_seven_has_2_expressions": {
   "key": "lean_coils_the_coil_on_zero_two_seven_has_2_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_zero_two_seven_has_2_expressions",
   "statementHash": "898103dcaf93e1ba",
-  "searched": "2026-09-25T13:36:06.827Z",
+  "searched": "2026-09-25T14:31:38.686Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2975,23 +2997,26 @@
    ]
   },
   "queries": {
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "zbmath: HTTP 404",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NOT_MEASURED"
  },
  "lean_coils_the_coil_on_zero_two_three_five_six_eight_has_2_expressions": {
   "key": "lean_coils_the_coil_on_zero_two_three_five_six_eight_has_2_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_zero_two_three_five_six_eight_has_2_expressions",
   "statementHash": "0e3eeb78324f6c11",
-  "searched": "2026-09-25T13:37:30.269Z",
+  "searched": "2026-09-25T14:32:59.465Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3007,13 +3032,13 @@
    "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
    "oeis 0,2,3,5,6,8": "0,2,3,5,6,8",
    "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: rate-limited after backoff"
+   "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
    {
@@ -3066,7 +3091,7 @@
   "file": "coils.lean",
   "name": "the_container_and_the_capacity_are_not_interchangeable",
   "statementHash": "5bb896f662ec23d5",
-  "searched": "2026-09-25T13:43:22.668Z",
+  "searched": "2026-09-25T14:33:57.934Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3079,10 +3104,2651 @@
    ]
   },
   "queries": {
-   "zbmath": "container capacity interchangeable extensional equality predicates",
-   "openalex": "container capacity interchangeable extensional equality predicates",
-   "crossref": "container capacity interchangeable extensional equality predicates",
-   "arxiv": "container AND capacity AND interchangeable"
+   "zbmath": "extensional equality predicates finite container capacity interchangeable",
+   "openalex": "extensional equality predicates finite container capacity interchangeable",
+   "crossref": "extensional equality predicates finite container capacity interchangeable",
+   "arxiv": "extensional AND equality AND predicates AND finite AND container"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coin_every_digit_is_sorted_exactly_once": {
+  "key": "lean_coin_every_digit_is_sorted_exactly_once",
+  "file": "coin.lean",
+  "name": "every_digit_is_sorted_exactly_once",
+  "statementHash": "312b7924815389c7",
+  "searched": "2026-09-25T14:35:15.704Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements digit sorted",
+   "openalex": "method complements digit sorted",
+   "crossref": "method complements digit sorted",
+   "arxiv": "method AND complements AND digit AND sorted"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coin_exactly_one_digit_is_unmoved": {
+  "key": "lean_coin_exactly_one_digit_is_unmoved",
+  "file": "coin.lean",
+  "name": "exactly_one_digit_is_unmoved",
+  "statementHash": "1a3f864b04aa60a0",
+  "searched": "2026-09-25T14:34:40.335Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements digit unmoved",
+   "openalex": "method complements digit unmoved",
+   "crossref": "method complements digit unmoved",
+   "arxiv": "method AND complements AND digit AND unmoved"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coin_exactly_one_digit_reflects_out_of_range": {
+  "key": "lean_coin_exactly_one_digit_reflects_out_of_range",
+  "file": "coin.lean",
+  "name": "exactly_one_digit_reflects_out_of_range",
+  "statementHash": "d594ec3943c4b2fb",
+  "searched": "2026-09-25T14:34:55.150Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements digit reflects",
+   "openalex": "method complements digit reflects",
+   "crossref": "method complements digit reflects",
+   "arxiv": "method AND complements AND digit AND reflects"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Twin-S: A Digital Twin for Skull-base Surgery",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2211.11863v2",
+    "relevance": 1,
+    "text": "Twin-S: A Digital Twin for Skull-base Surgery Purpose: Digital twins are virtual interactive models of the real world, exhibiting identical behavior and properties. In surgical applications, computational analysis from digital twins can be used, for example, to enhance situational awareness. Methods"
+   },
+   {
+    "source": "arxiv",
+    "title": "Spectrally-accurate numerical method for acoustic scattering from doubly-periodic 3D multilayered media",
+    "year": "2018",
+    "url": "http://arxiv.org/abs/1806.03813v3",
+    "relevance": 1,
+    "text": "Spectrally-accurate numerical method for acoustic scattering from doubly-periodic 3D multilayered media A periodizing scheme and the method of fundamental solutions are used to solve acoustic wave scattering from doubly-periodic three-dimensional multilayered media. A scattered wave in a unit cell i"
+   },
+   {
+    "source": "arxiv",
+    "title": "Re-calibrating methodologies in social media research: Challenge the visual, work with Speech",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2412.13170v1",
+    "relevance": 1,
+    "text": "Re-calibrating methodologies in social media research: Challenge the visual, work with Speech This article methodologically reflects on how social media scholars can effectively engage with speech-based data in their analyses. While contemporary media studies have embraced textual, visual, and relat"
+   },
+   {
+    "source": "arxiv",
+    "title": "GaussianHair: Hair Modeling and Rendering with Light-aware Gaussians",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2402.10483v1",
+    "relevance": 1,
+    "text": "GaussianHair: Hair Modeling and Rendering with Light-aware Gaussians Hairstyle reflects culture and ethnicity at first glance. In the digital era, various realistic human hairstyles are also critical to high-fidelity digital human assets for beauty and inclusivity. Yet, realistic hair modeling and r"
+   },
+   {
+    "source": "arxiv",
+    "title": "An Endoscopic Chisel: Intraoperative Imaging Carves 3D Anatomical Models",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2402.11840v1",
+    "relevance": 1,
+    "text": "An Endoscopic Chisel: Intraoperative Imaging Carves 3D Anatomical Models Purpose: Preoperative imaging plays a pivotal role in sinus surgery where CTs offer patient-specific insights of complex anatomy, enabling real-time intraoperative navigation to complement endoscopy imaging. However, surgery el"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_coin_on_the_fixed_points_the_reflection_never_leaves": {
+  "key": "lean_coin_on_the_fixed_points_the_reflection_never_leaves",
+  "file": "coin.lean",
+  "name": "on_the_fixed_points_the_reflection_never_leaves",
+  "statementHash": "1dd057ff2b179a61",
+  "searched": "2026-09-25T14:35:53.761Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements fixed points reflection",
+   "openalex": "method complements fixed points reflection",
+   "crossref": "method complements fixed points reflection",
+   "arxiv": "method AND complements AND fixed AND points AND reflection"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Lagrangian Relations and Linear Point Billiards",
+    "year": "2016",
+    "url": "http://arxiv.org/abs/1606.01420v1",
+    "relevance": 0.7142857142857143,
+    "text": "Lagrangian Relations and Linear Point Billiards Motivated by the high-energy limit of the $N$-body problem we construct non-deterministic billiard process. The billiard table is the complement of a finite collection of linear subspaces within a Euclidean vector space. A trajectory is a constant spee"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_coin_one_side_is_reflected_onto_itself": {
+  "key": "lean_coin_one_side_is_reflected_onto_itself",
+  "file": "coin.lean",
+  "name": "one_side_is_reflected_onto_itself",
+  "statementHash": "db6242ae64d1f11f",
+  "searched": "2026-09-25T14:34:18.841Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements reflected itself",
+   "openalex": "method complements reflected itself",
+   "crossref": "method complements reflected itself",
+   "arxiv": "method AND complements AND reflected AND itself"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Deterministic Cryptographic Seed Generation via Cyclic Modular Inversion over $\\mathbb{Z}/3^p\\mathbb{Z}$",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2507.03000v1",
+    "relevance": 0.75,
+    "text": "Deterministic Cryptographic Seed Generation via Cyclic Modular Inversion over $\\mathbb{Z}/3^p\\mathbb{Z}$ We present a deterministic framework for cryptographic seed generation based on cyclic modular inversion over $\\mathbb{Z}/3^p\\mathbb{Z}$. The method enforces algebraic admissibility on seed input"
+   },
+   {
+    "source": "arxiv",
+    "title": "Calibration through the Lens of Interpretability",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2412.00943v1",
+    "relevance": 0.75,
+    "text": "Calibration through the Lens of Interpretability Calibration is a frequently invoked concept when useful label probability estimates are required on top of classification accuracy. A calibrated model is a function whose values correctly reflect underlying label probabilities. Calibration in itself h"
+   },
+   {
+    "source": "arxiv",
+    "title": "Uncertainty-sensitive Learning and Planning with Ensembles",
+    "year": "2019",
+    "url": "http://arxiv.org/abs/1912.09996v3",
+    "relevance": 0.75,
+    "text": "Uncertainty-sensitive Learning and Planning with Ensembles We propose a reinforcement learning framework for discrete environments in which an agent makes both strategic and tactical decisions. The former manifests itself through the use of value function, while the latter is powered by a tree searc"
+   },
+   {
+    "source": "arxiv",
+    "title": "Towards Automated Integration of Guess and Check Programs in Answer Set Programming: A Meta-Interpreter and Applications",
+    "year": "2005",
+    "url": "http://arxiv.org/abs/cs/0501084v1",
+    "relevance": 0.75,
+    "text": "Towards Automated Integration of Guess and Check Programs in Answer Set Programming: A Meta-Interpreter and Applications Answer set programming (ASP) with disjunction offers a powerful tool for declaratively representing and solving hard problems. Many NP-complete problems can be encoded in the answ"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_coin_the_classes_partition_the_nine": {
+  "key": "lean_coin_the_classes_partition_the_nine",
+  "file": "coin.lean",
+  "name": "the_classes_partition_the_nine",
+  "statementHash": "e7533b82d97a264d",
+  "searched": "2026-09-25T14:35:05.372Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements classes partition",
+   "openalex": "method complements classes partition",
+   "crossref": "method complements classes partition",
+   "arxiv": "method AND complements AND classes AND partition"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Four symmetry classes of plane partitions under one roof",
+    "year": "1995",
+    "url": "http://arxiv.org/abs/math/9506225v1",
+    "relevance": 1,
+    "text": "Four symmetry classes of plane partitions under one roof In previous paper, the author applied the permanent-determinant method of Kasteleyn and its non-bipartite generalization, the Hafnian-Pfaffian method, to obtain a determinant or a Pfaffian that enumerates each of the ten symmetry classes of pl"
+   },
+   {
+    "source": "arxiv",
+    "title": "Escape times for subgraph detection and graph partitioning",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2212.12839v1",
+    "relevance": 0.75,
+    "text": "Escape times for subgraph detection and graph partitioning We provide a rearrangement based algorithm for fast detection of subgraphs of $k$ vertices with long escape times for directed or undirected networks. Complementing other notions of densest subgraphs and graph cuts, our method is based on th"
+   },
+   {
+    "source": "arxiv",
+    "title": "Double Saddle-Point Preconditioning for Krylov Methods in the Inexact Sequential Homotopy Method",
+    "year": "2021",
+    "url": "http://arxiv.org/abs/2112.05020v3",
+    "relevance": 0.75,
+    "text": "Double Saddle-Point Preconditioning for Krylov Methods in the Inexact Sequential Homotopy Method We derive an extension of the sequential homotopy method that allows for the application of inexact solvers for the linear (double) saddle-point systems arising in the local semismooth Newton method for "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit": {
+  "key": "lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit",
+  "file": "coin.lean",
+  "name": "the_fall_and_the_reflection_share_one_exceptional_digit",
+  "statementHash": "02a45e1480d7eaba",
+  "searched": "2026-09-25T14:35:41.427Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements reflection share exceptional",
+   "openalex": "method complements reflection share exceptional",
+   "crossref": "method complements reflection share exceptional",
+   "arxiv": "method AND complements AND reflection AND share AND exceptional"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coin_the_fall_fixes_every_digit_but_the_void": {
+  "key": "lean_coin_the_fall_fixes_every_digit_but_the_void",
+  "file": "coin.lean",
+  "name": "the_fall_fixes_every_digit_but_the_void",
+  "statementHash": "f00ebd1edcb03987",
+  "searched": "2026-09-25T14:35:28.866Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements fixes digit",
+   "openalex": "method complements fixes digit",
+   "crossref": "method complements fixes digit",
+   "arxiv": "method AND complements AND fixes AND digit"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "SALAD: Source-free Active Label-Agnostic Domain Adaptation for Classification, Segmentation and Detection",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2205.12840v3",
+    "relevance": 1,
+    "text": "SALAD: Source-free Active Label-Agnostic Domain Adaptation for Classification, Segmentation and Detection We present a novel method, SALAD, for the challenging vision task of adapting a pre-trained \"source\" domain network to a \"target\" domain, with a small budget for annotation in the \"target\" domai"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_coin_the_nines_complement_pairs_the_ten_digits": {
+  "key": "lean_coin_the_nines_complement_pairs_the_ten_digits",
+  "file": "coin.lean",
+  "name": "the_nines_complement_pairs_the_ten_digits",
+  "statementHash": "dd64498c34b11a12",
+  "searched": "2026-09-25T14:36:17.794Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements nines complement pairs",
+   "openalex": "method complements nines complement pairs",
+   "crossref": "method complements nines complement pairs",
+   "arxiv": "method AND complements AND nines AND complement AND pairs"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Quantum Lax pairs via Dunkl and Cherednik operators",
+    "year": "2018",
+    "url": "http://arxiv.org/abs/1804.01766v2",
+    "relevance": 0.8333333333333334,
+    "text": "Quantum Lax pairs via Dunkl and Cherednik operators We establish a direct link between Dunkl operators and quantum Lax matrices $\\mathcal L$ for the Calogero--Moser systems associated to an arbitrary Weyl group $W$ (or an arbitrary finite reflection group in the rational case). This interpretation a"
+   },
+   {
+    "source": "arxiv",
+    "title": "QA-Noun: Representing Nominal Semantics via Natural Language Question-Answer Pairs",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2511.12504v1",
+    "relevance": 0.8333333333333334,
+    "text": "QA-Noun: Representing Nominal Semantics via Natural Language Question-Answer Pairs Decomposing sentences into fine-grained meaning units is increasingly used to model semantic alignment. While QA-based semantic approaches have shown effectiveness for representing predicate-argument relations, they h"
+   },
+   {
+    "source": "arxiv",
+    "title": "MotiF: Making Text Count in Image Animation with Motion Focal Loss",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2412.16153v2",
+    "relevance": 0.8333333333333334,
+    "text": "MotiF: Making Text Count in Image Animation with Motion Focal Loss Text-Image-to-Video (TI2V) generation aims to generate a video from an image following a text description, which is also referred to as text-guided image animation. Most existing methods struggle to generate videos that align well wi"
+   },
+   {
+    "source": "arxiv",
+    "title": "Cityscapes 3D: Dataset and Benchmark for 9 DoF Vehicle Detection",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2006.07864v1",
+    "relevance": 0.8333333333333334,
+    "text": "Cityscapes 3D: Dataset and Benchmark for 9 DoF Vehicle Detection Detecting vehicles and representing their position and orientation in the three dimensional space is a key technology for autonomous driving. Recently, methods for 3D vehicle detection solely based on monocular RGB images gained popula"
+   },
+   {
+    "source": "arxiv",
+    "title": "Walking on the DARKSIDE",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2608.23370v2",
+    "relevance": 0.8333333333333334,
+    "text": "Walking on the DARKSIDE Large Language Models (LLMs) do not natively track the path of exclusions that a coherent discourse demands. When an input rests on a fabricated authority, a misapplied mechanism, or a surreptitious analogy, an unsteered LLM tends to engage with it as if it were well-posed, a"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_coin_the_other_two_swap": {
+  "key": "lean_coin_the_other_two_swap",
+  "file": "coin.lean",
+  "name": "the_other_two_swap",
+  "statementHash": "c75fff4ad8b1ee9a",
+  "searched": "2026-09-25T14:34:30.222Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements other",
+   "openalex": "method complements other",
+   "crossref": "method complements other",
+   "arxiv": "method AND complements AND other"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Viscosity method for hierarchical fixed point approach to variational inequalities",
+    "year": "2010",
+    "url": "https://zbmath.org/5788298",
+    "relevance": 1,
+    "text": "Viscosity method for hierarchical fixed point approach to variational inequalities [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"palagachev.dian-k\",\"reviewer_id\":\"7550\",\"name\":\"Dian K. Palagachev\",\"sign\":\"Dian K. Palagachev (Bari)\"},\"text\":\"The author presents a viscosity method for a hierarchic"
+   },
+   {
+    "source": "zbmath",
+    "title": "Dykstra's algorithm as the nonlinear extension of Bregman's optimization method",
+    "year": "1999",
+    "url": "https://zbmath.org/1393068",
+    "relevance": 0.6666666666666666,
+    "text": "Dykstra's algorithm as the nonlinear extension of Bregman's optimization method [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: We show that Dykstra's algorithm with Bregman projections, which finds the Bregman projection of a point "
+   },
+   {
+    "source": "arxiv",
+    "title": "Hypocoercivity with Schur complements",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2003.00726v4",
+    "relevance": 1,
+    "text": "Hypocoercivity with Schur complements We propose an approach to obtaining explicit estimates on the resolvent of hypocoercive operators by using Schur complements, rather than from an exponential decay of the evolution semigroup combined with a time integral. We present applications to Langevin-like"
+   },
+   {
+    "source": "arxiv",
+    "title": "The Fourier Singular Complement Method for the Poisson problem. Part I: prismatic domains",
+    "year": "2006",
+    "url": "http://arxiv.org/abs/math/0609394v1",
+    "relevance": 1,
+    "text": "The Fourier Singular Complement Method for the Poisson problem. Part I: prismatic domains This is the first part of a threefold article, aimed at solving numerically the Poisson problem in three-dimensional prismatic or axisymmetric domains. In this first part, the Fourier Singular Complement Method"
+   },
+   {
+    "source": "arxiv",
+    "title": "Schur complement Domain Decomposition Methods for the solution of multiple scattering problems",
+    "year": "2016",
+    "url": "http://arxiv.org/abs/1608.00034v1",
+    "relevance": 1,
+    "text": "Schur complement Domain Decomposition Methods for the solution of multiple scattering problems We present a Schur complement Domain Decomposition (DD) algorithm for the solution of frequency domain multiple scattering problems. Just as in the classical DD methods we (1) enclose the ensemble of scatt"
+   },
+   {
+    "source": "arxiv",
+    "title": "The Fourier Singular Complement Method for the Poisson problem. Part II: axisymmetric domains",
+    "year": "2006",
+    "url": "http://arxiv.org/abs/math/0609396v1",
+    "relevance": 1,
+    "text": "The Fourier Singular Complement Method for the Poisson problem. Part II: axisymmetric domains This paper is the second part of a threefold article, aimed at solving numerically the Poisson problem in three-dimensional prismatic or axisymmetric domains. In the first part of this series, the Fourier S"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_coin_the_reflection_is_an_involution": {
+  "key": "lean_coin_the_reflection_is_an_involution",
+  "file": "coin.lean",
+  "name": "the_reflection_is_an_involution",
+  "statementHash": "3bad7d15166862e9",
+  "searched": "2026-09-25T14:34:08.618Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements reflection involution",
+   "openalex": "method complements reflection involution",
+   "crossref": "method complements reflection involution",
+   "arxiv": "method AND complements AND reflection AND involution"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coin_what_escapes_falls_back_inside": {
+  "key": "lean_coin_what_escapes_falls_back_inside",
+  "file": "coin.lean",
+  "name": "what_escapes_falls_back_inside",
+  "statementHash": "4050a497dc34acdd",
+  "searched": "2026-09-25T14:36:06.287Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "method complements escapes falls inside",
+   "openalex": "method complements escapes falls inside",
+   "crossref": "method complements escapes falls inside",
+   "arxiv": "method AND complements AND escapes AND falls AND inside"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand_factorial_seven_is_five_thousand_and_forty": {
+  "key": "lean_demand_factorial_seven_is_five_thousand_and_forty",
+  "file": "demand.lean",
+  "name": "factorial_seven_is_five_thousand_and_forty",
+  "statementHash": "d9d66a421be88e37",
+  "searched": "2026-09-25T14:37:41.809Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "factorial thousand forty",
+   "openalex": "factorial thousand forty",
+   "crossref": "factorial thousand forty",
+   "arxiv": "factorial AND thousand AND forty"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd": {
+  "key": "lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd",
+  "file": "demand.lean",
+  "name": "fibonacci_gcd_is_the_fibonacci_of_the_gcd",
+  "statementHash": "f986c436aa89d2ff",
+  "searched": "2026-09-25T14:36:29.760Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fibonacci",
+   "openalex": "fibonacci",
+   "crossref": "fibonacci",
+   "arxiv": "fibonacci"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_demand_five_six_one_is_the_smallest_carmichael_number": {
+  "key": "lean_demand_five_six_one_is_the_smallest_carmichael_number",
+  "file": "demand.lean",
+  "name": "five_six_one_is_the_smallest_carmichael_number",
+  "statementHash": "8e99759de1199868",
+  "searched": "2026-09-25T14:37:08.886Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "smallest carmichael",
+   "openalex": "smallest carmichael",
+   "crossref": "smallest carmichael",
+   "arxiv": "smallest AND carmichael"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Ramanujan's taxicab number and its ilk",
+    "year": "2024",
+    "url": "https://zbmath.org/7887392",
+    "relevance": 1,
+    "text": "Ramanujan's taxicab number and its ilk [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"stoll.thomas\",\"reviewer_id\":\"12449\",\"name\":\"Thomas Stoll\",\"sign\":\"Thomas Stoll (Vandœuvre-lès Nancy)\"},\"text\":\"The taxicab number 1729 has the property (as Ramanujan famously observed) that it is the (smallest) "
+   },
+   {
+    "source": "zbmath",
+    "title": "Carmichael numbers with \\((p+1)\\mid (n-1)\\)",
+    "year": "2014",
+    "url": "https://zbmath.org/6427303",
+    "relevance": 1,
+    "text": "Carmichael numbers with \\((p+1)\\mid (n-1)\\) [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: A Carmichael number \\\\(N\\\\) is a super-Carmichael (sC) number if \\\\((p\\\\pm 1) | (N-1)\\\\) for all \\\\(p|N\\\\). These numbers are somewhat relate"
+   },
+   {
+    "source": "zbmath",
+    "title": "There is no Carmichael number of the form \\(2^n p^2+1\\) with \\(p\\) prime",
+    "year": "2023",
+    "url": "https://zbmath.org/7856137",
+    "relevance": 1,
+    "text": "There is no Carmichael number of the form \\(2^n p^2+1\\) with \\(p\\) prime [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"oller-marcen.antonio-m\",\"reviewer_id\":\"11775\",\"name\":\"Antonio M. Oller Marcén\",\"sign\":\"Antonio M. Oller Marcén (Zaragoza)\"},\"text\":\"An integer \\\\(N\\\\) is a Carmichael number pro"
+   },
+   {
+    "source": "arxiv",
+    "title": "On the Classification and Algorithmic Analysis of Carmichael Numbers",
+    "year": "2017",
+    "url": "http://arxiv.org/abs/1702.08066v1",
+    "relevance": 1,
+    "text": "On the Classification and Algorithmic Analysis of Carmichael Numbers In this paper, we study the properties of Carmichael numbers, false positives to several primality tests. We provide a classification for Carmichael numbers with a proportion of Fermat witnesses of less than 50%, based on if the sm"
+   },
+   {
+    "source": "arxiv",
+    "title": "The iterated Carmichael lambda function",
+    "year": "2011",
+    "url": "http://arxiv.org/abs/1111.3667v1",
+    "relevance": 1,
+    "text": "The iterated Carmichael lambda function The Carmichael lambda function $λ(n)$ is defined to be the smallest positive integer $m$ such that $a^m$ is congruent to 1 modulo $n,$ for all $a$ and $n$ relatively prime. The function $λ_k(n)$ is defined to be the $k$th iterate of $λ(n).$ Previous results sh"
+   },
+   {
+    "source": "arxiv",
+    "title": "The number of iterates of the Carmichael lambda function required to reach 1",
+    "year": "2012",
+    "url": "http://arxiv.org/abs/1203.4791v1",
+    "relevance": 1,
+    "text": "The number of iterates of the Carmichael lambda function required to reach 1 The Carmichael lambda function $λ(n)$ is defined to be the smallest positive integer $m$ such that $a^m \\equiv 1 \\pmod{n}$ for all $(a,n)=1.$ $λ_k(n)$ is defined to be the $k$th iterate of $λ(n).$ Let L(n) be the smallest $"
+   },
+   {
+    "source": "arxiv",
+    "title": "Carmichael numbers of the form $2^n p^m+1$ with odd exponent $m$: refinements of a theorem of Florian Luca, a general independence lemma, and a computational study",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2609.25104v1",
+    "relevance": 1,
+    "text": "Carmichael numbers of the form $2^n p^m+1$ with odd exponent $m$: refinements of a theorem of Florian Luca, a general independence lemma, and a computational study Florian Luca devoted the last paper of his life to the set $\\mathcal K$ of odd positive integers $k$ such that $2^n k+1$ is a Carmichael"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand_four_times_a_near_product_is_at_most_the_square": {
+  "key": "lean_demand_four_times_a_near_product_is_at_most_the_square",
+  "file": "demand.lean",
+  "name": "four_times_a_near_product_is_at_most_the_square",
+  "statementHash": "59e4068f9835496f",
+  "searched": "2026-09-25T14:38:17.445Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "times product square",
+   "openalex": "times product square",
+   "crossref": "times product square",
+   "arxiv": "times AND product AND square"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "A new lattice construction: The box product",
+    "year": "1999",
+    "url": "https://zbmath.org/1384449",
+    "relevance": 1,
+    "text": "A new lattice construction: The box product [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"novak.vitezslav\",\"reviewer_id\":\"3995\",\"name\":\"Vitězslav Novák\",\"sign\":\"Vitězslav Novák (Brno)\"},\"text\":\"It is known that for lattices \\\\(A,B\\\\), their tensor product \\\\(A \\\\otimes B\\\\) (as semilattices) nee"
+   },
+   {
+    "source": "arxiv",
+    "title": "Three integers whose sum, product and the sum of the products of the integers, taken two at a time, are perfect squares",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2505.19088v1",
+    "relevance": 1,
+    "text": "Three integers whose sum, product and the sum of the products of the integers, taken two at a time, are perfect squares Euler had considered the problem of finding three integers whose sum, product, and also the sum of the products of the integers, taken two at a time, are all perfect squares. Euler"
+   },
+   {
+    "source": "arxiv",
+    "title": "Some Thoughts on the Search for $5 \\times 5$ and $6 \\times 6$ Additive-Multiplicative Magic Squares",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2311.06326v1",
+    "relevance": 1,
+    "text": "Some Thoughts on the Search for $5 \\times 5$ and $6 \\times 6$ Additive-Multiplicative Magic Squares An additive-multiplicative magic square is a square grid of numbers whose rows, columns, and long diagonals all have the same sum (called the magic sum) and the same product (called the magic product)"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand_legendres_three_square_theorem": {
+  "key": "lean_demand_legendres_three_square_theorem",
+  "file": "demand.lean",
+  "name": "legendres_three_square_theorem",
+  "statementHash": "014a675fcddff4f0",
+  "searched": "2026-09-25T14:36:58.388Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "legendres square",
+   "openalex": "legendres square",
+   "crossref": "legendres square",
+   "arxiv": "legendres AND square"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A generating function of the squares of Legendre polynomials",
+    "year": "2012",
+    "url": "http://arxiv.org/abs/1210.2493v2",
+    "relevance": 1,
+    "text": "A generating function of the squares of Legendre polynomials We relate a one-parametric generating function for the squares of Legendre polynomials to an arithmetic hypergeometric series whose parametrisation by a level 7 modular function was recently given by Shaun Cooper. By using this modular par"
+   },
+   {
+    "source": "arxiv",
+    "title": "A hyperelliptic saga on a generating function of the squares of Legendre polynomials",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2306.04921v4",
+    "relevance": 1,
+    "text": "A hyperelliptic saga on a generating function of the squares of Legendre polynomials We decompose the generating function $\\sum_{n=0}^\\infty\\binom{2n}nP_n(y)^2z^n$ of the squares of Legendre polynomials as a product of periods of hyperelliptic curves. These periods satisfy a family of $\\textit{secon"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand_mantels_bound_is_n_squared_over_four": {
+  "key": "lean_demand_mantels_bound_is_n_squared_over_four",
+  "file": "demand.lean",
+  "name": "mantels_bound_is_n_squared_over_four",
+  "statementHash": "a443cc173d9be046",
+  "searched": "2026-09-25T14:37:51.819Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "mantels bound squared",
+   "openalex": "mantels bound squared",
+   "crossref": "mantels bound squared",
+   "arxiv": "mantels AND bound AND squared"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand_mantels_bound_is_n_squared_over_four_for_every_n": {
+  "key": "lean_demand_mantels_bound_is_n_squared_over_four_for_every_n",
+  "file": "demand.lean",
+  "name": "mantels_bound_is_n_squared_over_four_for_every_n",
+  "statementHash": "56bd3421a64ce7d1",
+  "searched": "2026-09-25T14:38:07.284Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "mantels bound squared",
+   "openalex": "mantels bound squared",
+   "crossref": "mantels bound squared",
+   "arxiv": "mantels AND bound AND squared"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand_no_cut_beats_the_balanced_one_for_every_n": {
+  "key": "lean_demand_no_cut_beats_the_balanced_one_for_every_n",
+  "file": "demand.lean",
+  "name": "no_cut_beats_the_balanced_one_for_every_n",
+  "statementHash": "fd2ae39c6bb39e54",
+  "searched": "2026-09-25T14:38:27.600Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "beats balanced",
+   "openalex": "beats balanced",
+   "crossref": "beats balanced",
+   "arxiv": "beats AND balanced"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand_the_derangement_recurrence_holds": {
+  "key": "lean_demand_the_derangement_recurrence_holds",
+  "file": "demand.lean",
+  "name": "the_derangement_recurrence_holds",
+  "statementHash": "f70c4998f4735c89",
+  "searched": "2026-09-25T14:36:41.231Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "derangement recurrence",
+   "openalex": "derangement recurrence",
+   "crossref": "derangement recurrence",
+   "arxiv": "derangement AND recurrence"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand_the_mobius_divisor_sum_is_the_identity": {
+  "key": "lean_demand_the_mobius_divisor_sum_is_the_identity",
+  "file": "demand.lean",
+  "name": "the_mobius_divisor_sum_is_the_identity",
+  "statementHash": "24f33e8b1a440d40",
+  "searched": "2026-09-25T14:36:29.762Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "mobius divisor",
+   "openalex": "mobius divisor",
+   "crossref": "mobius divisor",
+   "arxiv": "mobius AND divisor"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Sums of algebraic trace functions twisted by arithmetic functions",
+    "year": "2018",
+    "url": "http://arxiv.org/abs/1804.01337v2",
+    "relevance": 1,
+    "text": "Sums of algebraic trace functions twisted by arithmetic functions We obtain new bounds for short sums of isotypic trace functions associated to some sheaf modulo prime $p$ of bounded conductor, twisted by the Mobius function and also by the generalised divisor function. These trace functions include"
+   },
+   {
+    "source": "arxiv",
+    "title": "Some problems in analytic number theory for polynomials over a finite field",
+    "year": "2015",
+    "url": "http://arxiv.org/abs/1501.01769v1",
+    "relevance": 1,
+    "text": "Some problems in analytic number theory for polynomials over a finite field The lecture, given at the ICM 2014 in Seoul, explores several problems of analytic number theory in the context of function fields over a finite field, where they can be approached by methods different than those of traditio"
+   },
+   {
+    "source": "arxiv",
+    "title": "A Universal Space of Arithmetic Functions:The Banach--Hilbert Hybrid Space U",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2510.00008v1",
+    "relevance": 1,
+    "text": "A Universal Space of Arithmetic Functions:The Banach--Hilbert Hybrid Space U We introduce a new functional space U designed to contain all classical arithmetic functions (Mobius, von Mangoldt, Euler phi, divisor functions, Dirichlet characters, etc.). The norm of U combines a Hilbert-type component,"
+   },
+   {
+    "source": "arxiv",
+    "title": "On a New Formula for Arithmetic Functions",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2009.06411v1",
+    "relevance": 1,
+    "text": "On a New Formula for Arithmetic Functions In this paper we establish a new formula for the arithmetic functions that verify $ f(n) = \\sum_{d|n} g(d)$ where $g$ is also an arithmetic function. We prove the following identity, $$\\forall n \\in \\mathbb{N}^*, \\ \\ \\ f(n) = \\sum_{k=1}^n μ\\left(\\frac{k}{(n,"
+   },
+   {
+    "source": "arxiv",
+    "title": "Binary necklaces with minimum nontrivial rotational Hamming distance 2",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2606.08991v1",
+    "relevance": 1,
+    "text": "Binary necklaces with minimum nontrivial rotational Hamming distance 2 We classify and count binary necklaces [w] for which the representative-independent minimum nontrivial rotational Hamming distance minDist(w) equals 2, the first positive layer after the periodic case. With a fixed priority conve"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits": {
+  "key": "lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits",
+  "file": "demand.lean",
+  "name": "the_parity_of_popcount_is_the_xor_of_the_bits",
+  "statementHash": "1b0bbaa1c0a81f41",
+  "searched": "2026-09-25T14:37:21.755Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "parity popcount",
+   "openalex": "parity popcount",
+   "crossref": "parity popcount",
+   "arxiv": "parity AND popcount"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists": {
+  "key": "lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists",
+  "file": "demand2.lean",
+  "name": "bezouts_identity_is_attained_and_no_smaller_combination_exists",
+  "statementHash": "0ceb191c7e372df9",
+  "searched": "2026-09-25T14:39:08.803Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "bezouts attained smaller",
+   "openalex": "bezouts attained smaller",
+   "crossref": "bezouts attained smaller",
+   "arxiv": "bezouts AND attained AND smaller AND combination AND exists"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand": {
+  "key": "lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand",
+  "file": "demand2.lean",
+  "name": "eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand",
+  "statementHash": "e2aabb4737d7743a",
+  "searched": "2026-09-25T14:39:48.971Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "consecutive perfect powers",
+   "openalex": "consecutive perfect powers",
+   "crossref": "consecutive perfect powers",
+   "arxiv": "consecutive AND perfect AND powers AND below AND thousand"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Large gaps between consecutive prime numbers containing perfect powers",
+    "year": "2015",
+    "url": "https://zbmath.org/6569773",
+    "relevance": 0.6,
+    "text": "Large gaps between consecutive prime numbers containing perfect powers [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"zbMATH Open Web Interface contents unavailable due to conflicting licenses.\",\"contribution_type\":\"summary\"}]"
+   },
+   {
+    "source": "zbmath",
+    "title": "Perfect powers in products with consecutive terms from arithmetic progressions",
+    "year": "2006",
+    "url": "https://zbmath.org/5037078",
+    "relevance": 0.6,
+    "text": "Perfect powers in products with consecutive terms from arithmetic progressions [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"mignotte.maurice\",\"reviewer_id\":\"8217\",\"name\":\"Maurice Mignotte\",\"sign\":\"Maurice Mignotte (Strasbourg)\"},\"text\":\"The theme of this paper is on perfect powers or ``almost''"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number": {
+  "key": "lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number",
+  "file": "demand2.lean",
+  "name": "nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number",
+  "statementHash": "45fccd6442bf7ee1",
+  "searched": "2026-09-25T14:38:43.703Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nicomachus cubes square",
+   "openalex": "nicomachus cubes square",
+   "crossref": "nicomachus cubes square",
+   "arxiv": "nicomachus AND cubes AND square AND triangular"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Why Is Nicomachus' Identity Special?",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2608.15294v2",
+    "relevance": 1,
+    "text": "Why Is Nicomachus' Identity Special? Nicomachus' identity $\\sum_{k=1}^{n} k^3 = \\left(\\sum_{k=1}^{n} k\\right)^2$ is familiar, but the structure behind it is less often emphasized. We begin with Nicomachus' original pattern, in which successive cubes are expressed as successive blocks of consecutive "
+   },
+   {
+    "source": "arxiv",
+    "title": "A Balanced Three-term Generalization of Nicomachus' Identity",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2511.15133v1",
+    "relevance": 1,
+    "text": "A Balanced Three-term Generalization of Nicomachus' Identity We present a generalization of the classical Nicomachus' identity for the sum of the first $n$ cubes. Unlike previous generalizations, it has three rather than two terms, and involves not just one, but two distinct triangular numbers, and "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n": {
+  "key": "lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n",
+  "file": "demand2.lean",
+  "name": "nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n",
+  "statementHash": "d33dd05d8a9194b2",
+  "searched": "2026-09-25T14:40:08.813Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nicomachus cubes square",
+   "openalex": "nicomachus cubes square",
+   "crossref": "nicomachus cubes square",
+   "arxiv": "nicomachus AND cubes AND square AND triangular"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Why Is Nicomachus' Identity Special?",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2608.15294v2",
+    "relevance": 1,
+    "text": "Why Is Nicomachus' Identity Special? Nicomachus' identity $\\sum_{k=1}^{n} k^3 = \\left(\\sum_{k=1}^{n} k\\right)^2$ is familiar, but the structure behind it is less often emphasized. We begin with Nicomachus' original pattern, in which successive cubes are expressed as successive blocks of consecutive "
+   },
+   {
+    "source": "arxiv",
+    "title": "A Balanced Three-term Generalization of Nicomachus' Identity",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2511.15133v1",
+    "relevance": 1,
+    "text": "A Balanced Three-term Generalization of Nicomachus' Identity We present a generalization of the classical Nicomachus' identity for the sum of the first $n$ cubes. Unlike previous generalizations, it has three rather than two terms, and involves not just one, but two distinct triangular numbers, and "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid": {
+  "key": "lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid",
+  "file": "demand2.lean",
+  "name": "picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid",
+  "statementHash": "4ad501b0b1bce72e",
+  "searched": "2026-09-25T14:38:54.737Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "picks lattice triangle",
+   "openalex": "picks lattice triangle",
+   "crossref": "picks lattice triangle",
+   "arxiv": "picks AND lattice AND triangle"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime": {
+  "key": "lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime",
+  "file": "demand2.lean",
+  "name": "the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime",
+  "statementHash": "77c9b53c87cc5379",
+  "searched": "2026-09-25T14:39:38.805Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "chinese remainder moduli",
+   "openalex": "chinese remainder moduli",
+   "crossref": "chinese remainder moduli",
+   "arxiv": "chinese AND remainder AND moduli AND coprime"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "A fast modular square computing method based on the generalized Chinese remainder theorem for prime moduli",
+    "year": "2005",
+    "url": "https://zbmath.org/2136136",
+    "relevance": 0.75,
+    "text": "A fast modular square computing method based on the generalized Chinese remainder theorem for prime moduli [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"zbMATH Open Web Interface contents unavailable due to conflicting licenses.\",\"contribut"
+   },
+   {
+    "source": "crossref",
+    "title": "Fault-Tolerant Convolution Via Chinese Remainder Codes Constructed From Non-Coprime Moduli",
+    "year": 2008,
+    "url": "https://doi.org/10.1109/tsp.2008.924636",
+    "relevance": 1,
+    "text": "Fault-Tolerant Convolution Via Chinese Remainder Codes Constructed From Non-Coprime Moduli "
+   },
+   {
+    "source": "crossref",
+    "title": "Error Correction in Polynomial Remainder Codes With Non-Pairwise Coprime Moduli and Robust Chinese Remainder Theorem for Polynomials",
+    "year": 2015,
+    "url": "https://doi.org/10.1109/tcomm.2015.2400997",
+    "relevance": 1,
+    "text": "Error Correction in Polynomial Remainder Codes With Non-Pairwise Coprime Moduli and Robust Chinese Remainder Theorem for Polynomials "
+   },
+   {
+    "source": "arxiv",
+    "title": "Error Correction in Polynomial Remainder Codes with Non-Pairwise Coprime Moduli and Robust Chinese Remainder Theorem for Polynomials",
+    "year": "2014",
+    "url": "http://arxiv.org/abs/1501.00163v1",
+    "relevance": 1,
+    "text": "Error Correction in Polynomial Remainder Codes with Non-Pairwise Coprime Moduli and Robust Chinese Remainder Theorem for Polynomials This paper investigates polynomial remainder codes with non-pairwise coprime moduli. We first consider a robust reconstruction problem for polynomials from erroneous r"
+   },
+   {
+    "source": "arxiv",
+    "title": "On Solving a Generalized Chinese Remainder Theorem in the Presence of Remainder Errors",
+    "year": "2014",
+    "url": "http://arxiv.org/abs/1409.0121v4",
+    "relevance": 1,
+    "text": "On Solving a Generalized Chinese Remainder Theorem in the Presence of Remainder Errors In estimating frequencies given that the signal waveforms are undersampled multiple times, Xia et. al. proposed to use a generalized version of Chinese remainder Theorem (CRT), where the moduli are $M_1, M_2, \\cdo"
+   },
+   {
+    "source": "arxiv",
+    "title": "Robust Multidimentional Chinese Remainder Theorem for Integer Vector Reconstruction",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2311.11804v1",
+    "relevance": 1,
+    "text": "Robust Multidimentional Chinese Remainder Theorem for Integer Vector Reconstruction The problem of robustly reconstructing an integer vector from its erroneous remainders appears in many applications in the field of multidimensional (MD) signal processing. To address this problem, a robust MD Chines"
+   },
+   {
+    "source": "arxiv",
+    "title": "Exact and Robust Reconstructions of Integer Vectors Based on Multidimensional Chinese Remainder Theorem (MD-CRT)",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2002.00087v3",
+    "relevance": 1,
+    "text": "Exact and Robust Reconstructions of Integer Vectors Based on Multidimensional Chinese Remainder Theorem (MD-CRT) The robust Chinese remainder theorem (CRT) has been recently proposed for robustly reconstructing a large nonnegative integer from erroneous remainders. It has found many applications in "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six": {
+  "key": "lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six",
+  "file": "demand2.lean",
+  "name": "the_latin_squares_of_order_four_number_five_hundred_and_seventy_six",
+  "statementHash": "866deba4573da4e5",
+  "searched": "2026-09-25T14:39:18.817Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "latin squares hundred",
+   "openalex": "latin squares hundred",
+   "crossref": "latin squares hundred",
+   "arxiv": "latin AND squares AND hundred AND seventy"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand2_the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n": {
+  "key": "lean_demand2_the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n",
+  "file": "demand2.lean",
+  "name": "the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n",
+  "statementHash": "23b64bfce3d404c6",
+  "searched": "2026-09-25T14:40:31.111Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "squared triangular difference",
+   "openalex": "squared triangular difference",
+   "crossref": "squared triangular difference",
+   "arxiv": "squared AND triangular AND difference AND cubes"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "General solutions of sums of consecutive cubed integers equal to squared integers",
+    "year": "2015",
+    "url": "http://arxiv.org/abs/1501.06098v1",
+    "relevance": 1,
+    "text": "General solutions of sums of consecutive cubed integers equal to squared integers All integer solutions $\\left(M,a,c\\right)$ to the problem of the sums of $M$ consecutive cubed integers $\\left(a+i\\right)^{3}$ ($a&gt;1$, $0\\leq i\\leq M-1$) equaling squared integers $c^{2}$ are found by decomposing th"
+   },
+   {
+    "source": "arxiv",
+    "title": "Why Is Nicomachus' Identity Special?",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2608.15294v2",
+    "relevance": 0.75,
+    "text": "Why Is Nicomachus' Identity Special? Nicomachus' identity $\\sum_{k=1}^{n} k^3 = \\left(\\sum_{k=1}^{n} k\\right)^2$ is familiar, but the structure behind it is less often emphasized. We begin with Nicomachus' original pattern, in which successive cubes are expressed as successive blocks of consecutive "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for": {
+  "key": "lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for",
+  "file": "demand2.lean",
+  "name": "the_sum_of_fifth_powers_has_the_closed_form_asked_for",
+  "statementHash": "35b2c372649e0ed6",
+  "searched": "2026-09-25T14:39:29.075Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth powers closed",
+   "openalex": "fifth powers closed",
+   "crossref": "fifth powers closed",
+   "arxiv": "fifth AND powers AND closed AND asked"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_for_every_n": {
+  "key": "lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_for_every_n",
+  "file": "demand2.lean",
+  "name": "the_sum_of_fifth_powers_has_the_closed_form_for_every_n",
+  "statementHash": "22964938be90b00e",
+  "searched": "2026-09-25T14:40:21.174Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth powers closed",
+   "openalex": "fifth powers closed",
+   "crossref": "fifth powers closed",
+   "arxiv": "fifth AND powers AND closed"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+    "year": "2000",
+    "url": "https://zbmath.org/1486501",
+    "relevance": 0.6666666666666666,
+    "text": "zbMATH Open Web Interface contents unavailable due to conflicting licenses. [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"haukkanen.pentti\",\"reviewer_id\":\"6392\",\"name\":\"Pentti Haukkanen\",\"sign\":\"P.Haukkanen (Tampere)\"},\"text\":\"The author obtains factored closed-form expressions for all sums of t"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand2_the_two_power_sums_are_one_sum": {
+  "key": "lean_demand2_the_two_power_sums_are_one_sum",
+  "file": "demand2.lean",
+  "name": "the_two_power_sums_are_one_sum",
+  "statementHash": "2f6bb59ade116c3c",
+  "searched": "2026-09-25T14:40:08.813Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "power",
+   "openalex": "power",
+   "crossref": "power",
+   "arxiv": "power"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair": {
+  "key": "lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair",
+  "file": "demand2.lean",
+  "name": "two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair",
+  "statementHash": "297fd925d52ba9f2",
+  "searched": "2026-09-25T14:39:58.751Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "twenty eighty smallest",
+   "openalex": "twenty eighty smallest",
+   "crossref": "twenty eighty smallest",
+   "arxiv": "twenty AND eighty AND smallest AND amicable"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven": {
+  "key": "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven",
+  "file": "demand3.lean",
+  "name": "a_repunit_has_the_residue_of_its_length_mod_six_mod_seven",
+  "statementHash": "6b163d527401bd43",
+  "searched": "2026-09-25T14:42:43.561Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "repunit residue length",
+   "openalex": "repunit residue length",
+   "crossref": "repunit residue length",
+   "arxiv": "repunit AND residue AND length"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three": {
+  "key": "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three",
+  "file": "demand3.lean",
+  "name": "a_repunit_has_the_residue_of_its_length_mod_three",
+  "statementHash": "ae77038b870d879d",
+  "searched": "2026-09-25T14:42:08.156Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "repunit residue length",
+   "openalex": "repunit residue length",
+   "crossref": "repunit residue length",
+   "arxiv": "repunit AND residue AND length"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand3_a_repunit_is_below_ten_to_its_length": {
+  "key": "lean_demand3_a_repunit_is_below_ten_to_its_length",
+  "file": "demand3.lean",
+  "name": "a_repunit_is_below_ten_to_its_length",
+  "statementHash": "5b71b95a692925dd",
+  "searched": "2026-09-25T14:43:28.444Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "repunit below length",
+   "openalex": "repunit below length",
+   "crossref": "repunit below length",
+   "arxiv": "repunit AND below AND length"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n": {
+  "key": "lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n",
+  "file": "demand3.lean",
+  "name": "a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n",
+  "statementHash": "5c64edffd2848ab9",
+  "searched": "2026-09-25T14:42:58.145Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "repunit divisible divides",
+   "openalex": "repunit divisible divides",
+   "crossref": "repunit divisible divides",
+   "arxiv": "repunit AND divisible AND divides AND length"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n": {
+  "key": "lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n",
+  "file": "demand3.lean",
+  "name": "a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n",
+  "statementHash": "09e2e2406aba4526",
+  "searched": "2026-09-25T14:42:18.707Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "repunit divisible length",
+   "openalex": "repunit divisible length",
+   "crossref": "repunit divisible length",
+   "arxiv": "repunit AND divisible AND length"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Divisibility of generalized Mersenne numbers",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2512.22645v1",
+    "relevance": 0.6666666666666666,
+    "text": "Divisibility of generalized Mersenne numbers In this article, I present a theorem determining a criterion for divisibility of two generalized Mersenne numbers, which are repunits of the same length in base-$a^m$ and base-$a^k$. In addition to the general proof, I present an alternative proof for a s"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand3_a_repunit_splits_back_into_its_two_parts_for_every_n_k": {
+  "key": "lean_demand3_a_repunit_splits_back_into_its_two_parts_for_every_n_k",
+  "file": "demand3.lean",
+  "name": "a_repunit_splits_back_into_its_two_parts_for_every_n_k",
+  "statementHash": "bf28bca8c54f2521",
+  "searched": "2026-09-25T14:43:38.841Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "repunit splits parts",
+   "openalex": "repunit splits parts",
+   "crossref": "repunit splits parts",
+   "arxiv": "repunit AND splits AND parts"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand3_chi_is_injective_for_every_g_h": {
+  "key": "lean_demand3_chi_is_injective_for_every_g_h",
+  "file": "demand3.lean",
+  "name": "chi_is_injective_for_every_g_h",
+  "statementHash": "4e19c0b0691a4cb2",
+  "searched": "2026-09-25T14:43:28.444Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "injective",
+   "openalex": "injective",
+   "crossref": "injective",
+   "arxiv": "injective"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_demand3_every_number_is_a_sum_of_four_squares": {
+  "key": "lean_demand3_every_number_is_a_sum_of_four_squares",
+  "file": "demand3.lean",
+  "name": "every_number_is_a_sum_of_four_squares",
+  "statementHash": "77bb1003b63c964d",
+  "searched": "2026-09-25T14:40:52.366Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "squares",
+   "openalex": "squares",
+   "crossref": "squares",
+   "arxiv": "squares"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_demand3_havel_hakimi_decides_graphical_sequences": {
+  "key": "lean_demand3_havel_hakimi_decides_graphical_sequences",
+  "file": "demand3.lean",
+  "name": "havel_hakimi_decides_graphical_sequences",
+  "statementHash": "1bc904fbf0e7eae6",
+  "searched": "2026-09-25T14:41:48.333Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "havel hakimi graphical",
+   "openalex": "havel hakimi graphical",
+   "crossref": "havel hakimi graphical",
+   "arxiv": "havel AND hakimi AND graphical AND sequences"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "A simple Havel-Hakimi type algorithm to realize graphical degree sequences of directed graphs",
+    "year": "2010",
+    "url": "https://zbmath.org/5721460",
+    "relevance": 1,
+    "text": "A simple Havel-Hakimi type algorithm to realize graphical degree sequences of directed graphs [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: One of the simplest ways to decide whether a given finite sequence of positive integers can"
+   },
+   {
+    "source": "zbmath",
+    "title": "Degree sequences of graphs and dominance order",
+    "year": "1996",
+    "url": "https://zbmath.org/881287",
+    "relevance": 1,
+    "text": "Degree sequences of graphs and dominance order [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"havel.vaclav-j\",\"reviewer_id\":\"662\",\"name\":\"Vaclav Havel\",\"sign\":\"V.Havel (Brno)\"},\"text\":\"A theorem of \\\\textit{O. Favaron}, \\\\textit{M. Mahéo} and \\\\textit{J.-F. Saclé} says that for graphical partitio"
+   },
+   {
+    "source": "zbmath",
+    "title": "On the swap-distances of different realizations of a graphical degree sequence",
+    "year": "2013",
+    "url": "https://zbmath.org/6162257",
+    "relevance": 1,
+    "text": "On the swap-distances of different realizations of a graphical degree sequence [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: One of the first graph-theoretical problems to be given serious attention (in the 1950s) was the decision "
+   },
+   {
+    "source": "crossref",
+    "title": "A Simple Havel&amp;ndash;Hakimi Type Algorithm to Realize Graphical Degree Sequences of Directed Graphs",
+    "year": 2010,
+    "url": "https://doi.org/10.37236/338",
+    "relevance": 1,
+    "text": "A Simple Havel&amp;ndash;Hakimi Type Algorithm to Realize Graphical Degree Sequences of Directed Graphs One of the simplest ways to decide whether a given finite sequence of positive integers can arise as the degree sequence of a simple graph is the greedy algorithm of Havel and Hakimi. This note ex"
+   },
+   {
+    "source": "arxiv",
+    "title": "A simple Havel-Hakimi type algorithm to realize graphical degree sequences of directed graphs",
+    "year": "2009",
+    "url": "http://arxiv.org/abs/0905.4913v2",
+    "relevance": 1,
+    "text": "A simple Havel-Hakimi type algorithm to realize graphical degree sequences of directed graphs One of the simplest ways to decide whether a given finite sequence of positive integers can arise as the degree sequence of a simple graph is the greedy algorithm of Havel and Hakimi. This note extends thei"
+   },
+   {
+    "source": "arxiv",
+    "title": "On the swap-distances of different realizations of a graphical degree sequence",
+    "year": "2012",
+    "url": "http://arxiv.org/abs/1205.2842v3",
+    "relevance": 1,
+    "text": "On the swap-distances of different realizations of a graphical degree sequence One of the first graph theoretical problems which got serious attention (already in the fifties of the last century) was to decide whether a given integer sequence is equal to the degree sequence of a simple graph (or it "
+   },
+   {
+    "source": "arxiv",
+    "title": "On the Domination Order among Elimination Sequences",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2206.05820v1",
+    "relevance": 0.75,
+    "text": "On the Domination Order among Elimination Sequences In 1991, it was shown by Favaron, Mahéo, and Saclé that the residue, which is defined as the number of zeros remaining when the Havel-Hakimi algorithm is applied to a degree sequence, yields a lower bound on the independence number of any graph rea"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand3_odd_divisor_count_iff_perfect_square": {
+  "key": "lean_demand3_odd_divisor_count_iff_perfect_square",
+  "file": "demand3.lean",
+  "name": "odd_divisor_count_iff_perfect_square",
+  "statementHash": "202f790d828e56d1",
+  "searched": "2026-09-25T14:41:26.291Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "divisor count perfect",
+   "openalex": "divisor count perfect",
+   "crossref": "divisor count perfect",
+   "arxiv": "divisor AND count AND perfect AND square"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Every integer can be written as a square plus a squarefree",
+    "year": "2022",
+    "url": "https://zbmath.org/7584615",
+    "relevance": 1,
+    "text": "Every integer can be written as a square plus a squarefree [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"liu.huafeng\",\"reviewer_id\":\"19832\",\"name\":\"Huafeng Liu\",\"sign\":\"Huafeng Liu (Jinan)\"},\"text\":\"In this paper, the author shows that every integer can be written as the sum of two integers, one"
+   },
+   {
+    "source": "zbmath",
+    "title": "Moments of restricted divisor functions",
+    "year": "2026",
+    "url": "https://zbmath.org/8130384",
+    "relevance": 0.75,
+    "text": "Moments of restricted divisor functions [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"da-fonseca.carlos-martins\",\"reviewer_id\":\"10965\",\"name\":\"Carlos M. da Fonseca\",\"sign\":\"Carlos M. da Fonseca (Safat)\"},\"text\":\"In this interesting work, the authors study moments of restricted divisor functions "
+   },
+   {
+    "source": "zbmath",
+    "title": "Mathematics and computer science III. Algorithms, trees, combinatorics and probabilities. Proceedings of the international colloquium of mathematics and computer sciences, Vienna, September 13--17, 2004.",
+    "year": "2004",
+    "url": "https://zbmath.org/2108636",
+    "relevance": 0.75,
+    "text": "Mathematics and computer science III. Algorithms, trees, combinatorics and probabilities. Proceedings of the international colloquium of mathematics and computer sciences, Vienna, September 13--17, 2004. [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null"
+   },
+   {
+    "source": "arxiv",
+    "title": "Counting Type I and Type II solutions of the Erdos-Straus equation: concentration, local obstructions, and a pointwise comparison",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2609.09204v2",
+    "relevance": 1,
+    "text": "Counting Type I and Type II solutions of the Erdos-Straus equation: concentration, local obstructions, and a pointwise comparison For a prime p &gt;= 5 let f_I(p) and f_II(p) count the Type I and Type II solutions of the Erdos-Straus equation 4/p = 1/x + 1/y + 1/z, in the sense of Elsholtz and Tao. "
+   },
+   {
+    "source": "arxiv",
+    "title": "A lower bound for the two-variable Artin conjecture and prime divisors of recurrence sequences",
+    "year": "2017",
+    "url": "http://arxiv.org/abs/1711.06410v1",
+    "relevance": 1,
+    "text": "A lower bound for the two-variable Artin conjecture and prime divisors of recurrence sequences In 1927, Artin conjectured that any integer other than -1 or a perfect square generates the multiplicative group $\\mathbb{Z}/p\\mathbb{Z}^\\times$ for infinitely many $p$. In \\cite{MoSt}, Moree and Stevenhag"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand3_repunit_divisibility_by_three_and_seven": {
+  "key": "lean_demand3_repunit_divisibility_by_three_and_seven",
+  "file": "demand3.lean",
+  "name": "repunit_divisibility_by_three_and_seven",
+  "statementHash": "ec0c19dc63104381",
+  "searched": "2026-09-25T14:41:02.647Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "repunit divisibility",
+   "openalex": "repunit divisibility",
+   "crossref": "repunit divisibility",
+   "arxiv": "repunit AND divisibility"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "On primes and pseudoprimes in the generalized repunits",
+    "year": "2009",
+    "url": "https://zbmath.org/5778707",
+    "relevance": 1,
+    "text": "On primes and pseudoprimes in the generalized repunits [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: A repunit \\\\(R_n\\\\) is an integer that can be written as a string of \\\\(n\\\\) ones. Almost thirty years ago, \\\\textit{W. M. Snyder}"
+   },
+   {
+    "source": "arxiv",
+    "title": "Divisibility of generalized Mersenne numbers",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2512.22645v1",
+    "relevance": 1,
+    "text": "Divisibility of generalized Mersenne numbers In this article, I present a theorem determining a criterion for divisibility of two generalized Mersenne numbers, which are repunits of the same length in base-$a^m$ and base-$a^k$. In addition to the general proof, I present an alternative proof for a s"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand3_repunit_of_a_sum": {
+  "key": "lean_demand3_repunit_of_a_sum",
+  "file": "demand3.lean",
+  "name": "repunit_of_a_sum",
+  "statementHash": "35f6d7fb8cf67db1",
+  "searched": "2026-09-25T14:42:32.704Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "repunit",
+   "openalex": "repunit",
+   "crossref": "repunit",
+   "arxiv": "repunit"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_demand3_repunits_repeat_mod_seven_every_six_digits": {
+  "key": "lean_demand3_repunits_repeat_mod_seven_every_six_digits",
+  "file": "demand3.lean",
+  "name": "repunits_repeat_mod_seven_every_six_digits",
+  "statementHash": "556bded17a790378",
+  "searched": "2026-09-25T14:42:32.704Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "repunits repeat digits",
+   "openalex": "repunits repeat digits",
+   "crossref": "repunits repeat digits",
+   "arxiv": "repunits AND repeat AND digits"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Palindromic Smith numbers",
+    "year": "1987",
+    "url": "https://zbmath.org/4075165",
+    "relevance": 1,
+    "text": "Palindromic Smith numbers [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"A composite integer m whose digit sum S(m) is equal to the sum \\\\(S_ p(m)\\\\) of the digits of its prime factors is called a Smith number. In this article, we show how t"
+   },
+   {
+    "source": "zbmath",
+    "title": "Exploring the beauty of fascinating numbers",
+    "year": "2025",
+    "url": "https://zbmath.org/7863728",
+    "relevance": 1,
+    "text": "Exploring the beauty of fascinating numbers [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"ciesielski.krzysztof\",\"reviewer_id\":\"13871\",\"name\":\"Krzysztof Ciesielski\",\"sign\":\"Krzysztof Ciesielski (Kraków)\"},\"text\":\"The book can be regarded as an encyclopedic handbook devoted to numbers. The author "
+   },
+   {
+    "source": "arxiv",
+    "title": "On Sierpiński and Riesel Repdigits and Repintegers",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2505.00778v2",
+    "relevance": 1,
+    "text": "On Sierpiński and Riesel Repdigits and Repintegers For positive integers $b\\geq 2$, $k&lt;b$, and $t$, we say that an integer $k_b^{(t)}$ is a $b$-repdigit if $k_b^{(t)}$ can be expressed as the digit $k$ repeated $t$ times in base-$b$ representation, i.e., $k_b^{(t)} =k(b^t-1)/(b-1)$. In the case o"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment": {
+  "key": "lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment",
+  "file": "demand3.lean",
+  "name": "the_cantor_pairing_is_injective_and_covers_an_initial_segment",
+  "statementHash": "9092460004dcc148",
+  "searched": "2026-09-25T14:40:52.366Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor pairing injective",
+   "openalex": "cantor pairing injective",
+   "crossref": "cantor pairing injective",
+   "arxiv": "cantor AND pairing AND injective AND covers AND initial"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_demand3_the_euler_characteristic_of_a_genus_g_surface": {
+  "key": "lean_demand3_the_euler_characteristic_of_a_genus_g_surface",
+  "file": "demand3.lean",
+  "name": "the_euler_characteristic_of_a_genus_g_surface",
+  "statementHash": "dfa76de6246f0155",
+  "searched": "2026-09-25T14:41:13.507Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "euler characteristic genus",
+   "openalex": "euler characteristic genus",
+   "crossref": "euler characteristic genus",
+   "arxiv": "euler AND characteristic AND genus AND surface"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Classification of regular maps of negative prime Euler characteristic",
+    "year": "2005",
+    "url": "https://zbmath.org/2188284",
+    "relevance": 1,
+    "text": "Classification of regular maps of negative prime Euler characteristic [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: We give a classification of all regular maps on nonorientable surfaces with a negative odd prime Euler characterist"
+   },
+   {
+    "source": "zbmath",
+    "title": "The Cartesian product of three triangles can be embedded into a subspace of genus 7",
+    "year": "1985",
+    "url": "https://zbmath.org/3929027",
+    "relevance": 1,
+    "text": "The Cartesian product of three triangles can be embedded into a subspace of genus 7 [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"marx.morris-l\",\"reviewer_id\":\"2953\",\"name\":\"Morris Marx\",\"sign\":\"M.Marx\"},\"text\":\"Let G denote the three-fold direct product of the integers mod three: \\\\(G={\\\\mathbb"
+   },
+   {
+    "source": "arxiv",
+    "title": "Euler characteristics of Teichmüller curves in genus two",
+    "year": "2006",
+    "url": "http://arxiv.org/abs/math/0611409v1",
+    "relevance": 1,
+    "text": "Euler characteristics of Teichmüller curves in genus two We calculate the Euler characteristics of all of the Teichmuller curves in the moduli space of genus two Riemann surfaces which are generated by holomorphic one-forms with a single double zero. These curves can all be embedded in Hilbert modul"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand3_the_euler_characteristic_of_a_genus_g_surface_for_every_g": {
+  "key": "lean_demand3_the_euler_characteristic_of_a_genus_g_surface_for_every_g",
+  "file": "demand3.lean",
+  "name": "the_euler_characteristic_of_a_genus_g_surface_for_every_g",
+  "statementHash": "6903d7c1621b4153",
+  "searched": "2026-09-25T14:41:58.487Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "euler characteristic genus",
+   "openalex": "euler characteristic genus",
+   "crossref": "euler characteristic genus",
+   "arxiv": "euler AND characteristic AND genus AND surface"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Classification of regular maps of negative prime Euler characteristic",
+    "year": "2005",
+    "url": "https://zbmath.org/2188284",
+    "relevance": 1,
+    "text": "Classification of regular maps of negative prime Euler characteristic [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: We give a classification of all regular maps on nonorientable surfaces with a negative odd prime Euler characterist"
+   },
+   {
+    "source": "zbmath",
+    "title": "The Cartesian product of three triangles can be embedded into a subspace of genus 7",
+    "year": "1985",
+    "url": "https://zbmath.org/3929027",
+    "relevance": 1,
+    "text": "The Cartesian product of three triangles can be embedded into a subspace of genus 7 [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"marx.morris-l\",\"reviewer_id\":\"2953\",\"name\":\"Morris Marx\",\"sign\":\"M.Marx\"},\"text\":\"Let G denote the three-fold direct product of the integers mod three: \\\\(G={\\\\mathbb"
+   },
+   {
+    "source": "arxiv",
+    "title": "Euler characteristics of Teichmüller curves in genus two",
+    "year": "2006",
+    "url": "http://arxiv.org/abs/math/0611409v1",
+    "relevance": 1,
+    "text": "Euler characteristics of Teichmüller curves in genus two We calculate the Euler characteristics of all of the Teichmuller curves in the moduli space of genus two Riemann surfaces which are generated by holomorphic one-forms with a single double zero. These curves can all be embedded in Hilbert modul"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand3_the_genus_reads_back_from_chi_for_every_g": {
+  "key": "lean_demand3_the_genus_reads_back_from_chi_for_every_g",
+  "file": "demand3.lean",
+  "name": "the_genus_reads_back_from_chi_for_every_g",
+  "statementHash": "93e43d85cf22ccfb",
+  "searched": "2026-09-25T14:43:18.507Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "genus reads",
+   "openalex": "genus reads",
+   "crossref": "genus reads",
+   "arxiv": "genus AND reads"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+    "year": "2021",
+    "url": "https://zbmath.org/7397034",
+    "relevance": 1,
+    "text": "zbMATH Open Web Interface contents unavailable due to conflicting licenses. [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"bender.andreas-o\",\"reviewer_id\":\"13571\",\"name\":\"Andreas Bender\",\"sign\":\"Andreas Bender (Pavia)\"},\"text\":\"From an example of the mathematical notion of a motive as defined by "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two": {
+  "key": "lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two",
+  "file": "demand3.lean",
+  "name": "the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two",
+  "statementHash": "7b55fd0428d835ce",
+  "searched": "2026-09-25T14:43:08.215Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "minus euler characteristic",
+   "openalex": "minus euler characteristic",
+   "crossref": "minus euler characteristic",
+   "arxiv": "minus AND euler AND characteristic AND genus"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Hard squares with negative activity and rhombus tilings of the plane",
+    "year": "2006",
+    "url": "https://zbmath.org/5050785",
+    "relevance": 0.75,
+    "text": "Hard squares with negative activity and rhombus tilings of the plane [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: Let \\\\(S_{m,n}\\\\) be the graph on the vertex set \\\\({\\\\mathbb Z}_m \\\\times {\\\\mathbb Z}_n\\\\) in which there is an ed"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_demand3_wilsons_theorem_and_its_converse": {
+  "key": "lean_demand3_wilsons_theorem_and_its_converse",
+  "file": "demand3.lean",
+  "name": "wilsons_theorem_and_its_converse",
+  "statementHash": "c8fe37cb98929f19",
+  "searched": "2026-09-25T14:40:41.270Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "wilsons converse",
+   "openalex": "wilsons converse",
+   "crossref": "wilsons converse",
+   "arxiv": "wilsons AND converse"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_diagonal_containment_takes_both_values_on_this_population": {
+  "key": "lean_diagonal_containment_takes_both_values_on_this_population",
+  "file": "diagonal.lean",
+  "name": "containment_takes_both_values_on_this_population",
+  "statementHash": "8e810e6baa709b25",
+  "searched": "2026-09-25T14:44:11.794Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument finite containment takes values",
+   "openalex": "cantor diagonal argument finite containment takes values",
+   "crossref": "cantor diagonal argument finite containment takes values",
+   "arxiv": "cantor AND diagonal AND argument AND finite AND containment"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_diagonal_no_ring_addresses_the_subject_built_from_its_diagonal": {
+  "key": "lean_diagonal_no_ring_addresses_the_subject_built_from_its_diagonal",
+  "file": "diagonal.lean",
+  "name": "no_ring_addresses_the_subject_built_from_its_diagonal",
+  "statementHash": "314de368e4f0bfaf",
+  "searched": "2026-09-25T14:43:51.074Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument finite subject built",
+   "openalex": "cantor diagonal argument finite subject built",
+   "crossref": "cantor diagonal argument finite subject built",
+   "arxiv": "cantor AND diagonal AND argument AND finite AND subject"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_diagonal_the_bound_is_attained_and_so_is_its_floor": {
+  "key": "lean_diagonal_the_bound_is_attained_and_so_is_its_floor",
+  "file": "diagonal.lean",
+  "name": "the_bound_is_attained_and_so_is_its_floor",
+  "statementHash": "a8149998b3fc6ca7",
+  "searched": "2026-09-25T14:44:44.589Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument finite bound attained floor",
+   "openalex": "cantor diagonal argument finite bound attained floor",
+   "crossref": "cantor diagonal argument finite bound attained floor",
+   "arxiv": "cantor AND diagonal AND argument AND finite AND bound"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_diagonal_the_diagonal_disagrees_with_subject_i_about_label_i": {
+  "key": "lean_diagonal_the_diagonal_disagrees_with_subject_i_about_label_i",
+  "file": "diagonal.lean",
+  "name": "the_diagonal_disagrees_with_subject_i_about_label_i",
+  "statementHash": "49e8a3bc8f67e76e",
+  "searched": "2026-09-25T14:44:00.978Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument finite disagrees subject about",
+   "openalex": "cantor diagonal argument finite disagrees subject about",
+   "crossref": "cantor diagonal argument finite disagrees subject about",
+   "arxiv": "cantor AND diagonal AND argument AND finite AND disagrees"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_diagonal_the_drawn_ring_spent_none_of_its_twenty_eight_labels": {
+  "key": "lean_diagonal_the_drawn_ring_spent_none_of_its_twenty_eight_labels",
+  "file": "diagonal.lean",
+  "name": "the_drawn_ring_spent_none_of_its_twenty_eight_labels",
+  "statementHash": "ecc674cf684c2cd2",
+  "searched": "2026-09-25T14:44:54.865Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument finite drawn spent twenty",
+   "openalex": "cantor diagonal argument finite drawn spent twenty",
+   "crossref": "cantor diagonal argument finite drawn spent twenty",
+   "arxiv": "cantor AND diagonal AND argument AND finite AND drawn"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_diagonal_the_enumeration_is_five_hundred_and_twelve_rings_of_three": {
+  "key": "lean_diagonal_the_enumeration_is_five_hundred_and_twelve_rings_of_three",
+  "file": "diagonal.lean",
+  "name": "the_enumeration_is_five_hundred_and_twelve_rings_of_three",
+  "statementHash": "26825db4454d429d",
+  "searched": "2026-09-25T14:44:23.898Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument finite enumeration hundred twelve",
+   "openalex": "cantor diagonal argument finite enumeration hundred twelve",
+   "crossref": "cantor diagonal argument finite enumeration hundred twelve",
+   "arxiv": "cantor AND diagonal AND argument AND finite AND enumeration"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_diagonal_three_labels_take_at_most_eight_values": {
+  "key": "lean_diagonal_three_labels_take_at_most_eight_values",
+  "file": "diagonal.lean",
+  "name": "three_labels_take_at_most_eight_values",
+  "statementHash": "b61b95285d8693de",
+  "searched": "2026-09-25T14:44:34.127Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument finite labels values",
+   "openalex": "cantor diagonal argument finite labels values",
+   "crossref": "cantor diagonal argument finite labels values",
+   "arxiv": "cantor AND diagonal AND argument AND finite AND labels"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_digits_eight_and_eight_make_sixteen_which_reflects_to_ninety_four": {
+  "key": "lean_digits_eight_and_eight_make_sixteen_which_reflects_to_ninety_four",
+  "file": "digits.lean",
+  "name": "eight_and_eight_make_sixteen_which_reflects_to_ninety_four",
+  "statementHash": "b6af311645675b89",
+  "searched": "2026-09-25T14:45:26.647Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nines tens complement basis sixteen reflects ninety",
+   "openalex": "nines tens complement basis sixteen reflects ninety",
+   "crossref": "nines tens complement basis sixteen reflects ninety",
+   "arxiv": "nines AND tens AND complement AND basis AND sixteen"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_digits_the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten": {
+  "key": "lean_digits_the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten",
+  "file": "digits.lean",
+  "name": "the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten",
+  "statementHash": "a688f440b8da7b8b",
+  "searched": "2026-09-25T14:45:08.180Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nines tens complement basis reflected hundred thousand",
+   "openalex": "nines tens complement basis reflected hundred thousand",
+   "crossref": "nines tens complement basis reflected hundred thousand",
+   "arxiv": "nines AND tens AND complement AND basis AND reflected"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"

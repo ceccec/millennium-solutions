@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **1,163** report the same thing:
+axiom fails the build rather than earning a footnote. All **1,184** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **616** definitions, and every one of them is a choice. A theorem about
+theorems rest on **646** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 616 definitions
+## What IS assumed: the 646 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -140,6 +140,14 @@ def bits : Nat → List Nat := fun m => sealed.filter (fun i => (m >>> i) % 2 ==
 def cleared : List Nat := [3, 4]
 ```
 
+### `capacity.lean` — 3 definition(s), 8 theorem(s)
+
+```lean
+def container : Nat := 128    -- the bits a UUID occupies
+def reserved : Nat := 6      -- 4 version + 2 variant, RFC 9562
+def free : Nat := container - reserved
+```
+
 ### `closure.lean` — 13 definition(s), 8 theorem(s)
 
 ```lean
@@ -158,7 +166,7 @@ def table (p : Nat → Bool) : List Bool := R.map p
 def unnamed (d : Nat) : Bool :=
 ```
 
-### `coils.lean` — 1 definition(s), 24 theorem(s)
+### `coils.lean` — 1 definition(s), 27 theorem(s)
 
 ```lean
 def m9 (n : Nat) : Nat := n % 9
@@ -248,6 +256,17 @@ def refl (d : Nat) : Nat := 10 - d
 def refl2 (n : Nat) : Nat := refl (n / 10) * 10 + refl (n % 10)
 def refl3 (n : Nat) : Nat := refl (n / 100) * 100 + refl (n / 10 % 10) * 10 + refl (n % 10)
 def pairNums : List Nat := [1, 2, 3, 4, 5].map (fun a => a * 10 + refl a)
+```
+
+### `dimensions.lean` — 6 definition(s), 8 theorem(s)
+
+```lean
+def massOf (A B D : Int) : Int := A - D
+def lengthOf (A B D : Int) : Int := 2 * A + B + 3 * D
+def timeOf (A B D : Int) : Int := -A - B - 2 * D
+def R : List Int := (List.range 19).map (fun k => Int.ofNat k - 9)
+def solves (m l t : Int) (A B D : Int) : Bool :=
+def solutions (m l t : Int) : List (Int × Int × Int) :=
 ```
 
 ### `discount.lean` — 1 definition(s), 6 theorem(s)
@@ -545,24 +564,30 @@ def tri (n : Nat) : Nat := n * (n + 1) / 2
 def sumTri (n : Nat) : Nat := ((List.range' 1 n).map tri).foldl (· + ·) 0
 ```
 
-### `merkle.lean` — 20 definition(s), 14 theorem(s)
+### `merkle.lean` — 26 definition(s), 17 theorem(s)
 
 ```lean
 def hexDigit (n : Nat) : Nat := if n < 10 then 48 + n else 87 + n
 def byteHex (b : Nat) : List Nat := [hexDigit (b / 16), hexDigit (b % 16)]
 def uuidChars (bs : List Nat) : List Nat :=
-def merge (a b : List Nat) : List Nat := toUuidBytes (uuidChars a ++ [58] ++ uuidChars b)
+def PAIR : List Nat := [112, 97, 105, 114, 58]                                    -- "pair:"
+def L36 : List Nat := [51, 54, 58]                                               -- "36:" — a uuid is 36 chars
+def MLEAF : List Nat := [109, 101, 114, 107, 108, 101, 58, 108, 101, 97, 102, 58]  -- "merkle:leaf:"
+def MNODE : List Nat := [109, 101, 114, 107, 108, 101, 58, 110, 111, 100, 101, 58] -- "merkle:node:"
+def MEMPTY : List Nat := [109, 101, 114, 107, 108, 101, 58, 101, 109, 112, 116, 121]-- "merkle:empty"
+def merge (a b : List Nat) : List Nat := toUuidBytes (PAIR ++ L36 ++ uuidChars a ++ L36 ++ uuidChars b)
+def merkleLeaf (x : List Nat) : List Nat := toUuidBytes (MLEAF ++ L36 ++ uuidChars x)
+def merkleNode (a b : List Nat) : List Nat := toUuidBytes (MNODE ++ L36 ++ uuidChars a ++ L36 ++ uuidChars b)
 def leB : List Nat → List Nat → Bool
 def insB (a : List Nat) : List (List Nat) → List (List Nat)
 def sortB : List (List Nat) → List (List Nat)
 def pairUp : List (List Nat) → List (List Nat)
 def foldF : Nat → List (List Nat) → List (List Nat)
-def EMPTY_SEED : List Nat := [101, 109, 112, 116, 121, 45, 109, 105, 110, 100]  -- "empty-mind"
 def merkleFold (leaves : List (List Nat)) : List Nat :=
 def A : List Nat := toUuidBytes [97]     -- address of "a"
 def C : List Nat := toUuidBytes [99]     -- address of "c"
 def B : List Nat := toUuidBytes [98]     -- address of "b"
-def settledHere : Nat := 13
+def settledHere : Nat := 16
 def interleave (x : List Nat) : List (List Nat) → List (List (List Nat))
 def perms : List (List Nat) → List (List (List Nat))
 def D : List Nat := toUuidBytes [100]  -- address of "d"
@@ -666,6 +691,19 @@ def divisorsBelow (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n
 def transverse (d : Nat) : Nat := d - 2
 ```
 
+### `preimage.lean` — 8 definition(s), 8 theorem(s)
+
+```lean
+def merge (a b : Nat) : Nat := 32 * a + b + 1024
+def layer : List Nat → List Nat
+def fold : Nat → List Nat → Nat
+def foldOf (xs : List Nat) : Nat := fold 8 xs
+def leafTag (x : Nat) : Nat := 2 * x + 1
+def nodeTag (a b : Nat) : Nat := 2 * merge a b
+def sep : Nat := 99
+def mergeStr (a b : List Nat) : List Nat := a ++ [sep] ++ b
+```
+
 ### `priorart.lean` — 5 definition(s), 9 theorem(s)
 
 ```lean
@@ -724,6 +762,15 @@ def settledHere : Nat := 11
 def bit (n i : Nat) : Nat := n / (2 ^ i) % 2
 def par3 (n : Nat) : Nat := (bit n 0 + bit n 1 + bit n 2) % 2
 def ghzXSupport : List Nat := [0, 3, 5, 6]
+```
+
+### `ranking.lean` — 4 definition(s), 8 theorem(s)
+
+```lean
+def weights : List Nat := [3, 3, 1, 2, 1, 1]
+def bit (m i : Nat) : Bool := (m / 2 ^ i) % 2 == 1
+def score (m : Nat) : Nat :=
+def masks : List Nat := List.range 64
 ```
 
 ### `rays.lean` — 12 definition(s), 14 theorem(s)
@@ -943,6 +990,14 @@ def cycLen (f : Nat → Nat) (d : Nat) : Nat :=
 def ring : List Nat := List.range 9
 ```
 
+### `verdict.lean` — 3 definition(s), 8 theorem(s)
+
+```lean
+def sources : Nat := 5
+def verdict (keyTerms relevant silent : Nat) : Nat :=
+def R : List Nat := List.range 8
+```
+
 ### `z9.lean` — 8 definition(s), 25 theorem(s)
 
 ```lean
@@ -979,6 +1034,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**1,163** declarations, **0** axiom dependencies, **616** definitions they rest on.
+**1,184** declarations, **0** axiom dependencies, **646** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.
