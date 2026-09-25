@@ -91,6 +91,34 @@ console.log('content-addressed:', files.length, 'files → root', address)
   console.log(`sealed: all ${T.length} kernel theorems carry a live key · ledger ${L.length} = ${L.length / 8} × 8 · all carried entries resolve`)
 }
 
+// ── CUT ON GREEN ONLY ────────────────────────────────────────────────────────────────────────────────────
+// THE DEFECT THIS CLOSES, and it made v9.7.5 permanently unpublishable. This script refused a dirty tree,
+// refused churn and refused a rejected commit, and it never ran the GATES against the tree it was about to
+// tag. publish.yml then checks out that tag — `ref: inputs.tag`, the tagged tree and not a later main —
+// and runs them there, where a failure cannot be fixed, because the tag is immutable provenance and moving
+// it would destroy the one property this deposit rests on.
+//
+// So every deploy after a tag failed, and the fix always landed on main where the tag could never see it.
+// v9.7.5 carried two pages in the nav and not the sidebar; gaps.ts refused it three times, identically,
+// while main already had the fix. The order was backwards: the tag was the FIRST thing checked instead of
+// the last thing earned.
+//
+// The gates run here, against this tree, before anything is tagged. Same chain publish.yml runs, so a tag
+// that is cut is a tag that will publish — and a tree that would fail there fails here instead, where a
+// commit can still fix it.
+if (!process.argv.includes('--skip-gates')) {
+  console.log('gates: running the chain publish.yml will run against this tree, before anything is tagged…')
+  try {
+    execSync('npm run gates', { stdio: 'inherit' })
+    execSync('node scripts/gaps.ts', { stdio: 'inherit' })
+  } catch {
+    console.error('\nrelease: NOT tagging — the gates refuse this tree.')
+    console.error('  publish.yml would refuse the same tree at the same checks, and a tag cannot be moved.')
+    console.error('  Fix what refused, commit it, and re-run. That is what "cut on green only" means.')
+    process.exit(1)
+  }
+}
+
 // Useless work drains tokens: refuse to mint a new version for identical content.
 try {
   const tags = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean)
