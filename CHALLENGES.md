@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 3272 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 3280 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1153)
+### lean (1161)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1364,6 +1364,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_dimensions_a_looser_condition_returns_many](/theorem/lean_dimensions_a_looser_condition_returns_many) — lean dimensions.lean: a_looser_condition_returns_many — (R.flatMap (fun A =&gt; (R.filter (fun D =&gt; massOf A 0 D == 0)).map (fun D =&gt; (A, D)))).length == 19 &amp;&amp; (R.flatMap (fun A =&gt; (R.filter (fun D =&gt; massOf A 0 D == 0)).map (fun D =&gt; (A, D)))).length &gt; 1 &amp;&amp; (R.filter (fun A =&gt; massOf A 0 0 == 0)).… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e0f11dde-d6f4…`
 - [lean_dimensions_the_three_constants_are_dimensionally_independent](/theorem/lean_dimensions_the_three_constants_are_dimensionally_independent) — lean dimensions.lean: the_three_constants_are_dimensionally_independent — solutions 0 0 0 == [(0, 0, 0)] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `064ff78f-171e…`
 - [lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not](/theorem/lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not) — lean dimensions.lean: the_coefficient_is_undetermined_and_the_exponents_are_not — solutions 0 2 0 == [(1, -3, 1)] &amp;&amp; lengthOf 1 (-3) 1 == 2 &amp;&amp; massOf 1 (-3) 1 == 0 &amp;&amp; timeOf 1 (-3) 1 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0d20a400-1ea3…`
+- [lean_verdict_every_input_receives_one_of_the_five_verdicts](/theorem/lean_verdict_every_input_receives_one_of_the_five_verdicts) — lean verdict.lean: every_input_receives_one_of_the_five_verdicts — R.all (fun k =&gt; R.all (fun r =&gt; R.all (fun s =&gt; verdict k r s ≤ 4))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `80063d49-878c…`
+- [lean_verdict_the_five_classes_do_not_overlap](/theorem/lean_verdict_the_five_classes_do_not_overlap) — lean verdict.lean: the_five_classes_do_not_overlap — R.all (fun k =&gt; R.all (fun r =&gt; R.all (fun s =&gt; (verdict k r s == 0) == (k &lt; 2) &amp;&amp; (verdict k r s == 1) == (k ≥ 2 &amp;&amp; r &gt; 0) &amp;&amp; (verdict k r s == 4) == (k ≥ 2 &amp;&amp; r == 0 &amp;&amp; s ≥ sources) &amp;&amp; (verdict k r s == 3) == (k ≥ 2 &amp;&amp; r == 0 &amp;&amp; s &gt; 0 &amp;&amp; … — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6ecc042b-7e86…`
+- [lean_verdict_a_source_going_silent_never_cleans_the_verdict](/theorem/lean_verdict_a_source_going_silent_never_cleans_the_verdict) — lean verdict.lean: a_source_going_silent_never_cleans_the_verdict — R.all (fun k =&gt; R.all (fun r =&gt; R.all (fun s =&gt; (verdict k r s == 1) || verdict k r (s + 1) ≥ verdict k r s))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d860b86e-998c…`
+- [lean_verdict_the_clean_verdict_is_reachable_only_from_complete_evidence](/theorem/lean_verdict_the_clean_verdict_is_reachable_only_from_complete_evidence) — lean verdict.lean: the_clean_verdict_is_reachable_only_from_complete_evidence — R.all (fun k =&gt; R.all (fun r =&gt; R.all (fun s =&gt; !(verdict k r s == 2) || (s == 0 &amp;&amp; r == 0 &amp;&amp; k ≥ 2)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `927bf1a4-f7e9…`
+- [lean_verdict_a_relevant_hit_outranks_any_amount_of_silence](/theorem/lean_verdict_a_relevant_hit_outranks_any_amount_of_silence) — lean verdict.lean: a_relevant_hit_outranks_any_amount_of_silence — R.all (fun k =&gt; R.all (fun r =&gt; R.all (fun s =&gt; !(k ≥ 2 &amp;&amp; r &gt; 0) || verdict k r s == 1))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `197de671-e54e…`
+- [lean_verdict_all_five_verdicts_occur](/theorem/lean_verdict_all_five_verdicts_occur) — lean verdict.lean: all_five_verdicts_occur — (R.flatMap (fun k =&gt; R.flatMap (fun r =&gt; R.map (fun s =&gt; verdict k r s)))).eraseDups.length == 5 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c52fd3dd-90d0…`
+- [lean_verdict_too_few_terms_precedes_every_other_test](/theorem/lean_verdict_too_few_terms_precedes_every_other_test) — lean verdict.lean: too_few_terms_precedes_every_other_test — R.all (fun r =&gt; R.all (fun s =&gt; verdict 0 r s == 0 &amp;&amp; verdict 1 r s == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e78cee44-284e…`
+- [lean_verdict_the_rule_is_decided_and_the_search_quality_is_not](/theorem/lean_verdict_the_rule_is_decided_and_the_search_quality_is_not) — lean verdict.lean: the_rule_is_decided_and_the_search_quality_is_not — verdict 5 0 0 == 2 &amp;&amp; verdict 5 1 0 == 1 &amp;&amp; verdict 5 0 5 == 4 &amp;&amp; verdict 5 0 1 == 3 &amp;&amp; verdict 1 9 9 == 0 &amp;&amp; sources == 5 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fbf9e09d-c64e…`
 
 ### other — one-of-a-kind (0)
 
@@ -3029,4 +3037,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `968ca887-c8a4-8544-8406-1c8e6012ffc4`. Integrity, not truth.
+Page content-address: `61d340c7-a7e9-8651-87f5-ce37c052b7ed`. Integrity, not truth.

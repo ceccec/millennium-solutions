@@ -4,7 +4,7 @@
   "file": "address.lean",
   "name": "address_bytes_are_bytes",
   "statementHash": "984aa1ef05246f44",
-  "searched": "2026-09-25T14:03:32.434Z",
+  "searched": "2026-09-25T14:15:51.716Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -44,7 +44,7 @@
   "file": "address.lean",
   "name": "address_is_sixteen_bytes",
   "statementHash": "0507a5dbcc165f10",
-  "searched": "2026-09-25T14:03:21.926Z",
+  "searched": "2026-09-25T14:15:39.472Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -75,7 +75,7 @@
   "file": "address.lean",
   "name": "addressing_is_deterministic",
   "statementHash": "903e74e9a953c342",
-  "searched": "2026-09-25T14:04:04.256Z",
+  "searched": "2026-09-25T14:16:23.602Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -106,7 +106,7 @@
   "file": "address.lean",
   "name": "addressing_is_injective_on_single_characters",
   "statementHash": "1e918d0f50259075",
-  "searched": "2026-09-25T14:04:24.515Z",
+  "searched": "2026-09-25T14:16:51.757Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -137,7 +137,7 @@
   "file": "address.lean",
   "name": "addressing_is_not_constant",
   "statementHash": "910e5ee5119c88b1",
-  "searched": "2026-09-25T14:04:46.976Z",
+  "searched": "2026-09-25T14:17:19.044Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -168,7 +168,7 @@
   "file": "address.lean",
   "name": "addressing_is_not_the_identity",
   "statementHash": "df08236523a20ab9",
-  "searched": "2026-09-25T14:04:36.229Z",
+  "searched": "2026-09-25T14:17:07.756Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -232,7 +232,7 @@
   "file": "address.lean",
   "name": "distinct_inputs_give_distinct_addresses",
   "statementHash": "d8424dac0c7b6234",
-  "searched": "2026-09-25T14:05:19.307Z",
+  "searched": "2026-09-25T14:17:50.291Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -272,7 +272,7 @@
   "file": "address.lean",
   "name": "distinct_seeds_give_distinct_addresses",
   "statementHash": "0994ea842625c7b7",
-  "searched": "2026-09-25T14:04:14.343Z",
+  "searched": "2026-09-25T14:16:34.569Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -312,7 +312,7 @@
   "file": "address.lean",
   "name": "raw_bytes_of_a",
   "statementHash": "22d7f250d5a60df9",
-  "searched": "2026-09-25T13:57:40.151Z",
+  "searched": "2026-09-25T14:10:02.415Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -352,7 +352,7 @@
   "file": "address.lean",
   "name": "stamping_twice_is_stamping_once",
   "statementHash": "3817332e5077c8c3",
-  "searched": "2026-09-25T14:06:14.051Z",
+  "searched": "2026-09-25T14:19:01.579Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -383,7 +383,7 @@
   "file": "address.lean",
   "name": "the_address_is_not_the_payload",
   "statementHash": "ca319e5e865e7452",
-  "searched": "2026-09-25T14:05:29.460Z",
+  "searched": "2026-09-25T14:18:06.553Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -414,7 +414,7 @@
   "file": "address.lean",
   "name": "the_address_is_order_sensitive",
   "statementHash": "3a9e09557dd6dc48",
-  "searched": "2026-09-25T14:05:41.110Z",
+  "searched": "2026-09-25T14:18:17.090Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -454,7 +454,7 @@
   "file": "address.lean",
   "name": "the_address_is_sixteen_bytes_whatever_the_input_length",
   "statementHash": "2680d024bb1ecac6",
-  "searched": "2026-09-25T14:05:07.920Z",
+  "searched": "2026-09-25T14:17:39.781Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -485,7 +485,7 @@
   "file": "address.lean",
   "name": "the_four_seeds_are_distinct",
   "statementHash": "a7104220c0a9ff23",
-  "searched": "2026-09-25T14:04:57.342Z",
+  "searched": "2026-09-25T14:17:29.544Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -516,7 +516,7 @@
   "file": "address.lean",
   "name": "the_fourteen_hash_bits_read_back_from_the_fourth_group",
   "statementHash": "963b849acf440ab5",
-  "searched": "2026-09-25T14:07:11.296Z",
+  "searched": "2026-09-25T14:20:11.285Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -547,7 +547,7 @@
   "file": "address.lean",
   "name": "the_fourth_group_is_variant_two_over_fourteen_hash_bits",
   "statementHash": "4f603770a57b7857",
-  "searched": "2026-09-25T14:06:40.046Z",
+  "searched": "2026-09-25T14:19:28.918Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -578,7 +578,7 @@
   "file": "address.lean",
   "name": "the_third_group_is_version_eight_over_twelve_hash_bits",
   "statementHash": "80e63c5d6eb082f2",
-  "searched": "2026-09-25T14:06:24.689Z",
+  "searched": "2026-09-25T14:19:11.947Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -609,7 +609,7 @@
   "file": "address.lean",
   "name": "the_twelve_hash_bits_read_back_from_the_third_group",
   "statementHash": "747a1f623136680f",
-  "searched": "2026-09-25T14:07:00.914Z",
+  "searched": "2026-09-25T14:19:56.467Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -640,7 +640,7 @@
   "file": "address.lean",
   "name": "the_unstamped_bits_read_back_from_every_stamped_byte",
   "statementHash": "871e2e806d8995bc",
-  "searched": "2026-09-25T14:06:50.403Z",
+  "searched": "2026-09-25T14:19:40.211Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -671,7 +671,7 @@
   "file": "address.lean",
   "name": "the_variant_stamp_keeps_the_low_six_bits_of_every_byte",
   "statementHash": "a6d2433128e30493",
-  "searched": "2026-09-25T14:06:03.347Z",
+  "searched": "2026-09-25T14:18:44.803Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -711,7 +711,7 @@
   "file": "address.lean",
   "name": "the_version_stamp_keeps_the_low_nibble_of_every_byte",
   "statementHash": "0b0ee57f5138594c",
-  "searched": "2026-09-25T14:05:53.187Z",
+  "searched": "2026-09-25T14:18:33.479Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -742,7 +742,7 @@
   "file": "address.lean",
   "name": "to_uuid_bytes_of_a",
   "statementHash": "58daeefc12bf7453",
-  "searched": "2026-09-25T13:59:37.485Z",
+  "searched": "2026-09-25T14:11:55.948Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -782,7 +782,7 @@
   "file": "address.lean",
   "name": "to_uuid_bytes_of_uuidna",
   "statementHash": "a2ddd1cf2e209e2a",
-  "searched": "2026-09-25T14:01:28.991Z",
+  "searched": "2026-09-25T14:13:47.853Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -822,7 +822,7 @@
   "file": "address.lean",
   "name": "variant_bits_are_forced",
   "statementHash": "0a5f6b61b8e81af1",
-  "searched": "2026-09-25T14:03:53.614Z",
+  "searched": "2026-09-25T14:16:13.665Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -862,7 +862,7 @@
   "file": "address.lean",
   "name": "version_nibble_is_forced",
   "statementHash": "9ca200276d2bf5c8",
-  "searched": "2026-09-25T14:03:42.894Z",
+  "searched": "2026-09-25T14:16:03.578Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -893,7 +893,7 @@
   "file": "asymmetric.lean",
   "name": "a_checksum_is_the_same_whoever_computes_it",
   "statementHash": "87471e0eb6266289",
-  "searched": "2026-09-25T13:23:39.063Z",
+  "searched": "2026-09-25T14:21:43.559Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -906,23 +906,25 @@
    ]
   },
   "queries": {
-   "zbmath": "checksum whoever computes public key signatures",
-   "openalex": "checksum whoever computes public key signatures",
-   "crossref": "checksum whoever computes public key signatures",
-   "arxiv": "checksum AND whoever AND computes"
+   "zbmath": "public key signatures elliptic checksum whoever computes",
+   "openalex": "public key signatures elliptic checksum whoever computes",
+   "crossref": "public key signatures elliptic checksum whoever computes",
+   "arxiv": "public AND key AND signatures AND elliptic AND checksum"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_asymmetric_a_signature_is_four_uuids_and_a_key_is_two": {
   "key": "lean_asymmetric_a_signature_is_four_uuids_and_a_key_is_two",
   "file": "asymmetric.lean",
   "name": "a_signature_is_four_uuids_and_a_key_is_two",
   "statementHash": "0c8b7b37d41af52f",
-  "searched": "2026-09-25T13:22:06.380Z",
+  "searched": "2026-09-25T14:20:26.881Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -935,23 +937,66 @@
    ]
   },
   "queries": {
-   "zbmath": "signature uuids key public signatures elliptic",
-   "openalex": "signature uuids key public signatures elliptic",
-   "crossref": "signature uuids key public signatures elliptic",
-   "arxiv": "signature AND uuids AND key"
+   "zbmath": "public key signatures elliptic signature uuids",
+   "openalex": "public key signatures elliptic signature uuids",
+   "crossref": "public key signatures elliptic signature uuids",
+   "arxiv": "public AND key AND signatures AND elliptic AND signature"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A GOST-like Blind Signature Scheme Based on Elliptic Curve Discrete Logarithm Problem",
+    "year": "2013",
+    "url": "http://arxiv.org/abs/1304.2094v1",
+    "relevance": 0.8,
+    "text": "A GOST-like Blind Signature Scheme Based on Elliptic Curve Discrete Logarithm Problem In this paper, we propose a blind signature scheme and three practical educed schemes based on elliptic curve discrete logarithm problem. The proposed schemes impart the GOST signature structure and utilize the inh"
+   },
+   {
+    "source": "arxiv",
+    "title": "Unconditionally Secure Quantum Signatures",
+    "year": "2015",
+    "url": "http://arxiv.org/abs/1508.01893v1",
+    "relevance": 0.8,
+    "text": "Unconditionally Secure Quantum Signatures Signature schemes, proposed in 1976 by Diffie and Hellman, have become ubiquitous across modern communications. They allow for the exchange of messages from one sender to multiple recipients, with the guarantees that messages cannot be forged or tampered wit"
+   },
+   {
+    "source": "arxiv",
+    "title": "qDSA: Small and Secure Digital Signatures with Curve-based Diffie--Hellman Key Pairs",
+    "year": "2017",
+    "url": "http://arxiv.org/abs/1709.03358v1",
+    "relevance": 0.8,
+    "text": "qDSA: Small and Secure Digital Signatures with Curve-based Diffie--Hellman Key Pairs qDSA is a high-speed, high-security signature scheme that facilitates implementations with a very small memory footprint, a crucial requirement for embedded systems and IoT devices, and that uses the same public key"
+   },
+   {
+    "source": "arxiv",
+    "title": "Energy-Aware Digital Signatures for Embedded Medical Devices",
+    "year": "2019",
+    "url": "http://arxiv.org/abs/1903.07786v1",
+    "relevance": 0.8,
+    "text": "Energy-Aware Digital Signatures for Embedded Medical Devices Authentication is vital for the Internet of Things (IoT) applications involving sensitive data (e.g., medical and financial systems). Digital signatures offer scalable authentication with non-repudiation and public verifiability, which are"
+   },
+   {
+    "source": "arxiv",
+    "title": "Performance Analysis of Quantum-Secure Digital Signature Algorithms in Blockchain",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2601.17785v1",
+    "relevance": 0.8,
+    "text": "Performance Analysis of Quantum-Secure Digital Signature Algorithms in Blockchain The long-term security of public blockchains strictly depends on the hardness assumptions of the underlying digital signature schemes. In the current scenario, most deployed cryptocurrencies and blockchain platforms re"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_asymmetric_neither_the_key_nor_the_signature_fits_in_a_uuid": {
   "key": "lean_asymmetric_neither_the_key_nor_the_signature_fits_in_a_uuid",
   "file": "asymmetric.lean",
   "name": "neither_the_key_nor_the_signature_fits_in_a_uuid",
   "statementHash": "e83ed337792aab58",
-  "searched": "2026-09-25T13:22:20.047Z",
+  "searched": "2026-09-25T14:20:37.285Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -964,23 +1009,34 @@
    ]
   },
   "queries": {
-   "zbmath": "neither key nor signature fits public signatures elliptic",
-   "openalex": "neither key nor signature fits public signatures elliptic",
-   "crossref": "neither key nor signature fits public signatures elliptic",
-   "arxiv": "neither AND key AND nor AND signature AND fits"
+   "zbmath": "public key signatures elliptic neither signature",
+   "openalex": "public key signatures elliptic neither signature",
+   "crossref": "public key signatures elliptic neither signature",
+   "arxiv": "public AND key AND signatures AND elliptic AND neither"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Post-Quantum Signatures in DNSSEC via Request-Based Fragmentation",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2211.14196v1",
+    "relevance": 1,
+    "text": "Post-Quantum Signatures in DNSSEC via Request-Based Fragmentation The Domain Name System Security Extensions (DNSSEC) provide authentication of DNS responses using digital signatures. DNS operates primarily over UDP, which leads to several constraints: notably, packets should be at most 1232 bytes l"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_asymmetric_not_even_the_whole_uuid_would_hold_one": {
   "key": "lean_asymmetric_not_even_the_whole_uuid_would_hold_one",
   "file": "asymmetric.lean",
   "name": "not_even_the_whole_uuid_would_hold_one",
   "statementHash": "9d2ced3385f38d70",
-  "searched": "2026-09-25T13:22:33.160Z",
+  "searched": "2026-09-25T14:20:50.414Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -993,23 +1049,34 @@
    ]
   },
   "queries": {
-   "zbmath": "even whole uuid would public key signatures",
-   "openalex": "even whole uuid would public key signatures",
-   "crossref": "even whole uuid would public key signatures",
-   "arxiv": "even AND whole AND uuid AND would"
+   "zbmath": "public key signatures elliptic whole would",
+   "openalex": "public key signatures elliptic whole would",
+   "crossref": "public key signatures elliptic whole would",
+   "arxiv": "public AND key AND signatures AND elliptic AND whole"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Quantum attacks on public-key cryptosystems",
+    "year": "2013",
+    "url": "https://zbmath.org/5799509",
+    "relevance": 0.8,
+    "text": "Quantum attacks on public-key cryptosystems [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"atanasiu.adrian\",\"reviewer_id\":\"12636\",\"name\":\"Adrian Atanasiu\",\"sign\":\"Adrian Atanasiu (Bucureşti)\"},\"text\":\"The book offers a detailed overview of the main intractable problems which ensure security of us"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_asymmetric_the_check_cannot_separate_the_payloads": {
   "key": "lean_asymmetric_the_check_cannot_separate_the_payloads",
   "file": "asymmetric.lean",
   "name": "the_check_cannot_separate_the_payloads",
   "statementHash": "e74b14066bd5667a",
-  "searched": "2026-09-25T13:23:03.320Z",
+  "searched": "2026-09-25T14:21:19.899Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1022,23 +1089,25 @@
    ]
   },
   "queries": {
-   "zbmath": "check cannot separate payloads public key signatures",
-   "openalex": "check cannot separate payloads public key signatures",
-   "crossref": "check cannot separate payloads public key signatures",
-   "arxiv": "check AND cannot AND separate AND payloads"
+   "zbmath": "public key signatures elliptic check cannot separate",
+   "openalex": "public key signatures elliptic check cannot separate",
+   "crossref": "public key signatures elliptic check cannot separate",
+   "arxiv": "public AND key AND signatures AND elliptic AND check"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_asymmetric_the_cofactor_is_bracketed_at_eight": {
   "key": "lean_asymmetric_the_cofactor_is_bracketed_at_eight",
   "file": "asymmetric.lean",
   "name": "the_cofactor_is_bracketed_at_eight",
   "statementHash": "084539fb6b43a890",
-  "searched": "2026-09-25T13:24:54.084Z",
+  "searched": "2026-09-25T14:22:28.782Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1051,23 +1120,34 @@
    ]
   },
   "queries": {
-   "zbmath": "cofactor bracketed public key signatures",
-   "openalex": "cofactor bracketed public key signatures",
-   "crossref": "cofactor bracketed public key signatures",
-   "arxiv": "cofactor AND bracketed"
+   "zbmath": "public key signatures elliptic cofactor bracketed",
+   "openalex": "public key signatures elliptic cofactor bracketed",
+   "crossref": "public key signatures elliptic cofactor bracketed",
+   "arxiv": "public AND key AND signatures AND elliptic AND cofactor"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "ECCFROG522PP: An Enhanced 522-bit Weierstrass Elliptic Curve",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2509.04097v3",
+    "relevance": 0.8,
+    "text": "ECCFROG522PP: An Enhanced 522-bit Weierstrass Elliptic Curve Whilst many key exchange and digital signature systems still rely on NIST P-256 (secp256r1) and secp256k1, offering around 128-bit security, there is an increasing demand for transparent and reproducible curves at the 256-bit security leve"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_asymmetric_the_gap_is_fifty_eight_bits": {
   "key": "lean_asymmetric_the_gap_is_fifty_eight_bits",
   "file": "asymmetric.lean",
   "name": "the_gap_is_fifty_eight_bits",
   "statementHash": "66c5e75d181efac8",
-  "searched": "2026-09-25T13:23:25.558Z",
+  "searched": "2026-09-25T14:21:30.594Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1080,23 +1160,25 @@
    ]
   },
   "queries": {
-   "zbmath": "gap fifty bits public key signatures",
-   "openalex": "gap fifty bits public key signatures",
-   "crossref": "gap fifty bits public key signatures",
-   "arxiv": "gap AND fifty AND bits"
+   "zbmath": "public key signatures elliptic fifty",
+   "openalex": "public key signatures elliptic fifty",
+   "crossref": "public key signatures elliptic fifty",
+   "arxiv": "public AND key AND signatures AND elliptic AND fifty"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_asymmetric_the_square_root_rule_is_the_one_this_prime_admits": {
   "key": "lean_asymmetric_the_square_root_rule_is_the_one_this_prime_admits",
   "file": "asymmetric.lean",
   "name": "the_square_root_rule_is_the_one_this_prime_admits",
   "statementHash": "412d63bc32cb8a85",
-  "searched": "2026-09-25T13:24:33.237Z",
+  "searched": "2026-09-25T14:22:16.529Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1109,23 +1191,25 @@
    ]
   },
   "queries": {
-   "zbmath": "square root rule prime admits public key signatures",
-   "openalex": "square root rule prime admits public key signatures",
-   "crossref": "square root rule prime admits public key signatures",
-   "arxiv": "square AND root AND rule AND prime AND admits"
+   "zbmath": "public key signatures elliptic square prime admits",
+   "openalex": "public key signatures elliptic square prime admits",
+   "crossref": "public key signatures elliptic square prime admits",
+   "arxiv": "public AND key AND signatures AND elliptic AND square"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_asymmetric_the_tag_moves_with_the_payload": {
   "key": "lean_asymmetric_the_tag_moves_with_the_payload",
   "file": "asymmetric.lean",
   "name": "the_tag_moves_with_the_payload",
   "statementHash": "14efa7592ddc9f56",
-  "searched": "2026-09-25T13:24:18.537Z",
+  "searched": "2026-09-25T14:22:06.124Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1138,23 +1222,34 @@
    ]
   },
   "queries": {
-   "zbmath": "tag moves payload public key signatures",
-   "openalex": "tag moves payload public key signatures",
-   "crossref": "tag moves payload public key signatures",
-   "arxiv": "tag AND moves AND payload"
+   "zbmath": "public key signatures elliptic moves payload",
+   "openalex": "public key signatures elliptic moves payload",
+   "crossref": "public key signatures elliptic moves payload",
+   "arxiv": "public AND key AND signatures AND elliptic AND moves"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A survey on NIST PQ signatures",
+    "year": "2021",
+    "url": "http://arxiv.org/abs/2107.11082v1",
+    "relevance": 0.8,
+    "text": "A survey on NIST PQ signatures Shor's shockingly fast quantum algorithm for solving the period-finding problem is a threat for the most common public-key primitives, as it can be efficiently applied to solve both the Integer Factorisation Problem and the Discrete Logarithm Problem. In other words, m"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_asymmetric_two_secrets_part_company_on_every_payload": {
   "key": "lean_asymmetric_two_secrets_part_company_on_every_payload",
   "file": "asymmetric.lean",
   "name": "two_secrets_part_company_on_every_payload",
   "statementHash": "36f14d4254768c47",
-  "searched": "2026-09-25T13:23:57.716Z",
+  "searched": "2026-09-25T14:21:56.084Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1167,23 +1262,50 @@
    ]
   },
   "queries": {
-   "zbmath": "secrets part company payload public key signatures",
-   "openalex": "secrets part company payload public key signatures",
-   "crossref": "secrets part company payload public key signatures",
-   "arxiv": "secrets AND part AND company AND payload"
+   "zbmath": "public key signatures elliptic secrets company payload",
+   "openalex": "public key signatures elliptic secrets company payload",
+   "crossref": "public key signatures elliptic secrets company payload",
+   "arxiv": "public AND key AND signatures AND elliptic AND secrets"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Double Public Key Signing Function Oracle Attack on EdDSA Software Implementations",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2308.15009v2",
+    "relevance": 0.6666666666666666,
+    "text": "Double Public Key Signing Function Oracle Attack on EdDSA Software Implementations EdDSA is a standardised elliptic curve digital signature scheme introduced to overcome some of the issues prevalent in the more established ECDSA standard. Due to the EdDSA standard specifying that the EdDSA signature"
+   },
+   {
+    "source": "arxiv",
+    "title": "JugglingSwap: Scriptless Atomic Cross-Chain Swaps",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2007.14423v1",
+    "relevance": 0.6666666666666666,
+    "text": "JugglingSwap: Scriptless Atomic Cross-Chain Swaps The blockchain space is changing constantly. New chains are being implemented frequently with different use cases in mind. As more and more types of crypto assets are getting real world value there is an increasing need for blockchain interoperabilit"
+   },
+   {
+    "source": "arxiv",
+    "title": "Scalable Multi-domain Trust Infrastructures for Segmented Networks",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2310.04898v2",
+    "relevance": 0.6666666666666666,
+    "text": "Scalable Multi-domain Trust Infrastructures for Segmented Networks Within a trust infrastructure, a private key is often used to digitally sign a transaction, which can be verified with an associated public key. Using PKI (Public Key Infrastructure), a trusted entity can produce a digital signature,"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_asymmetric_what_travels_beside_the_identifier": {
   "key": "lean_asymmetric_what_travels_beside_the_identifier",
   "file": "asymmetric.lean",
   "name": "what_travels_beside_the_identifier",
   "statementHash": "66e9c8c949a1a517",
-  "searched": "2026-09-25T13:22:45.956Z",
+  "searched": "2026-09-25T14:21:09.175Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1196,23 +1318,25 @@
    ]
   },
   "queries": {
-   "zbmath": "travels beside identifier public key signatures",
-   "openalex": "travels beside identifier public key signatures",
-   "crossref": "travels beside identifier public key signatures",
-   "arxiv": "travels AND beside AND identifier"
+   "zbmath": "public key signatures elliptic travels beside identifier",
+   "openalex": "public key signatures elliptic travels beside identifier",
+   "crossref": "public key signatures elliptic travels beside identifier",
+   "arxiv": "public AND key AND signatures AND elliptic AND travels"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_authority_a_cleared_statement_leaves_the_queue_and_stays_on_the_record": {
   "key": "lean_authority_a_cleared_statement_leaves_the_queue_and_stays_on_the_record",
   "file": "authority.lean",
   "name": "a_cleared_statement_leaves_the_queue_and_stays_on_the_record",
   "statementHash": "941861941d30e4cc",
-  "searched": "2026-09-25T13:26:39.015Z",
+  "searched": "2026-09-25T14:23:51.942Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1225,23 +1349,25 @@
    ]
   },
   "queries": {
-   "zbmath": "cleared statement leaves queue stays arithmetic finite lists",
-   "openalex": "cleared statement leaves queue stays arithmetic finite lists",
-   "crossref": "cleared statement leaves queue stays arithmetic finite lists",
-   "arxiv": "cleared AND statement AND leaves AND queue AND stays"
+   "zbmath": "arithmetic finite lists cleared statement leaves",
+   "openalex": "arithmetic finite lists cleared statement leaves",
+   "crossref": "arithmetic finite lists cleared statement leaves",
+   "arxiv": "arithmetic AND finite AND lists AND cleared AND statement"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_authority_a_rider_and_a_verdict_are_different_things": {
   "key": "lean_authority_a_rider_and_a_verdict_are_different_things",
   "file": "authority.lean",
   "name": "a_rider_and_a_verdict_are_different_things",
   "statementHash": "7f1880861af5711e",
-  "searched": "2026-09-25T13:25:56.572Z",
+  "searched": "2026-09-25T14:23:19.769Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1254,23 +1380,25 @@
    ]
   },
   "queries": {
-   "zbmath": "rider verdict different things arithmetic finite lists",
-   "openalex": "rider verdict different things arithmetic finite lists",
-   "crossref": "rider verdict different things arithmetic finite lists",
-   "arxiv": "rider AND verdict AND different AND things"
+   "zbmath": "arithmetic finite lists rider verdict different",
+   "openalex": "arithmetic finite lists rider verdict different",
+   "crossref": "arithmetic finite lists rider verdict different",
+   "arxiv": "arithmetic AND finite AND lists AND rider AND verdict"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_authority_clearing_changes_no_seal": {
   "key": "lean_authority_clearing_changes_no_seal",
   "file": "authority.lean",
   "name": "clearing_changes_no_seal",
   "statementHash": "658479cb93312a69",
-  "searched": "2026-09-25T13:26:24.787Z",
+  "searched": "2026-09-25T14:23:41.342Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1283,23 +1411,25 @@
    ]
   },
   "queries": {
-   "zbmath": "clearing changes seal arithmetic finite lists",
-   "openalex": "clearing changes seal arithmetic finite lists",
-   "crossref": "clearing changes seal arithmetic finite lists",
-   "arxiv": "clearing AND changes AND seal"
+   "zbmath": "arithmetic finite lists clearing changes",
+   "openalex": "arithmetic finite lists clearing changes",
+   "crossref": "arithmetic finite lists clearing changes",
+   "arxiv": "arithmetic AND finite AND lists AND clearing AND changes"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_authority_every_sealed_statement_is_live_or_withdrawn_and_not_both": {
   "key": "lean_authority_every_sealed_statement_is_live_or_withdrawn_and_not_both",
   "file": "authority.lean",
   "name": "every_sealed_statement_is_live_or_withdrawn_and_not_both",
   "statementHash": "d20e8740f8991a98",
-  "searched": "2026-09-25T13:25:28.915Z",
+  "searched": "2026-09-25T14:22:51.930Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1312,23 +1442,25 @@
    ]
   },
   "queries": {
-   "zbmath": "sealed statement live withdrawn arithmetic finite lists",
-   "openalex": "sealed statement live withdrawn arithmetic finite lists",
-   "crossref": "sealed statement live withdrawn arithmetic finite lists",
-   "arxiv": "sealed AND statement AND live AND withdrawn"
+   "zbmath": "arithmetic finite lists sealed statement withdrawn",
+   "openalex": "arithmetic finite lists sealed statement withdrawn",
+   "crossref": "arithmetic finite lists sealed statement withdrawn",
+   "arxiv": "arithmetic AND finite AND lists AND sealed AND statement"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_authority_nothing_withdrawn_is_live": {
   "key": "lean_authority_nothing_withdrawn_is_live",
   "file": "authority.lean",
   "name": "nothing_withdrawn_is_live",
   "statementHash": "cc2bd6195e0d74bd",
-  "searched": "2026-09-25T13:25:15.698Z",
+  "searched": "2026-09-25T14:22:41.424Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1341,23 +1473,25 @@
    ]
   },
   "queries": {
-   "zbmath": "nothing withdrawn live arithmetic finite lists",
-   "openalex": "nothing withdrawn live arithmetic finite lists",
-   "crossref": "nothing withdrawn live arithmetic finite lists",
-   "arxiv": "nothing AND withdrawn AND live"
+   "zbmath": "arithmetic finite lists nothing withdrawn",
+   "openalex": "arithmetic finite lists nothing withdrawn",
+   "crossref": "arithmetic finite lists nothing withdrawn",
+   "arxiv": "arithmetic AND finite AND lists AND nothing AND withdrawn"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_authority_refusing_every_verdict_never_refuses_the_whole_record": {
   "key": "lean_authority_refusing_every_verdict_never_refuses_the_whole_record",
   "file": "authority.lean",
   "name": "refusing_every_verdict_never_refuses_the_whole_record",
   "statementHash": "c7629dfca9eb1f5d",
-  "searched": "2026-09-25T13:26:55.746Z",
+  "searched": "2026-09-25T14:24:02.413Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1370,23 +1504,25 @@
    ]
   },
   "queries": {
-   "zbmath": "refusing verdict never refuses whole arithmetic finite lists",
-   "openalex": "refusing verdict never refuses whole arithmetic finite lists",
-   "crossref": "refusing verdict never refuses whole arithmetic finite lists",
-   "arxiv": "refusing AND verdict AND never AND refuses AND whole"
+   "zbmath": "arithmetic finite lists refusing verdict never",
+   "openalex": "arithmetic finite lists refusing verdict never",
+   "crossref": "arithmetic finite lists refusing verdict never",
+   "arxiv": "arithmetic AND finite AND lists AND refusing AND verdict"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_authority_withdrawing_never_raises_the_frozen_count": {
   "key": "lean_authority_withdrawing_never_raises_the_frozen_count",
   "file": "authority.lean",
   "name": "withdrawing_never_raises_the_frozen_count",
   "statementHash": "01038fd605f66880",
-  "searched": "2026-09-25T13:26:09.735Z",
+  "searched": "2026-09-25T14:23:30.896Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1399,23 +1535,25 @@
    ]
   },
   "queries": {
-   "zbmath": "withdrawing never raises frozen count arithmetic finite lists",
-   "openalex": "withdrawing never raises frozen count arithmetic finite lists",
-   "crossref": "withdrawing never raises frozen count arithmetic finite lists",
-   "arxiv": "withdrawing AND never AND raises AND frozen AND count"
+   "zbmath": "arithmetic finite lists withdrawing never raises",
+   "openalex": "arithmetic finite lists withdrawing never raises",
+   "crossref": "arithmetic finite lists withdrawing never raises",
+   "arxiv": "arithmetic AND finite AND lists AND withdrawing AND never"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_authority_withdrawing_shrinks_the_live_set_and_never_the_record": {
   "key": "lean_authority_withdrawing_shrinks_the_live_set_and_never_the_record",
   "file": "authority.lean",
   "name": "withdrawing_shrinks_the_live_set_and_never_the_record",
   "statementHash": "47b24f39a1894105",
-  "searched": "2026-09-25T13:25:43.397Z",
+  "searched": "2026-09-25T14:23:07.553Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1428,23 +1566,25 @@
    ]
   },
   "queries": {
-   "zbmath": "withdrawing shrinks live set never arithmetic finite lists",
-   "openalex": "withdrawing shrinks live set never arithmetic finite lists",
-   "crossref": "withdrawing shrinks live set never arithmetic finite lists",
-   "arxiv": "withdrawing AND shrinks AND live AND set AND never"
+   "zbmath": "arithmetic finite lists withdrawing shrinks never",
+   "openalex": "arithmetic finite lists withdrawing shrinks never",
+   "crossref": "arithmetic finite lists withdrawing shrinks never",
+   "arxiv": "arithmetic AND finite AND lists AND withdrawing AND shrinks"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_capacity_the_birthday_gap_is_half_the_reservation": {
   "key": "lean_capacity_the_birthday_gap_is_half_the_reservation",
   "file": "capacity.lean",
   "name": "the_birthday_gap_is_half_the_reservation",
   "statementHash": "22542e0a7c2f6b74",
-  "searched": "2026-09-25T13:28:05.611Z",
+  "searched": "2026-09-25T14:25:06.714Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1457,23 +1597,25 @@
    ]
   },
   "queries": {
-   "zbmath": "birthday gap half reservation uuid layout version",
-   "openalex": "birthday gap half reservation uuid layout version",
-   "crossref": "birthday gap half reservation uuid layout version",
-   "arxiv": "birthday AND gap AND half AND reservation"
+   "zbmath": "uuid layout version variant birthday reservation",
+   "openalex": "uuid layout version variant birthday reservation",
+   "crossref": "uuid layout version variant birthday reservation",
+   "arxiv": "uuid AND layout AND version AND variant AND birthday"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_capacity_the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement": {
   "key": "lean_capacity_the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement",
   "file": "capacity.lean",
   "name": "the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement",
   "statementHash": "e769964776d2f06d",
-  "searched": "2026-09-25T13:28:54.954Z",
+  "searched": "2026-09-25T14:25:51.794Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1486,32 +1628,25 @@
    ]
   },
   "queries": {
-   "zbmath": "bound ceiling difficulty measurement uuid layout version",
-   "openalex": "bound ceiling difficulty measurement uuid layout version",
-   "crossref": "bound ceiling difficulty measurement uuid layout version",
-   "arxiv": "bound AND ceiling AND difficulty AND measurement"
+   "zbmath": "uuid layout version variant bound ceiling difficulty",
+   "openalex": "uuid layout version variant bound ceiling difficulty",
+   "crossref": "uuid layout version variant bound ceiling difficulty",
+   "arxiv": "uuid AND layout AND version AND variant AND bound"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "The Limits of Binding in Dual Encoders",
-    "year": "2026",
-    "url": "http://arxiv.org/abs/2608.15971v1",
-    "relevance": 0.75,
-    "text": "The Limits of Binding in Dual Encoders Dual-encoder models such as CLIP score an image-caption pair by a single inner product of two independently computed unit vectors, and fail at binding, often scoring near chance when asked to distinguish \"a red car and a blue dog\" from \"a blue car and a red dog"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_capacity_the_capacity_is_two_to_the_free_bits_and_not_the_container": {
   "key": "lean_capacity_the_capacity_is_two_to_the_free_bits_and_not_the_container",
   "file": "capacity.lean",
   "name": "the_capacity_is_two_to_the_free_bits_and_not_the_container",
   "statementHash": "f4a6611128df39f8",
-  "searched": "2026-09-25T13:27:27.632Z",
+  "searched": "2026-09-25T14:24:30.113Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1524,23 +1659,25 @@
    ]
   },
   "queries": {
-   "zbmath": "capacity free bits container uuid layout version",
-   "openalex": "capacity free bits container uuid layout version",
-   "crossref": "capacity free bits container uuid layout version",
-   "arxiv": "capacity AND free AND bits AND container"
+   "zbmath": "uuid layout version variant capacity container",
+   "openalex": "uuid layout version variant capacity container",
+   "crossref": "uuid layout version variant capacity container",
+   "arxiv": "uuid AND layout AND version AND variant AND capacity"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_capacity_the_collision_exponent_follows_the_free_bits": {
   "key": "lean_capacity_the_collision_exponent_follows_the_free_bits",
   "file": "capacity.lean",
   "name": "the_collision_exponent_follows_the_free_bits",
   "statementHash": "ac8fc8ac84dd33f0",
-  "searched": "2026-09-25T13:27:53.115Z",
+  "searched": "2026-09-25T14:24:55.917Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1553,23 +1690,25 @@
    ]
   },
   "queries": {
-   "zbmath": "collision exponent follows free bits uuid layout version",
-   "openalex": "collision exponent follows free bits uuid layout version",
-   "crossref": "collision exponent follows free bits uuid layout version",
-   "arxiv": "collision AND exponent AND follows AND free AND bits"
+   "zbmath": "uuid layout version variant collision exponent follows",
+   "openalex": "uuid layout version variant collision exponent follows",
+   "crossref": "uuid layout version variant collision exponent follows",
+   "arxiv": "uuid AND layout AND version AND variant AND collision"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_capacity_the_container_is_one_hundred_twenty_eight_and_six_are_spent": {
   "key": "lean_capacity_the_container_is_one_hundred_twenty_eight_and_six_are_spent",
   "file": "capacity.lean",
   "name": "the_container_is_one_hundred_twenty_eight_and_six_are_spent",
   "statementHash": "eb3bc11a98ff0efc",
-  "searched": "2026-09-25T13:27:13.494Z",
+  "searched": "2026-09-25T14:24:13.023Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1582,23 +1721,25 @@
    ]
   },
   "queries": {
-   "zbmath": "container hundred twenty spent uuid layout version",
-   "openalex": "container hundred twenty spent uuid layout version",
-   "crossref": "container hundred twenty spent uuid layout version",
-   "arxiv": "container AND hundred AND twenty AND spent"
+   "zbmath": "uuid layout version variant container hundred twenty",
+   "openalex": "uuid layout version variant container hundred twenty",
+   "crossref": "uuid layout version variant container hundred twenty",
+   "arxiv": "uuid AND layout AND version AND variant AND container"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_capacity_the_gap_is_zero_exactly_when_nothing_is_reserved": {
   "key": "lean_capacity_the_gap_is_zero_exactly_when_nothing_is_reserved",
   "file": "capacity.lean",
   "name": "the_gap_is_zero_exactly_when_nothing_is_reserved",
   "statementHash": "d76f0b7be38d5223",
-  "searched": "2026-09-25T13:28:18.147Z",
+  "searched": "2026-09-25T14:25:17.791Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1611,23 +1752,25 @@
    ]
   },
   "queries": {
-   "zbmath": "gap zero nothing reserved uuid layout version",
-   "openalex": "gap zero nothing reserved uuid layout version",
-   "crossref": "gap zero nothing reserved uuid layout version",
-   "arxiv": "gap AND zero AND nothing AND reserved"
+   "zbmath": "uuid layout version variant nothing reserved",
+   "openalex": "uuid layout version variant nothing reserved",
+   "crossref": "uuid layout version variant nothing reserved",
+   "arxiv": "uuid AND layout AND version AND variant AND nothing"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_capacity_the_nominal_overstates_the_real_by_two_to_the_reserved": {
   "key": "lean_capacity_the_nominal_overstates_the_real_by_two_to_the_reserved",
   "file": "capacity.lean",
   "name": "the_nominal_overstates_the_real_by_two_to_the_reserved",
   "statementHash": "f26803d6f0146a31",
-  "searched": "2026-09-25T13:27:40.343Z",
+  "searched": "2026-09-25T14:24:45.785Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1640,23 +1783,25 @@
    ]
   },
   "queries": {
-   "zbmath": "nominal overstates real reserved uuid layout version",
-   "openalex": "nominal overstates real reserved uuid layout version",
-   "crossref": "nominal overstates real reserved uuid layout version",
-   "arxiv": "nominal AND overstates AND real AND reserved"
+   "zbmath": "uuid layout version variant nominal overstates reserved",
+   "openalex": "uuid layout version variant nominal overstates reserved",
+   "crossref": "uuid layout version variant nominal overstates reserved",
+   "arxiv": "uuid AND layout AND version AND variant AND nominal"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_capacity_the_overclaim_is_this_many_addresses_that_do_not_exist": {
   "key": "lean_capacity_the_overclaim_is_this_many_addresses_that_do_not_exist",
   "file": "capacity.lean",
   "name": "the_overclaim_is_this_many_addresses_that_do_not_exist",
   "statementHash": "733b74e43c1cb800",
-  "searched": "2026-09-25T13:28:40.102Z",
+  "searched": "2026-09-25T14:25:39.850Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1669,23 +1814,25 @@
    ]
   },
   "queries": {
-   "zbmath": "overclaim many addresses exist uuid layout version",
-   "openalex": "overclaim many addresses exist uuid layout version",
-   "crossref": "overclaim many addresses exist uuid layout version",
-   "arxiv": "overclaim AND many AND addresses AND exist"
+   "zbmath": "uuid layout version variant overclaim exist",
+   "openalex": "uuid layout version variant overclaim exist",
+   "crossref": "uuid layout version variant overclaim exist",
+   "arxiv": "uuid AND layout AND version AND variant AND overclaim"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_closure_a_property_that_is_named_is_found_among_the_named": {
   "key": "lean_closure_a_property_that_is_named_is_found_among_the_named",
   "file": "closure.lean",
   "name": "a_property_that_is_named_is_found_among_the_named",
   "statementHash": "1f62b14b1648a5e6",
-  "searched": "2026-09-25T13:30:21.838Z",
+  "searched": "2026-09-25T14:26:55.888Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1698,23 +1845,25 @@
    ]
   },
   "queries": {
-   "zbmath": "property named found among cantor diagonal argument",
-   "openalex": "property named found among cantor diagonal argument",
-   "crossref": "property named found among cantor diagonal argument",
-   "arxiv": "property AND named AND found AND among"
+   "zbmath": "cantor diagonal argument again property found among",
+   "openalex": "cantor diagonal argument again property found among",
+   "crossref": "cantor diagonal argument again property found among",
+   "arxiv": "cantor AND diagonal AND argument AND again AND property"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_closure_nine_names_denote_seven_distinct_properties": {
   "key": "lean_closure_nine_names_denote_seven_distinct_properties",
   "file": "closure.lean",
   "name": "nine_names_denote_seven_distinct_properties",
   "statementHash": "cde1abe8132a3823",
-  "searched": "2026-09-25T13:29:15.765Z",
+  "searched": "2026-09-25T14:26:02.385Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1727,23 +1876,25 @@
    ]
   },
   "queries": {
-   "zbmath": "names denote distinct properties cantor diagonal argument",
-   "openalex": "names denote distinct properties cantor diagonal argument",
-   "crossref": "names denote distinct properties cantor diagonal argument",
-   "arxiv": "names AND denote AND distinct AND properties"
+   "zbmath": "cantor diagonal argument again names denote distinct",
+   "openalex": "cantor diagonal argument again names denote distinct",
+   "crossref": "cantor diagonal argument again names denote distinct",
+   "arxiv": "cantor AND diagonal AND argument AND again AND names"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_closure_nine_residues_carry_five_hundred_and_twelve_properties": {
   "key": "lean_closure_nine_residues_carry_five_hundred_and_twelve_properties",
   "file": "closure.lean",
   "name": "nine_residues_carry_five_hundred_and_twelve_properties",
   "statementHash": "dbc8ade5bae37bc3",
-  "searched": "2026-09-25T13:31:17.823Z",
+  "searched": "2026-09-25T14:27:17.518Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1756,23 +1907,25 @@
    ]
   },
   "queries": {
-   "zbmath": "residues carry hundred twelve properties cantor diagonal argument",
-   "openalex": "residues carry hundred twelve properties cantor diagonal argument",
-   "crossref": "residues carry hundred twelve properties cantor diagonal argument",
-   "arxiv": "residues AND carry AND hundred AND twelve AND properties"
+   "zbmath": "cantor diagonal argument again residues carry hundred",
+   "openalex": "cantor diagonal argument again residues carry hundred",
+   "crossref": "cantor diagonal argument again residues carry hundred",
+   "arxiv": "cantor AND diagonal AND argument AND again AND residues"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_closure_the_diagonal_escapes_nine_and_stops": {
   "key": "lean_closure_the_diagonal_escapes_nine_and_stops",
   "file": "closure.lean",
   "name": "the_diagonal_escapes_nine_and_stops",
   "statementHash": "8e7a2dc268ce205a",
-  "searched": "2026-09-25T13:30:48.656Z",
+  "searched": "2026-09-25T14:27:06.467Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1785,23 +1938,25 @@
    ]
   },
   "queries": {
-   "zbmath": "diagonal escapes stops cantor argument again",
-   "openalex": "diagonal escapes stops cantor argument again",
-   "crossref": "diagonal escapes stops cantor argument again",
-   "arxiv": "diagonal AND escapes AND stops"
+   "zbmath": "cantor diagonal argument again escapes stops",
+   "openalex": "cantor diagonal argument again escapes stops",
+   "crossref": "cantor diagonal argument again escapes stops",
+   "arxiv": "cantor AND diagonal AND argument AND again AND escapes"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_closure_the_witness_disagrees_with_property_i_at_residue_i": {
   "key": "lean_closure_the_witness_disagrees_with_property_i_at_residue_i",
   "file": "closure.lean",
   "name": "the_witness_disagrees_with_property_i_at_residue_i",
   "statementHash": "4018e7293a0fc4ac",
-  "searched": "2026-09-25T13:29:38.716Z",
+  "searched": "2026-09-25T14:26:12.885Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1814,23 +1969,25 @@
    ]
   },
   "queries": {
-   "zbmath": "witness disagrees property residue cantor diagonal argument",
-   "openalex": "witness disagrees property residue cantor diagonal argument",
-   "crossref": "witness disagrees property residue cantor diagonal argument",
-   "arxiv": "witness AND disagrees AND property AND residue"
+   "zbmath": "cantor diagonal argument again witness disagrees property",
+   "openalex": "cantor diagonal argument again witness disagrees property",
+   "crossref": "cantor diagonal argument again witness disagrees property",
+   "arxiv": "cantor AND diagonal AND argument AND again AND witness"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_closure_the_witness_is_decided_here_and_is_no_kind_of_limit": {
   "key": "lean_closure_the_witness_is_decided_here_and_is_no_kind_of_limit",
   "file": "closure.lean",
   "name": "the_witness_is_decided_here_and_is_no_kind_of_limit",
   "statementHash": "9bf7e3dcd4ec556b",
-  "searched": "2026-09-25T13:31:38.492Z",
+  "searched": "2026-09-25T14:27:33.499Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1843,32 +2000,25 @@
    ]
   },
   "queries": {
-   "zbmath": "witness kind limit cantor diagonal argument",
-   "openalex": "witness kind limit cantor diagonal argument",
-   "crossref": "witness kind limit cantor diagonal argument",
-   "arxiv": "witness AND kind AND limit"
+   "zbmath": "cantor diagonal argument again witness limit",
+   "openalex": "cantor diagonal argument again witness limit",
+   "crossref": "cantor diagonal argument again witness limit",
+   "arxiv": "cantor AND diagonal AND argument AND again AND witness"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "openalex",
-    "title": "History of constructivism in the 20th century",
-    "year": 2011,
-    "url": "https://doi.org/10.1017/cbo9780511910616.009",
-    "relevance": 0.6666666666666666,
-    "text": "History of constructivism in the 20th century § 1. Introduction. In this survey of the history of constructivism. more space has been devoted to early developments (up till ca. 1965) than to the work of the later decades. Not only because most of the concepts and general insights have emerged before"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_closure_the_witness_is_none_of_the_nine_named_properties": {
   "key": "lean_closure_the_witness_is_none_of_the_nine_named_properties",
   "file": "closure.lean",
   "name": "the_witness_is_none_of_the_nine_named_properties",
   "statementHash": "db3ad70eaff5d872",
-  "searched": "2026-09-25T13:29:51.066Z",
+  "searched": "2026-09-25T14:26:23.861Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1881,23 +2031,25 @@
    ]
   },
   "queries": {
-   "zbmath": "witness none named properties cantor diagonal argument",
-   "openalex": "witness none named properties cantor diagonal argument",
-   "crossref": "witness none named properties cantor diagonal argument",
-   "arxiv": "witness AND none AND named AND properties"
+   "zbmath": "cantor diagonal argument again witness properties",
+   "openalex": "cantor diagonal argument again witness properties",
+   "crossref": "cantor diagonal argument again witness properties",
+   "arxiv": "cantor AND diagonal AND argument AND again AND witness"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_closure_the_witness_is_this_table": {
   "key": "lean_closure_the_witness_is_this_table",
   "file": "closure.lean",
   "name": "the_witness_is_this_table",
   "statementHash": "08a7a5575b2b8bdd",
-  "searched": "2026-09-25T13:30:03.850Z",
+  "searched": "2026-09-25T14:26:34.059Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1910,16 +2062,18 @@
    ]
   },
   "queries": {
-   "zbmath": "witness table cantor diagonal argument",
-   "openalex": "witness table cantor diagonal argument",
-   "crossref": "witness table cantor diagonal argument",
-   "arxiv": "witness AND table"
+   "zbmath": "cantor diagonal argument again witness table",
+   "openalex": "cantor diagonal argument again witness table",
+   "crossref": "cantor diagonal argument again witness table",
+   "arxiv": "cantor AND diagonal AND argument AND again AND witness"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_address_coil_first_holds_at_every_reservation": {
   "key": "lean_coils_the_address_coil_first_holds_at_every_reservation",

@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 1,168 of them across 58 files and
-7 wings; 966 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 1,176 of them across 59 files and
+7 wings; 974 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -5741,6 +5741,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \mathrm{settledHere} = 8 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{verdict.lean}}
+
+\begin{theorem}[\texttt{every\_input\_receives\_one\_of\_the\_five\_verdicts}]
+\[ \mathrm{R.all}\mathopen{}\left(k \mapsto \mathrm{R.all}\mathopen{}\left(r \mapsto \mathrm{R.all}\mathopen{}\left(s \mapsto \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right) \le 4\right)\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_five\_classes\_do\_not\_overlap}]
+\[ \mathrm{R.all}\mathopen{}\left(k \mapsto \mathrm{R.all}\mathopen{}\left(r \mapsto \mathrm{R.all}\mathopen{}\left(s \mapsto \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right) = 0 = k < 2 \land \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right) = 1 = k \ge 2 \land r > 0 \land \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right) = 4 = k \ge 2 \land r = 0 \land s \ge \mathrm{sources} \land \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right) = 3 = k \ge 2 \land r = 0 \land s > 0 \land s < \mathrm{sources} \land \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right) = 2 = k \ge 2 \land r = 0 \land s = 0\right)\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_source\_going\_silent\_never\_cleans\_the\_verdict}]
+\[ \mathrm{R.all}\mathopen{}\left(k \mapsto \mathrm{R.all}\mathopen{}\left(r \mapsto \mathrm{R.all}\mathopen{}\left(s \mapsto \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right) = 1 \lor \mathrm{verdict}\mathopen{}\left(k,\,r,\,s + 1\right) \ge \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right)\right)\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_clean\_verdict\_is\_reachable\_only\_from\_complete\_evidence}]
+\[ \mathrm{R.all}\mathopen{}\left(k \mapsto \mathrm{R.all}\mathopen{}\left(r \mapsto \mathrm{R.all}\mathopen{}\left(s \mapsto \lnot \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right) = 2 \lor s = 0 \land r = 0 \land k \ge 2\right)\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_relevant\_hit\_outranks\_any\_amount\_of\_silence}]
+\[ \mathrm{R.all}\mathopen{}\left(k \mapsto \mathrm{R.all}\mathopen{}\left(r \mapsto \mathrm{R.all}\mathopen{}\left(s \mapsto \lnot k \ge 2 \land r > 0 \lor \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right) = 1\right)\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_five\_verdicts\_occur}]
+\[ \left|\operatorname{dedup}\left(\mathrm{R.flatMap}\mathopen{}\left(k \mapsto \mathrm{R.flatMap}\mathopen{}\left(r \mapsto \mathrm{R.map}\mathopen{}\left(s \mapsto \mathrm{verdict}\mathopen{}\left(k,\,r,\,s\right)\right)\right)\right)\right)\right| = 5 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{too\_few\_terms\_precedes\_every\_other\_test}]
+\[ \mathrm{R.all}\mathopen{}\left(r \mapsto \mathrm{R.all}\mathopen{}\left(s \mapsto \mathrm{verdict}\mathopen{}\left(0,\,r,\,s\right) = 0 \land \mathrm{verdict}\mathopen{}\left(1,\,r,\,s\right) = 0\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_rule\_is\_decided\_and\_the\_search\_quality\_is\_not}]
+\[ \mathrm{verdict}\mathopen{}\left(5,\,0,\,0\right) = 2 \land \mathrm{verdict}\mathopen{}\left(5,\,1,\,0\right) = 1 \land \mathrm{verdict}\mathopen{}\left(5,\,0,\,5\right) = 4 \land \mathrm{verdict}\mathopen{}\left(5,\,0,\,1\right) = 3 \land \mathrm{verdict}\mathopen{}\left(1,\,9,\,9\right) = 0 \land \mathrm{sources} = 5 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \subsection{the returned}
 

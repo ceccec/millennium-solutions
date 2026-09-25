@@ -11,7 +11,7 @@
  "@type": "ItemList",
  "name": "Formulas — every proposition this deposit decides",
  "description": "Each entry is the statement the Lean 4 kernel accepted, character for character, with its source, its wing and how it was proved.",
- "numberOfItems": 1168,
+ "numberOfItems": 1176,
  "itemListOrder": "https://schema.org/ItemListUnordered",
  "author": {
   "@type": "Person",
@@ -20794,6 +20794,158 @@
    "position": 1096,
    "item": {
     "@type": "ScholarlyArticle",
+    "name": "every_input_receives_one_of_the_five_verdicts",
+    "description": "R.all (fun k => R.all (fun r => R.all (fun s => verdict k r s ≤ 4)))",
+    "identifier": "lean_verdict_every_input_receives_one_of_the_five_verdicts",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_verdict_every_input_receives_one_of_the_five_verdicts",
+    "receipt": "80063d49-878c-8847-8ba2-df2b959abf5b",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Verdict"
+    },
+    "wing": "the record",
+    "source": "verdict.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1097,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_five_classes_do_not_overlap",
+    "description": "R.all (fun k => R.all (fun r => R.all (fun s => (verdict k r s == 0) == (k < 2) && (verdict k r s == 1) == (k ≥ 2 && r > 0) && (verdict k r s == 4) == (k ≥ 2 && r == 0 && s ≥ sources) && (verdict k r s == 3) == (k ≥ 2 && r == 0 && s > 0 && s < sources) && (verdict k r s == 2) == (k ≥ 2 && r == 0 && s == 0))))",
+    "identifier": "lean_verdict_the_five_classes_do_not_overlap",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_verdict_the_five_classes_do_not_overlap",
+    "receipt": "6ecc042b-7e86-8443-9fb6-b9ab2a46195b",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Verdict"
+    },
+    "wing": "the record",
+    "source": "verdict.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1098,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "a_source_going_silent_never_cleans_the_verdict",
+    "description": "R.all (fun k => R.all (fun r => R.all (fun s => (verdict k r s == 1) || verdict k r (s + 1) ≥ verdict k r s)))",
+    "identifier": "lean_verdict_a_source_going_silent_never_cleans_the_verdict",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_verdict_a_source_going_silent_never_cleans_the_verdict",
+    "receipt": "d860b86e-998c-8322-bfb9-10db30b9b661",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Verdict"
+    },
+    "wing": "the record",
+    "source": "verdict.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1099,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_clean_verdict_is_reachable_only_from_complete_evidence",
+    "description": "R.all (fun k => R.all (fun r => R.all (fun s => !(verdict k r s == 2) || (s == 0 && r == 0 && k ≥ 2))))",
+    "identifier": "lean_verdict_the_clean_verdict_is_reachable_only_from_complete_evidence",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_verdict_the_clean_verdict_is_reachable_only_from_complete_evidence",
+    "receipt": "927bf1a4-f7e9-84b1-b52a-90a94fec6616",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Verdict"
+    },
+    "wing": "the record",
+    "source": "verdict.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1100,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "a_relevant_hit_outranks_any_amount_of_silence",
+    "description": "R.all (fun k => R.all (fun r => R.all (fun s => !(k ≥ 2 && r > 0) || verdict k r s == 1)))",
+    "identifier": "lean_verdict_a_relevant_hit_outranks_any_amount_of_silence",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_verdict_a_relevant_hit_outranks_any_amount_of_silence",
+    "receipt": "197de671-e54e-803d-9ee5-b240b7b71332",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Verdict"
+    },
+    "wing": "the record",
+    "source": "verdict.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1101,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "all_five_verdicts_occur",
+    "description": "(R.flatMap (fun k => R.flatMap (fun r => R.map (fun s => verdict k r s)))).eraseDups.length == 5",
+    "identifier": "lean_verdict_all_five_verdicts_occur",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_verdict_all_five_verdicts_occur",
+    "receipt": "c52fd3dd-90d0-8d98-baad-fef88241482f",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Verdict"
+    },
+    "wing": "the record",
+    "source": "verdict.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1102,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "too_few_terms_precedes_every_other_test",
+    "description": "R.all (fun r => R.all (fun s => verdict 0 r s == 0 && verdict 1 r s == 0))",
+    "identifier": "lean_verdict_too_few_terms_precedes_every_other_test",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_verdict_too_few_terms_precedes_every_other_test",
+    "receipt": "e78cee44-284e-8b26-8622-c39db3426902",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Verdict"
+    },
+    "wing": "the record",
+    "source": "verdict.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1103,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_rule_is_decided_and_the_search_quality_is_not",
+    "description": "verdict 5 0 0 == 2 && verdict 5 1 0 == 1 && verdict 5 0 5 == 4 && verdict 5 0 1 == 3 && verdict 1 9 9 == 0 && sources == 5",
+    "identifier": "lean_verdict_the_rule_is_decided_and_the_search_quality_is_not",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_verdict_the_rule_is_decided_and_the_search_quality_is_not",
+    "receipt": "fbf9e09d-c64e-89c2-8adf-40961abc3ecd",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Verdict"
+    },
+    "wing": "the record",
+    "source": "verdict.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1104,
+   "item": {
+    "@type": "ScholarlyArticle",
     "name": "units_are_six",
     "description": "units = [1, 2, 4, 5, 7, 8]",
     "identifier": "lean_z9_units_are_six",
@@ -20810,7 +20962,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1097,
+   "position": 1105,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "units_count",
@@ -20829,7 +20981,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1098,
+   "position": 1106,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "hasinv_units",
@@ -20848,7 +21000,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1099,
+   "position": 1107,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "hasinv_triad_not",
@@ -20867,7 +21019,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1100,
+   "position": 1108,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "selfinv_exactly_one_and_eight",
@@ -20886,7 +21038,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1101,
+   "position": 1109,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "euler_units_pow_six",
@@ -20905,7 +21057,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1102,
+   "position": 1110,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "invpow_is_u_to_the_fifth",
@@ -20924,7 +21076,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1103,
+   "position": 1111,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "powsum_zero_at_six",
@@ -20943,7 +21095,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1104,
+   "position": 1112,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "powsum_zero_at_one",
@@ -20962,7 +21114,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1105,
+   "position": 1113,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "mulperm_iff_unit",
@@ -20981,7 +21133,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1106,
+   "position": 1114,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "addgen_iff_coprime",
@@ -21000,7 +21152,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1107,
+   "position": 1115,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "selfneg_only_zero",
@@ -21019,7 +21171,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1108,
+   "position": 1116,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_is_the_six",
@@ -21038,7 +21190,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1109,
+   "position": 1117,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_closes",
@@ -21057,7 +21209,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1110,
+   "position": 1118,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_distinct",
@@ -21076,7 +21228,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1111,
+   "position": 1119,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_covers_units",
@@ -21095,7 +21247,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1112,
+   "position": 1120,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_step_is_read_back_by_its_log",
@@ -21114,7 +21266,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1113,
+   "position": 1121,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "triad_never_reaches_one",
@@ -21133,7 +21285,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1114,
+   "position": 1122,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "triad_squares_vanish",
@@ -21152,7 +21304,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1115,
+   "position": 1123,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "add_group",
@@ -21171,7 +21323,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1116,
+   "position": 1124,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "neg_involution",
@@ -21190,7 +21342,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1117,
+   "position": 1125,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "z9_settles_its_domain_totally",
@@ -21206,7 +21358,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1118,
+   "position": 1126,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_repeats_every_six",
@@ -21225,7 +21377,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1119,
+   "position": 1127,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_is_its_exponent_mod_six",
@@ -21244,7 +21396,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1120,
+   "position": 1128,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_step_is_read_back_by_its_log_for_every_k",
@@ -21263,7 +21415,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1121,
+   "position": 1129,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "squares_land_exactly_in_zero_one_four_seven",
@@ -21282,7 +21434,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1122,
+   "position": 1130,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "five_is_not_a_square_mod_nine",
@@ -21301,7 +21453,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1123,
+   "position": 1131,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cubes_land_exactly_in_zero_one_eight",
@@ -21320,7 +21472,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1124,
+   "position": 1132,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "primitive_roots_are_exactly_two_and_five",
@@ -21339,7 +21491,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1125,
+   "position": 1133,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "primitive_root_iff_generates_the_units",
@@ -21358,7 +21510,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1126,
+   "position": 1134,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_has_period_six",
@@ -21377,7 +21529,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1127,
+   "position": 1135,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_period_smaller_than_six",
@@ -21396,7 +21548,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1128,
+   "position": 1136,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_agrees_with_the_residue",
@@ -21415,7 +21567,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1129,
+   "position": 1137,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_is_the_digit_sum_residue",
@@ -21434,7 +21586,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1130,
+   "position": 1138,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_cannot_change_the_digital_root",
@@ -21453,7 +21605,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1131,
+   "position": 1139,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_digital_roots_have_period_six",
@@ -21472,7 +21624,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1132,
+   "position": 1140,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orders_of_the_units_are_exact",
@@ -21491,7 +21643,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1133,
+   "position": 1141,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_unit_table_is_a_latin_square",
@@ -21510,7 +21662,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1134,
+   "position": 1142,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_never_meets_the_triad",
@@ -21529,7 +21681,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1135,
+   "position": 1143,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reflected_orbit_covers_the_whole_triad",
@@ -21548,7 +21700,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1136,
+   "position": 1144,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reflection_splits_the_orbit_in_half",
@@ -21567,7 +21719,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1137,
+   "position": 1145,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_crossing_pairs_are_one_four_seven",
@@ -21586,7 +21738,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1138,
+   "position": 1146,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reflection_is_injective_on_the_orbit",
@@ -21605,7 +21757,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1139,
+   "position": 1147,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_alone_reaches_only_the_units",
@@ -21624,7 +21776,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1140,
+   "position": 1148,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reflection_alone_reaches_only_two",
@@ -21643,7 +21795,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1141,
+   "position": 1149,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_and_reflection_together_reach_every_residue",
@@ -21662,7 +21814,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1142,
+   "position": 1150,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_residue_is_reachable_from_one",
@@ -21681,7 +21833,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1143,
+   "position": 1151,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_diameter_is_exactly_four",
@@ -21700,7 +21852,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1144,
+   "position": 1152,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_frontier_grows_by_two_each_round",
@@ -21719,7 +21871,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1145,
+   "position": 1153,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "product_of_the_units_is_minus_one",
@@ -21738,7 +21890,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1146,
+   "position": 1154,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "pisano_period_mod_nine_is_twenty_four",
@@ -21757,7 +21909,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1147,
+   "position": 1155,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_proper_divisor_of_twenty_four_is_a_period",
@@ -21776,7 +21928,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1148,
+   "position": 1156,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fibonacci_recurrence_holds",
@@ -21795,7 +21947,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1149,
+   "position": 1157,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "consecutive_fibonacci_are_coprime",
@@ -21814,7 +21966,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1150,
+   "position": 1158,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "three_five_eight_are_consecutive_fibonacci",
@@ -21833,7 +21985,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1151,
+   "position": 1159,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "units_and_triad_partition_the_ring",
@@ -21852,7 +22004,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1152,
+   "position": 1160,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "both_parts_sum_to_zero",
@@ -21871,7 +22023,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1153,
+   "position": 1161,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_has_period_six_for_every_k",
@@ -21890,7 +22042,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1154,
+   "position": 1162,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_digital_roots_have_period_six_for_every_k",
@@ -21909,7 +22061,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1155,
+   "position": 1163,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_doubling_orbit_is_read_from_the_exponent_mod_six",
@@ -21928,7 +22080,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1156,
+   "position": 1164,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_never_meets_the_triad_for_every_k",
@@ -21947,7 +22099,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1157,
+   "position": 1165,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fibonacci_residues_mod_nine_repeat_every_twenty_four_steps",
@@ -21966,7 +22118,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1158,
+   "position": 1166,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "pisano_period_mod_nine_is_twenty_four_for_every_k",
@@ -21985,7 +22137,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1159,
+   "position": 1167,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument",
@@ -22004,7 +22156,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1160,
+   "position": 1168,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "consecutive_fibonacci_numbers_are_coprime",
@@ -22023,7 +22175,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1161,
+   "position": 1169,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "consecutive_fibonacci_are_coprime_for_every_n",
@@ -22042,7 +22194,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1162,
+   "position": 1170,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_agrees_with_the_residue_for_every_n",
@@ -22061,7 +22213,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1163,
+   "position": 1171,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_is_the_digit_sum_residue_for_every_n",
@@ -22080,7 +22232,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1164,
+   "position": 1172,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_undoes_doubling_at_every_step",
@@ -22099,7 +22251,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1165,
+   "position": 1173,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_has_period_six_for_every_k",
@@ -22118,7 +22270,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1166,
+   "position": 1174,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_orbit_digital_roots_have_period_six_for_every_k",
@@ -22137,7 +22289,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1167,
+   "position": 1175,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k",
@@ -22156,7 +22308,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1168,
+   "position": 1176,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_cannot_change_the_digital_root_for_every_n",
