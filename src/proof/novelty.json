@@ -19028,7 +19028,7 @@
   "file": "involution.lean",
   "name": "every_involution_fixes_at_least_one_point",
   "statementHash": "687bd62d6bfc0607",
-  "searched": "2026-09-25T15:56:58.759Z",
+  "searched": "2026-09-25T21:44:03.459Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19060,7 +19060,7 @@
   "file": "involution.lean",
   "name": "no_single_point_is_fixed_by_all",
   "statementHash": "ad601f03f59ae54e",
-  "searched": "2026-09-25T15:57:18.926Z",
+  "searched": "2026-09-25T21:44:20.397Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19092,7 +19092,7 @@
   "file": "involution.lean",
   "name": "so_involutions_are_not_all_harmonic_in_that_sense",
   "statementHash": "84e5e5f94038c0f8",
-  "searched": "2026-09-25T15:57:38.790Z",
+  "searched": "2026-09-25T21:44:37.025Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19124,7 +19124,7 @@
   "file": "involution.lean",
   "name": "the_coins_reflection_is_harmonic_and_is_one_of_the_ninety",
   "statementHash": "0c1af2e8173f567c",
-  "searched": "2026-09-25T15:57:50.791Z",
+  "searched": "2026-09-25T21:44:45.235Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19156,7 +19156,7 @@
   "file": "involution.lean",
   "name": "the_constant_sum_is_rare",
   "statementHash": "dfb614adf43dd5c3",
-  "searched": "2026-09-25T15:57:28.961Z",
+  "searched": "2026-09-25T21:44:28.494Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19188,7 +19188,7 @@
   "file": "involution.lean",
   "name": "the_fixed_points_are_always_odd",
   "statementHash": "a2c3347877910f37",
-  "searched": "2026-09-25T15:57:08.047Z",
+  "searched": "2026-09-25T21:44:12.253Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19284,7 +19284,7 @@
   "file": "lanes.lean",
   "name": "a_lane_is_always_granted",
   "statementHash": "4bd9e414d375d93a",
-  "searched": "2026-09-25T15:58:01.100Z",
+  "searched": "2026-09-25T21:44:53.927Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19316,7 +19316,7 @@
   "file": "lanes.lean",
   "name": "an_unmeasurable_host_still_builds_and_still_fits",
   "statementHash": "b8406da5d84af890",
-  "searched": "2026-09-25T15:59:17.228Z",
+  "searched": "2026-09-25T21:45:53.806Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19348,7 +19348,7 @@
   "file": "lanes.lean",
   "name": "lanes_never_exceed_the_cores_but_for_the_floor",
   "statementHash": "8bbe5d7b0a5f1efc",
-  "searched": "2026-09-25T15:58:13.638Z",
+  "searched": "2026-09-25T21:45:02.208Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19380,7 +19380,7 @@
   "file": "lanes.lean",
   "name": "lanes_never_exceed_what_memory_affords",
   "statementHash": "d2830ff98e913ca1",
-  "searched": "2026-09-25T15:58:27.360Z",
+  "searched": "2026-09-25T21:45:11.888Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19412,7 +19412,7 @@
   "file": "lanes.lean",
   "name": "more_memory_never_costs_a_lane",
   "statementHash": "59be82b561228a1b",
-  "searched": "2026-09-25T15:58:46.853Z",
+  "searched": "2026-09-25T21:45:28.507Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19444,7 +19444,7 @@
   "file": "lanes.lean",
   "name": "more_neighbours_never_buys_a_lane",
   "statementHash": "f42607fae13536a9",
-  "searched": "2026-09-25T15:58:57.093Z",
+  "searched": "2026-09-25T21:45:37.347Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19476,7 +19476,7 @@
   "file": "lanes.lean",
   "name": "the_fallback_costs_half_the_lanes_at_the_size_that_prompted_this",
   "statementHash": "ddaae64ed571f9ff",
-  "searched": "2026-09-25T15:59:06.997Z",
+  "searched": "2026-09-25T21:45:45.735Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19508,7 +19508,7 @@
   "file": "lanes.lean",
   "name": "unknown_is_never_better_than_measuring_an_empty_machine",
   "statementHash": "50c2741bd5bbd55c",
-  "searched": "2026-09-25T15:58:36.673Z",
+  "searched": "2026-09-25T21:45:19.948Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19613,7 +19613,7 @@
   "file": "ledgerclaims.lean",
   "name": "a_saving_never_exceeds_its_value",
   "statementHash": "c38265144be8c2a6",
-  "searched": "2026-09-25T16:00:12.788Z",
+  "searched": "2026-09-25T21:46:27.121Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19718,7 +19718,7 @@
   "file": "ledgerclaims.lean",
   "name": "membership_grows_by_one_seal_per_doubling",
   "statementHash": "1c0b8dc00974dfc2",
-  "searched": "2026-09-25T15:59:38.440Z",
+  "searched": "2026-09-25T21:46:01.809Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19750,7 +19750,7 @@
   "file": "ledgerclaims.lean",
   "name": "membership_is_logarithmic_not_linear",
   "statementHash": "4c0a3f7698e7915c",
-  "searched": "2026-09-25T15:59:49.054Z",
+  "searched": "2026-09-25T21:46:10.514Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19782,7 +19782,7 @@
   "file": "ledgerclaims.lean",
   "name": "more_payloads_than_addresses_must_collide",
   "statementHash": "aad5e19fae4e9cc5",
-  "searched": "2026-09-25T16:00:22.279Z",
+  "searched": "2026-09-25T21:46:35.305Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19814,7 +19814,7 @@
   "file": "ledgerclaims.lean",
   "name": "the_967_receipt_case",
   "statementHash": "16700dd342e4cf39",
-  "searched": "2026-09-25T15:59:59.022Z",
+  "searched": "2026-09-25T21:46:18.898Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19887,7 +19887,7 @@
   "file": "light.lean",
   "name": "and_a_change_of_unit_destroys_it",
   "statementHash": "73cec4194b8952fe",
-  "searched": "2026-09-25T16:02:43.659Z",
+  "searched": "2026-09-25T21:47:50.512Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -19920,7 +19920,7 @@
   "file": "light.lean",
   "name": "the_absent_residues_are_the_primes_below_nine",
   "statementHash": "72c4cc893963e99d",
-  "searched": "2026-09-25T16:02:34.020Z",
+  "searched": "2026-09-25T21:47:42.439Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20010,7 +20010,7 @@
   "file": "light.lean",
   "name": "the_definitions_are_seven_and_travel_fixes_zero",
   "statementHash": "3bce2c0555a04292",
-  "searched": "2026-09-25T16:03:08.309Z",
+  "searched": "2026-09-25T21:48:10.216Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20042,7 +20042,7 @@
   "file": "light.lean",
   "name": "the_faraday_constant_is_an_exact_product_of_two_defined_constants",
   "statementHash": "6146e5958d73b364",
-  "searched": "2026-09-25T16:03:47.762Z",
+  "searched": "2026-09-25T21:48:42.699Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20074,7 +20074,7 @@
   "file": "light.lean",
   "name": "the_metre_returns_from_the_second_for_every_whole_length",
   "statementHash": "ae09ee056c91e2e9",
-  "searched": "2026-09-25T16:03:18.172Z",
+  "searched": "2026-09-25T21:48:18.257Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20106,7 +20106,7 @@
   "file": "light.lean",
   "name": "the_molar_gas_constant_is_an_exact_product_of_two_defined_constants",
   "statementHash": "d83bec388ed1eef0",
-  "searched": "2026-09-25T16:03:38.316Z",
+  "searched": "2026-09-25T21:48:34.732Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20138,7 +20138,7 @@
   "file": "light.lean",
   "name": "the_period_count_returns_from_the_second_for_every_whole_count",
   "statementHash": "e0265ff8972b54e6",
-  "searched": "2026-09-25T16:03:28.346Z",
+  "searched": "2026-09-25T21:48:26.450Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20170,7 +20170,7 @@
   "file": "light.lean",
   "name": "the_root_moves_with_the_unit_so_it_is_not_about_light",
   "statementHash": "c330a9a0dfcb5abc",
-  "searched": "2026-09-25T16:02:57.307Z",
+  "searched": "2026-09-25T21:48:01.286Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20244,7 +20244,7 @@
   "file": "light.lean",
   "name": "the_second_returns_from_the_metre_and_the_period",
   "statementHash": "a961ac5881f8a379",
-  "searched": "2026-09-25T16:01:14.718Z",
+  "searched": "2026-09-25T21:47:00.877Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20276,7 +20276,7 @@
   "file": "light.lean",
   "name": "the_second_returns_from_the_metre_and_the_period_at_every_duration",
   "statementHash": "bd631b184cb9bb70",
-  "searched": "2026-09-25T16:01:24.939Z",
+  "searched": "2026-09-25T21:47:09.391Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20308,7 +20308,7 @@
   "file": "light.lean",
   "name": "the_seven_roots_miss_four_residues",
   "statementHash": "0bf582ad3e63165a",
-  "searched": "2026-09-25T16:02:24.282Z",
+  "searched": "2026-09-25T21:47:34.273Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20357,7 +20357,7 @@
   "file": "light.lean",
   "name": "the_si_fixes_seven_distinct_nonzero_constants",
   "statementHash": "520bef23c9987755",
-  "searched": "2026-09-25T16:00:53.673Z",
+  "searched": "2026-09-25T21:46:44.212Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20389,7 +20389,7 @@
   "file": "light.lean",
   "name": "three_on_the_triad_and_four_on_the_units",
   "statementHash": "95082e882d096519",
-  "searched": "2026-09-25T16:02:14.875Z",
+  "searched": "2026-09-25T21:47:25.645Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20438,7 +20438,7 @@
   "file": "light.lean",
   "name": "travel_and_periods_at_one_return_their_constants",
   "statementHash": "aa55163fbc160113",
-  "searched": "2026-09-25T16:01:34.735Z",
+  "searched": "2026-09-25T21:47:17.220Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20470,7 +20470,7 @@
   "file": "light.lean",
   "name": "travel_at_one_returns_the_defined_constant",
   "statementHash": "dff936fc74632bb4",
-  "searched": "2026-09-25T16:01:04.902Z",
+  "searched": "2026-09-25T21:46:52.647Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20912,7 +20912,7 @@
   "file": "mechanical.lean",
   "name": "arts_nine_hues_distinct",
   "statementHash": "b5a405d62c087781",
-  "searched": "2026-09-25T16:05:17.005Z",
+  "searched": "2026-09-25T21:49:47.823Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20944,7 +20944,7 @@
   "file": "mechanical.lean",
   "name": "bool_absorption",
   "statementHash": "bdf27df63066e760",
-  "searched": "2026-09-25T16:04:37.261Z",
+  "searched": "2026-09-25T21:49:15.327Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -20976,7 +20976,7 @@
   "file": "mechanical.lean",
   "name": "bool_demorgan1",
   "statementHash": "d1f569de718c7e05",
-  "searched": "2026-09-25T16:04:07.139Z",
+  "searched": "2026-09-25T21:48:51.121Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -21008,7 +21008,7 @@
   "file": "mechanical.lean",
   "name": "bool_demorgan2",
   "statementHash": "ed8a3b8e5426f253",
-  "searched": "2026-09-25T16:04:17.271Z",
+  "searched": "2026-09-25T21:48:59.132Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -21040,7 +21040,7 @@
   "file": "mechanical.lean",
   "name": "bool_distributivity",
   "statementHash": "2c4b4b114c5e6637",
-  "searched": "2026-09-25T16:04:27.220Z",
+  "searched": "2026-09-25T21:49:07.316Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -21200,7 +21200,7 @@
   "file": "mechanical.lean",
   "name": "chess_board_64",
   "statementHash": "9436084a7fff9c63",
-  "searched": "2026-09-25T16:06:07.379Z",
+  "searched": "2026-09-25T21:50:29.303Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -21232,7 +21232,7 @@
   "file": "mechanical.lean",
   "name": "chess_diagonals_15",
   "statementHash": "0cb2bce115853b02",
-  "searched": "2026-09-25T16:06:18.185Z",
+  "searched": "2026-09-25T21:50:37.800Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -21328,7 +21328,7 @@
   "file": "mechanical.lean",
   "name": "content_address_is_keyless_integrity",
   "statementHash": "7002c0336f9c828c",
-  "searched": "2026-09-25T16:10:36.456Z",
+  "searched": "2026-09-25T21:53:53.397Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -21392,7 +21392,7 @@
   "file": "mechanical.lean",
   "name": "cover_rotation_full_circle",
   "statementHash": "b5a405d62c087781",
-  "searched": "2026-09-25T16:04:56.789Z",
+  "searched": "2026-09-25T21:49:31.471Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -21770,7 +21770,7 @@
   "file": "mechanical.lean",
   "name": "fib_trinity_horizon",
   "statementHash": "06d704b8f7bb99f4",
-  "searched": "2026-09-25T16:05:06.888Z",
+  "searched": "2026-09-25T21:49:39.797Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22061,7 +22061,7 @@
   "file": "mechanical.lean",
   "name": "genus2_h1_symplectic",
   "statementHash": "6169bcff94c7f454",
-  "searched": "2026-09-25T16:09:22.398Z",
+  "searched": "2026-09-25T21:52:56.102Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22093,7 +22093,7 @@
   "file": "mechanical.lean",
   "name": "genus2_hyperelliptic",
   "statementHash": "366fd656071d4959",
-  "searched": "2026-09-25T16:09:12.527Z",
+  "searched": "2026-09-25T21:52:48.411Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22125,7 +22125,7 @@
   "file": "mechanical.lean",
   "name": "genus2_moduli_dim",
   "statementHash": "b0815377cf1345de",
-  "searched": "2026-09-25T16:09:01.681Z",
+  "searched": "2026-09-25T21:52:39.724Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22270,7 +22270,7 @@
   "file": "mechanical.lean",
   "name": "harmonic_octave_2_1",
   "statementHash": "3e2f4e810b4a28a1",
-  "searched": "2026-09-25T16:07:28.057Z",
+  "searched": "2026-09-25T21:51:26.511Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22302,7 +22302,7 @@
   "file": "mechanical.lean",
   "name": "harmonic_pythagorean_comma",
   "statementHash": "565b4f27d34f6ebe",
-  "searched": "2026-09-25T16:07:37.880Z",
+  "searched": "2026-09-25T21:51:34.979Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22398,7 +22398,7 @@
   "file": "mechanical.lean",
   "name": "kaprekar_constants_digitroot_nine",
   "statementHash": "299e1fae3e13607b",
-  "searched": "2026-09-25T16:10:23.820Z",
+  "searched": "2026-09-25T21:53:44.705Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22430,7 +22430,7 @@
   "file": "mechanical.lean",
   "name": "merkaba_cube_q3",
   "statementHash": "dc8330e1fe559a25",
-  "searched": "2026-09-25T16:04:47.105Z",
+  "searched": "2026-09-25T21:49:23.371Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22462,7 +22462,7 @@
   "file": "mechanical.lean",
   "name": "midy_the_two_halves_of_142857_sum_to_nines",
   "statementHash": "9c2529ca1be3e380",
-  "searched": "2026-09-25T16:11:26.952Z",
+  "searched": "2026-09-25T21:54:25.824Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22526,7 +22526,7 @@
   "file": "mechanical.lean",
   "name": "nopayload_avalanche",
   "statementHash": "20765858e2a828e1",
-  "searched": "2026-09-25T16:05:57.292Z",
+  "searched": "2026-09-25T21:50:20.886Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22599,7 +22599,7 @@
   "file": "mechanical.lean",
   "name": "relation_432_factors",
   "statementHash": "630115ff6962c006",
-  "searched": "2026-09-25T16:10:04.752Z",
+  "searched": "2026-09-25T21:53:29.068Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22631,7 +22631,7 @@
   "file": "mechanical.lean",
   "name": "relation_creation_week",
   "statementHash": "d979b453523d348f",
-  "searched": "2026-09-25T16:08:07.687Z",
+  "searched": "2026-09-25T21:51:59.347Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22663,7 +22663,7 @@
   "file": "mechanical.lean",
   "name": "relation_digital_root",
   "statementHash": "96fcb1a5e418d06e",
-  "searched": "2026-09-25T16:07:15.366Z",
+  "searched": "2026-09-25T21:51:17.842Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22712,7 +22712,7 @@
   "file": "mechanical.lean",
   "name": "relation_digitroot_is_residue_mod9",
   "statementHash": "778509b8a8da6f88",
-  "searched": "2026-09-25T16:09:32.623Z",
+  "searched": "2026-09-25T21:53:04.626Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22776,7 +22776,7 @@
   "file": "mechanical.lean",
   "name": "relation_eight",
   "statementHash": "69a7629ac9a29414",
-  "searched": "2026-09-25T16:07:56.622Z",
+  "searched": "2026-09-25T21:51:51.163Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22808,7 +22808,7 @@
   "file": "mechanical.lean",
   "name": "relation_seven",
   "statementHash": "06d704b8f7bb99f4",
-  "searched": "2026-09-25T16:07:47.199Z",
+  "searched": "2026-09-25T21:51:42.967Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22840,7 +22840,7 @@
   "file": "mechanical.lean",
   "name": "relation_seven_is_six_plus_one",
   "statementHash": "b170b6c7c2ece2a1",
-  "searched": "2026-09-25T16:09:42.335Z",
+  "searched": "2026-09-25T21:53:12.968Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22889,7 +22889,7 @@
   "file": "mechanical.lean",
   "name": "relation_superposition_collapse",
   "statementHash": "9076c1eb6ba35d32",
-  "searched": "2026-09-25T16:08:16.808Z",
+  "searched": "2026-09-25T21:52:07.142Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22921,7 +22921,7 @@
   "file": "mechanical.lean",
   "name": "relation_triangular_45_is_base",
   "statementHash": "a91b0327bbb3f20a",
-  "searched": "2026-09-25T16:10:14.137Z",
+  "searched": "2026-09-25T21:53:36.898Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -22953,7 +22953,7 @@
   "file": "mechanical.lean",
   "name": "relation_units_sum_and_product",
   "statementHash": "dc049e8391f38a7a",
-  "searched": "2026-09-25T16:09:55.156Z",
+  "searched": "2026-09-25T21:53:21.095Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23002,7 +23002,7 @@
   "file": "mechanical.lean",
   "name": "relation_url_path",
   "statementHash": "7cc0da699e732bec",
-  "searched": "2026-09-25T16:08:26.751Z",
+  "searched": "2026-09-25T21:52:14.992Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23034,7 +23034,7 @@
   "file": "mechanical.lean",
   "name": "repeated_doubling_is_the_power_of_two",
   "statementHash": "d1a0a1e900dd2c40",
-  "searched": "2026-09-25T16:08:50.208Z",
+  "searched": "2026-09-25T21:52:31.520Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23098,7 +23098,7 @@
   "file": "mechanical.lean",
   "name": "seven_divides_the_repunit_of_length_six",
   "statementHash": "5332f0e3e157e5d6",
-  "searched": "2026-09-25T16:11:46.972Z",
+  "searched": "2026-09-25T21:54:41.881Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23258,7 +23258,7 @@
   "file": "mechanical.lean",
   "name": "tarot_78_cards",
   "statementHash": "93ddfc3dd85926ce",
-  "searched": "2026-09-25T16:06:27.702Z",
+  "searched": "2026-09-25T21:50:45.841Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23290,7 +23290,7 @@
   "file": "mechanical.lean",
   "name": "tarot_digital_roots",
   "statementHash": "576527bc20b1f249",
-  "searched": "2026-09-25T16:06:56.376Z",
+  "searched": "2026-09-25T21:51:09.816Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23322,7 +23322,7 @@
   "file": "mechanical.lean",
   "name": "tarot_major_0_21",
   "statementHash": "71b854551e279db8",
-  "searched": "2026-09-25T16:06:46.975Z",
+  "searched": "2026-09-25T21:51:01.599Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23354,7 +23354,7 @@
   "file": "mechanical.lean",
   "name": "tarot_minor_4x14",
   "statementHash": "adb08fcfb3754723",
-  "searched": "2026-09-25T16:06:37.699Z",
+  "searched": "2026-09-25T21:50:53.872Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23482,7 +23482,7 @@
   "file": "mechanical.lean",
   "name": "the_cyclic_number_142857_is_the_repetend_of_one_seventh",
   "statementHash": "7f2d2b5caf8adb88",
-  "searched": "2026-09-25T16:11:06.397Z",
+  "searched": "2026-09-25T21:54:17.946Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23642,7 +23642,7 @@
   "file": "mechanical.lean",
   "name": "the_digital_root_of_seven_to_the_k_has_period_three",
   "statementHash": "8231d526155908d1",
-  "searched": "2026-09-25T16:11:36.458Z",
+  "searched": "2026-09-25T21:54:33.970Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -23930,7 +23930,7 @@
   "file": "mechanical.lean",
   "name": "the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six",
   "statementHash": "49362d41f7720117",
-  "searched": "2026-09-25T16:08:39.737Z",
+  "searched": "2026-09-25T21:52:23.044Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -24282,7 +24282,7 @@
   "file": "mechanical.lean",
   "name": "the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight",
   "statementHash": "745e680fbe76ef52",
-  "searched": "2026-09-25T16:10:56.547Z",
+  "searched": "2026-09-25T21:54:09.736Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -24442,7 +24442,7 @@
   "file": "mechanical.lean",
   "name": "the_three_four_five_right_triangle_is_the_first_pythagorean_triple",
   "statementHash": "f169c891260baabd",
-  "searched": "2026-09-25T16:10:46.347Z",
+  "searched": "2026-09-25T21:54:01.532Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -24506,7 +24506,7 @@
   "file": "mechanical.lean",
   "name": "trial_units_group",
   "statementHash": "6b015b1446c0d72e",
-  "searched": "2026-09-25T16:05:28.475Z",
+  "searched": "2026-09-25T21:49:55.830Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -24555,7 +24555,7 @@
   "file": "mechanical.lean",
   "name": "trial_zero_divisors",
   "statementHash": "84890a8cac0f3302",
-  "searched": "2026-09-25T16:05:38.505Z",
+  "searched": "2026-09-25T21:50:03.985Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -24587,7 +24587,7 @@
   "file": "mechanical.lean",
   "name": "trial_zero_no_inverse",
   "statementHash": "57a5b119934711e5",
-  "searched": "2026-09-25T16:05:48.048Z",
+  "searched": "2026-09-25T21:50:12.498Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -24651,7 +24651,7 @@
   "file": "mechanical.lean",
   "name": "two_to_the_eighth_is_two_hundred_fifty_six_a_byte",
   "statementHash": "768f221e32d888e2",
-  "searched": "2026-09-25T16:11:57.021Z",
+  "searched": "2026-09-25T21:54:50.025Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -24683,7 +24683,7 @@
   "file": "mechanical.lean",
   "name": "two_to_the_tenth_is_1024_the_harmonic_ledger",
   "statementHash": "36d1a1e19219e478",
-  "searched": "2026-09-25T16:12:07.454Z",
+  "searched": "2026-09-25T21:54:57.870Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,

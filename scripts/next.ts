@@ -149,6 +149,29 @@ if (address === lastAddr) {
   // NOT to stop. It is the captain's other two motions: INVERT or REVERSE until the next is found. Forward
   // exhausted, the yacht comes about — reverse-verify the chain tail→genesis, invert to the sparsest region.
   console.log('next — forward is WHOLE (content-address = ' + lastTag + ' · ' + address.slice(0, 13) + '…). the procedure inverts.')
+
+  // ── AND WHOLE IS NOT THE SAME AS NOTHING LEFT TO DO ─────────────────────────────────────────────────────
+  // This measured CHURN — does the tree differ from the last release — and called the answer "whole". But
+  // scripts/leads.ts derives OBLIGATION from the same tree: theorems that read back a hand-set value, gates
+  // no chain runs, depositions staged and unminted, source files with no prior-art search. A tree can match
+  // its last release exactly and still owe every one of them, and `next` would say rest.
+  //
+  // The two were never fused, so the deposit had one tool that says what CHANGED and another that says what
+  // is OWED, and the one people run says rest while the other lists forty-two things. Whole now means the
+  // content-address matches AND the derived leads are empty; otherwise the top open areas are printed here,
+  // where whoever asked what is next actually looks.
+  try {
+    const out = execSync('node scripts/leads.ts', { encoding: 'utf8', stdio: 'pipe' })
+    const areas = out.split('\n').filter((l) => /^\s{4}\d+\s{2}\w/.test(l)).slice(0, 5)
+    const total = out.match(/○ leads: (\d+) open area\(s\), (\d+) item\(s\)/)
+    if (areas.length) {
+      console.log('\n  WHOLE BY CONTENT-ADDRESS, NOT BY OBLIGATION — ' + (total ? total[2] + ' item(s) across ' + total[1] + ' area(s)' : 'leads are open') + ':')
+      for (const a of areas) console.log('  ' + a.trim().slice(0, 150))
+      console.log('  → npm run leads for the whole list. Resting is right when these are empty and not before.')
+    } else {
+      console.log('\n  and the derived leads are empty — nothing is owed either. This is rest, earned.')
+    }
+  } catch { console.log('\n  ○ leads did not run — obligation UNMEASURED, which is not the same as none owed.') }
   console.log('\n' + rosettaReport().split('\n').map((l) => '  ' + l).join('\n'))
   const led = __ledger() as { key: string; receipt: string }[]
   // REVERSE — recompute the chain forward and confirm it re-seals; a reverse traversal reaches the same seal.

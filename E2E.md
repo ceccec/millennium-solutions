@@ -14,15 +14,15 @@ Last run: **9 of 9 passed**.
 
 | check | result | measured |
 | --- | :---: | --- |
-| the formulas page is built | ✓ | 50044 bytes |
-| it references the data file rather than embedding it | ✓ | page 49 KB, references formulas.jsonld: true |
-| the data file parses as JSON-LD | ✓ | 706 KB |
+| the formulas page is built | ✓ | 51126 bytes |
+| it references the data file rather than embedding it | ✓ | page 50 KB, references formulas.jsonld: true |
+| the data file parses as JSON-LD | ✓ | 721 KB |
 | it declares the schema.org context | ✓ | ["https://schema.org",{"wing":"https://schema.org/genre","source":"https://schem |
 | it is an ItemList | ✓ | ItemList |
-| numberOfItems matches what the list holds | ✓ | declared 1192, holds 1192 |
-| the page and the data agree on the count | ✓ | page says 1192, data holds 1192 |
-| every linked theorem page is built | ✓ | 1177 links, 3303 pages built, 0 dead |
-| every item carries the three facets the widget filters by | ✓ | 1192 of 1192 complete |
+| numberOfItems matches what the list holds | ✓ | declared 1216, holds 1216 |
+| the page and the data agree on the count | ✓ | page says 1216, data holds 1216 |
+| every linked theorem page is built | ✓ | 1201 links, 3327 pages built, 0 dead |
+| every item carries the three facets the widget filters by | ✓ | 1216 of 1216 complete |
 
 ## What this cannot tell you
 

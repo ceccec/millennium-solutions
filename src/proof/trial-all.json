@@ -19822,5 +19822,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "94b518cf-0e4a-8eea-9984-4263480c9b34"
+  },
+  {
+    "key": "lean_asymmetry_the_reflection_is_its_own_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7405001e-bff6-859d-a0fb-dc81ab77dd2b"
+  },
+  {
+    "key": "lean_asymmetry_squaring_is_not_injective_and_its_image_is_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e78ba1d4-b493-8788-9348-b489cecc173d"
+  },
+  {
+    "key": "lean_asymmetry_every_residue_shares_its_square_with_another",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "edb04164-7d0b-8c2e-b5b9-48186825f010"
+  },
+  {
+    "key": "lean_asymmetry_doubling_is_invertible_and_is_not_its_own_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c4abdffa-08e3-8691-a091-9e5f3828dda9"
+  },
+  {
+    "key": "lean_asymmetry_inverting_the_symmetric_gives_one_and_the_asymmetric_gives_many",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cb8e5a17-c020-8da3-a817-f644b99abd0d"
+  },
+  {
+    "key": "lean_asymmetry_each_kind_is_defined_by_the_other",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c9799733-ef99-8db8-89cb-b396477b866c"
+  },
+  {
+    "key": "lean_asymmetry_the_squares_are_not_closed_under_the_reflection",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "873b4c75-7e78-89af-b2c4-09deeaba8de5"
+  },
+  {
+    "key": "lean_asymmetry_the_shape_is_decided_and_the_difficulty_is_not",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c38ecb43-8538-86ba-8e99-e0f5a027a05a"
+  },
+  {
+    "key": "lean_widths_the_payload_and_the_check_exhaust_the_free_bits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7f7af53f-ab01-85fb-b0d3-0d39f7494554"
+  },
+  {
+    "key": "lean_widths_the_check_is_exactly_what_the_payload_does_not_take",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2142271e-89ca-8724-8d61-6653b2659bb0"
+  },
+  {
+    "key": "lean_widths_splitting_a_width_is_undone_by_either_part",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d419162b-a5e9-8214-82c2-ec1fa32ca32a"
+  },
+  {
+    "key": "lean_widths_reserving_and_freeing_are_inverse_at_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bb86c241-c6d1-8941-aaea-c51070de8a49"
+  },
+  {
+    "key": "lean_widths_one_more_bit_doubles_the_space_at_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6e681440-cce3-8f74-8c05-06ac94a54331"
+  },
+  {
+    "key": "lean_widths_the_space_recovers_the_width_it_came_from",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9fe18d52-ac05-8a63-9f97-f2f409e450c5"
+  },
+  {
+    "key": "lean_widths_the_unit_conversion_is_a_bijection_on_multiples_of_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3c94637c-8fda-8b26-8eee-4d3e2c2a9e01"
+  },
+  {
+    "key": "lean_widths_the_laws_separate_widths_rather_than_collapsing_them",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "57123f73-0b91-87cb-aac6-8aa841ad22c7"
   }
 ]
