@@ -15420,7 +15420,10 @@
   {
     "key": "lean_millenniumfloor.universal_universal_reflection_involution",
     "name": "lean theorems.lean: universal_reflection_involution — (List.range 11).all (fun d => refl (refl d) == d) -- σ ∘ σ = id everywhere — the shared involution ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1 -- exactly ONE shared centre (the heart), computed — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "09141102-ade1-8d1a-b5ff-78bda3063955"
+    "receipt": "09141102-ade1-8d1a-b5ff-78bda3063955",
+    "revoked": true,
+    "supersededBy": "lean_reflection_universal_reflection_involution",
+    "reason": "renamed namespace: this key addresses the theorem `universal_reflection_involution` through a namespace no file in src/proof declares any more, and lean_reflection_universal_reflection_involution addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_reflection_universal_reflection_involution; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_z9_units_are_six",
@@ -15983,7 +15986,10 @@
   {
     "key": "lean_millenniumfloor_the_seven_rest_on_one_finite_structure",
     "name": "lean index.lean: the_seven_rest_on_one_finite_structure — ((List.range' 1 9).all (fun d => refl (refl d) == d)) ∧ (((List.range' 1 9).filter isUnit).length = 6) ∧ (span.eraseDups.length = 6) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c4430b4b-f081-804c-b4f1-29fca82f3f61"
+    "receipt": "c4430b4b-f081-804c-b4f1-29fca82f3f61",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_seven_rest_on_one_finite_structure",
+    "reason": "renamed namespace: this key addresses the theorem `the_seven_rest_on_one_finite_structure` through a namespace no file in src/proof declares any more, and lean_windows_the_seven_rest_on_one_finite_structure addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_seven_rest_on_one_finite_structure; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_merkaba_the_three_classes_partition_z9",
@@ -17324,37 +17330,58 @@
   {
     "key": "lean_millenniumfloor.universal_universal_centre_is_five",
     "name": "lean theorems.lean: universal_centre_is_five — ((List.range 10).filter (fun d => refl d == d)) = [5] — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "42ce0775-4a4d-8489-bb30-7fcc5a550bff"
+    "receipt": "42ce0775-4a4d-8489-bb30-7fcc5a550bff",
+    "revoked": true,
+    "supersededBy": "lean_reflection_universal_centre_is_five",
+    "reason": "renamed namespace: this key addresses the theorem `universal_centre_is_five` through a namespace no file in src/proof declares any more, and lean_reflection_universal_centre_is_five addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_reflection_universal_centre_is_five; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor.universal_universal_pairs_sum_to_ten",
     "name": "lean theorems.lean: universal_pairs_sum_to_ten — (List.range 11).all (fun d => d + refl d == 10) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "637d181e-c3d7-8e3a-8711-c77142b83f68"
+    "receipt": "637d181e-c3d7-8e3a-8711-c77142b83f68",
+    "revoked": true,
+    "supersededBy": "lean_reflection_universal_pairs_sum_to_ten",
+    "reason": "renamed namespace: this key addresses the theorem `universal_pairs_sum_to_ten` through a namespace no file in src/proof declares any more, and lean_reflection_universal_pairs_sum_to_ten addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_reflection_universal_pairs_sum_to_ten; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor.universal_universal_reflection_reverses_the_domain",
     "name": "lean theorems.lean: universal_reflection_reverses_the_domain — (List.range 11).map refl = (List.range 11).reverse — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a1c960e9-f2e7-82bc-9c5e-a116f3b14161"
+    "receipt": "a1c960e9-f2e7-82bc-9c5e-a116f3b14161",
+    "revoked": true,
+    "supersededBy": "lean_reflection_universal_reflection_reverses_the_domain",
+    "reason": "renamed namespace: this key addresses the theorem `universal_reflection_reverses_the_domain` through a namespace no file in src/proof declares any more, and lean_reflection_universal_reflection_reverses_the_domain addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_reflection_universal_reflection_reverses_the_domain; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten",
     "name": "lean theorems.lean: universal_reflection_is_not_an_involution_above_ten — ((List.range 10).map (fun k => k + 11)).all (fun d => ¬ (refl (refl d) == d)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8508a4f1-bf0e-8327-9893-8a1f0f662caa"
+    "receipt": "8508a4f1-bf0e-8327-9893-8a1f0f662caa",
+    "revoked": true,
+    "supersededBy": "lean_reflection_universal_reflection_is_not_an_involution_above_ten",
+    "reason": "renamed namespace: this key addresses the theorem `universal_reflection_is_not_an_involution_above_ten` through a namespace no file in src/proof declares any more, and lean_reflection_universal_reflection_is_not_an_involution_above_ten addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_reflection_universal_reflection_is_not_an_involution_above_ten; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units",
     "name": "lean theorems.lean: universal_z9_reflection_permutes_the_units — ([1, 2, 4, 5, 7, 8].map (fun d => (9 - d) % 9)) = [8, 7, 5, 4, 2, 1] — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c108d1b2-5b61-87b8-8362-2c25afe59d18"
+    "receipt": "c108d1b2-5b61-87b8-8362-2c25afe59d18",
+    "revoked": true,
+    "supersededBy": "lean_reflection_universal_z9_reflection_permutes_the_units",
+    "reason": "renamed namespace: this key addresses the theorem `universal_z9_reflection_permutes_the_units` through a namespace no file in src/proof declares any more, and lean_reflection_universal_z9_reflection_permutes_the_units addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_reflection_universal_z9_reflection_permutes_the_units; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units",
     "name": "lean theorems.lean: universal_millennium_reflection_escapes_the_units — ¬ ([1, 2, 4, 5, 7, 8].all (fun u => [1, 2, 4, 5, 7, 8].contains (refl u))) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "42cffd21-8daa-8c57-b20c-485af9bc2174"
+    "receipt": "42cffd21-8daa-8c57-b20c-485af9bc2174",
+    "revoked": true,
+    "supersededBy": "lean_reflection_universal_millennium_reflection_escapes_the_units",
+    "reason": "renamed namespace: this key addresses the theorem `universal_millennium_reflection_escapes_the_units` through a namespace no file in src/proof declares any more, and lean_reflection_universal_millennium_reflection_escapes_the_units addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_reflection_universal_millennium_reflection_escapes_the_units; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted",
     "name": "lean theorems.lean: universal_reflection_is_the_vortex_reflection_shifted — (List.range 10).all (fun d => (10 - d) % 9 == ((9 - d) % 9 + 1) % 9) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "e27a695c-fcb5-8abc-86af-eb64c401bbef"
+    "receipt": "e27a695c-fcb5-8abc-86af-eb64c401bbef",
+    "revoked": true,
+    "supersededBy": "lean_reflection_universal_reflection_is_the_vortex_reflection_shifted",
+    "reason": "renamed namespace: this key addresses the theorem `universal_reflection_is_the_vortex_reflection_shifted` through a namespace no file in src/proof declares any more, and lean_reflection_universal_reflection_is_the_vortex_reflection_shifted addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_reflection_universal_reflection_is_the_vortex_reflection_shifted; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_rights_claims_exactly_what_arises_without_formality",
@@ -17477,17 +17504,26 @@
   {
     "key": "lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable",
     "name": "lean index.lean: the_three_non_units_are_exactly_the_unreachable — ((List.range 9).filter (fun d => ! isUnit d)) = [0, 3, 6] ∧ ((List.range 9).filter (fun d => ! isUnit d)).all (fun d => ! span.contains d) ∧ ((List.range 9).filter isUnit).length + ((List.range 9).filter (fun d => ! isUnit d)).length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a26af379-71ef-89f8-a964-40a35713534c"
+    "receipt": "a26af379-71ef-89f8-a964-40a35713534c",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_three_non_units_are_exactly_the_unreachable",
+    "reason": "renamed namespace: this key addresses the theorem `the_three_non_units_are_exactly_the_unreachable` through a namespace no file in src/proof declares any more, and lean_windows_the_three_non_units_are_exactly_the_unreachable addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_three_non_units_are_exactly_the_unreachable; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor_the_origin_annihilates_and_never_joins_the_circuit",
     "name": "lean index.lean: the_origin_annihilates_and_never_joins_the_circuit — ((List.range 9).all (fun e => (0 * e) % 9 != 1)) ∧ (! span.contains 0) ∧ ((List.range 9).all (fun d => (d + 0) % 9 == d % 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "3846d34b-b045-84e9-81e8-1f394c089b57"
+    "receipt": "3846d34b-b045-84e9-81e8-1f394c089b57",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_origin_annihilates_and_never_joins_the_circuit",
+    "reason": "renamed namespace: this key addresses the theorem `the_origin_annihilates_and_never_joins_the_circuit` through a namespace no file in src/proof declares any more, and lean_windows_the_origin_annihilates_and_never_joins_the_circuit addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_origin_annihilates_and_never_joins_the_circuit; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor_the_sequence_is_its_named_parts_and_closes",
     "name": "lean index.lean: the_sequence_is_its_named_parts_and_closes — sequence = span ++ [3, 6, 9] ++ [0] ++ [1] ∧ sequence.length = 11 ∧ sequence.head? = sequence.getLast? ∧ 9 % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "11e07809-0f98-862b-8fca-4784591eb19f"
+    "receipt": "11e07809-0f98-862b-8fca-4784591eb19f",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_sequence_is_its_named_parts_and_closes",
+    "reason": "renamed namespace: this key addresses the theorem `the_sequence_is_its_named_parts_and_closes` through a namespace no file in src/proof declares any more, and lean_windows_the_sequence_is_its_named_parts_and_closes addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_sequence_is_its_named_parts_and_closes; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_split_the_singles_are_exactly_the_non_units",
@@ -20017,37 +20053,58 @@
   {
     "key": "lean_millenniumfloor_the_tens_complement_is_an_involution_with_one_fixed_point",
     "name": "lean index.lean: the_tens_complement_is_an_involution_with_one_fixed_point — (List.range 10).all (fun d => refl (refl d) == d) ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "e9dd9619-515b-8cef-b59e-a0a6f53f4ed4"
+    "receipt": "e9dd9619-515b-8cef-b59e-a0a6f53f4ed4",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_tens_complement_is_an_involution_with_one_fixed_point",
+    "reason": "renamed namespace: this key addresses the theorem `the_tens_complement_is_an_involution_with_one_fixed_point` through a namespace no file in src/proof declares any more, and lean_windows_the_tens_complement_is_an_involution_with_one_fixed_point addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_tens_complement_is_an_involution_with_one_fixed_point; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor_each_unit_has_exactly_one_inverse_and_each_non_unit_none",
     "name": "lean index.lean: each_unit_has_exactly_one_inverse_and_each_non_unit_none — (List.range 9).all (fun d => ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "661bba08-39e9-829b-8f28-8676f6e49b3c"
+    "receipt": "661bba08-39e9-829b-8f28-8676f6e49b3c",
+    "revoked": true,
+    "supersededBy": "lean_windows_each_unit_has_exactly_one_inverse_and_each_non_unit_none",
+    "reason": "renamed namespace: this key addresses the theorem `each_unit_has_exactly_one_inverse_and_each_non_unit_none` through a namespace no file in src/proof declares any more, and lean_windows_each_unit_has_exactly_one_inverse_and_each_non_unit_none addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_each_unit_has_exactly_one_inverse_and_each_non_unit_none; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps",
     "name": "lean index.lean: the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps — ((List.range 48).map orbit).all (fun v => v < 9) ∧ (List.range 48).all (fun k => span.contains (orbit k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "98c5c4b5-949a-8370-9138-3417dbb66119"
+    "receipt": "98c5c4b5-949a-8370-9138-3417dbb66119",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps",
+    "reason": "renamed namespace: this key addresses the theorem `the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps` through a namespace no file in src/proof declares any more, and lean_windows_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor_the_doubling_orbit_first_returns_to_one_at_six",
     "name": "lean index.lean: the_doubling_orbit_first_returns_to_one_at_six — (List.range 6).all (fun k => k == 0 || orbit k != 1) ∧ orbit 6 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "996a80a9-10d3-86eb-bd27-f0d330ab86bd"
+    "receipt": "996a80a9-10d3-86eb-bd27-f0d330ab86bd",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_doubling_orbit_first_returns_to_one_at_six",
+    "reason": "renamed namespace: this key addresses the theorem `the_doubling_orbit_first_returns_to_one_at_six` through a namespace no file in src/proof declares any more, and lean_windows_the_doubling_orbit_first_returns_to_one_at_six addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_doubling_orbit_first_returns_to_one_at_six; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor_the_span_is_exactly_the_units_of_the_ring",
     "name": "lean index.lean: the_span_is_exactly_the_units_of_the_ring — (List.range 9).all (fun d => span.contains d == isUnit d) ∧ (List.range 9).all (fun d => isUnit d || ! span.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2d45299e-ed42-8c2b-a0e0-33972bcff114"
+    "receipt": "2d45299e-ed42-8c2b-a0e0-33972bcff114",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_span_is_exactly_the_units_of_the_ring",
+    "reason": "renamed namespace: this key addresses the theorem `the_span_is_exactly_the_units_of_the_ring` through a namespace no file in src/proof declares any more, and lean_windows_the_span_is_exactly_the_units_of_the_ring addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_span_is_exactly_the_units_of_the_ring; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor_the_span_and_the_units_both_sum_to_zero_mod_nine",
     "name": "lean index.lean: the_span_and_the_units_both_sum_to_zero_mod_nine — (span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a6bd7475-788f-84c3-a775-caf6732821ca"
+    "receipt": "a6bd7475-788f-84c3-a775-caf6732821ca",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine",
+    "reason": "renamed namespace: this key addresses the theorem `the_span_and_the_units_both_sum_to_zero_mod_nine` through a namespace no file in src/proof declares any more, and lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_millenniumfloor_the_orbit_is_one_closed_loop_of_six_distinct_points",
     "name": "lean index.lean: the_orbit_is_one_closed_loop_of_six_distinct_points — orbit 6 == orbit 0 ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j))) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "10ad046c-32e7-88a7-94fd-104d84ca24dd"
+    "receipt": "10ad046c-32e7-88a7-94fd-104d84ca24dd",
+    "revoked": true,
+    "supersededBy": "lean_windows_the_orbit_is_one_closed_loop_of_six_distinct_points",
+    "reason": "renamed namespace: this key addresses the theorem `the_orbit_is_one_closed_loop_of_six_distinct_points` through a namespace no file in src/proof declares any more, and lean_windows_the_orbit_is_one_closed_loop_of_six_distinct_points addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_windows_the_orbit_is_one_closed_loop_of_six_distinct_points; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_theology_the_mirror_and_the_doubling_agree_at_no_residue",
@@ -21409,5 +21466,365 @@
     "key": "lean_reached_every_euclid_perfect_number_is_a_triangular_number",
     "name": "lean reached.lean: every_euclid_perfect_number_is_a_triangular_number — [2, 3, 5, 7].all (fun q => perfect q == sumTo (2 ^ q - 1)) ∧ perfect 2 = sumTo 3 ∧ perfect 3 = sumTo 7 ∧ perfect 5 = sumTo 31 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "0daba30f-74b7-8c51-8235-9faa30c3b2a4"
+  },
+  {
+    "key": "lean_windows_the_tens_complement_is_an_involution_with_one_fixed_point",
+    "name": "lean index.lean: the_tens_complement_is_an_involution_with_one_fixed_point — (List.range 10).all (fun d => refl (refl d) == d) ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "610c790d-3ec4-8319-949a-a68d37a0a87e"
+  },
+  {
+    "key": "lean_windows_each_unit_has_exactly_one_inverse_and_each_non_unit_none",
+    "name": "lean index.lean: each_unit_has_exactly_one_inverse_and_each_non_unit_none — (List.range 9).all (fun d => ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3d5e5db1-24a6-823a-894e-ff5c105235fb"
+  },
+  {
+    "key": "lean_windows_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps",
+    "name": "lean index.lean: the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps — ((List.range 48).map orbit).all (fun v => v < 9) ∧ (List.range 48).all (fun k => span.contains (orbit k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2935a468-9dee-892a-aa7c-9d41402172b1"
+  },
+  {
+    "key": "lean_windows_the_doubling_orbit_first_returns_to_one_at_six",
+    "name": "lean index.lean: the_doubling_orbit_first_returns_to_one_at_six — (List.range 6).all (fun k => k == 0 || orbit k != 1) ∧ orbit 6 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1e3c149d-5ef1-8b4c-9177-3f1a7023af4d"
+  },
+  {
+    "key": "lean_windows_the_span_is_exactly_the_units_of_the_ring",
+    "name": "lean index.lean: the_span_is_exactly_the_units_of_the_ring — (List.range 9).all (fun d => span.contains d == isUnit d) ∧ (List.range 9).all (fun d => isUnit d || ! span.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7478c082-a1ea-841c-84a2-136e7e433123"
+  },
+  {
+    "key": "lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine",
+    "name": "lean index.lean: the_span_and_the_units_both_sum_to_zero_mod_nine — (span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d12ad83d-55fa-8d95-b49e-cfa52f048101"
+  },
+  {
+    "key": "lean_windows_the_orbit_is_one_closed_loop_of_six_distinct_points",
+    "name": "lean index.lean: the_orbit_is_one_closed_loop_of_six_distinct_points — orbit 6 == orbit 0 ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "858c0f78-9f32-850e-b8bb-01c33d97c59f"
+  },
+  {
+    "key": "lean_windows_the_seven_rest_on_one_finite_structure",
+    "name": "lean index.lean: the_seven_rest_on_one_finite_structure — ((List.range' 1 9).all (fun d => refl (refl d) == d)) ∧ (((List.range' 1 9).filter isUnit).length = 6) ∧ (span.eraseDups.length = 6) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "35450634-f271-85c3-ab96-202cc57da954"
+  },
+  {
+    "key": "lean_windows_the_three_non_units_are_exactly_the_unreachable",
+    "name": "lean index.lean: the_three_non_units_are_exactly_the_unreachable — ((List.range 9).filter (fun d => ! isUnit d)) = [0, 3, 6] ∧ ((List.range 9).filter (fun d => ! isUnit d)).all (fun d => ! span.contains d) ∧ ((List.range 9).filter isUnit).length + ((List.range 9).filter (fun d => ! isUnit d)).length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cd57e017-aac0-854f-ab54-ee61b53d6bcd"
+  },
+  {
+    "key": "lean_windows_the_origin_annihilates_and_never_joins_the_circuit",
+    "name": "lean index.lean: the_origin_annihilates_and_never_joins_the_circuit — ((List.range 9).all (fun e => (0 * e) % 9 != 1)) ∧ (! span.contains 0) ∧ ((List.range 9).all (fun d => (d + 0) % 9 == d % 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "aef8ffc2-a2c7-8d63-ae9d-0e84c2c19011"
+  },
+  {
+    "key": "lean_windows_the_sequence_is_its_named_parts_and_closes",
+    "name": "lean index.lean: the_sequence_is_its_named_parts_and_closes — sequence = span ++ [3, 6, 9] ++ [0] ++ [1] ∧ sequence.length = 11 ∧ sequence.head? = sequence.getLast? ∧ 9 % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "45ab29f5-91b9-88b5-b2a2-a5f6bd07227a"
+  },
+  {
+    "key": "lean_reflection_universal_reflection_involution",
+    "name": "lean reflection.lean: universal_reflection_involution — (List.range 11).all (fun d => refl (refl d) == d) ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e8d107a5-5feb-8527-a9db-755d14267eaa"
+  },
+  {
+    "key": "lean_reflection_universal_centre_is_five",
+    "name": "lean reflection.lean: universal_centre_is_five — ((List.range 10).filter (fun d => refl d == d)) = [5] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0e8b9cd8-bd2d-8f01-b21c-ce878f3e114b"
+  },
+  {
+    "key": "lean_reflection_universal_pairs_sum_to_ten",
+    "name": "lean reflection.lean: universal_pairs_sum_to_ten — (List.range 11).all (fun d => d + refl d == 10) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4b46ed40-3204-859c-bf2c-39ff693995d0"
+  },
+  {
+    "key": "lean_reflection_universal_reflection_reverses_the_domain",
+    "name": "lean reflection.lean: universal_reflection_reverses_the_domain — (List.range 11).map refl = (List.range 11).reverse — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5de37d64-47bf-8d0c-b5a3-72543ef9e05a"
+  },
+  {
+    "key": "lean_reflection_universal_reflection_is_not_an_involution_above_ten",
+    "name": "lean reflection.lean: universal_reflection_is_not_an_involution_above_ten — ((List.range 10).map (fun k => k + 11)).all (fun d => ¬ (refl (refl d) == d)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "646e5d12-1c25-8b5a-8cc9-ea066c5d00d7"
+  },
+  {
+    "key": "lean_reflection_universal_z9_reflection_permutes_the_units",
+    "name": "lean reflection.lean: universal_z9_reflection_permutes_the_units — ([1, 2, 4, 5, 7, 8].map (fun d => (9 - d) % 9)) = [8, 7, 5, 4, 2, 1] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b483359d-fc1f-8d2e-90b2-8c7457f0acf9"
+  },
+  {
+    "key": "lean_reflection_universal_millennium_reflection_escapes_the_units",
+    "name": "lean reflection.lean: universal_millennium_reflection_escapes_the_units — ¬ ([1, 2, 4, 5, 7, 8].all (fun u => [1, 2, 4, 5, 7, 8].contains (refl u))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e102a05c-de93-8e7a-b193-a6600e971f77"
+  },
+  {
+    "key": "lean_reflection_universal_reflection_is_the_vortex_reflection_shifted",
+    "name": "lean reflection.lean: universal_reflection_is_the_vortex_reflection_shifted — (List.range 10).all (fun d => (10 - d) % 9 == ((9 - d) % 9 + 1) % 9) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0290b847-2769-8f10-8bd1-e08ea64e5697"
+  },
+  {
+    "key": "lean_separation_the_ring_is_the_same_around_every_hub",
+    "name": "lean separation.lean: the_ring_is_the_same_around_every_hub — pairs.all (fun p => ring p.1 == ring p.2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "319e44cd-0051-8f29-856d-30084f7ed25e"
+  },
+  {
+    "key": "lean_separation_the_ring_separates_no_two_subjects",
+    "name": "lean separation.lean: the_ring_separates_no_two_subjects — pairs.all (fun p => !(ring p.1 != ring p.2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b972a581-0a5c-8879-99ca-32698f97d5d6"
+  },
+  {
+    "key": "lean_separation_the_varying_reading_separates_every_pair",
+    "name": "lean separation.lean: the_varying_reading_separates_every_pair — pairs.length == 6 && labels.length == 28 && hubs.length == 3 && pairs.all (fun p => window p.1 != window p.2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "095828b5-6b60-832c-8826-5f709740296b"
+  },
+  {
+    "key": "lean_separation_the_ring_takes_one_value_and_the_control_takes_three",
+    "name": "lean separation.lean: the_ring_takes_one_value_and_the_control_takes_three — valuesTaken ring == 1 && valuesTaken window == 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f64b9de2-7508-824d-b3b6-9ffdd7ec9ef8"
+  },
+  {
+    "key": "lean_separation_no_label_of_the_ring_narrows_the_subject",
+    "name": "lean separation.lean: no_label_of_the_ring_narrows_the_subject — labels.all (fun d => (hubs.filter (fun h => (ring h).contains d)).length == hubs.length || (hubs.filter (fun h => (ring h).contains d)).length == 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "97da18ff-e4a2-8dd1-8b3c-fd82e2ce2b20"
+  },
+  {
+    "key": "lean_separation_every_label_of_the_varying_reading_names_one_subject",
+    "name": "lean separation.lean: every_label_of_the_varying_reading_names_one_subject — labels.all (fun d => (hubs.filter (fun h => (window h).contains d)).length == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6942e368-b774-84b5-83bf-df14a9c44010"
+  },
+  {
+    "key": "lean_separation_the_printed_balance_holds_only_when_the_soil_is_zero",
+    "name": "lean separation.lean: the_printed_balance_holds_only_when_the_soil_is_zero — (List.range 24).all (fun m => (List.range 24).all (fun s => (m == m + s) == (s == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5e72d338-36e2-8e4c-9b0c-d060d9c86fc9"
+  },
+  {
+    "key": "lean_separation_the_intended_update_is_injective_in_the_soil",
+    "name": "lean separation.lean: the_intended_update_is_injective_in_the_soil — (List.range 24).all (fun m => (List.range 24).all (fun s => (List.range 24).all (fun t => ((m + s) == (m + t)) == (s == t)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "62516b00-3ba1-8504-9b8b-04eeb31f0dbc"
+  },
+  {
+    "key": "lean_discount_the_discount_never_raises_the_figure",
+    "name": "lean discount.lean: the_discount_never_raises_the_figure — (List.range 30).all (fun raw => (List.range 30).all (fun fl => discounted raw fl ≤ raw)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1b6b870c-7fd3-8b35-b52e-b4e6221545ad"
+  },
+  {
+    "key": "lean_discount_a_figure_at_or_below_its_floor_is_worth_nothing",
+    "name": "lean discount.lean: a_figure_at_or_below_its_floor_is_worth_nothing — (List.range 30).all (fun raw => (List.range 30).all (fun fl => (raw ≤ fl) == (discounted raw fl == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "515f0a8f-30d5-8219-9f30-41735fe09e02"
+  },
+  {
+    "key": "lean_discount_a_figure_above_its_floor_is_worth_something",
+    "name": "lean discount.lean: a_figure_above_its_floor_is_worth_something — (List.range 30).all (fun raw => (List.range 30).all (fun fl => (raw > fl) == (discounted raw fl > 0))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bc7c41f3-85ae-8265-bf69-cffd143f46e6"
+  },
+  {
+    "key": "lean_discount_the_discount_is_exactly_the_excess_over_the_control",
+    "name": "lean discount.lean: the_discount_is_exactly_the_excess_over_the_control — (List.range 30).all (fun raw => (List.range 30).all (fun fl => discounted raw fl + min raw fl == raw)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6914b975-232f-8f8f-abfd-94d8b9fabe16"
+  },
+  {
+    "key": "lean_discount_the_matcher_is_blind_below_its_floor_and_not_above",
+    "name": "lean discount.lean: the_matcher_is_blind_below_its_floor_and_not_above — (List.range 16).all (fun fl => (List.range 16).all (fun a => (List.range 16).all (fun b => (!(a ≤ fl && b ≤ fl) || discounted a fl == discounted b fl) && (!(a > fl && b > fl && a != b) || discounted a fl != discounted b fl)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "386c5499-e860-8913-8af8-bb46cdc7616b"
+  },
+  {
+    "key": "lean_discount_the_measured_ring_clears_its_floor_by_eleven",
+    "name": "lean discount.lean: the_measured_ring_clears_its_floor_by_eleven — discounted 15 4 == 11 && discounted 15 4 * 100 / 28 == 39 && 15 * 100 / 28 == 53 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "89dae10d-cf1a-89eb-83f8-f4e4926375d0"
+  },
+  {
+    "key": "lean_diagonal_no_ring_addresses_the_subject_built_from_its_diagonal",
+    "name": "lean diagonal.lean: no_ring_addresses_the_subject_built_from_its_diagonal — tables.all (fun rows => !rows.contains (diagOf rows)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "703e3dcf-b5bf-808f-93b4-25fe2699920f"
+  },
+  {
+    "key": "lean_diagonal_the_diagonal_disagrees_with_subject_i_about_label_i",
+    "name": "lean diagonal.lean: the_diagonal_disagrees_with_subject_i_about_label_i — tables.all (fun rows => (List.range 3).all (fun i => bit (diagOf rows) i != bit (rows.getD i 0) i)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "730ef9f0-12ab-8bae-90c9-147f6bbf8bbb"
+  },
+  {
+    "key": "lean_diagonal_containment_takes_both_values_on_this_population",
+    "name": "lean diagonal.lean: containment_takes_both_values_on_this_population — tables.any (fun rows => rows.contains 0) && tables.any (fun rows => !rows.contains 0) && tables.all (fun rows => diagOf rows < 8) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b634fa1e-50e6-8867-954a-687959c63897"
+  },
+  {
+    "key": "lean_diagonal_the_enumeration_is_five_hundred_and_twelve_rings_of_three",
+    "name": "lean diagonal.lean: the_enumeration_is_five_hundred_and_twelve_rings_of_three — tables.length == 512 && tables.all (fun rows => rows.length == 3) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "55a16eb5-ca46-802c-88f4-c3bdc6c546ed"
+  },
+  {
+    "key": "lean_diagonal_three_labels_take_at_most_eight_values",
+    "name": "lean diagonal.lean: three_labels_take_at_most_eight_values — tables.all (fun rows => distinct rows ≤ 8 && distinct rows ≤ 2 ^ 3) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f9508d7c-50f7-8a1a-8a19-af9ee915187a"
+  },
+  {
+    "key": "lean_diagonal_the_bound_is_attained_and_so_is_its_floor",
+    "name": "lean diagonal.lean: the_bound_is_attained_and_so_is_its_floor — tables.any (fun rows => distinct rows == 3) && tables.any (fun rows => distinct rows == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "920bc983-3d89-8521-a6d0-79702b18dbea"
+  },
+  {
+    "key": "lean_diagonal_the_drawn_ring_spent_none_of_its_twenty_eight_labels",
+    "name": "lean diagonal.lean: the_drawn_ring_spent_none_of_its_twenty_eight_labels — 2 ^ 28 == 268435456 && 2 ^ 0 == 1 && 2 ^ 28 - 2 ^ 0 == 268435455 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "748cb5c5-a722-8c35-b17c-02c6fc59e55f"
+  },
+  {
+    "key": "lean_closure_nine_names_denote_seven_distinct_properties",
+    "name": "lean closure.lean: nine_names_denote_seven_distinct_properties — named.length == 9 && ((named.map table).foldl (fun acc t => if acc.contains t then acc else acc ++ [t]) ([] : List (List Bool))).length == 7 && table isUnit == table inSpan && table isOrigin == table isFixed — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3c22587c-c5a1-8a5e-bbd6-6c3db40bc56e"
+  },
+  {
+    "key": "lean_closure_the_witness_disagrees_with_property_i_at_residue_i",
+    "name": "lean closure.lean: the_witness_disagrees_with_property_i_at_residue_i — (List.range 9).all (fun i => unnamed i != (named.getD i (fun _ => false)) i) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8dc26016-dba2-847b-baa1-438e90fe5bd8"
+  },
+  {
+    "key": "lean_closure_the_witness_is_none_of_the_nine_named_properties",
+    "name": "lean closure.lean: the_witness_is_none_of_the_nine_named_properties — (List.range 9).all (fun i => table unnamed != table (named.getD i (fun _ => false))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "854423b9-fb46-8b6a-b3f6-d035dc601810"
+  },
+  {
+    "key": "lean_closure_the_witness_is_this_table",
+    "name": "lean closure.lean: the_witness_is_this_table — table unnamed == [true, false, true, true, true, true, true, true, false] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9ec95c38-a2cb-81ce-b832-0663a7b2651d"
+  },
+  {
+    "key": "lean_closure_a_property_that_is_named_is_found_among_the_named",
+    "name": "lean closure.lean: a_property_that_is_named_is_found_among_the_named — (List.range 9).any (fun i => table isUnit == table (named.getD i (fun _ => false))) && table isUnit == table (named.getD 0 (fun _ => false)) && table isUnit != table unnamed — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7c2ca875-f785-8696-8288-511977f6d0e6"
+  },
+  {
+    "key": "lean_closure_the_diagonal_escapes_nine_and_stops",
+    "name": "lean closure.lean: the_diagonal_escapes_nine_and_stops — let ten := named ++ [unnamed] let next := fun d => !((ten.getD d (fun _ => false)) d) ten.length == 10 && (List.range 9).all (fun i => table next != table (named.getD i (fun _ => false))) && table next == table unnamed && table next == tabl… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b076fdc8-1936-85f8-b4ac-0e3e807ebb63"
+  },
+  {
+    "key": "lean_closure_nine_residues_carry_five_hundred_and_twelve_properties",
+    "name": "lean closure.lean: nine_residues_carry_five_hundred_and_twelve_properties — 2 ^ 9 == 512 && R.length == 9 && named.length == 9 && 512 - 7 == 505 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "750f4bf9-6f21-848c-bd60-c831cd61c227"
+  },
+  {
+    "key": "lean_closure_the_witness_is_decided_here_and_is_no_kind_of_limit",
+    "name": "lean closure.lean: the_witness_is_decided_here_and_is_no_kind_of_limit — R.all (fun d => unnamed d == !((named.getD d (fun _ => false)) d)) && (table unnamed).length == 9 && ((table unnamed).filter (fun b => b)).length == 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2744fe5d-0c8c-8efa-94ae-ad8ffb87a7e9"
+  },
+  {
+    "key": "lean_domain_the_sequence_is_eleven_positions_that_return_to_one",
+    "name": "lean domain.lean: the_sequence_is_eleven_positions_that_return_to_one — sequence.length == 11 && sequence.head? == sequence.getLast? && sequence.eraseDups.length == 10 && (sequence.map (fun d => d % 9)).eraseDups.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9090335a-6c60-8b33-9b0d-56e31331e28f"
+  },
+  {
+    "key": "lean_domain_nine_folds_to_zero_and_reflects_to_one",
+    "name": "lean domain.lean: nine_folds_to_zero_and_reflects_to_one — 9 % 9 == 0 && refl 9 == 1 && sequence.getD 8 0 == 9 && sequence.getD 9 0 == 0 && sequence.getD 10 0 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6f17b096-a726-854a-8ce7-a9db1d06dfd9"
+  },
+  {
+    "key": "lean_domain_the_sequence_exceeds_the_residues_by_the_fold_and_the_return",
+    "name": "lean domain.lean: the_sequence_exceeds_the_residues_by_the_fold_and_the_return — sequence.length - residues.length == 2 && residues.length == 9 && sequence.drop 9 == [0, 1] && (sequence.drop 9).map refl == [10, 9] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "711c38bd-8913-8d47-a327-356af869196c"
+  },
+  {
+    "key": "lean_domain_the_diagonal_escapes_nine_over_nine_and_eleven_over_eleven",
+    "name": "lean domain.lean: the_diagonal_escapes_nine_over_nine_and_eleven_over_eleven — escapes 9 (identityRows 9) && escapes 11 (identityRows 11) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9ccbbb99-474d-8428-89e1-0fdfe74ae56e"
+  },
+  {
+    "key": "lean_domain_the_diagonal_fails_on_a_list_one_longer_than_its_domain",
+    "name": "lean domain.lean: the_diagonal_fails_on_a_list_one_longer_than_its_domain — !escapes 9 (identityRows 9 ++ [diagOver 9 (identityRows 9)]) && !escapes 11 (identityRows 11 ++ [diagOver 11 (identityRows 11)]) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8f4a1a38-d059-8095-8819-8d3fc2cd299c"
+  },
+  {
+    "key": "lean_domain_the_reach_of_the_diagonal_is_the_length_of_its_domain",
+    "name": "lean domain.lean: the_reach_of_the_diagonal_is_the_length_of_its_domain — ((List.range 12).drop 1).all (fun n => escapes n (identityRows n) && !escapes n (identityRows n ++ [diagOver n (identityRows n)])) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5351269c-0eff-8e61-ae35-18abf8ba47bd"
+  },
+  {
+    "key": "lean_domain_the_eleven_positions_are_a_walk_of_nine_residues_that_returns",
+    "name": "lean domain.lean: the_eleven_positions_are_a_walk_of_nine_residues_that_returns — (sequence.map (fun d => d % 9)).eraseDups.length == 9 && (sequence.map (fun d => d % 9)).getD 8 99 == (sequence.map (fun d => d % 9)).getD 9 88 && (sequence.map (fun d => d % 9)).getD 0 77 == (sequence.map (fun d => d % 9)).getD 10 66 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "deda3c4a-28ba-8dc7-9a88-5ec5d1a5a659"
+  },
+  {
+    "key": "lean_domain_the_diagonal_does_not_run_out_at_nine",
+    "name": "lean domain.lean: the_diagonal_does_not_run_out_at_nine — escapes 9 (identityRows 9) && !escapes 9 (identityRows 9 ++ [diagOver 9 (identityRows 9)]) && escapes 11 (identityRows 11) && 11 > 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a547995d-37a7-8ade-878b-65f35ad7a12a"
+  },
+  {
+    "key": "lean_mirror_the_reflection_is_four_pairs_and_one_centre",
+    "name": "lean mirror.lean: the_reflection_is_four_pairs_and_one_centre — swapped.length == 4 && centred.length == 1 && swapped.length * 2 + centred.length == ring.length && ring.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "73c700f9-2edb-876d-b6ec-8e859ee58932"
+  },
+  {
+    "key": "lean_mirror_the_four_pairs_are_one_nine_two_eight_three_seven_four_six",
+    "name": "lean mirror.lean: the_four_pairs_are_one_nine_two_eight_three_seven_four_six — swapped == [(1, 9), (2, 8), (3, 7), (4, 6)] && centred == [5] && refl 6 == 4 && refl 3 == 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b13b8be7-74bd-8e26-afe7-6442aaf1abd4"
+  },
+  {
+    "key": "lean_mirror_the_sequence_returns_to_the_reflection_of_its_last_new_value",
+    "name": "lean mirror.lean: the_sequence_returns_to_the_reflection_of_its_last_new_value — sequence.getD 0 99 == 1 && sequence.getD 8 99 == 9 && refl (sequence.getD 8 99) == sequence.getD 10 99 && sequence.head? == sequence.getLast? — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "68fb5bc7-0dd2-8113-badf-68f3da42b67e"
+  },
+  {
+    "key": "lean_mirror_zero_alone_has_no_mirror_inside_the_ring",
+    "name": "lean mirror.lean: zero_alone_has_no_mirror_inside_the_ring — ring.all (fun d => ring.contains (refl d)) && !(ring.contains (refl 0)) && refl 0 == 10 && 9 % 9 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7e01cd39-1c99-8168-871f-7cf2ba3575cd"
+  },
+  {
+    "key": "lean_mirror_two_quarter_turns_and_three_sixth_turns_are_one_half_turn",
+    "name": "lean mirror.lean: two_quarter_turns_and_three_sixth_turns_are_one_half_turn — 2 * 90 == 180 && 3 * 60 == 180 && 180 * 2 == 360 && 360 / 180 == 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c1e76fc5-bf89-8e15-bf35-fc200e6d8c64"
+  },
+  {
+    "key": "lean_mirror_the_triad_reflects_into_the_doubling_span",
+    "name": "lean mirror.lean: the_triad_reflects_into_the_doubling_span — [3, 6, 9].map refl == [7, 4, 1] && ([3, 6, 9].map refl).all (fun d => [1, 2, 4, 8, 7, 5].contains d) && ([3, 6, 9].map refl).all (fun d => d % 3 != 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "11ea103c-d8b9-803d-ba3d-f6d6ed5d7341"
+  },
+  {
+    "key": "lean_mirror_a_map_that_is_not_this_reflection_gives_a_different_count",
+    "name": "lean mirror.lean: a_map_that_is_not_this_reflection_gives_a_different_count — (ring.filter (fun d => (d * 2) % 9 != d && ring.contains ((d * 2) % 9) && d < (d * 2) % 9 && ((d * 2) % 9 * 2) % 9 == d)).length == 1 && (ring.filter (fun d => (d * 2) % 9 != d && ring.contains ((d * 2) % 9) && d < (d * 2) % 9 && ((d * 2) %… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a0d2d8bd-8f54-8745-91e3-719b18534123"
+  },
+  {
+    "key": "lean_mirror_the_reflection_undoes_itself_on_the_ring_and_not_beyond",
+    "name": "lean mirror.lean: the_reflection_undoes_itself_on_the_ring_and_not_beyond — ring.all (fun d => refl (refl d) == d) && refl (refl 0) == 0 && ((List.range 9).map (fun k => k + 11)).all (fun d => refl (refl d) != d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6b6da19b-e097-8e27-bdff-42b3777668bf"
+  },
+  {
+    "key": "lean_digits_the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten",
+    "name": "lean digits.lean: the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten — (List.range 11).all (fun d => d + refl d == 10) && ((List.range 100).drop 10).all (fun n => n + refl2 n == 110) && ((List.range 1000).drop 100).all (fun n => n + refl3 n == 1110) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a1764710-30a4-8198-97c0-b8eeff6b3a8a"
+  },
+  {
+    "key": "lean_digits_eight_and_eight_make_sixteen_which_reflects_to_ninety_four",
+    "name": "lean digits.lean: eight_and_eight_make_sixteen_which_reflects_to_ninety_four — 8 + 8 == 16 && refl 1 == 9 && refl 6 == 4 && refl2 16 == 94 && 16 + 94 == 110 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9f8b0583-37c5-843e-8b99-f5fb9075aa68"
+  },
+  {
+    "key": "lean_digits_eight_times_eight_is_the_pair_six_four_read_both_ways",
+    "name": "lean digits.lean: eight_times_eight_is_the_pair_six_four_read_both_ways — 8 * 8 == 64 && refl 6 == 4 && refl 4 == 6 && refl2 64 == 46 && 64 + 46 == 110 && pairNums.contains 46 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dcb2451f-7773-8e00-9630-387d21fd6043"
+  },
+  {
+    "key": "lean_digits_every_pair_written_as_two_digits_is_one_mod_nine",
+    "name": "lean digits.lean: every_pair_written_as_two_digits_is_one_mod_nine — pairNums == [19, 28, 37, 46, 55] && pairNums.all (fun n => n % 9 == 1) && pairNums.all (fun n => refl2 n % 9 == 1) && pairNums.all (fun n => n + refl2 n == 110) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ddcb12b7-fdce-8d1c-9ef8-c194ca491ca4"
+  },
+  {
+    "key": "lean_digits_reflecting_both_digits_twice_returns_the_number",
+    "name": "lean digits.lean: reflecting_both_digits_twice_returns_the_number — ((List.range 100).drop 10).all (fun n => refl2 (refl2 n) == n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "66ed9dd4-078d-870a-b519-9f660630ee26"
+  },
+  {
+    "key": "lean_digits_exactly_one_two_digit_number_reflects_past_its_width_and_it_is_ten",
+    "name": "lean digits.lean: exactly_one_two_digit_number_reflects_past_its_width_and_it_is_ten — refl 0 == 10 && refl2 10 == 100 && refl2 (refl2 10) == 10 && ((List.range 100).drop 10).filter (fun n => refl2 n > 99) == [10] && ((List.range 100).drop 10).all (fun n => (refl2 n > 99) == (n == refl 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9092d965-1ccf-8664-bbcd-99b5f883a306"
+  },
+  {
+    "key": "lean_digits_the_nines_complement_gives_no_such_constant",
+    "name": "lean digits.lean: the_nines_complement_gives_no_such_constant — ((List.range 100).drop 10).any (fun n => n + ((9 - n / 10) * 10 + (9 - n % 10)) != 110) && ((List.range 100).drop 10).all (fun n => n + ((9 - n / 10) * 10 + (9 - n % 10)) == 99) && 99 != 110 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a3dd3fb6-4721-8b0b-b4c7-c595c171c665"
+  },
+  {
+    "key": "lean_digits_the_constants_are_ten_times_the_repunits",
+    "name": "lean digits.lean: the_constants_are_ten_times_the_repunits — 10 == 10 * 1 && 110 == 10 * 11 && 1110 == 10 * 111 && 11110 == 10 * 1111 && 11 == 1 * 10 + 1 && 111 == 11 * 10 + 1 && 1111 == 111 * 10 + 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "571c43da-830f-84fa-babe-50824d929dfa"
   }
 ]

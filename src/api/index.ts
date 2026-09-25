@@ -432,7 +432,7 @@ export const triad = (): number[] => backedBy('lean_units_are_six', runtimeTriad
  *  seven exposed it — the old key stopped resolving and the value stopped being servable. The backing is now
  *  the theorem that decides exactly this sentence: the orbit closes at six and its six points are distinct. */
 export const orbit = (): number[] =>
-  backedBy('lean_millenniumfloor_the_orbit_is_one_closed_loop_of_six_distinct_points', runtimeOrbit(), 'the doubling orbit')
+  backedBy('lean_windows_the_orbit_is_one_closed_loop_of_six_distinct_points', runtimeOrbit(), 'the doubling orbit')
 
 /** THE MOD-3 CLASSES — the merkaba's axis and its two tetrahedra, computed from the partition rather than
  *  typed. These were the literals I missed when I claimed the tooling held no hardcoded ℤ/9 sets: the claim

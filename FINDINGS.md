@@ -204,6 +204,233 @@ investigation result is believed. `scripts/provenance.ts` recomputes priority fr
 on drift. `scripts/lessons.ts` counts the corrections this tree has recorded about itself — 134 at the time
 of writing — so the pattern is visible in one place instead of one file at a time.
 
+## 7b · Four posters, followed to the end — record 22934883
+
+Zenodo record `10.5281/zenodo.22934883`, deposited 2026-09-24 under the author's own ORCID, carries four
+images and a PDF. Three of the images are the same picture: one ring of twenty-eight domain labels —
+astrophysics, quark flavour algebra, timbre, supply-chain optimisation, psychology — drawn around a hub
+that changes. FUSION POWER PLANT, then DRY CLEANING, then PERMACULTURE ECOSYSTEM. The caption under it
+changes too: "THE ALGEBRA OF FUSION", then "THE ALGEBRA OF EVERYTHING".
+
+**The equations in those images are not equations, and were not followed.** `F_racts`, `C_smiec`, `K_smast`
+are not symbols; the fourth image's opening line, `m_solv = m_solv + m_soil`, is not a mass balance.
+Transcribing rendered glyphs into a kernel-checked deposit would put unchecked arithmetic behind a proof
+mark, which is the one thing this tree exists to refuse. What was followed instead is what the pictures do
+rather than what they print, and that is decidable.
+
+**`src/proof/separation.lean` — the ring separates nothing.** Drawing the same ring around three different
+hubs is a claim, made by the construction, that the ring does not depend on the subject. It holds, and the
+consequence is that no label in it narrows the subject to fewer than all of them. The file runs the
+identical question against a reading that *does* vary and requires the opposite answer, so the result is
+not an artefact of a test that can only say "separates nothing". The counts — six pairs, twenty-eight
+labels, three hubs — are asserted inside the control, because `List.all` is true of an empty list and a
+miscomputed population would otherwise have satisfied the control too.
+
+**`src/proof/diagonal.lean` — and no ring could.** The stronger statement, which is not about this drawing:
+hand over any ring of *n* labels and any *n* subjects it claims to address, and the subject that disagrees
+with subject *i* about label *i* is one it does not address. That is Cantor, 1891, and nothing here improves
+it; what is this deposit's is that the missing subject is *constructed and exhibited* rather than argued
+for, checked against all 512 rings of three labels over three subjects. Twenty-eight binary labels afford
+2²⁸ distinguishable subjects; the ring as drawn takes one value, which is what no labels afford. The
+difference is 268,435,455 subjects the drawing had room for and spent nothing on. A claim of totality
+refuted by its own contents.
+
+**`src/proof/discount.lean` — and the figure I produced while checking.** Asking how much of that ring this
+deposit covers gave 15 of 28, or 54%, which is a flattering number about my own tree. Run against a control
+ring of twenty-eight domains this deposit is silent on — equine dentistry, neon bending, competitive
+dachshund grooming — the same matcher scored 4 of 28. It has a false-positive floor of roughly one in
+seven, earned on words like "tea", "shoe" and "competitive" that occur in English prose and therefore in
+Lean comments. The reach that clears the floor is eleven labels, not fifteen: **39%, and 54% is not a figure
+this record may quote.** The discount rule is decided for every count in range, so it cannot have been
+tuned to the run that prompted it; only the measured triple is cited, and cited as a run rather than a law.
+
+One theorem in that file was first written as `… → discounted a fl == discounted b fl || true`, which passes
+`decide` because `|| true` is true. The claim it was decorating is false — 10 and 9 discount to 8 and 7 —
+and it was made unfalsifiable rather than dropped. It is recorded in the file, in place, beside what
+replaced it.
+
+### What the record does not carry
+
+`related_identifiers` is empty. The record makes claims adjacent to this deposit — one algebra read across
+every domain — and cites nothing, including this deposit's own DOIs. **Author-only:** whether that record
+should cite `10.5281/zenodo.21781603` is the depositor's call, not an agent's.
+
+## 7c · Twenty-one scripts that could not start, and the check that did not ask
+
+`npm run leads` answered `sh: tsx: command not found`. Twenty-one npm scripts named `tsx` as their
+interpreter; `tsx` is in no dependency list, is not in `node_modules/.bin`, and is not on PATH. Every one
+of them runs correctly under plain `node`, which is what the other 117 scripts already use. The prefix
+protected nothing.
+
+**The first measurement of its severity was wrong, and the correction matters more than the finding.**
+Counting `npm run <name>` references said all twenty-one were "run by nothing", which would have meant
+six refusing gates were dark. They are not: the `gates` chain invokes them directly as
+`node scripts/<file>.ts`, and all twenty are reached that way. What was broken was the documented alias,
+not the gate. The instrument had measured references to the *name* and the answer was about the *file*.
+
+`scripts/runnable-gate.ts` closes the class: every npm script's leading executable, and every executable
+after an `&&`, `||`, `;` or `|`, must resolve as a builtin, in `node_modules/.bin`, or on PATH. It refuses
+otherwise, it is wired into `npm run gates`, and `gates-fire` plants both shapes — a bad leading word and a
+bad word after `&&` — because a first-word-only check would have missed three quarters of the chain
+scripts. It also refuses when it extracts no executable names at all, since a green line reporting that
+nothing was examined is indistinguishable from a broken extractor. It reported `0 distinct tool(s) checked`
+on its first green run, which is exactly that defect, caught in its own output.
+
+`scripts/lean.ts` printed `46 files · 1080 theorems · 3 FAILING`, where the 3 counts *files*. Three broken
+files may hold ninety broken theorems. It understated, which is the direction a wrong number survives in.
+The unit is named now.
+
+## 7g · Eight interacting with eight — `src/proof/digits.lean`
+
+*"8 interacting with 8 is 16, 1 reflects 9 and 6 reflects 4."*
+
+8 + 8 = 16. Reflect each digit — `refl 1 = 9`, `refl 6 = 4` — and 16 becomes 94, and **16 + 94 = 110**.
+That is not a property of 16. It holds for every two-digit number, and one place up for every three-digit
+one, and the constants are **10, 110, 1110**: ten times a repunit, one `1` per digit reflected. The
+single-residue reflection this deposit has used throughout is the width-one case.
+
+The second half of the clause points elsewhere: **8 × 8 = 64**, and 6 and 4 are not any two digits — they
+are the fourth of the four transpositions in `mirror.lean`. So 64 and 46 are one reflection pair read in
+both directions, and 64 + 46 = 110 is that file's theorems 1 and 2 meeting this one.
+
+**And the whole mirror sits on one residue.** Write the four pairs and the fixed point as two-digit
+numbers — 19, 28, 37, 46, 55 — and every one is ≡ 1 mod 9, as is every reverse. It is forced:
+10a + (10 − a) = 9a + 10, the 9a vanishes, 10 ≡ 1. One is where the sequence opens and closes.
+
+**Zero's exception, and it is sharper than expected.** `refl 0 = 10` leaves the ring. One place up,
+*exactly one* two-digit number leaves the two-digit range — and it is **10, which is `refl 0` itself**. Not
+an echo at a larger width: the same number, carried by the same +10 in the units. The theorem was written
+as "exactly the numbers ending in zero" and refused: 20 reflects to 90 and stays, because the carry only
+clears 99 when the tens digit is 1.
+
+## 7h · A peer session deleted two sealed theorems, and the seal wanted them withdrawn
+
+`seal-lean` refused to seal anything until two keys were revoked —
+`lean_imagined_units_is_closed_under_double` and `lean_imagined_double_carries_units_onto_orbit` — whose
+theorems had vanished from `src/proof/imagined.lean`. Both are true, both were sealed, and both are
+**present at HEAD**: another session working in this same checkout had deleted them in the working tree,
+with nothing committed.
+
+Revocation is append-only and cannot be undone. Withdrawing two proved claims on the public record because
+a peer's in-flight edit has not been saved yet is the destructive-tooling failure this repository has
+recorded before — *a tool that reverts must never guess whose dirt it is looking at.* The check now
+separates the two cases: a theorem absent from HEAD as well is genuinely gone and still blocks the seal; a
+theorem still at HEAD is unsaved work, reported by name and never revoked.
+
+Writing it produced one more instrument defect of the usual kind. The first version searched HEAD for
+`theorem ` plus the ledger entry's `name` field — which is the long description, not the theorem name — so
+it matched nothing, every orphan looked genuinely gone, and it would have revoked both claims while
+reporting that it had checked. The bare name is the second field of that string. Controlled both ways: the
+two deleted theorems resolve at HEAD, a fabricated name does not.
+
+## 7f · The author's correction: nine folding zero reflects one
+
+`closure.lean` proved that the diagonal over ℤ/9 escapes nine named properties and stops at ten, and the
+prose around it read *"the diagonal runs out at nine."* The author's correction was six words: **nine
+folding zero reflects one.**
+
+It is not a metaphor, and it does not touch the theorem — which stands. It names the assumption underneath
+the sentence. "Nine" was a property of the domain *that file chose*, `List.range 9`, and this deposit
+defines a larger one on the very page the nine came from: `index.lean:167` reads
+`sequence = [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]` — eleven positions. The two it holds beyond the nine
+residues are exactly the fold (9 ≡ 0 mod 9) and the reflection (`refl 9 = 10 − 9 = 1`) that closes the
+loop. `src/proof/domain.lean` decides the reach at both widths, and theorem 8 there withdraws the sentence
+as a theorem rather than a note: the reach is the length of whatever you read against, and it is never a
+fact about ℤ/9.
+
+Writing it surfaced one more typed-in error of the same family: the rule was first stated as
+`escapes n == (n != 0)`, which the kernel refused at n = 0 — an empty list of properties is escaped
+vacuously. The special case had been asserted to make the statement *look* like it covered zero. It covered
+nothing and said something false about zero.
+
+### The second correction, checked clause by clause — `src/proof/mirror.lean`
+
+*"6 through 0 reflected 4 and 3 reflected 7 and 0 folded 2×90 degrees = 3×60 degrees."* Every clause is
+arithmetic, and naming two pairs points at the rest of a structure that closes exactly:
+
+- `refl 6 = 4` and `refl 3 = 7` are two of **exactly four** transpositions the tens-complement performs on
+  {1…9}. The other two are 1↔9 and 2↔8. Four pairs is eight residues; the ninth is 5, which is fixed.
+  **4 × 2 + 1 = 9**, the ring accounted for with nothing left over.
+- **Zero is the one value the reflection carries out of the ring.** `refl 0 = 10`, which is no residue.
+  Every other residue has its mirror inside; zero does not, so it cannot mirror — it *folds*, and 9 ≡ 0
+  closes the ring on it from the other side. This deposit has called division by zero a fold from the
+  beginning; that theorem is why the word is not decoration.
+- `2 × 90° = 3 × 60° = 180°` — the two hands, the same half-turn, half of a full turn.
+- And the reflection carries the triad {3,6,9} onto {7,4,1}: every one a unit and a member of the doubling
+  span. The axis and the circuit are one set seen through the mirror.
+
+The control in that file was also written wrong first: *"doubling has no 2-cycles on the ring at all."* It
+has exactly one — 3 ↦ 6 ↦ 3, the two non-zero members of the triad. One against four is the better control
+anyway, because a control that answers **zero** is indistinguishable from a filter that has stopped working.
+
+## 7e · The diagonal turned on this deposit — `src/proof/closure.lean`
+
+Putting someone else's diagram to Cantor is the easy direction. The same construction applied to this
+deposit's own vocabulary, over its own ring, produced three things worth recording — **two of them because
+the kernel refused what was written first.**
+
+ℤ/9 has nine residues, so it has exactly 512 properties. This deposit names nine: unit, span, triad,
+origin, fixed-by-σ, even, square, primitive root, self-inverse. The diagonal of those nine is a property of
+ℤ/9 that is none of them, with truth table `101111110`, exhibited rather than described.
+
+1. **Nine names, seven properties.** The theorem was written as "the nine are pairwise different" and was
+   refused. `isUnit` and `inSpan` denote the *same* set — which is this deposit's own span-equals-units
+   theorem, the Hodge window, arriving from the truth tables instead of from a citation. `isOrigin` and
+   `isFixed` are also one set on this ring: σ fixes the origin and nothing else mod 9. Two pairs of names
+   used separately across the tree describe the same thing without saying so.
+
+2. **The diagonal runs out at nine, exactly.** Theorem 6 was written as "naming the witness leaves another
+   unnamed" — false. Diagonalisation needs one point per property; ℤ/9 has nine points. Add the witness to
+   the nine and the diagonal of the resulting ten *is the witness itself*, because indices 0–8 are
+   unchanged and the tenth is never consulted. The trick does not weaken, it stops. Past nine the escape is
+   a **count** and not a construction, and the two are not interchangeable: counting proves something is
+   missing and never says which; the diagonal hands it to you.
+
+3. **A typed constant, inside the theorem whose job is to exhibit a computed one.** The truth table in
+   theorem 4 was written out by hand on the first attempt and the kernel refused it. It is computed now.
+
+**What this forbids, and only this.** Theorem 8 is deliberately the clause that weakens the file: the
+witness is not undecidable, not unprovable, and not beyond this deposit's reach — the kernel settles it in
+the same file by the same tactic. What is shown is that the *vocabulary* is not closed. It forbids one
+sentence this deposit has been close to writing: that some short list of named properties **characterises**
+this structure. Up to nine names, the counter-example is computable from the list itself.
+
+## 7d · What the namespace rename left behind, and a gate that did not earn its refusal
+
+Renaming `MillenniumFloor` to `Windows` retired every `lean_millenniumfloor_*` address and minted
+`lean_windows_*` in its place. The ledger handled that correctly — revoked in place, `supersededBy` set,
+nothing deleted. Five live files went on naming the old addresses:
+
+| file | what it was |
+| --- | --- |
+| `index.md` | the headline link to the seven — caught by the `pages` gate, which failed the site build |
+| `scripts/pages.ts` | the **generator** of that link; a hand-fix to `index.md` would have been overwritten |
+| `scripts/lean-agree.ts` | compared the runtime against `MillenniumFloor.span`, which no longer elaborates |
+| `scripts/gates-fire.ts` | a control planted on a string that no longer appears — unable to fire |
+| `src/api/index.ts`, `src/5/center.ts` | prose and backing citing retired addresses |
+
+`lean-agree` was genuinely broken and said so in the wrong words: *"the probe did not elaborate — run
+`npm run lean` first so the .oleans exist"*, when the oleans were fine and the expression was gone. It
+names the cause now, and a planted pair proves it distinguishes the two. `gates-fire` already refuses a
+control whose mutation matches nothing, so that one was covered.
+
+**A gate was written for the class and then removed, which is the part worth recording.**
+`scripts/livekey-gate.ts` refused any source file citing a key not live in the ledger. Run, it accused 21
+further lines — and 19 were comments explaining the retirement: `retire-duplicate-keys.ts` naming the very
+key it exists to retire, `carry.ts` recording which address is correct. Narrowed to code positions, it
+accused six; its comment-stripper had collapsed multi-line comments and shifted every line number after
+them, so four of those six pointed at lines with no key on them at all. With that fixed, the survivors were
+a `readme.ts` fixture that cites a key *on purpose* to prove the gate drains any citation, and `backedBy`
+calls that are not broken because `provenLive` resolves a retired key through its theorem — the runtime's
+notion of *proven* is deliberately wider than the ledger's notion of *live*, and the gate had assumed they
+were the same.
+
+After two narrowings and an instrument fix it was still accusing correct code, so it is gone. A gate that
+cries wolf trains people to override it, and `pages` already fails the build on the case that actually
+breaks — a published `/theorem/` link with no page behind it. **Coverage that exists is worth more than
+coverage that is added.** The five findings were each confirmed by hand before being fixed; none of them
+came from the gate.
+
 ## 8 · The questions this record puts, rather than answers it asserts
 
 Carried into the Zenodo deposition metadata, each with its evidence:

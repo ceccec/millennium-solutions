@@ -21,7 +21,7 @@ import Index
 -- standard axioms propext and Quot.sound, printed per theorem by lean.ts.
 
 namespace Flow
-open MillenniumFloor
+open Windows
 
 -- ── the period: six steps of doubling return the flow to where it was, at every step ────────────────────
 theorem the_doubling_flow_repeats_every_six_steps : ∀ k : Nat, orbit (k + 6) = orbit k := by
@@ -53,7 +53,7 @@ theorem navier_stokes_flow_is_bounded_for_every_step :
 
 
 -- ── reflections, from the orbit batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
--- orbit and span are MillenniumFloor's (index.lean), opened above — not redefined here
+-- orbit and span are Windows' (index.lean), opened above — not redefined here
 -- REFLECTION: the reverse flow (halving, ×5) steps every state back one, at every step
 theorem the_reverse_flow_undoes_every_step : ∀ k : Nat, orbit (k + 1) * 5 % 9 = orbit k := by
   intro k

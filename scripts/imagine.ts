@@ -36,6 +36,7 @@ import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTet
 import { leanFiles } from '../src/api/index.ts'
 
 const m9 = (n: number) => ((n % 9) + 9) % 9
+const RING = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 // ── the primitives, each a total map on ℤ/9 ──────────────────────────────────────────────────────────────
 const MAPS: { id: string; lean: string; say: string; f: (d: number) => number }[] = [
@@ -56,6 +57,14 @@ const MAPS: { id: string; lean: string; say: string; f: (d: number) => number }[
   { id: 'sextuple', lean: 'm9 (6 * d)',     say: 'multiplication by six',  f: (d) => m9(6 * d) },
   { id: 'septuple', lean: 'm9 (7 * d)',     say: 'multiplication by seven',f: (d) => m9(7 * d) },
   { id: 'octuple',  lean: 'm9 (8 * d)',     say: 'multiplication by eight',f: (d) => m9(8 * d) },
+  // ── THE REFLECTION WAS NOT IN THIS TABLE, AND IT IS THE OPERATOR THE DEPOSIT IS NAMED FOR ──────────────
+  // `negate` above is m9 (9 − d). The reflection this tree actually uses is d ↦ 10 − d — the tens
+  // complement, the thing index.lean calls division by zero — and reduced into the ring it is m9 (10 − d),
+  // which is m9 (1 − d) and is NOT the same map as negation: negate fixes 0, reflect sends it to 1.
+  // Every theorem about it in src/proof was written by hand, one file at a time, while the generator that
+  // exists to propose exactly these statements had never been told the map existed. The vocabulary was the
+  // limit, as this file's own header says it always is.
+  { id: 'reflect',  lean: 'm9 (10 - d)',    say: 'the reflection',         f: (d) => m9(10 - d) },
 ]
 
 // ── the subsets, each a named structure the deposit already talks about ──────────────────────────────────
@@ -77,6 +86,28 @@ const SETS: { id: string; lean: string; say: string; s: number[] }[] = [
   { id: 'squares', lean: '[0, 1, 4, 7]', say: 'the squares mod nine', s: [0, 1, 4, 7] },
   { id: 'cubes',   lean: '[0, 1, 8]',    say: 'the cubes mod nine',   s: [0, 1, 8] },
 ]
+// ── THREE MORE STRUCTURES, DERIVED RATHER THAN LISTED ───────────────────────────────────────────────────
+// src/proof/closure.lean named nine properties of ℤ/9 that this deposit reasons about, and three of them
+// were structures this generator had no word for: the primitive roots, the self-inverse residues, and the
+// residues the reflection fixes. Each is COMPUTED from the ring below — a literal here would be a fourth
+// copy of a set the tree already proves, which is the defect the note above this table records.
+const selfInv = RING.filter((d) => m9(d * d) === 1)
+const reflFixed = RING.filter((d) => m9(10 - d) === d)
+const isPrimitiveRoot = (g: number) => {
+  const seen = new Set<number>()
+  let x = 1
+  for (let k = 1; k <= 9; k++) { x = m9(x * g); seen.add(x) }
+  return apiUnits().map(m9).every((u) => seen.has(u)) && seen.size === apiUnits().length
+}
+const primitives = RING.filter(isPrimitiveRoot)
+for (const [id, say, s] of [['primitives', 'the primitive roots', primitives],
+                            ['selfinv', 'the self-inverse residues', selfInv],
+                            ['reflfixed', 'the residues the reflection fixes', reflFixed]] as [string, string, number[]][]) {
+  // A SET THAT CAME OUT EMPTY WOULD MAKE EVERY PROPOSAL ABOUT IT VACUOUSLY TRUE, and `all` over nothing is
+  // the failure this repository keeps finding. An empty structure is dropped with its name said, not fed in.
+  if (!s.length) { console.log(`  ○ ${say}: computed empty on this ring — not proposed about`); continue }
+  SETS.push({ id, lean: asLean(s), say, s })
+}
 
 type Cand = { key: string; prop: string; say: string; kind: string; holds: boolean }
 const cands: Cand[] = []

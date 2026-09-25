@@ -5,18 +5,18 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `0e0001f2-7994-8e1a-bcd7-b85db565050e`.
+`npm run forensic`. Content-address `d151cb62-cdc2-83b8-99c4-8fd91f615fbd`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **2,925** |
-| standing — proved and sealed | 969 |
-| carried — withdrawn, proved by a live theorem | 435 |
+| ledger entries | **3,152** |
+| standing — proved and sealed | 1,110 |
+| carried — withdrawn, proved by a live theorem | 521 |
 | withdrawn — nothing currently proves them | 1,521 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 603 |
+| commits that changed ledger state | 614 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 
@@ -44,10 +44,10 @@ At least one of them was recoverable: `thue_morse_doubling_recurrence` was withd
 | date | net withdrawn | commit | subject |
 |---|---:|---|---|
 | 2026-08-20 | 1,864 | `e6bb01bb5` | gates: green the three that were red — by fixing the authority |
+| 2026-09-25 | 67 | `dcbb798ac` | provenance knew three records; there are 241 — and the three t |
 | 2026-08-20 | 25 | `959f8af2a` | lean: verify once instead of twice, and cache what the kernel  |
 | 2026-09-04 | 24 | `5d319470d` | Item 12 executed: 24 duplicate addresses retired, and it broke |
 | 2026-09-14 | 19 | `1c1b53f9a` | Nineteen more certificates become laws — the energy, speed, li |
-| 2026-09-07 | 13 | `301c67798` | `namespace Classical` shadowed Lean's, in a deposit whose stan |
 
 ## What this record does NOT establish
 

@@ -11,8 +11,10 @@
 --
 -- So the theorems below settle what they state. Each is a decidable window over ℤ/9, closed by exhaustion,
 -- and each is a DIFFERENT PROPOSITION from the conjecture whose name it borrows. The namespace stays
--- `MillenniumFloor` because 11 sealed ledger keys carry it and a receipt is not rewritten to fit a better
--- word; the title is prose and says what the file decides.
+-- The namespace was `MillenniumFloor` and is `Windows`, by the author's order on 2026-09-25: "remove the
+-- millennium floor and the rest of the hacks. they are not needed anymore." The old keys are not edited —
+-- a receipt is never rewritten — they are retired in favour of the new address by
+-- scripts/retire-duplicate-keys.ts, which is the append-only way to remove something.
 -- wing: the floor
 -- prior_art: named
 -- prior_art_domain: elementary number theory — the unit group of ℤ/9 and the doubling orbit
@@ -58,7 +60,7 @@
 -- `filter`/`all`/`any`/`foldr`), no axioms (pure `by decide`, never `native_decide` or `sorry`), no Mathlib.
 -- A single `lean` call verifies the file. Integrity, not truth.
 
-namespace MillenniumFloor
+namespace Windows
 
 -- ── the sequence and its derived maps — functions, never a typed-in answer ─────────────────────────────────
 def isUnit (d : Nat) : Bool := (List.range 9).any (fun e => (d * e) % 9 == 1)  -- DERIVED: d has an inverse mod 9
@@ -172,4 +174,4 @@ theorem the_sequence_is_its_named_parts_and_closes :
   := by decide
 
 
-end MillenniumFloor
+end Windows

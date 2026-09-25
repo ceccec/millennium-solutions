@@ -47,6 +47,21 @@ type Control = { gate: string; cmd: string; what: string; file: string; mutate: 
 const PREREQ = 'node scripts/locale-fold.ts'
 
 const CONTROLS: Control[] = [
+  // ── THE GATE THAT ASKS WHETHER A GATE CAN START AT ALL. Twenty-one npm scripts named `tsx`, which is in
+  //    no dependency list and on no PATH here, so `npm run leads`, `npm run vacuity` and `npm run blind`
+  //    all answered "command not found". The underlying gates were fine — the `gates` chain invokes them
+  //    by file path, which is why nothing was actually dark — but the documented way to run them was not,
+  //    and no check in this tree asked. Planted here in BOTH shapes it must catch: a bad leading word, and
+  //    a bad word after an `&&`, because checking only the first command would have missed three-quarters
+  //    of the chain scripts.
+  { gate: 'runnable (leading word)', cmd: 'node scripts/runnable-gate.ts', file: 'package.json',
+    what: 'an npm script whose interpreter is not installed anywhere',
+    mutate: (s) => s.replace('"lean":', '"__control_lead": "definitelynotarealbinary scripts/leads.ts",\n    "lean":') },
+
+  { gate: 'runnable (after &&)', cmd: 'node scripts/runnable-gate.ts', file: 'package.json',
+    what: 'the same defect in the SECOND command of a chain, where a first-word-only check would miss it',
+    mutate: (s) => s.replace('"lean":', '"__control_chain": "node scripts/leads.ts && alsonotarealbinary x",\n    "lean":') },
+
   // ── ADDED after deriving which gates had never been proven able to fail: 66 of 95 reachable scripts had
   //    no negative control, and `contradictions` — widened TWICE this session, once for the shape of a
   //    self-certifying literal and once for physical claims in published theorem names — was among them.
@@ -593,7 +608,7 @@ const CONTROLS: Control[] = [
 
   { gate: 'pages', cmd: 'node scripts/pages.ts', file: 'scripts/pages.ts',
     what: 'the front page citing a theorem that is not live in the ledger',
-    mutate: (s) => s.replace('/theorem/lean_millenniumfloor_the_seven_rest_on_one_finite_structure', '/theorem/a_key_that_was_never_sealed'),
+    mutate: (s) => s.replace('/theorem/lean_windows_the_seven_rest_on_one_finite_structure', '/theorem/a_key_that_was_never_sealed'),
     restore: 'node scripts/pages.ts' },
 
   { gate: 'orphan-gate', cmd: 'node scripts/orphan-gate.ts', file: 'package.json',

@@ -44,6 +44,11 @@ const STEPS: Step[] = [
   { name: 'gaps (nav + sidebar coverage)',   cmd: 'node scripts/gaps.ts' },
   { name: 'crypto-kat (published vectors)',  cmd: 'node scripts/crypto-kat.ts' },
   { name: 'prose-trial (every claim)',       cmd: 'node scripts/prose-trial.ts' },
+  // ADDED WITH THE RELEASE STEPS THEY MIRROR. release.yml gained a kernel stage — lean, contradictions,
+  // independent — and this mirror was not extended with it, so `npm run ci:local` reported green on a tree
+  // where two of CI's own gates had never been run locally. ci-drift found it, which is what it is for.
+  { name: 'contradictions',                  cmd: 'node scripts/contradictions.ts' },
+  { name: 'independent (claims stand alone)', cmd: 'node scripts/independent.ts' },
   // THE WORKSPACE STEPS. packages/uuidna is NOT a declared npm workspace — package.json has no
   // `workspaces` field — so these only make sense from inside that directory, which is exactly what the
   // workflows do and exactly what I got wrong.

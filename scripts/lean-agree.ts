@@ -25,7 +25,7 @@ import { execSync } from 'node:child_process'
 import { writeFileSync, unlinkSync, statSync, readFileSync } from 'node:fs'
 
 // `mod` is the MODULE (which Lean derives from the file name) and `expr` uses the NAMESPACE declared inside
-// it — index.lean is the module `Index` and the namespace `MillenniumFloor`, and conflating the two is why
+// it — index.lean is the module `Index` and the namespace `Windows` (it was `MillenniumFloor` until the floor was purged), and conflating the two is why
 // the first run could not find anything.
 // ── AND NOT ONLY CONSTANTS. A rule is as capable of drifting as a number, and worse: instruments.lean
 // decides three rules its TypeScript twins implement separately, so without this the kernel would be
@@ -59,7 +59,7 @@ const PAIRS = [
   { what: 'the modulus',        runtime: [BASE],        mod: 'Z9',      expr: 'Z9.B' },
   { what: 'the units',          runtime: units(),       mod: 'Z9',      expr: 'Z9.units' },
   { what: 'the triad',          runtime: triad(),       mod: 'Merkaba', expr: 'Merkaba.axis' },
-  { what: 'the doubling orbit', runtime: vortexOrbit(), mod: 'Index',   expr: 'MillenniumFloor.span' },
+  { what: 'the doubling orbit', runtime: vortexOrbit(), mod: 'Index',   expr: 'Windows.span' },
 
   { what: 'the time boundary',  runtime: precedesGrid(), mod: 'Instruments', raw: true,
     expr: '((List.range 12).flatMap (fun a => (List.range 12).map (fun b => if Instruments.precedes (some a) (some b) then 1 else 0))) '
@@ -187,8 +187,24 @@ writeFileSync(probe, mods.map((m) => `import ${m}`).join('\n') + '\n'
 let out = ''
 try { out = execSync(`lean ${probe}`, { encoding: 'utf8', env: ENV }) }
 catch (e) {
-  console.error('✗ lean-agree: the probe did not elaborate — run `node scripts/lean.ts` first so the .oleans exist')
-  console.error(String((e as { stdout?: string }).stdout ?? '').split('\n').slice(0, 6).join('\n'))
+  // TWO CAUSES, AND THIS NAMED ONLY THE FIRST. `MillenniumFloor.span` stopped existing when the namespace
+  // was renamed to `Windows`, and the probe's failure was reported as "run npm run lean first so the
+  // .oleans exist" — advice that is useless when the oleans are already there and the expression is the
+  // thing that is gone. Ten minutes rebuilding a tree that was already built, looking for a defect in the
+  // wrong layer. Lean says which it is, so this says which it is: an `unknown identifier` or `unknown
+  // constant` is a PAIR pointing at something the tree no longer declares, and a missing module prefix is
+  // the build. Blaming the instrument's environment for the instrument's subject, which is the mistake
+  // this repository has now recorded in three separate tools.
+  const detail = String((e as { stdout?: string }).stdout ?? '')
+  const gone = [...detail.matchAll(/unknown (?:identifier|constant)\s+'?([A-Za-z_0-9.]+)'?/g)].map((m) => m[1])
+  if (gone.length) {
+    console.error(`✗ lean-agree: the probe names ${gone.length} thing(s) the tree no longer declares: ${[...new Set(gone)].join(', ')}`)
+    console.error('  The .oleans are not the problem. A PAIR below points at a definition that was renamed or')
+    console.error('  removed — repoint it at what the tree declares now, or drop the pair with the value it compared.')
+  } else {
+    console.error('✗ lean-agree: the probe did not elaborate — run `node scripts/lean.ts` first so the .oleans exist')
+  }
+  console.error(detail.split('\n').slice(0, 6).join('\n'))
   process.exit(1)
 }
 unlinkSync(probe)

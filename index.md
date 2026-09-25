@@ -31,12 +31,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 1080 kernel-accepted declarations across 46 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `beba5ed3-fde4-8b20-b04f-6e5583d1d884`</sub>
-- 878 of those 1080 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
-  <sub>SEALED · `e325dd8f-3f4f-852e-854b-a22d0d13948a`</sub>
-- 1224 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `6219d504-4de9-8456-9d99-66f809cfa56c`</sub>
+- The formal layer holds 1131 kernel-accepted declarations across 53 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `a5d52bd5-9394-8220-a63d-56a59d6acd8f`</sub>
+- 929 of those 1131 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
+  <sub>SEALED · `7ac5bcb9-b9e5-88ef-acb7-9214a0da4291`</sub>
+- 1296 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `8e313f48-6d7c-8139-acb3-eee11810665d`</sub>
 
 ## 2 · The ring
 
@@ -59,10 +59,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 3088 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `2b6fa271-e347-82e2-8deb-177b73eb39b1`</sub>
-- The count is an exact multiple of eight — 3088 is 386 octaves with no remainder.
-  <sub>SEALED · `534343c5-7416-8ee9-806c-9324b777cc7a`</sub>
+- The ledger records 3160 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `7dc2a980-8649-882f-b0ee-8b5b029bb65a`</sub>
+- The count is an exact multiple of eight — 3160 is 395 octaves with no remainder.
+  <sub>SEALED · `ab7d3a7e-674c-84eb-84c2-1032b982ea70`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -72,8 +72,8 @@ last because the orbit never reaches it.
   <sub>SEALED · `f63cc6c5-44f9-8d92-afa7-ab9483573b28`</sub>
 - 176 withdrawn entries are marked portable — the deposit's own judgement that the kernel could reach them — and 80 of those are now reached in reached.lean, each decided over its whole finite domain. The rest are a queue, not a floor: a claim this deposit says it could prove and has not is it understating what it holds.
   <sub>SEALED · `09b4450b-3016-8368-89e2-74787fa214d9`</sub>
-- How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. On this host: min(cores 10, memory 6 at ~2900MB each) minus 0 already running.
-  <sub>SEALED · `4a582f8c-919d-8d9c-a00d-95d87b2141eb`</sub>
+- How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. On this host: min(cores 10, memory 5 at ~2900MB each) minus 0 already running.
+  <sub>SEALED · `3cc8cd05-cf74-8638-992e-867ea43cfd73`</sub>
 - The tools are reachable from a program: 21 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
   <sub>SEALED · `e15edd81-96c8-81fa-8c15-b971c7cb49e5`</sub>
 - The stdio server advertises 2 of those 21 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
@@ -100,11 +100,11 @@ walked, computed from the statements themselves. Nothing is chosen for this tabl
 | 152,568,360,000 | `bezouts_identity_is_attained_and_no_smaller_combination_exists` | `demand2.lean` |
 | 4,294,967,296 | `the_nim_sum_is_a_gf2_vector_addition` | `nim.lean` |
 | 7,529,536 | `gravity_holds_prose_code_and_paths` | `mechanical.lean` |
+| 1,100,000 | `the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten` | `digits.lean` |
 | 177,147 | `every_cube_mod_nine_is_zero_one_or_eight` | `reached.lean` |
 | 131,220 | `in_a_magic_square_the_centre_is_five_and_the_corners_are_even` | `reached.lean` |
 | 96,000 | `the_area_of_an_integer_right_triangle_is_a_multiple_of_six` | `elementary.lean` |
 | 95,048 | `two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair` | `demand2.lean` |
-| 90,000 | `the_digit_sum_agrees_with_the_value_modulo_three_and_modulo_nine` | `reached.lean` |
 
 The largest domain settled here is **152,568,360,000 cases**, and it is finite — as every
 entry in this ledger is, because `by decide` works by exhausting a domain and an infinite one cannot be
@@ -114,7 +114,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-46 Lean files in 7 wings, 1080 declarations of which 1065 are theorems. The prose in this section is read out of the
+53 Lean files in 7 wings, 1131 declarations of which 1116 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -176,7 +176,17 @@ this page; there is nowhere else to keep the description in step.
 
 ### the ring
 
+**The named properties of this ring are not closed under their own diagonal** — `closure.lean`, 8 theorem(s). ring, using the nine properties its own files name. A limit exhibited rather than conceded. prior_art_search: not performed — Cantor is named above. prior_art_pool: unbounded prior_art_own: the nine named properties, the exhibited witness, and the honesty clause in theorem 8
+
 **The two-sided coin** — `coin.lean`, 12 theorem(s). One involution on ten digits, two sides, one fixed point, and one digit that leaves.
+
+**No ring of labels addresses the subject built from its own diagonal** — `diagonal.lean`, 7 theorem(s). argument nor its finite case: it is that a specific published ring of labels, drawn three times   around three different subjects and captioned "THE ALGEBRA OF EVERYTHING", is put to it by the kernel   and the subject it misses is exhibited rather than described. prior_art_search: not performed — Cantor is named above. Searching would be theatre. prior_art_pool: unbounded prior_art_own: the exhibited witness, the spend bound in theorem 7, and the controls at 3 and 4
+
+**The reflection lifts digitwise, and the constant it adds to is ten times a repunit** — `digits.lean`, 8 theorem(s). the ring's four reflection pairs, written as two-digit numbers, are all congruent to one mod nine, and   that zero's exception reappears one place up as an excursion rather than a failure. prior_art_search: not performed — complement arithmetic is named above. prior_art_pool: unbounded prior_art_own: theorem 4 (the pairs mod nine) and theorem 6 (zero's excursion), and the controls
+
+**A coverage figure is worth what its control does not already explain** — `discount.lean`, 6 theorem(s). prior_art_pool: unbounded prior_art_own: the discount rule below, and the blindness bound in theorem 5
+
+**The reach of the diagonal is the domain you read against, and nine folds past nine** — `domain.lean`, 8 theorem(s). prior_art_search: not performed — Cantor and modular arithmetic are named above. prior_art_pool: unbounded prior_art_own: the two-domain comparison, and theorem 8, which withdraws a claim made in closure.lean
 
 **Elementary arithmetic** — `elementary.lean`, 41 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
 
@@ -187,6 +197,10 @@ this page; there is nowhere else to keep the description in step.
 **What every involution gives, and what it does not** — `involution.lean`, 8 theorem(s). transpositions, and that the number of fixed points therefore matches the parity of the set, is   classical and long predates this deposit. It is the orbit-counting argument in any first course.   What is this deposit's own here is the EXHAUSTIVE decision over ℤ/9 and the measured refusal below.
 
 **The merkaba** — `merkaba.lean`, 8 theorem(s). (Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE   declaration restates a named classical result: its third conjunct 4 + 4 - 6 = 2 IS the Euler   characteristic of the tetrahedron. The comment above that theorem already named Euler; the register   did not, because prior art was routed on the FILE and a file-level row cannot say "own work except   theorem 7". No priority over Euler is claimed. What is this deposit's own here is the pairing of the   two tetrahedra with the cube Q₃ and the vertex and edge counts around it, not the characteristic. The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite algebra is re-proved here, and the two that do not (a cosine field, a bond angle in degrees) are absent on purpose — they are real trigonometry, not decidable arithmetic over ℤ/9, and padding them in would be the exact dishonesty the revocation was for.
+
+**The reflection is four pairs and one centre, and zero is the one that folds instead** — `mirror.lean`, 8 theorem(s). reflection carries out of the ring so that it must fold instead. prior_art_search: not performed — both are named above. prior_art_pool: unbounded prior_art_own: the decomposition on {1…9}, and theorem 4, which isolates zero as the exception
+
+**A reading that does not vary with what it reads separates nothing** — `separation.lean`, 8 theorem(s). by the kernel, on a specific ring of labels published on a specific day, with a control that fires. prior_art_search: not performed — both notions are named above rather than searched for. prior_art_pool: unbounded prior_art_own: the two decisions below, and the control that proves they are not vacuous
 
 **Sequences** — `sequences.lean`, 28 theorem(s). The ledger held these as TypeScript tests. Each is a classical identity with a real proof; what is done here is to DECIDE each over a stated finite range, which is what `decide` can honestly deliver — the range is named in every theorem rather than implied, and no theorem claims the general case.
 
@@ -204,13 +218,13 @@ this page; there is nowhere else to keep the description in step.
 
 **Nim** — `nim.lean`, 28 theorem(s). Nim — Bouton's theorem and Sprague–Grundy, decided.
 
-**Digit reversal** — `reversal.lean`, 30 theorem(s). Digit reversal — arithmetic, not string handling.
+**The universal reflection, and where it stops being one** — `reflection.lean`, 8 theorem(s). wing: the machine prior_art: named prior_art_domain: the method of complements prior_art_note: the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04 prior_art_search: literature search performed 2026-09-04 — see the note for the terms and the result The universal property — honestly, and COMPUTED from the sequence.
 
-**Theorems** — `theorems.lean`, 8 theorem(s). The universal property — honestly, and COMPUTED from the sequence.
+**Digit reversal** — `reversal.lean`, 30 theorem(s). Digit reversal — arithmetic, not string handling.
 
 ### the imagined
 
-**What enumeration proposed and the kernel kept** — `imagined.lean`, 118 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept** — `imagined.lean`, 116 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
 ### the record
 
@@ -224,7 +238,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-31 of 1080 declarations carry no comment of their own and are shown here as the gap they are, not
+31 of 1131 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -233,20 +247,20 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 3,088 — 386 octaves exactly |
-| standing — carries its own proof | **1065** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **502** |
+| ledger entries | 3,160 — 395 octaves exactly |
+| standing — carries its own proof | **1118** |
+| carried — withdrawn on its own evidence, proved by a live theorem | **521** |
 | withdrawn — nothing proves it | 1,521 |
-| proved in total | **1567** of 3,088 |
-| standing keys → distinct theorems | 1065 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 46 · 1065 theorems (878 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
-| proved `by decide` | 878 of 1080 |
+| proved in total | **1639** of 3,160 |
+| standing keys → distinct theorems | 1116 sealed, 0 of them keyed twice, 2 unresolvable |
+| Lean files · theorems | 53 · 1116 theorems (929 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
+| proved `by decide` | 929 of 1131 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 502 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 521 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 135 other · 35 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 154 other · 35 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -258,13 +272,13 @@ Each Clay problem has **one** theorem here, in `src/proof/index.lean`, and the t
 
 | problem | the theorem, and what it decides | cases | proof |
 |---|---|---|---|
-| Riemann Hypothesis | `the_tens_complement_is_an_involution_with_one_fixed_point`<br/>`(List.range 10).all (fun d => refl (refl d) == d) ∧ ((List.range 10).filter (fun d => refl d == ` | 100 | [lean_millenniumfloor_the_ten…](/theorem/lean_millenniumfloor_the_tens_complement_is_an_involution_with_one_fixed_point) |
-| P versus NP | `each_unit_has_exactly_one_inverse_and_each_non_unit_none`<br/>`(List.range 9).all (fun d => ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if i` | 81 | [lean_millenniumfloor_each_un…](/theorem/lean_millenniumfloor_each_unit_has_exactly_one_inverse_and_each_non_unit_none) |
-| Navier–Stokes Existence & Smoothness | `the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps`<br/>`((List.range 48).map orbit).all (fun v => v < 9) ∧ (List.range 48).all (fun k => span.contains (` | 2,304 | [lean_millenniumfloor_the_dou…](/theorem/lean_millenniumfloor_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps) |
-| Yang–Mills Existence & Mass Gap | `the_doubling_orbit_first_returns_to_one_at_six`<br/>`(List.range 6).all (fun k => k == 0 \|\| orbit k != 1) ∧ orbit 6 == 1` | 6 | [lean_millenniumfloor_the_dou…](/theorem/lean_millenniumfloor_the_doubling_orbit_first_returns_to_one_at_six) |
-| Hodge Conjecture | `the_span_is_exactly_the_units_of_the_ring`<br/>`(List.range 9).all (fun d => span.contains d == isUnit d) ∧ (List.range 9).all (fun d => isUnit ` | 81 | [lean_millenniumfloor_the_spa…](/theorem/lean_millenniumfloor_the_span_is_exactly_the_units_of_the_ring) |
-| Birch and Swinnerton-Dyer Conjecture | `the_span_and_the_units_both_sum_to_zero_mod_nine`<br/>`(span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0` | 9 | [lean_millenniumfloor_the_spa…](/theorem/lean_millenniumfloor_the_span_and_the_units_both_sum_to_zero_mod_nine) |
-| Poincaré Conjecture (resolved) | `the_orbit_is_one_closed_loop_of_six_distinct_points`<br/>`orbit 6 == orbit 0 ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit` | 36 | [lean_millenniumfloor_the_orb…](/theorem/lean_millenniumfloor_the_orbit_is_one_closed_loop_of_six_distinct_points) |
+| Riemann Hypothesis | `the_tens_complement_is_an_involution_with_one_fixed_point`<br/>`(List.range 10).all (fun d => refl (refl d) == d) ∧ ((List.range 10).filter (fun d => refl d == ` | 100 | [lean_windows_the_tens_comple…](/theorem/lean_windows_the_tens_complement_is_an_involution_with_one_fixed_point) |
+| P versus NP | `each_unit_has_exactly_one_inverse_and_each_non_unit_none`<br/>`(List.range 9).all (fun d => ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if i` | 81 | [lean_windows_each_unit_has_e…](/theorem/lean_windows_each_unit_has_exactly_one_inverse_and_each_non_unit_none) |
+| Navier–Stokes Existence & Smoothness | `the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps`<br/>`((List.range 48).map orbit).all (fun v => v < 9) ∧ (List.range 48).all (fun k => span.contains (` | 2,304 | [lean_windows_the_doubling_or…](/theorem/lean_windows_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps) |
+| Yang–Mills Existence & Mass Gap | `the_doubling_orbit_first_returns_to_one_at_six`<br/>`(List.range 6).all (fun k => k == 0 \|\| orbit k != 1) ∧ orbit 6 == 1` | 6 | [lean_windows_the_doubling_or…](/theorem/lean_windows_the_doubling_orbit_first_returns_to_one_at_six) |
+| Hodge Conjecture | `the_span_is_exactly_the_units_of_the_ring`<br/>`(List.range 9).all (fun d => span.contains d == isUnit d) ∧ (List.range 9).all (fun d => isUnit ` | 81 | [lean_windows_the_span_is_exa…](/theorem/lean_windows_the_span_is_exactly_the_units_of_the_ring) |
+| Birch and Swinnerton-Dyer Conjecture | `the_span_and_the_units_both_sum_to_zero_mod_nine`<br/>`(span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0` | 9 | [lean_windows_the_span_and_th…](/theorem/lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine) |
+| Poincaré Conjecture (resolved) | `the_orbit_is_one_closed_loop_of_six_distinct_points`<br/>`orbit 6 == orbit 0 ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit` | 36 | [lean_windows_the_orbit_is_on…](/theorem/lean_windows_the_orbit_is_one_closed_loop_of_six_distinct_points) |
 
 ## The author's claim
 
@@ -274,8 +288,8 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ## Read
 
-[The seven, one theorem per problem](/theorem/lean_millenniumfloor_the_seven_rest_on_one_finite_structure) · [the ledger](/proofs) · [the trial](/verify)
+[The seven, one theorem per problem](/theorem/lean_windows_the_seven_rest_on_one_finite_structure) · [the ledger](/proofs) · [the trial](/verify)
 
 ---
 
-*19 claims, all verified · 1065 Lean theorems · 3088 ledger entries · trial root `ab6a8a8e-314f-8a49-bdc1-4730496f2a84` · integrity, not truth*
+*19 claims, all verified · 1116 Lean theorems · 3160 ledger entries · trial root `98fc32f4-a4be-8828-90c8-f35d1b30d1da` · integrity, not truth*

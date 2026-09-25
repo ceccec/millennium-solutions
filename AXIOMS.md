@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **979** report the same thing:
+axiom fails the build rather than earning a footnote. All **1,131** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **487** definitions, and every one of them is a choice. A theorem about
+theorems rest on **609** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 487 definitions
+## What IS assumed: the 609 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -138,6 +138,24 @@ def carriesRider : List Nat := [0, 1, 3, 4, 6]
 def isVerdict : List Nat := [1, 6, 7]
 def bits : Nat → List Nat := fun m => sealed.filter (fun i => (m >>> i) % 2 == 1)
 def cleared : List Nat := [3, 4]
+```
+
+### `closure.lean` — 13 definition(s), 8 theorem(s)
+
+```lean
+def R : List Nat := List.range 9
+def isUnit (d : Nat) : Bool := d % 3 != 0                    -- z9.lean: the six units
+def inSpan (d : Nat) : Bool := [1, 2, 4, 8, 7, 5].contains d -- index.lean: the doubling span
+def isTriad (d : Nat) : Bool := [3, 6, 0].contains d          -- merkaba.lean: the axis
+def isOrigin (d : Nat) : Bool := d == 0                        -- index.lean: the annihilator
+def isFixed (d : Nat) : Bool := (9 - d) % 9 == d              -- reflection.lean: fixed by σ
+def isEven (d : Nat) : Bool := d % 2 == 0                    -- elementary.lean
+def isSquare (d : Nat) : Bool := R.any (fun k => k * k % 9 == d)
+def isPrimitive (d : Nat) : Bool := [2, 5].contains d             -- reached.lean: the primitive roots
+def isSelfInv (d : Nat) : Bool := d * d % 9 == 1
+def named : List (Nat → Bool) := [isUnit, inSpan, isTriad, isOrigin, isFixed, isEven, isSquare, isPrimitive, isSelfInv]
+def table (p : Nat → Bool) : List Bool := R.map p
+def unnamed (d : Nat) : Bool :=
 ```
 
 ### `coin.lean` — 7 definition(s), 12 theorem(s)
@@ -206,6 +224,41 @@ def sortDesc : List Nat → List Nat
 def feasible (d : Nat) (rest : List Nat) : Bool :=
 def step : List Nat → List Nat
 def hh : Nat → List Nat → Bool
+```
+
+### `diagonal.lean` — 4 definition(s), 7 theorem(s)
+
+```lean
+def bit (m i : Nat) : Bool := (m / 2 ^ i) % 2 == 1
+def diagOf (rows : List Nat) : Nat :=
+def tables : List (List Nat) :=
+def distinct (xs : List Nat) : Nat :=
+```
+
+### `digits.lean` — 4 definition(s), 8 theorem(s)
+
+```lean
+def refl (d : Nat) : Nat := 10 - d
+def refl2 (n : Nat) : Nat := refl (n / 10) * 10 + refl (n % 10)
+def refl3 (n : Nat) : Nat := refl (n / 100) * 100 + refl (n / 10 % 10) * 10 + refl (n % 10)
+def pairNums : List Nat := [1, 2, 3, 4, 5].map (fun a => a * 10 + refl a)
+```
+
+### `discount.lean` — 1 definition(s), 6 theorem(s)
+
+```lean
+def discounted (raw floor : Nat) : Nat := raw - floor
+```
+
+### `domain.lean` — 6 definition(s), 8 theorem(s)
+
+```lean
+def refl (d : Nat) : Nat := 10 - d
+def sequence : List Nat := [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]
+def residues : List Nat := List.range 9
+def diagOver (n : Nat) (rows : List (List Bool)) : List Bool :=
+def escapes (n : Nat) (rows : List (List Bool)) : Bool :=
+def identityRows (n : Nat) : List (List Bool) :=
 ```
 
 ### `elementary.lean` — 24 definition(s), 41 theorem(s)
@@ -429,6 +482,14 @@ def constantSum (m : List (Nat × Nat)) : Bool :=
 def coinLike : List (Nat × Nat) := [(0, 0), (1, 8), (2, 7), (3, 6), (4, 5)]
 ```
 
+### `lanes.lean` — 3 definition(s), 8 theorem(s)
+
+```lean
+def base (cores byMemory : Nat) : Nat := min cores byMemory
+def lanesKnown (cores byMemory running : Nat) : Nat := max 1 (base cores byMemory - running)
+def lanesUnknown (cores byMemory : Nat) : Nat := max 1 (base cores byMemory / 2)
+```
+
 ### `ledgerclaims.lean` — 3 definition(s), 8 theorem(s)
 
 ```lean
@@ -437,7 +498,7 @@ def saving (value verify : Nat) : Nat := value - verify
 def addr4 (x : Nat) : Nat := x % 16
 ```
 
-### `light.lean` — 13 definition(s), 15 theorem(s)
+### `light.lean` — 15 definition(s), 17 theorem(s)
 
 ```lean
 def c : Nat := 299792458      -- m/s, exact
@@ -453,6 +514,8 @@ def periods (seconds : Nat) : Nat := dNuCs * seconds -- caesium periods elapsed 
 def root (n : Nat) : Nat := if n == 0 then 9 else 1 + (n - 1) % 9
 def kcdDoubled : Nat := 1366     -- K_cd expressed against a unit half the size; the same luminous efficacy
 def alternative : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcdDoubled]
+def molarGas : Nat := kDigits * naDigits        -- 10⁻²⁹ · 10¹⁵ = 10⁻¹⁴ · R = 8.31446261815324 J mol⁻¹ K⁻¹
+def faraday : Nat := eDigits * naDigits        -- 10⁻²⁸ · 10¹⁵ = 10⁻¹³ · F = 96485.33212331… C mol⁻¹
 ```
 
 ### `mechanical.lean` — 5 definition(s), 127 theorem(s)
@@ -501,6 +564,16 @@ def E : List Nat := toUuidBytes [101]    -- address of "e", a leaf none of A B C
 def setAt (l : List (List Nat)) (i : Nat) (x : List Nat) : List (List Nat) :=
 ```
 
+### `mirror.lean` — 5 definition(s), 8 theorem(s)
+
+```lean
+def refl (d : Nat) : Nat := 10 - d
+def ring : List Nat := [1, 2, 3, 4, 5, 6, 7, 8, 9]
+def sequence : List Nat := [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]
+def swapped : List (Nat × Nat) := (ring.filter (fun d => refl d != d && ring.contains (refl d) && d < refl d)).map (fun d => (d, refl d))
+def centred : List Nat := ring.filter (fun d => refl d == d)
+```
+
 ### `nim.lean` — 7 definition(s), 28 theorem(s)
 
 ```lean
@@ -534,7 +607,7 @@ def entries : List Entry :=
 def statusOf (e : Entry) : Nat := e.2
 ```
 
-### `planck.lean` — 32 definition(s), 24 theorem(s)
+### `planck.lean` — 48 definition(s), 35 theorem(s)
 
 ```lean
 def ellP : Nat := 1616255       -- 1.616255(18) e-35 m
@@ -569,6 +642,22 @@ def ppm4 (digits unc : Nat) : Nat := unc * 10000000000 / digits
 def ellPInches : Nat := ellP * 10000000 / 254
 def halfUlpPpm4 (digits : Nat) : Nat := 5000000000 / digits
 def displayBudget : Nat := (halfUlpPpm4 ellP + halfUlpPpm4 tP) * cDefined / 10000000000
+def hbar : Nat := 1054571817    -- 1.054571817 e-34 J s, CODATA's rounding of h / 2π
+def missPpb (a b : Nat) : Nat := (if a > b then a - b else b - a) * 1000000000 / b
+def quantumLhs : Nat := ellP * mP * cDefined          -- scaled 10^-55
+def quantumRhs : Nat := hbar * 1000000000000          -- 10^-43 brought to 10^-55
+def gravityLhs : Nat := ellP * cDefined * cDefined              -- 10^-41
+def gravityRhs : Nat := mP * bigG * 100000000000                -- 10^-14 · 10^-16 = 10^-30, × 10^11 → 10^-41
+def acoustic : Nat := 432
+def tPtimesAcoustic : Nat := tP * acoustic        -- scaled 10^-50, as tP is
+def cSq : Nat := cDefined * cDefined                      -- 8.9875517873681764e16 m²/s², exact
+def eCharge : Nat := 1602176634                           -- 1.602176634e-19 C, SI-defined (light.lean)
+def planckEnergyMantissa : Nat := mP * cSq / eCharge      -- ×10⁵ GeV
+def lhcGeV : Nat := 13600                                  -- 13.6 TeV, LHC Run 3
+def dimE8 : Nat := 248
+def dimSO (n : Nat) : Nat := n * (n - 1) / 2
+def divisorsBelow (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
+def transverse (d : Nat) : Nat := d - 2
 ```
 
 ### `priorart.lean` — 5 definition(s), 9 theorem(s)
@@ -655,12 +744,85 @@ def bounds : List Nat := List.range' 1 50
 def largestDomainHere : Nat := 152568360000
 ```
 
+### `reached.lean` — 62 definition(s), 80 theorem(s)
+
+```lean
+def B : Nat := Z9.B
+def m9 (n : Nat) : Nat := Z9.m9 n
+def residues : List Nat := List.range B          -- 0 … 8
+def neg (d : Nat) : Nat := m9 (B - m9 d)         -- additive inverse mod 9
+def cls (d : Nat) : Nat := m9 d % 3
+def verts (n : Nat) : Nat := 2 ^ n
+def edges (n : Nat) : Nat := n * 2 ^ (n - 1)
+def hue (d : Nat) : Nat := (d * 40) % 360
+def units : List Nat := Z9.units
+def sq : List (Nat × Nat) := (List.range 8).flatMap (fun r => (List.range 8).map (fun c => (r, c)))
+def dark (p : Nat × Nat) : Bool := (p.1 + p.2) % 2 == 0
+def jumps : List (Int × Int) := [(1,2),(2,1),(-1,2),(-2,1),(1,-2),(2,-1),(-1,-2),(-2,-1)]
+def table : Nat → List Bool
+def losing (n : Nat) : Bool := (table n).getD 0 false
+def inv (u : Nat) : Nat := ((List.range B).filter (fun e => m9 (u * e) == 1)).getD 0 0
+def perfect (p : Nat) : Nat := 2 ^ (p - 1) * (2 ^ p - 1)
+def divisorSum (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
+def isPrime (n : Nat) : Bool := n > 1 && (List.range' 2 n).all (fun d => d * d > n || n % d != 0)
+def twoSquares (n : Nat) : Bool :=
+def bit (n i : Nat) : Nat := (n / 2 ^ i) % 2
+def binom : Nat → Nat → Nat
+def popcount (n : Nat) : Nat := ((List.range 8).filter (fun i => bit n i == 1)).length
+def pairs : List (Nat × Nat) := [(0,1),(0,2),(0,3),(1,2),(1,3),(2,3)]
+def deg (g : Nat) (v : Nat) : Nat :=
+def edgeCount (g : Nat) : Nat := ((List.range 6).filter (fun i => bit g i == 1)).length
+def mex (xs : List Nat) : Nat := ((List.range (xs.length + 1)).filter (fun m => !(xs.contains m))).getD 0 0
+def grundyTable : Nat → List Nat
+def grundy (n : Nat) : Nat := (grundyTable n).getD 0 0
+def beats (a b : Nat) : Bool := a % 3 == (b + 1) % 3
+def digitsOf (v n len : Nat) : List Nat := (List.range len).map (fun i => (v / n ^ i) % n)
+def partsFuel : Nat → Nat → Nat → Nat
+def p (n : Nat) : Nat := partsFuel (n + n + 4) n n
+def orbit : List Nat := (List.range 6).map (fun k => m9 (2 ^ (k + 1)))
+def digitSum (n : Nat) : Nat := ((List.range 4).map (fun i => (n / 10 ^ i) % 10)).foldl (· + ·) 0
+def collapse : Nat → Nat → Nat
+def root (n : Nat) : Nat := collapse 8 n
+def gcd9 (d : Nat) : Nat := ((List.range' 1 9).filter (fun g => d % g == 0 && 9 % g == 0)).foldl max 1
+def refl10 (d : Nat) : Nat := 10 - d
+def powersOf (u : Nat) : List Nat := (List.range 6).map (fun k => m9 (u ^ (k + 1)))
+def phi (n : Nat) : Nat := ((List.range' 1 n).filter (fun d =>
+def ind (u : Nat) : Nat := ((List.range 6).filter (fun k => m9 (2 ^ k) == u)).getD 0 0
+def jos : Nat → Nat
+def perms9 : List (List Nat) :=
+def magicCentreAndCorners (sq : List Nat) : Bool :=
+def fibPair : Nat → Nat × Nat
+def sternF : Nat → Nat → Nat
+def stern (n : Nat) : Nat := sternF 12 n
+def gcdOf (a b : Nat) : Nat := ((List.range' 1 (min a b + 1)).filter (fun g => a % g == 0 && b % g == 0)).foldl max 1
+def isQR (a p : Nat) : Bool := (List.range p).any (fun x => (x * x) % p == a % p)
+def powers7 (u : Nat) : List Nat := (List.range 6).map (fun k => (u ^ (k + 1)) % 7)
+def swap2 (n : Nat) : Nat := (n % 10) * 10 + (n / 10) % 10 + (n / 100) * 100
+def addSpan (d : Nat) : List Nat := (List.range 9).map (fun k => m9 (k * d))
+def axis3 : List Nat := [0, 3, 6]
+def powMod (b m : Nat) : Nat → Nat
+def fermatFools (n : Nat) : Bool := (List.range n).all (fun a => powMod a n n == a % n)
+def fib : Nat → Nat
+def collatzSteps : Nat → Nat → Bool
+def divisorCount (n : Nat) : Nat := ((List.range' 1 n).filter (fun d => n % d == 0)).length
+def derange : Nat → Nat
+def lucas (n : Nat) : Nat := if n == 0 then 2 else fib (n - 1) + fib (n + 1)
+def sumTo (n : Nat) : Nat := (List.range' 1 n).foldl (· + ·) 0
+def largestPow2 (n : Nat) : Nat := ((List.range 12).map (fun k => 2 ^ k)).foldl (fun acc q => if q ≤ n then q else acc) 1
+```
+
 ### `recovered.lean` — 3 definition(s), 15 theorem(s)
 
 ```lean
-def units : List Nat := [1, 2, 4, 5, 7, 8]
+def units : List Nat := Z9.units
 def triad : List Nat := [3, 6, 9]
-def pow9 (b k : Nat) : Nat := (List.range k).foldl (fun a _ => a * b % 9) 1
+def pow9 (b k : Nat) : Nat := Z9.pow9 b k
+```
+
+### `reflection.lean` — 1 definition(s), 8 theorem(s)
+
+```lean
+def refl (d : Nat) : Nat := 10 - d  -- the shared reflection r(d) = 10 − d (the ½/heart-analogue centre)
 ```
 
 ### `reversal.lean` — 6 definition(s), 30 theorem(s)
@@ -695,6 +857,17 @@ def frac64 (k p : Nat) : Nat := iroot k (p * 2 ^ (64 * k)) % 2 ^ 64
 def isPrime (n : Nat) : Bool := n >= 2 && ((List.range' 2 (n - 2)).all (fun d => d * d > n || n % d != 0))
 def firstPrimes (bound count : Nat) : List Nat := ((List.range' 2 bound).filter isPrime).take count
 def settledHere : Nat := 7
+```
+
+### `separation.lean` — 6 definition(s), 8 theorem(s)
+
+```lean
+def hubs : List Nat := [0, 1, 2]
+def labels : List Nat := List.range 28
+def ring (_hub : Nat) : List Nat := labels
+def window (hub : Nat) : List Nat := labels.filter (fun d => d % 3 == hub)
+def pairs : List (Nat × Nat) := hubs.flatMap (fun a => (hubs.filter (fun b => b != a)).map (fun b => (a, b)))
+def valuesTaken (f : Nat → List Nat) : Nat :=
 ```
 
 ### `sequences.lean` — 7 definition(s), 28 theorem(s)
@@ -753,12 +926,6 @@ def pairing : List Nat := [0, 1, 2, 3, 4, 5, 6]
 def fact : Nat → Nat
 ```
 
-### `theorems.lean` — 1 definition(s), 8 theorem(s)
-
-```lean
-def refl (d : Nat) : Nat := 10 - d  -- the shared reflection r(d) = 10 − d (the ½/heart-analogue centre)
-```
-
 ### `z9.lean` — 8 definition(s), 25 theorem(s)
 
 ```lean
@@ -795,6 +962,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**979** declarations, **0** axiom dependencies, **487** definitions they rest on.
+**1,131** declarations, **0** axiom dependencies, **609** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

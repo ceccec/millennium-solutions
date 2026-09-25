@@ -1,4 +1,9 @@
--- title: Theorems
+-- title: The universal reflection, and where it stops being one
+--
+-- TWO HACKS REMOVED TOGETHER, by the author's order on 2026-09-25. The title was "Theorems", which names
+-- nothing — every file here holds theorems. And the namespace was `MillenniumFloor.Universal`: a namespace
+-- rooted in ANOTHER file's concept, so this file's keys carried a word about the Clay floor while deciding
+-- the ten's complement. It is `Reflection` now, which is what it decides.
 -- wing: the machine
 -- prior_art: named
 -- prior_art_domain: the method of complements
@@ -12,7 +17,7 @@
 -- centre (the heart). That shared structure is real; it is still not a proof of any conjecture. No anchors, no
 -- axioms, every proof `by decide`, no Mathlib.
 
-namespace MillenniumFloor.Universal
+namespace Reflection
 
 def refl (d : Nat) : Nat := 10 - d  -- the shared reflection r(d) = 10 − d (the ½/heart-analogue centre)
 
@@ -64,4 +69,4 @@ theorem universal_millennium_reflection_escapes_the_units :
 theorem universal_reflection_is_the_vortex_reflection_shifted :
   (List.range 10).all (fun d => (10 - d) % 9 == ((9 - d) % 9 + 1) % 9) := by decide
 
-end MillenniumFloor.Universal
+end Reflection

@@ -163,8 +163,39 @@ if (orphans.length) {
     writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
     console.log(`  ✓ revoked ${stillOrphaned.length} in place — receipts kept, claims withdrawn`)
   } else if (stillOrphaned.length) {
-    console.log('  run with --revoke-orphans to withdraw them (receipts kept, chain intact)')
-    process.exit(1)
+    // ── A DELETION NOBODY HAS COMMITTED IS NOT A WITHDRAWAL ──────────────────────────────────────────────
+    // Revocation is append-only and irreversible: once a key is marked revoked, the claim is withdrawn on
+    // the public record. This refused to seal anything until two keys were revoked whose theorems had been
+    // deleted from src/proof/imagined.lean IN THE WORKING TREE ONLY — both still present at HEAD, both
+    // true, both removed by another session working in this same checkout with nothing committed.
+    //
+    // Withdrawing a proved claim because a peer's in-flight edit has not been saved yet is the destructive
+    // failure this repository has recorded before: a tool that reverts must never guess whose dirt it is
+    // looking at. So the two cases are separated. A theorem absent from HEAD as well is genuinely gone and
+    // still blocks. A theorem still at HEAD is somebody's unsaved work: it is reported loudly, by name,
+    // and it does not force an irreversible withdrawal on the strength of an unsaved file.
+    // THE THEOREM NAME IS NOT THE LEDGER NAME. A ledger entry's `name` is the long description —
+    // "lean imagined.lean: units_is_closed_under_double — [1, 2, 4, …". Searching HEAD for `theorem ` plus
+    // that whole string matches nothing, which made every orphan look genuinely gone and would have
+    // revoked two true claims on an unsaved file. The bare name is the second field.
+    const theoremName = (e: { name: string; key: string }): string =>
+      e.name.match(/^lean\s+\S+:\s+(\S+)/)?.[1] ?? e.key.replace(/^lean_/, '')
+    const atHead = (e: { name: string; key: string }): boolean => {
+      try { return execSync(`git grep -lF ${JSON.stringify('theorem ' + theoremName(e))} HEAD -- src/proof/`, { stdio: 'pipe', encoding: 'utf8' }).trim().length > 0 }
+      catch { return false }
+    }
+    const uncommitted = stillOrphaned.filter((o) => atHead(o))
+    const reallyGone = stillOrphaned.filter((o) => !uncommitted.includes(o))
+    if (uncommitted.length) {
+      console.log(`  ○ ${uncommitted.length} of these are present at HEAD and missing only from the WORKING TREE —`)
+      console.log(`    an uncommitted deletion, not a withdrawal. Not revoked, because revocation cannot be undone:`)
+      for (const o of uncommitted) console.log(`      ${o.key}  →  theorem ${theoremName(o)}`)
+      console.log(`    Restore them, or commit the deletion and re-run — then they are genuinely gone and this refuses.`)
+    }
+    if (reallyGone.length) {
+      console.log(`  ✗ ${reallyGone.length} have no source at HEAD either — run with --revoke-orphans to withdraw them`)
+      process.exit(1)
+    }
   }
 }
 

@@ -17548,5 +17548,1415 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "9e420848-d43d-8697-99b3-0a9daef48263"
+  },
+  {
+    "key": "lean_lanes_a_lane_is_always_granted",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d5814a1b-e4b8-8fc4-90db-e2a872f654e9"
+  },
+  {
+    "key": "lean_lanes_lanes_never_exceed_the_cores_but_for_the_floor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "da821612-6f51-8848-9d55-b47106e30b90"
+  },
+  {
+    "key": "lean_lanes_lanes_never_exceed_what_memory_affords",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "06b34bd0-88e6-8625-8f21-6a5561891cb3"
+  },
+  {
+    "key": "lean_lanes_unknown_is_never_better_than_measuring_an_empty_machine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6a59c635-dc50-881f-ade7-ad6c9f6264d8"
+  },
+  {
+    "key": "lean_lanes_more_memory_never_costs_a_lane",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "19fd5ad4-81ee-833c-aa54-63ef154c06bf"
+  },
+  {
+    "key": "lean_lanes_more_neighbours_never_buys_a_lane",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0c54d172-0e9b-8b57-a9b1-8e2c88bd9686"
+  },
+  {
+    "key": "lean_lanes_the_fallback_costs_half_the_lanes_at_the_size_that_prompted_this",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5c562e3e-3039-893e-ad0b-a2458128ca8c"
+  },
+  {
+    "key": "lean_lanes_an_unmeasurable_host_still_builds_and_still_fits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eeebd599-e5f1-8b89-bb05-d81bfef644d4"
+  },
+  {
+    "key": "lean_claimed_every_residue_has_an_additive_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7274f321-df89-8dee-8f47-3808da94dd68"
+  },
+  {
+    "key": "lean_claimed_negation_is_an_involution_with_zero_its_own_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "37ed49b4-c2fb-824d-90fa-9120024037b3"
+  },
+  {
+    "key": "lean_claimed_the_mod_three_classes_partition_the_ring_into_three_threes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bd2a7f53-3974-88da-af3d-ef73bf47fec5"
+  },
+  {
+    "key": "lean_claimed_the_two_tetrahedra_meet_the_cube_at_its_own_counts",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0ac1a560-7414-8661-a2f0-ef75f75766bd"
+  },
+  {
+    "key": "lean_claimed_the_triad_lands_on_three_hues_a_third_of_the_circle_apart",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bf46fd44-b5d1-83cf-bf9e-7c783b02c763"
+  },
+  {
+    "key": "lean_claimed_the_nine_hues_are_distinct_and_evenly_spaced",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "feeb7b6d-2a6a-832c-b558-e07fcfcbc908"
+  },
+  {
+    "key": "lean_claimed_the_units_are_closed_have_an_identity_and_every_one_has_an_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e4fddca7-e9f1-8c53-be2d-b06b6298ba13"
+  },
+  {
+    "key": "lean_claimed_zero_has_no_multiplicative_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "254eadb6-0a93-8164-9275-a6ccb7cb34c7"
+  },
+  {
+    "key": "lean_claimed_the_board_is_sixty_four_evenly_split_and_every_knight_leap_flips_the_colour",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "261f4018-dd89-8edf-b245-a66bbeb23d03"
+  },
+  {
+    "key": "lean_claimed_the_mover_loses_exactly_at_the_multiples_of_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3e02d899-d216-8979-9d6c-dcb6e5d10d2b"
+  },
+  {
+    "key": "lean_claimed_twelve_fifths_overshoot_seven_octaves_and_by_how_much",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "96bd2a9c-0e23-8d3c-942f-78df2aa6e610"
+  },
+  {
+    "key": "lean_claimed_no_hue_on_an_odd_wheel_has_an_exact_complement",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "aa80479b-5d5f-8b90-9bb0-9a183b417ee0"
+  },
+  {
+    "key": "lean_claimed_the_inverse_map_applied_twice_is_the_identity_on_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1e78d2a6-287d-8593-913b-c765f33fb428"
+  },
+  {
+    "key": "lean_claimed_the_field_of_order_four_has_four_elements",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ae3ab41c-9f38-8c28-ad59-ba553d18159e"
+  },
+  {
+    "key": "lean_claimed_the_euclid_form_gives_the_first_three_perfect_numbers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "54ce508d-ecee-8727-b7d8-1c1eec9ad3ee"
+  },
+  {
+    "key": "lean_claimed_every_odd_prime_to_fifty_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "265edfd4-d06a-8fd3-96ea-c3204fa977a3"
+  },
+  {
+    "key": "lean_claimed_pascal_is_odd_exactly_where_the_index_is_a_submask",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "da2a4aae-4ec6-828b-89e0-c756e45e1e90"
+  },
+  {
+    "key": "lean_claimed_the_live_cells_of_row_n_number_two_to_the_popcount",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1b2e9413-d1a6-8ae8-931d-b1b4b6ebeaee"
+  },
+  {
+    "key": "lean_claimed_every_graph_on_four_vertices_sums_its_degrees_to_twice_its_edges",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "04b6a0d4-e5d8-8aa1-9935-41dee27ec666"
+  },
+  {
+    "key": "lean_claimed_the_grundy_value_of_the_subtraction_game_is_the_remainder_mod_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "89fdb6a9-0a55-8a1e-88d0-07046848ad30"
+  },
+  {
+    "key": "lean_claimed_the_beat_relation_is_the_successor_in_the_trinity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "28776a3e-496b-8b2a-898d-4490dfa2cd44"
+  },
+  {
+    "key": "lean_claimed_a_digit_and_its_balance_close_both_the_ring_and_the_circle",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f39405d0-db02-8c05-a546-655dfc5460b3"
+  },
+  {
+    "key": "lean_claimed_every_map_from_more_pigeons_than_holes_repeats",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e6c627fb-f1be-8b4e-810e-c98a9327ec0a"
+  },
+  {
+    "key": "lean_claimed_the_partition_numbers_to_eight_are_the_ones_the_ledger_stated",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8fa4cfb7-977a-89a0-bab0-4aff2bf65f5c"
+  },
+  {
+    "key": "lean_claimed_the_doubling_orbit_is_the_unit_group_and_two_generates_it",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "68d8d174-b2bd-8e2c-a903-8c5c2047f742"
+  },
+  {
+    "key": "lean_claimed_the_digit_sum_collapse_and_the_residue_are_the_same_map",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8751a8f4-ad56-856c-98e9-3e0b744773db"
+  },
+  {
+    "key": "lean_claimed_the_step_is_the_circle_divided_by_the_base_and_nine_steps_close_it",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0966a9d8-9f9b-851b-8fc3-9d6d61372c9d"
+  },
+  {
+    "key": "lean_claimed_the_units_are_exactly_the_residues_coprime_to_the_base",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d3d6739c-05a2-8fa1-a880-d9cce5218b4a"
+  },
+  {
+    "key": "lean_claimed_the_triad_is_the_multiples_of_three_and_the_nilpotents",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2f11b5e5-9101-84d6-8a37-ecbd3c07d053"
+  },
+  {
+    "key": "lean_claimed_the_unit_group_sums_to_zero_and_its_product_is_the_reflection_of_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "28ced42f-55ed-8700-922c-f434cd419e8e"
+  },
+  {
+    "key": "lean_claimed_the_step_base_factors_as_two_to_the_fourth_times_three_cubed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8e39fb0a-de01-89e3-ac8c-aa18ecab3c7e"
+  },
+  {
+    "key": "lean_claimed_the_tens_complement_fixes_exactly_the_centre",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a2365fc3-f51e-8daf-93c6-e74cde8870c7"
+  },
+  {
+    "key": "lean_claimed_the_balancing_complement_permutes_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5c72da69-f790-8bc3-942b-d27b116ca370"
+  },
+  {
+    "key": "lean_claimed_every_cube_mod_nine_is_zero_one_or_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "860ca08f-7e81-8da0-96e3-78e4add9a122"
+  },
+  {
+    "key": "lean_claimed_doubling_is_multiplication_by_two_and_the_reduction_commutes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "506662a7-e8b9-8c9d-a97c-db5e07f5bb4c"
+  },
+  {
+    "key": "lean_claimed_the_primitive_roots_are_exactly_two_and_five",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "26706c24-c08b-8592-8040-9cfba04bb28a"
+  },
+  {
+    "key": "lean_claimed_every_unit_is_a_power_of_two_for_exactly_one_exponent",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "76c7672f-adb5-8019-8998-441faab72ba9"
+  },
+  {
+    "key": "lean_claimed_the_index_carries_multiplication_to_addition_mod_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c210bb7d-f1fe-826c-9ec5-edf4dddc89f6"
+  },
+  {
+    "key": "lean_claimed_no_even_position_ever_survives",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5be4e76d-c9ca-8968-821f-652aa79e39a3"
+  },
+  {
+    "key": "lean_claimed_in_a_magic_square_the_centre_is_five_and_the_corners_are_even",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "254feb4f-e96c-8637-9967-02b901ffe92e"
+  },
+  {
+    "key": "lean_claimed_the_pisano_period_mod_nine_is_twenty_four_and_four_times_the_doubling_order",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "72ec91fc-4672-8ff6-b323-1193d8177954"
+  },
+  {
+    "key": "lean_claimed_each_stern_row_sums_to_a_power_of_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ba79a8ad-c8de-854e-9c5e-ec6d7c18194d"
+  },
+  {
+    "key": "lean_claimed_a_euclid_triple_is_primitive_exactly_when_its_seeds_are_coprime_and_opposite",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d4186368-2e8d-8171-a101-5a7726b60545"
+  },
+  {
+    "key": "lean_claimed_the_product_of_two_sums_of_squares_is_a_sum_of_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "749f2206-4967-8112-8e54-4d3e2b656075"
+  },
+  {
+    "key": "lean_claimed_minus_one_is_a_square_mod_p_exactly_when_p_is_one_mod_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "49b42c5d-424d-8e23-810d-4ae91409b81e"
+  },
+  {
+    "key": "lean_claimed_two_is_a_square_mod_p_exactly_when_p_is_one_or_seven_mod_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ba36da36-2a55-8575-9205-dafacee68285"
+  },
+  {
+    "key": "lean_claimed_reciprocity_holds_for_every_pair_of_odd_primes_below_thirty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "46893c0f-6ad4-8dbd-85f9-61e1f0b5c260"
+  },
+  {
+    "key": "lean_claimed_the_nine_point_wheel_the_dashboard_draws_closes_the_circle",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f2f76fca-b6b7-8293-b0f5-1df35f4e15c2"
+  },
+  {
+    "key": "lean_claimed_the_units_plus_one_distinguished_element_number_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a115c2de-7f52-86ab-8cde-7eb0f3286b53"
+  },
+  {
+    "key": "lean_claimed_the_digital_root_carries_both_sum_and_product",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "63c66d1c-468c-84f6-95bb-135fe77c1066"
+  },
+  {
+    "key": "lean_claimed_the_six_units_fall_into_three_pairs_that_sum_to_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7e4b173e-fea9-8e7e-90ac-b43482170671"
+  },
+  {
+    "key": "lean_planck_the_acoustic_and_planck_frequencies_are_forty_orders_apart_not_eighteen",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e35d35c1-6b3c-8d78-a4ef-9be92b58d075"
+  },
+  {
+    "key": "lean_planck_this_file_decides_arithmetic_on_digits_and_not_a_physical_theory",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9a95e897-92c7-887c-b2e2-489251b7f999"
+  },
+  {
+    "key": "lean_claimed_three_generates_the_units_mod_seven_and_they_number_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c2f5111c-9d5f-8340-bf4c-a9829052569b"
+  },
+  {
+    "key": "lean_claimed_the_two_unit_groups_are_cyclic_of_order_six_and_correspond_by_index",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3ccaf424-709a-8f2e-a334-f07d716e040c"
+  },
+  {
+    "key": "lean_claimed_the_nines_check_fires_exactly_when_the_error_is_not_a_multiple_of_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ff48fa6e-2e3c-8357-85a4-6b14bab4655d"
+  },
+  {
+    "key": "lean_claimed_the_nines_check_cannot_see_a_transposition_and_the_elevens_check_can",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "07913f61-c367-88e7-b7cd-293b5117872e"
+  },
+  {
+    "key": "lean_claimed_five_is_the_reflection_fixed_point_and_the_inverse_of_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f267d62d-7719-8edf-b392-536dd916f3f6"
+  },
+  {
+    "key": "lean_claimed_the_nonzero_residues_vanish_exactly_for_an_odd_modulus",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1b9819dc-3f83-82da-bbba-31387529f9bd"
+  },
+  {
+    "key": "lean_planck_the_planck_energy_derives_from_the_mass_and_the_defined_constants",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9aff2232-e0ed-869b-a221-c4470a0b0c2c"
+  },
+  {
+    "key": "lean_planck_the_collider_sits_between_fourteen_and_fifteen_orders_below_the_planck_energy",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a18d41ba-b349-83ee-a901-98c2ce65c3f1"
+  },
+  {
+    "key": "lean_planck_this_deposits_seven_dimensions_are_index_positions_and_not_directions",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d943c7fe-8af2-8448-a50f-39329cffdad0"
+  },
+  {
+    "key": "lean_claimed_the_unit_multiplication_table_is_a_latin_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0f038a8f-f0dc-878a-9d23-0053594cd6a8"
+  },
+  {
+    "key": "lean_claimed_the_additive_generators_are_exactly_the_multiplicative_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "24bfdaf0-3db6-8106-932c-ae7748aad1dc"
+  },
+  {
+    "key": "lean_claimed_the_axis_is_closed_under_addition_and_under_multiplication_by_the_ring",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1d1fd9b9-e728-87d9-823b-4785c8a17747"
+  },
+  {
+    "key": "lean_claimed_the_ring_of_residues_is_a_field_exactly_at_a_prime_modulus",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8a3d4757-774f-8970-87a3-a5123e90fb71"
+  },
+  {
+    "key": "lean_claimed_squaring_maps_the_six_units_onto_a_closed_set_of_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7e1a75f5-a906-8334-8bca-7b3673517acb"
+  },
+  {
+    "key": "lean_planck_the_two_anomaly_free_groups_share_a_dimension_and_it_is_perfect",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6b6d6d2d-5dc0-8468-8ba6-dfacfb645a42"
+  },
+  {
+    "key": "lean_planck_the_critical_dimensions_are_their_transverse_counts_plus_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "787b56bd-3463-867f-a5a4-1b6312a79281"
+  },
+  {
+    "key": "lean_planck_the_decidable_part_is_finished_and_the_theory_is_not",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a46e678a-01f4-87c0-bbfb-097513b4a5e6"
+  },
+  {
+    "key": "lean_claimed_five_six_one_is_composite_and_fools_fermat_for_every_base",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "045a981d-914b-8a15-8933-c545ca2220e2"
+  },
+  {
+    "key": "lean_claimed_cassinis_identity_alternates_by_one_either_side_of_the_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ab652956-9752-89b5-bdc2-9637703ba1e1"
+  },
+  {
+    "key": "lean_claimed_each_binomial_row_sums_to_a_power_of_two_and_splits_evenly",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b733b8c4-f2b6-878c-b6c3-534fbeb0587f"
+  },
+  {
+    "key": "lean_claimed_a_to_the_p_returns_a_modulo_every_prime_in_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1d1c4b60-90bf-88a3-a28f-51d0bd7a50c8"
+  },
+  {
+    "key": "lean_claimed_every_start_below_a_thousand_reaches_one_within_two_hundred_steps",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "702a259b-055f-82e3-83bf-a5a2bdc15257"
+  },
+  {
+    "key": "lean_reached_every_residue_has_an_additive_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7bb8f12d-106c-8aec-8954-cd8c5a15063f"
+  },
+  {
+    "key": "lean_reached_negation_is_an_involution_with_zero_its_own_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c18c011e-871c-88d7-8f83-d8045525c132"
+  },
+  {
+    "key": "lean_reached_the_mod_three_classes_partition_the_ring_into_three_threes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d9a42e61-3b8b-8324-a4ed-38e9d8c56ae5"
+  },
+  {
+    "key": "lean_reached_the_two_tetrahedra_meet_the_cube_at_its_own_counts",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b5b25284-5ae1-832e-9007-6a80f3df8f8b"
+  },
+  {
+    "key": "lean_reached_the_triad_lands_on_three_hues_a_third_of_the_circle_apart",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "064dd433-cf48-847c-a4b2-f5e06944cdcb"
+  },
+  {
+    "key": "lean_reached_the_nine_hues_are_distinct_and_evenly_spaced",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9284c39d-4d7d-85b2-80a6-42190f799e57"
+  },
+  {
+    "key": "lean_reached_the_units_are_closed_have_an_identity_and_every_one_has_an_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "145a5b95-70eb-8682-81ab-98f8ffc524be"
+  },
+  {
+    "key": "lean_reached_zero_has_no_multiplicative_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b8e0221f-b295-8806-9b08-8fed84f192ae"
+  },
+  {
+    "key": "lean_reached_the_board_is_sixty_four_evenly_split_and_every_knight_leap_flips_the_colour",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "10fbfd33-ef4d-8883-85d2-d9652b50db88"
+  },
+  {
+    "key": "lean_reached_the_mover_loses_exactly_at_the_multiples_of_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7be4f2a0-027e-874a-8c94-bc41392d08d4"
+  },
+  {
+    "key": "lean_reached_twelve_fifths_overshoot_seven_octaves_and_by_how_much",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e56374ba-3095-8a9c-855f-9c887cb25a69"
+  },
+  {
+    "key": "lean_reached_no_hue_on_an_odd_wheel_has_an_exact_complement",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d16566b7-2afa-8c07-82cc-fa51764361a4"
+  },
+  {
+    "key": "lean_reached_the_inverse_map_applied_twice_is_the_identity_on_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9e6029dc-3fcc-8f61-a50f-d80772bd0de6"
+  },
+  {
+    "key": "lean_reached_the_field_of_order_four_has_four_elements",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "82e0d785-5678-8bf8-9162-10f64814160d"
+  },
+  {
+    "key": "lean_reached_the_euclid_form_gives_the_first_three_perfect_numbers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cb6b86b7-407e-82cb-bbc4-e8a795d1eb82"
+  },
+  {
+    "key": "lean_reached_every_odd_prime_to_fifty_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3b90597e-dabc-84c6-8289-3ef3a58b4004"
+  },
+  {
+    "key": "lean_reached_pascal_is_odd_exactly_where_the_index_is_a_submask",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1984f732-4c11-815e-8a43-1ef95db24d9d"
+  },
+  {
+    "key": "lean_reached_the_live_cells_of_row_n_number_two_to_the_popcount",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "48576bb9-7fed-8cb5-9339-5b7649969035"
+  },
+  {
+    "key": "lean_reached_every_graph_on_four_vertices_sums_its_degrees_to_twice_its_edges",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "04772a67-fdb2-8fc3-b13b-34a5d6168122"
+  },
+  {
+    "key": "lean_reached_the_grundy_value_of_the_subtraction_game_is_the_remainder_mod_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6f72bd23-f01e-8b04-8a7b-bdd3de7f6a1e"
+  },
+  {
+    "key": "lean_reached_the_beat_relation_is_the_successor_in_the_trinity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "291a09ee-4f54-8df3-857a-2a0846c82d60"
+  },
+  {
+    "key": "lean_reached_a_digit_and_its_balance_close_both_the_ring_and_the_circle",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2f6f74cf-acab-8b6b-a98c-c03ed372556c"
+  },
+  {
+    "key": "lean_reached_every_map_from_more_pigeons_than_holes_repeats",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8f8a0ac3-0a26-8e44-9821-db1458c3fb30"
+  },
+  {
+    "key": "lean_reached_the_partition_numbers_to_eight_are_the_ones_the_ledger_stated",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8cc77533-655d-8c2b-8b56-9675093b2a3b"
+  },
+  {
+    "key": "lean_reached_the_doubling_orbit_is_the_unit_group_and_two_generates_it",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "501f81c1-d960-8243-b860-d5cdebf8d0b1"
+  },
+  {
+    "key": "lean_reached_the_digit_sum_collapse_and_the_residue_are_the_same_map",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c12f2558-616d-8881-bbcf-1e1945dbc51c"
+  },
+  {
+    "key": "lean_reached_the_step_is_the_circle_divided_by_the_base_and_nine_steps_close_it",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b3e8a8a9-188a-8c98-98d0-b61d1bb897db"
+  },
+  {
+    "key": "lean_reached_the_units_are_exactly_the_residues_coprime_to_the_base",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d4ca43c5-6402-8467-8fef-1e915cec04f8"
+  },
+  {
+    "key": "lean_reached_the_triad_is_the_multiples_of_three_and_the_nilpotents",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e51abe8b-ec19-855f-9120-2f5d69e89624"
+  },
+  {
+    "key": "lean_reached_the_unit_group_sums_to_zero_and_its_product_is_the_reflection_of_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b338c020-cb23-8b12-9a1a-c1fb803c8fb5"
+  },
+  {
+    "key": "lean_reached_the_step_base_factors_as_two_to_the_fourth_times_three_cubed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "90ff8e87-28bc-85f2-8ba4-4eeee19cd004"
+  },
+  {
+    "key": "lean_reached_the_tens_complement_fixes_exactly_the_centre",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6e7471c1-11c6-8740-ae54-6d0f54924f6c"
+  },
+  {
+    "key": "lean_reached_the_balancing_complement_permutes_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5b420612-ffbd-8034-a88e-b41893ea65fe"
+  },
+  {
+    "key": "lean_reached_every_cube_mod_nine_is_zero_one_or_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7b634bf8-836e-888a-affc-ca6c5d07d10c"
+  },
+  {
+    "key": "lean_reached_doubling_is_multiplication_by_two_and_the_reduction_commutes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4f420545-5c90-8354-a509-017d8b8975dd"
+  },
+  {
+    "key": "lean_reached_the_primitive_roots_are_exactly_two_and_five",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "271157f1-d42c-850d-bbab-ec0df38a7ee7"
+  },
+  {
+    "key": "lean_reached_every_unit_is_a_power_of_two_for_exactly_one_exponent",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "367400b5-dd73-82fd-85ac-819d2eb35898"
+  },
+  {
+    "key": "lean_reached_the_index_carries_multiplication_to_addition_mod_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fbf11ffa-74df-8f30-9062-c1e35c1d14fc"
+  },
+  {
+    "key": "lean_reached_no_even_position_ever_survives",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ea530cc5-fbab-86b1-ac4b-dec984f486f8"
+  },
+  {
+    "key": "lean_reached_in_a_magic_square_the_centre_is_five_and_the_corners_are_even",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f83f1084-f619-8356-834a-5256317fe2e9"
+  },
+  {
+    "key": "lean_reached_the_pisano_period_mod_nine_is_twenty_four_and_four_times_the_doubling_order",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0e63079e-c4a0-8864-9138-1e5a5ad1ddf5"
+  },
+  {
+    "key": "lean_reached_each_stern_row_sums_to_a_power_of_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d6419803-51b0-8e96-a9db-9ee29017e6dc"
+  },
+  {
+    "key": "lean_reached_a_euclid_triple_is_primitive_exactly_when_its_seeds_are_coprime_and_opposite",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f1be7392-ac17-8d3b-b4bf-eece39c41ddc"
+  },
+  {
+    "key": "lean_reached_the_product_of_two_sums_of_squares_is_a_sum_of_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "65012d7b-5a38-8ef9-bee7-f198c6857644"
+  },
+  {
+    "key": "lean_reached_minus_one_is_a_square_mod_p_exactly_when_p_is_one_mod_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "338b21a0-d1fa-8d7c-891c-af48d33f8c75"
+  },
+  {
+    "key": "lean_reached_two_is_a_square_mod_p_exactly_when_p_is_one_or_seven_mod_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "10d56151-db66-8114-b14a-b736fe383fd7"
+  },
+  {
+    "key": "lean_reached_reciprocity_holds_for_every_pair_of_odd_primes_below_thirty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "915fdd4b-254d-8f19-94d9-ccc981d91216"
+  },
+  {
+    "key": "lean_reached_the_nine_point_wheel_the_dashboard_draws_closes_the_circle",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "27ddbe3f-3abc-83ba-b897-febe3b63af64"
+  },
+  {
+    "key": "lean_reached_the_units_plus_one_distinguished_element_number_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3c394994-a5ed-8055-b38b-1661fbc5c81c"
+  },
+  {
+    "key": "lean_reached_the_digital_root_carries_both_sum_and_product",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4e0945ee-4151-8f81-9a5f-4f887198600d"
+  },
+  {
+    "key": "lean_reached_the_six_units_fall_into_three_pairs_that_sum_to_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "31ec41c7-74eb-8428-bd38-df2d7d3bb3a2"
+  },
+  {
+    "key": "lean_reached_three_generates_the_units_mod_seven_and_they_number_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "676222f2-9808-8f83-8bdf-a1d12c856bf2"
+  },
+  {
+    "key": "lean_reached_the_two_unit_groups_are_cyclic_of_order_six_and_correspond_by_index",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2380d44c-89c4-8567-a0d4-97d79767a124"
+  },
+  {
+    "key": "lean_reached_the_nines_check_fires_exactly_when_the_error_is_not_a_multiple_of_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b5938e21-4eef-8a16-8b43-74e657a9d277"
+  },
+  {
+    "key": "lean_reached_the_nines_check_cannot_see_a_transposition_and_the_elevens_check_can",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2384833c-aa12-81d7-b62f-86078c53539c"
+  },
+  {
+    "key": "lean_reached_five_is_the_reflection_fixed_point_and_the_inverse_of_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9354fa11-04c5-8ad1-935b-9d9277aaef83"
+  },
+  {
+    "key": "lean_reached_the_nonzero_residues_vanish_exactly_for_an_odd_modulus",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b8297a90-ce96-8d8a-b2f4-bcae96e6940c"
+  },
+  {
+    "key": "lean_reached_the_unit_multiplication_table_is_a_latin_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "97498087-0f6e-8965-aaf3-d9559b4a89cd"
+  },
+  {
+    "key": "lean_reached_the_additive_generators_are_exactly_the_multiplicative_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "afcc9dcf-249c-8897-b676-cd7c9cb5d49a"
+  },
+  {
+    "key": "lean_reached_the_axis_is_closed_under_addition_and_under_multiplication_by_the_ring",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4dc41462-ab94-8dda-9361-5619eb0c7fbb"
+  },
+  {
+    "key": "lean_reached_the_ring_of_residues_is_a_field_exactly_at_a_prime_modulus",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d5c04d6e-4348-8a8b-848b-1df8d8a8160c"
+  },
+  {
+    "key": "lean_reached_squaring_maps_the_six_units_onto_a_closed_set_of_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8883b32d-c737-8b12-aaf1-02e1472f5d7a"
+  },
+  {
+    "key": "lean_reached_five_six_one_is_composite_and_fools_fermat_for_every_base",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5d240ebb-179e-8606-b70e-201e5e0b2b89"
+  },
+  {
+    "key": "lean_reached_cassinis_identity_alternates_by_one_either_side_of_the_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c01874f6-f0f0-82a8-bbfe-3e52bf9c3bde"
+  },
+  {
+    "key": "lean_reached_each_binomial_row_sums_to_a_power_of_two_and_splits_evenly",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9ef1e391-0d8a-845c-befd-bc541152dbb1"
+  },
+  {
+    "key": "lean_reached_a_to_the_p_returns_a_modulo_every_prime_in_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "110a7ce4-8905-8d30-929a-ef99c478331f"
+  },
+  {
+    "key": "lean_reached_every_start_below_a_thousand_reaches_one_within_two_hundred_steps",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f377a54d-9042-879d-907f-92932ff98ef0"
+  },
+  {
+    "key": "lean_reached_the_number_of_divisors_is_odd_exactly_for_a_perfect_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "68113ae1-fc8c-837f-b8d7-54ce519b96e2"
+  },
+  {
+    "key": "lean_reached_euclids_formula_always_produces_a_right_triangle",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "164f5f54-17ce-87fc-bc9f-a8e49c4e86c8"
+  },
+  {
+    "key": "lean_reached_reduction_to_coprime_moduli_is_a_bijection_over_one_period",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5b8dd682-0d1d-8d78-8378-4b0e5abf9133"
+  },
+  {
+    "key": "lean_reached_the_derangements_follow_the_subfactorial_recurrence",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f6aa1159-e28b-8744-96b0-15e1a9bab532"
+  },
+  {
+    "key": "lean_reached_the_lucas_square_sits_four_either_side_of_five_fibonacci_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2748977c-c878-8980-9068-06dc406661a1"
+  },
+  {
+    "key": "lean_reached_the_digit_sum_agrees_with_the_value_modulo_three_and_modulo_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "793d8bcc-237e-8fcb-90dd-8a76c96f979e"
+  },
+  {
+    "key": "lean_reached_the_partitions_obey_eulers_pentagonal_recurrence",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4edf2fce-3187-8233-afb1-c5143eb60dad"
+  },
+  {
+    "key": "lean_reached_the_derangements_are_n_times_the_previous_with_one_alternating_correction",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e79a324a-ed4b-8922-b8ae-13f6c5fce924"
+  },
+  {
+    "key": "lean_reached_the_first_n_fibonacci_numbers_sum_to_the_term_two_further_on_less_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "36b1410a-1b7d-81c6-a486-6da816914fc2"
+  },
+  {
+    "key": "lean_reached_the_first_n_naturals_squares_and_cubes_have_their_closed_forms",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "553c05a9-1d0b-8a93-ae23-1082774345c0"
+  },
+  {
+    "key": "lean_reached_eight_triangular_numbers_plus_one_is_the_odd_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0f2ee1f2-dc4b-8294-b31e-cb44491478fa"
+  },
+  {
+    "key": "lean_reached_the_josephus_survivor_is_twice_the_remainder_above_a_power_of_two_plus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "314dc467-3737-81cc-8457-435a9cbd7e1f"
+  },
+  {
+    "key": "lean_reached_every_euclid_perfect_number_is_a_triangular_number",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0daba30f-74b7-8c51-8235-9faa30c3b2a4"
+  },
+  {
+    "key": "lean_windows_the_tens_complement_is_an_involution_with_one_fixed_point",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "610c790d-3ec4-8319-949a-a68d37a0a87e"
+  },
+  {
+    "key": "lean_windows_each_unit_has_exactly_one_inverse_and_each_non_unit_none",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3d5e5db1-24a6-823a-894e-ff5c105235fb"
+  },
+  {
+    "key": "lean_windows_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2935a468-9dee-892a-aa7c-9d41402172b1"
+  },
+  {
+    "key": "lean_windows_the_doubling_orbit_first_returns_to_one_at_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1e3c149d-5ef1-8b4c-9177-3f1a7023af4d"
+  },
+  {
+    "key": "lean_windows_the_span_is_exactly_the_units_of_the_ring",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7478c082-a1ea-841c-84a2-136e7e433123"
+  },
+  {
+    "key": "lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d12ad83d-55fa-8d95-b49e-cfa52f048101"
+  },
+  {
+    "key": "lean_windows_the_orbit_is_one_closed_loop_of_six_distinct_points",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "858c0f78-9f32-850e-b8bb-01c33d97c59f"
+  },
+  {
+    "key": "lean_windows_the_seven_rest_on_one_finite_structure",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "35450634-f271-85c3-ab96-202cc57da954"
+  },
+  {
+    "key": "lean_windows_the_three_non_units_are_exactly_the_unreachable",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cd57e017-aac0-854f-ab54-ee61b53d6bcd"
+  },
+  {
+    "key": "lean_windows_the_origin_annihilates_and_never_joins_the_circuit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "aef8ffc2-a2c7-8d63-ae9d-0e84c2c19011"
+  },
+  {
+    "key": "lean_windows_the_sequence_is_its_named_parts_and_closes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "45ab29f5-91b9-88b5-b2a2-a5f6bd07227a"
+  },
+  {
+    "key": "lean_reflection_universal_reflection_involution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e8d107a5-5feb-8527-a9db-755d14267eaa"
+  },
+  {
+    "key": "lean_reflection_universal_centre_is_five",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0e8b9cd8-bd2d-8f01-b21c-ce878f3e114b"
+  },
+  {
+    "key": "lean_reflection_universal_pairs_sum_to_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4b46ed40-3204-859c-bf2c-39ff693995d0"
+  },
+  {
+    "key": "lean_reflection_universal_reflection_reverses_the_domain",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5de37d64-47bf-8d0c-b5a3-72543ef9e05a"
+  },
+  {
+    "key": "lean_reflection_universal_reflection_is_not_an_involution_above_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "646e5d12-1c25-8b5a-8cc9-ea066c5d00d7"
+  },
+  {
+    "key": "lean_reflection_universal_z9_reflection_permutes_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b483359d-fc1f-8d2e-90b2-8c7457f0acf9"
+  },
+  {
+    "key": "lean_reflection_universal_millennium_reflection_escapes_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e102a05c-de93-8e7a-b193-a6600e971f77"
+  },
+  {
+    "key": "lean_reflection_universal_reflection_is_the_vortex_reflection_shifted",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0290b847-2769-8f10-8bd1-e08ea64e5697"
+  },
+  {
+    "key": "lean_separation_the_ring_is_the_same_around_every_hub",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "319e44cd-0051-8f29-856d-30084f7ed25e"
+  },
+  {
+    "key": "lean_separation_the_ring_separates_no_two_subjects",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b972a581-0a5c-8879-99ca-32698f97d5d6"
+  },
+  {
+    "key": "lean_separation_the_varying_reading_separates_every_pair",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "095828b5-6b60-832c-8826-5f709740296b"
+  },
+  {
+    "key": "lean_separation_the_ring_takes_one_value_and_the_control_takes_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f64b9de2-7508-824d-b3b6-9ffdd7ec9ef8"
+  },
+  {
+    "key": "lean_separation_no_label_of_the_ring_narrows_the_subject",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "97da18ff-e4a2-8dd1-8b3c-fd82e2ce2b20"
+  },
+  {
+    "key": "lean_separation_every_label_of_the_varying_reading_names_one_subject",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6942e368-b774-84b5-83bf-df14a9c44010"
+  },
+  {
+    "key": "lean_separation_the_printed_balance_holds_only_when_the_soil_is_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5e72d338-36e2-8e4c-9b0c-d060d9c86fc9"
+  },
+  {
+    "key": "lean_separation_the_intended_update_is_injective_in_the_soil",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "62516b00-3ba1-8504-9b8b-04eeb31f0dbc"
+  },
+  {
+    "key": "lean_discount_the_discount_never_raises_the_figure",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1b6b870c-7fd3-8b35-b52e-b4e6221545ad"
+  },
+  {
+    "key": "lean_discount_a_figure_at_or_below_its_floor_is_worth_nothing",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "515f0a8f-30d5-8219-9f30-41735fe09e02"
+  },
+  {
+    "key": "lean_discount_a_figure_above_its_floor_is_worth_something",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bc7c41f3-85ae-8265-bf69-cffd143f46e6"
+  },
+  {
+    "key": "lean_discount_the_discount_is_exactly_the_excess_over_the_control",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6914b975-232f-8f8f-abfd-94d8b9fabe16"
+  },
+  {
+    "key": "lean_discount_the_matcher_is_blind_below_its_floor_and_not_above",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "386c5499-e860-8913-8af8-bb46cdc7616b"
+  },
+  {
+    "key": "lean_discount_the_measured_ring_clears_its_floor_by_eleven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "89dae10d-cf1a-89eb-83f8-f4e4926375d0"
+  },
+  {
+    "key": "lean_diagonal_no_ring_addresses_the_subject_built_from_its_diagonal",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "703e3dcf-b5bf-808f-93b4-25fe2699920f"
+  },
+  {
+    "key": "lean_diagonal_the_diagonal_disagrees_with_subject_i_about_label_i",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "730ef9f0-12ab-8bae-90c9-147f6bbf8bbb"
+  },
+  {
+    "key": "lean_diagonal_containment_takes_both_values_on_this_population",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b634fa1e-50e6-8867-954a-687959c63897"
+  },
+  {
+    "key": "lean_diagonal_the_enumeration_is_five_hundred_and_twelve_rings_of_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "55a16eb5-ca46-802c-88f4-c3bdc6c546ed"
+  },
+  {
+    "key": "lean_diagonal_three_labels_take_at_most_eight_values",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f9508d7c-50f7-8a1a-8a19-af9ee915187a"
+  },
+  {
+    "key": "lean_diagonal_the_bound_is_attained_and_so_is_its_floor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "920bc983-3d89-8521-a6d0-79702b18dbea"
+  },
+  {
+    "key": "lean_diagonal_the_drawn_ring_spent_none_of_its_twenty_eight_labels",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "748cb5c5-a722-8c35-b17c-02c6fc59e55f"
+  },
+  {
+    "key": "lean_closure_nine_names_denote_seven_distinct_properties",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3c22587c-c5a1-8a5e-bbd6-6c3db40bc56e"
+  },
+  {
+    "key": "lean_closure_the_witness_disagrees_with_property_i_at_residue_i",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8dc26016-dba2-847b-baa1-438e90fe5bd8"
+  },
+  {
+    "key": "lean_closure_the_witness_is_none_of_the_nine_named_properties",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "854423b9-fb46-8b6a-b3f6-d035dc601810"
+  },
+  {
+    "key": "lean_closure_the_witness_is_this_table",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9ec95c38-a2cb-81ce-b832-0663a7b2651d"
+  },
+  {
+    "key": "lean_closure_a_property_that_is_named_is_found_among_the_named",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7c2ca875-f785-8696-8288-511977f6d0e6"
+  },
+  {
+    "key": "lean_closure_the_diagonal_escapes_nine_and_stops",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b076fdc8-1936-85f8-b4ac-0e3e807ebb63"
+  },
+  {
+    "key": "lean_closure_nine_residues_carry_five_hundred_and_twelve_properties",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "750f4bf9-6f21-848c-bd60-c831cd61c227"
+  },
+  {
+    "key": "lean_closure_the_witness_is_decided_here_and_is_no_kind_of_limit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2744fe5d-0c8c-8efa-94ae-ad8ffb87a7e9"
+  },
+  {
+    "key": "lean_domain_the_sequence_is_eleven_positions_that_return_to_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9090335a-6c60-8b33-9b0d-56e31331e28f"
+  },
+  {
+    "key": "lean_domain_nine_folds_to_zero_and_reflects_to_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6f17b096-a726-854a-8ce7-a9db1d06dfd9"
+  },
+  {
+    "key": "lean_domain_the_sequence_exceeds_the_residues_by_the_fold_and_the_return",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "711c38bd-8913-8d47-a327-356af869196c"
+  },
+  {
+    "key": "lean_domain_the_diagonal_escapes_nine_over_nine_and_eleven_over_eleven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9ccbbb99-474d-8428-89e1-0fdfe74ae56e"
+  },
+  {
+    "key": "lean_domain_the_diagonal_fails_on_a_list_one_longer_than_its_domain",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8f4a1a38-d059-8095-8819-8d3fc2cd299c"
+  },
+  {
+    "key": "lean_domain_the_reach_of_the_diagonal_is_the_length_of_its_domain",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5351269c-0eff-8e61-ae35-18abf8ba47bd"
+  },
+  {
+    "key": "lean_domain_the_eleven_positions_are_a_walk_of_nine_residues_that_returns",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "deda3c4a-28ba-8dc7-9a88-5ec5d1a5a659"
+  },
+  {
+    "key": "lean_domain_the_diagonal_does_not_run_out_at_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a547995d-37a7-8ade-878b-65f35ad7a12a"
+  },
+  {
+    "key": "lean_mirror_the_reflection_is_four_pairs_and_one_centre",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "73c700f9-2edb-876d-b6ec-8e859ee58932"
+  },
+  {
+    "key": "lean_mirror_the_four_pairs_are_one_nine_two_eight_three_seven_four_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b13b8be7-74bd-8e26-afe7-6442aaf1abd4"
+  },
+  {
+    "key": "lean_mirror_the_sequence_returns_to_the_reflection_of_its_last_new_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "68fb5bc7-0dd2-8113-badf-68f3da42b67e"
+  },
+  {
+    "key": "lean_mirror_zero_alone_has_no_mirror_inside_the_ring",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7e01cd39-1c99-8168-871f-7cf2ba3575cd"
+  },
+  {
+    "key": "lean_mirror_two_quarter_turns_and_three_sixth_turns_are_one_half_turn",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c1e76fc5-bf89-8e15-bf35-fc200e6d8c64"
+  },
+  {
+    "key": "lean_mirror_the_triad_reflects_into_the_doubling_span",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "11ea103c-d8b9-803d-ba3d-f6d6ed5d7341"
+  },
+  {
+    "key": "lean_mirror_a_map_that_is_not_this_reflection_gives_a_different_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a0d2d8bd-8f54-8745-91e3-719b18534123"
+  },
+  {
+    "key": "lean_mirror_the_reflection_undoes_itself_on_the_ring_and_not_beyond",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6b6da19b-e097-8e27-bdff-42b3777668bf"
+  },
+  {
+    "key": "lean_digits_the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a1764710-30a4-8198-97c0-b8eeff6b3a8a"
+  },
+  {
+    "key": "lean_digits_eight_and_eight_make_sixteen_which_reflects_to_ninety_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9f8b0583-37c5-843e-8b99-f5fb9075aa68"
+  },
+  {
+    "key": "lean_digits_eight_times_eight_is_the_pair_six_four_read_both_ways",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dcb2451f-7773-8e00-9630-387d21fd6043"
+  },
+  {
+    "key": "lean_digits_every_pair_written_as_two_digits_is_one_mod_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ddcb12b7-fdce-8d1c-9ef8-c194ca491ca4"
+  },
+  {
+    "key": "lean_digits_reflecting_both_digits_twice_returns_the_number",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "66ed9dd4-078d-870a-b519-9f660630ee26"
+  },
+  {
+    "key": "lean_digits_exactly_one_two_digit_number_reflects_past_its_width_and_it_is_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9092d965-1ccf-8664-bbcd-99b5f883a306"
+  },
+  {
+    "key": "lean_digits_the_nines_complement_gives_no_such_constant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a3dd3fb6-4721-8b0b-b4c7-c595c171c665"
+  },
+  {
+    "key": "lean_digits_the_constants_are_ten_times_the_repunits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "571c43da-830f-84fa-babe-50824d929dfa"
   }
 ]

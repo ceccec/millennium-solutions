@@ -217,7 +217,11 @@ rows.push(...ordered.filter(Boolean))
 
 writeFileSync(CACHE, JSON.stringify(cache, null, 2) + '\n')
 console.log(rows.join('\n'))
-console.log(`\n  ${files.length} files · ${total} theorems · ${bad ? bad + ' FAILING' : 'all clean'}`)
+// `bad` COUNTS FILES AND THE SENTENCE'S SUBJECT WAS THEOREMS. "46 files · 1080 theorems · 3 FAILING" reads
+// as three broken theorems and means three broken FILES, each of which may hold thirty. It understates, and
+// understating a failure count is the direction a wrong number survives in — nobody re-checks a number that
+// says the damage is small. The unit is named now.
+console.log(`\n  ${files.length} files · ${total} theorems · ${bad ? bad + ' FILE(S) FAILING' : 'all clean'}`)
 console.log(`  ${LANES} lane(s): ${BUDGET.why}`)
 console.log(`  verification root ${merkleFold(leaves)} — over ${leaves.length} file(s), the same at any lane count`)
 process.exit(bad ? 1 : 0)
