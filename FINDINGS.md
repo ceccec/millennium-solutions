@@ -280,6 +280,41 @@ on its first green run, which is exactly that defect, caught in its own output.
 files may hold ninety broken theorems. It understated, which is the direction a wrong number survives in.
 The unit is named now.
 
+## 7i · The Merkle fold admits a second preimage — `src/proof/preimage.lean`
+
+The author's cryptographic capabilities report (`10.5281/zenodo.22895141`, 2026-09-22) is carefully scoped:
+it separates what was tested against an independent reference from what was only identified. For Merkle
+commitments it states `Lᵢ = H(domainLeaf ‖ xᵢ)` and `Nᵢ,ⱼ = H(domainNode ‖ …)` and asks the security
+question: **are leaf and node domains separated?**
+
+In `merkleFold` (`src/0/index.ts`) they are not, and a second thing is worse. Measured 2026-09-25:
+
+```
+merkleFold(['a','b'])  = d9946a63-d471-825a-9b8e-b1864f68b416
+merkleFold([<that>])   = d9946a63-d471-825a-9b8e-b1864f68b416
+```
+
+**A one-leaf fold returns its leaf unhashed.** So for any root R this function produces, the single-leaf
+set `[R]` produces R again — two different leaf multisets, one root. `merkleFold([])` is a fixed sentinel
+and collides the same way with a one-leaf tree carrying it.
+
+**What is not at risk.** This is not a break of the hash; `toUuid` is untouched. The four-leaf case does
+*not* collide with its own internal nodes, because the fold sorts and the sort reorders them — checked, not
+assumed, and `preimage.lean` theorem 5 keeps the finding from being evidence of a worse bug it is not.
+What is wrong is the commitment property: a Merkle root must be producible from exactly one leaf multiset,
+and this one is producible from at least two. Every `verification root`, every octave-root and the
+forensics seal are this function's output, under an invitation that reads *"clone it and run `npm run lean`,
+compare the address."*
+
+**FOR THE AUTHOR — not fixed here, and not from timidity.** The remedy is one line and the author's own
+report names it: prefix leaves and nodes with distinct domains (RFC 6962 uses `0x00` and `0x01`) and hash
+the singleton. It changes **every root this deposit has ever published**, including values recorded in the
+append-only ledger. Rotating those is the depositor's act; doing it quietly would break forensics for every
+reader holding an older address.
+
+`preimage.lean` is **committed unsealed.** Sealing it would sweep in 48 theorems belonging to another
+session's live edit of `imagined.lean`, and the ledger is append-only.
+
 ## 7g · Eight interacting with eight — `src/proof/digits.lean`
 
 *"8 interacting with 8 is 16, 1 reflects 9 and 6 reflects 4."*
