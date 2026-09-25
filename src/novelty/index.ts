@@ -52,7 +52,12 @@ const STOP = new Set(('the a an and or of to in on by for with as at is are be i
 export const LABELS = new Set('navier stokes riemann hodge yang mills birch swinnerton dyer poincare poincaré clay millennium hypothesis conjecture'.split(' '))
 /** Domain words too generic to anchor a hit — "number" is in every Reynolds-number paper. */
 export const GENERIC = new Set(('elementary theory number numbers second tier named results quantified classical ' +
-  'unit units group groups order orders set sets form forms law laws').split(' '))
+  'unit units group groups order orders set sets form forms law laws ' +
+  // ADDED after 13 CANDIDATES for address.lean turned out to be the English verb. Its declared domain was
+  // "content addressing", so the anchors were `content` and `addressing`, and "Addressing identity/
+  // redressing the museum" and "Addressing Order Sensitivity of In-Context Demonstrations" both cleared
+  // them. An anchor made of ordinary English anchors nothing.
+  'content addressing address addresses identity mapping data information system systems').split(' '))
 export const NUMBER_THEORY = ['modulo', 'modular', 'residue', 'congruen', 'divisib', 'prime', 'integer', 'arithmetic', 'multiplicative', 'cyclic group']
 
 export const termsOf = (name: string) => [...new Set(name.split(/[_\s]+/).map((w) => w.toLowerCase())

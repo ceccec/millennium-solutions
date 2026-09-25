@@ -4,7 +4,7 @@
   "file": "address.lean",
   "name": "address_bytes_are_bytes",
   "statementHash": "984aa1ef05246f44",
-  "searched": "2026-09-20T12:21:12.219Z",
+  "searched": "2026-09-25T13:50:45.494Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -17,40 +17,25 @@
    ]
   },
   "queries": {
-   "zbmath": "address bytes content addressing",
-   "openalex": "address bytes content addressing",
-   "crossref": "address bytes content addressing",
+   "zbmath": "address bytes cryptographic hash sha",
+   "openalex": "address bytes cryptographic hash sha",
+   "crossref": "address bytes cryptographic hash sha",
    "arxiv": "address AND bytes"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "crossref",
-    "title": "Bytes and Barriers: Addressing Technology-Facilitated Gender-Based Violence for Women and Girls with Disabilities - Roadmap",
-    "year": 2025,
-    "url": "https://doi.org/10.32920/29521907",
-    "relevance": 1,
-    "text": "Bytes and Barriers: Addressing Technology-Facilitated Gender-Based Violence for Women and Girls with Disabilities - Roadmap &lt;p dir=\"ltr\"&gt;The Bytes and Barriers Symposium was a one-day event, focused on technology-facilitated gender-based violence (TFGBV) against women and girls with disabiliti"
-   },
-   {
-    "source": "crossref",
-    "title": "Bytes and Barriers: Addressing Technology-Facilitated Gender-Based Violence for Women and Girls with Disabilities - Roadmap",
-    "year": 2025,
-    "url": "https://doi.org/10.32920/29521907.v1",
-    "relevance": 1,
-    "text": "Bytes and Barriers: Addressing Technology-Facilitated Gender-Based Violence for Women and Girls with Disabilities - Roadmap &lt;p dir=\"ltr\"&gt;The Bytes and Barriers Symposium was a one-day event, focused on technology-facilitated gender-based violence (TFGBV) against women and girls with disabiliti"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_address_is_sixteen_bytes": {
   "key": "lean_address_address_is_sixteen_bytes",
   "file": "address.lean",
   "name": "address_is_sixteen_bytes",
   "statementHash": "0507a5dbcc165f10",
-  "searched": "2026-09-20T12:20:54.636Z",
+  "searched": "2026-09-25T13:48:53.328Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -63,32 +48,25 @@
    ]
   },
   "queries": {
-   "zbmath": "address sixteen bytes content addressing",
-   "openalex": "address sixteen bytes content addressing",
-   "crossref": "address sixteen bytes content addressing",
+   "zbmath": "address sixteen bytes cryptographic hash sha",
+   "openalex": "address sixteen bytes cryptographic hash sha",
+   "crossref": "address sixteen bytes cryptographic hash sha",
    "arxiv": "address AND sixteen AND bytes"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "openalex",
-    "title": "End-User Mapping",
-    "year": 2015,
-    "url": "https://doi.org/10.1145/2785956.2787500",
-    "relevance": 0.6666666666666666,
-    "text": "End-User Mapping Content Delivery Networks (CDNs) deliver much of the world's web, video, and application content on the Internet today. A key component of a CDN is the mapping system that uses the DNS protocol to route each client's request to a ``proximal'' server that serves the requested content"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_addressing_is_deterministic": {
   "key": "lean_address_addressing_is_deterministic",
   "file": "address.lean",
   "name": "addressing_is_deterministic",
   "statementHash": "903e74e9a953c342",
-  "searched": "2026-09-20T12:21:54.567Z",
+  "searched": "2026-09-25T13:51:34.958Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -101,48 +79,25 @@
    ]
   },
   "queries": {
-   "zbmath": "addressing deterministic content",
-   "openalex": "addressing deterministic content",
-   "crossref": "addressing deterministic content",
+   "zbmath": "addressing deterministic cryptographic hash sha",
+   "openalex": "addressing deterministic cryptographic hash sha",
+   "crossref": "addressing deterministic cryptographic hash sha",
    "arxiv": "addressing AND deterministic"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "zbmath",
-    "title": "HARTEX - a safe real-time kernel for distributed computer control systems",
-    "year": "2002",
-    "url": "https://zbmath.org/1934692",
-    "relevance": 1,
-    "text": "HARTEX - a safe real-time kernel for distributed computer control systems [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: A hard real-time kernel is presented for distributed computer control systems (DCCS), highlighting a number of "
-   },
-   {
-    "source": "crossref",
-    "title": "Deterministic Futexes: Addressing WCET and Bounded Interference Concerns",
-    "year": 2019,
-    "url": "https://doi.org/10.1109/rtas.2019.00014",
-    "relevance": 1,
-    "text": "Deterministic Futexes: Addressing WCET and Bounded Interference Concerns "
-   },
-   {
-    "source": "arxiv",
-    "title": "ForeSight: A Predictive-Scheduling Deterministic Database",
-    "year": "2025",
-    "url": "http://arxiv.org/abs/2508.17375v2",
-    "relevance": 1,
-    "text": "ForeSight: A Predictive-Scheduling Deterministic Database Deterministic databases enable scalable replicated systems by executing transactions in a predetermined order. However, existing designs fail to capture transaction dependencies, leading to insufficient scheduling, high abort rates, and poor "
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_addressing_is_injective_on_single_characters": {
   "key": "lean_address_addressing_is_injective_on_single_characters",
   "file": "address.lean",
   "name": "addressing_is_injective_on_single_characters",
   "statementHash": "1e918d0f50259075",
-  "searched": "2026-09-20T12:25:22.558Z",
+  "searched": "2026-09-25T13:51:55.963Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -155,23 +110,25 @@
    ]
   },
   "queries": {
-   "zbmath": "addressing injective single characters content",
-   "openalex": "addressing injective single characters content",
-   "crossref": "addressing injective single characters content",
+   "zbmath": "addressing injective single characters cryptographic hash sha",
+   "openalex": "addressing injective single characters cryptographic hash sha",
+   "crossref": "addressing injective single characters cryptographic hash sha",
    "arxiv": "addressing AND injective AND single AND characters"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_addressing_is_not_constant": {
   "key": "lean_address_addressing_is_not_constant",
   "file": "address.lean",
   "name": "addressing_is_not_constant",
   "statementHash": "910e5ee5119c88b1",
-  "searched": "2026-09-20T12:25:52.116Z",
+  "searched": "2026-09-25T13:52:16.793Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -184,40 +141,25 @@
    ]
   },
   "queries": {
-   "zbmath": "addressing constant content",
-   "openalex": "addressing constant content",
-   "crossref": "addressing constant content",
+   "zbmath": "addressing constant cryptographic hash sha",
+   "openalex": "addressing constant cryptographic hash sha",
+   "crossref": "addressing constant cryptographic hash sha",
    "arxiv": "addressing AND constant"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "zbmath",
-    "title": "HARTEX - a safe real-time kernel for distributed computer control systems",
-    "year": "2002",
-    "url": "https://zbmath.org/1934692",
-    "relevance": 1,
-    "text": "HARTEX - a safe real-time kernel for distributed computer control systems [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: A hard real-time kernel is presented for distributed computer control systems (DCCS), highlighting a number of "
-   },
-   {
-    "source": "zbmath",
-    "title": "Large-scale structure challenges dilaton gravity in a 5D brane scenario with AdS bulk",
-    "year": "2014",
-    "url": "https://zbmath.org/6291067",
-    "relevance": 1,
-    "text": "Large-scale structure challenges dilaton gravity in a 5D brane scenario with AdS bulk [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: We study a theory of dilaton gravity in a five-dimensional brane scenario, with a non-minimal coupl"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_addressing_is_not_the_identity": {
   "key": "lean_address_addressing_is_not_the_identity",
   "file": "address.lean",
   "name": "addressing_is_not_the_identity",
   "statementHash": "df08236523a20ab9",
-  "searched": "2026-09-20T12:25:38.393Z",
+  "searched": "2026-09-25T13:52:06.426Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -230,56 +172,25 @@
    ]
   },
   "queries": {
-   "zbmath": "addressing identity content",
-   "openalex": "addressing identity content",
-   "crossref": "addressing identity content",
+   "zbmath": "addressing identity cryptographic hash sha",
+   "openalex": "addressing identity cryptographic hash sha",
+   "crossref": "addressing identity cryptographic hash sha",
    "arxiv": "addressing AND identity"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "crossref",
-    "title": "Addressing identity/redressing the museum.",
-    "year": null,
-    "url": "https://doi.org/10.18297/etd/222",
-    "relevance": 1,
-    "text": "Addressing identity/redressing the museum. "
-   },
-   {
-    "source": "crossref",
-    "title": "International Trends in Addressing Identity Crime",
-    "year": 2020,
-    "url": "https://doi.org/10.1163/9789004395978_006",
-    "relevance": 1,
-    "text": "International Trends in Addressing Identity Crime "
-   },
-   {
-    "source": "crossref",
-    "title": "Addressing Social Justice and Cultural Identity in Pakistani Education: A Qualitative Content Analysis of Curriculum Policy",
-    "year": 2019,
-    "url": "https://doi.org/10.1007/978-981-13-3125-1_14",
-    "relevance": 1,
-    "text": "Addressing Social Justice and Cultural Identity in Pakistani Education: A Qualitative Content Analysis of Curriculum Policy "
-   },
-   {
-    "source": "arxiv",
-    "title": "On Addressing Isolation in Blockchain-Based Self-Sovereign Identity",
-    "year": "2025",
-    "url": "http://arxiv.org/abs/2511.18379v1",
-    "relevance": 1,
-    "text": "On Addressing Isolation in Blockchain-Based Self-Sovereign Identity Self-Sovereign Identity (SSI) grants holders full ownership and control of their digital identities, being the ultimate digital identity model. Operating in a decentralized manner, SSI enables the verification of claims, including p"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_distinct_inputs_give_distinct_addresses": {
   "key": "lean_address_distinct_inputs_give_distinct_addresses",
   "file": "address.lean",
   "name": "distinct_inputs_give_distinct_addresses",
   "statementHash": "d8424dac0c7b6234",
-  "searched": "2026-09-25T13:18:55.423Z",
+  "searched": "2026-09-25T13:52:55.966Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -292,32 +203,25 @@
    ]
   },
   "queries": {
-   "zbmath": "distinct inputs give addresses content addressing",
-   "openalex": "distinct inputs give addresses content addressing",
-   "crossref": "distinct inputs give addresses content addressing",
+   "zbmath": "distinct inputs give addresses cryptographic hash sha",
+   "openalex": "distinct inputs give addresses cryptographic hash sha",
+   "crossref": "distinct inputs give addresses cryptographic hash sha",
    "arxiv": "distinct AND inputs AND give AND addresses"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "Informativeness and Invariance: Two Perspectives on Spurious Correlations in Natural Language",
-    "year": "2022",
-    "url": "http://arxiv.org/abs/2204.04487v2",
-    "relevance": 0.75,
-    "text": "Informativeness and Invariance: Two Perspectives on Spurious Correlations in Natural Language Spurious correlations are a threat to the trustworthiness of natural language processing systems, motivating research into methods for identifying and eliminating them. However, addressing the problem of sp"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_distinct_seeds_give_distinct_addresses": {
   "key": "lean_address_distinct_seeds_give_distinct_addresses",
   "file": "address.lean",
   "name": "distinct_seeds_give_distinct_addresses",
   "statementHash": "0994ea842625c7b7",
-  "searched": "2026-09-20T12:25:09.111Z",
+  "searched": "2026-09-25T13:51:45.351Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -330,23 +234,25 @@
    ]
   },
   "queries": {
-   "zbmath": "distinct seeds give addresses content addressing",
-   "openalex": "distinct seeds give addresses content addressing",
-   "crossref": "distinct seeds give addresses content addressing",
+   "zbmath": "distinct seeds give addresses cryptographic hash sha",
+   "openalex": "distinct seeds give addresses cryptographic hash sha",
+   "crossref": "distinct seeds give addresses cryptographic hash sha",
    "arxiv": "distinct AND seeds AND give AND addresses"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_raw_bytes_of_a": {
   "key": "lean_address_raw_bytes_of_a",
   "file": "address.lean",
   "name": "raw_bytes_of_a",
   "statementHash": "22d7f250d5a60df9",
-  "searched": "2026-09-20T12:20:29.526Z",
+  "searched": "2026-09-25T13:45:07.765Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -359,9 +265,9 @@
    ]
   },
   "queries": {
-   "zbmath": "raw bytes content addressing",
-   "openalex": "raw bytes content addressing",
-   "crossref": "raw bytes content addressing",
+   "zbmath": "raw bytes cryptographic hash sha",
+   "openalex": "raw bytes cryptographic hash sha",
+   "crossref": "raw bytes cryptographic hash sha",
    "arxiv": "raw AND bytes"
   },
   "notMeasured": [],
@@ -375,7 +281,7 @@
   "file": "address.lean",
   "name": "stamping_twice_is_stamping_once",
   "statementHash": "3817332e5077c8c3",
-  "searched": "2026-09-25T13:20:08.674Z",
+  "searched": "2026-09-25T13:53:48.165Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -388,23 +294,25 @@
    ]
   },
   "queries": {
-   "zbmath": "stamping twice once content addressing",
-   "openalex": "stamping twice once content addressing",
-   "crossref": "stamping twice once content addressing",
+   "zbmath": "stamping twice once cryptographic hash sha",
+   "openalex": "stamping twice once cryptographic hash sha",
+   "crossref": "stamping twice once cryptographic hash sha",
    "arxiv": "stamping AND twice AND once"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_address_is_not_the_payload": {
   "key": "lean_address_the_address_is_not_the_payload",
   "file": "address.lean",
   "name": "the_address_is_not_the_payload",
   "statementHash": "ca319e5e865e7452",
-  "searched": "2026-09-25T13:19:10.676Z",
+  "searched": "2026-09-25T13:53:05.866Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -417,32 +325,25 @@
    ]
   },
   "queries": {
-   "zbmath": "address payload content addressing",
-   "openalex": "address payload content addressing",
-   "crossref": "address payload content addressing",
+   "zbmath": "address payload cryptographic hash sha",
+   "openalex": "address payload cryptographic hash sha",
+   "crossref": "address payload cryptographic hash sha",
    "arxiv": "address AND payload"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "openalex",
-    "title": "Polygraph: Automatically Generating Signatures for Polymorphic Worms",
-    "year": 2005,
-    "url": "https://doi.org/10.1109/sp.2005.15",
-    "relevance": 1,
-    "text": "Polygraph: Automatically Generating Signatures for Polymorphic Worms It is widely believed that content-signature-based intrusion detection systems (IDS) are easily evaded by polymorphic worms, which vary their payload on every infection attempt. In this paper, we present Polygraph, a signature gene"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_address_is_order_sensitive": {
   "key": "lean_address_the_address_is_order_sensitive",
   "file": "address.lean",
   "name": "the_address_is_order_sensitive",
   "statementHash": "3a9e09557dd6dc48",
-  "searched": "2026-09-25T13:19:23.004Z",
+  "searched": "2026-09-25T13:53:15.817Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -455,32 +356,25 @@
    ]
   },
   "queries": {
-   "zbmath": "address order sensitive content addressing",
-   "openalex": "address order sensitive content addressing",
-   "crossref": "address order sensitive content addressing",
+   "zbmath": "address order sensitive cryptographic hash sha",
+   "openalex": "address order sensitive cryptographic hash sha",
+   "crossref": "address order sensitive cryptographic hash sha",
    "arxiv": "address AND order AND sensitive"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "Addressing Order Sensitivity of In-Context Demonstration Examples in Causal Language Models",
-    "year": "2024",
-    "url": "http://arxiv.org/abs/2402.15637v2",
-    "relevance": 1,
-    "text": "Addressing Order Sensitivity of In-Context Demonstration Examples in Causal Language Models In-context learning has become a popular paradigm in natural language processing. However, its performance can be significantly influenced by the order of in-context demonstration examples. In this paper, we "
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length": {
   "key": "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length",
   "file": "address.lean",
   "name": "the_address_is_sixteen_bytes_whatever_the_input_length",
   "statementHash": "2680d024bb1ecac6",
-  "searched": "2026-09-25T13:16:05.665Z",
+  "searched": "2026-09-25T13:52:45.464Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -493,23 +387,25 @@
    ]
   },
   "queries": {
-   "zbmath": "address sixteen bytes whatever input content addressing",
-   "openalex": "address sixteen bytes whatever input content addressing",
-   "crossref": "address sixteen bytes whatever input content addressing",
+   "zbmath": "address sixteen bytes whatever input cryptographic hash sha",
+   "openalex": "address sixteen bytes whatever input cryptographic hash sha",
+   "crossref": "address sixteen bytes whatever input cryptographic hash sha",
    "arxiv": "address AND sixteen AND bytes AND whatever AND input"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_four_seeds_are_distinct": {
   "key": "lean_address_the_four_seeds_are_distinct",
   "file": "address.lean",
   "name": "the_four_seeds_are_distinct",
   "statementHash": "a7104220c0a9ff23",
-  "searched": "2026-09-20T12:26:05.192Z",
+  "searched": "2026-09-25T13:52:27.396Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -522,23 +418,25 @@
    ]
   },
   "queries": {
-   "zbmath": "seeds distinct content addressing",
-   "openalex": "seeds distinct content addressing",
-   "crossref": "seeds distinct content addressing",
+   "zbmath": "seeds distinct cryptographic hash sha",
+   "openalex": "seeds distinct cryptographic hash sha",
+   "crossref": "seeds distinct cryptographic hash sha",
    "arxiv": "seeds AND distinct"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group": {
   "key": "lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group",
   "file": "address.lean",
   "name": "the_fourteen_hash_bits_read_back_from_the_fourth_group",
   "statementHash": "963b849acf440ab5",
-  "searched": "2026-09-25T13:21:44.773Z",
+  "searched": "2026-09-25T13:54:39.390Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -551,23 +449,25 @@
    ]
   },
   "queries": {
-   "zbmath": "fourteen hash bits read back content addressing",
-   "openalex": "fourteen hash bits read back content addressing",
-   "crossref": "fourteen hash bits read back content addressing",
+   "zbmath": "fourteen hash bits read back cryptographic sha digests",
+   "openalex": "fourteen hash bits read back cryptographic sha digests",
+   "crossref": "fourteen hash bits read back cryptographic sha digests",
    "arxiv": "fourteen AND hash AND bits AND read AND back"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits": {
   "key": "lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits",
   "file": "address.lean",
   "name": "the_fourth_group_is_variant_two_over_fourteen_hash_bits",
   "statementHash": "4f603770a57b7857",
-  "searched": "2026-09-25T13:20:41.770Z",
+  "searched": "2026-09-25T13:54:08.772Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -580,23 +480,25 @@
    ]
   },
   "queries": {
-   "zbmath": "fourth group variant fourteen hash content addressing",
-   "openalex": "fourth group variant fourteen hash content addressing",
-   "crossref": "fourth group variant fourteen hash content addressing",
+   "zbmath": "fourth group variant fourteen hash cryptographic sha digests",
+   "openalex": "fourth group variant fourteen hash cryptographic sha digests",
+   "crossref": "fourth group variant fourteen hash cryptographic sha digests",
    "arxiv": "fourth AND group AND variant AND fourteen AND hash"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits": {
   "key": "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits",
   "file": "address.lean",
   "name": "the_third_group_is_version_eight_over_twelve_hash_bits",
   "statementHash": "80e63c5d6eb082f2",
-  "searched": "2026-09-25T13:20:26.866Z",
+  "searched": "2026-09-25T13:53:58.061Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -609,23 +511,25 @@
    ]
   },
   "queries": {
-   "zbmath": "group version twelve hash bits content addressing",
-   "openalex": "group version twelve hash bits content addressing",
-   "crossref": "group version twelve hash bits content addressing",
+   "zbmath": "group version twelve hash bits cryptographic sha digests",
+   "openalex": "group version twelve hash bits cryptographic sha digests",
+   "crossref": "group version twelve hash bits cryptographic sha digests",
    "arxiv": "group AND version AND twelve AND hash AND bits"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_twelve_hash_bits_read_back_from_the_third_group": {
   "key": "lean_address_the_twelve_hash_bits_read_back_from_the_third_group",
   "file": "address.lean",
   "name": "the_twelve_hash_bits_read_back_from_the_third_group",
   "statementHash": "747a1f623136680f",
-  "searched": "2026-09-25T13:21:28.035Z",
+  "searched": "2026-09-25T13:54:29.281Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -638,23 +542,25 @@
    ]
   },
   "queries": {
-   "zbmath": "twelve hash bits read back content addressing",
-   "openalex": "twelve hash bits read back content addressing",
-   "crossref": "twelve hash bits read back content addressing",
+   "zbmath": "twelve hash bits read back cryptographic sha digests",
+   "openalex": "twelve hash bits read back cryptographic sha digests",
+   "crossref": "twelve hash bits read back cryptographic sha digests",
    "arxiv": "twelve AND hash AND bits AND read AND back"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_unstamped_bits_read_back_from_every_stamped_byte": {
   "key": "lean_address_the_unstamped_bits_read_back_from_every_stamped_byte",
   "file": "address.lean",
   "name": "the_unstamped_bits_read_back_from_every_stamped_byte",
   "statementHash": "871e2e806d8995bc",
-  "searched": "2026-09-25T13:21:01.261Z",
+  "searched": "2026-09-25T13:54:19.160Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -667,13 +573,13 @@
    ]
   },
   "queries": {
-   "zbmath": "unstamped bits read back stamped content addressing",
-   "openalex": "unstamped bits read back stamped content addressing",
-   "crossref": "unstamped bits read back stamped content addressing",
+   "zbmath": "unstamped bits read back stamped cryptographic hash sha",
+   "openalex": "unstamped bits read back stamped cryptographic hash sha",
+   "crossref": "unstamped bits read back stamped cryptographic hash sha",
    "arxiv": "unstamped AND bits AND read AND back AND stamped"
   },
   "notMeasured": [
-   "zbmath: HTTP 404"
+   "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -685,7 +591,7 @@
   "file": "address.lean",
   "name": "the_variant_stamp_keeps_the_low_six_bits_of_every_byte",
   "statementHash": "a6d2433128e30493",
-  "searched": "2026-09-25T13:19:54.865Z",
+  "searched": "2026-09-25T13:53:38.242Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -698,23 +604,25 @@
    ]
   },
   "queries": {
-   "zbmath": "variant stamp keeps low bits content addressing",
-   "openalex": "variant stamp keeps low bits content addressing",
-   "crossref": "variant stamp keeps low bits content addressing",
+   "zbmath": "variant stamp keeps low bits cryptographic hash sha",
+   "openalex": "variant stamp keeps low bits cryptographic hash sha",
+   "crossref": "variant stamp keeps low bits cryptographic hash sha",
    "arxiv": "variant AND stamp AND keeps AND low AND bits"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte": {
   "key": "lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte",
   "file": "address.lean",
   "name": "the_version_stamp_keeps_the_low_nibble_of_every_byte",
   "statementHash": "0b0ee57f5138594c",
-  "searched": "2026-09-25T13:19:36.769Z",
+  "searched": "2026-09-25T13:53:26.356Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -727,23 +635,25 @@
    ]
   },
   "queries": {
-   "zbmath": "version stamp keeps low nibble content addressing",
-   "openalex": "version stamp keeps low nibble content addressing",
-   "crossref": "version stamp keeps low nibble content addressing",
+   "zbmath": "version stamp keeps low nibble cryptographic hash sha",
+   "openalex": "version stamp keeps low nibble cryptographic hash sha",
+   "crossref": "version stamp keeps low nibble cryptographic hash sha",
    "arxiv": "version AND stamp AND keeps AND low AND nibble"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_to_uuid_bytes_of_a": {
   "key": "lean_address_to_uuid_bytes_of_a",
   "file": "address.lean",
   "name": "to_uuid_bytes_of_a",
   "statementHash": "58daeefc12bf7453",
-  "searched": "2026-09-20T12:20:29.527Z",
+  "searched": "2026-09-25T13:45:07.767Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -756,32 +666,25 @@
    ]
   },
   "queries": {
-   "zbmath": "uuid bytes content addressing",
-   "openalex": "uuid bytes content addressing",
-   "crossref": "uuid bytes content addressing",
+   "zbmath": "uuid bytes cryptographic hash sha",
+   "openalex": "uuid bytes cryptographic hash sha",
+   "crossref": "uuid bytes cryptographic hash sha",
    "arxiv": "uuid AND bytes"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "Source Known Identifiers: A Three-Tier Identity System for Distributed Applications",
-    "year": "2026",
-    "url": "http://arxiv.org/abs/2604.00151v1",
-    "relevance": 1,
-    "text": "Source Known Identifiers: A Three-Tier Identity System for Distributed Applications Distributed applications need identifiers that satisfy storage efficiency, chronological sortability, origin metadata embedding, zero-lookup verifiability, confidentiality for external consumers, and multi-century ad"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_to_uuid_bytes_of_uuidna": {
   "key": "lean_address_to_uuid_bytes_of_uuidna",
   "file": "address.lean",
   "name": "to_uuid_bytes_of_uuidna",
   "statementHash": "a2ddd1cf2e209e2a",
-  "searched": "2026-09-20T12:20:42.640Z",
+  "searched": "2026-09-25T13:47:00.988Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -794,23 +697,25 @@
    ]
   },
   "queries": {
-   "zbmath": "uuid bytes uuidna content addressing",
-   "openalex": "uuid bytes uuidna content addressing",
-   "crossref": "uuid bytes uuidna content addressing",
+   "zbmath": "uuid bytes uuidna cryptographic hash sha",
+   "openalex": "uuid bytes uuidna cryptographic hash sha",
+   "crossref": "uuid bytes uuidna cryptographic hash sha",
    "arxiv": "uuid AND bytes AND uuidna"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_variant_bits_are_forced": {
   "key": "lean_address_variant_bits_are_forced",
   "file": "address.lean",
   "name": "variant_bits_are_forced",
   "statementHash": "0a5f6b61b8e81af1",
-  "searched": "2026-09-20T12:21:42.083Z",
+  "searched": "2026-09-25T13:51:24.382Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -823,23 +728,25 @@
    ]
   },
   "queries": {
-   "zbmath": "variant bits forced content addressing",
-   "openalex": "variant bits forced content addressing",
-   "crossref": "variant bits forced content addressing",
+   "zbmath": "variant bits forced cryptographic hash sha",
+   "openalex": "variant bits forced cryptographic hash sha",
+   "crossref": "variant bits forced cryptographic hash sha",
    "arxiv": "variant AND bits AND forced"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_address_version_nibble_is_forced": {
   "key": "lean_address_version_nibble_is_forced",
   "file": "address.lean",
   "name": "version_nibble_is_forced",
   "statementHash": "9ca200276d2bf5c8",
-  "searched": "2026-09-20T12:21:29.253Z",
+  "searched": "2026-09-25T13:50:55.851Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -852,16 +759,18 @@
    ]
   },
   "queries": {
-   "zbmath": "version nibble forced content addressing",
-   "openalex": "version nibble forced content addressing",
-   "crossref": "version nibble forced content addressing",
+   "zbmath": "version nibble forced cryptographic hash sha",
+   "openalex": "version nibble forced cryptographic hash sha",
+   "crossref": "version nibble forced cryptographic hash sha",
    "arxiv": "version AND nibble AND forced"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_asymmetric_a_checksum_is_the_same_whoever_computes_it": {
   "key": "lean_asymmetric_a_checksum_is_the_same_whoever_computes_it",
@@ -1896,12 +1805,161 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
+ "lean_coils_the_address_coil_first_holds_at_every_reservation": {
+  "key": "lean_coils_the_address_coil_first_holds_at_every_reservation",
+  "file": "coils.lean",
+  "name": "the_address_coil_first_holds_at_every_reservation",
+  "statementHash": "15df3d0495f79f38",
+  "searched": "2026-09-25T13:41:17.629Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "address coil reservation extensional equality predicates",
+   "openalex": "address coil reservation extensional equality predicates",
+   "crossref": "address coil reservation extensional equality predicates",
+   "arxiv": "address AND coil AND reservation"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coils_the_address_coil_second_holds_at_every_reservation": {
+  "key": "lean_coils_the_address_coil_second_holds_at_every_reservation",
+  "file": "coils.lean",
+  "name": "the_address_coil_second_holds_at_every_reservation",
+  "statementHash": "b30d61a3d3cb8350",
+  "searched": "2026-09-25T13:43:12.709Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "address coil reservation extensional equality predicates",
+   "openalex": "address coil reservation extensional equality predicates",
+   "crossref": "address coil reservation extensional equality predicates",
+   "arxiv": "address AND coil AND reservation"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coils_the_coil_on_eight_has_3_expressions": {
+  "key": "lean_coils_the_coil_on_eight_has_3_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_eight_has_3_expressions",
+  "statementHash": "87d2c0512b25b5da",
+  "searched": "2026-09-25T13:35:53.184Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
  "lean_coils_the_coil_on_five_has_3_expressions": {
   "key": "lean_coils_the_coil_on_five_has_3_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_five_has_3_expressions",
   "statementHash": "85d5082109e9cb44",
   "searched": "2026-09-25T13:34:27.791Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_four_five_has_2_expressions": {
+  "key": "lean_coils_the_coil_on_four_five_has_2_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_four_five_has_2_expressions",
+  "statementHash": "777c0314c98cc9e4",
+  "searched": "2026-09-25T13:36:47.274Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_four_has_2_expressions": {
+  "key": "lean_coils_the_coil_on_four_has_2_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_four_has_2_expressions",
+  "statementHash": "8bec01bae7497cc5",
+  "searched": "2026-09-25T13:36:59.843Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2125,6 +2183,66 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
+ "lean_coils_the_coil_on_seven_has_2_expressions": {
+  "key": "lean_coils_the_coil_on_seven_has_2_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_seven_has_2_expressions",
+  "statementHash": "a5267a005393213a",
+  "searched": "2026-09-25T13:39:25.586Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coils_the_coil_on_six_has_3_expressions": {
+  "key": "lean_coils_the_coil_on_six_has_3_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_six_has_3_expressions",
+  "statementHash": "2dbd3ff69af66919",
+  "searched": "2026-09-25T13:35:18.530Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
  "lean_coils_the_coil_on_three_has_3_expressions": {
   "key": "lean_coils_the_coil_on_three_has_3_expressions",
   "file": "coils.lean",
@@ -2240,6 +2358,64 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
+ "lean_coils_the_coil_on_two_seven_has_2_expressions": {
+  "key": "lean_coils_the_coil_on_two_seven_has_2_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_two_seven_has_2_expressions",
+  "statementHash": "38d2001b4f8338fc",
+  "searched": "2026-09-25T13:36:19.130Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_four_five_has_2_expressions": {
+  "key": "lean_coils_the_coil_on_zero_four_five_has_2_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_four_five_has_2_expressions",
+  "statementHash": "1e30634f376e972f",
+  "searched": "2026-09-25T13:36:35.510Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
  "lean_coils_the_coil_on_zero_has_10_expressions": {
   "key": "lean_coils_the_coil_on_zero_has_10_expressions",
   "file": "coils.lean",
@@ -2304,6 +2480,47 @@
   "name": "the_coil_on_zero_one_four_seven_has_5_expressions",
   "statementHash": "b13473808888ffaa",
   "searched": "2026-09-25T13:33:57.439Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 0,1,4,7": "0,1,4,7",
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A160120",
+    "name": "Y-toothpick sequence (see Comments lines for definition).",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A085787",
+    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
+    "query": "0,1,4,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_one_has_3_expressions": {
+  "key": "lean_coils_the_coil_on_zero_one_has_3_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_one_has_3_expressions",
+  "statementHash": "72171413d8c19edc",
+  "searched": "2026-09-25T13:35:32.378Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2448,6 +2665,220 @@
   "catalogued": true,
   "candidates": [],
   "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_two_seven_has_2_expressions": {
+  "key": "lean_coils_the_coil_on_zero_two_seven_has_2_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_two_seven_has_2_expressions",
+  "statementHash": "898103dcaf93e1ba",
+  "searched": "2026-09-25T13:36:06.827Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_two_three_five_six_eight_has_2_expressions": {
+  "key": "lean_coils_the_coil_on_zero_two_three_five_six_eight_has_2_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_two_three_five_six_eight_has_2_expressions",
+  "statementHash": "0e3eeb78324f6c11",
+  "searched": "2026-09-25T13:37:30.269Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "oeis 0,2,3,5,6,8": "0,2,3,5,6,8",
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A007494",
+    "name": "Numbers that are congruent to 0 or 2 mod 3.",
+    "query": "0,2,3,5,6,8"
+   },
+   {
+    "a": "A007067",
+    "name": "Nearest integer to n*phi where phi = (1+sqrt(5))/2.",
+    "query": "0,2,3,5,6,8"
+   },
+   {
+    "a": "A105760",
+    "name": "Nonnegative numbers k such that 2k+7 is prime.",
+    "query": "0,2,3,5,6,8"
+   },
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coils_the_container_and_the_capacity_are_not_interchangeable": {
+  "key": "lean_coils_the_container_and_the_capacity_are_not_interchangeable",
+  "file": "coils.lean",
+  "name": "the_container_and_the_capacity_are_not_interchangeable",
+  "statementHash": "5bb896f662ec23d5",
+  "searched": "2026-09-25T13:43:22.668Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "container capacity interchangeable extensional equality predicates",
+   "openalex": "container capacity interchangeable extensional equality predicates",
+   "crossref": "container capacity interchangeable extensional equality predicates",
+   "arxiv": "container AND capacity AND interchangeable"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_coin_one_side_is_reflected_onto_itself": {
+  "key": "lean_coin_one_side_is_reflected_onto_itself",
+  "file": "coin.lean",
+  "name": "one_side_is_reflected_onto_itself",
+  "statementHash": "db6242ae64d1f11f",
+  "searched": "2026-09-25T13:43:48.221Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "side reflected itself method complements",
+   "openalex": "side reflected itself method complements",
+   "crossref": "side reflected itself method complements",
+   "arxiv": "side AND reflected AND itself"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Glass Surface Detection: Leveraging Reflection Dynamics in Flash/No-flash Imagery",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2511.16887v5",
+    "relevance": 0.6666666666666666,
+    "text": "Glass Surface Detection: Leveraging Reflection Dynamics in Flash/No-flash Imagery Glass surfaces are ubiquitous in daily life, typically appearing colorless, transparent, and lacking distinctive features. These characteristics make glass surface detection a challenging computer vision task. Existing"
+   },
+   {
+    "source": "arxiv",
+    "title": "Weak reflection principle for Lévy processes",
+    "year": "2013",
+    "url": "http://arxiv.org/abs/1308.2250v4",
+    "relevance": 0.6666666666666666,
+    "text": "Weak reflection principle for Lévy processes In this paper, we develop a new mathematical technique which allows us to express the joint distribution of a Markov process and its running maximum (or minimum) through the marginal distribution of the process itself. This technique is an extension of th"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_coin_the_reflection_is_an_involution": {
+  "key": "lean_coin_the_reflection_is_an_involution",
+  "file": "coin.lean",
+  "name": "the_reflection_is_an_involution",
+  "statementHash": "3bad7d15166862e9",
+  "searched": "2026-09-25T13:43:33.476Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "reflection involution method complements",
+   "openalex": "reflection involution method complements",
+   "crossref": "reflection involution method complements",
+   "arxiv": "reflection AND involution"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_flow_navier_stokes_flow_is_bounded_for_every_step": {
   "key": "lean_flow_navier_stokes_flow_is_bounded_for_every_step",

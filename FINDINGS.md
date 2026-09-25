@@ -280,6 +280,42 @@ on its first green run, which is exactly that defect, caught in its own output.
 files may hold ninety broken theorems. It understated, which is the direction a wrong number survives in.
 The unit is named now.
 
+## 7l · The novelty search works in one half and is noise in the other
+
+The search ran to 10.3% coverage — 119 of 1,153 theorems. What it found separates cleanly into two halves,
+and they do not have the same standing.
+
+**The OEIS half works, and found real prior art.** Integer lists in a statement are looked up by their
+terms, which is the most exact check available, and it returned **A153130 — "Period 6: repeat
+[1, 2, 4, 8, 7, 5]"**: this deposit's own doubling orbit, catalogued. Also A001651 (numbers not divisible by
+3) for the units, A001370 (sum of digits of 2ⁿ), A000079 (powers of 2). Eleven statements carry a
+catalogued sequence. A sequence being catalogued credits the SEQUENCE by its A-number and says nothing
+about what a theorem claims of it — which is why it is recorded beside the verdict and never as one.
+
+**The keyword half is mostly noise, and the count is not a measure of prior art.** It first returned 13
+CANDIDATES for `address.lean`, every one a match on the English verb: *"Addressing identity/redressing the
+museum"*, *"Addressing Order Sensitivity of In-Context Demonstrations"*, *"Bytes and Barriers: Addressing
+Technology-Facilitated…"*. The cause was the file's own declaration — `prior_art_domain: content
+addressing` — so the anchors a hit must share were `content` and `addressing`, two ordinary English words.
+**An anchor made of ordinary English anchors nothing.**
+
+Fixed in two places: the declaration now names the actual field (*content addressing by cryptographic hash
+— SHA-256 digests as immutable identifiers*, giving anchors `cryptographic, hash, sha, digests`), and
+`content`, `addressing`, `address`, `identity`, `mapping`, `data`, `system` joined `GENERIC`, the list that
+already existed because *"number"* is in every Reynolds-number paper. The 25 rows searched under the old
+anchor were **deleted and re-searched, not re-labelled** — a verdict whose domain was wrong is not a
+verdict to keep.
+
+CANDIDATES fell 13 → 4. **All four are still lexical**: *"Glass Surface Detection: Leveraging Reflection
+Dynamics"* against a theorem on the tens-complement reflection; *"Tits polygons"* against "the roots are
+the singles"; *"History of constructivism in the 20th century"* against "the witness is decided here".
+
+**The nameable weakness:** the search queries the theorem's NAME, and this deposit names theorems as plain
+English sentences, which collide with every field's vocabulary at a 0.6 word-overlap floor. The OEIS half
+searches the statement's *mathematical content* and that is why it is the half that works. Raising the
+floor would trade these false positives for false negatives, which is worse — so what is recorded is the
+weakness, not a tuned number.
+
 ## 7k · Novelty is unmeasured here — 35 searches against 1,168 theorems
 
 `scripts/discoveries.ts` consolidates the four generators that had grown separately and never knew about
