@@ -47,6 +47,22 @@ type Control = { gate: string; cmd: string; what: string; file: string; mutate: 
 const PREREQ = 'node scripts/locale-fold.ts'
 
 const CONTROLS: Control[] = [
+  // ── THE TWO RELEASE CHECKS, CONTROLLED ─────────────────────────────────────────────────────────────────
+  // Both refuse, both are mine, and leads.ts named them uncontrolled the day they were written. e2e reads
+  // the BUILT site, so its control mutates what the build produced rather than a source file — a published
+  // page that no longer references its data is exactly the artefact defect it exists to catch.
+  { gate: 'e2e (page stops referencing its data)', cmd: 'node scripts/e2e.ts', file: '.vitepress/dist/formulas.html',
+    what: 'a published page that embeds nothing and references nothing — a reader arrives at an empty list',
+    mutate: (s) => s.replace(/formulas\.jsonld/g, 'formulas-that-do-not-exist.jsonld') },
+
+  // release-live IS NOT CONTROLLED HERE AND IS NAMED RATHER THAN FAKED — the discipline this file already
+  // applies to latex-gate, ci-drift and axiom-index. Its refusal is ABSENT, a fact about npm's registry,
+  // and no mutation of any file in this tree can produce it. Writing `mutate: (s) => s` would have been a
+  // control that is a no-op, which this file detects and refuses, and dressing one up would be worse than
+  // having none. It IS exercised, by argument rather than by mutation: `node scripts/release-live.ts
+  // v0.0.0` asks about a version that was never published and must answer ABSENT and exit non-zero. Run it
+  // after any change to that script.
+
   // ── THE TWO I ADDED THIS SESSION, CONTROLLED ───────────────────────────────────────────────────────────
   // Both refuse when their corpus collapses — a catalogue of nothing and a vocabulary that clusters into
   // everything or nothing are each a broken reader reporting a clean tree. leads.ts flagged them as
