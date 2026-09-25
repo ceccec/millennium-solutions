@@ -107,6 +107,6 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [64, 76, 34]  ·  `984a9c4c-396a…`
 - distinct harmonic sines are orthogonal over a period: ∫₀^{2π} sin(mx)·sin(nx) dx = 0 for m ≠ n — why waves of different harmonics do not interfere on average  ·  tarot [29, 27, 65]  ·  `0d37c981-4913…`
 
-Page content-address: `ec1d5245-076b-8c3d-a351-b86b7d4ff2f8`.
+Page content-address: `c1d3f520-49f9-8490-8be4-cd503b976547`.
 
 **Honest bound.** This page presents the *computed structure* — the pentagon, the games, the arts — each a decidable fact re-verified every build. It does not explain life or consciousness; the meaning is the observer's to bring. Geometry, not a claim about being.

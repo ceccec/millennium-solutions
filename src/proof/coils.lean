@@ -229,4 +229,18 @@ theorem the_coil_on_seven_has_2_expressions :
   (([5].map (fun d => m9 (d * d))).all (fun x => [7].contains x) && [7].all (fun x => ([5].map (fun d => m9 (d * d))).contains x) && ([5].map (fun d => m9 (d * d))).eraseDups.length == 1)
   && (([5].map (fun d => m9 (5 * d))).all (fun x => [7].contains x) && [7].all (fun x => ([5].map (fun d => m9 (5 * d))).contains x) && ([5].map (fun d => m9 (5 * d))).eraseDups.length == 1) := by decide
 
+-- the capacity 2^(128-reserved) = the container divided by the reservation = the container shifted right by the reservation
+theorem the_address_coil_first_holds_at_every_reservation :
+  (List.range 33).all (fun r => (2 ^ (128 - r)) == (2 ^ 128 / 2 ^ r)
+       && (2 ^ (128 - r)) == (2 ^ 128 / 2 ^ r)) := by decide
+
+-- the container size 2^128 = the capacity times the reservation cost
+theorem the_address_coil_second_holds_at_every_reservation :
+  (List.range 33).all (fun r => (2 ^ 128) == (2 ^ (128 - r) * 2 ^ r)) := by decide
+
+-- AND THE ONE THAT IS NOT A COIL. The container size and the capacity agree ONLY when nothing is
+-- reserved, so substituting one for the other asserts a reservation of zero — which RFC 9562 forbids.
+theorem the_container_and_the_capacity_are_not_interchangeable :
+  (List.range 33).all (fun r => ((2 ^ 128) == (2 ^ (128 - r))) == (r == 0)) := by decide
+
 end Coils

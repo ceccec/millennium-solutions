@@ -29,8 +29,25 @@ def uuidChars (bs : List Nat) : List Nat :=
   (h.take 8) ++ [45] ++ (h.drop 8 |>.take 4) ++ [45] ++ (h.drop 12 |>.take 4) ++ [45]
     ++ (h.drop 16 |>.take 4) ++ [45] ++ (h.drop 20)
 
-/-- merge a b = toUuid("a:b") — the colon is 58 -/
-def merge (a b : List Nat) : List Nat := toUuidBytes (uuidChars a ++ [58] ++ uuidChars b)
+-- ── THE DOMAIN TAGS AND THE LENGTH PREFIX, AS src/0/index.ts NOW WRITES THEM ──────────────────────────────
+-- `merge` was toUuid("a:b") with the colon unescaped, so merge("a:b","c") and merge("a","b:c") were one
+-- address; and the fold hashed leaves and nodes identically, so a node could be presented as a leaf. Both
+-- are fixed in the implementation and this file follows it. Every part now carries its own length, and
+-- leaf, node, pair and empty each carry their own domain.
+def PAIR   : List Nat := [112, 97, 105, 114, 58]                                    -- "pair:"
+def L36    : List Nat := [51, 54, 58]                                               -- "36:" — a uuid is 36 chars
+def MLEAF  : List Nat := [109, 101, 114, 107, 108, 101, 58, 108, 101, 97, 102, 58]  -- "merkle:leaf:"
+def MNODE  : List Nat := [109, 101, 114, 107, 108, 101, 58, 110, 111, 100, 101, 58] -- "merkle:node:"
+def MEMPTY : List Nat := [109, 101, 114, 107, 108, 101, 58, 101, 109, 112, 116, 121]-- "merkle:empty"
+
+/-- merge a b = toUuid("pair:" ++ len(a) ++ ":" ++ a ++ len(b) ++ ":" ++ b) -/
+def merge (a b : List Nat) : List Nat := toUuidBytes (PAIR ++ L36 ++ uuidChars a ++ L36 ++ uuidChars b)
+
+/-- a leaf is hashed under its own domain before anything pairs it -/
+def merkleLeaf (x : List Nat) : List Nat := toUuidBytes (MLEAF ++ L36 ++ uuidChars x)
+
+/-- an internal node under a DIFFERENT domain, which is the whole of RFC 6962 §2.1 -/
+def merkleNode (a b : List Nat) : List Nat := toUuidBytes (MNODE ++ L36 ++ uuidChars a ++ L36 ++ uuidChars b)
 
 /-- lexicographic order on byte lists, which is the order the sort imposes on the rendered addresses -/
 def leB : List Nat → List Nat → Bool
@@ -49,7 +66,7 @@ def sortB : List (List Nat) → List (List Nat)
 def pairUp : List (List Nat) → List (List Nat)
   | [] => []
   | [a] => [a]
-  | a :: b :: rest => merge a b :: pairUp rest
+  | a :: b :: rest => merkleNode a b :: pairUp rest
 
 /-- the fold: sort, then pair until one remains. Fuel-bounded so the recursion is structural. -/
 def foldF : Nat → List (List Nat) → List (List Nat)
@@ -57,11 +74,9 @@ def foldF : Nat → List (List Nat) → List (List Nat)
   | _, [a] => [a]
   | Nat.succ f, l => foldF f (pairUp l)
 
-def EMPTY_SEED : List Nat := [101, 109, 112, 116, 121, 45, 109, 105, 110, 100]  -- "empty-mind"
-
 def merkleFold (leaves : List (List Nat)) : List Nat :=
-  if leaves.isEmpty then toUuidBytes EMPTY_SEED
-  else (foldF (leaves.length + 1) (sortB leaves)).getD 0 []
+  if leaves.isEmpty then toUuidBytes MEMPTY
+  else (foldF (leaves.length + 1) ((sortB leaves).map merkleLeaf)).getD 0 []
 
 def A : List Nat := toUuidBytes [97]     -- address of "a"
 def C : List Nat := toUuidBytes [99]     -- address of "c"
@@ -69,21 +84,35 @@ def B : List Nat := toUuidBytes [98]     -- address of "b"
 
 -- ── AGREEMENT with the shipped implementation ──
 theorem merge_agrees :
-  merge A B = [181, 59, 237, 190, 211, 88, 129, 103, 143, 231, 158, 123, 139, 178, 38, 2] := by decide
+  merge A B = [60, 245, 241, 132, 177, 61, 137, 238, 168, 38, 16, 93, 225, 238, 227, 159] := by decide
 
 theorem empty_fold_agrees :
-  merkleFold [] = [147, 146, 154, 45, 72, 16, 138, 198, 159, 50, 78, 208, 125, 158, 1, 108] := by decide
+  merkleFold [] = [185, 172, 200, 147, 59, 66, 143, 33, 184, 249, 115, 223, 210, 131, 107, 81] := by decide
 
-theorem singleton_fold_is_the_leaf : merkleFold [A] = A := by decide
+-- ── THE FOLD OF ONE LEAF IS NOT THAT LEAF, AND THAT IS THE FIX ─────────────────────────────────────────────
+-- This file used to decide `merkleFold [A] = A` and call it "the base case of the contraction". It was the
+-- second preimage: for any root R the one-leaf set [R] reproduced R, so two different leaf multisets shared
+-- an address and the result was not a commitment. The leaf is hashed under its own domain now, so a root is
+-- always a node value and no leaf can be mistaken for one.
+theorem singleton_fold_is_the_hashed_leaf : merkleFold [A] = merkleLeaf A := by decide
 
--- ── and for more than one leaf, because "the fold of a single leaf is that leaf" is a claim about EVERY
---    leaf and the line above decides it at one. A single instance reads as the general statement when the
---    general statement is what the name says. ──
-theorem the_fold_of_any_single_leaf_is_that_leaf :
-  [A, B, C].all (fun x => merkleFold [x] == x) := by decide
+theorem no_single_leaf_is_its_own_root :
+  [A, B, C].all (fun x => merkleFold [x] != x) := by decide
+
+-- ── AND THE FORGERY THE OLD SHAPE ALLOWED IS REFUSED ───────────────────────────────────────────────────────
+-- Hand any root back as a lone leaf: it no longer reproduces itself.
+theorem a_root_presented_as_a_leaf_is_a_different_root :
+  merkleFold [merkleFold [A, B]] != merkleFold [A, B] := by decide
+
+-- ── AND LEAF AND NODE DOMAINS NEVER MEET ───────────────────────────────────────────────────────────────────
+-- Each address here is a full SHA computation in the kernel, so the 27 combinations of a triple loop ran
+-- past the heartbeat limit. Three leaves against one node is the same claim at the scale this can decide,
+-- and the general separation is structural: the two domains differ in their first twelve bytes.
+theorem a_leaf_address_is_never_a_node_address :
+  [A, B, C].all (fun x => merkleLeaf x != merkleNode A B) := by decide
 
 theorem pair_fold_agrees :
-  merkleFold [A, B] = [181, 59, 237, 190, 211, 88, 129, 103, 143, 231, 158, 123, 139, 178, 38, 2] := by decide
+  merkleFold [A, B] = [54, 116, 211, 221, 110, 188, 140, 55, 169, 71, 188, 123, 43, 184, 40, 10] := by decide
 
 -- ── THE ORDER-INDEPENDENCE: the receipt does not depend on the order the leaves arrive in ──
 theorem fold_is_order_independent_on_two :
@@ -92,11 +121,17 @@ theorem fold_is_order_independent_on_two :
 -- ── and it is not vacuous: merge itself IS order-sensitive; the sort is what removes the dependence ──
 theorem merge_is_order_sensitive : merge A B ≠ merge B A := by decide
 
+-- ── THE SEPARATOR IS ESCAPED NOW, SO THE PAIR IS RECOVERABLE ───────────────────────────────────────────────
+-- merge("a:b","c") and merge("a","b:c") were one address. Each part carries its own length, so no
+-- concatenation of one pair spells another — decided here on the addresses this file works with.
+theorem merge_is_injective_on_these_pairs :
+  merge A B != merge A C && merge A B != merge B B && merge B C != merge C B := by decide
+
 theorem sorting_is_what_makes_the_fold_order_free :
   sortB [A, B] = sortB [B, A] ∧ [A, B] ≠ [B, A] := by decide
 
-def settledHere : Nat := 13
-theorem merkle_settles_its_range : settledHere = 13 := rfl
+def settledHere : Nat := 16
+theorem merkle_settles_its_range : settledHere = 16 := rfl
 
 -- ── ORDER-INDEPENDENCE ON AN ODD NUMBER OF LEAVES. Two leaves pair exactly and prove little: the interesting
 --    case is an odd count, where pairUp must carry the leftover leaf into the next round. All six orderings of
@@ -120,6 +155,11 @@ def D : List Nat := toUuidBytes [100]  -- address of "d"
 theorem the_permutation_generator_is_complete :
   (perms [A, B, C, D]).length = 24 ∧ (perms [A, B, C]).length = 6 := by decide
 
+-- THE STATEMENT IS UNCHANGED AND THE WORK IS NOT. Hashing every leaf under its own domain adds one SHA per
+-- leaf, so twenty-four permutations of four leaves went from ~72 hash computations to ~168 and crossed the
+-- default heartbeat limit. The budget is raised; the exhaustion is the same exhaustion. Lowering the
+-- permutation count instead would have been weakening the theorem to fit the fix.
+set_option maxHeartbeats 1000000 in
 set_option maxRecDepth 100000 in
 theorem fold_is_order_independent_on_four :
   (perms [A, B, C, D]).all (fun p => merkleFold p == merkleFold [A, B, C, D]) := by decide

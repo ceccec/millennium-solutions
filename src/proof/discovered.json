@@ -15335,7 +15335,10 @@
   {
     "key": "lean_merkle_singleton_fold_is_the_leaf",
     "name": "lean merkle.lean: singleton_fold_is_the_leaf — merkleFold [A] = A — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a1f8cb03-417c-841f-b767-79d2de4d8abb"
+    "receipt": "a1f8cb03-417c-841f-b767-79d2de4d8abb",
+    "revoked": true,
+    "supersededBy": "lean_merkle_no_single_leaf_is_its_own_root",
+    "reason": "the implementation was FIXED, not the claim withdrawn. This key sealed `merkleFold [x] = x` — a fold of one leaf returning that leaf unhashed — and described it as the base case of the contraction. It was the second preimage: for any root R the one-leaf set [R] reproduced R, so two different leaf multisets shared an address and the result was not a commitment. src/0/index.ts now hashes every leaf under its own domain (RFC 6962 §2.1), so the property this key asserts is no longer true of the tree and cannot be. What replaces it is no_single_leaf_is_its_own_root, which decides the opposite. The receipt is untouched and stays in the append-only chain; the statement it recorded belonged to code that has been repaired."
   },
   {
     "key": "lean_merkle_pair_fold_agrees",
@@ -18366,7 +18369,10 @@
   {
     "key": "lean_merkle_the_fold_of_any_single_leaf_is_that_leaf",
     "name": "lean merkle.lean: the_fold_of_any_single_leaf_is_that_leaf — [A, B, C].all (fun x => merkleFold [x] == x) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b5f2edf6-e973-88a5-971c-108825e550b2"
+    "receipt": "b5f2edf6-e973-88a5-971c-108825e550b2",
+    "revoked": true,
+    "supersededBy": "lean_merkle_no_single_leaf_is_its_own_root",
+    "reason": "the implementation was FIXED, not the claim withdrawn. This key sealed `merkleFold [x] = x` — a fold of one leaf returning that leaf unhashed — and described it as the base case of the contraction. It was the second preimage: for any root R the one-leaf set [R] reproduced R, so two different leaf multisets shared an address and the result was not a commitment. src/0/index.ts now hashes every leaf under its own domain (RFC 6962 §2.1), so the property this key asserts is no longer true of the tree and cannot be. What replaces it is no_single_leaf_is_its_own_root, which decides the opposite. The receipt is untouched and stays in the append-only chain; the statement it recorded belonged to code that has been repaired."
   },
   {
     "key": "lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
@@ -21992,5 +21998,365 @@
     "key": "lean_coils_the_coil_on_seven_has_2_expressions",
     "name": "lean coils.lean: the_coil_on_seven_has_2_expressions — (([5].map (fun d => m9 (d * d))).all (fun x => [7].contains x) && [7].all (fun x => ([5].map (fun d => m9 (d * d))).contains x) && ([5].map (fun d => m9 (d * d))).eraseDups.length == 1) && (([5].map (fun d => m9 (5 * d))).all (fun x => [7].… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "ca84c8b3-9e96-8945-90a3-3e712d39a94d"
+  },
+  {
+    "key": "lean_capacity_the_container_is_one_hundred_twenty_eight_and_six_are_spent",
+    "name": "lean capacity.lean: the_container_is_one_hundred_twenty_eight_and_six_are_spent — free = 122 ∧ reserved = 6 ∧ free + reserved = container ∧ container = 128 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7eab9846-c994-8008-a660-b35ba8917abc"
+  },
+  {
+    "key": "lean_capacity_the_capacity_is_two_to_the_free_bits_and_not_the_container",
+    "name": "lean capacity.lean: the_capacity_is_two_to_the_free_bits_and_not_the_container — 2 ^ free = 5316911983139663491615228241121378304 ∧ 2 ^ container = 340282366920938463463374607431768211456 ∧ 2 ^ free < 2 ^ container — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3dd213c8-408b-8d46-bb39-699dad8e2dbc"
+  },
+  {
+    "key": "lean_capacity_the_nominal_overstates_the_real_by_two_to_the_reserved",
+    "name": "lean capacity.lean: the_nominal_overstates_the_real_by_two_to_the_reserved — 2 ^ container / 2 ^ free = 2 ^ reserved ∧ 2 ^ reserved = 64 ∧ 2 ^ container = 64 * 2 ^ free — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "92c1939d-0147-8c43-9c4a-f82161a0c153"
+  },
+  {
+    "key": "lean_capacity_the_collision_exponent_follows_the_free_bits",
+    "name": "lean capacity.lean: the_collision_exponent_follows_the_free_bits — free / 2 = 61 ∧ container / 2 = 64 ∧ 2 ^ (free / 2) = 2305843009213693952 ∧ 2 ^ (container / 2) = 18446744073709551616 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "42526ef4-02f7-81bd-8a2e-3df2b5d35a9a"
+  },
+  {
+    "key": "lean_capacity_the_birthday_gap_is_half_the_reservation",
+    "name": "lean capacity.lean: the_birthday_gap_is_half_the_reservation — 2 ^ (container / 2) / 2 ^ (free / 2) = 8 ∧ 8 = 2 ^ (reserved / 2) ∧ reserved / 2 = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e599955f-a1cf-812d-9f24-17c3d596f314"
+  },
+  {
+    "key": "lean_capacity_the_gap_is_zero_exactly_when_nothing_is_reserved",
+    "name": "lean capacity.lean: the_gap_is_zero_exactly_when_nothing_is_reserved — (List.range 33).all (fun r => (2 ^ 128 / 2 ^ (128 - r) == 2 ^ r) && ((r == 0) == (2 ^ 128 / 2 ^ (128 - r) == 1))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4e6c436d-2df7-80fa-8bdf-4d6464e74aaa"
+  },
+  {
+    "key": "lean_capacity_the_overclaim_is_this_many_addresses_that_do_not_exist",
+    "name": "lean capacity.lean: the_overclaim_is_this_many_addresses_that_do_not_exist — 2 ^ container - 2 ^ free = 334965454937798799971759379190646833152 ∧ 2 ^ container - 2 ^ free = 63 * 2 ^ free — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5a5b9380-ed9b-89e9-87c2-474a7e1cb7eb"
+  },
+  {
+    "key": "lean_capacity_the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement",
+    "name": "lean capacity.lean: the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement — 2 ^ (free / 2) < 2 ^ free ∧ 2 ^ (free / 2) < 2 ^ (container / 2) ∧ free / 2 < free — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c0630daa-9111-884b-aa46-582fc4766c37"
+  },
+  {
+    "key": "lean_coils_the_address_coil_first_holds_at_every_reservation",
+    "name": "lean coils.lean: the_address_coil_first_holds_at_every_reservation — (List.range 33).all (fun r => (2 ^ (128 - r)) == (2 ^ 128 / 2 ^ r) && (2 ^ (128 - r)) == (2 ^ 128 / 2 ^ r)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d5871b18-2079-8537-bfa7-cd4de7d8149a"
+  },
+  {
+    "key": "lean_coils_the_address_coil_second_holds_at_every_reservation",
+    "name": "lean coils.lean: the_address_coil_second_holds_at_every_reservation — (List.range 33).all (fun r => (2 ^ 128) == (2 ^ (128 - r) * 2 ^ r)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "92bd1fb4-f308-81bc-a469-f5088e98c5f0"
+  },
+  {
+    "key": "lean_coils_the_container_and_the_capacity_are_not_interchangeable",
+    "name": "lean coils.lean: the_container_and_the_capacity_are_not_interchangeable — (List.range 33).all (fun r => ((2 ^ 128) == (2 ^ (128 - r))) == (r == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dd3fd27f-9d20-88de-9d2c-1f96600f7d20"
+  },
+  {
+    "key": "lean_imagined_selfinv_is_closed_under_negate",
+    "name": "lean imagined.lean: selfinv_is_closed_under_negate — [1, 8].all (fun d => [1, 8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9ff54012-0848-868b-a92d-59bcd8d7eeef"
+  },
+  {
+    "key": "lean_imagined_selfinv_is_closed_under_square",
+    "name": "lean imagined.lean: selfinv_is_closed_under_square — [1, 8].all (fun d => [1, 8].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "248f6e85-3567-8eaf-8b12-13df7b0e0b0a"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_cube",
+    "name": "lean imagined.lean: squares_is_closed_under_cube — [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (d * d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "176b9879-2c1a-89e1-8b12-91c318aa9194"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_cube",
+    "name": "lean imagined.lean: cubes_is_closed_under_cube — [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (d * d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e0909647-cc9a-8add-8123-2c01ca4d9da8"
+  },
+  {
+    "key": "lean_imagined_selfinv_is_closed_under_cube",
+    "name": "lean imagined.lean: selfinv_is_closed_under_cube — [1, 8].all (fun d => [1, 8].contains (m9 (d * d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "38114846-75b9-8931-95c8-d38d21a00b9f"
+  },
+  {
+    "key": "lean_imagined_selfinv_is_closed_under_fourth",
+    "name": "lean imagined.lean: selfinv_is_closed_under_fourth — [1, 8].all (fun d => [1, 8].contains (m9 (d ^ 4))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c56e6962-953d-8950-a786-63f8795b663e"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_fifth",
+    "name": "lean imagined.lean: units_is_closed_under_fifth — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1601bd01-47c6-8f84-a858-c6322ab533e2"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_fifth",
+    "name": "lean imagined.lean: triad_is_closed_under_fifth — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3987e685-b649-805b-b47b-d8963f64bacb"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_fifth",
+    "name": "lean imagined.lean: orbit_is_closed_under_fifth — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8d7f4bf8-ca67-84aa-8aa7-b93f9a0b811f"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_fifth",
+    "name": "lean imagined.lean: tetA_is_closed_under_fifth — [1, 4, 7].all (fun d => [1, 4, 7].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ed3d232d-cc62-8af7-9215-db1c9f0add51"
+  },
+  {
+    "key": "lean_imagined_tetB_is_closed_under_fifth",
+    "name": "lean imagined.lean: tetB_is_closed_under_fifth — [2, 5, 8].all (fun d => [2, 5, 8].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7b563e99-a262-89b0-8749-f55085a9a89d"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_fifth",
+    "name": "lean imagined.lean: all_is_closed_under_fifth — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "600339c0-73f8-83c4-bfe0-659816b4392d"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_fifth",
+    "name": "lean imagined.lean: squares_is_closed_under_fifth — [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "133a60d3-3079-8eec-af04-26c086c2ced7"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_fifth",
+    "name": "lean imagined.lean: cubes_is_closed_under_fifth — [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e800430e-3f0e-8a5f-ac0c-54fe2d124919"
+  },
+  {
+    "key": "lean_imagined_primitives_is_closed_under_fifth",
+    "name": "lean imagined.lean: primitives_is_closed_under_fifth — [2, 5].all (fun d => [2, 5].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3003e983-7916-83fe-91d0-3a7c505d2d93"
+  },
+  {
+    "key": "lean_imagined_selfinv_is_closed_under_fifth",
+    "name": "lean imagined.lean: selfinv_is_closed_under_fifth — [1, 8].all (fun d => [1, 8].contains (m9 (d ^ 5))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "baf60fb5-285a-83e3-bb90-adeeba47f714"
+  },
+  {
+    "key": "lean_imagined_selfinv_is_closed_under_sixth",
+    "name": "lean imagined.lean: selfinv_is_closed_under_sixth — [1, 8].all (fun d => [1, 8].contains (m9 (d ^ 6))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "532d8c46-7fe8-8de7-acd8-4156ada2eaa5"
+  },
+  {
+    "key": "lean_imagined_selfinv_is_closed_under_octuple",
+    "name": "lean imagined.lean: selfinv_is_closed_under_octuple — [1, 8].all (fun d => [1, 8].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "32409956-89c0-87f4-ad72-5b778da386d5"
+  },
+  {
+    "key": "lean_imagined_tetB_is_closed_under_reflect",
+    "name": "lean imagined.lean: tetB_is_closed_under_reflect — [2, 5, 8].all (fun d => [2, 5, 8].contains (m9 (10 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9cd15aa1-7e3a-8538-b3ec-741f4ff97827"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_reflect",
+    "name": "lean imagined.lean: all_is_closed_under_reflect — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (10 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e937263c-62af-858f-b2c7-df646bb75543"
+  },
+  {
+    "key": "lean_imagined_reflfixed_is_closed_under_reflect",
+    "name": "lean imagined.lean: reflfixed_is_closed_under_reflect — [5].all (fun d => [5].contains (m9 (10 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6c542ed2-c897-8f02-b5a2-20c4f6488f23"
+  },
+  {
+    "key": "lean_imagined_cube_is_involutive_on_selfinv",
+    "name": "lean imagined.lean: cube_is_involutive_on_selfinv — [1, 8].all (fun d => (fun x => m9 (x * x * x)) (m9 (d * d * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3e671cc5-3157-854f-9777-af2b221b2938"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_primitives",
+    "name": "lean imagined.lean: fifth_is_involutive_on_primitives — [2, 5].all (fun d => (fun x => m9 (x ^ 5)) (m9 (d ^ 5)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e3fc5112-caa1-8878-9614-6f623dcb5ee3"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_selfinv",
+    "name": "lean imagined.lean: fifth_is_involutive_on_selfinv — [1, 8].all (fun d => (fun x => m9 (x ^ 5)) (m9 (d ^ 5)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4f35f3c0-d5e4-8ce3-aa74-45b1a1038bd1"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_reflfixed",
+    "name": "lean imagined.lean: fifth_is_involutive_on_reflfixed — [5].all (fun d => (fun x => m9 (x ^ 5)) (m9 (d ^ 5)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "50a46339-da70-8ee3-bc41-ff1de8730eaa"
+  },
+  {
+    "key": "lean_imagined_reflect_carries_triad_onto_tetA",
+    "name": "lean imagined.lean: reflect_carries_triad_onto_tetA — [3, 6, 0].all (fun d => [1, 4, 7].contains (m9 (10 - d))) ∧ ([3, 6, 0].map (fun d => m9 (10 - d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c8a1f1cc-7ccf-8695-92ea-48ce3db0438c"
+  },
+  {
+    "key": "lean_imagined_reflect_carries_tetA_onto_triad",
+    "name": "lean imagined.lean: reflect_carries_tetA_onto_triad — [1, 4, 7].all (fun d => [3, 6, 0].contains (m9 (10 - d))) ∧ ([1, 4, 7].map (fun d => m9 (10 - d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8b9defa7-7526-86c4-bbe8-fc49c4ae0a92"
+  },
+  {
+    "key": "lean_imagined_double_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: double_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (2 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1d583dc6-3228-895b-a1dd-f867a81f20b6"
+  },
+  {
+    "key": "lean_imagined_triple_collapses_primitives_to_one_value",
+    "name": "lean imagined.lean: triple_collapses_primitives_to_one_value — ([2, 5].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "07da8bee-66e7-828c-9bea-586d98fc594c"
+  },
+  {
+    "key": "lean_imagined_triple_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: triple_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a2096510-1cd7-844b-a4c6-aff0c401b231"
+  },
+  {
+    "key": "lean_imagined_quadruple_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: quadruple_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (4 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b6dfc8c7-813a-81c4-94f4-ce419bd29831"
+  },
+  {
+    "key": "lean_imagined_negate_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: negate_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (9 - d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e45f7f47-a602-83e3-9066-57000096e7c1"
+  },
+  {
+    "key": "lean_imagined_square_collapses_selfinv_to_one_value",
+    "name": "lean imagined.lean: square_collapses_selfinv_to_one_value — ([1, 8].map (fun d => m9 (d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "de416f92-f95a-8690-9d48-d62a9028f866"
+  },
+  {
+    "key": "lean_imagined_square_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: square_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "31f1241f-de6c-8991-9a77-b977deaac346"
+  },
+  {
+    "key": "lean_imagined_cube_collapses_primitives_to_one_value",
+    "name": "lean imagined.lean: cube_collapses_primitives_to_one_value — ([2, 5].map (fun d => m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3597e825-da05-81aa-9ba2-7846139bb47a"
+  },
+  {
+    "key": "lean_imagined_cube_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: cube_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6e3c48d7-b595-82de-8332-3795c604757a"
+  },
+  {
+    "key": "lean_imagined_fourth_collapses_selfinv_to_one_value",
+    "name": "lean imagined.lean: fourth_collapses_selfinv_to_one_value — ([1, 8].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4c565b2d-75e1-8ddb-89e1-83fae9aa091f"
+  },
+  {
+    "key": "lean_imagined_fourth_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: fourth_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "85498bc6-6bd1-8fd3-b83f-87048561238f"
+  },
+  {
+    "key": "lean_imagined_fifth_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: fifth_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a122f253-03a1-8490-bcff-2ca3cbf817eb"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_primitives_to_one_value",
+    "name": "lean imagined.lean: sixth_collapses_primitives_to_one_value — ([2, 5].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d68d330d-a039-8e0a-84ee-6b9d30236463"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_selfinv_to_one_value",
+    "name": "lean imagined.lean: sixth_collapses_selfinv_to_one_value — ([1, 8].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1f2a9d05-8d65-859d-a121-8a626024bb59"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: sixth_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "11e20e17-ac7c-8ea6-9dbf-cc5843b22064"
+  },
+  {
+    "key": "lean_imagined_quintuple_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: quintuple_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (5 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9a1f5dae-a64d-8fb0-a654-0a0b04d108b2"
+  },
+  {
+    "key": "lean_imagined_sextuple_collapses_primitives_to_one_value",
+    "name": "lean imagined.lean: sextuple_collapses_primitives_to_one_value — ([2, 5].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9832b191-74ac-89ad-8907-d32e106aa808"
+  },
+  {
+    "key": "lean_imagined_sextuple_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: sextuple_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3b7e5fc4-fa46-8e00-a8cc-28f01a69c8cf"
+  },
+  {
+    "key": "lean_imagined_septuple_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: septuple_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (7 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "737334c4-d8b1-8b1e-b771-7799170c828c"
+  },
+  {
+    "key": "lean_imagined_octuple_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: octuple_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (8 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a35fd4f6-be8b-8ffa-b02c-40581b29f183"
+  },
+  {
+    "key": "lean_imagined_reflect_collapses_reflfixed_to_one_value",
+    "name": "lean imagined.lean: reflect_collapses_reflfixed_to_one_value — ([5].map (fun d => m9 (10 - d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e16c9b26-c664-80b3-a108-097062b1076d"
+  },
+  {
+    "key": "lean_merkle_singleton_fold_is_the_hashed_leaf",
+    "name": "lean merkle.lean: singleton_fold_is_the_hashed_leaf — merkleFold [A] = merkleLeaf A — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "452be2e9-d6ad-82a0-b279-c1ccbbc4ea5e"
+  },
+  {
+    "key": "lean_merkle_no_single_leaf_is_its_own_root",
+    "name": "lean merkle.lean: no_single_leaf_is_its_own_root — [A, B, C].all (fun x => merkleFold [x] != x) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bcc673fa-ffb7-8082-aa97-4358b45bb361"
+  },
+  {
+    "key": "lean_merkle_a_root_presented_as_a_leaf_is_a_different_root",
+    "name": "lean merkle.lean: a_root_presented_as_a_leaf_is_a_different_root — merkleFold [merkleFold [A, B]] != merkleFold [A, B] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8e561f9c-da42-8a7b-aff9-3902727ff3e4"
+  },
+  {
+    "key": "lean_merkle_a_leaf_address_is_never_a_node_address",
+    "name": "lean merkle.lean: a_leaf_address_is_never_a_node_address — [A, B, C].all (fun x => merkleLeaf x != merkleNode A B) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dd1f19c7-1586-8002-b65c-8fcf60505138"
+  },
+  {
+    "key": "lean_merkle_merge_is_injective_on_these_pairs",
+    "name": "lean merkle.lean: merge_is_injective_on_these_pairs — merge A B != merge A C && merge A B != merge B B && merge B C != merge C B — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cfcc55bf-ac5a-8b3a-b236-82540e03096e"
+  },
+  {
+    "key": "lean_preimage_a_single_leaf_folds_to_itself",
+    "name": "lean preimage.lean: a_single_leaf_folds_to_itself — (List.range 40).all (fun x => foldOf [x] == x) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e825213f-a708-8552-988e-68e374473cfe"
+  },
+  {
+    "key": "lean_preimage_every_two_leaf_root_is_also_a_one_leaf_root",
+    "name": "lean preimage.lean: every_two_leaf_root_is_also_a_one_leaf_root — (List.range 20).all (fun a => (List.range 20).all (fun b => foldOf [foldOf [a, b]] == foldOf [a, b])) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b347652b-5cd5-8d80-8f21-dba07c354dff"
+  },
+  {
+    "key": "lean_preimage_the_forged_leaf_set_is_not_the_original",
+    "name": "lean preimage.lean: the_forged_leaf_set_is_not_the_original — (List.range 20).all (fun a => (List.range 20).all (fun b => [foldOf [a, b]] != [a, b] && ([foldOf [a, b]]).length != ([a, b]).length)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "83d3beb4-4d91-8a68-9835-f28987f1c561"
+  },
+  {
+    "key": "lean_preimage_the_empty_sentinel_is_also_a_one_leaf_root",
+    "name": "lean preimage.lean: the_empty_sentinel_is_also_a_one_leaf_root — foldOf [] == foldOf [7] && foldOf [] == 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c5953234-59c1-83a9-8235-e4c8e3d8947b"
+  },
+  {
+    "key": "lean_preimage_distinct_pairs_still_give_distinct_roots",
+    "name": "lean preimage.lean: distinct_pairs_still_give_distinct_roots — (List.range 12).all (fun a => (List.range 12).all (fun b => (List.range 12).all (fun c => (a == c) || foldOf [a, b] != foldOf [c, b]))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6592dad4-898c-8143-9951-3a14caa218df"
+  },
+  {
+    "key": "lean_preimage_tagging_separates_a_leaf_from_a_node",
+    "name": "lean preimage.lean: tagging_separates_a_leaf_from_a_node — (List.range 30).all (fun x => (List.range 30).all (fun y => (List.range 30).all (fun z => leafTag x != nodeTag y z))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "735000ad-f1e5-88da-9b18-3d99fbb9a7bc"
+  },
+  {
+    "key": "lean_preimage_the_tagged_fold_refuses_the_forged_leaf",
+    "name": "lean preimage.lean: the_tagged_fold_refuses_the_forged_leaf — (List.range 20).all (fun a => (List.range 20).all (fun b => leafTag (nodeTag a b) != nodeTag a b)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "405cb8fa-9f34-8b0e-abe6-d807e143f33f"
+  },
+  {
+    "key": "lean_preimage_the_unescaped_separator_makes_the_pairing_non_injective",
+    "name": "lean preimage.lean: the_unescaped_separator_makes_the_pairing_non_injective — mergeStr [1, sep, 2] [3] == mergeStr [1] [2, sep, 3] && [1, sep, 2] != ([1] : List Nat) && ([3] : List Nat) != [2, sep, 3] && (List.range 12).all (fun a => (List.range 12).all (fun b => (List.range 12).all (fun c => (b == c) || mergeStr [a]… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6ad749fa-362a-898b-9d78-662b254b3d52"
   }
 ]

@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 1,138 machine-checked declarations, **1,084** restate work that already has an author and
+Of 1,160 machine-checked declarations, **1,106** restate work that already has an author and
 **54** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **1,084** |
+| attributed to named earlier work | **1,106** |
 | unclassified — no search performed, status unknown | **54** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 4
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 51 sources, 1,084 theorems
+## Restated from named earlier work — 53 sources, 1,106 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -55,8 +55,9 @@ which is a contribution of verification, not of discovery.
 <table><thead><tr><th>source</th><th>theorems</th><th>domain</th><th>whose work</th></tr></thead><tbody>
 <tr><td><code>address.lean</code></td><td>26</td><td>content addressing</td><td>composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)</td></tr>
 <tr><td><code>asymmetric.lean</code></td><td>12</td><td>public-key signatures on elliptic curves</td><td>Ed25519 — Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe and Bo-Yin Yang,</td></tr>
+<tr><td><code>capacity.lean</code></td><td>8</td><td>the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC</td><td>NEITHER IS THIS DEPOSIT'S. RFC 9562 reserves the six bits and the birthday bound is</td></tr>
 <tr><td><code>closure.lean</code></td><td>8</td><td>Cantor's diagonal argument again, turned on a vocabulary rather than a set; the</td><td>THE METHOD IS CANTOR'S AND THE FINITE CASE IS ELEMENTARY. What is this deposit's is the</td></tr>
-<tr><td><code>coils.lean</code></td><td>24</td><td>extensional equality of predicates over a finite set — that two definitions picking out</td><td>NOT THIS DEPOSIT'S. "Two descriptions of the same set are equal" is the definition of a</td></tr>
+<tr><td><code>coils.lean</code></td><td>27</td><td>extensional equality of predicates over a finite set — that two definitions picking out</td><td>NOT THIS DEPOSIT'S. "Two descriptions of the same set are equal" is the definition of a</td></tr>
 <tr><td><code>coin.lean</code></td><td>12</td><td>the method of complements</td><td>the reflection d ↦ 10 − d is the TEN'S COMPLEMENT, and its sibling 9 − d the nines' complement — the method of complements, used to turn subtraction into addition in Pascal's calculator (1642), the Comptometer and the Curta, and in modern computer arithmetic. That it is an involution with a single fixed point is the property those machines rely on. Searched 2026-09-04, term "method of complements / nines' complement / ten's complement"; prior art found and credited</td></tr>
 <tr><td><code>demand.lean</code></td><td>11</td><td>elementary number theory</td><td>the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems</td></tr>
 <tr><td><code>demand2.lean</code></td><td>12</td><td>elementary number theory, second tier</td><td>Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002</td></tr>
@@ -80,12 +81,13 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>light.lean</code></td><td>17</td><td>metrology — the International System of Units</td><td>the exact numerical values below are DEFINITIONS adopted by the Conférence Générale des</td></tr>
 <tr><td><code>mechanical.lean</code></td><td>127</td><td>Boolean algebra and elementary modular arithmetic</td><td>the Boolean rows are De Morgan's laws — Augustus De Morgan, 1847 — written in the arithmetic of {0,1}; the group rows are the additive group of Z/9. Both long prior. Searched 2026-09-04, terms "De Morgan's laws boolean algebra" and "additive group mod 9"; prior art found and credited</td></tr>
 <tr><td><code>merkaba.lean</code></td><td>8</td><td>elementary group theory — subgroups and cosets of Z/9</td><td>the partition into {3,6,9} and two three-element classes closed under doubling is the subgroup and coset structure of Z/9 under the action of U(9); Lagrange. One theorem already credits Euler for the polyhedron formula. Searched 2026-09-04; prior art found and credited</td></tr>
-<tr><td><code>merkle.lean</code></td><td>14</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
+<tr><td><code>merkle.lean</code></td><td>17</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
 <tr><td><code>mirror.lean</code></td><td>8</td><td>an involution on a finite set decomposes into fixed points and transpositions — the</td><td>NONE OF IT IS THIS DEPOSIT'S. That an involution is fixed points plus 2-cycles is the</td></tr>
 <tr><td><code>nim.lean</code></td><td>28</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
 <tr><td><code>nucleus.lean</code></td><td>8</td><td>the nuclear shell model, and the proton-to-electron mass ratio</td><td>THE PHYSICS IS NOT THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The shell model and its</td></tr>
 <tr><td><code>phenomena.lean</code></td><td>4</td><td>metrology and classical physical chemistry</td><td>the SI base quantities and their defining constants are definitions of the Conférence</td></tr>
 <tr><td><code>planck.lean</code></td><td>35</td><td>the CODATA recommended values, and the SI's 2019 definition of the seven base constants</td><td>NONE OF THE PHYSICS IS THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The Planck units are</td></tr>
+<tr><td><code>preimage.lean</code></td><td>8</td><td>the second-preimage weakness of unpadded Merkle trees, and the standard remedy of</td><td>NOT THIS DEPOSIT'S AND WELL KNOWN. That a Merkle tree without domain separation lets an</td></tr>
 <tr><td><code>program.lean</code></td><td>22</td><td>identifier formats and error-detecting codes</td><td>the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC</td></tr>
 <tr><td><code>quantum.lean</code></td><td>12</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
 <tr><td><code>rays.lean</code></td><td>14</td><td>cyclic groups and primitive roots</td><td>that 3 is a primitive root modulo 7 and that (ℤ/7)* is cyclic of order six is Gauss and</td></tr>
@@ -134,8 +136,8 @@ which is a contribution of verification, not of discovery.
 - **elementary number theory, named results** — 19 theorems, in `demand3.lean`
 - **elementary number theory, second tier** — 12 theorems, in `demand2.lean`
 - **elementary set theory — the naturals are not exhausted by any finite list** — 12 theorems, in `reach.lean`
-- **extensional equality of predicates over a finite set — that two definitions picking out** — 24 theorems, in `coils.lean`
-- **hash trees and membership proofs** — 34 theorems, in `ledgerclaims.lean`, `merkle.lean`, `speed.lean`
+- **extensional equality of predicates over a finite set — that two definitions picking out** — 27 theorems, in `coils.lean`
+- **hash trees and membership proofs** — 37 theorems, in `ledgerclaims.lean`, `merkle.lean`, `speed.lean`
 - **identifier formats and error-detecting codes** — 22 theorems, in `program.lean`
 - **identifier formats and length-prefixed encodings** — 10 theorems, in `imprint.lean`
 - **integer sequences and identities** — 28 theorems, in `sequences.lean`
@@ -147,12 +149,14 @@ which is a contribution of verification, not of discovery.
 - **non-cryptographic hashing** — 15 theorems, in `fnv.lean`
 - **public-key signatures on elliptic curves** — 12 theorems, in `asymmetric.lean`
 - **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 35 theorems, in `planck.lean`
+- **the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC** — 8 theorems, in `capacity.lean`
 - **the UUID text format, and the pigeonhole principle** — 8 theorems, in `handle.lean`
 - **the cycle decomposition of a permutation into disjoint cycles; the order of 2 in** — 8 theorems, in `turns.lean`
 - **the false-positive rate of a classifier, and the correction of a raw count by a** — 6 theorems, in `discount.lean`
 - **the method of complements** — 20 theorems, in `coin.lean`, `reflection.lean`
 - **the nines' and tens' complement, the basis of complement subtraction and of the** — 8 theorems, in `digits.lean`
 - **the nuclear shell model, and the proton-to-electron mass ratio** — 8 theorems, in `nucleus.lean`
+- **the second-preimage weakness of unpadded Merkle trees, and the standard remedy of** — 8 theorems, in `preimage.lean`
 - **the separation of points by a family of functions — the notion behind a separating** — 8 theorems, in `separation.lean`
 
 Each is a field with an existing literature, and each is where this deposit's contribution actually sits: not
@@ -188,5 +192,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `0a674d1e-e462-8b93-b18f-ba2129a7adad` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `e1bf8b83-ccd5-8a11-a0de-aafa0e749c55` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

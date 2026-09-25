@@ -167,7 +167,8 @@
     "verify-clone": "node scripts/verify-clone.ts",
     "perturb": "node scripts/perturb-gate.ts",
     "coils": "node scripts/coils.ts",
-    "coils:emit": "node scripts/coils.ts --emit"
+    "coils:emit": "node scripts/coils.ts --emit",
+    "formulas": "node scripts/formulas.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

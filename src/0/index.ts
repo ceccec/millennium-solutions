@@ -85,9 +85,26 @@ export function strictUuidna(value: unknown): string {
 }
 
 /** Fold two addresses into one */
+/** ── LENGTH-PREFIXED, SO THE PAIR IS RECOVERABLE FROM THE STRING ──────────────────────────────────────────
+ *  This was `toUuid(`${a}:${b}`)`, and the separator was not escaped, so the pair was NOT recoverable:
+ *      merge("a:b", "c")  ===  merge("a", "b:c")      both `toUuid("a:b:c")`
+ *  and the ambiguity crossed module boundaries — a sealFacets receipt is `toUuid(tag:facet:on)`, so
+ *  `toUuid("x:y:true")` was simultaneously a receipt and the merge of "x" with "y:true". A receipt and a
+ *  Merkle node shared an address. The author's capabilities report (10.5281/zenodo.22895141 §9) names this
+ *  exactly: identical bytes in different semantic domains must not share an identifier.
+ *
+ *  Each part now carries its own length, so no concatenation of one pair can spell another, whatever the
+ *  parts contain — and the domain tag keeps a pair from colliding with anything else this tree addresses. */
+const part = (s: string) => `${s.length}:${s}`
 export function merge(a: string, b: string): string {
-  return toUuid(`${a}:${b}`)
+  return toUuid(`pair:${part(a)}${part(b)}`)
 }
+
+/** Merkle leaf and node live in DIFFERENT domains, which is the whole of RFC 6962 §2.1 (0x00 / 0x01) and
+ *  the question the capabilities report asks of this tree. Without it an internal node can be presented as
+ *  a leaf. */
+export const merkleLeaf = (x: string): string => toUuid(`merkle:leaf:${part(x)}`)
+export const merkleNode = (a: string, b: string): string => toUuid(`merkle:node:${part(a)}${part(b)}`)
 
 /** GCD for rational reduction */
 export function gcdBigInt(a: bigint, b: bigint): bigint {
@@ -101,15 +118,28 @@ export function foldPair(a: string, b: string): { forward: string; reverse: stri
 }
 
 /** Merkle fold — contract set of leaves to root */
+/** ── A FOLD OF ONE IS NOT ITS LEAF ────────────────────────────────────────────────────────────────────────
+ *  This returned a lone leaf UNHASHED, so for any root R the single-leaf set [R] produced R again — two
+ *  different leaf multisets, one root, which is a second preimage and disqualifies the result as a
+ *  commitment. `src/proof/preimage.lean` decides the old shape and this fixes it.
+ *
+ *  Every leaf is now hashed under the leaf domain before anything pairs it, so a root is always a node
+ *  value and can never be mistaken for a leaf. The empty case gets its own domain rather than a bare
+ *  sentinel that a one-leaf tree could carry.
+ *
+ *  THIS CHANGES EVERY ROOT THIS FUNCTION HAS EVER PRODUCED — verification roots, octave roots, the
+ *  forensics seal. It does NOT touch the ledger chain, whose receipts are `toUuid(previous → key)` and
+ *  never went through here. Rotating the roots is the point: the old ones certify a construction that
+ *  could be forged. */
 export function merkleFold(leaves: readonly string[]): string {
-  let layer = [...leaves].sort()
-  if (layer.length === 0) return toUuid('empty-mind')
+  if (leaves.length === 0) return toUuid('merkle:empty')
+  let layer = [...leaves].sort().map(merkleLeaf)
   while (layer.length > 1) {
     const next: string[] = []
     for (let i = 0; i < layer.length; i += 2) {
       const a = layer[i]
       const b = layer[i + 1]
-      next.push(b === undefined ? a : merge(a, b))
+      next.push(b === undefined ? a : merkleNode(a, b))
     }
     layer = next
   }

@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 1,163 of them across 55 files and
-7 wings; 961 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 1,160 of them across 57 files and
+7 wings; 958 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -267,6 +267,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
+\paragraph{\texttt{capacity.lean}}
+
+\begin{theorem}[\texttt{the\_container\_is\_one\_hundred\_twenty\_eight\_and\_six\_are\_spent}]
+\[ \mathrm{free} = 122 \land \mathrm{reserved} = 6 \land \mathrm{free} + \mathrm{reserved} = \mathrm{container} \land \mathrm{container} = 128 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_capacity\_is\_two\_to\_the\_free\_bits\_and\_not\_the\_container}]
+\[ 2^{\mathrm{free}} = 5316911983139663491615228241121378304 \land 2^{\mathrm{container}} = 340282366920938463463374607431768211456 \land 2^{\mathrm{free}} < 2^{\mathrm{container}} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_nominal\_overstates\_the\_real\_by\_two\_to\_the\_reserved}]
+\[ \frac{2^{\mathrm{container}}}{2^{\mathrm{free}}} = 2^{\mathrm{reserved}} \land 2^{\mathrm{reserved}} = 64 \land 2^{\mathrm{container}} = 64 \cdot 2^{\mathrm{free}} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_collision\_exponent\_follows\_the\_free\_bits}]
+\[ \frac{\mathrm{free}}{2} = 61 \land \frac{\mathrm{container}}{2} = 64 \land 2^{\frac{\mathrm{free}}{2}} = 2305843009213693952 \land 2^{\frac{\mathrm{container}}{2}} = 18446744073709551616 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_birthday\_gap\_is\_half\_the\_reservation}]
+\[ \frac{2^{\frac{\mathrm{container}}{2}}}{2^{\frac{\mathrm{free}}{2}}} = 8 \land 8 = 2^{\frac{\mathrm{reserved}}{2}} \land \frac{\mathrm{reserved}}{2} = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gap\_is\_zero\_exactly\_when\_nothing\_is\_reserved}]
+\[ \forall r \in \{0,\dots,32\},\; \frac{2^{128}}{2^{128 - r}} = 2^{r} \land r = 0 = \frac{2^{128}}{2^{128 - r}} = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 33 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_overclaim\_is\_this\_many\_addresses\_that\_do\_not\_exist}]
+\[ 2^{\mathrm{container}} - 2^{\mathrm{free}} = 334965454937798799971759379190646833152 \land 2^{\mathrm{container}} - 2^{\mathrm{free}} = 63 \cdot 2^{\mathrm{free}} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_bound\_is\_a\_ceiling\_on\_difficulty\_and\_not\_a\_measurement}]
+\[ 2^{\frac{\mathrm{free}}{2}} < 2^{\mathrm{free}} \land 2^{\frac{\mathrm{free}}{2}} < 2^{\frac{\mathrm{container}}{2}} \land \frac{\mathrm{free}}{2} < \mathrm{free} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{fnv.lean}}
 
 \begin{theorem}[\texttt{hash\_a\_seed\_zero}]
@@ -443,27 +485,37 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \paragraph{\texttt{merkle.lean}}
 
 \begin{theorem}[\texttt{merge\_agrees}]
-\[ \mathrm{merge}\mathopen{}\left(A,\,B\right) = [181,\,59,\,237,\,190,\,211,\,88,\,129,\,103,\,143,\,231,\,158,\,123,\,139,\,178,\,38,\,2] \]
+\[ \mathrm{merge}\mathopen{}\left(A,\,B\right) = [60,\,245,\,241,\,132,\,177,\,61,\,137,\,238,\,168,\,38,\,16,\,93,\,225,\,238,\,227,\,159] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{empty\_fold\_agrees}]
-\[ \mathrm{merkleFold}\mathopen{}\left([]\right) = [147,\,146,\,154,\,45,\,72,\,16,\,138,\,198,\,159,\,50,\,78,\,208,\,125,\,158,\,1,\,108] \]
+\[ \mathrm{merkleFold}\mathopen{}\left([]\right) = [185,\,172,\,200,\,147,\,59,\,66,\,143,\,33,\,184,\,249,\,115,\,223,\,210,\,131,\,107,\,81] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{singleton\_fold\_is\_the\_leaf}]
-\[ \mathrm{merkleFold}\mathopen{}\left([A]\right) = A \]
+\begin{theorem}[\texttt{singleton\_fold\_is\_the\_hashed\_leaf}]
+\[ \mathrm{merkleFold}\mathopen{}\left([A]\right) = \mathrm{merkleLeaf}\mathopen{}\left(A\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_fold\_of\_any\_single\_leaf\_is\_that\_leaf}]
-\[ \forall x \in [A,\,B,\,C],\; \mathrm{merkleFold}\mathopen{}\left([x]\right) = x \]
+\begin{theorem}[\texttt{no\_single\_leaf\_is\_its\_own\_root}]
+\[ \forall x \in [A,\,B,\,C],\; \mathrm{merkleFold}\mathopen{}\left([x]\right) \neq x \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_root\_presented\_as\_a\_leaf\_is\_a\_different\_root}]
+\[ \mathrm{merkleFold}\mathopen{}\left([\mathrm{merkleFold}\mathopen{}\left([A,\,B]\right)]\right) \neq \mathrm{merkleFold}\mathopen{}\left([A,\,B]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_leaf\_address\_is\_never\_a\_node\_address}]
+\[ \forall x \in [A,\,B,\,C],\; \mathrm{merkleLeaf}\mathopen{}\left(x\right) \neq \mathrm{merkleNode}\mathopen{}\left(A,\,B\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{pair\_fold\_agrees}]
-\[ \mathrm{merkleFold}\mathopen{}\left([A,\,B]\right) = [181,\,59,\,237,\,190,\,211,\,88,\,129,\,103,\,143,\,231,\,158,\,123,\,139,\,178,\,38,\,2] \]
+\[ \mathrm{merkleFold}\mathopen{}\left([A,\,B]\right) = [54,\,116,\,211,\,221,\,110,\,188,\,140,\,55,\,169,\,71,\,188,\,123,\,43,\,184,\,40,\,10] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
 
@@ -477,13 +529,18 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{merge\_is\_injective\_on\_these\_pairs}]
+\[ \mathrm{merge}\mathopen{}\left(A,\,B\right) \neq \mathrm{merge}\mathopen{}\left(A,\,C\right) \land \mathrm{merge}\mathopen{}\left(A,\,B\right) \neq \mathrm{merge}\mathopen{}\left(B,\,B\right) \land \mathrm{merge}\mathopen{}\left(B,\,C\right) \neq \mathrm{merge}\mathopen{}\left(C,\,B\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{sorting\_is\_what\_makes\_the\_fold\_order\_free}]
 \[ \mathrm{sortB}\mathopen{}\left([A,\,B]\right) = \mathrm{sortB}\mathopen{}\left([B,\,A]\right) \land [A,\,B] \neq [B,\,A] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{merkle\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 13 \]
+\[ \mathrm{settledHere} = 16 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -2187,6 +2244,21 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \forall x \in \{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [5] \,\},\; x \in [7] \land \forall x \in [7],\; x \in \{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [5] \,\} \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \land \forall x \in \{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [5] \,\},\; x \in [7] \land \forall x \in [7],\; x \in \{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [5] \,\} \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_address\_coil\_first\_holds\_at\_every\_reservation}]
+\[ \forall r \in \{0,\dots,32\},\; 2^{128 - r} = \frac{2^{128}}{2^{r}} \land 2^{128 - r} = \frac{2^{128}}{2^{r}} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 33 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_address\_coil\_second\_holds\_at\_every\_reservation}]
+\[ \forall r \in \{0,\dots,32\},\; 2^{128} = 2^{128 - r} \cdot 2^{r} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 33 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_container\_and\_the\_capacity\_are\_not\_interchangeable}]
+\[ \forall r \in \{0,\dots,32\},\; 2^{128} = 2^{128 - r} = r = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 33 cases. \hfill$\square$
 
 \paragraph{\texttt{coin.lean}}
 
@@ -4816,6 +4888,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
+\paragraph{\texttt{preimage.lean}}
+
+\begin{theorem}[\texttt{a\_single\_leaf\_folds\_to\_itself}]
+\[ \forall x \in \{0,\dots,39\},\; \mathrm{foldOf}\mathopen{}\left([x]\right) = x \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_two\_leaf\_root\_is\_also\_a\_one\_leaf\_root}]
+\[ \forall a \in \{0,\dots,19\},\; \forall b \in \{0,\dots,19\},\; \mathrm{foldOf}\mathopen{}\left([\mathrm{foldOf}\mathopen{}\left([a,\,b]\right)]\right) = \mathrm{foldOf}\mathopen{}\left([a,\,b]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 400 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_forged\_leaf\_set\_is\_not\_the\_original}]
+\[ \forall a \in \{0,\dots,19\},\; \forall b \in \{0,\dots,19\},\; [\mathrm{foldOf}\mathopen{}\left([a,\,b]\right)] \neq [a,\,b] \land \left|[\mathrm{foldOf}\mathopen{}\left([a,\,b]\right)]\right| \neq \left|[a,\,b]\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 400 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_empty\_sentinel\_is\_also\_a\_one\_leaf\_root}]
+\[ \mathrm{foldOf}\mathopen{}\left([]\right) = \mathrm{foldOf}\mathopen{}\left([7]\right) \land \mathrm{foldOf}\mathopen{}\left([]\right) = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{distinct\_pairs\_still\_give\_distinct\_roots}]
+\[ \forall a \in \{0,\dots,11\},\; \forall b \in \{0,\dots,11\},\; \forall c \in \{0,\dots,11\},\; a = c \lor \mathrm{foldOf}\mathopen{}\left([a,\,b]\right) \neq \mathrm{foldOf}\mathopen{}\left([c,\,b]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,728 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tagging\_separates\_a\_leaf\_from\_a\_node}]
+\[ \forall x \in \{0,\dots,29\},\; \forall y \in \{0,\dots,29\},\; \forall z \in \{0,\dots,29\},\; \mathrm{leafTag}\mathopen{}\left(x\right) \neq \mathrm{nodeTag}\mathopen{}\left(y,\,z\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_tagged\_fold\_refuses\_the\_forged\_leaf}]
+\[ \forall a \in \{0,\dots,19\},\; \forall b \in \{0,\dots,19\},\; \mathrm{leafTag}\mathopen{}\left(\mathrm{nodeTag}\mathopen{}\left(a,\,b\right)\right) \neq \mathrm{nodeTag}\mathopen{}\left(a,\,b\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 400 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_unescaped\_separator\_makes\_the\_pairing\_non\_injective}]
+\[ \mathrm{mergeStr}\mathopen{}\left([1,\,\mathrm{sep},\,2],\,[3]\right) = \mathrm{mergeStr}\mathopen{}\left([1],\,[2,\,\mathrm{sep},\,3]\right) \land [1,\,\mathrm{sep},\,2] \neq \left([1] : \mathrm{List}\mathopen{}\left(\mathrm{Nat}\right)\right) \land \left([3] : \mathrm{List}\mathopen{}\left(\mathrm{Nat}\right)\right) \neq [2,\,\mathrm{sep},\,3] \land \forall a \in \{0,\dots,11\},\; \forall b \in \{0,\dots,11\},\; \forall c \in \{0,\dots,11\},\; b = c \lor \mathrm{mergeStr}\mathopen{}\left([a],\,[b]\right) \neq \mathrm{mergeStr}\mathopen{}\left([a],\,[c]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,728 cases. \hfill$\square$
+
 \paragraph{\texttt{reflection.lean}}
 
 \begin{theorem}[\texttt{universal\_reflection\_involution}]
@@ -5035,105 +5149,20 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 
 \paragraph{\texttt{imagined.lean}}
 
-\begin{theorem}[\texttt{triad\_is\_closed\_under\_double}]
-\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [3,\,6,\,0] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{orbit\_is\_closed\_under\_double}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{all\_is\_closed\_under\_double}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triad\_is\_closed\_under\_triple}]
-\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [3,\,6,\,0] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{all\_is\_closed\_under\_triple}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{units\_is\_closed\_under\_quadruple}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triad\_is\_closed\_under\_quadruple}]
-\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [3,\,6,\,0] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{orbit\_is\_closed\_under\_quadruple}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{tetA\_is\_closed\_under\_quadruple}]
-\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,4,\,7] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{tetB\_is\_closed\_under\_quadruple}]
-\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [2,\,5,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{all\_is\_closed\_under\_quadruple}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
-
 \begin{theorem}[\texttt{squares\_is\_closed\_under\_quadruple}]
 \[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [0,\,1,\,4,\,7] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triad\_is\_closed\_under\_negate}]
-\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [3,\,6,\,0] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{orbit\_is\_closed\_under\_negate}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{all\_is\_closed\_under\_negate}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{cubes\_is\_closed\_under\_negate}]
 \[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [0,\,1,\,8] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{units\_is\_closed\_under\_square}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\begin{theorem}[\texttt{selfinv\_is\_closed\_under\_negate}]
+\[ \forall d \in [1,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,8] \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{orbit\_is\_closed\_under\_square}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{tetA\_is\_closed\_under\_square}]
-\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{all\_is\_closed\_under\_square}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{squares\_is\_closed\_under\_square}]
 \[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,4,\,7] \]
@@ -5144,6 +5173,26 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,8] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{selfinv\_is\_closed\_under\_square}]
+\[ \forall d \in [1,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{squares\_is\_closed\_under\_cube}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \in [0,\,1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cubes\_is\_closed\_under\_cube}]
+\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \in [0,\,1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{selfinv\_is\_closed\_under\_cube}]
+\[ \forall d \in [1,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \in [1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{units\_is\_closed\_under\_fourth}]
 \[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
@@ -5180,6 +5229,61 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{selfinv\_is\_closed\_under\_fourth}]
+\[ \forall d \in [1,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_is\_closed\_under\_fifth}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_fifth}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_fifth}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tetA\_is\_closed\_under\_fifth}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tetB\_is\_closed\_under\_fifth}]
+\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [2,\,5,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_fifth}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{squares\_is\_closed\_under\_fifth}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [0,\,1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cubes\_is\_closed\_under\_fifth}]
+\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [0,\,1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{primitives\_is\_closed\_under\_fifth}]
+\[ \forall d \in [2,\,5],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [2,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{selfinv\_is\_closed\_under\_fifth}]
+\[ \forall d \in [1,\,8],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{units\_is\_closed\_under\_sixth}]
 \[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
 \end{theorem}
@@ -5215,110 +5319,40 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{units\_is\_closed\_under\_quintuple}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\begin{theorem}[\texttt{selfinv\_is\_closed\_under\_sixth}]
+\[ \forall d \in [1,\,8],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [1,\,8] \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triad\_is\_closed\_under\_quintuple}]
-\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [3,\,6,\,0] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{orbit\_is\_closed\_under\_quintuple}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{all\_is\_closed\_under\_quintuple}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triad\_is\_closed\_under\_sextuple}]
-\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [3,\,6,\,0] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{all\_is\_closed\_under\_sextuple}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{units\_is\_closed\_under\_septuple}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triad\_is\_closed\_under\_septuple}]
-\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [3,\,6,\,0] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{orbit\_is\_closed\_under\_septuple}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{tetA\_is\_closed\_under\_septuple}]
-\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,4,\,7] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{tetB\_is\_closed\_under\_septuple}]
-\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [2,\,5,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{all\_is\_closed\_under\_septuple}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{squares\_is\_closed\_under\_septuple}]
 \[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [0,\,1,\,4,\,7] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{units\_is\_closed\_under\_octuple}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triad\_is\_closed\_under\_octuple}]
-\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [3,\,6,\,0] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{orbit\_is\_closed\_under\_octuple}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{all\_is\_closed\_under\_octuple}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
-
 \begin{theorem}[\texttt{cubes\_is\_closed\_under\_octuple}]
 \[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [0,\,1,\,8] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{double\_is\_involutive\_on\_triad}]
-\[ \forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(2 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(2 \cdot d\right)\right) = d \]
+\begin{theorem}[\texttt{selfinv\_is\_closed\_under\_octuple}]
+\[ \forall d \in [1,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,8] \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{quadruple\_is\_involutive\_on\_triad}]
-\[ \forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(4 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(4 \cdot d\right)\right) = d \]
+\begin{theorem}[\texttt{tetB\_is\_closed\_under\_reflect}]
+\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(10 - d\right) \in [2,\,5,\,8] \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{square\_is\_involutive\_on\_tetA}]
-\[ \forall d \in [1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d\right)\right) = d \]
+\begin{theorem}[\texttt{all\_is\_closed\_under\_reflect}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(10 - d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reflfixed\_is\_closed\_under\_reflect}]
+\[ \forall d \in [5],\; \mathrm{m9}\mathopen{}\left(10 - d\right) \in [5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{square\_is\_involutive\_on\_squares}]
 \[ \forall d \in [0,\,1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d\right)\right) = d \]
@@ -5329,6 +5363,11 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \forall d \in [0,\,1,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right)\right) = d \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cube\_is\_involutive\_on\_selfinv}]
+\[ \forall d \in [1,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{fourth\_is\_involutive\_on\_tetA}]
 \[ \forall d \in [1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{4}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{4}\right)\right) = d \]
@@ -5370,80 +5409,20 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{quintuple\_is\_involutive\_on\_triad}]
-\[ \forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(5 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(5 \cdot d\right)\right) = d \]
+\begin{theorem}[\texttt{fifth\_is\_involutive\_on\_primitives}]
+\[ \forall d \in [2,\,5],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{septuple\_is\_involutive\_on\_triad}]
-\[ \forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(7 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(7 \cdot d\right)\right) = d \]
+\begin{theorem}[\texttt{fifth\_is\_involutive\_on\_selfinv}]
+\[ \forall d \in [1,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{double\_carries\_orbit\_onto\_units}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\begin{theorem}[\texttt{fifth\_is\_involutive\_on\_reflfixed}]
+\[ \forall d \in [5],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triple\_carries\_all\_onto\_triad}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 3 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 243 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triple\_carries\_cubes\_onto\_triad}]
-\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [0,\,1,\,8] \,\}\right)\right| = 3 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{quadruple\_carries\_units\_onto\_orbit}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{quadruple\_carries\_orbit\_onto\_units}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{negate\_carries\_orbit\_onto\_units}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{negate\_carries\_tetA\_onto\_tetB}]
-\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [2,\,5,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{negate\_carries\_tetB\_onto\_tetA}]
-\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{square\_carries\_units\_onto\_tetA}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 3 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 108 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{square\_carries\_orbit\_onto\_tetA}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 3 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 108 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{square\_carries\_tetB\_onto\_tetA}]
-\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{square\_carries\_all\_onto\_squares}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 4 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 324 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{cube\_carries\_all\_onto\_cubes}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \in [0,\,1,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 3 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 243 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{fourth\_carries\_units\_onto\_tetA}]
 \[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 3 \]
@@ -5475,105 +5454,85 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{quintuple\_carries\_units\_onto\_orbit}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{quintuple\_carries\_orbit\_onto\_units}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{quintuple\_carries\_tetA\_onto\_tetB}]
-\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [2,\,5,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3 \]
+\begin{theorem}[\texttt{reflect\_carries\_triad\_onto\_tetA}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(10 - d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(10 - d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 3 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{quintuple\_carries\_tetB\_onto\_tetA}]
-\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3 \]
+\begin{theorem}[\texttt{reflect\_carries\_tetA\_onto\_triad}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(10 - d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(10 - d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{sextuple\_carries\_all\_onto\_triad}]
-\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 3 \]
+\begin{theorem}[\texttt{double\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 243 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{sextuple\_carries\_cubes\_onto\_triad}]
-\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [0,\,1,\,8] \,\}\right)\right| = 3 \]
+\begin{theorem}[\texttt{triple\_collapses\_primitives\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [2,\,5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{septuple\_carries\_units\_onto\_orbit}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
+\begin{theorem}[\texttt{triple\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{septuple\_carries\_orbit\_onto\_units}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\begin{theorem}[\texttt{quadruple\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{octuple\_carries\_units\_onto\_orbit}]
-\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
+\begin{theorem}[\texttt{negate\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{octuple\_carries\_orbit\_onto\_units}]
-\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\begin{theorem}[\texttt{square\_collapses\_selfinv\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [1,\,8] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{octuple\_carries\_tetA\_onto\_tetB}]
-\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [2,\,5,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3 \]
+\begin{theorem}[\texttt{square\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{octuple\_carries\_tetB\_onto\_tetA}]
-\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3 \]
+\begin{theorem}[\texttt{cube\_collapses\_primitives\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [2,\,5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{triple\_collapses\_triad\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
+\begin{theorem}[\texttt{cube\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triple\_collapses\_tetA\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{triple\_collapses\_tetB\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{cube\_collapses\_triad\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{cube\_collapses\_tetA\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{cube\_collapses\_tetB\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{fourth\_collapses\_triad\_to\_one\_value}]
 \[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{fourth\_collapses\_selfinv\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [1,\,8] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourth\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [5] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{fifth\_collapses\_triad\_to\_one\_value}]
 \[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{5}\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{5}\right) \mid d \in [5] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{sixth\_collapses\_units\_to\_one\_value}]
 \[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 1 \]
@@ -5600,20 +5559,50 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{sextuple\_collapses\_triad\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
+\begin{theorem}[\texttt{sixth\_collapses\_primitives\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [2,\,5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{sextuple\_collapses\_tetA\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1 \]
+\begin{theorem}[\texttt{sixth\_collapses\_selfinv\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [1,\,8] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{sextuple\_collapses\_tetB\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1 \]
+\begin{theorem}[\texttt{sixth\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [5] \,\}\right)\right| = 1 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{quintuple\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{sextuple\_collapses\_primitives\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [2,\,5] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sextuple\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{septuple\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{octuple\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reflect\_collapses\_reflfixed\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(10 - d\right) \mid d \in [5] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \subsection{the record}
 

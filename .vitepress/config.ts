@@ -198,6 +198,7 @@ export default defineConfig({
         { text: 'The harness', link: '/harness' },
         { text: 'The', link: '/the' },
         { text: 'Theorems', link: '/THEOREMS' },
+        { text: 'Formulas', link: '/formulas' },
         { text: 'Axiom index', link: '/AXIOMS' },
           { text: 'Lessons', link: '/LESSONS' },
         { text: 'Challenges', link: '/CHALLENGES' },

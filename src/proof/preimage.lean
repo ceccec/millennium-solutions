@@ -118,14 +118,40 @@ theorem the_tagged_fold_refuses_the_forged_leaf :
   (List.range 20).all (fun a => (List.range 20).all (fun b =>
     leafTag (nodeTag a b) != nodeTag a b)) := by decide
 
--- ── 8 · WHAT THIS FILE DOES NOT SAY ───────────────────────────────────────────────────────────────────────
--- IT SAYS NOTHING ABOUT THE HASH. `merge` is modelled as injective on its pair, which GRANTS the
--- implementation the property a real hash is relied on for; nothing here tests `toUuid`, SHA-256, or any
--- primitive. What is decided is the FOLD'S shape, and the shape is wrong on its own terms — a construction
--- whose singleton case is the identity cannot be a commitment, whatever it is built from. A reader taking
--- this as evidence about the hash is taking more than was proved.
-theorem the_model_grants_injectivity_rather_than_testing_it :
-  (List.range 20).all (fun a => (List.range 20).all (fun b => (List.range 20).all (fun c =>
-    (b == c) || merge a b != merge a c))) := by decide
+-- ── 8 · THE GRANTED ASSUMPTION IS FALSE IN THE IMPLEMENTATION ─────────────────────────────────────────────
+-- THIS THEOREM USED TO SAY "the model grants injectivity rather than testing it", with a note that a
+-- reader taking it as evidence about the hash would be taking more than was proved. The note was right and
+-- it was load-bearing: the grant does not hold.
+--
+-- `merge(a, b)` is `toUuid(a ++ ":" ++ b)` and THE SEPARATOR IS NOT ESCAPED, so the pair is not recoverable
+-- from the string. Measured 2026-09-25 against src/0/index.ts:
+--
+--     merge("a:b", "c")  = c795a74f-ff21-81a4-87f0-f3c2cb6198ad
+--     merge("a", "b:c")  = c795a74f-ff21-81a4-87f0-f3c2cb6198ad
+--
+-- and the same shape crosses module boundaries: a `sealFacets` receipt is `toUuid(tag ++ ":" ++ facet ++
+-- ":" ++ on)`, so `toUuid("x:y:true")` is BOTH a receipt and the merge of "x" with "y:true". A receipt and
+-- a Merkle node share an address — precisely what the author's report warns of at §9, "identical bytes in
+-- different semantic domains accidentally sharing an identifier".
+--
+-- THE HONEST SEVERITY, MEASURED AND NOT ESTIMATED. Zero of 3,192 ledger entries carry a colon in a key or
+-- a receipt, and every current call site folds UUIDs, which contain none. So the re-split has no witness in
+-- this tree today: it is latent, not exploited. `merge` is nonetheless a public export that accepts any
+-- string, and "no caller does this yet" is a property of the callers, not of the function.
+--
+-- The model below is the string, not the hash: lists of numbers with 99 standing for the separator. Nothing
+-- here tests `toUuid` or SHA-256, and the defect needs no assumption about them — it is visible before any
+-- hashing happens.
+def sep : Nat := 99
+def mergeStr (a b : List Nat) : List Nat := a ++ [sep] ++ b
+
+theorem the_unescaped_separator_makes_the_pairing_non_injective :
+  mergeStr [1, sep, 2] [3] == mergeStr [1] [2, sep, 3]
+  && [1, sep, 2] != ([1] : List Nat)
+  && ([3] : List Nat) != [2, sep, 3]
+  -- and it IS injective on the colon-free strings every current call site passes, which is why
+  -- nothing has broken yet and why that is a fact about the callers rather than about `mergeStr`
+  && (List.range 12).all (fun a => (List.range 12).all (fun b => (List.range 12).all (fun c =>
+       (b == c) || mergeStr [a] [b] != mergeStr [a] [c]))) := by decide
 
 end Preimage
