@@ -332,6 +332,35 @@
   "candidates": [],
   "verdict": "TOO_FEW_TERMS"
  },
+ "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length": {
+  "key": "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length",
+  "file": "address.lean",
+  "name": "the_address_is_sixteen_bytes_whatever_the_input_length",
+  "statementHash": "2680d024bb1ecac6",
+  "searched": "2026-09-25T13:16:05.665Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "address sixteen bytes whatever input content addressing",
+   "openalex": "address sixteen bytes whatever input content addressing",
+   "crossref": "address sixteen bytes whatever input content addressing",
+   "arxiv": "address AND sixteen AND bytes AND whatever AND input"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
  "lean_address_the_four_seeds_are_distinct": {
   "key": "lean_address_the_four_seeds_are_distinct",
   "file": "address.lean",
@@ -545,6 +574,238 @@
   "catalogued": false,
   "candidates": [],
   "verdict": "NOT_MEASURED"
+ },
+ "lean_lanes_a_lane_is_always_granted": {
+  "key": "lean_lanes_a_lane_is_always_granted",
+  "file": "lanes.lean",
+  "name": "a_lane_is_always_granted",
+  "statementHash": "4bd9e414d375d93a",
+  "searched": "2026-09-25T13:10:31.719Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "lane always granted arithmetic naturals min",
+   "openalex": "lane always granted arithmetic naturals min",
+   "crossref": "lane always granted arithmetic naturals min",
+   "arxiv": "lane AND always AND granted"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_lanes_an_unmeasurable_host_still_builds_and_still_fits": {
+  "key": "lean_lanes_an_unmeasurable_host_still_builds_and_still_fits",
+  "file": "lanes.lean",
+  "name": "an_unmeasurable_host_still_builds_and_still_fits",
+  "statementHash": "b8406da5d84af890",
+  "searched": "2026-09-25T13:12:19.884Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "unmeasurable host still builds fits arithmetic naturals min",
+   "openalex": "unmeasurable host still builds fits arithmetic naturals min",
+   "crossref": "unmeasurable host still builds fits arithmetic naturals min",
+   "arxiv": "unmeasurable AND host AND still AND builds AND fits"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_lanes_lanes_never_exceed_the_cores_but_for_the_floor": {
+  "key": "lean_lanes_lanes_never_exceed_the_cores_but_for_the_floor",
+  "file": "lanes.lean",
+  "name": "lanes_never_exceed_the_cores_but_for_the_floor",
+  "statementHash": "8bbe5d7b0a5f1efc",
+  "searched": "2026-09-25T13:10:47.768Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "lanes never exceed cores but arithmetic naturals min",
+   "openalex": "lanes never exceed cores but arithmetic naturals min",
+   "crossref": "lanes never exceed cores but arithmetic naturals min",
+   "arxiv": "lanes AND never AND exceed AND cores AND but"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_lanes_lanes_never_exceed_what_memory_affords": {
+  "key": "lean_lanes_lanes_never_exceed_what_memory_affords",
+  "file": "lanes.lean",
+  "name": "lanes_never_exceed_what_memory_affords",
+  "statementHash": "d2830ff98e913ca1",
+  "searched": "2026-09-25T13:11:01.144Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "lanes never exceed memory affords arithmetic naturals min",
+   "openalex": "lanes never exceed memory affords arithmetic naturals min",
+   "crossref": "lanes never exceed memory affords arithmetic naturals min",
+   "arxiv": "lanes AND never AND exceed AND memory AND affords"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_lanes_more_memory_never_costs_a_lane": {
+  "key": "lean_lanes_more_memory_never_costs_a_lane",
+  "file": "lanes.lean",
+  "name": "more_memory_never_costs_a_lane",
+  "statementHash": "59be82b561228a1b",
+  "searched": "2026-09-25T13:11:37.032Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "memory never costs lane arithmetic naturals min",
+   "openalex": "memory never costs lane arithmetic naturals min",
+   "crossref": "memory never costs lane arithmetic naturals min",
+   "arxiv": "memory AND never AND costs AND lane"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_lanes_more_neighbours_never_buys_a_lane": {
+  "key": "lean_lanes_more_neighbours_never_buys_a_lane",
+  "file": "lanes.lean",
+  "name": "more_neighbours_never_buys_a_lane",
+  "statementHash": "f42607fae13536a9",
+  "searched": "2026-09-25T13:11:50.405Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "neighbours never buys lane arithmetic naturals min",
+   "openalex": "neighbours never buys lane arithmetic naturals min",
+   "crossref": "neighbours never buys lane arithmetic naturals min",
+   "arxiv": "neighbours AND never AND buys AND lane"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_lanes_the_fallback_costs_half_the_lanes_at_the_size_that_prompted_this": {
+  "key": "lean_lanes_the_fallback_costs_half_the_lanes_at_the_size_that_prompted_this",
+  "file": "lanes.lean",
+  "name": "the_fallback_costs_half_the_lanes_at_the_size_that_prompted_this",
+  "statementHash": "ddaae64ed571f9ff",
+  "searched": "2026-09-25T13:12:05.049Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fallback costs half lanes size arithmetic naturals min",
+   "openalex": "fallback costs half lanes size arithmetic naturals min",
+   "crossref": "fallback costs half lanes size arithmetic naturals min",
+   "arxiv": "fallback AND costs AND half AND lanes AND size"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_lanes_unknown_is_never_better_than_measuring_an_empty_machine": {
+  "key": "lean_lanes_unknown_is_never_better_than_measuring_an_empty_machine",
+  "file": "lanes.lean",
+  "name": "unknown_is_never_better_than_measuring_an_empty_machine",
+  "statementHash": "50c2741bd5bbd55c",
+  "searched": "2026-09-25T13:11:14.365Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "unknown never better measuring empty arithmetic naturals min",
+   "openalex": "unknown never better measuring empty arithmetic naturals min",
+   "crossref": "unknown never better measuring empty arithmetic naturals min",
+   "arxiv": "unknown AND never AND better AND measuring AND empty"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
  },
  "lean_split_a_seal_divides_into_payments_and_multiplies_back": {
   "key": "lean_split_a_seal_divides_into_payments_and_multiplies_back",

@@ -17,6 +17,10 @@
  *  how many it is showing, so a filter that quietly matches nothing cannot look like an empty tree. */
 import { writeFileSync, readFileSync } from 'node:fs'
 import { leanTheorems, ledger as __ledger, live as __live, leanSource, leanFiles } from '../src/api/index.ts'
+// ESCAPING IS ONE JOB AND THIS TREE DERIVES IT ONCE. This file carried its own five-replace `esc`, and
+// canon-gate refused it — correctly: a second escaper is a second place for a missed character to hide,
+// and the one in src/html is the one every other page is checked against.
+import { escapeHtml } from '../src/html/index.ts'
 
 const T = leanTheorems() as { name: string; file: string; namespace: string; tactic: string; statement: string }[]
 const LIVE = new Set((__live(__ledger()) as { key: string }[]).map((e) => e.key))
@@ -28,7 +32,7 @@ for (const f of leanFiles() as string[]) {
   wingOf.set(f, leanSource(f).match(/^--\s*wing:\s*(.+)$/m)?.[1]?.trim() ?? 'unfiled')
 }
 
-const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+const esc = escapeHtml
 const rows = T.map((t) => ({
   name: t.name, file: t.file, ns: t.namespace, wing: wingOf.get(t.file) ?? 'unfiled',
   how: t.tactic === 'by decide' ? 'by exhaustion' : 'for every value',

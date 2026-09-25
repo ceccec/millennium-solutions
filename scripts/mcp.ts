@@ -36,6 +36,41 @@ const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 
 
 export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
+  // ── THE COMBINATORIAL LAYER, ANSWERED HERE ─────────────────────────────────────────────────────────────
+  // All four read and none writes. `novelty` in particular RETURNS its search instead of filing it:
+  // src/proof/novelty.json is the evidence priorart.lean's kind 2 rests on, and a public caller must be
+  // able to ask the question without being able to amend the answer.
+  novelty: async (a) => {
+    const statement = String(a?.statement ?? '')
+    if (!statement) throw new Error('novelty: statement is required — there is nothing to search the literature for without it')
+    const { search } = await import('../src/novelty/index.ts')
+    const r = await search(statement, (a?.anchors ?? []).map((x: unknown) => String(x).toLowerCase()))
+    return JSON.stringify({ ...r,
+      note: 'NONE_FOUND means these searches, on this date, returned nothing at the floors shown — never that nothing earlier exists. A keyword search misses what it does not name. Nothing was written to this deposit.' }, null, 1)
+  },
+  coils: async () => {
+    const { execFileSync } = await import('node:child_process')
+    return execFileSync('node', ['scripts/coils.ts'], { encoding: 'utf8', maxBuffer: 8 << 20 })
+  },
+  discoveries: async (a) => {
+    const { execFileSync } = await import('node:child_process')
+    const out = execFileSync('node', ['scripts/discoveries.ts', '--all'], { encoding: 'utf8', maxBuffer: 32 << 20 })
+    const n = Number(a?.limit ?? 40)
+    const lines = out.split('\n')
+    return lines.slice(0, 5).concat(lines.slice(5, 5 + n * 2)).concat(lines.slice(-4)).join('\n')
+  },
+  formulas: async (a) => {
+    const { leanTheorems, leanFiles, leanSource } = await import('../src/api/index.ts')
+    const wingOf = new Map((leanFiles() as string[]).map((f) => [f, leanSource(f).match(/^--\s*wing:\s*(.+)$/m)?.[1]?.trim() ?? 'unfiled']))
+    let rows = (leanTheorems() as any[]).map((t) => ({ name: t.name, file: t.file, namespace: t.namespace, wing: wingOf.get(t.file), tactic: t.tactic, statement: t.statement }))
+    const total = rows.length
+    if (a?.wing) rows = rows.filter((r) => r.wing === String(a.wing))
+    if (a?.file) rows = rows.filter((r) => r.file === String(a.file))
+    if (a?.contains) rows = rows.filter((r) => (r.name + ' ' + r.statement).toLowerCase().includes(String(a.contains).toLowerCase()))
+    const shown = rows.slice(0, Number(a?.limit ?? 50))
+    // THE COUNTS ARE RETURNED so a filter matching nothing cannot be read as an empty deposit.
+    return JSON.stringify({ total, matched: rows.length, shown: shown.length, formulas: shown }, null, 1)
+  },
   handle: (a) => {
     const text = String(a?.text ?? '')
     if (!text) throw new Error('handle: text is required — the message is the payload, so there is nothing to address without it')

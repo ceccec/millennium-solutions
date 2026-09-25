@@ -20,6 +20,21 @@
 export const WRITES = new Set(['lean_seal', 'lean_generate', 'pages', 'ledger_trial'])
 
 export const TOOLS = [
+  // ── THE COMBINATORIAL LAYER, OPENED TO THE PUBLIC ──────────────────────────────────────────────────────
+  // These four were local scripts: the deposit could search the literature, enumerate its statement space
+  // and cluster its cross formulas, and a reader could only read the recorded answers. A record of a search
+  // nobody else can run is an assertion with a date on it. All four are READ-ONLY here — none appears in
+  // WRITES, and the novelty search in particular returns its result instead of filing it, because
+  // src/proof/novelty.json is what priorart.lean's kind 2 rests on and a caller must be able to ASK without
+  // being able to amend the deposit's evidence. Searching is free; filing is the depositor's act.
+  { name: 'novelty', description: 'Run this deposit\'s own prior-art search against any statement: zbMATH, OpenAlex, Crossref, arXiv, and the OEIS for any integer sequence in it. Returns the verdict vocabulary the record uses — CANDIDATES | NONE_FOUND | NONE_FOUND_PARTIAL | NOT_MEASURED | TOO_FEW_TERMS — with the queries sent, the hits, and THE FLOORS APPLIED (relevance ≥ 0.6 over the first 5 results per source), because a verdict cannot be read apart from the domain that made it. NONE_FOUND means "these searches, on this date, returned nothing" and never "nothing earlier exists": a keyword search misses what it does not name. Writes nothing.',
+    inputSchema: { type: 'object', properties: { statement: { type: 'string' }, anchors: { type: 'array', items: { type: 'string' } } }, required: ['statement'] } },
+  { name: 'coils', description: 'The cross formulas, clustered: every expression in the deposit\'s vocabulary evaluated at every point of a grid and grouped by the resulting vector. Two expressions in one coil prove each other — compute either and the other is computed. Returns the coils, the pair count, and the expressions that coil with NOTHING, which are the ones prose must never interchange.',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'discoveries', description: 'Where the next prior-art search should go, consolidating the generators: which theorems sit in files declaring their own work, which have no search recorded, which families are at octave scale. A RANK IS NOT A NOVELTY CLAIM — this orders a queue, and only a performed search can say whether a statement has an earlier author. Reports the coverage, which is the finding: novelty in this tree is measured for a few per cent of it.',
+    inputSchema: { type: 'object', properties: { limit: { type: 'number' } }, required: [] } },
+  { name: 'formulas', description: 'Every formula this deposit decides, as data: the proposition the Lean kernel accepted, character for character, with its file, namespace, wing, tactic and ledger key. Filter by any of them. Nothing summarised and nothing authored.',
+    inputSchema: { type: 'object', properties: { wing: { type: 'string' }, file: { type: 'string' }, contains: { type: 'string' }, limit: { type: 'number' } }, required: [] } },
   { name: 'handle', description: 'The SHORT FORM: the first four hex of an address, plus the message, determine the whole address — so nothing but the message ever travels. Pass text to mint a handle; pass handle AND text to resolve one. ROUTES and REJECTS, never identifies: 16 bits over 2912 sealed receipts collide 71 times (birthday expectation 64.7), and the collision-free minimum today is 7 hex. The window is the FRONT four hex because hex 12..16 and 16..20 overlap the forced version/variant bits and carry less — and hex 12..16 is the third dash-group of the display form, the one an eye would reach for.',
     inputSchema: { type: 'object', properties: { text: { type: 'string' }, handle: { type: 'string' } }, required: ['text'] } },
   { name: 'content_address', description: 'Content-address (uuid) any text — INTEGRITY/provenance, NOT encryption or proof.',
