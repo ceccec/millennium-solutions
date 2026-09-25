@@ -618,3 +618,34 @@ Carried into the Zenodo deposition metadata, each with its evidence:
    made here, and on whose authority were they written in the author's name?**
 
 The signatures are in the repository. The questions are open to anyone who reads them.
+
+## 7n · The 42 "laws" lead, organised — three kinds, not one
+
+`leads.ts` reports 42 theorems that "only read back a hand-set value — a certificate, not a proof" and asks
+for each to be restated as a law with its inverse. Treated as one list it is 42 chores. Grouped by *why the
+constant is there*, it is three problems with three different answers, and one of them is not solvable:
+
+**1 · Physical constants — 12 (planck 7, rays 3, light 2).** CODATA measurements: ħ, c, G, the Planck
+units. These **cannot** be derived and restating them as laws would be a category error — a measured
+constant has no inverse over a domain, because it is not a function of anything this tree holds. What *is*
+decidable about them is their dimensional relations, and `src/proof/dimensions.lean` did exactly that this
+session: the exponents (1,−3,1), (1,−5,1), (1,1,−1) are **forced**, exhausted over every triple in range.
+The lead stays open against these and should be **reclassified**, not worked.
+
+**2 · Protocol widths — 17 (asymmetric 9, capacity 7, imprint 1).** RFC 9562's 128 bits, Ed25519's 32 and
+64 bytes. Also not derivable — they are other people's design choices — but they *do* have a law with an
+inverse: the unit conversion between them. `src/proof/widths.lean` did this for four of them, binding
+`uuidBytes` to `container` by importing both files rather than copying their values. **The remaining 13 are
+the genuinely actionable group**, and the pattern is established.
+
+**3 · Self-describing counts — 13 (one each across merkle, ranking, program, fnv, rights, …).** Mostly
+`settledHere = N` declarations, which state how many theorems a file closes. These are the only ones that
+are *purely* certificates, and they are also the least harmful: a wrong one is caught by `contradictions`,
+which recomputes the count. The honest answer here is probably to **derive them or delete them**, not to
+dress them as laws.
+
+**`capacity.lean` contributes 7 of the 42 — and it is my own file, written today while closing this very
+lead elsewhere.** Its theorems derive 2^122 from 122, the ratio 2^6 from six reserved bits, the birthday
+exponent from the free bits — real derivations — but each is stated *at the one point the constants sit
+at* rather than over a domain, which is precisely what the lead objects to. The detector is right about my
+work and I did not notice until the list was grouped.

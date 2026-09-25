@@ -142,7 +142,7 @@
   "file": "address.lean",
   "name": "addressing_is_not_constant",
   "statementHash": "910e5ee5119c88b1",
-  "searched": "2026-09-25T20:43:57.043Z",
+  "searched": "2026-09-25T20:40:52.432Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -468,7 +468,7 @@
   "file": "address.lean",
   "name": "the_address_is_sixteen_bytes_whatever_the_input_length",
   "statementHash": "2680d024bb1ecac6",
-  "searched": "2026-09-25T20:44:36.266Z",
+  "searched": "2026-09-25T20:41:20.768Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1383,7 +1383,7 @@
   "file": "authority.lean",
   "name": "a_cleared_statement_leaves_the_queue_and_stays_on_the_record",
   "statementHash": "941861941d30e4cc",
-  "searched": "2026-09-25T14:23:51.942Z",
+  "searched": "2026-09-25T20:44:53.471Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1402,7 +1402,7 @@
    "arxiv": "arithmetic AND finite AND lists AND cleared AND statement"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1414,7 +1414,7 @@
   "file": "authority.lean",
   "name": "a_rider_and_a_verdict_are_different_things",
   "statementHash": "7f1880861af5711e",
-  "searched": "2026-09-25T14:23:19.769Z",
+  "searched": "2026-09-25T20:44:22.924Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1433,7 +1433,7 @@
    "arxiv": "arithmetic AND finite AND lists AND rider AND verdict"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1445,7 +1445,7 @@
   "file": "authority.lean",
   "name": "clearing_changes_no_seal",
   "statementHash": "658479cb93312a69",
-  "searched": "2026-09-25T14:23:41.342Z",
+  "searched": "2026-09-25T20:44:43.512Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1464,7 +1464,7 @@
    "arxiv": "arithmetic AND finite AND lists AND clearing AND changes"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1476,7 +1476,7 @@
   "file": "authority.lean",
   "name": "every_sealed_statement_is_live_or_withdrawn_and_not_both",
   "statementHash": "d20e8740f8991a98",
-  "searched": "2026-09-25T14:22:51.930Z",
+  "searched": "2026-09-25T20:44:02.659Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1495,7 +1495,7 @@
    "arxiv": "arithmetic AND finite AND lists AND sealed AND statement"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1507,7 +1507,7 @@
   "file": "authority.lean",
   "name": "nothing_withdrawn_is_live",
   "statementHash": "cc2bd6195e0d74bd",
-  "searched": "2026-09-25T14:22:41.424Z",
+  "searched": "2026-09-25T20:43:52.153Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1526,7 +1526,7 @@
    "arxiv": "arithmetic AND finite AND lists AND nothing AND withdrawn"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1538,7 +1538,7 @@
   "file": "authority.lean",
   "name": "refusing_every_verdict_never_refuses_the_whole_record",
   "statementHash": "c7629dfca9eb1f5d",
-  "searched": "2026-09-25T14:24:02.413Z",
+  "searched": "2026-09-25T20:45:03.570Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1557,7 +1557,7 @@
    "arxiv": "arithmetic AND finite AND lists AND refusing AND verdict"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1569,7 +1569,7 @@
   "file": "authority.lean",
   "name": "withdrawing_never_raises_the_frozen_count",
   "statementHash": "01038fd605f66880",
-  "searched": "2026-09-25T14:23:30.896Z",
+  "searched": "2026-09-25T20:44:33.611Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1588,7 +1588,7 @@
    "arxiv": "arithmetic AND finite AND lists AND withdrawing AND never"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1600,7 +1600,7 @@
   "file": "authority.lean",
   "name": "withdrawing_shrinks_the_live_set_and_never_the_record",
   "statementHash": "47b24f39a1894105",
-  "searched": "2026-09-25T14:23:07.553Z",
+  "searched": "2026-09-25T20:44:12.901Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1619,7 +1619,7 @@
    "arxiv": "arithmetic AND finite AND lists AND withdrawing AND shrinks"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1631,7 +1631,7 @@
   "file": "capacity.lean",
   "name": "the_birthday_gap_is_half_the_reservation",
   "statementHash": "22542e0a7c2f6b74",
-  "searched": "2026-09-25T14:25:06.714Z",
+  "searched": "2026-09-25T20:45:54.139Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1650,7 +1650,7 @@
    "arxiv": "uuid AND layout AND version AND variant AND birthday"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1662,7 +1662,7 @@
   "file": "capacity.lean",
   "name": "the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement",
   "statementHash": "e769964776d2f06d",
-  "searched": "2026-09-25T14:25:51.794Z",
+  "searched": "2026-09-25T20:46:24.216Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1681,7 +1681,7 @@
    "arxiv": "uuid AND layout AND version AND variant AND bound"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1693,7 +1693,7 @@
   "file": "capacity.lean",
   "name": "the_capacity_is_two_to_the_free_bits_and_not_the_container",
   "statementHash": "f4a6611128df39f8",
-  "searched": "2026-09-25T14:24:30.113Z",
+  "searched": "2026-09-25T20:45:23.893Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1712,7 +1712,7 @@
    "arxiv": "uuid AND layout AND version AND variant AND capacity"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1724,7 +1724,7 @@
   "file": "capacity.lean",
   "name": "the_collision_exponent_follows_the_free_bits",
   "statementHash": "ac8fc8ac84dd33f0",
-  "searched": "2026-09-25T14:24:55.917Z",
+  "searched": "2026-09-25T20:45:44.164Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1743,7 +1743,7 @@
    "arxiv": "uuid AND layout AND version AND variant AND collision"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1755,7 +1755,7 @@
   "file": "capacity.lean",
   "name": "the_container_is_one_hundred_twenty_eight_and_six_are_spent",
   "statementHash": "eb3bc11a98ff0efc",
-  "searched": "2026-09-25T14:24:13.023Z",
+  "searched": "2026-09-25T20:45:13.839Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1774,7 +1774,7 @@
    "arxiv": "uuid AND layout AND version AND variant AND container"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1786,7 +1786,7 @@
   "file": "capacity.lean",
   "name": "the_gap_is_zero_exactly_when_nothing_is_reserved",
   "statementHash": "d76f0b7be38d5223",
-  "searched": "2026-09-25T14:25:17.791Z",
+  "searched": "2026-09-25T20:46:04.421Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1805,7 +1805,7 @@
    "arxiv": "uuid AND layout AND version AND variant AND nothing"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1817,7 +1817,7 @@
   "file": "capacity.lean",
   "name": "the_nominal_overstates_the_real_by_two_to_the_reserved",
   "statementHash": "f26803d6f0146a31",
-  "searched": "2026-09-25T14:24:45.785Z",
+  "searched": "2026-09-25T20:45:34.101Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1836,7 +1836,7 @@
    "arxiv": "uuid AND layout AND version AND variant AND nominal"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1848,7 +1848,7 @@
   "file": "capacity.lean",
   "name": "the_overclaim_is_this_many_addresses_that_do_not_exist",
   "statementHash": "733b74e43c1cb800",
-  "searched": "2026-09-25T14:25:39.850Z",
+  "searched": "2026-09-25T20:46:14.468Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1867,7 +1867,7 @@
    "arxiv": "uuid AND layout AND version AND variant AND overclaim"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1879,7 +1879,7 @@
   "file": "closure.lean",
   "name": "a_property_that_is_named_is_found_among_the_named",
   "statementHash": "1f62b14b1648a5e6",
-  "searched": "2026-09-25T14:26:55.888Z",
+  "searched": "2026-09-25T20:47:15.344Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1898,7 +1898,7 @@
    "arxiv": "cantor AND diagonal AND argument AND again AND property"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1910,7 +1910,7 @@
   "file": "closure.lean",
   "name": "nine_names_denote_seven_distinct_properties",
   "statementHash": "cde1abe8132a3823",
-  "searched": "2026-09-25T14:26:02.385Z",
+  "searched": "2026-09-25T20:46:34.628Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1929,7 +1929,7 @@
    "arxiv": "cantor AND diagonal AND argument AND again AND names"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1941,7 +1941,7 @@
   "file": "closure.lean",
   "name": "nine_residues_carry_five_hundred_and_twelve_properties",
   "statementHash": "dbc8ade5bae37bc3",
-  "searched": "2026-09-25T14:27:17.518Z",
+  "searched": "2026-09-25T20:47:36.491Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1960,7 +1960,7 @@
    "arxiv": "cantor AND diagonal AND argument AND again AND residues"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1972,7 +1972,7 @@
   "file": "closure.lean",
   "name": "the_diagonal_escapes_nine_and_stops",
   "statementHash": "8e7a2dc268ce205a",
-  "searched": "2026-09-25T14:27:06.467Z",
+  "searched": "2026-09-25T20:47:25.562Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1991,7 +1991,7 @@
    "arxiv": "cantor AND diagonal AND argument AND again AND escapes"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2003,7 +2003,7 @@
   "file": "closure.lean",
   "name": "the_witness_disagrees_with_property_i_at_residue_i",
   "statementHash": "4018e7293a0fc4ac",
-  "searched": "2026-09-25T14:26:12.885Z",
+  "searched": "2026-09-25T20:46:45.172Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2022,7 +2022,7 @@
    "arxiv": "cantor AND diagonal AND argument AND again AND witness"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2034,7 +2034,7 @@
   "file": "closure.lean",
   "name": "the_witness_is_decided_here_and_is_no_kind_of_limit",
   "statementHash": "9bf7e3dcd4ec556b",
-  "searched": "2026-09-25T14:27:33.499Z",
+  "searched": "2026-09-25T20:47:46.568Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2053,7 +2053,7 @@
    "arxiv": "cantor AND diagonal AND argument AND again AND witness"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2065,7 +2065,7 @@
   "file": "closure.lean",
   "name": "the_witness_is_none_of_the_nine_named_properties",
   "statementHash": "db3ad70eaff5d872",
-  "searched": "2026-09-25T14:26:23.861Z",
+  "searched": "2026-09-25T20:46:55.145Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2084,7 +2084,7 @@
    "arxiv": "cantor AND diagonal AND argument AND again AND witness"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2096,7 +2096,7 @@
   "file": "closure.lean",
   "name": "the_witness_is_this_table",
   "statementHash": "08a7a5575b2b8bdd",
-  "searched": "2026-09-25T14:26:34.059Z",
+  "searched": "2026-09-25T20:47:05.037Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2115,7 +2115,7 @@
    "arxiv": "cantor AND diagonal AND argument AND again AND witness"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2127,7 +2127,7 @@
   "file": "coils.lean",
   "name": "the_address_coil_first_holds_at_every_reservation",
   "statementHash": "15df3d0495f79f38",
-  "searched": "2026-09-25T14:33:27.898Z",
+  "searched": "2026-09-25T20:52:01.795Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2146,7 +2146,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND reservation"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2158,7 +2158,7 @@
   "file": "coils.lean",
   "name": "the_address_coil_second_holds_at_every_reservation",
   "statementHash": "b30d61a3d3cb8350",
-  "searched": "2026-09-25T14:33:38.170Z",
+  "searched": "2026-09-25T20:52:12.616Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2177,7 +2177,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND reservation"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2189,7 +2189,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_eight_has_3_expressions",
   "statementHash": "87d2c0512b25b5da",
-  "searched": "2026-09-25T14:31:28.641Z",
+  "searched": "2026-09-25T20:50:43.414Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2208,7 +2208,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2220,7 +2220,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_five_has_3_expressions",
   "statementHash": "85d5082109e9cb44",
-  "searched": "2026-09-25T14:30:29.812Z",
+  "searched": "2026-09-25T20:49:54.678Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2239,7 +2239,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2251,7 +2251,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_four_five_has_2_expressions",
   "statementHash": "777c0314c98cc9e4",
-  "searched": "2026-09-25T14:32:39.441Z",
+  "searched": "2026-09-25T20:51:21.612Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2270,7 +2270,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2282,7 +2282,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_four_has_2_expressions",
   "statementHash": "8bec01bae7497cc5",
-  "searched": "2026-09-25T14:32:49.541Z",
+  "searched": "2026-09-25T20:51:31.900Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2301,7 +2301,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2313,7 +2313,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_one_eight_has_6_expressions",
   "statementHash": "f08e9d6156598c3b",
-  "searched": "2026-09-25T14:29:34.058Z",
+  "searched": "2026-09-25T20:49:10.851Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2334,7 +2334,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
    {
@@ -2372,7 +2372,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_one_four_seven_has_12_expressions",
   "statementHash": "b8798dedae12e256",
-  "searched": "2026-09-25T14:28:34.325Z",
+  "searched": "2026-09-25T20:48:21.184Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2393,7 +2393,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
    {
@@ -2431,7 +2431,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_one_has_3_expressions",
   "statementHash": "f1b01e545cb7c0eb",
-  "searched": "2026-09-25T14:30:40.132Z",
+  "searched": "2026-09-25T20:50:04.244Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2450,7 +2450,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2462,7 +2462,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
   "statementHash": "f6d538182ed55e70",
-  "searched": "2026-09-25T14:27:46.462Z",
+  "searched": "2026-09-25T20:47:56.357Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2483,8 +2483,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "zbmath: HTTP 502",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
    {
@@ -2515,14 +2514,14 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_seven_has_2_expressions": {
   "key": "lean_coils_the_coil_on_seven_has_2_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_seven_has_2_expressions",
   "statementHash": "a5267a005393213a",
-  "searched": "2026-09-25T14:33:11.737Z",
+  "searched": "2026-09-25T20:51:52.411Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2541,7 +2540,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2553,7 +2552,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_six_has_3_expressions",
   "statementHash": "2dbd3ff69af66919",
-  "searched": "2026-09-25T14:31:00.316Z",
+  "searched": "2026-09-25T20:50:24.161Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2572,7 +2571,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2584,7 +2583,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_three_has_3_expressions",
   "statementHash": "43ebf5bdb85c6b96",
-  "searched": "2026-09-25T14:30:50.292Z",
+  "searched": "2026-09-25T20:50:13.949Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2603,7 +2602,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2615,7 +2614,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_three_six_has_6_expressions",
   "statementHash": "5fc03bbdee0336e5",
-  "searched": "2026-09-25T14:29:44.174Z",
+  "searched": "2026-09-25T20:49:20.685Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2636,7 +2635,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
    {
@@ -2674,7 +2673,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_two_five_eight_has_8_expressions",
   "statementHash": "75b4f5bc5fee0b05",
-  "searched": "2026-09-25T14:29:00.449Z",
+  "searched": "2026-09-25T20:48:41.008Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2693,7 +2692,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2705,7 +2704,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_two_seven_has_2_expressions",
   "statementHash": "38d2001b4f8338fc",
-  "searched": "2026-09-25T14:32:10.517Z",
+  "searched": "2026-09-25T20:51:02.558Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2724,7 +2723,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2736,7 +2735,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_four_five_has_2_expressions",
   "statementHash": "1e30634f376e972f",
-  "searched": "2026-09-25T14:32:20.567Z",
+  "searched": "2026-09-25T20:51:12.042Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2755,7 +2754,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2767,7 +2766,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_has_10_expressions",
   "statementHash": "6cdf21b96058d0e8",
-  "searched": "2026-09-25T14:28:44.746Z",
+  "searched": "2026-09-25T20:48:30.938Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2786,7 +2785,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2798,7 +2797,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_one_eight_has_6_expressions",
   "statementHash": "d810d4afbe402b0f",
-  "searched": "2026-09-25T14:29:23.355Z",
+  "searched": "2026-09-25T20:49:00.399Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2817,7 +2816,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2829,7 +2828,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_one_four_seven_has_5_expressions",
   "statementHash": "b13473808888ffaa",
-  "searched": "2026-09-25T14:29:58.629Z",
+  "searched": "2026-09-25T20:49:30.876Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2849,7 +2848,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
    {
@@ -2872,7 +2871,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_one_has_3_expressions",
   "statementHash": "72171413d8c19edc",
-  "searched": "2026-09-25T14:31:14.121Z",
+  "searched": "2026-09-25T20:50:33.789Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2892,7 +2891,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
    {
@@ -2915,7 +2914,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_one_two_three_four_five_six_seven_eight_has_8_expressions",
   "statementHash": "9c417c9bcd8094cb",
-  "searched": "2026-09-25T14:29:13.169Z",
+  "searched": "2026-09-25T20:48:50.815Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2934,7 +2933,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2946,7 +2945,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_three_six_has_14_expressions",
   "statementHash": "2955f9ffb4236d3e",
-  "searched": "2026-09-25T14:28:20.238Z",
+  "searched": "2026-09-25T20:48:11.380Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2965,7 +2964,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -2977,7 +2976,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_two_five_eight_has_4_expressions",
   "statementHash": "aa32e25a57f83560",
-  "searched": "2026-09-25T14:30:12.959Z",
+  "searched": "2026-09-25T20:49:43.116Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2998,7 +2997,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
    {
@@ -3031,7 +3030,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_two_seven_has_2_expressions",
   "statementHash": "898103dcaf93e1ba",
-  "searched": "2026-09-25T14:31:38.686Z",
+  "searched": "2026-09-25T20:50:52.807Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3050,20 +3049,19 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "zbmath: HTTP 404",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_two_three_five_six_eight_has_2_expressions": {
   "key": "lean_coils_the_coil_on_zero_two_three_five_six_eight_has_2_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_zero_two_three_five_six_eight_has_2_expressions",
   "statementHash": "0e3eeb78324f6c11",
-  "searched": "2026-09-25T14:32:59.465Z",
+  "searched": "2026-09-25T20:51:41.261Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3085,7 +3083,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
    {
@@ -3138,7 +3136,7 @@
   "file": "coils.lean",
   "name": "the_container_and_the_capacity_are_not_interchangeable",
   "statementHash": "5bb896f662ec23d5",
-  "searched": "2026-09-25T14:33:57.934Z",
+  "searched": "2026-09-25T20:52:22.110Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3157,7 +3155,7 @@
    "arxiv": "extensional AND equality AND predicates AND finite AND container"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -3169,7 +3167,7 @@
   "file": "coin.lean",
   "name": "every_digit_is_sorted_exactly_once",
   "statementHash": "312b7924815389c7",
-  "searched": "2026-09-25T14:35:15.704Z",
+  "searched": "2026-09-25T20:52:51.699Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3188,19 +3186,20 @@
    "arxiv": "method AND complements AND digit AND sorted"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: rate-limited after backoff"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_coin_exactly_one_digit_is_unmoved": {
   "key": "lean_coin_exactly_one_digit_is_unmoved",
   "file": "coin.lean",
   "name": "exactly_one_digit_is_unmoved",
   "statementHash": "1a3f864b04aa60a0",
-  "searched": "2026-09-25T14:34:40.335Z",
+  "searched": "2026-09-25T20:52:41.976Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3219,7 +3218,7 @@
    "arxiv": "method AND complements AND digit AND unmoved"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -3463,7 +3462,7 @@
   "file": "coin.lean",
   "name": "the_fall_and_the_reflection_share_one_exceptional_digit",
   "statementHash": "02a45e1480d7eaba",
-  "searched": "2026-09-25T14:35:41.427Z",
+  "searched": "2026-09-25T20:54:41.194Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3482,12 +3481,13 @@
    "arxiv": "method AND complements AND reflection AND share AND exceptional"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: rate-limited after backoff"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_coin_the_fall_fixes_every_digit_but_the_void": {
   "key": "lean_coin_the_fall_fixes_every_digit_but_the_void",
@@ -3686,7 +3686,7 @@
   "file": "coin.lean",
   "name": "the_reflection_is_an_involution",
   "statementHash": "3bad7d15166862e9",
-  "searched": "2026-09-25T14:34:08.618Z",
+  "searched": "2026-09-25T20:52:31.940Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3705,7 +3705,7 @@
    "arxiv": "method AND complements AND reflection AND involution"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -3717,7 +3717,7 @@
   "file": "coin.lean",
   "name": "what_escapes_falls_back_inside",
   "statementHash": "4050a497dc34acdd",
-  "searched": "2026-09-25T14:36:06.287Z",
+  "searched": "2026-09-25T20:56:31.541Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3736,19 +3736,20 @@
    "arxiv": "method AND complements AND escapes AND falls AND inside"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: rate-limited after backoff"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand_factorial_seven_is_five_thousand_and_forty": {
   "key": "lean_demand_factorial_seven_is_five_thousand_and_forty",
   "file": "demand.lean",
   "name": "factorial_seven_is_five_thousand_and_forty",
   "statementHash": "d9d66a421be88e37",
-  "searched": "2026-09-25T14:37:41.809Z",
+  "searched": "2026-09-25T20:58:37.437Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -3767,12 +3768,13 @@
    "arxiv": "factorial AND thousand AND forty"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd": {
   "key": "lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd",
@@ -4000,7 +4002,7 @@
   "file": "demand.lean",
   "name": "mantels_bound_is_n_squared_over_four",
   "statementHash": "a443cc173d9be046",
-  "searched": "2026-09-25T14:37:51.819Z",
+  "searched": "2026-09-25T20:58:45.752Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4019,19 +4021,20 @@
    "arxiv": "mantels AND bound AND squared"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand_mantels_bound_is_n_squared_over_four_for_every_n": {
   "key": "lean_demand_mantels_bound_is_n_squared_over_four_for_every_n",
   "file": "demand.lean",
   "name": "mantels_bound_is_n_squared_over_four_for_every_n",
   "statementHash": "56bd3421a64ce7d1",
-  "searched": "2026-09-25T14:38:07.284Z",
+  "searched": "2026-09-25T20:58:54.247Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4050,19 +4053,20 @@
    "arxiv": "mantels AND bound AND squared"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand_no_cut_beats_the_balanced_one_for_every_n": {
   "key": "lean_demand_no_cut_beats_the_balanced_one_for_every_n",
   "file": "demand.lean",
   "name": "no_cut_beats_the_balanced_one_for_every_n",
   "statementHash": "fd2ae39c6bb39e54",
-  "searched": "2026-09-25T14:38:27.600Z",
+  "searched": "2026-09-25T20:59:01.956Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4081,19 +4085,20 @@
    "arxiv": "beats AND balanced"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand_the_derangement_recurrence_holds": {
   "key": "lean_demand_the_derangement_recurrence_holds",
   "file": "demand.lean",
   "name": "the_derangement_recurrence_holds",
   "statementHash": "f70c4998f4735c89",
-  "searched": "2026-09-25T14:36:41.231Z",
+  "searched": "2026-09-25T20:58:21.292Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4112,12 +4117,13 @@
    "arxiv": "derangement AND recurrence"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand_the_mobius_divisor_sum_is_the_identity": {
   "key": "lean_demand_the_mobius_divisor_sum_is_the_identity",
@@ -4196,7 +4202,7 @@
   "file": "demand.lean",
   "name": "the_parity_of_popcount_is_the_xor_of_the_bits",
   "statementHash": "1b0bbaa1c0a81f41",
-  "searched": "2026-09-25T14:37:21.755Z",
+  "searched": "2026-09-25T20:58:29.447Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4215,19 +4221,20 @@
    "arxiv": "parity AND popcount"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists": {
   "key": "lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists",
   "file": "demand2.lean",
   "name": "bezouts_identity_is_attained_and_no_smaller_combination_exists",
   "statementHash": "0ceb191c7e372df9",
-  "searched": "2026-09-25T14:39:08.803Z",
+  "searched": "2026-09-25T20:59:19.940Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4246,12 +4253,13 @@
    "arxiv": "bezouts AND attained AND smaller AND combination AND exists"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand": {
   "key": "lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand",
@@ -4402,7 +4410,7 @@
   "file": "demand2.lean",
   "name": "picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid",
   "statementHash": "4ad501b0b1bce72e",
-  "searched": "2026-09-25T14:38:54.737Z",
+  "searched": "2026-09-25T20:59:11.489Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4421,12 +4429,13 @@
    "arxiv": "picks AND lattice AND triangle"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime": {
   "key": "lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime",
@@ -4521,7 +4530,7 @@
   "file": "demand2.lean",
   "name": "the_latin_squares_of_order_four_number_five_hundred_and_seventy_six",
   "statementHash": "866deba4573da4e5",
-  "searched": "2026-09-25T14:39:18.817Z",
+  "searched": "2026-09-25T20:59:28.612Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4540,12 +4549,13 @@
    "arxiv": "latin AND squares AND hundred AND seventy"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand2_the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n": {
   "key": "lean_demand2_the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n",
@@ -4600,7 +4610,7 @@
   "file": "demand2.lean",
   "name": "the_sum_of_fifth_powers_has_the_closed_form_asked_for",
   "statementHash": "35b2c372649e0ed6",
-  "searched": "2026-09-25T14:39:29.075Z",
+  "searched": "2026-09-25T20:59:37.130Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4619,12 +4629,13 @@
    "arxiv": "fifth AND powers AND closed AND asked"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_for_every_n": {
   "key": "lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_for_every_n",
@@ -4700,7 +4711,7 @@
   "file": "demand2.lean",
   "name": "two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair",
   "statementHash": "297fd925d52ba9f2",
-  "searched": "2026-09-25T14:39:58.751Z",
+  "searched": "2026-09-25T20:59:45.518Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4719,19 +4730,20 @@
    "arxiv": "twenty AND eighty AND smallest AND amicable"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven": {
   "key": "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven",
   "file": "demand3.lean",
   "name": "a_repunit_has_the_residue_of_its_length_mod_six_mod_seven",
   "statementHash": "6b163d527401bd43",
-  "searched": "2026-09-25T14:42:43.561Z",
+  "searched": "2026-09-25T21:00:36.482Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4750,19 +4762,20 @@
    "arxiv": "repunit AND residue AND length"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three": {
   "key": "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three",
   "file": "demand3.lean",
   "name": "a_repunit_has_the_residue_of_its_length_mod_three",
   "statementHash": "ae77038b870d879d",
-  "searched": "2026-09-25T14:42:08.156Z",
+  "searched": "2026-09-25T21:00:27.588Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4781,19 +4794,20 @@
    "arxiv": "repunit AND residue AND length"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand3_a_repunit_is_below_ten_to_its_length": {
   "key": "lean_demand3_a_repunit_is_below_ten_to_its_length",
   "file": "demand3.lean",
   "name": "a_repunit_is_below_ten_to_its_length",
   "statementHash": "5b71b95a692925dd",
-  "searched": "2026-09-25T14:43:28.444Z",
+  "searched": "2026-09-25T21:00:54.030Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4812,19 +4826,20 @@
    "arxiv": "repunit AND below AND length"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n": {
   "key": "lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n",
   "file": "demand3.lean",
   "name": "a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n",
   "statementHash": "5c64edffd2848ab9",
-  "searched": "2026-09-25T14:42:58.145Z",
+  "searched": "2026-09-25T21:00:45.487Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4843,12 +4858,13 @@
    "arxiv": "repunit AND divisible AND divides AND length"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n": {
   "key": "lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n",
@@ -4895,7 +4911,7 @@
   "file": "demand3.lean",
   "name": "a_repunit_splits_back_into_its_two_parts_for_every_n_k",
   "statementHash": "bf28bca8c54f2521",
-  "searched": "2026-09-25T14:43:38.841Z",
+  "searched": "2026-09-25T21:01:02.163Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -4914,12 +4930,13 @@
    "arxiv": "repunit AND splits AND parts"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand3_chi_is_injective_for_every_g_h": {
   "key": "lean_demand3_chi_is_injective_for_every_g_h",
@@ -5277,7 +5294,7 @@
   "file": "demand3.lean",
   "name": "the_cantor_pairing_is_injective_and_covers_an_initial_segment",
   "statementHash": "9092460004dcc148",
-  "searched": "2026-09-25T14:40:52.366Z",
+  "searched": "2026-09-25T21:00:18.074Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5296,12 +5313,13 @@
    "arxiv": "cantor AND pairing AND injective AND covers AND initial"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_demand3_the_euler_characteristic_of_a_genus_g_surface": {
   "key": "lean_demand3_the_euler_characteristic_of_a_genus_g_surface",
@@ -5500,7 +5518,7 @@
   "file": "demand3.lean",
   "name": "wilsons_theorem_and_its_converse",
   "statementHash": "c8fe37cb98929f19",
-  "searched": "2026-09-25T14:40:41.270Z",
+  "searched": "2026-09-25T20:59:53.979Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5519,19 +5537,20 @@
    "arxiv": "wilsons AND converse"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_diagonal_containment_takes_both_values_on_this_population": {
   "key": "lean_diagonal_containment_takes_both_values_on_this_population",
   "file": "diagonal.lean",
   "name": "containment_takes_both_values_on_this_population",
   "statementHash": "8e810e6baa709b25",
-  "searched": "2026-09-25T14:44:11.794Z",
+  "searched": "2026-09-25T21:01:27.717Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5550,19 +5569,20 @@
    "arxiv": "cantor AND diagonal AND argument AND finite AND containment"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_diagonal_no_ring_addresses_the_subject_built_from_its_diagonal": {
   "key": "lean_diagonal_no_ring_addresses_the_subject_built_from_its_diagonal",
   "file": "diagonal.lean",
   "name": "no_ring_addresses_the_subject_built_from_its_diagonal",
   "statementHash": "314de368e4f0bfaf",
-  "searched": "2026-09-25T14:43:51.074Z",
+  "searched": "2026-09-25T21:01:10.745Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5581,19 +5601,20 @@
    "arxiv": "cantor AND diagonal AND argument AND finite AND subject"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_diagonal_the_bound_is_attained_and_so_is_its_floor": {
   "key": "lean_diagonal_the_bound_is_attained_and_so_is_its_floor",
   "file": "diagonal.lean",
   "name": "the_bound_is_attained_and_so_is_its_floor",
   "statementHash": "a8149998b3fc6ca7",
-  "searched": "2026-09-25T14:44:44.589Z",
+  "searched": "2026-09-25T21:01:53.316Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5612,19 +5633,20 @@
    "arxiv": "cantor AND diagonal AND argument AND finite AND bound"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_diagonal_the_diagonal_disagrees_with_subject_i_about_label_i": {
   "key": "lean_diagonal_the_diagonal_disagrees_with_subject_i_about_label_i",
   "file": "diagonal.lean",
   "name": "the_diagonal_disagrees_with_subject_i_about_label_i",
   "statementHash": "49e8a3bc8f67e76e",
-  "searched": "2026-09-25T14:44:00.978Z",
+  "searched": "2026-09-25T21:01:19.375Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5643,19 +5665,20 @@
    "arxiv": "cantor AND diagonal AND argument AND finite AND disagrees"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_diagonal_the_drawn_ring_spent_none_of_its_twenty_eight_labels": {
   "key": "lean_diagonal_the_drawn_ring_spent_none_of_its_twenty_eight_labels",
   "file": "diagonal.lean",
   "name": "the_drawn_ring_spent_none_of_its_twenty_eight_labels",
   "statementHash": "ecc674cf684c2cd2",
-  "searched": "2026-09-25T14:44:54.865Z",
+  "searched": "2026-09-25T21:02:01.940Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5674,19 +5697,20 @@
    "arxiv": "cantor AND diagonal AND argument AND finite AND drawn"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_diagonal_the_enumeration_is_five_hundred_and_twelve_rings_of_three": {
   "key": "lean_diagonal_the_enumeration_is_five_hundred_and_twelve_rings_of_three",
   "file": "diagonal.lean",
   "name": "the_enumeration_is_five_hundred_and_twelve_rings_of_three",
   "statementHash": "26825db4454d429d",
-  "searched": "2026-09-25T14:44:23.898Z",
+  "searched": "2026-09-25T21:01:36.902Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5705,19 +5729,20 @@
    "arxiv": "cantor AND diagonal AND argument AND finite AND enumeration"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_diagonal_three_labels_take_at_most_eight_values": {
   "key": "lean_diagonal_three_labels_take_at_most_eight_values",
   "file": "diagonal.lean",
   "name": "three_labels_take_at_most_eight_values",
   "statementHash": "b61b95285d8693de",
-  "searched": "2026-09-25T14:44:34.127Z",
+  "searched": "2026-09-25T21:01:45.200Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5736,19 +5761,20 @@
    "arxiv": "cantor AND diagonal AND argument AND finite AND labels"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_digits_eight_and_eight_make_sixteen_which_reflects_to_ninety_four": {
   "key": "lean_digits_eight_and_eight_make_sixteen_which_reflects_to_ninety_four",
   "file": "digits.lean",
   "name": "eight_and_eight_make_sixteen_which_reflects_to_ninety_four",
   "statementHash": "b6af311645675b89",
-  "searched": "2026-09-25T14:45:26.647Z",
+  "searched": "2026-09-25T21:02:18.775Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5767,19 +5793,20 @@
    "arxiv": "nines AND tens AND complement AND basis AND sixteen"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_digits_eight_times_eight_is_the_pair_six_four_read_both_ways": {
   "key": "lean_digits_eight_times_eight_is_the_pair_six_four_read_both_ways",
   "file": "digits.lean",
   "name": "eight_times_eight_is_the_pair_six_four_read_both_ways",
   "statementHash": "9cb94671f7798189",
-  "searched": "2026-09-25T14:45:36.645Z",
+  "searched": "2026-09-25T21:02:26.850Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5798,19 +5825,20 @@
    "arxiv": "nines AND tens AND complement AND basis AND times"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_digits_every_pair_written_as_two_digits_is_one_mod_nine": {
   "key": "lean_digits_every_pair_written_as_two_digits_is_one_mod_nine",
   "file": "digits.lean",
   "name": "every_pair_written_as_two_digits_is_one_mod_nine",
   "statementHash": "df8ecb5fbdb12453",
-  "searched": "2026-09-25T14:45:47.050Z",
+  "searched": "2026-09-25T21:02:35.847Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5829,19 +5857,20 @@
    "arxiv": "nines AND tens AND complement AND basis AND written"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_digits_exactly_one_two_digit_number_reflects_past_its_width_and_it_is_ten": {
   "key": "lean_digits_exactly_one_two_digit_number_reflects_past_its_width_and_it_is_ten",
   "file": "digits.lean",
   "name": "exactly_one_two_digit_number_reflects_past_its_width_and_it_is_ten",
   "statementHash": "f39a0c127b80af4d",
-  "searched": "2026-09-25T14:46:08.705Z",
+  "searched": "2026-09-25T21:02:52.882Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5860,19 +5889,20 @@
    "arxiv": "nines AND tens AND complement AND basis AND digit"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_digits_reflecting_both_digits_twice_returns_the_number": {
   "key": "lean_digits_reflecting_both_digits_twice_returns_the_number",
   "file": "digits.lean",
   "name": "reflecting_both_digits_twice_returns_the_number",
   "statementHash": "a306ac9694a2bbc7",
-  "searched": "2026-09-25T14:45:57.572Z",
+  "searched": "2026-09-25T21:02:44.495Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5891,19 +5921,20 @@
    "arxiv": "nines AND tens AND complement AND basis AND reflecting"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_digits_the_constants_are_ten_times_the_repunits": {
   "key": "lean_digits_the_constants_are_ten_times_the_repunits",
   "file": "digits.lean",
   "name": "the_constants_are_ten_times_the_repunits",
   "statementHash": "40e523f3be654c91",
-  "searched": "2026-09-25T14:46:29.781Z",
+  "searched": "2026-09-25T21:03:10.322Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5922,19 +5953,20 @@
    "arxiv": "nines AND tens AND complement AND basis AND constants"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_digits_the_nines_complement_gives_no_such_constant": {
   "key": "lean_digits_the_nines_complement_gives_no_such_constant",
   "file": "digits.lean",
   "name": "the_nines_complement_gives_no_such_constant",
   "statementHash": "97b2cbb854cac6a5",
-  "searched": "2026-09-25T14:46:18.929Z",
+  "searched": "2026-09-25T21:03:01.502Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5953,19 +5985,20 @@
    "arxiv": "nines AND tens AND complement AND basis AND gives"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_digits_the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten": {
   "key": "lean_digits_the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten",
   "file": "digits.lean",
   "name": "the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten",
   "statementHash": "a688f440b8da7b8b",
-  "searched": "2026-09-25T14:45:08.180Z",
+  "searched": "2026-09-25T21:02:10.679Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -5984,19 +6017,20 @@
    "arxiv": "nines AND tens AND complement AND basis AND reflected"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_dimensions_a_looser_condition_returns_many": {
   "key": "lean_dimensions_a_looser_condition_returns_many",
   "file": "dimensions.lean",
   "name": "a_looser_condition_returns_many",
   "statementHash": "5ff910a7d505d4c8",
-  "searched": "2026-09-25T14:47:32.841Z",
+  "searched": "2026-09-25T21:03:37.248Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6015,19 +6049,20 @@
    "arxiv": "dimensional AND analysis AND buckingham AND method AND looser"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_dimensions_each_triple_produces_the_dimension_it_claims": {
   "key": "lean_dimensions_each_triple_produces_the_dimension_it_claims",
   "file": "dimensions.lean",
   "name": "each_triple_produces_the_dimension_it_claims",
   "statementHash": "a5760062d24e3366",
-  "searched": "2026-09-25T14:47:12.031Z",
+  "searched": "2026-09-25T21:03:19.324Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6046,19 +6081,20 @@
    "arxiv": "dimensional AND analysis AND buckingham AND method AND triple"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_dimensions_some_targets_have_no_solution_at_all": {
   "key": "lean_dimensions_some_targets_have_no_solution_at_all",
   "file": "dimensions.lean",
   "name": "some_targets_have_no_solution_at_all",
   "statementHash": "5b604d063ea5fbbd",
-  "searched": "2026-09-25T14:47:22.579Z",
+  "searched": "2026-09-25T21:03:28.521Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6077,12 +6113,13 @@
    "arxiv": "dimensional AND analysis AND buckingham AND method AND targets"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not": {
   "key": "lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not",
@@ -6217,7 +6254,7 @@
   "file": "dimensions.lean",
   "name": "the_three_constants_are_dimensionally_independent",
   "statementHash": "9326e33d9e40a5fc",
-  "searched": "2026-09-25T14:47:43.545Z",
+  "searched": "2026-09-25T21:03:45.634Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6236,12 +6273,13 @@
    "arxiv": "dimensional AND analysis AND buckingham AND method AND constants"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_dimensions_the_time_exponents_are_unique": {
   "key": "lean_dimensions_the_time_exponents_are_unique",
@@ -6288,7 +6326,7 @@
   "file": "discount.lean",
   "name": "a_figure_above_its_floor_is_worth_something",
   "statementHash": "9338e3a73974a538",
-  "searched": "2026-09-25T14:48:25.521Z",
+  "searched": "2026-09-25T21:04:12.238Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6307,19 +6345,20 @@
    "arxiv": "positive AND rate AND classifier AND correction AND figure"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_discount_a_figure_at_or_below_its_floor_is_worth_nothing": {
   "key": "lean_discount_a_figure_at_or_below_its_floor_is_worth_nothing",
   "file": "discount.lean",
   "name": "a_figure_at_or_below_its_floor_is_worth_nothing",
   "statementHash": "60087483870c1eb3",
-  "searched": "2026-09-25T14:48:15.203Z",
+  "searched": "2026-09-25T21:04:02.976Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6338,19 +6377,20 @@
    "arxiv": "positive AND rate AND classifier AND correction AND figure"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_discount_the_discount_is_exactly_the_excess_over_the_control": {
   "key": "lean_discount_the_discount_is_exactly_the_excess_over_the_control",
   "file": "discount.lean",
   "name": "the_discount_is_exactly_the_excess_over_the_control",
   "statementHash": "f5b9211ec26085ef",
-  "searched": "2026-09-25T14:48:37.880Z",
+  "searched": "2026-09-25T21:04:20.853Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6369,19 +6409,20 @@
    "arxiv": "positive AND rate AND classifier AND correction AND discount"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_discount_the_discount_never_raises_the_figure": {
   "key": "lean_discount_the_discount_never_raises_the_figure",
   "file": "discount.lean",
   "name": "the_discount_never_raises_the_figure",
   "statementHash": "8df7c89ef88c4ba7",
-  "searched": "2026-09-25T14:48:04.815Z",
+  "searched": "2026-09-25T21:03:54.522Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6400,19 +6441,20 @@
    "arxiv": "positive AND rate AND classifier AND correction AND discount"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_discount_the_matcher_is_blind_below_its_floor_and_not_above": {
   "key": "lean_discount_the_matcher_is_blind_below_its_floor_and_not_above",
   "file": "discount.lean",
   "name": "the_matcher_is_blind_below_its_floor_and_not_above",
   "statementHash": "11dc368d7d891fec",
-  "searched": "2026-09-25T14:48:48.080Z",
+  "searched": "2026-09-25T21:04:29.040Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6431,19 +6473,20 @@
    "arxiv": "positive AND rate AND classifier AND correction AND matcher"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_discount_the_measured_ring_clears_its_floor_by_eleven": {
   "key": "lean_discount_the_measured_ring_clears_its_floor_by_eleven",
   "file": "discount.lean",
   "name": "the_measured_ring_clears_its_floor_by_eleven",
   "statementHash": "d5463feaa6bb49a1",
-  "searched": "2026-09-25T14:48:58.173Z",
+  "searched": "2026-09-25T21:04:37.480Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6462,19 +6505,20 @@
    "arxiv": "positive AND rate AND classifier AND correction AND measured"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_domain_nine_folds_to_zero_and_reflects_to_one": {
   "key": "lean_domain_nine_folds_to_zero_and_reflects_to_one",
   "file": "domain.lean",
   "name": "nine_folds_to_zero_and_reflects_to_one",
   "statementHash": "1a99a966e44a275b",
-  "searched": "2026-09-25T14:49:33.501Z",
+  "searched": "2026-09-25T21:04:55.131Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6493,12 +6537,13 @@
    "arxiv": "cantor AND diagonal AND argument AND fact AND folds"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_domain_the_diagonal_does_not_run_out_at_nine": {
   "key": "lean_domain_the_diagonal_does_not_run_out_at_nine",
@@ -6554,7 +6599,7 @@
   "file": "domain.lean",
   "name": "the_diagonal_escapes_nine_over_nine_and_eleven_over_eleven",
   "statementHash": "fe2cb04f03d1e914",
-  "searched": "2026-09-25T14:50:00.482Z",
+  "searched": "2026-09-25T21:05:12.971Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6573,19 +6618,20 @@
    "arxiv": "cantor AND diagonal AND argument AND fact AND escapes"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_domain_the_diagonal_fails_on_a_list_one_longer_than_its_domain": {
   "key": "lean_domain_the_diagonal_fails_on_a_list_one_longer_than_its_domain",
   "file": "domain.lean",
   "name": "the_diagonal_fails_on_a_list_one_longer_than_its_domain",
   "statementHash": "9ba54fad071f2bb3",
-  "searched": "2026-09-25T14:50:19.073Z",
+  "searched": "2026-09-25T21:05:22.339Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6604,19 +6650,20 @@
    "arxiv": "cantor AND diagonal AND argument AND fact AND fails"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_domain_the_eleven_positions_are_a_walk_of_nine_residues_that_returns": {
   "key": "lean_domain_the_eleven_positions_are_a_walk_of_nine_residues_that_returns",
   "file": "domain.lean",
   "name": "the_eleven_positions_are_a_walk_of_nine_residues_that_returns",
   "statementHash": "6a4fefdd046858ac",
-  "searched": "2026-09-25T14:50:42.715Z",
+  "searched": "2026-09-25T21:05:43.076Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6635,19 +6682,20 @@
    "arxiv": "cantor AND diagonal AND argument AND fact AND eleven"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_domain_the_reach_of_the_diagonal_is_the_length_of_its_domain": {
   "key": "lean_domain_the_reach_of_the_diagonal_is_the_length_of_its_domain",
   "file": "domain.lean",
   "name": "the_reach_of_the_diagonal_is_the_length_of_its_domain",
   "statementHash": "1045837eb35de95e",
-  "searched": "2026-09-25T14:50:32.189Z",
+  "searched": "2026-09-25T21:05:31.330Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6666,19 +6714,20 @@
    "arxiv": "cantor AND diagonal AND argument AND fact AND reach"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_domain_the_sequence_exceeds_the_residues_by_the_fold_and_the_return": {
   "key": "lean_domain_the_sequence_exceeds_the_residues_by_the_fold_and_the_return",
   "file": "domain.lean",
   "name": "the_sequence_exceeds_the_residues_by_the_fold_and_the_return",
   "statementHash": "7ba0200079446427",
-  "searched": "2026-09-25T14:49:48.151Z",
+  "searched": "2026-09-25T21:05:03.753Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6697,19 +6746,20 @@
    "arxiv": "cantor AND diagonal AND argument AND fact AND sequence"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_domain_the_sequence_is_eleven_positions_that_return_to_one": {
   "key": "lean_domain_the_sequence_is_eleven_positions_that_return_to_one",
   "file": "domain.lean",
   "name": "the_sequence_is_eleven_positions_that_return_to_one",
   "statementHash": "20932073cfb65c74",
-  "searched": "2026-09-25T14:49:17.966Z",
+  "searched": "2026-09-25T21:04:46.175Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6728,19 +6778,20 @@
    "arxiv": "cantor AND diagonal AND argument AND fact AND sequence"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour": {
   "key": "lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour",
   "file": "elementary.lean",
   "name": "a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour",
   "statementHash": "ebc60088a4c6b7bd",
-  "searched": "2026-09-25T14:57:02.715Z",
+  "searched": "2026-09-25T21:09:03.429Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6759,19 +6810,20 @@
    "arxiv": "combinatorial AND game AND knight AND leaps AND flips"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_a_product_of_consecutive_numbers_is_even": {
   "key": "lean_elementary_a_product_of_consecutive_numbers_is_even",
   "file": "elementary.lean",
   "name": "a_product_of_consecutive_numbers_is_even",
   "statementHash": "4e3be9e6a69d409d",
-  "searched": "2026-09-25T14:58:33.912Z",
+  "searched": "2026-09-25T21:09:37.622Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6790,12 +6842,13 @@
    "arxiv": "combinatorial AND game AND product AND consecutive"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four": {
   "key": "lean_elementary_an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four",
@@ -6842,7 +6895,7 @@
   "file": "elementary.lean",
   "name": "consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant",
   "statementHash": "edca8f50784c8496",
-  "searched": "2026-09-25T14:56:20.558Z",
+  "searched": "2026-09-25T21:08:29.087Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6861,19 +6914,20 @@
    "arxiv": "combinatorial AND game AND consecutive AND farey AND neighbours"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square": {
   "key": "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square",
   "file": "elementary.lean",
   "name": "eight_times_a_triangular_number_plus_one_is_an_odd_square",
   "statementHash": "dcee456a1949bf28",
-  "searched": "2026-09-25T14:55:12.476Z",
+  "searched": "2026-09-25T21:07:46.472Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6892,19 +6946,20 @@
    "arxiv": "combinatorial AND game AND times AND triangular AND square"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n": {
   "key": "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n",
   "file": "elementary.lean",
   "name": "eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n",
   "statementHash": "8adfdf6d4daf1587",
-  "searched": "2026-09-25T14:58:43.653Z",
+  "searched": "2026-09-25T21:09:45.880Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6923,19 +6978,20 @@
    "arxiv": "combinatorial AND game AND times AND triangular AND square"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven": {
   "key": "lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
   "file": "elementary.lean",
   "name": "euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
   "statementHash": "e2b52a70d15268c4",
-  "searched": "2026-09-25T14:51:19.401Z",
+  "searched": "2026-09-25T21:05:52.003Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -6955,6 +7011,7 @@
    "arxiv": "combinatorial AND game AND euclids AND perfect AND mersenne"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [
@@ -6976,14 +7033,14 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_every_odd_square_one_more_than_eight_times_m_makes_m_triangular": {
   "key": "lean_elementary_every_odd_square_one_more_than_eight_times_m_makes_m_triangular",
   "file": "elementary.lean",
   "name": "every_odd_square_one_more_than_eight_times_m_makes_m_triangular",
   "statementHash": "18d4612e3e4a35ba",
-  "searched": "2026-09-25T14:59:19.772Z",
+  "searched": "2026-09-25T21:10:12.550Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7002,19 +7059,20 @@
    "arxiv": "combinatorial AND game AND square AND times AND makes"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_half_a_product_of_consecutive_numbers_multiplies_back_for_every_n": {
   "key": "lean_elementary_half_a_product_of_consecutive_numbers_multiplies_back_for_every_n",
   "file": "elementary.lean",
   "name": "half_a_product_of_consecutive_numbers_multiplies_back_for_every_n",
   "statementHash": "1e29509cf190350b",
-  "searched": "2026-09-25T14:59:40.311Z",
+  "searched": "2026-09-25T21:10:29.370Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7033,19 +7091,20 @@
    "arxiv": "combinatorial AND game AND product AND consecutive AND multiplies"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect": {
   "key": "lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect",
   "file": "elementary.lean",
   "name": "the_amicable_pair_is_mutual_and_neither_is_perfect",
   "statementHash": "c0c3d6a65bafb00b",
-  "searched": "2026-09-25T14:51:43.932Z",
+  "searched": "2026-09-25T21:06:12.320Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7064,19 +7123,20 @@
    "arxiv": "combinatorial AND game AND amicable AND mutual AND neither"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_area_of_an_integer_right_triangle_is_a_multiple_of_six": {
   "key": "lean_elementary_the_area_of_an_integer_right_triangle_is_a_multiple_of_six",
   "file": "elementary.lean",
   "name": "the_area_of_an_integer_right_triangle_is_a_multiple_of_six",
   "statementHash": "a4c304aaf1f6eee0",
-  "searched": "2026-09-25T14:54:17.479Z",
+  "searched": "2026-09-25T21:07:21.124Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7095,19 +7155,20 @@
    "arxiv": "combinatorial AND game AND integer AND right AND triangle"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_count_of_primitive_roots_is_phi_of_phi": {
   "key": "lean_elementary_the_count_of_primitive_roots_is_phi_of_phi",
   "file": "elementary.lean",
   "name": "the_count_of_primitive_roots_is_phi_of_phi",
   "statementHash": "9c7f02a82c8b2222",
-  "searched": "2026-09-25T14:52:59.340Z",
+  "searched": "2026-09-25T21:06:46.756Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7126,19 +7187,20 @@
    "arxiv": "combinatorial AND game AND count AND primitive AND roots"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_eisenstein_units_are_exactly_six": {
   "key": "lean_elementary_the_eisenstein_units_are_exactly_six",
   "file": "elementary.lean",
   "name": "the_eisenstein_units_are_exactly_six",
   "statementHash": "c563ed18697d65e7",
-  "searched": "2026-09-25T14:52:07.591Z",
+  "searched": "2026-09-25T21:06:21.233Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7157,19 +7219,20 @@
    "arxiv": "combinatorial AND game AND eisenstein"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n": {
   "key": "lean_elementary_the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n",
   "file": "elementary.lean",
   "name": "the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n",
   "statementHash": "25ffc766d4c051ad",
-  "searched": "2026-09-25T14:59:29.915Z",
+  "searched": "2026-09-25T21:10:20.785Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7188,19 +7251,20 @@
    "arxiv": "combinatorial AND game AND fibonaccis AND fifth AND neighbouring"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_golden_beatty_identity_holds_across_the_range": {
   "key": "lean_elementary_the_golden_beatty_identity_holds_across_the_range",
   "file": "elementary.lean",
   "name": "the_golden_beatty_identity_holds_across_the_range",
   "statementHash": "d0e452265ed2bdc8",
-  "searched": "2026-09-25T14:57:13.946Z",
+  "searched": "2026-09-25T21:09:12.334Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7219,7 +7283,7 @@
    "arxiv": "combinatorial AND game AND golden AND beatty AND across"
   },
   "notMeasured": [
-   "zbmath: HTTP 502",
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
@@ -7232,7 +7296,7 @@
   "file": "elementary.lean",
   "name": "the_hockey_stick_identity_holds_across_the_range",
   "statementHash": "5edd1f77a99ab0cc",
-  "searched": "2026-09-25T14:54:42.617Z",
+  "searched": "2026-09-25T21:07:37.989Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7251,19 +7315,20 @@
    "arxiv": "combinatorial AND game AND hockey AND stick AND across"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles": {
   "key": "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles",
   "file": "elementary.lean",
   "name": "the_interior_and_exterior_angles_are_n_straight_angles",
   "statementHash": "a188552dca706ffd",
-  "searched": "2026-09-25T14:56:52.115Z",
+  "searched": "2026-09-25T21:08:55.385Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7282,19 +7347,20 @@
    "arxiv": "combinatorial AND game AND interior AND exterior AND angles"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles_for_every_n": {
   "key": "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles_for_every_n",
   "file": "elementary.lean",
   "name": "the_interior_and_exterior_angles_are_n_straight_angles_for_every_n",
   "statementHash": "97c81c4ff1f324b1",
-  "searched": "2026-09-25T14:58:24.154Z",
+  "searched": "2026-09-25T21:09:29.694Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7313,19 +7379,20 @@
    "arxiv": "combinatorial AND game AND interior AND exterior AND angles"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution": {
   "key": "lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution",
   "file": "elementary.lean",
   "name": "the_inverse_map_permutes_the_units_and_is_an_involution",
   "statementHash": "3681b40f3838c276",
-  "searched": "2026-09-25T14:54:30.126Z",
+  "searched": "2026-09-25T21:07:29.658Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7344,19 +7411,20 @@
    "arxiv": "combinatorial AND game AND inverse AND permutes AND involution"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis": {
   "key": "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis",
   "file": "elementary.lean",
   "name": "the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis",
   "statementHash": "898d8b98bee4741d",
-  "searched": "2026-09-25T14:55:46.353Z",
+  "searched": "2026-09-25T21:08:12.047Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7375,19 +7443,20 @@
    "arxiv": "combinatorial AND game AND lucas AND neighbouring AND fibonaccis"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n": {
   "key": "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n",
   "file": "elementary.lean",
   "name": "the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n",
   "statementHash": "a3cc510e58d8fc47",
-  "searched": "2026-09-25T14:58:53.366Z",
+  "searched": "2026-09-25T21:09:54.076Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7406,19 +7475,20 @@
    "arxiv": "combinatorial AND game AND lucas AND neighbouring AND fibonaccis"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values": {
   "key": "lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values",
   "file": "elementary.lean",
   "name": "the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values",
   "statementHash": "7478592bb55dc7bb",
-  "searched": "2026-09-25T14:55:35.041Z",
+  "searched": "2026-09-25T21:08:03.577Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7437,19 +7507,20 @@
    "arxiv": "combinatorial AND game AND lucas AND follow AND their"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_mersenne_hypothesis_is_real_at_eleven": {
   "key": "lean_elementary_the_mersenne_hypothesis_is_real_at_eleven",
   "file": "elementary.lean",
   "name": "the_mersenne_hypothesis_is_real_at_eleven",
   "statementHash": "f63a32b80680db7e",
-  "searched": "2026-09-25T14:51:33.285Z",
+  "searched": "2026-09-25T21:06:03.132Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7468,19 +7539,20 @@
    "arxiv": "combinatorial AND game AND mersenne AND eleven"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square": {
   "key": "lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square",
   "file": "elementary.lean",
   "name": "the_multiplication_table_of_the_z9_units_is_a_latin_square",
   "statementHash": "ae96026d19ce33e7",
-  "searched": "2026-09-25T14:52:49.047Z",
+  "searched": "2026-09-25T21:06:38.452Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7499,19 +7571,20 @@
    "arxiv": "combinatorial AND game AND multiplication AND table AND latin"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum": {
   "key": "lean_elementary_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
   "file": "elementary.lean",
   "name": "the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
   "statementHash": "f9b099a25467e1c9",
-  "searched": "2026-09-25T14:53:09.635Z",
+  "searched": "2026-09-25T21:06:55.425Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7530,19 +7603,20 @@
    "arxiv": "combinatorial AND game AND spectrum AND realises AND gauss"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count": {
   "key": "lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count",
   "file": "elementary.lean",
   "name": "the_partition_and_bell_numbers_count_what_they_claim_to_count",
   "statementHash": "29cb71ca89cc6cfb",
-  "searched": "2026-09-25T14:58:01.901Z",
+  "searched": "2026-09-25T21:09:20.688Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7561,19 +7635,20 @@
    "arxiv": "combinatorial AND game AND partition AND count AND claim"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values": {
   "key": "lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values",
   "file": "elementary.lean",
   "name": "the_pell_numbers_follow_their_recurrence_and_reach_their_named_values",
   "statementHash": "73615f0cb9ec75f5",
-  "searched": "2026-09-25T14:56:05.193Z",
+  "searched": "2026-09-25T21:08:20.566Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7592,7 +7667,7 @@
    "arxiv": "combinatorial AND game AND follow AND their AND recurrence"
   },
   "notMeasured": [
-   "zbmath: HTTP 404",
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
@@ -7605,7 +7680,7 @@
   "file": "elementary.lean",
   "name": "the_polygon_side_count_reads_back_from_its_angle_sum",
   "statementHash": "dc57047080b37a07",
-  "searched": "2026-09-25T14:59:03.261Z",
+  "searched": "2026-09-25T21:10:02.168Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7624,19 +7699,20 @@
    "arxiv": "combinatorial AND game AND polygon AND count AND reads"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic": {
   "key": "lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic",
   "file": "elementary.lean",
   "name": "the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic",
   "statementHash": "f404b0b169c7fdd9",
-  "searched": "2026-09-25T14:55:24.886Z",
+  "searched": "2026-09-25T21:07:54.793Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7655,12 +7731,13 @@
    "arxiv": "combinatorial AND game AND powers AND isomorphic"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five": {
   "key": "lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five",
@@ -7715,7 +7792,7 @@
   "file": "elementary.lean",
   "name": "the_product_of_the_units_is_minus_one_exactly_where_gauss_says",
   "statementHash": "830b187306054c85",
-  "searched": "2026-09-25T14:53:20.157Z",
+  "searched": "2026-09-25T21:07:03.812Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7734,19 +7811,20 @@
    "arxiv": "combinatorial AND game AND product AND minus AND gauss"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four": {
   "key": "lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four",
   "file": "elementary.lean",
   "name": "the_subtraction_game_loses_exactly_at_the_multiples_of_four",
   "statementHash": "23ede4c09b47832d",
-  "searched": "2026-09-25T14:52:17.448Z",
+  "searched": "2026-09-25T21:06:29.702Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7765,12 +7843,13 @@
    "arxiv": "combinatorial AND game AND subtraction AND loses AND multiples"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra": {
   "key": "lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra",
@@ -7817,7 +7896,7 @@
   "file": "elementary.lean",
   "name": "the_units_are_three_regular_under_doubling_halving_and_reflection",
   "statementHash": "501ec91f72ce7039",
-  "searched": "2026-09-25T14:56:30.835Z",
+  "searched": "2026-09-25T21:08:38.180Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7836,12 +7915,13 @@
    "arxiv": "combinatorial AND game AND regular AND doubling AND halving"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine": {
   "key": "lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine",
@@ -7904,7 +7984,7 @@
   "file": "elementary.lean",
   "name": "the_whole_ring_is_not_regular_and_the_triad_is_why",
   "statementHash": "1d4d43d4cb1e6660",
-  "searched": "2026-09-25T14:56:41.473Z",
+  "searched": "2026-09-25T21:08:46.901Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -7923,12 +8003,13 @@
    "arxiv": "combinatorial AND game AND whole AND regular AND triad"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_the_wythoff_sequences_partition_the_integers": {
   "key": "lean_elementary_the_wythoff_sequences_partition_the_integers",
@@ -7983,7 +8064,7 @@
   "file": "elementary.lean",
   "name": "the_z9_unit_group_splits_as_reflection_times_trinity",
   "statementHash": "3df4c8a55a6f09d8",
-  "searched": "2026-09-25T14:53:42.910Z",
+  "searched": "2026-09-25T21:07:12.836Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8002,12 +8083,13 @@
    "arxiv": "combinatorial AND game AND splits AND reflection AND times"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_elementary_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one": {
   "key": "lean_elementary_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one",
@@ -8102,7 +8184,7 @@
   "file": "energy.lean",
   "name": "a_chain_of_efficiencies_can_only_lose",
   "statementHash": "02097610147eda8f",
-  "searched": "2026-09-25T15:00:15.746Z",
+  "searched": "2026-09-25T21:10:46.004Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8121,12 +8203,13 @@
    "arxiv": "electrochemistry AND combustion AND chain AND efficiencies"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_a_floor_division_multiplies_back_within_one_divisor": {
   "key": "lean_energy_a_floor_division_multiplies_back_within_one_divisor",
@@ -8164,7 +8247,7 @@
   "file": "energy.lean",
   "name": "a_part_and_its_rest_read_back_the_whole",
   "statementHash": "660e1ed3c418f869",
-  "searched": "2026-09-25T15:01:39.956Z",
+  "searched": "2026-09-25T21:11:36.751Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8183,12 +8266,13 @@
    "arxiv": "electrochemistry AND combustion AND whole"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_a_ratio_and_its_reciprocal_multiply_back_to_the_whole": {
   "key": "lean_energy_a_ratio_and_its_reciprocal_multiply_back_to_the_whole",
@@ -8226,7 +8310,7 @@
   "file": "energy.lean",
   "name": "any_yield_below_its_cost_reads_under_the_whole",
   "statementHash": "30aea54157376e49",
-  "searched": "2026-09-25T14:59:50.480Z",
+  "searched": "2026-09-25T21:10:37.715Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8245,12 +8329,13 @@
    "arxiv": "electrochemistry AND combustion AND yield AND below AND reads"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_burning_then_splitting_is_the_identity_above_the_bond": {
   "key": "lean_energy_burning_then_splitting_is_the_identity_above_the_bond",
@@ -8319,7 +8404,7 @@
   "file": "energy.lean",
   "name": "mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water",
   "statementHash": "fa6b82979de4b7fa",
-  "searched": "2026-09-25T15:01:52.507Z",
+  "searched": "2026-09-25T21:11:45.048Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8338,19 +8423,20 @@
    "arxiv": "electrochemistry AND combustion AND conserved AND scale AND cannot"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_one_litre_split_returns_one_litre_burnt": {
   "key": "lean_energy_one_litre_split_returns_one_litre_burnt",
   "file": "energy.lean",
   "name": "one_litre_split_returns_one_litre_burnt",
   "statementHash": "3fd1939fc2f4bc4e",
-  "searched": "2026-09-25T15:02:06.563Z",
+  "searched": "2026-09-25T21:11:53.263Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8369,12 +8455,13 @@
    "arxiv": "electrochemistry AND combustion AND litre AND split AND returns"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_one_part_in_three_is_a_third_at_every_scale_for_every_m": {
   "key": "lean_energy_one_part_in_three_is_a_third_at_every_scale_for_every_m",
@@ -8421,7 +8508,7 @@
   "file": "energy.lean",
   "name": "only_oxy_hydrogen_burns_without_admitting_nitrogen",
   "statementHash": "0a7db863c94d57bf",
-  "searched": "2026-09-25T15:02:17.442Z",
+  "searched": "2026-09-25T21:12:01.426Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8440,12 +8527,13 @@
    "arxiv": "electrochemistry AND combustion AND hydrogen AND burns AND without"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value": {
   "key": "lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value",
@@ -8514,7 +8602,7 @@
   "file": "energy.lean",
   "name": "the_atom_table_decides_the_balance",
   "statementHash": "df1c83aee00bdd82",
-  "searched": "2026-09-25T15:01:06.856Z",
+  "searched": "2026-09-25T21:11:20.248Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8533,12 +8621,13 @@
    "arxiv": "electrochemistry AND combustion AND table AND balance"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_the_atoms_read_back_from_the_mass": {
   "key": "lean_energy_the_atoms_read_back_from_the_mass",
@@ -8616,7 +8705,7 @@
   "file": "energy.lean",
   "name": "the_cost_per_litre_multiplies_back_to_the_cost",
   "statementHash": "120e1b27ebf8fe96",
-  "searched": "2026-09-25T15:00:27.125Z",
+  "searched": "2026-09-25T21:10:54.393Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8635,12 +8724,13 @@
    "arxiv": "electrochemistry AND combustion AND litre AND multiplies"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_the_energy_per_litre_multiplies_back_to_the_energy": {
   "key": "lean_energy_the_energy_per_litre_multiplies_back_to_the_energy",
@@ -8740,7 +8830,7 @@
   "file": "energy.lean",
   "name": "the_gases_are_two_to_one_and_consume_each_other_exactly",
   "statementHash": "d7ac9002256422fe",
-  "searched": "2026-09-25T15:01:24.840Z",
+  "searched": "2026-09-25T21:11:28.618Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8759,12 +8849,13 @@
    "arxiv": "electrochemistry AND combustion AND gases AND consume AND other"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_the_loss_and_the_yield_read_back_the_input": {
   "key": "lean_energy_the_loss_and_the_yield_read_back_the_input",
@@ -8802,7 +8893,7 @@
   "file": "energy.lean",
   "name": "the_mass_balance_is_the_atom_balance",
   "statementHash": "acfcebef996b8f99",
-  "searched": "2026-09-25T15:00:55.776Z",
+  "searched": "2026-09-25T21:11:12.121Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8821,12 +8912,13 @@
    "arxiv": "electrochemistry AND combustion AND balance"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_the_mass_names_the_molecule_below_5333_hydrogens": {
   "key": "lean_energy_the_mass_names_the_molecule_below_5333_hydrogens",
@@ -8895,7 +8987,7 @@
   "file": "energy.lean",
   "name": "the_two_to_one_is_forced_by_the_oxygen",
   "statementHash": "33c28557ff84a1bd",
-  "searched": "2026-09-25T15:00:45.120Z",
+  "searched": "2026-09-25T21:11:02.778Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -8914,12 +9006,13 @@
    "arxiv": "electrochemistry AND combustion AND forced AND oxygen"
   },
   "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NOT_MEASURED"
  },
  "lean_energy_two_parts_in_three_is_two_thirds_at_every_scale": {
   "key": "lean_energy_two_parts_in_three_is_two_thirds_at_every_scale",
