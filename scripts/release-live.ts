@@ -42,13 +42,33 @@ const get = async (url: string) => {
 // The registry is asked for the exact version. A package that exists at some other version is not this
 // release being live, and saying "the package is on npm" would be true and would answer a question nobody
 // asked.
+// ── AND IT WAITS, BECAUSE THE REGISTRY LAGS THE PUBLISH ──────────────────────────────────────────────────
+// THIS CHECK'S OWN FALSE NEGATIVE, AND IT WAS A BAD ONE. Asked twenty seconds after publish.yml reported
+// success, registry.npmjs.org answered that 9.7.6 did not exist and that latest was 9.7.4 — so this printed
+// ABSENT and exited non-zero over a release that had published correctly, with signed provenance, and whose
+// own log said `+ @ceccec/millennium-solutions@9.7.6`. Minutes later the same query found it as latest.
+//
+// ABSENT is the one state here that FAILS, so a false one turns a healthy release into a red build and
+// teaches whoever sees it to disbelieve the check. A read replica catching up is not a missing version, and
+// the two are told apart by asking again rather than by asking once and concluding. Five attempts over
+// roughly a minute; only after all of them is a version called absent.
+const npmHas = async (): Promise<{ has: boolean; latest: string; when: string; tries: number }> => {
+  let last: any = null
+  for (let i = 0; i < 5; i++) {
+    last = await get(`https://registry.npmjs.org/${encodeURIComponent(pkg.name)}`)
+    if (last?.versions?.[version]) return { has: true, latest: last?.['dist-tags']?.latest ?? '—', when: String(last?.time?.[version] ?? '').slice(0, 10), tries: i + 1 }
+    if (i < 4) await new Promise((r) => setTimeout(r, 15_000))
+  }
+  return { has: false, latest: last?.['dist-tags']?.latest ?? '—', when: '', tries: 5 }
+}
 try {
   const j = await get(`https://registry.npmjs.org/${encodeURIComponent(pkg.name)}`)
-  const has = Boolean(j?.versions?.[version])
-  const latest = j?.['dist-tags']?.latest ?? '—'
+  const probe = await npmHas()
+  const has = probe.has
+  const latest = probe.latest
   legs.push({ where: `npm ${pkg.name}`, state: has ? 'LIVE' : 'ABSENT',
-    detail: has ? `${version} published ${String(j?.time?.[version] ?? '').slice(0, 10)} · latest is ${latest}`
-                : `${version} is NOT in the registry · latest is ${latest} · ${Object.keys(j?.versions ?? {}).length} version(s) published` })
+    detail: has ? `${version} published ${probe.when} · latest is ${latest}${probe.tries > 1 ? ` · the registry needed ${probe.tries} asks to catch up` : ''}`
+                : `${version} is NOT in the registry after 5 asks over ~1 minute · latest is ${latest} · ${Object.keys(j?.versions ?? {}).length} version(s) published` })
 } catch (e) {
   // A registry that did not answer is NOT MEASURED. Recording it as ABSENT would turn an outage into a
   // claim that the release failed, which is the false negative this deposit keeps finding in itself.
