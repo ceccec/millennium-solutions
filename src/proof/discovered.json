@@ -22664,5 +22664,45 @@
     "key": "lean_equivalence_the_licence_is_over_computation_and_not_over_meaning",
     "name": "lean equivalence.lean: the_licence_is_over_computation_and_not_over_meaning — coils (extOf 0) (extOf 1) && extOf 0 == 63 && extOf 1 == 63 && !(coils (extOf 0) (extOf 2)) && extOf 2 == 448 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "6d038111-982e-8599-964e-b6168d7a3025"
+  },
+  {
+    "key": "lean_widths_the_uuid_width_is_one_fact_in_two_units",
+    "name": "lean widths.lean: the_uuid_width_is_one_fact_in_two_units — toBits uuidBytes == container ∧ toBytes container == uuidBytes — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "886461df-f1b1-8378-822b-ec87c99c252e"
+  },
+  {
+    "key": "lean_widths_bytes_to_bits_and_back_is_the_identity",
+    "name": "lean widths.lean: bytes_to_bits_and_back_is_the_identity — (List.range 40).all (fun b => toBytes (toBits b) == b) ∧ (List.range 40).all (fun n => (toBits (toBytes n) == n) == (n % 8 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8b883899-959a-83f2-814d-83b13b0850c3"
+  },
+  {
+    "key": "lean_widths_the_key_doubles_the_identifier_and_the_signature_doubles_the_key",
+    "name": "lean widths.lean: the_key_doubles_the_identifier_and_the_signature_doubles_the_key — publicKeyBytes == 2 * uuidBytes ∧ signatureBytes == 2 * publicKeyBytes ∧ signatureBytes == 4 * uuidBytes ∧ (List.range 3).all (fun k => [uuidBytes, publicKeyBytes, signatureBytes].getD k 0 == 16 * 2 ^ k) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0b609ddc-86da-81e4-a223-b46671ae4a76"
+  },
+  {
+    "key": "lean_widths_the_doubling_survives_the_conversion",
+    "name": "lean widths.lean: the_doubling_survives_the_conversion — toBits uuidBytes == 128 ∧ toBits publicKeyBytes == 256 ∧ toBits signatureBytes == 512 ∧ (List.range 3).all (fun k => toBits ([uuidBytes, publicKeyBytes, signatureBytes].getD k 0) == 128 * 2 ^ k) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "638219ab-87c1-8394-9523-446f77126996"
+  },
+  {
+    "key": "lean_widths_the_key_and_the_signature_together_are_six_identifiers",
+    "name": "lean widths.lean: the_key_and_the_signature_together_are_six_identifiers — publicKeyBytes + signatureBytes == 96 ∧ 96 == 6 * uuidBytes ∧ toBits (publicKeyBytes + signatureBytes) == 768 ∧ 768 == 6 * container — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8b5c9930-36ae-80c8-80ac-04a497d0b379"
+  },
+  {
+    "key": "lean_widths_no_other_width_converts_to_this_container",
+    "name": "lean widths.lean: no_other_width_converts_to_this_container — (List.range 40).all (fun b => (toBits b == container) == (b == uuidBytes)) ∧ toBits 15 != container ∧ toBits 17 != container — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dfe2407a-68d1-8f47-9665-c226794342c2"
+  },
+  {
+    "key": "lean_widths_the_constants_are_instances_of_the_law_and_not_the_law",
+    "name": "lean widths.lean: the_constants_are_instances_of_the_law_and_not_the_law — toBits uuidBytes == container ∧ (List.range 40).all (fun b => toBits b == b * 8) ∧ (List.range 40).all (fun b => b != uuidBytes || toBits b == container) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7851950c-8454-881f-9867-1cdebc4a9a61"
+  },
+  {
+    "key": "lean_widths_the_binding_is_consistency_and_not_derivation",
+    "name": "lean widths.lean: the_binding_is_consistency_and_not_derivation — publicKeyBytes == 32 ∧ signatureBytes == 64 ∧ container == 128 ∧ (List.range 60).any (fun b => b != publicKeyBytes ∧ toBits b == b * 8) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "94b518cf-0e4a-8eea-9984-4263480c9b34"
   }
 ]

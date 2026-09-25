@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 1,192 of them across 61 files and
-7 wings; 990 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 1,200 of them across 62 files and
+7 wings; 998 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -752,6 +752,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \mathrm{settledHere} = 13 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{widths.lean}}
+
+\begin{theorem}[\texttt{the\_uuid\_width\_is\_one\_fact\_in\_two\_units}]
+\[ \mathrm{toBits}\mathopen{}\left(\mathrm{uuidBytes}\right) = \mathrm{container} \land \mathrm{toBytes}\mathopen{}\left(\mathrm{container}\right) = \mathrm{uuidBytes} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{bytes\_to\_bits\_and\_back\_is\_the\_identity}]
+\[ \forall b \in \{0,\dots,39\},\; \mathrm{toBytes}\mathopen{}\left(\mathrm{toBits}\mathopen{}\left(b\right)\right) = b \land \forall n \in \{0,\dots,39\},\; \mathrm{toBits}\mathopen{}\left(\mathrm{toBytes}\mathopen{}\left(n\right)\right) = n = n \bmod 8 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,600 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_key\_doubles\_the\_identifier\_and\_the\_signature\_doubles\_the\_key}]
+\texttt{publicKeyBytes == 2 * uuidBytes ∧ signatureBytes == 2 * publicKeyBytes ∧ signatureBytes == 4 * uuidBytes ∧ (List.range 3).all (fun k => [uuidBytes, publicKeyBytes, signatureBytes].getD k 0 == 16 * 2 ^ k)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_doubling\_survives\_the\_conversion}]
+\texttt{toBits uuidBytes == 128 ∧ toBits publicKeyBytes == 256 ∧ toBits signatureBytes == 512 ∧ (List.range 3).all (fun k => toBits ([uuidBytes, publicKeyBytes, signatureBytes].getD k 0) == 128 * 2 ^ k)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_key\_and\_the\_signature\_together\_are\_six\_identifiers}]
+\[ \mathrm{publicKeyBytes} + \mathrm{signatureBytes} = 96 \land 96 = 6 \cdot \mathrm{uuidBytes} \land \mathrm{toBits}\mathopen{}\left(\mathrm{publicKeyBytes} + \mathrm{signatureBytes}\right) = 768 \land 768 = 6 \cdot \mathrm{container} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_other\_width\_converts\_to\_this\_container}]
+\[ \forall b \in \{0,\dots,39\},\; \mathrm{toBits}\mathopen{}\left(b\right) = \mathrm{container} = b = \mathrm{uuidBytes} \land \mathrm{toBits}\mathopen{}\left(15\right) \neq \mathrm{container} \land \mathrm{toBits}\mathopen{}\left(17\right) \neq \mathrm{container} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_constants\_are\_instances\_of\_the\_law\_and\_not\_the\_law}]
+\[ \mathrm{toBits}\mathopen{}\left(\mathrm{uuidBytes}\right) = \mathrm{container} \land \forall b \in \{0,\dots,39\},\; \mathrm{toBits}\mathopen{}\left(b\right) = b \cdot 8 \land \forall b \in \{0,\dots,39\},\; b \neq \mathrm{uuidBytes} \lor \mathrm{toBits}\mathopen{}\left(b\right) = \mathrm{container} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,600 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_binding\_is\_consistency\_and\_not\_derivation}]
+\[ \mathrm{publicKeyBytes} = 32 \land \mathrm{signatureBytes} = 64 \land \mathrm{container} = 128 \land \exists b \in \{0,\dots,59\} : b \neq \mathrm{publicKeyBytes} \land \mathrm{toBits}\mathopen{}\left(b\right) = b \cdot 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
 
 \subsection{the floor}
 

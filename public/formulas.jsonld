@@ -11,7 +11,7 @@
  "@type": "ItemList",
  "name": "Formulas — every proposition this deposit decides",
  "description": "Each entry is the statement the Lean 4 kernel accepted, character for character, with its source, its wing and how it was proved.",
- "numberOfItems": 1192,
+ "numberOfItems": 1200,
  "itemListOrder": "https://schema.org/ItemListUnordered",
  "author": {
   "@type": "Person",
@@ -21250,6 +21250,158 @@
    "position": 1120,
    "item": {
     "@type": "ScholarlyArticle",
+    "name": "the_uuid_width_is_one_fact_in_two_units",
+    "description": "toBits uuidBytes == container ∧ toBytes container == uuidBytes",
+    "identifier": "lean_widths_the_uuid_width_is_one_fact_in_two_units",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_widths_the_uuid_width_is_one_fact_in_two_units",
+    "receipt": "886461df-f1b1-8378-822b-ec87c99c252e",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Widths"
+    },
+    "wing": "the address",
+    "source": "widths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1121,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "bytes_to_bits_and_back_is_the_identity",
+    "description": "(List.range 40).all (fun b => toBytes (toBits b) == b) ∧ (List.range 40).all (fun n => (toBits (toBytes n) == n) == (n % 8 == 0))",
+    "identifier": "lean_widths_bytes_to_bits_and_back_is_the_identity",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_widths_bytes_to_bits_and_back_is_the_identity",
+    "receipt": "8b883899-959a-83f2-814d-83b13b0850c3",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Widths"
+    },
+    "wing": "the address",
+    "source": "widths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1122,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_key_doubles_the_identifier_and_the_signature_doubles_the_key",
+    "description": "publicKeyBytes == 2 * uuidBytes ∧ signatureBytes == 2 * publicKeyBytes ∧ signatureBytes == 4 * uuidBytes ∧ (List.range 3).all (fun k => [uuidBytes, publicKeyBytes, signatureBytes].getD k 0 == 16 * 2 ^ k)",
+    "identifier": "lean_widths_the_key_doubles_the_identifier_and_the_signature_doubles_the_key",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_widths_the_key_doubles_the_identifier_and_the_signature_doubles_the_key",
+    "receipt": "0b609ddc-86da-81e4-a223-b46671ae4a76",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Widths"
+    },
+    "wing": "the address",
+    "source": "widths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1123,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_doubling_survives_the_conversion",
+    "description": "toBits uuidBytes == 128 ∧ toBits publicKeyBytes == 256 ∧ toBits signatureBytes == 512 ∧ (List.range 3).all (fun k => toBits ([uuidBytes, publicKeyBytes, signatureBytes].getD k 0) == 128 * 2 ^ k)",
+    "identifier": "lean_widths_the_doubling_survives_the_conversion",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_widths_the_doubling_survives_the_conversion",
+    "receipt": "638219ab-87c1-8394-9523-446f77126996",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Widths"
+    },
+    "wing": "the address",
+    "source": "widths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1124,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_key_and_the_signature_together_are_six_identifiers",
+    "description": "publicKeyBytes + signatureBytes == 96 ∧ 96 == 6 * uuidBytes ∧ toBits (publicKeyBytes + signatureBytes) == 768 ∧ 768 == 6 * container",
+    "identifier": "lean_widths_the_key_and_the_signature_together_are_six_identifiers",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_widths_the_key_and_the_signature_together_are_six_identifiers",
+    "receipt": "8b5c9930-36ae-80c8-80ac-04a497d0b379",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Widths"
+    },
+    "wing": "the address",
+    "source": "widths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1125,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "no_other_width_converts_to_this_container",
+    "description": "(List.range 40).all (fun b => (toBits b == container) == (b == uuidBytes)) ∧ toBits 15 != container ∧ toBits 17 != container",
+    "identifier": "lean_widths_no_other_width_converts_to_this_container",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_widths_no_other_width_converts_to_this_container",
+    "receipt": "dfe2407a-68d1-8f47-9665-c226794342c2",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Widths"
+    },
+    "wing": "the address",
+    "source": "widths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1126,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_constants_are_instances_of_the_law_and_not_the_law",
+    "description": "toBits uuidBytes == container ∧ (List.range 40).all (fun b => toBits b == b * 8) ∧ (List.range 40).all (fun b => b != uuidBytes || toBits b == container)",
+    "identifier": "lean_widths_the_constants_are_instances_of_the_law_and_not_the_law",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_widths_the_constants_are_instances_of_the_law_and_not_the_law",
+    "receipt": "7851950c-8454-881f-9867-1cdebc4a9a61",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Widths"
+    },
+    "wing": "the address",
+    "source": "widths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1127,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_binding_is_consistency_and_not_derivation",
+    "description": "publicKeyBytes == 32 ∧ signatureBytes == 64 ∧ container == 128 ∧ (List.range 60).any (fun b => b != publicKeyBytes ∧ toBits b == b * 8)",
+    "identifier": "lean_widths_the_binding_is_consistency_and_not_derivation",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_widths_the_binding_is_consistency_and_not_derivation",
+    "receipt": "94b518cf-0e4a-8eea-9984-4263480c9b34",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "Widths"
+    },
+    "wing": "the address",
+    "source": "widths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 1128,
+   "item": {
+    "@type": "ScholarlyArticle",
     "name": "units_are_six",
     "description": "units = [1, 2, 4, 5, 7, 8]",
     "identifier": "lean_z9_units_are_six",
@@ -21266,7 +21418,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1121,
+   "position": 1129,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "units_count",
@@ -21285,7 +21437,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1122,
+   "position": 1130,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "hasinv_units",
@@ -21304,7 +21456,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1123,
+   "position": 1131,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "hasinv_triad_not",
@@ -21323,7 +21475,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1124,
+   "position": 1132,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "selfinv_exactly_one_and_eight",
@@ -21342,7 +21494,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1125,
+   "position": 1133,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "euler_units_pow_six",
@@ -21361,7 +21513,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1126,
+   "position": 1134,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "invpow_is_u_to_the_fifth",
@@ -21380,7 +21532,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1127,
+   "position": 1135,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "powsum_zero_at_six",
@@ -21399,7 +21551,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1128,
+   "position": 1136,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "powsum_zero_at_one",
@@ -21418,7 +21570,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1129,
+   "position": 1137,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "mulperm_iff_unit",
@@ -21437,7 +21589,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1130,
+   "position": 1138,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "addgen_iff_coprime",
@@ -21456,7 +21608,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1131,
+   "position": 1139,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "selfneg_only_zero",
@@ -21475,7 +21627,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1132,
+   "position": 1140,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_is_the_six",
@@ -21494,7 +21646,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1133,
+   "position": 1141,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_closes",
@@ -21513,7 +21665,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1134,
+   "position": 1142,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_distinct",
@@ -21532,7 +21684,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1135,
+   "position": 1143,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_covers_units",
@@ -21551,7 +21703,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1136,
+   "position": 1144,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_step_is_read_back_by_its_log",
@@ -21570,7 +21722,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1137,
+   "position": 1145,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "triad_never_reaches_one",
@@ -21589,7 +21741,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1138,
+   "position": 1146,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "triad_squares_vanish",
@@ -21608,7 +21760,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1139,
+   "position": 1147,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "add_group",
@@ -21627,7 +21779,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1140,
+   "position": 1148,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "neg_involution",
@@ -21646,7 +21798,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1141,
+   "position": 1149,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "z9_settles_its_domain_totally",
@@ -21662,7 +21814,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1142,
+   "position": 1150,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_repeats_every_six",
@@ -21681,7 +21833,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1143,
+   "position": 1151,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_is_its_exponent_mod_six",
@@ -21700,7 +21852,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1144,
+   "position": 1152,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_step_is_read_back_by_its_log_for_every_k",
@@ -21719,7 +21871,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1145,
+   "position": 1153,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "squares_land_exactly_in_zero_one_four_seven",
@@ -21738,7 +21890,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1146,
+   "position": 1154,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "five_is_not_a_square_mod_nine",
@@ -21757,7 +21909,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1147,
+   "position": 1155,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cubes_land_exactly_in_zero_one_eight",
@@ -21776,7 +21928,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1148,
+   "position": 1156,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "primitive_roots_are_exactly_two_and_five",
@@ -21795,7 +21947,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1149,
+   "position": 1157,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "primitive_root_iff_generates_the_units",
@@ -21814,7 +21966,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1150,
+   "position": 1158,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_has_period_six",
@@ -21833,7 +21985,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1151,
+   "position": 1159,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_period_smaller_than_six",
@@ -21852,7 +22004,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1152,
+   "position": 1160,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_agrees_with_the_residue",
@@ -21871,7 +22023,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1153,
+   "position": 1161,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_is_the_digit_sum_residue",
@@ -21890,7 +22042,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1154,
+   "position": 1162,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_cannot_change_the_digital_root",
@@ -21909,7 +22061,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1155,
+   "position": 1163,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_digital_roots_have_period_six",
@@ -21928,7 +22080,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1156,
+   "position": 1164,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orders_of_the_units_are_exact",
@@ -21947,7 +22099,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1157,
+   "position": 1165,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_unit_table_is_a_latin_square",
@@ -21966,7 +22118,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1158,
+   "position": 1166,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_never_meets_the_triad",
@@ -21985,7 +22137,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1159,
+   "position": 1167,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reflected_orbit_covers_the_whole_triad",
@@ -22004,7 +22156,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1160,
+   "position": 1168,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reflection_splits_the_orbit_in_half",
@@ -22023,7 +22175,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1161,
+   "position": 1169,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_crossing_pairs_are_one_four_seven",
@@ -22042,7 +22194,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1162,
+   "position": 1170,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reflection_is_injective_on_the_orbit",
@@ -22061,7 +22213,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1163,
+   "position": 1171,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_alone_reaches_only_the_units",
@@ -22080,7 +22232,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1164,
+   "position": 1172,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reflection_alone_reaches_only_two",
@@ -22099,7 +22251,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1165,
+   "position": 1173,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_and_reflection_together_reach_every_residue",
@@ -22118,7 +22270,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1166,
+   "position": 1174,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_residue_is_reachable_from_one",
@@ -22137,7 +22289,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1167,
+   "position": 1175,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_diameter_is_exactly_four",
@@ -22156,7 +22308,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1168,
+   "position": 1176,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_frontier_grows_by_two_each_round",
@@ -22175,7 +22327,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1169,
+   "position": 1177,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "product_of_the_units_is_minus_one",
@@ -22194,7 +22346,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1170,
+   "position": 1178,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "pisano_period_mod_nine_is_twenty_four",
@@ -22213,7 +22365,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1171,
+   "position": 1179,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_proper_divisor_of_twenty_four_is_a_period",
@@ -22232,7 +22384,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1172,
+   "position": 1180,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fibonacci_recurrence_holds",
@@ -22251,7 +22403,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1173,
+   "position": 1181,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "consecutive_fibonacci_are_coprime",
@@ -22270,7 +22422,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1174,
+   "position": 1182,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "three_five_eight_are_consecutive_fibonacci",
@@ -22289,7 +22441,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1175,
+   "position": 1183,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "units_and_triad_partition_the_ring",
@@ -22308,7 +22460,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1176,
+   "position": 1184,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "both_parts_sum_to_zero",
@@ -22327,7 +22479,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1177,
+   "position": 1185,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_has_period_six_for_every_k",
@@ -22346,7 +22498,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1178,
+   "position": 1186,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_digital_roots_have_period_six_for_every_k",
@@ -22365,7 +22517,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1179,
+   "position": 1187,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_doubling_orbit_is_read_from_the_exponent_mod_six",
@@ -22384,7 +22536,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1180,
+   "position": 1188,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_never_meets_the_triad_for_every_k",
@@ -22403,7 +22555,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1181,
+   "position": 1189,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fibonacci_residues_mod_nine_repeat_every_twenty_four_steps",
@@ -22422,7 +22574,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1182,
+   "position": 1190,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "pisano_period_mod_nine_is_twenty_four_for_every_k",
@@ -22441,7 +22593,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1183,
+   "position": 1191,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument",
@@ -22460,7 +22612,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1184,
+   "position": 1192,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "consecutive_fibonacci_numbers_are_coprime",
@@ -22479,7 +22631,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1185,
+   "position": 1193,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "consecutive_fibonacci_are_coprime_for_every_n",
@@ -22498,7 +22650,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1186,
+   "position": 1194,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_agrees_with_the_residue_for_every_n",
@@ -22517,7 +22669,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1187,
+   "position": 1195,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_is_the_digit_sum_residue_for_every_n",
@@ -22536,7 +22688,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1188,
+   "position": 1196,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_undoes_doubling_at_every_step",
@@ -22555,7 +22707,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1189,
+   "position": 1197,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_has_period_six_for_every_k",
@@ -22574,7 +22726,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1190,
+   "position": 1198,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_orbit_digital_roots_have_period_six_for_every_k",
@@ -22593,7 +22745,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1191,
+   "position": 1199,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k",
@@ -22612,7 +22764,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 1192,
+   "position": 1200,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_cannot_change_the_digital_root_for_every_n",

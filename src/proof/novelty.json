@@ -8081,6 +8081,99 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_energy_a_floor_division_multiplies_back_within_one_divisor": {
+  "key": "lean_energy_a_floor_division_multiplies_back_within_one_divisor",
+  "file": "energy.lean",
+  "name": "a_floor_division_multiplies_back_within_one_divisor",
+  "statementHash": "0e8b5d0e7f0feb3b",
+  "searched": "2026-09-25T15:05:48.311Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion floor division multiplies",
+   "openalex": "electrochemistry combustion floor division multiplies",
+   "crossref": "electrochemistry combustion floor division multiplies",
+   "arxiv": "electrochemistry AND combustion AND floor AND division AND multiplies"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_a_part_and_its_rest_read_back_the_whole": {
+  "key": "lean_energy_a_part_and_its_rest_read_back_the_whole",
+  "file": "energy.lean",
+  "name": "a_part_and_its_rest_read_back_the_whole",
+  "statementHash": "660e1ed3c418f869",
+  "searched": "2026-09-25T15:01:39.956Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion whole",
+   "openalex": "electrochemistry combustion whole",
+   "crossref": "electrochemistry combustion whole",
+   "arxiv": "electrochemistry AND combustion AND whole"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_a_ratio_and_its_reciprocal_multiply_back_to_the_whole": {
+  "key": "lean_energy_a_ratio_and_its_reciprocal_multiply_back_to_the_whole",
+  "file": "energy.lean",
+  "name": "a_ratio_and_its_reciprocal_multiply_back_to_the_whole",
+  "statementHash": "02600671ba65643b",
+  "searched": "2026-09-25T15:03:45.290Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion ratio reciprocal multiply",
+   "openalex": "electrochemistry combustion ratio reciprocal multiply",
+   "crossref": "electrochemistry combustion ratio reciprocal multiply",
+   "arxiv": "electrochemistry AND combustion AND ratio AND reciprocal AND multiply"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_energy_any_yield_below_its_cost_reads_under_the_whole": {
   "key": "lean_energy_any_yield_below_its_cost_reads_under_the_whole",
   "file": "energy.lean",
@@ -8111,6 +8204,1783 @@
   "catalogued": false,
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_burning_then_splitting_is_the_identity_above_the_bond": {
+  "key": "lean_energy_burning_then_splitting_is_the_identity_above_the_bond",
+  "file": "energy.lean",
+  "name": "burning_then_splitting_is_the_identity_above_the_bond",
+  "statementHash": "53f7fd1559e7be96",
+  "searched": "2026-09-25T15:04:46.215Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion burning splitting above",
+   "openalex": "electrochemistry combustion burning splitting above",
+   "crossref": "electrochemistry combustion burning splitting above",
+   "arxiv": "electrochemistry AND combustion AND burning AND splitting AND above"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_compression_scales_the_energy_per_litre_linearly": {
+  "key": "lean_energy_compression_scales_the_energy_per_litre_linearly",
+  "file": "energy.lean",
+  "name": "compression_scales_the_energy_per_litre_linearly",
+  "statementHash": "8195bcf2bb25f688",
+  "searched": "2026-09-25T15:03:32.828Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion compression scales energy",
+   "openalex": "electrochemistry combustion compression scales energy",
+   "crossref": "electrochemistry combustion compression scales energy",
+   "arxiv": "electrochemistry AND combustion AND compression AND scales AND energy"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water": {
+  "key": "lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water",
+  "file": "energy.lean",
+  "name": "mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water",
+  "statementHash": "fa6b82979de4b7fa",
+  "searched": "2026-09-25T15:01:52.507Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion conserved scale cannot",
+   "openalex": "electrochemistry combustion conserved scale cannot",
+   "crossref": "electrochemistry combustion conserved scale cannot",
+   "arxiv": "electrochemistry AND combustion AND conserved AND scale AND cannot"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_one_litre_split_returns_one_litre_burnt": {
+  "key": "lean_energy_one_litre_split_returns_one_litre_burnt",
+  "file": "energy.lean",
+  "name": "one_litre_split_returns_one_litre_burnt",
+  "statementHash": "3fd1939fc2f4bc4e",
+  "searched": "2026-09-25T15:02:06.563Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion litre split returns",
+   "openalex": "electrochemistry combustion litre split returns",
+   "crossref": "electrochemistry combustion litre split returns",
+   "arxiv": "electrochemistry AND combustion AND litre AND split AND returns"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_one_part_in_three_is_a_third_at_every_scale_for_every_m": {
+  "key": "lean_energy_one_part_in_three_is_a_third_at_every_scale_for_every_m",
+  "file": "energy.lean",
+  "name": "one_part_in_three_is_a_third_at_every_scale_for_every_m",
+  "statementHash": "9f6112ec5cb2e740",
+  "searched": "2026-09-25T15:04:56.395Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion scale",
+   "openalex": "electrochemistry combustion scale",
+   "crossref": "electrochemistry combustion scale",
+   "arxiv": "electrochemistry AND combustion AND scale"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Exploiting network topology for large-scale inference of nonlinear reaction models",
+    "year": "2017",
+    "url": "http://arxiv.org/abs/1705.04678v5",
+    "relevance": 1,
+    "text": "Exploiting network topology for large-scale inference of nonlinear reaction models The development of chemical reaction models aids understanding and prediction in areas ranging from biology to electrochemistry and combustion. A systematic approach to building reaction network models uses observatio"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen": {
+  "key": "lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen",
+  "file": "energy.lean",
+  "name": "only_oxy_hydrogen_burns_without_admitting_nitrogen",
+  "statementHash": "0a7db863c94d57bf",
+  "searched": "2026-09-25T15:02:17.442Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion hydrogen burns without",
+   "openalex": "electrochemistry combustion hydrogen burns without",
+   "crossref": "electrochemistry combustion hydrogen burns without",
+   "arxiv": "electrochemistry AND combustion AND hydrogen AND burns AND without"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value": {
+  "key": "lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value",
+  "file": "energy.lean",
+  "name": "splitting_then_burning_is_the_identity_at_every_ledger_value",
+  "statementHash": "47f37c23d6ca4ca8",
+  "searched": "2026-09-25T15:02:40.633Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion splitting burning ledger",
+   "openalex": "electrochemistry combustion splitting burning ledger",
+   "crossref": "electrochemistry combustion splitting burning ledger",
+   "arxiv": "electrochemistry AND combustion AND splitting AND burning AND ledger"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_splitting_then_burning_is_the_identity_at_the_ideal": {
+  "key": "lean_energy_splitting_then_burning_is_the_identity_at_the_ideal",
+  "file": "energy.lean",
+  "name": "splitting_then_burning_is_the_identity_at_the_ideal",
+  "statementHash": "20baee75696a1f23",
+  "searched": "2026-09-25T15:02:29.868Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion splitting burning ideal",
+   "openalex": "electrochemistry combustion splitting burning ideal",
+   "crossref": "electrochemistry combustion splitting burning ideal",
+   "arxiv": "electrochemistry AND combustion AND splitting AND burning AND ideal"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_atom_table_decides_the_balance": {
+  "key": "lean_energy_the_atom_table_decides_the_balance",
+  "file": "energy.lean",
+  "name": "the_atom_table_decides_the_balance",
+  "statementHash": "df1c83aee00bdd82",
+  "searched": "2026-09-25T15:01:06.856Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion table balance",
+   "openalex": "electrochemistry combustion table balance",
+   "crossref": "electrochemistry combustion table balance",
+   "arxiv": "electrochemistry AND combustion AND table AND balance"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_atoms_read_back_from_the_mass": {
+  "key": "lean_energy_the_atoms_read_back_from_the_mass",
+  "file": "energy.lean",
+  "name": "the_atoms_read_back_from_the_mass",
+  "statementHash": "af2c919bffcd2d08",
+  "searched": "2026-09-25T15:04:21.708Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion atoms",
+   "openalex": "electrochemistry combustion atoms",
+   "crossref": "electrochemistry combustion atoms",
+   "arxiv": "electrochemistry AND combustion AND atoms"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Applied second law analysis of heat engine cycles",
+    "year": "2022",
+    "url": "https://zbmath.org/7698521",
+    "relevance": 0.6666666666666666,
+    "text": "Applied second law analysis of heat engine cycles [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"brillard.alain\",\"reviewer_id\":\"10228\",\"name\":\"Alain Brillard\",\"sign\":\"Alain Brillard (Riedisheim)\"},\"text\":\"The book focuses on the link between the laws of thermodynamics and especially the second on"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_energy_the_boundary_is_sharp": {
+  "key": "lean_energy_the_boundary_is_sharp",
+  "file": "energy.lean",
+  "name": "the_boundary_is_sharp",
+  "statementHash": "984b139de54119a3",
+  "searched": "2026-09-25T15:05:38.166Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion boundary sharp",
+   "openalex": "electrochemistry combustion boundary sharp",
+   "crossref": "electrochemistry combustion boundary sharp",
+   "arxiv": "electrochemistry AND combustion AND boundary AND sharp"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_cost_per_litre_multiplies_back_to_the_cost": {
+  "key": "lean_energy_the_cost_per_litre_multiplies_back_to_the_cost",
+  "file": "energy.lean",
+  "name": "the_cost_per_litre_multiplies_back_to_the_cost",
+  "statementHash": "120e1b27ebf8fe96",
+  "searched": "2026-09-25T15:00:27.125Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion litre multiplies",
+   "openalex": "electrochemistry combustion litre multiplies",
+   "crossref": "electrochemistry combustion litre multiplies",
+   "arxiv": "electrochemistry AND combustion AND litre AND multiplies"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_energy_per_litre_multiplies_back_to_the_energy": {
+  "key": "lean_energy_the_energy_per_litre_multiplies_back_to_the_energy",
+  "file": "energy.lean",
+  "name": "the_energy_per_litre_multiplies_back_to_the_energy",
+  "statementHash": "c38d097619e5ffda",
+  "searched": "2026-09-25T15:03:22.365Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion energy litre multiplies",
+   "openalex": "electrochemistry combustion energy litre multiplies",
+   "crossref": "electrochemistry combustion energy litre multiplies",
+   "arxiv": "electrochemistry AND combustion AND energy AND litre AND multiplies"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_gas_volume_reads_back_its_moles": {
+  "key": "lean_energy_the_gas_volume_reads_back_its_moles",
+  "file": "energy.lean",
+  "name": "the_gas_volume_reads_back_its_moles",
+  "statementHash": "eeccd34c28719331",
+  "searched": "2026-09-25T15:02:56.842Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion volume reads moles",
+   "openalex": "electrochemistry combustion volume reads moles",
+   "crossref": "electrochemistry combustion volume reads moles",
+   "arxiv": "electrochemistry AND combustion AND volume AND reads AND moles"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_gas_volume_reads_back_its_moles_for_every_m": {
+  "key": "lean_energy_the_gas_volume_reads_back_its_moles_for_every_m",
+  "file": "energy.lean",
+  "name": "the_gas_volume_reads_back_its_moles_for_every_m",
+  "statementHash": "4f2fcd20a5640918",
+  "searched": "2026-09-25T15:05:17.743Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion volume reads moles",
+   "openalex": "electrochemistry combustion volume reads moles",
+   "crossref": "electrochemistry combustion volume reads moles",
+   "arxiv": "electrochemistry AND combustion AND volume AND reads AND moles"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly": {
+  "key": "lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly",
+  "file": "energy.lean",
+  "name": "the_gases_are_two_to_one_and_consume_each_other_exactly",
+  "statementHash": "d7ac9002256422fe",
+  "searched": "2026-09-25T15:01:24.840Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion gases consume other",
+   "openalex": "electrochemistry combustion gases consume other",
+   "crossref": "electrochemistry combustion gases consume other",
+   "arxiv": "electrochemistry AND combustion AND gases AND consume AND other"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_loss_and_the_yield_read_back_the_input": {
+  "key": "lean_energy_the_loss_and_the_yield_read_back_the_input",
+  "file": "energy.lean",
+  "name": "the_loss_and_the_yield_read_back_the_input",
+  "statementHash": "416b4c12cdf1829e",
+  "searched": "2026-09-25T15:03:55.829Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion yield input",
+   "openalex": "electrochemistry combustion yield input",
+   "crossref": "electrochemistry combustion yield input",
+   "arxiv": "electrochemistry AND combustion AND yield AND input"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_mass_balance_is_the_atom_balance": {
+  "key": "lean_energy_the_mass_balance_is_the_atom_balance",
+  "file": "energy.lean",
+  "name": "the_mass_balance_is_the_atom_balance",
+  "statementHash": "acfcebef996b8f99",
+  "searched": "2026-09-25T15:00:55.776Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion balance",
+   "openalex": "electrochemistry combustion balance",
+   "crossref": "electrochemistry combustion balance",
+   "arxiv": "electrochemistry AND combustion AND balance"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_mass_names_the_molecule_below_5333_hydrogens": {
+  "key": "lean_energy_the_mass_names_the_molecule_below_5333_hydrogens",
+  "file": "energy.lean",
+  "name": "the_mass_names_the_molecule_below_5333_hydrogens",
+  "statementHash": "6a1805ce3b0a0902",
+  "searched": "2026-09-25T15:05:27.684Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion names molecule below",
+   "openalex": "electrochemistry combustion names molecule below",
+   "crossref": "electrochemistry combustion names molecule below",
+   "arxiv": "electrochemistry AND combustion AND names AND molecule AND below"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_residue_ratio_is_the_same_at_every_volume": {
+  "key": "lean_energy_the_residue_ratio_is_the_same_at_every_volume",
+  "file": "energy.lean",
+  "name": "the_residue_ratio_is_the_same_at_every_volume",
+  "statementHash": "167c0f66d9f20786",
+  "searched": "2026-09-25T15:04:07.198Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion residue ratio volume",
+   "openalex": "electrochemistry combustion residue ratio volume",
+   "crossref": "electrochemistry combustion residue ratio volume",
+   "arxiv": "electrochemistry AND combustion AND residue AND ratio AND volume"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_the_two_to_one_is_forced_by_the_oxygen": {
+  "key": "lean_energy_the_two_to_one_is_forced_by_the_oxygen",
+  "file": "energy.lean",
+  "name": "the_two_to_one_is_forced_by_the_oxygen",
+  "statementHash": "33c28557ff84a1bd",
+  "searched": "2026-09-25T15:00:45.120Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion forced oxygen",
+   "openalex": "electrochemistry combustion forced oxygen",
+   "crossref": "electrochemistry combustion forced oxygen",
+   "arxiv": "electrochemistry AND combustion AND forced AND oxygen"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_two_parts_in_three_is_two_thirds_at_every_scale": {
+  "key": "lean_energy_two_parts_in_three_is_two_thirds_at_every_scale",
+  "file": "energy.lean",
+  "name": "two_parts_in_three_is_two_thirds_at_every_scale",
+  "statementHash": "bf5889ebb54d8207",
+  "searched": "2026-09-25T15:03:07.089Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion parts thirds scale",
+   "openalex": "electrochemistry combustion parts thirds scale",
+   "crossref": "electrochemistry combustion parts thirds scale",
+   "arxiv": "electrochemistry AND combustion AND parts AND thirds AND scale"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_two_parts_in_three_is_two_thirds_at_every_scale_for_every_m": {
+  "key": "lean_energy_two_parts_in_three_is_two_thirds_at_every_scale_for_every_m",
+  "file": "energy.lean",
+  "name": "two_parts_in_three_is_two_thirds_at_every_scale_for_every_m",
+  "statementHash": "17a4cdc312293f47",
+  "searched": "2026-09-25T15:04:36.410Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion parts thirds scale",
+   "openalex": "electrochemistry combustion parts thirds scale",
+   "crossref": "electrochemistry combustion parts thirds scale",
+   "arxiv": "electrochemistry AND combustion AND parts AND thirds AND scale"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_addition_generates_z9_at_exactly_the_units": {
+  "key": "lean_families_addition_generates_z9_at_exactly_the_units",
+  "file": "families.lean",
+  "name": "addition_generates_z9_at_exactly_the_units",
+  "statementHash": "470d9610db88f7d6",
+  "searched": "2026-09-25T15:09:04.661Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic addition generates",
+   "openalex": "modular arithmetic addition generates",
+   "crossref": "modular arithmetic addition generates",
+   "arxiv": "modular AND arithmetic AND addition AND generates"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Grokking of Diffusion Models: Case Study on Modular Addition",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2604.17673v1",
+    "relevance": 0.75,
+    "text": "Grokking of Diffusion Models: Case Study on Modular Addition Despite their empirical success, how diffusion models generalize remains poorly understood from a mechanistic perspective. We demonstrate that diffusion models trained with flow-matching objectives exhibit grokking--delayed generalization "
+   },
+   {
+    "source": "arxiv",
+    "title": "Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2407.17963v2",
+    "relevance": 0.75,
+    "text": "Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks Transformer-based models excel in various tasks but their generalization capabilities, especially in arithmetic reasoning, remain incompletely understood. Arithmetic tasks provide a controlled "
+   },
+   {
+    "source": "arxiv",
+    "title": "Grokking Modular Polynomials",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2406.03495v1",
+    "relevance": 0.75,
+    "text": "Grokking Modular Polynomials Neural networks readily learn a subset of the modular arithmetic tasks, while failing to generalize on the rest. This limitation remains unmoved by the choice of architecture and training strategies. On the other hand, an analytical solution for the weights of Multi-laye"
+   },
+   {
+    "source": "arxiv",
+    "title": "Modular Visual Question Answering via Code Generation",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2306.05392v1",
+    "relevance": 1,
+    "text": "Modular Visual Question Answering via Code Generation We present a framework that formulates visual question answering as modular code generation. In contrast to prior work on modular approaches to VQA, our approach requires no additional training and relies on pre-trained language models (LMs), vis"
+   },
+   {
+    "source": "arxiv",
+    "title": "Towards Empirical Interpretation of Internal Circuits and Properties in Grokked Transformers on Modular Polynomials",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2402.16726v4",
+    "relevance": 0.75,
+    "text": "Towards Empirical Interpretation of Internal Circuits and Properties in Grokked Transformers on Modular Polynomials Grokking has been actively explored to reveal the mystery of delayed generalization and identifying interpretable representations and algorithms inside the grokked models is a suggesti"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units": {
+  "key": "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units",
+  "file": "families.lean",
+  "name": "an_inverse_mod_nine_exists_at_exactly_the_units",
+  "statementHash": "0637f0e32375b392",
+  "searched": "2026-09-25T15:09:15.614Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic inverse exists",
+   "openalex": "modular arithmetic inverse exists",
+   "crossref": "modular arithmetic inverse exists",
+   "arxiv": "modular AND arithmetic AND inverse AND exists"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Horizontal divisors on arithmetic surfaces associated with Belyi uniformizations",
+    "year": "1994",
+    "url": "https://zbmath.org/732174",
+    "relevance": 0.75,
+    "text": "Horizontal divisors on arithmetic surfaces associated with Belyi uniformizations [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"The main results proved in this note are as follows. Let \\\\(X= \\\\mathbb{P}^1_{\\\\mathfrak O}\\\\) be the projective "
+   },
+   {
+    "source": "arxiv",
+    "title": "Fast Arithmetic Hardware Library For RLWE-Based Homomorphic Encryption",
+    "year": "2020",
+    "url": "http://arxiv.org/abs/2007.01648v1",
+    "relevance": 1,
+    "text": "Fast Arithmetic Hardware Library For RLWE-Based Homomorphic Encryption In this work, we propose an open-source, first-of-its-kind, arithmetic hardware library with a focus on accelerating the arithmetic operations involved in Ring Learning with Error (RLWE)-based somewhat homomorphic encryption (SHE"
+   },
+   {
+    "source": "arxiv",
+    "title": "High-Performance NTT Accelerators for PQC leveraging Unified Redundant Arithmetic and Fine-Tuned Microarchitecture",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2607.00621v1",
+    "relevance": 1,
+    "text": "High-Performance NTT Accelerators for PQC leveraging Unified Redundant Arithmetic and Fine-Tuned Microarchitecture Post-quantum cryptography and privacy-preserving technologies are expected to play a central role in future secure communication systems. Lattice-based PQC schemes such as ML-KEM (CRYST"
+   },
+   {
+    "source": "arxiv",
+    "title": "Equational Bit-Vector Solving via Strong Gröbner Bases",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2402.16314v1",
+    "relevance": 1,
+    "text": "Equational Bit-Vector Solving via Strong Gröbner Bases Bit-vectors, which are integers in a finite number of bits, are ubiquitous in software and hardware systems. In this work, we consider the satisfiability modulo theories (SMT) of bit-vectors. Unlike normal integers, the arithmetics of bit-vector"
+   },
+   {
+    "source": "arxiv",
+    "title": "Kuznetsov, Petersson and Weyl on $GL(3)$, II: The generalized principal series forms",
+    "year": "2017",
+    "url": "http://arxiv.org/abs/1706.08816v3",
+    "relevance": 0.75,
+    "text": "Kuznetsov, Petersson and Weyl on $GL(3)$, II: The generalized principal series forms This paper initiates the study by analytic methods of the generalized principal series Maass forms on $GL(3)$. These forms occur as an infinite sequence of one-parameter families in the two-parameter spectrum of $GL"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_and_the_converse_fails_at_six": {
+  "key": "lean_families_and_the_converse_fails_at_six",
+  "file": "families.lean",
+  "name": "and_the_converse_fails_at_six",
+  "statementHash": "e31affc253f5636c",
+  "searched": "2026-09-25T15:10:41.213Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic converse fails",
+   "openalex": "modular arithmetic converse fails",
+   "crossref": "modular arithmetic converse fails",
+   "arxiv": "modular AND arithmetic AND converse AND fails"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_at_a_zero_divisor_the_identity_is_carried_by_the_remainder": {
+  "key": "lean_families_at_a_zero_divisor_the_identity_is_carried_by_the_remainder",
+  "file": "families.lean",
+  "name": "at_a_zero_divisor_the_identity_is_carried_by_the_remainder",
+  "statementHash": "8daad3af9438f89b",
+  "searched": "2026-09-25T15:08:01.556Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic divisor carried remainder",
+   "openalex": "modular arithmetic divisor carried remainder",
+   "crossref": "modular arithmetic divisor carried remainder",
+   "arxiv": "modular AND arithmetic AND divisor AND carried AND remainder"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_demorgan_holds_at_every_arity_to_eight": {
+  "key": "lean_families_demorgan_holds_at_every_arity_to_eight",
+  "file": "families.lean",
+  "name": "demorgan_holds_at_every_arity_to_eight",
+  "statementHash": "8971d6effcfe018d",
+  "searched": "2026-09-25T15:08:43.967Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic demorgan arity",
+   "openalex": "modular arithmetic demorgan arity",
+   "crossref": "modular arithmetic demorgan arity",
+   "arxiv": "modular AND arithmetic AND demorgan AND arity"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_division_identity_holds_across_the_range": {
+  "key": "lean_families_division_identity_holds_across_the_range",
+  "file": "families.lean",
+  "name": "division_identity_holds_across_the_range",
+  "statementHash": "cf8ced57673e42ff",
+  "searched": "2026-09-25T15:07:49.227Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic division across",
+   "openalex": "modular arithmetic division across",
+   "crossref": "modular arithmetic division across",
+   "arxiv": "modular AND arithmetic AND division AND across"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck in Spiking Transformers",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2605.20289v1",
+    "relevance": 1,
+    "text": "Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck in Spiking Transformers ANN-to-SNN conversion offers a practical, training-free route to spiking large language models. However, current pipelines primarily focus on spike-driven realizations for Transformer linear-algebra operati"
+   },
+   {
+    "source": "arxiv",
+    "title": "An Efficient Algorithm for Modulus Operation and Its Hardware Implementation in Prime Number Calculation",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2407.12541v2",
+    "relevance": 1,
+    "text": "An Efficient Algorithm for Modulus Operation and Its Hardware Implementation in Prime Number Calculation This paper presents a novel algorithm for the modulus operation for FPGA implementation. The proposed algorithm use only addition, subtraction, logical, and bit shift operations, avoiding the com"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_flt_all_primes_under_thirty": {
+  "key": "lean_families_flt_all_primes_under_thirty",
+  "file": "families.lean",
+  "name": "flt_all_primes_under_thirty",
+  "statementHash": "82886d199c15a862",
+  "searched": "2026-09-25T15:05:58.552Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic primes thirty",
+   "openalex": "modular arithmetic primes thirty",
+   "crossref": "modular arithmetic primes thirty",
+   "arxiv": "modular AND arithmetic AND primes AND thirty"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_geometric_series_across_bases_and_exponents": {
+  "key": "lean_families_geometric_series_across_bases_and_exponents",
+  "file": "families.lean",
+  "name": "geometric_series_across_bases_and_exponents",
+  "statementHash": "d3d740b8a079e2ce",
+  "searched": "2026-09-25T15:10:06.100Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic geometric series across",
+   "openalex": "modular arithmetic geometric series across",
+   "crossref": "modular arithmetic geometric series across",
+   "arxiv": "modular AND arithmetic AND geometric AND series AND across"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_geometric_series_all_bases": {
+  "key": "lean_families_geometric_series_all_bases",
+  "file": "families.lean",
+  "name": "geometric_series_all_bases",
+  "statementHash": "f3d13529e1ab396c",
+  "searched": "2026-09-25T15:07:09.655Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic geometric series bases",
+   "openalex": "modular arithmetic geometric series bases",
+   "crossref": "modular arithmetic geometric series bases",
+   "arxiv": "modular AND arithmetic AND geometric AND series AND bases"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Overconvergent modular forms and their explicit arithmetic",
+    "year": "2021",
+    "url": "https://zbmath.org/7371305",
+    "relevance": 1,
+    "text": "Overconvergent modular forms and their explicit arithmetic [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"fu.weibo\",\"reviewer_id\":\"19516\",\"name\":\"Weibo Fu\",\"sign\":\"Weibo Fu (Princeton)\"},\"text\":\"This survey paper aims to introduce the theory of \\\\(p\\\\)-adic modular forms to non-experts. The autho"
+   },
+   {
+    "source": "zbmath",
+    "title": "Arithmetic quotients of the Bruhat-Tits building for projective general linear group in positive characteristic",
+    "year": "2025",
+    "url": "https://zbmath.org/8009112",
+    "relevance": 0.8,
+    "text": "Arithmetic quotients of the Bruhat-Tits building for projective general linear group in positive characteristic [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"jabara.enrico\",\"reviewer_id\":\"12758\",\"name\":\"Enrico Jabara\",\"sign\":\"Enrico Jabara (Venezia)\"},\"text\":\"Let \\\\(F\\\\) be a global function fie"
+   },
+   {
+    "source": "zbmath",
+    "title": "Proceedings of the 1997 international symposium on symbolic and algebraic computation, ISSAC '97, Maui, HI, USA, July 21--23, 1997",
+    "year": "1997",
+    "url": "https://zbmath.org/1232829",
+    "relevance": 0.6,
+    "text": "Proceedings of the 1997 international symposium on symbolic and algebraic computation, ISSAC '97, Maui, HI, USA, July 21--23, 1997 [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"The articles of this volume will be reviewed individually. The "
+   },
+   {
+    "source": "arxiv",
+    "title": "Euler systems for conjugate-symplectic motives",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2410.08419v1",
+    "relevance": 1,
+    "text": "Euler systems for conjugate-symplectic motives Let $ρ$ be a conjugate-symplectic, geometric representation of the Galois group of a CM field. Under the assumption that $ρ$ is automorphic, even-dimensional, and of minimal regular Hodge--Tate type, we construct an Euler system for $ρ$ in the sense of "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_multiplication_permutes_z9_at_exactly_the_units": {
+  "key": "lean_families_multiplication_permutes_z9_at_exactly_the_units",
+  "file": "families.lean",
+  "name": "multiplication_permutes_z9_at_exactly_the_units",
+  "statementHash": "05a3730ce1ecc6f4",
+  "searched": "2026-09-25T15:08:54.028Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic multiplication permutes",
+   "openalex": "modular arithmetic multiplication permutes",
+   "crossref": "modular arithmetic multiplication permutes",
+   "arxiv": "modular AND arithmetic AND multiplication AND permutes"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "N-ary groups of panmagic permutations from the Post coset theorem",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2606.23735v1",
+    "relevance": 0.75,
+    "text": "N-ary groups of panmagic permutations from the Post coset theorem Panmagic permutations are permutations whose matrices are panmagic squares, better known as solutions to the modular n-queens problem, configurations of n non-attacking queens on a toroidal nxn chessboard. Some of them, affine panmagi"
+   },
+   {
+    "source": "arxiv",
+    "title": "The rational function analogue of a question of Schur and exceptionality of permutation representations",
+    "year": "2002",
+    "url": "http://arxiv.org/abs/math/0201069v1",
+    "relevance": 0.75,
+    "text": "The rational function analogue of a question of Schur and exceptionality of permutation representations In 1923 Schur considered the following problem. Let f(X) be a polynomial with integer coefficients that induces a bijection on the residue fields Z/pZ for infinitely many primes p. His conjecture,"
+   },
+   {
+    "source": "arxiv",
+    "title": "QPP and HPPK: Unifying Non-Commutativity for Quantum-Secure Cryptography with Galois Permutation Group",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2402.01852v3",
+    "relevance": 0.75,
+    "text": "QPP and HPPK: Unifying Non-Commutativity for Quantum-Secure Cryptography with Galois Permutation Group In response to the evolving landscape of quantum computing and the escalating vulnerabilities in classical cryptographic systems, our paper introduces a unified cryptographic framework. Rooted in t"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_nat_div_is_a_total_function_returning_zero_at_a_zero_divisor": {
+  "key": "lean_families_nat_div_is_a_total_function_returning_zero_at_a_zero_divisor",
+  "file": "families.lean",
+  "name": "nat_div_is_a_total_function_returning_zero_at_a_zero_divisor",
+  "statementHash": "22430b35148419da",
+  "searched": "2026-09-25T15:07:38.611Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic total function returning",
+   "openalex": "modular arithmetic total function returning",
+   "crossref": "modular arithmetic total function returning",
+   "arxiv": "modular AND arithmetic AND total AND function AND returning"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_pascal_alternating_sums_vanish": {
+  "key": "lean_families_pascal_alternating_sums_vanish",
+  "file": "families.lean",
+  "name": "pascal_alternating_sums_vanish",
+  "statementHash": "444922e338b3e7ba",
+  "searched": "2026-09-25T15:06:42.986Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic pascal alternating vanish",
+   "openalex": "modular arithmetic pascal alternating vanish",
+   "crossref": "modular arithmetic pascal alternating vanish",
+   "arxiv": "modular AND arithmetic AND pascal AND alternating AND vanish"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_pascal_rows_sum_to_powers_of_two": {
+  "key": "lean_families_pascal_rows_sum_to_powers_of_two",
+  "file": "families.lean",
+  "name": "pascal_rows_sum_to_powers_of_two",
+  "statementHash": "eca78e81636cd75f",
+  "searched": "2026-09-25T15:06:33.198Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic pascal powers",
+   "openalex": "modular arithmetic pascal powers",
+   "crossref": "modular arithmetic pascal powers",
+   "arxiv": "modular AND arithmetic AND pascal AND powers"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_power_sums_match_their_closed_forms": {
+  "key": "lean_families_power_sums_match_their_closed_forms",
+  "file": "families.lean",
+  "name": "power_sums_match_their_closed_forms",
+  "statementHash": "5938a0ea038d617d",
+  "searched": "2026-09-25T15:09:45.348Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic power match their",
+   "openalex": "modular arithmetic power match their",
+   "crossref": "modular arithmetic power match their",
+   "arxiv": "modular AND arithmetic AND power AND match AND their"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_primality_is_decided_across_the_range": {
+  "key": "lean_families_primality_is_decided_across_the_range",
+  "file": "families.lean",
+  "name": "primality_is_decided_across_the_range",
+  "statementHash": "3b20ba79ab5e6ad5",
+  "searched": "2026-09-25T15:08:22.698Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic primality across",
+   "openalex": "modular arithmetic primality across",
+   "crossref": "modular arithmetic primality across",
+   "arxiv": "modular AND arithmetic AND primality AND across"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "A Kernel-Checked Exclusion Certificate for Erdős Problem 647",
+    "year": "2026",
+    "url": "https://zbmath.org/903138888",
+    "relevance": 0.75,
+    "text": "A Kernel-Checked Exclusion Certificate for Erdős Problem 647 [{\"language\":null,\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: Erdős problem 647 asks whether any $n > 24$ satisfies $\\\\max_{m<n}(m + τ(m)) \\\\le n + 2$, where $τ$ is the divisor-count function"
+   },
+   {
+    "source": "arxiv",
+    "title": "A parametric family of primes $p=km(m+1)+\\varepsilon +2kq$: heuristic laws, conditional theorems, and unconditional primality certificates",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2606.16189v1",
+    "relevance": 1,
+    "text": "A parametric family of primes $p=km(m+1)+\\varepsilon +2kq$: heuristic laws, conditional theorems, and unconditional primality certificates We study the parametric family $p_{k,m,\\varepsilon,q}=km(m+1)+\\varepsilon +2kq$ with $k,m\\in\\mathbb{N}^{\\ast}$, $\\varepsilon \\in \\{\\pm1\\}$, $q\\in\\mathbb{Z}$, whi"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_the_digital_root_is_invariant_under_digit_reversal": {
+  "key": "lean_families_the_digital_root_is_invariant_under_digit_reversal",
+  "file": "families.lean",
+  "name": "the_digital_root_is_invariant_under_digit_reversal",
+  "statementHash": "45bbeeed6b67b004",
+  "searched": "2026-09-25T15:09:55.875Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic digital invariant digit",
+   "openalex": "modular arithmetic digital invariant digit",
+   "crossref": "modular arithmetic digital invariant digit",
+   "arxiv": "modular AND arithmetic AND digital AND invariant AND digit"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Boyd's conductor-11 Mahler measure conjecture: proof of the split-integral identity (C3), with an exact structural analysis of the family S_k",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2609.26119v1",
+    "relevance": 0.6666666666666666,
+    "text": "Boyd's conductor-11 Mahler measure conjecture: proof of the split-integral identity (C3), with an exact structural analysis of the family S_k Boyd's 1998 tables of conjectural identities $m(P)=r\\,|L'(E,0)|$ between Mahler measures of two-variable polynomials and $L$-values of elliptic curves begin w"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power": {
+  "key": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power",
+  "file": "families.lean",
+  "name": "the_inverse_of_a_unit_mod_nine_is_its_fifth_power",
+  "statementHash": "1a529fd4211661bf",
+  "searched": "2026-09-25T15:09:28.531Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic inverse fifth power",
+   "openalex": "modular arithmetic inverse fifth power",
+   "crossref": "modular arithmetic inverse fifth power",
+   "arxiv": "modular AND arithmetic AND inverse AND fifth AND power"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible": {
+  "key": "lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible",
+  "file": "families.lean",
+  "name": "the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible",
+  "statementHash": "b9a55db20070db4f",
+  "searched": "2026-09-25T15:10:30.791Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic powers minus invertible",
+   "openalex": "modular arithmetic powers minus invertible",
+   "crossref": "modular arithmetic powers minus invertible",
+   "arxiv": "modular AND arithmetic AND powers AND minus AND invertible"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli": {
+  "key": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli",
+  "file": "families.lean",
+  "name": "the_units_are_cyclic_at_exactly_the_gauss_moduli",
+  "statementHash": "53b4267d5a7e5060",
+  "searched": "2026-09-25T15:08:33.983Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic cyclic gauss moduli",
+   "openalex": "modular arithmetic cyclic gauss moduli",
+   "crossref": "modular arithmetic cyclic gauss moduli",
+   "arxiv": "modular AND arithmetic AND cyclic AND gauss AND moduli"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Complex hyperbolic surfaces of abelian type",
+    "year": "2004",
+    "url": "https://zbmath.org/2143614",
+    "relevance": 0.8,
+    "text": "Complex hyperbolic surfaces of abelian type [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"wolfart.jurgen\",\"reviewer_id\":\"1925\",\"name\":\"Jürgen Wolfart\",\"sign\":\"Jürgen Wolfart (Frankfurt/Main)\"},\"text\":\"``Hyperbolic'' in the sense of the present article are those complex algebraic surfaces whose u"
+   },
+   {
+    "source": "zbmath",
+    "title": "Parallel calculations in the complex plane. (Parallel'nye vychisleniya v kompleksnoj ploskosti)",
+    "year": "1984",
+    "url": "https://zbmath.org/3878230",
+    "relevance": 1,
+    "text": "Parallel calculations in the complex plane. (Parallel'nye vychisleniya v kompleksnoj ploskosti) [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"gregor.jiri\",\"reviewer_id\":\"589\",\"name\":\"Jiří Gregor\",\"sign\":\"J.Gregor\"},\"text\":\"The book is entirely devoted to arithmetics of complex numbers; it aims a"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_totient_at_prime_powers": {
+  "key": "lean_families_totient_at_prime_powers",
+  "file": "families.lean",
+  "name": "totient_at_prime_powers",
+  "statementHash": "3ccd9a466d7b13a9",
+  "searched": "2026-09-25T15:06:54.695Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 2,3,5,7": "2,3,5,7",
+   "zbmath": "modular arithmetic totient prime powers",
+   "openalex": "modular arithmetic totient prime powers",
+   "crossref": "modular arithmetic totient prime powers",
+   "arxiv": "modular AND arithmetic AND totient AND prime AND powers"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A000040",
+    "name": "The prime numbers.",
+    "query": "2,3,5,7"
+   },
+   {
+    "a": "A000043",
+    "name": "Mersenne exponents: primes p such that 2^p - 1 is prime. Then 2^p - 1 is called a Mersenne prime.",
+    "query": "2,3,5,7"
+   },
+   {
+    "a": "A002385",
+    "name": "Palindromic primes: prime numbers whose decimal expansion is a palindrome.",
+    "query": "2,3,5,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "The Prime Clockwork: A Dynamic Representation of Modular and Multiplicative Arithmetic",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2609.03896v1",
+    "relevance": 1,
+    "text": "The Prime Clockwork: A Dynamic Representation of Modular and Multiplicative Arithmetic The way numbers are represented strongly influences which arithmetic structures are easy to see. The \\emph{prime clockwork} is a recursively growing discrete dynamical system: a list of autonomous two-hand clocks "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_totient_at_prime_powers_through_thirteen": {
+  "key": "lean_families_totient_at_prime_powers_through_thirteen",
+  "file": "families.lean",
+  "name": "totient_at_prime_powers_through_thirteen",
+  "statementHash": "97840888f6f063a5",
+  "searched": "2026-09-25T15:10:17.434Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 2,3,5,7,11,13": "2,3,5,7,11,13",
+   "zbmath": "modular arithmetic totient prime powers",
+   "openalex": "modular arithmetic totient prime powers",
+   "crossref": "modular arithmetic totient prime powers",
+   "arxiv": "modular AND arithmetic AND totient AND prime AND powers"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A000040",
+    "name": "The prime numbers.",
+    "query": "2,3,5,7,11,13"
+   },
+   {
+    "a": "A007500",
+    "name": "Primes whose reversal in base 10 is also prime (called \"palindromic primes\" by David Wells, although that name usually refers to A002385). Also called reversibl",
+    "query": "2,3,5,7,11,13"
+   },
+   {
+    "a": "A109611",
+    "name": "Chen primes: primes p such that p + 2 is either a prime or a semiprime.",
+    "query": "2,3,5,7,11,13"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "The Prime Clockwork: A Dynamic Representation of Modular and Multiplicative Arithmetic",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2609.03896v1",
+    "relevance": 0.8571428571428571,
+    "text": "The Prime Clockwork: A Dynamic Representation of Modular and Multiplicative Arithmetic The way numbers are represented strongly influences which arithmetic structures are easy to see. The \\emph{prime clockwork} is a recursively growing discrete dynamical system: a list of autonomous two-hand clocks "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_wilson_all_primes_under_thirty": {
+  "key": "lean_families_wilson_all_primes_under_thirty",
+  "file": "families.lean",
+  "name": "wilson_all_primes_under_thirty",
+  "statementHash": "6f687110fce02a99",
+  "searched": "2026-09-25T15:06:08.534Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic wilson primes thirty",
+   "openalex": "modular arithmetic wilson primes thirty",
+   "crossref": "modular arithmetic wilson primes thirty",
+   "arxiv": "modular AND arithmetic AND wilson AND primes AND thirty"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_wilson_fails_at_composites": {
+  "key": "lean_families_wilson_fails_at_composites",
+  "file": "families.lean",
+  "name": "wilson_fails_at_composites",
+  "statementHash": "8d6ef911a2e9d4d1",
+  "searched": "2026-09-25T15:06:19.186Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic wilson fails composites",
+   "openalex": "modular arithmetic wilson fails composites",
+   "crossref": "modular arithmetic wilson fails composites",
+   "arxiv": "modular AND arithmetic AND wilson AND fails AND composites"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_xor_is_parity_up_to_eight_bits": {
+  "key": "lean_families_xor_is_parity_up_to_eight_bits",
+  "file": "families.lean",
+  "name": "xor_is_parity_up_to_eight_bits",
+  "statementHash": "1d2668d6ac6532f8",
+  "searched": "2026-09-25T15:07:28.997Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic parity",
+   "openalex": "modular arithmetic parity",
+   "crossref": "modular arithmetic parity",
+   "arxiv": "modular AND arithmetic AND parity"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "crossref",
+    "title": "Parity based Finite State Machine approach for hardware implementation of Montgomery modular arithmetic",
+    "year": 2024,
+    "url": "https://doi.org/10.22541/au.173507271.13458422/v1",
+    "relevance": 1,
+    "text": "Parity based Finite State Machine approach for hardware implementation of Montgomery modular arithmetic Modular arithmetic is a fundamental operation in cryptography, particularly in public-key cryptography algorithms like RSA (Rivest-Shamir-Adleman) and Elliptic Curve Cryptography. It involves mult"
+   },
+   {
+    "source": "arxiv",
+    "title": "Non-paritious Hilbert modular forms",
+    "year": "2016",
+    "url": "http://arxiv.org/abs/1612.06625v3",
+    "relevance": 0.6666666666666666,
+    "text": "Non-paritious Hilbert modular forms The arithmetic of Hilbert modular forms has been extensively studied under the assumption that the forms concerned are \"paritious\" -- all the components of the weight are congruent modulo 2. In contrast, non-paritious Hilbert modular forms have been relatively lit"
+   },
+   {
+    "source": "arxiv",
+    "title": "Making Hard Problems Easier with Custom Data Distributions and Loss Regularization: A Case Study in Modular Arithmetic",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2410.03569v2",
+    "relevance": 1,
+    "text": "Making Hard Problems Easier with Custom Data Distributions and Loss Regularization: A Case Study in Modular Arithmetic Recent work showed that ML-based attacks on Learning with Errors (LWE), a hard problem used in post-quantum cryptography, outperform classical algebraic attacks in certain settings."
+   },
+   {
+    "source": "arxiv",
+    "title": "Wavelet-Based Feature Extraction and Unsupervised Clustering for Parity Detection: A Feature Engineering Perspective",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2511.00071v1",
+    "relevance": 1,
+    "text": "Wavelet-Based Feature Extraction and Unsupervised Clustering for Parity Detection: A Feature Engineering Perspective This paper explores a deliberately over-engineered approach to the classical problem of parity detection -- determining whether a number is odd or even -- by combining wavelet-based f"
+   },
+   {
+    "source": "arxiv",
+    "title": "The Tamagawa number conjecture and Kolyvagin's conjecture for motives of modular forms",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2211.04907v3",
+    "relevance": 1,
+    "text": "The Tamagawa number conjecture and Kolyvagin's conjecture for motives of modular forms Assuming specific instances of two general conjectures in arithmetic algebraic geometry (bijectivity of $p$-adic regulator maps, injectivity of $p$-adic Abel-Jacobi maps), we prove several cases of the $p$-part of"
+   },
+   {
+    "source": "arxiv",
+    "title": "Kolyvagin's conjecture for modular forms",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2412.02303v2",
+    "relevance": 1,
+    "text": "Kolyvagin's conjecture for modular forms Our main result in this article is a proof (under mild technical assumptions) of an analogue for $p$-adic Galois representations attached to a newform $f$ of even weight $k\\geq4$ of Kolyvagin's conjecture on the $p$-indivisibility of derived Heegner points on"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_flow_navier_stokes_flow_is_bounded_for_every_step": {
   "key": "lean_flow_navier_stokes_flow_is_bounded_for_every_step",

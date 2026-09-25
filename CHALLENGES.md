@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 3296 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 3304 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1177)
+### lean (1185)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1388,6 +1388,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_equivalence_some_pairs_do_not_coil_and_most_do_not](/theorem/lean_equivalence_some_pairs_do_not_coil_and_most_do_not) — lean equivalence.lean: some_pairs_do_not_coil_and_most_do_not — idx.any (fun i =&gt; idx.any (fun j =&gt; !coils (extOf i) (extOf j))) &amp;&amp; (idx.flatMap (fun i =&gt; idx.filter (fun j =&gt; !coils (extOf i) (extOf j)))).length &gt; (idx.flatMap (fun i =&gt; idx.filter (fun j =&gt; coils (extOf i) (extOf j)))).length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5d516346-5add…`
 - [lean_equivalence_a_singleton_class_licenses_no_substitution](/theorem/lean_equivalence_a_singleton_class_licenses_no_substitution) — lean equivalence.lean: a_singleton_class_licenses_no_substitution — (exts.eraseDups.filter (fun e =&gt; (exts.filter (fun x =&gt; x == e)).length == 1)).length == 2 &amp;&amp; (exts.eraseDups.filter (fun e =&gt; (exts.filter (fun x =&gt; x == e)).length &gt; 1)).length == 4 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7ac2956d-3a27…`
 - [lean_equivalence_the_licence_is_over_computation_and_not_over_meaning](/theorem/lean_equivalence_the_licence_is_over_computation_and_not_over_meaning) — lean equivalence.lean: the_licence_is_over_computation_and_not_over_meaning — coils (extOf 0) (extOf 1) &amp;&amp; extOf 0 == 63 &amp;&amp; extOf 1 == 63 &amp;&amp; !(coils (extOf 0) (extOf 2)) &amp;&amp; extOf 2 == 448 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6d038111-982e…`
+- [lean_widths_the_uuid_width_is_one_fact_in_two_units](/theorem/lean_widths_the_uuid_width_is_one_fact_in_two_units) — lean widths.lean: the_uuid_width_is_one_fact_in_two_units — toBits uuidBytes == container ∧ toBytes container == uuidBytes — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `886461df-f1b1…`
+- [lean_widths_bytes_to_bits_and_back_is_the_identity](/theorem/lean_widths_bytes_to_bits_and_back_is_the_identity) — lean widths.lean: bytes_to_bits_and_back_is_the_identity — (List.range 40).all (fun b =&gt; toBytes (toBits b) == b) ∧ (List.range 40).all (fun n =&gt; (toBits (toBytes n) == n) == (n % 8 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8b883899-959a…`
+- [lean_widths_the_key_doubles_the_identifier_and_the_signature_doubles_the_key](/theorem/lean_widths_the_key_doubles_the_identifier_and_the_signature_doubles_the_key) — lean widths.lean: the_key_doubles_the_identifier_and_the_signature_doubles_the_key — publicKeyBytes == 2 * uuidBytes ∧ signatureBytes == 2 * publicKeyBytes ∧ signatureBytes == 4 * uuidBytes ∧ (List.range 3).all (fun k =&gt; [uuidBytes, publicKeyBytes, signatureBytes].getD k 0 == 16 * 2 ^ k) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0b609ddc-86da…`
+- [lean_widths_the_doubling_survives_the_conversion](/theorem/lean_widths_the_doubling_survives_the_conversion) — lean widths.lean: the_doubling_survives_the_conversion — toBits uuidBytes == 128 ∧ toBits publicKeyBytes == 256 ∧ toBits signatureBytes == 512 ∧ (List.range 3).all (fun k =&gt; toBits ([uuidBytes, publicKeyBytes, signatureBytes].getD k 0) == 128 * 2 ^ k) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `638219ab-87c1…`
+- [lean_widths_the_key_and_the_signature_together_are_six_identifiers](/theorem/lean_widths_the_key_and_the_signature_together_are_six_identifiers) — lean widths.lean: the_key_and_the_signature_together_are_six_identifiers — publicKeyBytes + signatureBytes == 96 ∧ 96 == 6 * uuidBytes ∧ toBits (publicKeyBytes + signatureBytes) == 768 ∧ 768 == 6 * container — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8b5c9930-36ae…`
+- [lean_widths_no_other_width_converts_to_this_container](/theorem/lean_widths_no_other_width_converts_to_this_container) — lean widths.lean: no_other_width_converts_to_this_container — (List.range 40).all (fun b =&gt; (toBits b == container) == (b == uuidBytes)) ∧ toBits 15 != container ∧ toBits 17 != container — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dfe2407a-68d1…`
+- [lean_widths_the_constants_are_instances_of_the_law_and_not_the_law](/theorem/lean_widths_the_constants_are_instances_of_the_law_and_not_the_law) — lean widths.lean: the_constants_are_instances_of_the_law_and_not_the_law — toBits uuidBytes == container ∧ (List.range 40).all (fun b =&gt; toBits b == b * 8) ∧ (List.range 40).all (fun b =&gt; b != uuidBytes || toBits b == container) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7851950c-8454…`
+- [lean_widths_the_binding_is_consistency_and_not_derivation](/theorem/lean_widths_the_binding_is_consistency_and_not_derivation) — lean widths.lean: the_binding_is_consistency_and_not_derivation — publicKeyBytes == 32 ∧ signatureBytes == 64 ∧ container == 128 ∧ (List.range 60).any (fun b =&gt; b != publicKeyBytes ∧ toBits b == b * 8) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `94b518cf-0e4a…`
 
 ### other — one-of-a-kind (0)
 
@@ -3051,4 +3059,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `3846e4b9-8c08-8332-9d22-e163731c9870`. Integrity, not truth.
+Page content-address: `3d05d2f8-a477-84fb-a60e-f90963daf11e`. Integrity, not truth.
