@@ -1,5 +1,5 @@
 {
-  "produced": "f73ff8beb",
+  "produced": "ce3056190",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,10 +7,10 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 3192,
-    "carried": 523,
-    "withdrawn": 1521,
-    "standing": 1148
+    "entries": 3304,
+    "carried": 526,
+    "withdrawn": 1593,
+    "standing": 1185
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -26,6 +26,16 @@
       "revoked": 1864,
       "dRev": 1864,
       "dEnt": 200
+    },
+    {
+      "date": "2026-09-25",
+      "commit": "4d25e3359",
+      "author": "Tsvetan Rouschev",
+      "subject": "73 keys revoked: emitted no longer, by a vocabulary that discriminates b",
+      "entries": 3272,
+      "revoked": 2119,
+      "dRev": 73,
+      "dEnt": 0
     },
     {
       "date": "2026-09-25",
@@ -66,16 +76,6 @@
       "revoked": 1948,
       "dRev": 19,
       "dEnt": 19
-    },
-    {
-      "date": "2026-09-25",
-      "commit": "958888e5a",
-      "author": "Tsvetan Rouschev",
-      "subject": "the vocabulary was the limit: 116 -> 172 theorems from one map and three",
-      "entries": 3160,
-      "revoked": 2042,
-      "dRev": 19,
-      "dEnt": 72
     }
   ],
   "withdrawalReasonsAsRecorded": [
@@ -89,7 +89,7 @@
     ],
     [
       "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena",
-      35
+      108
     ],
     [
       "revoked in place: circular by construction AND dependent on the removed lexical gate.",
@@ -112,6 +112,6 @@
       1
     ]
   ],
-  "totalStateChangingCommits": 616,
-  "address": "b29befaa-0500-8da9-b152-ccab74d21b2d"
+  "totalStateChangingCommits": 623,
+  "address": "ce8f5bfb-32f1-80d4-a07e-230c6e05c0ea"
 }

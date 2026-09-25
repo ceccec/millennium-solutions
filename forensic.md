@@ -5,18 +5,18 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `b29befaa-0500-8da9-b152-ccab74d21b2d`.
+`npm run forensic`. Content-address `ce8f5bfb-32f1-80d4-a07e-230c6e05c0ea`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **3,192** |
-| standing — proved and sealed | 1,148 |
-| carried — withdrawn, proved by a live theorem | 523 |
-| withdrawn — nothing currently proves them | 1,521 |
+| ledger entries | **3,304** |
+| standing — proved and sealed | 1,185 |
+| carried — withdrawn, proved by a live theorem | 526 |
+| withdrawn — nothing currently proves them | 1,593 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 616 |
+| commits that changed ledger state | 623 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 
@@ -26,13 +26,13 @@ Verbatim, as written when the entry was revoked. Not inferred afterwards.
 |---:|---|
 | 1,011 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
 | 443 | revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis |
-| 35 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
+| 108 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
 | 12 | revoked in place: circular by construction AND dependent on the removed lexical gate. |
 | 10 | revoked in place: circular by construction — the test defines the answer it checks, proving a de |
 | 7 | renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay probl |
 
 **1,011** of
-**1,521** withdrawn entries — 66.5% —
+**1,593** withdrawn entries — 63.5% —
 were withdrawn for want of a Lean proof while their evidence was a TypeScript test that **computed**.
 Withdrawal costs one line of record; proving costs real work, and a green gate rewards both identically.
 
@@ -44,10 +44,10 @@ At least one of them was recoverable: `thue_morse_doubling_recurrence` was withd
 | date | net withdrawn | commit | subject |
 |---|---:|---|---|
 | 2026-08-20 | 1,864 | `e6bb01bb5` | gates: green the three that were red — by fixing the authority |
+| 2026-09-25 | 73 | `4d25e3359` | 73 keys revoked: emitted no longer, by a vocabulary that discr |
 | 2026-09-25 | 67 | `dcbb798ac` | provenance knew three records; there are 241 — and the three t |
 | 2026-08-20 | 25 | `959f8af2a` | lean: verify once instead of twice, and cache what the kernel  |
 | 2026-09-04 | 24 | `5d319470d` | Item 12 executed: 24 duplicate addresses retired, and it broke |
-| 2026-09-14 | 19 | `1c1b53f9a` | Nineteen more certificates become laws — the energy, speed, li |
 
 ## What this record does NOT establish
 

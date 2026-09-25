@@ -47,6 +47,7 @@ const DECLARED = new Set([
   'RFC-3339',                     // the timestamp format, taken from git rather than from a clock
   'RFC 8032',                     // Ed25519 — the signature scheme, and the §7.1 vectors crypto-kat checks against
   'RFC 4122',                     // the 2005 UUID spec RFC 9562 obsoletes, named where the layout's history matters
+  'RFC 6962',                     // Certificate Transparency §2.1 — the leaf/node domain separation (0x00/0x01) merkleFold was missing, cited where that repair is recorded
 ])
 
 // WHOLE CITATIONS, NOT A PREFIX PLUS AN OPTIONAL TAIL. The first version matched an instrument name, then

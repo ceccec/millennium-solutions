@@ -19726,5 +19726,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "f220388b-524c-8ca0-a7e9-b10da45df0ba"
+  },
+  {
+    "key": "lean_equivalence_every_expression_coils_with_itself",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b15ed9e7-c3a6-8d32-94bd-dbb11277ca61"
+  },
+  {
+    "key": "lean_equivalence_the_licence_runs_in_both_directions",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eb6634a4-c7dd-8b55-9857-102cb9d11ef3"
+  },
+  {
+    "key": "lean_equivalence_following_the_licence_twice_is_still_licensed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0bdda5f8-9ea5-8844-91ef-4c481430a2b7"
+  },
+  {
+    "key": "lean_equivalence_every_expression_sits_in_exactly_one_coil",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "94f6e830-5cb3-8bbf-9df3-dfd6478872d1"
+  },
+  {
+    "key": "lean_equivalence_expressions_in_different_coils_are_never_interchangeable",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6b228ef0-4e3e-8447-ae7c-26c5763db9d8"
+  },
+  {
+    "key": "lean_equivalence_some_pairs_do_not_coil_and_most_do_not",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5d516346-5add-8d7f-a514-6942a2302584"
+  },
+  {
+    "key": "lean_equivalence_a_singleton_class_licenses_no_substitution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7ac2956d-3a27-8e73-9b8b-3fa1bc2339bd"
+  },
+  {
+    "key": "lean_equivalence_the_licence_is_over_computation_and_not_over_meaning",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6d038111-982e-8599-964e-b6168d7a3025"
+  },
+  {
+    "key": "lean_widths_the_uuid_width_is_one_fact_in_two_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "886461df-f1b1-8378-822b-ec87c99c252e"
+  },
+  {
+    "key": "lean_widths_bytes_to_bits_and_back_is_the_identity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8b883899-959a-83f2-814d-83b13b0850c3"
+  },
+  {
+    "key": "lean_widths_the_key_doubles_the_identifier_and_the_signature_doubles_the_key",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0b609ddc-86da-81e4-a223-b46671ae4a76"
+  },
+  {
+    "key": "lean_widths_the_doubling_survives_the_conversion",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "638219ab-87c1-8394-9523-446f77126996"
+  },
+  {
+    "key": "lean_widths_the_key_and_the_signature_together_are_six_identifiers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8b5c9930-36ae-80c8-80ac-04a497d0b379"
+  },
+  {
+    "key": "lean_widths_no_other_width_converts_to_this_container",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dfe2407a-68d1-8f47-9665-c226794342c2"
+  },
+  {
+    "key": "lean_widths_the_constants_are_instances_of_the_law_and_not_the_law",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7851950c-8454-881f-9867-1cdebc4a9a61"
+  },
+  {
+    "key": "lean_widths_the_binding_is_consistency_and_not_derivation",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "94b518cf-0e4a-8eea-9984-4263480c9b34"
   }
 ]
