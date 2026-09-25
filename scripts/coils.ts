@@ -113,6 +113,29 @@ if (!exprs.length || by.size < 2 || coils.length === 0) {
   process.exit(1)
 }
 
+// ── WHICH COILS CROSS A DOMAIN, AND WHICH STAY HOME ──────────────────────────────────────────────────────
+// A coil says two expressions compute the same thing. That is worth most when the two come from DIFFERENT
+// domains — the units are group theory, the doubling orbit is a discrete dynamical system, the reflection
+// is geometry, the squares and cubes are elementary number theory. A coil spanning them says one result
+// answers a question asked in several languages, which is what lets a result in one domain explain a
+// problem in another. A coil whose members all sit in one domain is a restatement inside that domain: true,
+// and explaining nothing across.
+//
+// The domains are DECLARED, not guessed — each name below is the field the deposit's own vocabulary places
+// that object in, and an expression inherits the domain of the map or set it is built from.
+const DOMAIN: Record<string, string> = {
+  units: 'group theory', triad: 'group theory', selfinv: 'group theory', primitives: 'group theory',
+  orbit: 'dynamics', double: 'dynamics', quadruple: 'dynamics', octuple: 'dynamics',
+  reflect: 'geometry', negate: 'geometry', reflfixed: 'geometry',
+  tetA: 'geometry', tetB: 'geometry',
+  square: 'number theory', cube: 'number theory', squares: 'number theory', cubes: 'number theory',
+  triple: 'number theory', quintuple: 'number theory', sextuple: 'number theory', septuple: 'number theory',
+  all: 'the ring',
+}
+const domainsOf = (say: string) => [...new Set(Object.keys(DOMAIN).filter((k) => new RegExp('\\b' + k + '\\b', 'i').test(say)).map((k) => DOMAIN[k]))]
+const spans = coils.map((g) => ({ g, doms: [...new Set(g.flatMap((e) => domainsOf(e.say)))].filter((d) => d !== 'the ring') }))
+const crossing = spans.filter((x) => x.doms.length > 1).sort((a, b) => b.doms.length - a.doms.length)
+
 console.log(`  ring     : ${exprs.length} expressions · ${by.size} distinct extensions · ${coils.length} coils · ${pairs} pairs that prove each other`)
 console.log(`  address  : ${numExprs.length} expressions over ${GRID.length} reservations · ${numBy.size} distinct values · ${numCoils.length} coils · ${numPairs} pairs`)
 for (const g of numCoils) console.log(`  · ${g.length} ways: ${g.map((e) => e.say).join(' = ')}`)
@@ -120,6 +143,9 @@ for (const g of numCoils) console.log(`  · ${g.length} ways: ${g.map((e) => e.s
 // the container size against the capacity is exactly such a pair.
 const alone = numExprs.filter((e) => !numCoils.some((g) => g.includes(e)))
 if (alone.length) console.log(`  · ${alone.length} address expression(s) coil with NOTHING — never interchangeable: ${alone.map((e) => e.say).join(' · ')}`)
+console.log(`  CROSS-DOMAIN: ${crossing.length} of ${coils.length} coils span more than one declared domain — those are the ones`)
+console.log(`  that let a result in one field answer a question asked in another. ${coils.length - crossing.length} stay inside one.`)
+for (const x of crossing.slice(0, 5)) console.log(`  ✳ {${x.g[0].set.join(',')}}  ${x.doms.join(' ↔ ')}  — ${x.g.length} ways`)
 for (const g of coils.slice(0, 8)) console.log(`  · {${g[0].set.join(',')}}  ${g.length} ways: ${g.slice(0, 4).map((e) => e.say).join(' = ')}${g.length > 4 ? ' = …' : ''}`)
 
 if (!process.argv.includes('--emit')) { console.log('\n  run with --emit to write src/proof/coils.lean'); process.exit(0) }
