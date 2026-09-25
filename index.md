@@ -33,12 +33,12 @@ last because the orbit never reaches it.
 
 - The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 1208 kernel-accepted declarations across 63 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `009374e1-c25a-822b-abf8-7e97706da3e4`</sub>
-- 1006 of those 1208 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
-  <sub>SEALED · `d6c3292a-4050-8294-805c-25ca89302449`</sub>
-- 1448 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `f4157692-96d5-8d77-ba29-67eb0ddc3d30`</sub>
+- The formal layer holds 1216 kernel-accepted declarations across 63 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `4cff749f-c130-8b64-b7bb-8231fdb3ec0e`</sub>
+- 1014 of those 1216 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
+  <sub>SEALED · `6af5397e-73d0-8301-bb50-e95a2a6e11ec`</sub>
+- 1456 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `e370ab98-6d1a-801c-8e8e-93bc47f719c2`</sub>
 
 ## 2 · The ring
 
@@ -61,10 +61,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 3312 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `2b5aadb9-f6c4-80c5-a758-5bcf4e568d22`</sub>
-- The count is an exact multiple of eight — 3312 is 414 octaves with no remainder.
-  <sub>SEALED · `92915f6c-ec8c-8c4f-b800-01e40c276f7d`</sub>
+- The ledger records 3320 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `b0f64d0f-9b8b-8b28-8d76-e7eb105026e3`</sub>
+- The count is an exact multiple of eight — 3320 is 415 octaves with no remainder.
+  <sub>SEALED · `c2394b49-fc5c-85ad-842f-17022195cf97`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -116,7 +116,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-63 Lean files in 7 wings, 1208 declarations of which 1193 are theorems. The prose in this section is read out of the
+63 Lean files in 7 wings, 1216 declarations of which 1201 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -140,7 +140,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The rays, read forward and reverse, and the mark a life carries** — `rays.lean`, 14 theorem(s). is elementary number theory; the involution x ↦ ¬x on bit words is Boolean algebra. Neither is this   deposit's. What is decided here is only that THIS deposit's ray order is that orbit and that its trace   is that involution — the facts a reader would otherwise have to take from a comment.
 
-**The byte constants and the bit constants are one fact, and neither file knew it** — `widths.lean`, 8 theorem(s). deposit's is neither: it is that its OWN two files state the same width in different units and had no   theorem binding them, so either could have drifted while the other stayed green. prior_art_search: not performed — all three are named above. prior_art_pool: named prior_art_own: the binding below, and theorem 8
+**The byte constants and the bit constants are one fact, and neither file knew it** — `widths.lean`, 16 theorem(s). deposit's is neither: it is that its OWN two files state the same width in different units and had no   theorem binding them, so either could have drifted while the other stayed green. prior_art_search: not performed — all three are named above. prior_art_pool: named prior_art_own: the binding below, and theorem 8
 
 ### the ring
 
@@ -260,7 +260,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-31 of 1208 declarations carry no comment of their own and are shown here as the gap they are, not
+31 of 1216 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -269,14 +269,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 3,312 — 414 octaves exactly |
-| standing — carries its own proof | **1193** |
+| ledger entries | 3,320 — 415 octaves exactly |
+| standing — carries its own proof | **1201** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **526** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **1719** of 3,312 |
-| standing keys → distinct theorems | 1193 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 63 · 1193 theorems (1006 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
-| proved `by decide` | 1006 of 1208 |
+| proved in total | **1727** of 3,320 |
+| standing keys → distinct theorems | 1201 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 63 · 1201 theorems (1014 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
+| proved `by decide` | 1014 of 1216 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -314,4 +314,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*20 claims, all verified · 1193 Lean theorems · 3312 ledger entries · trial root `5154f817-4e0a-8622-9130-b518e5d346ab` · integrity, not truth*
+*20 claims, all verified · 1201 Lean theorems · 3320 ledger entries · trial root `cbd4265c-d843-8eb2-9874-1cb33e1e6d7f` · integrity, not truth*

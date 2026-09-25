@@ -22744,5 +22744,45 @@
     "key": "lean_asymmetry_the_shape_is_decided_and_the_difficulty_is_not",
     "name": "lean asymmetry.lean: the_shape_is_decided_and_the_difficulty_is_not — !(injective sq) && ring.length == 9 && (ring.filter (fun e => sq e == 0)).length == 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "c38ecb43-8538-86ba-8e99-e0f5a027a05a"
+  },
+  {
+    "key": "lean_widths_the_payload_and_the_check_exhaust_the_free_bits",
+    "name": "lean widths.lean: the_payload_and_the_check_exhaust_the_free_bits — Asymmetric.payloadBits + Asymmetric.checkBits == Capacity.free ∧ Asymmetric.payloadBits + Asymmetric.checkBits == 122 ∧ Asymmetric.payloadBits + Asymmetric.checkBits + Capacity.reserved == Capacity.container — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7f7af53f-ab01-85fb-b0d3-0d39f7494554"
+  },
+  {
+    "key": "lean_widths_the_check_is_exactly_what_the_payload_does_not_take",
+    "name": "lean widths.lean: the_check_is_exactly_what_the_payload_does_not_take — (List.range 123).all (fun pay => pay > Capacity.free || pay + (Capacity.free - pay) == Capacity.free) ∧ Capacity.free - Asymmetric.payloadBits == Asymmetric.checkBits ∧ Capacity.free - Asymmetric.checkBits == Asymmetric.payloadBits — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2142271e-89ca-8724-8d61-6653b2659bb0"
+  },
+  {
+    "key": "lean_widths_splitting_a_width_is_undone_by_either_part",
+    "name": "lean widths.lean: splitting_a_width_is_undone_by_either_part — (List.range 130).all (fun w => (List.range 130).all (fun a => a > w || (w - a) + a == w && w - (w - a) == a)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d419162b-a5e9-8214-82c2-ec1fa32ca32a"
+  },
+  {
+    "key": "lean_widths_reserving_and_freeing_are_inverse_at_every_width",
+    "name": "lean widths.lean: reserving_and_freeing_are_inverse_at_every_width — (List.range 130).all (fun w => (List.range 9).all (fun r => r > w || (w - r) + r == w)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bb86c241-c6d1-8941-aaea-c51070de8a49"
+  },
+  {
+    "key": "lean_widths_one_more_bit_doubles_the_space_at_every_width",
+    "name": "lean widths.lean: one_more_bit_doubles_the_space_at_every_width — (List.range 17).all (fun b => 2 ^ (b + 1) == 2 * 2 ^ b) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6e681440-cce3-8f74-8c05-06ac94a54331"
+  },
+  {
+    "key": "lean_widths_the_space_recovers_the_width_it_came_from",
+    "name": "lean widths.lean: the_space_recovers_the_width_it_came_from — (List.range 17).all (fun b => (List.range 17).all (fun c => (2 ^ b == 2 ^ c) == (b == c))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9fe18d52-ac05-8a63-9f97-f2f409e450c5"
+  },
+  {
+    "key": "lean_widths_the_unit_conversion_is_a_bijection_on_multiples_of_eight",
+    "name": "lean widths.lean: the_unit_conversion_is_a_bijection_on_multiples_of_eight — (List.range 40).all (fun b => toBytes (toBits b) == b) ∧ (List.range 200).all (fun n => (n % 8 == 0) == (toBits (toBytes n) == n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3c94637c-8fda-8b26-8eee-4d3e2c2a9e01"
+  },
+  {
+    "key": "lean_widths_the_laws_separate_widths_rather_than_collapsing_them",
+    "name": "lean widths.lean: the_laws_separate_widths_rather_than_collapsing_them — (List.range 12).any (fun w => (List.range 12).any (fun a => a > w && w - a == 0 && a != 0)) ∧ 2 ^ 7 != 2 ^ 8 ∧ toBits 5 != toBits 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "57123f73-0b91-87cb-aac6-8aa841ad22c7"
   }
 ]

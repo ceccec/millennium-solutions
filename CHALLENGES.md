@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 3312 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 3320 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1193)
+### lean (1201)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1404,6 +1404,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_asymmetry_each_kind_is_defined_by_the_other](/theorem/lean_asymmetry_each_kind_is_defined_by_the_other) — lean asymmetry.lean: each_kind_is_defined_by_the_other — (injective refl != injective sq) &amp;&amp; ((image refl).length != (image sq).length) &amp;&amp; (ring.all (fun d =&gt; refl (refl d) == d) != ring.all (fun d =&gt; sq (sq d) == d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c9799733-ef99…`
 - [lean_asymmetry_the_squares_are_not_closed_under_the_reflection](/theorem/lean_asymmetry_the_squares_are_not_closed_under_the_reflection) — lean asymmetry.lean: the_squares_are_not_closed_under_the_reflection — !((image sq).all (fun d =&gt; (image sq).contains (refl d))) &amp;&amp; (image sq).length == ((image sq).map refl).eraseDups.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `873b4c75-7e78…`
 - [lean_asymmetry_the_shape_is_decided_and_the_difficulty_is_not](/theorem/lean_asymmetry_the_shape_is_decided_and_the_difficulty_is_not) — lean asymmetry.lean: the_shape_is_decided_and_the_difficulty_is_not — !(injective sq) &amp;&amp; ring.length == 9 &amp;&amp; (ring.filter (fun e =&gt; sq e == 0)).length == 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c38ecb43-8538…`
+- [lean_widths_the_payload_and_the_check_exhaust_the_free_bits](/theorem/lean_widths_the_payload_and_the_check_exhaust_the_free_bits) — lean widths.lean: the_payload_and_the_check_exhaust_the_free_bits — Asymmetric.payloadBits + Asymmetric.checkBits == Capacity.free ∧ Asymmetric.payloadBits + Asymmetric.checkBits == 122 ∧ Asymmetric.payloadBits + Asymmetric.checkBits + Capacity.reserved == Capacity.container — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7f7af53f-ab01…`
+- [lean_widths_the_check_is_exactly_what_the_payload_does_not_take](/theorem/lean_widths_the_check_is_exactly_what_the_payload_does_not_take) — lean widths.lean: the_check_is_exactly_what_the_payload_does_not_take — (List.range 123).all (fun pay =&gt; pay &gt; Capacity.free || pay + (Capacity.free - pay) == Capacity.free) ∧ Capacity.free - Asymmetric.payloadBits == Asymmetric.checkBits ∧ Capacity.free - Asymmetric.checkBits == Asymmetric.payloadBits — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2142271e-89ca…`
+- [lean_widths_splitting_a_width_is_undone_by_either_part](/theorem/lean_widths_splitting_a_width_is_undone_by_either_part) — lean widths.lean: splitting_a_width_is_undone_by_either_part — (List.range 130).all (fun w =&gt; (List.range 130).all (fun a =&gt; a &gt; w || (w - a) + a == w &amp;&amp; w - (w - a) == a)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d419162b-a5e9…`
+- [lean_widths_reserving_and_freeing_are_inverse_at_every_width](/theorem/lean_widths_reserving_and_freeing_are_inverse_at_every_width) — lean widths.lean: reserving_and_freeing_are_inverse_at_every_width — (List.range 130).all (fun w =&gt; (List.range 9).all (fun r =&gt; r &gt; w || (w - r) + r == w)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bb86c241-c6d1…`
+- [lean_widths_one_more_bit_doubles_the_space_at_every_width](/theorem/lean_widths_one_more_bit_doubles_the_space_at_every_width) — lean widths.lean: one_more_bit_doubles_the_space_at_every_width — (List.range 17).all (fun b =&gt; 2 ^ (b + 1) == 2 * 2 ^ b) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6e681440-cce3…`
+- [lean_widths_the_space_recovers_the_width_it_came_from](/theorem/lean_widths_the_space_recovers_the_width_it_came_from) — lean widths.lean: the_space_recovers_the_width_it_came_from — (List.range 17).all (fun b =&gt; (List.range 17).all (fun c =&gt; (2 ^ b == 2 ^ c) == (b == c))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9fe18d52-ac05…`
+- [lean_widths_the_unit_conversion_is_a_bijection_on_multiples_of_eight](/theorem/lean_widths_the_unit_conversion_is_a_bijection_on_multiples_of_eight) — lean widths.lean: the_unit_conversion_is_a_bijection_on_multiples_of_eight — (List.range 40).all (fun b =&gt; toBytes (toBits b) == b) ∧ (List.range 200).all (fun n =&gt; (n % 8 == 0) == (toBits (toBytes n) == n)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3c94637c-8fda…`
+- [lean_widths_the_laws_separate_widths_rather_than_collapsing_them](/theorem/lean_widths_the_laws_separate_widths_rather_than_collapsing_them) — lean widths.lean: the_laws_separate_widths_rather_than_collapsing_them — (List.range 12).any (fun w =&gt; (List.range 12).any (fun a =&gt; a &gt; w &amp;&amp; w - a == 0 &amp;&amp; a != 0)) ∧ 2 ^ 7 != 2 ^ 8 ∧ toBits 5 != toBits 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `57123f73-0b91…`
 
 ### other — one-of-a-kind (0)
 
@@ -3067,4 +3075,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `b53f12ec-738b-8e65-ab0f-d73d6cc63188`. Integrity, not truth.
+Page content-address: `9e461cac-369f-8b2e-9378-bc72e5da991b`. Integrity, not truth.

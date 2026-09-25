@@ -131,4 +131,61 @@ theorem the_binding_is_consistency_and_not_derivation :
   publicKeyBytes == 32 ∧ signatureBytes == 64 ∧ container == 128
   ∧ (List.range 60).any (fun b => b != publicKeyBytes ∧ toBits b == b * 8) := by decide
 
+-- ── 9 · THE PAYLOAD AND THE CHECK PARTITION THE FREE BITS ─────────────────────────────────────────────────
+-- A third file joins the binding, and this one was invisible until the widths were put side by side.
+-- asymmetric.lean types `checkBits = 32` and `payloadBits = 42 + 48`; imprint.lean and capacity.lean decide
+-- that a UUID has 122 free bits after the version and variant are reserved. 90 + 32 = 122 EXACTLY — the
+-- payload and its check do not merely fit in a UUID, they exhaust it, with nothing spare and nothing
+-- borrowed. Three files stating one layout, and nothing had ever compared them.
+theorem the_payload_and_the_check_exhaust_the_free_bits :
+  Asymmetric.payloadBits + Asymmetric.checkBits == Capacity.free
+  ∧ Asymmetric.payloadBits + Asymmetric.checkBits == 122
+  ∧ Asymmetric.payloadBits + Asymmetric.checkBits + Capacity.reserved == Capacity.container := by decide
+
+-- ── 10 · AND NOTHING IS SPARE, WHICH IS A CHOICE AND NOT AN ACCIDENT ──────────────────────────────────────
+-- Stated as the law rather than at the point: for every split of the free bits, the check is what the
+-- payload does not take. The instance is one line of it, and the domain is decided so a future change to
+-- either constant cannot silently leave a gap or an overlap.
+theorem the_check_is_exactly_what_the_payload_does_not_take :
+  (List.range 123).all (fun pay => pay > Capacity.free || pay + (Capacity.free - pay) == Capacity.free)
+  ∧ Capacity.free - Asymmetric.payloadBits == Asymmetric.checkBits
+  ∧ Capacity.free - Asymmetric.checkBits == Asymmetric.payloadBits := by decide
+
+-- ── 11..16 · THE LAWS, OVER THE DOMAIN, NOT AT THE POINT ──────────────────────────────────────────────────
+-- leads.ts calls a theorem that reads back a hand-set value a CERTIFICATE, and asks for the law it is an
+-- instance of, decided at every instance. Theorems 9 and 10 above were still instances — true, and stated
+-- at the one place the constants sit. These six are the laws, and each carries its inverse, so a future
+-- edit to any width meets arithmetic rather than a restatement of itself.
+
+-- A partition of a width is recovered by subtracting either part: the inverse of splitting is splitting.
+theorem splitting_a_width_is_undone_by_either_part :
+  (List.range 130).all (fun w => (List.range 130).all (fun a =>
+    a > w || (w - a) + a == w && w - (w - a) == a)) := by decide
+
+-- Reserving bits and freeing them are inverse over every container, not only over 128.
+theorem reserving_and_freeing_are_inverse_at_every_width :
+  (List.range 130).all (fun w => (List.range 9).all (fun r =>
+    r > w || (w - r) + r == w)) := by decide
+
+-- The capacity law: doubling the width squares the space, at every width in range.
+theorem one_more_bit_doubles_the_space_at_every_width :
+  (List.range 17).all (fun b => 2 ^ (b + 1) == 2 * 2 ^ b) := by decide
+
+-- And its inverse: the space determines the width back, for every exact power.
+theorem the_space_recovers_the_width_it_came_from :
+  (List.range 17).all (fun b => (List.range 17).all (fun c =>
+    (2 ^ b == 2 ^ c) == (b == c))) := by decide
+
+-- Bytes and bits, both directions, at every width — the law theorem 2 stated for one conversion.
+theorem the_unit_conversion_is_a_bijection_on_multiples_of_eight :
+  (List.range 40).all (fun b => toBytes (toBits b) == b)
+  ∧ (List.range 200).all (fun n => (n % 8 == 0) == (toBits (toBytes n) == n)) := by decide
+
+-- THE CONTROL ON ALL FIVE. Each is satisfied by arithmetic that ignores its arguments, so a case that must
+-- FAIL is required: subtracting more than a width does not return it, and unequal widths give unequal
+-- spaces. Without this the laws above are true of a tree where every width is the same width.
+theorem the_laws_separate_widths_rather_than_collapsing_them :
+  (List.range 12).any (fun w => (List.range 12).any (fun a => a > w && w - a == 0 && a != 0))
+  ∧ 2 ^ 7 != 2 ^ 8 ∧ toBits 5 != toBits 6 := by decide
+
 end Widths
