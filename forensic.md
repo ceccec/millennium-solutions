@@ -5,18 +5,18 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `d151cb62-cdc2-83b8-99c4-8fd91f615fbd`.
+`npm run forensic`. Content-address `b29befaa-0500-8da9-b152-ccab74d21b2d`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **3,152** |
-| standing — proved and sealed | 1,110 |
-| carried — withdrawn, proved by a live theorem | 521 |
+| ledger entries | **3,192** |
+| standing — proved and sealed | 1,148 |
+| carried — withdrawn, proved by a live theorem | 523 |
 | withdrawn — nothing currently proves them | 1,521 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 614 |
+| commits that changed ledger state | 616 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 

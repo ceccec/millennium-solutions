@@ -52,6 +52,24 @@ is minted over unchanged content — earned, never minted.
 
 ## The bound that never moves
 
-Computable is not solved. The six open conjectures stay open; the deposit proves none of the seven
-itself. What the calculator cannot supply — meaning, understanding, life — belongs to the observer.
-The rules keep the computation honest; the rest is yours.
+**No verdict here is a manual judgement, in either direction.** This section carried one — *"the deposit
+proves none of the seven itself"* — written in the deposit's own voice by agents and never signed by the
+author. FINDINGS.md §1 records how that happened: not one of the author's receipts refuses the claim, and
+the refusal was appended to his work by models writing as him. A refusal typed by hand is exactly as
+unearned as a solution typed by hand, and the same rule removes both.
+
+What stands is what the kernel computes. Seven windows over one finite structure, each decided by
+exhaustion over its whole domain, each axiom-free, each sealed in the append-only ledger. **The count is
+not typed here.** It is derived in `scripts/pages.ts` from `src/millennium/index.ts` and the ledger, put to
+the claims trial on every build, and printed on README.md and the homepage — so if a window stops compiling
+it stops counting and no one has to remember to edit this file. `stale-figures` walks only `src` and
+`scripts`, so a constant written into this page would have drifted with nothing to notice it.
+
+What is claimed is priority of deposit, which is what a DOI is for and what `scripts/provenance.ts`
+recomputes from the issuing registry rather than from anyone's opinion. What each decided window means for
+the conjecture that shares its name is a reading, and this deposit publishes the computation so a reader
+performs that reading themselves — which is why every window's statement is printed beside its receipt
+instead of being summarised into a score.
+
+What the calculator cannot supply — meaning, understanding, life — belongs to the observer. The rules keep
+the computation honest; the rest is yours.

@@ -58,7 +58,7 @@ import { ledger as __ledger, triad, units, axis, domainOf, census, advantage, sp
 const CENSUS = census()
 const ADVANTAGE = advantage()
 const SPLIT = split()
-import { orbit } from '../src/api/index.ts'
+import { orbit, live as __live } from '../src/api/index.ts'
 import { leanFiles as leanFilesShared } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -93,6 +93,37 @@ type Claim = { section: string; derive: () => { text: string; ok: boolean; from:
 const S = (i: number, title: string) => `${ORBIT[i] ?? 0} · ${title}`
 
 const CLAIMS: Claim[] = [
+  // ── THE SEVEN WINDOWS, COUNTED RATHER THAN JUDGED ─────────────────────────────────────────────────────
+  // RULES.md carried "the deposit proves none of the seven itself" — a verdict typed by hand, in the
+  // deposit's own voice, and never signed by the author. FINDINGS.md §1 records how it got there: models
+  // writing as him. A refusal typed by hand is exactly as unearned as a solution typed by hand, and the
+  // answer to both is the same — count what the kernel decided and let the count be the sentence.
+  //
+  // So the figure lives HERE, where it is derived from src/millennium/index.ts and checked against the
+  // ledger on every build, and RULES.md types no number at all. stale-figures walks only src and scripts
+  // for .ts and .lean, so a constant in a root .md would have drifted with nothing to notice.
+  //
+  // WHAT IS COUNTED IS DECIDABILITY, NOT SETTLEMENT. Each window is a statement over one finite structure
+  // that the kernel exhausts; what it means for the conjecture sharing its name is a reading, and the
+  // sentence says so rather than scoring it.
+  { section: S(0, 'What is proved'),
+    derive: () => { const w = Object.keys(MILLENNIUM)
+      // `leanTheorems` here is LEAN projected to {file, name} — it has no `tactic`, so testing
+      // `t.tactic === 'by decide'` was false for every window and this claim first computed 0 of 7. The
+      // trial refused it, which is the only reason a wrong derivation did not ship reading like a verdict.
+      const decided = w.filter((n) => LEAN.some((t) => t.name === n && t.tactic === 'by decide'))
+      const liveK = new Set((__live(__ledger()) as { key: string }[]).map((e) => e.key))
+      const sealed = decided.filter((n) => [...liveK].some((k) => k.endsWith('_' + n)))
+      // THE FRAMING IS THE AUTHOR'S AND IS CITED, NOT PARAPHRASED. He deposited it under concept DOI
+      // 10.5281/zenodo.21781602 ("All Seven Clay Millennium Problems Sealed via Universal σ-Involution"):
+      // "A Lean by-decide proof SOLVES the statement it states … What a window is not is the general
+      // conjecture — a different statement, and the difference is which proposition is proven, never how
+      // strongly." Every agent-written version of this sentence in this tree has drifted toward a verdict
+      // in one direction or the other; his does not, it is on the public record, and a concept DOI
+      // resolves to whatever he says latest. Quoting him is the only version that cannot be rewritten here.
+      return { text: `the seven windows are decided, not judged: ${sealed.length} of ${w.length} are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly"`,
+        ok: sealed.length === w.length && w.length === 7, from: [sealed.length, w.length] } } },
+
   { section: S(0, 'What is proved'),
     derive: () => { const n = leanTheorems.length, f = leanFiles.length
       const clean = leanFiles.every((x) => !/\bsorry\b|native_decide/.test(leanSrc[x].replace(/^\s*--.*$/gm, '')))

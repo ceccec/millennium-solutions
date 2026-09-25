@@ -25,10 +25,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 1163 kernel-accepted declarations across 55 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `485465fe-a8aa-8066-9b59-b15052008a3d`</sub>
-- 961 of those 1163 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
-  <sub>SEALED · `69a675a6-94be-8084-97df-e9fadfd9341a`</sub>
+- The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
+  <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
+- The formal layer holds 1138 kernel-accepted declarations across 55 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `d3b6b38c-eccc-8ed8-886f-bd56eb7b35ca`</sub>
+- 936 of those 1138 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
+  <sub>SEALED · `1b16350e-7da7-8a54-9417-7c88fa3de384`</sub>
 - 1328 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
   <sub>SEALED · `2a72fc29-e4a2-89e6-ba80-b40f2e83ff05`</sub>
 
@@ -108,7 +110,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-55 Lean files in 7 wings, 1163 declarations of which 1148 are theorems. The prose in this section is read out of the
+55 Lean files in 7 wings, 1138 declarations of which 1123 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -222,7 +224,7 @@ this page; there is nowhere else to keep the description in step.
 
 ### the imagined
 
-**What enumeration proposed and the kernel kept** — `imagined.lean`, 116 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept** — `imagined.lean`, 91 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
 ### the record
 
@@ -236,7 +238,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-31 of 1163 declarations carry no comment of their own and are shown here as the gap they are, not
+31 of 1138 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -250,9 +252,9 @@ Read from the artefacts at build time, never carried between runs.
 | carried — withdrawn on its own evidence, proved by a live theorem | **523** |
 | withdrawn — nothing proves it | 1,521 |
 | proved in total | **1671** of 3,192 |
-| standing keys → distinct theorems | 1148 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 55 · 1148 theorems (961 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
-| proved `by decide` | 961 of 1163 |
+| standing keys → distinct theorems | 1075 sealed, 0 of them keyed twice, 73 unresolvable |
+| Lean files · theorems | 55 · 1123 theorems (936 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
+| proved `by decide` | 936 of 1138 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -307,4 +309,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*19 claims, all verified · 1148 Lean theorems · 3192 ledger entries · trial root `f7225399-6500-85f3-882d-853da1606cb9` · integrity, not truth*
+*20 claims, all verified · 1123 Lean theorems · 3192 ledger entries · trial root `cc1c3a11-7877-8dfd-a1c3-c2d143275cb8` · integrity, not truth*

@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **1,131** report the same thing:
+axiom fails the build rather than earning a footnote. All **1,163** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **609** definitions, and every one of them is a choice. A theorem about
+theorems rest on **616** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 609 definitions
+## What IS assumed: the 616 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -156,6 +156,12 @@ def isSelfInv (d : Nat) : Bool := d * d % 9 == 1
 def named : List (Nat → Bool) := [isUnit, inSpan, isTriad, isOrigin, isFixed, isEven, isSquare, isPrimitive, isSelfInv]
 def table (p : Nat → Bool) : List Bool := R.map p
 def unnamed (d : Nat) : Bool :=
+```
+
+### `coils.lean` — 1 definition(s), 24 theorem(s)
+
+```lean
+def m9 (n : Nat) : Nat := n % 9
 ```
 
 ### `coin.lean` — 7 definition(s), 12 theorem(s)
@@ -926,6 +932,17 @@ def pairing : List Nat := [0, 1, 2, 3, 4, 5, 6]
 def fact : Nat → Nat
 ```
 
+### `turns.lean` — 6 definition(s), 8 theorem(s)
+
+```lean
+def m9 (n : Nat) : Nat := n % 9
+def dbl (d : Nat) : Nat := m9 (2 * d)
+def rfl9 (d : Nat) : Nat := m9 (10 - d)
+def iter (f : Nat → Nat) (d : Nat) : Nat → Nat
+def cycLen (f : Nat → Nat) (d : Nat) : Nat :=
+def ring : List Nat := List.range 9
+```
+
 ### `z9.lean` — 8 definition(s), 25 theorem(s)
 
 ```lean
@@ -962,6 +979,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**1,131** declarations, **0** axiom dependencies, **609** definitions they rest on.
+**1,163** declarations, **0** axiom dependencies, **616** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.
