@@ -9173,6 +9173,68 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_families_cassinis_identity_holds_across_the_range": {
+  "key": "lean_families_cassinis_identity_holds_across_the_range",
+  "file": "families.lean",
+  "name": "cassinis_identity_holds_across_the_range",
+  "statementHash": "5a876a03574748ff",
+  "searched": "2026-09-25T15:12:58.674Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic cassinis across",
+   "openalex": "modular arithmetic cassinis across",
+   "crossref": "modular arithmetic cassinis across",
+   "arxiv": "modular AND arithmetic AND cassinis AND across"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k": {
+  "key": "lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k",
+  "file": "families.lean",
+  "name": "choose_is_invariant_under_the_involution_k_to_n_minus_k",
+  "statementHash": "b0f24b0e1cfd0fd4",
+  "searched": "2026-09-25T15:15:30.805Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic choose invariant involution",
+   "openalex": "modular arithmetic choose invariant involution",
+   "crossref": "modular arithmetic choose invariant involution",
+   "arxiv": "modular AND arithmetic AND choose AND invariant AND involution"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_families_demorgan_holds_at_every_arity_to_eight": {
   "key": "lean_families_demorgan_holds_at_every_arity_to_eight",
   "file": "families.lean",
@@ -9377,6 +9439,38 @@
    }
   ],
   "verdict": "CANDIDATES"
+ },
+ "lean_families_invOf_is_an_inverse_and_an_involution_on_the_units": {
+  "key": "lean_families_invOf_is_an_inverse_and_an_involution_on_the_units",
+  "file": "families.lean",
+  "name": "invOf_is_an_inverse_and_an_involution_on_the_units",
+  "statementHash": "90bf66e5c2f8bc2a",
+  "searched": "2026-09-25T15:15:11.860Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic invof inverse involution",
+   "openalex": "modular arithmetic invof inverse involution",
+   "crossref": "modular arithmetic invof inverse involution",
+   "arxiv": "modular AND arithmetic AND invof AND inverse AND involution"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
  },
  "lean_families_multiplication_permutes_z9_at_exactly_the_units": {
   "key": "lean_families_multiplication_permutes_z9_at_exactly_the_units",
@@ -9638,6 +9732,69 @@
   ],
   "verdict": "CANDIDATES"
  },
+ "lean_families_square_of_successor": {
+  "key": "lean_families_square_of_successor",
+  "file": "families.lean",
+  "name": "square_of_successor",
+  "statementHash": "a13dc86e0015beea",
+  "searched": "2026-09-25T15:16:06.210Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic square successor",
+   "openalex": "modular arithmetic square successor",
+   "crossref": "modular arithmetic square successor",
+   "arxiv": "modular AND arithmetic AND square AND successor"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_families_the_catalan_recurrence_matches_the_binomial_formula": {
+  "key": "lean_families_the_catalan_recurrence_matches_the_binomial_formula",
+  "file": "families.lean",
+  "name": "the_catalan_recurrence_matches_the_binomial_formula",
+  "statementHash": "68e661965ba4f4db",
+  "searched": "2026-09-25T15:13:42.376Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic catalan recurrence matches",
+   "openalex": "modular arithmetic catalan recurrence matches",
+   "crossref": "modular arithmetic catalan recurrence matches",
+   "arxiv": "modular AND arithmetic AND catalan AND recurrence AND matches"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_families_the_digit_square_iteration_reaches_one_or_four": {
   "key": "lean_families_the_digit_square_iteration_reaches_one_or_four",
   "file": "families.lean",
@@ -9668,6 +9825,38 @@
   "catalogued": false,
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand": {
+  "key": "lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand",
+  "file": "families.lean",
+  "name": "the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand",
+  "statementHash": "5489994c53653041",
+  "searched": "2026-09-25T15:14:45.169Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic digit rules below",
+   "openalex": "modular arithmetic digit rules below",
+   "crossref": "modular arithmetic digit rules below",
+   "arxiv": "modular AND arithmetic AND digit AND rules AND below"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
  },
  "lean_families_the_digital_root_is_invariant_under_digit_reversal": {
   "key": "lean_families_the_digital_root_is_invariant_under_digit_reversal",
@@ -9853,6 +10042,37 @@
   ],
   "verdict": "CANDIDATES"
  },
+ "lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant": {
+  "key": "lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant",
+  "file": "families.lean",
+  "name": "the_golden_convergents_are_fibonacci_ratios_with_unit_determinant",
+  "statementHash": "f4962da7412095c2",
+  "searched": "2026-09-25T15:13:23.456Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic golden convergents fibonacci",
+   "openalex": "modular arithmetic golden convergents fibonacci",
+   "crossref": "modular arithmetic golden convergents fibonacci",
+   "arxiv": "modular AND arithmetic AND golden AND convergents AND fibonacci"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power": {
   "key": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power",
   "file": "families.lean",
@@ -9875,6 +10095,37 @@
    "openalex": "modular arithmetic inverse fifth power",
    "crossref": "modular arithmetic inverse fifth power",
    "arxiv": "modular AND arithmetic AND inverse AND fifth AND power"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_the_involutions_are_counted_by_the_telephone_numbers": {
+  "key": "lean_families_the_involutions_are_counted_by_the_telephone_numbers",
+  "file": "families.lean",
+  "name": "the_involutions_are_counted_by_the_telephone_numbers",
+  "statementHash": "5ae532ff8befaa5d",
+  "searched": "2026-09-25T15:14:56.173Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic involutions counted telephone",
+   "openalex": "modular arithmetic involutions counted telephone",
+   "crossref": "modular arithmetic involutions counted telephone",
+   "arxiv": "modular AND arithmetic AND involutions AND counted AND telephone"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -9963,6 +10214,37 @@
    }
   ],
   "verdict": "CANDIDATES"
+ },
+ "lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one": {
+  "key": "lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one",
+  "file": "families.lean",
+  "name": "the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one",
+  "statementHash": "5ba8760687303d14",
+  "searched": "2026-09-25T15:14:11.901Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic pisano period twenty",
+   "openalex": "modular arithmetic pisano period twenty",
+   "crossref": "modular arithmetic pisano period twenty",
+   "arxiv": "modular AND arithmetic AND pisano AND period AND twenty"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible": {
   "key": "lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible",
@@ -10064,6 +10346,79 @@
     "relevance": 1,
     "text": "Fundamental number theory with applications [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"vlamos.panayiotis-m\",\"reviewer_id\":\"9747\",\"name\":\"Panayiotis Vlamos\",\"sign\":\"Panayiotis Vlamos (Athens)\"},\"text\":\"The second edition of this very interesting book includes a revision of its contents and a p"
    },
+   {
+    "source": "crossref",
+    "title": "Modular arithmetic of iterated powers",
+    "year": 1983,
+    "url": "https://doi.org/10.1016/0898-1221(83)90114-1",
+    "relevance": 1,
+    "text": "Modular arithmetic of iterated powers "
+   },
+   {
+    "source": "arxiv",
+    "title": "Dyadically resolving trinomials for fast modular arithmetic",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2508.11043v1",
+    "relevance": 1,
+    "text": "Dyadically resolving trinomials for fast modular arithmetic Residue number systems based on pairwise relatively prime moduli are a powerful tool for accelerating integer computations via the Chinese Remainder Theorem. We study a structured family of moduli of the form $2^n - 2^k + 1$, originally pro"
+   },
+   {
+    "source": "arxiv",
+    "title": "Supersingular reduction and strongly special intersections in powers of the modular curve",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2605.00766v2",
+    "relevance": 1,
+    "text": "Supersingular reduction and strongly special intersections in powers of the modular curve We show that Lang--Trotter-type sparsity for simultaneous supersingular reduction of pairs of elliptic curves provides a new arithmetic input for unlikely intersections in powers of the modular curve. Assuming "
+   },
+   {
+    "source": "arxiv",
+    "title": "On symmetric power L-invariants of Iwahori level Hilbert modular forms",
+    "year": "2013",
+    "url": "http://arxiv.org/abs/1310.6244v1",
+    "relevance": 1,
+    "text": "On symmetric power L-invariants of Iwahori level Hilbert modular forms We compute the arithmetic L-invariants (of Greenberg-Benois) of twists of symmetric powers of p-adic Galois representations attached to Iwahori level Hilbert modular forms (under some technical conditions). Our method uses the au"
+   },
+   {
+    "source": "arxiv",
+    "title": "New Residue Arithmetic Based Barrett Algorithms, Part I: Modular Integer Computations",
+    "year": "2016",
+    "url": "http://arxiv.org/abs/1602.01551v1",
+    "relevance": 1,
+    "text": "New Residue Arithmetic Based Barrett Algorithms, Part I: Modular Integer Computations In this paper, we derive new computational techniques for residue number systems (RNS) based Barrett algorithm (BA). The focus of the work is an algorithm that carries out the entire computation using only modular "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_the_powers_of_two_sum_to_one_less_than_the_next_for_every_n": {
+  "key": "lean_families_the_powers_of_two_sum_to_one_less_than_the_next_for_every_n",
+  "file": "families.lean",
+  "name": "the_powers_of_two_sum_to_one_less_than_the_next_for_every_n",
+  "statementHash": "fa2f8175d116c235",
+  "searched": "2026-09-25T15:15:40.986Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic powers",
+   "openalex": "modular arithmetic powers",
+   "crossref": "modular arithmetic powers",
+   "arxiv": "modular AND arithmetic AND powers"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
    {
     "source": "crossref",
     "title": "Modular arithmetic of iterated powers",

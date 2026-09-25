@@ -47,6 +47,11 @@ const STEPS: Step[] = [
   // ADDED WITH THE RELEASE STEPS THEY MIRROR. release.yml gained a kernel stage — lean, contradictions,
   // independent — and this mirror was not extended with it, so `npm run ci:local` reported green on a tree
   // where two of CI's own gates had never been run locally. ci-drift found it, which is what it is for.
+  // ADDED WITH THE RELEASE STEP IT MIRRORS. release.yml reached 11 of the 30 scripts the local chains run,
+  // so twenty-eight gates that refuse an ordinary commit never ran before a tag was cut — and the tag is
+  // immutable provenance that triggers publish.yml. The workflow runs `npm run gates` now, and this mirror
+  // has to know it, or ci-drift is right that the mirror is lying about its coverage.
+  { name: 'gates (the whole refusing chain)', cmd: 'npm run gates' },
   { name: 'contradictions',                  cmd: 'node scripts/contradictions.ts' },
   { name: 'independent (claims stand alone)', cmd: 'node scripts/independent.ts' },
   // THE WORKSPACE STEPS. packages/uuidna is NOT a declared npm workspace — package.json has no

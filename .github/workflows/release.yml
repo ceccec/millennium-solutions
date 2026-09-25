@@ -90,6 +90,23 @@ jobs:
       - name: forensics (chain of custody, tamper-evident)
         run: node scripts/forensics.ts
 
+      # ── THE GATES A LOCAL COMMIT PASSES, WHICH A RELEASE WAS NOT PASSING ──────────────────────────────
+      # Measured 2026-09-25: this workflow reached 11 of the 30 scripts the local chains run. Twenty-eight
+      # gates that refuse a commit on this machine — prose-trial, attribution, security, orphan, hardcode,
+      # cite-audit, vacuity, lean-agree, carry, coils, formulas and the rest — never ran before a tag was
+      # cut. The tag is immutable provenance and it triggers publish.yml, so a release was being published
+      # on LESS evidence than an ordinary commit, which is exactly backwards.
+      #
+      # `npm run gates` rather than a list of twenty-eight steps: the chain is the tree's own statement of
+      # what must hold, and a copy of it here would be a second list to keep in step.
+      - name: gates (every refusing check a local commit passes)
+        run: npm run gates
+
+      # And the artefact, not only the source. scripts/e2e.ts checks what a reader opens — the page
+      # references its data, the counts agree, every linked theorem page exists — and it needs the build.
+      - name: build the site, then check it as a reader meets it
+        run: npm run docs:build
+
       # An ANNOTATED tag carries an author, so the runner needs an identity or `git tag -a` fails.
       - name: identity for the annotated tag
         run: |
