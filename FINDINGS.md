@@ -280,6 +280,44 @@ on its first green run, which is exactly that defect, caught in its own output.
 files may hold ninety broken theorems. It understated, which is the direction a wrong number survives in.
 The unit is named now.
 
+## 7k · Novelty is unmeasured here — 35 searches against 1,168 theorems
+
+`scripts/discoveries.ts` consolidates the four generators that had grown separately and never knew about
+each other — `imagine.ts` (enumerate and keep what the kernel accepts and what discriminates), `coils.ts`
+(cluster expressions that prove each other), `novelty.ts` (search five registries per theorem), and the
+prior-art classification of each source file. Separately each answers a narrow question. Together they
+answer the one that matters: **where should the next search go.**
+
+**The number it surfaces is the finding.** 35 novelty searches are recorded against 1,168 theorems — **3.0%**
+— while **332 theorems sit in files declaring `prior_art_own` with nothing looked up at all.** This
+deposit's own rule is that `none-known` is the only class permitted to claim novelty and that it requires
+*"a named prior-art search that was performed and found nothing"*. At three per cent, almost nothing here
+has earned that class. **The honest reading is that novelty in this tree is UNMEASURED — not absent, and
+not present.**
+
+A rank is not a novelty claim, and the script says so in its own output. It orders a queue; only a
+performed search, recorded with its queries and results, can say whether a statement has an earlier author.
+
+### The ranking was wrong first, and the fix is a declared list rather than a cleverer signal
+
+The first run put nine `priorart.lean` theorems at the top — statements about whether *this tree's own
+prior-art table* classifies its own sources. There is no literature to find for those.
+
+**Two mechanical signals were tried and both failed.** *Does the statement contain a numeral or an
+operator* — `priorart`'s statements contain `== 1` and `== 0`, so it separated nothing. *How many files
+mention the identifiers this statement uses* — `sources` reaches 3 files, but so does `solutions` in
+`dimensions.lean`, an ordinary file-local helper inside a perfectly searchable claim about Planck
+exponents. The signal confused *bookkeeping* with *local definition*, and shipping it would have demoted
+real mathematics to make a ranking look clever.
+
+So the exclusion is **declared with a reason each**, the way `src/api/gates.ts` declares gates nothing runs:
+25 theorems across `priorart.lean`, `ledgerclaims.lean` and `authority.lean`, whose subject is this
+deposit's own record. A named hand-list that says why beats a mechanical signal that is wrong.
+
+With them out, the head of the queue is `lanes.lean` — eight theorems on min, floor division and truncating
+subtraction, in a file still classed `prior_art: unclassified`. That is real work with a real literature,
+and `leads.ts` had been reporting it independently.
+
 ## 7j · The author's own status matrix — record 22895141, all thirteen files read
 
 The record whose title is *"All Seven Clay Millennium Problems Sealed via Universal σ-Involution"* also
