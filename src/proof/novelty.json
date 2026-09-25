@@ -44,7 +44,7 @@
   "file": "address.lean",
   "name": "address_is_sixteen_bytes",
   "statementHash": "0507a5dbcc165f10",
-  "searched": "2026-09-25T14:15:39.472Z",
+  "searched": "2026-09-25T20:39:20.178Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -62,20 +62,18 @@
    "crossref": "cryptographic hash sha digests sixteen bytes",
    "arxiv": "cryptographic AND hash AND sha AND digests AND sixteen"
   },
-  "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NONE_FOUND"
  },
  "lean_address_addressing_is_deterministic": {
   "key": "lean_address_addressing_is_deterministic",
   "file": "address.lean",
   "name": "addressing_is_deterministic",
   "statementHash": "903e74e9a953c342",
-  "searched": "2026-09-25T14:16:23.602Z",
+  "searched": "2026-09-25T20:40:02.687Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -94,19 +92,28 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND deterministic"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: HTTP 500"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Recommendation for applications using approved hash algorithms",
+    "year": 2012,
+    "url": "https://doi.org/10.6028/nist.sp.800-107r1",
+    "relevance": 0.75,
+    "text": "Recommendation for applications using approved hash algorithms Hash functions that compute a fixed-length message digest from arbitrary length messages are widely used for many purposes in information security.This document provides security guidelines for achieving the required or desired security "
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_addressing_is_injective_on_single_characters": {
   "key": "lean_address_addressing_is_injective_on_single_characters",
   "file": "address.lean",
   "name": "addressing_is_injective_on_single_characters",
   "statementHash": "1e918d0f50259075",
-  "searched": "2026-09-25T14:16:51.757Z",
+  "searched": "2026-09-25T20:40:24.004Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -124,20 +131,18 @@
    "crossref": "cryptographic hash sha digests injective single characters",
    "arxiv": "cryptographic AND hash AND sha AND digests AND injective"
   },
-  "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NONE_FOUND"
  },
  "lean_address_addressing_is_not_constant": {
   "key": "lean_address_addressing_is_not_constant",
   "file": "address.lean",
   "name": "addressing_is_not_constant",
   "statementHash": "910e5ee5119c88b1",
-  "searched": "2026-09-25T14:17:19.044Z",
+  "searched": "2026-09-25T20:43:57.043Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -156,7 +161,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND constant"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: HTTP 502"
   ],
   "oeis": [],
   "catalogued": false,
@@ -352,7 +357,7 @@
   "file": "address.lean",
   "name": "stamping_twice_is_stamping_once",
   "statementHash": "3817332e5077c8c3",
-  "searched": "2026-09-25T14:19:01.579Z",
+  "searched": "2026-09-25T20:42:00.292Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -371,19 +376,28 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND stamping"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Hash functions in Cryptography",
+    "year": 2008,
+    "url": "https://openalex.org/W2126530758",
+    "relevance": 0.6,
+    "text": "Hash functions in Cryptography This thesis is concerned with giving both an overview of the application of hash functions in cryptography and a presentation of today's standard cryptographic hash functions. Cryptographic hash functions are a valuable tool in cryptography. They are applied in many ar"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_the_address_is_not_the_payload": {
   "key": "lean_address_the_address_is_not_the_payload",
   "file": "address.lean",
   "name": "the_address_is_not_the_payload",
   "statementHash": "ca319e5e865e7452",
-  "searched": "2026-09-25T14:18:06.553Z",
+  "searched": "2026-09-25T20:41:39.805Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -402,7 +416,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND payload"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -454,7 +468,7 @@
   "file": "address.lean",
   "name": "the_address_is_sixteen_bytes_whatever_the_input_length",
   "statementHash": "2680d024bb1ecac6",
-  "searched": "2026-09-25T14:17:39.781Z",
+  "searched": "2026-09-25T20:44:36.266Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -473,7 +487,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND sixteen"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: HTTP 404"
   ],
   "oeis": [],
   "catalogued": false,
@@ -485,7 +499,7 @@
   "file": "address.lean",
   "name": "the_four_seeds_are_distinct",
   "statementHash": "a7104220c0a9ff23",
-  "searched": "2026-09-25T14:17:29.544Z",
+  "searched": "2026-09-25T20:41:08.036Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -504,19 +518,28 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND seeds"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: HTTP 502"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "A review of collisions in cryptographic hash function used in digital forensic tools",
+    "year": 2017,
+    "url": "https://doi.org/10.1016/j.procs.2017.10.072",
+    "relevance": 0.6,
+    "text": "A review of collisions in cryptographic hash function used in digital forensic tools Digital forensic tool is a software used by digital evidence investigators to extract data and information from a digital evidence. The integrity of the digital evidence must be maintained through the chain of custo"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group": {
   "key": "lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group",
   "file": "address.lean",
   "name": "the_fourteen_hash_bits_read_back_from_the_fourth_group",
   "statementHash": "963b849acf440ab5",
-  "searched": "2026-09-25T14:20:11.285Z",
+  "searched": "2026-09-25T20:42:50.364Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -535,19 +558,36 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND fourteen"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Status report on the second round of the SHA-3 cryptographic hash algorithm competition",
+    "year": 2011,
+    "url": "https://doi.org/10.6028/nist.ir.7764",
+    "relevance": 0.6,
+    "text": "Status report on the second round of the SHA-3 cryptographic hash algorithm competition The National Institute of Standards and Technology (NIST) opened a public competition on November 2, 2007 to develop a new cryptographic hash algorithm -SHA-3, which will augment the hash algorithms currently spe"
+   },
+   {
+    "source": "openalex",
+    "title": "Secure and Efficient Implementations of Cryptographic Primitives",
+    "year": 2012,
+    "url": "https://openalex.org/W2752481168",
+    "relevance": 0.8,
+    "text": "Secure and Efficient Implementations of Cryptographic Primitives Nowadays pervasive computing opens up many new challenges. Personal and sensitive data and computations are distributed over a wide range of computing devices. This presents great challenges in cryptographic system designs: how to prot"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits": {
   "key": "lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits",
   "file": "address.lean",
   "name": "the_fourth_group_is_variant_two_over_fourteen_hash_bits",
   "statementHash": "4f603770a57b7857",
-  "searched": "2026-09-25T14:19:28.918Z",
+  "searched": "2026-09-25T20:42:20.789Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -566,19 +606,28 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND fourth"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Secure and Efficient Implementations of Cryptographic Primitives",
+    "year": 2012,
+    "url": "https://openalex.org/W2752481168",
+    "relevance": 0.6666666666666666,
+    "text": "Secure and Efficient Implementations of Cryptographic Primitives Nowadays pervasive computing opens up many new challenges. Personal and sensitive data and computations are distributed over a wide range of computing devices. This presents great challenges in cryptographic system designs: how to prot"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits": {
   "key": "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits",
   "file": "address.lean",
   "name": "the_third_group_is_version_eight_over_twelve_hash_bits",
   "statementHash": "80e63c5d6eb082f2",
-  "searched": "2026-09-25T14:19:11.947Z",
+  "searched": "2026-09-25T20:42:11.071Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -597,7 +646,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND version"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -609,7 +658,7 @@
   "file": "address.lean",
   "name": "the_twelve_hash_bits_read_back_from_the_third_group",
   "statementHash": "747a1f623136680f",
-  "searched": "2026-09-25T14:19:56.467Z",
+  "searched": "2026-09-25T20:42:40.454Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -628,7 +677,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND twelve"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -640,7 +689,7 @@
   "file": "address.lean",
   "name": "the_unstamped_bits_read_back_from_every_stamped_byte",
   "statementHash": "871e2e806d8995bc",
-  "searched": "2026-09-25T14:19:40.211Z",
+  "searched": "2026-09-25T20:42:30.762Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -659,7 +708,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND unstamped"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -711,7 +760,7 @@
   "file": "address.lean",
   "name": "the_version_stamp_keeps_the_low_nibble_of_every_byte",
   "statementHash": "0b0ee57f5138594c",
-  "searched": "2026-09-25T14:18:33.479Z",
+  "searched": "2026-09-25T20:41:50.453Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -730,7 +779,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND version"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -862,7 +911,7 @@
   "file": "address.lean",
   "name": "version_nibble_is_forced",
   "statementHash": "9ca200276d2bf5c8",
-  "searched": "2026-09-25T14:16:03.578Z",
+  "searched": "2026-09-25T20:39:50.290Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -880,20 +929,18 @@
    "crossref": "cryptographic hash sha digests version nibble forced",
    "arxiv": "cryptographic AND hash AND sha AND digests AND version"
   },
-  "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NONE_FOUND"
  },
  "lean_asymmetric_a_checksum_is_the_same_whoever_computes_it": {
   "key": "lean_asymmetric_a_checksum_is_the_same_whoever_computes_it",
   "file": "asymmetric.lean",
   "name": "a_checksum_is_the_same_whoever_computes_it",
   "statementHash": "87471e0eb6266289",
-  "searched": "2026-09-25T14:21:43.559Z",
+  "searched": "2026-09-25T20:43:31.466Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -912,7 +959,7 @@
    "arxiv": "public AND key AND signatures AND elliptic AND checksum"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1076,7 +1123,7 @@
   "file": "asymmetric.lean",
   "name": "the_check_cannot_separate_the_payloads",
   "statementHash": "e74b14066bd5667a",
-  "searched": "2026-09-25T14:21:19.899Z",
+  "searched": "2026-09-25T20:43:10.737Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1095,7 +1142,7 @@
    "arxiv": "public AND key AND signatures AND elliptic AND check"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1147,7 +1194,7 @@
   "file": "asymmetric.lean",
   "name": "the_gap_is_fifty_eight_bits",
   "statementHash": "66c5e75d181efac8",
-  "searched": "2026-09-25T14:21:30.594Z",
+  "searched": "2026-09-25T20:43:21.046Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1166,7 +1213,7 @@
    "arxiv": "public AND key AND signatures AND elliptic AND fifty"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1178,7 +1225,7 @@
   "file": "asymmetric.lean",
   "name": "the_square_root_rule_is_the_one_this_prime_admits",
   "statementHash": "412d63bc32cb8a85",
-  "searched": "2026-09-25T14:22:16.529Z",
+  "searched": "2026-09-25T20:43:41.977Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1197,7 +1244,7 @@
    "arxiv": "public AND key AND signatures AND elliptic AND square"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -1305,7 +1352,7 @@
   "file": "asymmetric.lean",
   "name": "what_travels_beside_the_identifier",
   "statementHash": "66e9c8c949a1a517",
-  "searched": "2026-09-25T14:21:09.175Z",
+  "searched": "2026-09-25T20:43:00.358Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -1324,7 +1371,7 @@
    "arxiv": "public AND key AND signatures AND elliptic AND travels"
   },
   "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,

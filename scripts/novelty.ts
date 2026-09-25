@@ -138,7 +138,16 @@ if (hollowRows.length || orphanRows.length) {
 // on OpenAlex answering 429 to every call, each refusal costing ~100 s of backoff: hours spent learning nothing. A
 // refusing source now costs seconds, its records say so, and the next run asks it again.
 let measured = 0, n = 0
+// ── THE BREAKER COOLS DOWN; IT DOES NOT GIVE UP FOR THE RUN ──────────────────────────────────────────────
+// Three refusals in a row used to set a source aside FOR THE WHOLE RUN. Sensible at eight theorems and
+// ruinous at 1,153: a bad patch early poisons every row after it. Measured on the full sweep — 704 of
+// 1,153 rows NOT_MEASURED, with openalex named in 1,120 of them and zbmath in 851 — and the sweep
+// "completed" having measured almost nothing, which is the worst possible outcome because the record then
+// LOOKS full. A source that refuses is resting, not gone: it is set aside for a cooling period and asked
+// again after it, so one bad five minutes costs five minutes instead of a thousand theorems.
 const refusals = new Map<string, number>()
+const restingUntil = new Map<string, number>()
+const COOLDOWN_MS = 90_000
 const oeisSeen = new Map<string, { a: string; name: string; query: string }[] | Error>()
 for (const { t, key, h } of todo) {
   // ── SEARCHED BY THE STATEMENT, NOT BY THE NAME ──────────────────────────────────────────────────────────
@@ -185,7 +194,9 @@ for (const { t, key, h } of todo) {
   for (const [name, s] of Object.entries(SOURCES)) {
     rec.queries[name] = name === 'arxiv' ? terms.slice(0, 5).join(' AND ') : query
     if (terms.filter((w) => w.length >= 4).length < 2) continue
-    if ((refusals.get(name) ?? 0) >= 3) { rec.notMeasured.push(`${name}: refusing this run (three refusals in a row) — retried next run`); continue }
+    const restsTill = restingUntil.get(name) ?? 0
+    if (Date.now() < restsTill) { rec.notMeasured.push(`${name}: resting after three refusals, asked again in ${Math.ceil((restsTill - Date.now()) / 1000)}s`); continue }
+    if (restsTill && Date.now() >= restsTill) { refusals.set(name, 0); restingUntil.delete(name) }  // cooled off: ask again
     try {
       const hits = await s.run(terms, query); measured++; refusals.set(name, 0)
       // RELEVANT = most of the theorem's own terms AND a specific word of its file's domain, in the same hit.
@@ -193,7 +204,12 @@ for (const { t, key, h } of todo) {
       const anchors = anchorsOf(t.file)
       rec.candidates.push(...hits.filter((x) => x.relevance >= LIMITS.relevanceFloor && anchors.length > 0 && anchors.some((a) => (x.text ?? '').toLowerCase().includes(a)))
         .map((x) => ({ ...x, text: (x.text ?? '').replace(/\s+/g, ' ').slice(0, 300) })))
-    } catch (e) { rec.notMeasured.push(`${name}: ${(e as Error).message}`); refusals.set(name, (refusals.get(name) ?? 0) + 1) }
+    } catch (e) {
+      rec.notMeasured.push(`${name}: ${(e as Error).message}`)
+      const n = (refusals.get(name) ?? 0) + 1
+      refusals.set(name, n)
+      if (n >= 3) restingUntil.set(name, Date.now() + COOLDOWN_MS)
+    }
     await sleep(s.pace)
   }
   const searchable = terms.filter((w) => w.length >= 4).length >= 2
