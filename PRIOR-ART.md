@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 1,184 machine-checked declarations, **1,130** restate work that already has an author and
+Of 1,216 machine-checked declarations, **1,162** restate work that already has an author and
 **54** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **1,130** |
+| attributed to named earlier work | **1,162** |
 | unclassified — no search performed, status unknown | **54** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 4
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 56 sources, 1,130 theorems
+## Restated from named earlier work — 59 sources, 1,162 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -55,6 +55,7 @@ which is a contribution of verification, not of discovery.
 <table><thead><tr><th>source</th><th>theorems</th><th>domain</th><th>whose work</th></tr></thead><tbody>
 <tr><td><code>address.lean</code></td><td>26</td><td>content addressing by cryptographic hash — SHA-256 digests as immutable identifiers</td><td>composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)</td></tr>
 <tr><td><code>asymmetric.lean</code></td><td>12</td><td>public-key signatures on elliptic curves</td><td>Ed25519 — Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe and Bo-Yin Yang,</td></tr>
+<tr><td><code>asymmetry.lean</code></td><td>8</td><td>the injectivity of a map on a finite set, and the involution; the one-way function of</td><td>NONE OF IT IS THIS DEPOSIT'S. An involution is its own inverse by definition, a</td></tr>
 <tr><td><code>capacity.lean</code></td><td>8</td><td>the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC</td><td>NEITHER IS THIS DEPOSIT'S. RFC 9562 reserves the six bits and the birthday bound is</td></tr>
 <tr><td><code>closure.lean</code></td><td>8</td><td>Cantor's diagonal argument again, turned on a vocabulary rather than a set; the</td><td>THE METHOD IS CANTOR'S AND THE FINITE CASE IS ELEMENTARY. What is this deposit's is the</td></tr>
 <tr><td><code>coils.lean</code></td><td>27</td><td>extensional equality of predicates over a finite set — that two definitions picking out</td><td>NOT THIS DEPOSIT'S. "Two descriptions of the same set are equal" is the definition of a</td></tr>
@@ -69,6 +70,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>domain.lean</code></td><td>8</td><td>Cantor's diagonal argument, and the elementary fact that a diagonal over a domain of n</td><td>THE BOUND IS NOT NEW AND IS NOT CLAIMED. "One point per property" is the counting that</td></tr>
 <tr><td><code>elementary.lean</code></td><td>41</td><td>elementary number theory and combinatorial game theory</td><td>Euclid (Elements IX.36) and Euler for the even perfect numbers; the amicable pair</td></tr>
 <tr><td><code>energy.lean</code></td><td>28</td><td>electrochemistry and combustion</td><td>the laws of electrolysis — Michael Faraday, 1834; the enthalpy of combustion of hydrogen, standard physical chemistry</td></tr>
+<tr><td><code>equivalence.lean</code></td><td>8</td><td>the equivalence relation and its quotient — reflexivity, symmetry, transitivity, and</td><td>NONE OF IT IS THIS DEPOSIT'S AND ALL OF IT IS FOUNDATIONAL. That an equivalence relation</td></tr>
 <tr><td><code>families.lean</code></td><td>64</td><td>modular arithmetic, quantified</td><td>quantifies the ℤ/9 arithmetic above; the underlying results are Fermat’s, Euler’s and Gauss’s</td></tr>
 <tr><td><code>flow.lean</code></td><td>16</td><td>elementary number theory — the multiplicative order of 2 modulo 9</td><td>2⁶ = 64 ≡ 1 (mod 9), so the powers of two modulo 9 repeat with period six — Euler's</td></tr>
 <tr><td><code>fnv.lean</code></td><td>15</td><td>non-cryptographic hashing</td><td>FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991</td></tr>
@@ -107,6 +109,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>theology.lean</code></td><td>8</td><td>elementary number theory — the unit group of ℤ/9, the doubling map, and the ten's complement</td><td>the structure is the same standard one index.lean credits: U(9) = {1,2,4,5,7,8}, the</td></tr>
 <tr><td><code>turns.lean</code></td><td>8</td><td>the cycle decomposition of a permutation into disjoint cycles; the order of 2 in</td><td>NONE OF IT IS THIS DEPOSIT'S. Cycle decomposition is the first structure theorem for</td></tr>
 <tr><td><code>verdict.lean</code></td><td>8</td><td>the classification of a test outcome under partial information — the distinction</td><td>NEITHER IS THIS DEPOSIT'S. "Absence of evidence is not evidence of absence" is a</td></tr>
+<tr><td><code>widths.lean</code></td><td>16</td><td>the Ed25519 signature scheme's parameter sizes — 32-byte public key, 64-byte</td><td>EVERY CONSTANT HERE IS SOMEBODY ELSE'S AND IS CITED ABOVE. Ed25519's sizes are its</td></tr>
 <tr><td><code>z9.lean</code></td><td>25</td><td>modular arithmetic</td><td>Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801</td></tr>
 <tr><td><code>z9plus.lean</code></td><td>48</td><td>modular arithmetic and periodicity</td><td>digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774</td></tr>
 </tbody></table>
@@ -154,11 +157,14 @@ which is a contribution of verification, not of discovery.
 - **non-cryptographic hashing** — 15 theorems, in `fnv.lean`
 - **public-key signatures on elliptic curves** — 12 theorems, in `asymmetric.lean`
 - **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 35 theorems, in `planck.lean`
+- **the Ed25519 signature scheme's parameter sizes — 32-byte public key, 64-byte** — 16 theorems, in `widths.lean`
 - **the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC** — 8 theorems, in `capacity.lean`
 - **the UUID text format, and the pigeonhole principle** — 8 theorems, in `handle.lean`
 - **the classification of a test outcome under partial information — the distinction** — 8 theorems, in `verdict.lean`
 - **the cycle decomposition of a permutation into disjoint cycles; the order of 2 in** — 8 theorems, in `turns.lean`
+- **the equivalence relation and its quotient — reflexivity, symmetry, transitivity, and** — 8 theorems, in `equivalence.lean`
 - **the false-positive rate of a classifier, and the correction of a raw count by a** — 6 theorems, in `discount.lean`
+- **the injectivity of a map on a finite set, and the involution; the one-way function of** — 8 theorems, in `asymmetry.lean`
 - **the method of complements** — 20 theorems, in `coin.lean`, `reflection.lean`
 - **the nines' and tens' complement, the basis of complement subtraction and of the** — 8 theorems, in `digits.lean`
 - **the nuclear shell model, and the proton-to-electron mass ratio** — 8 theorems, in `nucleus.lean`
@@ -198,5 +204,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `6f120cfb-bcbf-8000-9838-3228a8925dea` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `d120f93b-3b35-8369-92e7-e081345364db` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

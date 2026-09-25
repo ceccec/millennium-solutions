@@ -162,7 +162,10 @@ if (address === lastAddr) {
   // where whoever asked what is next actually looks.
   try {
     const out = execSync('node scripts/leads.ts', { encoding: 'utf8', stdio: 'pipe' })
-    const areas = out.split('\n').filter((l) => /^\s{4}\d+\s{2}\w/.test(l)).slice(0, 5)
+    // WIDTH-PADDED, SO THE COUNT'S DIGITS CHANGE THE INDENT. A four-space rule caught the two-digit areas
+    // and silently dropped every single-digit one — it reported 2 of 4 while saying "open areas". The
+    // leading run is whatever the formatter chose; what identifies a row is a count then a label.
+    const areas = out.split('\n').filter((l) => /^\s+\d+\s+[a-z]/.test(l) && !/^\s*\(/.test(l) && !/theorems ·/.test(l)).slice(0, 6)
     const total = out.match(/○ leads: (\d+) open area\(s\), (\d+) item\(s\)/)
     if (areas.length) {
       console.log('\n  WHOLE BY CONTENT-ADDRESS, NOT BY OBLIGATION — ' + (total ? total[2] + ' item(s) across ' + total[1] + ' area(s)' : 'leads are open') + ':')
