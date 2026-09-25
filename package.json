@@ -170,7 +170,8 @@
     "coils:emit": "node scripts/coils.ts --emit",
     "formulas": "node scripts/formulas.ts",
     "discoveries": "node scripts/discoveries.ts",
-    "e2e": "node scripts/e2e.ts"
+    "e2e": "node scripts/e2e.ts",
+    "release:live": "node scripts/release-live.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

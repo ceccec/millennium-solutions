@@ -109,6 +109,7 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   // had shown could fail. That is the exact defect scripts/runnable-gate.ts was written to catch in other
   // people's scripts, committed three waves before these were added. `formulas` and `coils` are wired into
   // `npm run gates` and controlled in gates-fire. `discoveries` is not, and here is why.
+  'release-live': 'reaches the npm registry and Zenodo to ask whether a tag actually landed — network, and about somebody else\'s server, so no build chain can run it. It is the check to run AFTER publish.yml: a green workflow says a job exited zero, not that the registry has the version. It refuses only on ABSENT, never on NOT MEASURED',
   discoveries: 'REPORTS by design, like stale-figures: it orders where the next prior-art search should go, and its own output says a rank is not a novelty claim. It refuses only when its signals collapse — every candidate scoring alike, which would mean the queue cannot tell its entries apart — and gating a build on the shape of a work queue would teach closing the queue rather than working it',
   probe: 'the control harness, not a gate: it takes a file, a theorem and a mutation as arguments, so no chain can run it bare; gates-fire holds its control — a mutation that never reaches the theorem must be refused',
 }
