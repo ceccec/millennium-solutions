@@ -199,6 +199,7 @@ export default defineConfig({
         { text: 'The', link: '/the' },
         { text: 'Theorems', link: '/THEOREMS' },
         { text: 'Formulas', link: '/formulas' },
+        { text: 'End-to-end', link: '/E2E' },
         { text: 'Axiom index', link: '/AXIOMS' },
           { text: 'Lessons', link: '/LESSONS' },
         { text: 'Challenges', link: '/CHALLENGES' },

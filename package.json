@@ -30,7 +30,7 @@
   "scripts": {
     "docs:dev": "vitepress dev",
     "predocs:build": "node scripts/analytics.ts && node scripts/pages.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/rights.ts && node scripts/priorart.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && node scripts/speedup.ts && node scripts/greeting.ts && node scripts/solutions.ts && node scripts/contradictions.ts && node scripts/latex-gate.ts && node scripts/paper.ts",
-    "docs:build": "vitepress build",
+    "docs:build": "vitepress build && node scripts/e2e.ts",
     "docs:preview": "vitepress preview",
     "crypto-kat": "node scripts/crypto-kat.ts",
     "prose-trial": "node scripts/prose-trial.ts",
@@ -169,7 +169,8 @@
     "coils": "node scripts/coils.ts",
     "coils:emit": "node scripts/coils.ts --emit",
     "formulas": "node scripts/formulas.ts",
-    "discoveries": "node scripts/discoveries.ts"
+    "discoveries": "node scripts/discoveries.ts",
+    "e2e": "node scripts/e2e.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

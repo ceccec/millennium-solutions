@@ -8936,6 +8936,37 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_families_a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds": {
+  "key": "lean_families_a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds",
+  "file": "families.lean",
+  "name": "a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds",
+  "statementHash": "f60762c3a526209d",
+  "searched": "2026-09-25T15:12:23.198Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic squares fermats condition",
+   "openalex": "modular arithmetic squares fermats condition",
+   "crossref": "modular arithmetic squares fermats condition",
+   "arxiv": "modular AND arithmetic AND squares AND fermats AND condition"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_families_addition_generates_z9_at_exactly_the_units": {
   "key": "lean_families_addition_generates_z9_at_exactly_the_units",
   "file": "families.lean",
@@ -9496,6 +9527,38 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_families_polygonal_closed_forms_match_their_recurrences": {
+  "key": "lean_families_polygonal_closed_forms_match_their_recurrences",
+  "file": "families.lean",
+  "name": "polygonal_closed_forms_match_their_recurrences",
+  "statementHash": "f77a1fe88e103df1",
+  "searched": "2026-09-25T15:11:45.166Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic polygonal closed match",
+   "openalex": "modular arithmetic polygonal closed match",
+   "crossref": "modular arithmetic polygonal closed match",
+   "arxiv": "modular AND arithmetic AND polygonal AND closed AND match"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run",
+   "crossref: HTTP TypeError"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
  "lean_families_power_sums_match_their_closed_forms": {
   "key": "lean_families_power_sums_match_their_closed_forms",
   "file": "families.lean",
@@ -9575,6 +9638,37 @@
   ],
   "verdict": "CANDIDATES"
  },
+ "lean_families_the_digit_square_iteration_reaches_one_or_four": {
+  "key": "lean_families_the_digit_square_iteration_reaches_one_or_four",
+  "file": "families.lean",
+  "name": "the_digit_square_iteration_reaches_one_or_four",
+  "statementHash": "465fa195c9767a80",
+  "searched": "2026-09-25T15:12:06.689Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic digit square iteration",
+   "openalex": "modular arithmetic digit square iteration",
+   "crossref": "modular arithmetic digit square iteration",
+   "arxiv": "modular AND arithmetic AND digit AND square AND iteration"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_families_the_digital_root_is_invariant_under_digit_reversal": {
   "key": "lean_families_the_digital_root_is_invariant_under_digit_reversal",
   "file": "families.lean",
@@ -9615,6 +9709,150 @@
   ],
   "verdict": "CANDIDATES"
  },
+ "lean_families_the_first_n_odd_numbers_sum_to_n_squared": {
+  "key": "lean_families_the_first_n_odd_numbers_sum_to_n_squared",
+  "file": "families.lean",
+  "name": "the_first_n_odd_numbers_sum_to_n_squared",
+  "statementHash": "e6a84a17e5faa059",
+  "searched": "2026-09-25T15:10:51.826Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic squared",
+   "openalex": "modular arithmetic squared",
+   "crossref": "modular arithmetic squared",
+   "arxiv": "modular AND arithmetic AND squared"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Squared Möbius function for half-integral matrices and its applications",
+    "year": "2001",
+    "url": "https://zbmath.org/1584996",
+    "relevance": 0.6666666666666666,
+    "text": "Squared Möbius function for half-integral matrices and its applications [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"krieg.aloys\",\"reviewer_id\":\"5848\",\"name\":\"Aloys Krieg\",\"sign\":\"A.Krieg (Aachen)\"},\"text\":\"The authors introduce an analog \\\\(\\\\sigma\\\\) of \\\\(\\\\mu^2\\\\), where \\\\(\\\\mu\\\\) denotes "
+   },
+   {
+    "source": "zbmath",
+    "title": "Integral quadratic forms and lattices. Proceedings of the international conference on integral quadratic forms and lattices, Seoul National University, Seoul, Korea, June 15--19, 1998. Dedicated to the memory of Dennis Ray Estes",
+    "year": "1999",
+    "url": "https://zbmath.org/1402071",
+    "relevance": 1,
+    "text": "Integral quadratic forms and lattices. Proceedings of the international conference on integral quadratic forms and lattices, Seoul National University, Seoul, Korea, June 15--19, 1998. Dedicated to the memory of Dennis Ray Estes [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":nul"
+   },
+   {
+    "source": "arxiv",
+    "title": "Classification of integral modular data up to rank 13",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2302.01613v10",
+    "relevance": 1,
+    "text": "Classification of integral modular data up to rank 13 This paper classifies the modular data of integral modular fusion categories up to rank 13, and integral half-Frobenius fusion rings up to rank 12. We establish that every perfect case within these bounds is trivial. Furthermore, we refine the no"
+   },
+   {
+    "source": "arxiv",
+    "title": "Modular forms and arithmetic geometry",
+    "year": "2003",
+    "url": "http://arxiv.org/abs/math/0308296v1",
+    "relevance": 0.6666666666666666,
+    "text": "Modular forms and arithmetic geometry This article describes results of joint work with Michael Rapoport and Tonghai Yang. First, we construct an modular form φ(τ) of weight 3/2 valued in the arithmetic Chow group of the arithmetic surface M attached toa Shimura curve over Q. The q-expansion of this"
+   },
+   {
+    "source": "arxiv",
+    "title": "From sum of two squares to arithmetic Siegel-Weil formulas",
+    "year": "2021",
+    "url": "http://arxiv.org/abs/2110.07457v2",
+    "relevance": 0.6666666666666666,
+    "text": "From sum of two squares to arithmetic Siegel-Weil formulas The main goal of this expository article is to survey recent progress on the arithmetic Siegel-Weil formula and its applications. We begin with the classical sum of two squares problem and put it in the context of the Siegel-Weil formula. We"
+   },
+   {
+    "source": "arxiv",
+    "title": "Families of modular arithmetic progressions with an interval of distance multiplicities",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2208.05527v1",
+    "relevance": 0.6666666666666666,
+    "text": "Families of modular arithmetic progressions with an interval of distance multiplicities Given a family $\\mathcal{F}=\\{A_1,\\dots,A_s\\}$ of subsets of $\\mathbb{Z}_n$, define $Δ\\mathcal{F}$ to be the multiset of all (cyclic) distances dist$(x,y)$, where $\\{x,y\\} \\subset A_i$, $x \\neq y$, for some $i=1,"
+   },
+   {
+    "source": "arxiv",
+    "title": "Prime Fourier Embeddings: A Principled Basis for Modular Arithmetic",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2606.23044v2",
+    "relevance": 0.6666666666666666,
+    "text": "Prime Fourier Embeddings: A Principled Basis for Modular Arithmetic Numbers have algebraic structure that standard neural embeddings often fail to expose. We introduce Prime Fourier Embeddings (PFE), which encode integers as prime-indexed (cos, sin) pairs derived from the harmonic analysis of Q, pro"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_the_first_three_power_sums_hold_to_two_hundred": {
+  "key": "lean_families_the_first_three_power_sums_hold_to_two_hundred",
+  "file": "families.lean",
+  "name": "the_first_three_power_sums_hold_to_two_hundred",
+  "statementHash": "92c915971c25946d",
+  "searched": "2026-09-25T15:12:34.427Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic power hundred",
+   "openalex": "modular arithmetic power hundred",
+   "crossref": "modular arithmetic power hundred",
+   "arxiv": "modular AND arithmetic AND power AND hundred"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Elliptic and modular functions from Gauss to Dedekind to Hecke",
+    "year": "2017",
+    "url": "https://zbmath.org/6653747",
+    "relevance": 0.75,
+    "text": "Elliptic and modular functions from Gauss to Dedekind to Hecke [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"simsek.yilmaz\",\"reviewer_id\":\"11035\",\"name\":\"Yılmaz Şimşek\",\"sign\":\"Yilmaz Simsek (Antalya)\"},\"text\":\"This book covers Elliptic and Modular functions and their applications. The book cons"
+   },
+   {
+    "source": "arxiv",
+    "title": "Improving MATLAB's isprime performance without arbitrary-precision arithmetic",
+    "year": "2021",
+    "url": "http://arxiv.org/abs/2108.04791v1",
+    "relevance": 1,
+    "text": "Improving MATLAB's isprime performance without arbitrary-precision arithmetic MATLAB is a numerical computing platform used by scientists, engineers, mathematicians, and students which contains many mathematical functions, including isprime. MATLAB's isprime function determines which elements of an "
+   },
+   {
+    "source": "arxiv",
+    "title": "Formally certifying number field invariants",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2607.26230v1",
+    "relevance": 1,
+    "text": "Formally certifying number field invariants Number fields, which generalize the rational numbers, are fundamental objects in number theory. Many of their key arithmetic properties are captured by invariants whose computation is among the central tasks of computational algebraic number theory and a f"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
  "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power": {
   "key": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power",
   "file": "families.lean",
@@ -9646,6 +9884,86 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_families_the_order_of_every_unit_mod_nine_divides_six": {
+  "key": "lean_families_the_order_of_every_unit_mod_nine_divides_six",
+  "file": "families.lean",
+  "name": "the_order_of_every_unit_mod_nine_divides_six",
+  "statementHash": "c0169af032667ccb",
+  "searched": "2026-09-25T15:11:55.421Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic divides",
+   "openalex": "modular arithmetic divides",
+   "crossref": "modular arithmetic divides",
+   "arxiv": "modular AND arithmetic AND divides"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "2-adic properties of certain modular forms and their applications to arithmetic functions",
+    "year": "2005",
+    "url": "https://zbmath.org/2205599",
+    "relevance": 1,
+    "text": "2-adic properties of certain modular forms and their applications to arithmetic functions [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"kuhnlein.stefan\",\"reviewer_id\":\"9315\",\"name\":\"Stefan Kühnlein\",\"sign\":\"Stefan Kühnlein (Karlsruhe)\"},\"text\":\"Let \\\\(j(z) = q^{-1} + 744 + \\\\sum_{n=1}^\\\\infty C("
+   },
+   {
+    "source": "zbmath",
+    "title": "Jacobian of modular cures and Hecke operators",
+    "year": "1991",
+    "url": "https://zbmath.org/124551",
+    "relevance": 0.6666666666666666,
+    "text": "Jacobian of modular cures and Hecke operators [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"herrlich.frank\",\"reviewer_id\":\"3297\",\"name\":\"Frank Herrlich\",\"sign\":\"F.Herrlich (Karlsruhe)\"},\"text\":\"[For the entire collection see Zbl 0745.00052.]\\n\\n\\nFor an integer \\\\(N \\\\geq 1\\\\), let \\\\(J_ 0(N)_ \\"
+   },
+   {
+    "source": "arxiv",
+    "title": "Modern Computer Arithmetic (version 0.5.1)",
+    "year": "2010",
+    "url": "http://arxiv.org/abs/1004.4710v1",
+    "relevance": 1,
+    "text": "Modern Computer Arithmetic (version 0.5.1) This is a draft of a book about algorithms for performing arithmetic, and their implementation on modern computers. We are concerned with software more than hardware - we do not cover computer architecture or the design of computer hardware. Instead we focu"
+   },
+   {
+    "source": "arxiv",
+    "title": "O'Nan moonshine and arithmetic",
+    "year": "2017",
+    "url": "http://arxiv.org/abs/1702.03516v4",
+    "relevance": 0.6666666666666666,
+    "text": "O'Nan moonshine and arithmetic Answering a question posed by Conway and Norton in their seminal 1979 paper on moonshine, we prove the existence of a graded infinite-dimensional module for the sporadic simple group of O'Nan, for which the McKay--Thompson series are weight $3/2$ modular forms. The coe"
+   },
+   {
+    "source": "arxiv",
+    "title": "Discrepancy in modular arithmetic progressions",
+    "year": "2021",
+    "url": "http://arxiv.org/abs/2104.03929v1",
+    "relevance": 1,
+    "text": "Discrepancy in modular arithmetic progressions Celebrated theorems of Roth and of Matoušek and Spencer together show that the discrepancy of arithmetic progressions in the first $n$ positive integers is $Θ(n^{1/4})$. We study the analogous problem in the $\\mathbb{Z}_n$ setting. We asymptotically det"
+   },
+   {
+    "source": "arxiv",
+    "title": "Beta-elements and divided congruences",
+    "year": "2005",
+    "url": "http://arxiv.org/abs/math/0508466v2",
+    "relevance": 1,
+    "text": "Beta-elements and divided congruences The f-invariant is an injective homomorphism from the 2-line of the Adams-Novikov spectral sequence to a group which is closely related to divided congruences of elliptic modular forms. We compute the f-invariant for two infinite families of beta-elements and ex"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
  "lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible": {
   "key": "lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible",
   "file": "families.lean",
@@ -9668,6 +9986,180 @@
    "openalex": "modular arithmetic powers minus invertible",
    "crossref": "modular arithmetic powers minus invertible",
    "arxiv": "modular AND arithmetic AND powers AND minus AND invertible"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_the_powers_of_two_sum_to_one_less_than_the_next": {
+  "key": "lean_families_the_powers_of_two_sum_to_one_less_than_the_next",
+  "file": "families.lean",
+  "name": "the_powers_of_two_sum_to_one_less_than_the_next",
+  "statementHash": "63a80e61d45960a2",
+  "searched": "2026-09-25T15:11:02.685Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic powers",
+   "openalex": "modular arithmetic powers",
+   "crossref": "modular arithmetic powers",
+   "arxiv": "modular AND arithmetic AND powers"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Arithmetic of singular moduli and class polynomials",
+    "year": "2005",
+    "url": "https://zbmath.org/2174574",
+    "relevance": 1,
+    "text": "Arithmetic of singular moduli and class polynomials [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"heim.bernhard-ernst\",\"reviewer_id\":\"11802\",\"name\":\"Bernhard Heim\",\"sign\":\"Bernhard Heim (Bonn)\"},\"text\":\"The values \\\\(j(z)\\\\) of the modular invariant at imaginary quadratic arguments are known as "
+   },
+   {
+    "source": "zbmath",
+    "title": "Sums of powers of cusp form coefficients. II",
+    "year": "1985",
+    "url": "https://zbmath.org/3885993",
+    "relevance": 0.6666666666666666,
+    "text": "Sums of powers of cusp form coefficients. II [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Let f be a newform of weight k for the modular group SL(2,\\\\({\\\\mathbb{Z}})\\\\) given by \\\\(f(z)=\\\\sum^{\\\\infty}_{n=1}a(n)e^{2\\\\pi inz}\\\\) and write \\"
+   },
+   {
+    "source": "zbmath",
+    "title": "Promenade along modular forms and analytic number theory",
+    "year": "1985",
+    "url": "https://zbmath.org/3966185",
+    "relevance": 1,
+    "text": "Promenade along modular forms and analytic number theory [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"bruggeman.roelof-wichert\",\"reviewer_id\":\"2969\",\"name\":\"R. W. Bruggeman\",\"sign\":\"R.W.Bruggeman\"},\"text\":\"[For the entire collection see Zbl 0589.00007.] \\n\\n\\nThese lectures discuss the spectral"
+   },
+   {
+    "source": "zbmath",
+    "title": "Perfect powers in products with consecutive terms from arithmetic progressions. II",
+    "year": "2013",
+    "url": "https://zbmath.org/6296731",
+    "relevance": 1,
+    "text": "Perfect powers in products with consecutive terms from arithmetic progressions. II [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"hajdu.lajos\",\"reviewer_id\":\"8942\",\"name\":\"Lajos Hajdu\",\"sign\":\"Lajos Hajdu (Debrecen)\"},\"text\":\"The problem of products of consecutive integers yielding perfect powers"
+   },
+   {
+    "source": "zbmath",
+    "title": "Fundamental number theory with applications",
+    "year": "2008",
+    "url": "https://zbmath.org/5265465",
+    "relevance": 1,
+    "text": "Fundamental number theory with applications [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"vlamos.panayiotis-m\",\"reviewer_id\":\"9747\",\"name\":\"Panayiotis Vlamos\",\"sign\":\"Panayiotis Vlamos (Athens)\"},\"text\":\"The second edition of this very interesting book includes a revision of its contents and a p"
+   },
+   {
+    "source": "crossref",
+    "title": "Modular arithmetic of iterated powers",
+    "year": 1983,
+    "url": "https://doi.org/10.1016/0898-1221(83)90114-1",
+    "relevance": 1,
+    "text": "Modular arithmetic of iterated powers "
+   },
+   {
+    "source": "arxiv",
+    "title": "Dyadically resolving trinomials for fast modular arithmetic",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2508.11043v1",
+    "relevance": 1,
+    "text": "Dyadically resolving trinomials for fast modular arithmetic Residue number systems based on pairwise relatively prime moduli are a powerful tool for accelerating integer computations via the Chinese Remainder Theorem. We study a structured family of moduli of the form $2^n - 2^k + 1$, originally pro"
+   },
+   {
+    "source": "arxiv",
+    "title": "Supersingular reduction and strongly special intersections in powers of the modular curve",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2605.00766v2",
+    "relevance": 1,
+    "text": "Supersingular reduction and strongly special intersections in powers of the modular curve We show that Lang--Trotter-type sparsity for simultaneous supersingular reduction of pairs of elliptic curves provides a new arithmetic input for unlikely intersections in powers of the modular curve. Assuming "
+   },
+   {
+    "source": "arxiv",
+    "title": "On symmetric power L-invariants of Iwahori level Hilbert modular forms",
+    "year": "2013",
+    "url": "http://arxiv.org/abs/1310.6244v1",
+    "relevance": 1,
+    "text": "On symmetric power L-invariants of Iwahori level Hilbert modular forms We compute the arithmetic L-invariants (of Greenberg-Benois) of twists of symmetric powers of p-adic Galois representations attached to Iwahori level Hilbert modular forms (under some technical conditions). Our method uses the au"
+   },
+   {
+    "source": "arxiv",
+    "title": "New Residue Arithmetic Based Barrett Algorithms, Part I: Modular Integer Computations",
+    "year": "2016",
+    "url": "http://arxiv.org/abs/1602.01551v1",
+    "relevance": 1,
+    "text": "New Residue Arithmetic Based Barrett Algorithms, Part I: Modular Integer Computations In this paper, we derive new computational techniques for residue number systems (RNS) based Barrett algorithm (BA). The focus of the work is an algorithm that carries out the entire computation using only modular "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_families_the_squares_of_a_pascal_row_sum_to_the_central_binomial": {
+  "key": "lean_families_the_squares_of_a_pascal_row_sum_to_the_central_binomial",
+  "file": "families.lean",
+  "name": "the_squares_of_a_pascal_row_sum_to_the_central_binomial",
+  "statementHash": "7064c96f883baf87",
+  "searched": "2026-09-25T15:11:28.626Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic squares pascal central",
+   "openalex": "modular arithmetic squares pascal central",
+   "crossref": "modular arithmetic squares pascal central",
+   "arxiv": "modular AND arithmetic AND squares AND pascal AND central"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_families_the_sums_of_triangular_numbers_are_the_tetrahedral_numbers": {
+  "key": "lean_families_the_sums_of_triangular_numbers_are_the_tetrahedral_numbers",
+  "file": "families.lean",
+  "name": "the_sums_of_triangular_numbers_are_the_tetrahedral_numbers",
+  "statementHash": "f768e88c7f2c3034",
+  "searched": "2026-09-25T15:11:13.560Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic triangular tetrahedral",
+   "openalex": "modular arithmetic triangular tetrahedral",
+   "crossref": "modular arithmetic triangular tetrahedral",
+   "arxiv": "modular AND arithmetic AND triangular AND tetrahedral"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -9724,6 +10216,37 @@
    }
   ],
   "verdict": "CANDIDATES"
+ },
+ "lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula": {
+  "key": "lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula",
+  "file": "families.lean",
+  "name": "there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula",
+  "statementHash": "128c086f405f5b27",
+  "searched": "2026-09-25T15:12:45.389Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "modular arithmetic platonic solids satisfies",
+   "openalex": "modular arithmetic platonic solids satisfies",
+   "crossref": "modular arithmetic platonic solids satisfies",
+   "arxiv": "modular AND arithmetic AND platonic AND solids AND satisfies"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_families_totient_at_prime_powers": {
   "key": "lean_families_totient_at_prime_powers",
