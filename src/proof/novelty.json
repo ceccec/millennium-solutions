@@ -6422,6 +6422,1696 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_domain_nine_folds_to_zero_and_reflects_to_one": {
+  "key": "lean_domain_nine_folds_to_zero_and_reflects_to_one",
+  "file": "domain.lean",
+  "name": "nine_folds_to_zero_and_reflects_to_one",
+  "statementHash": "1a99a966e44a275b",
+  "searched": "2026-09-25T14:49:33.501Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument fact folds reflects",
+   "openalex": "cantor diagonal argument fact folds reflects",
+   "crossref": "cantor diagonal argument fact folds reflects",
+   "arxiv": "cantor AND diagonal AND argument AND fact AND folds"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_domain_the_diagonal_does_not_run_out_at_nine": {
+  "key": "lean_domain_the_diagonal_does_not_run_out_at_nine",
+  "file": "domain.lean",
+  "name": "the_diagonal_does_not_run_out_at_nine",
+  "statementHash": "dc6923149425219a",
+  "searched": "2026-09-25T14:50:53.362Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument fact",
+   "openalex": "cantor diagonal argument fact",
+   "crossref": "cantor diagonal argument fact",
+   "arxiv": "cantor AND diagonal AND argument AND fact"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Diagonalization Games",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2301.01924v3",
+    "relevance": 1,
+    "text": "Diagonalization Games We study several variants of a combinatorial game which is based on Cantor's diagonal argument. The game is between two players called Kronecker and Cantor. The names of the players are motivated by the known fact that Leopold Kronecker did not appreciate Georg Cantor's argumen"
+   },
+   {
+    "source": "arxiv",
+    "title": "Debunking Cantor: New Set-Theoretical and Logical Considerations",
+    "year": "2023",
+    "url": "http://arxiv.org/abs/2305.08855v1",
+    "relevance": 1,
+    "text": "Debunking Cantor: New Set-Theoretical and Logical Considerations For more than a century, Cantor's theory of transfinite numbers has played a pivotal role in set theory, with ramifications that extend to many areas of mathematics. This article extends earlier findings with a fresh look at the critic"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_domain_the_diagonal_escapes_nine_over_nine_and_eleven_over_eleven": {
+  "key": "lean_domain_the_diagonal_escapes_nine_over_nine_and_eleven_over_eleven",
+  "file": "domain.lean",
+  "name": "the_diagonal_escapes_nine_over_nine_and_eleven_over_eleven",
+  "statementHash": "fe2cb04f03d1e914",
+  "searched": "2026-09-25T14:50:00.482Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument fact escapes eleven",
+   "openalex": "cantor diagonal argument fact escapes eleven",
+   "crossref": "cantor diagonal argument fact escapes eleven",
+   "arxiv": "cantor AND diagonal AND argument AND fact AND escapes"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_domain_the_diagonal_fails_on_a_list_one_longer_than_its_domain": {
+  "key": "lean_domain_the_diagonal_fails_on_a_list_one_longer_than_its_domain",
+  "file": "domain.lean",
+  "name": "the_diagonal_fails_on_a_list_one_longer_than_its_domain",
+  "statementHash": "9ba54fad071f2bb3",
+  "searched": "2026-09-25T14:50:19.073Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument fact fails longer domain",
+   "openalex": "cantor diagonal argument fact fails longer domain",
+   "crossref": "cantor diagonal argument fact fails longer domain",
+   "arxiv": "cantor AND diagonal AND argument AND fact AND fails"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_domain_the_eleven_positions_are_a_walk_of_nine_residues_that_returns": {
+  "key": "lean_domain_the_eleven_positions_are_a_walk_of_nine_residues_that_returns",
+  "file": "domain.lean",
+  "name": "the_eleven_positions_are_a_walk_of_nine_residues_that_returns",
+  "statementHash": "6a4fefdd046858ac",
+  "searched": "2026-09-25T14:50:42.715Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument fact eleven positions residues",
+   "openalex": "cantor diagonal argument fact eleven positions residues",
+   "crossref": "cantor diagonal argument fact eleven positions residues",
+   "arxiv": "cantor AND diagonal AND argument AND fact AND eleven"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_domain_the_reach_of_the_diagonal_is_the_length_of_its_domain": {
+  "key": "lean_domain_the_reach_of_the_diagonal_is_the_length_of_its_domain",
+  "file": "domain.lean",
+  "name": "the_reach_of_the_diagonal_is_the_length_of_its_domain",
+  "statementHash": "1045837eb35de95e",
+  "searched": "2026-09-25T14:50:32.189Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument fact reach length domain",
+   "openalex": "cantor diagonal argument fact reach length domain",
+   "crossref": "cantor diagonal argument fact reach length domain",
+   "arxiv": "cantor AND diagonal AND argument AND fact AND reach"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_domain_the_sequence_exceeds_the_residues_by_the_fold_and_the_return": {
+  "key": "lean_domain_the_sequence_exceeds_the_residues_by_the_fold_and_the_return",
+  "file": "domain.lean",
+  "name": "the_sequence_exceeds_the_residues_by_the_fold_and_the_return",
+  "statementHash": "7ba0200079446427",
+  "searched": "2026-09-25T14:49:48.151Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument fact sequence exceeds residues",
+   "openalex": "cantor diagonal argument fact sequence exceeds residues",
+   "crossref": "cantor diagonal argument fact sequence exceeds residues",
+   "arxiv": "cantor AND diagonal AND argument AND fact AND sequence"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_domain_the_sequence_is_eleven_positions_that_return_to_one": {
+  "key": "lean_domain_the_sequence_is_eleven_positions_that_return_to_one",
+  "file": "domain.lean",
+  "name": "the_sequence_is_eleven_positions_that_return_to_one",
+  "statementHash": "20932073cfb65c74",
+  "searched": "2026-09-25T14:49:17.966Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cantor diagonal argument fact sequence eleven positions",
+   "openalex": "cantor diagonal argument fact sequence eleven positions",
+   "crossref": "cantor diagonal argument fact sequence eleven positions",
+   "arxiv": "cantor AND diagonal AND argument AND fact AND sequence"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour": {
+  "key": "lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour",
+  "file": "elementary.lean",
+  "name": "a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour",
+  "statementHash": "ebc60088a4c6b7bd",
+  "searched": "2026-09-25T14:57:02.715Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game knight leaps flips",
+   "openalex": "combinatorial game knight leaps flips",
+   "crossref": "combinatorial game knight leaps flips",
+   "arxiv": "combinatorial AND game AND knight AND leaps AND flips"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_a_product_of_consecutive_numbers_is_even": {
+  "key": "lean_elementary_a_product_of_consecutive_numbers_is_even",
+  "file": "elementary.lean",
+  "name": "a_product_of_consecutive_numbers_is_even",
+  "statementHash": "4e3be9e6a69d409d",
+  "searched": "2026-09-25T14:58:33.912Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game product consecutive",
+   "openalex": "combinatorial game product consecutive",
+   "crossref": "combinatorial game product consecutive",
+   "arxiv": "combinatorial AND game AND product AND consecutive"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four": {
+  "key": "lean_elementary_an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four",
+  "file": "elementary.lean",
+  "name": "an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four",
+  "statementHash": "694dfc818898ee10",
+  "searched": "2026-09-25T14:54:05.385Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game prime squares",
+   "openalex": "combinatorial game prime squares",
+   "crossref": "combinatorial game prime squares",
+   "arxiv": "combinatorial AND game AND prime AND squares"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "An existence theorem for cyclic triplewhist tournaments",
+    "year": "1995",
+    "url": "https://zbmath.org/743994",
+    "relevance": 0.75,
+    "text": "An existence theorem for cyclic triplewhist tournaments [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"jungnickel.dieter\",\"reviewer_id\":\"4908\",\"name\":\"Dieter Jungnickel\",\"sign\":\"D.Jungnickel (Augsburg)\"},\"text\":\"A triplewhist tournament on \\\\(v= 4m+ 1\\\\) players is a schedule of games \\\\((a,b,c,d"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant": {
+  "key": "lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant",
+  "file": "elementary.lean",
+  "name": "consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant",
+  "statementHash": "edca8f50784c8496",
+  "searched": "2026-09-25T14:56:20.558Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game consecutive farey neighbours",
+   "openalex": "combinatorial game consecutive farey neighbours",
+   "crossref": "combinatorial game consecutive farey neighbours",
+   "arxiv": "combinatorial AND game AND consecutive AND farey AND neighbours"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square": {
+  "key": "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square",
+  "file": "elementary.lean",
+  "name": "eight_times_a_triangular_number_plus_one_is_an_odd_square",
+  "statementHash": "dcee456a1949bf28",
+  "searched": "2026-09-25T14:55:12.476Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game times triangular square",
+   "openalex": "combinatorial game times triangular square",
+   "crossref": "combinatorial game times triangular square",
+   "arxiv": "combinatorial AND game AND times AND triangular AND square"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n": {
+  "key": "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n",
+  "file": "elementary.lean",
+  "name": "eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n",
+  "statementHash": "8adfdf6d4daf1587",
+  "searched": "2026-09-25T14:58:43.653Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game times triangular square",
+   "openalex": "combinatorial game times triangular square",
+   "crossref": "combinatorial game times triangular square",
+   "arxiv": "combinatorial AND game AND times AND triangular AND square"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven": {
+  "key": "lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
+  "file": "elementary.lean",
+  "name": "euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
+  "statementHash": "e2b52a70d15268c4",
+  "searched": "2026-09-25T14:51:19.401Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 2,3,5,7": "2,3,5,7",
+   "zbmath": "combinatorial game euclids perfect mersenne",
+   "openalex": "combinatorial game euclids perfect mersenne",
+   "crossref": "combinatorial game euclids perfect mersenne",
+   "arxiv": "combinatorial AND game AND euclids AND perfect AND mersenne"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A000040",
+    "name": "The prime numbers.",
+    "query": "2,3,5,7"
+   },
+   {
+    "a": "A000043",
+    "name": "Mersenne exponents: primes p such that 2^p - 1 is prime. Then 2^p - 1 is called a Mersenne prime.",
+    "query": "2,3,5,7"
+   },
+   {
+    "a": "A002385",
+    "name": "Palindromic primes: prime numbers whose decimal expansion is a palindrome.",
+    "query": "2,3,5,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_every_odd_square_one_more_than_eight_times_m_makes_m_triangular": {
+  "key": "lean_elementary_every_odd_square_one_more_than_eight_times_m_makes_m_triangular",
+  "file": "elementary.lean",
+  "name": "every_odd_square_one_more_than_eight_times_m_makes_m_triangular",
+  "statementHash": "18d4612e3e4a35ba",
+  "searched": "2026-09-25T14:59:19.772Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game square times makes",
+   "openalex": "combinatorial game square times makes",
+   "crossref": "combinatorial game square times makes",
+   "arxiv": "combinatorial AND game AND square AND times AND makes"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_half_a_product_of_consecutive_numbers_multiplies_back_for_every_n": {
+  "key": "lean_elementary_half_a_product_of_consecutive_numbers_multiplies_back_for_every_n",
+  "file": "elementary.lean",
+  "name": "half_a_product_of_consecutive_numbers_multiplies_back_for_every_n",
+  "statementHash": "1e29509cf190350b",
+  "searched": "2026-09-25T14:59:40.311Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game product consecutive multiplies",
+   "openalex": "combinatorial game product consecutive multiplies",
+   "crossref": "combinatorial game product consecutive multiplies",
+   "arxiv": "combinatorial AND game AND product AND consecutive AND multiplies"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect": {
+  "key": "lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect",
+  "file": "elementary.lean",
+  "name": "the_amicable_pair_is_mutual_and_neither_is_perfect",
+  "statementHash": "c0c3d6a65bafb00b",
+  "searched": "2026-09-25T14:51:43.932Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game amicable mutual neither",
+   "openalex": "combinatorial game amicable mutual neither",
+   "crossref": "combinatorial game amicable mutual neither",
+   "arxiv": "combinatorial AND game AND amicable AND mutual AND neither"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_area_of_an_integer_right_triangle_is_a_multiple_of_six": {
+  "key": "lean_elementary_the_area_of_an_integer_right_triangle_is_a_multiple_of_six",
+  "file": "elementary.lean",
+  "name": "the_area_of_an_integer_right_triangle_is_a_multiple_of_six",
+  "statementHash": "a4c304aaf1f6eee0",
+  "searched": "2026-09-25T14:54:17.479Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game integer right triangle",
+   "openalex": "combinatorial game integer right triangle",
+   "crossref": "combinatorial game integer right triangle",
+   "arxiv": "combinatorial AND game AND integer AND right AND triangle"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_count_of_primitive_roots_is_phi_of_phi": {
+  "key": "lean_elementary_the_count_of_primitive_roots_is_phi_of_phi",
+  "file": "elementary.lean",
+  "name": "the_count_of_primitive_roots_is_phi_of_phi",
+  "statementHash": "9c7f02a82c8b2222",
+  "searched": "2026-09-25T14:52:59.340Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game count primitive roots",
+   "openalex": "combinatorial game count primitive roots",
+   "crossref": "combinatorial game count primitive roots",
+   "arxiv": "combinatorial AND game AND count AND primitive AND roots"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_eisenstein_units_are_exactly_six": {
+  "key": "lean_elementary_the_eisenstein_units_are_exactly_six",
+  "file": "elementary.lean",
+  "name": "the_eisenstein_units_are_exactly_six",
+  "statementHash": "c563ed18697d65e7",
+  "searched": "2026-09-25T14:52:07.591Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game eisenstein",
+   "openalex": "combinatorial game eisenstein",
+   "crossref": "combinatorial game eisenstein",
+   "arxiv": "combinatorial AND game AND eisenstein"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n": {
+  "key": "lean_elementary_the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n",
+  "file": "elementary.lean",
+  "name": "the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n",
+  "statementHash": "25ffc766d4c051ad",
+  "searched": "2026-09-25T14:59:29.915Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game fibonaccis fifth neighbouring",
+   "openalex": "combinatorial game fibonaccis fifth neighbouring",
+   "crossref": "combinatorial game fibonaccis fifth neighbouring",
+   "arxiv": "combinatorial AND game AND fibonaccis AND fifth AND neighbouring"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_golden_beatty_identity_holds_across_the_range": {
+  "key": "lean_elementary_the_golden_beatty_identity_holds_across_the_range",
+  "file": "elementary.lean",
+  "name": "the_golden_beatty_identity_holds_across_the_range",
+  "statementHash": "d0e452265ed2bdc8",
+  "searched": "2026-09-25T14:57:13.946Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game golden beatty across",
+   "openalex": "combinatorial game golden beatty across",
+   "crossref": "combinatorial game golden beatty across",
+   "arxiv": "combinatorial AND game AND golden AND beatty AND across"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_elementary_the_hockey_stick_identity_holds_across_the_range": {
+  "key": "lean_elementary_the_hockey_stick_identity_holds_across_the_range",
+  "file": "elementary.lean",
+  "name": "the_hockey_stick_identity_holds_across_the_range",
+  "statementHash": "5edd1f77a99ab0cc",
+  "searched": "2026-09-25T14:54:42.617Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game hockey stick across",
+   "openalex": "combinatorial game hockey stick across",
+   "crossref": "combinatorial game hockey stick across",
+   "arxiv": "combinatorial AND game AND hockey AND stick AND across"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles": {
+  "key": "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles",
+  "file": "elementary.lean",
+  "name": "the_interior_and_exterior_angles_are_n_straight_angles",
+  "statementHash": "a188552dca706ffd",
+  "searched": "2026-09-25T14:56:52.115Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game interior exterior angles",
+   "openalex": "combinatorial game interior exterior angles",
+   "crossref": "combinatorial game interior exterior angles",
+   "arxiv": "combinatorial AND game AND interior AND exterior AND angles"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles_for_every_n": {
+  "key": "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles_for_every_n",
+  "file": "elementary.lean",
+  "name": "the_interior_and_exterior_angles_are_n_straight_angles_for_every_n",
+  "statementHash": "97c81c4ff1f324b1",
+  "searched": "2026-09-25T14:58:24.154Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game interior exterior angles",
+   "openalex": "combinatorial game interior exterior angles",
+   "crossref": "combinatorial game interior exterior angles",
+   "arxiv": "combinatorial AND game AND interior AND exterior AND angles"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution": {
+  "key": "lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution",
+  "file": "elementary.lean",
+  "name": "the_inverse_map_permutes_the_units_and_is_an_involution",
+  "statementHash": "3681b40f3838c276",
+  "searched": "2026-09-25T14:54:30.126Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game inverse permutes involution",
+   "openalex": "combinatorial game inverse permutes involution",
+   "crossref": "combinatorial game inverse permutes involution",
+   "arxiv": "combinatorial AND game AND inverse AND permutes AND involution"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis": {
+  "key": "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis",
+  "file": "elementary.lean",
+  "name": "the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis",
+  "statementHash": "898d8b98bee4741d",
+  "searched": "2026-09-25T14:55:46.353Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game lucas neighbouring fibonaccis",
+   "openalex": "combinatorial game lucas neighbouring fibonaccis",
+   "crossref": "combinatorial game lucas neighbouring fibonaccis",
+   "arxiv": "combinatorial AND game AND lucas AND neighbouring AND fibonaccis"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n": {
+  "key": "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n",
+  "file": "elementary.lean",
+  "name": "the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n",
+  "statementHash": "a3cc510e58d8fc47",
+  "searched": "2026-09-25T14:58:53.366Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game lucas neighbouring fibonaccis",
+   "openalex": "combinatorial game lucas neighbouring fibonaccis",
+   "crossref": "combinatorial game lucas neighbouring fibonaccis",
+   "arxiv": "combinatorial AND game AND lucas AND neighbouring AND fibonaccis"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values": {
+  "key": "lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values",
+  "file": "elementary.lean",
+  "name": "the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values",
+  "statementHash": "7478592bb55dc7bb",
+  "searched": "2026-09-25T14:55:35.041Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game lucas follow their",
+   "openalex": "combinatorial game lucas follow their",
+   "crossref": "combinatorial game lucas follow their",
+   "arxiv": "combinatorial AND game AND lucas AND follow AND their"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_mersenne_hypothesis_is_real_at_eleven": {
+  "key": "lean_elementary_the_mersenne_hypothesis_is_real_at_eleven",
+  "file": "elementary.lean",
+  "name": "the_mersenne_hypothesis_is_real_at_eleven",
+  "statementHash": "f63a32b80680db7e",
+  "searched": "2026-09-25T14:51:33.285Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game mersenne eleven",
+   "openalex": "combinatorial game mersenne eleven",
+   "crossref": "combinatorial game mersenne eleven",
+   "arxiv": "combinatorial AND game AND mersenne AND eleven"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square": {
+  "key": "lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square",
+  "file": "elementary.lean",
+  "name": "the_multiplication_table_of_the_z9_units_is_a_latin_square",
+  "statementHash": "ae96026d19ce33e7",
+  "searched": "2026-09-25T14:52:49.047Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game multiplication table latin",
+   "openalex": "combinatorial game multiplication table latin",
+   "crossref": "combinatorial game multiplication table latin",
+   "arxiv": "combinatorial AND game AND multiplication AND table AND latin"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum": {
+  "key": "lean_elementary_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
+  "file": "elementary.lean",
+  "name": "the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
+  "statementHash": "f9b099a25467e1c9",
+  "searched": "2026-09-25T14:53:09.635Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game spectrum realises gauss",
+   "openalex": "combinatorial game spectrum realises gauss",
+   "crossref": "combinatorial game spectrum realises gauss",
+   "arxiv": "combinatorial AND game AND spectrum AND realises AND gauss"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count": {
+  "key": "lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count",
+  "file": "elementary.lean",
+  "name": "the_partition_and_bell_numbers_count_what_they_claim_to_count",
+  "statementHash": "29cb71ca89cc6cfb",
+  "searched": "2026-09-25T14:58:01.901Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game partition count claim",
+   "openalex": "combinatorial game partition count claim",
+   "crossref": "combinatorial game partition count claim",
+   "arxiv": "combinatorial AND game AND partition AND count AND claim"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values": {
+  "key": "lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values",
+  "file": "elementary.lean",
+  "name": "the_pell_numbers_follow_their_recurrence_and_reach_their_named_values",
+  "statementHash": "73615f0cb9ec75f5",
+  "searched": "2026-09-25T14:56:05.193Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game follow their recurrence",
+   "openalex": "combinatorial game follow their recurrence",
+   "crossref": "combinatorial game follow their recurrence",
+   "arxiv": "combinatorial AND game AND follow AND their AND recurrence"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 404",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_elementary_the_polygon_side_count_reads_back_from_its_angle_sum": {
+  "key": "lean_elementary_the_polygon_side_count_reads_back_from_its_angle_sum",
+  "file": "elementary.lean",
+  "name": "the_polygon_side_count_reads_back_from_its_angle_sum",
+  "statementHash": "dc57047080b37a07",
+  "searched": "2026-09-25T14:59:03.261Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game polygon count reads",
+   "openalex": "combinatorial game polygon count reads",
+   "crossref": "combinatorial game polygon count reads",
+   "arxiv": "combinatorial AND game AND polygon AND count AND reads"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic": {
+  "key": "lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic",
+  "file": "elementary.lean",
+  "name": "the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic",
+  "statementHash": "f404b0b169c7fdd9",
+  "searched": "2026-09-25T14:55:24.886Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game powers isomorphic",
+   "openalex": "combinatorial game powers isomorphic",
+   "crossref": "combinatorial game powers isomorphic",
+   "arxiv": "combinatorial AND game AND powers AND isomorphic"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five": {
+  "key": "lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five",
+  "file": "elementary.lean",
+  "name": "the_primitive_roots_mod_nine_are_exactly_two_and_five",
+  "statementHash": "3662d5207d8694c5",
+  "searched": "2026-09-25T14:51:57.565Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game primitive roots",
+   "openalex": "combinatorial game primitive roots",
+   "crossref": "combinatorial game primitive roots",
+   "arxiv": "combinatorial AND game AND primitive AND roots"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "An existence theorem for cyclic triplewhist tournaments",
+    "year": "1995",
+    "url": "https://zbmath.org/743994",
+    "relevance": 0.75,
+    "text": "An existence theorem for cyclic triplewhist tournaments [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"jungnickel.dieter\",\"reviewer_id\":\"4908\",\"name\":\"Dieter Jungnickel\",\"sign\":\"D.Jungnickel (Augsburg)\"},\"text\":\"A triplewhist tournament on \\\\(v= 4m+ 1\\\\) players is a schedule of games \\\\((a,b,c,d"
+   },
+   {
+    "source": "zbmath",
+    "title": "\\(Z\\)-cyclic triplewhist tournaments when the number of players involves primes of the form \\(8u+5\\)",
+    "year": "1994",
+    "url": "https://zbmath.org/751210",
+    "relevance": 0.75,
+    "text": "\\(Z\\)-cyclic triplewhist tournaments when the number of players involves primes of the form \\(8u+5\\) [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"brand.neal\",\"reviewer_id\":\"6029\",\"name\":\"N. Brand\",\"sign\":\"N.Brand (Denton)\"},\"text\":\"A whist tournament for \\\\(4m+ 1\\\\) players is a tournament cons"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_elementary_the_product_of_the_units_is_minus_one_exactly_where_gauss_says": {
+  "key": "lean_elementary_the_product_of_the_units_is_minus_one_exactly_where_gauss_says",
+  "file": "elementary.lean",
+  "name": "the_product_of_the_units_is_minus_one_exactly_where_gauss_says",
+  "statementHash": "830b187306054c85",
+  "searched": "2026-09-25T14:53:20.157Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game product minus gauss",
+   "openalex": "combinatorial game product minus gauss",
+   "crossref": "combinatorial game product minus gauss",
+   "arxiv": "combinatorial AND game AND product AND minus AND gauss"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four": {
+  "key": "lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four",
+  "file": "elementary.lean",
+  "name": "the_subtraction_game_loses_exactly_at_the_multiples_of_four",
+  "statementHash": "23ede4c09b47832d",
+  "searched": "2026-09-25T14:52:17.448Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game subtraction loses multiples",
+   "openalex": "combinatorial game subtraction loses multiples",
+   "crossref": "combinatorial game subtraction loses multiples",
+   "arxiv": "combinatorial AND game AND subtraction AND loses AND multiples"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra": {
+  "key": "lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra",
+  "file": "elementary.lean",
+  "name": "the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra",
+  "statementHash": "60089fce1aebe3c0",
+  "searched": "2026-09-25T14:58:12.802Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game graph complete bipartite",
+   "openalex": "combinatorial game graph complete bipartite",
+   "crossref": "combinatorial game graph complete bipartite",
+   "arxiv": "combinatorial AND game AND graph AND complete AND bipartite"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Totally Unimodular Congestion Games",
+    "year": "2015",
+    "url": "http://arxiv.org/abs/1511.02784v2",
+    "relevance": 0.7142857142857143,
+    "text": "Totally Unimodular Congestion Games We investigate a new class of congestion games, called Totally Unimodular (TU) Congestion Games, where the players' strategies are binary vectors inside polyhedra defined by totally unimodular constraint matrices. Network congestion games belong to this class. In "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_elementary_the_units_are_three_regular_under_doubling_halving_and_reflection": {
+  "key": "lean_elementary_the_units_are_three_regular_under_doubling_halving_and_reflection",
+  "file": "elementary.lean",
+  "name": "the_units_are_three_regular_under_doubling_halving_and_reflection",
+  "statementHash": "501ec91f72ce7039",
+  "searched": "2026-09-25T14:56:30.835Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game regular doubling halving",
+   "openalex": "combinatorial game regular doubling halving",
+   "crossref": "combinatorial game regular doubling halving",
+   "arxiv": "combinatorial AND game AND regular AND doubling AND halving"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine": {
+  "key": "lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine",
+  "file": "elementary.lean",
+  "name": "the_units_of_z9_form_three_pairs_summing_to_nine",
+  "statementHash": "1f532c01562f52bb",
+  "searched": "2026-09-25T14:52:27.567Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game pairs summing",
+   "openalex": "combinatorial game pairs summing",
+   "crossref": "combinatorial game pairs summing",
+   "arxiv": "combinatorial AND game AND pairs AND summing"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Nimber-Preserving Reductions and Homomorphic Sprague-Grundy Game Encodings",
+    "year": "2021",
+    "url": "http://arxiv.org/abs/2109.05622v2",
+    "relevance": 0.75,
+    "text": "Nimber-Preserving Reductions and Homomorphic Sprague-Grundy Game Encodings The concept of nimbers--a.k.a. Grundy-values or nim-values--is fundamental to combinatorial game theory. Nimbers provide a complete characterization of strategic interactions among impartial games in their disjunctive sums as"
+   },
+   {
+    "source": "arxiv",
+    "title": "The Ordered Zeckendorf Game",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2508.20222v2",
+    "relevance": 0.75,
+    "text": "The Ordered Zeckendorf Game We introduce and analyze the ordered Zeckendorf game, a novel combinatorial two-player game inspired by Zeckendorf's Theorem, which guarantees a unique decomposition of every positive integer as a sum of non-consecutive Fibonacci numbers. Building on the original Zeckendo"
+   },
+   {
+    "source": "arxiv",
+    "title": "On the number of $2$-dice games with prime power dice-size",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2608.27983v1",
+    "relevance": 0.75,
+    "text": "On the number of $2$-dice games with prime power dice-size We have two dices which have $n$ labels. We want to assign a pair of labelings with positive integers to them such that the sums of the labels on them are the same and have the same distribution as at the standard labeling. We call such a pa"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_elementary_the_whole_ring_is_not_regular_and_the_triad_is_why": {
+  "key": "lean_elementary_the_whole_ring_is_not_regular_and_the_triad_is_why",
+  "file": "elementary.lean",
+  "name": "the_whole_ring_is_not_regular_and_the_triad_is_why",
+  "statementHash": "1d4d43d4cb1e6660",
+  "searched": "2026-09-25T14:56:41.473Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game whole regular triad",
+   "openalex": "combinatorial game whole regular triad",
+   "crossref": "combinatorial game whole regular triad",
+   "arxiv": "combinatorial AND game AND whole AND regular AND triad"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_the_wythoff_sequences_partition_the_integers": {
+  "key": "lean_elementary_the_wythoff_sequences_partition_the_integers",
+  "file": "elementary.lean",
+  "name": "the_wythoff_sequences_partition_the_integers",
+  "statementHash": "ed6aeed129774a74",
+  "searched": "2026-09-25T14:57:49.956Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game wythoff sequences partition",
+   "openalex": "combinatorial game wythoff sequences partition",
+   "crossref": "combinatorial game wythoff sequences partition",
+   "arxiv": "combinatorial AND game AND wythoff AND sequences AND partition"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "The Wythoff difference array",
+    "year": "2009",
+    "url": "https://zbmath.org/6032407",
+    "relevance": 1,
+    "text": "The Wythoff difference array [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"dhand.vivek\",\"reviewer_id\":\"13619\",\"name\":\"Vivek Dhand\",\"sign\":\"Vivek Dhand (Boulder)\"},\"text\":\"The Wythoff game is a two-player game where, given a pair of positive integers, the players take turns choosing a positive in"
+   },
+   {
+    "source": "zbmath",
+    "title": "Beating your fractional Beatty game opponent and: what's the question to your answer?",
+    "year": "2013",
+    "url": "https://zbmath.org/6204640",
+    "relevance": 0.6666666666666666,
+    "text": "Beating your fractional Beatty game opponent and: what's the question to your answer? [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"rigo.michel\",\"reviewer_id\":\"14250\",\"name\":\"Michel Rigo\",\"sign\":\"Michel Rigo (Liège)\"},\"text\":\"In this paper, two homogenous Beatty sequences are considered:\\n\\n \\\\("
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_elementary_the_z9_unit_group_splits_as_reflection_times_trinity": {
+  "key": "lean_elementary_the_z9_unit_group_splits_as_reflection_times_trinity",
+  "file": "elementary.lean",
+  "name": "the_z9_unit_group_splits_as_reflection_times_trinity",
+  "statementHash": "3df4c8a55a6f09d8",
+  "searched": "2026-09-25T14:53:42.910Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game splits reflection times",
+   "openalex": "combinatorial game splits reflection times",
+   "crossref": "combinatorial game splits reflection times",
+   "arxiv": "combinatorial AND game AND splits AND reflection AND times"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_elementary_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one": {
+  "key": "lean_elementary_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one",
+  "file": "elementary.lean",
+  "name": "three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one",
+  "statementHash": "462de5676c441128",
+  "searched": "2026-09-25T14:53:30.462Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game primitive",
+   "openalex": "combinatorial game primitive",
+   "crossref": "combinatorial game primitive",
+   "arxiv": "combinatorial AND game AND primitive"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "\\(Z\\)-cyclic triplewhist tournaments when the number of players involves primes of the form \\(8u+5\\)",
+    "year": "1994",
+    "url": "https://zbmath.org/751210",
+    "relevance": 0.6666666666666666,
+    "text": "\\(Z\\)-cyclic triplewhist tournaments when the number of players involves primes of the form \\(8u+5\\) [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"brand.neal\",\"reviewer_id\":\"6029\",\"name\":\"N. Brand\",\"sign\":\"N.Brand (Denton)\"},\"text\":\"A whist tournament for \\\\(4m+ 1\\\\) players is a tournament cons"
+   },
+   {
+    "source": "zbmath",
+    "title": "An existence theorem for cyclic triplewhist tournaments",
+    "year": "1995",
+    "url": "https://zbmath.org/743994",
+    "relevance": 0.6666666666666666,
+    "text": "An existence theorem for cyclic triplewhist tournaments [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"jungnickel.dieter\",\"reviewer_id\":\"4908\",\"name\":\"Dieter Jungnickel\",\"sign\":\"D.Jungnickel (Augsburg)\"},\"text\":\"A triplewhist tournament on \\\\(v= 4m+ 1\\\\) players is a schedule of games \\\\((a,b,c,d"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_elementary_three_is_the_only_prime_one_less_than_a_square_in_this_range": {
+  "key": "lean_elementary_three_is_the_only_prime_one_less_than_a_square_in_this_range",
+  "file": "elementary.lean",
+  "name": "three_is_the_only_prime_one_less_than_a_square_in_this_range",
+  "statementHash": "2a2f1a10919ce1a3",
+  "searched": "2026-09-25T14:55:01.060Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "combinatorial game prime square",
+   "openalex": "combinatorial game prime square",
+   "crossref": "combinatorial game prime square",
+   "arxiv": "combinatorial AND game AND prime AND square"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Game distinguishing numbers of Cartesian products",
+    "year": "2018",
+    "url": "https://zbmath.org/6905005",
+    "relevance": 0.75,
+    "text": "Game distinguishing numbers of Cartesian products [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: The distinguishing number of a graph \\\\(H\\\\) is a symmetry related graph invariant whose study started two decades ago. The distinguish"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_energy_a_chain_of_efficiencies_can_only_lose": {
+  "key": "lean_energy_a_chain_of_efficiencies_can_only_lose",
+  "file": "energy.lean",
+  "name": "a_chain_of_efficiencies_can_only_lose",
+  "statementHash": "02097610147eda8f",
+  "searched": "2026-09-25T15:00:15.746Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion chain efficiencies",
+   "openalex": "electrochemistry combustion chain efficiencies",
+   "crossref": "electrochemistry combustion chain efficiencies",
+   "arxiv": "electrochemistry AND combustion AND chain AND efficiencies"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_energy_any_yield_below_its_cost_reads_under_the_whole": {
+  "key": "lean_energy_any_yield_below_its_cost_reads_under_the_whole",
+  "file": "energy.lean",
+  "name": "any_yield_below_its_cost_reads_under_the_whole",
+  "statementHash": "30aea54157376e49",
+  "searched": "2026-09-25T14:59:50.480Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "electrochemistry combustion yield below reads",
+   "openalex": "electrochemistry combustion yield below reads",
+   "crossref": "electrochemistry combustion yield below reads",
+   "arxiv": "electrochemistry AND combustion AND yield AND below AND reads"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_flow_navier_stokes_flow_is_bounded_for_every_step": {
   "key": "lean_flow_navier_stokes_flow_is_bounded_for_every_step",
   "file": "flow.lean",

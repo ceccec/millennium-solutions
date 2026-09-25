@@ -104,6 +104,12 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   'uses-mail': 'delivery, not a gate: it mails each lead uses.ts found to legal@psg.bg as an evidence dossier, from rights@uuidna.com through mail.psg.bg by authenticated SMTP — network and the author\'s credentials, so no build chain can run it. It runs weekly after uses.ts in .github/workflows/uses.yml, says NOT CONFIGURED when the SMTP secrets are unset, and refuses only when a send fails',
   novelty: 'discovery, not a gate: it reaches the OEIS, zbMATH Open, OpenAlex, Crossref and arXiv to search the literature for each theorem, and records what was searched and what came back in src/proof/novelty.json — network a build about this tree must not depend on',
   clusters: 'a generator, not a gate: it prepares one publication draft per proven cluster in .zenodo/clusters/ and reaches no network; it refuses only when a joint address fails to bind every receipt, which forensics and the seal already check on every run',
+  // ── MINE, DECIDED RATHER THAN LEFT SILENT ───────────────────────────────────────────────────────────────
+  // leads.ts named these the moment they existed: scripts that REFUSE, that no chain ran, and that nothing
+  // had shown could fail. That is the exact defect scripts/runnable-gate.ts was written to catch in other
+  // people's scripts, committed three waves before these were added. `formulas` and `coils` are wired into
+  // `npm run gates` and controlled in gates-fire. `discoveries` is not, and here is why.
+  discoveries: 'REPORTS by design, like stale-figures: it orders where the next prior-art search should go, and its own output says a rank is not a novelty claim. It refuses only when its signals collapse — every candidate scoring alike, which would mean the queue cannot tell its entries apart — and gating a build on the shape of a work queue would teach closing the queue rather than working it',
   probe: 'the control harness, not a gate: it takes a file, a theorem and a mutation as arguments, so no chain can run it bare; gates-fire holds its control — a mutation that never reaches the theorem must be refused',
 }
 

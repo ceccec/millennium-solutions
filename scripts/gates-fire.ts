@@ -47,6 +47,26 @@ type Control = { gate: string; cmd: string; what: string; file: string; mutate: 
 const PREREQ = 'node scripts/locale-fold.ts'
 
 const CONTROLS: Control[] = [
+  // ── THE TWO I ADDED THIS SESSION, CONTROLLED ───────────────────────────────────────────────────────────
+  // Both refuse when their corpus collapses — a catalogue of nothing and a vocabulary that clusters into
+  // everything or nothing are each a broken reader reporting a clean tree. leads.ts flagged them as
+  // uncontrolled the moment they existed, which is the check working on its author.
+  { gate: 'formulas (empty catalogue)', cmd: 'node scripts/formulas.ts', file: 'src/api/index.ts',
+    what: 'a reader that returns no formulas — a catalogue of nothing, which would publish as an achievement',
+    mutate: (s) => s.replace('export const leanTheorems', 'export const leanTheoremsUnreachable') },
+
+  // discoveries REPORTS rather than gates, and is recorded as such in src/api/gates.ts — but it still
+  // refuses when its signals collapse, and a refusal nobody has shown can fire is a refusal that protects
+  // nothing. Flatten the weights and every candidate scores alike: the queue can no longer tell its own
+  // entries apart, which is the one thing it must never do silently.
+  { gate: 'discoveries (signals collapse)', cmd: 'node scripts/discoveries.ts', file: 'scripts/discoveries.ts',
+    what: 'a queue whose signals all weigh the same, so every candidate ties and the ranking orders nothing',
+    mutate: (s) => s.replace(/score \+= [123]/g, 'score += 0') },
+
+  { gate: 'coils (vocabulary collapse)', cmd: 'node scripts/coils.ts', file: 'scripts/coils.ts',
+    what: 'a vocabulary where every expression computes the same thing, so everything coils and the clustering says nothing',
+    mutate: (s) => s.replace("const sortU = (xs: number[]) =>", "const sortU = (_xs: number[]) => [0] as number[]\nconst __unusedSortU = (xs: number[]) =>") },
+
   // ── THE GATE THAT ASKS WHETHER A GATE CAN START AT ALL. Twenty-one npm scripts named `tsx`, which is in
   //    no dependency list and on no PATH here, so `npm run leads`, `npm run vacuity` and `npm run blind`
   //    all answered "command not found". The underlying gates were fine — the `gates` chain invokes them
