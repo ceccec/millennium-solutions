@@ -22,7 +22,7 @@ title: Challenges
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1226)
+### lean (1153)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -204,91 +204,20 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_merkaba_one_tetrahedron_covers_half_the_units](/theorem/lean_merkaba_one_tetrahedron_covers_half_the_units) — lean merkaba.lean: one_tetrahedron_covers_half_the_units — (units.filter (fun d =&gt; tetA.contains d)).length = 3 ∧ (units.filter (fun d =&gt; tetB.contains d)).length = 3 ∧ units.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c5305e5f-2386…`
 - [lean_merkaba_the_cube_and_the_tetrahedron_count_out](/theorem/lean_merkaba_the_cube_and_the_tetrahedron_count_out) — lean merkaba.lean: the_cube_and_the_tetrahedron_count_out — 2 ^ 3 = 8 ∧ 3 * 2 ^ 2 = 12 ∧ 4 + 4 - 6 = 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `18accb6b-20e6…`
 - [lean_merkaba_stacked_triangles_are_tetrahedral](/theorem/lean_merkaba_stacked_triangles_are_tetrahedral) — lean merkaba.lean: stacked_triangles_are_tetrahedral — (List.range' 1 40).all (fun n =&gt; sumTri n == n * (n + 1) * (n + 2) / 6) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4611383b-7ebe…`
-- [lean_imagined_orbit_is_closed_under_double](/theorem/lean_imagined_orbit_is_closed_under_double) — lean imagined.lean: orbit_is_closed_under_double — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `43137a9a-a239…`
-- [lean_imagined_all_is_closed_under_double](/theorem/lean_imagined_all_is_closed_under_double) — lean imagined.lean: all_is_closed_under_double — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a484e31e-4061…`
-- [lean_imagined_triad_is_closed_under_triple](/theorem/lean_imagined_triad_is_closed_under_triple) — lean imagined.lean: triad_is_closed_under_triple — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8a09c26a-d00f…`
-- [lean_imagined_all_is_closed_under_triple](/theorem/lean_imagined_all_is_closed_under_triple) — lean imagined.lean: all_is_closed_under_triple — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (3 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6721ec81-d9dc…`
-- [lean_imagined_triad_is_closed_under_negate](/theorem/lean_imagined_triad_is_closed_under_negate) — lean imagined.lean: triad_is_closed_under_negate — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5866147f-e850…`
-- [lean_imagined_orbit_is_closed_under_negate](/theorem/lean_imagined_orbit_is_closed_under_negate) — lean imagined.lean: orbit_is_closed_under_negate — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2648891c-b6ac…`
-- [lean_imagined_all_is_closed_under_negate](/theorem/lean_imagined_all_is_closed_under_negate) — lean imagined.lean: all_is_closed_under_negate — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `488239aa-b8c4…`
-- [lean_imagined_units_is_closed_under_square](/theorem/lean_imagined_units_is_closed_under_square) — lean imagined.lean: units_is_closed_under_square — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6d29a3cd-f0c8…`
-- [lean_imagined_orbit_is_closed_under_square](/theorem/lean_imagined_orbit_is_closed_under_square) — lean imagined.lean: orbit_is_closed_under_square — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a001d862-2860…`
-- [lean_imagined_tetA_is_closed_under_square](/theorem/lean_imagined_tetA_is_closed_under_square) — lean imagined.lean: tetA_is_closed_under_square — [1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1af8a50e-a0f9…`
-- [lean_imagined_all_is_closed_under_square](/theorem/lean_imagined_all_is_closed_under_square) — lean imagined.lean: all_is_closed_under_square — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `eb6c5699-9bf8…`
-- [lean_imagined_units_is_closed_under_quintuple](/theorem/lean_imagined_units_is_closed_under_quintuple) — lean imagined.lean: units_is_closed_under_quintuple — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (5 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `23146a0e-4f1a…`
-- [lean_imagined_triad_is_closed_under_quintuple](/theorem/lean_imagined_triad_is_closed_under_quintuple) — lean imagined.lean: triad_is_closed_under_quintuple — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (5 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0c782557-1e79…`
-- [lean_imagined_orbit_is_closed_under_quintuple](/theorem/lean_imagined_orbit_is_closed_under_quintuple) — lean imagined.lean: orbit_is_closed_under_quintuple — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (5 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `36f80355-f5c0…`
-- [lean_imagined_all_is_closed_under_quintuple](/theorem/lean_imagined_all_is_closed_under_quintuple) — lean imagined.lean: all_is_closed_under_quintuple — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (5 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dae19453-3390…`
-- [lean_imagined_quadruple_is_involutive_on_triad](/theorem/lean_imagined_quadruple_is_involutive_on_triad) — lean imagined.lean: quadruple_is_involutive_on_triad — [3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (4 * x)) (m9 (4 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4633b9bd-d5d5…`
-- [lean_imagined_square_is_involutive_on_tetA](/theorem/lean_imagined_square_is_involutive_on_tetA) — lean imagined.lean: square_is_involutive_on_tetA — [1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x * x)) (m9 (d * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e13716ed-0ac5…`
-- [lean_imagined_quintuple_is_involutive_on_triad](/theorem/lean_imagined_quintuple_is_involutive_on_triad) — lean imagined.lean: quintuple_is_involutive_on_triad — [3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (5 * x)) (m9 (5 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `98dcf6c8-a85e…`
-- [lean_imagined_double_carries_orbit_onto_units](/theorem/lean_imagined_double_carries_orbit_onto_units) — lean imagined.lean: double_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (2 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (2 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1fe514e5-9af2…`
-- [lean_imagined_triple_carries_all_onto_triad](/theorem/lean_imagined_triple_carries_all_onto_triad) — lean imagined.lean: triple_carries_all_onto_triad — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `99968f56-31e3…`
-- [lean_imagined_quadruple_carries_units_onto_orbit](/theorem/lean_imagined_quadruple_carries_units_onto_orbit) — lean imagined.lean: quadruple_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (4 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (4 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d37065ab-bac3…`
-- [lean_imagined_quadruple_carries_orbit_onto_units](/theorem/lean_imagined_quadruple_carries_orbit_onto_units) — lean imagined.lean: quadruple_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (4 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a8560589-8c23…`
-- [lean_imagined_negate_carries_orbit_onto_units](/theorem/lean_imagined_negate_carries_orbit_onto_units) — lean imagined.lean: negate_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9785d5df-38fb…`
-- [lean_imagined_negate_carries_tetA_onto_tetB](/theorem/lean_imagined_negate_carries_tetA_onto_tetB) — lean imagined.lean: negate_carries_tetA_onto_tetB — [1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (9 - d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cd1a8234-fa1f…`
-- [lean_imagined_negate_carries_tetB_onto_tetA](/theorem/lean_imagined_negate_carries_tetB_onto_tetA) — lean imagined.lean: negate_carries_tetB_onto_tetA — [2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (9 - d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2d5f2887-07ff…`
-- [lean_imagined_square_carries_units_onto_tetA](/theorem/lean_imagined_square_carries_units_onto_tetA) — lean imagined.lean: square_carries_units_onto_tetA — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (d * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f57e0f22-217a…`
-- [lean_imagined_square_carries_orbit_onto_tetA](/theorem/lean_imagined_square_carries_orbit_onto_tetA) — lean imagined.lean: square_carries_orbit_onto_tetA — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fce1a3af-47fc…`
-- [lean_imagined_square_carries_tetB_onto_tetA](/theorem/lean_imagined_square_carries_tetB_onto_tetA) — lean imagined.lean: square_carries_tetB_onto_tetA — [2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (d * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bebc2b15-1fa2…`
-- [lean_imagined_quintuple_carries_units_onto_orbit](/theorem/lean_imagined_quintuple_carries_units_onto_orbit) — lean imagined.lean: quintuple_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (5 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dadc55f1-9dd3…`
-- [lean_imagined_quintuple_carries_orbit_onto_units](/theorem/lean_imagined_quintuple_carries_orbit_onto_units) — lean imagined.lean: quintuple_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (5 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `65c0d9be-2315…`
-- [lean_imagined_quintuple_carries_tetA_onto_tetB](/theorem/lean_imagined_quintuple_carries_tetA_onto_tetB) — lean imagined.lean: quintuple_carries_tetA_onto_tetB — [1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (5 * d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `083aec67-2d52…`
-- [lean_imagined_quintuple_carries_tetB_onto_tetA](/theorem/lean_imagined_quintuple_carries_tetB_onto_tetA) — lean imagined.lean: quintuple_carries_tetB_onto_tetA — [2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (5 * d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `20e8affd-97c5…`
-- [lean_imagined_triple_collapses_triad_to_one_value](/theorem/lean_imagined_triple_collapses_triad_to_one_value) — lean imagined.lean: triple_collapses_triad_to_one_value — ([3, 6, 0].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b69711cf-680d…`
-- [lean_imagined_triple_collapses_tetA_to_one_value](/theorem/lean_imagined_triple_collapses_tetA_to_one_value) — lean imagined.lean: triple_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `09f1a817-8fcf…`
-- [lean_imagined_triple_collapses_tetB_to_one_value](/theorem/lean_imagined_triple_collapses_tetB_to_one_value) — lean imagined.lean: triple_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `56e120e9-368e…`
-- [lean_imagined_cube_collapses_triad_to_one_value](/theorem/lean_imagined_cube_collapses_triad_to_one_value) — lean imagined.lean: cube_collapses_triad_to_one_value — ([3, 6, 0].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1878b27c-8b5d…`
-- [lean_imagined_cube_collapses_tetA_to_one_value](/theorem/lean_imagined_cube_collapses_tetA_to_one_value) — lean imagined.lean: cube_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `89b479b2-bb01…`
-- [lean_imagined_cube_collapses_tetB_to_one_value](/theorem/lean_imagined_cube_collapses_tetB_to_one_value) — lean imagined.lean: cube_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f0c171ba-5dd3…`
-- [lean_imagined_triad_is_closed_under_sextuple](/theorem/lean_imagined_triad_is_closed_under_sextuple) — lean imagined.lean: triad_is_closed_under_sextuple — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (6 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c6a3004b-4600…`
-- [lean_imagined_all_is_closed_under_sextuple](/theorem/lean_imagined_all_is_closed_under_sextuple) — lean imagined.lean: all_is_closed_under_sextuple — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (6 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `487c1f28-9559…`
-- [lean_imagined_units_is_closed_under_octuple](/theorem/lean_imagined_units_is_closed_under_octuple) — lean imagined.lean: units_is_closed_under_octuple — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a7229156-86a5…`
-- [lean_imagined_triad_is_closed_under_octuple](/theorem/lean_imagined_triad_is_closed_under_octuple) — lean imagined.lean: triad_is_closed_under_octuple — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `03033716-02a9…`
-- [lean_imagined_orbit_is_closed_under_octuple](/theorem/lean_imagined_orbit_is_closed_under_octuple) — lean imagined.lean: orbit_is_closed_under_octuple — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4f278f65-1bde…`
-- [lean_imagined_all_is_closed_under_octuple](/theorem/lean_imagined_all_is_closed_under_octuple) — lean imagined.lean: all_is_closed_under_octuple — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9188cd9f-002a…`
-- [lean_imagined_septuple_is_involutive_on_triad](/theorem/lean_imagined_septuple_is_involutive_on_triad) — lean imagined.lean: septuple_is_involutive_on_triad — [3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (7 * x)) (m9 (7 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `172d9674-4d63…`
-- [lean_imagined_sextuple_carries_all_onto_triad](/theorem/lean_imagined_sextuple_carries_all_onto_triad) — lean imagined.lean: sextuple_carries_all_onto_triad — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [3, 6, 0].contains (m9 (6 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `626b20bb-2221…`
-- [lean_imagined_septuple_carries_units_onto_orbit](/theorem/lean_imagined_septuple_carries_units_onto_orbit) — lean imagined.lean: septuple_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (7 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (7 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a8f55b84-94b6…`
-- [lean_imagined_septuple_carries_orbit_onto_units](/theorem/lean_imagined_septuple_carries_orbit_onto_units) — lean imagined.lean: septuple_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (7 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (7 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8df83d0f-2bed…`
-- [lean_imagined_octuple_carries_units_onto_orbit](/theorem/lean_imagined_octuple_carries_units_onto_orbit) — lean imagined.lean: octuple_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (8 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cee59fa8-fb75…`
-- [lean_imagined_octuple_carries_orbit_onto_units](/theorem/lean_imagined_octuple_carries_orbit_onto_units) — lean imagined.lean: octuple_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (8 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d133706e-bd8c…`
-- [lean_imagined_octuple_carries_tetA_onto_tetB](/theorem/lean_imagined_octuple_carries_tetA_onto_tetB) — lean imagined.lean: octuple_carries_tetA_onto_tetB — [1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (8 * d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dfecc1ef-d81b…`
-- [lean_imagined_octuple_carries_tetB_onto_tetA](/theorem/lean_imagined_octuple_carries_tetB_onto_tetA) — lean imagined.lean: octuple_carries_tetB_onto_tetA — [2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (8 * d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `74ad9bcf-f22c…`
-- [lean_imagined_sextuple_collapses_triad_to_one_value](/theorem/lean_imagined_sextuple_collapses_triad_to_one_value) — lean imagined.lean: sextuple_collapses_triad_to_one_value — ([3, 6, 0].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6c5bf198-bd89…`
-- [lean_imagined_sextuple_collapses_tetA_to_one_value](/theorem/lean_imagined_sextuple_collapses_tetA_to_one_value) — lean imagined.lean: sextuple_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d29da6cf-62b5…`
-- [lean_imagined_sextuple_collapses_tetB_to_one_value](/theorem/lean_imagined_sextuple_collapses_tetB_to_one_value) — lean imagined.lean: sextuple_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ee2a3939-17c8…`
 - [lean_energy_a_chain_of_efficiencies_can_only_lose](/theorem/lean_energy_a_chain_of_efficiencies_can_only_lose) — lean energy.lean: a_chain_of_efficiencies_can_only_lose — (List.range 101).all (fun a =&gt; (List.range 101).all (fun b =&gt; a * b ≤ 100 * a &amp;&amp; a * b ≤ 100 * b)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34cbdadb-77a7…`
 - [lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly](/theorem/lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly) — lean energy.lean: the_gases_are_two_to_one_and_consume_each_other_exactly — 2 * 1 = 2 ∧ (2 * 100 / 3 = 66) ∧ (1 * 100 / 3 = 33) ∧ ¬ (1 * 1 = 2) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4411df61-18c7…`
 - [lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water](/theorem/lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water) — lean energy.lean: mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water — (List.range' 1 100).all (fun n =&gt; 2 * n * mgH2O == 2 * n * mgH2 + n * mgO2) ∧ ¬ ((List.range' 1 100).all (fun n =&gt; n * mgH2O == n * mgH2 + n * mgO2)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `55429cd8-2b19…`
 - [lean_energy_one_litre_split_returns_one_litre_burnt](/theorem/lean_energy_one_litre_split_returns_one_litre_burnt) — lean energy.lean: one_litre_split_returns_one_litre_burnt — 111900 + 888100 = 1000000 ∧ 888100 * 100 / 111900 = 793 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e88c70d6-0123…`
 - [lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen](/theorem/lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen) — lean energy.lean: only_oxy_hydrogen_burns_without_admitting_nitrogen — 7808 * 100 / 2095 = 372 ∧ 0 * 372 = 0 ∧ ¬ (372 = 0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `69997ab3-1d7e…`
 - [lean_energy_the_two_to_one_is_forced_by_the_oxygen](/theorem/lean_energy_the_two_to_one_is_forced_by_the_oxygen) — lean energy.lean: the_two_to_one_is_forced_by_the_oxygen — balances 2 2 1 = true ∧ balances 1 1 1 = false ∧ (((List.range' 1 9).flatMap (fun a =&gt; (List.range' 1 9).flatMap (fun b =&gt; (List.range' 1 9).filter (fun c =&gt; balances a b c)))).length = 4) ∧ balances 4 4 2 = true ∧ balances 6 6 3 = true ∧ b… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `75828bd9-1d34…`
-- [lean_imagined_units_is_closed_under_quadruple](/theorem/lean_imagined_units_is_closed_under_quadruple) — lean imagined.lean: units_is_closed_under_quadruple — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e90978b5-a350…`
-- [lean_imagined_triad_is_closed_under_quadruple](/theorem/lean_imagined_triad_is_closed_under_quadruple) — lean imagined.lean: triad_is_closed_under_quadruple — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6d2f140d-6eff…`
-- [lean_imagined_orbit_is_closed_under_quadruple](/theorem/lean_imagined_orbit_is_closed_under_quadruple) — lean imagined.lean: orbit_is_closed_under_quadruple — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f889d728-465d…`
-- [lean_imagined_tetA_is_closed_under_quadruple](/theorem/lean_imagined_tetA_is_closed_under_quadruple) — lean imagined.lean: tetA_is_closed_under_quadruple — [1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f9075b8c-6548…`
-- [lean_imagined_tetB_is_closed_under_quadruple](/theorem/lean_imagined_tetB_is_closed_under_quadruple) — lean imagined.lean: tetB_is_closed_under_quadruple — [2, 5, 8].all (fun d =&gt; [2, 5, 8].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d15e7f2a-be1e…`
-- [lean_imagined_all_is_closed_under_quadruple](/theorem/lean_imagined_all_is_closed_under_quadruple) — lean imagined.lean: all_is_closed_under_quadruple — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9fdde539-0c75…`
 - [lean_imagined_squares_is_closed_under_quadruple](/theorem/lean_imagined_squares_is_closed_under_quadruple) — lean imagined.lean: squares_is_closed_under_quadruple — [0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `12d7a596-c1f8…`
 - [lean_imagined_cubes_is_closed_under_negate](/theorem/lean_imagined_cubes_is_closed_under_negate) — lean imagined.lean: cubes_is_closed_under_negate — [0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `78ef83db-c595…`
 - [lean_imagined_squares_is_closed_under_square](/theorem/lean_imagined_squares_is_closed_under_square) — lean imagined.lean: squares_is_closed_under_square — [0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `be288202-61e8…`
 - [lean_imagined_cubes_is_closed_under_square](/theorem/lean_imagined_cubes_is_closed_under_square) — lean imagined.lean: cubes_is_closed_under_square — [0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `827d987b-f6c7…`
-- [lean_imagined_units_is_closed_under_septuple](/theorem/lean_imagined_units_is_closed_under_septuple) — lean imagined.lean: units_is_closed_under_septuple — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `33c6b2af-ea05…`
-- [lean_imagined_triad_is_closed_under_septuple](/theorem/lean_imagined_triad_is_closed_under_septuple) — lean imagined.lean: triad_is_closed_under_septuple — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `64ea3fd6-5235…`
-- [lean_imagined_orbit_is_closed_under_septuple](/theorem/lean_imagined_orbit_is_closed_under_septuple) — lean imagined.lean: orbit_is_closed_under_septuple — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7a790873-2c87…`
-- [lean_imagined_tetA_is_closed_under_septuple](/theorem/lean_imagined_tetA_is_closed_under_septuple) — lean imagined.lean: tetA_is_closed_under_septuple — [1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d0845a96-1990…`
-- [lean_imagined_tetB_is_closed_under_septuple](/theorem/lean_imagined_tetB_is_closed_under_septuple) — lean imagined.lean: tetB_is_closed_under_septuple — [2, 5, 8].all (fun d =&gt; [2, 5, 8].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `94ca3492-fc0f…`
-- [lean_imagined_all_is_closed_under_septuple](/theorem/lean_imagined_all_is_closed_under_septuple) — lean imagined.lean: all_is_closed_under_septuple — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `360040f3-1afb…`
 - [lean_imagined_squares_is_closed_under_septuple](/theorem/lean_imagined_squares_is_closed_under_septuple) — lean imagined.lean: squares_is_closed_under_septuple — [0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `929df56e-f860…`
 - [lean_imagined_cubes_is_closed_under_octuple](/theorem/lean_imagined_cubes_is_closed_under_octuple) — lean imagined.lean: cubes_is_closed_under_octuple — [0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `91dcd0db-2571…`
 - [lean_imagined_square_is_involutive_on_squares](/theorem/lean_imagined_square_is_involutive_on_squares) — lean imagined.lean: square_is_involutive_on_squares — [0, 1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x * x)) (m9 (d * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b71b08a8-b238…`
 - [lean_imagined_cube_is_involutive_on_cubes](/theorem/lean_imagined_cube_is_involutive_on_cubes) — lean imagined.lean: cube_is_involutive_on_cubes — [0, 1, 8].all (fun d =&gt; (fun x =&gt; m9 (x * x * x)) (m9 (d * d * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d607231e-ecb2…`
-- [lean_imagined_triple_carries_cubes_onto_triad](/theorem/lean_imagined_triple_carries_cubes_onto_triad) — lean imagined.lean: triple_carries_cubes_onto_triad — [0, 1, 8].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d))) ∧ ([0, 1, 8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `07183390-0375…`
-- [lean_imagined_square_carries_all_onto_squares](/theorem/lean_imagined_square_carries_all_onto_squares) — lean imagined.lean: square_carries_all_onto_squares — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (d * d))).eraseDups.length = 4 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `95bfa2f5-30af…`
-- [lean_imagined_cube_carries_all_onto_cubes](/theorem/lean_imagined_cube_carries_all_onto_cubes) — lean imagined.lean: cube_carries_all_onto_cubes — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0, 1, 8].contains (m9 (d * d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `614b5517-fe8e…`
-- [lean_imagined_sextuple_carries_cubes_onto_triad](/theorem/lean_imagined_sextuple_carries_cubes_onto_triad) — lean imagined.lean: sextuple_carries_cubes_onto_triad — [0, 1, 8].all (fun d =&gt; [3, 6, 0].contains (m9 (6 * d))) ∧ ([0, 1, 8].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8d1758c9-e43d…`
 - [lean_mechanical_relation_digital_root](/theorem/lean_mechanical_relation_digital_root) — lean mechanical.lean: relation_digital_root — DR (78) == 6 &amp;&amp; DR (12) == DR (21) &amp;&amp; [1,2,4,5,7,8].contains (DR (7)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d07323c6-683c…`
 - [lean_mechanical_relation_432_factors](/theorem/lean_mechanical_relation_432_factors) — lean mechanical.lean: relation_432_factors — 432 == 16 * 27 &amp;&amp; 432 == 2 ^ 4 * 3 ^ 3 &amp;&amp; DR (432) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34d3073f-7f81…`
 - [lean_mechanical_fib_trinity_horizon](/theorem/lean_mechanical_fib_trinity_horizon) — lean mechanical.lean: fib_trinity_horizon — DR (3 + 5 + 8) == 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `458420c0-010d…`
@@ -501,8 +430,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_light_travel_and_periods_at_one_return_their_constants](/theorem/lean_light_travel_and_periods_at_one_return_their_constants) — lean light.lean: travel_and_periods_at_one_return_their_constants — travel 1 = 299792458 ∧ periods 1 = 9192631770 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `442f56f7-384d…`
 - [lean_light_the_definitions_are_seven_and_travel_fixes_zero](/theorem/lean_light_the_definitions_are_seven_and_travel_fixes_zero) — lean light.lean: the_definitions_are_seven_and_travel_fixes_zero — defining.length = 7 ∧ travel 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `660422cc-20f7…`
 - [lean_priorart_novelty_is_claimed_of_no_source](/theorem/lean_priorart_novelty_is_claimed_of_no_source) — lean priorart.lean: novelty_is_claimed_of_no_source — (sources.filter novelty).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f7830678-15e8…`
-- [lean_imagined_triad_is_closed_under_double](/theorem/lean_imagined_triad_is_closed_under_double) — lean imagined.lean: triad_is_closed_under_double — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e97a7f4a-5ea2…`
-- [lean_imagined_double_is_involutive_on_triad](/theorem/lean_imagined_double_is_involutive_on_triad) — lean imagined.lean: double_is_involutive_on_triad — [3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (2 * x)) (m9 (2 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2745f785-9f44…`
 - [lean_quantum_the_ghz_x_support_is_exactly_the_even_parity_strings](/theorem/lean_quantum_the_ghz_x_support_is_exactly_the_even_parity_strings) — lean quantum.lean: the_ghz_x_support_is_exactly_the_even_parity_strings — (List.range 8).filter (fun n =&gt; par3 n == 0) = ghzXSupport — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7fb1069f-54b2…`
 - [lean_quantum_it_is_half_of_the_eight](/theorem/lean_quantum_it_is_half_of_the_eight) — lean quantum.lean: it_is_half_of_the_eight — ghzXSupport.length = 4 ∧ (List.range 8).length = 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8c2ae28f-cbb1…`
 - [lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does](/theorem/lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does) — lean quantum.lean: a_classical_mixture_reaches_the_parity_ghz_never_does — ((List.range 8).filter (fun n =&gt; par3 n == 1)).length = 4 ∧ ((List.range 8).filter (fun n =&gt; par3 n == 1)).all (fun n =&gt; ¬ ghzXSupport.contains n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1e0393b3-351a…`
@@ -1442,13 +1369,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 
 
-## Revoked — 1521 entries that no longer stand
+## Revoked — 1594 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
 - **1011** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
-- **35** — orphaned: the theorem this key was sealed from is no longer in src/proof
+- **108** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
 - **7** — renamed to what it decides (2026-09-18, by the author's order)
@@ -1503,7 +1430,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 …and 485 more.
 
-<details><summary>List all 1521 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1594 withdrawn keys — nothing proves these</summary>
 
 - ~~`qr_u7`~~  ·  `2a422f9b-761a…`
 - ~~`powinv_k5`~~  ·  `8e327990-c88f…`
@@ -2990,12 +2917,83 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`lean_millenniumfloor_hodge_span_is_the_units`~~  ·  `dd0efc5b-a2ff…`
 - ~~`lean_millenniumfloor_birch_swinnerton_dyer_vanishing`~~  ·  `57ed1964-529c…`
 - ~~`lean_millenniumfloor_poincare_single_closed_loop`~~  ·  `7b9dd11f-6b04…`
+- ~~`lean_imagined_orbit_is_closed_under_double`~~  ·  `43137a9a-a239…`
+- ~~`lean_imagined_all_is_closed_under_double`~~  ·  `a484e31e-4061…`
+- ~~`lean_imagined_triad_is_closed_under_triple`~~  ·  `8a09c26a-d00f…`
+- ~~`lean_imagined_all_is_closed_under_triple`~~  ·  `6721ec81-d9dc…`
+- ~~`lean_imagined_triad_is_closed_under_negate`~~  ·  `5866147f-e850…`
+- ~~`lean_imagined_orbit_is_closed_under_negate`~~  ·  `2648891c-b6ac…`
+- ~~`lean_imagined_all_is_closed_under_negate`~~  ·  `488239aa-b8c4…`
+- ~~`lean_imagined_units_is_closed_under_square`~~  ·  `6d29a3cd-f0c8…`
+- ~~`lean_imagined_orbit_is_closed_under_square`~~  ·  `a001d862-2860…`
+- ~~`lean_imagined_tetA_is_closed_under_square`~~  ·  `1af8a50e-a0f9…`
+- ~~`lean_imagined_all_is_closed_under_square`~~  ·  `eb6c5699-9bf8…`
+- ~~`lean_imagined_units_is_closed_under_quintuple`~~  ·  `23146a0e-4f1a…`
+- ~~`lean_imagined_triad_is_closed_under_quintuple`~~  ·  `0c782557-1e79…`
+- ~~`lean_imagined_orbit_is_closed_under_quintuple`~~  ·  `36f80355-f5c0…`
+- ~~`lean_imagined_all_is_closed_under_quintuple`~~  ·  `dae19453-3390…`
+- ~~`lean_imagined_quadruple_is_involutive_on_triad`~~  ·  `4633b9bd-d5d5…`
+- ~~`lean_imagined_square_is_involutive_on_tetA`~~  ·  `e13716ed-0ac5…`
+- ~~`lean_imagined_quintuple_is_involutive_on_triad`~~  ·  `98dcf6c8-a85e…`
+- ~~`lean_imagined_double_carries_orbit_onto_units`~~  ·  `1fe514e5-9af2…`
+- ~~`lean_imagined_triple_carries_all_onto_triad`~~  ·  `99968f56-31e3…`
+- ~~`lean_imagined_quadruple_carries_units_onto_orbit`~~  ·  `d37065ab-bac3…`
+- ~~`lean_imagined_quadruple_carries_orbit_onto_units`~~  ·  `a8560589-8c23…`
+- ~~`lean_imagined_negate_carries_orbit_onto_units`~~  ·  `9785d5df-38fb…`
+- ~~`lean_imagined_negate_carries_tetA_onto_tetB`~~  ·  `cd1a8234-fa1f…`
+- ~~`lean_imagined_negate_carries_tetB_onto_tetA`~~  ·  `2d5f2887-07ff…`
+- ~~`lean_imagined_square_carries_units_onto_tetA`~~  ·  `f57e0f22-217a…`
+- ~~`lean_imagined_square_carries_orbit_onto_tetA`~~  ·  `fce1a3af-47fc…`
+- ~~`lean_imagined_square_carries_tetB_onto_tetA`~~  ·  `bebc2b15-1fa2…`
+- ~~`lean_imagined_quintuple_carries_units_onto_orbit`~~  ·  `dadc55f1-9dd3…`
+- ~~`lean_imagined_quintuple_carries_orbit_onto_units`~~  ·  `65c0d9be-2315…`
+- ~~`lean_imagined_quintuple_carries_tetA_onto_tetB`~~  ·  `083aec67-2d52…`
+- ~~`lean_imagined_quintuple_carries_tetB_onto_tetA`~~  ·  `20e8affd-97c5…`
+- ~~`lean_imagined_triple_collapses_triad_to_one_value`~~  ·  `b69711cf-680d…`
+- ~~`lean_imagined_triple_collapses_tetA_to_one_value`~~  ·  `09f1a817-8fcf…`
+- ~~`lean_imagined_triple_collapses_tetB_to_one_value`~~  ·  `56e120e9-368e…`
+- ~~`lean_imagined_cube_collapses_triad_to_one_value`~~  ·  `1878b27c-8b5d…`
+- ~~`lean_imagined_cube_collapses_tetA_to_one_value`~~  ·  `89b479b2-bb01…`
+- ~~`lean_imagined_cube_collapses_tetB_to_one_value`~~  ·  `f0c171ba-5dd3…`
+- ~~`lean_imagined_triad_is_closed_under_sextuple`~~  ·  `c6a3004b-4600…`
+- ~~`lean_imagined_all_is_closed_under_sextuple`~~  ·  `487c1f28-9559…`
+- ~~`lean_imagined_units_is_closed_under_octuple`~~  ·  `a7229156-86a5…`
+- ~~`lean_imagined_triad_is_closed_under_octuple`~~  ·  `03033716-02a9…`
+- ~~`lean_imagined_orbit_is_closed_under_octuple`~~  ·  `4f278f65-1bde…`
+- ~~`lean_imagined_all_is_closed_under_octuple`~~  ·  `9188cd9f-002a…`
+- ~~`lean_imagined_septuple_is_involutive_on_triad`~~  ·  `172d9674-4d63…`
+- ~~`lean_imagined_sextuple_carries_all_onto_triad`~~  ·  `626b20bb-2221…`
+- ~~`lean_imagined_septuple_carries_units_onto_orbit`~~  ·  `a8f55b84-94b6…`
+- ~~`lean_imagined_septuple_carries_orbit_onto_units`~~  ·  `8df83d0f-2bed…`
+- ~~`lean_imagined_octuple_carries_units_onto_orbit`~~  ·  `cee59fa8-fb75…`
+- ~~`lean_imagined_octuple_carries_orbit_onto_units`~~  ·  `d133706e-bd8c…`
+- ~~`lean_imagined_octuple_carries_tetA_onto_tetB`~~  ·  `dfecc1ef-d81b…`
+- ~~`lean_imagined_octuple_carries_tetB_onto_tetA`~~  ·  `74ad9bcf-f22c…`
+- ~~`lean_imagined_sextuple_collapses_triad_to_one_value`~~  ·  `6c5bf198-bd89…`
+- ~~`lean_imagined_sextuple_collapses_tetA_to_one_value`~~  ·  `d29da6cf-62b5…`
+- ~~`lean_imagined_sextuple_collapses_tetB_to_one_value`~~  ·  `ee2a3939-17c8…`
 - ~~`lean_energy_the_loop_returns_less_than_it_took`~~  ·  `8229c511-d4bd…`
 - ~~`lean_energy_as_a_purifier_the_loop_costs_a_thousandfold`~~  ·  `840c66b6-b891…`
 - ~~`lean_energy_the_equation_balances_by_atom_count`~~  ·  `ecfd70b1-b35b…`
 - ~~`lean_energy_the_equation_balances_by_mass`~~  ·  `debf920f-a945…`
 - ~~`lean_energy_hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest`~~  ·  `585ebc79-3eac…`
 - ~~`lean_energy_the_ideal_round_trip_is_exactly_zero`~~  ·  `181481c2-3745…`
+- ~~`lean_imagined_units_is_closed_under_quadruple`~~  ·  `e90978b5-a350…`
+- ~~`lean_imagined_triad_is_closed_under_quadruple`~~  ·  `6d2f140d-6eff…`
+- ~~`lean_imagined_orbit_is_closed_under_quadruple`~~  ·  `f889d728-465d…`
+- ~~`lean_imagined_tetA_is_closed_under_quadruple`~~  ·  `f9075b8c-6548…`
+- ~~`lean_imagined_tetB_is_closed_under_quadruple`~~  ·  `d15e7f2a-be1e…`
+- ~~`lean_imagined_all_is_closed_under_quadruple`~~  ·  `9fdde539-0c75…`
+- ~~`lean_imagined_units_is_closed_under_septuple`~~  ·  `33c6b2af-ea05…`
+- ~~`lean_imagined_triad_is_closed_under_septuple`~~  ·  `64ea3fd6-5235…`
+- ~~`lean_imagined_orbit_is_closed_under_septuple`~~  ·  `7a790873-2c87…`
+- ~~`lean_imagined_tetA_is_closed_under_septuple`~~  ·  `d0845a96-1990…`
+- ~~`lean_imagined_tetB_is_closed_under_septuple`~~  ·  `94ca3492-fc0f…`
+- ~~`lean_imagined_all_is_closed_under_septuple`~~  ·  `360040f3-1afb…`
+- ~~`lean_imagined_triple_carries_cubes_onto_triad`~~  ·  `07183390-0375…`
+- ~~`lean_imagined_square_carries_all_onto_squares`~~  ·  `95bfa2f5-30af…`
+- ~~`lean_imagined_cube_carries_all_onto_cubes`~~  ·  `614b5517-fe8e…`
+- ~~`lean_imagined_sextuple_carries_cubes_onto_triad`~~  ·  `8d1758c9-e43d…`
 - ~~`lean_energy_the_gases_are_eighteen_hundred_times_the_water_they_came_from`~~  ·  `033b4a15-d8ee…`
 - ~~`lean_energy_two_thirds_of_the_volume_carries_a_ninth_of_the_mass`~~  ·  `f8780f77-c9ef…`
 - ~~`lean_energy_uncompressed_hydrogen_is_three_thousandfold_worse_by_volume`~~  ·  `9c0e0943-6e5a…`
@@ -3022,6 +3020,8 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`lean_reach_even_the_largest_domain_here_has_an_outside`~~  ·  `9f25da95-de94…`
 - ~~`lean_reach_this_file_settles_none_of_the_seven`~~  ·  `2c8272de-17dd…`
 - ~~`lean_coin_the_digits_are_ten`~~  ·  `bdd50a11-7fb4…`
+- ~~`lean_imagined_triad_is_closed_under_double`~~  ·  `e97a7f4a-5ea2…`
+- ~~`lean_imagined_double_is_involutive_on_triad`~~  ·  `2745f785-9f44…`
 - ~~`lean_speed_hexbits_are_shorter_than_hex`~~  ·  `d3b171cf-2487…`
 - ~~`lean_speed_hexbits_are_slower_than_hex`~~  ·  `cf4672e4-0be3…`
 - ~~`lean_speed_an_encoding_changes_width_not_the_count_of_operations`~~  ·  `9227b54d-7b6f…`
