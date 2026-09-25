@@ -4,7 +4,7 @@
   "file": "address.lean",
   "name": "address_bytes_are_bytes",
   "statementHash": "984aa1ef05246f44",
-  "searched": "2026-09-25T13:50:45.494Z",
+  "searched": "2026-09-25T14:03:32.434Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -17,25 +17,34 @@
    ]
   },
   "queries": {
-   "zbmath": "address bytes cryptographic hash sha",
-   "openalex": "address bytes cryptographic hash sha",
-   "crossref": "address bytes cryptographic hash sha",
-   "arxiv": "address AND bytes"
+   "zbmath": "cryptographic hash sha digests bytes",
+   "openalex": "cryptographic hash sha digests bytes",
+   "crossref": "cryptographic hash sha digests bytes",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND bytes"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2602.15376v1",
+    "relevance": 1,
+    "text": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection Cryptographic digests (e.g., MD5, SHA-256) are designed to provide exact identity. Any single-bit change in the input produces a completely different hash, which is ideal for integrity verification but limits their us"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_address_is_sixteen_bytes": {
   "key": "lean_address_address_is_sixteen_bytes",
   "file": "address.lean",
   "name": "address_is_sixteen_bytes",
   "statementHash": "0507a5dbcc165f10",
-  "searched": "2026-09-25T13:48:53.328Z",
+  "searched": "2026-09-25T14:03:21.926Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -48,13 +57,13 @@
    ]
   },
   "queries": {
-   "zbmath": "address sixteen bytes cryptographic hash sha",
-   "openalex": "address sixteen bytes cryptographic hash sha",
-   "crossref": "address sixteen bytes cryptographic hash sha",
-   "arxiv": "address AND sixteen AND bytes"
+   "zbmath": "cryptographic hash sha digests sixteen bytes",
+   "openalex": "cryptographic hash sha digests sixteen bytes",
+   "crossref": "cryptographic hash sha digests sixteen bytes",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND sixteen"
   },
   "notMeasured": [
-   "openalex: rate-limited after backoff"
+   "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
@@ -66,7 +75,7 @@
   "file": "address.lean",
   "name": "addressing_is_deterministic",
   "statementHash": "903e74e9a953c342",
-  "searched": "2026-09-25T13:51:34.958Z",
+  "searched": "2026-09-25T14:04:04.256Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -79,10 +88,10 @@
    ]
   },
   "queries": {
-   "zbmath": "addressing deterministic cryptographic hash sha",
-   "openalex": "addressing deterministic cryptographic hash sha",
-   "crossref": "addressing deterministic cryptographic hash sha",
-   "arxiv": "addressing AND deterministic"
+   "zbmath": "cryptographic hash sha digests deterministic",
+   "openalex": "cryptographic hash sha digests deterministic",
+   "crossref": "cryptographic hash sha digests deterministic",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND deterministic"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -97,7 +106,7 @@
   "file": "address.lean",
   "name": "addressing_is_injective_on_single_characters",
   "statementHash": "1e918d0f50259075",
-  "searched": "2026-09-25T13:51:55.963Z",
+  "searched": "2026-09-25T14:04:24.515Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -110,10 +119,10 @@
    ]
   },
   "queries": {
-   "zbmath": "addressing injective single characters cryptographic hash sha",
-   "openalex": "addressing injective single characters cryptographic hash sha",
-   "crossref": "addressing injective single characters cryptographic hash sha",
-   "arxiv": "addressing AND injective AND single AND characters"
+   "zbmath": "cryptographic hash sha digests injective single characters",
+   "openalex": "cryptographic hash sha digests injective single characters",
+   "crossref": "cryptographic hash sha digests injective single characters",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND injective"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -128,7 +137,7 @@
   "file": "address.lean",
   "name": "addressing_is_not_constant",
   "statementHash": "910e5ee5119c88b1",
-  "searched": "2026-09-25T13:52:16.793Z",
+  "searched": "2026-09-25T14:04:46.976Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -141,10 +150,10 @@
    ]
   },
   "queries": {
-   "zbmath": "addressing constant cryptographic hash sha",
-   "openalex": "addressing constant cryptographic hash sha",
-   "crossref": "addressing constant cryptographic hash sha",
-   "arxiv": "addressing AND constant"
+   "zbmath": "cryptographic hash sha digests constant",
+   "openalex": "cryptographic hash sha digests constant",
+   "crossref": "cryptographic hash sha digests constant",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND constant"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -159,7 +168,7 @@
   "file": "address.lean",
   "name": "addressing_is_not_the_identity",
   "statementHash": "df08236523a20ab9",
-  "searched": "2026-09-25T13:52:06.426Z",
+  "searched": "2026-09-25T14:04:36.229Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -172,25 +181,58 @@
    ]
   },
   "queries": {
-   "zbmath": "addressing identity cryptographic hash sha",
-   "openalex": "addressing identity cryptographic hash sha",
-   "crossref": "addressing identity cryptographic hash sha",
-   "arxiv": "addressing AND identity"
+   "zbmath": "cryptographic hash sha digests",
+   "openalex": "cryptographic hash sha digests",
+   "crossref": "cryptographic hash sha digests",
+   "arxiv": "cryptographic AND hash AND sha AND digests"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "HF-hash : Hash Functions Using Restricted HFE Challenge-1",
+    "year": "2009",
+    "url": "http://arxiv.org/abs/0909.1392v2",
+    "relevance": 1,
+    "text": "HF-hash : Hash Functions Using Restricted HFE Challenge-1 Vulnerability of dedicated hash functions to various attacks has made the task of designing hash function much more challenging. This provides us a strong motivation to design a new cryptographic hash function viz. HF-hash. This is a hash fun"
+   },
+   {
+    "source": "arxiv",
+    "title": "Performance Evaluation of Hashing Algorithms on Commodity Hardware",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2407.08284v1",
+    "relevance": 1,
+    "text": "Performance Evaluation of Hashing Algorithms on Commodity Hardware Hashing functions, which are created to provide brief and erratic digests for the message entered, are the primary cryptographic primitives used in blockchain networks. Hashing is employed in blockchain networks to create linked bloc"
+   },
+   {
+    "source": "arxiv",
+    "title": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2602.15376v1",
+    "relevance": 1,
+    "text": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection Cryptographic digests (e.g., MD5, SHA-256) are designed to provide exact identity. Any single-bit change in the input produces a completely different hash, which is ideal for integrity verification but limits their us"
+   },
+   {
+    "source": "arxiv",
+    "title": "Quantum One-Wayness of the Single-Round Sponge with Invertible Permutations",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2403.04740v4",
+    "relevance": 1,
+    "text": "Quantum One-Wayness of the Single-Round Sponge with Invertible Permutations Sponge hashing is a widely used class of cryptographic hash algorithms which underlies the current international hash function standard SHA-3. In a nutshell, a sponge function takes as input a bit-stream of any length and pr"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_distinct_inputs_give_distinct_addresses": {
   "key": "lean_address_distinct_inputs_give_distinct_addresses",
   "file": "address.lean",
   "name": "distinct_inputs_give_distinct_addresses",
   "statementHash": "d8424dac0c7b6234",
-  "searched": "2026-09-25T13:52:55.966Z",
+  "searched": "2026-09-25T14:05:19.307Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -203,25 +245,34 @@
    ]
   },
   "queries": {
-   "zbmath": "distinct inputs give addresses cryptographic hash sha",
-   "openalex": "distinct inputs give addresses cryptographic hash sha",
-   "crossref": "distinct inputs give addresses cryptographic hash sha",
-   "arxiv": "distinct AND inputs AND give AND addresses"
+   "zbmath": "cryptographic hash sha digests distinct inputs",
+   "openalex": "cryptographic hash sha digests distinct inputs",
+   "crossref": "cryptographic hash sha digests distinct inputs",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND distinct"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2602.15376v1",
+    "relevance": 1,
+    "text": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection Cryptographic digests (e.g., MD5, SHA-256) are designed to provide exact identity. Any single-bit change in the input produces a completely different hash, which is ideal for integrity verification but limits their us"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_distinct_seeds_give_distinct_addresses": {
   "key": "lean_address_distinct_seeds_give_distinct_addresses",
   "file": "address.lean",
   "name": "distinct_seeds_give_distinct_addresses",
   "statementHash": "0994ea842625c7b7",
-  "searched": "2026-09-25T13:51:45.351Z",
+  "searched": "2026-09-25T14:04:14.343Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -234,25 +285,34 @@
    ]
   },
   "queries": {
-   "zbmath": "distinct seeds give addresses cryptographic hash sha",
-   "openalex": "distinct seeds give addresses cryptographic hash sha",
-   "crossref": "distinct seeds give addresses cryptographic hash sha",
-   "arxiv": "distinct AND seeds AND give AND addresses"
+   "zbmath": "cryptographic hash sha digests distinct seeds",
+   "openalex": "cryptographic hash sha digests distinct seeds",
+   "crossref": "cryptographic hash sha digests distinct seeds",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND distinct"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2602.15376v1",
+    "relevance": 0.8,
+    "text": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection Cryptographic digests (e.g., MD5, SHA-256) are designed to provide exact identity. Any single-bit change in the input produces a completely different hash, which is ideal for integrity verification but limits their us"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_raw_bytes_of_a": {
   "key": "lean_address_raw_bytes_of_a",
   "file": "address.lean",
   "name": "raw_bytes_of_a",
   "statementHash": "22d7f250d5a60df9",
-  "searched": "2026-09-25T13:45:07.765Z",
+  "searched": "2026-09-25T13:57:40.151Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -265,23 +325,34 @@
    ]
   },
   "queries": {
-   "zbmath": "raw bytes cryptographic hash sha",
-   "openalex": "raw bytes cryptographic hash sha",
-   "crossref": "raw bytes cryptographic hash sha",
-   "arxiv": "raw AND bytes"
+   "zbmath": "cryptographic hash sha digests bytes",
+   "openalex": "cryptographic hash sha digests bytes",
+   "crossref": "cryptographic hash sha digests bytes",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND bytes"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "TOO_FEW_TERMS"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2602.15376v1",
+    "relevance": 1,
+    "text": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection Cryptographic digests (e.g., MD5, SHA-256) are designed to provide exact identity. Any single-bit change in the input produces a completely different hash, which is ideal for integrity verification but limits their us"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_stamping_twice_is_stamping_once": {
   "key": "lean_address_stamping_twice_is_stamping_once",
   "file": "address.lean",
   "name": "stamping_twice_is_stamping_once",
   "statementHash": "3817332e5077c8c3",
-  "searched": "2026-09-25T13:53:48.165Z",
+  "searched": "2026-09-25T14:06:14.051Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -294,10 +365,10 @@
    ]
   },
   "queries": {
-   "zbmath": "stamping twice once cryptographic hash sha",
-   "openalex": "stamping twice once cryptographic hash sha",
-   "crossref": "stamping twice once cryptographic hash sha",
-   "arxiv": "stamping AND twice AND once"
+   "zbmath": "cryptographic hash sha digests stamping twice",
+   "openalex": "cryptographic hash sha digests stamping twice",
+   "crossref": "cryptographic hash sha digests stamping twice",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND stamping"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -312,7 +383,7 @@
   "file": "address.lean",
   "name": "the_address_is_not_the_payload",
   "statementHash": "ca319e5e865e7452",
-  "searched": "2026-09-25T13:53:05.866Z",
+  "searched": "2026-09-25T14:05:29.460Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -325,10 +396,10 @@
    ]
   },
   "queries": {
-   "zbmath": "address payload cryptographic hash sha",
-   "openalex": "address payload cryptographic hash sha",
-   "crossref": "address payload cryptographic hash sha",
-   "arxiv": "address AND payload"
+   "zbmath": "cryptographic hash sha digests payload",
+   "openalex": "cryptographic hash sha digests payload",
+   "crossref": "cryptographic hash sha digests payload",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND payload"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -343,7 +414,7 @@
   "file": "address.lean",
   "name": "the_address_is_order_sensitive",
   "statementHash": "3a9e09557dd6dc48",
-  "searched": "2026-09-25T13:53:15.817Z",
+  "searched": "2026-09-25T14:05:41.110Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -356,25 +427,34 @@
    ]
   },
   "queries": {
-   "zbmath": "address order sensitive cryptographic hash sha",
-   "openalex": "address order sensitive cryptographic hash sha",
-   "crossref": "address order sensitive cryptographic hash sha",
-   "arxiv": "address AND order AND sensitive"
+   "zbmath": "cryptographic hash sha digests sensitive",
+   "openalex": "cryptographic hash sha digests sensitive",
+   "crossref": "cryptographic hash sha digests sensitive",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND sensitive"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2602.15376v1",
+    "relevance": 1,
+    "text": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection Cryptographic digests (e.g., MD5, SHA-256) are designed to provide exact identity. Any single-bit change in the input produces a completely different hash, which is ideal for integrity verification but limits their us"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length": {
   "key": "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length",
   "file": "address.lean",
   "name": "the_address_is_sixteen_bytes_whatever_the_input_length",
   "statementHash": "2680d024bb1ecac6",
-  "searched": "2026-09-25T13:52:45.464Z",
+  "searched": "2026-09-25T14:05:07.920Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -387,10 +467,10 @@
    ]
   },
   "queries": {
-   "zbmath": "address sixteen bytes whatever input cryptographic hash sha",
-   "openalex": "address sixteen bytes whatever input cryptographic hash sha",
-   "crossref": "address sixteen bytes whatever input cryptographic hash sha",
-   "arxiv": "address AND sixteen AND bytes AND whatever AND input"
+   "zbmath": "cryptographic hash sha digests sixteen bytes whatever",
+   "openalex": "cryptographic hash sha digests sixteen bytes whatever",
+   "crossref": "cryptographic hash sha digests sixteen bytes whatever",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND sixteen"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -405,7 +485,7 @@
   "file": "address.lean",
   "name": "the_four_seeds_are_distinct",
   "statementHash": "a7104220c0a9ff23",
-  "searched": "2026-09-25T13:52:27.396Z",
+  "searched": "2026-09-25T14:04:57.342Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -418,10 +498,10 @@
    ]
   },
   "queries": {
-   "zbmath": "seeds distinct cryptographic hash sha",
-   "openalex": "seeds distinct cryptographic hash sha",
-   "crossref": "seeds distinct cryptographic hash sha",
-   "arxiv": "seeds AND distinct"
+   "zbmath": "cryptographic hash sha digests seeds distinct",
+   "openalex": "cryptographic hash sha digests seeds distinct",
+   "crossref": "cryptographic hash sha digests seeds distinct",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND seeds"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -436,7 +516,7 @@
   "file": "address.lean",
   "name": "the_fourteen_hash_bits_read_back_from_the_fourth_group",
   "statementHash": "963b849acf440ab5",
-  "searched": "2026-09-25T13:54:39.390Z",
+  "searched": "2026-09-25T14:07:11.296Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -449,10 +529,10 @@
    ]
   },
   "queries": {
-   "zbmath": "fourteen hash bits read back cryptographic sha digests",
-   "openalex": "fourteen hash bits read back cryptographic sha digests",
-   "crossref": "fourteen hash bits read back cryptographic sha digests",
-   "arxiv": "fourteen AND hash AND bits AND read AND back"
+   "zbmath": "cryptographic hash sha digests fourteen fourth",
+   "openalex": "cryptographic hash sha digests fourteen fourth",
+   "crossref": "cryptographic hash sha digests fourteen fourth",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND fourteen"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -467,7 +547,7 @@
   "file": "address.lean",
   "name": "the_fourth_group_is_variant_two_over_fourteen_hash_bits",
   "statementHash": "4f603770a57b7857",
-  "searched": "2026-09-25T13:54:08.772Z",
+  "searched": "2026-09-25T14:06:40.046Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -480,10 +560,10 @@
    ]
   },
   "queries": {
-   "zbmath": "fourth group variant fourteen hash cryptographic sha digests",
-   "openalex": "fourth group variant fourteen hash cryptographic sha digests",
-   "crossref": "fourth group variant fourteen hash cryptographic sha digests",
-   "arxiv": "fourth AND group AND variant AND fourteen AND hash"
+   "zbmath": "cryptographic hash sha digests fourth variant fourteen",
+   "openalex": "cryptographic hash sha digests fourth variant fourteen",
+   "crossref": "cryptographic hash sha digests fourth variant fourteen",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND fourth"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -498,7 +578,7 @@
   "file": "address.lean",
   "name": "the_third_group_is_version_eight_over_twelve_hash_bits",
   "statementHash": "80e63c5d6eb082f2",
-  "searched": "2026-09-25T13:53:58.061Z",
+  "searched": "2026-09-25T14:06:24.689Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -511,10 +591,10 @@
    ]
   },
   "queries": {
-   "zbmath": "group version twelve hash bits cryptographic sha digests",
-   "openalex": "group version twelve hash bits cryptographic sha digests",
-   "crossref": "group version twelve hash bits cryptographic sha digests",
-   "arxiv": "group AND version AND twelve AND hash AND bits"
+   "zbmath": "cryptographic hash sha digests version twelve",
+   "openalex": "cryptographic hash sha digests version twelve",
+   "crossref": "cryptographic hash sha digests version twelve",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND version"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -529,7 +609,7 @@
   "file": "address.lean",
   "name": "the_twelve_hash_bits_read_back_from_the_third_group",
   "statementHash": "747a1f623136680f",
-  "searched": "2026-09-25T13:54:29.281Z",
+  "searched": "2026-09-25T14:07:00.914Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -542,10 +622,10 @@
    ]
   },
   "queries": {
-   "zbmath": "twelve hash bits read back cryptographic sha digests",
-   "openalex": "twelve hash bits read back cryptographic sha digests",
-   "crossref": "twelve hash bits read back cryptographic sha digests",
-   "arxiv": "twelve AND hash AND bits AND read AND back"
+   "zbmath": "cryptographic hash sha digests twelve",
+   "openalex": "cryptographic hash sha digests twelve",
+   "crossref": "cryptographic hash sha digests twelve",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND twelve"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -560,7 +640,7 @@
   "file": "address.lean",
   "name": "the_unstamped_bits_read_back_from_every_stamped_byte",
   "statementHash": "871e2e806d8995bc",
-  "searched": "2026-09-25T13:54:19.160Z",
+  "searched": "2026-09-25T14:06:50.403Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -573,10 +653,10 @@
    ]
   },
   "queries": {
-   "zbmath": "unstamped bits read back stamped cryptographic hash sha",
-   "openalex": "unstamped bits read back stamped cryptographic hash sha",
-   "crossref": "unstamped bits read back stamped cryptographic hash sha",
-   "arxiv": "unstamped AND bits AND read AND back AND stamped"
+   "zbmath": "cryptographic hash sha digests unstamped stamped",
+   "openalex": "cryptographic hash sha digests unstamped stamped",
+   "crossref": "cryptographic hash sha digests unstamped stamped",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND unstamped"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -591,7 +671,7 @@
   "file": "address.lean",
   "name": "the_variant_stamp_keeps_the_low_six_bits_of_every_byte",
   "statementHash": "a6d2433128e30493",
-  "searched": "2026-09-25T13:53:38.242Z",
+  "searched": "2026-09-25T14:06:03.347Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -604,25 +684,34 @@
    ]
   },
   "queries": {
-   "zbmath": "variant stamp keeps low bits cryptographic hash sha",
-   "openalex": "variant stamp keeps low bits cryptographic hash sha",
-   "crossref": "variant stamp keeps low bits cryptographic hash sha",
-   "arxiv": "variant AND stamp AND keeps AND low AND bits"
+   "zbmath": "cryptographic hash sha digests variant stamp keeps",
+   "openalex": "cryptographic hash sha digests variant stamp keeps",
+   "crossref": "cryptographic hash sha digests variant stamp keeps",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND variant"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Quantum One-Wayness of the Single-Round Sponge with Invertible Permutations",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2403.04740v4",
+    "relevance": 0.6666666666666666,
+    "text": "Quantum One-Wayness of the Single-Round Sponge with Invertible Permutations Sponge hashing is a widely used class of cryptographic hash algorithms which underlies the current international hash function standard SHA-3. In a nutshell, a sponge function takes as input a bit-stream of any length and pr"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte": {
   "key": "lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte",
   "file": "address.lean",
   "name": "the_version_stamp_keeps_the_low_nibble_of_every_byte",
   "statementHash": "0b0ee57f5138594c",
-  "searched": "2026-09-25T13:53:26.356Z",
+  "searched": "2026-09-25T14:05:53.187Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -635,10 +724,10 @@
    ]
   },
   "queries": {
-   "zbmath": "version stamp keeps low nibble cryptographic hash sha",
-   "openalex": "version stamp keeps low nibble cryptographic hash sha",
-   "crossref": "version stamp keeps low nibble cryptographic hash sha",
-   "arxiv": "version AND stamp AND keeps AND low AND nibble"
+   "zbmath": "cryptographic hash sha digests version stamp keeps",
+   "openalex": "cryptographic hash sha digests version stamp keeps",
+   "crossref": "cryptographic hash sha digests version stamp keeps",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND version"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -653,7 +742,7 @@
   "file": "address.lean",
   "name": "to_uuid_bytes_of_a",
   "statementHash": "58daeefc12bf7453",
-  "searched": "2026-09-25T13:45:07.767Z",
+  "searched": "2026-09-25T13:59:37.485Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -666,25 +755,34 @@
    ]
   },
   "queries": {
-   "zbmath": "uuid bytes cryptographic hash sha",
-   "openalex": "uuid bytes cryptographic hash sha",
-   "crossref": "uuid bytes cryptographic hash sha",
-   "arxiv": "uuid AND bytes"
+   "zbmath": "cryptographic hash sha digests bytes",
+   "openalex": "cryptographic hash sha digests bytes",
+   "crossref": "cryptographic hash sha digests bytes",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND bytes"
   },
   "notMeasured": [
    "openalex: rate-limited after backoff"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2602.15376v1",
+    "relevance": 1,
+    "text": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection Cryptographic digests (e.g., MD5, SHA-256) are designed to provide exact identity. Any single-bit change in the input produces a completely different hash, which is ideal for integrity verification but limits their us"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_to_uuid_bytes_of_uuidna": {
   "key": "lean_address_to_uuid_bytes_of_uuidna",
   "file": "address.lean",
   "name": "to_uuid_bytes_of_uuidna",
   "statementHash": "a2ddd1cf2e209e2a",
-  "searched": "2026-09-25T13:47:00.988Z",
+  "searched": "2026-09-25T14:01:28.991Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -697,25 +795,34 @@
    ]
   },
   "queries": {
-   "zbmath": "uuid bytes uuidna cryptographic hash sha",
-   "openalex": "uuid bytes uuidna cryptographic hash sha",
-   "crossref": "uuid bytes uuidna cryptographic hash sha",
-   "arxiv": "uuid AND bytes AND uuidna"
+   "zbmath": "cryptographic hash sha digests bytes uuidna",
+   "openalex": "cryptographic hash sha digests bytes uuidna",
+   "crossref": "cryptographic hash sha digests bytes uuidna",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND bytes"
   },
   "notMeasured": [
    "openalex: rate-limited after backoff"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2602.15376v1",
+    "relevance": 0.8,
+    "text": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection Cryptographic digests (e.g., MD5, SHA-256) are designed to provide exact identity. Any single-bit change in the input produces a completely different hash, which is ideal for integrity verification but limits their us"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_variant_bits_are_forced": {
   "key": "lean_address_variant_bits_are_forced",
   "file": "address.lean",
   "name": "variant_bits_are_forced",
   "statementHash": "0a5f6b61b8e81af1",
-  "searched": "2026-09-25T13:51:24.382Z",
+  "searched": "2026-09-25T14:03:53.614Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -728,25 +835,34 @@
    ]
   },
   "queries": {
-   "zbmath": "variant bits forced cryptographic hash sha",
-   "openalex": "variant bits forced cryptographic hash sha",
-   "crossref": "variant bits forced cryptographic hash sha",
-   "arxiv": "variant AND bits AND forced"
+   "zbmath": "cryptographic hash sha digests variant forced",
+   "openalex": "cryptographic hash sha digests variant forced",
+   "crossref": "cryptographic hash sha digests variant forced",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND variant"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Quantum One-Wayness of the Single-Round Sponge with Invertible Permutations",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2403.04740v4",
+    "relevance": 0.8,
+    "text": "Quantum One-Wayness of the Single-Round Sponge with Invertible Permutations Sponge hashing is a widely used class of cryptographic hash algorithms which underlies the current international hash function standard SHA-3. In a nutshell, a sponge function takes as input a bit-stream of any length and pr"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_version_nibble_is_forced": {
   "key": "lean_address_version_nibble_is_forced",
   "file": "address.lean",
   "name": "version_nibble_is_forced",
   "statementHash": "9ca200276d2bf5c8",
-  "searched": "2026-09-25T13:50:55.851Z",
+  "searched": "2026-09-25T14:03:42.894Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -759,10 +875,10 @@
    ]
   },
   "queries": {
-   "zbmath": "version nibble forced cryptographic hash sha",
-   "openalex": "version nibble forced cryptographic hash sha",
-   "crossref": "version nibble forced cryptographic hash sha",
-   "arxiv": "version AND nibble AND forced"
+   "zbmath": "cryptographic hash sha digests version nibble forced",
+   "openalex": "cryptographic hash sha digests version nibble forced",
+   "crossref": "cryptographic hash sha digests version nibble forced",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND version"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
@@ -2801,85 +2917,6 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
- "lean_coin_one_side_is_reflected_onto_itself": {
-  "key": "lean_coin_one_side_is_reflected_onto_itself",
-  "file": "coin.lean",
-  "name": "one_side_is_reflected_onto_itself",
-  "statementHash": "db6242ae64d1f11f",
-  "searched": "2026-09-25T13:43:48.221Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "side reflected itself method complements",
-   "openalex": "side reflected itself method complements",
-   "crossref": "side reflected itself method complements",
-   "arxiv": "side AND reflected AND itself"
-  },
-  "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "Glass Surface Detection: Leveraging Reflection Dynamics in Flash/No-flash Imagery",
-    "year": "2025",
-    "url": "http://arxiv.org/abs/2511.16887v5",
-    "relevance": 0.6666666666666666,
-    "text": "Glass Surface Detection: Leveraging Reflection Dynamics in Flash/No-flash Imagery Glass surfaces are ubiquitous in daily life, typically appearing colorless, transparent, and lacking distinctive features. These characteristics make glass surface detection a challenging computer vision task. Existing"
-   },
-   {
-    "source": "arxiv",
-    "title": "Weak reflection principle for Lévy processes",
-    "year": "2013",
-    "url": "http://arxiv.org/abs/1308.2250v4",
-    "relevance": 0.6666666666666666,
-    "text": "Weak reflection principle for Lévy processes In this paper, we develop a new mathematical technique which allows us to express the joint distribution of a Markov process and its running maximum (or minimum) through the marginal distribution of the process itself. This technique is an extension of th"
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
- "lean_coin_the_reflection_is_an_involution": {
-  "key": "lean_coin_the_reflection_is_an_involution",
-  "file": "coin.lean",
-  "name": "the_reflection_is_an_involution",
-  "statementHash": "3bad7d15166862e9",
-  "searched": "2026-09-25T13:43:33.476Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "reflection involution method complements",
-   "openalex": "reflection involution method complements",
-   "crossref": "reflection involution method complements",
-   "arxiv": "reflection AND involution"
-  },
-  "notMeasured": [
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
  "lean_flow_navier_stokes_flow_is_bounded_for_every_step": {
   "key": "lean_flow_navier_stokes_flow_is_bounded_for_every_step",
   "file": "flow.lean",
@@ -3171,444 +3208,5 @@
   "catalogued": false,
   "candidates": [],
   "verdict": "NONE_FOUND"
- },
- "lean_split_a_seal_divides_into_payments_and_multiplies_back": {
-  "key": "lean_split_a_seal_divides_into_payments_and_multiplies_back",
-  "file": "split.lean",
-  "name": "a_seal_divides_into_payments_and_multiplies_back",
-  "statementHash": "2bd7913032d6d578",
-  "searched": "2026-09-15T04:41:50.935Z",
-  "queries": {
-   "oeis 1,2,4,8,16,32,64,128": "1,2,4,8,16,32,64,128",
-   "zbmath": "seal divides payments multiplies back",
-   "openalex": "seal divides payments multiplies back",
-   "crossref": "seal divides payments multiplies back",
-   "arxiv": "seal AND divides AND payments AND multiplies AND back"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [
-   {
-    "a": "A000079",
-    "name": "Powers of 2: a(n) = 2^n.",
-    "query": "1,2,4,8,16,32,64,128"
-   },
-   {
-    "a": "A320487",
-    "name": "a(0) = 1; thereafter a(n) is obtained by applying the \"delete multiple digits\" map m -> A320485(m) to 2*a(n-1).",
-    "query": "1,2,4,8,16,32,64,128"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_addition_and_multiplication_stay_inside": {
-  "key": "lean_split_addition_and_multiplication_stay_inside",
-  "file": "split.lean",
-  "name": "addition_and_multiplication_stay_inside",
-  "statementHash": "b4b265c45ea0a779",
-  "searched": "2026-09-15T04:40:38.686Z",
-  "queries": {
-   "zbmath": "addition multiplication stay inside",
-   "openalex": "addition multiplication stay inside",
-   "crossref": "addition multiplication stay inside",
-   "arxiv": "addition AND multiplication AND stay AND inside"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_division_is_the_operation_that_leaves": {
-  "key": "lean_split_division_is_the_operation_that_leaves",
-  "file": "split.lean",
-  "name": "division_is_the_operation_that_leaves",
-  "statementHash": "6d7599905c245f27",
-  "searched": "2026-09-15T04:40:50.859Z",
-  "queries": {
-   "zbmath": "division operation leaves",
-   "openalex": "division operation leaves",
-   "crossref": "division operation leaves",
-   "arxiv": "division AND operation AND leaves"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_each_pair_is_two_consecutive_units": {
-  "key": "lean_split_each_pair_is_two_consecutive_units",
-  "file": "split.lean",
-  "name": "each_pair_is_two_consecutive_units",
-  "statementHash": "385d57d08a5bfa8f",
-  "searched": "2026-09-15T04:37:49.726Z",
-  "queries": {
-   "zbmath": "pair consecutive units",
-   "openalex": "pair consecutive units",
-   "crossref": "pair consecutive units",
-   "arxiv": "pair AND consecutive AND units"
-  },
-  "notMeasured": [
-   "arxiv: rate-limited after backoff"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_every_root_is_a_single": {
-  "key": "lean_split_every_root_is_a_single",
-  "file": "split.lean",
-  "name": "every_root_is_a_single",
-  "statementHash": "62d50c1db319aa56",
-  "searched": "2026-09-15T04:41:05.781Z",
-  "queries": {
-   "zbmath": "root single",
-   "openalex": "root single",
-   "crossref": "root single",
-   "arxiv": "root AND single"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_every_token_is_a_multiple_of_three": {
-  "key": "lean_split_every_token_is_a_multiple_of_three",
-  "file": "split.lean",
-  "name": "every_token_is_a_multiple_of_three",
-  "statementHash": "6aa07116db5bf21b",
-  "searched": "2026-09-15T04:39:02.082Z",
-  "queries": {
-   "zbmath": "token multiple",
-   "openalex": "token multiple",
-   "crossref": "token multiple",
-   "arxiv": "token AND multiple"
-  },
-  "notMeasured": [
-   "arxiv: rate-limited after backoff"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_every_token_is_void_bound_or_halts_on_three": {
-  "key": "lean_split_every_token_is_void_bound_or_halts_on_three",
-  "file": "split.lean",
-  "name": "every_token_is_void_bound_or_halts_on_three",
-  "statementHash": "b461fd11a2188c4b",
-  "searched": "2026-09-15T04:41:38.561Z",
-  "queries": {
-   "zbmath": "token void bound halts",
-   "openalex": "token void bound halts",
-   "crossref": "token void bound halts",
-   "arxiv": "token AND void AND bound AND halts"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one": {
-  "key": "lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one",
-  "file": "split.lean",
-  "name": "inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one",
-  "statementHash": "5fd3ff702cf1fd25",
-  "searched": "2026-09-15T04:41:44.535Z",
-  "queries": {
-   "zbmath": "inside ideal bare coin sorts",
-   "openalex": "inside ideal bare coin sorts",
-   "crossref": "inside ideal bare coin sorts",
-   "arxiv": "inside AND ideal AND bare AND coin AND sorts"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_paying_and_refunding_coins_on_the_last_pair_round_trips": {
-  "key": "lean_split_paying_and_refunding_coins_on_the_last_pair_round_trips",
-  "file": "split.lean",
-  "name": "paying_and_refunding_coins_on_the_last_pair_round_trips",
-  "statementHash": "167eaa2e32fa9f30",
-  "searched": "2026-09-15T04:41:17.579Z",
-  "queries": {
-   "zbmath": "paying refunding coins pair round",
-   "openalex": "paying refunding coins pair round",
-   "crossref": "paying refunding coins pair round",
-   "arxiv": "paying AND refunding AND coins AND pair AND round"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_sixty_four_is_where_the_doubling_returns": {
-  "key": "lean_split_sixty_four_is_where_the_doubling_returns",
-  "file": "split.lean",
-  "name": "sixty_four_is_where_the_doubling_returns",
-  "statementHash": "b8dd21a22f2cd4b2",
-  "searched": "2026-09-15T04:41:58.940Z",
-  "queries": {
-   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "sixty doubling returns",
-   "openalex": "sixty doubling returns",
-   "crossref": "sixty doubling returns",
-   "arxiv": "sixty AND doubling AND returns"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [
-   {
-    "a": "A001370",
-    "name": "Sum of digits of 2^n.",
-    "query": "1,2,4,8,7,5"
-   },
-   {
-    "a": "A153130",
-    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
-    "query": "1,2,4,8,7,5"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_subtraction_stays_inside": {
-  "key": "lean_split_subtraction_stays_inside",
-  "file": "split.lean",
-  "name": "subtraction_stays_inside",
-  "statementHash": "994fef3f211ac348",
-  "searched": "2026-09-15T04:40:44.696Z",
-  "queries": {
-   "zbmath": "subtraction stays inside",
-   "openalex": "subtraction stays inside",
-   "crossref": "subtraction stays inside",
-   "arxiv": "subtraction AND stays AND inside"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_the_coin_step_and_the_coins_are_inverse": {
-  "key": "lean_split_the_coin_step_and_the_coins_are_inverse",
-  "file": "split.lean",
-  "name": "the_coin_step_and_the_coins_are_inverse",
-  "statementHash": "75a15bb39967b3f8",
-  "searched": "2026-09-15T04:41:11.819Z",
-  "queries": {
-   "zbmath": "coin step coins inverse",
-   "openalex": "coin step coins inverse",
-   "crossref": "coin step coins inverse",
-   "arxiv": "coin AND step AND coins AND inverse"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_the_exhaustible_tokens_are_those_six_divides": {
-  "key": "lean_split_the_exhaustible_tokens_are_those_six_divides",
-  "file": "split.lean",
-  "name": "the_exhaustible_tokens_are_those_six_divides",
-  "statementHash": "c74bed3627607126",
-  "searched": "2026-09-15T04:41:23.249Z",
-  "queries": {
-   "oeis 0,12,6,78": "0,12,6,78",
-   "zbmath": "exhaustible tokens divides",
-   "openalex": "exhaustible tokens divides",
-   "crossref": "exhaustible tokens divides",
-   "arxiv": "exhaustible AND tokens AND divides"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_the_orbit_turns_once_per_budget": {
-  "key": "lean_split_the_orbit_turns_once_per_budget",
-  "file": "split.lean",
-  "name": "the_orbit_turns_once_per_budget",
-  "statementHash": "1b2e0383ed7d1dfc",
-  "searched": "2026-09-15T04:42:07.484Z",
-  "queries": {
-   "zbmath": "orbit turns once budget",
-   "openalex": "orbit turns once budget",
-   "crossref": "orbit turns once budget",
-   "arxiv": "orbit AND turns AND once AND budget"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_the_pairs_are_exactly_the_units_in_order": {
-  "key": "lean_split_the_pairs_are_exactly_the_units_in_order",
-  "file": "split.lean",
-  "name": "the_pairs_are_exactly_the_units_in_order",
-  "statementHash": "a3ff64e9d198c8cb",
-  "searched": "2026-09-15T04:36:35.131Z",
-  "queries": {
-   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
-   "zbmath": "pairs units order",
-   "openalex": "pairs units order",
-   "crossref": "pairs units order",
-   "arxiv": "pairs AND units AND order"
-  },
-  "notMeasured": [
-   "arxiv: rate-limited after backoff"
-  ],
-  "oeis": [
-   {
-    "a": "A001651",
-    "name": "Numbers not divisible by 3.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A032924",
-    "name": "Numbers whose ternary expansion contains no 0.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A020914",
-    "name": "Number of digits in the base-2 representation of 3^n.",
-    "query": "1,2,4,5,7,8"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_the_rest_halt_on_the_generator": {
-  "key": "lean_split_the_rest_halt_on_the_generator",
-  "file": "split.lean",
-  "name": "the_rest_halt_on_the_generator",
-  "statementHash": "3b5c089f16d7315a",
-  "searched": "2026-09-15T04:41:32.527Z",
-  "queries": {
-   "zbmath": "rest halt generator",
-   "openalex": "rest halt generator",
-   "crossref": "rest halt generator",
-   "arxiv": "rest AND halt AND generator"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_split_the_roots_are_the_singles": {
-  "key": "lean_split_the_roots_are_the_singles",
-  "file": "split.lean",
-  "name": "the_roots_are_the_singles",
-  "statementHash": "9402aac2112ef0ef",
-  "searched": "2026-09-15T04:40:57.251Z",
-  "queries": {
-   "oeis 0,3,3,0,6,6,0": "0,3,3,0,6,6,0",
-   "zbmath": "roots singles",
-   "openalex": "roots singles",
-   "crossref": "roots singles",
-   "arxiv": "roots AND singles"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [
-   {
-    "source": "zbmath",
-    "title": "The Weierstrass preparation theorem and resultants of \\(p\\)-adic power series",
-    "year": "2021",
-    "url": "https://zbmath.org/7324085",
-    "relevance": 1,
-    "text": "The Weierstrass preparation theorem and resultants of \\(p\\)-adic power series [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"moutaoukil.mouad\",\"reviewer_id\":\"17494\",\"name\":\"Mouad Moutaoukil\",\"sign\":\"Mouad Moutaoukil (Fès)\"},\"text\":\"In this article, the author defines the resultant of two power se"
-   },
-   {
-    "source": "zbmath",
-    "title": "Tits polygons. With an appendix by Holger P. Petersson",
-    "year": "2022",
-    "url": "https://zbmath.org/7492810",
-    "relevance": 1,
-    "text": "Tits polygons. With an appendix by Holger P. Petersson [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"van-maldeghem.hendrik-j\",\"reviewer_id\":\"6515\",\"name\":\"Hendrik Van Maldeghem\",\"sign\":\"Hendrik Van Maldeghem (Gent)\"},\"text\":\"Tits \\\\(n\\\\)-gons are a generalization of Moufang \\\\(n\\\\)-gons in that "
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
- "lean_split_the_singles_are_exactly_the_non_units": {
-  "key": "lean_split_the_singles_are_exactly_the_non_units",
-  "file": "split.lean",
-  "name": "the_singles_are_exactly_the_non_units",
-  "statementHash": "5ff017edd1913884",
-  "searched": "2026-09-15T04:36:21.558Z",
-  "queries": {
-   "zbmath": "singles non units",
-   "openalex": "singles non units",
-   "crossref": "singles non units",
-   "arxiv": "singles AND non AND units"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_split_the_tokens_are_three_times_these": {
-  "key": "lean_split_the_tokens_are_three_times_these",
-  "file": "split.lean",
-  "name": "the_tokens_are_three_times_these",
-  "statementHash": "b7a7634ea044b963",
-  "searched": "2026-09-15T04:40:29.621Z",
-  "queries": {
-   "oeis 0,4,1,15,2,26,3": "0,4,1,15,2,26,3",
-   "zbmath": "tokens times",
-   "openalex": "tokens times",
-   "crossref": "tokens times",
-   "arxiv": "tokens AND times"
-  },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
  }
 }

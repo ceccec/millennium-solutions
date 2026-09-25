@@ -141,8 +141,30 @@ let measured = 0, n = 0
 const refusals = new Map<string, number>()
 const oeisSeen = new Map<string, { a: string; name: string; query: string }[] | Error>()
 for (const { t, key, h } of todo) {
-  const terms = termsOf(t.name).filter((w) => !LABELS.has(w)), dom = domainOf(t.file)
-  const query = [...terms.slice(0, 5), ...dom.filter((d) => !terms.includes(d)).slice(0, 3)].join(' ')
+  // ── SEARCHED BY THE STATEMENT, NOT BY THE NAME ──────────────────────────────────────────────────────────
+  // The query was built from the theorem's NAME, and this deposit names theorems as plain English
+  // sentences. So `addressing_is_deterministic` searched for "addressing" and returned "Addressing
+  // identity/redressing the museum"; `the_tens_complement_is_an_involution` searched for "reflection" and
+  // returned "Glass Surface Detection: Leveraging Reflection Dynamics". Thirteen CANDIDATES for one file,
+  // every one a collision with ordinary English.
+  //
+  // THE STATEMENT'S OWN IDENTIFIERS DO NOT FIX IT, and trying them is how the shape became clear: they are
+  // `pow9`, `refl`, `isUnit`, `toUuidBytes` — this deposit's names for its objects, DEPOSIT-LOCAL BY
+  // CONSTRUCTION, and no literature anywhere uses them. A search for `pow9` finds nothing and would record
+  // NONE_FOUND, which is the false negative that looks like a discovery.
+  //
+  // What a statement actually offers the literature is two things, and both are used here. Its INTEGER
+  // SEQUENCES, which the OEIS looks up by terms — the half of this search that already worked, and the half
+  // that found A153130, "Period 6: repeat [1,2,4,8,7,5]", this deposit's own orbit already catalogued. And
+  // the FIELD those objects belong to, which the file declares in `prior_art_domain` in the literature's
+  // own language, because that line was written to be read by someone outside this tree.
+  //
+  // So the domain leads the query and the name follows it, contributing only terms long enough to be
+  // distinctive. A name is a label its author chose; a domain is a claim about where the mathematics lives.
+  const dom = domainOf(t.file)
+  const fromName = termsOf(t.name).filter((w) => !LABELS.has(w) && !GENERIC.has(w) && w.length >= 5)
+  const terms = [...dom, ...fromName.filter((w) => !dom.includes(w))]
+  const query = [...dom.slice(0, 4), ...fromName.filter((w) => !dom.includes(w)).slice(0, 3)].join(' ')
   const rec: Rec = { key, file: t.file, name: t.name, statementHash: h, searched: new Date().toISOString(), limits: LIMITS, queries: {}, notMeasured: [], oeis: [], catalogued: false, candidates: [], verdict: 'NOT_MEASURED' }
   for (const seq of sequencesIn(t.statement)) {
     rec.queries[`oeis ${seq}`] = seq

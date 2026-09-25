@@ -280,6 +280,33 @@ on its first green run, which is exactly that defect, caught in its own output.
 files may hold ninety broken theorems. It understated, which is the direction a wrong number survives in.
 The unit is named now.
 
+## 7m · Searched by the statement now, and the candidate count went UP — which is the fix working
+
+*"Search by statement not name."* Trying it is how the shape became clear, and the first attempt was wrong
+in an instructive way.
+
+**A statement's own identifiers are useless to a literature search.** They are `pow9`, `refl`, `isUnit`,
+`toUuidBytes` — this deposit's names for its objects, **deposit-local by construction**. A search for
+`pow9` finds nothing anywhere and would record NONE_FOUND, which is the false *negative* that reads like a
+discovery. That is worse than the false positives it would replace.
+
+What a statement actually offers the literature is two things, and the search uses both. Its **integer
+sequences**, which the OEIS looks up by terms — the half that already worked and found A153130. And the
+**field its objects belong to**, which each file declares in `prior_art_domain` *in the literature's own
+language*, because that line was written to be read from outside this tree. So the domain leads the query
+and the theorem's name follows it, contributing only terms of five letters or more. **A name is a label its
+author chose; a domain is a claim about where the mathematics lives.**
+
+**The result: CANDIDATES for `address.lean` went 4 → 12, and that is the fix working.** The query changed
+from the English word *addressing* to `cryptographic hash sha digests bytes`, and the hits changed from
+*"Addressing identity/redressing the museum"* to *"HF-hash: Hash Functions Using Restricted HFE"*,
+*"Performance Evaluation of Hashing Algorithms on Commodity Hardware"*, *"Quantum One-Wayness of the
+Single-Round Sponge"*. That is the field `address.lean` restates, and its own header says so.
+
+**More candidates is the right answer when a deposit genuinely restates a well-populated field.** A search
+returning little is not a search finding nothing; it can be a search asking the wrong question, and for
+this file it was. Forty-six rows searched under the old rule were deleted and re-searched, not re-labelled.
+
 ## 7l · The novelty search works in one half and is noise in the other
 
 The search ran to 10.3% coverage — 119 of 1,153 theorems. What it found separates cleanly into two halves,
