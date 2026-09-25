@@ -36,9 +36,13 @@ set_option maxRecDepth 100000
 --
 -- WHY THIS FILE EXISTS.
 --
--- The ledger carries 2,933 entries. 1,956 are withdrawn, and of those, 1,124 read "not backed by a Lean
--- proof. Its evidence is a TypeScript test". Inside that set, 176 carry `portable: true` — the deposit's own
--- judgement that the claim IS reachable by the kernel. Every one of those 176 is withdrawn. Not one is live.
+-- Measured 2026-09-25: the ledger carried 3,192 entries, 2,044 of them withdrawn, and of those 1,386 read
+-- "not backed by a Lean proof. Its evidence is a TypeScript test". Those three counts move with every seal
+-- and are dated here for that reason — `npm run forensics` prints them live.
+--
+-- THE FIGURE THAT IS NOT A HEADCOUNT IS THE ONE THIS FILE IS ABOUT. Inside that set, 176 carry
+-- `portable: true` — the deposit's own judgement that the claim IS reachable by the kernel — and every one
+-- of those 176 is withdrawn. Not one is live. That 176 has not moved while the totals grew by 259.
 --
 -- So the deposit had marked 176 facts as provable and proved none of them. That is not a floor and not a
 -- refusal; it is a queue nobody worked. A claim the deposit itself says it could prove, left unproved, is

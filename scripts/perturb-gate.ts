@@ -2,9 +2,11 @@
 /** ── PERTURBATION — does a theorem NOTICE the values it is about? ──────────────────────────────────────
  *
  *  scripts/vacuity.ts rejects a theorem whose quantifier ranges over nothing, and says plainly what it
- *  cannot reach: "344 theorem(s) quantify over nothing at all — a concrete equality has no domain to be
- *  empty — those are NOT claimed as checked." That is 35% of the corpus, declared unchecked by the check
- *  that exists for deciding nothing.
+ *  cannot reach. Measured 2026-09-25 it reported 403 theorem(s) quantifying over nothing at all — a
+ *  concrete equality has no domain to be empty — and did not claim them as checked. That count grows with
+ *  the corpus and is dated for that reason; `npm run vacuity` prints it. THE PROPORTION IS THE DURABLE
+ *  FIGURE and it has not moved: 35% of the corpus then and 35% now, declared unchecked by the check that
+ *  exists for deciding nothing.
  *
  *  A concrete equality has a second way to decide nothing, and I shipped one and deleted it the same hour.
  *  `molarGas % naDigits = 0`, where `molarGas` IS `kDigits * naDigits`, restates its own definition: true
