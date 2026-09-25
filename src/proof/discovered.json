@@ -22704,5 +22704,45 @@
     "key": "lean_widths_the_binding_is_consistency_and_not_derivation",
     "name": "lean widths.lean: the_binding_is_consistency_and_not_derivation — publicKeyBytes == 32 ∧ signatureBytes == 64 ∧ container == 128 ∧ (List.range 60).any (fun b => b != publicKeyBytes ∧ toBits b == b * 8) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "94b518cf-0e4a-8eea-9984-4263480c9b34"
+  },
+  {
+    "key": "lean_asymmetry_the_reflection_is_its_own_inverse",
+    "name": "lean asymmetry.lean: the_reflection_is_its_own_inverse — ring.all (fun d => refl (refl d) == d) && injective refl — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7405001e-bff6-859d-a0fb-dc81ab77dd2b"
+  },
+  {
+    "key": "lean_asymmetry_squaring_is_not_injective_and_its_image_is_four",
+    "name": "lean asymmetry.lean: squaring_is_not_injective_and_its_image_is_four — !(injective sq) && (image sq).length == 4 && ring.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e78ba1d4-b493-8788-9348-b489cecc173d"
+  },
+  {
+    "key": "lean_asymmetry_every_residue_shares_its_square_with_another",
+    "name": "lean asymmetry.lean: every_residue_shares_its_square_with_another — ring.all (fun d => ring.any (fun e => e != d && sq e == sq d)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "edb04164-7d0b-8c2e-b5b9-48186825f010"
+  },
+  {
+    "key": "lean_asymmetry_doubling_is_invertible_and_is_not_its_own_inverse",
+    "name": "lean asymmetry.lean: doubling_is_invertible_and_is_not_its_own_inverse — injective dbl && !(ring.all (fun d => dbl (dbl d) == d)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c4abdffa-08e3-8691-a091-9e5f3828dda9"
+  },
+  {
+    "key": "lean_asymmetry_inverting_the_symmetric_gives_one_and_the_asymmetric_gives_many",
+    "name": "lean asymmetry.lean: inverting_the_symmetric_gives_one_and_the_asymmetric_gives_many — ring.all (fun d => (ring.filter (fun e => refl e == refl d)).length == 1) && ring.all (fun d => (ring.filter (fun e => sq e == sq d)).length > 1) && (ring.filter (fun e => sq e == sq 1)).length == 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cb8e5a17-c020-8da3-a817-f644b99abd0d"
+  },
+  {
+    "key": "lean_asymmetry_each_kind_is_defined_by_the_other",
+    "name": "lean asymmetry.lean: each_kind_is_defined_by_the_other — (injective refl != injective sq) && ((image refl).length != (image sq).length) && (ring.all (fun d => refl (refl d) == d) != ring.all (fun d => sq (sq d) == d)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c9799733-ef99-8db8-89cb-b396477b866c"
+  },
+  {
+    "key": "lean_asymmetry_the_squares_are_not_closed_under_the_reflection",
+    "name": "lean asymmetry.lean: the_squares_are_not_closed_under_the_reflection — !((image sq).all (fun d => (image sq).contains (refl d))) && (image sq).length == ((image sq).map refl).eraseDups.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "873b4c75-7e78-89af-b2c4-09deeaba8de5"
+  },
+  {
+    "key": "lean_asymmetry_the_shape_is_decided_and_the_difficulty_is_not",
+    "name": "lean asymmetry.lean: the_shape_is_decided_and_the_difficulty_is_not — !(injective sq) && ring.length == 9 && (ring.filter (fun e => sq e == 0)).length == 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c38ecb43-8538-86ba-8e99-e0f5a027a05a"
   }
 ]

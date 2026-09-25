@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 3304 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 3312 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1185)
+### lean (1193)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1396,6 +1396,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_widths_no_other_width_converts_to_this_container](/theorem/lean_widths_no_other_width_converts_to_this_container) — lean widths.lean: no_other_width_converts_to_this_container — (List.range 40).all (fun b =&gt; (toBits b == container) == (b == uuidBytes)) ∧ toBits 15 != container ∧ toBits 17 != container — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dfe2407a-68d1…`
 - [lean_widths_the_constants_are_instances_of_the_law_and_not_the_law](/theorem/lean_widths_the_constants_are_instances_of_the_law_and_not_the_law) — lean widths.lean: the_constants_are_instances_of_the_law_and_not_the_law — toBits uuidBytes == container ∧ (List.range 40).all (fun b =&gt; toBits b == b * 8) ∧ (List.range 40).all (fun b =&gt; b != uuidBytes || toBits b == container) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7851950c-8454…`
 - [lean_widths_the_binding_is_consistency_and_not_derivation](/theorem/lean_widths_the_binding_is_consistency_and_not_derivation) — lean widths.lean: the_binding_is_consistency_and_not_derivation — publicKeyBytes == 32 ∧ signatureBytes == 64 ∧ container == 128 ∧ (List.range 60).any (fun b =&gt; b != publicKeyBytes ∧ toBits b == b * 8) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `94b518cf-0e4a…`
+- [lean_asymmetry_the_reflection_is_its_own_inverse](/theorem/lean_asymmetry_the_reflection_is_its_own_inverse) — lean asymmetry.lean: the_reflection_is_its_own_inverse — ring.all (fun d =&gt; refl (refl d) == d) &amp;&amp; injective refl — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7405001e-bff6…`
+- [lean_asymmetry_squaring_is_not_injective_and_its_image_is_four](/theorem/lean_asymmetry_squaring_is_not_injective_and_its_image_is_four) — lean asymmetry.lean: squaring_is_not_injective_and_its_image_is_four — !(injective sq) &amp;&amp; (image sq).length == 4 &amp;&amp; ring.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e78ba1d4-b493…`
+- [lean_asymmetry_every_residue_shares_its_square_with_another](/theorem/lean_asymmetry_every_residue_shares_its_square_with_another) — lean asymmetry.lean: every_residue_shares_its_square_with_another — ring.all (fun d =&gt; ring.any (fun e =&gt; e != d &amp;&amp; sq e == sq d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `edb04164-7d0b…`
+- [lean_asymmetry_doubling_is_invertible_and_is_not_its_own_inverse](/theorem/lean_asymmetry_doubling_is_invertible_and_is_not_its_own_inverse) — lean asymmetry.lean: doubling_is_invertible_and_is_not_its_own_inverse — injective dbl &amp;&amp; !(ring.all (fun d =&gt; dbl (dbl d) == d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c4abdffa-08e3…`
+- [lean_asymmetry_inverting_the_symmetric_gives_one_and_the_asymmetric_gives_many](/theorem/lean_asymmetry_inverting_the_symmetric_gives_one_and_the_asymmetric_gives_many) — lean asymmetry.lean: inverting_the_symmetric_gives_one_and_the_asymmetric_gives_many — ring.all (fun d =&gt; (ring.filter (fun e =&gt; refl e == refl d)).length == 1) &amp;&amp; ring.all (fun d =&gt; (ring.filter (fun e =&gt; sq e == sq d)).length &gt; 1) &amp;&amp; (ring.filter (fun e =&gt; sq e == sq 1)).length == 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cb8e5a17-c020…`
+- [lean_asymmetry_each_kind_is_defined_by_the_other](/theorem/lean_asymmetry_each_kind_is_defined_by_the_other) — lean asymmetry.lean: each_kind_is_defined_by_the_other — (injective refl != injective sq) &amp;&amp; ((image refl).length != (image sq).length) &amp;&amp; (ring.all (fun d =&gt; refl (refl d) == d) != ring.all (fun d =&gt; sq (sq d) == d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c9799733-ef99…`
+- [lean_asymmetry_the_squares_are_not_closed_under_the_reflection](/theorem/lean_asymmetry_the_squares_are_not_closed_under_the_reflection) — lean asymmetry.lean: the_squares_are_not_closed_under_the_reflection — !((image sq).all (fun d =&gt; (image sq).contains (refl d))) &amp;&amp; (image sq).length == ((image sq).map refl).eraseDups.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `873b4c75-7e78…`
+- [lean_asymmetry_the_shape_is_decided_and_the_difficulty_is_not](/theorem/lean_asymmetry_the_shape_is_decided_and_the_difficulty_is_not) — lean asymmetry.lean: the_shape_is_decided_and_the_difficulty_is_not — !(injective sq) &amp;&amp; ring.length == 9 &amp;&amp; (ring.filter (fun e =&gt; sq e == 0)).length == 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c38ecb43-8538…`
 
 ### other — one-of-a-kind (0)
 
@@ -3059,4 +3067,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `3d05d2f8-a477-84fb-a60e-f90963daf11e`. Integrity, not truth.
+Page content-address: `b53f12ec-738b-8e65-ab0f-d73d6cc63188`. Integrity, not truth.
