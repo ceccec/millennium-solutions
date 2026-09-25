@@ -1,126 +1,104 @@
 #!/usr/bin/env node
-/** ── /formulas — EVERY FORMULA THIS DEPOSIT DECIDES, IN ONE FILTERABLE COLLECTION ─────────────────────────
+/** ── /formulas — ONE schema.org ItemList, NOT A HAND-ROLLED PAGE ──────────────────────────────────────────
  *
- *  A reader arriving at this deposit can reach any single theorem at /theorem/<key>, and can read the prose
- *  pages, and has had no way to see THE FORMULAS THEMSELVES as a body — to ask "what does this tree decide
- *  about the reflection", or "which formulas are proved for every value rather than by exhaustion", or
- *  "show me everything in the ring wing". The statements were always there; they were addressable one at a
- *  time and browsable never.
+ *  The first version of this wrote 545 KB of bespoke HTML: an <article> per formula, its own escaping, its
+ *  own CSS, its own filter script. It worked, and it was the wrong shape twice over. This tree ALREADY
+ *  emits schema.org for every theorem — `structuredData` in src/publication builds a ScholarlyArticle with
+ *  author, licence, citation, the source files and the cross-repository statement address — and a second
+ *  format beside it is a second thing to keep in step, readable by nothing but this one page.
  *
- *  THIS PAGE IS DERIVED, NOT WRITTEN. Every row is a Lean statement read out of src/proof, with its file,
- *  namespace, wing, tactic and ledger key. Nothing is summarised and nothing is authored: the formula shown
- *  is the proposition the kernel accepted, character for character. A formula that stops compiling stops
- *  appearing, and no one has to remember to delete a row.
+ *  So the data is a schema.org ItemList of the entries structuredData already produces, written once to
+ *  public/formulas.jsonld, and the page is a few lines that render it. A search engine, a citation index
+ *  and another agent read the same file with no bespoke parser, and the page has no copy of the content to
+ *  drift from it.
  *
- *  FILTERS ARE THE POINT. A list of 1,100 formulas nobody can narrow is a wall, not a collection, so the
- *  page filters by free text, by wing, by file and by how the formula was proved — and says how many of
- *  how many it is showing, so a filter that quietly matches nothing cannot look like an empty tree. */
-import { writeFileSync, readFileSync } from 'node:fs'
-import { leanTheorems, ledger as __ledger, live as __live, leanSource, leanFiles } from '../src/api/index.ts'
-// ESCAPING IS ONE JOB AND THIS TREE DERIVES IT ONCE. This file carried its own five-replace `esc`, and
-// canon-gate refused it — correctly: a second escaper is a second place for a missed character to hide,
-// and the one in src/html is the one every other page is checked against.
-import { escapeHtml } from '../src/html/index.ts'
+ *  WHAT THIS REMOVED: 545 KB of generated markup, a duplicate HTML escaper canon-gate had already refused,
+ *  and every field name invented here rather than taken from a vocabulary someone else maintains. */
+import { writeFileSync, mkdirSync } from 'node:fs'
+import { leanTheorems, leanFiles, leanSource, ledger as __ledger, live as __live } from '../src/api/index.ts'
+import { SITE, CONCEPT_DOI } from '../src/publication/index.ts'
 
-const T = leanTheorems() as { name: string; file: string; namespace: string; tactic: string; statement: string }[]
+const T = leanTheorems() as any[]
 const LIVE = new Set((__live(__ledger()) as { key: string }[]).map((e) => e.key))
-const keyOf = (t: { name: string }) => [...LIVE].find((k) => k.endsWith('_' + t.name) || k === 'lean_' + t.name) ?? ''
+const wingOf = new Map((leanFiles() as string[]).map((f) => [f, leanSource(f).match(/^--\s*wing:\s*(.+)$/m)?.[1]?.trim() ?? 'unfiled']))
+const keyOf = (t: { name: string }) => [...LIVE].find((k) => k.endsWith('_' + t.name)) ?? null
+// The ledger's receipt for each key, so ONE component can serve both the formula list and the ledger list
+// that AllTheorems.vue used to render from a bundled copy of discovered.json.
+const receiptOf = new Map((__ledger() as { key: string; receipt: string }[]).map((e) => [e.key, e.receipt]))
 
-/** The wing is declared in each file's frontmatter, so it is read rather than assigned here. */
-const wingOf = new Map<string, string>()
-for (const f of leanFiles() as string[]) {
-  wingOf.set(f, leanSource(f).match(/^--\s*wing:\s*(.+)$/m)?.[1]?.trim() ?? 'unfiled')
-}
+// ── WHAT IS THE SAME FOR EVERY ENTRY GOES ON THE LIST, ONCE ──────────────────────────────────────────────
+// The first schema.org version reused `structuredData` per formula and produced 2.6 MB — larger than the
+// 545 KB of hand-rolled HTML it replaced — because author, licence, isPartOf and a three-item citation
+// array were repeated 1,168 times. That is not a size problem, it is a MODELLING problem: schema.org puts
+// what a collection shares on the collection. Each entry now carries only what distinguishes it, and the
+// per-theorem ScholarlyArticle with its full provenance stays where it belongs, on the theorem's own page.
+const items = T.map((t, i) => {
+  const key = keyOf(t)
+  return {
+    '@type': 'ListItem', position: i + 1,
+    item: {
+      '@type': 'ScholarlyArticle',
+      name: t.name,
+      description: t.statement,
+      ...(key ? { identifier: key, url: `${SITE}/theorem/${key}`, receipt: receiptOf.get(key) } : {}),
+      about: { '@type': 'DefinedTerm', name: t.namespace || t.file.replace('.lean', '') },
+      // ALIASED IN THE CONTEXT, NOT WRAPPED PER ITEM. Three PropertyValue objects per formula cost more
+      // than the statements they annotate. A local @context maps these names onto schema.org properties
+      // once, which is what a context is FOR — the data means the same to a consumer and stops repeating
+      // the scaffolding 1,168 times.
+      wing: wingOf.get(t.file), source: t.file,
+      proof: t.tactic === 'by decide' ? 'by exhaustion' : 'for every value',
+    },
+  }
+})
 
-const esc = escapeHtml
-const rows = T.map((t) => ({
-  name: t.name, file: t.file, ns: t.namespace, wing: wingOf.get(t.file) ?? 'unfiled',
-  how: t.tactic === 'by decide' ? 'by exhaustion' : 'for every value',
-  key: keyOf(t), statement: t.statement,
-}))
-
-/** A COLLECTION OF NOTHING IS NOT A CLEAN RUN. If the tree stops yielding formulas, or every one lands in
- *  one wing, the page would render as an achievement either way. */
-const wings = [...new Set(rows.map((r) => r.wing))].sort()
-const files = [...new Set(rows.map((r) => r.file))].sort()
-if (rows.length < 100 || wings.length < 2) {
-  console.log(`✗ formulas: ${rows.length} formula(s) across ${wings.length} wing(s) — the reader has broken, not the tree.`)
+const wings = [...new Set(T.map((t) => wingOf.get(t.file)))].sort()
+const files = [...new Set(T.map((t) => t.file))].sort()
+/** A CATALOGUE OF NOTHING IS NOT A CLEAN RUN. */
+if (items.length < 100 || wings.length < 2) {
+  console.log(`✗ formulas: ${items.length} formula(s) across ${wings.length} wing(s) — the reader has broken, not the tree.`)
   process.exit(1)
 }
 
-const body = rows.map((r) => `<article class="fx" data-wing="${esc(r.wing)}" data-file="${esc(r.file)}" data-how="${esc(r.how)}">
-<h3>${r.key ? `<a href="/theorem/${esc(r.key)}">${esc(r.name)}</a>` : esc(r.name)}</h3>
-<pre><code>${esc(r.statement)}</code></pre>
-<p class="meta">${esc(r.ns)} · ${esc(r.file)} · ${esc(r.wing)} · ${esc(r.how)}${r.key ? '' : ' · not sealed'}</p>
-</article>`).join('\n')
+mkdirSync('public', { recursive: true })
+writeFileSync('public/formulas.jsonld', JSON.stringify({
+  '@context': [
+    'https://schema.org',
+    // Three local terms, each a schema.org property under a shorter name.
+    { wing: 'https://schema.org/genre', source: 'https://schema.org/isBasedOn', proof: 'https://schema.org/creativeWorkStatus', receipt: 'https://schema.org/sameAs' },
+  ],
+  '@type': 'ItemList',
+  name: 'Formulas — every proposition this deposit decides',
+  description: 'Each entry is the statement the Lean 4 kernel accepted, character for character, with its source, its wing and how it was proved.',
+  numberOfItems: items.length,
+  itemListOrder: 'https://schema.org/ItemListUnordered',
+  // Shared by every member, stated once — which is both smaller and the vocabulary's own shape.
+  author: { '@type': 'Person', name: 'Tsvetan Rouschev', '@id': 'https://orcid.org/0009-0000-7312-9778' },
+  license: 'https://creativecommons.org/licenses/by-nc-nd/4.0/',
+  inLanguage: 'en',
+  isPartOf: { '@type': 'Dataset', name: 'Millennium Solutions — the ℤ/9 vortex framework', identifier: `https://doi.org/${CONCEPT_DOI}` },
+  itemListElement: items,
+}, null, 1) + '\n')
 
 writeFileSync('formulas.md', `---
 title: Formulas
-description: Every formula this deposit decides, filterable by wing, file and how it was proved.
+description: Every formula this deposit decides, as a schema.org ItemList, filterable by wing, source and proof.
 ---
 <!-- GENERATED BY scripts/formulas.ts — DO NOT EDIT BY HAND -->
 
 # Formulas
 
-${rows.length} formulas, each the proposition the Lean kernel accepted, read from \`src/proof\` and shown
-character for character. ${rows.filter((r) => r.how === 'by exhaustion').length} are decided by exhaustion
-over a finite domain; ${rows.filter((r) => r.how !== 'by exhaustion').length} are proved for every value.
-${rows.filter((r) => r.key).length} carry a live ledger key and link to their receipt.
+${items.length} formulas, each the proposition the Lean 4 kernel accepted, character for character.
+${T.filter((t) => t.tactic === 'by decide').length} decided by exhaustion over a finite domain,
+${T.filter((t) => t.tactic !== 'by decide').length} proved for every value,
+${T.filter((t) => keyOf(t)).length} carrying a live ledger key.
 
-Nothing here is authored. A formula that stops compiling stops appearing.
+The data is **[public/formulas.jsonld](/formulas.jsonld)** — one schema.org \`ItemList\` of
+\`ScholarlyArticle\`, the same structured data every theorem page carries. This page renders that file
+and holds no copy of it, so the two cannot drift. Nothing here is authored: a formula that stops
+compiling stops appearing.
 
-<div class="fx-controls">
-  <input id="fx-q" type="search" placeholder="filter by text — reflection, orbit, involution…" aria-label="Filter formulas by text">
-  <select id="fx-wing" aria-label="Filter by wing"><option value="">every wing</option>${wings.map((w) => `<option>${esc(w)}</option>`).join('')}</select>
-  <select id="fx-file" aria-label="Filter by file"><option value="">every file</option>${files.map((f) => `<option>${esc(f)}</option>`).join('')}</select>
-  <select id="fx-how" aria-label="Filter by how it was proved"><option value="">proved either way</option><option>by exhaustion</option><option>for every value</option></select>
-  <p id="fx-count" role="status">${rows.length} of ${rows.length}</p>
-</div>
-
-<div id="fx-list">
-${body}
-</div>
-
-<style>
-.fx-controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1rem 0;position:sticky;top:var(--vp-nav-height,64px);background:var(--vp-c-bg);padding:.6rem 0;z-index:10}
-.fx-controls input,.fx-controls select{padding:.4rem .6rem;border:1px solid var(--vp-c-divider);border-radius:6px;background:var(--vp-c-bg-soft);color:var(--vp-c-text-1)}
-.fx-controls input{flex:1 1 18rem}
-#fx-count{margin:0;font-size:.85rem;color:var(--vp-c-text-2);white-space:nowrap}
-.fx{border-top:1px solid var(--vp-c-divider);padding:.8rem 0}
-.fx h3{margin:0 0 .3rem;font-size:1rem}
-.fx pre{margin:.2rem 0;overflow-x:auto}
-.fx .meta{margin:.2rem 0 0;font-size:.8rem;color:var(--vp-c-text-2)}
-</style>
-
-<script setup>
-// A BARE <script> IN VITEPRESS MARKDOWN BECOMES THE COMPONENT'S SCRIPT BLOCK and runs before the page is
-// mounted, so document.getElementById would return null and every filter would be dead on arrival — a
-// page that renders perfectly and does nothing, which is the worst kind because it looks finished.
-// A setup block with onMounted is the documented pattern and runs when the nodes exist.
-import { onMounted } from 'vue'
-onMounted(() => {
-  const q = document.getElementById('fx-q'), w = document.getElementById('fx-wing')
-  const f = document.getElementById('fx-file'), h = document.getElementById('fx-how')
-  const count = document.getElementById('fx-count'), items = [...document.querySelectorAll('.fx')]
-  if (!q || !count || !items.length) return
-  const apply = () => {
-    const t = (q.value || '').toLowerCase()
-    let shown = 0
-    for (const el of items) {
-      const ok = (!t || el.textContent.toLowerCase().includes(t))
-        && (!w.value || el.dataset.wing === w.value)
-        && (!f.value || el.dataset.file === f.value)
-        && (!h.value || el.dataset.how === h.value)
-      el.style.display = ok ? '' : 'none'
-      if (ok) shown++
-    }
-    // THE COUNT IS SHOWN SO A FILTER MATCHING NOTHING CANNOT LOOK LIKE AN EMPTY DEPOSIT.
-    count.textContent = shown + ' of ' + items.length + (shown === 0 ? ' — nothing matches that filter' : '')
-  }
-  for (const el of [q, w, f, h]) el.addEventListener('input', apply)
-  apply()
-})
-</script>
+<FormulaList />
 `)
-console.log(`✓ formulas: ${rows.length} formula(s) across ${wings.length} wing(s) and ${files.length} file(s) → formulas.md`)
-console.log(`  ${rows.filter((r) => r.key).length} carry a live ledger key · ${rows.filter((r) => !r.key).length} not sealed`)
+console.log(`✓ formulas: ${items.length} in a schema.org ItemList → public/formulas.jsonld (${(JSON.stringify(items).length / 1024).toFixed(0)} KB) + a page that renders it`)
+console.log(`  ${wings.length} wing(s) · ${files.length} source file(s) · ${T.filter((t) => keyOf(t)).length} with a live ledger key`)

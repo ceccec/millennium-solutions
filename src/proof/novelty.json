@@ -274,6 +274,44 @@
   ],
   "verdict": "CANDIDATES"
  },
+ "lean_address_distinct_inputs_give_distinct_addresses": {
+  "key": "lean_address_distinct_inputs_give_distinct_addresses",
+  "file": "address.lean",
+  "name": "distinct_inputs_give_distinct_addresses",
+  "statementHash": "d8424dac0c7b6234",
+  "searched": "2026-09-25T13:18:55.423Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "distinct inputs give addresses content addressing",
+   "openalex": "distinct inputs give addresses content addressing",
+   "crossref": "distinct inputs give addresses content addressing",
+   "arxiv": "distinct AND inputs AND give AND addresses"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Informativeness and Invariance: Two Perspectives on Spurious Correlations in Natural Language",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2204.04487v2",
+    "relevance": 0.75,
+    "text": "Informativeness and Invariance: Two Perspectives on Spurious Correlations in Natural Language Spurious correlations are a threat to the trustworthiness of natural language processing systems, motivating research into methods for identifying and eliminating them. However, addressing the problem of sp"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
  "lean_address_distinct_seeds_give_distinct_addresses": {
   "key": "lean_address_distinct_seeds_give_distinct_addresses",
   "file": "address.lean",
@@ -332,6 +370,111 @@
   "candidates": [],
   "verdict": "TOO_FEW_TERMS"
  },
+ "lean_address_stamping_twice_is_stamping_once": {
+  "key": "lean_address_stamping_twice_is_stamping_once",
+  "file": "address.lean",
+  "name": "stamping_twice_is_stamping_once",
+  "statementHash": "3817332e5077c8c3",
+  "searched": "2026-09-25T13:20:08.674Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "stamping twice once content addressing",
+   "openalex": "stamping twice once content addressing",
+   "crossref": "stamping twice once content addressing",
+   "arxiv": "stamping AND twice AND once"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_address_the_address_is_not_the_payload": {
+  "key": "lean_address_the_address_is_not_the_payload",
+  "file": "address.lean",
+  "name": "the_address_is_not_the_payload",
+  "statementHash": "ca319e5e865e7452",
+  "searched": "2026-09-25T13:19:10.676Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "address payload content addressing",
+   "openalex": "address payload content addressing",
+   "crossref": "address payload content addressing",
+   "arxiv": "address AND payload"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Polygraph: Automatically Generating Signatures for Polymorphic Worms",
+    "year": 2005,
+    "url": "https://doi.org/10.1109/sp.2005.15",
+    "relevance": 1,
+    "text": "Polygraph: Automatically Generating Signatures for Polymorphic Worms It is widely believed that content-signature-based intrusion detection systems (IDS) are easily evaded by polymorphic worms, which vary their payload on every infection attempt. In this paper, we present Polygraph, a signature gene"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_address_the_address_is_order_sensitive": {
+  "key": "lean_address_the_address_is_order_sensitive",
+  "file": "address.lean",
+  "name": "the_address_is_order_sensitive",
+  "statementHash": "3a9e09557dd6dc48",
+  "searched": "2026-09-25T13:19:23.004Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "address order sensitive content addressing",
+   "openalex": "address order sensitive content addressing",
+   "crossref": "address order sensitive content addressing",
+   "arxiv": "address AND order AND sensitive"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Addressing Order Sensitivity of In-Context Demonstration Examples in Causal Language Models",
+    "year": "2024",
+    "url": "http://arxiv.org/abs/2402.15637v2",
+    "relevance": 1,
+    "text": "Addressing Order Sensitivity of In-Context Demonstration Examples in Causal Language Models In-context learning has become a popular paradigm in natural language processing. However, its performance can be significantly influenced by the order of in-context demonstration examples. In this paper, we "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
  "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length": {
   "key": "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length",
   "file": "address.lean",
@@ -383,6 +526,211 @@
    "openalex": "seeds distinct content addressing",
    "crossref": "seeds distinct content addressing",
    "arxiv": "seeds AND distinct"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group": {
+  "key": "lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group",
+  "file": "address.lean",
+  "name": "the_fourteen_hash_bits_read_back_from_the_fourth_group",
+  "statementHash": "963b849acf440ab5",
+  "searched": "2026-09-25T13:21:44.773Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fourteen hash bits read back content addressing",
+   "openalex": "fourteen hash bits read back content addressing",
+   "crossref": "fourteen hash bits read back content addressing",
+   "arxiv": "fourteen AND hash AND bits AND read AND back"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits": {
+  "key": "lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits",
+  "file": "address.lean",
+  "name": "the_fourth_group_is_variant_two_over_fourteen_hash_bits",
+  "statementHash": "4f603770a57b7857",
+  "searched": "2026-09-25T13:20:41.770Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fourth group variant fourteen hash content addressing",
+   "openalex": "fourth group variant fourteen hash content addressing",
+   "crossref": "fourth group variant fourteen hash content addressing",
+   "arxiv": "fourth AND group AND variant AND fourteen AND hash"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits": {
+  "key": "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits",
+  "file": "address.lean",
+  "name": "the_third_group_is_version_eight_over_twelve_hash_bits",
+  "statementHash": "80e63c5d6eb082f2",
+  "searched": "2026-09-25T13:20:26.866Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "group version twelve hash bits content addressing",
+   "openalex": "group version twelve hash bits content addressing",
+   "crossref": "group version twelve hash bits content addressing",
+   "arxiv": "group AND version AND twelve AND hash AND bits"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_address_the_twelve_hash_bits_read_back_from_the_third_group": {
+  "key": "lean_address_the_twelve_hash_bits_read_back_from_the_third_group",
+  "file": "address.lean",
+  "name": "the_twelve_hash_bits_read_back_from_the_third_group",
+  "statementHash": "747a1f623136680f",
+  "searched": "2026-09-25T13:21:28.035Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "twelve hash bits read back content addressing",
+   "openalex": "twelve hash bits read back content addressing",
+   "crossref": "twelve hash bits read back content addressing",
+   "arxiv": "twelve AND hash AND bits AND read AND back"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_address_the_unstamped_bits_read_back_from_every_stamped_byte": {
+  "key": "lean_address_the_unstamped_bits_read_back_from_every_stamped_byte",
+  "file": "address.lean",
+  "name": "the_unstamped_bits_read_back_from_every_stamped_byte",
+  "statementHash": "871e2e806d8995bc",
+  "searched": "2026-09-25T13:21:01.261Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "unstamped bits read back stamped content addressing",
+   "openalex": "unstamped bits read back stamped content addressing",
+   "crossref": "unstamped bits read back stamped content addressing",
+   "arxiv": "unstamped AND bits AND read AND back AND stamped"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 404"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_address_the_variant_stamp_keeps_the_low_six_bits_of_every_byte": {
+  "key": "lean_address_the_variant_stamp_keeps_the_low_six_bits_of_every_byte",
+  "file": "address.lean",
+  "name": "the_variant_stamp_keeps_the_low_six_bits_of_every_byte",
+  "statementHash": "a6d2433128e30493",
+  "searched": "2026-09-25T13:19:54.865Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "variant stamp keeps low bits content addressing",
+   "openalex": "variant stamp keeps low bits content addressing",
+   "crossref": "variant stamp keeps low bits content addressing",
+   "arxiv": "variant AND stamp AND keeps AND low AND bits"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte": {
+  "key": "lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte",
+  "file": "address.lean",
+  "name": "the_version_stamp_keeps_the_low_nibble_of_every_byte",
+  "statementHash": "0b0ee57f5138594c",
+  "searched": "2026-09-25T13:19:36.769Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "version stamp keeps low nibble content addressing",
+   "openalex": "version stamp keeps low nibble content addressing",
+   "crossref": "version stamp keeps low nibble content addressing",
+   "arxiv": "version AND stamp AND keeps AND low AND nibble"
   },
   "notMeasured": [],
   "oeis": [],
@@ -512,6 +860,1592 @@
   "notMeasured": [],
   "oeis": [],
   "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_a_checksum_is_the_same_whoever_computes_it": {
+  "key": "lean_asymmetric_a_checksum_is_the_same_whoever_computes_it",
+  "file": "asymmetric.lean",
+  "name": "a_checksum_is_the_same_whoever_computes_it",
+  "statementHash": "87471e0eb6266289",
+  "searched": "2026-09-25T13:23:39.063Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "checksum whoever computes public key signatures",
+   "openalex": "checksum whoever computes public key signatures",
+   "crossref": "checksum whoever computes public key signatures",
+   "arxiv": "checksum AND whoever AND computes"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_a_signature_is_four_uuids_and_a_key_is_two": {
+  "key": "lean_asymmetric_a_signature_is_four_uuids_and_a_key_is_two",
+  "file": "asymmetric.lean",
+  "name": "a_signature_is_four_uuids_and_a_key_is_two",
+  "statementHash": "0c8b7b37d41af52f",
+  "searched": "2026-09-25T13:22:06.380Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "signature uuids key public signatures elliptic",
+   "openalex": "signature uuids key public signatures elliptic",
+   "crossref": "signature uuids key public signatures elliptic",
+   "arxiv": "signature AND uuids AND key"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_neither_the_key_nor_the_signature_fits_in_a_uuid": {
+  "key": "lean_asymmetric_neither_the_key_nor_the_signature_fits_in_a_uuid",
+  "file": "asymmetric.lean",
+  "name": "neither_the_key_nor_the_signature_fits_in_a_uuid",
+  "statementHash": "e83ed337792aab58",
+  "searched": "2026-09-25T13:22:20.047Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "neither key nor signature fits public signatures elliptic",
+   "openalex": "neither key nor signature fits public signatures elliptic",
+   "crossref": "neither key nor signature fits public signatures elliptic",
+   "arxiv": "neither AND key AND nor AND signature AND fits"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_not_even_the_whole_uuid_would_hold_one": {
+  "key": "lean_asymmetric_not_even_the_whole_uuid_would_hold_one",
+  "file": "asymmetric.lean",
+  "name": "not_even_the_whole_uuid_would_hold_one",
+  "statementHash": "9d2ced3385f38d70",
+  "searched": "2026-09-25T13:22:33.160Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "even whole uuid would public key signatures",
+   "openalex": "even whole uuid would public key signatures",
+   "crossref": "even whole uuid would public key signatures",
+   "arxiv": "even AND whole AND uuid AND would"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_the_check_cannot_separate_the_payloads": {
+  "key": "lean_asymmetric_the_check_cannot_separate_the_payloads",
+  "file": "asymmetric.lean",
+  "name": "the_check_cannot_separate_the_payloads",
+  "statementHash": "e74b14066bd5667a",
+  "searched": "2026-09-25T13:23:03.320Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "check cannot separate payloads public key signatures",
+   "openalex": "check cannot separate payloads public key signatures",
+   "crossref": "check cannot separate payloads public key signatures",
+   "arxiv": "check AND cannot AND separate AND payloads"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_the_cofactor_is_bracketed_at_eight": {
+  "key": "lean_asymmetric_the_cofactor_is_bracketed_at_eight",
+  "file": "asymmetric.lean",
+  "name": "the_cofactor_is_bracketed_at_eight",
+  "statementHash": "084539fb6b43a890",
+  "searched": "2026-09-25T13:24:54.084Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cofactor bracketed public key signatures",
+   "openalex": "cofactor bracketed public key signatures",
+   "crossref": "cofactor bracketed public key signatures",
+   "arxiv": "cofactor AND bracketed"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_the_gap_is_fifty_eight_bits": {
+  "key": "lean_asymmetric_the_gap_is_fifty_eight_bits",
+  "file": "asymmetric.lean",
+  "name": "the_gap_is_fifty_eight_bits",
+  "statementHash": "66c5e75d181efac8",
+  "searched": "2026-09-25T13:23:25.558Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "gap fifty bits public key signatures",
+   "openalex": "gap fifty bits public key signatures",
+   "crossref": "gap fifty bits public key signatures",
+   "arxiv": "gap AND fifty AND bits"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_the_square_root_rule_is_the_one_this_prime_admits": {
+  "key": "lean_asymmetric_the_square_root_rule_is_the_one_this_prime_admits",
+  "file": "asymmetric.lean",
+  "name": "the_square_root_rule_is_the_one_this_prime_admits",
+  "statementHash": "412d63bc32cb8a85",
+  "searched": "2026-09-25T13:24:33.237Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "square root rule prime admits public key signatures",
+   "openalex": "square root rule prime admits public key signatures",
+   "crossref": "square root rule prime admits public key signatures",
+   "arxiv": "square AND root AND rule AND prime AND admits"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_the_tag_moves_with_the_payload": {
+  "key": "lean_asymmetric_the_tag_moves_with_the_payload",
+  "file": "asymmetric.lean",
+  "name": "the_tag_moves_with_the_payload",
+  "statementHash": "14efa7592ddc9f56",
+  "searched": "2026-09-25T13:24:18.537Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "tag moves payload public key signatures",
+   "openalex": "tag moves payload public key signatures",
+   "crossref": "tag moves payload public key signatures",
+   "arxiv": "tag AND moves AND payload"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_two_secrets_part_company_on_every_payload": {
+  "key": "lean_asymmetric_two_secrets_part_company_on_every_payload",
+  "file": "asymmetric.lean",
+  "name": "two_secrets_part_company_on_every_payload",
+  "statementHash": "36f14d4254768c47",
+  "searched": "2026-09-25T13:23:57.716Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "secrets part company payload public key signatures",
+   "openalex": "secrets part company payload public key signatures",
+   "crossref": "secrets part company payload public key signatures",
+   "arxiv": "secrets AND part AND company AND payload"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_asymmetric_what_travels_beside_the_identifier": {
+  "key": "lean_asymmetric_what_travels_beside_the_identifier",
+  "file": "asymmetric.lean",
+  "name": "what_travels_beside_the_identifier",
+  "statementHash": "66e9c8c949a1a517",
+  "searched": "2026-09-25T13:22:45.956Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "travels beside identifier public key signatures",
+   "openalex": "travels beside identifier public key signatures",
+   "crossref": "travels beside identifier public key signatures",
+   "arxiv": "travels AND beside AND identifier"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_authority_a_cleared_statement_leaves_the_queue_and_stays_on_the_record": {
+  "key": "lean_authority_a_cleared_statement_leaves_the_queue_and_stays_on_the_record",
+  "file": "authority.lean",
+  "name": "a_cleared_statement_leaves_the_queue_and_stays_on_the_record",
+  "statementHash": "941861941d30e4cc",
+  "searched": "2026-09-25T13:26:39.015Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cleared statement leaves queue stays arithmetic finite lists",
+   "openalex": "cleared statement leaves queue stays arithmetic finite lists",
+   "crossref": "cleared statement leaves queue stays arithmetic finite lists",
+   "arxiv": "cleared AND statement AND leaves AND queue AND stays"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_authority_a_rider_and_a_verdict_are_different_things": {
+  "key": "lean_authority_a_rider_and_a_verdict_are_different_things",
+  "file": "authority.lean",
+  "name": "a_rider_and_a_verdict_are_different_things",
+  "statementHash": "7f1880861af5711e",
+  "searched": "2026-09-25T13:25:56.572Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "rider verdict different things arithmetic finite lists",
+   "openalex": "rider verdict different things arithmetic finite lists",
+   "crossref": "rider verdict different things arithmetic finite lists",
+   "arxiv": "rider AND verdict AND different AND things"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_authority_clearing_changes_no_seal": {
+  "key": "lean_authority_clearing_changes_no_seal",
+  "file": "authority.lean",
+  "name": "clearing_changes_no_seal",
+  "statementHash": "658479cb93312a69",
+  "searched": "2026-09-25T13:26:24.787Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "clearing changes seal arithmetic finite lists",
+   "openalex": "clearing changes seal arithmetic finite lists",
+   "crossref": "clearing changes seal arithmetic finite lists",
+   "arxiv": "clearing AND changes AND seal"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_authority_every_sealed_statement_is_live_or_withdrawn_and_not_both": {
+  "key": "lean_authority_every_sealed_statement_is_live_or_withdrawn_and_not_both",
+  "file": "authority.lean",
+  "name": "every_sealed_statement_is_live_or_withdrawn_and_not_both",
+  "statementHash": "d20e8740f8991a98",
+  "searched": "2026-09-25T13:25:28.915Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "sealed statement live withdrawn arithmetic finite lists",
+   "openalex": "sealed statement live withdrawn arithmetic finite lists",
+   "crossref": "sealed statement live withdrawn arithmetic finite lists",
+   "arxiv": "sealed AND statement AND live AND withdrawn"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_authority_nothing_withdrawn_is_live": {
+  "key": "lean_authority_nothing_withdrawn_is_live",
+  "file": "authority.lean",
+  "name": "nothing_withdrawn_is_live",
+  "statementHash": "cc2bd6195e0d74bd",
+  "searched": "2026-09-25T13:25:15.698Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nothing withdrawn live arithmetic finite lists",
+   "openalex": "nothing withdrawn live arithmetic finite lists",
+   "crossref": "nothing withdrawn live arithmetic finite lists",
+   "arxiv": "nothing AND withdrawn AND live"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_authority_refusing_every_verdict_never_refuses_the_whole_record": {
+  "key": "lean_authority_refusing_every_verdict_never_refuses_the_whole_record",
+  "file": "authority.lean",
+  "name": "refusing_every_verdict_never_refuses_the_whole_record",
+  "statementHash": "c7629dfca9eb1f5d",
+  "searched": "2026-09-25T13:26:55.746Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "refusing verdict never refuses whole arithmetic finite lists",
+   "openalex": "refusing verdict never refuses whole arithmetic finite lists",
+   "crossref": "refusing verdict never refuses whole arithmetic finite lists",
+   "arxiv": "refusing AND verdict AND never AND refuses AND whole"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_authority_withdrawing_never_raises_the_frozen_count": {
+  "key": "lean_authority_withdrawing_never_raises_the_frozen_count",
+  "file": "authority.lean",
+  "name": "withdrawing_never_raises_the_frozen_count",
+  "statementHash": "01038fd605f66880",
+  "searched": "2026-09-25T13:26:09.735Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "withdrawing never raises frozen count arithmetic finite lists",
+   "openalex": "withdrawing never raises frozen count arithmetic finite lists",
+   "crossref": "withdrawing never raises frozen count arithmetic finite lists",
+   "arxiv": "withdrawing AND never AND raises AND frozen AND count"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_authority_withdrawing_shrinks_the_live_set_and_never_the_record": {
+  "key": "lean_authority_withdrawing_shrinks_the_live_set_and_never_the_record",
+  "file": "authority.lean",
+  "name": "withdrawing_shrinks_the_live_set_and_never_the_record",
+  "statementHash": "47b24f39a1894105",
+  "searched": "2026-09-25T13:25:43.397Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "withdrawing shrinks live set never arithmetic finite lists",
+   "openalex": "withdrawing shrinks live set never arithmetic finite lists",
+   "crossref": "withdrawing shrinks live set never arithmetic finite lists",
+   "arxiv": "withdrawing AND shrinks AND live AND set AND never"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_capacity_the_birthday_gap_is_half_the_reservation": {
+  "key": "lean_capacity_the_birthday_gap_is_half_the_reservation",
+  "file": "capacity.lean",
+  "name": "the_birthday_gap_is_half_the_reservation",
+  "statementHash": "22542e0a7c2f6b74",
+  "searched": "2026-09-25T13:28:05.611Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "birthday gap half reservation uuid layout version",
+   "openalex": "birthday gap half reservation uuid layout version",
+   "crossref": "birthday gap half reservation uuid layout version",
+   "arxiv": "birthday AND gap AND half AND reservation"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_capacity_the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement": {
+  "key": "lean_capacity_the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement",
+  "file": "capacity.lean",
+  "name": "the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement",
+  "statementHash": "e769964776d2f06d",
+  "searched": "2026-09-25T13:28:54.954Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "bound ceiling difficulty measurement uuid layout version",
+   "openalex": "bound ceiling difficulty measurement uuid layout version",
+   "crossref": "bound ceiling difficulty measurement uuid layout version",
+   "arxiv": "bound AND ceiling AND difficulty AND measurement"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "The Limits of Binding in Dual Encoders",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2608.15971v1",
+    "relevance": 0.75,
+    "text": "The Limits of Binding in Dual Encoders Dual-encoder models such as CLIP score an image-caption pair by a single inner product of two independently computed unit vectors, and fail at binding, often scoring near chance when asked to distinguish \"a red car and a blue dog\" from \"a blue car and a red dog"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_capacity_the_capacity_is_two_to_the_free_bits_and_not_the_container": {
+  "key": "lean_capacity_the_capacity_is_two_to_the_free_bits_and_not_the_container",
+  "file": "capacity.lean",
+  "name": "the_capacity_is_two_to_the_free_bits_and_not_the_container",
+  "statementHash": "f4a6611128df39f8",
+  "searched": "2026-09-25T13:27:27.632Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "capacity free bits container uuid layout version",
+   "openalex": "capacity free bits container uuid layout version",
+   "crossref": "capacity free bits container uuid layout version",
+   "arxiv": "capacity AND free AND bits AND container"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_capacity_the_collision_exponent_follows_the_free_bits": {
+  "key": "lean_capacity_the_collision_exponent_follows_the_free_bits",
+  "file": "capacity.lean",
+  "name": "the_collision_exponent_follows_the_free_bits",
+  "statementHash": "ac8fc8ac84dd33f0",
+  "searched": "2026-09-25T13:27:53.115Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "collision exponent follows free bits uuid layout version",
+   "openalex": "collision exponent follows free bits uuid layout version",
+   "crossref": "collision exponent follows free bits uuid layout version",
+   "arxiv": "collision AND exponent AND follows AND free AND bits"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_capacity_the_container_is_one_hundred_twenty_eight_and_six_are_spent": {
+  "key": "lean_capacity_the_container_is_one_hundred_twenty_eight_and_six_are_spent",
+  "file": "capacity.lean",
+  "name": "the_container_is_one_hundred_twenty_eight_and_six_are_spent",
+  "statementHash": "eb3bc11a98ff0efc",
+  "searched": "2026-09-25T13:27:13.494Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "container hundred twenty spent uuid layout version",
+   "openalex": "container hundred twenty spent uuid layout version",
+   "crossref": "container hundred twenty spent uuid layout version",
+   "arxiv": "container AND hundred AND twenty AND spent"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_capacity_the_gap_is_zero_exactly_when_nothing_is_reserved": {
+  "key": "lean_capacity_the_gap_is_zero_exactly_when_nothing_is_reserved",
+  "file": "capacity.lean",
+  "name": "the_gap_is_zero_exactly_when_nothing_is_reserved",
+  "statementHash": "d76f0b7be38d5223",
+  "searched": "2026-09-25T13:28:18.147Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "gap zero nothing reserved uuid layout version",
+   "openalex": "gap zero nothing reserved uuid layout version",
+   "crossref": "gap zero nothing reserved uuid layout version",
+   "arxiv": "gap AND zero AND nothing AND reserved"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_capacity_the_nominal_overstates_the_real_by_two_to_the_reserved": {
+  "key": "lean_capacity_the_nominal_overstates_the_real_by_two_to_the_reserved",
+  "file": "capacity.lean",
+  "name": "the_nominal_overstates_the_real_by_two_to_the_reserved",
+  "statementHash": "f26803d6f0146a31",
+  "searched": "2026-09-25T13:27:40.343Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nominal overstates real reserved uuid layout version",
+   "openalex": "nominal overstates real reserved uuid layout version",
+   "crossref": "nominal overstates real reserved uuid layout version",
+   "arxiv": "nominal AND overstates AND real AND reserved"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_capacity_the_overclaim_is_this_many_addresses_that_do_not_exist": {
+  "key": "lean_capacity_the_overclaim_is_this_many_addresses_that_do_not_exist",
+  "file": "capacity.lean",
+  "name": "the_overclaim_is_this_many_addresses_that_do_not_exist",
+  "statementHash": "733b74e43c1cb800",
+  "searched": "2026-09-25T13:28:40.102Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "overclaim many addresses exist uuid layout version",
+   "openalex": "overclaim many addresses exist uuid layout version",
+   "crossref": "overclaim many addresses exist uuid layout version",
+   "arxiv": "overclaim AND many AND addresses AND exist"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_closure_a_property_that_is_named_is_found_among_the_named": {
+  "key": "lean_closure_a_property_that_is_named_is_found_among_the_named",
+  "file": "closure.lean",
+  "name": "a_property_that_is_named_is_found_among_the_named",
+  "statementHash": "1f62b14b1648a5e6",
+  "searched": "2026-09-25T13:30:21.838Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "property named found among cantor diagonal argument",
+   "openalex": "property named found among cantor diagonal argument",
+   "crossref": "property named found among cantor diagonal argument",
+   "arxiv": "property AND named AND found AND among"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_closure_nine_names_denote_seven_distinct_properties": {
+  "key": "lean_closure_nine_names_denote_seven_distinct_properties",
+  "file": "closure.lean",
+  "name": "nine_names_denote_seven_distinct_properties",
+  "statementHash": "cde1abe8132a3823",
+  "searched": "2026-09-25T13:29:15.765Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "names denote distinct properties cantor diagonal argument",
+   "openalex": "names denote distinct properties cantor diagonal argument",
+   "crossref": "names denote distinct properties cantor diagonal argument",
+   "arxiv": "names AND denote AND distinct AND properties"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_closure_nine_residues_carry_five_hundred_and_twelve_properties": {
+  "key": "lean_closure_nine_residues_carry_five_hundred_and_twelve_properties",
+  "file": "closure.lean",
+  "name": "nine_residues_carry_five_hundred_and_twelve_properties",
+  "statementHash": "dbc8ade5bae37bc3",
+  "searched": "2026-09-25T13:31:17.823Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "residues carry hundred twelve properties cantor diagonal argument",
+   "openalex": "residues carry hundred twelve properties cantor diagonal argument",
+   "crossref": "residues carry hundred twelve properties cantor diagonal argument",
+   "arxiv": "residues AND carry AND hundred AND twelve AND properties"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_closure_the_diagonal_escapes_nine_and_stops": {
+  "key": "lean_closure_the_diagonal_escapes_nine_and_stops",
+  "file": "closure.lean",
+  "name": "the_diagonal_escapes_nine_and_stops",
+  "statementHash": "8e7a2dc268ce205a",
+  "searched": "2026-09-25T13:30:48.656Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "diagonal escapes stops cantor argument again",
+   "openalex": "diagonal escapes stops cantor argument again",
+   "crossref": "diagonal escapes stops cantor argument again",
+   "arxiv": "diagonal AND escapes AND stops"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_closure_the_witness_disagrees_with_property_i_at_residue_i": {
+  "key": "lean_closure_the_witness_disagrees_with_property_i_at_residue_i",
+  "file": "closure.lean",
+  "name": "the_witness_disagrees_with_property_i_at_residue_i",
+  "statementHash": "4018e7293a0fc4ac",
+  "searched": "2026-09-25T13:29:38.716Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "witness disagrees property residue cantor diagonal argument",
+   "openalex": "witness disagrees property residue cantor diagonal argument",
+   "crossref": "witness disagrees property residue cantor diagonal argument",
+   "arxiv": "witness AND disagrees AND property AND residue"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_closure_the_witness_is_decided_here_and_is_no_kind_of_limit": {
+  "key": "lean_closure_the_witness_is_decided_here_and_is_no_kind_of_limit",
+  "file": "closure.lean",
+  "name": "the_witness_is_decided_here_and_is_no_kind_of_limit",
+  "statementHash": "9bf7e3dcd4ec556b",
+  "searched": "2026-09-25T13:31:38.492Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "witness kind limit cantor diagonal argument",
+   "openalex": "witness kind limit cantor diagonal argument",
+   "crossref": "witness kind limit cantor diagonal argument",
+   "arxiv": "witness AND kind AND limit"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "History of constructivism in the 20th century",
+    "year": 2011,
+    "url": "https://doi.org/10.1017/cbo9780511910616.009",
+    "relevance": 0.6666666666666666,
+    "text": "History of constructivism in the 20th century § 1. Introduction. In this survey of the history of constructivism. more space has been devoted to early developments (up till ca. 1965) than to the work of the later decades. Not only because most of the concepts and general insights have emerged before"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_closure_the_witness_is_none_of_the_nine_named_properties": {
+  "key": "lean_closure_the_witness_is_none_of_the_nine_named_properties",
+  "file": "closure.lean",
+  "name": "the_witness_is_none_of_the_nine_named_properties",
+  "statementHash": "db3ad70eaff5d872",
+  "searched": "2026-09-25T13:29:51.066Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "witness none named properties cantor diagonal argument",
+   "openalex": "witness none named properties cantor diagonal argument",
+   "crossref": "witness none named properties cantor diagonal argument",
+   "arxiv": "witness AND none AND named AND properties"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_closure_the_witness_is_this_table": {
+  "key": "lean_closure_the_witness_is_this_table",
+  "file": "closure.lean",
+  "name": "the_witness_is_this_table",
+  "statementHash": "08a7a5575b2b8bdd",
+  "searched": "2026-09-25T13:30:03.850Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "witness table cantor diagonal argument",
+   "openalex": "witness table cantor diagonal argument",
+   "crossref": "witness table cantor diagonal argument",
+   "arxiv": "witness AND table"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_five_has_3_expressions": {
+  "key": "lean_coils_the_coil_on_five_has_3_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_five_has_3_expressions",
+  "statementHash": "85d5082109e9cb44",
+  "searched": "2026-09-25T13:34:27.791Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_one_eight_has_6_expressions": {
+  "key": "lean_coils_the_coil_on_one_eight_has_6_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_one_eight_has_6_expressions",
+  "statementHash": "f08e9d6156598c3b",
+  "searched": "2026-09-25T13:33:29.107Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_one_four_seven_has_12_expressions": {
+  "key": "lean_coils_the_coil_on_one_four_seven_has_12_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_one_four_seven_has_12_expressions",
+  "statementHash": "b8798dedae12e256",
+  "searched": "2026-09-25T13:32:26.677Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_one_has_3_expressions": {
+  "key": "lean_coils_the_coil_on_one_has_3_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_one_has_3_expressions",
+  "statementHash": "f1b01e545cb7c0eb",
+  "searched": "2026-09-25T13:34:40.661Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_one_two_four_five_seven_eight_has_14_expressions": {
+  "key": "lean_coils_the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
+  "statementHash": "f6d538182ed55e70",
+  "searched": "2026-09-25T13:31:52.125Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_three_has_3_expressions": {
+  "key": "lean_coils_the_coil_on_three_has_3_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_three_has_3_expressions",
+  "statementHash": "43ebf5bdb85c6b96",
+  "searched": "2026-09-25T13:35:01.905Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_three_six_has_6_expressions": {
+  "key": "lean_coils_the_coil_on_three_six_has_6_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_three_six_has_6_expressions",
+  "statementHash": "5fc03bbdee0336e5",
+  "searched": "2026-09-25T13:33:44.192Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_two_five_eight_has_8_expressions": {
+  "key": "lean_coils_the_coil_on_two_five_eight_has_8_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_two_five_eight_has_8_expressions",
+  "statementHash": "75b4f5bc5fee0b05",
+  "searched": "2026-09-25T13:32:52.681Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil has expressions extensional equality predicates",
+   "openalex": "coil has expressions extensional equality predicates",
+   "crossref": "coil has expressions extensional equality predicates",
+   "arxiv": "coil AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_has_10_expressions": {
+  "key": "lean_coils_the_coil_on_zero_has_10_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_has_10_expressions",
+  "statementHash": "6cdf21b96058d0e8",
+  "searched": "2026-09-25T13:32:39.792Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_one_eight_has_6_expressions": {
+  "key": "lean_coils_the_coil_on_zero_one_eight_has_6_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_one_eight_has_6_expressions",
+  "statementHash": "d810d4afbe402b0f",
+  "searched": "2026-09-25T13:33:16.936Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_one_four_seven_has_5_expressions": {
+  "key": "lean_coils_the_coil_on_zero_one_four_seven_has_5_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_one_four_seven_has_5_expressions",
+  "statementHash": "b13473808888ffaa",
+  "searched": "2026-09-25T13:33:57.439Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 0,1,4,7": "0,1,4,7",
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A160120",
+    "name": "Y-toothpick sequence (see Comments lines for definition).",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A085787",
+    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
+    "query": "0,1,4,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_one_two_three_four_five_six_seven_eight_has_8_expressions": {
+  "key": "lean_coils_the_coil_on_zero_one_two_three_four_five_six_seven_eight_has_8_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_one_two_three_four_five_six_seven_eight_has_8_expressions",
+  "statementHash": "9c417c9bcd8094cb",
+  "searched": "2026-09-25T13:33:04.961Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_three_six_has_14_expressions": {
+  "key": "lean_coils_the_coil_on_zero_three_six_has_14_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_three_six_has_14_expressions",
+  "statementHash": "2955f9ffb4236d3e",
+  "searched": "2026-09-25T13:32:09.556Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_coils_the_coil_on_zero_two_five_eight_has_4_expressions": {
+  "key": "lean_coils_the_coil_on_zero_two_five_eight_has_4_expressions",
+  "file": "coils.lean",
+  "name": "the_coil_on_zero_two_five_eight_has_4_expressions",
+  "statementHash": "aa32e25a57f83560",
+  "searched": "2026-09-25T13:34:11.911Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 0,1,4,7": "0,1,4,7",
+   "oeis 0,2,5,8": "0,2,5,8",
+   "zbmath": "coil zero has expressions extensional equality predicates",
+   "openalex": "coil zero has expressions extensional equality predicates",
+   "crossref": "coil zero has expressions extensional equality predicates",
+   "arxiv": "coil AND zero AND has AND expressions"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A160120",
+    "name": "Y-toothpick sequence (see Comments lines for definition).",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A085787",
+    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A022843",
+    "name": "Beatty sequence for e: a(n) = floor(n*e).",
+    "query": "0,2,5,8"
+   },
+   {
+    "a": "A140101",
+    "name": "Start with Y(0)=0, X(1)=1, Y(1)=2. For n > 1, choose least positive integers Y(n) > X(n) such that neither Y(n) nor X(n) appear in {Y(k), 1 <= k < n} or {X(k), ",
+    "query": "0,2,5,8"
+   }
+  ],
+  "catalogued": true,
   "candidates": [],
   "verdict": "NONE_FOUND"
  },

@@ -94,4 +94,4 @@ ledger**, read directly from `src/proof/discovered.json` and re-bundled on every
 upgrades itself with every new set of theorems, the newest surfaced first. Each is decidable, verified
 by exhaustion in `scripts/discover.ts`, and re-verified each build.
 
-<AllTheorems />
+<FormulaList mode="ledger" />

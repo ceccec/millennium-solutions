@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 1,160 machine-checked declarations, **1,106** restate work that already has an author and
+Of 1,168 machine-checked declarations, **1,114** restate work that already has an author and
 **54** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **1,106** |
+| attributed to named earlier work | **1,114** |
 | unclassified — no search performed, status unknown | **54** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 4
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 53 sources, 1,106 theorems
+## Restated from named earlier work — 54 sources, 1,114 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -64,6 +64,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>demand3.lean</code></td><td>19</td><td>elementary number theory, named results</td><td>Legendre’s three-square theorem — Adrien-Marie Legendre, 1797; Carmichael numbers — Robert Carmichael, 1910; amicable pairs — known to antiquity</td></tr>
 <tr><td><code>diagonal.lean</code></td><td>7</td><td>Cantor's diagonal argument (1891), in its finite form: no list of subsets of a finite</td><td>THE ARGUMENT IS CANTOR'S AND NOTHING HERE IMPROVES IT. It is one of the most cited</td></tr>
 <tr><td><code>digits.lean</code></td><td>8</td><td>the nines' and tens' complement, the basis of complement subtraction and of the</td><td>COMPLEMENT ARITHMETIC IS NOT THIS DEPOSIT'S AND IS OLDER THAN THE DECIMAL POINT. That a</td></tr>
+<tr><td><code>dimensions.lean</code></td><td>8</td><td>dimensional analysis and the Buckingham π theorem (Buckingham, 1914; the method is</td><td>NOTHING HERE IS NEW AND THE DERIVATION IS THE STANDARD ONE. Solving three linear</td></tr>
 <tr><td><code>discount.lean</code></td><td>6</td><td>the false-positive rate of a classifier, and the correction of a raw count by a</td><td>NOT THIS DEPOSIT'S, AND OLD. Subtracting what a control already produces is what a blank</td></tr>
 <tr><td><code>domain.lean</code></td><td>8</td><td>Cantor's diagonal argument, and the elementary fact that a diagonal over a domain of n</td><td>THE BOUND IS NOT NEW AND IS NOT CLAIMED. "One point per property" is the counting that</td></tr>
 <tr><td><code>elementary.lean</code></td><td>41</td><td>elementary number theory and combinatorial game theory</td><td>Euclid (Elements IX.36) and Euler for the even perfect numbers; the amicable pair</td></tr>
@@ -121,6 +122,7 @@ which is a contribution of verification, not of discovery.
 - **copyright law — rights arising without formality** — 9 theorems, in `rights.lean`
 - **cryptographic hash standards and integer root extraction** — 8 theorems, in `roots.lean`
 - **cyclic groups and primitive roots** — 14 theorems, in `rays.lean`
+- **dimensional analysis and the Buckingham π theorem (Buckingham, 1914; the method is** — 8 theorems, in `dimensions.lean`
 - **electrochemistry and combustion** — 28 theorems, in `energy.lean`
 - **elementary arithmetic** — 30 theorems, in `reversal.lean`
 - **elementary finite group theory over ℤ/9, and the hue circle of colour theory** — 80 theorems, in `reached.lean`
@@ -192,5 +194,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `e1bf8b83-ccd5-8a11-a0de-aafa0e749c55` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `e19eef21-e778-8832-9888-97448005dcbe` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

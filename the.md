@@ -17,4 +17,4 @@ Every decidable fact the deposit has discovered, rendered from `src/proof/discov
 complete ledger, re-verified by exhaustion on each build. None is a Clay Millennium result; all land
 on
 
-<AllTheorems />
+<FormulaList mode="ledger" />
