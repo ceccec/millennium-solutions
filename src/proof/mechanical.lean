@@ -53,6 +53,12 @@ theorem fib_trinity_horizon : DR (3 + 5 + 8) == 7 := by decide
 -- the same arithmetic through a different lens, and the file is standalone, so removing one would
 -- Restates the statement of `cover_rotation_full_circle` above under a different name. Both are kept: each reads
 -- canonical: cover_rotation_full_circle
+-- canonical: cover_rotation_full_circle
+-- SAME STATEMENT, DECLARED RATHER THAN DEDUPLICATED. This and `cover_rotation_full_circle` decide the identical
+-- proposition, character for character — both name an application of one arithmetic fact: the nine multiples of 40 mod 360 are distinct. Rotation and hue are two readings of the same circle, and the kernel decides the circle.
+-- Both are kept because each carries a reading a reader arrives with, and the deposit says which is
+-- the result and which is a second address for it. `npm run unique` refuses an undeclared collision:
+-- two names for one theorem are two publications waiting to happen.
 theorem arts_nine_hues_distinct : ((List.range' 1 9).map (fun d => (d * 40) % 360)).eraseDups.length == 9 := by decide
 
 -- trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)
@@ -103,6 +109,12 @@ theorem harmonic_pythagorean_comma : 3 ^ 12 == 531441 && 2 ^ 19 == 524288 && 3 ^
 -- the same arithmetic through a different lens, and the file is standalone, so removing one would
 -- Restates the statement of `fib_trinity_horizon` above under a different name. Both are kept: each reads
 -- canonical: fib_trinity_horizon
+-- canonical: fib_trinity_horizon
+-- SAME STATEMENT, DECLARED RATHER THAN DEDUPLICATED. This and `fib_trinity_horizon` decide the identical
+-- proposition, character for character — one fact, DR(3+5+8) = 7, under two labels. Neither name states the arithmetic; both point at it.
+-- Both are kept because each carries a reading a reader arrives with, and the deposit says which is
+-- the result and which is a second address for it. `npm run unique` refuses an undeclared collision:
+-- two names for one theorem are two publications waiting to happen.
 theorem relation_seven : DR (3 + 5 + 8) == 7 := by decide
 
 -- 8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor
@@ -334,6 +346,12 @@ theorem present_by_reference_fits_a_tiny_budget : 1600 * 36 == 57600 && 57600 < 
 -- the same arithmetic through a different lens, and the file is standalone, so removing one would
 -- Restates the statement of `the_address_is_shipped_not_the_payload` above under a different name. Both are kept: each reads
 -- canonical: the_address_is_shipped_not_the_payload
+-- canonical: the_address_is_shipped_not_the_payload
+-- SAME STATEMENT, DECLARED RATHER THAN DEDUPLICATED. This and `the_address_is_shipped_not_the_payload` decide the identical
+-- proposition, character for character — one determinism fact about toUuidBytes under two readings — caching and shipping are what the fact is USED for, not what it says.
+-- Both are kept because each carries a reading a reader arrives with, and the deposit says which is
+-- the result and which is a second address for it. `npm run unique` refuses an undeclared collision:
+-- two names for one theorem are two publications waiting to happen.
 theorem a_cached_address_is_never_recomputed : Address.toUuidBytes [120] == Address.toUuidBytes [120] && Address.toUuidBytes [120] != Address.toUuidBytes [121] := by decide
 
 -- a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilit
