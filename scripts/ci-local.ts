@@ -52,6 +52,9 @@ const STEPS: Step[] = [
   // immutable provenance that triggers publish.yml. The workflow runs `npm run gates` now, and this mirror
   // has to know it, or ci-drift is right that the mirror is lying about its coverage.
   { name: 'gates (the whole refusing chain)', cmd: 'npm run gates' },
+  // e2e lives in docs:build, which release.yml runs — but leads.ts counts the chains this mirror names,
+  // and a gate reachable only through a build step it does not know about reads as unrun. It is named here.
+  { name: 'e2e (the artefact a reader opens)', cmd: 'npm run docs:build' },
   { name: 'contradictions',                  cmd: 'node scripts/contradictions.ts' },
   { name: 'independent (claims stand alone)', cmd: 'node scripts/independent.ts' },
   // THE WORKSPACE STEPS. packages/uuidna is NOT a declared npm workspace — package.json has no
