@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 1,176 of them across 59 files and
-7 wings; 974 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 1,184 of them across 60 files and
+7 wings; 982 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -5692,6 +5692,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 
 \begin{theorem}[\texttt{novelty\_is\_claimed\_of\_no\_source}]
 \[ \left|\{\, x \in \mathrm{sources} \mid \mathrm{novelty}\mathopen{}\left(x\right) \,\}\right| = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{ranking.lean}}
+
+\begin{theorem}[\texttt{turning\_a\_signal\_on\_never\_lowers\_the\_score}]
+\[ \forall m \in \mathrm{masks},\; \forall i \in \{0,\dots,5\},\; \mathrm{bit}\mathopen{}\left(m,\,i\right) \lor \mathrm{score}\mathopen{}\left(m + 2^{i}\right) \ge \mathrm{score}\mathopen{}\left(m\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_signal\_strictly\_raises\_the\_score}]
+\[ \forall m \in \mathrm{masks},\; \forall i \in \{0,\dots,5\},\; \mathrm{bit}\mathopen{}\left(m,\,i\right) \lor \mathrm{score}\mathopen{}\left(m + 2^{i}\right) > \mathrm{score}\mathopen{}\left(m\right) \land \forall w \in \mathrm{weights},\; w > 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_score\_runs\_from\_zero\_to\_eleven}]
+\[ \mathrm{score}\mathopen{}\left(0\right) = 0 \land \mathrm{score}\mathopen{}\left(63\right) = 11 \land \sum \mathrm{weights} = 11 \land \forall m \in \mathrm{masks},\; \mathrm{score}\mathopen{}\left(m\right) \le 11 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_ranking\_holds\_nine\_distinguishable\_states\_as\_one}]
+\[ \left|\operatorname{dedup}\left(\mathrm{score}[\mathrm{masks}]\right)\right| = 12 \land \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) = 4 \,\}\right| = 9 \land \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) = 5 \,\}\right| = 9 \land \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) = 6 \,\}\right| = 9 \land \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) = 7 \,\}\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{only\_the\_top\_and\_the\_bottom\_identify\_their\_evidence}]
+\[ \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) = 0 \,\}\right| = 1 \land \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) = 11 \,\}\right| = 1 \land \{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) = 0 \,\} = [0] \land \{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) = 11 \,\} = [63] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{distinct\_powers\_would\_separate\_every\_state}]
+\[ \left|\operatorname{dedup}\left(\{\, \operatorname{fold}_{\mathrm{acc},\,i \mapsto \mathrm{acc} + \begin{cases}2^{i} & \text{if } \mathrm{bit}\mathopen{}\left(m,\,i\right)\\ 0 & \text{otherwise}\end{cases}}\left(\{0,\dots,5\},\, 0\right) \mid m \in \mathrm{masks} \,\}\right)\right| = 64 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_heaviest\_signals\_outweigh\_all\_the\_others}]
+\texttt{weights.getD 0 0 == 3 \&\& weights.getD 1 0 == 3 \&\& weights.getD 0 0 + weights.getD 1 0 > weights.getD 2 0 + weights.getD 3 0 + weights.getD 4 0 + weights.getD 5 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_high\_score\_orders\_attention\_and\_settles\_nothing}]
+\[ \mathrm{score}\mathopen{}\left(63\right) = 11 \land \mathrm{score}\mathopen{}\left(0\right) = 0 \land \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) \ge 8 \,\}\right| = 14 \land \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) \ge 8 \,\}\right| < \left|\mathrm{masks}\right| \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

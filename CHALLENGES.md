@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 3280 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 3288 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1161)
+### lean (1169)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1372,6 +1372,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_verdict_all_five_verdicts_occur](/theorem/lean_verdict_all_five_verdicts_occur) — lean verdict.lean: all_five_verdicts_occur — (R.flatMap (fun k =&gt; R.flatMap (fun r =&gt; R.map (fun s =&gt; verdict k r s)))).eraseDups.length == 5 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c52fd3dd-90d0…`
 - [lean_verdict_too_few_terms_precedes_every_other_test](/theorem/lean_verdict_too_few_terms_precedes_every_other_test) — lean verdict.lean: too_few_terms_precedes_every_other_test — R.all (fun r =&gt; R.all (fun s =&gt; verdict 0 r s == 0 &amp;&amp; verdict 1 r s == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e78cee44-284e…`
 - [lean_verdict_the_rule_is_decided_and_the_search_quality_is_not](/theorem/lean_verdict_the_rule_is_decided_and_the_search_quality_is_not) — lean verdict.lean: the_rule_is_decided_and_the_search_quality_is_not — verdict 5 0 0 == 2 &amp;&amp; verdict 5 1 0 == 1 &amp;&amp; verdict 5 0 5 == 4 &amp;&amp; verdict 5 0 1 == 3 &amp;&amp; verdict 1 9 9 == 0 &amp;&amp; sources == 5 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fbf9e09d-c64e…`
+- [lean_ranking_turning_a_signal_on_never_lowers_the_score](/theorem/lean_ranking_turning_a_signal_on_never_lowers_the_score) — lean ranking.lean: turning_a_signal_on_never_lowers_the_score — masks.all (fun m =&gt; (List.range 6).all (fun i =&gt; bit m i || score (m + 2 ^ i) ≥ score m)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `19b28918-b1e8…`
+- [lean_ranking_every_signal_strictly_raises_the_score](/theorem/lean_ranking_every_signal_strictly_raises_the_score) — lean ranking.lean: every_signal_strictly_raises_the_score — masks.all (fun m =&gt; (List.range 6).all (fun i =&gt; bit m i || score (m + 2 ^ i) &gt; score m)) &amp;&amp; weights.all (fun w =&gt; w &gt; 0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e84e0759-2071…`
+- [lean_ranking_the_score_runs_from_zero_to_eleven](/theorem/lean_ranking_the_score_runs_from_zero_to_eleven) — lean ranking.lean: the_score_runs_from_zero_to_eleven — score 0 == 0 &amp;&amp; score 63 == 11 &amp;&amp; weights.foldl (· + ·) 0 == 11 &amp;&amp; masks.all (fun m =&gt; score m ≤ 11) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `96b30d19-3f93…`
+- [lean_ranking_the_ranking_holds_nine_distinguishable_states_as_one](/theorem/lean_ranking_the_ranking_holds_nine_distinguishable_states_as_one) — lean ranking.lean: the_ranking_holds_nine_distinguishable_states_as_one — (masks.map score).eraseDups.length == 12 &amp;&amp; (masks.filter (fun m =&gt; score m == 4)).length == 9 &amp;&amp; (masks.filter (fun m =&gt; score m == 5)).length == 9 &amp;&amp; (masks.filter (fun m =&gt; score m == 6)).length == 9 &amp;&amp; (masks.filter (fun m =&gt; score m ==… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5995d53b-72d5…`
+- [lean_ranking_only_the_top_and_the_bottom_identify_their_evidence](/theorem/lean_ranking_only_the_top_and_the_bottom_identify_their_evidence) — lean ranking.lean: only_the_top_and_the_bottom_identify_their_evidence — (masks.filter (fun m =&gt; score m == 0)).length == 1 &amp;&amp; (masks.filter (fun m =&gt; score m == 11)).length == 1 &amp;&amp; (masks.filter (fun m =&gt; score m == 0)) == [0] &amp;&amp; (masks.filter (fun m =&gt; score m == 11)) == [63] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ef785a00-ef89…`
+- [lean_ranking_distinct_powers_would_separate_every_state](/theorem/lean_ranking_distinct_powers_would_separate_every_state) — lean ranking.lean: distinct_powers_would_separate_every_state — (masks.map (fun m =&gt; (List.range 6).foldl (fun acc i =&gt; acc + (if bit m i then 2 ^ i else 0)) 0)).eraseDups.length == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e857c1d1-2da2…`
+- [lean_ranking_the_two_heaviest_signals_outweigh_all_the_others](/theorem/lean_ranking_the_two_heaviest_signals_outweigh_all_the_others) — lean ranking.lean: the_two_heaviest_signals_outweigh_all_the_others — weights.getD 0 0 == 3 &amp;&amp; weights.getD 1 0 == 3 &amp;&amp; weights.getD 0 0 + weights.getD 1 0 &gt; weights.getD 2 0 + weights.getD 3 0 + weights.getD 4 0 + weights.getD 5 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3de521f2-a598…`
+- [lean_ranking_a_high_score_orders_attention_and_settles_nothing](/theorem/lean_ranking_a_high_score_orders_attention_and_settles_nothing) — lean ranking.lean: a_high_score_orders_attention_and_settles_nothing — score 63 == 11 &amp;&amp; score 0 == 0 &amp;&amp; (masks.filter (fun m =&gt; score m ≥ 8)).length == 14 &amp;&amp; (masks.filter (fun m =&gt; score m ≥ 8)).length &lt; masks.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f220388b-524c…`
 
 ### other — one-of-a-kind (0)
 
@@ -3037,4 +3045,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `61d340c7-a7e9-8651-87f5-ce37c052b7ed`. Integrity, not truth.
+Page content-address: `b592d9df-dabb-8669-a940-05a419620936`. Integrity, not truth.

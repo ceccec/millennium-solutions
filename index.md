@@ -33,12 +33,12 @@ last because the orbit never reaches it.
 
 - The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 1176 kernel-accepted declarations across 59 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `3de77494-4dfc-8aa3-a218-3d198feb5ca1`</sub>
-- 974 of those 1176 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
-  <sub>SEALED · `0fa7d2cc-6ccb-883e-b980-19db2eda3314`</sub>
-- 1416 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `80f7acd2-2ed9-852e-98b5-035bd09dbe4f`</sub>
+- The formal layer holds 1184 kernel-accepted declarations across 60 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `4f0f4fac-570f-8998-9651-2bf2170bf47d`</sub>
+- 982 of those 1184 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
+  <sub>SEALED · `e0bcde67-005f-854d-ba15-a4cc6e370b19`</sub>
+- 1424 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `a0ae98ce-5d1d-8eff-8409-5b561007187f`</sub>
 
 ## 2 · The ring
 
@@ -61,10 +61,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 3280 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `2436acea-d4a9-82b2-818e-ba8f32f9d535`</sub>
-- The count is an exact multiple of eight — 3280 is 410 octaves with no remainder.
-  <sub>SEALED · `8ec0fb23-bb05-84d8-94ab-25779ff38251`</sub>
+- The ledger records 3288 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `c7110500-e888-803c-9938-12058bbf5227`</sub>
+- The count is an exact multiple of eight — 3288 is 411 octaves with no remainder.
+  <sub>SEALED · `7319098f-6409-8aa9-8172-1eb4c7a9952e`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -116,7 +116,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-59 Lean files in 7 wings, 1176 declarations of which 1161 are theorems. The prose in this section is read out of the
+60 Lean files in 7 wings, 1184 declarations of which 1169 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -242,6 +242,8 @@ this page; there is nowhere else to keep the description in step.
 
 **Prior art, and what novelty is claimed** — `priorart.lean`, 9 theorem(s). artefact is long established and formalised: W3C PROV-O, the DataCite metadata schema, Dublin Core   Metadata Terms, PREMIS for archived digital objects, the Open Provenance Model, and the software   citation principles' credit-and-attribution requirement. Nothing about keeping an attribution table is   new, and this deposit does not suggest otherwise.
 
+**The discovery ranking is monotone, and it is far coarser than it looks** — `ranking.lean`, 8 theorem(s). queue — which decides where the next prior-art search goes — is put to both, and that the second   answer is unflattering and recorded anyway. prior_art_search: not performed — both are named above. prior_art_pool: unbounded prior_art_own: the coarseness count in theorem 4, and theorem 8
+
 **Rights** — `rights.lean`, 9 theorem(s). Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by   exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;   the audit of its own position against the law is. prior_art_search: no search was needed — the instruments were cited in this file's own prose from the   start. Recorded 2026-09-05, when the table was found to disagree with the file. prior_art_pool: unbounded   the subject is this deposit's own rights table.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own rights table What this deposit claims under international law — and, in the same table, what it does not.
 
 **The prior-art verdict is total, exclusive, and never improved by silence** — `verdict.lean`, 8 theorem(s). is this deposit's is that ITS OWN verdict rule — the one standing behind every novelty claim it makes —   is decided by the kernel rather than left as a line of TypeScript nobody checks. prior_art_search: not performed — both notions are named above. prior_art_pool: unbounded prior_art_own: the four properties below, and theorem 8
@@ -252,7 +254,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-31 of 1176 declarations carry no comment of their own and are shown here as the gap they are, not
+31 of 1184 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -261,14 +263,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 3,280 — 410 octaves exactly |
-| standing — carries its own proof | **1161** |
+| ledger entries | 3,288 — 411 octaves exactly |
+| standing — carries its own proof | **1169** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **525** |
 | withdrawn — nothing proves it | 1,594 |
-| proved in total | **1686** of 3,280 |
-| standing keys → distinct theorems | 1161 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 59 · 1161 theorems (974 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
-| proved `by decide` | 974 of 1176 |
+| proved in total | **1694** of 3,288 |
+| standing keys → distinct theorems | 1169 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 60 · 1169 theorems (982 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
+| proved `by decide` | 982 of 1184 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -306,4 +308,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*20 claims, all verified · 1161 Lean theorems · 3280 ledger entries · trial root `aaf717f4-6b70-842e-89d4-1fc96b3ded57` · integrity, not truth*
+*20 claims, all verified · 1169 Lean theorems · 3288 ledger entries · trial root `7c324c33-d0cb-8378-b47d-46e5c42b4414` · integrity, not truth*

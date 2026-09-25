@@ -22584,5 +22584,45 @@
     "key": "lean_verdict_the_rule_is_decided_and_the_search_quality_is_not",
     "name": "lean verdict.lean: the_rule_is_decided_and_the_search_quality_is_not — verdict 5 0 0 == 2 && verdict 5 1 0 == 1 && verdict 5 0 5 == 4 && verdict 5 0 1 == 3 && verdict 1 9 9 == 0 && sources == 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "fbf9e09d-c64e-89c2-8adf-40961abc3ecd"
+  },
+  {
+    "key": "lean_ranking_turning_a_signal_on_never_lowers_the_score",
+    "name": "lean ranking.lean: turning_a_signal_on_never_lowers_the_score — masks.all (fun m => (List.range 6).all (fun i => bit m i || score (m + 2 ^ i) ≥ score m)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "19b28918-b1e8-8b07-8e41-b1bd5177f397"
+  },
+  {
+    "key": "lean_ranking_every_signal_strictly_raises_the_score",
+    "name": "lean ranking.lean: every_signal_strictly_raises_the_score — masks.all (fun m => (List.range 6).all (fun i => bit m i || score (m + 2 ^ i) > score m)) && weights.all (fun w => w > 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e84e0759-2071-8d3a-b46d-b2999f96d06b"
+  },
+  {
+    "key": "lean_ranking_the_score_runs_from_zero_to_eleven",
+    "name": "lean ranking.lean: the_score_runs_from_zero_to_eleven — score 0 == 0 && score 63 == 11 && weights.foldl (· + ·) 0 == 11 && masks.all (fun m => score m ≤ 11) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "96b30d19-3f93-8af6-95f1-7ab1e01b2397"
+  },
+  {
+    "key": "lean_ranking_the_ranking_holds_nine_distinguishable_states_as_one",
+    "name": "lean ranking.lean: the_ranking_holds_nine_distinguishable_states_as_one — (masks.map score).eraseDups.length == 12 && (masks.filter (fun m => score m == 4)).length == 9 && (masks.filter (fun m => score m == 5)).length == 9 && (masks.filter (fun m => score m == 6)).length == 9 && (masks.filter (fun m => score m ==… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5995d53b-72d5-8708-863e-f58f99c26d4a"
+  },
+  {
+    "key": "lean_ranking_only_the_top_and_the_bottom_identify_their_evidence",
+    "name": "lean ranking.lean: only_the_top_and_the_bottom_identify_their_evidence — (masks.filter (fun m => score m == 0)).length == 1 && (masks.filter (fun m => score m == 11)).length == 1 && (masks.filter (fun m => score m == 0)) == [0] && (masks.filter (fun m => score m == 11)) == [63] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ef785a00-ef89-8ff9-b5d0-05a0833e1429"
+  },
+  {
+    "key": "lean_ranking_distinct_powers_would_separate_every_state",
+    "name": "lean ranking.lean: distinct_powers_would_separate_every_state — (masks.map (fun m => (List.range 6).foldl (fun acc i => acc + (if bit m i then 2 ^ i else 0)) 0)).eraseDups.length == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e857c1d1-2da2-87b9-a396-4f9617d85344"
+  },
+  {
+    "key": "lean_ranking_the_two_heaviest_signals_outweigh_all_the_others",
+    "name": "lean ranking.lean: the_two_heaviest_signals_outweigh_all_the_others — weights.getD 0 0 == 3 && weights.getD 1 0 == 3 && weights.getD 0 0 + weights.getD 1 0 > weights.getD 2 0 + weights.getD 3 0 + weights.getD 4 0 + weights.getD 5 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3de521f2-a598-856e-a1b3-0b63ee9236ee"
+  },
+  {
+    "key": "lean_ranking_a_high_score_orders_attention_and_settles_nothing",
+    "name": "lean ranking.lean: a_high_score_orders_attention_and_settles_nothing — score 63 == 11 && score 0 == 0 && (masks.filter (fun m => score m ≥ 8)).length == 14 && (masks.filter (fun m => score m ≥ 8)).length < masks.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f220388b-524c-8ca0-a7e9-b10da45df0ba"
   }
 ]

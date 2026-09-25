@@ -2258,7 +2258,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_one_eight_has_6_expressions",
   "statementHash": "f08e9d6156598c3b",
-  "searched": "2026-09-25T13:33:29.107Z",
+  "searched": "2026-09-25T14:29:34.058Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2273,12 +2273,14 @@
   "queries": {
    "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
    "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [
    {
     "a": "A001651",
@@ -2308,14 +2310,14 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_one_four_seven_has_12_expressions": {
   "key": "lean_coils_the_coil_on_one_four_seven_has_12_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_one_four_seven_has_12_expressions",
   "statementHash": "b8798dedae12e256",
-  "searched": "2026-09-25T13:32:26.677Z",
+  "searched": "2026-09-25T14:28:34.325Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2330,12 +2332,14 @@
   "queries": {
    "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
    "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [
    {
     "a": "A001651",
@@ -2365,7 +2369,7 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_one_has_3_expressions": {
   "key": "lean_coils_the_coil_on_one_has_3_expressions",
@@ -2401,7 +2405,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
   "statementHash": "f6d538182ed55e70",
-  "searched": "2026-09-25T13:31:52.125Z",
+  "searched": "2026-09-25T14:27:46.462Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2416,12 +2420,15 @@
   "queries": {
    "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
    "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "zbmath: HTTP 502",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [
    {
     "a": "A001651",
@@ -2451,7 +2458,7 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NOT_MEASURED"
  },
  "lean_coils_the_coil_on_seven_has_2_expressions": {
   "key": "lean_coils_the_coil_on_seven_has_2_expressions",
@@ -2547,7 +2554,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_three_six_has_6_expressions",
   "statementHash": "5fc03bbdee0336e5",
-  "searched": "2026-09-25T13:33:44.192Z",
+  "searched": "2026-09-25T14:29:44.174Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2562,12 +2569,14 @@
   "queries": {
    "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
    "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [
    {
     "a": "A001651",
@@ -2597,14 +2606,14 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_two_five_eight_has_8_expressions": {
   "key": "lean_coils_the_coil_on_two_five_eight_has_8_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_two_five_eight_has_8_expressions",
   "statementHash": "75b4f5bc5fee0b05",
-  "searched": "2026-09-25T13:32:52.681Z",
+  "searched": "2026-09-25T14:29:00.449Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2617,16 +2626,18 @@
    ]
   },
   "queries": {
-   "zbmath": "coil has expressions extensional equality predicates",
-   "openalex": "coil has expressions extensional equality predicates",
-   "crossref": "coil has expressions extensional equality predicates",
-   "arxiv": "coil AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_two_seven_has_2_expressions": {
   "key": "lean_coils_the_coil_on_two_seven_has_2_expressions",
@@ -2691,7 +2702,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_has_10_expressions",
   "statementHash": "6cdf21b96058d0e8",
-  "searched": "2026-09-25T13:32:39.792Z",
+  "searched": "2026-09-25T14:28:44.746Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2704,23 +2715,25 @@
    ]
   },
   "queries": {
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_one_eight_has_6_expressions": {
   "key": "lean_coils_the_coil_on_zero_one_eight_has_6_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_zero_one_eight_has_6_expressions",
   "statementHash": "d810d4afbe402b0f",
-  "searched": "2026-09-25T13:33:16.936Z",
+  "searched": "2026-09-25T14:29:23.355Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2733,23 +2746,25 @@
    ]
   },
   "queries": {
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_one_four_seven_has_5_expressions": {
   "key": "lean_coils_the_coil_on_zero_one_four_seven_has_5_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_zero_one_four_seven_has_5_expressions",
   "statementHash": "b13473808888ffaa",
-  "searched": "2026-09-25T13:33:57.439Z",
+  "searched": "2026-09-25T14:29:58.629Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2763,12 +2778,14 @@
   },
   "queries": {
    "oeis 0,1,4,7": "0,1,4,7",
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [
    {
     "a": "A160120",
@@ -2783,7 +2800,7 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_one_has_3_expressions": {
   "key": "lean_coils_the_coil_on_zero_one_has_3_expressions",
@@ -2831,7 +2848,7 @@
   "file": "coils.lean",
   "name": "the_coil_on_zero_one_two_three_four_five_six_seven_eight_has_8_expressions",
   "statementHash": "9c417c9bcd8094cb",
-  "searched": "2026-09-25T13:33:04.961Z",
+  "searched": "2026-09-25T14:29:13.169Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2844,23 +2861,25 @@
    ]
   },
   "queries": {
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_three_six_has_14_expressions": {
   "key": "lean_coils_the_coil_on_zero_three_six_has_14_expressions",
   "file": "coils.lean",
   "name": "the_coil_on_zero_three_six_has_14_expressions",
   "statementHash": "2955f9ffb4236d3e",
-  "searched": "2026-09-25T13:32:09.556Z",
+  "searched": "2026-09-25T14:28:20.238Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -2873,16 +2892,18 @@
    ]
   },
   "queries": {
-   "zbmath": "coil zero has expressions extensional equality predicates",
-   "openalex": "coil zero has expressions extensional equality predicates",
-   "crossref": "coil zero has expressions extensional equality predicates",
-   "arxiv": "coil AND zero AND has AND expressions"
+   "zbmath": "extensional equality predicates finite expressions",
+   "openalex": "extensional equality predicates finite expressions",
+   "crossref": "extensional equality predicates finite expressions",
+   "arxiv": "extensional AND equality AND predicates AND finite AND expressions"
   },
-  "notMeasured": [],
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_coils_the_coil_on_zero_two_five_eight_has_4_expressions": {
   "key": "lean_coils_the_coil_on_zero_two_five_eight_has_4_expressions",

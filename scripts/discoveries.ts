@@ -118,6 +118,13 @@ for (const c of show) {
   console.log(`      ${c.why.join(' · ')}`)
 }
 console.log(`\n  showing ${show.length} of ${cands.length}${process.argv.includes('--all') ? '' : ' — run with --all for the rest'}`)
+// THE RANKING IS COARSER THAN A SORTED LIST LOOKS, and src/proof/ranking.lean counts exactly how much:
+// six binary signals make 64 distinguishable states and this scoring collapses them onto 12 scores, with
+// NINE different signal sets sharing the score 4, and nine more sharing 5, 6 and 7. That is the middle of
+// this queue, where most theorems sit. Only 0 and 11 identify their evidence uniquely. Printed here
+// because a reader meets the list, not the theorem.
+console.log(`  ORDINAL ONLY: 64 signal states collapse onto 12 scores — nine sets share each of 4, 5, 6, 7.`)
+console.log(`  Only the extremes are unambiguous. See src/proof/ranking.lean, which decides it.`)
 console.log(`  A RANK IS NOT A NOVELTY CLAIM. This orders where to look; only a performed search, recorded`)
 console.log(`  with its queries and results, can say whether a statement has an earlier author. Run`)
 console.log(`  \`npm run novelty\` to perform them — it reaches five registries, so no build chain runs it.`)
