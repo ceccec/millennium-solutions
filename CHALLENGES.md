@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 3264 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 3272 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1218)
+### lean (1226)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1429,6 +1429,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_preimage_tagging_separates_a_leaf_from_a_node](/theorem/lean_preimage_tagging_separates_a_leaf_from_a_node) — lean preimage.lean: tagging_separates_a_leaf_from_a_node — (List.range 30).all (fun x =&gt; (List.range 30).all (fun y =&gt; (List.range 30).all (fun z =&gt; leafTag x != nodeTag y z))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `735000ad-f1e5…`
 - [lean_preimage_the_tagged_fold_refuses_the_forged_leaf](/theorem/lean_preimage_the_tagged_fold_refuses_the_forged_leaf) — lean preimage.lean: the_tagged_fold_refuses_the_forged_leaf — (List.range 20).all (fun a =&gt; (List.range 20).all (fun b =&gt; leafTag (nodeTag a b) != nodeTag a b)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `405cb8fa-9f34…`
 - [lean_preimage_the_unescaped_separator_makes_the_pairing_non_injective](/theorem/lean_preimage_the_unescaped_separator_makes_the_pairing_non_injective) — lean preimage.lean: the_unescaped_separator_makes_the_pairing_non_injective — mergeStr [1, sep, 2] [3] == mergeStr [1] [2, sep, 3] &amp;&amp; [1, sep, 2] != ([1] : List Nat) &amp;&amp; ([3] : List Nat) != [2, sep, 3] &amp;&amp; (List.range 12).all (fun a =&gt; (List.range 12).all (fun b =&gt; (List.range 12).all (fun c =&gt; (b == c) || mergeStr [a]… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6ad749fa-362a…`
+- [lean_dimensions_the_length_exponents_are_unique](/theorem/lean_dimensions_the_length_exponents_are_unique) — lean dimensions.lean: the_length_exponents_are_unique — solutions 0 2 0 == [(1, -3, 1)] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1014a00f-bfdb…`
+- [lean_dimensions_the_time_exponents_are_unique](/theorem/lean_dimensions_the_time_exponents_are_unique) — lean dimensions.lean: the_time_exponents_are_unique — solutions 0 0 2 == [(1, -5, 1)] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `606e3e20-1cf1…`
+- [lean_dimensions_the_mass_exponents_are_unique](/theorem/lean_dimensions_the_mass_exponents_are_unique) — lean dimensions.lean: the_mass_exponents_are_unique — solutions 2 0 0 == [(1, 1, -1)] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e45642c9-5411…`
+- [lean_dimensions_each_triple_produces_the_dimension_it_claims](/theorem/lean_dimensions_each_triple_produces_the_dimension_it_claims) — lean dimensions.lean: each_triple_produces_the_dimension_it_claims — (massOf 1 (-3) 1, lengthOf 1 (-3) 1, timeOf 1 (-3) 1) == (0, 2, 0) &amp;&amp; (massOf 1 (-5) 1, lengthOf 1 (-5) 1, timeOf 1 (-5) 1) == (0, 0, 2) &amp;&amp; (massOf 1 1 (-1), lengthOf 1 1 (-1), timeOf 1 1 (-1)) == (2, 0, 0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a73da60e-e8b9…`
+- [lean_dimensions_some_targets_have_no_solution_at_all](/theorem/lean_dimensions_some_targets_have_no_solution_at_all) — lean dimensions.lean: some_targets_have_no_solution_at_all — solutions 1 1 1 == [] &amp;&amp; (solutions 0 2 0).length == 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9fadd4d0-e091…`
+- [lean_dimensions_a_looser_condition_returns_many](/theorem/lean_dimensions_a_looser_condition_returns_many) — lean dimensions.lean: a_looser_condition_returns_many — (R.flatMap (fun A =&gt; (R.filter (fun D =&gt; massOf A 0 D == 0)).map (fun D =&gt; (A, D)))).length == 19 &amp;&amp; (R.flatMap (fun A =&gt; (R.filter (fun D =&gt; massOf A 0 D == 0)).map (fun D =&gt; (A, D)))).length &gt; 1 &amp;&amp; (R.filter (fun A =&gt; massOf A 0 0 == 0)).… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e0f11dde-d6f4…`
+- [lean_dimensions_the_three_constants_are_dimensionally_independent](/theorem/lean_dimensions_the_three_constants_are_dimensionally_independent) — lean dimensions.lean: the_three_constants_are_dimensionally_independent — solutions 0 0 0 == [(0, 0, 0)] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `064ff78f-171e…`
+- [lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not](/theorem/lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not) — lean dimensions.lean: the_coefficient_is_undetermined_and_the_exponents_are_not — solutions 0 2 0 == [(1, -3, 1)] &amp;&amp; lengthOf 1 (-3) 1 == 2 &amp;&amp; massOf 1 (-3) 1 == 0 &amp;&amp; timeOf 1 (-3) 1 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0d20a400-1ea3…`
 
 ### other — one-of-a-kind (0)
 
@@ -3021,4 +3029,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `183cadd4-7584-8f58-a7b4-a92db444124b`. Integrity, not truth.
+Page content-address: `968ca887-c8a4-8544-8406-1c8e6012ffc4`. Integrity, not truth.

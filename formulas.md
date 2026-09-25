@@ -6,19 +6,19 @@ description: Every formula this deposit decides, filterable by wing, file and ho
 
 # Formulas
 
-1160 formulas, each the proposition the Lean kernel accepted, read from `src/proof` and shown
-character for character. 958 are decided by exhaustion
+1168 formulas, each the proposition the Lean kernel accepted, read from `src/proof` and shown
+character for character. 966 are decided by exhaustion
 over a finite domain; 202 are proved for every value.
-1145 carry a live ledger key and link to their receipt.
+1153 carry a live ledger key and link to their receipt.
 
 Nothing here is authored. A formula that stops compiling stops appearing.
 
 <div class="fx-controls">
   <input id="fx-q" type="search" placeholder="filter by text — reflection, orbit, involution…" aria-label="Filter formulas by text">
   <select id="fx-wing" aria-label="Filter by wing"><option value="">every wing</option><option>the address</option><option>the floor</option><option>the imagined</option><option>the machine</option><option>the record</option><option>the returned</option><option>the ring</option></select>
-  <select id="fx-file" aria-label="Filter by file"><option value="">every file</option><option>address.lean</option><option>asymmetric.lean</option><option>authority.lean</option><option>capacity.lean</option><option>closure.lean</option><option>coils.lean</option><option>coin.lean</option><option>demand.lean</option><option>demand2.lean</option><option>demand3.lean</option><option>diagonal.lean</option><option>digits.lean</option><option>discount.lean</option><option>domain.lean</option><option>elementary.lean</option><option>energy.lean</option><option>families.lean</option><option>flow.lean</option><option>fnv.lean</option><option>generated.lean</option><option>handle.lean</option><option>imagined.lean</option><option>imprint.lean</option><option>index.lean</option><option>instruments.lean</option><option>involution.lean</option><option>lanes.lean</option><option>ledgerclaims.lean</option><option>light.lean</option><option>mechanical.lean</option><option>merkaba.lean</option><option>merkle.lean</option><option>mirror.lean</option><option>nim.lean</option><option>nucleus.lean</option><option>phenomena.lean</option><option>planck.lean</option><option>preimage.lean</option><option>priorart.lean</option><option>program.lean</option><option>quantum.lean</option><option>rays.lean</option><option>reach.lean</option><option>reached.lean</option><option>recovered.lean</option><option>reflection.lean</option><option>reversal.lean</option><option>rights.lean</option><option>roots.lean</option><option>separation.lean</option><option>sequences.lean</option><option>speed.lean</option><option>split.lean</option><option>theology.lean</option><option>turns.lean</option><option>z9.lean</option><option>z9plus.lean</option></select>
+  <select id="fx-file" aria-label="Filter by file"><option value="">every file</option><option>address.lean</option><option>asymmetric.lean</option><option>authority.lean</option><option>capacity.lean</option><option>closure.lean</option><option>coils.lean</option><option>coin.lean</option><option>demand.lean</option><option>demand2.lean</option><option>demand3.lean</option><option>diagonal.lean</option><option>digits.lean</option><option>dimensions.lean</option><option>discount.lean</option><option>domain.lean</option><option>elementary.lean</option><option>energy.lean</option><option>families.lean</option><option>flow.lean</option><option>fnv.lean</option><option>generated.lean</option><option>handle.lean</option><option>imagined.lean</option><option>imprint.lean</option><option>index.lean</option><option>instruments.lean</option><option>involution.lean</option><option>lanes.lean</option><option>ledgerclaims.lean</option><option>light.lean</option><option>mechanical.lean</option><option>merkaba.lean</option><option>merkle.lean</option><option>mirror.lean</option><option>nim.lean</option><option>nucleus.lean</option><option>phenomena.lean</option><option>planck.lean</option><option>preimage.lean</option><option>priorart.lean</option><option>program.lean</option><option>quantum.lean</option><option>rays.lean</option><option>reach.lean</option><option>reached.lean</option><option>recovered.lean</option><option>reflection.lean</option><option>reversal.lean</option><option>rights.lean</option><option>roots.lean</option><option>separation.lean</option><option>sequences.lean</option><option>speed.lean</option><option>split.lean</option><option>theology.lean</option><option>turns.lean</option><option>z9.lean</option><option>z9plus.lean</option></select>
   <select id="fx-how" aria-label="Filter by how it was proved"><option value="">proved either way</option><option>by exhaustion</option><option>for every value</option></select>
-  <p id="fx-count" role="status">1160 of 1160</p>
+  <p id="fx-count" role="status">1168 of 1168</p>
 </div>
 
 <div id="fx-list">
@@ -811,6 +811,46 @@ Nothing here is authored. A formula that stops compiling stops appearing.
 <h3><a href="/theorem/lean_digits_the_constants_are_ten_times_the_repunits">the_constants_are_ten_times_the_repunits</a></h3>
 <pre><code>10 == 10 * 1 &amp;&amp; 110 == 10 * 11 &amp;&amp; 1110 == 10 * 111 &amp;&amp; 11110 == 10 * 1111 &amp;&amp; 11 == 1 * 10 + 1 &amp;&amp; 111 == 11 * 10 + 1 &amp;&amp; 1111 == 111 * 10 + 1</code></pre>
 <p class="meta">Digits · digits.lean · the ring · by exhaustion</p>
+</article>
+<article class="fx" data-wing="the ring" data-file="dimensions.lean" data-how="by exhaustion">
+<h3><a href="/theorem/lean_dimensions_the_length_exponents_are_unique">the_length_exponents_are_unique</a></h3>
+<pre><code>solutions 0 2 0 == [(1, -3, 1)]</code></pre>
+<p class="meta">Dimensions · dimensions.lean · the ring · by exhaustion</p>
+</article>
+<article class="fx" data-wing="the ring" data-file="dimensions.lean" data-how="by exhaustion">
+<h3><a href="/theorem/lean_dimensions_the_time_exponents_are_unique">the_time_exponents_are_unique</a></h3>
+<pre><code>solutions 0 0 2 == [(1, -5, 1)]</code></pre>
+<p class="meta">Dimensions · dimensions.lean · the ring · by exhaustion</p>
+</article>
+<article class="fx" data-wing="the ring" data-file="dimensions.lean" data-how="by exhaustion">
+<h3><a href="/theorem/lean_dimensions_the_mass_exponents_are_unique">the_mass_exponents_are_unique</a></h3>
+<pre><code>solutions 2 0 0 == [(1, 1, -1)]</code></pre>
+<p class="meta">Dimensions · dimensions.lean · the ring · by exhaustion</p>
+</article>
+<article class="fx" data-wing="the ring" data-file="dimensions.lean" data-how="by exhaustion">
+<h3><a href="/theorem/lean_dimensions_each_triple_produces_the_dimension_it_claims">each_triple_produces_the_dimension_it_claims</a></h3>
+<pre><code>(massOf 1 (-3) 1, lengthOf 1 (-3) 1, timeOf 1 (-3) 1) == (0, 2, 0) &amp;&amp; (massOf 1 (-5) 1, lengthOf 1 (-5) 1, timeOf 1 (-5) 1) == (0, 0, 2) &amp;&amp; (massOf 1 1 (-1), lengthOf 1 1 (-1), timeOf 1 1 (-1)) == (2, 0, 0)</code></pre>
+<p class="meta">Dimensions · dimensions.lean · the ring · by exhaustion</p>
+</article>
+<article class="fx" data-wing="the ring" data-file="dimensions.lean" data-how="by exhaustion">
+<h3><a href="/theorem/lean_dimensions_some_targets_have_no_solution_at_all">some_targets_have_no_solution_at_all</a></h3>
+<pre><code>solutions 1 1 1 == [] &amp;&amp; (solutions 0 2 0).length == 1</code></pre>
+<p class="meta">Dimensions · dimensions.lean · the ring · by exhaustion</p>
+</article>
+<article class="fx" data-wing="the ring" data-file="dimensions.lean" data-how="by exhaustion">
+<h3><a href="/theorem/lean_dimensions_a_looser_condition_returns_many">a_looser_condition_returns_many</a></h3>
+<pre><code>(R.flatMap (fun A =&gt; (R.filter (fun D =&gt; massOf A 0 D == 0)).map (fun D =&gt; (A, D)))).length == 19 &amp;&amp; (R.flatMap (fun A =&gt; (R.filter (fun D =&gt; massOf A 0 D == 0)).map (fun D =&gt; (A, D)))).length &gt; 1 &amp;&amp; (R.filter (fun A =&gt; massOf A 0 0 == 0)).length == 1</code></pre>
+<p class="meta">Dimensions · dimensions.lean · the ring · by exhaustion</p>
+</article>
+<article class="fx" data-wing="the ring" data-file="dimensions.lean" data-how="by exhaustion">
+<h3><a href="/theorem/lean_dimensions_the_three_constants_are_dimensionally_independent">the_three_constants_are_dimensionally_independent</a></h3>
+<pre><code>solutions 0 0 0 == [(0, 0, 0)]</code></pre>
+<p class="meta">Dimensions · dimensions.lean · the ring · by exhaustion</p>
+</article>
+<article class="fx" data-wing="the ring" data-file="dimensions.lean" data-how="by exhaustion">
+<h3><a href="/theorem/lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not">the_coefficient_is_undetermined_and_the_exponents_are_not</a></h3>
+<pre><code>solutions 0 2 0 == [(1, -3, 1)] &amp;&amp; lengthOf 1 (-3) 1 == 2 &amp;&amp; massOf 1 (-3) 1 == 0 &amp;&amp; timeOf 1 (-3) 1 == 0</code></pre>
+<p class="meta">Dimensions · dimensions.lean · the ring · by exhaustion</p>
 </article>
 <article class="fx" data-wing="the ring" data-file="discount.lean" data-how="by exhaustion">
 <h3><a href="/theorem/lean_discount_the_discount_never_raises_the_figure">the_discount_never_raises_the_figure</a></h3>

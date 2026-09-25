@@ -22358,5 +22358,45 @@
     "key": "lean_preimage_the_unescaped_separator_makes_the_pairing_non_injective",
     "name": "lean preimage.lean: the_unescaped_separator_makes_the_pairing_non_injective — mergeStr [1, sep, 2] [3] == mergeStr [1] [2, sep, 3] && [1, sep, 2] != ([1] : List Nat) && ([3] : List Nat) != [2, sep, 3] && (List.range 12).all (fun a => (List.range 12).all (fun b => (List.range 12).all (fun c => (b == c) || mergeStr [a]… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "6ad749fa-362a-898b-9d78-662b254b3d52"
+  },
+  {
+    "key": "lean_dimensions_the_length_exponents_are_unique",
+    "name": "lean dimensions.lean: the_length_exponents_are_unique — solutions 0 2 0 == [(1, -3, 1)] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1014a00f-bfdb-89bf-9e38-8fe827c03e7d"
+  },
+  {
+    "key": "lean_dimensions_the_time_exponents_are_unique",
+    "name": "lean dimensions.lean: the_time_exponents_are_unique — solutions 0 0 2 == [(1, -5, 1)] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "606e3e20-1cf1-8870-a0dd-f672e4affea5"
+  },
+  {
+    "key": "lean_dimensions_the_mass_exponents_are_unique",
+    "name": "lean dimensions.lean: the_mass_exponents_are_unique — solutions 2 0 0 == [(1, 1, -1)] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e45642c9-5411-8180-9c46-74d68fcfdced"
+  },
+  {
+    "key": "lean_dimensions_each_triple_produces_the_dimension_it_claims",
+    "name": "lean dimensions.lean: each_triple_produces_the_dimension_it_claims — (massOf 1 (-3) 1, lengthOf 1 (-3) 1, timeOf 1 (-3) 1) == (0, 2, 0) && (massOf 1 (-5) 1, lengthOf 1 (-5) 1, timeOf 1 (-5) 1) == (0, 0, 2) && (massOf 1 1 (-1), lengthOf 1 1 (-1), timeOf 1 1 (-1)) == (2, 0, 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a73da60e-e8b9-87e1-8425-fba27041dd1f"
+  },
+  {
+    "key": "lean_dimensions_some_targets_have_no_solution_at_all",
+    "name": "lean dimensions.lean: some_targets_have_no_solution_at_all — solutions 1 1 1 == [] && (solutions 0 2 0).length == 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9fadd4d0-e091-8ec7-bb01-a498cc69e57f"
+  },
+  {
+    "key": "lean_dimensions_a_looser_condition_returns_many",
+    "name": "lean dimensions.lean: a_looser_condition_returns_many — (R.flatMap (fun A => (R.filter (fun D => massOf A 0 D == 0)).map (fun D => (A, D)))).length == 19 && (R.flatMap (fun A => (R.filter (fun D => massOf A 0 D == 0)).map (fun D => (A, D)))).length > 1 && (R.filter (fun A => massOf A 0 0 == 0)).… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e0f11dde-d6f4-8808-b00f-d978eef46895"
+  },
+  {
+    "key": "lean_dimensions_the_three_constants_are_dimensionally_independent",
+    "name": "lean dimensions.lean: the_three_constants_are_dimensionally_independent — solutions 0 0 0 == [(0, 0, 0)] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "064ff78f-171e-8828-b62c-4065bdd7c82e"
+  },
+  {
+    "key": "lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not",
+    "name": "lean dimensions.lean: the_coefficient_is_undetermined_and_the_exponents_are_not — solutions 0 2 0 == [(1, -3, 1)] && lengthOf 1 (-3) 1 == 2 && massOf 1 (-3) 1 == 0 && timeOf 1 (-3) 1 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0d20a400-1ea3-8707-bddf-f48fc75293e2"
   }
 ]

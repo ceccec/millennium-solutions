@@ -280,6 +280,44 @@ on its first green run, which is exactly that defect, caught in its own output.
 files may hold ninety broken theorems. It understated, which is the direction a wrong number survives in.
 The unit is named now.
 
+## 7j · The author's own status matrix — record 22895141, all thirteen files read
+
+The record whose title is *"All Seven Clay Millennium Problems Sealed via Universal σ-Involution"* also
+contains `clay_millennium_reconstructive_publication.pdf`, deposited by the author, which opens:
+
+> "This is a mathematically honest publication dossier, **not a claim to solve the six currently open
+> Millennium Prize Problems.** … The phrase 'reconstructive algebraic proof' is therefore used here in the
+> legitimate sense: reconstructing definitions, equations, reductions, known implications, and proof
+> obligations. **It does not manufacture proofs of open theorems.**"
+
+and carries a status matrix: **BSD, Hodge, Navier–Stokes, P vs NP, Riemann, Yang–Mills — Open. Poincaré —
+Solved by Perelman.**
+
+The two are not in tension; together they are the author's signed position, and it is more exact than any
+agent paraphrase of it. The windows are sealed and the conjectures are open. **This is neither "0 of 7" nor
+"7 of 7", and it is the author's own formulation, in his own deposit, alongside the title that has been read
+as the stronger claim.**
+
+### What the other twelve files yielded
+
+| file(s) | followed to |
+| --- | --- |
+| capabilities report, crypto formulas | the `merkleFold` second preimage and the unescaped separator — **fixed**, §7i |
+| six dimensional-analysis PDFs | `src/proof/dimensions.lean` — the Planck exponents are *forced*, not chosen |
+| `explain qpu in formulas.pdf` | nothing to fix: it states plainly that its figures "do not by themselves establish that a physical 32-qubit processor is present" and that its capacity formula is "a classical systems-capacity formula, not a quantum-mechanical law". Its one arithmetic claim, 120,259,084,288 = 28·2³², checks out |
+| `The Clay problem.pdf`, the energy-inequality PDF | a correct statement of Navier–Stokes and the Leray–Hopf energy identity, with the boundary stated: "an arbitrary singular numerical computation is not enough" |
+
+**`src/proof/dimensions.lean`.** `planck.lean` already *records* the exponents; nothing decided they were
+the only ones. They are: over every triple in −9…9, exactly one gives a length, one a time, one a mass, and
+only the empty product is dimensionless — so ħ, c and G are dimensionally independent, which is what makes
+"unique" mean anything. Theorem 8 states what it does not decide: dimensional analysis leaves the
+dimensionless coefficient free, so nothing here says the resulting length is physically significant.
+
+**Three figures in that file were typed from expectation and refused by the kernel**, one after another: a
+transposed exponent triple — `planck.lean` orders (ħ, G, c) and this file orders (ħ, c, G), so a triple
+copied across without reading the convention is simply wrong — a miscounted solution list, and a control
+conjunct that was false. Both orderings are now stated in the file so the next reader need not guess.
+
 ## 7i · The Merkle fold admits a second preimage — `src/proof/preimage.lean`
 
 The author's cryptographic capabilities report (`10.5281/zenodo.22895141`, 2026-09-22) is carefully scoped:
