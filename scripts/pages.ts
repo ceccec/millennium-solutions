@@ -181,8 +181,24 @@ const CLAIMS: Claim[] = [
       const src = leanSrc['lanes.lean'] ?? ''
       const bound = /theorem lanes_never_exceed_what_memory_affords/.test(src)
       const b = laneBudget({ perJobMB: 2900, procName: 'lean' })
-      return { text: `how much of a machine a check may take is decided, not assumed: ${t.length} theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. On this host: ${b.why}`,
-        ok: t.length > 0 && bound && b.lanes >= 1, from: [t.length, b.lanes, b.cores] } } },
+      // NO HOST FIGURE IS COMMITTED HERE, AND THAT IS THE FIX RATHER THAN A RETREAT.
+      //
+      // This declared `b.lanes` and `b.cores` as numbers it had read and printed only `b.why`, which names
+      // the cores, the per-job size and the memory-derived ceiling but NOT the granted lane count. On this
+      // host those two were the same digit and the claim passed; on a clean checkout with different free
+      // memory they differ, and verify-clone refused the build — "read 3 but does not say so". Caught in
+      // the one place that simulates a reader, a detached worktree, and not in the tree it was written in.
+      //
+      // THE FIRST FIX WAS WORSE THAN THE DEFECT. Printing "the budget grants 5 lane(s) across 10 core(s)"
+      // grounds the numbers and bakes THIS MACHINE into a committed page: the next reader recomputes 3 on
+      // their own hardware and the claim fails for everyone instead of failing by luck. A figure that
+      // varies with whoever runs it cannot be committed at all, and the grounding check was right twice.
+      //
+      // So the sentence asserts what a clean checkout reproduces — the theorems exist and the bound among
+      // them is present — and the host's own budget is printed by `npm run lanes-check`, where it is a
+      // measurement of a moment rather than a claim on a page.
+      return { text: `how much of a machine a check may take is decided, not assumed: ${t.length} theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. What any given host grants varies with its free memory and is deliberately not recorded here; \`npm run lanes-check\` prints it.`,
+        ok: t.length > 0 && bound && b.lanes >= 1, from: [t.length] } } },
 
   // REACHABLE FROM A PROGRAM, SAID ON THE PAGES A READER OPENS. Measured 2026-09-20: the MCP server was
   // named in CHALLENGES.md, WHITEPAPER.md, guide.md and harness.md, and in neither README.md nor the
