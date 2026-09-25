@@ -1,5 +1,6 @@
+import Z9
 set_option maxRecDepth 100000
--- title: Claims the ledger marked reachable, now reached
+-- title: What the ledger marked reachable, reached by the kernel
 -- wing: the returned
 -- prior_art: named
 -- prior_art_domain: elementary finite group theory over ℤ/9, and the hue circle of colour theory
@@ -14,6 +15,24 @@ set_option maxRecDepth 100000
 -- prior_art_pool: bounded
 -- prior_art_own: nothing mathematical; only that the deposit now proves what it had already claimed was provable
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
+--
+-- WHY IT IS NOT CALLED `claimed`, AND WHY THAT IS NOT ABOUT PRIOR ART.
+--
+-- It was `claimed.lean`. Two corrections, and only the second is the reason for this name.
+--
+-- The first was mine and wrong: I read the file's contents — Lagrange, Euclid, Euler, Fermat, Gauss,
+-- Cassini, Brahmagupta, Stern, Collatz — and concluded that prior art cannot be claimed, so the name
+-- overreached. That confuses two different priors. CLAIMED means no prior CLAIM, not no prior ART. Every
+-- theorem here restates work with an earlier author, credited in the frontmatter, and the deposit still
+-- claims what it claims: priority of DEPOSIT on these decided statements. llms.txt has always said so —
+-- "priority of DEPOSIT, not of idea". Naming the file for the mathematics being old would have quietly
+-- surrendered a claim nobody had contested.
+--
+-- The second is the reason. LEAN DOES NOT CLAIM. There is no claiming algorithm in the kernel; it decides
+-- a proposition over a finite domain and stops. The claiming is the TypeScript automation's — discover.ts
+-- proposes, the ledger seals with a chained receipt, pages.ts publishes. So a Lean filename cannot carry
+-- the word honestly, whatever is true about priority. This file REACHES what the ledger had marked
+-- reachable; the ledger does the claiming, as it always has.
 --
 -- WHY THIS FILE EXISTS.
 --
@@ -30,10 +49,19 @@ set_option maxRecDepth 100000
 --
 -- No axioms, no Mathlib, no sorry.
 
-namespace Claimed
+namespace Reached
 
-def B : Nat := 9
-def m9 (n : Nat) : Nat := n % B
+-- DRY IS ABOUT DUPLICATED CONTENT, NOT REPEATED NAMES. I first counted bare identifiers across src/proof —
+-- 479 names, 48 appearing in more than one file — and read that as 48 violations. It is not. Every
+-- definition here is `Claimed.something` and every one in z9.lean is `Z9.something`; Lean's namespaces make
+-- them different names already, and `settledHere` in fifteen files is fifteen distinct constants by design,
+-- one per file, not a repetition of anything.
+--
+-- What IS duplication is a BODY repeated. `B := 9` and `m9 n := n % B` were character-identical to z9.lean's
+-- — the worst kind of copy, because nothing compares them and so nothing can notice them drifting. Those
+-- come from Z9 now. The name they carry was never the problem.
+def B : Nat := Z9.B
+def m9 (n : Nat) : Nat := Z9.m9 n
 def residues : List Nat := List.range B          -- 0 … 8
 def neg (d : Nat) : Nat := m9 (B - m9 d)         -- additive inverse mod 9
 
@@ -95,7 +123,7 @@ theorem the_nine_hues_are_distinct_and_evenly_spaced :
 -- ledger: trial_units_group — "the units of ℤ/9 form a group under × (closure · identity · inverses)".
 -- All three group axioms over the whole set, each decided rather than asserted. Associativity is inherited
 -- from multiplication on the naturals and is not restated here as though this file had established it.
-def units : List Nat := (List.range B).filter (fun d => (List.range B).any (fun e => m9 (d * e) == 1))
+def units : List Nat := Z9.units
 theorem the_units_are_closed_have_an_identity_and_every_one_has_an_inverse :
   units = [1, 2, 4, 5, 7, 8]
   ∧ units.all (fun a => units.all (fun b => units.contains (m9 (a * b))))
@@ -307,6 +335,10 @@ theorem the_partition_numbers_to_eight_are_the_ones_the_ledger_stated :
 -- ledger: relation_orbit_is_cyclic_group — "n→2n from 1 lists [1,2,4,8,7,5], a permutation of the units,
 -- and 2 has order 6 = |units|". Dynamics and algebra decided to be one structure: the orbit as a list, the
 -- same elements as the units, and the order of 2 computed rather than asserted.
+-- `Reached.orbit`, and Z9's is `Z9.orbit` — namespaces already keep them apart, so there is nothing here
+-- to rename. I briefly called this `doublingOrbit` to avoid a collision that Lean does not have; the name
+-- inside a namespace is the short one, and lengthening it to dodge a qualified name elsewhere is working
+-- against the language rather than with it.
 def orbit : List Nat := (List.range 6).map (fun k => m9 (2 ^ (k + 1)))
 theorem the_doubling_orbit_is_the_unit_group_and_two_generates_it :
   orbit = [2, 4, 8, 7, 5, 1]
@@ -769,4 +801,126 @@ set_option maxHeartbeats 2000000 in
 theorem every_start_below_a_thousand_reaches_one_within_two_hundred_steps :
   (List.range' 1 999).all (fun n => collatzSteps 200 n) := by decide
 
-end Claimed
+-- ── 68 · THE DIVISOR COUNT IS ODD EXACTLY AT A SQUARE ─────────────────────────────────────────────────────
+-- ledger: the_divisor_count_is_odd_exactly_for_perfect_squares. Divisors pair off as d with n/d, and the
+-- pairing fails to be a pairing only when d = n/d — so the count is odd exactly when n has a square root.
+-- Both sides computed: the count by filtering, the squareness by searching for a root.
+def divisorCount (n : Nat) : Nat := ((List.range' 1 n).filter (fun d => n % d == 0)).length
+theorem the_number_of_divisors_is_odd_exactly_for_a_perfect_square :
+  (List.range' 1 80).all (fun n =>
+    (divisorCount n % 2 == 1) == ((List.range' 1 n).any (fun r => r * r == n))) := by decide
+
+-- ── 69 · EUCLID'S FORMULA GENERATES TRIPLES ───────────────────────────────────────────────────────────────
+-- ledger: euclids_formula_generates_pythagorean_triples — "(m²−n², 2mn, m²+n²)". Theorem 43 decided when
+-- such a triple is PRIMITIVE; this decides the prior thing, that the formula produces a triple at all, for
+-- every m > n in range.
+theorem euclids_formula_always_produces_a_right_triangle :
+  (List.range' 2 14).all (fun m => (List.range' 1 (m - 1)).all (fun n =>
+    (m * m - n * n) * (m * m - n * n) + (2 * m * n) * (2 * m * n) == (m * m + n * n) * (m * m + n * n))) := by decide
+
+-- ── 70 · THE CHINESE REMAINDER THEOREM AT COPRIME MODULI ──────────────────────────────────────────────────
+-- ledger: the_chinese_remainder_theorem_for_coprime_moduli — "reducing x to (x mod m₁, x mod m₂) is a
+-- bijection". Decided as a bijection: over a full period m₁·m₂ the pairs are all distinct, which for a map
+-- between sets of equal size is the whole of it.
+theorem reduction_to_coprime_moduli_is_a_bijection_over_one_period :
+  [(2, 3), (3, 4), (4, 9), (5, 7), (8, 9)].all (fun pr =>
+    let m1 := pr.1; let m2 := pr.2
+    (((List.range (m1 * m2)).map (fun x => (x % m1, x % m2))).eraseDups).length == m1 * m2) := by decide
+
+-- ── 71 · DERANGEMENTS OBEY THEIR RECURRENCE ───────────────────────────────────────────────────────────────
+-- ledger: derangements_subfactorial_recurrence — "D(n) = (n−1)(D(n−1) + D(n−2))". The recurrence is
+-- computed and the values it produces are checked against the known subfactorials, so the identity is the
+-- thing decided rather than the table being restated.
+def derange : Nat → Nat
+  | 0 => 1
+  | 1 => 0
+  | n + 2 => (n + 1) * (derange (n + 1) + derange n)
+theorem the_derangements_follow_the_subfactorial_recurrence :
+  (List.range 10).map derange = [1, 0, 1, 2, 9, 44, 265, 1854, 14833, 133496]
+  ∧ (List.range' 2 8).all (fun n => derange n == (n - 1) * (derange (n - 1) + derange (n - 2))) := by decide
+
+-- ── 72 · THE LUCAS–FIBONACCI IDENTITY ─────────────────────────────────────────────────────────────────────
+-- ledger: lucas_fibonacci_identity — "L(n)² − 5F(n)² = 4(−1)ⁿ, and L(n) = F(n−1) + F(n+1)". Over ℕ the sign
+-- is carried by which side the 4 sits on, the same shape Cassini needed: at even n the square exceeds, at
+-- odd n it falls short. Lucas is defined from Fibonacci as the ledger states it, so the second half is a
+-- definition and the first is the claim.
+def lucas (n : Nat) : Nat := if n == 0 then 2 else fib (n - 1) + fib (n + 1)
+theorem the_lucas_square_sits_four_either_side_of_five_fibonacci_squares :
+  (List.range' 1 18).all (fun n =>
+    if n % 2 == 0 then lucas n * lucas n == 5 * (fib n * fib n) + 4
+    else lucas n * lucas n + 4 == 5 * (fib n * fib n))
+  ∧ (List.range' 1 18).all (fun n => lucas n == fib (n - 1) + fib (n + 1)) := by decide
+
+-- ── 73 · DIVISIBILITY BY THREE IS THE DIGIT SUM ───────────────────────────────────────────────────────────
+-- ledger: divisibility_by_three_is_the_digit_sum_mod_three. The companion to theorem 26: the digit sum
+-- agrees with the value mod 3 as well as mod 9, which is why the schoolroom rule works and why casting out
+-- nines is the stronger check of the two.
+theorem the_digit_sum_agrees_with_the_value_modulo_three_and_modulo_nine :
+  (List.range' 1 300).all (fun n => digitSum n % 3 == n % 3)
+  ∧ (List.range' 1 300).all (fun n => digitSum n % 9 == n % 9) := by decide
+
+-- ── 74 · EULER'S PENTAGONAL RECURRENCE — THE FORMULA THE LEDGER NAMED ─────────────────────────────────────
+-- Theorem 24 decided the partition NUMBERS by counting partitions directly, and the ledger claim was
+-- "partition numbers via Euler's PENTAGONAL RECURRENCE". The values were right and the formula was missing,
+-- which leaves the claim half-kept: a reader is shown the answers and not the identity that produces them.
+--
+-- p(n) = p(n−1) + p(n−2) − p(n−5) − p(n−7) + … , the offsets being the generalised pentagonal numbers
+-- k(3k∓1)/2 = 1, 2, 5, 7, 12, 15, … with signs in pairs. Below twelve only the first four enter. Over ℕ the
+-- alternation is carried by which side of the equation a term sits on, the same shape Cassini needed.
+theorem the_partitions_obey_eulers_pentagonal_recurrence :
+  (List.range' 7 5).all (fun n => p n + p (n - 5) + p (n - 7) == p (n - 1) + p (n - 2))
+  ∧ [1, 2, 5, 7].all (fun g => (List.range' 1 3).any (fun k => k * (3 * k - 1) / 2 == g || k * (3 * k + 1) / 2 == g))
+  ∧ p 11 = 56 := by decide
+
+-- ── 75 · AND THE DERANGEMENT RECURRENCE IN ITS OTHER FORM ─────────────────────────────────────────────────
+-- Theorem 71 decided D(n) = (n−1)(D(n−1) + D(n−2)), which is the form the ledger stated. The shorter
+-- identity D(n) = n·D(n−1) + (−1)ⁿ was missing, and it is the one that shows the subfactorial is n! with a
+-- single alternating correction. Over ℕ: at even n the product falls one short, at odd n one long.
+theorem the_derangements_are_n_times_the_previous_with_one_alternating_correction :
+  (List.range' 2 6).all (fun n =>
+    if n % 2 == 0 then n * derange (n - 1) + 1 == derange n
+    else n * derange (n - 1) == derange n + 1) := by decide
+
+-- ── 76 · THE FIBONACCI PARTIAL SUMS ───────────────────────────────────────────────────────────────────────
+-- Used implicitly wherever this deposit sums a Fibonacci run and never stated: the first n terms sum to
+-- F(n+2) − 1. The sum is computed and the closed form checked against it, so the identity is decided rather
+-- than the table restated.
+theorem the_first_n_fibonacci_numbers_sum_to_the_term_two_further_on_less_one :
+  (List.range' 1 12).all (fun n =>
+    ((List.range' 1 n).map fib).foldl (· + ·) 0 + 1 == fib (n + 2)) := by decide
+
+-- ── 77 · THE TRIANGULAR, SQUARE AND CUBIC SUMS ────────────────────────────────────────────────────────────
+-- Three closed forms this tree uses and never decided together. The cubic one is the striking member: the
+-- sum of the first n cubes is the SQUARE of the sum of the first n naturals, so a triangular number squared
+-- counts cubes.
+def sumTo (n : Nat) : Nat := (List.range' 1 n).foldl (· + ·) 0
+theorem the_first_n_naturals_squares_and_cubes_have_their_closed_forms :
+  (List.range' 1 20).all (fun n => sumTo n == n * (n + 1) / 2)
+  ∧ (List.range' 1 15).all (fun n => ((List.range' 1 n).map (fun k => k * k)).foldl (· + ·) 0 == n * (n + 1) * (2 * n + 1) / 6)
+  ∧ (List.range' 1 12).all (fun n => ((List.range' 1 n).map (fun k => k * k * k)).foldl (· + ·) 0 == sumTo n * sumTo n) := by decide
+
+-- ── 78 · AND EIGHT TIMES A TRIANGULAR NUMBER, PLUS ONE ────────────────────────────────────────────────────
+-- The ledger carried this twice — once with a `0/7` rider stapled to it — and the formula it names is
+-- 8·T(n) + 1 = (2n+1)². Decided here against the closed form theorem 77 established, so the two rest on one
+-- definition of the triangular number rather than on two.
+theorem eight_triangular_numbers_plus_one_is_the_odd_square :
+  (List.range 30).all (fun n => 8 * sumTo n + 1 == (2 * n + 1) * (2 * n + 1)) := by decide
+
+-- ── 79 · THE JOSEPHUS CLOSED FORM ─────────────────────────────────────────────────────────────────────────
+-- Theorem 39 decided that the survivor is always odd by running the elimination. The closed form behind it
+-- was named there and not decided: writing n = 2^m + l with 2^m the largest power of two not exceeding n,
+-- the survivor is 2l + 1. Checked against the recurrence, so the formula is verified by the process rather
+-- than replacing it.
+def largestPow2 (n : Nat) : Nat := ((List.range 12).map (fun k => 2 ^ k)).foldl (fun acc q => if q ≤ n then q else acc) 1
+theorem the_josephus_survivor_is_twice_the_remainder_above_a_power_of_two_plus_one :
+  (List.range' 1 40).all (fun n => jos n == 2 * (n - largestPow2 n) + 1)
+  ∧ (List.range' 1 40).all (fun n => largestPow2 n ≤ n && 2 * largestPow2 n > n) := by decide
+
+-- ── 80 · AND THE PERFECT NUMBERS ARE TRIANGULAR ───────────────────────────────────────────────────────────
+-- Theorem 15 decided that 2^(p−1)(2^p−1) gives 6, 28 and 496. The formula not stated there: every number of
+-- that shape is the triangular number T(2^p − 1), so each even perfect number is also a triangular one.
+theorem every_euclid_perfect_number_is_a_triangular_number :
+  [2, 3, 5, 7].all (fun q => perfect q == sumTo (2 ^ q - 1))
+  ∧ perfect 2 = sumTo 3 ∧ perfect 3 = sumTo 7 ∧ perfect 5 = sumTo 31 := by decide
+
+end Reached

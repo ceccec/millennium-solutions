@@ -25,9 +25,23 @@ import { ledger as __ledger, leanTheorems, theoremOfKey } from '../src/api/index
 const ledger = __ledger() as { key: string; name: string; revoked?: boolean; reason?: string; supersededBy?: string }[]
 const T = leanTheorems()
 const byThm = new Map<string, string[]>()
+// AN AMBIGUOUS SUFFIX IS NOT AN UNKNOWN KEY. theoremOfKey matches a key's trailing name against every
+// theorem, and `lean_claimed_the_primitive_roots_are_exactly_two_and_five` ends with BOTH
+// `the_primitive_roots_are_exactly_two_and_five` (reached.lean) and `primitive_roots_are_exactly_two_and_five`
+// (z9plus.lean) — two matches, so it disambiguates by namespace, and `claimed` is a namespace no file
+// declares any more. It returns null, the key is dropped before the rename case can see it, and one stale
+// address survives a retirement written for exactly this.
+//
+// The tie-break is the LONGEST match: a key carries its theorem's full name, so the longest candidate
+// ending the key is the one it was minted from. Only used when theoremOfKey declines.
+const longestSuffixMatch = (key: string) => {
+  const rest = key.replace(/^lean_/, '')
+  return T.filter((t) => rest.endsWith('_' + t.name) || rest.endsWith('.' + t.name) || rest === t.name)
+    .sort((a, b) => b.name.length - a.name.length)[0] ?? null
+}
 for (const e of ledger) {
   if (e.revoked) continue
-  const t = theoremOfKey(e.key, T)
+  const t = theoremOfKey(e.key, T) ?? longestSuffixMatch(e.key)
   if (t) byThm.set(t.name, [...(byThm.get(t.name) ?? []), e.key])
 }
 
@@ -42,7 +56,7 @@ const nsOf = (key: string, name: string): string | null => {
   return rest.endsWith('_' + name) ? rest.slice(0, rest.length - name.length - 1) : null
 }
 
-let retired = 0, skipped = 0
+let retiredBare = 0, retiredRenamed = 0, skipped = 0
 for (const [name, keys] of byThm) {
   if (keys.length < 2) continue
   const namespaced = keys.filter((k) => k !== `lean_${name}`).sort((a, b) => b.length - a.length)[0]
@@ -63,6 +77,7 @@ for (const [name, keys] of byThm) {
     for (const d of dead) {
       const e = ledger.find((x) => x.key === d)!
       if (e.revoked) continue
+      retiredRenamed++
       if (process.argv.includes('--retire')) {
         e.revoked = true
         e.supersededBy = living[0]
@@ -71,7 +86,6 @@ for (const [name, keys] of byThm) {
           + `The statement STANDS and the kernel re-checks it on every run at ${living[0]}; what is withdrawn is `
           + `this stale address for it. Marked in place — the receipt is untouched and stays in the chain.`
       }
-      retired++
     }
     continue
   }
@@ -87,9 +101,14 @@ for (const [name, keys] of byThm) {
       + `${namespaced}; what is withdrawn is this second address for it, so one theorem has one address. `
       + `Marked in place — the receipt is untouched and stays in the append-only chain.`
   }
-  retired++
+  retiredBare++
 }
 
 if (process.argv.includes('--retire')) writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
-console.log(`\n${'✓'} retire-duplicate-keys: ${retired} bare key(s) ${process.argv.includes('--retire') ? 'retired in favour of' : 'would be retired in favour of'} their namespaced form`
+// THE SUMMARY NAMED ONE CASE AND COUNTED TWO. This script retires bare keys AND keys naming a namespace the
+// tree no longer declares — CASE 2, written for exactly a rename — and reported the total as "bare key(s)".
+// Renaming `claimed` to `reached` produced 66 stale addresses that this would have retired while calling
+// them something they are not, which is how a correct action gets recorded as a different one.
+console.log(`\n${'✓'} retire-duplicate-keys: ${retiredBare} bare key(s) and ${retiredRenamed} key(s) naming a namespace the tree no longer declares `
+  + `${process.argv.includes('--retire') ? 'retired in favour of' : 'would be retired in favour of'} the surviving address`
   + (skipped ? `, ${skipped} left alone for having no clear split` : ''))

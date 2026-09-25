@@ -1,6 +1,3100 @@
 {
-  "measured": "2026-09-20",
+  "measured": "2026-09-25",
   "records": [
+    {
+      "id": "22018434",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-19",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22018445",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-19",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22018480",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-19",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22018531",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-19",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22018568",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-19",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22018591",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-19",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22018613",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-19",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22018677",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-19",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22018731",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-19",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22018965",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-20",
+      "created": "2026-08-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22101661",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-25",
+      "created": "2026-08-25",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22101742",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-25",
+      "created": "2026-08-25",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22101826",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-25",
+      "created": "2026-08-25",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22206523",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-31",
+      "created": "2026-08-31",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22206677",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-31",
+      "created": "2026-08-31",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22207059",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-31",
+      "created": "2026-08-31",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22207217",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-08-31",
+      "created": "2026-08-31",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22230923",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22230981",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22231021",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22231154",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22231627",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22231818",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22231974",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22232559",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22232748",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22232885",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22233195",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22234002",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22234108",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22234316",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22234402",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22234459",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22234547",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-08-30",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22234671",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22234747",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22234929",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22235086",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22235182",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22235236",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-08-30",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22235583",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22236025",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22236132",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22236200",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-08-30",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22236615",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-08-30",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22237096",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-08-30",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22237585",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-08-30",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22237699",
+      "concept": "22237698",
+      "title": "erpax — a zero-entropy, content-addressed ERP corpus",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22238324",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22239152",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22239643",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-01",
+      "created": "2026-09-01",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22239944",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-02",
+      "created": "2026-09-02",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22240221",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-02",
+      "created": "2026-09-02",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22256731",
+      "concept": "21970356",
+      "title": "uuidna — content-addressed identity, honest by construction: 2499 distinct kerne",
+      "published": "2026-09-02",
+      "created": "2026-09-02",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22256708",
+      "concept": "21787143",
+      "title": "uuidna — content-addressed identity, honest by construction: 2499 distinct kerne",
+      "published": "2026-09-02",
+      "created": "2026-09-02",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22259496",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-02",
+      "created": "2026-09-02",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22259988",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-02",
+      "created": "2026-09-02",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22275803",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-03",
+      "created": "2026-09-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22277570",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-03",
+      "created": "2026-09-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22277705",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-03",
+      "created": "2026-09-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22286537",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-03",
+      "created": "2026-09-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22286911",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-03",
+      "created": "2026-09-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22286927",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-03",
+      "created": "2026-09-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22287320",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-03",
+      "created": "2026-09-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22287840",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-03",
+      "created": "2026-09-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22288360",
+      "concept": "22237698",
+      "title": "erpax — a zero-entropy, content-addressed ERP corpus",
+      "published": "2026-09-04",
+      "created": "2026-09-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22308239",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22308271",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22308298",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22308349",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22308406",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22308491",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22308591",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22308767",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22309009",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22309092",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22309235",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22309341",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22309413",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22309722",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22309803",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22309899",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22309990",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22310063",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22310154",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22310225",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22310316",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22310617",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22310775",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22311006",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22311030",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-04",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22312772",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22312825",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22312985",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22313037",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22313119",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22313234",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22313303",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22313459",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-04",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22313665",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22313815",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22313886",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22314474",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22314990",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22332952",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22333209",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22333973",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22334757",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22335152",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22335734",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22337060",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22337958",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22338644",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22338888",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22339523",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22340204",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22340656",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22340699",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22341467",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22341659",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22341793",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22342198",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22342828",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22343336",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22343427",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22344033",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22344994",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22345483",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22346098",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22346451",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22346931",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22347061",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22347462",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22347651",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22347794",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22348558",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22348989",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22349085",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22349926",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22351482",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22352541",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22352567",
+      "concept": "22352566",
+      "title": "Double Torus — A Deterministic Quantum Simulation Kernel with Content-Addressed ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22356937",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22360755",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22371251",
+      "concept": "22237698",
+      "title": "erpax — a zero-entropy, content-addressed ERP corpus",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22398323",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22398337",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22398889",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22399942",
+      "concept": "22352566",
+      "title": "Double Torus — A Deterministic Quantum Simulation Kernel with Content-Addressed ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22400954",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22401488",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22405996",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22416527",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-06",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22418089",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-06",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22421042",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-05",
+      "created": "2026-09-05",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22430972",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-06",
+      "created": "2026-09-06",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22432295",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-06",
+      "created": "2026-09-06",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22433000",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-06",
+      "created": "2026-09-06",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22555482",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-06",
+      "created": "2026-09-06",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22555592",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-06",
+      "created": "2026-09-06",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22555831",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-07",
+      "created": "2026-09-06",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22557108",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-06",
+      "created": "2026-09-06",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22557355",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-07",
+      "created": "2026-09-06",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22636318",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-07",
+      "created": "2026-09-07",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22647716",
+      "concept": "22178675",
+      "title": "ZeroPoint Node",
+      "published": "2026-09-07",
+      "created": "2026-09-07",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22717782",
+      "concept": "22700098",
+      "title": "QPU",
+      "published": "2026-09-12",
+      "created": "2026-09-12",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22718022",
+      "concept": "22352566",
+      "title": "Double Torus — A Deterministic Quantum Simulation Kernel with Content-Addressed ",
+      "published": "2026-09-12",
+      "created": "2026-09-12",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22730576",
+      "concept": "22700098",
+      "title": "QPU",
+      "published": "2026-09-13",
+      "created": "2026-09-12",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22737368",
+      "concept": "22352566",
+      "title": "Double Torus — A Deterministic Quantum Simulation Kernel with Content-Addressed ",
+      "published": "2026-09-13",
+      "created": "2026-09-13",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22737822",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-13",
+      "created": "2026-09-13",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22738007",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-13",
+      "created": "2026-09-13",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22738314",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-13",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22738451",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-13",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22738624",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-13",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22739348",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22739416",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22741148",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22741470",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22750137",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22751159",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22751234",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22752227",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22753265",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22753686",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22755815",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22756592",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22756638",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22756742",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22756866",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22757077",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22757210",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22757287",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22758044",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22758226",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-14",
+      "created": "2026-09-14",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22761956",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22762901",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22763064",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22763340",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22763428",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22763557",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22763657",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22763714",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22765098",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22765286",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22765664",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22765847",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22766228",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22767183",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22767519",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22770012",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-15",
+      "created": "2026-09-15",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22831109",
+      "concept": "22237698",
+      "title": "erpax — a zero-entropy, content-addressed ERP corpus",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22834231",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22834377",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22834746",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22835307",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22836230",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22836387",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22836462",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22836549",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22836826",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-18",
+      "created": "2026-09-18",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22850514",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-19",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22854613",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22856016",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22858061",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22858237",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22858240",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22858271",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22858663",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22858806",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22858846",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22860794",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22863511",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-20",
+      "created": "2026-09-20",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22874413",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-21",
+      "created": "2026-09-21",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22875750",
+      "concept": "22018433",
+      "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a ",
+      "published": "2026-09-21",
+      "created": "2026-09-21",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22895141",
+      "concept": "21781602",
+      "title": "All Seven Clay Millennium Problems Sealed via Universal σ-Involution",
+      "published": "2026-09-22",
+      "created": "2026-09-23",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22933794",
+      "concept": "21781602",
+      "title": "All Seven Clay Millennium Problems Sealed via Universal σ-Involution",
+      "published": "2026-09-24",
+      "created": "2026-09-24",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22934737",
+      "concept": "22934736",
+      "title": "Novelty and Practical Utility of the Dry Cleaning Multimodal Algebra Framework",
+      "published": "2026-09-24",
+      "created": "2026-09-24",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
+    {
+      "id": "22934883",
+      "concept": "22934736",
+      "title": "Novelty and Practical Utility of the Dry Cleaning Multimodal Algebra Framework",
+      "published": "2026-09-24",
+      "created": "2026-09-24",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": "0009-0000-7312-9778"
+        }
+      ]
+    },
     {
       "id": "21781603",
       "concept": "21781602",
@@ -47,9 +3141,9 @@
   },
   "earliestDeposit": "2026-08-03",
   "leadDays": 3,
-  "commits": 1072,
+  "commits": 1127,
   "authors": {
-    "Tsvetan Rouschev": 1072
+    "Tsvetan Rouschev": 1127
   },
-  "receipt": "017f9612-cce9-8fb2-aaef-280aab05ee84"
+  "receipt": "e3ce5e9c-0e5e-8492-bdc7-da1f080dc969"
 }
