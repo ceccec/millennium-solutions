@@ -4,6 +4,7 @@ import { execSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { merkleGravity } from '../src/the/apple/index.ts'
+import { live, leanTheorems } from '../src/api/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 
 // Version: explicit arg wins; otherwise DERIVE the next patch from the latest tag.
@@ -48,6 +49,47 @@ const V = process.argv[2] || nextVersion()
 const files = execSync('git ls-files', { encoding: 'utf8' }).trim().split('\n').filter(Boolean).sort()
 const address = merkleFold(files.map(f => toUuid(f + ':' + readFileSync(f))))
 console.log('content-addressed:', files.length, 'files → root', address)
+
+// ── SEALED AND OCTAVE-EXACT, OR NO TAG ───────────────────────────────────────────────────────────────────
+// This refused a dirty tree, refused churn, and refused a commit a gate hook rejected — and it did not ask
+// whether the LEDGER was in a state worth tagging. A tag could be cut over a tree carrying theorems the
+// kernel accepts and the ledger has never sealed, or a ledger short of its octave, and nothing would have
+// said so. The tag is immutable provenance and it triggers publish.yml; a version is supposed to mean the
+// deposit was whole at that moment.
+//
+// Three conditions, all measured here and none typed:
+//   SEALED   every kernel-accepted theorem has a live key — an unsealed theorem is work the version would
+//            claim to contain and the ledger could not produce a receipt for
+//   EXACT    the ledger is a whole number of octaves, which is this deposit's own discipline and is either
+//            kept or abandoned, not kept approximately
+//   CARRIED  no withdrawn claim promises a surviving proof at an address that leads nowhere
+{
+  const L = __ledger() as { key: string; revoked?: boolean; supersededBy?: string }[]
+  const liveKeys = new Set((live(L) as { key: string }[]).map((e) => e.key))
+  const T = (leanTheorems() as { name: string; tactic: string }[]).filter((t) => t.tactic !== 'rfl')
+  const unsealed = T.filter((t) => ![...liveKeys].some((k) => k.endsWith('_' + t.name)))
+  const byKey = new Map(L.map((e) => [e.key, e]))
+  const dangling = L.filter((e) => {
+    if (!e.revoked || !e.supersededBy) return false
+    const seen = new Set([e.key]); let cur: string | undefined = e.supersededBy, hops = 0
+    while (cur && !liveKeys.has(cur) && byKey.has(cur) && !seen.has(cur) && hops < 32) {
+      seen.add(cur); cur = byKey.get(cur)!.supersededBy; hops++
+    }
+    return !cur || !liveKeys.has(cur)
+  })
+  const bad: string[] = []
+  if (unsealed.length) bad.push(`${unsealed.length} kernel theorem(s) the ledger has never sealed: ${unsealed.slice(0, 3).map((t) => t.name).join(', ')}`)
+  if (L.length % 8 !== 0) bad.push(`the ledger is ${L.length}, which is ${L.length % 8} past an octave (${Math.floor(L.length / 8)} × 8)`)
+  if (dangling.length) bad.push(`${dangling.length} carried entr(y/ies) promise a surviving proof and lead nowhere`)
+  if (bad.length) {
+    console.error('release: NOT tagging — the deposit is not in a state a version should claim:')
+    for (const b of bad) console.error('  ✗ ' + b)
+    console.error('  A tag is immutable and triggers publish.yml. Seal what the kernel accepts, close the')
+    console.error('  octave, and point every carried entry at a theorem that stands; then re-run.')
+    process.exit(1)
+  }
+  console.log(`sealed: all ${T.length} kernel theorems carry a live key · ledger ${L.length} = ${L.length / 8} × 8 · all carried entries resolve`)
+}
 
 // Useless work drains tokens: refuse to mint a new version for identical content.
 try {
