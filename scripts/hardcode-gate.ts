@@ -11,7 +11,7 @@
 // 0..9 and asks whether it matches a set the API computes. A match is a copy of something already derived and
 // proved, and the gate names it. Anything else is left alone: a list of small integers is not automatically
 // an algebraic claim, and refusing them all would be a lexicon by another name.
-import { readFileSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { units, triad, orbit, tetA, tetB, axis } from '../src/api/index.ts'
 
 const KNOWN: [string, number[]][] = [
@@ -50,6 +50,12 @@ const FILES = [
   // domain is narrower than the defect it names. They matched when found, so nothing was WRONG on screen —
   // it was simply unheld, and a set that agrees today by luck is not a set under a gate.
   ...readdirSync('.vitepress/theme').filter((f) => f.endsWith('.vue')).map((f) => '.vitepress/theme/' + f),
+  // AND THE SUBDIRECTORY, which this read as a directory and skipped. Components moved under
+  // theme/components/ were outside the gate's domain entirely — the same narrower-than-the-defect shape
+  // this repository keeps finding: a check that names one folder and a defect that lives in two.
+  ...(existsSync('.vitepress/theme/components')
+    ? readdirSync('.vitepress/theme/components').filter((f) => f.endsWith('.vue')).map((f) => '.vitepress/theme/components/' + f)
+    : []),
 ]
 
 let found = 0
