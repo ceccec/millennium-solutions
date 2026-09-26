@@ -1,7 +1,12 @@
 set_option maxRecDepth 4000
 -- title: Who may speak, decided
 -- wing: the floor
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_search: not performed — the work is NAMED below rather than searched for. Membership, set
+--   difference and monotonicity over finite lists are foundational set theory (Cantor, Dedekind, Zermelo)
+--   and appear in every introductory text; a keyword search for them returns the whole literature and
+--   establishes nothing, which this deposit has measured — see FINDINGS §7l, where searching a theorem's
+--   ordinary-English name returned museum studies for "addressing".
 -- prior_art_domain: elementary set and order arithmetic over finite lists
 -- prior_art_note: NO NOVELTY IS CLAIMED AND NONE IS DENIED. Membership, set difference and monotonicity over
 --   finite lists are elementary and older than anyone could name. This row is kind 1 rather than kind 2

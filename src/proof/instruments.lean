@@ -1,7 +1,11 @@
 set_option maxRecDepth 8000000
 -- title: The instruments, and the three rules they are allowed to have
 -- wing: the floor
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_search: not performed — the work is NAMED below rather than searched for. A strict order, a
+--   membership test and substring matching are foundational order theory and elementary string algorithms
+--   (Knuth–Morris–Pratt, 1977, for the last, though nothing here needs its efficiency); searching those
+--   terms returns the field rather than a prior claim, which is theatre and is refused as such.
 -- prior_art_domain: elementary order theory, list processing and string matching
 -- prior_art_note: NO NOVELTY IS CLAIMED AND NONE IS DENIED. The three rules are elementary — a strict order
 --   with an unknown value, a partition of a list at its last marked position, and removal of every

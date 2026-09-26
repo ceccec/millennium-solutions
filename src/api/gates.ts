@@ -10,9 +10,16 @@
 import { readFileSync, existsSync } from 'node:fs'
 
 /** Scripts that RUN other scripts. Probing them probes their children and says nothing about themselves. */
-export const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'control-probe', 'leads', 'wire', 'metrics'])
+// `release` joins META: it TAGS. A control harness that mutates a file and runs it would either hit the
+// dirty-tree refusal — firing for the wrong reason, which is the 1-in-39 mistake gates-fire warns about —
+// or, worse, succeed and cut a tag. Its own preconditions (sealed, octave-exact, carried) were exercised
+// by hand with a planted ledger row and it refused, naming the remainder.
+export const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'control-probe', 'leads', 'wire', 'metrics', 'release'])
 /** Scripts whose subject is a remote nobody here may perturb. */
-export const NETWORK = new Set(['cern', 'cern-oai', 'doi-resolve', 'zenodo-mint', 'zenodo-verify', 'bench-hex', 'bench-hexbit'])
+// `release-live` joins NETWORK: its refusal is ABSENT, a fact about npm's registry and Zenodo's, and no
+// mutation of any file in this tree can produce it. It is exercised by ARGUMENT instead —
+// `node scripts/release-live.ts v0.0.0` asks about a version never published, answers ABSENT, exits 1.
+export const NETWORK = new Set(['cern', 'cern-oai', 'doi-resolve', 'zenodo-mint', 'zenodo-verify', 'bench-hex', 'bench-hexbit', 'release-live'])
 
 /** Every script package.json can reach. */
 export const reachableScripts = (): Set<string> => {
@@ -110,6 +117,8 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   // people's scripts, committed three waves before these were added. `formulas` and `coils` are wired into
   // `npm run gates` and controlled in gates-fire. `discoveries` is not, and here is why.
   'release-live': 'reaches the npm registry and Zenodo to ask whether a tag actually landed — network, and about somebody else\'s server, so no build chain can run it. It is the check to run AFTER publish.yml: a green workflow says a job exited zero, not that the registry has the version. It refuses only on ABSENT, never on NOT MEASURED',
+  provenance: 'reaches zenodo.org to recompute the priority record from the registry that issued the DOIs — network, and about a third party\'s server. A build chain that ran it would fail on a Zenodo outage, about this tree, which is the false negative this deposit refuses. It is the check to run BEFORE a deposition, and its drift refusal is the one that caught the ORCID discovery flipping the lead from +3 days to −27',
+  sources: 'proves fifteen live readers against answers known in advance, over the network, before any investigation result is believed — the instrument check that must precede provenance. Same reason it cannot sit in a chain: a reader that does not answer is an outage, not a finding, and a build about this tree must not turn red for one',
   e2e: 'needs a BUILT site, not a source tree: it walks .vitepress/dist and checks what a reader opens — the page references its data, the counts agree, every linked theorem page exists. It runs inside npm run docs:build, which release.yml runs before any tag, and it cannot join the source chain because on a fresh clone there is no dist to check and it would refuse for the wrong reason. Controlled in gates-fire by mutating the built page',
   discoveries: 'REPORTS by design, like stale-figures: it orders where the next prior-art search should go, and its own output says a rank is not a novelty claim. It refuses only when its signals collapse — every candidate scoring alike, which would mean the queue cannot tell its entries apart — and gating a build on the shape of a work queue would teach closing the queue rather than working it',
   probe: 'the control harness, not a gate: it takes a file, a theorem and a mutation as arguments, so no chain can run it bare; gates-fire holds its control — a mutation that never reaches the theorem must be refused',
