@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 1,216 of them across 63 files and
-7 wings; 1,014 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 1,224 of them across 63 files and
+7 wings; 1,022 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -834,6 +834,46 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \exists w \in \{0,\dots,11\} : \exists a \in \{0,\dots,11\} : a > w \land w - a = 0 \land a \neq 0 \land 2^{7} \neq 2^{8} \land \mathrm{toBits}\mathopen{}\left(5\right) \neq \mathrm{toBits}\mathopen{}\left(6\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 144 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fitting\_is\_the\_order\_and\_not\_fitting\_is\_its\_negation}]
+\[ \forall a \in \{0,\dots,69\},\; \forall b \in \{0,\dots,69\},\; a \le b = \lnot b < a \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,900 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gap\_is\_what\_is\_left\_and\_adding\_it\_back\_returns}]
+\[ \forall a \in \{0,\dots,69\},\; \forall b \in \{0,\dots,69\},\; a > b \lor b - a + a = b \land b - b - a = a \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,900 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identifier\_holds\_neither\_the\_key\_nor\_the\_signature}]
+\[ \mathrm{uuidBytes} < \mathrm{publicKeyBytes} \land \mathrm{uuidBytes} < \mathrm{signatureBytes} \land \mathrm{publicKeyBytes} - \mathrm{uuidBytes} = \mathrm{uuidBytes} \land \mathrm{signatureBytes} - \mathrm{uuidBytes} = 3 \cdot \mathrm{uuidBytes} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_conversion\_carries\_the\_containment}]
+\[ \forall a \in \{0,\dots,69\},\; \forall b \in \{0,\dots,69\},\; a \le b = \mathrm{toBits}\mathopen{}\left(a\right) \le \mathrm{toBits}\mathopen{}\left(b\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,900 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gap\_between\_payload\_and\_check\_is\_their\_difference}]
+\[ \forall \mathrm{pay} \in \{0,\dots,122\},\; \mathrm{pay} > \mathrm{Capacity.free} \lor \mathrm{pay} \ge \mathrm{Capacity.free} - \mathrm{pay} = \mathrm{pay} + \mathrm{pay} \ge \mathrm{Capacity.free} \land \mathrm{Asymmetric.payloadBits} - \mathrm{Asymmetric.checkBits} = 58 \land \mathrm{Asymmetric.checkBits} + 58 = \mathrm{Asymmetric.payloadBits} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 123 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_gap\_in\_bits\_is\_a\_factor\_in\_space}]
+\[ 2^{58} \cdot 2^{\mathrm{Asymmetric.checkBits}} = 2^{\mathrm{Asymmetric.payloadBits}} \land \forall g \in \{0,\dots,19\},\; \forall c \in \{0,\dots,19\},\; 2^{g} \cdot 2^{c} = 2^{g + c} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 400 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_laws\_separate\_the\_order\_rather\_than\_collapsing\_it}]
+\[ \lnot \mathrm{publicKeyBytes} \le \mathrm{uuidBytes} \land \lnot \mathrm{signatureBytes} \le \mathrm{publicKeyBytes} - 1 \land \mathrm{signatureBytes} - \mathrm{uuidBytes} \neq \mathrm{uuidBytes} - \mathrm{signatureBytes} \land \mathrm{uuidBytes} - \mathrm{signatureBytes} = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{truncation\_reports\_no\_gap\_where\_the\_order\_reverses}]
+\[ \forall a \in \{0,\dots,39\},\; \forall b \in \{0,\dots,39\},\; a \le b = a - b = 0 \lor a = b \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,600 cases. \hfill$\square$
 
 \subsection{the ring}
 

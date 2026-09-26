@@ -22784,5 +22784,45 @@
     "key": "lean_widths_the_laws_separate_widths_rather_than_collapsing_them",
     "name": "lean widths.lean: the_laws_separate_widths_rather_than_collapsing_them — (List.range 12).any (fun w => (List.range 12).any (fun a => a > w && w - a == 0 && a != 0)) ∧ 2 ^ 7 != 2 ^ 8 ∧ toBits 5 != toBits 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "57123f73-0b91-87cb-aac6-8aa841ad22c7"
+  },
+  {
+    "key": "lean_widths_fitting_is_the_order_and_not_fitting_is_its_negation",
+    "name": "lean widths.lean: fitting_is_the_order_and_not_fitting_is_its_negation — (List.range 70).all (fun a => (List.range 70).all (fun b => (a ≤ b) == !(b < a))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d7a93cba-c377-8c03-b1b1-9cda2125114d"
+  },
+  {
+    "key": "lean_widths_the_gap_is_what_is_left_and_adding_it_back_returns",
+    "name": "lean widths.lean: the_gap_is_what_is_left_and_adding_it_back_returns — (List.range 70).all (fun a => (List.range 70).all (fun b => a > b || (b - a) + a == b && b - (b - a) == a)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "163456ce-7ffa-83eb-af96-8d802f7db9c3"
+  },
+  {
+    "key": "lean_widths_the_identifier_holds_neither_the_key_nor_the_signature",
+    "name": "lean widths.lean: the_identifier_holds_neither_the_key_nor_the_signature — uuidBytes < publicKeyBytes ∧ uuidBytes < signatureBytes ∧ publicKeyBytes - uuidBytes == uuidBytes ∧ signatureBytes - uuidBytes == 3 * uuidBytes — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1f005f8a-59f5-80e8-822a-5e512d324f57"
+  },
+  {
+    "key": "lean_widths_the_conversion_carries_the_containment",
+    "name": "lean widths.lean: the_conversion_carries_the_containment — (List.range 70).all (fun a => (List.range 70).all (fun b => (a ≤ b) == (toBits a ≤ toBits b))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ceb4d6c7-8310-88e1-9850-b6a4c7cf228f"
+  },
+  {
+    "key": "lean_widths_the_gap_between_payload_and_check_is_their_difference",
+    "name": "lean widths.lean: the_gap_between_payload_and_check_is_their_difference — (List.range 123).all (fun pay => pay > Capacity.free || (pay ≥ Capacity.free - pay) == (pay + pay ≥ Capacity.free)) ∧ Asymmetric.payloadBits - Asymmetric.checkBits == 58 ∧ Asymmetric.checkBits + 58 == Asymmetric.payloadBits — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3bfb3b1a-f8d1-8ce9-903f-1b2bb70563ad"
+  },
+  {
+    "key": "lean_widths_a_gap_in_bits_is_a_factor_in_space",
+    "name": "lean widths.lean: a_gap_in_bits_is_a_factor_in_space — 2 ^ 58 * 2 ^ Asymmetric.checkBits == 2 ^ Asymmetric.payloadBits ∧ (List.range 20).all (fun g => (List.range 20).all (fun c => 2 ^ g * 2 ^ c == 2 ^ (g + c))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5a41c04d-5cc9-8b08-94bd-57743bf1d41f"
+  },
+  {
+    "key": "lean_widths_the_laws_separate_the_order_rather_than_collapsing_it",
+    "name": "lean widths.lean: the_laws_separate_the_order_rather_than_collapsing_it — !(publicKeyBytes ≤ uuidBytes) ∧ !(signatureBytes ≤ publicKeyBytes - 1) ∧ (signatureBytes - uuidBytes) != (uuidBytes - signatureBytes) ∧ uuidBytes - signatureBytes == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d62e0600-21a9-8a0c-be73-b5f0f7c68803"
+  },
+  {
+    "key": "lean_widths_truncation_reports_no_gap_where_the_order_reverses",
+    "name": "lean widths.lean: truncation_reports_no_gap_where_the_order_reverses — (List.range 40).all (fun a => (List.range 40).all (fun b => (a ≤ b) == (a - b == 0) || a == b)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fd7accb7-6933-8562-ac71-f3a41cbb5fc5"
   }
 ]

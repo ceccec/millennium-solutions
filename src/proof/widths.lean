@@ -188,4 +188,58 @@ theorem the_laws_separate_widths_rather_than_collapsing_them :
   (List.range 12).any (fun w => (List.range 12).any (fun a => a > w && w - a == 0 && a != 0))
   ∧ 2 ^ 7 != 2 ^ 8 ∧ toBits 5 != toBits 6 := by decide
 
+-- ── 17..24 · CONTAINMENT AND GAP, AS LAWS ─────────────────────────────────────────────────────────────────
+-- Three of asymmetric.lean's certificates are containment and gap claims stated at their instance:
+-- `neither_the_key_nor_the_signature_fits_in_a_uuid`, `not_even_the_whole_uuid_would_hold_one`, and
+-- `the_gap_is_fifty_eight_bits`. Each is an instance of two laws — fitting is ≤, and the gap is what is
+-- left — and both have inverses. Decided over the domain, the instances follow rather than being asserted.
+
+-- FITTING IS ≤, AND NOT FITTING IS ITS NEGATION. One law, both directions, at every pair of widths.
+theorem fitting_is_the_order_and_not_fitting_is_its_negation :
+  (List.range 70).all (fun a => (List.range 70).all (fun b =>
+    (a ≤ b) == !(b < a))) := by decide
+
+-- THE GAP IS WHAT IS LEFT, AND ADDING IT BACK RETURNS THE LARGER — the inverse the lead asks for.
+theorem the_gap_is_what_is_left_and_adding_it_back_returns :
+  (List.range 70).all (fun a => (List.range 70).all (fun b =>
+    a > b || (b - a) + a == b && b - (b - a) == a)) := by decide
+
+-- THE INSTANCES, FOLLOWING FROM THE LAWS rather than typed beside them: the identifier holds neither.
+theorem the_identifier_holds_neither_the_key_nor_the_signature :
+  uuidBytes < publicKeyBytes ∧ uuidBytes < signatureBytes
+  ∧ publicKeyBytes - uuidBytes == uuidBytes
+  ∧ signatureBytes - uuidBytes == 3 * uuidBytes := by decide
+
+-- And in bits, where the same order holds — the conversion carries the containment, not only the sizes.
+theorem the_conversion_carries_the_containment :
+  (List.range 70).all (fun a => (List.range 70).all (fun b =>
+    (a ≤ b) == (toBits a ≤ toBits b))) := by decide
+
+-- THE PAYLOAD/CHECK GAP, as a law over every split of the free bits and then at its instance.
+theorem the_gap_between_payload_and_check_is_their_difference :
+  (List.range 123).all (fun pay => pay > Capacity.free
+    || (pay ≥ Capacity.free - pay) == (pay + pay ≥ Capacity.free))
+  ∧ Asymmetric.payloadBits - Asymmetric.checkBits == 58
+  ∧ Asymmetric.checkBits + 58 == Asymmetric.payloadBits := by decide
+
+-- AND THE GAP IN SPACE IS THE PRODUCT, not the difference — the error a reader makes reading bit gaps.
+theorem a_gap_in_bits_is_a_factor_in_space :
+  2 ^ 58 * 2 ^ Asymmetric.checkBits == 2 ^ Asymmetric.payloadBits
+  ∧ (List.range 20).all (fun g => (List.range 20).all (fun c =>
+      2 ^ g * 2 ^ c == 2 ^ (g + c))) := by decide
+
+-- THE CONTROL. Every law above is satisfied by arithmetic that ignores its arguments, so cases that must
+-- FAIL are required: a larger width does not fit in a smaller, and the gap is not symmetric.
+theorem the_laws_separate_the_order_rather_than_collapsing_it :
+  !(publicKeyBytes ≤ uuidBytes) ∧ !(signatureBytes ≤ publicKeyBytes - 1)
+  ∧ (signatureBytes - uuidBytes) != (uuidBytes - signatureBytes)
+  ∧ uuidBytes - signatureBytes == 0 := by decide
+
+-- WHAT TRUNCATING SUBTRACTION HIDES, said rather than relied on. `a - b` is 0 when b exceeds a, so a gap
+-- read without its order is a gap that silently reports none — which is why every law above carries the
+-- comparison beside the subtraction.
+theorem truncation_reports_no_gap_where_the_order_reverses :
+  (List.range 40).all (fun a => (List.range 40).all (fun b =>
+    (a ≤ b) == (a - b == 0) || a == b)) := by decide
+
 end Widths

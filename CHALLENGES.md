@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 3320 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 3328 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1201)
+### lean (1209)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1412,6 +1412,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_widths_the_space_recovers_the_width_it_came_from](/theorem/lean_widths_the_space_recovers_the_width_it_came_from) — lean widths.lean: the_space_recovers_the_width_it_came_from — (List.range 17).all (fun b =&gt; (List.range 17).all (fun c =&gt; (2 ^ b == 2 ^ c) == (b == c))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9fe18d52-ac05…`
 - [lean_widths_the_unit_conversion_is_a_bijection_on_multiples_of_eight](/theorem/lean_widths_the_unit_conversion_is_a_bijection_on_multiples_of_eight) — lean widths.lean: the_unit_conversion_is_a_bijection_on_multiples_of_eight — (List.range 40).all (fun b =&gt; toBytes (toBits b) == b) ∧ (List.range 200).all (fun n =&gt; (n % 8 == 0) == (toBits (toBytes n) == n)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3c94637c-8fda…`
 - [lean_widths_the_laws_separate_widths_rather_than_collapsing_them](/theorem/lean_widths_the_laws_separate_widths_rather_than_collapsing_them) — lean widths.lean: the_laws_separate_widths_rather_than_collapsing_them — (List.range 12).any (fun w =&gt; (List.range 12).any (fun a =&gt; a &gt; w &amp;&amp; w - a == 0 &amp;&amp; a != 0)) ∧ 2 ^ 7 != 2 ^ 8 ∧ toBits 5 != toBits 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `57123f73-0b91…`
+- [lean_widths_fitting_is_the_order_and_not_fitting_is_its_negation](/theorem/lean_widths_fitting_is_the_order_and_not_fitting_is_its_negation) — lean widths.lean: fitting_is_the_order_and_not_fitting_is_its_negation — (List.range 70).all (fun a =&gt; (List.range 70).all (fun b =&gt; (a ≤ b) == !(b &lt; a))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d7a93cba-c377…`
+- [lean_widths_the_gap_is_what_is_left_and_adding_it_back_returns](/theorem/lean_widths_the_gap_is_what_is_left_and_adding_it_back_returns) — lean widths.lean: the_gap_is_what_is_left_and_adding_it_back_returns — (List.range 70).all (fun a =&gt; (List.range 70).all (fun b =&gt; a &gt; b || (b - a) + a == b &amp;&amp; b - (b - a) == a)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `163456ce-7ffa…`
+- [lean_widths_the_identifier_holds_neither_the_key_nor_the_signature](/theorem/lean_widths_the_identifier_holds_neither_the_key_nor_the_signature) — lean widths.lean: the_identifier_holds_neither_the_key_nor_the_signature — uuidBytes &lt; publicKeyBytes ∧ uuidBytes &lt; signatureBytes ∧ publicKeyBytes - uuidBytes == uuidBytes ∧ signatureBytes - uuidBytes == 3 * uuidBytes — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1f005f8a-59f5…`
+- [lean_widths_the_conversion_carries_the_containment](/theorem/lean_widths_the_conversion_carries_the_containment) — lean widths.lean: the_conversion_carries_the_containment — (List.range 70).all (fun a =&gt; (List.range 70).all (fun b =&gt; (a ≤ b) == (toBits a ≤ toBits b))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ceb4d6c7-8310…`
+- [lean_widths_the_gap_between_payload_and_check_is_their_difference](/theorem/lean_widths_the_gap_between_payload_and_check_is_their_difference) — lean widths.lean: the_gap_between_payload_and_check_is_their_difference — (List.range 123).all (fun pay =&gt; pay &gt; Capacity.free || (pay ≥ Capacity.free - pay) == (pay + pay ≥ Capacity.free)) ∧ Asymmetric.payloadBits - Asymmetric.checkBits == 58 ∧ Asymmetric.checkBits + 58 == Asymmetric.payloadBits — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3bfb3b1a-f8d1…`
+- [lean_widths_a_gap_in_bits_is_a_factor_in_space](/theorem/lean_widths_a_gap_in_bits_is_a_factor_in_space) — lean widths.lean: a_gap_in_bits_is_a_factor_in_space — 2 ^ 58 * 2 ^ Asymmetric.checkBits == 2 ^ Asymmetric.payloadBits ∧ (List.range 20).all (fun g =&gt; (List.range 20).all (fun c =&gt; 2 ^ g * 2 ^ c == 2 ^ (g + c))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5a41c04d-5cc9…`
+- [lean_widths_the_laws_separate_the_order_rather_than_collapsing_it](/theorem/lean_widths_the_laws_separate_the_order_rather_than_collapsing_it) — lean widths.lean: the_laws_separate_the_order_rather_than_collapsing_it — !(publicKeyBytes ≤ uuidBytes) ∧ !(signatureBytes ≤ publicKeyBytes - 1) ∧ (signatureBytes - uuidBytes) != (uuidBytes - signatureBytes) ∧ uuidBytes - signatureBytes == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d62e0600-21a9…`
+- [lean_widths_truncation_reports_no_gap_where_the_order_reverses](/theorem/lean_widths_truncation_reports_no_gap_where_the_order_reverses) — lean widths.lean: truncation_reports_no_gap_where_the_order_reverses — (List.range 40).all (fun a =&gt; (List.range 40).all (fun b =&gt; (a ≤ b) == (a - b == 0) || a == b)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fd7accb7-6933…`
 
 ### other — one-of-a-kind (0)
 
@@ -3075,4 +3083,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `9e461cac-369f-8b2e-9378-bc72e5da991b`. Integrity, not truth.
+Page content-address: `ef83557f-9f87-8e1b-bf44-4cdb381ed0fb`. Integrity, not truth.
