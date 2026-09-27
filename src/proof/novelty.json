@@ -39986,6 +39986,37 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_verdict_the_rule_is_decided_and_the_search_quality_is_not": {
+  "key": "lean_verdict_the_rule_is_decided_and_the_search_quality_is_not",
+  "file": "verdict.lean",
+  "name": "the_rule_is_decided_and_the_search_quality_is_not",
+  "statementHash": "387e4b33a385f16e",
+  "searched": "2026-09-26T07:31:56.601Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "classification test outcome partial search quality",
+   "openalex": "classification test outcome partial search quality",
+   "crossref": "classification test outcome partial search quality",
+   "arxiv": "classification AND test AND outcome AND partial AND search"
+  },
+  "notMeasured": [
+   "openalex: resting after three refusals, asked again in 50s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_verdict_too_few_terms_precedes_every_other_test": {
   "key": "lean_verdict_too_few_terms_precedes_every_other_test",
   "file": "verdict.lean",
@@ -40011,6 +40042,255 @@
   },
   "notMeasured": [
    "openalex: resting after three refusals, asked again in 69s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_widths_bytes_to_bits_and_back_is_the_identity": {
+  "key": "lean_widths_bytes_to_bits_and_back_is_the_identity",
+  "file": "widths.lean",
+  "name": "bytes_to_bits_and_back_is_the_identity",
+  "statementHash": "7bfc2e9b99a75c3f",
+  "searched": "2026-09-26T07:32:29.705Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "ed25519 signature scheme parameter bytes",
+   "openalex": "ed25519 signature scheme parameter bytes",
+   "crossref": "ed25519 signature scheme parameter bytes",
+   "arxiv": "ed25519 AND signature AND scheme AND parameter AND bytes"
+  },
+  "notMeasured": [
+   "openalex: resting after three refusals, asked again in 24s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_widths_no_other_width_converts_to_this_container": {
+  "key": "lean_widths_no_other_width_converts_to_this_container",
+  "file": "widths.lean",
+  "name": "no_other_width_converts_to_this_container",
+  "statementHash": "80294a6e6bf15d94",
+  "searched": "2026-09-26T07:36:51.306Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "ed25519 signature scheme parameter other width converts",
+   "openalex": "ed25519 signature scheme parameter other width converts",
+   "crossref": "ed25519 signature scheme parameter other width converts",
+   "arxiv": "ed25519 AND signature AND scheme AND parameter AND other"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_widths_the_binding_is_consistency_and_not_derivation": {
+  "key": "lean_widths_the_binding_is_consistency_and_not_derivation",
+  "file": "widths.lean",
+  "name": "the_binding_is_consistency_and_not_derivation",
+  "statementHash": "758cfc0fc30e4450",
+  "searched": "2026-09-26T07:38:55.021Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "ed25519 signature scheme parameter binding consistency derivation",
+   "openalex": "ed25519 signature scheme parameter binding consistency derivation",
+   "crossref": "ed25519 signature scheme parameter binding consistency derivation",
+   "arxiv": "ed25519 AND signature AND scheme AND parameter AND binding"
+  },
+  "notMeasured": [
+   "openalex: resting after three refusals, asked again in 67s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_widths_the_constants_are_instances_of_the_law_and_not_the_law": {
+  "key": "lean_widths_the_constants_are_instances_of_the_law_and_not_the_law",
+  "file": "widths.lean",
+  "name": "the_constants_are_instances_of_the_law_and_not_the_law",
+  "statementHash": "7c4a6cb225b9a456",
+  "searched": "2026-09-26T07:38:43.003Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "ed25519 signature scheme parameter constants instances",
+   "openalex": "ed25519 signature scheme parameter constants instances",
+   "crossref": "ed25519 signature scheme parameter constants instances",
+   "arxiv": "ed25519 AND signature AND scheme AND parameter AND constants"
+  },
+  "notMeasured": [
+   "openalex: resting after three refusals, asked again in 77s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_widths_the_doubling_survives_the_conversion": {
+  "key": "lean_widths_the_doubling_survives_the_conversion",
+  "file": "widths.lean",
+  "name": "the_doubling_survives_the_conversion",
+  "statementHash": "f1cd03b3656a326a",
+  "searched": "2026-09-26T07:33:00.713Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "ed25519 signature scheme parameter doubling survives conversion",
+   "openalex": "ed25519 signature scheme parameter doubling survives conversion",
+   "crossref": "ed25519 signature scheme parameter doubling survives conversion",
+   "arxiv": "ed25519 AND signature AND scheme AND parameter AND doubling"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_widths_the_key_and_the_signature_together_are_six_identifiers": {
+  "key": "lean_widths_the_key_and_the_signature_together_are_six_identifiers",
+  "file": "widths.lean",
+  "name": "the_key_and_the_signature_together_are_six_identifiers",
+  "statementHash": "bb07fd243c98ffa6",
+  "searched": "2026-09-26T07:34:56.810Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "ed25519 signature scheme parameter together identifiers",
+   "openalex": "ed25519 signature scheme parameter together identifiers",
+   "crossref": "ed25519 signature scheme parameter together identifiers",
+   "arxiv": "ed25519 AND signature AND scheme AND parameter AND together"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_widths_the_key_doubles_the_identifier_and_the_signature_doubles_the_key": {
+  "key": "lean_widths_the_key_doubles_the_identifier_and_the_signature_doubles_the_key",
+  "file": "widths.lean",
+  "name": "the_key_doubles_the_identifier_and_the_signature_doubles_the_key",
+  "statementHash": "5df602def099810b",
+  "searched": "2026-09-26T07:32:41.732Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "ed25519 signature scheme parameter doubles identifier",
+   "openalex": "ed25519 signature scheme parameter doubles identifier",
+   "crossref": "ed25519 signature scheme parameter doubles identifier",
+   "arxiv": "ed25519 AND signature AND scheme AND parameter AND doubles"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 404",
+   "openalex: resting after three refusals, asked again in 5s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_widths_the_uuid_width_is_one_fact_in_two_units": {
+  "key": "lean_widths_the_uuid_width_is_one_fact_in_two_units",
+  "file": "widths.lean",
+  "name": "the_uuid_width_is_one_fact_in_two_units",
+  "statementHash": "8e5c699f64238338",
+  "searched": "2026-09-26T07:32:15.987Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "ed25519 signature scheme parameter width",
+   "openalex": "ed25519 signature scheme parameter width",
+   "crossref": "ed25519 signature scheme parameter width",
+   "arxiv": "ed25519 AND signature AND scheme AND parameter AND width"
+  },
+  "notMeasured": [
+   "openalex: resting after three refusals, asked again in 36s"
   ],
   "oeis": [],
   "catalogued": false,
@@ -40486,7 +40766,7 @@
   "file": "z9.lean",
   "name": "addgen_iff_coprime",
   "statementHash": "fbdf7b8e7ec30e01",
-  "searched": "2026-09-25T17:37:04.697Z",
+  "searched": "2026-09-26T07:42:53.460Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -40504,14 +40784,11 @@
    "crossref": "modular arithmetic addgen coprime",
    "arxiv": "modular AND arithmetic AND addgen AND coprime"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9_euler_units_pow_six": {
   "key": "lean_z9_euler_units_pow_six",
@@ -40591,7 +40868,7 @@
   "file": "z9.lean",
   "name": "hasinv_triad_not",
   "statementHash": "de0adedf8a1b6a61",
-  "searched": "2026-09-25T17:35:50.162Z",
+  "searched": "2026-09-26T07:39:14.605Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -40610,20 +40887,19 @@
    "arxiv": "modular AND arithmetic AND hasinv AND triad"
   },
   "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "openalex: resting after three refusals, asked again in 47s"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_z9_hasinv_units": {
   "key": "lean_z9_hasinv_units",
   "file": "z9.lean",
   "name": "hasinv_units",
   "statementHash": "234839b40f5e1d39",
-  "searched": "2026-09-25T17:35:38.283Z",
+  "searched": "2026-09-26T07:39:04.852Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -40642,20 +40918,19 @@
    "arxiv": "modular AND arithmetic AND hasinv"
   },
   "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "openalex: resting after three refusals, asked again in 57s"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_z9_invpow_is_u_to_the_fifth": {
   "key": "lean_z9_invpow_is_u_to_the_fifth",
   "file": "z9.lean",
   "name": "invpow_is_u_to_the_fifth",
   "statementHash": "cc6e4fd999f1b221",
-  "searched": "2026-09-25T17:36:23.059Z",
+  "searched": "2026-09-26T07:39:37.143Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -40674,20 +40949,19 @@
    "arxiv": "modular AND arithmetic AND invpow AND fifth"
   },
   "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "openalex: resting after three refusals, asked again in 24s"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_z9_mulperm_iff_unit": {
   "key": "lean_z9_mulperm_iff_unit",
   "file": "z9.lean",
   "name": "mulperm_iff_unit",
   "statementHash": "1986b9f9b9344d53",
-  "searched": "2026-09-25T17:36:52.991Z",
+  "searched": "2026-09-26T07:42:33.131Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -40705,14 +40979,11 @@
    "crossref": "modular arithmetic mulperm",
    "arxiv": "modular AND arithmetic AND mulperm"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9_neg_involution": {
   "key": "lean_z9_neg_involution",
@@ -40955,7 +41226,7 @@
   "file": "z9.lean",
   "name": "orbit_is_its_exponent_mod_six",
   "statementHash": "f3535270611672a4",
-  "searched": "2026-09-25T17:39:04.262Z",
+  "searched": "2026-09-26T07:44:23.306Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -40973,14 +41244,28 @@
    "crossref": "modular arithmetic orbit exponent",
    "arxiv": "modular AND arithmetic AND orbit AND exponent"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Matrix coefficients, counting and primes for orbits of geometrically finite groups",
+    "year": "2015",
+    "url": "https://zbmath.org/6435875",
+    "relevance": 0.75,
+    "text": "Matrix coefficients, counting and primes for orbits of geometrically finite groups [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: Let \\\\(G:=\\\\mathrm {SO}(n,1)^\\\\circ\\\\) and \\\\(\\\\Gamma<G\\\\) be a geometrically finite Zariski dense sub"
+   },
+   {
+    "source": "zbmath",
+    "title": "Orbit sizes and character degrees",
+    "year": "1999",
+    "url": "https://zbmath.org/1344299",
+    "relevance": 0.75,
+    "text": "Orbit sizes and character degrees [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"berkovich.yakov-g\",\"reviewer_id\":\"8125\",\"name\":\"Yakov Berkovich\",\"sign\":\"Yakolev Berkovich (Afula)\"},\"text\":\"The objective of this paper is to develop criteria that guarantee that a finite group \\\\(G\\\\) which acts fa"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_z9_orbit_is_the_six": {
   "key": "lean_z9_orbit_is_the_six",
@@ -41105,7 +41390,7 @@
   "file": "z9.lean",
   "name": "powsum_zero_at_one",
   "statementHash": "0acb65f83a058325",
-  "searched": "2026-09-25T17:36:43.454Z",
+  "searched": "2026-09-26T07:42:08.387Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41124,20 +41409,19 @@
    "arxiv": "modular AND arithmetic AND powsum"
   },
   "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "openalex: HTTP TypeError"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_z9_powsum_zero_at_six": {
   "key": "lean_z9_powsum_zero_at_six",
   "file": "z9.lean",
   "name": "powsum_zero_at_six",
   "statementHash": "92718e4146c6cb65",
-  "searched": "2026-09-25T17:36:33.588Z",
+  "searched": "2026-09-26T07:39:47.987Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41156,8 +41440,9 @@
    "arxiv": "modular AND arithmetic AND powsum"
   },
   "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: HTTP 404",
+   "openalex: rate-limited after backoff",
+   "crossref: HTTP TypeError"
   ],
   "oeis": [],
   "catalogued": false,
@@ -41169,7 +41454,7 @@
   "file": "z9.lean",
   "name": "selfinv_exactly_one_and_eight",
   "statementHash": "6da850925d5aa976",
-  "searched": "2026-09-25T17:35:59.875Z",
+  "searched": "2026-09-26T07:39:24.941Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41188,20 +41473,19 @@
    "arxiv": "modular AND arithmetic AND selfinv"
   },
   "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "openalex: resting after three refusals, asked again in 35s"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_z9_selfneg_only_zero": {
   "key": "lean_z9_selfneg_only_zero",
   "file": "z9.lean",
   "name": "selfneg_only_zero",
   "statementHash": "33731ef17ef27a5a",
-  "searched": "2026-09-25T17:37:14.830Z",
+  "searched": "2026-09-26T07:43:10.949Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41219,14 +41503,11 @@
    "crossref": "modular arithmetic selfneg",
    "arxiv": "modular AND arithmetic AND selfneg"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9_the_orbit_step_is_read_back_by_its_log": {
   "key": "lean_z9_the_orbit_step_is_read_back_by_its_log",
@@ -41363,7 +41644,7 @@
   "file": "z9.lean",
   "name": "triad_never_reaches_one",
   "statementHash": "d638b97aa7a359a8",
-  "searched": "2026-09-25T17:38:13.275Z",
+  "searched": "2026-09-26T07:43:30.960Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41381,21 +41662,18 @@
    "crossref": "modular arithmetic triad never reaches",
    "arxiv": "modular AND arithmetic AND triad AND never AND reaches"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9_triad_squares_vanish": {
   "key": "lean_z9_triad_squares_vanish",
   "file": "z9.lean",
   "name": "triad_squares_vanish",
   "statementHash": "1967d708e2a4b0bb",
-  "searched": "2026-09-25T17:38:23.689Z",
+  "searched": "2026-09-26T07:43:54.837Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41413,14 +41691,11 @@
    "crossref": "modular arithmetic triad squares vanish",
    "arxiv": "modular AND arithmetic AND triad AND squares AND vanish"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9_units_are_six": {
   "key": "lean_z9_units_are_six",
@@ -41671,7 +41946,7 @@
   "file": "z9plus.lean",
   "name": "consecutive_fibonacci_are_coprime",
   "statementHash": "9b4217b93b67e2e5",
-  "searched": "2026-09-25T17:44:00.371Z",
+  "searched": "2026-09-26T07:52:09.072Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41689,21 +41964,18 @@
    "crossref": "modular arithmetic periodicity consecutive fibonacci coprime",
    "arxiv": "modular AND arithmetic AND periodicity AND consecutive AND fibonacci"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_consecutive_fibonacci_are_coprime_for_every_n": {
   "key": "lean_z9plus_consecutive_fibonacci_are_coprime_for_every_n",
   "file": "z9plus.lean",
   "name": "consecutive_fibonacci_are_coprime_for_every_n",
   "statementHash": "ef13bd4c8bf9f533",
-  "searched": "2026-09-25T17:46:02.953Z",
+  "searched": "2026-09-26T07:55:17.154Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41721,21 +41993,18 @@
    "crossref": "modular arithmetic periodicity consecutive fibonacci coprime",
    "arxiv": "modular AND arithmetic AND periodicity AND consecutive AND fibonacci"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_consecutive_fibonacci_numbers_are_coprime": {
   "key": "lean_z9plus_consecutive_fibonacci_numbers_are_coprime",
   "file": "z9plus.lean",
   "name": "consecutive_fibonacci_numbers_are_coprime",
   "statementHash": "2204487305682572",
-  "searched": "2026-09-25T17:45:53.683Z",
+  "searched": "2026-09-26T07:55:00.818Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41753,14 +42022,11 @@
    "crossref": "modular arithmetic periodicity consecutive fibonacci coprime",
    "arxiv": "modular AND arithmetic AND periodicity AND consecutive AND fibonacci"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_cubes_land_exactly_in_zero_one_eight": {
   "key": "lean_z9plus_cubes_land_exactly_in_zero_one_eight",
@@ -41832,7 +42098,7 @@
   "file": "z9plus.lean",
   "name": "digital_root_agrees_with_the_residue",
   "statementHash": "f55561343176b93f",
-  "searched": "2026-09-25T17:40:33.799Z",
+  "searched": "2026-09-26T07:45:19.417Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41850,21 +42116,18 @@
    "crossref": "modular arithmetic periodicity digital agrees residue",
    "arxiv": "modular AND arithmetic AND periodicity AND digital AND agrees"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_digital_root_agrees_with_the_residue_for_every_n": {
   "key": "lean_z9plus_digital_root_agrees_with_the_residue_for_every_n",
   "file": "z9plus.lean",
   "name": "digital_root_agrees_with_the_residue_for_every_n",
   "statementHash": "ab5f4cdad6b0b1d7",
-  "searched": "2026-09-25T17:46:12.194Z",
+  "searched": "2026-09-26T07:55:31.499Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41882,21 +42145,18 @@
    "crossref": "modular arithmetic periodicity digital agrees residue",
    "arxiv": "modular AND arithmetic AND periodicity AND digital AND agrees"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_digital_root_is_the_digit_sum_residue": {
   "key": "lean_z9plus_digital_root_is_the_digit_sum_residue",
   "file": "z9plus.lean",
   "name": "digital_root_is_the_digit_sum_residue",
   "statementHash": "e2bf299f0a92cb26",
-  "searched": "2026-09-25T17:40:44.258Z",
+  "searched": "2026-09-26T07:45:37.125Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41914,21 +42174,35 @@
    "crossref": "modular arithmetic periodicity digital digit residue",
    "arxiv": "modular AND arithmetic AND periodicity AND digital AND digit"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "A course in computational number theory",
+    "year": 2000,
+    "url": "https://doi.org/10.5860/choice.38-2203",
+    "relevance": 0.8333333333333334,
+    "text": "A course in computational number theory Preface. Notation. Chapter 1 Fundamentals. 1.0 Introduction. 1.1 A Famous Sequence of Numbers. 1.2 The Euclidean ALgorithm. The Oldest Algorithm. Reversing the Euclidean Algorithm. The Extended GCD Algorithm. The Fundamental Theorem of Arithmetic. Two Applicat"
+   },
+   {
+    "source": "openalex",
+    "title": "Improved memoryless RNS forward converter based on the periodicity of residues",
+    "year": 2006,
+    "url": "https://doi.org/10.1109/tcsii.2005.857090",
+    "relevance": 0.6666666666666666,
+    "text": "Improved memoryless RNS forward converter based on the periodicity of residues The residue number system (RNS) is suitable for DSP architectures because of its ability to perform fast carry-free arithmetic. However, this advantage is over-shadowed by the complexity involved in the conversion of numb"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_z9plus_digital_root_is_the_digit_sum_residue_for_every_n": {
   "key": "lean_z9plus_digital_root_is_the_digit_sum_residue_for_every_n",
   "file": "z9plus.lean",
   "name": "digital_root_is_the_digit_sum_residue_for_every_n",
   "statementHash": "fb08b848b04bb0bf",
-  "searched": "2026-09-25T17:46:22.654Z",
+  "searched": "2026-09-26T07:55:48.909Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41946,21 +42220,35 @@
    "crossref": "modular arithmetic periodicity digital digit residue",
    "arxiv": "modular AND arithmetic AND periodicity AND digital AND digit"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "A course in computational number theory",
+    "year": 2000,
+    "url": "https://doi.org/10.5860/choice.38-2203",
+    "relevance": 0.8333333333333334,
+    "text": "A course in computational number theory Preface. Notation. Chapter 1 Fundamentals. 1.0 Introduction. 1.1 A Famous Sequence of Numbers. 1.2 The Euclidean ALgorithm. The Oldest Algorithm. Reversing the Euclidean Algorithm. The Extended GCD Algorithm. The Fundamental Theorem of Arithmetic. Two Applicat"
+   },
+   {
+    "source": "openalex",
+    "title": "Improved memoryless RNS forward converter based on the periodicity of residues",
+    "year": 2006,
+    "url": "https://doi.org/10.1109/tcsii.2005.857090",
+    "relevance": 0.6666666666666666,
+    "text": "Improved memoryless RNS forward converter based on the periodicity of residues The residue number system (RNS) is suitable for DSP architectures because of its ability to perform fast carry-free arithmetic. However, this advantage is over-shadowed by the complexity involved in the conversion of numb"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_z9plus_doubling_alone_reaches_only_the_units": {
   "key": "lean_z9plus_doubling_alone_reaches_only_the_units",
   "file": "z9plus.lean",
   "name": "doubling_alone_reaches_only_the_units",
   "statementHash": "c370efb4e6b00911",
-  "searched": "2026-09-25T17:42:23.388Z",
+  "searched": "2026-09-26T07:48:29.841Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -41978,21 +42266,18 @@
    "crossref": "modular arithmetic periodicity doubling alone reaches",
    "arxiv": "modular AND arithmetic AND periodicity AND doubling AND alone"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_doubling_and_reflection_together_reach_every_residue": {
   "key": "lean_z9plus_doubling_and_reflection_together_reach_every_residue",
   "file": "z9plus.lean",
   "name": "doubling_and_reflection_together_reach_every_residue",
   "statementHash": "49e886ebf8ee0356",
-  "searched": "2026-09-25T17:42:43.793Z",
+  "searched": "2026-09-26T07:49:09.957Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42010,14 +42295,11 @@
    "crossref": "modular arithmetic periodicity doubling reflection together",
    "arxiv": "modular AND arithmetic AND periodicity AND doubling AND reflection"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_doubling_has_period_six": {
   "key": "lean_z9plus_doubling_has_period_six",
@@ -42106,7 +42388,7 @@
   "file": "z9plus.lean",
   "name": "every_residue_is_reachable_from_one",
   "statementHash": "97138d1b45b230ba",
-  "searched": "2026-09-25T17:42:52.790Z",
+  "searched": "2026-09-26T07:49:30.188Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42124,21 +42406,18 @@
    "crossref": "modular arithmetic periodicity residue reachable",
    "arxiv": "modular AND arithmetic AND periodicity AND residue AND reachable"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_fibonacci_recurrence_holds": {
   "key": "lean_z9plus_fibonacci_recurrence_holds",
   "file": "z9plus.lean",
   "name": "fibonacci_recurrence_holds",
   "statementHash": "2c46d2e950c435da",
-  "searched": "2026-09-25T17:43:52.202Z",
+  "searched": "2026-09-26T07:51:49.863Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42156,21 +42435,18 @@
    "crossref": "modular arithmetic periodicity fibonacci recurrence",
    "arxiv": "modular AND arithmetic AND periodicity AND fibonacci AND recurrence"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_fibonacci_residues_mod_nine_repeat_every_twenty_four_steps": {
   "key": "lean_z9plus_fibonacci_residues_mod_nine_repeat_every_twenty_four_steps",
   "file": "z9plus.lean",
   "name": "fibonacci_residues_mod_nine_repeat_every_twenty_four_steps",
   "statementHash": "ecc451850de4a83a",
-  "searched": "2026-09-25T17:45:24.910Z",
+  "searched": "2026-09-26T07:53:55.756Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42188,14 +42464,11 @@
    "crossref": "modular arithmetic periodicity fibonacci residues repeat",
    "arxiv": "modular AND arithmetic AND periodicity AND fibonacci AND residues"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_five_is_not_a_square_mod_nine": {
   "key": "lean_z9plus_five_is_not_a_square_mod_nine",
@@ -42275,7 +42548,7 @@
   "file": "z9plus.lean",
   "name": "halving_has_period_six_for_every_k",
   "statementHash": "c37bbc5deef3806d",
-  "searched": "2026-09-25T17:46:42.341Z",
+  "searched": "2026-09-26T07:56:24.919Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42293,21 +42566,18 @@
    "crossref": "modular arithmetic periodicity halving period",
    "arxiv": "modular AND arithmetic AND periodicity AND halving AND period"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_halving_orbit_digital_roots_have_period_six_for_every_k": {
   "key": "lean_z9plus_halving_orbit_digital_roots_have_period_six_for_every_k",
   "file": "z9plus.lean",
   "name": "halving_orbit_digital_roots_have_period_six_for_every_k",
   "statementHash": "7419738470d73988",
-  "searched": "2026-09-25T17:46:54.385Z",
+  "searched": "2026-09-26T07:56:39.266Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42325,21 +42595,18 @@
    "crossref": "modular arithmetic periodicity halving orbit digital",
    "arxiv": "modular AND arithmetic AND periodicity AND halving AND orbit"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_halving_undoes_doubling_at_every_step": {
   "key": "lean_z9plus_halving_undoes_doubling_at_every_step",
   "file": "z9plus.lean",
   "name": "halving_undoes_doubling_at_every_step",
   "statementHash": "98e75acf25717048",
-  "searched": "2026-09-25T17:46:32.407Z",
+  "searched": "2026-09-26T07:56:10.714Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42357,21 +42624,18 @@
    "crossref": "modular arithmetic periodicity halving undoes doubling",
    "arxiv": "modular AND arithmetic AND periodicity AND halving AND undoes"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_no_period_smaller_than_six": {
   "key": "lean_z9plus_no_period_smaller_than_six",
   "file": "z9plus.lean",
   "name": "no_period_smaller_than_six",
   "statementHash": "2a97a221fd8687eb",
-  "searched": "2026-09-25T17:40:23.378Z",
+  "searched": "2026-09-26T07:44:57.708Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42389,21 +42653,18 @@
    "crossref": "modular arithmetic periodicity period smaller",
    "arxiv": "modular AND arithmetic AND periodicity AND period AND smaller"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_no_proper_divisor_of_twenty_four_is_a_period": {
   "key": "lean_z9plus_no_proper_divisor_of_twenty_four_is_a_period",
   "file": "z9plus.lean",
   "name": "no_proper_divisor_of_twenty_four_is_a_period",
   "statementHash": "e571867d17f42b8a",
-  "searched": "2026-09-25T17:43:40.654Z",
+  "searched": "2026-09-26T07:51:26.693Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42422,10 +42683,7 @@
    "crossref": "modular arithmetic periodicity proper divisor twenty",
    "arxiv": "modular AND arithmetic AND periodicity AND proper AND divisor"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [
    {
     "a": "A029744",
@@ -42440,14 +42698,14 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_orbit_digital_roots_have_period_six": {
   "key": "lean_z9plus_orbit_digital_roots_have_period_six",
   "file": "z9plus.lean",
   "name": "orbit_digital_roots_have_period_six",
   "statementHash": "6276e2d7b7b5f911",
-  "searched": "2026-09-25T17:41:04.291Z",
+  "searched": "2026-09-26T07:46:11.756Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42465,21 +42723,18 @@
    "crossref": "modular arithmetic periodicity orbit digital roots",
    "arxiv": "modular AND arithmetic AND periodicity AND orbit AND digital"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_orbit_digital_roots_have_period_six_for_every_k": {
   "key": "lean_z9plus_orbit_digital_roots_have_period_six_for_every_k",
   "file": "z9plus.lean",
   "name": "orbit_digital_roots_have_period_six_for_every_k",
   "statementHash": "6d2f6daa6a2c0a5e",
-  "searched": "2026-09-25T17:44:50.151Z",
+  "searched": "2026-09-26T07:53:03.990Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42497,21 +42752,18 @@
    "crossref": "modular arithmetic periodicity orbit digital roots",
    "arxiv": "modular AND arithmetic AND periodicity AND orbit AND digital"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_pisano_period_mod_nine_is_twenty_four": {
   "key": "lean_z9plus_pisano_period_mod_nine_is_twenty_four",
   "file": "z9plus.lean",
   "name": "pisano_period_mod_nine_is_twenty_four",
   "statementHash": "984f7716861d35fc",
-  "searched": "2026-09-25T17:43:30.275Z",
+  "searched": "2026-09-26T07:51:00.202Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42529,21 +42781,18 @@
    "crossref": "modular arithmetic periodicity pisano period twenty",
    "arxiv": "modular AND arithmetic AND periodicity AND pisano AND period"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_pisano_period_mod_nine_is_twenty_four_for_every_k": {
   "key": "lean_z9plus_pisano_period_mod_nine_is_twenty_four_for_every_k",
   "file": "z9plus.lean",
   "name": "pisano_period_mod_nine_is_twenty_four_for_every_k",
   "statementHash": "cc97667631c2a3a9",
-  "searched": "2026-09-25T17:45:33.981Z",
+  "searched": "2026-09-26T07:54:20.126Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42562,13 +42811,12 @@
    "arxiv": "modular AND arithmetic AND periodicity AND pisano AND period"
   },
   "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
+   "zbmath: HTTP TypeError"
   ],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_z9plus_primitive_root_iff_generates_the_units": {
   "key": "lean_z9plus_primitive_root_iff_generates_the_units",
@@ -42616,7 +42864,7 @@
   "file": "z9plus.lean",
   "name": "primitive_roots_are_exactly_two_and_five",
   "statementHash": "3e1eb5cec93d7ad5",
-  "searched": "2026-09-25T17:39:52.000Z",
+  "searched": "2026-09-26T07:44:40.108Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42634,21 +42882,43 @@
    "crossref": "modular arithmetic periodicity primitive roots",
    "arxiv": "modular AND arithmetic AND periodicity AND primitive AND roots"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Introduction to number theory",
+    "year": 2009,
+    "url": "https://doi.org/10.5860/choice.46-6857",
+    "relevance": 0.8,
+    "text": "Introduction to number theory 1. The Factorization of Integers.- 1.1 Divisibility.- 1.2 Prime Numbers and Composite Numbers.- 1.3 Prime Numbers.- 1.4 Integral Modulus.- 1.5 The Fundamental Theorem of Arithmetic.- 1.6 The Greatest Common Factor and the Least Common Multiple.- 1.7 The Inclusion-Exclus"
+   },
+   {
+    "source": "openalex",
+    "title": "A course in computational number theory",
+    "year": 2000,
+    "url": "https://doi.org/10.5860/choice.38-2203",
+    "relevance": 0.8,
+    "text": "A course in computational number theory Preface. Notation. Chapter 1 Fundamentals. 1.0 Introduction. 1.1 A Famous Sequence of Numbers. 1.2 The Euclidean ALgorithm. The Oldest Algorithm. Reversing the Euclidean Algorithm. The Extended GCD Algorithm. The Fundamental Theorem of Arithmetic. Two Applicat"
+   },
+   {
+    "source": "openalex",
+    "title": "The arithmetic of algebraic curves",
+    "year": 2019,
+    "url": "https://doi.org/10.1090/dol/054/12",
+    "relevance": 0.6,
+    "text": "The arithmetic of algebraic curves In this dissertation, we present a collection of results regarding the arithmetic of algebraic curves. More specifically, the curves involved are modular curves and elliptic curves. In the first part, we present an algorithm that computes a $p$-adic integration cal"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_z9plus_product_of_the_units_is_minus_one": {
   "key": "lean_z9plus_product_of_the_units_is_minus_one",
   "file": "z9plus.lean",
   "name": "product_of_the_units_is_minus_one",
   "statementHash": "1bac579996746351",
-  "searched": "2026-09-25T17:43:21.691Z",
+  "searched": "2026-09-26T07:50:40.297Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42667,10 +42937,7 @@
    "crossref": "modular arithmetic periodicity product minus",
    "arxiv": "modular AND arithmetic AND periodicity AND product AND minus"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [
    {
     "a": "A001651",
@@ -42690,14 +42957,14 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_reflection_alone_reaches_only_two": {
   "key": "lean_z9plus_reflection_alone_reaches_only_two",
   "file": "z9plus.lean",
   "name": "reflection_alone_reaches_only_two",
   "statementHash": "b4170e752b80dcec",
-  "searched": "2026-09-25T17:42:34.444Z",
+  "searched": "2026-09-26T07:48:49.346Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42715,21 +42982,18 @@
    "crossref": "modular arithmetic periodicity reflection alone reaches",
    "arxiv": "modular AND arithmetic AND periodicity AND reflection AND alone"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_reflection_is_injective_on_the_orbit": {
   "key": "lean_z9plus_reflection_is_injective_on_the_orbit",
   "file": "z9plus.lean",
   "name": "reflection_is_injective_on_the_orbit",
   "statementHash": "1f3e35d149afb2a0",
-  "searched": "2026-09-25T17:42:13.612Z",
+  "searched": "2026-09-26T07:48:15.479Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42747,21 +43011,18 @@
    "crossref": "modular arithmetic periodicity reflection injective orbit",
    "arxiv": "modular AND arithmetic AND periodicity AND reflection AND injective"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_reflection_splits_the_orbit_in_half": {
   "key": "lean_z9plus_reflection_splits_the_orbit_in_half",
   "file": "z9plus.lean",
   "name": "reflection_splits_the_orbit_in_half",
   "statementHash": "5f43da5d10b117c4",
-  "searched": "2026-09-25T17:41:54.991Z",
+  "searched": "2026-09-26T07:47:33.503Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42779,21 +43040,18 @@
    "crossref": "modular arithmetic periodicity reflection splits orbit",
    "arxiv": "modular AND arithmetic AND periodicity AND reflection AND splits"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_reversal_cannot_change_the_digital_root": {
   "key": "lean_z9plus_reversal_cannot_change_the_digital_root",
   "file": "z9plus.lean",
   "name": "reversal_cannot_change_the_digital_root",
   "statementHash": "b50686255ebd6b9e",
-  "searched": "2026-09-25T17:40:54.659Z",
+  "searched": "2026-09-26T07:45:56.669Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42811,21 +43069,18 @@
    "crossref": "modular arithmetic periodicity reversal cannot change",
    "arxiv": "modular AND arithmetic AND periodicity AND reversal AND cannot"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_reversal_cannot_change_the_digital_root_for_every_n": {
   "key": "lean_z9plus_reversal_cannot_change_the_digital_root_for_every_n",
   "file": "z9plus.lean",
   "name": "reversal_cannot_change_the_digital_root_for_every_n",
   "statementHash": "f71371910c552698",
-  "searched": "2026-09-25T17:47:15.247Z",
+  "searched": "2026-09-26T07:57:16.233Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42843,14 +43098,11 @@
    "crossref": "modular arithmetic periodicity reversal cannot change",
    "arxiv": "modular AND arithmetic AND periodicity AND reversal AND cannot"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_squares_land_exactly_in_zero_one_four_seven": {
   "key": "lean_z9plus_squares_land_exactly_in_zero_one_four_seven",
@@ -42942,7 +43194,7 @@
   "file": "z9plus.lean",
   "name": "the_crossing_pairs_are_one_four_seven",
   "statementHash": "7daf7fb98e70f377",
-  "searched": "2026-09-25T17:42:03.797Z",
+  "searched": "2026-09-26T07:47:53.370Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42960,21 +43212,18 @@
    "crossref": "modular arithmetic periodicity crossing pairs",
    "arxiv": "modular AND arithmetic AND periodicity AND crossing AND pairs"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_the_diameter_is_exactly_four": {
   "key": "lean_z9plus_the_diameter_is_exactly_four",
   "file": "z9plus.lean",
   "name": "the_diameter_is_exactly_four",
   "statementHash": "5dcdcabbff811e73",
-  "searched": "2026-09-25T17:43:01.845Z",
+  "searched": "2026-09-26T07:49:46.467Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -42992,21 +43241,18 @@
    "crossref": "modular arithmetic periodicity diameter",
    "arxiv": "modular AND arithmetic AND periodicity AND diameter"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_the_doubling_orbit_is_read_from_the_exponent_mod_six": {
   "key": "lean_z9plus_the_doubling_orbit_is_read_from_the_exponent_mod_six",
   "file": "z9plus.lean",
   "name": "the_doubling_orbit_is_read_from_the_exponent_mod_six",
   "statementHash": "f7e8e2053d683917",
-  "searched": "2026-09-25T17:45:01.400Z",
+  "searched": "2026-09-26T07:53:20.448Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43024,21 +43270,18 @@
    "crossref": "modular arithmetic periodicity doubling orbit exponent",
    "arxiv": "modular AND arithmetic AND periodicity AND doubling AND orbit"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_the_frontier_grows_by_two_each_round": {
   "key": "lean_z9plus_the_frontier_grows_by_two_each_round",
   "file": "z9plus.lean",
   "name": "the_frontier_grows_by_two_each_round",
   "statementHash": "ccda3d98d0e10ab0",
-  "searched": "2026-09-25T17:43:12.300Z",
+  "searched": "2026-09-26T07:50:15.541Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43056,21 +43299,18 @@
    "crossref": "modular arithmetic periodicity frontier grows round",
    "arxiv": "modular AND arithmetic AND periodicity AND frontier AND grows"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument": {
   "key": "lean_z9plus_the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument",
   "file": "z9plus.lean",
   "name": "the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument",
   "statementHash": "a9f857d801238b57",
-  "searched": "2026-09-25T17:45:43.416Z",
+  "searched": "2026-09-26T07:54:42.769Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43088,21 +43328,18 @@
    "crossref": "modular arithmetic periodicity fuelled exceeds argument",
    "arxiv": "modular AND arithmetic AND periodicity AND fuelled AND exceeds"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_the_orbit_never_meets_the_triad": {
   "key": "lean_z9plus_the_orbit_never_meets_the_triad",
   "file": "z9plus.lean",
   "name": "the_orbit_never_meets_the_triad",
   "statementHash": "d5082e973b0e3737",
-  "searched": "2026-09-25T17:41:34.578Z",
+  "searched": "2026-09-26T07:46:48.731Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43120,21 +43357,18 @@
    "crossref": "modular arithmetic periodicity orbit never meets",
    "arxiv": "modular AND arithmetic AND periodicity AND orbit AND never"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_the_orbit_never_meets_the_triad_for_every_k": {
   "key": "lean_z9plus_the_orbit_never_meets_the_triad_for_every_k",
   "file": "z9plus.lean",
   "name": "the_orbit_never_meets_the_triad_for_every_k",
   "statementHash": "563af0c5040f68de",
-  "searched": "2026-09-25T17:45:13.732Z",
+  "searched": "2026-09-26T07:53:37.514Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43152,14 +43386,11 @@
    "crossref": "modular arithmetic periodicity orbit never meets",
    "arxiv": "modular AND arithmetic AND periodicity AND orbit AND never"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_the_orders_of_the_units_are_exact": {
   "key": "lean_z9plus_the_orders_of_the_units_are_exact",
@@ -43215,7 +43446,7 @@
   "file": "z9plus.lean",
   "name": "the_reflected_orbit_covers_the_whole_triad",
   "statementHash": "2133ec824e7077a6",
-  "searched": "2026-09-25T17:41:45.179Z",
+  "searched": "2026-09-26T07:47:17.179Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43233,21 +43464,18 @@
    "crossref": "modular arithmetic periodicity reflected orbit covers",
    "arxiv": "modular AND arithmetic AND periodicity AND reflected AND orbit"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k": {
   "key": "lean_z9plus_the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k",
   "file": "z9plus.lean",
   "name": "the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k",
   "statementHash": "db2aff435191dbd0",
-  "searched": "2026-09-25T17:47:06.167Z",
+  "searched": "2026-09-26T07:56:56.387Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43265,21 +43493,18 @@
    "crossref": "modular arithmetic periodicity reflected orbit meets",
    "arxiv": "modular AND arithmetic AND periodicity AND reflected AND orbit"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_the_unit_table_is_a_latin_square": {
   "key": "lean_z9plus_the_unit_table_is_a_latin_square",
   "file": "z9plus.lean",
   "name": "the_unit_table_is_a_latin_square",
   "statementHash": "3d9aeaeaa3e49107",
-  "searched": "2026-09-25T17:41:24.965Z",
+  "searched": "2026-09-26T07:46:28.797Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43298,10 +43523,7 @@
    "crossref": "modular arithmetic periodicity table latin square",
    "arxiv": "modular AND arithmetic AND periodicity AND table AND latin"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [
    {
     "a": "A001651",
@@ -43321,14 +43543,14 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_three_five_eight_are_consecutive_fibonacci": {
   "key": "lean_z9plus_three_five_eight_are_consecutive_fibonacci",
   "file": "z9plus.lean",
   "name": "three_five_eight_are_consecutive_fibonacci",
   "statementHash": "fbe11bec4065416b",
-  "searched": "2026-09-25T17:44:10.966Z",
+  "searched": "2026-09-26T07:52:33.699Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43346,21 +43568,18 @@
    "crossref": "modular arithmetic periodicity consecutive fibonacci",
    "arxiv": "modular AND arithmetic AND periodicity AND consecutive AND fibonacci"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  },
  "lean_z9plus_units_and_triad_partition_the_ring": {
   "key": "lean_z9plus_units_and_triad_partition_the_ring",
   "file": "z9plus.lean",
   "name": "units_and_triad_partition_the_ring",
   "statementHash": "095f739f2eb3a130",
-  "searched": "2026-09-25T17:44:19.279Z",
+  "searched": "2026-09-26T07:52:48.312Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -43378,13 +43597,10 @@
    "crossref": "modular arithmetic periodicity triad partition",
    "arxiv": "modular AND arithmetic AND periodicity AND triad AND partition"
   },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
  }
 }

@@ -41,41 +41,75 @@ namespace Capacity
 
 def container : Nat := 128    -- the bits a UUID occupies
 def reserved  : Nat := 6      -- 4 version + 2 variant, RFC 9562
-def free      : Nat := container - reserved
+
+-- WHAT IS FREE IS A FUNCTION OF WHAT IS RESERVED, and the six is one argument to it. Every theorem below is
+-- stated of `freeOf` over every reservation the container admits; `free` is then the instance at six and it
+-- is a consequence, not a separate assertion. Before this the file typed each figure at r = 6 and proved it
+-- equal to itself — which checks the typing and decides nothing, because the arithmetic that makes 122 the
+-- right answer never appeared. The reservation is the variable; the RFC's choice of 6 is the value.
+def freeOf (r : Nat) : Nat := container - r
+def free   : Nat := freeOf reserved
+
+-- every reservation the container can spend, and the argument the RFC actually picked
+def reservations : List Nat := List.range (container + 1)
 
 -- ── 1 · THE COUNT, AGREEING WITH imprint.lean ─────────────────────────────────────────────────────────────
--- Restated here so this file stands on the same arithmetic rather than on a citation to it.
+-- THE SPLIT IS EXACT AT EVERY RESERVATION, AND IT IS RECOVERABLE. What is free plus what is spent returns
+-- the container, and the container minus what is free returns what was spent — so neither side is an
+-- independent number and editing one without the other contradicts the law. 122 is then read off at r = 6.
 theorem the_container_is_one_hundred_twenty_eight_and_six_are_spent :
-  free = 122 ∧ reserved = 6 ∧ free + reserved = container ∧ container = 128 := by decide
+  reservations.all (fun r => (freeOf r + r == container) && (container - freeOf r == r))
+  ∧ free = 122 ∧ reserved = 6 ∧ free + reserved = container ∧ container = 128 := by decide
 
 -- ── 2 · SO THE CAPACITY IS TWO TO THE HUNDRED AND TWENTY-SECOND ───────────────────────────────────────────
 -- The figure a reader quotes, decided. Both numbers written out, because "2^122" and "2^128" look alike on
--- a page and the difference between them does not.
+-- a page and the difference between them does not. AND THE CAPACITY FALLS STRICTLY WHENEVER ANYTHING IS RESERVED, AND ONLY THEN. The inequality is not a fact
+-- about six: it holds at every positive reservation and turns into equality at exactly one argument, r = 0.
+-- A reader who quotes the container size is claiming r = 0, which the layout refutes.
 theorem the_capacity_is_two_to_the_free_bits_and_not_the_container :
-  2 ^ free = 5316911983139663491615228241121378304
+  reservations.all (fun r => ((2 ^ freeOf r == 2 ^ container) == (r == 0))
+    && (2 ^ freeOf r ≤ 2 ^ container))
+  ∧ 2 ^ free = 5316911983139663491615228241121378304
   ∧ 2 ^ container = 340282366920938463463374607431768211456
   ∧ 2 ^ free < 2 ^ container := by decide
 
 -- ── 3 · AND THE GAP IS ONE DOUBLING PER RESERVED BIT ──────────────────────────────────────────────────────
 -- Not an unexplained discrepancy: the ratio is exactly 2^6, which is what six reserved bits cost, so the
--- overstatement has a cause a reader can check rather than a size they must accept.
+-- overstatement has a cause a reader can check rather than a size they must accept. Stated as ONE DOUBLING
+-- PER RESERVED BIT, AT EVERY RESERVATION. The ratio is 2^r for every r the container admits,
+-- and the product form says the same thing without a division — so the factor is the reservation itself and
+-- 64 is what that law returns when handed the RFC's six.
 theorem the_nominal_overstates_the_real_by_two_to_the_reserved :
-  2 ^ container / 2 ^ free = 2 ^ reserved
+  reservations.all (fun r => (2 ^ container / 2 ^ freeOf r == 2 ^ r)
+    && (2 ^ container == 2 ^ r * 2 ^ freeOf r))
+  ∧ 2 ^ container / 2 ^ free = 2 ^ reserved
   ∧ 2 ^ reserved = 64
   ∧ 2 ^ container = 64 * 2 ^ free := by decide
 
 -- ── 4 · THE BIRTHDAY BOUND HALVES THE EXPONENT, AND HALVES THE HONEST ONE ─────────────────────────────────
 -- A collision is expected near 2^(n/2). Taken on the container that is 2^64; taken on what is actually
 -- free it is 2^61 — the number a forgery attempt really faces.
+--
+-- AND THE HALVED WORLD LOSES THE CEILING OF HALF THE RESERVATION, NOT HALF OF IT. Stating the drop as r/2
+-- would be wrong on every odd reservation, because the floor division that halves the exponent cannot spend
+-- half a bit: the exponent lost is (r+1)/2. So an odd reservation costs a forger exactly what the next even
+-- one costs, and 6 and 5 are the same bound. This is the arithmetic the typed 61 was resting on.
 theorem the_collision_exponent_follows_the_free_bits :
-  free / 2 = 61 ∧ container / 2 = 64
+  reservations.all (fun r => (container / 2 - freeOf r / 2 == (r + 1) / 2)
+    && (2 * (freeOf r / 2) + freeOf r % 2 == freeOf r))
+  ∧ free / 2 = 61 ∧ container / 2 = 64
   ∧ 2 ^ (free / 2) = 2305843009213693952
   ∧ 2 ^ (container / 2) = 18446744073709551616 := by decide
 
 -- ── 5 · AND THAT GAP IS A FACTOR OF EIGHT ─────────────────────────────────────────────────────────────────
--- Half the reservation, because the exponent was halved: three bits, not six.
+-- Half the reservation, because the exponent was halved: three bits, not six. The general gap is 2^((r+1)/2)
+-- by theorem 4, and it equals the tidy 2^(r/2) at EXACTLY the even reservations — decided as an iff in both
+-- directions, so the name's word "half" carries the condition under which it is true instead of hiding it.
+-- Six is even, which is why the eight is right here and why it would not have been at five or seven.
 theorem the_birthday_gap_is_half_the_reservation :
-  2 ^ (container / 2) / 2 ^ (free / 2) = 8
+  reservations.all (fun r => (2 ^ (container / 2) / 2 ^ (freeOf r / 2) == 2 ^ ((r + 1) / 2))
+    && ((2 ^ (container / 2) / 2 ^ (freeOf r / 2) == 2 ^ (r / 2)) == (r % 2 == 0)))
+  ∧ 2 ^ (container / 2) / 2 ^ (free / 2) = 8
   ∧ 8 = 2 ^ (reserved / 2)
   ∧ reserved / 2 = 3 := by decide
 
@@ -90,8 +124,12 @@ theorem the_gap_is_zero_exactly_when_nothing_is_reserved :
 -- ── 7 · WHAT A CLAIM OF 2^128 ADDRESSES ACTUALLY ASSERTS ──────────────────────────────────────────────────
 -- Stated as the difference itself, so the overstatement is a quantity rather than an adjective: writing the
 -- container size as the capacity claims this many addresses that do not exist.
+-- THE OVERCLAIM IS (2^r − 1) TIMES WHAT EXISTS, at every reservation — so the 63 is not a coincidence of six
+-- but one less than the doubling factor, and the difference vanishes exactly at r = 0 where nothing is spent.
 theorem the_overclaim_is_this_many_addresses_that_do_not_exist :
-  2 ^ container - 2 ^ free = 334965454937798799971759379190646833152
+  reservations.all (fun r => (2 ^ container - 2 ^ freeOf r == (2 ^ r - 1) * 2 ^ freeOf r)
+    && ((2 ^ container - 2 ^ freeOf r == 0) == (r == 0)))
+  ∧ 2 ^ container - 2 ^ free = 334965454937798799971759379190646833152
   ∧ 2 ^ container - 2 ^ free = 63 * 2 ^ free := by decide
 
 -- ── 8 · WHAT THIS FILE DOES NOT SAY ───────────────────────────────────────────────────────────────────────
@@ -101,8 +139,14 @@ theorem the_overclaim_is_this_many_addresses_that_do_not_exist :
 -- so the figures here are a ceiling on the difficulty and not a measurement of it. Nor does anything here
 -- decide that 2^61 is enough for any purpose — that is a judgement about a threat, and this deposit's rule
 -- is that judgements are not typed into theorems.
+-- THE CEILING HOLDS WHEREVER ANYTHING IS LEFT, and it stops holding exactly where nothing is. The guard is
+-- freeOf r ≥ 1 and not, as this file first asserted, freeOf r ≥ 2: at one free bit the halving still drops
+-- strictly, because 1/2 is 0 and 0 < 1. The kernel refused the ≥ 2 form and the ≥ 1 form is the true one —
+-- which is the whole reason the condition is decided at every reservation instead of read off 122.
 theorem the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement :
-  2 ^ (free / 2) < 2 ^ free
+  reservations.all (fun r => ((freeOf r / 2 < freeOf r) == (1 ≤ freeOf r))
+    && (freeOf r / 2 ≤ container / 2))
+  ∧ 2 ^ (free / 2) < 2 ^ free
   ∧ 2 ^ (free / 2) < 2 ^ (container / 2)
   ∧ free / 2 < free := by decide
 

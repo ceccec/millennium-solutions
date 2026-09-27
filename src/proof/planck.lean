@@ -148,8 +148,17 @@ theorem the_same_search_does_reach_the_magnitude :
 -- 37 wide is 9 * 37 / 100001, which is zero in the naturals — far under one. A search whose expected yield
 -- is below one finds nothing whether or not there is anything to find. The absence is reported; it is not
 -- promoted to a result, and a hit would not have been promoted either.
+-- THE THRESHOLD IS THE STATEMENT, AND THE WINDOW IS 308 TIMES TOO NARROW TO REACH IT. Expected hits grow
+-- strictly with the window — 9(2u+1) is increasing, decided on both ranges below — so ONE threshold governs
+-- every width, and it is exactly u = 5556: at 5555 the expectation is still under one and at 5556 it is not.
+-- The published uncertainty is 18, which is that threshold divided by 308. So the search is not merely
+-- unlucky at this width; no digit of this precision could have given it power, and the ratio says by how far.
 theorem a_search_expecting_less_than_one_hit_settles_nothing_either_way :
-  9 * (2 * ellPUnc + 1) / 100001 = 0
+  (List.range 64).all (fun u => 9 * (2 * u + 1) < 9 * (2 * (u + 1) + 1))
+  ∧ (List.range' 5546 20).all (fun u => (9 * (2 * u + 1) < 9 * (2 * (u + 1) + 1))
+      && ((9 * (2 * u + 1) < 100001) == (u < 5556)))
+  ∧ 5556 / ellPUnc = 308
+  ∧ 9 * (2 * ellPUnc + 1) / 100001 = 0
   ∧ 9 * (2 * ellPUnc + 1) < 100001 := by decide
 
 -- ── 9 · THE DIMENSIONAL SKELETON, IN HALVES ───────────────────────────────────────────────────────────────
@@ -166,8 +175,18 @@ def dimTP   : Dim := (1, 1, -5)
 def dimMP   : Dim := (1, -1, 1)
 def dmul (x y : Dim) : Dim := (x.1 + y.1, x.2.1 + y.2.1, x.2.2 + y.2.2)
 def ddiv (x y : Dim) : Dim := (x.1 - y.1, x.2.1 - y.2.1, x.2.2 - y.2.2)
+-- PARITY IS ADDITIVE UNDER COMBINING, WHICH IS WHY THE SQUARE ROOT CANNOT BE AVOIDED. The ħ exponent of a
+-- product is the sum of the two exponents, so its parity is the sum of the parities — decided over every pair
+-- of the three units. Each unit alone is odd and each SQUARED is even. An odd exponent is therefore not a
+-- property of one unit that another combination might dodge: no product of these can reach an odd ħ power
+-- except by an odd count of odd factors, and a plain product of two never does.
+def planckDims : List Dim := [dimEllP, dimTP, dimMP]
+
 theorem every_planck_unit_is_a_square_root_and_not_a_plain_product :
-  dimEllP.1 % 2 ≠ 0 ∧ dimTP.1 % 2 ≠ 0 ∧ dimMP.1 % 2 ≠ 0 := by decide
+  planckDims.all (fun d => (d.1 % 2 ≠ 0) && ((dmul d d).1 % 2 == 0)
+    && planckDims.all (fun e => ((dmul d e).1 % 2 == (d.1 + e.1) % 2)
+        && ((dmul d e).1 % 2 == 0)))
+  ∧ dimEllP.1 % 2 ≠ 0 ∧ dimTP.1 % 2 ≠ 0 ∧ dimMP.1 % 2 ≠ 0 := by decide
 
 -- ── 10 · LENGTH OVER TIME CANCELS BOTH ────────────────────────────────────────────────────────────────────
 -- Dividing the Planck length by the Planck time subtracts the exponents: the quantum vanishes, gravity
@@ -215,8 +234,16 @@ theorem the_three_uncertainties_are_one_uncertainty_wearing_three_faces :
 -- 299792458. The registry's own numbers fail an identity that has no measurement in it.
 def cDefined : Nat := 299792458
 def ratioFromDigits : Nat := ellP * 1000000000 / tP
+-- NO DIGIT IN THE PUBLISHED WINDOW REPRODUCES c, AND c SITS BETWEEN TWO ADJACENT ONES. Decided across the
+-- whole uncertainty window, not only at the central value: not one candidate for ℓP gives ℓP/tP = c exactly.
+-- Yet c is bracketed by the two CONSECUTIVE candidates 1616255 and 1616256 — so the identity is not
+-- contradicted by the measurement, it is unreachable at this digit count. That is a statement about
+-- resolution, and it is why the next theorem can call the miss rounding rather than disagreement.
 theorem the_published_digits_miss_an_identity_that_has_no_measurement_in_it :
-  ratioFromDigits = 299792422
+  window.all (fun e => e * 1000000000 / tP != cDefined)
+  ∧ ellP * 1000000000 / tP < cDefined
+  ∧ cDefined < (ellP + 1) * 1000000000 / tP
+  ∧ ratioFromDigits = 299792422
   ∧ ratioFromDigits ≠ cDefined
   ∧ cDefined - ratioFromDigits = 36 := by decide
 
@@ -227,8 +254,18 @@ theorem the_published_digits_miss_an_identity_that_has_no_measurement_in_it :
 -- or with CODATA: the deviation is a fact about DECIMAL PRESENTATION, it sits two orders below the
 -- uncertainty, and it is invisible in every use of these constants except this one — asking an exact
 -- identity to hold on the printed digits.
+-- THE MISS IS SMALLER THAN ONE STEP OF THE LAST PUBLISHED DIGIT, which is what "rounding" means precisely.
+-- Advancing ℓP by one in its final digit moves the derived speed by 185 or 186 — the floor division
+-- alternates between the two, which is why the step is BRACKETED here and stating it as a single 186 was
+-- refused by the kernel — and the miss is 36. So the gap is under a fifth of the smallest move the published
+-- precision can make, and no closer value is expressible. Decided across the window, not read off one pair. It is also 91 times below
+-- the uncertainty band, which is the separate and weaker statement this theorem used to make alone.
 theorem the_miss_is_rounding_and_sits_far_below_the_uncertainty :
-  (cDefined - ratioFromDigits) * 1000000 < 11 * cDefined
+  window.all (fun e =>
+    (185 ≤ (e + 1) * 1000000000 / tP - e * 1000000000 / tP)
+      && ((e + 1) * 1000000000 / tP - e * 1000000000 / tP ≤ 186))
+  ∧ cDefined - ratioFromDigits < 185
+  ∧ (cDefined - ratioFromDigits) * 1000000 < 11 * cDefined
   ∧ 11 * cDefined / ((cDefined - ratioFromDigits) * 1000000) = 91 := by decide
 
 -- ── 17 · THE WINDOW WAS NEVER REACHABLE ───────────────────────────────────────────────────────────────────
@@ -387,8 +424,14 @@ theorem the_relations_cannot_express_the_uncertainty_they_inherit :
 -- sequences make that a comparison of naturals.
 def acoustic : Nat := 432
 def tPtimesAcoustic : Nat := tP * acoustic        -- scaled 10^-50, as tP is
+-- THE DECADE IS UNIQUE, AND THAT IS WHAT FIXES THE ORDER. A two-sided bound says the value is somewhere
+-- between two powers of ten; the law says there is EXACTLY ONE k for which it is, decided against every
+-- candidate to eleven and answering nine at all the others no. An order of magnitude that is pinned rather
+-- than merely bounded cannot be quoted as eighteen by choosing a different pair of brackets.
 theorem the_acoustic_and_planck_frequencies_are_forty_orders_apart_not_eighteen :
-  tPtimesAcoustic = 2329018704
+  (List.range 12).all (fun k =>
+    ((10 ^ k < tPtimesAcoustic) && (tPtimesAcoustic < 10 ^ (k + 1))) == (k == 9))
+  ∧ tPtimesAcoustic = 2329018704
   ∧ 1000000000 < tPtimesAcoustic ∧ tPtimesAcoustic < 10000000000
   ∧ 10 ^ 9 < tPtimesAcoustic ∧ tPtimesAcoustic < 10 ^ 10
   ∧ 18 + 22 = 40 := by decide
@@ -412,8 +455,16 @@ theorem this_file_decides_arithmetic_on_digits_and_not_a_physical_theory :
 def cSq : Nat := cDefined * cDefined                      -- 8.9875517873681764e16 m²/s², exact
 def eCharge : Nat := 1602176634                           -- 1.602176634e-19 C, SI-defined (light.lean)
 def planckEnergyMantissa : Nat := mP * cSq / eCharge      -- ×10⁵ GeV
+-- "DERIVES" MEANS INVERTIBLE, AND THAT IS DECIDED ACROSS THE PUBLISHED MASS BAND. For every mass the
+-- uncertainty admits, multiplying by the exact square and dividing back returns the mass unchanged — so the
+-- step from mass to energy introduces no rounding of its own and the energy carries exactly the mass's
+-- precision, no more. A derivation that lost a digit here would be manufacturing precision, which is the
+-- defect this file exists to catch; the numbers below are that law evaluated at the central mass.
+def massWindow : List Nat := (List.range (2 * mPUnc + 1)).map (fun i => mP - mPUnc + i)
+
 theorem the_planck_energy_derives_from_the_mass_and_the_defined_constants :
-  cSq = 89875517873681764
+  massWindow.all (fun m => (m * cSq == m * cDefined * cDefined) && (m * cSq / cSq == m))
+  ∧ cSq = 89875517873681764
   ∧ mP * cSq = 195608132867888696349576
   ∧ planckEnergyMantissa = 122088993633325 := by decide
 
@@ -428,8 +479,13 @@ theorem the_planck_energy_derives_from_the_mass_and_the_defined_constants :
 -- string theory is therefore INDIRECT, and this deposit performs none of them: no superpartner search, no
 -- extra-dimension bound, no cosmic-string signature, no constraint on inflation. It measures naturals.
 def lhcGeV : Nat := 13600                                  -- 13.6 TeV, LHC Run 3
+-- AND THIS ORDER IS PINNED THE SAME WAY: exactly one k brackets the Planck energy above the collider's, and
+-- it is fourteen. Every other candidate to twenty-three is refused, so "fourteen orders" is the unique answer
+-- the two energies admit rather than one true pair of brackets among several.
 theorem the_collider_sits_between_fourteen_and_fifteen_orders_below_the_planck_energy :
-  lhcGeV * 10 ^ 14 < planckEnergyMantissa * 10 ^ 5
+  (List.range 24).all (fun k => ((lhcGeV * 10 ^ k < planckEnergyMantissa * 10 ^ 5)
+    && (planckEnergyMantissa * 10 ^ 5 < lhcGeV * 10 ^ (k + 1))) == (k == 14))
+  ∧ lhcGeV * 10 ^ 14 < planckEnergyMantissa * 10 ^ 5
   ∧ planckEnergyMantissa * 10 ^ 5 < lhcGeV * 10 ^ 15
   ∧ lhcGeV = 136 * 100 := by decide
 
