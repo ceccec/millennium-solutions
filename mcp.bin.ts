@@ -10,7 +10,24 @@
  *  only one in the published surface that knows it is a process, which keeps the boundary checkable: if a
  *  module under src/ ever needs `process`, the dist build says so instead of a reviewer having to notice. */
 import { createInterface } from 'node:readline'
-import { run, SERVED } from './src/mcp/serve.ts'
+import { readFileSync, existsSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import { dirname, join } from 'node:path'
+import { run, served, withLedger, type Row } from './src/mcp/serve.ts'
+
+// ── THE LEDGER IS LOADED HERE, BECAUSE ONLY HERE MAY READ A FILE ─────────────────────────────────────────
+// The four evidence tools measure the discovery ledger and the package did not ship it, which put the
+// deposit's own evidence in the one place a stranger could not examine. It ships now, beside this file, and
+// the reading happens here: src/mcp/serve.ts is compiled without node type definitions, which is the standing
+// check that nothing in the published core reaches a node builtin. Resolved against THIS FILE's directory and
+// not the working directory — a server started from somewhere else is the normal case for MCP, and a relative
+// path would have found the ledger only when the caller happened to be standing in the right folder.
+const here = dirname(fileURLToPath(import.meta.url))
+for (const p of [join(here, 'data', 'discovered.json'), join(here, '..', 'src', 'proof', 'discovered.json')]) {
+  if (!existsSync(p)) continue
+  try { withLedger(JSON.parse(readFileSync(p, 'utf8')) as Row[]); break }
+  catch { /* a ledger that does not parse is an absent ledger, and the tools say absent rather than zero */ }
+}
 
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 const rl = createInterface({ input: process.stdin })
@@ -29,7 +46,7 @@ rl.on('line', (line: string) => {
     if (req.method === 'tools/list') {
       return ok({ tools: [
         { name: 'list_tools', description: 'What this entry serves, and what each tool it does not serve needs instead.', inputSchema: { type: 'object', properties: { name: { type: 'string' } } } },
-        { name: 'call_tool', description: 'Call one of the served tools.', inputSchema: { type: 'object', properties: { name: { type: 'string', enum: SERVED }, arguments: { type: 'object' } }, required: ['name'] } },
+        { name: 'call_tool', description: 'Call one of the served tools.', inputSchema: { type: 'object', properties: { name: { type: 'string', enum: served() }, arguments: { type: 'object' } }, required: ['name'] } },
       ] })
     }
     if (req.method === 'tools/call') {

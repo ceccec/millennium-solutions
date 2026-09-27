@@ -28,17 +28,108 @@ import { checkFace, type Face } from '../face/index.ts'
 import { CORE as ROSETTA_CORE, DOMAINS as ROSETTA_DOMAINS } from '../the/rosetta/index.ts'
 import { TOOLS, NEEDS, WRITES } from './index.ts'
 
+/** ── THE EVIDENCE TOOLS, OVER A LEDGER THE CALLER IS HANDED ───────────────────────────────────────────────
+ *  Four tools measure the discovery ledger, and the package did not ship it — so they were `ledger` tools,
+ *  unreachable from an install, and the deposit's central evidence was the one thing a stranger could not
+ *  examine. That is the worst place for the publication gap to sit.
+ *
+ *  THEY TAKE THE LEDGER AS AN ARGUMENT. This module may not read a file: it is compiled with no node type
+ *  definitions, which is the standing check that nothing in the published core reaches a node builtin. So the
+ *  reading happens in mcp.bin.ts, the one file allowed to know it is a process, and these stay pure functions
+ *  of the rows. That is a better shape than a file path anyway — the same function verifies a ledger the
+ *  caller obtained from anywhere, including one this deposit never wrote. */
+export type Row = { key: string; name?: string; receipt: string; revoked?: boolean; reason?: string; supersededBy?: string }
+
+export const ledgerStatus = (rows: Row[]) => {
+  const live = rows.filter((r) => !r.revoked)
+  const carried = rows.filter((r) => r.revoked && r.supersededBy)
+  const keys = new Map<string, number>(), receipts = new Map<string, number>()
+  for (const r of rows) { keys.set(r.key, (keys.get(r.key) ?? 0) + 1); receipts.set(r.receipt, (receipts.get(r.receipt) ?? 0) + 1) }
+  return {
+    total: rows.length, live: live.length, revoked: rows.length - live.length, carried: carried.length,
+    duplicateKeys: [...keys].filter(([, n]) => n > 1).map(([k]) => k),
+    duplicateReceipts: [...receipts].filter(([, n]) => n > 1).map(([k]) => k),
+    octave: { size: rows.length, remainder: rows.length % 8, exact: rows.length % 8 === 0 },
+    note: 'Measurement of the ledger as given. It says nothing about whether any entry is TRUE — only what the record contains and whether its keys and receipts are unique.',
+  }
+}
+
+/** The chain: receipt[i] = toUuid(receipt[i-1] + '→' + key[i]). Recomputed link by link from the rows alone,
+ *  so a break is located rather than reported as a total. The first two indices are a documented genesis
+ *  discontinuity in this deposit's own record and are reported as such instead of counted as tampering. */
+export const forensicsOf = (rows: Row[], seed = 'axiom:TRINITY') => {
+  const breaks: { index: number; key: string; expected: string; found: string }[] = []
+  let prev = toUuid(seed)
+  rows.forEach((r, i) => {
+    const expected = toUuid(prev + '→' + r.key)
+    if (expected !== r.receipt) breaks.push({ index: i, key: r.key, expected, found: r.receipt })
+    prev = r.receipt
+  })
+  const genesis = breaks.filter((b) => b.index < 2)
+  return {
+    entries: rows.length, breaks: breaks.length, genesisDiscontinuities: genesis.length,
+    newBreaks: breaks.filter((b) => b.index >= 2).slice(0, 8),
+    intactFromIndex: breaks.length === genesis.length ? 2 : null,
+    seal: merkleFold(rows.map((r) => r.receipt)),
+    note: 'Chain-of-custody and tamper-evidence, not truth. Indices 0 and 1 are a documented baseline in this deposit; a break at index 2 or later is tampering.',
+  }
+}
+
+/** A uuid is a one-way address. This does not reverse it — it LOOKS IT UP, and says plainly when it is not
+ *  there rather than implying the address is meaningless. */
+export const verifyIn = (rows: Row[], uuid: string) => {
+  const at = rows.findIndex((r) => r.receipt === uuid.toLowerCase())
+  if (at < 0) return { uuid, found: false,
+    note: 'Not a receipt in this ledger. That is not the same as opaque or invalid: this entry carries only the ledger it was handed, and the address may belong to the agent-statement receipts, which the full server reads.' }
+  const r = rows[at]
+  return { uuid, found: true, index: at, key: r.key, name: r.name ?? null, live: !r.revoked,
+    supersededBy: r.supersededBy ?? null, reason: r.reason ?? null,
+    chainIntactHere: at === 0 || toUuid(rows[at - 1].receipt + '→' + r.key) === r.receipt,
+    note: 'The address was found and its chain link recomputed. Integrity and position, never truth of the statement.' }
+}
+
 /** The tools this entry serves — DERIVED from NEEDS, not listed, minus the two that need a dependency or
  *  repository logic. Those two are named with their reason so the subtraction is auditable. */
 export const CANNOT_SHIP: Record<string, string> = {
   honesty_gate: 'its `computes` comes from @uuidna/uuidna, a devDependency; shipping it would spend the zero-dependency core to gain one tool',
   discover: 'its candidate set is scripts/discover.ts — repository logic, not a module',
+  recompute: 'it re-runs every candidate\'s formula, and the formulas are in scripts/discover.ts — the same repository logic. Reading the ledger is not enough: this tool recomputes what the ledger RECORDS, which needs the code that computed it',
 }
-export const SERVED = Object.entries(NEEDS)
+const CORE_TOOLS = Object.entries(NEEDS)
   .filter(([k, n]) => n.length === 1 && n[0] === 'core' && !CANNOT_SHIP[k])
-  .map(([k]) => k).sort()
+  .map(([k]) => k)
+/** The ledger tools ship too, because the ledger ships. They are `ledger` in NEEDS and that stays true — the
+ *  requirement did not vanish, it is SATISFIED by the package now, which is a different thing and the reason
+ *  `hasLedger()` gates them rather than a redeclaration. */
+const LEDGER_TOOLS = Object.entries(NEEDS)
+  .filter(([k, n]) => n.length === 1 && n[0] === 'ledger' && !CANNOT_SHIP[k])
+  .map(([k]) => k)
+export const SERVED_CORE = [...CORE_TOOLS].sort()
+export const SERVED_WITH_LEDGER = [...CORE_TOOLS, ...LEDGER_TOOLS].sort()
+/** WHAT IS SERVED DEPENDS ON WHAT IS LOADED, so this is a function and not a constant. A constant would have
+ *  had to pick one answer before the transport had read anything, and the honest answer differs: a caller with
+ *  the ledger beside the package gets nine tools and a caller without it gets six. Both are told which. */
+export const served = (): string[] => (hasLedger() ? SERVED_WITH_LEDGER : SERVED_CORE)
+
+/** Injected by the transport when a ledger is present beside the package. Absent is reported as absent. */
+let ROWS: Row[] | null = null
+export const withLedger = (rows: Row[]) => { ROWS = rows }
+export const hasLedger = () => ROWS !== null
+const rowsOrRefuse = (tool: string): Row[] => {
+  if (!ROWS) throw new Error(`${tool} measures the discovery ledger and no ledger was loaded. `
+    + 'That is NOT a ledger of zero entries — it is an absent one. The published package carries the ledger at '
+    + 'dist/data/discovered.json; if it is missing, pass one, or clone the repository for the full server.')
+  return ROWS
+}
 
 const H: Record<string, (a: any) => string> = {
+  ledger_status: () => JSON.stringify(ledgerStatus(rowsOrRefuse('ledger_status'))),
+  forensics: () => JSON.stringify(forensicsOf(rowsOrRefuse('forensics'))),
+  verify: (a) => {
+    const u = String(a?.uuid ?? '')
+    if (!u) throw new Error('verify: uuid is required. This entry looks an address up in the ledger; for prose auditing, the honesty gate lives in the full server.')
+    return JSON.stringify(verifyIn(rowsOrRefuse('verify'), u))
+  },
   content_address: (a) => {
     const text = String(a?.text ?? '')
     if (!text) throw new Error('content_address: text is required')
@@ -83,14 +174,14 @@ const H: Record<string, (a: any) => string> = {
     root: merkleFold(ROSETTA_DOMAINS.map((d: string) => toUuid(d))),
     note: 'Integrity of the cross-domain map, not truth of anything in it.' }),
   audit: () => {
-    const served = SERVED
-    const missing = served.filter((n) => !H[n])
-    const extra = Object.keys(H).filter((n) => !served.includes(n))
+    const here = served()
+    const missing = here.filter((n) => !H[n])
+    const extra = Object.keys(H).filter((n) => !here.includes(n))
     return JSON.stringify({
-      entry: 'self-sufficient', served: served.length, of: TOOLS.length,
+      entry: 'self-sufficient', ledgerLoaded: hasLedger(), served: here.length, of: TOOLS.length,
       declaredWithoutHandler: missing, handlerWithoutDeclaration: extra,
-      writes: [...WRITES].filter((w) => served.includes(w)),
-      root: merkleFold(served.map((n) => toUuid(n + ':' + (TOOLS.find((t) => t.name === n)?.description ?? '')))),
+      writes: [...WRITES].filter((w) => here.includes(w)),
+      root: merkleFold(here.map((n) => toUuid(n + ':' + (TOOLS.find((t) => t.name === n)?.description ?? '')))),
       cannotShip: CANNOT_SHIP,
       note: 'Integrity of THIS entry\'s tool surface. `writes` is empty by construction: nothing reachable from here can write, because nothing reachable from here has a tree to write to.',
     })
@@ -102,15 +193,16 @@ export const listTools = (name?: unknown): string => {
   if (name) {
     const t = TOOLS.find((x) => x.name === String(name))
     if (!t) throw new Error(`unknown tool: ${String(name)} — call list_tools with no name for the list`)
-    const here = SERVED.includes(t.name)
-    return JSON.stringify({ name: t.name, description: t.description, inputSchema: t.inputSchema, available: here,
-      ...(here ? {} : { needs: NEEDS[t.name], why: CANNOT_SHIP[t.name] ?? 'needs the repository: clone it and run `npm run mcp` for the full surface' }) })
+    const avail = served().includes(t.name)
+    return JSON.stringify({ name: t.name, description: t.description, inputSchema: t.inputSchema, available: avail,
+      ...(avail ? {} : { needs: NEEDS[t.name], why: CANNOT_SHIP[t.name] ?? 'needs the repository: clone it and run `npm run mcp` for the full surface' }) })
   }
   return JSON.stringify({
     entry: 'self-sufficient — runs from the published package with no account, key, model, network or clone',
-    serves: `${SERVED.length} of ${TOOLS.length} tools`,
-    tools: SERVED.map((n) => ({ name: n, description: first(TOOLS.find((t) => t.name === n)?.description ?? '') })),
-    elsewhere: TOOLS.filter((t) => !SERVED.includes(t.name)).map((t) => ({ name: t.name, needs: NEEDS[t.name], why: CANNOT_SHIP[t.name] ?? 'needs the repository' })),
+    serves: `${served().length} of ${TOOLS.length} tools`,
+    ledgerLoaded: hasLedger(),
+    tools: served().map((n) => ({ name: n, description: first(TOOLS.find((t) => t.name === n)?.description ?? '') })),
+    elsewhere: TOOLS.filter((t) => !served().includes(t.name)).map((t) => ({ name: t.name, needs: NEEDS[t.name], why: CANNOT_SHIP[t.name] ?? 'needs the repository' })),
     note: 'The other tools are not hidden and not broken: each names what it needs. Clone the repository for the full surface.',
   })
 }

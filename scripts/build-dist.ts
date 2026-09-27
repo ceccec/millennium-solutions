@@ -4,7 +4,7 @@
 // reaches into dist/ as plain ES modules with declarations, then refuses to finish unless the compiled toUuid agrees
 // with the source's on the same input: a build that changed an address would be a different package with our name on it.
 import { execFileSync } from 'node:child_process'
-import { readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs'
+import { readFileSync, readdirSync, rmSync, statSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
@@ -19,6 +19,25 @@ execFileSync(join('node_modules', '.bin', 'tsc'), ['-p', 'tsconfig.dist.json'], 
 // only file in it: mcp.bin.ts may know it is a process, and if anything under src/ ever needs to, the core
 // build says so instead of a reviewer having to notice.
 execFileSync(join('node_modules', '.bin', 'tsc'), ['-p', 'tsconfig.mcp.json'], { stdio: 'inherit' })
+
+// ── AND THE LEDGER TRAVELS WITH IT ───────────────────────────────────────────────────────────────────────
+// The four evidence tools measure src/proof/discovered.json, and the package did not carry it — so the
+// deposit's own evidence was the one artefact a stranger could not examine, which is the worst place for a
+// publication gap to sit. Copied rather than imported: it is data, tsc has no business with it, and the MCP
+// entry reads it from beside itself. Nothing is transformed on the way, so the bytes a reader checks are the
+// bytes this repository sealed — a re-serialisation would change the file while changing nothing in it, and
+// then no receipt computed from the copy would be comparable to one computed here.
+{
+  const from = join('src', 'proof', 'discovered.json')
+  if (existsSync(from)) {
+    mkdirSync(join('dist', 'data'), { recursive: true })
+    copyFileSync(from, join('dist', 'data', 'discovered.json'))
+    const n = (JSON.parse(readFileSync(from, 'utf8')) as unknown[]).length
+    console.log(`  · ledger shipped: ${n} entries → dist/data/discovered.json (the evidence tools work from the package)`)
+  } else {
+    console.log('  ○ no ledger at src/proof/discovered.json — the published MCP entry will report it ABSENT, not zero')
+  }
+}
 
 // tsc rewrites `.ts` specifiers in the JavaScript it emits but not in the declarations; a consumer's checker resolves
 // `./x.js` to `./x.d.ts`, so the declarations are given the same specifiers the JavaScript has.

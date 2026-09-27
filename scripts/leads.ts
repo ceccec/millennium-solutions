@@ -9,7 +9,9 @@
  *  from work that is wrong, and gating a build on an open question would only teach people to close
  *  questions cheaply. What it refuses to do is let the list be silent. */
 import { readFileSync, readdirSync, existsSync} from 'node:fs'
-import { NEEDS as MCP_NEEDS, SELF_SUFFICIENT } from '../src/mcp/index.ts'
+import { NEEDS as MCP_NEEDS, TOOLS as MCP_TOOLS, SELF_SUFFICIENT } from '../src/mcp/index.ts'
+import { SERVED_WITH_LEDGER as SERVED_BY_PACKAGE } from '../src/mcp/serve.ts'
+const TOOL_NAMES = MCP_TOOLS.map((t) => t.name)
 import { homedir } from 'node:os'
 import { execSync } from 'node:child_process'
 import { leanFiles, leanSource, ledger, live, theoremCount } from '../src/api/index.ts'
@@ -181,12 +183,20 @@ for (const f of leanFiles()) {
 //       "CITATION.cff"], there is no `bin`, and nothing in dist/ is the MCP. So even the 8 self-sufficient
 //       tools are unreachable by `npm install`: the only way to run any of them is to clone the repository,
 //       which is precisely the thing the claim says is not required. This is the larger of the two.
-const mcpNeeds = Object.entries(MCP_NEEDS).filter(([, n]) => !(n.length === 1 && n[0] === 'core'))
-add('mcp-reach', mcpNeeds.length,
-  `MCP tool(s) that need more than the published package (${SELF_SUFFICIENT.length} of ${Object.keys(MCP_NEEDS).length} are self-sufficient): `
-  + mcpNeeds.map(([k, n]) => `${k}:${n.join('+')}`).slice(0, 5).join(' ') + (mcpNeeds.length > 5 ? ' …' : ''),
-  'each is declared in src/mcp/index.ts NEEDS and reported per tool by list_tools, so a caller is told before '
-  + 'calling; raising the count means moving a tool onto the core, which is a design change and not a fix', ['environment'])
+// COUNTED BY WHAT THE PACKAGE SERVES, NOT BY WHAT NEEDS MORE THAN THE CORE. The first version of this lead
+// counted tools whose NEEDS was anything but ['core'] — a proxy, and it went wrong the moment the ledger was
+// shipped: the four evidence tools still NEED the ledger, and that requirement is now SATISFIED by the
+// package, which is a different thing. A requirement met is not a requirement absent, and the proxy reported
+// tools as out of reach while a stranger was already running three of them. What the lead is about is what an
+// install can reach, so that is what it counts now.
+const unreachable = TOOL_NAMES.filter((n) => !SERVED_BY_PACKAGE.includes(n))
+add('mcp-reach', unreachable.length,
+  `MCP tool(s) an npm install cannot reach (${SERVED_BY_PACKAGE.length} of ${TOOL_NAMES.length} are served from the package, ledger included): `
+  + unreachable.slice(0, 6).map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' ') + (unreachable.length > 6 ? ' …' : ''),
+  'each names what it needs, and list_tools tells a caller before they call rather than failing when they do. '
+  + 'Reducing the count means moving a tool onto data or logic the package carries — shipping the ledger took '
+  + 'it from 19 to 16 — and for some it cannot be done: lean_verify needs the Lean toolchain and probe needs '
+  + 'the network. Those are honest requirements, not gaps.', ['publication'])
 
 const shipsMcp = (() => {
   try {
