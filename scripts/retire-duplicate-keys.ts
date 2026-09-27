@@ -16,6 +16,11 @@
 // APPEND-ONLY IS RESPECTED. Nothing is deleted, no receipt is touched, no key is renamed, and the order is
 // unchanged. The entry stays in the chain and is marked in place.
 //
+// derived-gate: not-a-generator — a completed one-off migration that MARKED its duplicates in place with
+// supersededBy; it does not own src/proof/discovered.json, which seal-lean.ts and carry.ts write. The census
+// now reports "0 keyed twice", so there is nothing left for it to do and no chain step should run it again:
+// putting a migration in the chain is how a migration runs twice.
+//
 // WHICH ONE SURVIVES needs no judgment: the namespaced key is unambiguous and the bare one is not — that is
 // why the convention exists, and it is why `lean_add_group` remains unresolvable, being a bare name declared
 // in two files with no namespaced key to fall back to.

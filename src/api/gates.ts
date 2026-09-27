@@ -66,7 +66,26 @@ export const uncontrolledRefusers = (opts: { includeMeta?: boolean; includeNetwo
  *  every commit — the third extractor in one session that was narrower than the thing it read. */
 export const runByChain = (): Set<string> => {
   const pkg = JSON.parse(readFileSync('package.json', 'utf8')).scripts as Record<string, string>
-  let text = ['release', 'gates', 'all', 'ci:local'].map((k) => String(pkg[k] ?? '')).join(' ')
+  // AND THE CHAIN IS EXPANDED THROUGH npm, NOT READ AS FOUR STRINGS. `release` contains `npm run docs:build`
+  // and npm runs `predocs:build` around it implicitly — twenty-one generators live in that hook, including
+  // pages, dashboard, priorart, accounting and solutions. Reading only the four top-level bodies never saw
+  // any of them, so `solutions.ts` reported as a script no chain runs while every release runs it twice.
+  // This file's own comment above already names the shape — "the third extractor in one session that was
+  // narrower than the thing it read" — and this was a fourth instance of it, inside the correction.
+  const seen = new Set<string>()
+  const bodies: string[] = []
+  const expand = (name: string): void => {
+    if (seen.has(name)) return
+    seen.add(name)
+    for (const n of [`pre${name}`, name, `post${name}`]) {
+      const body = pkg[n]
+      if (!body) continue
+      bodies.push(body)
+      for (const m of body.matchAll(/npm run ([a-zA-Z0-9:._-]+)/g)) expand(m[1])
+    }
+  }
+  for (const root of ['release', 'gates', 'all', 'ci:local']) expand(root)
+  let text = bodies.join(' ')
   for (const c of ['scripts/ci-local.ts', 'scripts/gate.ts', 'scripts/precommit.ts', 'scripts/all.ts']) {
     try { text += readFileSync(c, 'utf8') } catch { /* absent chains are not chains */ }
   }
@@ -96,6 +115,16 @@ export const runByChain = (): Set<string> => {
 //            emitting Lean the kernel refuses. The exemption permitted exactly the failure that occurred.
 // Both are in `npm run release` now. The other reasons here were tested the same way and hold: gates-fire
 // and forensics do run in release and ci:local, priorart-gen does run in ci:local.
+//
+// THREE MORE WERE REMOVED, AND THEY WERE NEVER DECISIONS AT ALL — they were this extractor's blind spot
+// written down as policy. `runByChain` read four top-level script bodies and did not expand `npm run`, so it
+// never saw `predocs:build`, the hook where twenty-one generators live. paper, priorart and e2e all run
+// there, on every release, and each had an entry here explaining why no chain runs them.
+//   e2e's own text gives it away: "It runs inside npm run docs:build, which release.yml runs before any
+//   tag." The entry asserted the gate is unrun and its reason asserted the opposite, and both sat here
+//   agreeing with each other, because nothing compared either to the chain.
+// An exemption that exists to explain an instrument's gap is the most durable kind of wrong: it makes the
+// gap look like a decision, so nobody looks again. The expansion is fixed above and the three are gone.
 export const UNRUN_BY_DESIGN: Record<string, string> = {
   'bench-hex': 'a benchmark: its output is a measurement, not a verdict, and timings vary by machine',
   'bench-hexbit': 'the same — and its result is sealed in speed.lean, which every chain does check',
@@ -103,8 +132,6 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   'doi-resolve': 'resolves external DOIs; a registry outage would fail a build about this tree',
   'zenodo-verify': 'reaches Zenodo; same reason',
   xrepo: 'reads peer manifests OUTSIDE this repository — it cannot run where they do not exist, which is any clone but this machine',
-  paper: 'a generator whose output every chain already checks',
-  priorart: 'a generator; priorart-gen is the gate that holds its output',
   'stale-figures': 'REPORTS by design — a 75% false-positive rate is not something to gate a build on',
   'verify-theorems': 'covered by gates-fire, and its subject is re-verified by forensics on every commit',
   uses: 'discovery, not a gate: it reaches GDELT, Hacker News, Zenodo, OpenAlex, npm and GitHub, and what it finds is someone else\'s use of the work — whether it cites and pays — not a defect in this tree. It runs weekly in .github/workflows/uses.yml and reports in the run summary; it refuses only when no source measured anything',
@@ -119,8 +146,8 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   'release-live': 'reaches the npm registry and Zenodo to ask whether a tag actually landed — network, and about somebody else\'s server, so no build chain can run it. It is the check to run AFTER publish.yml: a green workflow says a job exited zero, not that the registry has the version. It refuses only on ABSENT, never on NOT MEASURED',
   provenance: 'reaches zenodo.org to recompute the priority record from the registry that issued the DOIs — network, and about a third party\'s server. A build chain that ran it would fail on a Zenodo outage, about this tree, which is the false negative this deposit refuses. It is the check to run BEFORE a deposition, and its drift refusal is the one that caught the ORCID discovery flipping the lead from +3 days to −27',
   sources: 'proves fifteen live readers against answers known in advance, over the network, before any investigation result is believed — the instrument check that must precede provenance. Same reason it cannot sit in a chain: a reader that does not answer is an outage, not a finding, and a build about this tree must not turn red for one',
-  e2e: 'needs a BUILT site, not a source tree: it walks .vitepress/dist and checks what a reader opens — the page references its data, the counts agree, every linked theorem page exists. It runs inside npm run docs:build, which release.yml runs before any tag, and it cannot join the source chain because on a fresh clone there is no dist to check and it would refuse for the wrong reason. Controlled in gates-fire by mutating the built page',
   discoveries: 'REPORTS by design, like stale-figures: it orders where the next prior-art search should go, and its own output says a rank is not a novelty claim. It refuses only when its signals collapse — every candidate scoring alike, which would mean the queue cannot tell its entries apart — and gating a build on the shape of a work queue would teach closing the queue rather than working it',
+  citations: 'asks DataCite and OpenAlex what cites this deposit — network, and about two third parties\' servers. A chain that ran it would turn an outage at either into a failed build about THIS tree, which is the false negative this deposit refuses; and it must work offline on a fresh clone. The cost is stated rather than hidden: src/proof/citations.json holds whatever it last held, so a reception figure quoted from it is as of its last manual `npm run citations` and not as of today. zenodo-sync.ts refuses outright when the file is ABSENT rather than reporting zero, which is the distinction that matters — unstated reception is not no reception',
   probe: 'the control harness, not a gate: it takes a file, a theorem and a mutation as arguments, so no chain can run it bare; gates-fire holds its control — a mutation that never reaches the theorem must be refused',
 }
 

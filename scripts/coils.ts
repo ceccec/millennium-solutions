@@ -30,9 +30,17 @@
  *  Adding a vocabulary is adding a grid and some expressions. Nothing else changes, and every coil it finds
  *  is found the same way as every other.
  *
- *    node scripts/coils.ts            report the coils
- *    node scripts/coils.ts --emit     write src/proof/coils.lean and put it to the kernel */
-import { writeFileSync } from 'node:fs'
+ *    node scripts/coils.ts            report the coils AND CHECK src/proof/coils.lean against them
+ *    node scripts/coils.ts --emit     write src/proof/coils.lean and put it to the kernel
+ *
+ *  WITHOUT --emit THIS CHECKS, AND IT FAILS ON A DIFFERENCE. It used to print the report and exit 0, which
+ *  made it a generator that is IN the `gates` chain and still could not catch its own drift: the vocabulary
+ *  could grow, a coil could appear or change shape, and src/proof/coils.lean would keep compiling the old
+ *  clustering while every gate read green. This deposit already carries that defect by name — "a derived
+ *  file whose generator is in no chain step drifts and ships" — and being in the chain is not the property
+ *  that matters. FAILING is. scripts/settled.ts was written with the check and this one was not, which is
+ *  the asymmetry FINDINGS.md 7o named and this closes. */
+import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
 
 const m9 = (n: number) => ((n % 9) + 9) % 9
@@ -148,8 +156,6 @@ console.log(`  that let a result in one field answer a question asked in another
 for (const x of crossing.slice(0, 5)) console.log(`  ✳ {${x.g[0].set.join(',')}}  ${x.doms.join(' ↔ ')}  — ${x.g.length} ways`)
 for (const g of coils.slice(0, 8)) console.log(`  · {${g[0].set.join(',')}}  ${g.length} ways: ${g.slice(0, 4).map((e) => e.say).join(' = ')}${g.length > 4 ? ' = …' : ''}`)
 
-if (!process.argv.includes('--emit')) { console.log('\n  run with --emit to write src/proof/coils.lean'); process.exit(0) }
-
 // ── EMIT ────────────────────────────────────────────────────────────────────────────────────────────────
 // One theorem per coil, stating that every expression in it has the same extension. The name is derived
 // from the residues, so a coil that changes shape changes address rather than silently restating.
@@ -190,7 +196,8 @@ const numBody = numCoils.map((g, i) => {
   + `theorem the_container_and_the_capacity_are_not_interchangeable :\n`
   + `  (List.range 33).all (fun r => ((2 ^ 128) == (2 ^ (128 - r))) == (r == 0)) := by decide\n`
 
-writeFileSync('src/proof/coils.lean', `set_option maxRecDepth 100000
+const OUT = 'src/proof/coils.lean'
+const generated = `set_option maxRecDepth 100000
 -- title: Expressions that compute the same residues, clustered
 -- wing: the ring
 -- prior_art: named
@@ -227,5 +234,37 @@ def m9 (n : Nat) : Nat := n % 9
 ${body}
 ${numBody}
 end Coils
-`)
-console.log(`\n✓ coils: ${coils.length} coil(s) written to src/proof/coils.lean — run npm run lean to put them to the kernel`)
+`
+
+// ── CHECK, OR WRITE WHEN ASKED ───────────────────────────────────────────────────────────────────────────
+// The comparison is on the WHOLE generated file, not on the coil count. A count is the flattering number
+// here: the vocabulary can change which expressions fall into which coil while the number of coils holds
+// steady, and a check on the count would pass through exactly that. The bytes are what the kernel reads, so
+// the bytes are what is compared — and the first differing line is printed, because "it differs" sends the
+// reader to a 300-line diff while the line itself usually names the cause.
+const EMIT = process.argv.includes('--emit')
+if (EMIT) {
+  writeFileSync(OUT, generated)
+  console.log(`\n✓ coils: ${coils.length} coil(s) written to ${OUT} — run npm run lean to put them to the kernel`)
+} else {
+  const onDisk = existsSync(OUT) ? readFileSync(OUT, 'utf8') : ''
+  if (onDisk === generated) {
+    console.log(`\n✓ coils: ${coils.length} coil(s) · ${OUT} is what this vocabulary generates`)
+  } else {
+    console.log(`\n✗ coils: ${OUT} is not what the vocabulary generates — run \`npm run coils:emit\``)
+    if (!onDisk) console.log('    the file is missing entirely')
+    else {
+      const a = onDisk.split('\n'), b = generated.split('\n')
+      for (let i = 0; i < Math.max(a.length, b.length); i++) {
+        if (a[i] !== b[i]) {
+          console.log(`    first difference at line ${i + 1}:`)
+          console.log(`      on disk:    ${a[i] ?? '(end of file)'}`)
+          console.log(`      generated:  ${b[i] ?? '(end of file)'}`)
+          break
+        }
+      }
+      console.log(`    ${a.length} line(s) on disk, ${b.length} generated`)
+    }
+    process.exit(1)
+  }
+}

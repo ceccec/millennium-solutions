@@ -79,6 +79,25 @@ const CONTROLS: Control[] = [
     what: 'a queue whose signals all weigh the same, so every candidate ties and the ranking orders nothing',
     mutate: (s) => s.replace(/score \+= [123]/g, 'score += 0') },
 
+  // A DERIVED FILE WHOSE GENERATOR NOTHING RUNS. llms.txt shipped live at 924 against a tree of 932 and
+  // metrics.json at 619, both because the generator was written once, committed, and never run again. The
+  // control removes the one recorded reason that keeps citations.ts out of the chain, so the gate must report
+  // it as a generator nobody runs rather than a decision somebody took — the distinction the whole gate is.
+  { gate: 'derived (a committed derived file nobody regenerates)', cmd: 'node scripts/derived-gate.ts', file: 'src/api/gates.ts',
+    what: 'a generator of a COMMITTED file that no chain step runs — its output ships whatever it last held',
+    mutate: (s) => s.replace('  citations: \'asks DataCite', '  __removed_citations: \'asks DataCite') },
+
+  // AND THE DRIFT, which for a generator is the defect the vocabulary collapse cannot reach. coils.ts used to
+  // print its report without --emit and exit 0 — so it sat in the `gates` chain and still could not notice
+  // that src/proof/coils.lean no longer matched what its own vocabulary generates. Measured: adding one map
+  // to the vocabulary moves 131 expressions to 142 and the file from 247 lines to 258, and the old form
+  // called that green. It compares the WHOLE generated file now, because the coil COUNT is the flattering
+  // number here: the vocabulary can change which expressions fall into which coil while the count holds
+  // steady, and a check on the count passes through exactly that.
+  { gate: 'coils (the generated file drifts from the vocabulary)', cmd: 'node scripts/coils.ts', file: 'src/proof/coils.lean',
+    what: 'a generated Lean file that no longer matches the vocabulary it was derived from — stale clustering the kernel still accepts',
+    mutate: (s) => s.replace('def m9 (n : Nat) : Nat := n % 9', 'def m9 (n : Nat) : Nat := n % 9  -- edited by hand') },
+
   { gate: 'coils (vocabulary collapse)', cmd: 'node scripts/coils.ts', file: 'scripts/coils.ts',
     what: 'a vocabulary where every expression computes the same thing, so everything coils and the clustering says nothing',
     mutate: (s) => s.replace("const sortU = (xs: number[]) =>", "const sortU = (_xs: number[]) => [0] as number[]\nconst __unusedSortU = (xs: number[]) =>") },
