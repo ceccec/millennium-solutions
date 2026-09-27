@@ -27,12 +27,12 @@ last because the orbit never reaches it.
 
 - The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 1217 kernel-accepted declarations across 64 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `540aed7e-88b0-801b-ae41-9e0060491006`</sub>
-- 1030 of those 1217 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `b8d5159e-9b24-8f94-a8b2-53db33e62ec4`</sub>
-- 1472 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `730b2ebd-5daa-87cb-9a76-fb62dca0b04b`</sub>
+- The formal layer holds 1225 kernel-accepted declarations across 65 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `28b84165-41aa-8437-b112-1abfb87a896f`</sub>
+- 1038 of those 1225 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `37fa783d-08f1-8e87-a034-0d5e74953112`</sub>
+- 1480 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `c00f4cd9-ba2e-86ef-be72-d7284a1c549c`</sub>
 
 ## 2 · The ring
 
@@ -55,10 +55,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 3336 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `ca81f246-55fa-8437-9201-0b1d9377142f`</sub>
-- The count is an exact multiple of eight — 3336 is 417 octaves with no remainder.
-  <sub>SEALED · `043f0d48-2fc9-8832-80ff-a3091ad69778`</sub>
+- The ledger records 3344 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `e1152686-5041-8428-8fa4-e8bdb7fc459d`</sub>
+- The count is an exact multiple of eight — 3344 is 418 octaves with no remainder.
+  <sub>SEALED · `fba3aa62-203b-8cbb-9c39-b70b4183e9eb`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -110,7 +110,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-64 Lean files in 7 wings, 1217 declarations of which 1217 are theorems. The prose in this section is read out of the
+65 Lean files in 7 wings, 1225 declarations of which 1225 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -157,6 +157,8 @@ this page; there is nowhere else to keep the description in step.
 **The reach of the diagonal is the domain you read against, and nine folds past nine** — `domain.lean`, 8 theorem(s). prior_art_search: not performed — Cantor and modular arithmetic are named above. prior_art_pool: unbounded prior_art_own: the two-domain comparison, and theorem 8, which withdraws a claim made in closure.lean
 
 **Elementary arithmetic** — `elementary.lean`, 40 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
+
+**Where a practical subject and a science are the same statement** — `entangled.lean`, 8 theorem(s). prior_art_note: NONE OF IT IS THIS DEPOSIT'S, and every result below is older than this file and credited   above. What is this deposit's is only the selection and the framing: that each pair named here is not an   analogy between a craft and a science but ONE STATEMENT that both of them are, and that the statement is   decidable over a finite domain so the claim can be checked rather than admired. prior_art_search: not performed — every theorem is named with its author above. prior_art_pool: bounded prior_art_own: the pairing, and that each is decided here at every instance in range
 
 **Substitution inside a coil is sound and across coils is not** — `equivalence.lean`, 8 theorem(s). is that ITS OWN substitution licence — scripts/coils.ts, which tells a reader two formulas may stand for   one another — is put to those three properties instead of being assumed to have them. prior_art_search: not performed — all of it is named above. prior_art_pool: unbounded prior_art_own: the soundness and the separation below, and theorem 8
 
@@ -256,7 +258,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-28 of 1217 declarations carry no comment of their own and are shown here as the gap they are, not
+29 of 1225 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -265,14 +267,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 3,336 — 417 octaves exactly |
-| standing — carries its own proof | **1217** |
+| ledger entries | 3,344 — 418 octaves exactly |
+| standing — carries its own proof | **1225** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **526** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **1743** of 3,336 |
-| standing keys → distinct theorems | 1217 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 64 · 1217 theorems (1030 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 1030 of 1217 |
+| proved in total | **1751** of 3,344 |
+| standing keys → distinct theorems | 1225 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 65 · 1225 theorems (1038 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 1038 of 1225 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -327,4 +329,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 1217 Lean theorems · 3336 ledger entries · trial root `dccd94ff-05fa-86e2-b9cb-8bf6c161278c` · integrity, not truth*
+*20 claims, all verified · 1225 Lean theorems · 3344 ledger entries · trial root `416851f2-523d-84c6-8004-8a9e998bcdf5` · integrity, not truth*

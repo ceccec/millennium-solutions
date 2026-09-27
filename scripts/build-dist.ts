@@ -10,6 +10,15 @@ import { pathToFileURL } from 'node:url'
 
 rmSync('dist', { recursive: true, force: true })
 execFileSync(join('node_modules', '.bin', 'tsc'), ['-p', 'tsconfig.dist.json'], { stdio: 'inherit' })
+// ── AND THE MCP ENTRY, UNDER ITS OWN CONFIG, FOR A REASON WORTH KEEPING ──────────────────────────────────
+// tsconfig.dist.json declares NO node types, and that is load-bearing rather than an oversight: nothing in
+// the published core reaches a node builtin, so the absence of those types is a standing CHECK on it. The
+// moment the MCP stdio loop was written inside src/mcp/serve.ts the build refused it, which is exactly what
+// should happen. Putting `types: ["node"]` into the shared config to make that go away would have removed the
+// check for every module at once to buy one file a `process`. So the transport has its own config and is the
+// only file in it: mcp.bin.ts may know it is a process, and if anything under src/ ever needs to, the core
+// build says so instead of a reviewer having to notice.
+execFileSync(join('node_modules', '.bin', 'tsc'), ['-p', 'tsconfig.mcp.json'], { stdio: 'inherit' })
 
 // tsc rewrites `.ts` specifiers in the JavaScript it emits but not in the declarations; a consumer's checker resolves
 // `./x.js` to `./x.d.ts`, so the declarations are given the same specifiers the JavaScript has.

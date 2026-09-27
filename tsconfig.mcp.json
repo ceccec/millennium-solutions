@@ -11,9 +11,12 @@
     "outDir": "dist",
     "rootDir": ".",
     "sourceMap": false,
-    "removeComments": true
+    "removeComments": true,
+    "types": [
+      "node"
+    ]
   },
   "files": [
-    "mod.core.ts"
+    "mcp.bin.ts"
   ]
 }

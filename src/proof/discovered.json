@@ -22864,5 +22864,45 @@
     "key": "lean_settled_no_declaration_in_these_files_closes_by_rfl",
     "name": "lean settled.lean: no_declaration_in_these_files_closes_by_rfl — byRfl.all (fun n => n == 0) ∧ byRfl.foldl (· + ·) 0 == 0 ∧ ((theorems.zip measured).map (fun p => p.1 - p.2)) == byOther — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "94302ef6-4051-8bb4-9ab3-bf150df5d9cf"
+  },
+  {
+    "key": "lean_entangled_no_stack_of_pure_fifths_ever_closes_an_octave",
+    "name": "lean entangled.lean: no_stack_of_pure_fifths_ever_closes_an_octave — (List.range' 1 24).all (fun k => (List.range' 1 24).all (fun j => 3 ^ k != 2 ^ j)) ∧ 3 ^ 12 = 531441 ∧ 2 ^ 19 = 524288 ∧ 3 ^ 12 ≠ 2 ^ 19 ∧ 3 ^ 12 - 2 ^ 19 = 7153 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8ae91d7e-2289-8514-a652-af8bafd8472c"
+  },
+  {
+    "key": "lean_entangled_the_comma_is_within_one_and_a_half_percent_of_closing",
+    "name": "lean entangled.lean: the_comma_is_within_one_and_a_half_percent_of_closing — 531441 * 1000 < 524288 * 1014 ∧ 531441 * 1000 > 524288 * 1013 ∧ 531441 > 524288 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "94cceb67-1028-8029-93a1-557d8492310e"
+  },
+  {
+    "key": "lean_entangled_a_pattern_is_possible_exactly_when_the_landings_do_not_collide",
+    "name": "lean entangled.lean: a_pattern_is_possible_exactly_when_the_landings_do_not_collide — valid [3] = true ∧ valid [5, 3, 1] = true ∧ valid [4, 4, 1] = true ∧ valid [5, 0, 1] = true ∧ valid [4, 3, 2] = false ∧ valid [3, 3, 1] = false ∧ [[3], [5, 3, 1], [4, 4, 1], [5, 0, 1], [4, 3, 2], [3, 3, 1], [2, 2], [1, 1, 1]].all (fun s => … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5bd4dad3-9e77-85ac-acd7-2786e6c64152"
+  },
+  {
+    "key": "lean_entangled_the_ball_count_is_the_average_of_the_throws",
+    "name": "lean entangled.lean: the_ball_count_is_the_average_of_the_throws — [[3], [5, 3, 1], [4, 4, 1], [5, 0, 1], [2, 2], [1, 1, 1]].all (fun s => (throws s) % s.length == 0 && (!(valid s) || throws s == (throws s / s.length) * s.length)) ∧ throws [5, 3, 1] / 3 = 3 ∧ throws [4, 4, 1] / 3 = 3 ∧ throws [5, 0, 1] / 3… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ab42e5e1-df46-8b1d-b796-c05f8f12d732"
+  },
+  {
+    "key": "lean_entangled_a_polyrhythm_closes_at_the_least_common_multiple",
+    "name": "lean entangled.lean: a_polyrhythm_closes_at_the_least_common_multiple — (List.range' 1 8).all (fun k => (List.range' 1 8).all (fun m => let c := closesAt k m 0 < c && c < 64 && c % k == 0 && c % m == 0 && ((List.range' 1 (c - 1)).filter (fun b => b % k == 0 && b % m == 0)).length == 0 && ((List.range' 1 (c - 1)… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4fe83ad7-7231-8656-92c5-2ba163107503"
+  },
+  {
+    "key": "lean_entangled_a_flat_folded_vertex_has_an_even_number_of_creases",
+    "name": "lean entangled.lean: a_flat_folded_vertex_has_an_even_number_of_creases — (List.range 13).all (fun m => (List.range 13).all (fun v => !((m == v + 2) || (v == m + 2)) || ((m + v) % 2 == 0 && 2 ≤ m + v))) ∧ ([90, 90, 90, 90].foldl (· + ·) 0 = 360) ∧ (90 + 90 = 90 + 90) ∧ (90 + 90 = 180) ∧ ([90, 90, 90, 45, 45].fold… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bb74aa45-86a8-83bb-982c-a8c1445e6218"
+  },
+  {
+    "key": "lean_entangled_holding_the_pole_wider_slows_every_fall",
+    "name": "lean entangled.lean: holding_the_pole_wider_slows_every_fall — (List.range 12).all (fun a => (List.range 12).all (fun b => ((inertia 10 3 a < inertia 10 3 b) == (a < b)))) ∧ inertia 10 3 0 = 10 ∧ inertia 10 3 1 = 16 ∧ inertia 10 3 4 = 106 ∧ (inertia 10 3 4 - 10) = 4 * (inertia 10 3 2 - 10) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7ab6ee5d-3b9c-83c0-ae5e-99fe090b34f3"
+  },
+  {
+    "key": "lean_entangled_only_five_rotation_orders_repeat_on_a_lattice",
+    "name": "lean entangled.lean: only_five_rotation_orders_repeat_on_a_lattice — traces.length = 5 ∧ (traces.map orderOfTrace) = [2, 3, 4, 6, 1] ∧ (traces.map orderOfTrace).eraseDups.length = 5 ∧ !((traces.map orderOfTrace).contains 5) ∧ !((traces.map orderOfTrace).contains 7) ∧ (((List.range 17).map (fun (i : Nat) => (… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fe91245b-5919-8772-addf-3cf13333aa4d"
   }
 ]

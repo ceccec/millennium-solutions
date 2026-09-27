@@ -20014,5 +20014,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "94302ef6-4051-8bb4-9ab3-bf150df5d9cf"
+  },
+  {
+    "key": "lean_entangled_no_stack_of_pure_fifths_ever_closes_an_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8ae91d7e-2289-8514-a652-af8bafd8472c"
+  },
+  {
+    "key": "lean_entangled_the_comma_is_within_one_and_a_half_percent_of_closing",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "94cceb67-1028-8029-93a1-557d8492310e"
+  },
+  {
+    "key": "lean_entangled_a_pattern_is_possible_exactly_when_the_landings_do_not_collide",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5bd4dad3-9e77-85ac-acd7-2786e6c64152"
+  },
+  {
+    "key": "lean_entangled_the_ball_count_is_the_average_of_the_throws",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ab42e5e1-df46-8b1d-b796-c05f8f12d732"
+  },
+  {
+    "key": "lean_entangled_a_polyrhythm_closes_at_the_least_common_multiple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4fe83ad7-7231-8656-92c5-2ba163107503"
+  },
+  {
+    "key": "lean_entangled_a_flat_folded_vertex_has_an_even_number_of_creases",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bb74aa45-86a8-83bb-982c-a8c1445e6218"
+  },
+  {
+    "key": "lean_entangled_holding_the_pole_wider_slows_every_fall",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7ab6ee5d-3b9c-83c0-ae5e-99fe090b34f3"
+  },
+  {
+    "key": "lean_entangled_only_five_rotation_orders_repeat_on_a_lattice",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fe91245b-5919-8772-addf-3cf13333aa4d"
   }
 ]

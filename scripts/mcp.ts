@@ -8,8 +8,8 @@ import { execSync } from 'node:child_process'
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 // The tool table is data and lives in src/mcp; the handlers below are what need the network.
-import { TOOLS, LISTED, WRITES } from '../src/mcp/index.ts'
-export { TOOLS, LISTED, WRITES }
+import { TOOLS, LISTED, WRITES, NEEDS, SELF_SUFFICIENT, type Need } from '../src/mcp/index.ts'
+export { TOOLS, LISTED, WRITES, NEEDS, SELF_SUFFICIENT }
 import { handle as __handle, resolve as __resolve, HANDLE_HEX as __HANDLE_HEX } from '../src/handle/index.ts'
 const __toUuidForHandle = toUuid
 import { checkFace, type Face } from '../src/face/index.ts'
@@ -23,9 +23,34 @@ import { CORE as ROSETTA_CORE, DOMAINS as ROSETTA_DOMAINS } from '../src/the/ros
 import { ledger as __ledger } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
-export const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
+// ABSENT IS NOT ZERO, AND IT IS NOT 'v0' EITHER. This read the newest git tag and fell back to the string
+// 'v0' — so in the published package, which is not a git checkout, every answer this server gave carried a
+// version that is not a version and that no tag will ever equal. A caller comparing it against a release
+// would conclude the server is ancient rather than that it cannot tell. The deposit already draws this
+// distinction elsewhere in its own words: "unstated reception is not no reception". Same rule here.
+export const version = (() => {
+  try {
+    const t = execSync('git tag --sort=version:refname', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
+      .trim().split('\n').filter(Boolean).pop()
+    return t ?? 'unversioned (a git checkout with no tags)'
+  } catch { return 'unknown (not a git checkout — this is the published package, which carries no tags)' }
+})()
 type LedgerEntry = { key: string; name: string; receipt: string }
-const loadLedger = (): LedgerEntry[] => existsSync('src/proof/discovered.json') ? __ledger() : []
+// AND THE LEDGER'S ABSENCE IS REPORTED, NOT ROUNDED TO EMPTY. Returning [] for a missing file made every
+// ledger tool answer "0 entries" in an environment where the truth is that the ledger was never shipped —
+// the published package does not include src/proof/. Zero theorems is a finding about this deposit; an absent
+// file is a fact about the caller's environment, and a tool that cannot tell them apart reports the first
+// when it means the second. The throw is caught per tool and becomes a note the caller can read.
+export const LEDGER_PATH = 'src/proof/discovered.json'
+export const ledgerPresent = (): boolean => existsSync(LEDGER_PATH)
+const loadLedger = (): LedgerEntry[] => {
+  if (!ledgerPresent()) throw new Error(
+    `the discovery ledger is not present at ${LEDGER_PATH}. This tool measures the ledger, so with no ledger `
+    + 'there is nothing to measure — which is NOT the same as a ledger of zero entries. The published package '
+    + 'ships dist/ only; run this tool from a checkout of the repository. The tools that need nothing but the '
+    + 'package are listed by `list_tools` and marked self-sufficient.')
+  return __ledger()
+}
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 
 // WHETHER A TOOL WRITES IS A PROPERTY OF THE TOOL, NOT OF THE TRANSPORT THAT REACHES IT. This set lived in
@@ -240,9 +265,57 @@ const toolOf = (name: unknown) => {
   if (!t) throw new Error('unknown tool: ' + String(name) + ' — call list_tools with no name for the list')
   return t
 }
+// ── WHAT THIS ENVIRONMENT ACTUALLY HAS ───────────────────────────────────────────────────────────────────
+// PROBED ONCE, REPORTED PER TOOL. Before this, a caller learned that a tool needs the source tree, or git, or
+// the Lean toolchain by CALLING it and reading a failure — and for two of them by not reading a failure at
+// all, because the server answered 'v0' and an empty ledger. 17 of the 25 tools need something beyond the
+// published package. That is a fact about this surface and it belongs in the catalogue, not in an error.
+//
+// `net` is not probed. Reachability is a property of a request, not of a machine, and a probe that said "the
+// network is present" would be making a promise about somebody else's server that this deposit refuses to
+// make anywhere else — the same reason `probe` reports INCONCLUSIVE on a timeout rather than "blocked".
+const has = (() => {
+  const q = (c: string) => { try { execSync(c, { stdio: 'ignore' }); return true } catch { return false } }
+  return {
+    core: true,
+    tree: existsSync('src/proof') && existsSync('scripts'),
+    git: q('git rev-parse --is-inside-work-tree'),
+    lean: q('lean --version'),
+    ledger: existsSync(LEDGER_PATH),
+    net: true,     // never probed — see above
+    shared: existsSync(process.env.FUSION_DIR ?? '.fusion'),
+  } as Record<Need, boolean>
+})()
+const missingFor = (n: string): Need[] => (NEEDS[n] ?? []).filter((k) => !has[k])
+const WHY: Record<Need, string> = {
+  core: 'nothing beyond this package',
+  tree: 'the repository source tree (src/proof and scripts) — the published package ships dist/ only',
+  git: 'a git checkout with tags — the published package is not one',
+  lean: 'the Lean toolchain on PATH',
+  ledger: `the discovery ledger at ${LEDGER_PATH}, which the published package does not ship`,
+  net: 'the network, and therefore somebody else\'s server',
+  shared: 'a shared fusion directory, which exists only where sibling sessions write one',
+}
+export const environment = () => ({
+  present: (Object.keys(has) as Need[]).filter((k) => has[k]),
+  absent: (Object.keys(has) as Need[]).filter((k) => !has[k]),
+  runnable: TOOLS.filter((t) => missingFor(t.name).length === 0).length,
+  of: TOOLS.length,
+  selfSufficient: SELF_SUFFICIENT,
+  note: 'net is never probed: reachability is a property of a request, not of a machine.',
+})
+
 const listTools = (name?: unknown): string => {
-  if (name) { const t = toolOf(name); return JSON.stringify({ name: t.name, description: t.description, inputSchema: t.inputSchema }) }
-  return JSON.stringify({ tools: TOOLS.map((t) => ({ name: t.name, description: first(t.description) })) })
+  const avail = (n: string) => {
+    const m = missingFor(n)
+    return m.length ? { available: false, needs: NEEDS[n], missing: m, why: m.map((k) => WHY[k]) } : { available: true, needs: NEEDS[n] }
+  }
+  if (name) { const t = toolOf(name); return JSON.stringify({ name: t.name, description: t.description, inputSchema: t.inputSchema, ...avail(t.name) }) }
+  const env = environment()
+  return JSON.stringify({
+    environment: { present: env.present, absent: env.absent, runnable: `${env.runnable} of ${env.of} tools can run here`, note: env.note },
+    tools: TOOLS.map((t) => ({ name: t.name, description: first(t.description), ...avail(t.name) })),
+  })
 }
 const describeFirstDoor = (op?: unknown): string => {
   if (op) { const t = toolOf(op); return JSON.stringify({ op: t.name, description: t.description, args: t.inputSchema }) }

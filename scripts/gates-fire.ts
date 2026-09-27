@@ -79,6 +79,17 @@ const CONTROLS: Control[] = [
     what: 'a queue whose signals all weigh the same, so every candidate ties and the ranking orders nothing',
     mutate: (s) => s.replace(/score \+= [123]/g, 'score += 0') },
 
+  // WHAT EACH MCP TOOL NEEDS, DECLARED IN ONE PLACE AND DERIVED FROM ANOTHER. src/mcp/index.ts declares the
+  // requirement per tool; scripts/mcp-gate.ts derives it from the handler source in scripts/mcp.ts and fails
+  // on any disagreement — the two-independent-reads discipline that src/proof/settled.lean uses for the
+  // theorem counts. The control moves a declaration away from what its handler reaches, which is exactly what
+  // happens when a handler gains an import and nobody updates the table. Its first derivation read three
+  // tools as needing nothing at all, always in the flattering direction, so this gate is the one that keeps
+  // the honest size of "run it yourself" from drifting upward.
+  { gate: 'mcp-gate (a tool\'s declared requirement drifts from its handler)', cmd: 'node scripts/mcp-gate.ts', file: 'src/mcp/index.ts',
+    what: 'an MCP tool declaring it needs nothing while its handler reaches the tree — a caller told the surface is larger than it is',
+    mutate: (s) => s.replace("  formulas: ['tree'],", "  formulas: ['core'],") },
+
   // A DERIVED FILE WHOSE GENERATOR NOTHING RUNS. llms.txt shipped live at 924 against a tree of 932 and
   // metrics.json at 619, both because the generator was written once, committed, and never run again. The
   // control removes the one recorded reason that keeps citations.ts out of the chain, so the gate must report

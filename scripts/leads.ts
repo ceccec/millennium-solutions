@@ -9,20 +9,42 @@
  *  from work that is wrong, and gating a build on an open question would only teach people to close
  *  questions cheaply. What it refuses to do is let the list be silent. */
 import { readFileSync, readdirSync, existsSync} from 'node:fs'
+import { NEEDS as MCP_NEEDS, SELF_SUFFICIENT } from '../src/mcp/index.ts'
 import { homedir } from 'node:os'
 import { execSync } from 'node:child_process'
 import { leanFiles, leanSource, ledger, live, theoremCount } from '../src/api/index.ts'
 import { uncontrolledRefusers, refusersNoChainRuns, unrunUndecided, runByChain, UNRUN_BY_DESIGN } from '../src/api/gates.ts'
 
-type Lead = { area: string; n: number; what: string; how: string }
+type Lead = { area: string; n: number; what: string; how: string; causes: Cause[] }
+
+/** ── CROSSING THE LEADS ────────────────────────────────────────────────────────────────────────────────────
+ *  A list of leads is a list of chores. The same leads grouped by WHY they are open is something else: two
+ *  leads sharing a cause are one problem with two faces, and the cause is a lead nobody entered — it is
+ *  derived from the crossing. This is scripts/coils.ts applied to this file's own output: there, expressions
+ *  with the same extension form a coil and the cross-domain ones are the load-bearing ones; here, leads with
+ *  a shared cause form a crossing, and a crossing that spans two AREAS is the one worth acting on, because
+ *  fixing the cause moves both.
+ *
+ *  The cause vocabulary is deliberately small. A cause per lead would cross nothing, which is the failure mode
+ *  of every taxonomy invented to make a report look organised. */
+type Cause = 'publication' | 'authority' | 'instrument' | 'derivation' | 'environment'
+const CAUSES: Record<Cause, string> = {
+  publication: 'the surface a stranger receives is narrower than the tree — work exists here and does not reach them',
+  authority: 'it needs an act only the depositor can perform: a credential, a token, a signature',
+  instrument: 'the check does not exist, or its domain is narrower than the defect it is named for',
+  derivation: 'a value that should be computed is kept by hand, so it drifts and ships',
+  environment: 'it depends on something outside this repository: a network, a toolchain, another session',
+}
 const leads: Lead[] = []
-const add = (area: string, n: number, what: string, how: string) => { if (n > 0) leads.push({ area, n, what, how }) }
+const add = (area: string, n: number, what: string, how: string, causes: Cause[] = []) => {
+  if (n > 0) leads.push({ area, n, what, how, causes })
+}
 
 // ── 1 · REFUSING SCRIPTS WITH NO NEGATIVE CONTROL ────────────────────────────────────────────────────────
 // A gate nobody has shown can go from green to red is a gate whose next regression is silent.
 const refusing = uncontrolledRefusers()
 add('controls', refusing.length, `script(s) that REFUSE but have never been shown to fail: ${refusing.sort().join(' ')}`,
-  'add a control to scripts/gates-fire.ts, or name it uncontrolled there with the reason')
+  'add a control to scripts/gates-fire.ts, or name it uncontrolled there with the reason', ['instrument'])
 
 // ── 1b · GATES THAT REFUSE AND THAT NOTHING RUNS ─────────────────────────────────────────────────────────
 // The involution of lead 1. A gate with no control may be silently broken; a gate no chain runs protects
@@ -31,7 +53,7 @@ add('controls', refusing.length, `script(s) that REFUSE but have never been show
 const unrun = unrunUndecided()
 const decided = refusersNoChainRuns().length - unrun.length
 add('unrun', unrun.length, `gate(s) that refuse, that no chain runs, and that nobody has decided about: ${unrun.join(' ')}`,
-  'wire it into a chain, or record WHY not in UNRUN_BY_DESIGN — an absence nobody decided is indistinguishable from an oversight')
+  'wire it into a chain, or record WHY not in UNRUN_BY_DESIGN — an absence nobody decided is indistinguishable from an oversight', ['instrument'])
 if (decided) console.log(`  (${decided} further gate(s) are unrun BY RECORDED DECISION — network, generator, or report-by-design — and are not leads)\n`)
 
 // THE EXEMPTION LIST NEEDS ITS OWN GUARD. UNRUN_BY_DESIGN records WHY a gate is absent from every chain.
@@ -100,13 +122,13 @@ const quiet = (cmd: string, re: RegExp): number => {
   catch (e: any) { const o = String(e?.stdout ?? ''); const m = o.match(re); return m ? Number(m[1]) : 0 }
 }
 add('figures', quiet('node scripts/stale-figures.ts', /○ stale-figures: (\d+) figure/),
-  'figure(s) in comments claim a present that has moved', 'npm run stale-figures — each is either stale or a record of the past')
+  'figure(s) in comments claim a present that has moved', 'npm run stale-figures — each is either stale or a record of the past', ['derivation'])
 
 // ── 5b · WHAT THE LIVE SITE SERVES ───────────────────────────────────────────────────────────────────────
 // Every other lead reads the tree or the built dist. None reads what is actually SERVED, so a deploy that
 // failed or a stale cache leaves every gate green while a reader is handed numbers the tree no longer holds.
 // Reported here as a lead rather than run inline, because it needs the network and this census must not.
-add('deploy', 0, '', 'run `npm run deployed` — it compares the served figures against the tree; an unreachable site is reported as unreachable, never as agreement')
+add('deploy', 0, '', 'run `npm run deployed` — it compares the served figures against the tree; an unreachable site is reported as unreachable, never as agreement', ['publication', 'environment'])
 
 // ── 6 · THE DOI QUEUE, AND WHETHER ANYTHING IS MINTED ────────────────────────────────────────────────────
 const deps = existsSync('.zenodo/theorems') ? readdirSync('.zenodo/theorems').filter((f) => f.endsWith('.json')) : []
@@ -119,7 +141,7 @@ add('deposit', deps.length - minted.length, `deposition(s) staged and not minted
   'TWO paths, both the depositor\'s: (a) enable the Zenodo↔GitHub integration for this repo, which mints ONE '
   + 'DOI per release for the whole deposit — verified NOT active, a release cut today minted nothing; '
   + '(b) a token with deposit:write and deposit:actions, which mints the per-theorem records individually. '
-  + 'They are different artefacts and "a DOI for all" could mean either.')
+  + 'They are different artefacts and "a DOI for all" could mean either.', ['authority', 'publication'])
 
 // ── 7 · CERTIFICATES TO DEVELOP INTO LEAN LAWS ───────────────────────────────────────────────────────────
 // "The purges are leads to develop in lean theorems" (user, 2026-09-14). A theorem whose statement rests only on
@@ -146,9 +168,44 @@ for (const f of leanFiles()) {
     if (names.some((w) => consts.has(w)) || m[3] === 'rfl') certificates.push(`${f}:${m[1]}`)
   }
 }
+// ── 8 · WHAT A STRANGER CAN RUN, AND WHAT THIS DEPOSIT SHIPS THEM ────────────────────────────────────────
+// The standing claim is that a third party can check this deposit "without an account, a key or a model". The
+// MCP server is the surface that claim is made ON, so the size of its self-sufficient part is part of the
+// claim and was never counted. Two separate gaps, and they have separate fixes:
+//
+//   (a) TOOLS THAT NEED MORE THAN THE PACKAGE. 17 of 25 need the source tree, a git checkout, the Lean
+//       toolchain, the ledger file, the network or a shared directory. That is not a defect by itself — a
+//       tool that compiles Lean obviously needs Lean — but the COUNT is the honest size of "run it yourself",
+//       and it is 8, not 25. Reported so it can be raised deliberately rather than assumed.
+//   (b) THE SERVER IS NOT IN THE PACKAGE AT ALL. package.json ships ["dist", "README.md", "LICENSE",
+//       "CITATION.cff"], there is no `bin`, and nothing in dist/ is the MCP. So even the 8 self-sufficient
+//       tools are unreachable by `npm install`: the only way to run any of them is to clone the repository,
+//       which is precisely the thing the claim says is not required. This is the larger of the two.
+const mcpNeeds = Object.entries(MCP_NEEDS).filter(([, n]) => !(n.length === 1 && n[0] === 'core'))
+add('mcp-reach', mcpNeeds.length,
+  `MCP tool(s) that need more than the published package (${SELF_SUFFICIENT.length} of ${Object.keys(MCP_NEEDS).length} are self-sufficient): `
+  + mcpNeeds.map(([k, n]) => `${k}:${n.join('+')}`).slice(0, 5).join(' ') + (mcpNeeds.length > 5 ? ' …' : ''),
+  'each is declared in src/mcp/index.ts NEEDS and reported per tool by list_tools, so a caller is told before '
+  + 'calling; raising the count means moving a tool onto the core, which is a design change and not a fix', ['environment'])
+
+const shipsMcp = (() => {
+  try {
+    const pkg = JSON.parse(readFileSync('package.json', 'utf8')) as { files?: string[]; bin?: unknown; exports?: Record<string, unknown> }
+    const hasBin = Boolean(pkg.bin)
+    const exported = Object.keys(pkg.exports ?? {}).some((k) => /mcp/i.test(k))
+    return hasBin || exported
+  } catch { return true }
+})()
+add('mcp-ship', shipsMcp ? 0 : SELF_SUFFICIENT.length,
+  `self-sufficient MCP tool(s) that npm install cannot reach: the package declares no bin and exports no MCP entry, `
+  + `so all ${SELF_SUFFICIENT.length} of them require cloning the repository — which is what "no account, no key, no model" says is unnecessary`,
+  'publish an MCP entry built from the core-only tools: a `bin`, and an export that imports nothing needing '
+  + 'the tree, git, Lean, the ledger or a shared directory. scripts/mcp-gate.ts already derives exactly which '
+  + 'tools those are, so the subset is computed and not chosen', ['publication'])
+
 add('laws', certificates.length,
   `theorem(s) that only read back a hand-set value — a certificate, not a proof: ${certificates.slice(0, 6).join(' ')}${certificates.length > 6 ? ' …' : ''}`,
-  'restate each as a law with its inverse over the domain its constant describes, decided at every instance (the involution discipline); where no law exists yet, the lead stays open')
+  'restate each as a law with its inverse over the domain its constant describes, decided at every instance (the involution discipline); where no law exists yet, the lead stays open', ['derivation'])
 if (process.argv.includes('--laws')) { for (const c of certificates) console.log(c); process.exit(0) }
 
 // ── REPORT ───────────────────────────────────────────────────────────────────────────────────────────────
@@ -158,6 +215,31 @@ for (const L of leads.sort((a, b) => b.n - a.n)) {
   console.log(`  ${String(L.n).padStart(4)}  ${L.area.padEnd(11)} ${L.what}`)
   console.log(`        → ${L.how}`)
 }
+// ── THE CROSSINGS ────────────────────────────────────────────────────────────────────────────────────────
+const byCause = new Map<Cause, Lead[]>()
+for (const L of leads) for (const c of L.causes) byCause.set(c, [...(byCause.get(c) ?? []), L])
+const crossings = [...byCause.entries()]
+  .map(([c, ls]) => ({ c, ls, areas: new Set(ls.map((l) => l.area)).size, items: ls.reduce((a, b) => a + b.n, 0) }))
+  .filter((x) => x.ls.length > 0)
+  .sort((a, b) => b.areas - a.areas || b.items - a.items)
+const uncaused = leads.filter((L) => !L.causes.length)
+
+console.log('\ncrossed by cause — a cause shared by two areas is one problem with two faces:\n')
+for (const x of crossings) {
+  const mark = x.areas > 1 ? '✳' : '·'
+  console.log(`  ${mark} ${x.c.toUpperCase()} — ${x.areas} area(s), ${x.items} item(s)`)
+  console.log(`      ${CAUSES[x.c]}`)
+  for (const L of x.ls) console.log(`      · ${L.area} (${L.n})`)
+  if (x.areas > 1) {
+    console.log(`      ⇒ THE CROSSING IS ITSELF A LEAD: ${x.ls.map((l) => l.area).join(' and ')} are not two tasks here.`)
+    console.log(`        Anything that only fixes one of them leaves the cause in place, and the other returns.`)
+  }
+}
+if (uncaused.length) {
+  console.log(`\n  ○ ${uncaused.length} lead(s) carry no cause and therefore cross with nothing: ${uncaused.map((l) => l.area).join(' ')}`)
+  console.log(`    An uncrossed lead is either genuinely singular or has a cause nobody has named. Both are worth a look.`)
+}
+
 console.log(`\n○ leads: ${leads.length} open area(s), ${leads.reduce((a, b) => a + b.n, 0)} item(s).`)
 console.log(`  ${theoremCount()} theorems · ${live().length} live keys · ${l.length} ledger entries.`)
 console.log(`  Reports and does not fail: an open question is work not done, which is not the same as work`)

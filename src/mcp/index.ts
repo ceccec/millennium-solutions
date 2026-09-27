@@ -95,3 +95,56 @@ export const LISTED = [
     inputSchema: { type: 'object', properties: { name: { type: 'string', enum: TOOLS.map((t) => t.name) }, arguments: { type: 'object' } }, required: ['name'] },
   },
 ]
+
+/** ── WHAT EACH TOOL NEEDS BEYOND THE PUBLISHED PACKAGE ────────────────────────────────────────────────────
+ *
+ *  The deposit's standing claim is that a third party can check it "without an account, a key or a model".
+ *  That is true of the CORE and it is not true of every tool on this surface, and the difference was nowhere
+ *  written down — so a caller discovered it by getting an error, or worse, by getting a plausible answer.
+ *
+ *    core    nothing but this package: pure computation over values the caller passes in
+ *    tree    the source tree — it reads src/proof/*.lean, or shells out to a script in scripts/
+ *    lean    the Lean toolchain on PATH, over and above the tree
+ *    ledger  src/proof/discovered.json, which the published package does not ship
+ *    git     a git checkout with tags; the published package is not one
+ *    net     the network, and therefore somebody else's server
+ *    shared  a shared fusion directory that only exists where sibling sessions write
+ *
+ *  8 OF 25 ARE `core`. That is the honest size of the self-sufficient surface and it is worth stating plainly
+ *  rather than leaving a reader to infer 25. scripts/mcp-gate.ts derives this same table from the handler
+ *  source and fails on any disagreement, so the declaration cannot drift from what the code reaches — and its
+ *  first derivation was three too GENEROUS, which is the direction an error about one's own self-sufficiency
+ *  always goes. */
+export type Need = 'core' | 'tree' | 'git' | 'lean' | 'ledger' | 'net' | 'shared'
+
+export const NEEDS: Record<string, Need[]> = {
+  novelty: ['net'],
+  coils: ['tree'],
+  discoveries: ['tree'],
+  formulas: ['tree'],
+  handle: ['core'],
+  lean_verify: ['lean', 'tree'],
+  lean_seal: ['lean', 'tree'],
+  lean_generate: ['lean', 'tree'],
+  ledger_trial: ['tree'],
+  pages: ['shared', 'tree'],
+  metrics_face: ['tree'],
+  verify_face: ['core'],
+  peer_faces: ['shared'],
+  ledger_status: ['ledger'],
+  content_address: ['core'],
+  honesty_gate: ['core'],
+  merkle_fold: ['core'],
+  probe: ['net'],
+  verify: ['ledger'],
+  lineage: ['git'],
+  discover: ['core'],
+  recompute: ['ledger'],
+  rosetta: ['core'],
+  forensics: ['ledger'],
+  audit: ['core'],
+}
+
+/** The tools a caller can run from the published package alone — derived, so it cannot be overstated. */
+export const SELF_SUFFICIENT = Object.entries(NEEDS)
+  .filter(([, n]) => n.length === 1 && n[0] === 'core').map(([k]) => k).sort()
