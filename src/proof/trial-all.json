@@ -19918,5 +19918,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "57123f73-0b91-87cb-aac6-8aa841ad22c7"
+  },
+  {
+    "key": "lean_widths_fitting_is_the_order_and_not_fitting_is_its_negation",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d7a93cba-c377-8c03-b1b1-9cda2125114d"
+  },
+  {
+    "key": "lean_widths_the_gap_is_what_is_left_and_adding_it_back_returns",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "163456ce-7ffa-83eb-af96-8d802f7db9c3"
+  },
+  {
+    "key": "lean_widths_the_identifier_holds_neither_the_key_nor_the_signature",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1f005f8a-59f5-80e8-822a-5e512d324f57"
+  },
+  {
+    "key": "lean_widths_the_conversion_carries_the_containment",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ceb4d6c7-8310-88e1-9850-b6a4c7cf228f"
+  },
+  {
+    "key": "lean_widths_the_gap_between_payload_and_check_is_their_difference",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3bfb3b1a-f8d1-8ce9-903f-1b2bb70563ad"
+  },
+  {
+    "key": "lean_widths_a_gap_in_bits_is_a_factor_in_space",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5a41c04d-5cc9-8b08-94bd-57743bf1d41f"
+  },
+  {
+    "key": "lean_widths_the_laws_separate_the_order_rather_than_collapsing_it",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d62e0600-21a9-8a0c-be73-b5f0f7c68803"
+  },
+  {
+    "key": "lean_widths_truncation_reports_no_gap_where_the_order_reverses",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fd7accb7-6933-8562-ac71-f3a41cbb5fc5"
+  },
+  {
+    "key": "lean_settled_every_file_settles_exactly_what_it_declares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4213f75a-5858-8442-9c76-61de7daffa8d"
+  },
+  {
+    "key": "lean_settled_no_file_declares_more_than_it_holds",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "08df07c1-1759-8a94-95de-783ca58f241b"
+  },
+  {
+    "key": "lean_settled_the_parts_sum_to_the_whole_and_each_part_is_recoverable",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c100d7db-dbc8-83ef-becf-95b866375a4c"
+  },
+  {
+    "key": "lean_settled_no_file_settles_nothing",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "11b61001-3ea9-88ea-a72e-e97159cf376b"
+  },
+  {
+    "key": "lean_settled_the_counts_are_not_one_number_repeated",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a824ffc6-adfa-8530-8f67-8f641f44b5ad"
+  },
+  {
+    "key": "lean_settled_each_file_is_counted_once",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "87dd8904-ca5a-8add-85ef-afe78b3a13b8"
+  },
+  {
+    "key": "lean_settled_the_two_proof_styles_partition_the_theorems",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6cfd842f-d5b9-8de5-9de9-4add436f3a87"
+  },
+  {
+    "key": "lean_settled_no_declaration_in_these_files_closes_by_rfl",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "94302ef6-4051-8bb4-9ab3-bf150df5d9cf"
   }
 ]

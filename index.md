@@ -37,8 +37,8 @@ last because the orbit never reaches it.
   <sub>SEALED · `540aed7e-88b0-801b-ae41-9e0060491006`</sub>
 - 1030 of those 1217 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
   <sub>SEALED · `b8d5159e-9b24-8f94-a8b2-53db33e62ec4`</sub>
-- 1470 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `789c97f6-a865-8b03-92ca-16ecbc0f6155`</sub>
+- 1472 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `730b2ebd-5daa-87cb-9a76-fb62dca0b04b`</sub>
 
 ## 2 · The ring
 
@@ -61,10 +61,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 3334 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `22b41bde-bc49-8dbd-9b15-fd84b8b439e3`</sub>
-- The count is 3334, which is 416 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `f192b421-e66e-8ab6-8400-b98e3c317a91`</sub>
+- The ledger records 3336 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `ca81f246-55fa-8437-9201-0b1d9377142f`</sub>
+- The count is an exact multiple of eight — 3336 is 417 octaves with no remainder.
+  <sub>SEALED · `043f0d48-2fc9-8832-80ff-a3091ad69778`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -271,12 +271,12 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 3,334 — 416 octaves and 6 over |
-| standing — carries its own proof | **1215** |
+| ledger entries | 3,336 — 417 octaves exactly |
+| standing — carries its own proof | **1217** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **526** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **1741** of 3,334 |
-| standing keys → distinct theorems | 1215 sealed, 0 of them keyed twice, 0 unresolvable |
+| proved in total | **1743** of 3,336 |
+| standing keys → distinct theorems | 1217 sealed, 0 of them keyed twice, 0 unresolvable |
 | Lean files · theorems | 64 · 1217 theorems (1030 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
 | proved `by decide` | 1030 of 1217 |
 | claims a machine can render | 103 of 1,555 |
@@ -316,4 +316,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*20 claims, all verified · 1217 Lean theorems · 3334 ledger entries · trial root `17c94ce6-a734-8696-b049-26e66f4ec71a` · integrity, not truth*
+*20 claims, all verified · 1217 Lean theorems · 3336 ledger entries · trial root `dccd94ff-05fa-86e2-b9cb-8bf6c161278c` · integrity, not truth*
