@@ -83,6 +83,25 @@ const CONTROLS: Control[] = [
     what: 'a vocabulary where every expression computes the same thing, so everything coils and the clustering says nothing',
     mutate: (s) => s.replace("const sortU = (xs: number[]) =>", "const sortU = (_xs: number[]) => [0] as number[]\nconst __unusedSortU = (xs: number[]) =>") },
 
+  // ── THE TWO WAYS A FILE'S SELF-DECLARED COUNT CAN GO WRONG, and they need separate controls because they
+  //    are separate defects with separate fixes. Fifteen files declare `settledHere` — how many declarations
+  //    that file closes by exhaustion — and each was followed by `settledHere = N := rfl`, a constant compared
+  //    to itself, which seal-lean refused to seal at all. So the numbers were hand-maintained with nothing
+  //    checking them. scripts/settled.ts now reads the declaration and COUNTS the theorems independently.
+  //    (a) THE SUBJECT DRIFTS: a source file's count stops matching its contents. Planted by bumping one
+  //    count, which is exactly what happens when a theorem is added and the count is not.
+  { gate: 'settled (a file\'s count drifts from its contents)', cmd: 'node scripts/settled.ts', file: 'src/proof/fnv.lean',
+    what: 'a file declaring it settles more than it holds — the drift that ships a number no reader can check',
+    mutate: (s) => s.replace('def settledHere : Nat := 12', 'def settledHere : Nat := 13') },
+
+  //    (b) THE GENERATED FILE DRIFTS FROM ITS GENERATOR, which is the defect this deposit has already
+  //    recorded as "a derived file whose generator is in no chain step drifts and ships". scripts/coils.ts,
+  //    the other generator of a Lean file, prints without --emit and exits 0 — so it is in the chain and
+  //    still cannot catch this. settled.ts compares the file on disk to what the tree generates and fails.
+  { gate: 'settled (the generated file drifts from the tree)', cmd: 'node scripts/settled.ts', file: 'src/proof/settled.lean',
+    what: 'a generated Lean file edited by hand, or left behind after the sources moved — green while it lies',
+    mutate: (s) => s.replace('def measured  : List Nat := [20,', 'def measured  : List Nat := [19,') },
+
   // ── THE GATE THAT ASKS WHETHER A GATE CAN START AT ALL. Twenty-one npm scripts named `tsx`, which is in
   //    no dependency list and on no PATH here, so `npm run leads`, `npm run vacuity` and `npm run blind`
   //    all answered "command not found". The underlying gates were fine — the `gates` chain invokes them
@@ -867,11 +886,6 @@ if (leftover.length) {
   // before gates-fire is reached at all, so nothing ever restores it. Two chains died that way today, each
   // failure guaranteeing the next.
   //
-  // Restoring is safe here in a way it is not in control-probe: these paths are the DIFFERENCE between a
-  // snapshot taken before the controls ran and one taken after, so they are this run's own doing by
-  // construction, not a guess about whose dirt it is. Anything a person changed meanwhile is identical in
-  // both snapshots and is never touched. The failure still stands — a control that does not clean up after
-  // itself is a defect and the exit code says so — but it no longer hands the mess to the next run.
   // EVERY LEFTOVER, NOT JUST THE ONES ALREADY DIRTY. The first version of this restore filtered on
   // `before.has(p)` — and `snapshot()` is built from `git status --porcelain`, so it holds only files that
   // were ALREADY dirty. A control mutating a CLEAN file appears in `after` alone, which is precisely the
@@ -879,15 +893,41 @@ if (leftover.length) {
   // "We prove the Riemann hypothesis in this deposit today." to README.md; it survived a run and the next
   // chain refused the whole build on a Clay claim in the deposit's own voice.
   //
-  // `leftover` is already the set that changed BETWEEN the two snapshots, so every member is this run's
-  // doing by construction. Restoring all of them is correct; an untracked file has nothing to check out and
-  // the catch covers it.
-  if (leftover.length) {
-    try { execSync('git checkout -- ' + leftover.map((p) => JSON.stringify(p)).join(' '), { stdio: 'pipe' }) } catch { /* untracked, nothing to restore */ }
+  // ── AND THE PARAGRAPH THAT STOOD HERE WAS WRONG, AND IT DESTROYED WORK ────────────────────────────────
+  // It read: "these paths are the DIFFERENCE between a snapshot taken before the controls ran and one taken
+  // after, so they are this run's own doing BY CONSTRUCTION, not a guess about whose dirt it is. Anything a
+  // person changed meanwhile is identical in both snapshots and is never touched."
+  //
+  // THE SECOND SENTENCE IS FALSE, and it is false in exactly the case it claims to cover. A file someone
+  // edits BETWEEN the two snapshots is not identical in both — that is what editing it means. It appears in
+  // the difference, indistinguishable from a control's mutation, and `git checkout --` threw the edit away.
+  // This run did it: a 57-line section appended to FINDINGS.md while the suite was running, in a file no
+  // control here names, silently reverted to HEAD and reported as "this run's own mutation, put back".
+  //
+  // A comment asserting a safety property the code does not have is worse than no comment, because the next
+  // reader — me, twice — checks the claim instead of the code. The deposit already carries this lesson as
+  // "a tool that reverts must run in a disposable worktree, never guess whose dirt it is". The snapshot diff
+  // IS a guess, and it was dressed as a construction.
+  //
+  // THE FIX: this run may only revert what it declared it would touch. Every control names the file it
+  // mutates, so that set is known before anything runs and cannot grow to cover somebody's editor. A path
+  // outside it is REPORTED and left exactly as it is — a stranded mutation named loudly is recoverable, and
+  // a destroyed edit is not. Files a control's GATE writes rather than its mutation are outside the set by
+  // design and are what the `restore:` commands are for; if one is ever missed it now shows up here by name.
+  const DECLARED = new Set(CONTROLS.map((c) => c.file))
+  const mine = leftover.filter((p) => DECLARED.has(p))
+  const foreign = leftover.filter((p) => !DECLARED.has(p))
+  if (mine.length) {
+    try { execSync('git checkout -- ' + mine.map((p) => JSON.stringify(p)).join(' '), { stdio: 'pipe' }) } catch { /* untracked, nothing to restore */ }
   }
-  const own = leftover
   console.log(`\n✗ gates-fire changed the tree and did not restore it:\n${leftover.slice(0, 5).join('\n')}`)
-  if (own.length) console.log(`  ${own.length} of them were this run's own mutation and have been put back; the failure stands.`)
+  if (mine.length) console.log(`  ${mine.length} of them are named by a control here and have been put back; the failure stands.`)
+  if (foreign.length) {
+    console.log(`  ${foreign.length} changed during this run but are named by NO control here, so they are NOT this run's`)
+    console.log(`  to revert and have been LEFT ALONE — an edit made while the suite ran looks exactly like a`)
+    console.log(`  stranded mutation, and reverting it would destroy work. Check them yourself:`)
+    for (const f of foreign.slice(0, 10)) console.log(`    · ${f}`)
+  }
   process.exit(1)
 }
 

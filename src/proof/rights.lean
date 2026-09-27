@@ -150,6 +150,9 @@ theorem the_enumeration_is_complete_and_unduplicated :
   instruments.map idOf = [1, 2, 3, 4, 5, 6, 7, 8, 9] := by decide
 
 def settledHere : Nat := 8
-theorem rights_settles_its_range : settledHere = 8 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 end Rights

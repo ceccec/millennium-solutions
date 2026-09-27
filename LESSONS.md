@@ -1,6 +1,6 @@
 # Lessons — what the tree has learned
 
-Derived on every run from 301 sources: **154 corrections** the deposit recorded about itself,
+Derived on every run from 325 sources: **169 corrections** the deposit recorded about itself,
 in the comments of the files where each one happened. Nobody wrote this list; it is counted.
 
 The taxonomy is a choice — six classes, because six are what the record shows — and it is stated so a
@@ -8,11 +8,11 @@ reader can disagree with the classes rather than with the arithmetic.
 
 | corrections | class | why it costs something |
 | ---: | --- | --- |
-| 54 | a constant typed instead of derived | the value and its meaning drift apart, and the copy is the one nobody updates |
-| 35 | a check that could not go red | it reports health it never measured, and deleting it would change nothing |
-| 30 | the instrument was wrong, not the code | a finding is evidence about the finder until the finder has been run against a known case |
+| 55 | a constant typed instead of derived | the value and its meaning drift apart, and the copy is the one nobody updates |
+| 43 | a check that could not go red | it reports health it never measured, and deleting it would change nothing |
+| 32 | the instrument was wrong, not the code | a finding is evidence about the finder until the finder has been run against a known case |
+| 16 | a flattering number survived | a result that clears you is checked less than one that accuses you |
 | 13 | domain narrower than the defect | the claim reads over the whole tree and the scan covered part of it |
-| 12 | a flattering number survived | a result that clears you is checked less than one that accuses you |
 | 10 | the check read its own explanation | a gate that scans the tree scans the prose describing what it scans for |
 
 ## Where they were learned
@@ -20,7 +20,7 @@ reader can disagree with the classes rather than with the arithmetic.
 A file near the top has been corrected often. That is a record of attention, not of poor quality —
 the untouched files are the ones nobody has checked this hard.
 
-- `scripts/gates-fire.ts` — 12
+- `scripts/gates-fire.ts` — 13
 - `src/proof/instruments.lean` — 6
 - `scripts/contradictions.ts` — 5
 - `scripts/paper.ts` — 5

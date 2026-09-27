@@ -78,7 +78,10 @@ theorem hash_is_thirty_two_bit :
   (List.range 40).all (fun c => hash32 0 [c] < M32) := by decide
 
 def settledHere : Nat := 12
-theorem fnv_settles_its_range : settledHere = 12 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 -- ── THE ADDRESS IS A SEQUENCE HASH, NOT A SET HASH. Swapping two bytes changes it, so the input's ORDER is
 --    part of what is addressed. This is the opposite of the merkle fold, which sorts precisely so that order

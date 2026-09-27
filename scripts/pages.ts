@@ -129,9 +129,19 @@ const CLAIMS: Claim[] = [
       const clean = leanFiles.every((x) => !/\bsorry\b|native_decide/.test(leanSrc[x].replace(/^\s*--.*$/gm, '')))
       return { text: `the formal layer holds ${n} kernel-accepted declarations across ${f} files, and ${clean ? 'no file uses sorry or native_decide outside a comment' : 'AT LEAST ONE FILE USES sorry OR native_decide'}`, ok: n > 0 && clean, from: [n, f] } } },
 
+  // WHAT IS NOT AN EXHAUSTION IS NOT THEREFORE A DECLARATION, and this sentence said it was. It computed the
+  // remainder as `n - d` and called every one of them an rfl declaration — so on the README and the index the
+  // deposit published, of its own formal layer, that 202 (then 187) of its proofs were declarations closing by
+  // rfl. They are ∀-QUANTIFIED THEOREMS closed by a tactic block over every value; the rfl count in this tree
+  // is now ZERO, every genuine one having been a `settledHere = N` tautology that src/proof/settled.lean
+  // replaced. The old sentence therefore named a population that does not exist, and it was wrong before the
+  // tautologies went too: only 15 of the 202 were ever rfl. The three counts are measured separately here and
+  // the remainder is no longer assumed to be one of them — `lean_settled_no_declaration_in_these_files_closes_by_rfl`
+  // is the theorem that falsifies the old form.
   { section: S(0, 'What is proved'),
     derive: () => { const d = byDecide.length, n = leanTheorems.length
-      return { text: `${d} of those ${n} are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining ${n - d} close by rfl and are declarations`, ok: d > 0 && d <= n, from: [d, n] } } },
+      const r = LEAN.filter((t) => t.tactic === 'rfl').length, other = n - d - r
+      return { text: `${d} of those ${n} are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; ${other} more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and ${r} close by rfl`, ok: d > 0 && d + other + r === n, from: [d, n] } } },
 
   { section: S(0, 'What is proved'),
     derive: () => { const k = leanSealed.length, chained = leanSealed.every((e) => e.receipt.length === 36)

@@ -107,8 +107,15 @@ theorem distinct_powers_would_separate_every_state :
 -- Stated so the judgement is visible rather than buried in a list of numbers: "the file claims its own
 -- work" and "nobody has looked" each outweigh any other single signal, and together they outweigh all four
 -- of the rest.
+-- OUTWEIGH IS A STATEMENT ABOUT EVERY SCORE, NOT ABOUT THE WEIGHTS. Comparing the two sums says the numbers
+-- are ordered; what matters for the queue is that NO combination of the four light signals ever reaches the
+-- pair of heavy ones. Decided over all sixty-four masks in both directions: every mask with both heavy bits
+-- off scores strictly below their sum, and the mask carrying only those two scores at least as much as any
+-- of them. So a candidate cannot climb past a heavy signal by accumulating light ones.
 theorem the_two_heaviest_signals_outweigh_all_the_others :
-  weights.getD 0 0 == 3 && weights.getD 1 0 == 3
+  masks.all (fun m => (bit m 0 || bit m 1 || score m < weights.getD 0 0 + weights.getD 1 0)
+    && (!(bit m 0 || bit m 1) || score m ≥ weights.getD 2 0))
+  ∧ weights.getD 0 0 == 3 && weights.getD 1 0 == 3
   && weights.getD 0 0 + weights.getD 1 0 > weights.getD 2 0 + weights.getD 3 0 + weights.getD 4 0 + weights.getD 5 0 := by decide
 
 -- ── 8 · WHAT A HIGH SCORE DOES NOT MEAN ───────────────────────────────────────────────────────────────────

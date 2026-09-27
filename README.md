@@ -27,12 +27,12 @@ last because the orbit never reaches it.
 
 - The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 1224 kernel-accepted declarations across 63 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `a651eb5c-3040-867a-aa19-1bc8824d546d`</sub>
-- 1022 of those 1224 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
-  <sub>SEALED · `e82cf39e-c36d-84b8-bec0-c96ef771b7cb`</sub>
-- 1464 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `19c89a44-e0d2-88c0-9950-f322faedcee5`</sub>
+- The formal layer holds 1217 kernel-accepted declarations across 64 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `540aed7e-88b0-801b-ae41-9e0060491006`</sub>
+- 1030 of those 1217 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `b8d5159e-9b24-8f94-a8b2-53db33e62ec4`</sub>
+- 1470 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `789c97f6-a865-8b03-92ca-16ecbc0f6155`</sub>
 
 ## 2 · The ring
 
@@ -48,17 +48,17 @@ last because the orbit never reaches it.
 
 ## 8 · Addressing
 
-- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 58 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
-  <sub>SEALED · `1148fd57-01c2-8fab-b834-2712077e4ec4`</sub>
+- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 55 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
+  <sub>SEALED · `3bf5bc86-48a0-83f7-ad13-ede54ffef0b2`</sub>
 - The fold does not depend on the order its leaves arrive in, and that is not vacuous because merge itself is proved order-sensitive — the sort is what removes the dependence.
   <sub>SEALED · `7ee1de7d-d218-88d4-8dc9-6eec451ced72`</sub>
 
 ## 7 · The ledger
 
-- The ledger records 3328 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `c53ceefa-2039-8d3a-af54-b41839d5bdd2`</sub>
-- The count is an exact multiple of eight — 3328 is 416 octaves with no remainder.
-  <sub>SEALED · `7d7f600d-474f-8ef8-a9f6-47eaf54b8fa5`</sub>
+- The ledger records 3334 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `22b41bde-bc49-8dbd-9b15-fd84b8b439e3`</sub>
+- The count is 3334, which is 416 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `f192b421-e66e-8ab6-8400-b98e3c317a91`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -110,29 +110,29 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-63 Lean files in 7 wings, 1224 declarations of which 1209 are theorems. The prose in this section is read out of the
+64 Lean files in 7 wings, 1217 declarations of which 1217 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
 ### the address
 
-**Addressing** — `address.lean`, 26 theorem(s). The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
+**Addressing** — `address.lean`, 25 theorem(s). The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
 
-**What a signature is for, and where it cannot go** — `asymmetric.lean`, 12 theorem(s). 2011; standardised as RFC 8032 (Josefsson and Liusvaara, 2017). SHA-512 is FIPS 180-4 (NIST). The   curve, the signature scheme and the hash are all theirs and none is this deposit's. The implementation   in src/0/ed25519.ts is checked against their published vectors by scripts/crypto-kat.ts, which is where   the assurance for the PRIMITIVE lives — not here. Nothing below decides that Ed25519 is secure, and a   file that appeared to would be claiming a result nobody has.
+**What a signature is for, and where it cannot go** — `asymmetric.lean`, 11 theorem(s). 2011; standardised as RFC 8032 (Josefsson and Liusvaara, 2017). SHA-512 is FIPS 180-4 (NIST). The   curve, the signature scheme and the hash are all theirs and none is this deposit's. The implementation   in src/0/ed25519.ts is checked against their published vectors by scripts/crypto-kat.ts, which is where   the assurance for the PRIMITIVE lives — not here. Nothing below decides that Ed25519 is secure, and a   file that appeared to would be claiming a result nobody has.
 
 **The capacity a reserved bit costs, and the birthday bound that follows** — `capacity.lean`, 8 theorem(s). reservation is decided here rather than left to prose — the capacity and the collision exponent that   follow from a count this tree already seals in imprint.lean. prior_art_search: not performed — both are named above. prior_art_pool: named prior_art_own: the capacity and birthday figures derived from the sealed bit count, and theorem 8
 
-**FNV-1a, the address function** — `fnv.lean`, 15 theorem(s). FNV-1a, ported to Lean — the hash the whole deposit's addressing rests on.
+**FNV-1a, the address function** — `fnv.lean`, 14 theorem(s). FNV-1a, ported to Lean — the hash the whole deposit's addressing rests on.
 
-**The imprint — a uuid that carries a message and gives it back** — `imprint.lean`, 10 theorem(s). 4122, 2005). A length-prefixed payload is ordinary practice with no single author and no priority is   claimed for it. What is decided here is only that THIS deposit's codec is reversible where it says it   is, and refuses where it says it refuses.
+**The imprint — a uuid that carries a message and gives it back** — `imprint.lean`, 9 theorem(s). 4122, 2005). A length-prefixed payload is ordinary practice with no single author and no priority is   claimed for it. What is decided here is only that THIS deposit's codec is reversible where it says it   is, and refuses where it says it refuses.
 
 **What the ledger claims** — `ledgerclaims.lean`, 8 theorem(s). Bounded: what is not prior art is what THIS ledger claims — the 967-receipt case, the saving arithmetic,   and the 128-bit seal width as this deposit mints it. prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic   verification path length"; prior art found and credited. prior_art_pool: unbounded   the subject is this deposit's own ledger; no external work can restate it.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: claims about this deposit's own ledger Three claims the prose made in words and cited to entries that no longer stand. Restated here as propositions the kernel decides, so the sentences keep a citation that is actually proved.
 
-**The fold** — `merkle.lean`, 17 theorem(s). The fold, ported to Lean — merge, merkleFold, and the order-independence the deposit calls its receipt.
+**The fold** — `merkle.lean`, 16 theorem(s). The fold, ported to Lean — merge, merkleFold, and the order-independence the deposit calls its receipt.
 
-**The uuid as a container — a checksum, a program, and a message** — `program.lean`, 22 theorem(s). 4122, 2005); FNV-1a, used here as the check function, is Glenn Fowler, Landon Curt Noll and Phong Vo,   1991, and is credited in fnv.lean where it is ported. A checksum placed in one field of an identifier   over the remaining fields is ordinary practice and no priority is claimed for it. What is decided here   is only that THIS deposit's layout is the partition it says it is.
+**The uuid as a container — a checksum, a program, and a message** — `program.lean`, 21 theorem(s). 4122, 2005); FNV-1a, used here as the check function, is Glenn Fowler, Landon Curt Noll and Phong Vo,   1991, and is credited in fnv.lean where it is ported. A checksum placed in one field of an identifier   over the remaining fields is ordinary practice and no priority is claimed for it. What is decided here   is only that THIS deposit's layout is the partition it says it is.
 
-**The rays, read forward and reverse, and the mark a life carries** — `rays.lean`, 14 theorem(s). is elementary number theory; the involution x ↦ ¬x on bit words is Boolean algebra. Neither is this   deposit's. What is decided here is only that THIS deposit's ray order is that orbit and that its trace   is that involution — the facts a reader would otherwise have to take from a comment.
+**The rays, read forward and reverse, and the mark a life carries** — `rays.lean`, 13 theorem(s). is elementary number theory; the involution x ↦ ¬x on bit words is Boolean algebra. Neither is this   deposit's. What is decided here is only that THIS deposit's ray order is that orbit and that its trace   is that involution — the facts a reader would otherwise have to take from a comment.
 
 **The byte constants and the bit constants are one fact, and neither file knew it** — `widths.lean`, 24 theorem(s). deposit's is neither: it is that its OWN two files state the same width in different units and had no   theorem binding them, so either could have drifted while the other stayed green. prior_art_search: not performed — all three are named above. prior_art_pool: named prior_art_own: the binding below, and theorem 8
 
@@ -156,11 +156,11 @@ this page; there is nowhere else to keep the description in step.
 
 **The reach of the diagonal is the domain you read against, and nine folds past nine** — `domain.lean`, 8 theorem(s). prior_art_search: not performed — Cantor and modular arithmetic are named above. prior_art_pool: unbounded prior_art_own: the two-domain comparison, and theorem 8, which withdraws a claim made in closure.lean
 
-**Elementary arithmetic** — `elementary.lean`, 41 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
+**Elementary arithmetic** — `elementary.lean`, 40 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
 
 **Substitution inside a coil is sound and across coils is not** — `equivalence.lean`, 8 theorem(s). is that ITS OWN substitution licence — scripts/coils.ts, which tells a reader two formulas may stand for   one another — is put to those three properties instead of being assumed to have them. prior_art_search: not performed — all of it is named above. prior_art_pool: unbounded prior_art_own: the soundness and the separation below, and theorem 8
 
-**Families over the ring** — `families.lean`, 64 theorem(s). The families, quantified. Proving at scale.
+**Families over the ring** — `families.lean`, 63 theorem(s). The families, quantified. Proving at scale.
 
 **The doubling flow, for every step** — `flow.lean`, 16 theorem(s). prior_art_search: literature search performed 2026-09-14, terms "powers of two modulo 9 period 6 order of 2   mod 9 Euler theorem"; prior art found and credited. prior_art_pool: bounded prior_art_own: the every-step bound of the doubling flow, stated for the Navier–Stokes theorem in index.lean
 
@@ -178,7 +178,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Doubling is two loops and both close at three hundred and sixty degrees** — `turns.lean`, 8 theorem(s). the accounting: that doubling leaves exactly TWO non-trivial loops on this ring, that their step angles   are 60° and 180°, and that both close at 360° — and theorem 8, which says plainly that the surface is   an interpretation of the cycle structure and not a theorem about it. prior_art_search: not performed — all three are named above. prior_art_pool: unbounded prior_art_own: the two-loop accounting, the step angles, and the honesty clause in theorem 8
 
-**The ring ℤ/9** — `z9.lean`, 25 theorem(s). The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
+**The ring ℤ/9** — `z9.lean`, 24 theorem(s). The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
 
 **Entanglement in the ring** — `z9plus.lean`, 48 theorem(s). z9.lean settled the families exhaustively. This settles the claims the ledger stated individually and never generalised: which residues squares and cubes can be, which residues are primitive roots, the period of the doubling orbit's digital root, and the identity behind digit-reversal invariance. Each is stated as an EQUIVALENCE or an exact set where the ledger stated instances, so the negative half is proved too.
 
@@ -198,7 +198,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Seven decidable windows over one finite structure** — `index.lean`, 11 theorem(s). and depends on no axiom beyond the kernel. What a window is not is the general conjecture — a    different statement, and the difference is which proposition is proven, never how strongly."
 
-**The instruments, and the three rules they are allowed to have** — `instruments.lean`, 29 theorem(s). prior_art_domain: elementary order theory, list processing and string matching prior_art_note: NO NOVELTY IS CLAIMED AND NONE IS DENIED. The three rules are elementary — a strict order   with an unknown value, a partition of a list at its last marked position, and removal of every   occurrence of a substring — and each is standard enough that naming one author would be arbitrary. This   row is kind 1 rather than kind 2 because kind 2 asserts that a search was performed and found nothing,   and no such search was performed for these. What is this deposit's is not the rules: it is that three of   its own instruments hold them by decision of the kernel, instead of by a block of reasoning written   inside the instrument that needs them and checked by that same instrument.
+**The instruments, and the three rules they are allowed to have** — `instruments.lean`, 28 theorem(s). prior_art_domain: elementary order theory, list processing and string matching prior_art_note: NO NOVELTY IS CLAIMED AND NONE IS DENIED. The three rules are elementary — a strict order   with an unknown value, a partition of a list at its last marked position, and removal of every   occurrence of a substring — and each is standard enough that naming one author would be arbitrary. This   row is kind 1 rather than kind 2 because kind 2 asserts that a search was performed and found nothing,   and no such search was performed for these. What is this deposit's is not the rules: it is that three of   its own instruments hold them by decision of the kernel, instead of by a block of reasoning written   inside the instrument that needs them and checked by that same instrument.
 
 **How many checkers may run at once, decided** — `lanes.lean`, 8 theorem(s). prior_art_search: not performed — the arithmetic is named above rather than searched for. prior_art_pool: bounded prior_art_own: the safety bound below, decided
 
@@ -210,11 +210,11 @@ this page; there is nowhere else to keep the description in step.
 
 **The Planck length, and what a lattice may say about it** — `planck.lean`, 35 theorem(s). here and none is asserted. What is decided below is arithmetic on those digit sequences: a quotient, a   list length, a residue, and an exhaustion over 2,197 products. prior_art_search: not performed — the source is named above rather than searched for. Nothing here claims   a search of the literature returned nothing. prior_art_pool: bounded prior_art_own: nothing about nature; the one thing this file contributes is the REFUSAL below, decided
 
-**Order-invariance** — `quantum.lean`, 12 theorem(s). form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What   this file contributes is the Lean verification over a stated finite domain and the negative controls   beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free,   and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits.   Verification and refusal, not discovery. prior_art_search: literature search performed 2026-09-05, terms "sorted Merkle tree order-invariant set   commitment canonical ordering leaves"; prior art found and credited. This file was `unclassified` — no   search had ever been run for it — and it is one of the 8 files whose 86 theorems are staged for DOIs. prior_art_pool: mixed   canonicalisation before folding is a searchable technique; the receipt it folds is ours.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: order-invariance of this deposit's receipt The quantum receipt — order invariance, proved rather than asserted.
+**Order-invariance** — `quantum.lean`, 11 theorem(s). form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What   this file contributes is the Lean verification over a stated finite domain and the negative controls   beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free,   and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits.   Verification and refusal, not discovery. prior_art_search: literature search performed 2026-09-05, terms "sorted Merkle tree order-invariant set   commitment canonical ordering leaves"; prior art found and credited. This file was `unclassified` — no   search had ever been run for it — and it is one of the 8 files whose 86 theorems are staged for DOIs. prior_art_pool: mixed   canonicalisation before folding is a searchable technique; the receipt it folds is ours.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: order-invariance of this deposit's receipt The quantum receipt — order invariance, proved rather than asserted.
 
 **What exhaustion reaches, and what lies outside it** — `reach.lean`, 12 theorem(s). old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN   bounds, and the statement of where that decision stops.
 
-**The constants, derived from what they are** — `roots.lean`, 8 theorem(s). fractional part of the cube root of the t-th prime (§4.2.3) and H[i] the same of the square root   (§5.3.5). Newton's method for integer roots is classical. Neither is this deposit's. What is decided   here is only that THIS deposit's derivation computes those definitions and not something near them.
+**The constants, derived from what they are** — `roots.lean`, 7 theorem(s). fractional part of the cube root of the t-th prime (§4.2.3) and H[i] the same of the square root   (§5.3.5). Newton's method for integer roots is classical. Neither is this deposit's. What is decided   here is only that THIS deposit's derivation computes those definitions and not something near them.
 
 **Why verification is fast, and what it is not** — `speed.lean`, 12 theorem(s). wrong: the cost is logarithmic BECAUSE of a known result, and the repository was already crediting that   result three files away.   Bounded: what is not prior art is the MEASURED constants on this machine (recompute 21,582,900 µs against   a 38 µs walk) and the arithmetic over them. A measurement is not a discovery either, and the file says so. prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic   verification path length"; prior art found and credited. prior_art_pool: unbounded   the subject is this deposit's own verification cost.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own verification cost
 
@@ -232,7 +232,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The universal reflection, and where it stops being one** — `reflection.lean`, 8 theorem(s). wing: the machine prior_art: named prior_art_domain: the method of complements prior_art_note: the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04 prior_art_search: literature search performed 2026-09-04 — see the note for the terms and the result The universal property — honestly, and COMPUTED from the sequence.
 
-**Digit reversal** — `reversal.lean`, 30 theorem(s). Digit reversal — arithmetic, not string handling.
+**Digit reversal** — `reversal.lean`, 29 theorem(s). Digit reversal — arithmetic, not string handling.
 
 ### the imagined
 
@@ -244,7 +244,9 @@ this page; there is nowhere else to keep the description in step.
 
 **The discovery ranking is monotone, and it is far coarser than it looks** — `ranking.lean`, 8 theorem(s). queue — which decides where the next prior-art search goes — is put to both, and that the second   answer is unflattering and recorded anyway. prior_art_search: not performed — both are named above. prior_art_pool: unbounded prior_art_own: the coarseness count in theorem 4, and theorem 8
 
-**Rights** — `rights.lean`, 9 theorem(s). Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by   exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;   the audit of its own position against the law is. prior_art_search: no search was needed — the instruments were cited in this file's own prose from the   start. Recorded 2026-09-05, when the table was found to disagree with the file. prior_art_pool: unbounded   the subject is this deposit's own rights table.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own rights table What this deposit claims under international law — and, in the same table, what it does not.
+**Rights** — `rights.lean`, 8 theorem(s). Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by   exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;   the audit of its own position against the law is. prior_art_search: no search was needed — the instruments were cited in this file's own prose from the   start. Recorded 2026-09-05, when the table was found to disagree with the file. prior_art_pool: unbounded   the subject is this deposit's own rights table.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own rights table What this deposit claims under international law — and, in the same table, what it does not.
+
+**What each file says it settles, checked against what it does** — `settled.lean`, 8 theorem(s). tree and asserts nothing about anybody else's work. prior_art_search: not performed — the arithmetic is named above rather than searched for, and the subject   is this deposit's own sources, where there is nothing to search. prior_art_pool: bounded prior_art_own: the agreement between each file's declared count and its measured contents
 
 **The prior-art verdict is total, exclusive, and never improved by silence** — `verdict.lean`, 8 theorem(s). is this deposit's is that ITS OWN verdict rule — the one standing behind every novelty claim it makes —   is decided by the kernel rather than left as a line of TypeScript nobody checks. prior_art_search: not performed — both notions are named above. prior_art_pool: unbounded prior_art_own: the four properties below, and theorem 8
 
@@ -254,7 +256,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-31 of 1224 declarations carry no comment of their own and are shown here as the gap they are, not
+28 of 1217 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -263,14 +265,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 3,328 — 416 octaves exactly |
-| standing — carries its own proof | **1209** |
+| ledger entries | 3,334 — 416 octaves and 6 over |
+| standing — carries its own proof | **1215** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **526** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **1735** of 3,328 |
-| standing keys → distinct theorems | 1209 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 63 · 1209 theorems (1022 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
-| proved `by decide` | 1022 of 1224 |
+| proved in total | **1741** of 3,334 |
+| standing keys → distinct theorems | 1215 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 64 · 1217 theorems (1030 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 1030 of 1217 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -325,4 +327,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 1209 Lean theorems · 3328 ledger entries · trial root `a5b55cf4-0433-8f95-86e7-1122d90d6567` · integrity, not truth*
+*20 claims, all verified · 1217 Lean theorems · 3334 ledger entries · trial root `17c94ce6-a734-8696-b049-26e66f4ec71a` · integrity, not truth*

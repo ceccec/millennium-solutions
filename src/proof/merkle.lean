@@ -131,7 +131,10 @@ theorem sorting_is_what_makes_the_fold_order_free :
   sortB [A, B] = sortB [B, A] ∧ [A, B] ≠ [B, A] := by decide
 
 def settledHere : Nat := 16
-theorem merkle_settles_its_range : settledHere = 16 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 -- ── ORDER-INDEPENDENCE ON AN ODD NUMBER OF LEAVES. Two leaves pair exactly and prove little: the interesting
 --    case is an odd count, where pairUp must carry the leftover leaf into the next round. All six orderings of

@@ -445,7 +445,10 @@ theorem choose_is_invariant_under_the_involution_k_to_n_minus_k :
 
 -- ── what these settle ──
 def settledHere : Nat := 42
-theorem families_settle_their_ranges : settledHere = 42 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 
 -- ── the capped rows above, proved for every value by induction — no bound ────────────────────────────────────

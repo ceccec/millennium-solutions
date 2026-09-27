@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **1,184** report the same thing:
+axiom fails the build rather than earning a footnote. All **1,215** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **646** definitions, and every one of them is a choice. A theorem about
+theorems rest on **670** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,13 +90,13 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 646 definitions
+## What IS assumed: the 670 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
 deposit that reports its axiom count and hides its definition count is reporting the flattering half.
 
-### `address.lean` — 12 definition(s), 26 theorem(s)
+### `address.lean` — 12 definition(s), 25 theorem(s)
 
 ```lean
 def andF : Nat → Nat → Nat → Nat
@@ -113,7 +113,7 @@ def UUIDNA : List Nat := [117, 117, 105, 100, 110, 97]      -- "uuidna"
 def settledHere : Nat := 20
 ```
 
-### `asymmetric.lean` — 10 definition(s), 12 theorem(s)
+### `asymmetric.lean` — 13 definition(s), 11 theorem(s)
 
 ```lean
 def uuidBytes : Nat := 16
@@ -121,11 +121,26 @@ def publicKeyBytes : Nat := 32
 def signatureBytes : Nat := 64
 def checkBits : Nat := 32
 def payloadBits : Nat := 42 + 48
+def bitsOf (n : Nat) : Nat := 8 * n
+def containersOf (n : Nat) : Nat := (n + uuidBytes - 1) / uuidBytes
+def widths : List Nat := List.range (8 * uuidBytes + 1)
 def checkOf (_secret payload : Nat) : Nat := payload % 4
 def tagOf (secret payload : Nat) : Nat := (secret * 7 + payload * 3) % 16
 def p : Nat := 2 ^ 255 - 19
 def L : Nat := 2 ^ 252 + 27742317777372353535851937790883648493
 def settledHere : Nat := 11
+```
+
+### `asymmetry.lean` — 7 definition(s), 8 theorem(s)
+
+```lean
+def m9 (n : Nat) : Nat := n % 9
+def ring : List Nat := List.range 9
+def refl (d : Nat) : Nat := m9 (10 - d)
+def dbl (d : Nat) : Nat := m9 (2 * d)
+def sq (d : Nat) : Nat := m9 (d * d)
+def image (f : Nat → Nat) : List Nat := (ring.map f).eraseDups
+def injective (f : Nat → Nat) : Bool := (image f).length == ring.length
 ```
 
 ### `authority.lean` — 7 definition(s), 8 theorem(s)
@@ -140,12 +155,14 @@ def bits : Nat → List Nat := fun m => sealed.filter (fun i => (m >>> i) % 2 ==
 def cleared : List Nat := [3, 4]
 ```
 
-### `capacity.lean` — 3 definition(s), 8 theorem(s)
+### `capacity.lean` — 5 definition(s), 8 theorem(s)
 
 ```lean
 def container : Nat := 128    -- the bits a UUID occupies
 def reserved : Nat := 6      -- 4 version + 2 variant, RFC 9562
-def free : Nat := container - reserved
+def freeOf (r : Nat) : Nat := container - r
+def free : Nat := freeOf reserved
+def reservations : List Nat := List.range (container + 1)
 ```
 
 ### `closure.lean` — 13 definition(s), 8 theorem(s)
@@ -286,7 +303,7 @@ def escapes (n : Nat) (rows : List (List Bool)) : Bool :=
 def identityRows (n : Nat) : List (List Bool) :=
 ```
 
-### `elementary.lean` — 24 definition(s), 41 theorem(s)
+### `elementary.lean` — 24 definition(s), 40 theorem(s)
 
 ```lean
 def properDivisorSum (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
@@ -351,7 +368,16 @@ def residueMg (litres tds : Nat) : Nat := litres * tds
 def atomsOf (m : Nat) : Option (Nat × Nat) :=
 ```
 
-### `families.lean` — 44 definition(s), 64 theorem(s)
+### `equivalence.lean` — 4 definition(s), 8 theorem(s)
+
+```lean
+def exts : List Nat := [63, 63, 448, 448, 448, 341, 7, 7, 63, 511, 0, 341]
+def coils (a b : Nat) : Bool := a == b
+def idx : List Nat := List.range 12
+def extOf (i : Nat) : Nat := exts.getD i 0
+```
+
+### `families.lean` — 44 definition(s), 63 theorem(s)
 
 ```lean
 def primesUpTo30 : List Nat := [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
@@ -410,7 +436,7 @@ def burgersSkew3 (N : Nat) (u : Nat → Int) (i : Nat) : Int :=
 def ringLap (N : Nat) (u : Nat → Int) (i : Nat) : Int := u (ringNext N i) - 2 * u i + u (ringPrev N i)
 ```
 
-### `fnv.lean` — 13 definition(s), 15 theorem(s)
+### `fnv.lean` — 13 definition(s), 14 theorem(s)
 
 ```lean
 def xorF : Nat → Nat → Nat → Nat
@@ -442,7 +468,7 @@ def fold4 (a b c d : Nat) : Nat := (((a * 31 + b) * 31 + c) * 31 + d) % 65536
 def perms : List (List Nat) :=
 ```
 
-### `imprint.lean` — 12 definition(s), 10 theorem(s)
+### `imprint.lean` — 12 definition(s), 9 theorem(s)
 
 ```lean
 def RESERVED : List Nat := [48, 49, 50, 51, 64, 65]
@@ -469,7 +495,7 @@ def span : List Nat := (List.range 6).map orbit                               --
 def sequence : List Nat := [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]
 ```
 
-### `instruments.lean` — 21 definition(s), 29 theorem(s)
+### `instruments.lean` — 21 definition(s), 28 theorem(s)
 
 ```lean
 def precedes : Option Nat → Option Nat → Bool
@@ -564,7 +590,7 @@ def tri (n : Nat) : Nat := n * (n + 1) / 2
 def sumTri (n : Nat) : Nat := ((List.range' 1 n).map tri).foldl (· + ·) 0
 ```
 
-### `merkle.lean` — 26 definition(s), 17 theorem(s)
+### `merkle.lean` — 26 definition(s), 16 theorem(s)
 
 ```lean
 def hexDigit (n : Nat) : Nat := if n < 10 then 48 + n else 87 + n
@@ -638,7 +664,7 @@ def entries : List Entry :=
 def statusOf (e : Entry) : Nat := e.2
 ```
 
-### `planck.lean` — 48 definition(s), 35 theorem(s)
+### `planck.lean` — 50 definition(s), 35 theorem(s)
 
 ```lean
 def ellP : Nat := 1616255       -- 1.616255(18) e-35 m
@@ -662,6 +688,7 @@ def dimTP : Dim := (1, 1, -5)
 def dimMP : Dim := (1, -1, 1)
 def dmul (x y : Dim) : Dim := (x.1 + y.1, x.2.1 + y.2.1, x.2.2 + y.2.2)
 def ddiv (x y : Dim) : Dim := (x.1 - y.1, x.2.1 - y.2.1, x.2.2 - y.2.2)
+def planckDims : List Dim := [dimEllP, dimTP, dimMP]
 def gPpm (d : Dim) : Nat := d.2.1.natAbs * 11
 def cDefined : Nat := 299792458
 def ratioFromDigits : Nat := ellP * 1000000000 / tP
@@ -684,6 +711,7 @@ def tPtimesAcoustic : Nat := tP * acoustic        -- scaled 10^-50, as tP is
 def cSq : Nat := cDefined * cDefined                      -- 8.9875517873681764e16 m²/s², exact
 def eCharge : Nat := 1602176634                           -- 1.602176634e-19 C, SI-defined (light.lean)
 def planckEnergyMantissa : Nat := mP * cSq / eCharge      -- ×10⁵ GeV
+def massWindow : List Nat := (List.range (2 * mPUnc + 1)).map (fun i => mP - mPUnc + i)
 def lhcGeV : Nat := 13600                                  -- 13.6 TeV, LHC Run 3
 def dimE8 : Nat := 248
 def dimSO (n : Nat) : Nat := n * (n - 1) / 2
@@ -714,7 +742,7 @@ def novelty (s : Source) : Bool := s.2.2
 def sources : List Source :=
 ```
 
-### `program.lean` — 29 definition(s), 22 theorem(s)
+### `program.lean` — 29 definition(s), 21 theorem(s)
 
 ```lean
 def GROUPS : List Nat := [4, 2, 2, 2, 6]
@@ -748,7 +776,7 @@ def flipBit (bs : List Bool) (i : Nat) : List Bool :=
 def settledHere : Nat := 21
 ```
 
-### `quantum.lean` — 11 definition(s), 12 theorem(s)
+### `quantum.lean` — 11 definition(s), 11 theorem(s)
 
 ```lean
 def insertEverywhere (x : Nat) : List Nat → List (List Nat)
@@ -773,7 +801,7 @@ def score (m : Nat) : Nat :=
 def masks : List Nat := List.range 64
 ```
 
-### `rays.lean` — 12 definition(s), 14 theorem(s)
+### `rays.lean` — 12 definition(s), 13 theorem(s)
 
 ```lean
 def G : Nat := 3      -- the generator
@@ -878,7 +906,7 @@ def pow9 (b k : Nat) : Nat := Z9.pow9 b k
 def refl (d : Nat) : Nat := 10 - d  -- the shared reflection r(d) = 10 − d (the ½/heart-analogue centre)
 ```
 
-### `reversal.lean` — 6 definition(s), 30 theorem(s)
+### `reversal.lean` — 6 definition(s), 29 theorem(s)
 
 ```lean
 def digitsF : Nat → Nat → List Nat
@@ -889,7 +917,7 @@ def isPrime (n : Nat) : Bool := n > 1 && (List.range n).all (fun d => d < 2 || n
 def settledHere : Nat := 8
 ```
 
-### `rights.lean` — 7 definition(s), 9 theorem(s)
+### `rights.lean` — 7 definition(s), 8 theorem(s)
 
 ```lean
 abbrev Instrument := Nat × Nat × Bool × Bool
@@ -901,7 +929,7 @@ def instruments : List Instrument :=
 def settledHere : Nat := 8
 ```
 
-### `roots.lean` — 6 definition(s), 8 theorem(s)
+### `roots.lean` — 6 definition(s), 7 theorem(s)
 
 ```lean
 def step : Nat → Nat → Nat → Nat → Nat
@@ -933,6 +961,15 @@ def andF : Nat → Nat → Nat → Nat
 def andN (a b : Nat) : Nat := andF 33 a b
 def popcount (n : Nat) : Nat := (List.range (n + 1)).foldl (fun a i => a + n / 2 ^ i % 2) 0
 def tm (n : Nat) : Nat := popcount n % 2
+```
+
+### `settled.lean` — 4 definition(s), 6 theorem(s)
+
+```lean
+def files : List String := ["address.lean", "asymmetric.lean", "elementary.lean", "families.lean", "fnv.lean", "imprint.lean", "instruments.lean", "merkle.lean", "program.lean", "quantum.lean", "rays.lean", "reversal.lean", "rights.lean", "roots.lean", "z9.lean"]
+def declared : List Nat := [Address.settledHere, Asymmetric.settledHere, Elementary.settledHere, Families.settledHere, Fnv.settledHere, Imprint.settledHere, Instruments.settledHere, Merkle.settledHere, Program.settledHere, Quantum.settledHere, Rays.settledHere, Reversal.settledHere, Rights.settledHere, Roots.settledHere, Z9.settledHere]
+def measured : List Nat := [20, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 21]
+def theorems : List Nat := [25, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24]
 ```
 
 ### `speed.lean` — 8 definition(s), 12 theorem(s)
@@ -998,7 +1035,14 @@ def verdict (keyTerms relevant silent : Nat) : Nat :=
 def R : List Nat := List.range 8
 ```
 
-### `z9.lean` — 8 definition(s), 25 theorem(s)
+### `widths.lean` — 2 definition(s), 24 theorem(s)
+
+```lean
+def toBits (bytes : Nat) : Nat := bytes * 8
+def toBytes (bits  : Nat) : Nat := bits / 8
+```
+
+### `z9.lean` — 8 definition(s), 24 theorem(s)
 
 ```lean
 def B : Nat := 9
@@ -1034,6 +1078,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**1,184** declarations, **0** axiom dependencies, **646** definitions they rest on.
+**1,215** declarations, **0** axiom dependencies, **670** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

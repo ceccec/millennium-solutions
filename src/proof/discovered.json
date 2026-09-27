@@ -22824,5 +22824,45 @@
     "key": "lean_widths_truncation_reports_no_gap_where_the_order_reverses",
     "name": "lean widths.lean: truncation_reports_no_gap_where_the_order_reverses — (List.range 40).all (fun a => (List.range 40).all (fun b => (a ≤ b) == (a - b == 0) || a == b)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "fd7accb7-6933-8562-ac71-f3a41cbb5fc5"
+  },
+  {
+    "key": "lean_settled_every_file_settles_exactly_what_it_declares",
+    "name": "lean settled.lean: every_file_settles_exactly_what_it_declares — (declared.zip measured).all (fun p => p.1 == p.2) ∧ declared.length == measured.length ∧ declared.length == files.length ∧ declared.length == 15 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4213f75a-5858-8442-9c76-61de7daffa8d"
+  },
+  {
+    "key": "lean_settled_no_file_declares_more_than_it_holds",
+    "name": "lean settled.lean: no_file_declares_more_than_it_holds — (declared.zip theorems).all (fun p => p.1 ≤ p.2) ∧ (measured.zip theorems).all (fun p => p.1 ≤ p.2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "08df07c1-1759-8a94-95de-783ca58f241b"
+  },
+  {
+    "key": "lean_settled_the_parts_sum_to_the_whole_and_each_part_is_recoverable",
+    "name": "lean settled.lean: the_parts_sum_to_the_whole_and_each_part_is_recoverable — declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 259 ∧ (List.range declared.length).all (fun i => declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j => j != i)).fold… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c100d7db-dbc8-83ef-becf-95b866375a4c"
+  },
+  {
+    "key": "lean_settled_no_file_settles_nothing",
+    "name": "lean settled.lean: no_file_settles_nothing — declared.all (fun n => 0 < n) ∧ measured.all (fun n => 0 < n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "11b61001-3ea9-88ea-a72e-e97159cf376b"
+  },
+  {
+    "key": "lean_settled_the_counts_are_not_one_number_repeated",
+    "name": "lean settled.lean: the_counts_are_not_one_number_repeated — 1 < declared.eraseDups.length ∧ declared.eraseDups.length == 12 ∧ (declared.foldl (fun a b => if a < b then b else a) 0) > (declared.foldl (fun a b => if b < a then b else a) 1000) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a824ffc6-adfa-8530-8f67-8f641f44b5ad"
+  },
+  {
+    "key": "lean_settled_each_file_is_counted_once",
+    "name": "lean settled.lean: each_file_is_counted_once — files.eraseDups.length == files.length ∧ files.length == 15 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "87dd8904-ca5a-8add-85ef-afe78b3a13b8"
+  },
+  {
+    "key": "lean_settled_the_two_proof_styles_partition_the_theorems",
+    "name": "lean settled.lean: the_two_proof_styles_partition_the_theorems — ((measured.zip byOther).map (fun p => p.1 + p.2)) == theorems ∧ measured.foldl (· + ·) 0 + byOther.foldl (· + ·) 0 == theorems.foldl (· + ·) 0 ∧ (measured.zip theorems).all (fun p => p.1 ≤ p.2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6cfd842f-d5b9-8de5-9de9-4add436f3a87"
+  },
+  {
+    "key": "lean_settled_no_declaration_in_these_files_closes_by_rfl",
+    "name": "lean settled.lean: no_declaration_in_these_files_closes_by_rfl — byRfl.all (fun n => n == 0) ∧ byRfl.foldl (· + ·) 0 == 0 ∧ ((theorems.zip measured).map (fun p => p.1 - p.2)) == byOther — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "94302ef6-4051-8bb4-9ab3-bf150df5d9cf"
   }
 ]

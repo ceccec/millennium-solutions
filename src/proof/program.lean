@@ -238,6 +238,9 @@ theorem a_damaged_container_is_refused_at_every_program_position :
   (List.range 42).all (fun i => !(intact (flipBit (encodeBits P0 M0) (programF.getD i 0)))) := by decide
 
 def settledHere : Nat := 21
-theorem program_settles_its_range : settledHere = 21 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 end Program

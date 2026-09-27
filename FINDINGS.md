@@ -649,3 +649,90 @@ lead elsewhere.** Its theorems derive 2^122 from 122, the ratio 2^6 from six res
 exponent from the free bits — real derivations — but each is stated *at the one point the constants sit
 at* rather than over a domain, which is precisely what the lead objects to. The detector is right about my
 work and I did not notice until the list was grouped.
+
+## 7o · The 42 "laws" lead, closed — and the four things that closing it found
+
+Section 7n grouped the 42 and judged each group. The work is done and `leads.ts --laws` now reports **0**.
+What closed it was not the approach that had failed twice before: writing a domain-quantified companion
+*beside* a certificate leaves the certificate exactly where it was, and the count does not move. A commit
+had already recorded that honestly — "adding laws beside certificates does not remove the certificates."
+Each of the 42 was **rewritten where it lived**, so the typed figure follows from the law inside the same
+statement rather than sitting next to one.
+
+Rewriting them surfaced three defects that the certificate form had been hiding, and all three were in
+statements that read as true:
+
+**`the_cofactor_is_bracketed_at_eight` was not bracketing eight.** `4L < p < 8L` says nothing whatever about
+5L, 6L or 7L, so the theorem's name claimed a precision its statement did not have. The law is that exactly
+one multiple of the base point's order sits at or below p with the next above it, decided against every
+candidate to sixteen: it is the seventh, so eight is the **least** cofactor whose multiple clears p and is
+pinned from below as well as above. Section 7n had grouped this theorem under "not derivable — other
+people's design choices" and a note in this session's own working record called it untouchable number
+theory. It was the single most worthwhile rewrite in the set.
+
+**The birthday gap is `2^(r/2)` at exactly the even reservations, and the collision exponent loses the
+ceiling of half the reservation, not half of it.** Floor division cannot spend half a bit, so the exponent
+lost is `(r+1)/2` — which means an odd reservation costs a forger exactly what the next even one costs, and
+5 and 6 give the same bound. A theorem named `the_birthday_gap_is_half_the_reservation` was true only
+because 6 is even, and said nothing about the condition that made it true. The typed 61 rested on this.
+
+**c is unreachable at the published digit count, not contradicted by it.** No value of ℓP in its uncertainty
+window reproduces ℓP/tP = c exactly, yet c is bracketed by two *adjacent* candidates: one step of the last
+published digit moves the derived speed by 185 or 186 — the floor division alternates, and stating it as a
+flat 186 was refused by the kernel — while the miss is 36. So the miss is below the resolution of the
+digits, which is what licenses calling it rounding rather than disagreement. The certificate form asserted
+the 36 and left the word "rounding" to the comment.
+
+**And the fifteen self-describing counts were resolved the way 7n prescribed — derived, not dressed as
+laws.** They were worse than certificates: `seal-lean` had been refusing every one of them as "rfl — a
+declaration, not algebra", so fifteen numbers a reader quotes were hand-maintained with **nothing** checking
+them, and a tautology stood where the check should have been. `scripts/settled.ts` now reads each file
+twice — the `settledHere` def and an independent parse of its `by decide` theorems — and emits
+`src/proof/settled.lean`, which **imports the fifteen modules** so Lean reads each hand-set constant out of
+its own source. Only the measured column is generator-written, which is what makes the equality a check
+instead of a restatement: add a `by decide` theorem to any of the fifteen without bumping its count and the
+file stops compiling. Six laws replace fifteen tautologies, and they are sealed, which none of the fifteen
+ever were.
+
+One correction to 7n's own numbers: it put `imprint.lean` in the protocol-widths group at 1, but the
+detector's list has imprint contributing only its `settledHere` row. The groups were 15 self-describing
+counts, not 13.
+
+**What the closure then opened.** `leads.ts` immediately reported the new gate as a lead of its own —
+`settled` refuses but had never been shown to fail. Both controls are now in `scripts/gates-fire.ts`,
+because the two ways this can go wrong are separate defects with separate fixes: a source file's count
+drifting from its contents, and the generated file drifting from its generator. The second is the defect
+this record already carries as "a derived file whose generator is in no chain step drifts and ships" — and
+`scripts/coils.ts`, the tree's other Lean generator, is in the `gates` chain and still cannot catch it,
+because it prints its output without `--emit` and exits 0. `settled.ts` compares the file on disk to what
+the tree generates and fails. **That gap in `coils.ts` is named here and is not closed.**
+
+## 7p · A comment claimed a safety property the code did not have, and it destroyed this section once
+
+The section above had to be written twice. `scripts/gates-fire.ts` compares a snapshot of the tree taken
+before its controls run against one taken after, and `git checkout --` everything in the difference. A
+paragraph justified that:
+
+> these paths are the DIFFERENCE between a snapshot taken before the controls ran and one taken after, so
+> they are this run's own doing **by construction**, not a guess about whose dirt it is. Anything a person
+> changed meanwhile is identical in both snapshots and is never touched.
+
+**The second sentence is false, and it is false in exactly the case it claims to cover.** A file edited
+*between* the two snapshots is not identical in both — that is what editing it means. It lands in the
+difference indistinguishable from a control's mutation. Section 7o was appended to FINDINGS.md while the
+suite was running in the background; the run reverted it to HEAD and reported it as "this run's own mutation
+and has been put back". No control in that file names FINDINGS.md. There was no backup: the per-control
+backup covers only the one file under active mutation.
+
+The deposit already carries this lesson — *"a tool that reverts must run in a disposable worktree, never
+guess whose dirt it is."* **The snapshot diff IS that guess, dressed as a construction.** And a comment
+asserting a safety property the code does not have is worse than no comment, because the next reader checks
+the claim instead of the code. I did exactly that: I read the paragraph, believed it, and ran the suite in
+the background while editing the tree.
+
+The fix is a scope, not a cleverer heuristic: the run may only revert files that a control **declares** it
+mutates, a set fixed before anything runs and unable to grow to cover somebody's editor. Anything else in
+the difference is **reported by name and left exactly as it is** — a stranded mutation named loudly is
+recoverable, and a destroyed edit is not. Files that a control's *gate* writes rather than its mutation now
+fall outside the set by design; that is what the `restore:` commands are for, and one that is ever missed
+shows up here by name instead of being silently reverted.

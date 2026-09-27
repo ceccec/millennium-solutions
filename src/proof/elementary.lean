@@ -396,7 +396,10 @@ theorem the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra :
 
 -- ── what these settle ──
 def settledHere : Nat := 32
-theorem elementary_settles_its_range : settledHere = 32 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 
 -- ── the capped rows above, proved for every value — no bound ──────────────────────────────────────────────────

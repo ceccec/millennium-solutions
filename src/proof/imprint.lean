@@ -106,6 +106,9 @@ theorem the_reserved_six_survive_any_message :
       && (b.getD 51 false == false) && (b.getD 64 false == true) && (b.getD 65 false == false)) := by decide
 
 def settledHere : Nat := 9
-theorem imprint_settles_its_range : settledHere = 9 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 end Imprint

@@ -94,7 +94,10 @@ theorem neg_involution : (List.range B).all (fun d => m9 (B - m9 (B - d)) == m9 
 --    the rfl declaration below is excluded from its own total. It read 21 until the count was recomputed
 --    against the tree: it had been counting itself. A tautology is not one of the things settled here.
 def settledHere : Nat := 21
-theorem z9_settles_its_domain_totally : settledHere = 21 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 
 -- ── reflections, from the orbit batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──

@@ -80,11 +80,22 @@ def DIMENSIONS : Nat := 2 * N
 def DIGITS_READ : Nat := 4 * N
 def DIGITS_TOTAL : Nat := 32
 
+-- READING IS TWICE PER DIMENSION, AT EVERY DIMENSION COUNT. Four per generator is two per dimension, and it
+-- exceeds the dimension count for exactly the positive counts — at zero dimensions nothing is read and the
+-- strict inequality correctly fails. The fourteen and twenty-eight are that law at seven.
 theorem the_two_by_seven_reads_more_than_the_seven :
-  DIMENSIONS = 14 ∧ DIGITS_READ = 28 ∧ 2 * N = 14 ∧ DIGITS_READ > 2 * N := by decide
+  (List.range 16).all (fun n => (4 * n == 2 * (2 * n)) && ((4 * n > 2 * n) == (0 < n)))
+  ∧ DIMENSIONS = 14 ∧ DIGITS_READ = 28 ∧ DIGITS_READ = 2 * DIMENSIONS
+  ∧ 2 * N = 14 ∧ DIGITS_READ > 2 * N := by decide
 
+-- AND SEVEN IS THE LARGEST GENERATOR COUNT THAT LEAVES ANYTHING UNREAD. The unread digits are the total less
+-- four per generator, and that remainder is positive for exactly the counts below eight — so at eight
+-- dimensions the reading would consume all thirty-two and the four left over here is not slack anybody chose.
+-- The split is also exact at every count within range: what is read plus what is not returns the total.
 theorem four_digits_stay_unread_and_are_counted :
-  DIGITS_TOTAL - DIGITS_READ = 4 ∧ DIGITS_READ < DIGITS_TOTAL := by decide
+  (List.range 16).all (fun n => ((4 * n < DIGITS_TOTAL) == (n < 8))
+    && (!(4 * n ≤ DIGITS_TOTAL) || (4 * n + (DIGITS_TOTAL - 4 * n) == DIGITS_TOTAL)))
+  ∧ N < 8 ∧ DIGITS_TOTAL - DIGITS_READ = 4 ∧ DIGITS_READ < DIGITS_TOTAL := by decide
 
 -- ── THE DISTANCE IS A DISTANCE, on the torus where 0 and 8 are one apart and not eight ───────────────────
 def d1 (a b : Nat) : Nat := let x := if a < b then b - a else a - b; min x (9 - x)
@@ -101,6 +112,9 @@ theorem the_triangle_inequality_holds_on_every_triple :
     decide (d1 a c ≤ d1 a b + d1 b c)))) := by decide
 
 def settledHere : Nat := 13
-theorem rays_settles_its_range : settledHere = 13 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 end Rays

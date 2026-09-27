@@ -68,7 +68,10 @@ theorem reversal_is_involutive_exactly_off_the_trailing_zeros :
   (List.range' 1 300).all (fun n => (reverseNum (reverseNum n) == n) == (n % 10 != 0)) := by decide
 
 def settledHere : Nat := 8
-theorem reversal_settles_its_range : settledHere = 8 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 
 -- ── the capped rows above, proved for every value by induction — no bound ────────────────────────────────────

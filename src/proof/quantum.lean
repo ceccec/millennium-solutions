@@ -115,7 +115,10 @@ theorem the_uncanonicalised_fold_gives_many_answers :
 --    both directions of each iff, every one of the permutations, negatives proved rather than declared. Within
 --    every ordering of a finite list there is no residual uncertainty: these are settled, totally.
 def settledHere : Nat := 11
-theorem quantum_settles_its_domain_totally : settledHere = 11 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 -- ── WHAT THE REPORTED STATISTICS CANNOT TELL YOU ────────────────────────────────────────────────────────
 --

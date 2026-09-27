@@ -89,7 +89,10 @@ theorem addressing_is_not_constant : toUuidBytes [1] ≠ toUuidBytes [2] := by d
 theorem the_four_seeds_are_distinct : (SEEDS.eraseDups).length = 4 := by decide
 
 def settledHere : Nat := 20
-theorem address_settles_its_range : settledHere = 20 := rfl
+-- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
+-- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
+-- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
+-- it as "a declaration, not algebra". The check is real now and it lives where both sides can be read.
 
 
 

@@ -184,11 +184,27 @@ theorem the_period_count_returns_from_the_second_for_every_whole_count :
 def molarGas : Nat := kDigits * naDigits        -- 10⁻²⁹ · 10¹⁵ = 10⁻¹⁴ · R = 8.31446261815324 J mol⁻¹ K⁻¹
 def faraday  : Nat := eDigits * naDigits        -- 10⁻²⁸ · 10¹⁵ = 10⁻¹³ · F = 96485.33212331… C mol⁻¹
 
+-- EXACT MEANS IT DIVIDES BACK, and that is a law about every pair of the seven, not a property of this one
+-- product. A product of two defining constants leaves no remainder against either factor and returns each
+-- when divided by the other — so nothing is rounded in forming R, and the digits below are carried and not
+-- approximated. Stating only the value left the word "exact" doing work no theorem did.
 theorem the_molar_gas_constant_is_an_exact_product_of_two_defined_constants :
-  molarGas = 831446261815324 := by decide
+  defining.all (fun a => defining.all (fun b =>
+    (a * b % b == 0) && (a * b / b == a) && (a * b / a == b)))
+  ∧ molarGas = kDigits * naDigits
+  ∧ molarGas / naDigits = kDigits ∧ molarGas / kDigits = naDigits
+  ∧ molarGas = 831446261815324 := by decide
 
+-- AND MULTIPLYING BY AVOGADRO NEVER CONFUSES TWO CONSTANTS: at every pair of the seven, the scaled values
+-- agree exactly when the constants do. That is the reason R and F are different numbers — not that they were
+-- computed separately, but that k and e differ and the scaling cannot collapse them. The injectivity is the
+-- law; F's digits are what it returns for e.
 theorem the_faraday_constant_is_an_exact_product_of_two_defined_constants :
-  faraday = 964853321233100184 := by decide
+  defining.all (fun a => defining.all (fun b => (a * naDigits == b * naDigits) == (a == b)))
+  ∧ faraday = eDigits * naDigits
+  ∧ faraday / naDigits = eDigits
+  ∧ molarGas ≠ faraday
+  ∧ faraday = 964853321233100184 := by decide
 
 -- ── WHAT CANNOT BE DECIDED HERE ONCE R AND F ARE DEFINED THIS WAY ─────────────────────────────────────────
 -- A third theorem stood here and was removed before it shipped. It asserted that each product divides back

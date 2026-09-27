@@ -10,19 +10,19 @@ Every other gate here checks a **source**: the Lean compiles, the ledger chains,
 This checks the **artefact a reader opens**, and this page is its output — so it cannot describe a check
 that did not run.
 
-Last run: **9 of 9 passed**.
+Last run: **8 of 9 passed**, 1 failing.
 
 | check | result | measured |
 | --- | :---: | --- |
-| the formulas page is built | ✓ | 51126 bytes |
-| it references the data file rather than embedding it | ✓ | page 50 KB, references formulas.jsonld: true |
-| the data file parses as JSON-LD | ✓ | 721 KB |
+| the formulas page is built | ✓ | 51162 bytes |
+| it references the data file rather than embedding it | ✗ | page 50 KB, references formulas.jsonld: false |
+| the data file parses as JSON-LD | ✓ | 726 KB |
 | it declares the schema.org context | ✓ | ["https://schema.org",{"wing":"https://schema.org/genre","source":"https://schem |
 | it is an ItemList | ✓ | ItemList |
-| numberOfItems matches what the list holds | ✓ | declared 1216, holds 1216 |
-| the page and the data agree on the count | ✓ | page says 1216, data holds 1216 |
-| every linked theorem page is built | ✓ | 1201 links, 3327 pages built, 0 dead |
-| every item carries the three facets the widget filters by | ✓ | 1216 of 1216 complete |
+| numberOfItems matches what the list holds | ✓ | declared 1224, holds 1224 |
+| the page and the data agree on the count | ✓ | page says 1224, data holds 1224 |
+| every linked theorem page is built | ✓ | 1209 links, 3335 pages built, 0 dead |
+| every item carries the three facets the widget filters by | ✓ | 1224 of 1224 complete |
 
 ## What this cannot tell you
 
