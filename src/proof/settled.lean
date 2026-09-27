@@ -119,9 +119,9 @@ theorem the_two_proof_styles_partition_the_theorems :
 -- THE THEOREM THAT FALSIFIES A SENTENCE THIS DEPOSIT WAS PUBLISHING. scripts/pages.ts wrote, on the README
 -- and the index, "the remaining N close by rfl and are declarations", computing N as the total less the
 -- by-decide count — which treats every proof that is not an exhaustion as an rfl declaration. They are not:
--- they are ∀-quantified theorems. Across these 15 files the rfl count is zero, so the sentence
--- named a population that does not exist — every one of the fifteen genuine rfl
--- declarations that used to live here was a `settledHere = N` tautology, and all fifteen are gone. What that
+-- they are ∀-quantified theorems. Among the 15 that declare a count the rfl total is zero, so the
+-- sentence named a population that does not exist — every genuine rfl declaration that used to live in them
+-- was a `settledHere = N` tautology, and each one is gone. What that
 -- subtraction actually counts is byOther, and THAT is the conjunct below: the quantity pages.ts labelled rfl
 -- equals the ∀-proved theorems at every row, so the label was wrong about every one of them.
 theorem no_declaration_in_these_files_closes_by_rfl :
