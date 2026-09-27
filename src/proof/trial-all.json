@@ -20062,5 +20062,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "fe91245b-5919-8772-addf-3cf13333aa4d"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_biology_and_chemistry_and_computing_and_music_and_number_theory_at_every_n0",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3b4be1b7-f869-893f-8c2e-04b23e59fd51"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_computing_and_number_theory_and_sport_and_taxonomy_at_every_n1",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c28d0a66-03c1-81b6-98f0-c99b95b6c0d8"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_chemistry_and_geometry_and_number_theory_and_sport_at_every_n2",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "92d81c9f-1eea-809a-aab2-0a6b94f1823b"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_botany_and_music_and_number_theory_at_every_n3",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4108cfb4-a141-8ff6-ad5d-b9d08d4641ee"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_biology_and_botany_and_number_theory_at_every_n4",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7f7510b8-8745-843e-9937-faaa8a2f5a99"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_biology_and_computing_and_geometry_at_every_n5",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "43695183-6c1d-8938-a4c9-ed931537e52e"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_chemistry_and_juggling_and_number_theory_at_every_n6",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f998e825-206f-8eba-9e25-b20d3a1ab2e9"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_geometry_and_music_at_every_n7",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "79e41e57-a8fd-8529-ac4c-279153fc4ab4"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_chemistry_and_metrology_at_every_n8",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e9f456af-9898-8ec5-b052-ac2f3884551d"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_music_and_number_theory_at_every_n9",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "69bfae39-c7d9-8278-b182-b95dda8c83b5"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_geometry_and_number_theory_at_every_n10",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "27e28860-55f6-865e-a214-6a3409fd78e3"
+  },
+  {
+    "key": "lean_coils_the_staircase_and_the_handshake_never_agree_above_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e4820b3d-f512-86b1-b635-b157cdfd8901"
+  },
+  {
+    "key": "lean_coils_the_factorial_outgrows_every_other_expression",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b03ba3e1-73ef-8873-a6ac-f64c5b2d05f0"
+  },
+  {
+    "key": "lean_coils_the_entanglement_graph_is_connected",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6862d2e3-4c8c-87ec-873f-48b3ee53de63"
+  },
+  {
+    "key": "lean_coils_no_domain_is_entangled_with_nothing",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "896b455b-9cc3-83be-8916-0e81942a31a2"
+  },
+  {
+    "key": "lean_coils_the_distant_pair_is_joined_only_through_a_hub",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "03319608-2cb7-86cd-ad43-7296efc74f55"
   }
 ]

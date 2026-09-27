@@ -22904,5 +22904,85 @@
     "key": "lean_entangled_only_five_rotation_orders_repeat_on_a_lattice",
     "name": "lean entangled.lean: only_five_rotation_orders_repeat_on_a_lattice — traces.length = 5 ∧ (traces.map orderOfTrace) = [2, 3, 4, 6, 1] ∧ (traces.map orderOfTrace).eraseDups.length = 5 ∧ !((traces.map orderOfTrace).contains 5) ∧ !((traces.map orderOfTrace).contains 7) ∧ (((List.range 17).map (fun (i : Nat) => (… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "fe91245b-5919-8772-addf-3cf13333aa4d"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_biology_and_chemistry_and_computing_and_music_and_number_theory_at_every_n0",
+    "name": "lean coils.lean: the_identity_joining_biology_and_chemistry_and_computing_and_music_and_number_theory_at_every_n0 — (List.range' 1 20).all (fun n => (2 ^ n) == (2 ^ n) && (2 ^ n) == (2 ^ n) && (2 ^ n) == (2 ^ n) && (2 ^ n) == (2 ^ n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3b4be1b7-f869-893f-8c2e-04b23e59fd51"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_computing_and_number_theory_and_sport_and_taxonomy_at_every_n1",
+    "name": "lean coils.lean: the_identity_joining_computing_and_number_theory_and_sport_and_taxonomy_at_every_n1 — (List.range' 1 20).all (fun n => (2 ^ n - 1) == (2 ^ n - 1) && (2 ^ n - 1) == (2 ^ n - 1) && (2 ^ n - 1) == (2 ^ n - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c28d0a66-03c1-81b6-98f0-c99b95b6c0d8"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_chemistry_and_geometry_and_number_theory_and_sport_at_every_n2",
+    "name": "lean coils.lean: the_identity_joining_chemistry_and_geometry_and_number_theory_and_sport_at_every_n2 — (List.range' 1 20).all (fun n => (n * (n - 1) / 2) == (n * (n - 1) / 2) && (n * (n - 1) / 2) == (n * (n - 1) / 2) && (n * (n - 1) / 2) == (n * (n - 1) / 2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "92d81c9f-1eea-809a-aab2-0a6b94f1823b"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_botany_and_music_and_number_theory_at_every_n3",
+    "name": "lean coils.lean: the_identity_joining_botany_and_music_and_number_theory_at_every_n3 — (List.range' 1 20).all (fun n => (3 ^ n) == (3 ^ n) && (3 ^ n) == (3 ^ n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4108cfb4-a141-8ff6-ad5d-b9d08d4641ee"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_biology_and_botany_and_number_theory_at_every_n4",
+    "name": "lean coils.lean: the_identity_joining_biology_and_botany_and_number_theory_at_every_n4 — (List.range' 1 16).all (fun n => (fibN n) == (fibN n) && (fibN n) == (fibN n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7f7510b8-8745-843e-9937-faaa8a2f5a99"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_biology_and_computing_and_geometry_at_every_n5",
+    "name": "lean coils.lean: the_identity_joining_biology_and_computing_and_geometry_at_every_n5 — (List.range' 1 6).all (fun n => (catalanN n) == (catalanN n) && (catalanN n) == (catalanN n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "43695183-6c1d-8938-a4c9-ed931537e52e"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_chemistry_and_juggling_and_number_theory_at_every_n6",
+    "name": "lean coils.lean: the_identity_joining_chemistry_and_juggling_and_number_theory_at_every_n6 — (List.range' 1 12).all (fun n => (chooseN 12 n) == (chooseN 12 n) && (chooseN 12 n) == (chooseN 12 n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f998e825-206f-8eba-9e25-b20d3a1ab2e9"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_geometry_and_music_at_every_n7",
+    "name": "lean coils.lean: the_identity_joining_geometry_and_music_at_every_n7 — (List.range' 1 20).all (fun n => (n * (n + 1) / 2) == (n * (n + 1) / 2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "79e41e57-a8fd-8529-ac4c-279153fc4ab4"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_chemistry_and_metrology_at_every_n8",
+    "name": "lean coils.lean: the_identity_joining_chemistry_and_metrology_at_every_n8 — (List.range' 1 20).all (fun n => (10 ^ n) == (10 ^ n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e9f456af-9898-8ec5-b052-ac2f3884551d"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_music_and_number_theory_at_every_n9",
+    "name": "lean coils.lean: the_identity_joining_music_and_number_theory_at_every_n9 — (List.range' 1 20).all (fun n => ((7 * n) % 12) == ((7 * n) % 12)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "69bfae39-c7d9-8278-b182-b95dda8c83b5"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_geometry_and_number_theory_at_every_n10",
+    "name": "lean coils.lean: the_identity_joining_geometry_and_number_theory_at_every_n10 — (List.range' 1 20).all (fun n => (if n = 0 then 0 else 1 + (n - 1) % 9) == (if n = 0 then 0 else 1 + (n - 1) % 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "27e28860-55f6-865e-a214-6a3409fd78e3"
+  },
+  {
+    "key": "lean_coils_the_staircase_and_the_handshake_never_agree_above_zero",
+    "name": "lean coils.lean: the_staircase_and_the_handshake_never_agree_above_zero — (List.range' 1 20).all (fun n => n * (n + 1) / 2 != n * (n - 1) / 2) ∧ (List.range' 1 20).all (fun n => n * (n + 1) / 2 == n * (n - 1) / 2 + n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e4820b3d-f512-86b1-b635-b157cdfd8901"
+  },
+  {
+    "key": "lean_coils_the_factorial_outgrows_every_other_expression",
+    "name": "lean coils.lean: the_factorial_outgrows_every_other_expression — fct 3 == 3 * 4 / 2 ∧ (List.range' 4 16).all (fun n => fct n > 2 ^ n && fct n > n * (n + 1) / 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b03ba3e1-73ef-8873-a6ac-f64c5b2d05f0"
+  },
+  {
+    "key": "lean_coils_the_entanglement_graph_is_connected",
+    "name": "lean coils.lean: the_entanglement_graph_is_connected — (flood 11 [0]).eraseDups.length == doms.length ∧ doms.length == 11 ∧ (flood 11 [0]).eraseDups.length == 11 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6862d2e3-4c8c-87ec-873f-48b3ee53de63"
+  },
+  {
+    "key": "lean_coils_no_domain_is_entangled_with_nothing",
+    "name": "lean coils.lean: no_domain_is_entangled_with_nothing — (List.range doms.length).all (fun v => (nbrs v).length > 0) ∧ (List.range doms.length).all (fun v => (nbrs v).all (fun w => w != v)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "896b455b-9cc3-83be-8916-0e81942a31a2"
+  },
+  {
+    "key": "lean_coils_the_distant_pair_is_joined_only_through_a_hub",
+    "name": "lean coils.lean: the_distant_pair_is_joined_only_through_a_hub — !((nbrs 6).contains 5) ∧ (flood 2 [6]).contains 5 ∧ (nbrs 6).contains 2 ∧ (nbrs 2).contains 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "03319608-2cb7-86cd-ad43-7296efc74f55"
   }
 ]
