@@ -195,13 +195,12 @@
     "ci:watch": "node scripts/ci-watch.ts",
     "ci:watch-wait": "node scripts/ci-watch.ts --wait",
     "cycle": "npm run gates && npm run docs:build",
-    "cycle:ship": "npm run cycle && git push origin main && node scripts/ci-watch.ts --wait",
+    "cycle:ship": "npm run cycle && git push origin main && node scripts/ci-watch.ts --wait --for 5400",
     "bridge": "node scripts/bridge.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
     "@types/three": "^0.185.4",
-    "@uuidna/uuidna": "^0.2.6",
     "three": "^0.185.1",
     "typescript": "7.0.2",
     "vitepress": "^2.0.0-alpha.19",
@@ -234,5 +233,8 @@
   ],
   "bin": {
     "millennium-mcp": "./dist/mcp.bin.js"
+  },
+  "dependencies": {
+    "@uuidna/uuidna": "^0.2.6"
   }
 }
