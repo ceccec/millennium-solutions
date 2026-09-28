@@ -10,12 +10,12 @@ Every other gate here checks a **source**: the Lean compiles, the ledger chains,
 This checks the **artefact a reader opens**, and this page is its output — so it cannot describe a check
 that did not run.
 
-Last run: **8 of 9 passed**, 1 failing.
+Last run: **9 of 9 passed**.
 
 | check | result | measured |
 | --- | :---: | --- |
-| the formulas page is built | ✓ | 51162 bytes |
-| it references the data file rather than embedding it | ✗ | page 50 KB, references formulas.jsonld: false |
+| the formulas page is built | ✓ | 51126 bytes |
+| it references the data file rather than embedding it | ✓ | page 50 KB, references formulas.jsonld: true |
 | the data file parses as JSON-LD | ✓ | 726 KB |
 | it declares the schema.org context | ✓ | ["https://schema.org",{"wing":"https://schema.org/genre","source":"https://schem |
 | it is an ItemList | ✓ | ItemList |

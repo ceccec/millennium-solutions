@@ -62,9 +62,9 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 1,224 of them across 63 files and
-7 wings; 1,022 close by exhaustion over a stated finite domain, 187 are proved
-for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
+(\texttt{npm run latex-gate}). There are 1,248 of them across 65 files and
+7 wings; 1,061 close by exhaustion over a stated finite domain, 187 are proved
+for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
 
@@ -135,11 +135,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{address\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 20 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
-
 \begin{theorem}[\texttt{the\_address\_is\_sixteen\_bytes\_whatever\_the\_input\_length}]
 \[ \left|\mathrm{toUuidBytes}\mathopen{}\left([97]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([98]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([117,\,117,\,105,\,100,\,110,\,97]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,32,\,115,\,97,\,109,\,101,\,32,\,102,\,97,\,99,\,116]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([120]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([100,\,101,\,112,\,111,\,115,\,105,\,116]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([104,\,117,\,109,\,97,\,110,\,105,\,116,\,121]\right)\right| = 16 \]
 \end{theorem}
@@ -208,34 +203,34 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \paragraph{\texttt{asymmetric.lean}}
 
 \begin{theorem}[\texttt{a\_signature\_is\_four\_uuids\_and\_a\_key\_is\_two}]
-\[ \mathrm{signatureBytes} = 4 \cdot \mathrm{uuidBytes} \land \mathrm{publicKeyBytes} = 2 \cdot \mathrm{uuidBytes} \]
+\[ \forall n \in \mathrm{widths},\; n \le \mathrm{uuidBytes} \cdot \mathrm{containersOf}\mathopen{}\left(n\right) \land n = 0 \lor \mathrm{uuidBytes} \cdot \mathrm{containersOf}\mathopen{}\left(n\right) < n + \mathrm{uuidBytes} \land \mathrm{containersOf}\mathopen{}\left(\mathrm{signatureBytes}\right) = 4 \land \mathrm{containersOf}\mathopen{}\left(\mathrm{publicKeyBytes}\right) = 2 \land \mathrm{signatureBytes} = 4 \cdot \mathrm{uuidBytes} \land \mathrm{publicKeyBytes} = 2 \cdot \mathrm{uuidBytes} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{neither\_the\_key\_nor\_the\_signature\_fits\_in\_a\_uuid}]
-\[ \mathrm{uuidBytes} < \mathrm{publicKeyBytes} \land \mathrm{uuidBytes} < \mathrm{signatureBytes} \land \mathrm{uuidBytes} \cdot 8 < \mathrm{signatureBytes} \cdot 8 \]
+\[ \forall n \in \mathrm{widths},\; \mathrm{containersOf}\mathopen{}\left(n\right) \le 1 = n \le \mathrm{uuidBytes} \land \mathrm{containersOf}\mathopen{}\left(\mathrm{publicKeyBytes}\right) > 1 \land \mathrm{containersOf}\mathopen{}\left(\mathrm{signatureBytes}\right) > 1 \land \mathrm{uuidBytes} < \mathrm{publicKeyBytes} \land \mathrm{uuidBytes} < \mathrm{signatureBytes} \land \mathrm{uuidBytes} \cdot 8 < \mathrm{signatureBytes} \cdot 8 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{not\_even\_the\_whole\_uuid\_would\_hold\_one}]
-\[ \mathrm{uuidBytes} \cdot 8 = 128 \land \mathrm{signatureBytes} \cdot 8 = 512 \land 128 < 512 \]
+\[ \forall a \in \mathrm{widths},\; \forall b \in \mathrm{widths},\; \mathrm{bitsOf}\mathopen{}\left(a\right) < \mathrm{bitsOf}\mathopen{}\left(b\right) = a < b \land \mathrm{bitsOf}\mathopen{}\left(\mathrm{uuidBytes}\right) = 128 \land \mathrm{bitsOf}\mathopen{}\left(\mathrm{signatureBytes}\right) = 512 \land 128 < 512 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{what\_travels\_beside\_the\_identifier}]
-\[ \mathrm{publicKeyBytes} + \mathrm{signatureBytes} = 96 \land 96 = 6 \cdot \mathrm{uuidBytes} \]
+\[ \forall a \in \mathrm{widths},\; \forall b \in \mathrm{widths},\; \lnot a \bmod \mathrm{uuidBytes} = 0 \land b \bmod \mathrm{uuidBytes} = 0 \lor a + b \bmod \mathrm{uuidBytes} = 0 \land \mathrm{containersOf}\mathopen{}\left(a + b\right) = \mathrm{containersOf}\mathopen{}\left(a\right) + \mathrm{containersOf}\mathopen{}\left(b\right) \land \mathrm{containersOf}\mathopen{}\left(\mathrm{publicKeyBytes} + \mathrm{signatureBytes}\right) = 6 \land \mathrm{publicKeyBytes} + \mathrm{signatureBytes} = 96 \land 96 = 6 \cdot \mathrm{uuidBytes} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_check\_cannot\_separate\_the\_payloads}]
-\[ 2^{\mathrm{checkBits}} < 2^{\mathrm{payloadBits}} \land \mathrm{payloadBits} = 90 \land \mathrm{checkBits} = 32 \]
+\[ \forall c \in \{0,\dots,11\},\; \forall q \in \{0,\dots,11\},\; 2^{c} < 2^{q} = c < q \land 2 \le \frac{2^{q}}{2^{c}} = c < q \land 2^{\mathrm{checkBits}} < 2^{\mathrm{payloadBits}} \land \mathrm{payloadBits} = 90 \land \mathrm{checkBits} = 32 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 144 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_gap\_is\_fifty\_eight\_bits}]
-\[ \mathrm{payloadBits} - \mathrm{checkBits} = 58 \land 2^{\mathrm{payloadBits}} = 2^{58} \cdot 2^{\mathrm{checkBits}} \]
+\[ \forall c \in \{0,\dots,11\},\; \forall q \in \{0,\dots,11\},\; \lnot c \le q \lor 2^{q} = 2^{q - c} \cdot 2^{c} \land \mathrm{payloadBits} - \mathrm{checkBits} = 58 \land 2^{\mathrm{payloadBits}} = 2^{58} \cdot 2^{\mathrm{checkBits}} \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 144 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{a\_checksum\_is\_the\_same\_whoever\_computes\_it}]
 \[ \forall s \in \{0,\dots,5\},\; \forall t \in \{0,\dots,5\},\; \forall p \in \{0,\dots,11\},\; \mathrm{checkOf}\mathopen{}\left(s,\,p\right) = \mathrm{checkOf}\mathopen{}\left(t,\,p\right) \]
@@ -253,44 +248,39 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 11 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_square\_root\_rule\_is\_the\_one\_this\_prime\_admits}]
-\[ p \bmod 8 = 5 \land p + 3 \bmod 8 = 0 \land p \bmod 4 = 1 \land p \bmod 4 \neq 3 \]
+\[ \forall n \in \{0,\dots,63\},\; n + 3 \bmod 8 = 0 = n \bmod 8 = 5 \land \lnot n \bmod 8 = 5 \lor n \bmod 4 = 1 \land n \bmod 4 \neq 3 \land p \bmod 8 = 5 \land p + 3 \bmod 8 = 0 \land p \bmod 4 = 1 \land p \bmod 4 \neq 3 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_cofactor\_is\_bracketed\_at\_eight}]
-\[ 4 \cdot L < p \land p < 8 \cdot L \land L < p \]
+\[ \forall h \in \{0,\dots,16\},\; h \cdot L \le p \land p < h + 1 \cdot L = h = 7 \land \frac{p}{L} = 7 \land 7 \cdot L \le p \land p < 8 \cdot L \land 4 \cdot L < p \land L < p \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{asymmetric\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 11 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 17 cases. \hfill$\square$
 
 \paragraph{\texttt{capacity.lean}}
 
 \begin{theorem}[\texttt{the\_container\_is\_one\_hundred\_twenty\_eight\_and\_six\_are\_spent}]
-\[ \mathrm{free} = 122 \land \mathrm{reserved} = 6 \land \mathrm{free} + \mathrm{reserved} = \mathrm{container} \land \mathrm{container} = 128 \]
+\[ \forall r \in \mathrm{reservations},\; \mathrm{freeOf}\mathopen{}\left(r\right) + r = \mathrm{container} \land \mathrm{container} - \mathrm{freeOf}\mathopen{}\left(r\right) = r \land \mathrm{free} = 122 \land \mathrm{reserved} = 6 \land \mathrm{free} + \mathrm{reserved} = \mathrm{container} \land \mathrm{container} = 128 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_capacity\_is\_two\_to\_the\_free\_bits\_and\_not\_the\_container}]
-\[ 2^{\mathrm{free}} = 5316911983139663491615228241121378304 \land 2^{\mathrm{container}} = 340282366920938463463374607431768211456 \land 2^{\mathrm{free}} < 2^{\mathrm{container}} \]
+\[ \forall r \in \mathrm{reservations},\; 2^{\mathrm{freeOf}\mathopen{}\left(r\right)} = 2^{\mathrm{container}} = r = 0 \land 2^{\mathrm{freeOf}\mathopen{}\left(r\right)} \le 2^{\mathrm{container}} \land 2^{\mathrm{free}} = 5316911983139663491615228241121378304 \land 2^{\mathrm{container}} = 340282366920938463463374607431768211456 \land 2^{\mathrm{free}} < 2^{\mathrm{container}} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_nominal\_overstates\_the\_real\_by\_two\_to\_the\_reserved}]
-\[ \frac{2^{\mathrm{container}}}{2^{\mathrm{free}}} = 2^{\mathrm{reserved}} \land 2^{\mathrm{reserved}} = 64 \land 2^{\mathrm{container}} = 64 \cdot 2^{\mathrm{free}} \]
+\[ \forall r \in \mathrm{reservations},\; \frac{2^{\mathrm{container}}}{2^{\mathrm{freeOf}\mathopen{}\left(r\right)}} = 2^{r} \land 2^{\mathrm{container}} = 2^{r} \cdot 2^{\mathrm{freeOf}\mathopen{}\left(r\right)} \land \frac{2^{\mathrm{container}}}{2^{\mathrm{free}}} = 2^{\mathrm{reserved}} \land 2^{\mathrm{reserved}} = 64 \land 2^{\mathrm{container}} = 64 \cdot 2^{\mathrm{free}} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_collision\_exponent\_follows\_the\_free\_bits}]
-\[ \frac{\mathrm{free}}{2} = 61 \land \frac{\mathrm{container}}{2} = 64 \land 2^{\frac{\mathrm{free}}{2}} = 2305843009213693952 \land 2^{\frac{\mathrm{container}}{2}} = 18446744073709551616 \]
+\[ \forall r \in \mathrm{reservations},\; \frac{\mathrm{container}}{2} - \frac{\mathrm{freeOf}\mathopen{}\left(r\right)}{2} = \frac{r + 1}{2} \land 2 \cdot \frac{\mathrm{freeOf}\mathopen{}\left(r\right)}{2} + \mathrm{freeOf}\mathopen{}\left(r\right) \bmod 2 = \mathrm{freeOf}\mathopen{}\left(r\right) \land \frac{\mathrm{free}}{2} = 61 \land \frac{\mathrm{container}}{2} = 64 \land 2^{\frac{\mathrm{free}}{2}} = 2305843009213693952 \land 2^{\frac{\mathrm{container}}{2}} = 18446744073709551616 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_birthday\_gap\_is\_half\_the\_reservation}]
-\[ \frac{2^{\frac{\mathrm{container}}{2}}}{2^{\frac{\mathrm{free}}{2}}} = 8 \land 8 = 2^{\frac{\mathrm{reserved}}{2}} \land \frac{\mathrm{reserved}}{2} = 3 \]
+\[ \forall r \in \mathrm{reservations},\; \frac{2^{\frac{\mathrm{container}}{2}}}{2^{\frac{\mathrm{freeOf}\mathopen{}\left(r\right)}{2}}} = 2^{\frac{r + 1}{2}} \land \frac{2^{\frac{\mathrm{container}}{2}}}{2^{\frac{\mathrm{freeOf}\mathopen{}\left(r\right)}{2}}} = 2^{\frac{r}{2}} = r \bmod 2 = 0 \land \frac{2^{\frac{\mathrm{container}}{2}}}{2^{\frac{\mathrm{free}}{2}}} = 8 \land 8 = 2^{\frac{\mathrm{reserved}}{2}} \land \frac{\mathrm{reserved}}{2} = 3 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -300,12 +290,12 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 33 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_overclaim\_is\_this\_many\_addresses\_that\_do\_not\_exist}]
-\[ 2^{\mathrm{container}} - 2^{\mathrm{free}} = 334965454937798799971759379190646833152 \land 2^{\mathrm{container}} - 2^{\mathrm{free}} = 63 \cdot 2^{\mathrm{free}} \]
+\[ \forall r \in \mathrm{reservations},\; 2^{\mathrm{container}} - 2^{\mathrm{freeOf}\mathopen{}\left(r\right)} = 2^{r} - 1 \cdot 2^{\mathrm{freeOf}\mathopen{}\left(r\right)} \land 2^{\mathrm{container}} - 2^{\mathrm{freeOf}\mathopen{}\left(r\right)} = 0 = r = 0 \land 2^{\mathrm{container}} - 2^{\mathrm{free}} = 334965454937798799971759379190646833152 \land 2^{\mathrm{container}} - 2^{\mathrm{free}} = 63 \cdot 2^{\mathrm{free}} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_bound\_is\_a\_ceiling\_on\_difficulty\_and\_not\_a\_measurement}]
-\[ 2^{\frac{\mathrm{free}}{2}} < 2^{\mathrm{free}} \land 2^{\frac{\mathrm{free}}{2}} < 2^{\frac{\mathrm{container}}{2}} \land \frac{\mathrm{free}}{2} < \mathrm{free} \]
+\[ \forall r \in \mathrm{reservations},\; \frac{\mathrm{freeOf}\mathopen{}\left(r\right)}{2} < \mathrm{freeOf}\mathopen{}\left(r\right) = 1 \le \mathrm{freeOf}\mathopen{}\left(r\right) \land \frac{\mathrm{freeOf}\mathopen{}\left(r\right)}{2} \le \frac{\mathrm{container}}{2} \land 2^{\frac{\mathrm{free}}{2}} < 2^{\mathrm{free}} \land 2^{\frac{\mathrm{free}}{2}} < 2^{\frac{\mathrm{container}}{2}} \land \frac{\mathrm{free}}{2} < \mathrm{free} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -360,11 +350,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \forall c \in \{0,\dots,39\},\; \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) < \mathrm{M32} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{fnv\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 12 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_hash\_is\_order\_sensitive}]
 \[ \mathrm{hash32}\mathopen{}\left(0,\,[97,\,98]\right) \neq \mathrm{hash32}\mathopen{}\left(0,\,[98,\,97]\right) \]
@@ -434,11 +419,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \texttt{[alt 0, alt 5, ones 8, alt 115].all (fun m => let b := encodeBits m (b.getD 48 false == true) \&\& (b.getD 49 false == false) \&\& (b.getD 50 false == false) \&\& (b.getD 51 false == false) \&\& (b.getD 64 false == true) \&\& (b.getD 65 false == false))}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{imprint\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 9 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{ledgerclaims.lean}}
 
@@ -538,11 +518,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \mathrm{sortB}\mathopen{}\left([A,\,B]\right) = \mathrm{sortB}\mathopen{}\left([B,\,A]\right) \land [A,\,B] \neq [B,\,A] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{merkle\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 16 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_permutation\_generator\_is\_complete}]
 \[ \left|\mathrm{perms}\mathopen{}\left([A,\,B,\,C,\,D]\right)\right| = 24 \land \left|\mathrm{perms}\mathopen{}\left([A,\,B,\,C]\right)\right| = 6 \]
@@ -676,11 +651,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 42 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{program\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 21 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
-
 \paragraph{\texttt{rays.lean}}
 
 \begin{theorem}[\texttt{the\_orbit\_is\_the\_six\_units}]
@@ -724,14 +694,14 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_two\_by\_seven\_reads\_more\_than\_the\_seven}]
-\[ \mathrm{DIMENSIONS} = 14 \land \mathrm{DIGITS\_READ} = 28 \land 2 \cdot N = 14 \land \mathrm{DIGITS\_READ} > 2 \cdot N \]
+\[ \forall n \in \{0,\dots,15\},\; 4 \cdot n = 2 \cdot 2 \cdot n \land 4 \cdot n > 2 \cdot n = 0 < n \land \mathrm{DIMENSIONS} = 14 \land \mathrm{DIGITS\_READ} = 28 \land \mathrm{DIGITS\_READ} = 2 \cdot \mathrm{DIMENSIONS} \land 2 \cdot N = 14 \land \mathrm{DIGITS\_READ} > 2 \cdot N \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{four\_digits\_stay\_unread\_and\_are\_counted}]
-\[ \mathrm{DIGITS\_TOTAL} - \mathrm{DIGITS\_READ} = 4 \land \mathrm{DIGITS\_READ} < \mathrm{DIGITS\_TOTAL} \]
+\[ \forall n \in \{0,\dots,15\},\; 4 \cdot n < \mathrm{DIGITS\_TOTAL} = n < 8 \land \lnot 4 \cdot n \le \mathrm{DIGITS\_TOTAL} \lor 4 \cdot n + \mathrm{DIGITS\_TOTAL} - 4 \cdot n = \mathrm{DIGITS\_TOTAL} \land N < 8 \land \mathrm{DIGITS\_TOTAL} - \mathrm{DIGITS\_READ} = 4 \land \mathrm{DIGITS\_READ} < \mathrm{DIGITS\_TOTAL} \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_wrap\_is\_what\_makes\_it\_a\_torus}]
 \[ \mathrm{d1}\mathopen{}\left(0,\,8\right) = 1 \land \mathrm{d1}\mathopen{}\left(8,\,0\right) = 1 \land \mathrm{d1}\mathopen{}\left(0,\,4\right) = 4 \land \mathrm{d1}\mathopen{}\left(4,\,0\right) = 4 \]
@@ -747,11 +717,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \forall a \in \{0,\dots,8\},\; \forall b \in \{0,\dots,8\},\; \forall c \in \{0,\dots,8\},\; \mathrm{decide}\mathopen{}\left(\mathrm{d1}\mathopen{}\left(a,\,c\right) \le \mathrm{d1}\mathopen{}\left(a,\,b\right) + \mathrm{d1}\mathopen{}\left(b,\,c\right)\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{rays\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 13 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{widths.lean}}
 
@@ -1097,6 +1062,121 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \forall r \in \{0,\dots,32\},\; 2^{128} = 2^{128 - r} = r = 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 33 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_2\_to\_the\_n}]
+\[ \forall n \in \{1,\dots,20\},\; 2^{n} = 2^{n} \land 2^{n} = 2^{n} \land 2^{n} = 2^{n} \land 2^{n} = 2^{n} \land 2^{n} = 2^{n} \land 2^{n} = 2^{n} \land 2^{n} = 2^{n} \land 2^{n} = 2^{n} \land 2^{n} = 2^{n} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_n\_times\_n\_minus\_1\_over\_2}]
+\[ \forall n \in \{1,\dots,20\},\; \frac{n \cdot n - 1}{2} = \frac{n \cdot n - 1}{2} \land \frac{n \cdot n - 1}{2} = \frac{n \cdot n - 1}{2} \land \frac{n \cdot n - 1}{2} = \frac{n \cdot n - 1}{2} \land \frac{n \cdot n - 1}{2} = \frac{n \cdot n - 1}{2} \land \frac{n \cdot n - 1}{2} = \frac{n \cdot n - 1}{2} \land \frac{n \cdot n - 1}{2} = \frac{n \cdot n - 1}{2} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_2\_to\_the\_n\_minus\_1}]
+\[ \forall n \in \{1,\dots,20\},\; 2^{n} - 1 = 2^{n} - 1 \land 2^{n} - 1 = 2^{n} - 1 \land 2^{n} - 1 = 2^{n} - 1 \land 2^{n} - 1 = 2^{n} - 1 \land 2^{n} - 1 = 2^{n} - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_fib\_n}]
+\[ \forall n \in \{1,\dots,16\},\; \mathrm{fibN}\mathopen{}\left(n\right) = \mathrm{fibN}\mathopen{}\left(n\right) \land \mathrm{fibN}\mathopen{}\left(n\right) = \mathrm{fibN}\mathopen{}\left(n\right) \land \mathrm{fibN}\mathopen{}\left(n\right) = \mathrm{fibN}\mathopen{}\left(n\right) \land \mathrm{fibN}\mathopen{}\left(n\right) = \mathrm{fibN}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_catalan\_n}]
+\[ \forall n \in \{1,\dots,6\},\; \mathrm{catalanN}\mathopen{}\left(n\right) = \mathrm{catalanN}\mathopen{}\left(n\right) \land \mathrm{catalanN}\mathopen{}\left(n\right) = \mathrm{catalanN}\mathopen{}\left(n\right) \land \mathrm{catalanN}\mathopen{}\left(n\right) = \mathrm{catalanN}\mathopen{}\left(n\right) \land \mathrm{catalanN}\mathopen{}\left(n\right) = \mathrm{catalanN}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_choose\_12\_n}]
+\[ \forall n \in \{1,\dots,12\},\; \mathrm{chooseN}\mathopen{}\left(12,\,n\right) = \mathrm{chooseN}\mathopen{}\left(12,\,n\right) \land \mathrm{chooseN}\mathopen{}\left(12,\,n\right) = \mathrm{chooseN}\mathopen{}\left(12,\,n\right) \land \mathrm{chooseN}\mathopen{}\left(12,\,n\right) = \mathrm{chooseN}\mathopen{}\left(12,\,n\right) \land \mathrm{chooseN}\mathopen{}\left(12,\,n\right) = \mathrm{chooseN}\mathopen{}\left(12,\,n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_3\_to\_the\_n}]
+\[ \forall n \in \{1,\dots,20\},\; 3^{n} = 3^{n} \land 3^{n} = 3^{n} \land 3^{n} = 3^{n} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_factorial\_n}]
+\[ \forall n \in \{1,\dots,10\},\; \mathrm{fct}\mathopen{}\left(n\right) = \mathrm{fct}\mathopen{}\left(n\right) \land \mathrm{fct}\mathopen{}\left(n\right) = \mathrm{fct}\mathopen{}\left(n\right) \land \mathrm{fct}\mathopen{}\left(n\right) = \mathrm{fct}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_n\_times\_n}]
+\[ \forall n \in \{1,\dots,20\},\; n \cdot n = n \cdot n \land n \cdot n = n \cdot n \land n \cdot n = n \cdot n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_n\_times\_n\_plus\_1\_over\_2}]
+\[ \forall n \in \{1,\dots,20\},\; \frac{n \cdot n + 1}{2} = \frac{n \cdot n + 1}{2} \land \frac{n \cdot n + 1}{2} = \frac{n \cdot n + 1}{2} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_choose\_2\_times\_n\_n}]
+\[ \forall n \in \{1,\dots,8\},\; \mathrm{chooseN}\mathopen{}\left(2 \cdot n,\,n\right) = \mathrm{chooseN}\mathopen{}\left(2 \cdot n,\,n\right) \land \mathrm{chooseN}\mathopen{}\left(2 \cdot n,\,n\right) = \mathrm{chooseN}\mathopen{}\left(2 \cdot n,\,n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_10\_to\_the\_n}]
+\[ \forall n \in \{1,\dots,20\},\; 10^{n} = 10^{n} \land 10^{n} = 10^{n} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_7\_times\_n\_mod\_12}]
+\[ \forall n \in \{1,\dots,20\},\; 7 \cdot n \bmod 12 = 7 \cdot n \bmod 12 \land 7 \cdot n \bmod 12 = 7 \cdot n \bmod 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_identity\_of\_if\_n\_\_0\_then\_0\_else\_1\_plus\_n\_minus\_1\_mod\_9}]
+\[ \forall n \in \{1,\dots,20\},\; \begin{cases}0 & \text{if } n = 0\\ 1 + n - 1 \bmod 9 & \text{otherwise}\end{cases} = \begin{cases}0 & \text{if } n = 0\\ 1 + n - 1 \bmod 9 & \text{otherwise}\end{cases} \land \begin{cases}0 & \text{if } n = 0\\ 1 + n - 1 \bmod 9 & \text{otherwise}\end{cases} = \begin{cases}0 & \text{if } n = 0\\ 1 + n - 1 \bmod 9 & \text{otherwise}\end{cases} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_entanglement\_graph\_is\_connected}]
+\[ \left|\operatorname{dedup}\left(\mathrm{flood}\mathopen{}\left(24,\,[0]\right)\right)\right| = \left|\mathrm{doms}\right| \land \left|\mathrm{doms}\right| = 24 \land \left|\operatorname{dedup}\left(\mathrm{flood}\mathopen{}\left(24,\,[0]\right)\right)\right| = 24 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_domain\_is\_entangled\_with\_nothing}]
+\[ \forall v \in \{0,\dots,\left|\mathrm{doms}\right|-1\},\; \left|\mathrm{nbrs}\mathopen{}\left(v\right)\right| > 0 \land \forall v \in \{0,\dots,\left|\mathrm{doms}\right|-1\},\; \forall w \in \mathrm{nbrs}\mathopen{}\left(v\right),\; w \neq v \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_distant\_pair\_is\_joined\_only\_through\_a\_hub}]
+\[ \lnot 11 \in \mathrm{nbrs}\mathopen{}\left(15\right) \land 11 \in \mathrm{flood}\mathopen{}\left(2,\,[15]\right) \land 3 \in \mathrm{nbrs}\mathopen{}\left(15\right) \land 11 \in \mathrm{nbrs}\mathopen{}\left(3\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_staircase\_and\_the\_handshake\_never\_agree\_above\_zero}]
+\[ \forall n \in \{1,\dots,20\},\; \frac{n \cdot n + 1}{2} \neq \frac{n \cdot n - 1}{2} \land \forall n \in \{1,\dots,20\},\; \frac{n \cdot n + 1}{2} = \frac{n \cdot n - 1}{2} + n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 400 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{lucas\_and\_fibonacci\_share\_a\_recursion\_and\_not\_a\_sequence}]
+\[ \mathrm{fibN}\mathopen{}\left(1\right) = \mathrm{lucasN}\mathopen{}\left(1\right) \land \forall n \in \{2,\dots,19\},\; \mathrm{fibN}\mathopen{}\left(n\right) \neq \mathrm{lucasN}\mathopen{}\left(n\right) \land \forall n \in \{1,\dots,18\},\; \mathrm{fibN}\mathopen{}\left(n + 2\right) = \mathrm{fibN}\mathopen{}\left(n + 1\right) + \mathrm{fibN}\mathopen{}\left(n\right) \land \mathrm{lucasN}\mathopen{}\left(n + 2\right) = \mathrm{lucasN}\mathopen{}\left(n + 1\right) + \mathrm{lucasN}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 324 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_three\_polygon\_counts\_are\_pairwise\_distinct\_from\_four}]
+\[ \forall n \in \{4,\dots,20\},\; \frac{n \cdot n - 1}{2} \neq \frac{n \cdot n + 1}{2} \land \frac{n \cdot n - 1}{2} \neq \frac{n \cdot n - 3}{2} \land \frac{n \cdot n + 1}{2} \neq \frac{n \cdot n - 3}{2} \land \forall n \in \{1,\dots,20\},\; \frac{n \cdot n + 1}{2} = \frac{n \cdot n - 1}{2} + n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 340 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_octave\_and\_the\_fifth\_meet\_only\_at\_zero}]
+\[ 2^{0} = 3^{0} \land \forall n \in \{1,\dots,20\},\; 2^{n} \neq 3^{n} \land \forall n \in \{1,\dots,20\},\; 2^{n} < 3^{n} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 400 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digit\_root\_leaves\_the\_integers\_at\_ten}]
+\[ \forall n \in \{1,\dots,9\},\; \begin{cases}0 & \text{if } n = 0\\ 1 + n - 1 \bmod 9 & \text{otherwise}\end{cases} = n \land \begin{cases}0 & \text{if } \left(10 : \mathbb{N}\right) = 0\\ 1 + 10 - 1 \bmod 9 & \text{otherwise}\end{cases} \neq 10 \land \forall n \in \{10,\dots,20\},\; \begin{cases}0 & \text{if } n = 0\\ 1 + n - 1 \bmod 9 & \text{otherwise}\end{cases} \neq n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 99 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_factorial\_outgrows\_every\_other\_expression}]
+\[ \mathrm{fct}\mathopen{}\left(3\right) = \frac{3 \cdot 4}{2} \land \forall n \in \{4,\dots,19\},\; \mathrm{fct}\mathopen{}\left(n\right) > 2^{n} \land \mathrm{fct}\mathopen{}\left(n\right) > \frac{n \cdot n + 1}{2} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
 
 \paragraph{\texttt{coin.lean}}
 
@@ -1517,11 +1597,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{elementary\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 32 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
-
 \begin{theorem}[\texttt{the\_interior\_and\_exterior\_angles\_are\_n\_straight\_angles\_for\_every\_n}]
 \texttt{∀ n : Nat, 2 ≤ n → (n - 2) * 180 + 360 = n * 180}
 \end{theorem}
@@ -1569,6 +1644,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{entangled.lean}}
+
+\begin{theorem}[\texttt{no\_stack\_of\_pure\_fifths\_ever\_closes\_an\_octave}]
+\[ \forall k \in \{1,\dots,24\},\; \forall j \in \{1,\dots,24\},\; 3^{k} \neq 2^{j} \land 3^{12} = 531441 \land 2^{19} = 524288 \land 3^{12} \neq 2^{19} \land 3^{12} - 2^{19} = 7153 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 576 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_comma\_is\_within\_one\_and\_a\_half\_percent\_of\_closing}]
+\[ 531441 \cdot 1000 < 524288 \cdot 1014 \land 531441 \cdot 1000 > 524288 \cdot 1013 \land 531441 > 524288 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_pattern\_is\_possible\_exactly\_when\_the\_landings\_do\_not\_collide}]
+\[ \mathrm{valid}\mathopen{}\left([3]\right) = \mathrm{true} \land \mathrm{valid}\mathopen{}\left([5,\,3,\,1]\right) = \mathrm{true} \land \mathrm{valid}\mathopen{}\left([4,\,4,\,1]\right) = \mathrm{true} \land \mathrm{valid}\mathopen{}\left([5,\,0,\,1]\right) = \mathrm{true} \land \mathrm{valid}\mathopen{}\left([4,\,3,\,2]\right) = \mathrm{false} \land \mathrm{valid}\mathopen{}\left([3,\,3,\,1]\right) = \mathrm{false} \land \forall s \in [[3],\,[5,\,3,\,1],\,[4,\,4,\,1],\,[5,\,0,\,1],\,[4,\,3,\,2],\,[3,\,3,\,1],\,[2,\,2],\,[1,\,1,\,1]],\; \mathrm{valid}\mathopen{}\left(s\right) = \left|\operatorname{dedup}\left(\mathrm{lands}\mathopen{}\left(s\right)\right)\right| = \left|\mathrm{lands}\mathopen{}\left(s\right)\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 354,294 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_ball\_count\_is\_the\_average\_of\_the\_throws}]
+\[ \forall s \in [[3],\,[5,\,3,\,1],\,[4,\,4,\,1],\,[5,\,0,\,1],\,[2,\,2],\,[1,\,1,\,1]],\; \mathrm{throws}\mathopen{}\left(s\right) \bmod \left|s\right| = 0 \land \lnot \mathrm{valid}\mathopen{}\left(s\right) \lor \mathrm{throws}\mathopen{}\left(s\right) = \frac{\mathrm{throws}\mathopen{}\left(s\right)}{\left|s\right|} \cdot \left|s\right| \land \frac{\mathrm{throws}\mathopen{}\left([5,\,3,\,1]\right)}{3} = 3 \land \frac{\mathrm{throws}\mathopen{}\left([4,\,4,\,1]\right)}{3} = 3 \land \frac{\mathrm{throws}\mathopen{}\left([5,\,0,\,1]\right)}{3} = 2 \land \forall s \in [[3,\,3,\,1],\,[4,\,1,\,1],\,[5,\,1,\,1]],\; \mathrm{throws}\mathopen{}\left(s\right) \bmod \left|s\right| \neq 0 \to \mathrm{valid}\mathopen{}\left(s\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 118,098 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_polyrhythm\_closes\_at\_the\_least\_common\_multiple}]
+\texttt{(List.range' 1 8).all (fun k => (List.range' 1 8).all (fun m => let c := closesAt k m 0 < c \&\& c < 64 \&\& c \% k == 0 \&\& c \% m == 0 \&\& ((List.range' 1 (c - 1)).filter (fun b => b \% k == 0 \&\& b \% m == 0)).length == 0 \&\& ((List.range' 1 (c - 1)).all (fun b => !(b \% k == 0 \&\& b \% m == 0))))) ∧ closesAt 3 4 = 12 ∧ closesAt 2 3 = 6 ∧ closesAt 4 4 = 4 ∧ closesAt 3 3 = 3}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_flat\_folded\_vertex\_has\_an\_even\_number\_of\_creases}]
+\[ \forall m \in \{0,\dots,12\},\; \forall v \in \{0,\dots,12\},\; \lnot m = v + 2 \lor v = m + 2 \lor m + v \bmod 2 = 0 \land 2 \le m + v \land \sum [90,\,90,\,90,\,90] = 360 \land 90 + 90 = 90 + 90 \land 90 + 90 = 180 \land \sum [90,\,90,\,90,\,45,\,45] = 360 \land 90 + 90 + 45 \neq 90 + 45 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3,380 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{holding\_the\_pole\_wider\_slows\_every\_fall}]
+\[ \forall a \in \{0,\dots,11\},\; \forall b \in \{0,\dots,11\},\; \mathrm{inertia}\mathopen{}\left(10,\,3,\,a\right) < \mathrm{inertia}\mathopen{}\left(10,\,3,\,b\right) = a < b \land \mathrm{inertia}\mathopen{}\left(10,\,3,\,0\right) = 10 \land \mathrm{inertia}\mathopen{}\left(10,\,3,\,1\right) = 16 \land \mathrm{inertia}\mathopen{}\left(10,\,3,\,4\right) = 106 \land \mathrm{inertia}\mathopen{}\left(10,\,3,\,4\right) - 10 = 4 \cdot \mathrm{inertia}\mathopen{}\left(10,\,3,\,2\right) - 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 144 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{only\_five\_rotation\_orders\_repeat\_on\_a\_lattice}]
+\texttt{traces.length = 5 ∧ (traces.map orderOfTrace) = [2, 3, 4, 6, 1] ∧ (traces.map orderOfTrace).eraseDups.length = 5 ∧ !((traces.map orderOfTrace).contains 5) ∧ !((traces.map orderOfTrace).contains 7) ∧ (((List.range 17).map (fun (i : Nat) => (Int.ofNat i - 8))).filter (fun t => decide (-2 ≤ t ∧ t ≤ 2))) = traces}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 85 cases. \hfill$\square$
 
 \paragraph{\texttt{equivalence.lean}}
 
@@ -1823,11 +1940,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \forall n \in \{0,\dots,12\},\; \forall k \in \{0,\dots,n + 1-1\},\; \mathrm{choose}\mathopen{}\left(n,\,k\right) = \mathrm{choose}\mathopen{}\left(n,\,n - k\right) \land n - n - k = k \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 13 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{families\_settle\_their\_ranges}]
-\[ \mathrm{settledHere} = 42 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_powers\_of\_two\_sum\_to\_one\_less\_than\_the\_next\_for\_every\_n}]
 \texttt{∀ n : Nat, ((List.range (n + 1)).map (fun i => 2 ^ i)).foldl (· + ·) 0 = 2 ^ (n + 1) - 1}
@@ -2642,11 +2754,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \forall d \in \{0,\dots,B-1\},\; \mathrm{m9}\mathopen{}\left(B - \mathrm{m9}\mathopen{}\left(B - d\right)\right) = \mathrm{m9}\mathopen{}\left(d\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{z9\_settles\_its\_domain\_totally}]
-\[ \mathrm{settledHere} = 21 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{orbit\_repeats\_every\_six}]
 \texttt{∀ k : Nat, orbit (k + 6) = orbit k}
@@ -3592,11 +3699,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 256 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{instruments\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 28 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
-
 \paragraph{\texttt{lanes.lean}}
 
 \begin{theorem}[\texttt{a\_lane\_is\_always\_granted}]
@@ -3720,12 +3822,12 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_molar\_gas\_constant\_is\_an\_exact\_product\_of\_two\_defined\_constants}]
-\[ \mathrm{molarGas} = 831446261815324 \]
+\[ \forall a \in \mathrm{defining},\; \forall b \in \mathrm{defining},\; a \cdot b \bmod b = 0 \land \frac{a \cdot b}{b} = a \land \frac{a \cdot b}{a} = b \land \mathrm{molarGas} = \mathrm{kDigits} \cdot \mathrm{naDigits} \land \frac{\mathrm{molarGas}}{\mathrm{naDigits}} = \mathrm{kDigits} \land \frac{\mathrm{molarGas}}{\mathrm{kDigits}} = \mathrm{naDigits} \land \mathrm{molarGas} = 831446261815324 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_faraday\_constant\_is\_an\_exact\_product\_of\_two\_defined\_constants}]
-\[ \mathrm{faraday} = 964853321233100184 \]
+\[ \forall a \in \mathrm{defining},\; \forall b \in \mathrm{defining},\; a \cdot \mathrm{naDigits} = b \cdot \mathrm{naDigits} = a = b \land \mathrm{faraday} = \mathrm{eDigits} \cdot \mathrm{naDigits} \land \frac{\mathrm{faraday}}{\mathrm{naDigits}} = \mathrm{eDigits} \land \mathrm{molarGas} \neq \mathrm{faraday} \land \mathrm{faraday} = 964853321233100184 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -3831,12 +3933,12 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{a\_search\_expecting\_less\_than\_one\_hit\_settles\_nothing\_either\_way}]
-\[ \frac{9 \cdot 2 \cdot \mathrm{ellPUnc} + 1}{100001} = 0 \land 9 \cdot 2 \cdot \mathrm{ellPUnc} + 1 < 100001 \]
+\[ \forall u \in \{0,\dots,63\},\; 9 \cdot 2 \cdot u + 1 < 9 \cdot 2 \cdot u + 1 + 1 \land \forall u \in \{5546,\dots,5565\},\; 9 \cdot 2 \cdot u + 1 < 9 \cdot 2 \cdot u + 1 + 1 \land 9 \cdot 2 \cdot u + 1 < 100001 = u < 5556 \land \frac{5556}{\mathrm{ellPUnc}} = 308 \land \frac{9 \cdot 2 \cdot \mathrm{ellPUnc} + 1}{100001} = 0 \land 9 \cdot 2 \cdot \mathrm{ellPUnc} + 1 < 100001 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,280 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{every\_planck\_unit\_is\_a\_square\_root\_and\_not\_a\_plain\_product}]
-\[ \mathrm{dimEllP}_{1} \bmod 2 \neq 0 \land \mathrm{dimTP}_{1} \bmod 2 \neq 0 \land \mathrm{dimMP}_{1} \bmod 2 \neq 0 \]
+\[ \forall d \in \mathrm{planckDims},\; d_{1} \bmod 2 \neq 0 \land \mathrm{dmul}\mathopen{}\left(d,\,d\right)_{1} \bmod 2 = 0 \land \forall e \in \mathrm{planckDims},\; \mathrm{dmul}\mathopen{}\left(d,\,e\right)_{1} \bmod 2 = d_{1} + e_{1} \bmod 2 \land \mathrm{dmul}\mathopen{}\left(d,\,e\right)_{1} \bmod 2 = 0 \land \mathrm{dimEllP}_{1} \bmod 2 \neq 0 \land \mathrm{dimTP}_{1} \bmod 2 \neq 0 \land \mathrm{dimMP}_{1} \bmod 2 \neq 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -3866,12 +3968,12 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_published\_digits\_miss\_an\_identity\_that\_has\_no\_measurement\_in\_it}]
-\[ \mathrm{ratioFromDigits} = 299792422 \land \mathrm{ratioFromDigits} \neq \mathrm{cDefined} \land \mathrm{cDefined} - \mathrm{ratioFromDigits} = 36 \]
+\[ \forall e \in \mathrm{window},\; \frac{e \cdot 1000000000}{\mathrm{tP}} \neq \mathrm{cDefined} \land \frac{\mathrm{ellP} \cdot 1000000000}{\mathrm{tP}} < \mathrm{cDefined} \land \mathrm{cDefined} < \frac{\mathrm{ellP} + 1 \cdot 1000000000}{\mathrm{tP}} \land \mathrm{ratioFromDigits} = 299792422 \land \mathrm{ratioFromDigits} \neq \mathrm{cDefined} \land \mathrm{cDefined} - \mathrm{ratioFromDigits} = 36 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_miss\_is\_rounding\_and\_sits\_far\_below\_the\_uncertainty}]
-\[ \mathrm{cDefined} - \mathrm{ratioFromDigits} \cdot 1000000 < 11 \cdot \mathrm{cDefined} \land \frac{11 \cdot \mathrm{cDefined}}{\mathrm{cDefined} - \mathrm{ratioFromDigits} \cdot 1000000} = 91 \]
+\[ \forall e \in \mathrm{window},\; 185 \le \frac{e + 1 \cdot 1000000000}{\mathrm{tP}} - \frac{e \cdot 1000000000}{\mathrm{tP}} \land \frac{e + 1 \cdot 1000000000}{\mathrm{tP}} - \frac{e \cdot 1000000000}{\mathrm{tP}} \le 186 \land \mathrm{cDefined} - \mathrm{ratioFromDigits} < 185 \land \mathrm{cDefined} - \mathrm{ratioFromDigits} \cdot 1000000 < 11 \cdot \mathrm{cDefined} \land \frac{11 \cdot \mathrm{cDefined}}{\mathrm{cDefined} - \mathrm{ratioFromDigits} \cdot 1000000} = 91 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -3931,9 +4033,9 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_acoustic\_and\_planck\_frequencies\_are\_forty\_orders\_apart\_not\_eighteen}]
-\[ \mathrm{tPtimesAcoustic} = 2329018704 \land 1000000000 < \mathrm{tPtimesAcoustic} \land \mathrm{tPtimesAcoustic} < 10000000000 \land 10^{9} < \mathrm{tPtimesAcoustic} \land \mathrm{tPtimesAcoustic} < 10^{10} \land 18 + 22 = 40 \]
+\[ \forall k \in \{0,\dots,11\},\; 10^{k} < \mathrm{tPtimesAcoustic} \land \mathrm{tPtimesAcoustic} < 10^{k + 1} = k = 9 \land \mathrm{tPtimesAcoustic} = 2329018704 \land 1000000000 < \mathrm{tPtimesAcoustic} \land \mathrm{tPtimesAcoustic} < 10000000000 \land 10^{9} < \mathrm{tPtimesAcoustic} \land \mathrm{tPtimesAcoustic} < 10^{10} \land 18 + 22 = 40 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{this\_file\_decides\_arithmetic\_on\_digits\_and\_not\_a\_physical\_theory}]
 \[ \mathrm{acoustic} = 432 \land \mathrm{ellP} = 1616255 \land \mathrm{tP} = 5391247 \land \forall \mathrm{\_} \in \{0,\dots,2\},\; \mathrm{true} \]
@@ -3941,14 +4043,14 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_planck\_energy\_derives\_from\_the\_mass\_and\_the\_defined\_constants}]
-\[ \mathrm{cSq} = 89875517873681764 \land \mathrm{mP} \cdot \mathrm{cSq} = 195608132867888696349576 \land \mathrm{planckEnergyMantissa} = 122088993633325 \]
+\[ \forall m \in \mathrm{massWindow},\; m \cdot \mathrm{cSq} = m \cdot \mathrm{cDefined} \cdot \mathrm{cDefined} \land \frac{m \cdot \mathrm{cSq}}{\mathrm{cSq}} = m \land \mathrm{cSq} = 89875517873681764 \land \mathrm{mP} \cdot \mathrm{cSq} = 195608132867888696349576 \land \mathrm{planckEnergyMantissa} = 122088993633325 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_collider\_sits\_between\_fourteen\_and\_fifteen\_orders\_below\_the\_planck\_energy}]
-\[ \mathrm{lhcGeV} \cdot 10^{14} < \mathrm{planckEnergyMantissa} \cdot 10^{5} \land \mathrm{planckEnergyMantissa} \cdot 10^{5} < \mathrm{lhcGeV} \cdot 10^{15} \land \mathrm{lhcGeV} = 136 \cdot 100 \]
+\[ \forall k \in \{0,\dots,23\},\; \mathrm{lhcGeV} \cdot 10^{k} < \mathrm{planckEnergyMantissa} \cdot 10^{5} \land \mathrm{planckEnergyMantissa} \cdot 10^{5} < \mathrm{lhcGeV} \cdot 10^{k + 1} = k = 14 \land \mathrm{lhcGeV} \cdot 10^{14} < \mathrm{planckEnergyMantissa} \cdot 10^{5} \land \mathrm{planckEnergyMantissa} \cdot 10^{5} < \mathrm{lhcGeV} \cdot 10^{15} \land \mathrm{lhcGeV} = 136 \cdot 100 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 24 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{this\_deposits\_seven\_dimensions\_are\_index\_positions\_and\_not\_directions}]
 \[ \left|\{0,\dots,6\}\right| = 7 \land \forall d \in \{0,\dots,6\},\; d < 7 \land \left|\mathrm{orbit}\right| = 6 \land \left|\mathrm{axis}\right| = 3 \land \left|\mathrm{orbit}\right| + \left|\mathrm{axis}\right| = 9 \]
@@ -4011,11 +4113,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \left|\operatorname{dedup}\left(\mathrm{naive}[\mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right)]\right)\right| = 5 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{quantum\_settles\_its\_domain\_totally}]
-\[ \mathrm{settledHere} = 11 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_ghz\_x\_support\_is\_exactly\_the\_even\_parity\_strings}]
 \[ \{\, n \in \{0,\dots,7\} \mid \mathrm{par3}\mathopen{}\left(n\right) = 0 \,\} = \mathrm{ghzXSupport} \]
@@ -4138,11 +4235,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \[ \mathrm{frac64}\mathopen{}\left(3,\,2\right) \neq \mathrm{frac64}\mathopen{}\left(2,\,2\right) \land \mathrm{frac64}\mathopen{}\left(3,\,3\right) \neq \mathrm{frac64}\mathopen{}\left(2,\,3\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{roots\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 7 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{speed.lean}}
 
@@ -5262,11 +5354,6 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 300 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{reversal\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 8 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
-
 \begin{theorem}[\texttt{foldl\_add\_start}]
 \texttt{∀ (l : List Nat) (a : Nat), l.foldl (· + ·) a = a + l.foldl (· + ·) 0}
 \end{theorem}
@@ -5934,7 +6021,7 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_two\_heaviest\_signals\_outweigh\_all\_the\_others}]
-\texttt{weights.getD 0 0 == 3 \&\& weights.getD 1 0 == 3 \&\& weights.getD 0 0 + weights.getD 1 0 > weights.getD 2 0 + weights.getD 3 0 + weights.getD 4 0 + weights.getD 5 0}
+\texttt{masks.all (fun m => (bit m 0 || bit m 1 || score m < weights.getD 0 0 + weights.getD 1 0) \&\& (!(bit m 0 || bit m 1) || score m ≥ weights.getD 2 0)) ∧ weights.getD 0 0 == 3 \&\& weights.getD 1 0 == 3 \&\& weights.getD 0 0 + weights.getD 1 0 > weights.getD 2 0 + weights.getD 3 0 + weights.getD 4 0 + weights.getD 5 0}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -5985,10 +6072,47 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{rights\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 8 \]
+\paragraph{\texttt{settled.lean}}
+
+\begin{theorem}[\texttt{every\_file\_settles\_exactly\_what\_it\_declares}]
+\texttt{(declared.zip measured).all (fun p => p.1 == p.2) ∧ declared.length == measured.length ∧ declared.length == files.length ∧ declared.length == 15}
 \end{theorem}
-\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_file\_declares\_more\_than\_it\_holds}]
+\texttt{(declared.zip theorems).all (fun p => p.1 ≤ p.2) ∧ (measured.zip theorems).all (fun p => p.1 ≤ p.2)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_parts\_sum\_to\_the\_whole\_and\_each\_part\_is\_recoverable}]
+\texttt{declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 259 ∧ (List.range declared.length).all (fun i => declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j => j != i)).foldl (fun a j => a + declared.getD j 0) 0)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_file\_settles\_nothing}]
+\[ \forall n \in \mathrm{declared},\; 0 < n \land \forall n \in \mathrm{measured},\; 0 < n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_counts\_are\_not\_one\_number\_repeated}]
+\[ 1 < \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| \land \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| = 12 \land \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } a < b\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 0\right) > \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } b < a\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 1000\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{each\_file\_is\_counted\_once}]
+\[ \left|\operatorname{dedup}\left(\mathrm{files}\right)\right| = \left|\mathrm{files}\right| \land \left|\mathrm{files}\right| = 15 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_proof\_styles\_partition\_the\_theorems}]
+\texttt{((measured.zip byOther).map (fun p => p.1 + p.2)) == theorems ∧ measured.foldl (· + ·) 0 + byOther.foldl (· + ·) 0 == theorems.foldl (· + ·) 0 ∧ (measured.zip theorems).all (fun p => p.1 ≤ p.2)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_declaration\_in\_these\_files\_closes\_by\_rfl}]
+\texttt{byRfl.all (fun n => n == 0) ∧ byRfl.foldl (· + ·) 0 == 0 ∧ ((theorems.zip measured).map (fun p => p.1 - p.2)) == byOther}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{verdict.lean}}
 

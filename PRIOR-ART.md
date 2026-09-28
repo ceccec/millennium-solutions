@@ -6,8 +6,8 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 1,215 machine-checked declarations, **1,192** restate work that already has an author and
-**23** are about this deposit's own construction. Each source file declares which it is, in its own
+Of 1,248 machine-checked declarations, **1,223** restate work that already has an author and
+**25** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
@@ -27,12 +27,12 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **1,192** |
-| unclassified — no search performed, status unknown | **23** |
+| attributed to named earlier work | **1,223** |
+| unclassified — no search performed, status unknown | **25** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
-that everything here already has an author. It is not that. **23** theorems have had no prior-art
+that everything here already has an author. It is not that. **25** theorems have had no prior-art
 search at all, so their status is unknown rather than conceded — and of the 27 distinct years the
 attributions carry, **23** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
@@ -43,11 +43,11 @@ caveat cannot be separated by an edit.
 
 A source may claim novelty only if it names a prior-art search that was actually performed — what was
 searched, where, and when. An earlier version of this page claimed novelty for 3 sources and
-23 theorems on the strength of their own self-description, with nobody having looked. Asserting
+25 theorems on the strength of their own self-description, with nobody having looked. Asserting
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 61 sources, 1,192 theorems
+## Restated from named earlier work — 62 sources, 1,223 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -59,7 +59,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>authority.lean</code></td><td>8</td><td>elementary set and order arithmetic over finite lists</td><td>NO NOVELTY IS CLAIMED AND NONE IS DENIED. Membership, set difference and monotonicity over</td></tr>
 <tr><td><code>capacity.lean</code></td><td>8</td><td>the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC</td><td>NEITHER IS THIS DEPOSIT'S. RFC 9562 reserves the six bits and the birthday bound is</td></tr>
 <tr><td><code>closure.lean</code></td><td>8</td><td>Cantor's diagonal argument again, turned on a vocabulary rather than a set; the</td><td>THE METHOD IS CANTOR'S AND THE FINITE CASE IS ELEMENTARY. What is this deposit's is the</td></tr>
-<tr><td><code>coils.lean</code></td><td>27</td><td>extensional equality of predicates over a finite set — that two definitions picking out</td><td>NOT THIS DEPOSIT'S. "Two descriptions of the same set are equal" is the definition of a</td></tr>
+<tr><td><code>coils.lean</code></td><td>50</td><td>extensional equality of predicates over a finite set — that two definitions picking out</td><td>NOT THIS DEPOSIT'S. "Two descriptions of the same set are equal" is the definition of a</td></tr>
 <tr><td><code>coin.lean</code></td><td>12</td><td>the method of complements</td><td>the reflection d ↦ 10 − d is the TEN'S COMPLEMENT, and its sibling 9 − d the nines' complement — the method of complements, used to turn subtraction into addition in Pascal's calculator (1642), the Comptometer and the Curta, and in modern computer arithmetic. That it is an involution with a single fixed point is the property those machines rely on. Searched 2026-09-04, term "method of complements / nines' complement / ten's complement"; prior art found and credited</td></tr>
 <tr><td><code>demand.lean</code></td><td>11</td><td>elementary number theory</td><td>the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems</td></tr>
 <tr><td><code>demand2.lean</code></td><td>12</td><td>elementary number theory, second tier</td><td>Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002</td></tr>
@@ -71,6 +71,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>domain.lean</code></td><td>8</td><td>Cantor's diagonal argument, and the elementary fact that a diagonal over a domain of n</td><td>THE BOUND IS NOT NEW AND IS NOT CLAIMED. "One point per property" is the counting that</td></tr>
 <tr><td><code>elementary.lean</code></td><td>40</td><td>elementary number theory and combinatorial game theory</td><td>Euclid (Elements IX.36) and Euler for the even perfect numbers; the amicable pair</td></tr>
 <tr><td><code>energy.lean</code></td><td>28</td><td>electrochemistry and combustion</td><td>the laws of electrolysis — Michael Faraday, 1834; the enthalpy of combustion of hydrogen, standard physical chemistry</td></tr>
+<tr><td><code>entangled.lean</code></td><td>8</td><td>siteswap notation for juggling (Klimek, Tiemann and Magnusson, independently c. 1985; the</td><td>NONE OF IT IS THIS DEPOSIT'S, and every result below is older than this file and credited</td></tr>
 <tr><td><code>equivalence.lean</code></td><td>8</td><td>the equivalence relation and its quotient — reflexivity, symmetry, transitivity, and</td><td>NONE OF IT IS THIS DEPOSIT'S AND ALL OF IT IS FOUNDATIONAL. That an equivalence relation</td></tr>
 <tr><td><code>families.lean</code></td><td>63</td><td>modular arithmetic, quantified</td><td>quantifies the ℤ/9 arithmetic above; the underlying results are Fermat’s, Euler’s and Gauss’s</td></tr>
 <tr><td><code>flow.lean</code></td><td>16</td><td>elementary number theory — the multiplicative order of 2 modulo 9</td><td>2⁶ = 64 ≡ 1 (mod 9), so the powers of two modulo 9 repeat with period six — Euler's</td></tr>
@@ -148,7 +149,7 @@ which is a contribution of verification, not of discovery.
 - **elementary order theory, list processing and string matching** — 28 theorems, in `instruments.lean`
 - **elementary set and order arithmetic over finite lists** — 8 theorems, in `authority.lean`
 - **elementary set theory — the naturals are not exhausted by any finite list** — 12 theorems, in `reach.lean`
-- **extensional equality of predicates over a finite set — that two definitions picking out** — 27 theorems, in `coils.lean`
+- **extensional equality of predicates over a finite set — that two definitions picking out** — 50 theorems, in `coils.lean`
 - **hash trees and membership proofs** — 36 theorems, in `ledgerclaims.lean`, `merkle.lean`, `speed.lean`
 - **identifier formats and error-detecting codes** — 21 theorems, in `program.lean`
 - **identifier formats and length-prefixed encodings** — 9 theorems, in `imprint.lean`
@@ -160,6 +161,7 @@ which is a contribution of verification, not of discovery.
 - **modular arithmetic, quantified** — 63 theorems, in `families.lean`
 - **non-cryptographic hashing** — 14 theorems, in `fnv.lean`
 - **public-key signatures on elliptic curves** — 11 theorems, in `asymmetric.lean`
+- **siteswap notation for juggling (Klimek, Tiemann and Magnusson, independently c. 1985; the** — 8 theorems, in `entangled.lean`
 - **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 35 theorems, in `planck.lean`
 - **the Ed25519 signature scheme's parameter sizes — 32-byte public key, 64-byte** — 24 theorems, in `widths.lean`
 - **the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC** — 8 theorems, in `capacity.lean`
@@ -182,7 +184,7 @@ is worth saying precisely, because it is both smaller than a discovery claim and
 Author and year are given rather than a resolver identifier. Asserting a DOI for someone else's paper without
 verifying it would be a fabricated citation, and this is the worst document in the deposit to put one in.
 
-## This deposit's own construction — 3 sources, 23 theorems, none claimed
+## This deposit's own construction — 3 sources, 25 theorems, none claimed
 
 The ℤ/9 vortex framework, its ledger, its receipts, and the enumeration its own generators proposed. These are
 **unclassified**: no prior-art search has been performed for them, so nothing is claimed about them either
@@ -195,7 +197,7 @@ refuses a `none-known` declaration that does not carry one.
 <table><thead><tr><th>source</th><th>theorems</th><th>note</th></tr></thead><tbody>
 <tr><td><code>lanes.lean</code></td><td>8</td><td>NONE OF THE ARITHMETIC IS THIS DEPOSIT'S. min, ⌊a/b⌋ and truncating subtraction on the</td></tr>
 <tr><td><code>priorart.lean</code></td><td>9</td><td>THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per</td></tr>
-<tr><td><code>settled.lean</code></td><td>6</td><td>THE ARITHMETIC IS NAMED, NOT CLAIMED. What is this deposit's is only the subject: that</td></tr>
+<tr><td><code>settled.lean</code></td><td>8</td><td>THE ARITHMETIC IS NAMED, NOT CLAIMED. What is this deposit's is only the subject: that</td></tr>
 </tbody></table>
 
 ## Defensive publication
@@ -207,5 +209,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `824fa5b7-f4d2-89da-b128-a960cfd09c5a` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `776e8a3a-6ae8-8899-bd7b-d8e50c04660d` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.
