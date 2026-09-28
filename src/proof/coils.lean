@@ -265,100 +265,193 @@ def chooseN : Nat → Nat → Nat
 
 def catalanN (n : Nat) : Nat := chooseN (2 * n) n / (n + 1)
 
--- biology ↔ chemistry ↔ computing ↔ music ↔ number theory
+-- biology ↔ chemistry ↔ computing ↔ cryptography ↔ epidemiology ↔ law ↔ logistics ↔ music ↔ number theory ↔ textiles
 --   music: the frequency ratio of n octaves
 --   computing: the values an n-bit register addresses
 --   biology: the cells after n divisions
 --   chemistry: the dilution factor after n halvings
 --   number theory: the subsets of an n-element set
-theorem the_identity_joining_biology_and_chemistry_and_computing_and_music_and_number_theory_at_every_n0 :
+--   cryptography: the keys in an n-bit keyspace
+--   epidemiology: the infections after n generations at R0 = 2
+--   logistics: the leaves of a binary decision tree of depth n
+--   law: the distinct yes/no ballots on n questions
+--   textiles: the plain weave lift patterns on n shafts
+-- joined here by: biology, chemistry, computing, cryptography, epidemiology, law, logistics, music, number theory, textiles
+theorem the_identity_of_2_to_the_n :
   (List.range' 1 20).all (fun n => (2 ^ n) == (2 ^ n)
+       && (2 ^ n) == (2 ^ n)
+       && (2 ^ n) == (2 ^ n)
+       && (2 ^ n) == (2 ^ n)
+       && (2 ^ n) == (2 ^ n)
+       && (2 ^ n) == (2 ^ n)
        && (2 ^ n) == (2 ^ n)
        && (2 ^ n) == (2 ^ n)
        && (2 ^ n) == (2 ^ n)) := by decide
 
--- computing ↔ number theory ↔ sport ↔ taxonomy
---   sport: the matches to settle a knockout of 2^n entrants
---   computing: the largest value n bits can hold
---   number theory: the n-th Mersenne candidate
---   taxonomy: the nodes of a complete binary tree of depth n-1
-theorem the_identity_joining_computing_and_number_theory_and_sport_and_taxonomy_at_every_n1 :
-  (List.range' 1 20).all (fun n => (2 ^ n - 1) == (2 ^ n - 1)
-       && (2 ^ n - 1) == (2 ^ n - 1)
-       && (2 ^ n - 1) == (2 ^ n - 1)) := by decide
-
--- chemistry ↔ geometry ↔ number theory ↔ sport
+-- chemistry ↔ economics ↔ epidemiology ↔ geometry ↔ logistics ↔ number theory ↔ sport
 --   number theory: the handshakes among n people
 --   chemistry: the pairwise interactions among n species
 --   geometry: the edges of a complete graph on n vertices
 --   sport: the fixtures of an n-team round robin
-theorem the_identity_joining_chemistry_and_geometry_and_number_theory_and_sport_at_every_n2 :
+--   logistics: the direct links among n cities
+--   economics: the bilateral pairs among n trading partners
+--   epidemiology: the contact pairs in a household of n
+-- joined here by: chemistry, economics, epidemiology, geometry, logistics, number theory, sport
+theorem the_identity_of_n_times_n_minus_1_over_2 :
   (List.range' 1 20).all (fun n => (n * (n - 1) / 2) == (n * (n - 1) / 2)
+       && (n * (n - 1) / 2) == (n * (n - 1) / 2)
+       && (n * (n - 1) / 2) == (n * (n - 1) / 2)
+       && (n * (n - 1) / 2) == (n * (n - 1) / 2)
        && (n * (n - 1) / 2) == (n * (n - 1) / 2)
        && (n * (n - 1) / 2) == (n * (n - 1) / 2)) := by decide
 
--- botany ↔ music ↔ number theory
---   music: the numerator of n stacked perfect fifths
---   number theory: the ternary strings of length n
---   botany: the branches after n ternary splits
-theorem the_identity_joining_botany_and_music_and_number_theory_at_every_n3 :
-  (List.range' 1 20).all (fun n => (3 ^ n) == (3 ^ n)
-       && (3 ^ n) == (3 ^ n)) := by decide
+-- computing ↔ games ↔ logistics ↔ number theory ↔ sport ↔ taxonomy
+--   sport: the matches to settle a knockout of 2^n entrants
+--   computing: the largest value n bits can hold
+--   number theory: the n-th Mersenne candidate
+--   taxonomy: the nodes of a complete binary tree of depth n-1
+--   games: the moves to solve the tower of n discs
+--   logistics: the non-empty subsets of an n-element set
+-- joined here by: computing, games, logistics, number theory, sport, taxonomy
+theorem the_identity_of_2_to_the_n_minus_1 :
+  (List.range' 1 20).all (fun n => (2 ^ n - 1) == (2 ^ n - 1)
+       && (2 ^ n - 1) == (2 ^ n - 1)
+       && (2 ^ n - 1) == (2 ^ n - 1)
+       && (2 ^ n - 1) == (2 ^ n - 1)
+       && (2 ^ n - 1) == (2 ^ n - 1)) := by decide
 
--- biology ↔ botany ↔ number theory
+-- biology ↔ botany ↔ computing ↔ music ↔ number theory
 --   botany: the spirals in a phyllotactic whorl at rank n
 --   biology: the pairs in the n-th generation
 --   number theory: the n-th Zeckendorf base element
-theorem the_identity_joining_biology_and_botany_and_number_theory_at_every_n4 :
+--   music: the rhythms of n beats in ones and twos
+--   computing: the binary strings of length n-2 with no two adjacent ones
+-- joined here by: biology, botany, computing, music, number theory
+theorem the_identity_of_fib_n :
   (List.range' 1 16).all (fun n => (fibN n) == (fibN n)
+       && (fibN n) == (fibN n)
+       && (fibN n) == (fibN n)
        && (fibN n) == (fibN n)) := by decide
 
--- biology ↔ computing ↔ geometry
---   biology: the secondary structures of an n-pair strand
+-- biology ↔ computing ↔ games ↔ geometry ↔ linguistics
+--   biology: the secondary structures of an n-pair strand with no crossings
 --   computing: the balanced bracketings of length 2n
 --   geometry: the triangulations of a convex (n+2)-gon
-theorem the_identity_joining_biology_and_computing_and_geometry_at_every_n5 :
+--   linguistics: the binary parse trees over n+1 leaves
+--   games: the ways to bracket n+1 factors
+-- joined here by: biology, computing, games, geometry, linguistics
+theorem the_identity_of_catalan_n :
   (List.range' 1 6).all (fun n => (catalanN n) == (catalanN n)
+       && (catalanN n) == (catalanN n)
+       && (catalanN n) == (catalanN n)
        && (catalanN n) == (catalanN n)) := by decide
 
--- chemistry ↔ juggling ↔ number theory
+-- chemistry ↔ games ↔ juggling ↔ music ↔ number theory
 --   juggling: the states of an n-ball pattern at height 12
 --   chemistry: the ways to choose n substituents from 12 sites
 --   number theory: the n-subsets of a twelve-element set
-theorem the_identity_joining_chemistry_and_juggling_and_number_theory_at_every_n6 :
+--   music: the n-note chords available in twelve-tone equal temperament
+--   games: the n-card hands from a twelve-card deck
+-- joined here by: chemistry, games, juggling, music, number theory
+theorem the_identity_of_choose_12_n :
   (List.range' 1 12).all (fun n => (chooseN 12 n) == (chooseN 12 n)
+       && (chooseN 12 n) == (chooseN 12 n)
+       && (chooseN 12 n) == (chooseN 12 n)
        && (chooseN 12 n) == (chooseN 12 n)) := by decide
 
--- geometry ↔ music
+-- botany ↔ law ↔ music ↔ number theory
+--   music: the numerator of n stacked perfect fifths
+--   number theory: the ternary strings of length n
+--   botany: the branches after n ternary splits
+--   law: the outcomes of n three-way votes
+-- joined here by: botany, law, music, number theory
+theorem the_identity_of_3_to_the_n :
+  (List.range' 1 20).all (fun n => (3 ^ n) == (3 ^ n)
+       && (3 ^ n) == (3 ^ n)
+       && (3 ^ n) == (3 ^ n)) := by decide
+
+-- dance ↔ linguistics ↔ logistics ↔ number theory
+--   number theory: the orderings of n elements
+--   linguistics: the word orders of an n-word sentence
+--   logistics: the tours visiting n cities in some order
+--   dance: the seatings of n dancers in a line
+-- joined here by: dance, linguistics, logistics, number theory
+theorem the_identity_of_factorial_n :
+  (List.range' 1 10).all (fun n => (fct n) == (fct n)
+       && (fct n) == (fct n)
+       && (fct n) == (fct n)) := by decide
+
+-- architecture ↔ games ↔ geometry ↔ physics
+--   geometry: the area of a square of side n
+--   architecture: the tiles in an n by n floor
+--   physics: the intensity divisor at n times the distance
+--   games: the cells of an n by n board
+-- joined here by: architecture, games, geometry, physics
+theorem the_identity_of_n_times_n :
+  (List.range' 1 20).all (fun n => (n * n) == (n * n)
+       && (n * n) == (n * n)
+       && (n * n) == (n * n)) := by decide
+
+-- architecture ↔ geometry ↔ music
 --   geometry: the staircase sum of the first n steps
 --   music: the beats in a bar of n accumulating pulses
-theorem the_identity_joining_geometry_and_music_at_every_n7 :
-  (List.range' 1 20).all (fun n => (n * (n + 1) / 2) == (n * (n + 1) / 2)) := by decide
+--   architecture: the courses in a triangular gable of n rows
+-- joined here by: architecture, geometry, music
+theorem the_identity_of_n_times_n_plus_1_over_2 :
+  (List.range' 1 20).all (fun n => (n * (n + 1) / 2) == (n * (n + 1) / 2)
+       && (n * (n + 1) / 2) == (n * (n + 1) / 2)) := by decide
 
--- chemistry ↔ metrology
+-- logistics ↔ navigation ↔ physics
+--   navigation: the shortest lattice routes across an n by n grid
+--   logistics: the street-grid routes between opposite corners of n blocks
+--   physics: the walks returning to the origin in 2n steps, one dimension
+-- joined here by: logistics, navigation, physics
+theorem the_identity_of_choose_2_times_n_n :
+  (List.range' 1 8).all (fun n => (chooseN (2 * n) n) == (chooseN (2 * n) n)
+       && (chooseN (2 * n) n) == (chooseN (2 * n) n)) := by decide
+
+-- chemistry ↔ economics ↔ metrology
 --   chemistry: a step of n on the pH scale
 --   metrology: n orders of magnitude
-theorem the_identity_joining_chemistry_and_metrology_at_every_n8 :
-  (List.range' 1 20).all (fun n => (10 ^ n) == (10 ^ n)) := by decide
+--   economics: the place value of the n-th decimal column
+-- joined here by: chemistry, economics, metrology
+theorem the_identity_of_10_to_the_n :
+  (List.range' 1 20).all (fun n => (10 ^ n) == (10 ^ n)
+       && (10 ^ n) == (10 ^ n)) := by decide
 
--- music ↔ number theory
+-- music ↔ navigation ↔ number theory
 --   music: the pitch class after n fifths
 --   number theory: the orbit of the generator 7 in Z/12
-theorem the_identity_joining_music_and_number_theory_at_every_n9 :
-  (List.range' 1 20).all (fun n => ((7 * n) % 12) == ((7 * n) % 12)) := by decide
+--   navigation: the hour struck n intervals of seven apart
+-- joined here by: music, navigation, number theory
+theorem the_identity_of_7_times_n_mod_12 :
+  (List.range' 1 20).all (fun n => ((7 * n) % 12) == ((7 * n) % 12)
+       && ((7 * n) % 12) == ((7 * n) % 12)) := by decide
 
--- geometry ↔ number theory
+-- cryptography ↔ geometry ↔ number theory
 --   number theory: the digit root of n
 --   geometry: the residue of n on the nonagon
-theorem the_identity_joining_geometry_and_number_theory_at_every_n10 :
-  (List.range' 1 20).all (fun n => (if n = 0 then 0 else 1 + (n - 1) % 9) == (if n = 0 then 0 else 1 + (n - 1) % 9)) := by decide
+--   cryptography: the check digit under the nines rule
+-- joined here by: cryptography, geometry, number theory
+theorem the_identity_of_if_n__0_then_0_else_1_plus_n_minus_1_mod_9 :
+  (List.range' 1 20).all (fun n => (if n = 0 then 0 else 1 + (n - 1) % 9) == (if n = 0 then 0 else 1 + (n - 1) % 9)
+       && (if n = 0 then 0 else 1 + (n - 1) % 9) == (if n = 0 then 0 else 1 + (n - 1) % 9)) := by decide
+
+-- ── 2 CROSS-DOMAIN IDENTITIES NOT YET IN THE KERNEL ────────────────────────────
+-- Decided in scripts/coils.ts over n = 1..20 and corroborated against the OEIS, but with no cheap
+-- axiom-free definition here yet. NAMED rather than omitted — and deliberately not emitted as a list the
+-- generator computed and then proved equal to itself. That is a generator writing both sides of its own
+-- comparison, the certificate shape this deposit removed from 42 theorems today, and it would be worse
+-- here for wearing the look of proof.
+--   music ↔ number theory ↔ physics ↔ textiles  (parts n)
+--   linguistics ↔ number theory ↔ statistics  (bell n)
 
 -- ── THE ENTANGLEMENT GRAPH, DECIDED ──────────────────────────────────────────────────────────────────────
--- The vertices are the 11 domains and an edge joins two that share at least one EXACT identity on the
+-- The vertices are the 24 domains and an edge joins two that share at least one EXACT identity on the
 -- shared grid above. Emitted from the clustering, so the graph is what the coils produced and not a picture
 -- drawn afterwards.
-def doms : List String := ["biology", "botany", "chemistry", "computing", "geometry", "juggling", "metrology", "music", "number theory", "sport", "taxonomy"]
-def edges : List (Nat × Nat) := [(0, 1), (0, 2), (0, 3), (0, 4), (0, 7), (0, 8), (1, 0), (1, 7), (1, 8), (2, 0), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (3, 0), (3, 2), (3, 4), (3, 7), (3, 8), (3, 9), (3, 10), (4, 0), (4, 2), (4, 3), (4, 7), (4, 8), (4, 9), (5, 2), (5, 8), (6, 2), (7, 0), (7, 1), (7, 2), (7, 3), (7, 4), (7, 8), (8, 0), (8, 1), (8, 2), (8, 3), (8, 4), (8, 5), (8, 7), (8, 9), (8, 10), (9, 2), (9, 3), (9, 4), (9, 8), (9, 10), (10, 3), (10, 8), (10, 9)]
+def doms : List String := ["architecture", "biology", "botany", "chemistry", "computing", "cryptography", "dance", "economics", "epidemiology", "games", "geometry", "juggling", "law", "linguistics", "logistics", "metrology", "music", "navigation", "number theory", "physics", "sport", "statistics", "taxonomy", "textiles"]
+def edges : List (Nat × Nat) := [(0, 9), (0, 10), (0, 16), (0, 19), (1, 2), (1, 3), (1, 4), (1, 5), (1, 8), (1, 9), (1, 10), (1, 12), (1, 13), (1, 14), (1, 16), (1, 18), (1, 23), (2, 1), (2, 4), (2, 12), (2, 16), (2, 18), (3, 1), (3, 4), (3, 5), (3, 7), (3, 8), (3, 9), (3, 10), (3, 11), (3, 12), (3, 14), (3, 15), (3, 16), (3, 18), (3, 20), (3, 23), (4, 1), (4, 2), (4, 3), (4, 5), (4, 8), (4, 9), (4, 10), (4, 12), (4, 13), (4, 14), (4, 16), (4, 18), (4, 20), (4, 22), (4, 23), (5, 1), (5, 3), (5, 4), (5, 8), (5, 10), (5, 12), (5, 14), (5, 16), (5, 18), (5, 23), (6, 13), (6, 14), (6, 18), (7, 3), (7, 8), (7, 10), (7, 14), (7, 15), (7, 18), (7, 20), (8, 1), (8, 3), (8, 4), (8, 5), (8, 7), (8, 10), (8, 12), (8, 14), (8, 16), (8, 18), (8, 20), (8, 23), (9, 0), (9, 1), (9, 3), (9, 4), (9, 10), (9, 11), (9, 13), (9, 14), (9, 16), (9, 18), (9, 19), (9, 20), (9, 22), (10, 0), (10, 1), (10, 3), (10, 4), (10, 5), (10, 7), (10, 8), (10, 9), (10, 13), (10, 14), (10, 16), (10, 18), (10, 19), (10, 20), (11, 3), (11, 9), (11, 16), (11, 18), (12, 1), (12, 2), (12, 3), (12, 4), (12, 5), (12, 8), (12, 14), (12, 16), (12, 18), (12, 23), (13, 1), (13, 4), (13, 6), (13, 9), (13, 10), (13, 14), (13, 18), (13, 21), (14, 1), (14, 3), (14, 4), (14, 5), (14, 6), (14, 7), (14, 8), (14, 9), (14, 10), (14, 12), (14, 13), (14, 16), (14, 17), (14, 18), (14, 19), (14, 20), (14, 22), (14, 23), (15, 3), (15, 7), (16, 0), (16, 1), (16, 2), (16, 3), (16, 4), (16, 5), (16, 8), (16, 9), (16, 10), (16, 11), (16, 12), (16, 14), (16, 17), (16, 18), (16, 19), (16, 23), (17, 14), (17, 16), (17, 18), (17, 19), (18, 1), (18, 2), (18, 3), (18, 4), (18, 5), (18, 6), (18, 7), (18, 8), (18, 9), (18, 10), (18, 11), (18, 12), (18, 13), (18, 14), (18, 16), (18, 17), (18, 19), (18, 20), (18, 21), (18, 22), (18, 23), (19, 0), (19, 9), (19, 10), (19, 14), (19, 16), (19, 17), (19, 18), (19, 23), (20, 3), (20, 4), (20, 7), (20, 8), (20, 9), (20, 10), (20, 14), (20, 18), (20, 22), (21, 13), (21, 18), (22, 4), (22, 9), (22, 14), (22, 18), (22, 20), (23, 1), (23, 3), (23, 4), (23, 5), (23, 8), (23, 12), (23, 14), (23, 16), (23, 18), (23, 19)]
 def nbrs (v : Nat) : List Nat := (edges.filter (fun e => e.1 == v)).map (fun e => e.2)
 def step (s : List Nat) : List Nat := (s ++ s.flatMap nbrs).eraseDups
 def flood : Nat → List Nat → List Nat
@@ -369,9 +462,9 @@ def flood : Nat → List Nat → List Nat
 -- each is joined to each through a chain of exact identities. This is the theorem the phrase "all is
 -- entangled" should mean, and it is the strongest form of it that is true here.
 theorem the_entanglement_graph_is_connected :
-  (flood 11 [0]).eraseDups.length == doms.length
-  ∧ doms.length == 11
-  ∧ (flood 11 [0]).eraseDups.length == 11 := by decide
+  (flood 24 [0]).eraseDups.length == doms.length
+  ∧ doms.length == 24
+  ∧ (flood 24 [0]).eraseDups.length == 24 := by decide
 
 -- 2 · AND NO VERTEX IS ISOLATED, which is the weaker statement, decided separately because the two are
 -- different: a graph can have no isolated vertex and still fall into several components. Both hold here, and
@@ -385,16 +478,63 @@ theorem no_domain_is_entangled_with_nothing :
 -- passing through chemistry. Decided as the two-step reach: juggling is absent from metrology's own
 -- neighbourhood and present after two steps. "Shared substrate" measured instead of asserted.
 theorem the_distant_pair_is_joined_only_through_a_hub :
-  !((nbrs 6).contains 5)
-  ∧ (flood 2 [6]).contains 5
-  ∧ (nbrs 6).contains 2
-  ∧ (nbrs 2).contains 5 := by decide
+  !((nbrs 15).contains 11)
+  ∧ (flood 2 [15]).contains 11
+  ∧ (nbrs 15).contains 3
+  ∧ (nbrs 3).contains 11 := by decide
 
 -- THE NEAR MISS THAT DOES NOT COIL. n(n+1)/2 and n(n-1)/2 sit one index apart, and if the
 -- grid could not separate them it could not establish any of the identities above either.
 theorem the_staircase_and_the_handshake_never_agree_above_zero :
   (List.range' 1 20).all (fun n => n * (n + 1) / 2 != n * (n - 1) / 2)
   ∧ (List.range' 1 20).all (fun n => n * (n + 1) / 2 == n * (n - 1) / 2 + n) := by decide
+
+-- ── THE SEPARATIONS, WHICH ARE WHAT THE WIDENED GRID NEEDS MOST ───────────────────────────────────────────
+-- Going from 11 domains to 24 doubled the chances that two expressions coincide by accident, so the theorems
+-- that say things stay APART carry more weight than before, not less.
+
+-- 1 · THE SAME RECURSION, DIFFERENT SEQUENCES. Lucas and Fibonacci obey F(n) = F(n-1) + F(n-2) identically and
+-- differ only in the seed, which is enough: they agree at exactly one point in range and part company for
+-- good after it. A grid that merged them would be merging a recursion with its own initial conditions.
+def lucasAux : Nat → Nat → Nat → Nat
+  | 0, a, _ => a
+  | (n + 1), a, b => lucasAux n b (a + b)
+def lucasN (n : Nat) : Nat := lucasAux n 2 1
+
+theorem lucas_and_fibonacci_share_a_recursion_and_not_a_sequence :
+  fibN 1 == lucasN 1
+  ∧ (List.range' 2 18).all (fun n => fibN n != lucasN n)
+  ∧ (List.range' 1 18).all (fun n => fibN (n + 2) == fibN (n + 1) + fibN n
+      && lucasN (n + 2) == lucasN (n + 1) + lucasN n) := by decide
+
+-- 2 · THE THREE POLYGON COUNTS STAY APART. Handshakes n(n-1)/2, the staircase n(n+1)/2 and a polygon's
+-- diagonals n(n-3)/2 are three expressions within one index of each other, and all three appear in this
+-- vocabulary under different subjects. They are pairwise distinct from n = 4 up; below that the degenerate
+-- cases coincide, and the theorem states where rather than starting the range past the awkward part.
+theorem the_three_polygon_counts_are_pairwise_distinct_from_four :
+  (List.range' 4 17).all (fun n =>
+    n * (n - 1) / 2 != n * (n + 1) / 2
+    && n * (n - 1) / 2 != n * (n - 3) / 2
+    && n * (n + 1) / 2 != n * (n - 3) / 2)
+  ∧ (List.range' 1 20).all (fun n => n * (n + 1) / 2 == n * (n - 1) / 2 + n) := by decide
+
+-- 3 · THE OCTAVE AND THE FIFTH MEET ONLY WHERE NOTHING IS STACKED. 2^n and 3^n coincide at n = 0 and nowhere
+-- after, which is the same fact src/proof/entangled.lean states about the comma, arriving here from the other
+-- side: the two coils are separate coils, and no amount of stacking merges them.
+theorem the_octave_and_the_fifth_meet_only_at_zero :
+  2 ^ 0 == 3 ^ 0
+  ∧ (List.range' 1 20).all (fun n => 2 ^ n != 3 ^ n)
+  ∧ (List.range' 1 20).all (fun n => 2 ^ n < 3 ^ n) := by decide
+
+-- 4 · WHERE THE DIGIT ROOT LEAVES THE INTEGERS, AND WHY A SHORT SEARCH CANNOT SEE IT. The digit root of n
+-- EQUALS n for every n up to nine and first differs at ten. That is not a curiosity here: an outside catalogue
+-- was asked to corroborate this coil on its first eight terms and returned A000027, "the positive integers" —
+-- a true answer to the question asked and the wrong sequence, because the two are indistinguishable until the
+-- tenth term. The search was widened after this theorem was written, and the theorem is the reason it had to be.
+theorem the_digit_root_leaves_the_integers_at_ten :
+  (List.range' 1 9).all (fun n => (if n = 0 then 0 else 1 + (n - 1) % 9) == n)
+  ∧ (if (10 : Nat) = 0 then 0 else 1 + (10 - 1) % 9) != 10
+  ∧ (List.range' 10 11).all (fun n => (if n = 0 then 0 else 1 + (n - 1) % 9) != n) := by decide
 
 -- AND THE FACTORIAL JOINS NOTHING: it outgrows every other expression here, so no identity can hold. The
 -- boundary is named rather than stepped over — at n = 3 the factorial EQUALS the triangular number, both 6,

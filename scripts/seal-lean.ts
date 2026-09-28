@@ -120,7 +120,19 @@ if (orphans.length) {
   const covered: Record<string, string> = existsSync('src/proof/covered.json')
     ? JSON.parse(readFileSync('src/proof/covered.json', 'utf8')) : {}
   const bare = (k: string) => k.replace(/^lean_/, '')
-  const keyFor = (name: string) => [...liveKeys].find((k) => bare(k) === name || bare(k).endsWith('_' + name) || bare(k).endsWith('.' + name))
+  // ── AND A RENAME COULD NEVER BE CARRIED IN ONE RUN, WHICH IS AN ORDERING BUG AND NOT A POLICY ────────────
+  // This looked for the successor among LEDGER keys only. The orphan sweep runs before the sealing below, so a
+  // theorem renamed in the same commit has its successor in the KERNEL but not yet in the ledger — `keyFor`
+  // returned nothing, `successorOf` gave up, and the run refused with "N have no source" while offering to
+  // WITHDRAW facts the kernel had just checked. A second run did not help: nothing had been sealed, so the
+  // successor was still not a live key, and the refusal was stable.
+  // Found by renaming 25 generated theorems at once: src/proof/coils.lean names each cross-domain identity
+  // after the invariant now instead of after its domain list, because a name that enumerates cannot survive
+  // the vocabulary growing. Every one of the 25 was a pure rename with the same statement on both sides, and
+  // this gate could not express that. The fix is to let the successor be a key this run is ABOUT to write:
+  // it is in the kernel, verified, and whether its ledger row is appended sixty lines later is bookkeeping.
+  const pendingKeys = new Set(fresh.map((t) => t.key))
+  const keyFor = (name: string) => [...liveKeys, ...pendingKeys].find((k) => bare(k) === name || bare(k).endsWith('_' + name) || bare(k).endsWith('.' + name))
   const successorOf = (o: { key: string }): string | undefined => {
     const lex = [...liveKeys].find((k) => k !== o.key && k.endsWith('_' + bare(o.key)))
     if (lex) return lex

@@ -73,6 +73,30 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     return JSON.stringify({ ...r,
       note: 'NONE_FOUND means these searches, on this date, returned nothing at the floors shown — never that nothing earlier exists. A keyword search misses what it does not name. Nothing was written to this deposit.' }, null, 1)
   },
+  entanglements: async (a) => {
+    const { execFileSync } = await import('node:child_process')
+    const out = execFileSync('node', ['scripts/coils.ts'], { encoding: 'utf8', maxBuffer: 16 << 20 })
+    // the cross-domain section only: the ring and address vocabularies are the `coils` tool's answer
+    const i = out.indexOf('one grid, every science')
+    const body = i < 0 ? out : out.slice(i)
+    if (a?.domain) {
+      const d = String(a.domain)
+      const kept = body.split('\n').filter((l) => l.includes(d) || /^\s*(✳|·|AND|THE|WHAT|IT )/.test(l))
+      return kept.join('\n')
+    }
+    return a?.spanningOnly ? body.split('\n').filter((l) => /✳|↔/.test(l)).join('\n') : body
+  },
+  api_joins: async (a) => {
+    const { execFileSync } = await import('node:child_process')
+    // THE SCRIPT PATH IS WRITTEN OUT, NOT BUILT INTO A VARIABLE. The first version assembled the argv array
+    // first and passed the variable, and scripts/mcp-gate.ts then read this handler as needing nothing at all —
+    // a handler that hides which script it runs hides its own requirements, and the gate said so. The literal
+    // is here so the dependency is visible to anything reading this source, which includes the gate.
+    const p = a?.probe ? String(a.probe) : ''
+    return p
+      ? execFileSync('node', ['scripts/api-discover.ts', '--probe', p], { encoding: 'utf8', maxBuffer: 16 << 20 })
+      : execFileSync('node', ['scripts/api-discover.ts'], { encoding: 'utf8', maxBuffer: 16 << 20 })
+  },
   coils: async () => {
     const { execFileSync } = await import('node:child_process')
     return execFileSync('node', ['scripts/coils.ts'], { encoding: 'utf8', maxBuffer: 8 << 20 })

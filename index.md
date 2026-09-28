@@ -33,12 +33,12 @@ last because the orbit never reaches it.
 
 - The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 1241 kernel-accepted declarations across 65 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `81272e47-0392-8adb-b433-416ca427e6df`</sub>
-- 1054 of those 1241 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `2e1f74e1-9931-8f40-8315-a95f126a9e93`</sub>
-- 1496 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `50214631-5371-81b5-a228-9b74169d3aa3`</sub>
+- The formal layer holds 1248 kernel-accepted declarations across 65 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `156b8707-0e1e-8b78-89bf-220abf2b0f87`</sub>
+- 1061 of those 1248 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `d1610ebf-8afe-8f5a-bc0e-30737ffba11f`</sub>
+- 1528 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `0ae1f87d-1006-81dd-814d-411ae467ebd4`</sub>
 
 ## 2 · The ring
 
@@ -61,10 +61,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 3360 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `f87245ec-1d34-8209-b780-c65ccd8f915a`</sub>
-- The count is an exact multiple of eight — 3360 is 420 octaves with no remainder.
-  <sub>SEALED · `ea4a36b3-00f4-86c7-8746-a8396cc81a65`</sub>
+- The ledger records 3392 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `3a3a96da-eb76-8f4e-8629-ee5c372d6293`</sub>
+- The count is an exact multiple of eight — 3392 is 424 octaves with no remainder.
+  <sub>SEALED · `77c87a14-5981-8313-9f6c-709ee3fcb665`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -76,10 +76,10 @@ last because the orbit never reaches it.
   <sub>SEALED · `09b4450b-3016-8368-89e2-74787fa214d9`</sub>
 - How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. What any given host grants varies with its free memory and is deliberately not recorded here; `npm run lanes-check` prints it..
   <sub>SEALED · `85560e4e-7642-820b-aa1a-91f0e7e14c41`</sub>
-- The tools are reachable from a program: 25 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
-  <sub>SEALED · `321d23c3-801b-8f61-87f7-85eef9e0c91d`</sub>
-- The stdio server advertises 2 of those 25 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
-  <sub>SEALED · `392aee0b-95c6-8943-8fcc-305b02156223`</sub>
+- The tools are reachable from a program: 27 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
+  <sub>SEALED · `8652003e-3344-8db6-b609-874d5ce0e952`</sub>
+- The stdio server advertises 2 of those 27 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
+  <sub>SEALED · `5f87213f-e4cb-8f58-8362-7c9c22ea1ba3`</sub>
 
 ## The floor
 
@@ -116,7 +116,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-65 Lean files in 7 wings, 1241 declarations of which 1241 are theorems. The prose in this section is read out of the
+65 Lean files in 7 wings, 1248 declarations of which 1248 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -148,7 +148,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The named properties of this ring are not closed under their own diagonal** — `closure.lean`, 8 theorem(s). ring, using the nine properties its own files name. A limit exhibited rather than conceded. prior_art_search: not performed — Cantor is named above. prior_art_pool: unbounded prior_art_own: the nine named properties, the exhibited witness, and the honesty clause in theorem 8
 
-**Expressions that compute the same residues, clustered** — `coils.lean`, 43 theorem(s). it would be overwritten. prior_art_search: not performed — extensionality is named above. prior_art_pool: unbounded prior_art_own: the coils below, and that they are computed from the vocabulary rather than chosen
+**Expressions that compute the same residues, clustered** — `coils.lean`, 50 theorem(s). it would be overwritten. prior_art_search: not performed — extensionality is named above. prior_art_pool: unbounded prior_art_own: the coils below, and that they are computed from the vocabulary rather than chosen
 
 **The two-sided coin** — `coin.lean`, 12 theorem(s). One involution on ten digits, two sides, one fixed point, and one digit that leaves.
 
@@ -264,7 +264,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-29 of 1241 declarations carry no comment of their own and are shown here as the gap they are, not
+29 of 1248 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -273,20 +273,20 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 3,360 — 420 octaves exactly |
-| standing — carries its own proof | **1241** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **526** |
+| ledger entries | 3,392 — 424 octaves exactly |
+| standing — carries its own proof | **1248** |
+| carried — withdrawn on its own evidence, proved by a live theorem | **551** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **1767** of 3,360 |
-| standing keys → distinct theorems | 1241 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 65 · 1241 theorems (1054 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 1054 of 1241 |
+| proved in total | **1799** of 3,392 |
+| standing keys → distinct theorems | 1248 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 65 · 1248 theorems (1061 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 1061 of 1248 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 526 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 551 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 158 other · 108 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 183 other · 108 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -318,4 +318,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*20 claims, all verified · 1241 Lean theorems · 3360 ledger entries · trial root `e0c85fa4-3b7c-89f8-9445-542b5ec07ce4` · integrity, not truth*
+*20 claims, all verified · 1248 Lean theorems · 3392 ledger entries · trial root `20a7ffcd-37df-84f6-accc-87390db63afc` · integrity, not truth*

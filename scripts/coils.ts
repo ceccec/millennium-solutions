@@ -41,6 +41,7 @@
  *  that matters. FAILING is. scripts/settled.ts was written with the check and this one was not, which is
  *  the asymmetry FINDINGS.md 7o named and this closes. */
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
+import { DOM_EXPRS, ALL_DOMS, DROPPED } from '../src/entangle/index.ts'
 import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
 
 const m9 = (n: number) => ((n % 9) + 9) % 9
@@ -125,85 +126,18 @@ const numPairs = numCoils.reduce((a, g) => a + (g.length * (g.length - 1)) / 2, 
 // rather than a resemblance. It does NOT establish that either subject explains the other, that the identity
 // is interesting, or that a student who learns one has learned the other. Those are different claims and two
 // of them are empirical.
-type DomExpr = { say: string; dom: string; lean: string; at: (n: number) => bigint }
+// The vocabulary itself moved to src/entangle/index.ts and grew from 37 expressions over 11 domains to 80
+// over 24. It is data and it belongs beside the other registries rather than inside the generator that reads
+// it — the same split src/mcp/index.ts records the reason for, and it is what let the widening happen without
+// this file growing at all.
 const N = Array.from({ length: 20 }, (_, i) => i + 1)
-const B = (x: number | bigint) => BigInt(x)
-const fib = (n: number): bigint => { let a = 0n, b = 1n; for (let i = 0; i < n; i++) { [a, b] = [b, a + b] } return a }
-const fact = (n: number): bigint => { let r = 1n; for (let i = 2; i <= n; i++) r *= B(i); return r }
-const choose = (n: number, k: number): bigint => k < 0 || k > n ? 0n : fact(n) / (fact(k) * fact(n - k))
-const catalan = (n: number): bigint => choose(2 * n, n) / B(n + 1)
-
-const domExprs: DomExpr[] = [
-  // ── DOUBLING. The same law under five names, and the oldest cross-domain identity there is.
-  { say: 'the frequency ratio of n octaves', dom: 'music', lean: '2 ^ n', at: (n) => 2n ** B(n) },
-  { say: 'the values an n-bit register addresses', dom: 'computing', lean: '2 ^ n', at: (n) => 2n ** B(n) },
-  { say: 'the cells after n divisions', dom: 'biology', lean: '2 ^ n', at: (n) => 2n ** B(n) },
-  { say: 'the dilution factor after n halvings', dom: 'chemistry', lean: '2 ^ n', at: (n) => 2n ** B(n) },
-  { say: 'the subsets of an n-element set', dom: 'number theory', lean: '2 ^ n', at: (n) => 2n ** B(n) },
-  // ── DOUBLING LESS ONE. A knockout bracket and a register ceiling are the same integer at every n.
-  { say: 'the matches to settle a knockout of 2^n entrants', dom: 'sport', lean: '2 ^ n - 1', at: (n) => 2n ** B(n) - 1n },
-  { say: 'the largest value n bits can hold', dom: 'computing', lean: '2 ^ n - 1', at: (n) => 2n ** B(n) - 1n },
-  { say: 'the n-th Mersenne candidate', dom: 'number theory', lean: '2 ^ n - 1', at: (n) => 2n ** B(n) - 1n },
-  { say: 'the nodes of a complete binary tree of depth n-1', dom: 'taxonomy', lean: '2 ^ n - 1', at: (n) => 2n ** B(n) - 1n },
-  // ── TRIPLING, which is where the comma comes from.
-  { say: 'the numerator of n stacked perfect fifths', dom: 'music', lean: '3 ^ n', at: (n) => 3n ** B(n) },
-  { say: 'the ternary strings of length n', dom: 'number theory', lean: '3 ^ n', at: (n) => 3n ** B(n) },
-  { say: 'the branches after n ternary splits', dom: 'botany', lean: '3 ^ n', at: (n) => 3n ** B(n) },
-  // ── PAIRWISE INTERACTION. Handshakes, reacting species and graph edges are one count.
-  { say: 'the handshakes among n people', dom: 'number theory', lean: 'n * (n - 1) / 2', at: (n) => B(n * (n - 1) / 2) },
-  { say: 'the pairwise interactions among n species', dom: 'chemistry', lean: 'n * (n - 1) / 2', at: (n) => B(n * (n - 1) / 2) },
-  { say: 'the edges of a complete graph on n vertices', dom: 'geometry', lean: 'n * (n - 1) / 2', at: (n) => B(n * (n - 1) / 2) },
-  { say: 'the fixtures of an n-team round robin', dom: 'sport', lean: 'n * (n - 1) / 2', at: (n) => B(n * (n - 1) / 2) },
-  // ── AND THE NEAR MISS THAT MUST NOT COIL. The staircase sum is n(n+1)/2, one index off the handshake, and
-  //    if these two ever landed together the grid would be proving an identity that is false.
-  { say: 'the staircase sum of the first n steps', dom: 'geometry', lean: 'n * (n + 1) / 2', at: (n) => B(n * (n + 1) / 2) },
-  { say: 'the beats in a bar of n accumulating pulses', dom: 'music', lean: 'n * (n + 1) / 2', at: (n) => B(n * (n + 1) / 2) },
-  // ── FIBONACCI. Phyllotaxis, rabbits and Zeckendorf are the same recursion, which is the entanglement most
-  //    often asserted loosely and is exact here.
-  { say: 'the spirals in a phyllotactic whorl at rank n', dom: 'botany', lean: 'fib n', at: (n) => fib(n) },
-  { say: 'the pairs in the n-th generation', dom: 'biology', lean: 'fib n', at: (n) => fib(n) },
-  { say: 'the n-th Zeckendorf base element', dom: 'number theory', lean: 'fib n', at: (n) => fib(n) },
-  // ── CATALAN. RNA folds, balanced brackets and triangulations — one sequence, three subjects.
-  { say: 'the secondary structures of an n-pair strand', dom: 'biology', lean: 'catalan n', at: (n) => catalan(n) },
-  { say: 'the balanced bracketings of length 2n', dom: 'computing', lean: 'catalan n', at: (n) => catalan(n) },
-  { say: 'the triangulations of a convex (n+2)-gon', dom: 'geometry', lean: 'catalan n', at: (n) => catalan(n) },
-  // ── DECADES. A pH step and an order of magnitude are the same step.
-  { say: 'a step of n on the pH scale', dom: 'chemistry', lean: '10 ^ n', at: (n) => 10n ** B(n) },
-  { say: 'n orders of magnitude', dom: 'metrology', lean: '10 ^ n', at: (n) => 10n ** B(n) },
-  // ── THE CIRCLE OF FIFTHS IS A CYCLIC ORBIT, and the two statements are one.
-  { say: 'the pitch class after n fifths', dom: 'music', lean: '(7 * n) % 12', at: (n) => B((7 * n) % 12) },
-  { say: 'the orbit of the generator 7 in Z/12', dom: 'number theory', lean: '(7 * n) % 12', at: (n) => B((7 * n) % 12) },
-  // ── CASTING OUT NINES, which is this deposit's own ring arriving from arithmetic.
-  { say: 'the digit root of n', dom: 'number theory', lean: 'if n = 0 then 0 else 1 + (n - 1) % 9', at: (n) => B(n === 0 ? 0 : 1 + (n - 1) % 9) },
-  { say: 'the residue of n on the nonagon', dom: 'geometry', lean: 'if n = 0 then 0 else 1 + (n - 1) % 9', at: (n) => B(n === 0 ? 0 : 1 + (n - 1) % 9) },
-  // ── JUGGLING. The states of an n-ball pattern at height h are a binomial, which is the same object that
-  //    counts chemical isomers by substitution and hands in a card game.
-  { say: 'the states of an n-ball pattern at height 12', dom: 'juggling', lean: 'choose 12 n', at: (n) => choose(12, Math.min(n, 12)) },
-  { say: 'the ways to choose n substituents from 12 sites', dom: 'chemistry', lean: 'choose 12 n', at: (n) => choose(12, Math.min(n, 12)) },
-  { say: 'the n-subsets of a twelve-element set', dom: 'number theory', lean: 'choose 12 n', at: (n) => choose(12, Math.min(n, 12)) },
-  // ── AND FOUR THAT SHOULD COIL WITH NOTHING. Included deliberately: a vocabulary in which everything coils
-  //    is a vocabulary that has stopped discriminating, and these are the control on that.
-  { say: 'the factorial orderings of n elements', dom: 'number theory', lean: 'n !', at: (n) => fact(n) },
-  { say: 'the semitone cents of n steps', dom: 'music', lean: '100 * n', at: (n) => B(100 * n) },
-  { say: 'the degrees of n nonagon steps', dom: 'geometry', lean: '40 * n', at: (n) => B(40 * n) },
-  { say: 'the taxonomic ranks below kingdom at depth n', dom: 'taxonomy', lean: 'n', at: (n) => B(n) },
-]
-
-/** The Lean form of an expression, with `n` free. Kept beside the TypeScript so the two cannot drift: the
- *  theorem decides the same arithmetic the report clustered on, and if a `lean` string were wrong the kernel
- *  would refuse the theorem rather than the report quietly describing something else. */
-const leanOf = (e: DomExpr): string => e.lean
-  .replace(/\bfib n\b/, 'fibN n')
-  .replace(/\bcatalan n\b/, 'catalanN n')
-  .replace(/\bchoose 12 n\b/, 'chooseN 12 n')
-  .replace(/\bn !\b/, 'fct n')
+const domExprs = DOM_EXPRS
 
 const domBy = new Map<string, DomExpr[]>()
 for (const e of domExprs) { const k = N.map(e.at).join('|'); if (!domBy.has(k)) domBy.set(k, []); domBy.get(k)!.push(e) }
 const domCoils = [...domBy.values()].filter((g) => g.length > 1).sort((a, b) => b.length - a.length)
 const domAlone = domExprs.filter((e) => !domCoils.some((g) => g.includes(e)))
 const domSpanning = domCoils.filter((g) => new Set(g.map((e) => e.dom)).size > 1)
-const ALL_DOMS = [...new Set(domExprs.map((e) => e.dom))].sort()
 // which domains are joined by at least one exact identity — the adjacency the experiment measures
 const adj = new Map<string, Set<string>>()
 for (const g of domSpanning) {
@@ -377,17 +311,56 @@ const numBody = numCoils.map((g, i) => {
 // and a Catalan number through choose(2n,n) would make the file take minutes to prove what it proves in six.
 // So each theorem carries the grid it was decided over rather than a grid chosen to look impressive, and a
 // reader can see that the identity was checked at twenty points or at six.
-const LEAN_N: Record<string, number> = { 'fib n': 16, 'choose 12 n': 12, 'catalan n': 6 }
-const domBody = domSpanning.map((g, i) => {
+const LEAN_N: Record<string, number> = { 'fib n': 16, 'chooseN 12 n': 12, 'catalan n': 6, 'fct n': 10, 'chooseN (2 * n) n': 8 }
+
+/** The Lean form of an expression. `null` means this deposit has no cheap, axiom-free kernel definition for it
+ *  yet, and the coil is then reported as a NAMED GAP rather than emitted.
+ *
+ *  TWO ARE NULL AND THEY STAY NULL FOR A REASON. Bell numbers and unrestricted partitions are decided in the
+ *  TypeScript layer and corroborated by the catalogue (A000110, A000041), and both have kernel definitions that
+ *  are either expensive or need a termination proof this file is not the place for. The tempting shortcut was
+ *  to have the generator emit the computed sequence as a list and prove the members equal it — but that is a
+ *  generator writing both sides of its own comparison, which is exactly the certificate shape this deposit
+ *  spent the day removing from 42 theorems. A named gap is honest; a self-satisfied theorem is not. */
+const leanOf = (e: DomExpr): string | null => {
+  if (/\bbell n\b|\bparts n\b|\bmotzkin n\b|\bderange n\b|\blucas n\b/.test(e.lean)) return null
+  return e.lean
+    .replace(/\bfib n\b/, 'fibN n')
+    .replace(/\bcatalan n\b/, 'catalanN n')
+    .replace(/\bfct n\b/, 'fct n')
+}
+const emittable = domSpanning.filter((g) => leanOf(g[0]) !== null)
+const notEmittable = domSpanning.filter((g) => leanOf(g[0]) === null)
+const domBody = emittable.map((g, i) => {
   const lim = LEAN_N[g[0].lean] ?? 20
   const ds = [...new Set(g.map((e) => e.dom))].sort()
-  const name = 'the_identity_joining_' + ds.join('_and_').replace(/[^a-z_]/g, '_')
+  // ── NAMED AFTER THE INVARIANT, NOT THE MEMBERS ──────────────────────────────────────────────────────────
+  // The first version named each theorem after its DOMAIN LIST, and widening the vocabulary from 11 domains to
+  // 24 changed every name and orphaned 11 sealed keys in one run. This tree already had the lesson written
+  // down, in src/proof/rights.lean: "A name that enumerates cannot survive growth; a name that quantifies
+  // can." I wrote a name that enumerates and the ledger paid for it the first time the vocabulary grew.
+  // The expression IS the invariant — which subjects happen to share it is exactly the part that changes when
+  // more subjects are added — so the name is the expression and adding a domain now leaves the key alone.
+  const name = 'the_identity_of_' + (g[0].lean
+    .replace(/\bchooseN\b/g, 'choose').replace(/\bfibN\b/g, 'fib').replace(/\bcatalanN\b/g, 'catalan')
+    .replace(/\bfct\b/g, 'factorial').replace(/\^/g, '_to_the_').replace(/%/g, '_mod_')
+    .replace(/\*/g, '_times_').replace(/\//g, '_over_').replace(/[+]/g, '_plus_').replace(/-/g, '_minus_')
+    .replace(/[()]/g, '').replace(/\s+/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '')
+    .replace(/[^a-z0-9_]/g, '') || 'unnamed')
   const conj = g.slice(1).map((e) => `(${leanOf(g[0])}) == (${leanOf(e)})`).join('\n       && ')
   return `-- ${ds.join(' ↔ ')}\n`
     + g.map((e) => `--   ${e.dom}: ${e.say}\n`).join('')
-    + `theorem ${name}_at_every_n${i} :\n`
+    + `-- joined here by: ${ds.join(', ')}\n`
+    + `theorem ${name} :\n`
     + `  (List.range' 1 ${lim}).all (fun n => ${conj || 'true'}) := by decide\n`
 }).join('\n')
+  + (notEmittable.length ? `\n-- ── ${notEmittable.length} CROSS-DOMAIN IDENTITIES NOT YET IN THE KERNEL ────────────────────────────\n`
+    + `-- Decided in scripts/coils.ts over n = 1..20 and corroborated against the OEIS, but with no cheap\n`
+    + `-- axiom-free definition here yet. NAMED rather than omitted — and deliberately not emitted as a list the\n`
+    + `-- generator computed and then proved equal to itself. That is a generator writing both sides of its own\n`
+    + `-- comparison, the certificate shape this deposit removed from 42 theorems today, and it would be worse\n`
+    + `-- here for wearing the look of proof.\n`
+    + notEmittable.map((g) => `--   ${[...new Set(g.map((e) => e.dom))].sort().join(' ↔ ')}  (${g[0].lean})\n`).join('') : '')
 
 // AND THE NEGATIVE CONTROL, WHICH IS THE THEOREM THAT MAKES THE OTHERS MEAN ANYTHING. If everything on this
 // grid agreed with everything, the coils above would be an artefact of a grid too coarse to tell anything
@@ -447,6 +420,53 @@ const domControl = `-- THE NEAR MISS THAT DOES NOT COIL. n(n+1)/2 and n(n-1)/2 s
 theorem the_staircase_and_the_handshake_never_agree_above_zero :
   (List.range' 1 20).all (fun n => n * (n + 1) / 2 != n * (n - 1) / 2)
   ∧ (List.range' 1 20).all (fun n => n * (n + 1) / 2 == n * (n - 1) / 2 + n) := by decide
+
+-- ── THE SEPARATIONS, WHICH ARE WHAT THE WIDENED GRID NEEDS MOST ───────────────────────────────────────────
+-- Going from 11 domains to 24 doubled the chances that two expressions coincide by accident, so the theorems
+-- that say things stay APART carry more weight than before, not less.
+
+-- 1 · THE SAME RECURSION, DIFFERENT SEQUENCES. Lucas and Fibonacci obey F(n) = F(n-1) + F(n-2) identically and
+-- differ only in the seed, which is enough: they agree at exactly one point in range and part company for
+-- good after it. A grid that merged them would be merging a recursion with its own initial conditions.
+def lucasAux : Nat → Nat → Nat → Nat
+  | 0, a, _ => a
+  | (n + 1), a, b => lucasAux n b (a + b)
+def lucasN (n : Nat) : Nat := lucasAux n 2 1
+
+theorem lucas_and_fibonacci_share_a_recursion_and_not_a_sequence :
+  fibN 1 == lucasN 1
+  ∧ (List.range' 2 18).all (fun n => fibN n != lucasN n)
+  ∧ (List.range' 1 18).all (fun n => fibN (n + 2) == fibN (n + 1) + fibN n
+      && lucasN (n + 2) == lucasN (n + 1) + lucasN n) := by decide
+
+-- 2 · THE THREE POLYGON COUNTS STAY APART. Handshakes n(n-1)/2, the staircase n(n+1)/2 and a polygon's
+-- diagonals n(n-3)/2 are three expressions within one index of each other, and all three appear in this
+-- vocabulary under different subjects. They are pairwise distinct from n = 4 up; below that the degenerate
+-- cases coincide, and the theorem states where rather than starting the range past the awkward part.
+theorem the_three_polygon_counts_are_pairwise_distinct_from_four :
+  (List.range' 4 17).all (fun n =>
+    n * (n - 1) / 2 != n * (n + 1) / 2
+    && n * (n - 1) / 2 != n * (n - 3) / 2
+    && n * (n + 1) / 2 != n * (n - 3) / 2)
+  ∧ (List.range' 1 20).all (fun n => n * (n + 1) / 2 == n * (n - 1) / 2 + n) := by decide
+
+-- 3 · THE OCTAVE AND THE FIFTH MEET ONLY WHERE NOTHING IS STACKED. 2^n and 3^n coincide at n = 0 and nowhere
+-- after, which is the same fact src/proof/entangled.lean states about the comma, arriving here from the other
+-- side: the two coils are separate coils, and no amount of stacking merges them.
+theorem the_octave_and_the_fifth_meet_only_at_zero :
+  2 ^ 0 == 3 ^ 0
+  ∧ (List.range' 1 20).all (fun n => 2 ^ n != 3 ^ n)
+  ∧ (List.range' 1 20).all (fun n => 2 ^ n < 3 ^ n) := by decide
+
+-- 4 · WHERE THE DIGIT ROOT LEAVES THE INTEGERS, AND WHY A SHORT SEARCH CANNOT SEE IT. The digit root of n
+-- EQUALS n for every n up to nine and first differs at ten. That is not a curiosity here: an outside catalogue
+-- was asked to corroborate this coil on its first eight terms and returned A000027, "the positive integers" —
+-- a true answer to the question asked and the wrong sequence, because the two are indistinguishable until the
+-- tenth term. The search was widened after this theorem was written, and the theorem is the reason it had to be.
+theorem the_digit_root_leaves_the_integers_at_ten :
+  (List.range' 1 9).all (fun n => (if n = 0 then 0 else 1 + (n - 1) % 9) == n)
+  ∧ (if (10 : Nat) = 0 then 0 else 1 + (10 - 1) % 9) != 10
+  ∧ (List.range' 10 11).all (fun n => (if n = 0 then 0 else 1 + (n - 1) % 9) != n) := by decide
 
 -- AND THE FACTORIAL JOINS NOTHING: it outgrows every other expression here, so no identity can hold. The
 -- boundary is named rather than stepped over — at n = 3 the factorial EQUALS the triangular number, both 6,

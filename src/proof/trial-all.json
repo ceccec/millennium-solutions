@@ -20158,5 +20158,197 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "03319608-2cb7-86cd-ad43-7296efc74f55"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_biology_and_chemistry_and_computing_and_cryptography_and_epidemiology_and_law_and_logistics_and_music_and_number_theory_and_textiles_at_every_n0",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "23bebb4c-6e26-8b16-a9dd-eea782e2fd4c"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_chemistry_and_economics_and_epidemiology_and_geometry_and_logistics_and_number_theory_and_sport_at_every_n1",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "99da4636-a240-82ba-bbd8-706f74dbf00c"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_computing_and_games_and_logistics_and_number_theory_and_sport_and_taxonomy_at_every_n2",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3d5faaeb-e7d5-83a3-a507-e0c297e69c84"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_biology_and_botany_and_computing_and_music_and_number_theory_at_every_n3",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e9e20d2e-94eb-80da-9dd9-41b7b5636e08"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_biology_and_computing_and_games_and_geometry_and_linguistics_at_every_n4",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9cfc9f5d-81cc-8d12-8227-79a8b131217b"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_chemistry_and_games_and_juggling_and_music_and_number_theory_at_every_n5",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "52634648-b5c1-8b0b-a7f7-5499b9900a47"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_botany_and_law_and_music_and_number_theory_at_every_n6",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bf7063f8-4eb2-8ff0-9b61-faccfa2b64db"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_dance_and_linguistics_and_logistics_and_number_theory_at_every_n7",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e666ea79-7f67-8663-91af-3057bb3a992f"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_architecture_and_games_and_geometry_and_physics_at_every_n8",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "62df4078-2714-8d44-9f10-8ac7efab6d73"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_architecture_and_geometry_and_music_at_every_n9",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cf45d965-1414-86d9-8552-58df04cf3d2a"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_logistics_and_navigation_and_physics_at_every_n10",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1244f640-1613-8e40-b12c-30ef17fb15f2"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_chemistry_and_economics_and_metrology_at_every_n11",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c8377a54-6d83-8240-be60-92e1052964c5"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_music_and_navigation_and_number_theory_at_every_n12",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8c3cc5d8-5832-8a5e-990f-b95c5d37c33b"
+  },
+  {
+    "key": "lean_coils_the_identity_joining_cryptography_and_geometry_and_number_theory_at_every_n13",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4676a5f3-6d57-8807-9d02-109554d7f9c3"
+  },
+  {
+    "key": "lean_coils_the_identity_of_2_to_the_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1dba93c9-02e6-8e2c-8f86-acd8071ce24f"
+  },
+  {
+    "key": "lean_coils_the_identity_of_n_times_n_minus_1_over_2",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ab2eae63-c8dd-802d-81ca-b2aa020eda3d"
+  },
+  {
+    "key": "lean_coils_the_identity_of_2_to_the_n_minus_1",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0efa3a47-8a8a-8eaf-a9cf-8f1d5692e4a9"
+  },
+  {
+    "key": "lean_coils_the_identity_of_fib_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "324b3a9c-586f-8244-854c-b947870cb5fa"
+  },
+  {
+    "key": "lean_coils_the_identity_of_catalan_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eb2f0c2f-41e5-86f8-8df1-b72c81d8bfc4"
+  },
+  {
+    "key": "lean_coils_the_identity_of_choose_12_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "630f75f0-8c98-85c8-85e9-d35cdfcb3c90"
+  },
+  {
+    "key": "lean_coils_the_identity_of_3_to_the_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ede09fca-afa5-8e07-a802-cf548c4f5f78"
+  },
+  {
+    "key": "lean_coils_the_identity_of_factorial_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ca518390-8767-8f60-ab44-13a1b5f388ab"
+  },
+  {
+    "key": "lean_coils_the_identity_of_n_times_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "55ae0bb5-0310-8fc9-88f1-ba66833bcea7"
+  },
+  {
+    "key": "lean_coils_the_identity_of_n_times_n_plus_1_over_2",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "240e4410-d5bc-81d8-af29-201ee0e8ca97"
+  },
+  {
+    "key": "lean_coils_the_identity_of_choose_2_times_n_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b510dcbf-aee0-80ec-a0ab-2e13585132fb"
+  },
+  {
+    "key": "lean_coils_the_identity_of_10_to_the_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ccb50cbe-3e92-82f1-9808-ac6a6b82b5c1"
+  },
+  {
+    "key": "lean_coils_the_identity_of_7_times_n_mod_12",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "64b81920-8ebd-8d90-a5d9-4e00bdd0ba7b"
+  },
+  {
+    "key": "lean_coils_the_identity_of_if_n__0_then_0_else_1_plus_n_minus_1_mod_9",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e8ee472c-e78b-831f-b00c-0c11340dfeca"
+  },
+  {
+    "key": "lean_coils_lucas_and_fibonacci_share_a_recursion_and_not_a_sequence",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3c14b0b7-1fb3-801b-88ed-4ef23d79393b"
+  },
+  {
+    "key": "lean_coils_the_three_polygon_counts_are_pairwise_distinct_from_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6ec44d3f-d33f-8fb2-99cb-236956f33237"
+  },
+  {
+    "key": "lean_coils_the_octave_and_the_fifth_meet_only_at_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "74381e03-a7ec-8b56-a9fc-7ceb692f598e"
+  },
+  {
+    "key": "lean_coils_the_digit_root_leaves_the_integers_at_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "47729165-d473-8eae-8417-e6de81c38f9d"
   }
 ]

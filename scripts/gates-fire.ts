@@ -86,6 +86,15 @@ const CONTROLS: Control[] = [
   // happens when a handler gains an import and nobody updates the table. Its first derivation read three
   // tools as needing nothing at all, always in the flattering direction, so this gate is the one that keeps
   // the honest size of "run it yourself" from drifting upward.
+  // AND THE TRANSITIVE HALF, which the first mutation cannot reach. A handler that SPAWNS a networked script
+  // needs the network, one level below anything a reading of the handler can see — mcp-gate resolves it from
+  // src/api/gates.ts NETWORK. Dropping `net` from a tool that shells out to a networked script is the shape
+  // that would tell an offline caller the tool is available, and it is a different defect from a declaration
+  // drifting on a direct dependency, so it gets its own control.
+  { gate: 'mcp-gate (a requirement that travels through a spawn is dropped)', cmd: 'node scripts/mcp-gate.ts', file: 'src/mcp/index.ts',
+    what: 'a tool that shells out to a networked script while declaring it needs no network — available, to a caller who has none',
+    mutate: (s) => s.replace("  api_joins: ['net', 'tree'],", "  api_joins: ['tree'],") },
+
   { gate: 'mcp-gate (a tool\'s declared requirement drifts from its handler)', cmd: 'node scripts/mcp-gate.ts', file: 'src/mcp/index.ts',
     what: 'an MCP tool declaring it needs nothing while its handler reaches the tree — a caller told the surface is larger than it is',
     mutate: (s) => s.replace("  formulas: ['tree'],", "  formulas: ['core'],") },

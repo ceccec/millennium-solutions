@@ -75,6 +75,16 @@ export const TOOLS = [
     inputSchema: { type: 'object', properties: { json: { type: 'string' }, path: { type: 'string' } }, required: [] } },
   { name: 'peer_faces', description: 'List and verify every face present in the shared fusion directory, so this session can check what siblings published rather than trust their reports. Reports each repo, its root, whether it is intact, and any gate it published as FAIL.',
     inputSchema: { type: 'object', properties: { dir: { type: 'string' } }, required: [] } },
+  // ── THE CROSS-DOMAIN LAYER, OPENED TO THE PUBLIC ───────────────────────────────────────────────────────
+  // Both READ. `entanglements` returns a clustering the kernel has already decided and `api_joins` asks other
+  // people's servers and files nothing here — a caller must be able to run the experiment without being able
+  // to amend the record of it, which is the same rule `novelty` follows.
+  { name: 'entanglements', description: 'The cross-domain identity map: 80 expressions from 24 subjects — music, biology, sport, juggling, botany, law, textiles, cryptography and the rest — evaluated on ONE shared grid n = 1..20 and clustered by agreeing at every point. Returns the identities (a knockout bracket and an n-bit register are the same integer; phyllotaxis, breeding pairs and Zeckendorf are one recursion), the domains each joins, the expressions that join NOTHING, and whether the entanglement graph is connected. Decided in src/proof/coils.lean, so the identities hold whether or not this tool answers. An identity is not an explanation: neither subject explains the other, they are one object approached from two sides.',
+    inputSchema: { type: 'object', properties: { domain: { type: 'string' }, spanningOnly: { type: 'boolean' } } } },
+
+  { name: 'api_joins', description: 'Ask several independent public services for the SAME entity and report which values two or more of them return — the join DISCOVERED from the data rather than declared. PubChem, ChEMBL and ChEBI all return the InChIKey BSYNRYMUTXBXSQ-UHFFFAOYSA-N for aspirin, at three different paths, from two institutions on two continents. Negative results are reported and are the interesting ones: two plant-naming authorities share no joinable value, which is the problem Kew\'s credential-gated MPNS exists to solve. A JOIN IS NOT A TRUTH — it establishes that two databases mean the same entity, never that either is correct; two services can agree and both be wrong. Reaches the network; writes nothing.',
+    inputSchema: { type: 'object', properties: { probe: { type: 'string', enum: ['drug', 'protein', 'plant', 'paper'] } } } },
+
   { name: 'ledger_status', description: 'Composition of the ledger: total, live, lean-backed, revoked, portable-to-Lean, chain breaks, duplicate keys/receipts, octave remainder. Measurement only — writes nothing.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'ledger_trial', description: 'Put every ledger entry in the dock and record a verdict with its ground — no bare verdicts. Writes src/proof/trial-all.json. Adjudicates, never removes: what follows from a refusal is the captain\'s to order.',
@@ -119,6 +129,11 @@ export type Need = 'core' | 'tree' | 'git' | 'lean' | 'ledger' | 'net' | 'shared
 
 export const NEEDS: Record<string, Need[]> = {
   novelty: ['net'],
+  entanglements: ['tree'],
+  // BOTH: it reaches other people's servers AND it runs a script from this tree. The first declaration said
+  // only `net`, which was incomplete in the direction that flatters — a tool needing one thing looks more
+  // portable than one needing two, and mcp-gate refused it.
+  api_joins: ['net', 'tree'],
   coils: ['tree'],
   discoveries: ['tree'],
   formulas: ['tree'],

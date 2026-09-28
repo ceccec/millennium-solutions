@@ -26,6 +26,7 @@
  *    node scripts/mcp-gate.ts --report    report only, exit 0 */
 import { readFileSync } from 'node:fs'
 import { TOOLS, NEEDS, type Need } from '../src/mcp/index.ts'
+import { NETWORK } from '../src/api/gates.ts'
 
 const src = readFileSync('scripts/mcp.ts', 'utf8')
 // THE LAST HANDLER MUST NOT ABSORB THE REST OF THE FILE. Slicing from `export const HANDLERS` to the end gave
@@ -55,8 +56,22 @@ const REACHES: [RegExp, Need][] = [
   [/discovered\.json|__ledger\(|\bloadLedger\b|\bisLive\b|\bisWithdrawn\b/, 'ledger'],
   [/FUSION|faceDir|peer_faces|\bfaces\b/, 'shared'],
 ]
+/** ── A REQUIREMENT TRAVELS THROUGH A SPAWN ─────────────────────────────────────────────────────────────────
+ *  A handler that runs `node scripts/api-discover.ts` needs the tree, which the table above sees. It also needs
+ *  the NETWORK, and that is one level down in the script it spawned — invisible to any reading of the handler
+ *  itself. The first version therefore read the tool as needing only the tree, and would have told a caller
+ *  offline that it was available.
+ *
+ *  Resolved from a registry that already exists rather than a second list: src/api/gates.ts NETWORK names every
+ *  script that reaches somebody else's server, for its own purposes. If a handler spawns one of those, the tool
+ *  inherits `net`. Derived, and it stays correct when a script is added to NETWORK for unrelated reasons. */
+const spawned = (t: string): string[] =>
+  [...t.matchAll(/scripts\/([a-z0-9-]+)\.ts/g)].map((m) => m[1])
+
 const derive = (t: string): Need[] => {
-  const n = [...new Set(REACHES.filter(([re]) => re.test(t)).map(([, need]) => need))].sort()
+  const direct = REACHES.filter(([re]) => re.test(t)).map(([, need]) => need)
+  const viaSpawn: Need[] = spawned(t).some((s) => NETWORK.has(s)) ? ['net'] : []
+  const n = [...new Set([...direct, ...viaSpawn])].sort()
   return n.length ? n : ['core']
 }
 
