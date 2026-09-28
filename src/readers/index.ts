@@ -45,6 +45,13 @@ export type Reader = {
    *  rather than omitted, because "we could not add this" is a claim about the world and the kind that becomes
    *  folklore if it is never written down. */
   url: string | null
+  /** POST, for the sources that only answer to one. Added because Open Targets is GraphQL and a GET-only
+   *  prober could not reach it at all — the reader was missing not because the source was unreachable but
+   *  because this file could not phrase the question. A framework's shape quietly deciding which sources
+   *  exist is the kind of omission that reads as "we checked and found nothing". */
+  method?: 'GET' | 'POST'
+  /** The request body, for POST. A GraphQL query is data, so it lives here beside the endpoint. */
+  body?: string
   /** What must appear in the response. Absent when url is null. */
   expect?: (body: string) => boolean
   /** How the source must be credited. Every one of these belongs to somebody else. */
@@ -159,6 +166,16 @@ export const READERS: Reader[] = [
     for: 'a second independent pathway curation, so a claim resting on one curation can be seen to rest on one',
     notFor: 'the same limit as any pathway map' },
 
+  // ── TARGET AND DISEASE ───────────────────────────────────────────────────────────────────────────────────
+  { source: 'opentargets', domain: 'genes', why: 'ENSG00000157764 is BRAF — one of the best-characterised oncogenes there is, and the identifier is Ensembl\'s, so this also checks the two services agree on it',
+    url: 'https://api.platform.opentargets.org/api/v4/graphql',
+    method: 'POST',
+    body: JSON.stringify({ query: '{ target(ensemblId: "ENSG00000157764") { id approvedSymbol biotype } }' }),
+    expect: (b) => /"approvedSymbol"\s*:\s*"BRAF"/.test(b) && /"biotype"\s*:\s*"protein_coding"/.test(b),
+    attribution: 'Open Targets Platform — EMBL-EBI, Wellcome Sanger Institute and partners. CC0 for the data; individual evidence carries its source\'s own terms.',
+    for: 'which targets are ASSOCIATED with which diseases, and — the part that matters — the EVIDENCE behind each association, typed and traceable to the study that produced it. It is the only source here that scores a link rather than merely recording one',
+    notFor: 'treating an association score as a causal claim, or as a drug that works. The score summarises evidence of a relationship; it is not efficacy, not a mechanism, and not a recommendation. Reading a high score as "this drug treats this disease" is the specific misuse this dataset attracts' },
+
   // ── TAXONOMY AND PLANTS ──────────────────────────────────────────────────────────────────────────────────
   { source: 'gbif', domain: 'taxonomy', why: 'German chamomile matches to the Asteraceae, which is settled botany',
     url: 'https://api.gbif.org/v1/species/match?name=Matricaria%20chamomilla',
@@ -171,7 +188,12 @@ export const READERS: Reader[] = [
     expect: (b) => /wfo-\d+/i.test(b) || /Matricaria/i.test(b),
     attribution: 'World Flora Online Consortium.',
     for: 'a second independent naming authority, so synonymy disagreements are visible instead of averaged',
-    notFor: 'the same limit: naming only' },
+    notFor: 'the same limit: naming only. AND A MEASURED CAVEAT, 2026-09-28: this host serves an INCOMPLETE '
+      + 'TLS certificate chain — no intermediate — so node refuses it with UNABLE_TO_VERIFY_LEAF_SIGNATURE '
+      + 'while curl accepts it from the system trust store. The service is up and answers in under a second; '
+      + 'it is misconfigured, which is not the same as down. Recorded here rather than worked around: running '
+      + 'node with --use-system-ca would hide a real defect in somebody else\'s deployment behind a flag in '
+      + 'this one, and disabling verification would be worse. It reads NOT MEASURED, correctly, with the reason' },
   { source: 'powo', domain: 'taxonomy', why: 'Kew\'s Plants of the World Online has no documented open JSON API',
     url: null,
     attribution: 'Plants of the World Online, Royal Botanic Gardens, Kew.',

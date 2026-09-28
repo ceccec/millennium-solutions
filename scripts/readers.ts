@@ -50,15 +50,49 @@ const ask = async (r: typeof PROBEABLE[number]): Promise<{ source: string; domai
   const ctl = new AbortController()
   const t = setTimeout(() => ctl.abort(), 20_000)
   try {
-    const res = await fetch(r.url!, { headers: UA, signal: ctl.signal, redirect: 'follow' })
+    // POST WHERE THE SOURCE ONLY ANSWERS TO ONE. Open Targets is GraphQL: a GET-only prober could not ask it
+    // anything, so it was absent from this registry — not because it is unreachable, but because this file
+    // could not phrase the question. A framework's shape deciding which sources "exist" is how a gap in
+    // coverage comes to read as a finding about the world.
+    const init: RequestInit = r.method === 'POST'
+      ? { method: 'POST', headers: { ...UA, 'content-type': 'application/json' }, body: r.body ?? '', signal: ctl.signal, redirect: 'follow' }
+      : { headers: UA, signal: ctl.signal, redirect: 'follow' }
+    const res = await fetch(r.url!, init)
     const body = await res.text()
     if (!res.ok) return { source: r.source, domain: r.domain, verdict: 'NOT MEASURED', detail: `HTTP ${res.status} — a status is not an answer` }
     return r.expect!(body)
       ? { source: r.source, domain: r.domain, verdict: 'PROVEN', detail: `HTTP ${res.status}, ${body.length} byte(s), and the known fact is present` }
       : { source: r.source, domain: r.domain, verdict: 'WRONG', detail: `HTTP ${res.status}, ${body.length} byte(s), and the known fact is ABSENT — the reader or my expectation is broken: ${body.slice(0, 110).replace(/\s+/g, ' ')}` }
   } catch (e) {
+    // ── "fetch failed" IS NOT A DIAGNOSIS, AND IT HID A REAL ONE FOR TWO RUNS ───────────────────────────────
+    // node's fetch reports every transport failure as the same two words and puts the reason in `cause`,
+    // which this threw away. World Flora Online came back NOT MEASURED twice, hours apart, and the honest
+    // reading of that line was "one run, one network". It was neither: the service answers curl in 0.65s with
+    // HTTP 200, and node refuses it with UNABLE_TO_VERIFY_LEAF_SIGNATURE because the server sends an
+    // INCOMPLETE CERTIFICATE CHAIN — no intermediate. curl accepts it from the system trust store; node's
+    // bundled store correctly does not.
+    //
+    // That is a fact about the SOURCE, and it was being reported as a fact about the weather. A reader seeing
+    // "fetch failed" concludes the service is down and moves on; the truth is that it is up and misconfigured,
+    // which somebody can act on. The cause chain is unwrapped and named now.
+    //
+    // NOT WORKED AROUND. Running node with --use-system-ca would make this pass, and hide a real defect in
+    // somebody else's deployment behind a flag in mine. Disabling verification would be worse. The verdict
+    // stays NOT MEASURED, which is correct — nothing was measured — and it now says why.
     const m = e instanceof Error ? e.message : String(e)
-    return { source: r.source, domain: r.domain, verdict: 'NOT MEASURED', detail: /abort/i.test(m) ? 'timed out at 20s — inconclusive, never "blocked"' : m.slice(0, 110) }
+    const causes: string[] = []
+    let c: unknown = (e as { cause?: unknown }).cause
+    for (let d = 0; c && d < 4; d++) {
+      const cc = c as { code?: string; message?: string; cause?: unknown }
+      if (cc.code || cc.message) causes.push([cc.code, cc.message].filter(Boolean).join(': '))
+      c = cc.cause
+    }
+    const why = causes.length ? causes.join(' ← ') : m
+    const tls = /CERT|SIGNATURE|SSL|TLS/i.test(why)
+    return { source: r.source, domain: r.domain, verdict: 'NOT MEASURED',
+      detail: /abort/i.test(m) ? 'timed out at 20s — inconclusive, never "blocked"'
+        : tls ? `${why.slice(0, 130)} — the SOURCE's certificate chain, not this network. It is up and misconfigured, which is not the same as down`
+        : why.slice(0, 130) }
   } finally { clearTimeout(t) }
 }
 
