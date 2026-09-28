@@ -35,6 +35,7 @@
 // Run: node scripts/imagine.ts          (propose and report)
 //      node scripts/imagine.ts --emit   (also write src/proof/imagined*.lean and verify them)
 import { existsSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
+import { flag } from '../src/cli/index.ts'
 import { execSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 // the cache scripts/lean.ts writes; its shape is that file's, read here and never written here.
@@ -539,6 +540,35 @@ if (!process.argv.includes('--emit')) {
 }
 
 // ── FILTER 4 · the kernel ────────────────────────────────────────────────────────────────────────────────
+// ── A CEILING, BECAUSE THIS GENERATOR HAS NO OPINION ABOUT ENOUGH ───────────────────────────────────────
+// Deriving the map table from the ring took this from 91 propositions to 24,742 in one run, and the deposit
+// spent the rest of the day surviving it: the Lean corpus had to be sharded, then resharded for a smaller
+// machine; the paper reached 52 MB and the directory 9.8 MB; the site build aborted on a 12 GB heap; three
+// separate places grew their own copy of "which keys are computed"; and the ledger took 24,742 entries that
+// are, overwhelmingly, ONE question asked once per pair per subset — 18,098 of them are "do these two maps
+// commute here". Sixteen theorems in group.lean and bridge.lean say what all of that was reaching for.
+//
+// None of the filters below could have stopped it. Each one asks whether a single proposition is true, new,
+// discriminating and cross-formulated, and every one of the 24,742 passed on its own terms. What nothing
+// asked was whether the deposit was better for having them, and a generator cannot answer that — so it stops
+// instead of deciding. Growth past what is already sealed needs --grow, said out loud, by someone who meant
+// it. The ledger is append-only: what this writes cannot be taken back, which is the whole reason for a gate
+// in front of it rather than an apology behind it.
+const SEALED = (() => {
+  try { return (JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as unknown[]).length } catch { return 0 }
+})()
+if (t2.length > 0 && !flag('--grow')) {
+  const already = new Set(leanFiles().filter(MINE.test.bind(MINE))
+    .flatMap((f) => [...readFileSync('src/proof/' + f, 'utf8').matchAll(/^theorem\s+([A-Za-z_0-9]+)/gm)].map((m) => m[1]!)))
+  const added = t2.filter((c) => !already.has(c.key)).length
+  if (added > 0) {
+    console.error(`\n✗ imagine: this run would add ${added} proposition(s) the corpus does not have, on top of ${already.size}.`)
+    console.error(`  Every one passes every filter here; none of them answers whether the deposit is better for it.`)
+    console.error(`  The ledger already holds ${SEALED} entries and cannot give them back. Re-run with --grow to mean it.`)
+    process.exit(1)
+  }
+}
+
 const blocks = t2.map((c) => `-- ${c.say}\ntheorem ${c.key} :\n  ${c.prop} := by decide`)
 
 // ATTRIBUTION IS CARRIED FORWARD, NEVER REGENERATED AS `unclassified`. This header used to emit a fixed
