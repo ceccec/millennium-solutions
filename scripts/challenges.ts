@@ -48,9 +48,27 @@ const singles = cats.filter((c) => groups[c].length === 1)
 const line = (e: typeof ledger[number]) => '- [' + e.key + '](/theorem/' + e.key + ') — ' + esc(e.name) + '  ·  `' + e.receipt.slice(0, 13) + '…`\n'
 o += '## Discovered theorems (decidable, over ℤ/9) — ' + ledger.length + ' standing in ' + cats.length + ' families\n\n'
 o += 'Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:\n\n'
+// A FAMILY OF THOUSANDS IS COUNTED, NOT LISTED. This wrote one linked line per standing entry, which was a
+// readable page at 2,441 of them and a 9.8 MB one at 28,360 — a single markdown file no reader opens and
+// VitePress cannot render. The enumerated families are instances of laws stated once in group.lean, and
+// their keys are computable from their names, so a family past the threshold is reported with its size and
+// a sample instead of transcribed. Every entry is still in the ledger, still sealed, still addressable; what
+// stops is printing thousands of near-identical lines into a document as though that were evidence.
+const LISTED = 200
 for (const c of multi.sort((a, b) => groups[b].length - groups[a].length || a.localeCompare(b))) {
   o += '### ' + c + ' (' + groups[c].length + ')\n\n'
-  for (const e of groups[c]) o += line(e)
+  if (groups[c].length > LISTED) {
+    o += 'This family has **' + groups[c].length + '** members, enumerated over a derived vocabulary and each '
+    o += 'decided by the kernel on every run. They are counted here rather than listed: the statement of each '
+    o += 'follows from its name, and the laws they instantiate are in `src/proof/group.lean`. '
+    o += 'The first ' + LISTED + ' are shown; every one is in `src/proof/discovered.json` with its receipt.\n\n'
+    // NOT LINKED, because these keys no longer have a page — theorem/[key].paths.ts stopped pre-rendering
+    // the enumerated family, and a link to a page that is not built is exactly the dead /theorem/ link this
+    // repository refuses to publish. The key and the receipt are printed, which is what a reader needs to
+    // find the row in the ledger; what is not printed is a promise the site cannot keep.
+    for (const e of groups[c].slice(0, LISTED))
+      o += '- `' + e.key + '` — ' + esc(e.name) + '  ·  `' + e.receipt.slice(0, 13) + '…`\n'
+  } else for (const e of groups[c]) o += line(e)
   o += '\n'
 }
 o += '### other — one-of-a-kind (' + singles.length + ')\n\n'

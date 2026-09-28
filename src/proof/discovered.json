@@ -148884,5 +148884,45 @@
     "key": "lean_groups_the_centre_of_the_group_is_the_identity_alone",
     "name": "lean group.lean: the_centre_of_the_group_is_the_identity_alone — (agl.filter (fun p => agl.all (fun q => cmp p q == cmp q p))).length = 1 ∧ (agl.filter (fun p => agl.all (fun q => cmp p q == cmp q p))) = [one] ∧ 1 < agl.length — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "01d98d6b-3309-8ffa-92e3-ef3b8f24264a"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_10_subjects_is_the_orbit_of_d_to_2d_plus_0_0",
+    "name": "lean bridge.lean: the_reduction_shared_by_10_subjects_is_the_orbit_of_d_to_2d_plus_0_0 — (List.range 17).all (fun i => [2, 4, 8, 7, 5, 1, 2, 4, 8, 7, 5, 1, 2, 4, 8, 7, 5, 1].getD (i + 1) 99 == (2 * [2, 4, 8, 7, 5, 1, 2, 4, 8, 7, 5, 1, 2, 4, 8, 7, 5, 1].getD i 99 + 0) % 9) ∧ (List.range 12).all (fun i => [2, 4, 8, 7, 5, 1, 2, 4,… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "96a93798-e87b-8807-a31d-838bf0bfba3f"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_6_subjects_is_the_orbit_of_d_to_2d_plus_1_1",
+    "name": "lean bridge.lean: the_reduction_shared_by_6_subjects_is_the_orbit_of_d_to_2d_plus_1_1 — (List.range 17).all (fun i => [1, 3, 7, 6, 4, 0, 1, 3, 7, 6, 4, 0, 1, 3, 7, 6, 4, 0].getD (i + 1) 99 == (2 * [1, 3, 7, 6, 4, 0, 1, 3, 7, 6, 4, 0, 1, 3, 7, 6, 4, 0].getD i 99 + 1) % 9) ∧ (List.range 12).all (fun i => [1, 3, 7, 6, 4, 0, 1, 3,… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8a35ec1e-1f88-86a3-86b0-178b6923386c"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_5_subjects_is_the_orbit_of_d_to_1d_plus_1_2",
+    "name": "lean bridge.lean: the_reduction_shared_by_5_subjects_is_the_orbit_of_d_to_1d_plus_1_2 — (List.range 17).all (fun i => [1, 2, 3, 4, 5, 6, 7, 8, 0, 1, 2, 3, 4, 5, 6, 7, 8, 0].getD (i + 1) 99 == (1 * [1, 2, 3, 4, 5, 6, 7, 8, 0, 1, 2, 3, 4, 5, 6, 7, 8, 0].getD i 99 + 1) % 9) ∧ (List.range 9).all (fun i => [1, 2, 3, 4, 5, 6, 7, 8, … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3d813c36-9705-8232-b3c1-01075ffccfb1"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_4_subjects_is_the_orbit_of_d_to_0d_plus_0_3",
+    "name": "lean bridge.lean: the_reduction_shared_by_4_subjects_is_the_orbit_of_d_to_0d_plus_0_3 — (List.range 17).all (fun i => [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].getD (i + 1) 99 == (0 * [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].getD i 99 + 0) % 9) ∧ [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "37a11540-85bd-8687-9f0d-dfb1bfa565cb"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_3_subjects_is_the_orbit_of_d_to_0d_plus_1_4",
+    "name": "lean bridge.lean: the_reduction_shared_by_3_subjects_is_the_orbit_of_d_to_0d_plus_1_4 — (List.range 17).all (fun i => [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].getD (i + 1) 99 == (0 * [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].getD i 99 + 1) % 9) ∧ (List.range 17).all (fun i => [1, 1, 1, 1, 1, 1, 1, 1,… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6d91bc70-0212-84ec-861b-4eba9c2dbc36"
+  },
+  {
+    "key": "lean_bridge_not_every_shared_reduction_is_an_orbit",
+    "name": "lean bridge.lean: not_every_shared_reduction_is_an_orbit — ¬ [0,1,2,3,4,5,6,7,8].any (fun a => [0,1,2,3,4,5,6,7,8].any (fun b => (List.range 17).all (fun i => [0, 1, 3, 6, 1, 6, 3, 1, 0, 0, 1, 3, 6, 1, 6, 3, 1, 0].getD (i + 1) 99 == (a * [0, 1, 3, 6, 1, 6, 3, 1, 0, 0, 1, 3, 6, 1, 6, 3, 1, 0].getD i… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d788d871-ebbe-8e1b-be58-7aba51cde0b9"
+  },
+  {
+    "key": "lean_bridge_the_5_rules_are_5_different_maps",
+    "name": "lean bridge.lean: the_5_rules_are_5_different_maps — [(2, 0), (2, 1), (1, 1), (0, 0), (0, 1)].eraseDups.length = 5 ∧ [(2, 0), (2, 1), (1, 1), (0, 0), (0, 1)].length = 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "273ca02c-162d-8812-9261-7f8da9f3baf1"
+  },
+  {
+    "key": "lean_bridge_every_rule_is_a_map_the_group_file_classifies",
+    "name": "lean bridge.lean: every_rule_is_a_map_the_group_file_classifies — [(2, 0), (2, 1), (1, 1), (0, 0), (0, 1)].all (fun p => [1, 2, 4, 5, 7, 8].contains p.1 || p.1 == 0) ∧ ([(2, 0), (2, 1), (1, 1), (0, 0), (0, 1)].filter (fun p => [1, 2, 4, 5, 7, 8].contains p.1)).length = 3 ∧ ([(2, 0), (2, 1), (1, 1), (0, 0)… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "269230fd-748a-8c4a-a8b1-1ce0097ecf53"
   }
 ]

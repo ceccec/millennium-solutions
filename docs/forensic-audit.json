@@ -1,5 +1,5 @@
 {
-  "produced": "9a85ad0b3",
+  "produced": "b4acdd82e",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -26,6 +26,16 @@
       "revoked": 1864,
       "dRev": 1864,
       "dEnt": 200
+    },
+    {
+      "date": "2026-09-28",
+      "commit": "b4acdd82e",
+      "author": "Tsvetan Rouschev",
+      "subject": "size the generated modules for the machine that checks them, not the one",
+      "entries": 28360,
+      "revoked": 2419,
+      "dRev": 199,
+      "dEnt": 8
     },
     {
       "date": "2026-09-28",
@@ -66,16 +76,6 @@
       "revoked": 1890,
       "dRev": 25,
       "dEnt": 32
-    },
-    {
-      "date": "2026-09-28",
-      "commit": "88737a3ad",
-      "author": "Tsvetan Rouschev",
-      "subject": "the grid widened to 24 subjects, and the joins between real databases ar",
-      "entries": 3392,
-      "revoked": 2144,
-      "dRev": 25,
-      "dEnt": 32
     }
   ],
   "withdrawalReasonsAsRecorded": [
@@ -112,6 +112,6 @@
       1
     ]
   ],
-  "totalStateChangingCommits": 633,
-  "address": "a1885022-28ac-8bd4-80da-21bcceef82e0"
+  "totalStateChangingCommits": 634,
+  "address": "72e33676-4acf-8ce9-969c-979024e1267b"
 }

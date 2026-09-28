@@ -218,6 +218,18 @@ for (const f of readdirSync('.').filter((f) => f.endsWith('.md') && !generated.h
   if (next !== txt) writeFileSync(f, next)
 }
 if (recited) console.log(`  ✓ ${recited} citation(s) repointed to the carrier the ledger names`)
+// ── NO CARRIER THAT IS NOT A THEOREM ────────────────────────────────────────────────────────────────────
+// covered-gate found an entry naming `belowtouchesit.These` as the theorem carrying a fact — prose with its
+// whitespace stripped, produced by a matcher that took a name from a chunk that was not a theorem. A
+// coverage record exists to answer WHICH theorem holds a superseded fact; an entry naming something that
+// does not exist answers it falsely, which is worse than leaving it unanswered, because the ledger then
+// reports the fact as carried. Every carrier is checked against the live corpus before the file is written,
+// and one that is not a theorem is dropped with its name said out loud.
+const liveNames = new Set(after.keys())
+let dropped = 0
+for (const [k, v] of Object.entries(covered))
+  if (!liveNames.has(v)) { console.log(`  ○ dropped carrier ${k} → ${v} — no such theorem in src/proof`); delete covered[k]; dropped++ }
+if (dropped) console.log(`  ✓ ${dropped} entr(ies) named a theorem that does not exist and were removed`)
 writeFileSync('src/proof/covered.json', JSON.stringify(covered, null, 2) + '\n')
 console.log(`before ${before.size} · after ${after.size}`)
 console.log(`  ✓ ${moved} old name(s) carried — a live theorem computes each one's statement value for value`)

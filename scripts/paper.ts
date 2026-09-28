@@ -217,7 +217,33 @@ for (const w of wings) {
 let k = 0
 for (const w of wings) {
   o += `\n<h2 class="paper-h paper-wing">${esc(wingLabel(w))}</h2>\n\n`
-  for (const d of docs.filter((x) => x.wing === w)) {
+  // ── THE ENUMERATED FAMILY IS SUMMARISED, NOT INLINED ────────────────────────────────────────────────
+  // This printed every theorem of every file, which was right at 1,256 of them and produced a 52 MB single
+  // markdown page at 25,941. VitePress has to parse and render that as ONE page, and it aborted out of
+  // memory on a 12 GB heap — here and on the runner. The page count was never the problem; this file was.
+  //
+  // 24,742 of those theorems are instances scripts/imagine.ts enumerates over a derived vocabulary, and an
+  // instance is a function of its key: the name gives the map, the relation and the set. Printing all of
+  // them is transcribing the output of a program into a document nobody can open. Their eight structural
+  // laws are in src/proof/group.lean and ARE printed, in full, below — which is the part a reader needs.
+  // Nothing is withdrawn: every one is sealed, decided by the kernel on every run, and addressable.
+  const enumerated = docs.filter((x) => x.wing === w && /^imagined(_\d+)?\.lean$/.test(x.file))
+  if (enumerated.length) {
+    const count = enumerated.reduce((a, d) => a + d.theorems.length, 0)
+    o += `\n### The enumerated family {#imagined}\n\n`
+    o += `<p class="paper-src"><code>src/proof/imagined*.lean</code> · ${enumerated.length} modules · ${n(count)} theorems</p>\n\n`
+    o += `These are proposed by \`scripts/imagine.ts\`, which enumerates every statement its vocabulary can `
+    o += `express over ℤ/9, keeps the ones true by exhaustion, discards every one that also holds for all its `
+    o += `siblings, and puts what is left to the kernel. Each is sealed and decided on every run. They are `
+    o += `**summarised rather than transcribed**: each is an instance whose statement follows from its name — `
+    o += `the map, the relation and the set — and the laws they are instances of are stated once, in `
+    o += `\`src/proof/group.lean\`, printed in full in this paper. A document that reprinted ${n(count)} `
+    o += `instances of eight laws would be ${n(count)} restatements of what those eight say.\n\n`
+    o += `<p class="paper-src">Three, as written:</p>\n\n<pre class="thm-statement"><code>`
+    o += enumerated[0]!.theorems.slice(0, 3).map((t) => esc(`${t.name} : ${t.statement}`)).join('\n\n')
+    o += `</code></pre>\n\n`
+  }
+  for (const d of docs.filter((x) => x.wing === w && !/^imagined(_\d+)?\.lean$/.test(x.file))) {
     o += `\n### ${d.title} {#${d.file.replace('.lean', '')}}\n\n`
     o += `<p class="paper-src"><code>src/proof/${d.file}</code> · namespace <code>${d.namespace}</code> · ${d.theorems.length} theorems</p>\n\n`
     // THE FILE HEADER WENT OUT RAW, AND ANY ANGLE BRACKET IN IT WAS AN HTML TAG. Every other prose here is

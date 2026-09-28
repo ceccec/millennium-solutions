@@ -69,7 +69,15 @@ add('the page and the data agree on the count', Number.isNaN(stated) || stated =
 // ── 4 · EVERY ADDRESS THE PAGE OFFERS A READER RESOLVES ──────────────────────────────────────────────────
 // A link to a theorem page that was never built is a dead end a reader finds and no gate does.
 const built = new Set(existsSync(`${DIST}/theorem`) ? readdirSync(`${DIST}/theorem`).filter((f) => f.endsWith('.html')).map((f) => f.replace('.html', '')) : [])
-const linked = items.map((e: any) => e.item?.identifier).filter(Boolean)
+// THE LINK IS THE `url`, NOT THE `identifier` — and this read the identifier, which is a NAME. The two were
+// the same set for as long as every item carried both, so the check passed by coincidence rather than by
+// construction. When 24,742 derivable pages stopped being pre-rendered, their entries kept the identifier and
+// the receipt — the things that let a reader find and check the row — and dropped the url, which is the only
+// field that promises a page is there. This then reported 24,742 dead LINKS for entries that offer none.
+// A name a reader cannot follow is not a dead end; an href that 404s is. It reads the href now, which is
+// what the note above it always said it was reading.
+const linked = items.map((e: any) => e.item?.url).filter(Boolean)
+  .map((u: string) => u.replace(/^.*\/theorem\//, ''))
 const dead = linked.filter((k: string) => !built.has(k))
 // `pages built` counts what VitePress emitted, which is a build artefact and not a function of the source —
 // so it varies between machines and versions, and belongs with the byte counts. The link count and the dead

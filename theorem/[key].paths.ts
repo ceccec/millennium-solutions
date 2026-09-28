@@ -6,9 +6,9 @@
 // Each page also carries the hues of its SURROUNDING theorems so its hero background is computed by the
 // neighbourhood — the mesh, seen locally. The Lean proof text is READ FROM index.lean (single source), and
 // every receipt is the content-address of the exact statement (reproducible by anyone via toUuid).
-import { readFileSync } from 'node:fs'
+import { readdirSync, readFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
-import { leanTheorems, theoremOfKey, domainOf } from '../src/api/index.ts'
+import { leanTheorems, theoremOfKey, domainOf, enumeratedNames, isComputedKey } from '../src/api/index.ts'
 import { publicationHtml, structuredData, NOVELTY, kinds, closureOf, creditedIn } from '../src/publication/index.ts'
 import { treeOf } from '../src/quantum/tree.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
@@ -105,6 +105,28 @@ export default {
     // it ever stopped holding the build would fail") are FALSE of an entry that stopped holding. The page
     // carries the revocation and its reason, and the template suppresses those claims. A page that presents a
     // withdrawn theorem as live is the exact overclaim this deposit exists to refuse.
+    // ── THE COMBINATORIAL FAMILY IS COMPUTED, NOT PRE-RENDERED ──────────────────────────────────────────
+    // One page per ledger key was fine at 2,441 keys. At 28,360 it is not a large site, it is an impossible
+    // one: VitePress aborted out of memory on a 12 GB heap with dist already past 489 MB, and the deploy did
+    // the same thing on the runner. GitHub Pages could not have served it either.
+    //
+    // 24,742 of those keys are instances the generator enumerates, and an instance is a FUNCTION OF ITS KEY:
+    // `aff_3_1_is_injective_on_squares` names the map, the relation and the set, and its statement follows
+    // from them. Baking a file for each is storing the output of a function that anyone can apply — the
+    // uuidna doors answer exactly this way, from a baked root plus the one piece a cited key sits in, and
+    // they refuse a request for every row. So those keys are served by /theorem/computed, which derives the
+    // page from the key, and the 3,618 that are not enumerated keep their own page as before.
+    //
+    // NOTHING IS WITHDRAWN AND NO KEY STOPS BEING CITABLE: every row is still in the append-only ledger,
+    // every theorem is still decided by the kernel on every run, and the address still resolves. What
+    // changes is that a derivable page is derived instead of stored.
+    //
+    // THE SET IS READ FROM THE GENERATOR'S OWN FILES, never listed here — a typed list would drift the first
+    // time the vocabulary moved, which is the defect this tree keeps finding.
+    // the walk lives in src/api — one owner, so this builder, the gate that checks it and the feed
+    // that advertises it cannot disagree about which keys exist.
+    const names = enumeratedNames()
+    const isComputed = (key: string) => isComputedKey(key, names)
     const discovered = ledger.map((e, i) => ({
       params: {
         // THE NAME AS SHOWN, NOT AS SEALED (2026-09-14): 1,017 revoked names were sealed carrying the Clay floor the author
@@ -149,6 +171,10 @@ export default {
         ...formulaOf(e.key),
       },
     }))
+      // filtered AFTER the map so each entry keeps its LEDGER index: withHues reads a row's neighbours by
+      // position, and filtering first renumbered them — the page would have shown the colours of a different
+      // row and nothing would have said so.
+      .filter((p) => !isComputed(p.params.key))
 
     // 2 · the seven Millennium-floor theorems — Lean proof (from index.lean) + qualified outlet, one template
     const seven = Object.keys(MILLENNIUM).map((key) => {

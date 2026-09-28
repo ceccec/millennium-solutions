@@ -87,6 +87,24 @@ export interface LeanTheorem { name: string; file: string; tactic: string; state
 export const leanFiles = (): string[] =>
   existsSync(PROOF_DIR) ? readdirSync(PROOF_DIR).filter((f) => f.endsWith('.lean')).sort() : []
 
+/** Files written by scripts/imagine.ts — the enumerated family, whose pages are computed from their keys
+ *  rather than pre-rendered. Read from the corpus, never listed, so it cannot drift from what the generator
+ *  actually writes. */
+export const isEnumeratedFile = (file: string): boolean => /^imagined(_\d+)?\.lean$/.test(file)
+
+/** The theorem names in those files. Three separate places had grown their own copy of this walk — the page
+ *  builder, the page gate and the formula feed — which is three chances for the published surface, the gate
+ *  that checks it and the feed that advertises it to disagree about which keys exist. One owner. */
+export const enumeratedNames = (): Set<string> => {
+  const out = new Set<string>()
+  for (const t of leanTheorems()) if (isEnumeratedFile(t.file)) out.add(t.name)
+  return out
+}
+
+/** True when a ledger key names a theorem of the enumerated family, and so has no pre-rendered page. */
+export const isComputedKey = (key: string, names: Set<string> = enumeratedNames()): boolean =>
+  key.startsWith('lean_imagined_') && names.has(key.replace('lean_imagined_', ''))
+
 export const leanSource = (file: string): string => readFileSync(`${PROOF_DIR}/${file}`, 'utf8')
 
 /** Every theorem on disk, with the file that carries it and the tactic that closed it. ONE parse of the

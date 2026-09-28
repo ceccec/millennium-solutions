@@ -15,7 +15,7 @@
  *  WHAT THIS REMOVED: 545 KB of generated markup, a duplicate HTML escaper canon-gate had already refused,
  *  and every field name invented here rather than taken from a vocabulary someone else maintains. */
 import { writeFileSync, mkdirSync } from 'node:fs'
-import { leanTheorems, leanFiles, leanSource, ledger as __ledger, live as __live } from '../src/api/index.ts'
+import { leanTheorems, leanFiles, leanSource, ledger as __ledger, live as __live, isEnumeratedFile } from '../src/api/index.ts'
 import { SITE, CONCEPT_DOI } from '../src/publication/index.ts'
 
 const T = leanTheorems() as any[]
@@ -32,6 +32,7 @@ const receiptOf = new Map((__ledger() as { key: string; receipt: string }[]).map
 // array were repeated 1,168 times. That is not a size problem, it is a MODELLING problem: schema.org puts
 // what a collection shares on the collection. Each entry now carries only what distinguishes it, and the
 // per-theorem ScholarlyArticle with its full provenance stays where it belongs, on the theorem's own page.
+// one owner in src/api, for the reason canon-gate exists
 const items = T.map((t, i) => {
   const key = keyOf(t)
   return {
@@ -40,7 +41,13 @@ const items = T.map((t, i) => {
       '@type': 'ScholarlyArticle',
       name: t.name,
       description: t.statement,
-      ...(key ? { identifier: key, url: `${SITE}/theorem/${key}`, receipt: receiptOf.get(key) } : {}),
+      // A url IS A PROMISE THAT THE PAGE EXISTS. theorem/[key].paths.ts stopped pre-rendering the enumerated
+      // family — 24,742 derivable pages that a 12 GB heap could not build — and this went on publishing a
+      // link for every one of them. e2e caught it: "25941 links, 24742 dead". The identifier and the receipt
+      // still go out, because those are what let a reader find the row and check it; what is withheld is the
+      // one field that asserts a page is there. The set is read from the generator's own files, never listed.
+      ...(key ? { identifier: key, receipt: receiptOf.get(key),
+                  ...(isEnumeratedFile(t.file) ? {} : { url: `${SITE}/theorem/${key}` }) } : {}),
       about: { '@type': 'DefinedTerm', name: t.namespace || t.file.replace('.lean', '') },
       // ALIASED IN THE CONTEXT, NOT WRAPPED PER ITEM. Three PropertyValue objects per formula cost more
       // than the statements they annotate. A local @context maps these names onto schema.org properties

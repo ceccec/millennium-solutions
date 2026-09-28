@@ -15,11 +15,22 @@
 // has pages for a PREFIX of it and none after, while a genuine defect is a HOLE — a key with no page that
 // has a later key with one. So the missing keys are split at the last key that does have a page.
 import { readFileSync, existsSync } from 'node:fs'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { ledger as __ledger, enumeratedNames, isComputedKey } from '../src/api/index.ts'
 import { staleTail } from '../src/api/gates.ts'
 
 const DIST = '.vitepress/dist/theorem'
-const ledger: { key: string }[] = __ledger()
+// THE COMPUTED FAMILY HAS NO PAGE BY DESIGN, AND THAT IS NOT A HOLE. theorem/[key].paths.ts stopped
+// pre-rendering the 24,742 enumerated keys — a page for each is derivable from the key, and building them
+// aborted VitePress on a 12 GB heap. This gate asks "does every ledger key have a page" and reported all
+// 24,742 as findings, which is the gate being right about the old policy and wrong about the current one.
+// A page that is deliberately not built is a decision; a page missing from a family that HAS pages is a
+// defect, and that distinction is the whole content of this gate. The computed set is read from the
+// generator's own files so it cannot drift from what theorem/[key].paths.ts actually skips.
+const names = enumeratedNames()
+const isComputed = (key: string) => isComputedKey(key, names)
+const all: { key: string }[] = __ledger()
+const ledger = all.filter((e) => !isComputed(e.key))
+console.log(`  · ${all.length - ledger.length} key(s) are computed from their name and are not pre-rendered — not holes`)
 
 // The split is not written here. `staleTail` is a pure predicate in src/api/gates.ts and the ledger decides
 // it — lean_… the_hole_and_the_stale_tail_are_told_apart_by_order — so what this file does is read the disk
