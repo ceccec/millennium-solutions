@@ -111,6 +111,20 @@ const measureGates = async () => {
   } else {
     console.log(`   ✓ none failed concurrently — all ${steps.length} are order-invariant IN FACT, so the \`&&\` is`)
     console.log(`     ACCIDENTAL order-dependence: a property of how the chain was written, not of what it computes.`)
+    console.log()
+    console.log(`   AND THAT IS NOT ENOUGH TO FLIP THE CHAIN, WHICH IS THE POINT OF SAYING IT HERE.`)
+    console.log(`   Five of these gates WRITE — trial-all, readme, forensic-audit, notice, formulas — and a search`)
+    console.log(`   for a file one writes and another reads finds nothing. But that search matches LITERAL PATHS`)
+    console.log(`   only, and literal-path detection has been wrong three times in this tree in one day: a command`)
+    console.log(`   in a comment read as a chain step, remediation advice in a failure message read as an`)
+    console.log(`   invocation, and a path in a data field missed entirely. A gate reading through a variable or a`)
+    console.log(`   glob is invisible to it.`)
+    console.log(`   AND ONE GREEN CONCURRENT RUN DOES NOT PROVE THE ABSENCE OF A RACE. A race is timing-dependent;`)
+    console.log(`   passing once is the weakest evidence there is, and it is the flattering kind — it clears the`)
+    console.log(`   change you already want to make.`)
+    console.log(`   What would justify it: a declared read/write manifest per gate, checked like the MCP tools'`)
+    console.log(`   NEEDS table, so the dependency is stated rather than inferred from a regex. Until then the`)
+    console.log(`   ${ms(summed - wall)} is MEASURED and NOT TAKEN, deliberately.`)
   }
   console.log()
 }
