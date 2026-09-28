@@ -99,6 +99,17 @@ const CONTROLS: Control[] = [
     what: 'an MCP tool declaring it needs nothing while its handler reaches the tree — a caller told the surface is larger than it is',
     mutate: (s) => s.replace("  formulas: ['tree'],", "  formulas: ['core'],") },
 
+  // THE ORDER OF A WORKFLOW, WHICH A SET OF COMMANDS CANNOT SEE. ci-drift compared WHICH commands CI runs
+  // against which ones ci-local runs, as a Set — and release.yml ran `npm run gates` before `npm run
+  // docs:build` while fourteen scripts read .vitepress/dist. Every command was accounted for, every local
+  // run passed because a developer always has dist/ lying around, and no tag minted for days. The control
+  // puts the defect back exactly as it was: gates before the build.
+  { gate: 'ci-drift (a step runs before the build it depends on)', cmd: 'node scripts/ci-drift.ts', file: '.github/workflows/release.yml',
+    what: 'a workflow step that reads the built site before anything builds it — green on a developer machine, fatal on a cold runner',
+    mutate: (s) => s.replace(
+      '      - name: build the site first — six gates below read what a reader actually opens\n        run: npm run docs:build\n\n      - name: gates (every refusing check a local commit passes)\n        run: npm run gates',
+      '      - name: gates (every refusing check a local commit passes)\n        run: npm run gates\n\n      - name: build the site first — six gates below read what a reader actually opens\n        run: npm run docs:build') },
+
   // A DERIVED FILE WHOSE GENERATOR NOTHING RUNS. llms.txt shipped live at 924 against a tree of 932 and
   // metrics.json at 619, both because the generator was written once, committed, and never run again. The
   // control removes the one recorded reason that keeps citations.ts out of the chain, so the gate must report
