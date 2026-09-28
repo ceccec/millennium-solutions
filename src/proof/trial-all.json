@@ -170158,5 +170158,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "01d98d6b-3309-8ffa-92e3-ef3b8f24264a"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_10_subjects_is_the_orbit_of_d_to_2d_plus_0_0",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "96a93798-e87b-8807-a31d-838bf0bfba3f"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_6_subjects_is_the_orbit_of_d_to_2d_plus_1_1",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8a35ec1e-1f88-86a3-86b0-178b6923386c"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_5_subjects_is_the_orbit_of_d_to_1d_plus_1_2",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3d813c36-9705-8232-b3c1-01075ffccfb1"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_4_subjects_is_the_orbit_of_d_to_0d_plus_0_3",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "37a11540-85bd-8687-9f0d-dfb1bfa565cb"
+  },
+  {
+    "key": "lean_bridge_the_reduction_shared_by_3_subjects_is_the_orbit_of_d_to_0d_plus_1_4",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6d91bc70-0212-84ec-861b-4eba9c2dbc36"
+  },
+  {
+    "key": "lean_bridge_not_every_shared_reduction_is_an_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d788d871-ebbe-8e1b-be58-7aba51cde0b9"
+  },
+  {
+    "key": "lean_bridge_the_5_rules_are_5_different_maps",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "273ca02c-162d-8812-9261-7f8da9f3baf1"
+  },
+  {
+    "key": "lean_bridge_every_rule_is_a_map_the_group_file_classifies",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "269230fd-748a-8c4a-a8b1-1ce0097ecf53"
   }
 ]

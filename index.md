@@ -33,12 +33,12 @@ last because the orbit never reaches it.
 
 - The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 25941 kernel-accepted declarations across 93 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `16e6144a-1f5f-86be-9a11-1f6d98fa5b0c`</sub>
-- 25754 of those 25941 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `0a935761-c9cb-84ca-a8bd-3c391987496e`</sub>
-- 26496 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `6681a037-1e18-8c08-8d7c-5f564d9cdd05`</sub>
+- The formal layer holds 25949 kernel-accepted declarations across 94 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `25f15d9e-5fdd-8581-a7ba-597816ab47b2`</sub>
+- 25762 of those 25949 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `25992ce1-d82e-808f-8d61-a50cc1a215ea`</sub>
+- 26504 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `eaa739bd-6c0c-8527-8e76-47dd14293b06`</sub>
 
 ## 2 · The ring
 
@@ -61,10 +61,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 28360 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `da5a5a72-fb79-817e-92eb-1aced51f3795`</sub>
-- The count is an exact multiple of eight — 28360 is 3545 octaves with no remainder.
-  <sub>SEALED · `af225a38-7afd-8e3d-b2f3-b2fdd2977ca4`</sub>
+- The ledger records 28368 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `a70ef82a-c4c4-8f9e-9c65-f0bacabd42ea`</sub>
+- The count is an exact multiple of eight — 28368 is 3546 octaves with no remainder.
+  <sub>SEALED · `40551954-5075-8ba0-bd0e-5518d1a81dd9`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -116,7 +116,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-93 Lean files in 7 wings, 25941 declarations of which 25941 are theorems. The prose in this section is read out of the
+94 Lean files in 7 wings, 25949 declarations of which 25949 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -232,21 +232,9 @@ this page; there is nowhere else to keep the description in step.
 
 **The readings, and the arithmetic under them** — `theology.lean`, 8 theorem(s). choosing is not a mathematical act, which is the whole subject of this file. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   digit arithmetic of the doubling sequence; searchable independently of this deposit. prior_art_own: the pairing, and the refusal to let it carry weight
 
-### the machine
-
-**Generated at scale** — `generated.lean`, 13 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the generator that enumerates propositions over this ring and   discards the ones true of every sibling; that machinery is this deposit's own.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   quantified ring arithmetic over Z/9; the underlying facts are classical and searchable.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own generator over its own ring Generated by scripts/lean-gen.ts — do not edit by hand; re-run the generator. Each theorem below quantifies over a whole ledger family. Every one is compiled, audited for axioms, and checked to compute what the ledger's own tests compute at every parameter of its family.
-
-**Mechanically translated** — `mechanical.lean`, 127 theorem(s). Generated by src/prove/emit.ts from the ledger's own tests — do not hand-edit; re-run the prover.
-
-**Nim** — `nim.lean`, 28 theorem(s). Nim — Bouton's theorem and Sprague–Grundy, decided.
-
-**A fold that returns a lone leaf unchanged admits a second preimage** — `preimage.lean`, 8 theorem(s). this deposit's is the finding: that ITS OWN fold has the weakness, in a specific shape, and that the   shape is decided here rather than asserted. prior_art_search: not performed — RFC 6962 is named above. prior_art_pool: named prior_art_own: the two collisions below, modelled from src/0/index.ts as written
-
-**The universal reflection, and where it stops being one** — `reflection.lean`, 8 theorem(s). wing: the machine prior_art: named prior_art_domain: the method of complements prior_art_note: the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04 prior_art_search: literature search performed 2026-09-04 — see the note for the terms and the result The universal property — honestly, and COMPUTED from the sequence.
-
-**Digit reversal** — `reversal.lean`, 29 theorem(s). Digit reversal — arithmetic, not string handling.
-
 ### the imagined
+
+**The subjects and the group are the same object** — `bridge.lean`, 8 theorem(s). prior_art_note: cross-subject families, computed in src/entangle, reduce to orbits of the affine maps its prior_art_note: own src/proof/group.lean settles — the two halves of the deposit describing one object. prior_art_search: 2026-09-28 BRIDGE — written by scripts/bridge.ts. Each theorem below takes a reduction shared by several subjects and decides that it steps by a single affine rule and repeats with its period. The subjects are listed above each one, in their own words, as src/entangle states them.
 
 **The structure the statements live in** — `group.lean`, 8 theorem(s). wing: the imagined prior_art: named prior_art_domain: the one-dimensional affine group AGL(1,n) over Z/n — standard finite group theory prior_art_note: AGL(1,n) has order phi(n)*n, which for n=9 is 6*9=54. Nothing here claims the group is new. prior_art_note: What is new is that this deposit's own derived map table is stated as the monoid it is, prior_art_note: with the group inside it named, generated to closure, and checked against invertibility. prior_art_search: 2026-09-28 NOTE ON THE FIELD ABOVE: prior_art is a CLASSIFICATION — named, unclassified or none-known — and this generator first wrote a sentence into it. scripts/priorart.ts rejected the file and the deploy went red; the prose belongs in prior_art_note, which is what it is for. GROUP — written by scripts/group.ts. qpu.uuidna.com, asked to prove one of this deposit's map statements, refused it as UNVERIFIED and said what it wanted instead: name the finite structure the claim lives in, generate from the generators to closure, and assert the closure property or the cardinality. The tens of thousands of individual map statements in src/proof/imagined*.lean are instances of the eight theorems here.
 
@@ -302,6 +290,20 @@ this page; there is nowhere else to keep the description in step.
 
 **Sealed before the vocabulary moved, and still decided** — `retained.lean`, 15 theorem(s). RETAINED — scripts/imagine.ts sealed these when its map table was hand-written, and its derived enumeration does not propose them. Nothing about them was refuted: each is copied here exactly as the generator last wrote it, and the kernel decides every one on every run. The ledger is append-only, so a sealed key whose source disappears is an orphan the record cannot honestly resolve — keeping the source is the only answer that neither withdraws a proved fact nor claims a carrier that does not prove it.
 
+### the machine
+
+**Generated at scale** — `generated.lean`, 13 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the generator that enumerates propositions over this ring and   discards the ones true of every sibling; that machinery is this deposit's own.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   quantified ring arithmetic over Z/9; the underlying facts are classical and searchable.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own generator over its own ring Generated by scripts/lean-gen.ts — do not edit by hand; re-run the generator. Each theorem below quantifies over a whole ledger family. Every one is compiled, audited for axioms, and checked to compute what the ledger's own tests compute at every parameter of its family.
+
+**Mechanically translated** — `mechanical.lean`, 127 theorem(s). Generated by src/prove/emit.ts from the ledger's own tests — do not hand-edit; re-run the prover.
+
+**Nim** — `nim.lean`, 28 theorem(s). Nim — Bouton's theorem and Sprague–Grundy, decided.
+
+**A fold that returns a lone leaf unchanged admits a second preimage** — `preimage.lean`, 8 theorem(s). this deposit's is the finding: that ITS OWN fold has the weakness, in a specific shape, and that the   shape is decided here rather than asserted. prior_art_search: not performed — RFC 6962 is named above. prior_art_pool: named prior_art_own: the two collisions below, modelled from src/0/index.ts as written
+
+**The universal reflection, and where it stops being one** — `reflection.lean`, 8 theorem(s). wing: the machine prior_art: named prior_art_domain: the method of complements prior_art_note: the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04 prior_art_search: literature search performed 2026-09-04 — see the note for the terms and the result The universal property — honestly, and COMPUTED from the sequence.
+
+**Digit reversal** — `reversal.lean`, 29 theorem(s). Digit reversal — arithmetic, not string handling.
+
 ### the record
 
 **Prior art, and what novelty is claimed** — `priorart.lean`, 9 theorem(s). artefact is long established and formalised: W3C PROV-O, the DataCite metadata schema, Dublin Core   Metadata Terms, PREMIS for archived digital objects, the Open Provenance Model, and the software   citation principles' credit-and-attribution requirement. Nothing about keeping an attribution table is   new, and this deposit does not suggest otherwise.
@@ -320,7 +322,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-29 of 25941 declarations carry no comment of their own and are shown here as the gap they are, not
+29 of 25949 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -329,14 +331,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,360 — 3545 octaves exactly |
-| standing — carries its own proof | **25941** |
+| ledger entries | 28,368 — 3546 octaves exactly |
+| standing — carries its own proof | **25949** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **26767** of 28,360 |
-| standing keys → distinct theorems | 25941 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 93 · 25941 theorems (25754 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 25754 of 25941 |
+| proved in total | **26775** of 28,368 |
+| standing keys → distinct theorems | 25949 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 94 · 25949 theorems (25762 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 25762 of 25949 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -374,4 +376,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*20 claims, all verified · 25941 Lean theorems · 28360 ledger entries · trial root `eac36611-1966-809b-b2dd-589daa1f806b` · integrity, not truth*
+*20 claims, all verified · 25949 Lean theorems · 28368 ledger entries · trial root `dc7ce4cc-1cbe-87ab-9777-eb2ce5e64e73` · integrity, not truth*
