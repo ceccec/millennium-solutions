@@ -23219,5 +23219,45 @@
     "key": "lean_coils_the_digit_root_leaves_the_integers_at_ten",
     "name": "lean coils.lean: the_digit_root_leaves_the_integers_at_ten — (List.range' 1 9).all (fun n => (if n = 0 then 0 else 1 + (n - 1) % 9) == n) ∧ (if (10 : Nat) = 0 then 0 else 1 + (10 - 1) % 9) != 10 ∧ (List.range' 10 11).all (fun n => (if n = 0 then 0 else 1 + (n - 1) % 9) != n) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "47729165-d473-8eae-8417-e6de81c38f9d"
+  },
+  {
+    "key": "lean_qpu_the_served_constants_satisfy_the_relations_qpu_states",
+    "name": "lean qpu.lean: the_served_constants_satisfy_the_relations_qpu_states — faces = coins * rays ∧ bits = vertices * hexbit ∧ vertices = levels ^ qubits ∧ faces = 14 ∧ bits = 32 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c192bedd-4735-8652-9122-0ac38e046f9a"
+  },
+  {
+    "key": "lean_qpu_fourteen_is_two_sevens_on_both_sides",
+    "name": "lean qpu.lean: fourteen_is_two_sevens_on_both_sides — faces = Rays.DIMENSIONS ∧ rays = Rays.N ∧ coins * rays = 2 * Rays.N ∧ Rays.DIMENSIONS = 14 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9901cf26-40ab-8747-bb65-80c346e274a8"
+  },
+  {
+    "key": "lean_qpu_hexbit_times_rays_is_what_this_deposit_reads",
+    "name": "lean qpu.lean: hexbit_times_rays_is_what_this_deposit_reads — hexbit * rays = Rays.DIGITS_READ ∧ Rays.DIGITS_READ = 28 ∧ hexbit * rays = 2 * faces — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e16df843-cf2e-8199-8f4f-455aeb0f0b7c"
+  },
+  {
+    "key": "lean_qpu_thirty_two_is_derived_there_and_declared_here",
+    "name": "lean qpu.lean: thirty_two_is_derived_there_and_declared_here — bits = Rays.DIGITS_TOTAL ∧ bits = vertices * hexbit ∧ Rays.DIGITS_TOTAL = 32 ∧ Rays.DIGITS_TOTAL - Rays.DIGITS_READ = 4 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f42918b9-0097-86d6-94b5-e5129112a979"
+  },
+  {
+    "key": "lean_qpu_the_capacity_law_holds_at_thirty_two_and_at_one_hundred_twenty_two",
+    "name": "lean qpu.lean: the_capacity_law_holds_at_thirty_two_and_at_one_hundred_twenty_two — 2 ^ bits = 4294967296 ∧ 2 ^ Capacity.free = 5316911983139663491615228241121378304 ∧ 2 ^ Capacity.free = 2 ^ bits * 2 ^ (Capacity.free - bits) ∧ Capacity.free - bits = 90 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1a260e71-109b-8f45-ad17-54550f3debab"
+  },
+  {
+    "key": "lean_qpu_the_constants_that_do_not_meet",
+    "name": "lean qpu.lean: the_constants_that_do_not_meet — bits ≠ Capacity.container ∧ faces ≠ 16 ∧ vertices ≠ Capacity.reserved ∧ Capacity.container - bits = 96 ∧ Capacity.container = 4 * vertices * hexbit — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "20d68b04-c25b-8a15-b3f8-add389cf344b"
+  },
+  {
+    "key": "lean_qpu_seven_appears_twice_for_unrelated_reasons",
+    "name": "lean qpu.lean: seven_appears_twice_for_unrelated_reasons — 91 = 7 * 13 ∧ rays = 7 ∧ 91 % rays = 0 ∧ 91 ≠ faces ∧ 91 ≠ bits ∧ 13 ≠ rays — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3f87c273-8634-85b9-af4d-295638e004d4"
+  },
+  {
+    "key": "lean_qpu_both_sides_grow_by_doubling",
+    "name": "lean qpu.lean: both_sides_grow_by_doubling — (List.range' 1 20).all (fun n => 2 ^ (n + 1) == 2 ^ n + 2 ^ n) ∧ 240518168576 = 120259084288 + 120259084288 ∧ 240518168576 = 2 * 120259084288 ∧ vertices = levels ^ qubits ∧ vertices + vertices = 2 ^ (qubits + 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c01a0ce0-8578-8a29-8045-dbf7ae5f9398"
   }
 ]

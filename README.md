@@ -27,12 +27,12 @@ last because the orbit never reaches it.
 
 - The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 1248 kernel-accepted declarations across 65 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `156b8707-0e1e-8b78-89bf-220abf2b0f87`</sub>
-- 1061 of those 1248 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `d1610ebf-8afe-8f5a-bc0e-30737ffba11f`</sub>
-- 1528 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `0ae1f87d-1006-81dd-814d-411ae467ebd4`</sub>
+- The formal layer holds 1256 kernel-accepted declarations across 66 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `6e0dc526-75f9-8025-8b42-b2f85eec33c5`</sub>
+- 1069 of those 1256 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `667ecf52-8697-8e94-9007-52d0b89ce0c3`</sub>
+- 1536 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `90b5d38d-4dba-8678-b006-94a9b43d2f3a`</sub>
 
 ## 2 · The ring
 
@@ -55,10 +55,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 3392 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `3a3a96da-eb76-8f4e-8629-ee5c372d6293`</sub>
-- The count is an exact multiple of eight — 3392 is 424 octaves with no remainder.
-  <sub>SEALED · `77c87a14-5981-8313-9f6c-709ee3fcb665`</sub>
+- The ledger records 3400 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `482c83ae-356c-8eeb-b9dd-5bd827538579`</sub>
+- The count is an exact multiple of eight — 3400 is 425 octaves with no remainder.
+  <sub>SEALED · `90689ddf-8331-82ca-a718-367333975734`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -70,10 +70,10 @@ last because the orbit never reaches it.
   <sub>SEALED · `09b4450b-3016-8368-89e2-74787fa214d9`</sub>
 - How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. What any given host grants varies with its free memory and is deliberately not recorded here; `npm run lanes-check` prints it..
   <sub>SEALED · `85560e4e-7642-820b-aa1a-91f0e7e14c41`</sub>
-- The tools are reachable from a program: 27 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
-  <sub>SEALED · `8652003e-3344-8db6-b609-874d5ce0e952`</sub>
-- The stdio server advertises 2 of those 27 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
-  <sub>SEALED · `5f87213f-e4cb-8f58-8362-7c9c22ea1ba3`</sub>
+- The tools are reachable from a program: 31 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
+  <sub>SEALED · `2cefbd88-6936-8e22-8ab4-906bf3874b67`</sub>
+- The stdio server advertises 2 of those 31 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
+  <sub>SEALED · `630f044f-cb02-8f18-beee-48e0b064e362`</sub>
 
 ## The floor
 
@@ -110,7 +110,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-65 Lean files in 7 wings, 1248 declarations of which 1248 are theorems. The prose in this section is read out of the
+66 Lean files in 7 wings, 1256 declarations of which 1256 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -171,6 +171,8 @@ this page; there is nowhere else to keep the description in step.
 **The merkaba** — `merkaba.lean`, 8 theorem(s). (Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE   declaration restates a named classical result: its third conjunct 4 + 4 - 6 = 2 IS the Euler   characteristic of the tetrahedron. The comment above that theorem already named Euler; the register   did not, because prior art was routed on the FILE and a file-level row cannot say "own work except   theorem 7". No priority over Euler is claimed. What is this deposit's own here is the pairing of the   two tetrahedra with the cube Q₃ and the vertex and edge counts around it, not the characteristic. The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite algebra is re-proved here, and the two that do not (a cosine field, a bond angle in degrees) are absent on purpose — they are real trigonometry, not decidable arithmetic over ℤ/9, and padding them in would be the exact dishonesty the revocation was for.
 
 **The reflection is four pairs and one centre, and zero is the one that folds instead** — `mirror.lean`, 8 theorem(s). reflection carries out of the ring so that it must fold instead. prior_art_search: not performed — both are named above. prior_art_pool: unbounded prior_art_own: the decomposition on {1…9}, and theorem 4, which isolates zero as the exception
+
+**What qpu.uuidna.com and this deposit independently count the same way** — `qpu.lean`, 8 theorem(s). in rays.lean. What is decided here is only WHICH of those land on the same integers, and which do not. prior_art_search: not performed — both sides are named above and neither result is claimed as novel. prior_art_pool: bounded prior_art_own: the pairing, and the separations that keep it from being a coincidence collector
 
 **A reading that does not vary with what it reads separates nothing** — `separation.lean`, 8 theorem(s). by the kernel, on a specific ring of labels published on a specific day, with a control that fires. prior_art_search: not performed — both notions are named above rather than searched for. prior_art_pool: unbounded prior_art_own: the two decisions below, and the control that proves they are not vacuous
 
@@ -258,7 +260,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-29 of 1248 declarations carry no comment of their own and are shown here as the gap they are, not
+29 of 1256 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -267,14 +269,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 3,392 — 424 octaves exactly |
-| standing — carries its own proof | **1248** |
+| ledger entries | 3,400 — 425 octaves exactly |
+| standing — carries its own proof | **1256** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **551** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **1799** of 3,392 |
-| standing keys → distinct theorems | 1248 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 65 · 1248 theorems (1061 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 1061 of 1248 |
+| proved in total | **1807** of 3,400 |
+| standing keys → distinct theorems | 1256 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 66 · 1256 theorems (1069 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 1069 of 1256 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -329,4 +331,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 1248 Lean theorems · 3392 ledger entries · trial root `20a7ffcd-37df-84f6-accc-87390db63afc` · integrity, not truth*
+*20 claims, all verified · 1256 Lean theorems · 3400 ledger entries · trial root `7a3e6409-bfed-8e05-943f-6702199bd9c7` · integrity, not truth*

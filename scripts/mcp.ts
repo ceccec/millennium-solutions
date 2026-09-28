@@ -73,6 +73,59 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     return JSON.stringify({ ...r,
       note: 'NONE_FOUND means these searches, on this date, returned nothing at the floors shown — never that nothing earlier exists. A keyword search misses what it does not name. Nothing was written to this deposit.' }, null, 1)
   },
+  leads: async (a) => {
+    const { execFileSync } = await import('node:child_process')
+    const out = execFileSync('node', ['scripts/leads.ts'], { encoding: 'utf8', maxBuffer: 16 << 20 })
+    if (!a?.area) return out
+    const area = String(a.area)
+    return out.split('\n').filter((l) => l.includes(area) || /^○|^open leads|^crossed/.test(l)).join('\n')
+  },
+  readers: async (a) => {
+    const { execFileSync } = await import('node:child_process')
+    if (a?.list) return execFileSync('node', ['scripts/readers.ts', '--list'], { encoding: 'utf8', maxBuffer: 16 << 20 })
+    if (a?.domain) return execFileSync('node', ['scripts/readers.ts', '--domain', String(a.domain)], { encoding: 'utf8', maxBuffer: 16 << 20 })
+    return execFileSync('node', ['scripts/readers.ts'], { encoding: 'utf8', maxBuffer: 16 << 20 })
+  },
+  live: async () => {
+    const { execFileSync } = await import('node:child_process')
+    return execFileSync('node', ['scripts/published.ts'], { encoding: 'utf8', maxBuffer: 16 << 20 })
+  },
+
+  // ── THE CONNECTOR. This server speaks JSON-RPC to ANOTHER MCP server and returns its answer unchanged. ──
+  // Not mirrored, not summarised, not cached: forwarded. The registry is data in src/mcp/connectors.ts and
+  // holds no client, so nothing on the verification path can open a socket by importing it.
+  connect: async (a) => {
+    const { CONNECTORS, CONNECTOR } = await import('../src/mcp/connectors.ts')
+    if (!a?.connector) {
+      return JSON.stringify({
+        connectors: CONNECTORS.map((c) => ({ name: c.name, endpoint: c.endpoint, attribution: c.attribution, for: c.for, notFor: c.notFor, readOnly: c.readOnly })),
+        note: 'Call one with { connector, tool, arguments }. Pass no tool to list that server\'s own tools. '
+          + 'Every answer is that server\'s report of itself on this date; nothing here can check a remote claim.',
+      }, null, 1)
+    }
+    const c = CONNECTOR(String(a.connector))
+    if (!c) throw new Error(`unknown connector: ${String(a.connector)} — call connect with no arguments for the list`)
+    const body = a?.tool
+      ? { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: String(a.tool), arguments: a.arguments ?? {} } }
+      : { jsonrpc: '2.0', id: 1, method: 'tools/list' }
+    const ctl = new AbortController()
+    const t = setTimeout(() => ctl.abort(), 40_000)
+    try {
+      const res = await fetch(c.endpoint, {
+        method: 'POST', signal: ctl.signal,
+        headers: { 'content-type': 'application/json', 'User-Agent': 'millennium-solutions/connect (+https://ceccec.psg.bg/millennium-solutions/; read-only)' },
+        body: JSON.stringify(body),
+      })
+      const text = await res.text()
+      if (!res.ok) return JSON.stringify({ connector: c.name, status: res.status, note: `${c.name} answered HTTP ${res.status} — NOT MEASURED, never read as "it has no answer"` })
+      return JSON.stringify({ connector: c.name, endpoint: c.endpoint, attribution: c.attribution, notFor: c.notFor,
+        answer: (() => { try { return JSON.parse(text) } catch { return text.slice(0, 40_000) } })() }, null, 1)
+    } catch (e) {
+      const m = e instanceof Error ? e.message : String(e)
+      return JSON.stringify({ connector: c.name, note: /abort/i.test(m) ? 'timed out at 40s — NOT MEASURED, never "unreachable"' : m.slice(0, 200) })
+    } finally { clearTimeout(t) }
+  },
+
   entanglements: async (a) => {
     const { execFileSync } = await import('node:child_process')
     const out = execFileSync('node', ['scripts/coils.ts'], { encoding: 'utf8', maxBuffer: 16 << 20 })

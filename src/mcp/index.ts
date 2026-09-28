@@ -85,6 +85,23 @@ export const TOOLS = [
   { name: 'api_joins', description: 'Ask several independent public services for the SAME entity and report which values two or more of them return — the join DISCOVERED from the data rather than declared. PubChem, ChEMBL and ChEBI all return the InChIKey BSYNRYMUTXBXSQ-UHFFFAOYSA-N for aspirin, at three different paths, from two institutions on two continents. Negative results are reported and are the interesting ones: two plant-naming authorities share no joinable value, which is the problem Kew\'s credential-gated MPNS exists to solve. A JOIN IS NOT A TRUTH — it establishes that two databases mean the same entity, never that either is correct; two services can agree and both be wrong. Reaches the network; writes nothing.',
     inputSchema: { type: 'object', properties: { probe: { type: 'string', enum: ['drug', 'protein', 'plant', 'paper'] } } } },
 
+  // ── AUTONOMY: WHAT IS OPEN, AND WHAT IS LIVE ───────────────────────────────────────────────────────────
+  // Ten capabilities existed as scripts and NONE was reachable through MCP — including every one that reads
+  // the network. A caller could be told what this deposit proves and could not ask what it still owes, nor
+  // whether the release it describes is actually on the registry. Both are read-only.
+  { name: 'leads', description: 'The deposit\'s own open questions, derived from the tree rather than listed: uncontrolled refusing gates, unminted depositions, theorems that read back a hand-set value, MCP tools an install cannot reach. Also CROSSES them by cause — publication, authority, instrument, derivation, environment — because two leads sharing a cause are one problem with two faces and only one of them may be closable. Reports and does not gate: an open question is work not done, which is not work that is wrong.',
+    inputSchema: { type: 'object', properties: { area: { type: 'string' } } } },
+
+  { name: 'readers', description: 'Ask the scientific and medical sources this deposit investigates through — Europe PMC, PubMed, PubChem, ChEMBL, UniProt, Ensembl, KEGG, Reactome, GBIF, RxNorm, openFDA, MeSH, ClinicalTrials.gov and more — whether each still answers with a fact known BEFORE it was asked. Three verdicts kept apart: PROVEN, WRONG (the reader is broken OR the expectation was), and NOT MEASURED (it did not answer — silence is not absence). 8 further sources are named as credential- or licence-gated rather than omitted, because an unrecorded gap becomes an implicit claim of completeness. CITATION INSTRUMENTS, NOT MEDICAL ADVICE: a documented traditional use is an anthropological fact, never evidence a use works, and never a dose.',
+    inputSchema: { type: 'object', properties: { domain: { type: 'string' }, list: { type: 'boolean' } } } },
+
+  { name: 'live', description: 'What this deposit has actually SHIPPED, asked of the registries rather than the tree: the npm version against package.json, the newest provenance tag, and the site against the ledger this tree holds. A green publish workflow says npm was called, not that the version on the registry is the one here — that gap has been real for three releases. Reports, never gates: network state must not decide whether a local build is allowed.',
+    inputSchema: { type: 'object', properties: {} } },
+
+  // ── AND THE LIVE CONNECTOR: this server calling ANOTHER MCP server ─────────────────────────────────────
+  { name: 'connect', description: 'Call a declared live MCP server and return ITS answer, attributed. With no arguments, lists the connectors and what each one\'s answers do and do not establish. Currently one: qpu.uuidna.com, sixteen tools over the same JSON-RPC this server speaks — its state-vector circuit, its Lean rows, and the Shor run factoring 91 = 7 x 13 by period-finding. FORWARDS, NEVER MIRRORS: copying a remote answer into this tree would make a second source of one truth that drifts from the first and then disagrees silently. A connected answer is a third party\'s report of ITSELF on a date, carrying no more authority than that — and two services agreeing is a join key, never a truth.',
+    inputSchema: { type: 'object', properties: { connector: { type: 'string' }, tool: { type: 'string' }, arguments: { type: 'object' } } } },
+
   { name: 'ledger_status', description: 'Composition of the ledger: total, live, lean-backed, revoked, portable-to-Lean, chain breaks, duplicate keys/receipts, octave remainder. Measurement only — writes nothing.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'ledger_trial', description: 'Put every ledger entry in the dock and record a verdict with its ground — no bare verdicts. Writes src/proof/trial-all.json. Adjudicates, never removes: what follows from a refusal is the captain\'s to order.',
@@ -130,6 +147,10 @@ export type Need = 'core' | 'tree' | 'git' | 'lean' | 'ledger' | 'net' | 'shared
 export const NEEDS: Record<string, Need[]> = {
   novelty: ['net'],
   entanglements: ['tree'],
+  leads: ['tree'],
+  readers: ['net', 'tree'],
+  live: ['net', 'tree'],
+  connect: ['net'],
   // BOTH: it reaches other people's servers AND it runs a script from this tree. The first declaration said
   // only `net`, which was incomplete in the direction that flatters — a tool needing one thing looks more
   // portable than one needing two, and mcp-gate refused it.

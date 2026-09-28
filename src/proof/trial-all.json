@@ -20350,5 +20350,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "47729165-d473-8eae-8417-e6de81c38f9d"
+  },
+  {
+    "key": "lean_qpu_the_served_constants_satisfy_the_relations_qpu_states",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c192bedd-4735-8652-9122-0ac38e046f9a"
+  },
+  {
+    "key": "lean_qpu_fourteen_is_two_sevens_on_both_sides",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9901cf26-40ab-8747-bb65-80c346e274a8"
+  },
+  {
+    "key": "lean_qpu_hexbit_times_rays_is_what_this_deposit_reads",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e16df843-cf2e-8199-8f4f-455aeb0f0b7c"
+  },
+  {
+    "key": "lean_qpu_thirty_two_is_derived_there_and_declared_here",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f42918b9-0097-86d6-94b5-e5129112a979"
+  },
+  {
+    "key": "lean_qpu_the_capacity_law_holds_at_thirty_two_and_at_one_hundred_twenty_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1a260e71-109b-8f45-ad17-54550f3debab"
+  },
+  {
+    "key": "lean_qpu_the_constants_that_do_not_meet",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20d68b04-c25b-8a15-b3f8-add389cf344b"
+  },
+  {
+    "key": "lean_qpu_seven_appears_twice_for_unrelated_reasons",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3f87c273-8634-85b9-af4d-295638e004d4"
+  },
+  {
+    "key": "lean_qpu_both_sides_grow_by_doubling",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c01a0ce0-8578-8a29-8045-dbf7ae5f9398"
   }
 ]
