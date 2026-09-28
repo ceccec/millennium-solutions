@@ -18,9 +18,21 @@
 import { readFileSync, existsSync, writeFileSync, readdirSync } from 'node:fs'
 
 const DIST = '.vitepress/dist'
-type Check = { name: string; ok: boolean; detail: string }
+/** ── A BUILD-VARYING NUMBER CANNOT BE COMMITTED ────────────────────────────────────────────────────────────
+ *  This wrote exact byte counts of the built pages into E2E.md, and E2E.md is committed. A built page's size
+ *  is not stable across machines or across a VitePress upgrade, so the committed copy disagreed with whatever
+ *  CI built and the tree was dirty at the end of every release — scripts/release.ts then refused, correctly,
+ *  to mint a tag claiming a content-address HEAD does not carry. Same shape as the `produced` field in
+ *  docs/forensic-audit.json: a derived file recording something that cannot be reproduced.
+ *
+ *  The VERDICT is what this document is for and the verdict is stable — the page is built, it is under the
+ *  size limit, it references its data rather than embedding it. So `measured` carries the verdict's terms and
+ *  the exact byte count goes to the console, where a number that varies is information rather than a promise.
+ *  Nothing is hidden: the run still prints the bytes, and the document still says which side of the line they
+ *  fell. */
+type Check = { name: string; ok: boolean; detail: string; volatile?: string }
 const checks: Check[] = []
-const add = (name: string, ok: boolean, detail: string) => checks.push({ name, ok, detail })
+const add = (name: string, ok: boolean, detail: string, volatile?: string) => checks.push({ name, ok, detail, volatile })
 
 if (!existsSync(DIST)) {
   console.log(`✗ e2e: ${DIST} does not exist — run npm run docs:build first. A check of the artefact needs the artefact.`)
@@ -29,15 +41,17 @@ if (!existsSync(DIST)) {
 
 // ── 1 · the page a reader opens exists and references its data rather than embedding it ──────────────────
 const page = existsSync(`${DIST}/formulas.html`) ? readFileSync(`${DIST}/formulas.html`, 'utf8') : ''
-add('the formulas page is built', page.length > 0, `${page.length} bytes`)
+add('the formulas page is built', page.length > 0, page.length > 0 ? 'built' : 'absent', `${page.length} bytes`)
 add('it references the data file rather than embedding it',
   /formulas\.jsonld/.test(page) && page.length < 200_000,
-  `page ${(page.length / 1024).toFixed(0)} KB, references formulas.jsonld: ${/formulas\.jsonld/.test(page)}`)
+  `under the 200 KB limit and references formulas.jsonld: ${/formulas\.jsonld/.test(page)}`,
+  `page ${(page.length / 1024).toFixed(0)} KB`)
 
 // ── 2 · the data is schema.org and parses ────────────────────────────────────────────────────────────────
 let list: any = null
 try { list = JSON.parse(readFileSync(`${DIST}/formulas.jsonld`, 'utf8')) } catch (e) { /* reported below */ }
-add('the data file parses as JSON-LD', !!list, list ? `${(JSON.stringify(list).length / 1024).toFixed(0)} KB` : 'did not parse')
+add('the data file parses as JSON-LD', !!list, list ? 'parses' : 'did not parse',
+  list ? `${(JSON.stringify(list).length / 1024).toFixed(0)} KB` : undefined)
 const ctx = JSON.stringify(list?.['@context'] ?? '')
 add('it declares the schema.org context', /schema\.org/.test(ctx), ctx.slice(0, 80))
 add('it is an ItemList', list?.['@type'] === 'ItemList', String(list?.['@type']))
@@ -57,8 +71,12 @@ add('the page and the data agree on the count', Number.isNaN(stated) || stated =
 const built = new Set(existsSync(`${DIST}/theorem`) ? readdirSync(`${DIST}/theorem`).filter((f) => f.endsWith('.html')).map((f) => f.replace('.html', '')) : [])
 const linked = items.map((e: any) => e.item?.identifier).filter(Boolean)
 const dead = linked.filter((k: string) => !built.has(k))
+// `pages built` counts what VitePress emitted, which is a build artefact and not a function of the source —
+// so it varies between machines and versions, and belongs with the byte counts. The link count and the dead
+// count ARE functions of the source, and they are the verdict: every link a reader can follow resolves.
 add('every linked theorem page is built', dead.length === 0,
-  `${linked.length} links, ${built.size} pages built, ${dead.length} dead${dead.length ? ': ' + dead.slice(0, 3).join(', ') : ''}`)
+  `${linked.length} links, ${dead.length} dead${dead.length ? ': ' + dead.slice(0, 3).join(', ') : ''}`,
+  `${built.size} pages built`)
 
 // ── 5 · the facets the widget filters by are present on every item ────────────────────────────────────────
 const missing = items.filter((e: any) => !e.item?.wing || !e.item?.source || !e.item?.proof).length
@@ -71,7 +89,7 @@ if (items.length < 100 || checks.length < 5) {
 }
 
 const failed = checks.filter((c) => !c.ok)
-for (const c of checks) console.log(`  ${c.ok ? '✓' : '✗'} ${c.name} — ${c.detail}`)
+for (const c of checks) console.log(`  ${c.ok ? '✓' : '✗'} ${c.name} — ${c.detail}${c.volatile ? ` (${c.volatile})` : ''}`)
 
 writeFileSync('E2E.md', `---
 title: End-to-end
