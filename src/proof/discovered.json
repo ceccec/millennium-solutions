@@ -23259,5 +23259,60 @@
     "key": "lean_qpu_both_sides_grow_by_doubling",
     "name": "lean qpu.lean: both_sides_grow_by_doubling — (List.range' 1 20).all (fun n => 2 ^ (n + 1) == 2 ^ n + 2 ^ n) ∧ 240518168576 = 120259084288 + 120259084288 ∧ 240518168576 = 2 * 120259084288 ∧ vertices = levels ^ qubits ∧ vertices + vertices = 2 ^ (qubits + 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "c01a0ce0-8578-8a29-8045-dbf7ae5f9398"
+  },
+  {
+    "key": "lean_extension_coiling_over_a_grid_is_exactly_equality_of_extensions",
+    "name": "lean extension.lean: coiling_over_a_grid_is_exactly_equality_of_extensions — (grid.all (fun n => (fun k => 2 * k) n == (fun k => k + k) n)) == (ext (fun k => 2 * k) == ext (fun k => k + k)) ∧ (grid.all (fun n => (fun k => 2 * k) n == (fun k => 3 * k) n)) == (ext (fun k => 2 * k) == ext (fun k => 3 * k)) ∧ ext (fun k… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cf9fb48d-3b8a-8eca-a460-d1b5ba1862dd"
+  },
+  {
+    "key": "lean_extension_agreement_on_a_prefix_is_not_agreement",
+    "name": "lean extension.lean: agreement_on_a_prefix_is_not_agreement — (List.range' 1 9).all (fun n => dr n == n) ∧ dr 10 != 10 ∧ ext dr ≠ ext (fun k => k) ∧ ((List.range' 1 9).map dr) = ((List.range' 1 9).map (fun k => k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "63e923ac-462b-8424-89e3-1afbf60a0b57"
+  },
+  {
+    "key": "lean_extension_a_hash_into_nine_values_must_repeat",
+    "name": "lean extension.lean: a_hash_into_nine_values_must_repeat — ((List.range' 1 10).map dr).eraseDups.length < (List.range' 1 10).length ∧ ((List.range' 1 10).map dr).eraseDups.length = 9 ∧ (List.range' 1 10).length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "44f643f2-8efd-8c95-a51e-3107486a19d4"
+  },
+  {
+    "key": "lean_extension_a_collision_does_not_lift_to_an_identity",
+    "name": "lean extension.lean: a_collision_does_not_lift_to_an_identity — dr 1 = dr 10 ∧ (1 : Nat) ≠ 10 ∧ ext (fun _ => 1) ≠ ext (fun _ => 10) ∧ ¬ (grid.all (fun n => (n + 1) == (n + 10))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5fcecbc4-8b26-8925-81d1-8f10d11b2d30"
+  },
+  {
+    "key": "lean_extension_the_hash_keeps_one_value_and_a_coil_needs_all_of_them",
+    "name": "lean extension.lean: the_hash_keeps_one_value_and_a_coil_needs_all_of_them — grid.length = 12 ∧ (grid.map dr).eraseDups.length = 10 ∧ (grid.map dr).eraseDups.length < grid.length ∧ grid.length - (grid.map dr).eraseDups.length = 2 ∧ ((List.range' 1 20).map dr).eraseDups.length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d58f4624-41aa-89cf-be20-ab1c9bb02728"
+  },
+  {
+    "key": "lean_extension_order_invariance_is_the_identity_a_hash_can_have",
+    "name": "lean extension.lean: order_invariance_is_the_identity_a_hash_can_have — perms3.all (fun p => sum3 p == sum3 [1, 2, 4]) ∧ perms3.all (fun p => dr (sum3 p) == dr (sum3 [1, 2, 4])) ∧ perms3.length = 6 ∧ (perms3.map sum3).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "aed0fae9-5452-8647-b791-420a1b623596"
+  },
+  {
+    "key": "lean_extension_determinism_is_a_law_and_it_is_the_last_one_a_value_gives",
+    "name": "lean extension.lean: determinism_is_a_law_and_it_is_the_last_one_a_value_gives — grid.all (fun n => dr n == dr n) ∧ (List.range' 1 20).all (fun n => dr n == dr (n + 9)) ∧ dr 0 ≠ dr 9 ∧ ¬ grid.all (fun n => (dr n == dr (n + 1))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "eb846385-e918-8050-94b1-84ce373895f4"
+  },
+  {
+    "key": "lean_extension_an_identity_survives_a_wider_grid_and_a_collision_need_not",
+    "name": "lean extension.lean: an_identity_survives_a_wider_grid_and_a_collision_need_not — (List.range 40).all (fun n => 2 * n == n + n) ∧ ¬ (List.range 40).all (fun n => dr n == n) ∧ (List.range' 1 9).all (fun n => dr n == n) ∧ ((List.range 40).filter (fun n => dr n == n)).length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b171aee1-7b69-89f3-bd6d-417f5dad0099"
+  },
+  {
+    "key": "lean_extension_an_array_is_the_image_of_a_grid_under_a_formula",
+    "name": "lean extension.lean: an_array_is_the_image_of_a_grid_under_a_formula — ext (fun k => 2 * k) = grid.map (fun k => 2 * k) ∧ ext (fun k => k + k) = ext (fun k => 2 * k) ∧ ext (fun k => 2 * k) = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22] ∧ grid = List.range 12 ∧ grid.length = 12 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d7ab1872-728e-8b1f-b26e-c7fe84af9a4b"
+  },
+  {
+    "key": "lean_extension_a_hash_is_a_fold_and_a_chain_is_a_recurrence",
+    "name": "lean extension.lean: a_hash_is_a_fold_and_a_chain_is_a_recurrence — foldSum (ext (fun k => 2 * k)) = 132 ∧ dr (foldSum (ext (fun k => 2 * k))) = 6 ∧ foldSum [1, 2, 4] = foldSum [4, 2, 1] ∧ chain 3 0 = dr (dr (dr (0 + 3) + 2) + 1) ∧ chain 0 7 = 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d7ae1b22-a77a-883a-9e35-5a3c0b422b5c"
+  },
+  {
+    "key": "lean_extension_every_step_from_grid_to_address_is_computed",
+    "name": "lean extension.lean: every_step_from_grid_to_address_is_computed — grid = List.range 12 ∧ ext (fun k => 2 * k) = grid.map (fun k => 2 * k) ∧ foldSum (ext (fun k => 2 * k)) = 132 ∧ dr (foldSum (ext (fun k => 2 * k))) = 6 ∧ (ext (fun k => 2 * k) == ext (fun k => k + k)) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "11411e80-9d9e-86de-a6ac-ad9776f447ce"
   }
 ]

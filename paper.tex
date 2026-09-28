@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 1,248 of them across 65 files and
-7 wings; 1,061 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 1,256 of them across 66 files and
+7 wings; 1,069 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2290,6 +2290,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \forall d \in \mathrm{ring},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \land \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(0\right)\right) = 0 \land \forall d \in \{\, k + 11 \mid k \in \{0,\dots,8\} \,\},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) \neq d \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\paragraph{\texttt{qpu.lean}}
+
+\begin{theorem}[\texttt{the\_served\_constants\_satisfy\_the\_relations\_qpu\_states}]
+\[ \forall r \in \{0,\dots,23\},\; \mathrm{coins} \cdot r = \mathrm{faces} = r = \mathrm{rays} \land \forall v \in \{0,\dots,23\},\; v \cdot \mathrm{hexbit} = \mathrm{bits} = v = \mathrm{vertices} \land \forall k \in \{0,\dots,7\},\; \mathrm{levels}^{k} = \mathrm{vertices} = k = \mathrm{qubits} \land \mathrm{faces} = \mathrm{coins} \cdot \mathrm{rays} \land \mathrm{bits} = \mathrm{vertices} \cdot \mathrm{hexbit} \land \mathrm{faces} = 14 \land \mathrm{bits} = 32 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,608 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourteen\_is\_two\_sevens\_on\_both\_sides}]
+\[ \forall n \in \{0,\dots,23\},\; 2 \cdot n = \mathrm{Rays.DIMENSIONS} = n = \mathrm{Rays.N} \land \forall n \in \{0,\dots,23\},\; \mathrm{coins} \cdot n = \mathrm{faces} = 2 \cdot n = \mathrm{Rays.DIMENSIONS} \land \mathrm{faces} = \mathrm{Rays.DIMENSIONS} \land \mathrm{rays} = \mathrm{Rays.N} \land \mathrm{Rays.DIMENSIONS} = 14 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 576 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{hexbit\_times\_rays\_is\_what\_this\_deposit\_reads}]
+\[ \forall n \in \{0,\dots,23\},\; \mathrm{hexbit} \cdot n = \mathrm{Rays.DIGITS\_READ} = n = \mathrm{rays} \land \forall n \in \{0,\dots,23\},\; 4 \cdot n = \mathrm{Rays.DIGITS\_READ} = 2 \cdot n = \mathrm{Rays.DIMENSIONS} \land \mathrm{hexbit} \cdot \mathrm{rays} = \mathrm{Rays.DIGITS\_READ} \land \mathrm{Rays.DIGITS\_READ} = 28 \land \mathrm{hexbit} \cdot \mathrm{rays} = 2 \cdot \mathrm{faces} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 576 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{thirty\_two\_is\_derived\_there\_and\_declared\_here}]
+\[ \forall v \in \{0,\dots,23\},\; v \cdot \mathrm{hexbit} = \mathrm{Rays.DIGITS\_TOTAL} = v = \mathrm{vertices} \land \forall t \in \{0,\dots,39\},\; t - \mathrm{Rays.DIGITS\_READ} = 4 = t = \mathrm{Rays.DIGITS\_TOTAL} \land \mathrm{bits} = \mathrm{Rays.DIGITS\_TOTAL} \land \mathrm{bits} = \mathrm{vertices} \cdot \mathrm{hexbit} \land \mathrm{Rays.DIGITS\_TOTAL} = 32 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 960 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_capacity\_law\_holds\_at\_thirty\_two\_and\_at\_one\_hundred\_twenty\_two}]
+\[ \forall w \in \{0,\dots,127\},\; 2^{w} \cdot 2^{\mathrm{Capacity.free} - w} = 2^{\mathrm{Capacity.free}} \lor \mathrm{Capacity.free} < w \land \forall w \in \{0,\dots,127\},\; 2^{w} = 4294967296 = w = \mathrm{bits} \land 2^{\mathrm{bits}} = 4294967296 \land 2^{\mathrm{Capacity.free}} = 2^{\mathrm{bits}} \cdot 2^{\mathrm{Capacity.free} - \mathrm{bits}} \land \mathrm{Capacity.free} - \mathrm{bits} = 90 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16,384 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_constants\_that\_do\_not\_meet}]
+\[ \forall v \in \{0,\dots,23\},\; v \cdot \mathrm{hexbit} = \mathrm{Capacity.container} = v = 4 \cdot \mathrm{vertices} \land \forall n \in \{0,\dots,39\},\; n = \mathrm{Capacity.reserved} = n = 6 \land \mathrm{bits} \neq \mathrm{Capacity.container} \land \mathrm{faces} \neq 16 \land \mathrm{vertices} \neq \mathrm{Capacity.reserved} \land \mathrm{Capacity.container} - \mathrm{bits} = 96 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 960 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{seven\_appears\_twice\_for\_unrelated\_reasons}]
+\[ \forall d \in \{2,\dots,91\},\; 91 \bmod d = 0 = d = 7 \lor d = 13 \lor d = 91 \land 91 = 7 \cdot 13 \land \mathrm{rays} = 7 \land 91 \bmod \mathrm{rays} = 0 \land 91 \neq \mathrm{faces} \land 91 \neq \mathrm{bits} \land 13 \neq \mathrm{rays} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 90 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{both\_sides\_grow\_by\_doubling}]
+\[ \forall n \in \{1,\dots,20\},\; 2^{n + 1} = 2^{n} + 2^{n} \land 240518168576 = 120259084288 + 120259084288 \land 240518168576 = 2 \cdot 120259084288 \land \mathrm{vertices} = \mathrm{levels}^{\mathrm{qubits}} \land \mathrm{vertices} + \mathrm{vertices} = 2^{\mathrm{qubits} + 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
 
 \paragraph{\texttt{separation.lean}}
 

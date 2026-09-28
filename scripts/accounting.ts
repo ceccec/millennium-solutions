@@ -15,8 +15,22 @@ const cap = (c: string, fallback = '') => { try { return execSync(c, { encoding:
 const ledger: { key: string }[] = existsSync('src/proof/discovered.json') ? __ledger() : []
 const theorems = ledger.length
 const signed = existsSync('src/receipts') ? readdirSync('src/receipts').filter((f) => f.endsWith('.json')).length : 0
+// ── THE RELEASE COUNT IS THE OBSERVER, NOT THE SUBJECT, AND IT POISONED EVERY RELEASE AFTER ONE ──────────
+// This counted `git tag` into a COMMITTED document. Minting a tag is what a release DOES, so the moment one
+// succeeded this file was stale — the next release regenerated it, found the tree dirty, and scripts/
+// release.ts refused to tag against a content-address HEAD does not carry. Correctly. Predicted here before
+// it fired, and it fired exactly as described: 925 -> 926 the instant v9.7.8 landed.
+//
+// Same shape as docs/forensic-audit.json recording its own commit: a derived file whose value the act of
+// deriving-and-shipping changes has no fixed point. There the fix was to record the SUBJECT — the last commit
+// that touched the ledger. Here the subject is the ledger too: releases are counted as of the tag that was
+// current when the LEDGER last moved, which a release of documents does not change.
+//
+// The live count is still printed to the console and still on the site, which rebuilds every deploy. What
+// leaves the committed document is only the number that cannot be committed.
 const tags = cap('git tag').split('\n').filter(Boolean).length
 const latest = cap('git describe --tags --abbrev=0', 'v0')
+const ledgerTag = cap('git describe --tags --abbrev=0 $(git log -1 --format=%H -- src/proof/discovered.json)', latest)
 const files = cap('git ls-files').split('\n').filter(Boolean).length
 
 // each row is (label, value) — the value is a REAL count computed above.
@@ -26,7 +40,7 @@ const rows: [string, number][] = [
   ['Coins per receipt', COINS_PER_RECEIPT],
   ['Coins on the ledger (theorems × 2)', theorems * COINS_PER_RECEIPT],
   ['Coins on signed receipts (× 2)', signed * COINS_PER_RECEIPT],
-  ['Released versions (git tags)', tags],
+  ['Released versions (as of the last ledger change)', ledgerTag],
   ['Tracked, content-addressed files', files],
 ]
 const address = merkleFold(rows.map(([k, v]) => toUuid(k + ':' + v)))

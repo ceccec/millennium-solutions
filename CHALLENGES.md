@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 3392 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 3400 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1248)
+### lean (1256)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1459,6 +1459,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_coils_the_three_polygon_counts_are_pairwise_distinct_from_four](/theorem/lean_coils_the_three_polygon_counts_are_pairwise_distinct_from_four) — lean coils.lean: the_three_polygon_counts_are_pairwise_distinct_from_four — (List.range' 4 17).all (fun n =&gt; n * (n - 1) / 2 != n * (n + 1) / 2 &amp;&amp; n * (n - 1) / 2 != n * (n - 3) / 2 &amp;&amp; n * (n + 1) / 2 != n * (n - 3) / 2) ∧ (List.range' 1 20).all (fun n =&gt; n * (n + 1) / 2 == n * (n - 1) / 2 + n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6ec44d3f-d33f…`
 - [lean_coils_the_octave_and_the_fifth_meet_only_at_zero](/theorem/lean_coils_the_octave_and_the_fifth_meet_only_at_zero) — lean coils.lean: the_octave_and_the_fifth_meet_only_at_zero — 2 ^ 0 == 3 ^ 0 ∧ (List.range' 1 20).all (fun n =&gt; 2 ^ n != 3 ^ n) ∧ (List.range' 1 20).all (fun n =&gt; 2 ^ n &lt; 3 ^ n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `74381e03-a7ec…`
 - [lean_coils_the_digit_root_leaves_the_integers_at_ten](/theorem/lean_coils_the_digit_root_leaves_the_integers_at_ten) — lean coils.lean: the_digit_root_leaves_the_integers_at_ten — (List.range' 1 9).all (fun n =&gt; (if n = 0 then 0 else 1 + (n - 1) % 9) == n) ∧ (if (10 : Nat) = 0 then 0 else 1 + (10 - 1) % 9) != 10 ∧ (List.range' 10 11).all (fun n =&gt; (if n = 0 then 0 else 1 + (n - 1) % 9) != n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `47729165-d473…`
+- [lean_qpu_the_served_constants_satisfy_the_relations_qpu_states](/theorem/lean_qpu_the_served_constants_satisfy_the_relations_qpu_states) — lean qpu.lean: the_served_constants_satisfy_the_relations_qpu_states — faces = coins * rays ∧ bits = vertices * hexbit ∧ vertices = levels ^ qubits ∧ faces = 14 ∧ bits = 32 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c192bedd-4735…`
+- [lean_qpu_fourteen_is_two_sevens_on_both_sides](/theorem/lean_qpu_fourteen_is_two_sevens_on_both_sides) — lean qpu.lean: fourteen_is_two_sevens_on_both_sides — faces = Rays.DIMENSIONS ∧ rays = Rays.N ∧ coins * rays = 2 * Rays.N ∧ Rays.DIMENSIONS = 14 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9901cf26-40ab…`
+- [lean_qpu_hexbit_times_rays_is_what_this_deposit_reads](/theorem/lean_qpu_hexbit_times_rays_is_what_this_deposit_reads) — lean qpu.lean: hexbit_times_rays_is_what_this_deposit_reads — hexbit * rays = Rays.DIGITS_READ ∧ Rays.DIGITS_READ = 28 ∧ hexbit * rays = 2 * faces — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e16df843-cf2e…`
+- [lean_qpu_thirty_two_is_derived_there_and_declared_here](/theorem/lean_qpu_thirty_two_is_derived_there_and_declared_here) — lean qpu.lean: thirty_two_is_derived_there_and_declared_here — bits = Rays.DIGITS_TOTAL ∧ bits = vertices * hexbit ∧ Rays.DIGITS_TOTAL = 32 ∧ Rays.DIGITS_TOTAL - Rays.DIGITS_READ = 4 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f42918b9-0097…`
+- [lean_qpu_the_capacity_law_holds_at_thirty_two_and_at_one_hundred_twenty_two](/theorem/lean_qpu_the_capacity_law_holds_at_thirty_two_and_at_one_hundred_twenty_two) — lean qpu.lean: the_capacity_law_holds_at_thirty_two_and_at_one_hundred_twenty_two — 2 ^ bits = 4294967296 ∧ 2 ^ Capacity.free = 5316911983139663491615228241121378304 ∧ 2 ^ Capacity.free = 2 ^ bits * 2 ^ (Capacity.free - bits) ∧ Capacity.free - bits = 90 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1a260e71-109b…`
+- [lean_qpu_the_constants_that_do_not_meet](/theorem/lean_qpu_the_constants_that_do_not_meet) — lean qpu.lean: the_constants_that_do_not_meet — bits ≠ Capacity.container ∧ faces ≠ 16 ∧ vertices ≠ Capacity.reserved ∧ Capacity.container - bits = 96 ∧ Capacity.container = 4 * vertices * hexbit — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `20d68b04-c25b…`
+- [lean_qpu_seven_appears_twice_for_unrelated_reasons](/theorem/lean_qpu_seven_appears_twice_for_unrelated_reasons) — lean qpu.lean: seven_appears_twice_for_unrelated_reasons — 91 = 7 * 13 ∧ rays = 7 ∧ 91 % rays = 0 ∧ 91 ≠ faces ∧ 91 ≠ bits ∧ 13 ≠ rays — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3f87c273-8634…`
+- [lean_qpu_both_sides_grow_by_doubling](/theorem/lean_qpu_both_sides_grow_by_doubling) — lean qpu.lean: both_sides_grow_by_doubling — (List.range' 1 20).all (fun n =&gt; 2 ^ (n + 1) == 2 ^ n + 2 ^ n) ∧ 240518168576 = 120259084288 + 120259084288 ∧ 240518168576 = 2 * 120259084288 ∧ vertices = levels ^ qubits ∧ vertices + vertices = 2 ^ (qubits + 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c01a0ce0-8578…`
 
 ### other — one-of-a-kind (0)
 
@@ -3122,4 +3130,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `c159bbd9-bc7c-8549-9678-74c14912b06a`. Integrity, not truth.
+Page content-address: `43097043-7583-898b-8aec-3157ae19024c`. Integrity, not truth.

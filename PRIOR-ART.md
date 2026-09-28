@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 1,248 machine-checked declarations, **1,223** restate work that already has an author and
+Of 1,256 machine-checked declarations, **1,231** restate work that already has an author and
 **25** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **1,223** |
+| attributed to named earlier work | **1,231** |
 | unclassified — no search performed, status unknown | **25** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 3
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 62 sources, 1,223 theorems
+## Restated from named earlier work — 63 sources, 1,231 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -95,6 +95,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>planck.lean</code></td><td>35</td><td>the CODATA recommended values, and the SI's 2019 definition of the seven base constants</td><td>NONE OF THE PHYSICS IS THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The Planck units are</td></tr>
 <tr><td><code>preimage.lean</code></td><td>8</td><td>the second-preimage weakness of unpadded Merkle trees, and the standard remedy of</td><td>NOT THIS DEPOSIT'S AND WELL KNOWN. That a Merkle tree without domain separation lets an</td></tr>
 <tr><td><code>program.lean</code></td><td>21</td><td>identifier formats and error-detecting codes</td><td>the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC</td></tr>
+<tr><td><code>qpu.lean</code></td><td>8</td><td>the constants on the left are qpu.uuidna.com's, read from the served JSON-LD on</td><td>NEITHER SIDE IS BEING CREDITED WITH THE OTHER'S WORK. qpu states faces = coins * rays and</td></tr>
 <tr><td><code>quantum.lean</code></td><td>11</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
 <tr><td><code>ranking.lean</code></td><td>8</td><td>additive scoring over binary criteria — a weighted sum, the simplest form of</td><td>NEITHER IS THIS DEPOSIT'S. A weighted sum of indicators is the oldest scoring rule there</td></tr>
 <tr><td><code>rays.lean</code></td><td>13</td><td>cyclic groups and primitive roots</td><td>that 3 is a primitive root modulo 7 and that (ℤ/7)* is cyclic of order six is Gauss and</td></tr>
@@ -167,6 +168,7 @@ which is a contribution of verification, not of discovery.
 - **the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC** — 8 theorems, in `capacity.lean`
 - **the UUID text format, and the pigeonhole principle** — 8 theorems, in `handle.lean`
 - **the classification of a test outcome under partial information — the distinction** — 8 theorems, in `verdict.lean`
+- **the constants on the left are qpu.uuidna.com's, read from the served JSON-LD on** — 8 theorems, in `qpu.lean`
 - **the cycle decomposition of a permutation into disjoint cycles; the order of 2 in** — 8 theorems, in `turns.lean`
 - **the equivalence relation and its quotient — reflexivity, symmetry, transitivity, and** — 8 theorems, in `equivalence.lean`
 - **the false-positive rate of a classifier, and the correction of a raw count by a** — 6 theorems, in `discount.lean`
@@ -209,5 +211,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `776e8a3a-6ae8-8899-bd7b-d8e50c04660d` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `2a779520-e680-897f-a048-182bc4b6aa70` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.
