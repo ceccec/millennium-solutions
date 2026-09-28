@@ -36,6 +36,10 @@
 //      node scripts/imagine.ts --emit   (also write src/proof/imagined*.lean and verify them)
 import { existsSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
 import { execSync } from 'node:child_process'
+import { createHash } from 'node:crypto'
+// the cache scripts/lean.ts writes; its shape is that file's, read here and never written here.
+const LEAN_CACHE = 'src/proof/.lean-cache.json'
+const LEAN_CACHE_FORMAT = 3
 import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
 import { leanFiles } from '../src/api/index.ts'
 
@@ -395,7 +399,16 @@ const ignoresElement = (prop: string) => {
   }
   return false
 }
-const related = cands.filter((c) => !isTautology(c.prop) && !ignoresElement(c.prop))
+// AND ONE STATEMENT GETS ONE NAME. latex-gate found 199 pairs where two candidates are the SAME
+// proposition: on a one-element set, "collapses to a single value" and "is injective" are both
+// `(...).eraseDups.length = 1` — the same characters, twice, under two names. Two names for one statement is
+// the exact opposite of two statements proving each other, and it inflates every count that reads the corpus
+// while adding nothing. The first spelling wins, deterministically by key, so the choice is re-derivable.
+const seenProp = new Set<string>()
+const related = cands
+  .filter((c) => !isTautology(c.prop) && !ignoresElement(c.prop))
+  .sort((a, b) => a.key < b.key ? -1 : a.key > b.key ? 1 : 0)
+  .filter((c) => { const k = c.prop.replace(/\s+/g, ''); if (seenProp.has(k)) return false; seenProp.add(k); return true })
 console.log(`  ${cands.length - related.length} proposition(s) dropped as not cross-formulated `
   + `— the two sides were one expression, or the statement never mentioned the element it quantified over`)
 // pushed one at a time, not spread: `cands.push(...related)` passes every element as an argument and
@@ -553,7 +566,14 @@ const priorArt = carried.length ? carried.join('\n') : '-- prior_art: unclassifi
 //
 // So the output is split into modules the kernel can hold, each self-contained on Z9 and compiled on its own.
 // The shard size is a property of the machine rather than of the deposit, so it is stated here as one.
-const PER_SHARD = 4000
+// SIZED FOR THE SMALLEST MACHINE THAT MUST COMPILE IT, WHICH IS NOT THIS ONE. 4000 per shard was chosen
+// because it compiled here — ten cores and plenty of memory — and every shard was REFUSED on the GitHub
+// runner, taking the release workflow red for 34 minutes while reporting only "does not compile". The file
+// that a workstation accepts and a 4 GB runner kills is not a smaller claim, it is the same claim in a
+// container that cannot hold it: the third time this session that a limit of the machine has been read as a
+// judgement on the mathematics. A generated artefact has to compile where it is checked, so the size is set
+// by the tightest checker rather than the loosest, and it is a measured constant with a reason, not a guess.
+const PER_SHARD = 1000
 const shards: string[][] = []
 for (let i = 0; i < blocks.length; i += PER_SHARD) shards.push(blocks.slice(i, i + PER_SHARD))
 if (!shards.length) shards.push([])
@@ -610,7 +630,22 @@ const verdict = (out: string) => {
   return errors
 }
 try {
-  const out = shards.map((_, n) => String(execSync(`cd src/proof && LEAN_PATH=. lean ${shardName(n)}`, { encoding: 'utf8', stdio: 'pipe' }))).join('\n')
+  // THE SAME CACHE scripts/lean.ts KEEPS, CONSULTED RATHER THAN REBUILT. This recompiled all seven shards on
+  // every --emit, and --emit runs inside covered-gate in both the gates and the release chains — so the same
+  // bytes were put to the kernel three times a run, minutes each. lean.ts already records the kernel's
+  // verdict against the SHA-256 of each file's source; a shard whose bytes are unchanged has been checked, by
+  // that record, and re-checking it is work with a foregone answer. This is a cache of work and never of
+  // trust: it is keyed on the source, so a shard this run rewrote is compiled, and `lean --full` ignores it.
+  const cached: Record<string, { hash: string; format: number; ok: boolean }> =
+    existsSync(LEAN_CACHE) ? JSON.parse(readFileSync(LEAN_CACHE, 'utf8')) : {}
+  const fresh = shards.map((_, n) => shardName(n)).filter((name) => {
+    const hit = cached[name]
+    return !(hit?.ok && hit.format === LEAN_CACHE_FORMAT
+      && hit.hash === createHash('sha256').update(readFileSync('src/proof/' + name, 'utf8')).digest('hex'))
+  })
+  if (fresh.length < shards.length)
+    console.log(`  · ${shards.length - fresh.length} shard(s) unchanged — the kernel's verdict on those exact bytes is on record`)
+  const out = fresh.map((name) => String(execSync(`cd src/proof && LEAN_PATH=. lean ${name}`, { encoding: 'utf8', stdio: 'pipe' }))).join('\n')
   const errors = verdict(out)
   if (errors.length) { console.log('  ✗ ' + errors.length + ' refused:\n' + errors.slice(0, 10).map((l) => '    ' + l).join('\n')); process.exit(1) }
   console.log('  ✓ the kernel accepted all ' + t2.length)

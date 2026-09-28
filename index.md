@@ -33,12 +33,12 @@ last because the orbit never reaches it.
 
 - The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 26132 kernel-accepted declarations across 74 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `e39569f6-e4bd-85a6-94ca-718db33425af`</sub>
-- 25945 of those 26132 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `914dbd53-534c-8203-8cf8-a3e01ecb8bf5`</sub>
-- 26488 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `ac829b7f-aeef-84f5-b7eb-f1097f8d9c63`</sub>
+- The formal layer holds 25941 kernel-accepted declarations across 93 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `16e6144a-1f5f-86be-9a11-1f6d98fa5b0c`</sub>
+- 25754 of those 25941 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `0a935761-c9cb-84ca-a8bd-3c391987496e`</sub>
+- 26496 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `6681a037-1e18-8c08-8d7c-5f564d9cdd05`</sub>
 
 ## 2 · The ring
 
@@ -61,10 +61,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 28352 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `c692e774-6b3a-8016-a880-f53d07da5fd7`</sub>
-- The count is an exact multiple of eight — 28352 is 3544 octaves with no remainder.
-  <sub>SEALED · `760f5e45-dd8d-88ad-b62a-1ba17d32c58d`</sub>
+- The ledger records 28360 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `da5a5a72-fb79-817e-92eb-1aced51f3795`</sub>
+- The count is an exact multiple of eight — 28360 is 3545 octaves with no remainder.
+  <sub>SEALED · `af225a38-7afd-8e3d-b2f3-b2fdd2977ca4`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -116,7 +116,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-74 Lean files in 7 wings, 26132 declarations of which 26132 are theorems. The prose in this section is read out of the
+93 Lean files in 7 wings, 25941 declarations of which 25941 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -248,19 +248,57 @@ this page; there is nowhere else to keep the description in step.
 
 ### the imagined
 
-**What enumeration proposed and the kernel kept (1 of 7)** — `imagined.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**The structure the statements live in** — `group.lean`, 8 theorem(s). wing: the imagined prior_art: named prior_art_domain: the one-dimensional affine group AGL(1,n) over Z/n — standard finite group theory prior_art_note: AGL(1,n) has order phi(n)*n, which for n=9 is 6*9=54. Nothing here claims the group is new. prior_art_note: What is new is that this deposit's own derived map table is stated as the monoid it is, prior_art_note: with the group inside it named, generated to closure, and checked against invertibility. prior_art_search: 2026-09-28 NOTE ON THE FIELD ABOVE: prior_art is a CLASSIFICATION — named, unclassified or none-known — and this generator first wrote a sentence into it. scripts/priorart.ts rejected the file and the deploy went red; the prose belongs in prior_art_note, which is what it is for. GROUP — written by scripts/group.ts. qpu.uuidna.com, asked to prove one of this deposit's map statements, refused it as UNVERIFIED and said what it wanted instead: name the finite structure the claim lives in, generate from the generators to closure, and assert the closure property or the cardinality. The tens of thousands of individual map statements in src/proof/imagined*.lean are instances of the eight theorems here.
 
-**What enumeration proposed and the kernel kept (2 of 7)** — `imagined_2.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept (1 of 25)** — `imagined.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
-**What enumeration proposed and the kernel kept (3 of 7)** — `imagined_3.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept (10 of 25)** — `imagined_10.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
-**What enumeration proposed and the kernel kept (4 of 7)** — `imagined_4.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept (11 of 25)** — `imagined_11.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
-**What enumeration proposed and the kernel kept (5 of 7)** — `imagined_5.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept (12 of 25)** — `imagined_12.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
-**What enumeration proposed and the kernel kept (6 of 7)** — `imagined_6.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept (13 of 25)** — `imagined_13.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
-**What enumeration proposed and the kernel kept (7 of 7)** — `imagined_7.lean`, 941 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept (14 of 25)** — `imagined_14.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (15 of 25)** — `imagined_15.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (16 of 25)** — `imagined_16.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (17 of 25)** — `imagined_17.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (18 of 25)** — `imagined_18.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (19 of 25)** — `imagined_19.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (2 of 25)** — `imagined_2.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (20 of 25)** — `imagined_20.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (21 of 25)** — `imagined_21.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (22 of 25)** — `imagined_22.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (23 of 25)** — `imagined_23.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (24 of 25)** — `imagined_24.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (25 of 25)** — `imagined_25.lean`, 742 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (3 of 25)** — `imagined_3.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (4 of 25)** — `imagined_4.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (5 of 25)** — `imagined_5.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (6 of 25)** — `imagined_6.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (7 of 25)** — `imagined_7.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (8 of 25)** — `imagined_8.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (9 of 25)** — `imagined_9.lean`, 1000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
 **Sealed before the vocabulary moved, and still decided** — `retained.lean`, 15 theorem(s). RETAINED — scripts/imagine.ts sealed these when its map table was hand-written, and its derived enumeration does not propose them. Nothing about them was refuted: each is copied here exactly as the generator last wrote it, and the kernel decides every one on every run. The ledger is append-only, so a sealed key whose source disappears is an orphan the record cannot honestly resolve — keeping the source is the only answer that neither withdraws a proved fact nor claims a carrier that does not prove it.
 
@@ -282,7 +320,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-29 of 26132 declarations carry no comment of their own and are shown here as the gap they are, not
+29 of 25941 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -291,20 +329,20 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,352 — 3544 octaves exactly |
-| standing — carries its own proof | **26132** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **627** |
+| ledger entries | 28,360 — 3545 octaves exactly |
+| standing — carries its own proof | **25941** |
+| carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **26759** of 28,352 |
-| standing keys → distinct theorems | 26132 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 74 · 26132 theorems (25945 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 25945 of 26132 |
+| proved in total | **26767** of 28,360 |
+| standing keys → distinct theorems | 25941 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 93 · 25941 theorems (25754 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 25754 of 25941 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 627 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 826 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 259 other · 108 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 458 other · 457 tested the removed lexical gate · 108 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -336,4 +374,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*20 claims, all verified · 26132 Lean theorems · 28352 ledger entries · trial root `77618abf-7deb-8151-9453-cdb61bc95f8d` · integrity, not truth*
+*20 claims, all verified · 25941 Lean theorems · 28360 ledger entries · trial root `eac36611-1966-809b-b2dd-589daa1f806b` · integrity, not truth*

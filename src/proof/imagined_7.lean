@@ -1,6 +1,6 @@
 import Z9
 set_option maxRecDepth 8000000
--- title: What enumeration proposed and the kernel kept (7 of 7)
+-- title: What enumeration proposed and the kernel kept (7 of 25)
 -- wing: the imagined
 -- prior_art: named
 -- prior_art_domain: elementary number theory — the unit group of Z/9
@@ -17,3768 +17,4004 @@ namespace Imagined
 
 open Z9
 
--- d ↦ 3d + 8 folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([5].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 3d + 8 folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([0].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 3d + 8 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([1].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 3d + 8 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([2].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 3d + 8 folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([3].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 3d + 8 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([4].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 3d + 8 folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([6].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 3d + 8 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([7].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 3d + 8 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([8].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 3d + 8 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_3_8_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (3 * d + 8))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (3 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- multiplication by 6 folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_0_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (6 * d))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (6 * d) == v)).length)).eraseDups.length = 1 := by decide
-
--- multiplication by 6 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_0_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (6 * d))).eraseDups.map (fun v => ([1].filter (fun d => m9 (6 * d) == v)).length)).eraseDups.length = 1 := by decide
-
--- multiplication by 6 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_0_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (6 * d))).eraseDups.map (fun v => ([2].filter (fun d => m9 (6 * d) == v)).length)).eraseDups.length = 1 := by decide
-
--- multiplication by 6 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_0_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (6 * d))).eraseDups.map (fun v => ([4].filter (fun d => m9 (6 * d) == v)).length)).eraseDups.length = 1 := by decide
-
--- multiplication by 6 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_0_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (6 * d))).eraseDups.map (fun v => ([7].filter (fun d => m9 (6 * d) == v)).length)).eraseDups.length = 1 := by decide
-
--- multiplication by 6 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_0_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (6 * d))).eraseDups.map (fun v => ([8].filter (fun d => m9 (6 * d) == v)).length)).eraseDups.length = 1 := by decide
-
--- multiplication by 6 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_0_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (6 * d))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (6 * d) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the whole ring evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_all_are_all_the_same_size :
-  (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([0,1,2,3,4,5,6,7,8].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the cubes mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_cubes_are_all_the_same_size :
-  (([0, 1, 8].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([0, 1, 8].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([5].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([0].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([1].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([2].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([3].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([4].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([6].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([7].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([8].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 1 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_1_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (6 * d + 1))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (6 * d + 1) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the whole ring evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_all_are_all_the_same_size :
-  (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([0,1,2,3,4,5,6,7,8].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the cubes mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_cubes_are_all_the_same_size :
-  (([0, 1, 8].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([0, 1, 8].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([5].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([0].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([1].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([2].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([3].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([4].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([6].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([7].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([8].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 2 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_2_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (6 * d + 2))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (6 * d + 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the whole ring evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_all_are_all_the_same_size :
-  (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([0,1,2,3,4,5,6,7,8].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the cubes mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_cubes_are_all_the_same_size :
-  (([0, 1, 8].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([0, 1, 8].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([5].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([0].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([1].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([2].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([3].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([4].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([6].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([7].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([8].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 3 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_3_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (6 * d + 3))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (6 * d + 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the whole ring evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_all_are_all_the_same_size :
-  (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([0,1,2,3,4,5,6,7,8].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the cubes mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_cubes_are_all_the_same_size :
-  (([0, 1, 8].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([0, 1, 8].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([5].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([0].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([1].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([2].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([3].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([4].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([6].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([7].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([8].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 4 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_4_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (6 * d + 4))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (6 * d + 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the whole ring evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_all_are_all_the_same_size :
-  (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([0,1,2,3,4,5,6,7,8].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the cubes mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_cubes_are_all_the_same_size :
-  (([0, 1, 8].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([0, 1, 8].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([5].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([0].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([1].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([2].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([3].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([4].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([6].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([7].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([8].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 5 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_5_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (6 * d + 5))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (6 * d + 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the whole ring evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_all_are_all_the_same_size :
-  (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([0,1,2,3,4,5,6,7,8].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the cubes mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_cubes_are_all_the_same_size :
-  (([0, 1, 8].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([0, 1, 8].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([5].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([0].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([1].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([2].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([3].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([4].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([6].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([7].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([8].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 6 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_6_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (6 * d + 6))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (6 * d + 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the whole ring evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_all_are_all_the_same_size :
-  (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([0,1,2,3,4,5,6,7,8].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the cubes mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_cubes_are_all_the_same_size :
-  (([0, 1, 8].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([0, 1, 8].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([5].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([0].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([1].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([2].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([3].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([4].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([6].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([7].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([8].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 7 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_7_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (6 * d + 7))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (6 * d + 7) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the whole ring evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_all_are_all_the_same_size :
-  (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([0,1,2,3,4,5,6,7,8].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the cubes mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_cubes_are_all_the_same_size :
-  (([0, 1, 8].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([0, 1, 8].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([5].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([0].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([1].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([2].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([3].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([4].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([6].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([7].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([8].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- d ↦ 6d + 8 folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_aff_6_8_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (6 * d + 8))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (6 * d + 8) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the squares mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_squares_are_all_the_same_size :
-  (([0, 1, 4, 7].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([0, 1, 4, 7].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([5].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([0].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([1].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([2].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([3].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([4].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([6].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([7].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([8].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 2th power folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_2_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (d ^ 2))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (d ^ 2) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the whole ring evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_all_are_all_the_same_size :
-  (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([0,1,2,3,4,5,6,7,8].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([5].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([0].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([1].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([2].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([3].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([4].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([6].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([7].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([8].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 3th power folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_3_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (d ^ 3))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (d ^ 3) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the squares mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_squares_are_all_the_same_size :
-  (([0, 1, 4, 7].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([0, 1, 4, 7].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([5].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([0].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([1].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([2].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([3].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([4].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([6].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([7].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([8].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 4th power folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_4_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (d ^ 4))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (d ^ 4) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the squares mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_squares_are_all_the_same_size :
-  (([0, 1, 4, 7].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([0, 1, 4, 7].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the cubes mod nine evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_cubes_are_all_the_same_size :
-  (([0, 1, 8].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([0, 1, 8].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([5].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([0].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([1].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([2].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([3].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([4].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([6].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([7].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([8].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 5th power folds the image of the 5th power evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_5_over_pow_5_image_are_all_the_same_size :
-  (([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 5))).eraseDups.map (fun v => ([0, 1, 2, 4, 5, 7, 8].filter (fun d => m9 (d ^ 5) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the units evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_units_are_all_the_same_size :
-  (([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([1, 2, 4, 5, 7, 8].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the triad evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_triad_are_all_the_same_size :
-  (([3, 6, 0].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([3, 6, 0].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the doubling orbit evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_orbit_are_all_the_same_size :
-  (([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([1, 2, 4, 8, 7, 5].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the first tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_tetA_are_all_the_same_size :
-  (([1, 4, 7].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([1, 4, 7].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the second tetrahedron evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_tetB_are_all_the_same_size :
-  (([2, 5, 8].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([2, 5, 8].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the primitive roots evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_primitives_are_all_the_same_size :
-  (([2, 5].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([2, 5].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the self-inverse residues evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_selfinv_are_all_the_same_size :
-  (([1, 8].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([1, 8].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the residues the reflection fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_reflfixed_are_all_the_same_size :
-  (([5].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([5].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the image of the constant 0 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_aff_0_0_image_are_all_the_same_size :
-  (([0].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([0].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the image of the constant 1 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_aff_0_1_image_are_all_the_same_size :
-  (([1].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([1].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the image of the constant 2 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_aff_0_2_image_are_all_the_same_size :
-  (([2].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([2].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the image of the constant 3 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_aff_0_3_image_are_all_the_same_size :
-  (([3].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([3].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the image of the constant 4 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_aff_0_4_image_are_all_the_same_size :
-  (([4].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([4].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the image of the constant 6 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_aff_0_6_image_are_all_the_same_size :
-  (([6].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([6].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the image of the constant 7 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_aff_0_7_image_are_all_the_same_size :
-  (([7].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([7].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the image of the constant 8 evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_aff_0_8_image_are_all_the_same_size :
-  (([8].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([8].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- the 6th power folds the residues the 2th power fixes evenly — every fibre holds the same number of elements
-theorem the_fibres_of_pow_6_over_pow_2_fixed_are_all_the_same_size :
-  (([0, 1].map (fun d => m9 (d ^ 6))).eraseDups.map (fun v => ([0, 1].filter (fun d => m9 (d ^ 6) == v)).length)).eraseDups.length = 1 := by decide
-
--- chaining the identity across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_0_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => d)).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => d)).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 1 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_1_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 2 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_2_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 3 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_3_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 4 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_4_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 5 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_5_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 6 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_6_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 7 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_7_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the shift by 8 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_1_8_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 2 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_0_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (2 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (2 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 2 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_0_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (2 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (2 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 2 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_0_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 1 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_1_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 2 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_2_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 3 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_3_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 4 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_4_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 5 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_5_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 6 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_6_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 7 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_7_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 2d + 8 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_2_8_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (2 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 3 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_0_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (3 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (3 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 3 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_0_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 1 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_1_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 1 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_1_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 1 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_1_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 1 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_1_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 1 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_1_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 1 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_1_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 1 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_1_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 2 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_2_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 2 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_2_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 2 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_2_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 2 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_2_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 2 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_2_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 2 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_2_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 2 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_2_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 3 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_3_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 3 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_3_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 3 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_3_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 3 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_3_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 3 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_3_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 3 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_3_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 3 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_3_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 4 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_4_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 4 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_4_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 4 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_4_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 4 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_4_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 4 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_4_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 4 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_4_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 4 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_4_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 5 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_5_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 5 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_5_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 5 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_5_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 5 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_5_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 5 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_5_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 5 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_5_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 5 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_5_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 6 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_6_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 6 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_6_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 6 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_6_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 6 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_6_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 6 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_6_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 6 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_6_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 6 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_6_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 7 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_7_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 7 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_7_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 7 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_7_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 7 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_7_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 7 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_7_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 7 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_7_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 7 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_7_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 8 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_8_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 8 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_8_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 8 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_8_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 8 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_8_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 8 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_8_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 8 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_8_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 3d + 8 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_3_8_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (3 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 4 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_0_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (4 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (4 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 4 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_0_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (4 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (4 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 4 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_0_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 1 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_1_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 2 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_2_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 3 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_3_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 4 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_4_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 5 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_5_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 6 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_6_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 7 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_7_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 4d + 8 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_4_8_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (4 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 5 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_0_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (5 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (5 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 5 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_0_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (5 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (5 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 5 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_0_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 1 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_1_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 2 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_2_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 3 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_3_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 4 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_4_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 5 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_5_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 6 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_6_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 7 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_7_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 5d + 8 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_5_8_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (5 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 6 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_0_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (6 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (6 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 6 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_0_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 1 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_1_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 1 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_1_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 1 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_1_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 1 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_1_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 1 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_1_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 1 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_1_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 1 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_1_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 2 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_2_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 2 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_2_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 2 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_2_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 2 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_2_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 2 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_2_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 2 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_2_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 2 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_2_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 3 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_3_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 3 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_3_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 3 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_3_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 3 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_3_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 3 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_3_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 3 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_3_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 3 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_3_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 4 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_4_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 4 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_4_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 4 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_4_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 4 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_4_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 4 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_4_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 4 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_4_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 4 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_4_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 5 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_5_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 5 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_5_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 5 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_5_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 5 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_5_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 5 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_5_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 5 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_5_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 5 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_5_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 6 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_6_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 6 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_6_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 6 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_6_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 6 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_6_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 6 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_6_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 6 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_6_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 6 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_6_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 7 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_7_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 7 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_7_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 7 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_7_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 7 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_7_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 7 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_7_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 7 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_7_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 7 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_7_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 8 across the units gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_8_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 8 across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_8_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 8 across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_8_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 8 across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_8_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 8 across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_8_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 8 across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_8_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 6d + 8 across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_aff_6_8_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (6 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 7 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_0_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (7 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (7 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 7 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_0_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (7 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (7 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 7 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_0_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 1 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_1_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 2 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_2_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 3 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_3_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 4 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_4_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 5 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_5_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 6 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_6_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 7 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_7_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 7d + 8 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_7_8_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (7 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 8 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_0_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (8 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (8 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 8 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_0_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (8 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (8 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining multiplication by 8 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_0_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 1 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_1_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 1))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 2 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_2_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 3 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_3_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 4 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_4_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 5 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_5_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 6 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_6_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 7 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_7_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 7))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the units gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_units_ignores_the_listing_order :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the doubling orbit gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_orbit_ignores_the_listing_order :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 2, 4, 8, 7, 5].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the first tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_tetA_ignores_the_listing_order :
-  ([1, 4, 7].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 4, 7].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the second tetrahedron gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_tetB_ignores_the_listing_order :
-  ([2, 5, 8].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5, 8].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the whole ring gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_all_ignores_the_listing_order :
-  ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0,1,2,3,4,5,6,7,8].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the squares mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_squares_ignores_the_listing_order :
-  ([0, 1, 4, 7].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 4, 7].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the cubes mod nine gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_cubes_ignores_the_listing_order :
-  ([0, 1, 8].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 8].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the primitive roots gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_primitives_ignores_the_listing_order :
-  ([2, 5].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [2, 5].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the self-inverse residues gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_selfinv_ignores_the_listing_order :
-  ([1, 8].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [1, 8].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the residues the 2th power fixes gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_pow_2_fixed_ignores_the_listing_order :
-  ([0, 1].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining d ↦ 8d + 8 across the image of the 5th power gives the same address whether the set is taken as listed or in the ring's own order
-theorem the_chain_of_aff_8_8_over_pow_5_image_ignores_the_listing_order :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 = (([0,1,2,3,4,5,6,7,8].filter (fun d => [0, 1, 2, 4, 5, 7, 8].contains d)).map (fun d => m9 (8 * d + 8))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 2th power across the units gives the same address after the array is rotated by one
-theorem the_chain_of_pow_2_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 2th power across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_pow_2_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 2th power across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_pow_2_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 2th power across the self-inverse residues gives the same address after the array is rotated by one
-theorem the_chain_of_pow_2_over_selfinv_survives_rotation :
-  ([1, 8].map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 8]).drop 1 ++ ([1, 8]).take 1).map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 2th power across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_pow_2_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (d ^ 2))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 3th power across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_pow_3_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (d ^ 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (d ^ 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 3th power across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_pow_3_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (d ^ 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (d ^ 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 3th power across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_pow_3_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (d ^ 3))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (d ^ 3))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 4th power across the units gives the same address after the array is rotated by one
-theorem the_chain_of_pow_4_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 4th power across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_pow_4_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 4th power across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_pow_4_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 4th power across the self-inverse residues gives the same address after the array is rotated by one
-theorem the_chain_of_pow_4_over_selfinv_survives_rotation :
-  ([1, 8].map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 8]).drop 1 ++ ([1, 8]).take 1).map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 4th power across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_pow_4_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (d ^ 4))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 5th power across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_pow_5_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (d ^ 5))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (d ^ 5))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 6th power across the units gives the same address after the array is rotated by one
-theorem the_chain_of_pow_6_over_units_survives_rotation :
-  ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 5, 7, 8]).drop 1 ++ ([1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 6th power across the triad gives the same address after the array is rotated by one
-theorem the_chain_of_pow_6_over_triad_survives_rotation :
-  ([3, 6, 0].map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([3, 6, 0]).drop 1 ++ ([3, 6, 0]).take 1).map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 6th power across the doubling orbit gives the same address after the array is rotated by one
-theorem the_chain_of_pow_6_over_orbit_survives_rotation :
-  ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 2, 4, 8, 7, 5]).drop 1 ++ ([1, 2, 4, 8, 7, 5]).take 1).map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 6th power across the first tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_pow_6_over_tetA_survives_rotation :
-  ([1, 4, 7].map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 4, 7]).drop 1 ++ ([1, 4, 7]).take 1).map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 6th power across the second tetrahedron gives the same address after the array is rotated by one
-theorem the_chain_of_pow_6_over_tetB_survives_rotation :
-  ([2, 5, 8].map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5, 8]).drop 1 ++ ([2, 5, 8]).take 1).map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 6th power across the primitive roots gives the same address after the array is rotated by one
-theorem the_chain_of_pow_6_over_primitives_survives_rotation :
-  ([2, 5].map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([2, 5]).drop 1 ++ ([2, 5]).take 1).map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 6th power across the self-inverse residues gives the same address after the array is rotated by one
-theorem the_chain_of_pow_6_over_selfinv_survives_rotation :
-  ([1, 8].map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([1, 8]).drop 1 ++ ([1, 8]).take 1).map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
-
--- chaining the 6th power across the image of the 5th power gives the same address after the array is rotated by one
-theorem the_chain_of_pow_6_over_pow_5_image_survives_rotation :
-  ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 := by decide
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the image of the constant 0
+theorem aff_2_8_and_pow_3_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the image of the constant 1
+theorem aff_2_8_and_pow_3_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the image of the constant 3
+theorem aff_2_8_and_pow_3_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the image of the constant 4
+theorem aff_2_8_and_pow_3_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the image of the constant 6
+theorem aff_2_8_and_pow_3_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the image of the constant 7
+theorem aff_2_8_and_pow_3_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the residues the 2th power fixes
+theorem aff_2_8_and_pow_3_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the squares mod nine
+theorem aff_2_8_and_pow_3_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the first tetrahedron
+theorem aff_2_8_and_pow_3_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 3th power may be applied in either order on the triad
+theorem aff_2_8_and_pow_3_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (2 * (m9 (d ^ 3)) + 8) == m9 ((m9 (2 * d + 8)) ^ 3)) := by decide
+
+-- d ↦ 2d + 8 and the 4th power may be applied in either order on the image of the constant 1
+theorem aff_2_8_and_pow_4_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (2 * (m9 (d ^ 4)) + 8) == m9 ((m9 (2 * d + 8)) ^ 4)) := by decide
+
+-- d ↦ 2d + 8 and the 4th power may be applied in either order on the image of the constant 4
+theorem aff_2_8_and_pow_4_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (2 * (m9 (d ^ 4)) + 8) == m9 ((m9 (2 * d + 8)) ^ 4)) := by decide
+
+-- d ↦ 2d + 8 and the 4th power may be applied in either order on the image of the constant 7
+theorem aff_2_8_and_pow_4_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (2 * (m9 (d ^ 4)) + 8) == m9 ((m9 (2 * d + 8)) ^ 4)) := by decide
+
+-- d ↦ 2d + 8 and the 4th power may be applied in either order on the first tetrahedron
+theorem aff_2_8_and_pow_4_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (2 * (m9 (d ^ 4)) + 8) == m9 ((m9 (2 * d + 8)) ^ 4)) := by decide
+
+-- d ↦ 2d + 8 and the 5th power may be applied in either order on the image of the constant 0
+theorem aff_2_8_and_pow_5_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (2 * (m9 (d ^ 5)) + 8) == m9 ((m9 (2 * d + 8)) ^ 5)) := by decide
+
+-- d ↦ 2d + 8 and the 5th power may be applied in either order on the image of the constant 1
+theorem aff_2_8_and_pow_5_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (2 * (m9 (d ^ 5)) + 8) == m9 ((m9 (2 * d + 8)) ^ 5)) := by decide
+
+-- d ↦ 2d + 8 and the 5th power may be applied in either order on the image of the constant 2
+theorem aff_2_8_and_pow_5_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (2 * (m9 (d ^ 5)) + 8) == m9 ((m9 (2 * d + 8)) ^ 5)) := by decide
+
+-- d ↦ 2d + 8 and the 5th power may be applied in either order on the image of the constant 4
+theorem aff_2_8_and_pow_5_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (2 * (m9 (d ^ 5)) + 8) == m9 ((m9 (2 * d + 8)) ^ 5)) := by decide
+
+-- d ↦ 2d + 8 and the 5th power may be applied in either order on the image of the constant 7
+theorem aff_2_8_and_pow_5_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (2 * (m9 (d ^ 5)) + 8) == m9 ((m9 (2 * d + 8)) ^ 5)) := by decide
+
+-- d ↦ 2d + 8 and the 5th power may be applied in either order on the residues the 2th power fixes
+theorem aff_2_8_and_pow_5_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (2 * (m9 (d ^ 5)) + 8) == m9 ((m9 (2 * d + 8)) ^ 5)) := by decide
+
+-- d ↦ 2d + 8 and the 5th power may be applied in either order on the squares mod nine
+theorem aff_2_8_and_pow_5_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (2 * (m9 (d ^ 5)) + 8) == m9 ((m9 (2 * d + 8)) ^ 5)) := by decide
+
+-- d ↦ 2d + 8 and the 5th power may be applied in either order on the first tetrahedron
+theorem aff_2_8_and_pow_5_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (2 * (m9 (d ^ 5)) + 8) == m9 ((m9 (2 * d + 8)) ^ 5)) := by decide
+
+-- d ↦ 2d + 8 and the 6th power may be applied in either order on the image of the constant 1
+theorem aff_2_8_and_pow_6_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (2 * (m9 (d ^ 6)) + 8) == m9 ((m9 (2 * d + 8)) ^ 6)) := by decide
+
+-- d ↦ 2d + 8 and the 6th power may be applied in either order on the image of the constant 4
+theorem aff_2_8_and_pow_6_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (2 * (m9 (d ^ 6)) + 8) == m9 ((m9 (2 * d + 8)) ^ 6)) := by decide
+
+-- d ↦ 2d + 8 and the 6th power may be applied in either order on the image of the constant 7
+theorem aff_2_8_and_pow_6_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (2 * (m9 (d ^ 6)) + 8) == m9 ((m9 (2 * d + 8)) ^ 6)) := by decide
+
+-- d ↦ 2d + 8 and the 6th power may be applied in either order on the first tetrahedron
+theorem aff_2_8_and_pow_6_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (2 * (m9 (d ^ 6)) + 8) == m9 ((m9 (2 * d + 8)) ^ 6)) := by decide
+
+-- d ↦ 2d + 8 carries the image of the constant 0 onto the image of the constant 8
+theorem aff_2_8_carries_aff_0_0_image_onto_aff_0_8_image :
+  [0].all (fun d => [8].contains (m9 (2 * d + 8))) ∧ ([0].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 carries the image of the constant 2 onto the image of the constant 3
+theorem aff_2_8_carries_aff_0_2_image_onto_aff_0_3_image :
+  [2].all (fun d => [3].contains (m9 (2 * d + 8))) ∧ ([2].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 carries the image of the constant 3 onto the residues the reflection fixes
+theorem aff_2_8_carries_aff_0_3_image_onto_reflfixed :
+  [3].all (fun d => [5].contains (m9 (2 * d + 8))) ∧ ([3].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 carries the image of the constant 4 onto the image of the constant 7
+theorem aff_2_8_carries_aff_0_4_image_onto_aff_0_7_image :
+  [4].all (fun d => [7].contains (m9 (2 * d + 8))) ∧ ([4].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 carries the image of the constant 6 onto the image of the constant 2
+theorem aff_2_8_carries_aff_0_6_image_onto_aff_0_2_image :
+  [6].all (fun d => [2].contains (m9 (2 * d + 8))) ∧ ([6].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 carries the image of the constant 7 onto the image of the constant 4
+theorem aff_2_8_carries_aff_0_7_image_onto_aff_0_4_image :
+  [7].all (fun d => [4].contains (m9 (2 * d + 8))) ∧ ([7].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 carries the image of the constant 8 onto the image of the constant 6
+theorem aff_2_8_carries_aff_0_8_image_onto_aff_0_6_image :
+  [8].all (fun d => [6].contains (m9 (2 * d + 8))) ∧ ([8].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 carries the residues the 2th power fixes onto the self-inverse residues
+theorem aff_2_8_carries_pow_2_fixed_onto_selfinv :
+  [0, 1].all (fun d => [1, 8].contains (m9 (2 * d + 8))) ∧ ([0, 1].map (fun d => m9 (2 * d + 8))).eraseDups.length = 2 := by decide
+
+-- d ↦ 2d + 8 carries the residues the reflection fixes onto the image of the constant 0
+theorem aff_2_8_carries_reflfixed_onto_aff_0_0_image :
+  [5].all (fun d => [0].contains (m9 (2 * d + 8))) ∧ ([5].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 carries the second tetrahedron onto the triad
+theorem aff_2_8_carries_tetB_onto_triad :
+  [2, 5, 8].all (fun d => [3, 6, 0].contains (m9 (2 * d + 8))) ∧ ([2, 5, 8].map (fun d => m9 (2 * d + 8))).eraseDups.length = 3 := by decide
+
+-- d ↦ 2d + 8 carries the triad onto the second tetrahedron
+theorem aff_2_8_carries_triad_onto_tetB :
+  [3, 6, 0].all (fun d => [2, 5, 8].contains (m9 (2 * d + 8))) ∧ ([3, 6, 0].map (fun d => m9 (2 * d + 8))).eraseDups.length = 3 := by decide
+
+-- d ↦ 2d + 8 sends every element of the image of the constant 0 to a single value
+theorem aff_2_8_collapses_aff_0_0_image_to_one_value :
+  ([0].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 sends every element of the image of the constant 1 to a single value
+theorem aff_2_8_collapses_aff_0_1_image_to_one_value :
+  ([1].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 sends every element of the image of the constant 2 to a single value
+theorem aff_2_8_collapses_aff_0_2_image_to_one_value :
+  ([2].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 sends every element of the image of the constant 3 to a single value
+theorem aff_2_8_collapses_aff_0_3_image_to_one_value :
+  ([3].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 sends every element of the image of the constant 4 to a single value
+theorem aff_2_8_collapses_aff_0_4_image_to_one_value :
+  ([4].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 sends every element of the image of the constant 6 to a single value
+theorem aff_2_8_collapses_aff_0_6_image_to_one_value :
+  ([6].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 sends every element of the image of the constant 7 to a single value
+theorem aff_2_8_collapses_aff_0_7_image_to_one_value :
+  ([7].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 sends every element of the image of the constant 8 to a single value
+theorem aff_2_8_collapses_aff_0_8_image_to_one_value :
+  ([8].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 sends every element of the residues the reflection fixes to a single value
+theorem aff_2_8_collapses_reflfixed_to_one_value :
+  ([5].map (fun d => m9 (2 * d + 8))).eraseDups.length = 1 := by decide
+
+-- d ↦ 2d + 8 may be applied before or after folding the image of the constant 0 — the address is the same
+theorem aff_2_8_commutes_with_the_fold_on_aff_0_0_image :
+  m9 (([0].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 (2 * (m9 ([0].foldl (fun a b => a + b) 0)) + 8) := by decide
+
+-- d ↦ 2d + 8 may be applied before or after folding the image of the constant 1 — the address is the same
+theorem aff_2_8_commutes_with_the_fold_on_aff_0_1_image :
+  m9 (([1].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 (2 * (m9 ([1].foldl (fun a b => a + b) 0)) + 8) := by decide
+
+-- d ↦ 2d + 8 may be applied before or after folding the image of the constant 2 — the address is the same
+theorem aff_2_8_commutes_with_the_fold_on_aff_0_2_image :
+  m9 (([2].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 (2 * (m9 ([2].foldl (fun a b => a + b) 0)) + 8) := by decide
+
+-- d ↦ 2d + 8 may be applied before or after folding the image of the constant 3 — the address is the same
+theorem aff_2_8_commutes_with_the_fold_on_aff_0_3_image :
+  m9 (([3].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 (2 * (m9 ([3].foldl (fun a b => a + b) 0)) + 8) := by decide
+
+-- d ↦ 2d + 8 may be applied before or after folding the image of the constant 4 — the address is the same
+theorem aff_2_8_commutes_with_the_fold_on_aff_0_4_image :
+  m9 (([4].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 (2 * (m9 ([4].foldl (fun a b => a + b) 0)) + 8) := by decide
+
+-- d ↦ 2d + 8 may be applied before or after folding the image of the constant 6 — the address is the same
+theorem aff_2_8_commutes_with_the_fold_on_aff_0_6_image :
+  m9 (([6].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 (2 * (m9 ([6].foldl (fun a b => a + b) 0)) + 8) := by decide
+
+-- d ↦ 2d + 8 may be applied before or after folding the image of the constant 7 — the address is the same
+theorem aff_2_8_commutes_with_the_fold_on_aff_0_7_image :
+  m9 (([7].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 (2 * (m9 ([7].foldl (fun a b => a + b) 0)) + 8) := by decide
+
+-- d ↦ 2d + 8 may be applied before or after folding the image of the constant 8 — the address is the same
+theorem aff_2_8_commutes_with_the_fold_on_aff_0_8_image :
+  m9 (([8].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 (2 * (m9 ([8].foldl (fun a b => a + b) 0)) + 8) := by decide
+
+-- d ↦ 2d + 8 may be applied before or after folding the residues the reflection fixes — the address is the same
+theorem aff_2_8_commutes_with_the_fold_on_reflfixed :
+  m9 (([5].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 (2 * (m9 ([5].foldl (fun a b => a + b) 0)) + 8) := by decide
+
+-- d ↦ 2d + 8 applied three times returns every element of the image of the constant 1
+theorem aff_2_8_has_order_three_on_aff_0_1_image :
+  [1].all (fun d => m9 (2 * (m9 (2 * (m9 (2 * d + 8)) + 8)) + 8) == d) := by decide
+
+-- applying d ↦ 2d + 8 twice to the image of the constant 1 is the same as applying it once
+theorem aff_2_8_is_idempotent_on_aff_0_1_image :
+  [1].all (fun d => m9 (2 * (m9 (2 * d + 8)) + 8) == m9 (2 * d + 8)) := by decide
+
+-- d ↦ 2d + 8 is its own inverse on the image of the constant 1
+theorem aff_2_8_is_involutive_on_aff_0_1_image :
+  [1].all (fun d => (fun x => m9 (2 * x + 8)) (m9 (2 * d + 8)) == d) := by decide
+
+-- d ↦ 2d + 8 is its own inverse on the image of the constant 4
+theorem aff_2_8_is_involutive_on_aff_0_4_image :
+  [4].all (fun d => (fun x => m9 (2 * x + 8)) (m9 (2 * d + 8)) == d) := by decide
+
+-- d ↦ 2d + 8 is its own inverse on the image of the constant 7
+theorem aff_2_8_is_involutive_on_aff_0_7_image :
+  [7].all (fun d => (fun x => m9 (2 * x + 8)) (m9 (2 * d + 8)) == d) := by decide
+
+-- d ↦ 2d + 8 is its own inverse on the first tetrahedron
+theorem aff_2_8_is_involutive_on_tetA :
+  [1, 4, 7].all (fun d => (fun x => m9 (2 * x + 8)) (m9 (2 * d + 8)) == d) := by decide
+
+-- d ↦ 2d + 8 rewrites every element of the image of the constant 1 and its folded address does not move
+theorem aff_2_8_leaves_the_address_of_aff_0_1_image_unmoved :
+  m9 (([1].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 ([1].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 2d + 8 rewrites every element of the whole ring and its folded address does not move
+theorem aff_2_8_leaves_the_address_of_all_unmoved :
+  m9 (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 ([0,1,2,3,4,5,6,7,8].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 2d + 8 rewrites every element of the first tetrahedron and its folded address does not move
+theorem aff_2_8_leaves_the_address_of_tetA_unmoved :
+  m9 (([1, 4, 7].map (fun d => m9 (2 * d + 8))).foldl (fun a b => a + b) 0) = m9 ([1, 4, 7].foldl (fun a b => a + b) 0) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_aff_1_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the image of the constant 1
+theorem aff_3_0_and_aff_1_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the image of the constant 2
+theorem aff_3_0_and_aff_1_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_aff_1_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the image of the constant 4
+theorem aff_3_0_and_aff_1_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_aff_1_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the image of the constant 7
+theorem aff_3_0_and_aff_1_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the image of the constant 8
+theorem aff_3_0_and_aff_1_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the whole ring
+theorem aff_3_0_and_aff_1_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the cubes mod nine
+theorem aff_3_0_and_aff_1_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the doubling orbit
+theorem aff_3_0_and_aff_1_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the residues the 2th power fixes
+theorem aff_3_0_and_aff_1_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the image of the 5th power
+theorem aff_3_0_and_aff_1_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the primitive roots
+theorem aff_3_0_and_aff_1_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the residues the reflection fixes
+theorem aff_3_0_and_aff_1_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the self-inverse residues
+theorem aff_3_0_and_aff_1_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the squares mod nine
+theorem aff_3_0_and_aff_1_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the first tetrahedron
+theorem aff_3_0_and_aff_1_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the second tetrahedron
+theorem aff_3_0_and_aff_1_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the triad
+theorem aff_3_0_and_aff_1_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and the identity may be applied in either order on the units
+theorem aff_3_0_and_aff_1_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d)) == (m9 (3 * d))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_aff_2_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the image of the constant 1
+theorem aff_3_0_and_aff_2_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the image of the constant 2
+theorem aff_3_0_and_aff_2_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_aff_2_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the image of the constant 4
+theorem aff_3_0_and_aff_2_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_aff_2_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the image of the constant 7
+theorem aff_3_0_and_aff_2_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the image of the constant 8
+theorem aff_3_0_and_aff_2_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the whole ring
+theorem aff_3_0_and_aff_2_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the cubes mod nine
+theorem aff_3_0_and_aff_2_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the doubling orbit
+theorem aff_3_0_and_aff_2_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_0_and_aff_2_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the image of the 5th power
+theorem aff_3_0_and_aff_2_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the primitive roots
+theorem aff_3_0_and_aff_2_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the residues the reflection fixes
+theorem aff_3_0_and_aff_2_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the self-inverse residues
+theorem aff_3_0_and_aff_2_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the squares mod nine
+theorem aff_3_0_and_aff_2_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the first tetrahedron
+theorem aff_3_0_and_aff_2_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the second tetrahedron
+theorem aff_3_0_and_aff_2_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the triad
+theorem aff_3_0_and_aff_2_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 2 may be applied in either order on the units
+theorem aff_3_0_and_aff_2_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d))) == m9 (2 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_aff_4_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the image of the constant 1
+theorem aff_3_0_and_aff_4_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the image of the constant 2
+theorem aff_3_0_and_aff_4_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_aff_4_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the image of the constant 4
+theorem aff_3_0_and_aff_4_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_aff_4_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the image of the constant 7
+theorem aff_3_0_and_aff_4_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the image of the constant 8
+theorem aff_3_0_and_aff_4_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the whole ring
+theorem aff_3_0_and_aff_4_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the cubes mod nine
+theorem aff_3_0_and_aff_4_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the doubling orbit
+theorem aff_3_0_and_aff_4_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_0_and_aff_4_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the image of the 5th power
+theorem aff_3_0_and_aff_4_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the primitive roots
+theorem aff_3_0_and_aff_4_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the residues the reflection fixes
+theorem aff_3_0_and_aff_4_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the self-inverse residues
+theorem aff_3_0_and_aff_4_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the squares mod nine
+theorem aff_3_0_and_aff_4_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the first tetrahedron
+theorem aff_3_0_and_aff_4_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the second tetrahedron
+theorem aff_3_0_and_aff_4_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the triad
+theorem aff_3_0_and_aff_4_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 4 may be applied in either order on the units
+theorem aff_3_0_and_aff_4_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d))) == m9 (4 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_aff_5_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the image of the constant 1
+theorem aff_3_0_and_aff_5_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the image of the constant 2
+theorem aff_3_0_and_aff_5_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_aff_5_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the image of the constant 4
+theorem aff_3_0_and_aff_5_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_aff_5_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the image of the constant 7
+theorem aff_3_0_and_aff_5_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the image of the constant 8
+theorem aff_3_0_and_aff_5_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the whole ring
+theorem aff_3_0_and_aff_5_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the cubes mod nine
+theorem aff_3_0_and_aff_5_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the doubling orbit
+theorem aff_3_0_and_aff_5_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_0_and_aff_5_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the image of the 5th power
+theorem aff_3_0_and_aff_5_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the primitive roots
+theorem aff_3_0_and_aff_5_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the residues the reflection fixes
+theorem aff_3_0_and_aff_5_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the self-inverse residues
+theorem aff_3_0_and_aff_5_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the squares mod nine
+theorem aff_3_0_and_aff_5_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the first tetrahedron
+theorem aff_3_0_and_aff_5_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the second tetrahedron
+theorem aff_3_0_and_aff_5_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the triad
+theorem aff_3_0_and_aff_5_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 5 may be applied in either order on the units
+theorem aff_3_0_and_aff_5_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d))) == m9 (5 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_aff_6_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the image of the constant 1
+theorem aff_3_0_and_aff_6_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the image of the constant 2
+theorem aff_3_0_and_aff_6_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_aff_6_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the image of the constant 4
+theorem aff_3_0_and_aff_6_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_aff_6_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the image of the constant 7
+theorem aff_3_0_and_aff_6_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the image of the constant 8
+theorem aff_3_0_and_aff_6_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the whole ring
+theorem aff_3_0_and_aff_6_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the cubes mod nine
+theorem aff_3_0_and_aff_6_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the doubling orbit
+theorem aff_3_0_and_aff_6_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_0_and_aff_6_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the image of the 5th power
+theorem aff_3_0_and_aff_6_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the primitive roots
+theorem aff_3_0_and_aff_6_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the residues the reflection fixes
+theorem aff_3_0_and_aff_6_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the self-inverse residues
+theorem aff_3_0_and_aff_6_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the squares mod nine
+theorem aff_3_0_and_aff_6_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the first tetrahedron
+theorem aff_3_0_and_aff_6_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the second tetrahedron
+theorem aff_3_0_and_aff_6_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the triad
+theorem aff_3_0_and_aff_6_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 6 may be applied in either order on the units
+theorem aff_3_0_and_aff_6_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d))) == m9 (6 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_aff_7_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the image of the constant 1
+theorem aff_3_0_and_aff_7_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the image of the constant 2
+theorem aff_3_0_and_aff_7_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_aff_7_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the image of the constant 4
+theorem aff_3_0_and_aff_7_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_aff_7_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the image of the constant 7
+theorem aff_3_0_and_aff_7_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the image of the constant 8
+theorem aff_3_0_and_aff_7_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the whole ring
+theorem aff_3_0_and_aff_7_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the cubes mod nine
+theorem aff_3_0_and_aff_7_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the doubling orbit
+theorem aff_3_0_and_aff_7_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_0_and_aff_7_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the image of the 5th power
+theorem aff_3_0_and_aff_7_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the primitive roots
+theorem aff_3_0_and_aff_7_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the residues the reflection fixes
+theorem aff_3_0_and_aff_7_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the self-inverse residues
+theorem aff_3_0_and_aff_7_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the squares mod nine
+theorem aff_3_0_and_aff_7_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the first tetrahedron
+theorem aff_3_0_and_aff_7_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the second tetrahedron
+theorem aff_3_0_and_aff_7_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the triad
+theorem aff_3_0_and_aff_7_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 7 may be applied in either order on the units
+theorem aff_3_0_and_aff_7_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (7 * d))) == m9 (7 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_aff_8_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the image of the constant 1
+theorem aff_3_0_and_aff_8_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the image of the constant 2
+theorem aff_3_0_and_aff_8_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_aff_8_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the image of the constant 4
+theorem aff_3_0_and_aff_8_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_aff_8_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the image of the constant 7
+theorem aff_3_0_and_aff_8_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the image of the constant 8
+theorem aff_3_0_and_aff_8_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the whole ring
+theorem aff_3_0_and_aff_8_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the cubes mod nine
+theorem aff_3_0_and_aff_8_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the doubling orbit
+theorem aff_3_0_and_aff_8_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_0_and_aff_8_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the image of the 5th power
+theorem aff_3_0_and_aff_8_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the primitive roots
+theorem aff_3_0_and_aff_8_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the residues the reflection fixes
+theorem aff_3_0_and_aff_8_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the self-inverse residues
+theorem aff_3_0_and_aff_8_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the squares mod nine
+theorem aff_3_0_and_aff_8_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the first tetrahedron
+theorem aff_3_0_and_aff_8_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the second tetrahedron
+theorem aff_3_0_and_aff_8_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the triad
+theorem aff_3_0_and_aff_8_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and multiplication by 8 may be applied in either order on the units
+theorem aff_3_0_and_aff_8_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (8 * d))) == m9 (8 * (m9 (3 * d)))) := by decide
+
+-- multiplication by 3 and the 2th power may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_pow_2_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 2))) == m9 ((m9 (3 * d)) ^ 2)) := by decide
+
+-- multiplication by 3 and the 2th power may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_pow_2_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 2))) == m9 ((m9 (3 * d)) ^ 2)) := by decide
+
+-- multiplication by 3 and the 2th power may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_pow_2_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 2))) == m9 ((m9 (3 * d)) ^ 2)) := by decide
+
+-- multiplication by 3 and the 2th power may be applied in either order on the triad
+theorem aff_3_0_and_pow_2_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 2))) == m9 ((m9 (3 * d)) ^ 2)) := by decide
+
+-- multiplication by 3 and the 3th power may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_pow_3_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 3))) == m9 ((m9 (3 * d)) ^ 3)) := by decide
+
+-- multiplication by 3 and the 3th power may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_pow_3_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 3))) == m9 ((m9 (3 * d)) ^ 3)) := by decide
+
+-- multiplication by 3 and the 3th power may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_pow_3_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 3))) == m9 ((m9 (3 * d)) ^ 3)) := by decide
+
+-- multiplication by 3 and the 3th power may be applied in either order on the triad
+theorem aff_3_0_and_pow_3_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 3))) == m9 ((m9 (3 * d)) ^ 3)) := by decide
+
+-- multiplication by 3 and the 4th power may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_pow_4_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 4))) == m9 ((m9 (3 * d)) ^ 4)) := by decide
+
+-- multiplication by 3 and the 4th power may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_pow_4_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 4))) == m9 ((m9 (3 * d)) ^ 4)) := by decide
+
+-- multiplication by 3 and the 4th power may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_pow_4_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 4))) == m9 ((m9 (3 * d)) ^ 4)) := by decide
+
+-- multiplication by 3 and the 4th power may be applied in either order on the triad
+theorem aff_3_0_and_pow_4_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 4))) == m9 ((m9 (3 * d)) ^ 4)) := by decide
+
+-- multiplication by 3 and the 5th power may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_pow_5_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 5))) == m9 ((m9 (3 * d)) ^ 5)) := by decide
+
+-- multiplication by 3 and the 5th power may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_pow_5_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 5))) == m9 ((m9 (3 * d)) ^ 5)) := by decide
+
+-- multiplication by 3 and the 5th power may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_pow_5_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 5))) == m9 ((m9 (3 * d)) ^ 5)) := by decide
+
+-- multiplication by 3 and the 5th power may be applied in either order on the triad
+theorem aff_3_0_and_pow_5_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 5))) == m9 ((m9 (3 * d)) ^ 5)) := by decide
+
+-- multiplication by 3 and the 6th power may be applied in either order on the image of the constant 0
+theorem aff_3_0_and_pow_6_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 6))) == m9 ((m9 (3 * d)) ^ 6)) := by decide
+
+-- multiplication by 3 and the 6th power may be applied in either order on the image of the constant 3
+theorem aff_3_0_and_pow_6_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 6))) == m9 ((m9 (3 * d)) ^ 6)) := by decide
+
+-- multiplication by 3 and the 6th power may be applied in either order on the image of the constant 6
+theorem aff_3_0_and_pow_6_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 6))) == m9 ((m9 (3 * d)) ^ 6)) := by decide
+
+-- multiplication by 3 and the 6th power may be applied in either order on the triad
+theorem aff_3_0_and_pow_6_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 6))) == m9 ((m9 (3 * d)) ^ 6)) := by decide
+
+-- multiplication by 3 carries the image of the constant 1 onto the image of the constant 3
+theorem aff_3_0_carries_aff_0_1_image_onto_aff_0_3_image :
+  [1].all (fun d => [3].contains (m9 (3 * d))) ∧ ([1].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by 3 carries the image of the constant 2 onto the image of the constant 6
+theorem aff_3_0_carries_aff_0_2_image_onto_aff_0_6_image :
+  [2].all (fun d => [6].contains (m9 (3 * d))) ∧ ([2].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by 3 carries the image of the 5th power onto the triad
+theorem aff_3_0_carries_pow_5_image_onto_triad :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => [3, 6, 0].contains (m9 (3 * d))) ∧ ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d))).eraseDups.length = 3 := by decide
+
+-- multiplication by 3 sends every element of the image of the constant 1 to a single value
+theorem aff_3_0_collapses_aff_0_1_image_to_one_value :
+  ([1].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by 3 sends every element of the image of the constant 2 to a single value
+theorem aff_3_0_collapses_aff_0_2_image_to_one_value :
+  ([2].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by 3 sends every element of the image of the constant 4 to a single value
+theorem aff_3_0_collapses_aff_0_4_image_to_one_value :
+  ([4].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by 3 sends every element of the image of the constant 7 to a single value
+theorem aff_3_0_collapses_aff_0_7_image_to_one_value :
+  ([7].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by 3 sends every element of the image of the constant 8 to a single value
+theorem aff_3_0_collapses_aff_0_8_image_to_one_value :
+  ([8].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by 3 sends every element of the primitive roots to a single value
+theorem aff_3_0_collapses_primitives_to_one_value :
+  ([2, 5].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by 3 collides nowhere on the residues the 2th power fixes — every fibre is a single element
+theorem aff_3_0_is_injective_on_pow_2_fixed :
+  ([0, 1].map (fun d => m9 (3 * d))).eraseDups.length = 2 := by decide
+
+-- multiplication by 3 rewrites every element of the image of the 5th power and its folded address does not move
+theorem aff_3_0_leaves_the_address_of_pow_5_image_unmoved :
+  m9 (([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d))).foldl (fun a b => a + b) 0) = m9 ([0, 1, 2, 4, 5, 7, 8].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_aff_1_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the image of the constant 1
+theorem aff_3_1_and_aff_1_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the image of the constant 2
+theorem aff_3_1_and_aff_1_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_aff_1_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the image of the constant 4
+theorem aff_3_1_and_aff_1_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_aff_1_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the image of the constant 7
+theorem aff_3_1_and_aff_1_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the image of the constant 8
+theorem aff_3_1_and_aff_1_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the whole ring
+theorem aff_3_1_and_aff_1_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the cubes mod nine
+theorem aff_3_1_and_aff_1_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the doubling orbit
+theorem aff_3_1_and_aff_1_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the residues the 2th power fixes
+theorem aff_3_1_and_aff_1_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the image of the 5th power
+theorem aff_3_1_and_aff_1_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the primitive roots
+theorem aff_3_1_and_aff_1_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the residues the reflection fixes
+theorem aff_3_1_and_aff_1_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the self-inverse residues
+theorem aff_3_1_and_aff_1_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the squares mod nine
+theorem aff_3_1_and_aff_1_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the first tetrahedron
+theorem aff_3_1_and_aff_1_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the second tetrahedron
+theorem aff_3_1_and_aff_1_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the triad
+theorem aff_3_1_and_aff_1_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and the identity may be applied in either order on the units
+theorem aff_3_1_and_aff_1_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d) + 1) == (m9 (3 * d + 1))) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_aff_2_5_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the image of the constant 1
+theorem aff_3_1_and_aff_2_5_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the image of the constant 2
+theorem aff_3_1_and_aff_2_5_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_aff_2_5_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the image of the constant 4
+theorem aff_3_1_and_aff_2_5_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_aff_2_5_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the image of the constant 7
+theorem aff_3_1_and_aff_2_5_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the image of the constant 8
+theorem aff_3_1_and_aff_2_5_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the whole ring
+theorem aff_3_1_and_aff_2_5_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the cubes mod nine
+theorem aff_3_1_and_aff_2_5_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the doubling orbit
+theorem aff_3_1_and_aff_2_5_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_1_and_aff_2_5_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the image of the 5th power
+theorem aff_3_1_and_aff_2_5_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the primitive roots
+theorem aff_3_1_and_aff_2_5_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the residues the reflection fixes
+theorem aff_3_1_and_aff_2_5_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the self-inverse residues
+theorem aff_3_1_and_aff_2_5_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the squares mod nine
+theorem aff_3_1_and_aff_2_5_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the first tetrahedron
+theorem aff_3_1_and_aff_2_5_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the second tetrahedron
+theorem aff_3_1_and_aff_2_5_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the triad
+theorem aff_3_1_and_aff_2_5_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 2d + 5 may be applied in either order on the units
+theorem aff_3_1_and_aff_2_5_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d + 5)) + 1) == m9 (2 * (m9 (3 * d + 1)) + 5)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_aff_4_6_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the image of the constant 1
+theorem aff_3_1_and_aff_4_6_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the image of the constant 2
+theorem aff_3_1_and_aff_4_6_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_aff_4_6_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the image of the constant 4
+theorem aff_3_1_and_aff_4_6_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_aff_4_6_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the image of the constant 7
+theorem aff_3_1_and_aff_4_6_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the image of the constant 8
+theorem aff_3_1_and_aff_4_6_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the whole ring
+theorem aff_3_1_and_aff_4_6_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the cubes mod nine
+theorem aff_3_1_and_aff_4_6_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the doubling orbit
+theorem aff_3_1_and_aff_4_6_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_1_and_aff_4_6_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the image of the 5th power
+theorem aff_3_1_and_aff_4_6_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the primitive roots
+theorem aff_3_1_and_aff_4_6_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the residues the reflection fixes
+theorem aff_3_1_and_aff_4_6_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the self-inverse residues
+theorem aff_3_1_and_aff_4_6_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the squares mod nine
+theorem aff_3_1_and_aff_4_6_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the first tetrahedron
+theorem aff_3_1_and_aff_4_6_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the second tetrahedron
+theorem aff_3_1_and_aff_4_6_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the triad
+theorem aff_3_1_and_aff_4_6_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 4d + 6 may be applied in either order on the units
+theorem aff_3_1_and_aff_4_6_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 1) == m9 (4 * (m9 (3 * d + 1)) + 6)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_aff_5_2_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the image of the constant 1
+theorem aff_3_1_and_aff_5_2_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the image of the constant 2
+theorem aff_3_1_and_aff_5_2_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_aff_5_2_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the image of the constant 4
+theorem aff_3_1_and_aff_5_2_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_aff_5_2_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the image of the constant 7
+theorem aff_3_1_and_aff_5_2_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the image of the constant 8
+theorem aff_3_1_and_aff_5_2_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the whole ring
+theorem aff_3_1_and_aff_5_2_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the cubes mod nine
+theorem aff_3_1_and_aff_5_2_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the doubling orbit
+theorem aff_3_1_and_aff_5_2_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_1_and_aff_5_2_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the image of the 5th power
+theorem aff_3_1_and_aff_5_2_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the primitive roots
+theorem aff_3_1_and_aff_5_2_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the residues the reflection fixes
+theorem aff_3_1_and_aff_5_2_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the self-inverse residues
+theorem aff_3_1_and_aff_5_2_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the squares mod nine
+theorem aff_3_1_and_aff_5_2_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the first tetrahedron
+theorem aff_3_1_and_aff_5_2_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the second tetrahedron
+theorem aff_3_1_and_aff_5_2_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the triad
+theorem aff_3_1_and_aff_5_2_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 5d + 2 may be applied in either order on the units
+theorem aff_3_1_and_aff_5_2_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d + 2)) + 1) == m9 (5 * (m9 (3 * d + 1)) + 2)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_aff_6_7_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the image of the constant 1
+theorem aff_3_1_and_aff_6_7_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the image of the constant 2
+theorem aff_3_1_and_aff_6_7_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_aff_6_7_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the image of the constant 4
+theorem aff_3_1_and_aff_6_7_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_aff_6_7_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the image of the constant 7
+theorem aff_3_1_and_aff_6_7_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the image of the constant 8
+theorem aff_3_1_and_aff_6_7_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the whole ring
+theorem aff_3_1_and_aff_6_7_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the cubes mod nine
+theorem aff_3_1_and_aff_6_7_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the doubling orbit
+theorem aff_3_1_and_aff_6_7_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_1_and_aff_6_7_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the image of the 5th power
+theorem aff_3_1_and_aff_6_7_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the primitive roots
+theorem aff_3_1_and_aff_6_7_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the residues the reflection fixes
+theorem aff_3_1_and_aff_6_7_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the self-inverse residues
+theorem aff_3_1_and_aff_6_7_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the squares mod nine
+theorem aff_3_1_and_aff_6_7_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the first tetrahedron
+theorem aff_3_1_and_aff_6_7_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the second tetrahedron
+theorem aff_3_1_and_aff_6_7_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the triad
+theorem aff_3_1_and_aff_6_7_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 6d + 7 may be applied in either order on the units
+theorem aff_3_1_and_aff_6_7_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d + 7)) + 1) == m9 (6 * (m9 (3 * d + 1)) + 7)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_aff_7_3_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the image of the constant 1
+theorem aff_3_1_and_aff_7_3_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the image of the constant 2
+theorem aff_3_1_and_aff_7_3_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_aff_7_3_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the image of the constant 4
+theorem aff_3_1_and_aff_7_3_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_aff_7_3_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the image of the constant 7
+theorem aff_3_1_and_aff_7_3_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the image of the constant 8
+theorem aff_3_1_and_aff_7_3_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the whole ring
+theorem aff_3_1_and_aff_7_3_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the cubes mod nine
+theorem aff_3_1_and_aff_7_3_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the doubling orbit
+theorem aff_3_1_and_aff_7_3_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_1_and_aff_7_3_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the image of the 5th power
+theorem aff_3_1_and_aff_7_3_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the primitive roots
+theorem aff_3_1_and_aff_7_3_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the residues the reflection fixes
+theorem aff_3_1_and_aff_7_3_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the self-inverse residues
+theorem aff_3_1_and_aff_7_3_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the squares mod nine
+theorem aff_3_1_and_aff_7_3_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the first tetrahedron
+theorem aff_3_1_and_aff_7_3_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the second tetrahedron
+theorem aff_3_1_and_aff_7_3_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the triad
+theorem aff_3_1_and_aff_7_3_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 7d + 3 may be applied in either order on the units
+theorem aff_3_1_and_aff_7_3_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 1) == m9 (7 * (m9 (3 * d + 1)) + 3)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_aff_8_8_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the image of the constant 1
+theorem aff_3_1_and_aff_8_8_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the image of the constant 2
+theorem aff_3_1_and_aff_8_8_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_aff_8_8_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the image of the constant 4
+theorem aff_3_1_and_aff_8_8_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_aff_8_8_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the image of the constant 7
+theorem aff_3_1_and_aff_8_8_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the image of the constant 8
+theorem aff_3_1_and_aff_8_8_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the whole ring
+theorem aff_3_1_and_aff_8_8_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the cubes mod nine
+theorem aff_3_1_and_aff_8_8_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the doubling orbit
+theorem aff_3_1_and_aff_8_8_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_1_and_aff_8_8_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the image of the 5th power
+theorem aff_3_1_and_aff_8_8_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the primitive roots
+theorem aff_3_1_and_aff_8_8_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the residues the reflection fixes
+theorem aff_3_1_and_aff_8_8_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the self-inverse residues
+theorem aff_3_1_and_aff_8_8_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the squares mod nine
+theorem aff_3_1_and_aff_8_8_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the first tetrahedron
+theorem aff_3_1_and_aff_8_8_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the second tetrahedron
+theorem aff_3_1_and_aff_8_8_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the triad
+theorem aff_3_1_and_aff_8_8_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and d ↦ 8d + 8 may be applied in either order on the units
+theorem aff_3_1_and_aff_8_8_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (8 * d + 8)) + 1) == m9 (8 * (m9 (3 * d + 1)) + 8)) := by decide
+
+-- d ↦ 3d + 1 and the 2th power may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_pow_2_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 2)) + 1) == m9 ((m9 (3 * d + 1)) ^ 2)) := by decide
+
+-- d ↦ 3d + 1 and the 2th power may be applied in either order on the image of the constant 2
+theorem aff_3_1_and_pow_2_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (d ^ 2)) + 1) == m9 ((m9 (3 * d + 1)) ^ 2)) := by decide
+
+-- d ↦ 3d + 1 and the 2th power may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_pow_2_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 2)) + 1) == m9 ((m9 (3 * d + 1)) ^ 2)) := by decide
+
+-- d ↦ 3d + 1 and the 2th power may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_pow_2_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 2)) + 1) == m9 ((m9 (3 * d + 1)) ^ 2)) := by decide
+
+-- d ↦ 3d + 1 and the 2th power may be applied in either order on the image of the constant 8
+theorem aff_3_1_and_pow_2_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (d ^ 2)) + 1) == m9 ((m9 (3 * d + 1)) ^ 2)) := by decide
+
+-- d ↦ 3d + 1 and the 2th power may be applied in either order on the primitive roots
+theorem aff_3_1_and_pow_2_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (d ^ 2)) + 1) == m9 ((m9 (3 * d + 1)) ^ 2)) := by decide
+
+-- d ↦ 3d + 1 and the 2th power may be applied in either order on the residues the reflection fixes
+theorem aff_3_1_and_pow_2_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (d ^ 2)) + 1) == m9 ((m9 (3 * d + 1)) ^ 2)) := by decide
+
+-- d ↦ 3d + 1 and the 2th power may be applied in either order on the second tetrahedron
+theorem aff_3_1_and_pow_2_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (d ^ 2)) + 1) == m9 ((m9 (3 * d + 1)) ^ 2)) := by decide
+
+-- d ↦ 3d + 1 and the 2th power may be applied in either order on the triad
+theorem aff_3_1_and_pow_2_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 2)) + 1) == m9 ((m9 (3 * d + 1)) ^ 2)) := by decide
+
+-- d ↦ 3d + 1 and the 3th power may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_pow_3_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 3)) + 1) == m9 ((m9 (3 * d + 1)) ^ 3)) := by decide
+
+-- d ↦ 3d + 1 and the 3th power may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_pow_3_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 3)) + 1) == m9 ((m9 (3 * d + 1)) ^ 3)) := by decide
+
+-- d ↦ 3d + 1 and the 3th power may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_pow_3_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 3)) + 1) == m9 ((m9 (3 * d + 1)) ^ 3)) := by decide
+
+-- d ↦ 3d + 1 and the 3th power may be applied in either order on the triad
+theorem aff_3_1_and_pow_3_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 3)) + 1) == m9 ((m9 (3 * d + 1)) ^ 3)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_pow_4_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the image of the constant 1
+theorem aff_3_1_and_pow_4_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_pow_4_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the image of the constant 4
+theorem aff_3_1_and_pow_4_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_pow_4_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the image of the constant 7
+theorem aff_3_1_and_pow_4_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the residues the 2th power fixes
+theorem aff_3_1_and_pow_4_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the squares mod nine
+theorem aff_3_1_and_pow_4_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the first tetrahedron
+theorem aff_3_1_and_pow_4_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 4th power may be applied in either order on the triad
+theorem aff_3_1_and_pow_4_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 4)) + 1) == m9 ((m9 (3 * d + 1)) ^ 4)) := by decide
+
+-- d ↦ 3d + 1 and the 5th power may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_pow_5_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 5)) + 1) == m9 ((m9 (3 * d + 1)) ^ 5)) := by decide
+
+-- d ↦ 3d + 1 and the 5th power may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_pow_5_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 5)) + 1) == m9 ((m9 (3 * d + 1)) ^ 5)) := by decide
+
+-- d ↦ 3d + 1 and the 5th power may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_pow_5_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 5)) + 1) == m9 ((m9 (3 * d + 1)) ^ 5)) := by decide
+
+-- d ↦ 3d + 1 and the 5th power may be applied in either order on the triad
+theorem aff_3_1_and_pow_5_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 5)) + 1) == m9 ((m9 (3 * d + 1)) ^ 5)) := by decide
+
+-- d ↦ 3d + 1 and the 6th power may be applied in either order on the image of the constant 0
+theorem aff_3_1_and_pow_6_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (d ^ 6)) + 1) == m9 ((m9 (3 * d + 1)) ^ 6)) := by decide
+
+-- d ↦ 3d + 1 and the 6th power may be applied in either order on the image of the constant 3
+theorem aff_3_1_and_pow_6_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (d ^ 6)) + 1) == m9 ((m9 (3 * d + 1)) ^ 6)) := by decide
+
+-- d ↦ 3d + 1 and the 6th power may be applied in either order on the image of the constant 6
+theorem aff_3_1_and_pow_6_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (d ^ 6)) + 1) == m9 ((m9 (3 * d + 1)) ^ 6)) := by decide
+
+-- d ↦ 3d + 1 and the 6th power may be applied in either order on the triad
+theorem aff_3_1_and_pow_6_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (d ^ 6)) + 1) == m9 ((m9 (3 * d + 1)) ^ 6)) := by decide
+
+-- d ↦ 3d + 1 carries the image of the constant 0 onto the image of the constant 1
+theorem aff_3_1_carries_aff_0_0_image_onto_aff_0_1_image :
+  [0].all (fun d => [1].contains (m9 (3 * d + 1))) ∧ ([0].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the image of the constant 1 onto the image of the constant 4
+theorem aff_3_1_carries_aff_0_1_image_onto_aff_0_4_image :
+  [1].all (fun d => [4].contains (m9 (3 * d + 1))) ∧ ([1].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the image of the constant 2 onto the image of the constant 7
+theorem aff_3_1_carries_aff_0_2_image_onto_aff_0_7_image :
+  [2].all (fun d => [7].contains (m9 (3 * d + 1))) ∧ ([2].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the image of the constant 3 onto the image of the constant 1
+theorem aff_3_1_carries_aff_0_3_image_onto_aff_0_1_image :
+  [3].all (fun d => [1].contains (m9 (3 * d + 1))) ∧ ([3].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the image of the constant 6 onto the image of the constant 1
+theorem aff_3_1_carries_aff_0_6_image_onto_aff_0_1_image :
+  [6].all (fun d => [1].contains (m9 (3 * d + 1))) ∧ ([6].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the image of the constant 7 onto the image of the constant 4
+theorem aff_3_1_carries_aff_0_7_image_onto_aff_0_4_image :
+  [7].all (fun d => [4].contains (m9 (3 * d + 1))) ∧ ([7].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the image of the constant 8 onto the image of the constant 7
+theorem aff_3_1_carries_aff_0_8_image_onto_aff_0_7_image :
+  [8].all (fun d => [7].contains (m9 (3 * d + 1))) ∧ ([8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the whole ring onto the first tetrahedron
+theorem aff_3_1_carries_all_onto_tetA :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [1, 4, 7].contains (m9 (3 * d + 1))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 1 carries the cubes mod nine onto the first tetrahedron
+theorem aff_3_1_carries_cubes_onto_tetA :
+  [0, 1, 8].all (fun d => [1, 4, 7].contains (m9 (3 * d + 1))) ∧ ([0, 1, 8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 1 carries the image of the 5th power onto the first tetrahedron
+theorem aff_3_1_carries_pow_5_image_onto_tetA :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => [1, 4, 7].contains (m9 (3 * d + 1))) ∧ ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 1 carries the primitive roots onto the image of the constant 7
+theorem aff_3_1_carries_primitives_onto_aff_0_7_image :
+  [2, 5].all (fun d => [7].contains (m9 (3 * d + 1))) ∧ ([2, 5].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the residues the reflection fixes onto the image of the constant 7
+theorem aff_3_1_carries_reflfixed_onto_aff_0_7_image :
+  [5].all (fun d => [7].contains (m9 (3 * d + 1))) ∧ ([5].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the first tetrahedron onto the image of the constant 4
+theorem aff_3_1_carries_tetA_onto_aff_0_4_image :
+  [1, 4, 7].all (fun d => [4].contains (m9 (3 * d + 1))) ∧ ([1, 4, 7].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the second tetrahedron onto the image of the constant 7
+theorem aff_3_1_carries_tetB_onto_aff_0_7_image :
+  [2, 5, 8].all (fun d => [7].contains (m9 (3 * d + 1))) ∧ ([2, 5, 8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 carries the triad onto the image of the constant 1
+theorem aff_3_1_carries_triad_onto_aff_0_1_image :
+  [3, 6, 0].all (fun d => [1].contains (m9 (3 * d + 1))) ∧ ([3, 6, 0].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the image of the constant 0 to a single value
+theorem aff_3_1_collapses_aff_0_0_image_to_one_value :
+  ([0].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the image of the constant 1 to a single value
+theorem aff_3_1_collapses_aff_0_1_image_to_one_value :
+  ([1].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the image of the constant 2 to a single value
+theorem aff_3_1_collapses_aff_0_2_image_to_one_value :
+  ([2].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the image of the constant 3 to a single value
+theorem aff_3_1_collapses_aff_0_3_image_to_one_value :
+  ([3].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the image of the constant 4 to a single value
+theorem aff_3_1_collapses_aff_0_4_image_to_one_value :
+  ([4].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the image of the constant 6 to a single value
+theorem aff_3_1_collapses_aff_0_6_image_to_one_value :
+  ([6].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the image of the constant 7 to a single value
+theorem aff_3_1_collapses_aff_0_7_image_to_one_value :
+  ([7].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the image of the constant 8 to a single value
+theorem aff_3_1_collapses_aff_0_8_image_to_one_value :
+  ([8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the primitive roots to a single value
+theorem aff_3_1_collapses_primitives_to_one_value :
+  ([2, 5].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the residues the reflection fixes to a single value
+theorem aff_3_1_collapses_reflfixed_to_one_value :
+  ([5].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the first tetrahedron to a single value
+theorem aff_3_1_collapses_tetA_to_one_value :
+  ([1, 4, 7].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the second tetrahedron to a single value
+theorem aff_3_1_collapses_tetB_to_one_value :
+  ([2, 5, 8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 sends every element of the triad to a single value
+theorem aff_3_1_collapses_triad_to_one_value :
+  ([3, 6, 0].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 1 may be applied before or after folding the image of the constant 0 — the address is the same
+theorem aff_3_1_commutes_with_the_fold_on_aff_0_0_image :
+  m9 (([0].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([0].foldl (fun a b => a + b) 0)) + 1) := by decide
+
+-- d ↦ 3d + 1 may be applied before or after folding the image of the constant 1 — the address is the same
+theorem aff_3_1_commutes_with_the_fold_on_aff_0_1_image :
+  m9 (([1].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([1].foldl (fun a b => a + b) 0)) + 1) := by decide
+
+-- d ↦ 3d + 1 may be applied before or after folding the image of the constant 2 — the address is the same
+theorem aff_3_1_commutes_with_the_fold_on_aff_0_2_image :
+  m9 (([2].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([2].foldl (fun a b => a + b) 0)) + 1) := by decide
+
+-- d ↦ 3d + 1 may be applied before or after folding the image of the constant 3 — the address is the same
+theorem aff_3_1_commutes_with_the_fold_on_aff_0_3_image :
+  m9 (([3].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([3].foldl (fun a b => a + b) 0)) + 1) := by decide
+
+-- d ↦ 3d + 1 may be applied before or after folding the image of the constant 4 — the address is the same
+theorem aff_3_1_commutes_with_the_fold_on_aff_0_4_image :
+  m9 (([4].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([4].foldl (fun a b => a + b) 0)) + 1) := by decide
+
+-- d ↦ 3d + 1 may be applied before or after folding the image of the constant 6 — the address is the same
+theorem aff_3_1_commutes_with_the_fold_on_aff_0_6_image :
+  m9 (([6].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([6].foldl (fun a b => a + b) 0)) + 1) := by decide
+
+-- d ↦ 3d + 1 may be applied before or after folding the image of the constant 7 — the address is the same
+theorem aff_3_1_commutes_with_the_fold_on_aff_0_7_image :
+  m9 (([7].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([7].foldl (fun a b => a + b) 0)) + 1) := by decide
+
+-- d ↦ 3d + 1 may be applied before or after folding the image of the constant 8 — the address is the same
+theorem aff_3_1_commutes_with_the_fold_on_aff_0_8_image :
+  m9 (([8].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([8].foldl (fun a b => a + b) 0)) + 1) := by decide
+
+-- d ↦ 3d + 1 may be applied before or after folding the residues the reflection fixes — the address is the same
+theorem aff_3_1_commutes_with_the_fold_on_reflfixed :
+  m9 (([5].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([5].foldl (fun a b => a + b) 0)) + 1) := by decide
+
+-- d ↦ 3d + 1 applied three times returns every element of the image of the constant 4
+theorem aff_3_1_has_order_three_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (3 * (m9 (3 * d + 1)) + 1)) + 1) == d) := by decide
+
+-- applying d ↦ 3d + 1 twice to the image of the constant 1 is the same as applying it once
+theorem aff_3_1_is_idempotent_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (3 * d + 1)) + 1) == m9 (3 * d + 1)) := by decide
+
+-- applying d ↦ 3d + 1 twice to the image of the constant 4 is the same as applying it once
+theorem aff_3_1_is_idempotent_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (3 * d + 1)) + 1) == m9 (3 * d + 1)) := by decide
+
+-- applying d ↦ 3d + 1 twice to the image of the constant 7 is the same as applying it once
+theorem aff_3_1_is_idempotent_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (3 * d + 1)) + 1) == m9 (3 * d + 1)) := by decide
+
+-- applying d ↦ 3d + 1 twice to the first tetrahedron is the same as applying it once
+theorem aff_3_1_is_idempotent_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (3 * d + 1)) + 1) == m9 (3 * d + 1)) := by decide
+
+-- d ↦ 3d + 1 collides nowhere on the cubes mod nine — every fibre is a single element
+theorem aff_3_1_is_injective_on_cubes :
+  ([0, 1, 8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 1 collides nowhere on the residues the 2th power fixes — every fibre is a single element
+theorem aff_3_1_is_injective_on_pow_2_fixed :
+  ([0, 1].map (fun d => m9 (3 * d + 1))).eraseDups.length = 2 := by decide
+
+-- d ↦ 3d + 1 collides nowhere on the self-inverse residues — every fibre is a single element
+theorem aff_3_1_is_injective_on_selfinv :
+  ([1, 8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 2 := by decide
+
+-- d ↦ 3d + 1 is its own inverse on the image of the constant 4
+theorem aff_3_1_is_involutive_on_aff_0_4_image :
+  [4].all (fun d => (fun x => m9 (3 * x + 1)) (m9 (3 * d + 1)) == d) := by decide
+
+-- d ↦ 3d + 1 rewrites every element of the image of the constant 4 and its folded address does not move
+theorem aff_3_1_leaves_the_address_of_aff_0_4_image_unmoved :
+  m9 (([4].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 ([4].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 1 rewrites every element of the whole ring and its folded address does not move
+theorem aff_3_1_leaves_the_address_of_all_unmoved :
+  m9 (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 ([0,1,2,3,4,5,6,7,8].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 1 rewrites every element of the first tetrahedron and its folded address does not move
+theorem aff_3_1_leaves_the_address_of_tetA_unmoved :
+  m9 (([1, 4, 7].map (fun d => m9 (3 * d + 1))).foldl (fun a b => a + b) 0) = m9 ([1, 4, 7].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the image of the constant 0
+theorem aff_3_2_and_aff_1_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the image of the constant 1
+theorem aff_3_2_and_aff_1_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the image of the constant 2
+theorem aff_3_2_and_aff_1_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the image of the constant 3
+theorem aff_3_2_and_aff_1_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the image of the constant 4
+theorem aff_3_2_and_aff_1_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the image of the constant 6
+theorem aff_3_2_and_aff_1_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the image of the constant 7
+theorem aff_3_2_and_aff_1_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the image of the constant 8
+theorem aff_3_2_and_aff_1_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the whole ring
+theorem aff_3_2_and_aff_1_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the cubes mod nine
+theorem aff_3_2_and_aff_1_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the doubling orbit
+theorem aff_3_2_and_aff_1_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the residues the 2th power fixes
+theorem aff_3_2_and_aff_1_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the image of the 5th power
+theorem aff_3_2_and_aff_1_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the primitive roots
+theorem aff_3_2_and_aff_1_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the residues the reflection fixes
+theorem aff_3_2_and_aff_1_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the self-inverse residues
+theorem aff_3_2_and_aff_1_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the squares mod nine
+theorem aff_3_2_and_aff_1_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the first tetrahedron
+theorem aff_3_2_and_aff_1_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the second tetrahedron
+theorem aff_3_2_and_aff_1_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the triad
+theorem aff_3_2_and_aff_1_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and the identity may be applied in either order on the units
+theorem aff_3_2_and_aff_1_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d) + 2) == (m9 (3 * d + 2))) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the image of the constant 0
+theorem aff_3_2_and_aff_2_1_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the image of the constant 1
+theorem aff_3_2_and_aff_2_1_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the image of the constant 2
+theorem aff_3_2_and_aff_2_1_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the image of the constant 3
+theorem aff_3_2_and_aff_2_1_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the image of the constant 4
+theorem aff_3_2_and_aff_2_1_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the image of the constant 6
+theorem aff_3_2_and_aff_2_1_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the image of the constant 7
+theorem aff_3_2_and_aff_2_1_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the image of the constant 8
+theorem aff_3_2_and_aff_2_1_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the whole ring
+theorem aff_3_2_and_aff_2_1_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the cubes mod nine
+theorem aff_3_2_and_aff_2_1_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the doubling orbit
+theorem aff_3_2_and_aff_2_1_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_2_and_aff_2_1_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the image of the 5th power
+theorem aff_3_2_and_aff_2_1_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the primitive roots
+theorem aff_3_2_and_aff_2_1_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the residues the reflection fixes
+theorem aff_3_2_and_aff_2_1_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the self-inverse residues
+theorem aff_3_2_and_aff_2_1_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the squares mod nine
+theorem aff_3_2_and_aff_2_1_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the first tetrahedron
+theorem aff_3_2_and_aff_2_1_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the second tetrahedron
+theorem aff_3_2_and_aff_2_1_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the triad
+theorem aff_3_2_and_aff_2_1_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 2d + 1 may be applied in either order on the units
+theorem aff_3_2_and_aff_2_1_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d + 1)) + 2) == m9 (2 * (m9 (3 * d + 2)) + 1)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the image of the constant 0
+theorem aff_3_2_and_aff_4_3_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the image of the constant 1
+theorem aff_3_2_and_aff_4_3_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the image of the constant 2
+theorem aff_3_2_and_aff_4_3_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the image of the constant 3
+theorem aff_3_2_and_aff_4_3_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the image of the constant 4
+theorem aff_3_2_and_aff_4_3_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the image of the constant 6
+theorem aff_3_2_and_aff_4_3_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the image of the constant 7
+theorem aff_3_2_and_aff_4_3_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the image of the constant 8
+theorem aff_3_2_and_aff_4_3_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the whole ring
+theorem aff_3_2_and_aff_4_3_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the cubes mod nine
+theorem aff_3_2_and_aff_4_3_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the doubling orbit
+theorem aff_3_2_and_aff_4_3_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_2_and_aff_4_3_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the image of the 5th power
+theorem aff_3_2_and_aff_4_3_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the primitive roots
+theorem aff_3_2_and_aff_4_3_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the residues the reflection fixes
+theorem aff_3_2_and_aff_4_3_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the self-inverse residues
+theorem aff_3_2_and_aff_4_3_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the squares mod nine
+theorem aff_3_2_and_aff_4_3_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the first tetrahedron
+theorem aff_3_2_and_aff_4_3_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the second tetrahedron
+theorem aff_3_2_and_aff_4_3_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the triad
+theorem aff_3_2_and_aff_4_3_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 4d + 3 may be applied in either order on the units
+theorem aff_3_2_and_aff_4_3_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d + 3)) + 2) == m9 (4 * (m9 (3 * d + 2)) + 3)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the image of the constant 0
+theorem aff_3_2_and_aff_5_4_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the image of the constant 1
+theorem aff_3_2_and_aff_5_4_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the image of the constant 2
+theorem aff_3_2_and_aff_5_4_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the image of the constant 3
+theorem aff_3_2_and_aff_5_4_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the image of the constant 4
+theorem aff_3_2_and_aff_5_4_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the image of the constant 6
+theorem aff_3_2_and_aff_5_4_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the image of the constant 7
+theorem aff_3_2_and_aff_5_4_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the image of the constant 8
+theorem aff_3_2_and_aff_5_4_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the whole ring
+theorem aff_3_2_and_aff_5_4_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the cubes mod nine
+theorem aff_3_2_and_aff_5_4_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the doubling orbit
+theorem aff_3_2_and_aff_5_4_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_2_and_aff_5_4_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the image of the 5th power
+theorem aff_3_2_and_aff_5_4_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the primitive roots
+theorem aff_3_2_and_aff_5_4_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the residues the reflection fixes
+theorem aff_3_2_and_aff_5_4_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the self-inverse residues
+theorem aff_3_2_and_aff_5_4_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the squares mod nine
+theorem aff_3_2_and_aff_5_4_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the first tetrahedron
+theorem aff_3_2_and_aff_5_4_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the second tetrahedron
+theorem aff_3_2_and_aff_5_4_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the triad
+theorem aff_3_2_and_aff_5_4_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 5d + 4 may be applied in either order on the units
+theorem aff_3_2_and_aff_5_4_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d + 4)) + 2) == m9 (5 * (m9 (3 * d + 2)) + 4)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the image of the constant 0
+theorem aff_3_2_and_aff_6_5_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the image of the constant 1
+theorem aff_3_2_and_aff_6_5_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the image of the constant 2
+theorem aff_3_2_and_aff_6_5_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the image of the constant 3
+theorem aff_3_2_and_aff_6_5_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the image of the constant 4
+theorem aff_3_2_and_aff_6_5_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the image of the constant 6
+theorem aff_3_2_and_aff_6_5_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the image of the constant 7
+theorem aff_3_2_and_aff_6_5_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the image of the constant 8
+theorem aff_3_2_and_aff_6_5_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the whole ring
+theorem aff_3_2_and_aff_6_5_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the cubes mod nine
+theorem aff_3_2_and_aff_6_5_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the doubling orbit
+theorem aff_3_2_and_aff_6_5_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_2_and_aff_6_5_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the image of the 5th power
+theorem aff_3_2_and_aff_6_5_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the primitive roots
+theorem aff_3_2_and_aff_6_5_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the residues the reflection fixes
+theorem aff_3_2_and_aff_6_5_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the self-inverse residues
+theorem aff_3_2_and_aff_6_5_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the squares mod nine
+theorem aff_3_2_and_aff_6_5_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the first tetrahedron
+theorem aff_3_2_and_aff_6_5_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the second tetrahedron
+theorem aff_3_2_and_aff_6_5_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the triad
+theorem aff_3_2_and_aff_6_5_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 6d + 5 may be applied in either order on the units
+theorem aff_3_2_and_aff_6_5_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d + 5)) + 2) == m9 (6 * (m9 (3 * d + 2)) + 5)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the image of the constant 0
+theorem aff_3_2_and_aff_7_6_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the image of the constant 1
+theorem aff_3_2_and_aff_7_6_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the image of the constant 2
+theorem aff_3_2_and_aff_7_6_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the image of the constant 3
+theorem aff_3_2_and_aff_7_6_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the image of the constant 4
+theorem aff_3_2_and_aff_7_6_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the image of the constant 6
+theorem aff_3_2_and_aff_7_6_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the image of the constant 7
+theorem aff_3_2_and_aff_7_6_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the image of the constant 8
+theorem aff_3_2_and_aff_7_6_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the whole ring
+theorem aff_3_2_and_aff_7_6_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the cubes mod nine
+theorem aff_3_2_and_aff_7_6_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the doubling orbit
+theorem aff_3_2_and_aff_7_6_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_2_and_aff_7_6_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the image of the 5th power
+theorem aff_3_2_and_aff_7_6_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the primitive roots
+theorem aff_3_2_and_aff_7_6_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the residues the reflection fixes
+theorem aff_3_2_and_aff_7_6_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the self-inverse residues
+theorem aff_3_2_and_aff_7_6_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the squares mod nine
+theorem aff_3_2_and_aff_7_6_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the first tetrahedron
+theorem aff_3_2_and_aff_7_6_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the second tetrahedron
+theorem aff_3_2_and_aff_7_6_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the triad
+theorem aff_3_2_and_aff_7_6_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 7d + 6 may be applied in either order on the units
+theorem aff_3_2_and_aff_7_6_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (7 * d + 6)) + 2) == m9 (7 * (m9 (3 * d + 2)) + 6)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the image of the constant 0
+theorem aff_3_2_and_aff_8_7_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the image of the constant 1
+theorem aff_3_2_and_aff_8_7_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the image of the constant 2
+theorem aff_3_2_and_aff_8_7_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the image of the constant 3
+theorem aff_3_2_and_aff_8_7_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the image of the constant 4
+theorem aff_3_2_and_aff_8_7_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the image of the constant 6
+theorem aff_3_2_and_aff_8_7_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the image of the constant 7
+theorem aff_3_2_and_aff_8_7_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the image of the constant 8
+theorem aff_3_2_and_aff_8_7_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the whole ring
+theorem aff_3_2_and_aff_8_7_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the cubes mod nine
+theorem aff_3_2_and_aff_8_7_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the doubling orbit
+theorem aff_3_2_and_aff_8_7_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_2_and_aff_8_7_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the image of the 5th power
+theorem aff_3_2_and_aff_8_7_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the primitive roots
+theorem aff_3_2_and_aff_8_7_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the residues the reflection fixes
+theorem aff_3_2_and_aff_8_7_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the self-inverse residues
+theorem aff_3_2_and_aff_8_7_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the squares mod nine
+theorem aff_3_2_and_aff_8_7_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the first tetrahedron
+theorem aff_3_2_and_aff_8_7_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the second tetrahedron
+theorem aff_3_2_and_aff_8_7_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the triad
+theorem aff_3_2_and_aff_8_7_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and d ↦ 8d + 7 may be applied in either order on the units
+theorem aff_3_2_and_aff_8_7_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (8 * d + 7)) + 2) == m9 (8 * (m9 (3 * d + 2)) + 7)) := by decide
+
+-- d ↦ 3d + 2 and the 3th power may be applied in either order on the image of the constant 2
+theorem aff_3_2_and_pow_3_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (d ^ 3)) + 2) == m9 ((m9 (3 * d + 2)) ^ 3)) := by decide
+
+-- d ↦ 3d + 2 and the 3th power may be applied in either order on the image of the constant 8
+theorem aff_3_2_and_pow_3_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (d ^ 3)) + 2) == m9 ((m9 (3 * d + 2)) ^ 3)) := by decide
+
+-- d ↦ 3d + 2 and the 3th power may be applied in either order on the primitive roots
+theorem aff_3_2_and_pow_3_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (d ^ 3)) + 2) == m9 ((m9 (3 * d + 2)) ^ 3)) := by decide
+
+-- d ↦ 3d + 2 and the 3th power may be applied in either order on the residues the reflection fixes
+theorem aff_3_2_and_pow_3_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (d ^ 3)) + 2) == m9 ((m9 (3 * d + 2)) ^ 3)) := by decide
+
+-- d ↦ 3d + 2 and the 3th power may be applied in either order on the second tetrahedron
+theorem aff_3_2_and_pow_3_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (d ^ 3)) + 2) == m9 ((m9 (3 * d + 2)) ^ 3)) := by decide
+
+-- d ↦ 3d + 2 and the 5th power may be applied in either order on the image of the constant 2
+theorem aff_3_2_and_pow_5_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (d ^ 5)) + 2) == m9 ((m9 (3 * d + 2)) ^ 5)) := by decide
+
+-- d ↦ 3d + 2 and the 5th power may be applied in either order on the image of the constant 8
+theorem aff_3_2_and_pow_5_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (d ^ 5)) + 2) == m9 ((m9 (3 * d + 2)) ^ 5)) := by decide
+
+-- d ↦ 3d + 2 and the 5th power may be applied in either order on the primitive roots
+theorem aff_3_2_and_pow_5_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (d ^ 5)) + 2) == m9 ((m9 (3 * d + 2)) ^ 5)) := by decide
+
+-- d ↦ 3d + 2 and the 5th power may be applied in either order on the residues the reflection fixes
+theorem aff_3_2_and_pow_5_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (d ^ 5)) + 2) == m9 ((m9 (3 * d + 2)) ^ 5)) := by decide
+
+-- d ↦ 3d + 2 and the 5th power may be applied in either order on the second tetrahedron
+theorem aff_3_2_and_pow_5_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (d ^ 5)) + 2) == m9 ((m9 (3 * d + 2)) ^ 5)) := by decide
+
+-- d ↦ 3d + 2 carries the image of the constant 0 onto the image of the constant 2
+theorem aff_3_2_carries_aff_0_0_image_onto_aff_0_2_image :
+  [0].all (fun d => [2].contains (m9 (3 * d + 2))) ∧ ([0].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the image of the constant 1 onto the residues the reflection fixes
+theorem aff_3_2_carries_aff_0_1_image_onto_reflfixed :
+  [1].all (fun d => [5].contains (m9 (3 * d + 2))) ∧ ([1].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the image of the constant 2 onto the image of the constant 8
+theorem aff_3_2_carries_aff_0_2_image_onto_aff_0_8_image :
+  [2].all (fun d => [8].contains (m9 (3 * d + 2))) ∧ ([2].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the image of the constant 3 onto the image of the constant 2
+theorem aff_3_2_carries_aff_0_3_image_onto_aff_0_2_image :
+  [3].all (fun d => [2].contains (m9 (3 * d + 2))) ∧ ([3].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the image of the constant 4 onto the residues the reflection fixes
+theorem aff_3_2_carries_aff_0_4_image_onto_reflfixed :
+  [4].all (fun d => [5].contains (m9 (3 * d + 2))) ∧ ([4].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the image of the constant 6 onto the image of the constant 2
+theorem aff_3_2_carries_aff_0_6_image_onto_aff_0_2_image :
+  [6].all (fun d => [2].contains (m9 (3 * d + 2))) ∧ ([6].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the image of the constant 7 onto the residues the reflection fixes
+theorem aff_3_2_carries_aff_0_7_image_onto_reflfixed :
+  [7].all (fun d => [5].contains (m9 (3 * d + 2))) ∧ ([7].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the whole ring onto the second tetrahedron
+theorem aff_3_2_carries_all_onto_tetB :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [2, 5, 8].contains (m9 (3 * d + 2))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (3 * d + 2))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 2 carries the cubes mod nine onto the second tetrahedron
+theorem aff_3_2_carries_cubes_onto_tetB :
+  [0, 1, 8].all (fun d => [2, 5, 8].contains (m9 (3 * d + 2))) ∧ ([0, 1, 8].map (fun d => m9 (3 * d + 2))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 2 carries the residues the 2th power fixes onto the primitive roots
+theorem aff_3_2_carries_pow_2_fixed_onto_primitives :
+  [0, 1].all (fun d => [2, 5].contains (m9 (3 * d + 2))) ∧ ([0, 1].map (fun d => m9 (3 * d + 2))).eraseDups.length = 2 := by decide
+
+-- d ↦ 3d + 2 carries the image of the 5th power onto the second tetrahedron
+theorem aff_3_2_carries_pow_5_image_onto_tetB :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => [2, 5, 8].contains (m9 (3 * d + 2))) ∧ ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 2))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 2 carries the primitive roots onto the image of the constant 8
+theorem aff_3_2_carries_primitives_onto_aff_0_8_image :
+  [2, 5].all (fun d => [8].contains (m9 (3 * d + 2))) ∧ ([2, 5].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the residues the reflection fixes onto the image of the constant 8
+theorem aff_3_2_carries_reflfixed_onto_aff_0_8_image :
+  [5].all (fun d => [8].contains (m9 (3 * d + 2))) ∧ ([5].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the squares mod nine onto the primitive roots
+theorem aff_3_2_carries_squares_onto_primitives :
+  [0, 1, 4, 7].all (fun d => [2, 5].contains (m9 (3 * d + 2))) ∧ ([0, 1, 4, 7].map (fun d => m9 (3 * d + 2))).eraseDups.length = 2 := by decide
+
+-- d ↦ 3d + 2 carries the first tetrahedron onto the residues the reflection fixes
+theorem aff_3_2_carries_tetA_onto_reflfixed :
+  [1, 4, 7].all (fun d => [5].contains (m9 (3 * d + 2))) ∧ ([1, 4, 7].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the second tetrahedron onto the image of the constant 8
+theorem aff_3_2_carries_tetB_onto_aff_0_8_image :
+  [2, 5, 8].all (fun d => [8].contains (m9 (3 * d + 2))) ∧ ([2, 5, 8].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 carries the triad onto the image of the constant 2
+theorem aff_3_2_carries_triad_onto_aff_0_2_image :
+  [3, 6, 0].all (fun d => [2].contains (m9 (3 * d + 2))) ∧ ([3, 6, 0].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the image of the constant 0 to a single value
+theorem aff_3_2_collapses_aff_0_0_image_to_one_value :
+  ([0].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the image of the constant 1 to a single value
+theorem aff_3_2_collapses_aff_0_1_image_to_one_value :
+  ([1].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the image of the constant 2 to a single value
+theorem aff_3_2_collapses_aff_0_2_image_to_one_value :
+  ([2].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the image of the constant 3 to a single value
+theorem aff_3_2_collapses_aff_0_3_image_to_one_value :
+  ([3].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the image of the constant 4 to a single value
+theorem aff_3_2_collapses_aff_0_4_image_to_one_value :
+  ([4].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the image of the constant 6 to a single value
+theorem aff_3_2_collapses_aff_0_6_image_to_one_value :
+  ([6].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the image of the constant 7 to a single value
+theorem aff_3_2_collapses_aff_0_7_image_to_one_value :
+  ([7].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the image of the constant 8 to a single value
+theorem aff_3_2_collapses_aff_0_8_image_to_one_value :
+  ([8].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the primitive roots to a single value
+theorem aff_3_2_collapses_primitives_to_one_value :
+  ([2, 5].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the residues the reflection fixes to a single value
+theorem aff_3_2_collapses_reflfixed_to_one_value :
+  ([5].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the first tetrahedron to a single value
+theorem aff_3_2_collapses_tetA_to_one_value :
+  ([1, 4, 7].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the second tetrahedron to a single value
+theorem aff_3_2_collapses_tetB_to_one_value :
+  ([2, 5, 8].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 sends every element of the triad to a single value
+theorem aff_3_2_collapses_triad_to_one_value :
+  ([3, 6, 0].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 2 may be applied before or after folding the image of the constant 0 — the address is the same
+theorem aff_3_2_commutes_with_the_fold_on_aff_0_0_image :
+  m9 (([0].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([0].foldl (fun a b => a + b) 0)) + 2) := by decide
+
+-- d ↦ 3d + 2 may be applied before or after folding the image of the constant 1 — the address is the same
+theorem aff_3_2_commutes_with_the_fold_on_aff_0_1_image :
+  m9 (([1].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([1].foldl (fun a b => a + b) 0)) + 2) := by decide
+
+-- d ↦ 3d + 2 may be applied before or after folding the image of the constant 2 — the address is the same
+theorem aff_3_2_commutes_with_the_fold_on_aff_0_2_image :
+  m9 (([2].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([2].foldl (fun a b => a + b) 0)) + 2) := by decide
+
+-- d ↦ 3d + 2 may be applied before or after folding the image of the constant 3 — the address is the same
+theorem aff_3_2_commutes_with_the_fold_on_aff_0_3_image :
+  m9 (([3].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([3].foldl (fun a b => a + b) 0)) + 2) := by decide
+
+-- d ↦ 3d + 2 may be applied before or after folding the image of the constant 4 — the address is the same
+theorem aff_3_2_commutes_with_the_fold_on_aff_0_4_image :
+  m9 (([4].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([4].foldl (fun a b => a + b) 0)) + 2) := by decide
+
+-- d ↦ 3d + 2 may be applied before or after folding the image of the constant 6 — the address is the same
+theorem aff_3_2_commutes_with_the_fold_on_aff_0_6_image :
+  m9 (([6].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([6].foldl (fun a b => a + b) 0)) + 2) := by decide
+
+-- d ↦ 3d + 2 may be applied before or after folding the image of the constant 7 — the address is the same
+theorem aff_3_2_commutes_with_the_fold_on_aff_0_7_image :
+  m9 (([7].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([7].foldl (fun a b => a + b) 0)) + 2) := by decide
+
+-- d ↦ 3d + 2 may be applied before or after folding the image of the constant 8 — the address is the same
+theorem aff_3_2_commutes_with_the_fold_on_aff_0_8_image :
+  m9 (([8].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([8].foldl (fun a b => a + b) 0)) + 2) := by decide
+
+-- d ↦ 3d + 2 may be applied before or after folding the residues the reflection fixes — the address is the same
+theorem aff_3_2_commutes_with_the_fold_on_reflfixed :
+  m9 (([5].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([5].foldl (fun a b => a + b) 0)) + 2) := by decide
+
+-- d ↦ 3d + 2 applied three times returns every element of the image of the constant 8
+theorem aff_3_2_has_order_three_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (3 * (m9 (3 * d + 2)) + 2)) + 2) == d) := by decide
+
+-- applying d ↦ 3d + 2 twice to the image of the constant 2 is the same as applying it once
+theorem aff_3_2_is_idempotent_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (3 * d + 2)) + 2) == m9 (3 * d + 2)) := by decide
+
+-- applying d ↦ 3d + 2 twice to the image of the constant 8 is the same as applying it once
+theorem aff_3_2_is_idempotent_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (3 * d + 2)) + 2) == m9 (3 * d + 2)) := by decide
+
+-- applying d ↦ 3d + 2 twice to the primitive roots is the same as applying it once
+theorem aff_3_2_is_idempotent_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (3 * d + 2)) + 2) == m9 (3 * d + 2)) := by decide
+
+-- applying d ↦ 3d + 2 twice to the residues the reflection fixes is the same as applying it once
+theorem aff_3_2_is_idempotent_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (3 * d + 2)) + 2) == m9 (3 * d + 2)) := by decide
+
+-- applying d ↦ 3d + 2 twice to the second tetrahedron is the same as applying it once
+theorem aff_3_2_is_idempotent_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (3 * d + 2)) + 2) == m9 (3 * d + 2)) := by decide
+
+-- d ↦ 3d + 2 collides nowhere on the cubes mod nine — every fibre is a single element
+theorem aff_3_2_is_injective_on_cubes :
+  ([0, 1, 8].map (fun d => m9 (3 * d + 2))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 2 collides nowhere on the residues the 2th power fixes — every fibre is a single element
+theorem aff_3_2_is_injective_on_pow_2_fixed :
+  ([0, 1].map (fun d => m9 (3 * d + 2))).eraseDups.length = 2 := by decide
+
+-- d ↦ 3d + 2 collides nowhere on the self-inverse residues — every fibre is a single element
+theorem aff_3_2_is_injective_on_selfinv :
+  ([1, 8].map (fun d => m9 (3 * d + 2))).eraseDups.length = 2 := by decide
+
+-- d ↦ 3d + 2 is its own inverse on the image of the constant 8
+theorem aff_3_2_is_involutive_on_aff_0_8_image :
+  [8].all (fun d => (fun x => m9 (3 * x + 2)) (m9 (3 * d + 2)) == d) := by decide
+
+-- d ↦ 3d + 2 rewrites every element of the image of the constant 8 and its folded address does not move
+theorem aff_3_2_leaves_the_address_of_aff_0_8_image_unmoved :
+  m9 (([8].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 ([8].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 2 rewrites every element of the whole ring and its folded address does not move
+theorem aff_3_2_leaves_the_address_of_all_unmoved :
+  m9 (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 ([0,1,2,3,4,5,6,7,8].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 2 rewrites every element of the primitive roots and its folded address does not move
+theorem aff_3_2_leaves_the_address_of_primitives_unmoved :
+  m9 (([2, 5].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 ([2, 5].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 2 rewrites every element of the second tetrahedron and its folded address does not move
+theorem aff_3_2_leaves_the_address_of_tetB_unmoved :
+  m9 (([2, 5, 8].map (fun d => m9 (3 * d + 2))).foldl (fun a b => a + b) 0) = m9 ([2, 5, 8].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the image of the constant 0
+theorem aff_3_3_and_aff_1_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the image of the constant 1
+theorem aff_3_3_and_aff_1_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the image of the constant 2
+theorem aff_3_3_and_aff_1_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the image of the constant 3
+theorem aff_3_3_and_aff_1_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the image of the constant 4
+theorem aff_3_3_and_aff_1_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the image of the constant 6
+theorem aff_3_3_and_aff_1_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the image of the constant 7
+theorem aff_3_3_and_aff_1_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the image of the constant 8
+theorem aff_3_3_and_aff_1_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the whole ring
+theorem aff_3_3_and_aff_1_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the cubes mod nine
+theorem aff_3_3_and_aff_1_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the doubling orbit
+theorem aff_3_3_and_aff_1_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the residues the 2th power fixes
+theorem aff_3_3_and_aff_1_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the image of the 5th power
+theorem aff_3_3_and_aff_1_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the primitive roots
+theorem aff_3_3_and_aff_1_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the residues the reflection fixes
+theorem aff_3_3_and_aff_1_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the self-inverse residues
+theorem aff_3_3_and_aff_1_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the squares mod nine
+theorem aff_3_3_and_aff_1_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the first tetrahedron
+theorem aff_3_3_and_aff_1_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the second tetrahedron
+theorem aff_3_3_and_aff_1_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the triad
+theorem aff_3_3_and_aff_1_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and the identity may be applied in either order on the units
+theorem aff_3_3_and_aff_1_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d) + 3) == (m9 (3 * d + 3))) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the image of the constant 0
+theorem aff_3_3_and_aff_2_6_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the image of the constant 1
+theorem aff_3_3_and_aff_2_6_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the image of the constant 2
+theorem aff_3_3_and_aff_2_6_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the image of the constant 3
+theorem aff_3_3_and_aff_2_6_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the image of the constant 4
+theorem aff_3_3_and_aff_2_6_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the image of the constant 6
+theorem aff_3_3_and_aff_2_6_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the image of the constant 7
+theorem aff_3_3_and_aff_2_6_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the image of the constant 8
+theorem aff_3_3_and_aff_2_6_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the whole ring
+theorem aff_3_3_and_aff_2_6_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the cubes mod nine
+theorem aff_3_3_and_aff_2_6_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the doubling orbit
+theorem aff_3_3_and_aff_2_6_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_3_and_aff_2_6_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the image of the 5th power
+theorem aff_3_3_and_aff_2_6_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the primitive roots
+theorem aff_3_3_and_aff_2_6_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the residues the reflection fixes
+theorem aff_3_3_and_aff_2_6_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the self-inverse residues
+theorem aff_3_3_and_aff_2_6_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the squares mod nine
+theorem aff_3_3_and_aff_2_6_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the first tetrahedron
+theorem aff_3_3_and_aff_2_6_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the second tetrahedron
+theorem aff_3_3_and_aff_2_6_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the triad
+theorem aff_3_3_and_aff_2_6_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 2d + 6 may be applied in either order on the units
+theorem aff_3_3_and_aff_2_6_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d + 6)) + 3) == m9 (2 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the image of the constant 0
+theorem aff_3_3_and_aff_4_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the image of the constant 1
+theorem aff_3_3_and_aff_4_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the image of the constant 2
+theorem aff_3_3_and_aff_4_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the image of the constant 3
+theorem aff_3_3_and_aff_4_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the image of the constant 4
+theorem aff_3_3_and_aff_4_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the image of the constant 6
+theorem aff_3_3_and_aff_4_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the image of the constant 7
+theorem aff_3_3_and_aff_4_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the image of the constant 8
+theorem aff_3_3_and_aff_4_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the whole ring
+theorem aff_3_3_and_aff_4_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the cubes mod nine
+theorem aff_3_3_and_aff_4_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the doubling orbit
+theorem aff_3_3_and_aff_4_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_3_and_aff_4_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the image of the 5th power
+theorem aff_3_3_and_aff_4_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the primitive roots
+theorem aff_3_3_and_aff_4_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the residues the reflection fixes
+theorem aff_3_3_and_aff_4_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the self-inverse residues
+theorem aff_3_3_and_aff_4_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the squares mod nine
+theorem aff_3_3_and_aff_4_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the first tetrahedron
+theorem aff_3_3_and_aff_4_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the second tetrahedron
+theorem aff_3_3_and_aff_4_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the triad
+theorem aff_3_3_and_aff_4_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 4 may be applied in either order on the units
+theorem aff_3_3_and_aff_4_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d)) + 3) == m9 (4 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the image of the constant 0
+theorem aff_3_3_and_aff_5_6_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the image of the constant 1
+theorem aff_3_3_and_aff_5_6_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the image of the constant 2
+theorem aff_3_3_and_aff_5_6_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the image of the constant 3
+theorem aff_3_3_and_aff_5_6_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the image of the constant 4
+theorem aff_3_3_and_aff_5_6_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the image of the constant 6
+theorem aff_3_3_and_aff_5_6_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the image of the constant 7
+theorem aff_3_3_and_aff_5_6_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the image of the constant 8
+theorem aff_3_3_and_aff_5_6_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the whole ring
+theorem aff_3_3_and_aff_5_6_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the cubes mod nine
+theorem aff_3_3_and_aff_5_6_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the doubling orbit
+theorem aff_3_3_and_aff_5_6_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_3_and_aff_5_6_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the image of the 5th power
+theorem aff_3_3_and_aff_5_6_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the primitive roots
+theorem aff_3_3_and_aff_5_6_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the residues the reflection fixes
+theorem aff_3_3_and_aff_5_6_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the self-inverse residues
+theorem aff_3_3_and_aff_5_6_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the squares mod nine
+theorem aff_3_3_and_aff_5_6_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the first tetrahedron
+theorem aff_3_3_and_aff_5_6_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the second tetrahedron
+theorem aff_3_3_and_aff_5_6_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the triad
+theorem aff_3_3_and_aff_5_6_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 5d + 6 may be applied in either order on the units
+theorem aff_3_3_and_aff_5_6_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d + 6)) + 3) == m9 (5 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the image of the constant 0
+theorem aff_3_3_and_aff_6_3_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the image of the constant 1
+theorem aff_3_3_and_aff_6_3_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the image of the constant 2
+theorem aff_3_3_and_aff_6_3_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the image of the constant 3
+theorem aff_3_3_and_aff_6_3_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the image of the constant 4
+theorem aff_3_3_and_aff_6_3_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the image of the constant 6
+theorem aff_3_3_and_aff_6_3_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the image of the constant 7
+theorem aff_3_3_and_aff_6_3_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the image of the constant 8
+theorem aff_3_3_and_aff_6_3_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the whole ring
+theorem aff_3_3_and_aff_6_3_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the cubes mod nine
+theorem aff_3_3_and_aff_6_3_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the doubling orbit
+theorem aff_3_3_and_aff_6_3_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_3_and_aff_6_3_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the image of the 5th power
+theorem aff_3_3_and_aff_6_3_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the primitive roots
+theorem aff_3_3_and_aff_6_3_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the residues the reflection fixes
+theorem aff_3_3_and_aff_6_3_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the self-inverse residues
+theorem aff_3_3_and_aff_6_3_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the squares mod nine
+theorem aff_3_3_and_aff_6_3_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the first tetrahedron
+theorem aff_3_3_and_aff_6_3_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the second tetrahedron
+theorem aff_3_3_and_aff_6_3_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the triad
+theorem aff_3_3_and_aff_6_3_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 6d + 3 may be applied in either order on the units
+theorem aff_3_3_and_aff_6_3_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d + 3)) + 3) == m9 (6 * (m9 (3 * d + 3)) + 3)) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the image of the constant 0
+theorem aff_3_3_and_aff_7_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the image of the constant 1
+theorem aff_3_3_and_aff_7_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the image of the constant 2
+theorem aff_3_3_and_aff_7_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the image of the constant 3
+theorem aff_3_3_and_aff_7_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the image of the constant 4
+theorem aff_3_3_and_aff_7_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the image of the constant 6
+theorem aff_3_3_and_aff_7_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the image of the constant 7
+theorem aff_3_3_and_aff_7_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the image of the constant 8
+theorem aff_3_3_and_aff_7_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the whole ring
+theorem aff_3_3_and_aff_7_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the cubes mod nine
+theorem aff_3_3_and_aff_7_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the doubling orbit
+theorem aff_3_3_and_aff_7_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_3_and_aff_7_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the image of the 5th power
+theorem aff_3_3_and_aff_7_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the primitive roots
+theorem aff_3_3_and_aff_7_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the residues the reflection fixes
+theorem aff_3_3_and_aff_7_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the self-inverse residues
+theorem aff_3_3_and_aff_7_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the squares mod nine
+theorem aff_3_3_and_aff_7_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the first tetrahedron
+theorem aff_3_3_and_aff_7_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the second tetrahedron
+theorem aff_3_3_and_aff_7_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the triad
+theorem aff_3_3_and_aff_7_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and multiplication by 7 may be applied in either order on the units
+theorem aff_3_3_and_aff_7_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (7 * d)) + 3) == m9 (7 * (m9 (3 * d + 3)))) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the image of the constant 0
+theorem aff_3_3_and_aff_8_6_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the image of the constant 1
+theorem aff_3_3_and_aff_8_6_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the image of the constant 2
+theorem aff_3_3_and_aff_8_6_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the image of the constant 3
+theorem aff_3_3_and_aff_8_6_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the image of the constant 4
+theorem aff_3_3_and_aff_8_6_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the image of the constant 6
+theorem aff_3_3_and_aff_8_6_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the image of the constant 7
+theorem aff_3_3_and_aff_8_6_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the image of the constant 8
+theorem aff_3_3_and_aff_8_6_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the whole ring
+theorem aff_3_3_and_aff_8_6_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the cubes mod nine
+theorem aff_3_3_and_aff_8_6_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the doubling orbit
+theorem aff_3_3_and_aff_8_6_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_3_and_aff_8_6_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the image of the 5th power
+theorem aff_3_3_and_aff_8_6_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the primitive roots
+theorem aff_3_3_and_aff_8_6_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the residues the reflection fixes
+theorem aff_3_3_and_aff_8_6_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the self-inverse residues
+theorem aff_3_3_and_aff_8_6_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the squares mod nine
+theorem aff_3_3_and_aff_8_6_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the first tetrahedron
+theorem aff_3_3_and_aff_8_6_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the second tetrahedron
+theorem aff_3_3_and_aff_8_6_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the triad
+theorem aff_3_3_and_aff_8_6_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and d ↦ 8d + 6 may be applied in either order on the units
+theorem aff_3_3_and_aff_8_6_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (8 * d + 6)) + 3) == m9 (8 * (m9 (3 * d + 3)) + 6)) := by decide
+
+-- d ↦ 3d + 3 and the 3th power may be applied in either order on the image of the constant 2
+theorem aff_3_3_and_pow_3_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (d ^ 3)) + 3) == m9 ((m9 (3 * d + 3)) ^ 3)) := by decide
+
+-- d ↦ 3d + 3 and the 3th power may be applied in either order on the image of the constant 8
+theorem aff_3_3_and_pow_3_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (d ^ 3)) + 3) == m9 ((m9 (3 * d + 3)) ^ 3)) := by decide
+
+-- d ↦ 3d + 3 and the 3th power may be applied in either order on the primitive roots
+theorem aff_3_3_and_pow_3_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (d ^ 3)) + 3) == m9 ((m9 (3 * d + 3)) ^ 3)) := by decide
+
+-- d ↦ 3d + 3 and the 3th power may be applied in either order on the residues the reflection fixes
+theorem aff_3_3_and_pow_3_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (d ^ 3)) + 3) == m9 ((m9 (3 * d + 3)) ^ 3)) := by decide
+
+-- d ↦ 3d + 3 and the 3th power may be applied in either order on the second tetrahedron
+theorem aff_3_3_and_pow_3_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (d ^ 3)) + 3) == m9 ((m9 (3 * d + 3)) ^ 3)) := by decide
+
+-- d ↦ 3d + 3 and the 5th power may be applied in either order on the image of the constant 2
+theorem aff_3_3_and_pow_5_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (d ^ 5)) + 3) == m9 ((m9 (3 * d + 3)) ^ 5)) := by decide
+
+-- d ↦ 3d + 3 and the 5th power may be applied in either order on the image of the constant 8
+theorem aff_3_3_and_pow_5_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (d ^ 5)) + 3) == m9 ((m9 (3 * d + 3)) ^ 5)) := by decide
+
+-- d ↦ 3d + 3 and the 5th power may be applied in either order on the primitive roots
+theorem aff_3_3_and_pow_5_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (d ^ 5)) + 3) == m9 ((m9 (3 * d + 3)) ^ 5)) := by decide
+
+-- d ↦ 3d + 3 and the 5th power may be applied in either order on the residues the reflection fixes
+theorem aff_3_3_and_pow_5_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (d ^ 5)) + 3) == m9 ((m9 (3 * d + 3)) ^ 5)) := by decide
+
+-- d ↦ 3d + 3 and the 5th power may be applied in either order on the second tetrahedron
+theorem aff_3_3_and_pow_5_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (d ^ 5)) + 3) == m9 ((m9 (3 * d + 3)) ^ 5)) := by decide
+
+-- d ↦ 3d + 3 carries the image of the constant 0 onto the image of the constant 3
+theorem aff_3_3_carries_aff_0_0_image_onto_aff_0_3_image :
+  [0].all (fun d => [3].contains (m9 (3 * d + 3))) ∧ ([0].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the image of the constant 1 onto the image of the constant 6
+theorem aff_3_3_carries_aff_0_1_image_onto_aff_0_6_image :
+  [1].all (fun d => [6].contains (m9 (3 * d + 3))) ∧ ([1].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the image of the constant 2 onto the image of the constant 0
+theorem aff_3_3_carries_aff_0_2_image_onto_aff_0_0_image :
+  [2].all (fun d => [0].contains (m9 (3 * d + 3))) ∧ ([2].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the image of the constant 4 onto the image of the constant 6
+theorem aff_3_3_carries_aff_0_4_image_onto_aff_0_6_image :
+  [4].all (fun d => [6].contains (m9 (3 * d + 3))) ∧ ([4].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the image of the constant 6 onto the image of the constant 3
+theorem aff_3_3_carries_aff_0_6_image_onto_aff_0_3_image :
+  [6].all (fun d => [3].contains (m9 (3 * d + 3))) ∧ ([6].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the image of the constant 7 onto the image of the constant 6
+theorem aff_3_3_carries_aff_0_7_image_onto_aff_0_6_image :
+  [7].all (fun d => [6].contains (m9 (3 * d + 3))) ∧ ([7].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the image of the constant 8 onto the image of the constant 0
+theorem aff_3_3_carries_aff_0_8_image_onto_aff_0_0_image :
+  [8].all (fun d => [0].contains (m9 (3 * d + 3))) ∧ ([8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the whole ring onto the triad
+theorem aff_3_3_carries_all_onto_triad :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [3, 6, 0].contains (m9 (3 * d + 3))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 3 carries the cubes mod nine onto the triad
+theorem aff_3_3_carries_cubes_onto_triad :
+  [0, 1, 8].all (fun d => [3, 6, 0].contains (m9 (3 * d + 3))) ∧ ([0, 1, 8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 3 carries the image of the 5th power onto the triad
+theorem aff_3_3_carries_pow_5_image_onto_triad :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => [3, 6, 0].contains (m9 (3 * d + 3))) ∧ ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 3 carries the primitive roots onto the image of the constant 0
+theorem aff_3_3_carries_primitives_onto_aff_0_0_image :
+  [2, 5].all (fun d => [0].contains (m9 (3 * d + 3))) ∧ ([2, 5].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the residues the reflection fixes onto the image of the constant 0
+theorem aff_3_3_carries_reflfixed_onto_aff_0_0_image :
+  [5].all (fun d => [0].contains (m9 (3 * d + 3))) ∧ ([5].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the first tetrahedron onto the image of the constant 6
+theorem aff_3_3_carries_tetA_onto_aff_0_6_image :
+  [1, 4, 7].all (fun d => [6].contains (m9 (3 * d + 3))) ∧ ([1, 4, 7].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the second tetrahedron onto the image of the constant 0
+theorem aff_3_3_carries_tetB_onto_aff_0_0_image :
+  [2, 5, 8].all (fun d => [0].contains (m9 (3 * d + 3))) ∧ ([2, 5, 8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 carries the triad onto the image of the constant 3
+theorem aff_3_3_carries_triad_onto_aff_0_3_image :
+  [3, 6, 0].all (fun d => [3].contains (m9 (3 * d + 3))) ∧ ([3, 6, 0].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the image of the constant 0 to a single value
+theorem aff_3_3_collapses_aff_0_0_image_to_one_value :
+  ([0].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the image of the constant 1 to a single value
+theorem aff_3_3_collapses_aff_0_1_image_to_one_value :
+  ([1].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the image of the constant 2 to a single value
+theorem aff_3_3_collapses_aff_0_2_image_to_one_value :
+  ([2].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the image of the constant 3 to a single value
+theorem aff_3_3_collapses_aff_0_3_image_to_one_value :
+  ([3].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the image of the constant 4 to a single value
+theorem aff_3_3_collapses_aff_0_4_image_to_one_value :
+  ([4].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the image of the constant 6 to a single value
+theorem aff_3_3_collapses_aff_0_6_image_to_one_value :
+  ([6].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the image of the constant 7 to a single value
+theorem aff_3_3_collapses_aff_0_7_image_to_one_value :
+  ([7].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the image of the constant 8 to a single value
+theorem aff_3_3_collapses_aff_0_8_image_to_one_value :
+  ([8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the primitive roots to a single value
+theorem aff_3_3_collapses_primitives_to_one_value :
+  ([2, 5].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the residues the reflection fixes to a single value
+theorem aff_3_3_collapses_reflfixed_to_one_value :
+  ([5].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the first tetrahedron to a single value
+theorem aff_3_3_collapses_tetA_to_one_value :
+  ([1, 4, 7].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the second tetrahedron to a single value
+theorem aff_3_3_collapses_tetB_to_one_value :
+  ([2, 5, 8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 sends every element of the triad to a single value
+theorem aff_3_3_collapses_triad_to_one_value :
+  ([3, 6, 0].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the image of the constant 0 — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_aff_0_0_image :
+  m9 (([0].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([0].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the image of the constant 1 — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_aff_0_1_image :
+  m9 (([1].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([1].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the image of the constant 2 — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_aff_0_2_image :
+  m9 (([2].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([2].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the image of the constant 3 — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_aff_0_3_image :
+  m9 (([3].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([3].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the image of the constant 4 — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_aff_0_4_image :
+  m9 (([4].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([4].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the image of the constant 6 — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_aff_0_6_image :
+  m9 (([6].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([6].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the image of the constant 7 — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_aff_0_7_image :
+  m9 (([7].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([7].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the image of the constant 8 — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_aff_0_8_image :
+  m9 (([8].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([8].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the image of the 5th power — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_pow_5_image :
+  m9 (([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([0, 1, 2, 4, 5, 7, 8].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the residues the reflection fixes — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_reflfixed :
+  m9 (([5].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([5].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 may be applied before or after folding the squares mod nine — the address is the same
+theorem aff_3_3_commutes_with_the_fold_on_squares :
+  m9 (([0, 1, 4, 7].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 (3 * (m9 ([0, 1, 4, 7].foldl (fun a b => a + b) 0)) + 3) := by decide
+
+-- d ↦ 3d + 3 applied three times returns every element of the image of the constant 3
+theorem aff_3_3_has_order_three_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (3 * (m9 (3 * d + 3)) + 3)) + 3) == d) := by decide
+
+-- applying d ↦ 3d + 3 twice to the image of the constant 0 is the same as applying it once
+theorem aff_3_3_is_idempotent_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (3 * d + 3)) + 3) == m9 (3 * d + 3)) := by decide
+
+-- applying d ↦ 3d + 3 twice to the image of the constant 3 is the same as applying it once
+theorem aff_3_3_is_idempotent_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (3 * d + 3)) + 3) == m9 (3 * d + 3)) := by decide
+
+-- applying d ↦ 3d + 3 twice to the image of the constant 6 is the same as applying it once
+theorem aff_3_3_is_idempotent_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (3 * d + 3)) + 3) == m9 (3 * d + 3)) := by decide
+
+-- applying d ↦ 3d + 3 twice to the triad is the same as applying it once
+theorem aff_3_3_is_idempotent_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (3 * d + 3)) + 3) == m9 (3 * d + 3)) := by decide
+
+-- d ↦ 3d + 3 collides nowhere on the cubes mod nine — every fibre is a single element
+theorem aff_3_3_is_injective_on_cubes :
+  ([0, 1, 8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 3 := by decide
+
+-- d ↦ 3d + 3 collides nowhere on the residues the 2th power fixes — every fibre is a single element
+theorem aff_3_3_is_injective_on_pow_2_fixed :
+  ([0, 1].map (fun d => m9 (3 * d + 3))).eraseDups.length = 2 := by decide
+
+-- d ↦ 3d + 3 collides nowhere on the self-inverse residues — every fibre is a single element
+theorem aff_3_3_is_injective_on_selfinv :
+  ([1, 8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 2 := by decide
+
+-- d ↦ 3d + 3 is its own inverse on the image of the constant 3
+theorem aff_3_3_is_involutive_on_aff_0_3_image :
+  [3].all (fun d => (fun x => m9 (3 * x + 3)) (m9 (3 * d + 3)) == d) := by decide
+
+-- d ↦ 3d + 3 rewrites every element of the image of the constant 3 and its folded address does not move
+theorem aff_3_3_leaves_the_address_of_aff_0_3_image_unmoved :
+  m9 (([3].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 ([3].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 3 rewrites every element of the whole ring and its folded address does not move
+theorem aff_3_3_leaves_the_address_of_all_unmoved :
+  m9 (([0,1,2,3,4,5,6,7,8].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 ([0,1,2,3,4,5,6,7,8].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 3 rewrites every element of the cubes mod nine and its folded address does not move
+theorem aff_3_3_leaves_the_address_of_cubes_unmoved :
+  m9 (([0, 1, 8].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 ([0, 1, 8].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 3 rewrites every element of the doubling orbit and its folded address does not move
+theorem aff_3_3_leaves_the_address_of_orbit_unmoved :
+  m9 (([1, 2, 4, 8, 7, 5].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 ([1, 2, 4, 8, 7, 5].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 3 rewrites every element of the squares mod nine and its folded address does not move
+theorem aff_3_3_leaves_the_address_of_squares_unmoved :
+  m9 (([0, 1, 4, 7].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 ([0, 1, 4, 7].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 3 rewrites every element of the triad and its folded address does not move
+theorem aff_3_3_leaves_the_address_of_triad_unmoved :
+  m9 (([3, 6, 0].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 ([3, 6, 0].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 3 rewrites every element of the units and its folded address does not move
+theorem aff_3_3_leaves_the_address_of_units_unmoved :
+  m9 (([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d + 3))).foldl (fun a b => a + b) 0) = m9 ([1, 2, 4, 5, 7, 8].foldl (fun a b => a + b) 0) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the image of the constant 0
+theorem aff_3_4_and_aff_1_0_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the image of the constant 1
+theorem aff_3_4_and_aff_1_0_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the image of the constant 2
+theorem aff_3_4_and_aff_1_0_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the image of the constant 3
+theorem aff_3_4_and_aff_1_0_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the image of the constant 4
+theorem aff_3_4_and_aff_1_0_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the image of the constant 6
+theorem aff_3_4_and_aff_1_0_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the image of the constant 7
+theorem aff_3_4_and_aff_1_0_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the image of the constant 8
+theorem aff_3_4_and_aff_1_0_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the whole ring
+theorem aff_3_4_and_aff_1_0_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the cubes mod nine
+theorem aff_3_4_and_aff_1_0_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the doubling orbit
+theorem aff_3_4_and_aff_1_0_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the residues the 2th power fixes
+theorem aff_3_4_and_aff_1_0_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the image of the 5th power
+theorem aff_3_4_and_aff_1_0_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the primitive roots
+theorem aff_3_4_and_aff_1_0_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the residues the reflection fixes
+theorem aff_3_4_and_aff_1_0_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the self-inverse residues
+theorem aff_3_4_and_aff_1_0_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the squares mod nine
+theorem aff_3_4_and_aff_1_0_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the first tetrahedron
+theorem aff_3_4_and_aff_1_0_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the second tetrahedron
+theorem aff_3_4_and_aff_1_0_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the triad
+theorem aff_3_4_and_aff_1_0_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and the identity may be applied in either order on the units
+theorem aff_3_4_and_aff_1_0_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (d) + 4) == (m9 (3 * d + 4))) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the image of the constant 0
+theorem aff_3_4_and_aff_2_2_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the image of the constant 1
+theorem aff_3_4_and_aff_2_2_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the image of the constant 2
+theorem aff_3_4_and_aff_2_2_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the image of the constant 3
+theorem aff_3_4_and_aff_2_2_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the image of the constant 4
+theorem aff_3_4_and_aff_2_2_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the image of the constant 6
+theorem aff_3_4_and_aff_2_2_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the image of the constant 7
+theorem aff_3_4_and_aff_2_2_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the image of the constant 8
+theorem aff_3_4_and_aff_2_2_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the whole ring
+theorem aff_3_4_and_aff_2_2_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the cubes mod nine
+theorem aff_3_4_and_aff_2_2_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the doubling orbit
+theorem aff_3_4_and_aff_2_2_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_4_and_aff_2_2_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the image of the 5th power
+theorem aff_3_4_and_aff_2_2_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the primitive roots
+theorem aff_3_4_and_aff_2_2_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the residues the reflection fixes
+theorem aff_3_4_and_aff_2_2_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the self-inverse residues
+theorem aff_3_4_and_aff_2_2_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the squares mod nine
+theorem aff_3_4_and_aff_2_2_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the first tetrahedron
+theorem aff_3_4_and_aff_2_2_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the second tetrahedron
+theorem aff_3_4_and_aff_2_2_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the triad
+theorem aff_3_4_and_aff_2_2_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 2d + 2 may be applied in either order on the units
+theorem aff_3_4_and_aff_2_2_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (2 * d + 2)) + 4) == m9 (2 * (m9 (3 * d + 4)) + 2)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the image of the constant 0
+theorem aff_3_4_and_aff_4_6_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the image of the constant 1
+theorem aff_3_4_and_aff_4_6_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the image of the constant 2
+theorem aff_3_4_and_aff_4_6_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the image of the constant 3
+theorem aff_3_4_and_aff_4_6_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the image of the constant 4
+theorem aff_3_4_and_aff_4_6_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the image of the constant 6
+theorem aff_3_4_and_aff_4_6_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the image of the constant 7
+theorem aff_3_4_and_aff_4_6_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the image of the constant 8
+theorem aff_3_4_and_aff_4_6_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the whole ring
+theorem aff_3_4_and_aff_4_6_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the cubes mod nine
+theorem aff_3_4_and_aff_4_6_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the doubling orbit
+theorem aff_3_4_and_aff_4_6_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_4_and_aff_4_6_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the image of the 5th power
+theorem aff_3_4_and_aff_4_6_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the primitive roots
+theorem aff_3_4_and_aff_4_6_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the residues the reflection fixes
+theorem aff_3_4_and_aff_4_6_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the self-inverse residues
+theorem aff_3_4_and_aff_4_6_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the squares mod nine
+theorem aff_3_4_and_aff_4_6_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the first tetrahedron
+theorem aff_3_4_and_aff_4_6_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the second tetrahedron
+theorem aff_3_4_and_aff_4_6_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the triad
+theorem aff_3_4_and_aff_4_6_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 4d + 6 may be applied in either order on the units
+theorem aff_3_4_and_aff_4_6_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (4 * d + 6)) + 4) == m9 (4 * (m9 (3 * d + 4)) + 6)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the image of the constant 0
+theorem aff_3_4_and_aff_5_8_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the image of the constant 1
+theorem aff_3_4_and_aff_5_8_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the image of the constant 2
+theorem aff_3_4_and_aff_5_8_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the image of the constant 3
+theorem aff_3_4_and_aff_5_8_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the image of the constant 4
+theorem aff_3_4_and_aff_5_8_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the image of the constant 6
+theorem aff_3_4_and_aff_5_8_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the image of the constant 7
+theorem aff_3_4_and_aff_5_8_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the image of the constant 8
+theorem aff_3_4_and_aff_5_8_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the whole ring
+theorem aff_3_4_and_aff_5_8_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the cubes mod nine
+theorem aff_3_4_and_aff_5_8_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the doubling orbit
+theorem aff_3_4_and_aff_5_8_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_4_and_aff_5_8_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the image of the 5th power
+theorem aff_3_4_and_aff_5_8_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the primitive roots
+theorem aff_3_4_and_aff_5_8_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the residues the reflection fixes
+theorem aff_3_4_and_aff_5_8_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the self-inverse residues
+theorem aff_3_4_and_aff_5_8_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the squares mod nine
+theorem aff_3_4_and_aff_5_8_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the first tetrahedron
+theorem aff_3_4_and_aff_5_8_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the second tetrahedron
+theorem aff_3_4_and_aff_5_8_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the triad
+theorem aff_3_4_and_aff_5_8_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 5d + 8 may be applied in either order on the units
+theorem aff_3_4_and_aff_5_8_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (5 * d + 8)) + 4) == m9 (5 * (m9 (3 * d + 4)) + 8)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the image of the constant 0
+theorem aff_3_4_and_aff_6_1_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the image of the constant 1
+theorem aff_3_4_and_aff_6_1_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the image of the constant 2
+theorem aff_3_4_and_aff_6_1_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the image of the constant 3
+theorem aff_3_4_and_aff_6_1_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the image of the constant 4
+theorem aff_3_4_and_aff_6_1_commute_on_aff_0_4_image :
+  [4].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the image of the constant 6
+theorem aff_3_4_and_aff_6_1_commute_on_aff_0_6_image :
+  [6].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the image of the constant 7
+theorem aff_3_4_and_aff_6_1_commute_on_aff_0_7_image :
+  [7].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the image of the constant 8
+theorem aff_3_4_and_aff_6_1_commute_on_aff_0_8_image :
+  [8].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the whole ring
+theorem aff_3_4_and_aff_6_1_commute_on_all :
+  [0,1,2,3,4,5,6,7,8].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the cubes mod nine
+theorem aff_3_4_and_aff_6_1_commute_on_cubes :
+  [0, 1, 8].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the doubling orbit
+theorem aff_3_4_and_aff_6_1_commute_on_orbit :
+  [1, 2, 4, 8, 7, 5].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the residues the 2th power fixes
+theorem aff_3_4_and_aff_6_1_commute_on_pow_2_fixed :
+  [0, 1].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the image of the 5th power
+theorem aff_3_4_and_aff_6_1_commute_on_pow_5_image :
+  [0, 1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the primitive roots
+theorem aff_3_4_and_aff_6_1_commute_on_primitives :
+  [2, 5].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the residues the reflection fixes
+theorem aff_3_4_and_aff_6_1_commute_on_reflfixed :
+  [5].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the self-inverse residues
+theorem aff_3_4_and_aff_6_1_commute_on_selfinv :
+  [1, 8].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the squares mod nine
+theorem aff_3_4_and_aff_6_1_commute_on_squares :
+  [0, 1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the first tetrahedron
+theorem aff_3_4_and_aff_6_1_commute_on_tetA :
+  [1, 4, 7].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the second tetrahedron
+theorem aff_3_4_and_aff_6_1_commute_on_tetB :
+  [2, 5, 8].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the triad
+theorem aff_3_4_and_aff_6_1_commute_on_triad :
+  [3, 6, 0].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 6d + 1 may be applied in either order on the units
+theorem aff_3_4_and_aff_6_1_commute_on_units :
+  [1, 2, 4, 5, 7, 8].all (fun d => m9 (3 * (m9 (6 * d + 1)) + 4) == m9 (6 * (m9 (3 * d + 4)) + 1)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 7d + 3 may be applied in either order on the image of the constant 0
+theorem aff_3_4_and_aff_7_3_commute_on_aff_0_0_image :
+  [0].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 4) == m9 (7 * (m9 (3 * d + 4)) + 3)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 7d + 3 may be applied in either order on the image of the constant 1
+theorem aff_3_4_and_aff_7_3_commute_on_aff_0_1_image :
+  [1].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 4) == m9 (7 * (m9 (3 * d + 4)) + 3)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 7d + 3 may be applied in either order on the image of the constant 2
+theorem aff_3_4_and_aff_7_3_commute_on_aff_0_2_image :
+  [2].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 4) == m9 (7 * (m9 (3 * d + 4)) + 3)) := by decide
+
+-- d ↦ 3d + 4 and d ↦ 7d + 3 may be applied in either order on the image of the constant 3
+theorem aff_3_4_and_aff_7_3_commute_on_aff_0_3_image :
+  [3].all (fun d => m9 (3 * (m9 (7 * d + 3)) + 4) == m9 (7 * (m9 (3 * d + 4)) + 3)) := by decide
 
 end Imagined

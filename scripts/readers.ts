@@ -23,13 +23,16 @@
  *    node scripts/readers.ts                 probe every readable source
  *    node scripts/readers.ts --domain herbal only one domain
  *    node scripts/readers.ts --list          the registry, with boundaries, no network */
+import { arg, flag } from '../src/cli/index.ts'
 import { READERS, PROBEABLE, GATED, DOMAINS } from '../src/readers/index.ts'
 
-const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : null }
+// argv reading comes from src/cli — one implementation, kept that way by scripts/canon-gate.ts. The copy
+// that stood here returned null where the shared one returns undefined; every call site tests it with a
+// falsy check or `??`, so the two are indistinguishable to them.
 const only = arg('--domain')
 const UA = { 'User-Agent': 'millennium-solutions/readers (+https://ceccec.psg.bg/millennium-solutions/; read-only, citation checking)' }
 
-if (process.argv.includes('--list')) {
+if (flag('--list')) {
   console.log(`readers: ${READERS.length} source(s) over ${DOMAINS.length} domain(s) — ${PROBEABLE.length} readable, ${GATED.length} behind a credential or licence\n`)
   for (const d of DOMAINS) {
     console.log(`── ${d.toUpperCase()}`)

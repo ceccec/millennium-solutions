@@ -19,7 +19,7 @@
 // and three of its twelve candidates were wrong.
 import { execSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync, readdirSync } from 'node:fs'
-import { ledger as ledgerRows, carrierOf } from '../src/api/index.ts'
+import { ledger as ledgerRows, carrierOf, leanFiles } from '../src/api/index.ts'
 
 // THE JOIN IS ON WHAT THE STATEMENT COMPUTES, NOT ON HOW IT IS SPELLED — and the first version of this was
 // character-exact, which is the right conservatism and the wrong instrument. It carried 56 names and left 35
@@ -70,7 +70,10 @@ const before = new Map<string, string>()
 const heads: string[] = []
 for (const f of execSync('git ls-tree --name-only HEAD src/proof/', { encoding: 'utf8' }).split('\n')
   .map((l) => l.replace('src/proof/', '').trim()).filter((f) => /^imagined(_\d+)?\.lean$/.test(f)))
-  { const src = execSync(`git show HEAD:src/proof/${f}`, { encoding: 'utf8' }); heads.push(src)
+  { // maxBuffer RAISED FROM ITS 1 MB DEFAULT. This read HEAD's generated Lean back through a pipe, which was
+    // fine while the generator wrote one small file and threw at the first commit where it wrote seven
+    // multi-megabyte shards — as a crash dumping a megabyte of Lean into the error, not as a clear limit.
+    const src = execSync(`git show HEAD:src/proof/${f}`, { encoding: 'utf8', maxBuffer: 512 * 1024 * 1024 }); heads.push(src)
     for (const [n, p] of parse(src)) before.set(n, p) }
 
 // THE WHOLE CORPUS, not only this generator's own files. Scoped to the shards, the question being asked was
@@ -80,7 +83,7 @@ for (const f of execSync('git ls-tree --name-only HEAD src/proof/', { encoding: 
 // it; the old key could not find that carrier because the two names have nothing in common. A fact proved
 // by hand is proved.
 const after = new Map<string, string>()
-for (const f of readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort())
+for (const f of leanFiles())
   for (const [n, p] of parse(readFileSync('src/proof/' + f, 'utf8'))) after.set(n, p)
 
 // A STATEMENT PROVED TWICE UNDER TWO NEW NAMES CANNOT NAME A CARRIER. If the same proposition appears more

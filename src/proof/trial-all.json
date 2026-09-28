@@ -170110,5 +170110,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "aac2bd39-1b5f-8934-a5c0-d46f55552137"
+  },
+  {
+    "key": "lean_groups_the_pair_arithmetic_is_composition",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cb8b8c97-fdd4-8ed8-a70d-2e5fda646545"
+  },
+  {
+    "key": "lean_groups_the_affine_maps_are_closed_under_composition",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "efabcbf6-129c-85b4-9c90-600d51334d43"
+  },
+  {
+    "key": "lean_groups_exactly_54_of_the_81_affine_maps_have_an_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c37ccedd-c887-8d13-97c1-f426104cf7ac"
+  },
+  {
+    "key": "lean_groups_the_invertible_affine_maps_are_a_group_of_order_54",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "04ef377d-a6bd-81b8-8a8e-8c87d84f1ded"
+  },
+  {
+    "key": "lean_groups_the_generated_group_is_exactly_the_invertible_set",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a7ace576-7434-83ac-89b4-8dc3ad0bdc4a"
+  },
+  {
+    "key": "lean_groups_the_9_collapsing_maps_are_exactly_those_outside_the_group_that_kill_the_ring",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "102b4684-f8a7-8112-a920-d7ce43b081b7"
+  },
+  {
+    "key": "lean_groups_the_group_is_not_abelian",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1f7e3abb-f610-85e4-ac14-75914dc4747b"
+  },
+  {
+    "key": "lean_groups_the_centre_of_the_group_is_the_identity_alone",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "01d98d6b-3309-8ffa-92e3-ef3b8f24264a"
   }
 ]

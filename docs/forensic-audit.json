@@ -1,5 +1,5 @@
 {
-  "produced": "3cccf79b7",
+  "produced": "9a85ad0b3",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,10 +7,10 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 28352,
-    "carried": 627,
+    "entries": 28360,
+    "carried": 826,
     "withdrawn": 1593,
-    "standing": 26132
+    "standing": 25941
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -26,6 +26,16 @@
       "revoked": 1864,
       "dRev": 1864,
       "dEnt": 200
+    },
+    {
+      "date": "2026-09-28",
+      "commit": "9a85ad0b3",
+      "author": "Tsvetan Rouschev",
+      "subject": "derive the generator's vocabulary from the ring instead of typing it",
+      "entries": 28352,
+      "revoked": 2220,
+      "dRev": 76,
+      "dEnt": 24941
     },
     {
       "date": "2026-09-25",
@@ -66,16 +76,6 @@
       "revoked": 2144,
       "dRev": 25,
       "dEnt": 32
-    },
-    {
-      "date": "2026-09-04",
-      "commit": "5d319470d",
-      "author": "Tsvetan Rouschev",
-      "subject": "Item 12 executed: 24 duplicate addresses retired, and it broke the API's",
-      "entries": 2423,
-      "revoked": 1896,
-      "dRev": 24,
-      "dEnt": 0
     }
   ],
   "withdrawalReasonsAsRecorded": [
@@ -112,6 +112,6 @@
       1
     ]
   ],
-  "totalStateChangingCommits": 632,
-  "address": "eff5f8e7-72d7-8108-a34a-88f44105b2c7"
+  "totalStateChangingCommits": 633,
+  "address": "a1885022-28ac-8bd4-80da-21bcceef82e0"
 }

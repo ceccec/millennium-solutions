@@ -36,9 +36,12 @@
  *    node scripts/api-discover.ts              every probe
  *    node scripts/api-discover.ts --probe drug only one
  *    node scripts/api-discover.ts --schemas    stop after discovering schemas, do not look for joins */
+import { arg, flag } from '../src/cli/index.ts'
 import { READERS } from '../src/readers/index.ts'
 
-const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : null }
+// argv reading comes from src/cli — one implementation, kept that way by scripts/canon-gate.ts. The copy
+// that stood here returned null where the shared one returns undefined; every call site tests it with a
+// falsy check or `??`, so the two are indistinguishable to them.
 const UA = { 'User-Agent': 'millennium-solutions/api-discover (+https://ceccec.psg.bg/millennium-solutions/; read-only)' }
 const get = async (url: string, ms = 25_000): Promise<{ ok: boolean; body: string; status: number }> => {
   const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), ms)
@@ -96,7 +99,7 @@ console.log(`api-discover: ${READERS.length} source(s) in the registry · ${prob
 // ── STEP 2a · DOES THE SERVICE PUBLISH A SCHEMA AT ALL? Asked of the hosts this run touches, at the paths the
 // OpenAPI ecosystem has settled on. A service that publishes none is not at fault and is not a gap in this
 // deposit — it is a fact about the service, and the response shape below is read instead.
-if (process.argv.includes('--schemas')) {
+if (flag('--schemas')) {
   const hosts = [...new Set(probes.flatMap((p) => p.calls.map((c) => new URL(c.url).origin)))]
   const WELL_KNOWN = ['/openapi.json', '/swagger.json', '/api/openapi.json', '/v3/api-docs', '/.well-known/openapi.json']
   for (const h of hosts) {

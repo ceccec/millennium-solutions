@@ -111,8 +111,27 @@ export const normalizeStatement = (raw: string): string =>
 // ignored that would hand them the corpus as it stood before they wrote it — stale, plausible, and silent.
 // Stat-ing the files costs one syscall each and is what makes the cache safe rather than merely fast.
 let leanCache: { stamp: string; out: LeanTheorem[] } | null = null
-const leanStamp = (): string =>
+// BAKED ONCE PER PROCESS, WHICH IS THE WHOLE POINT OF A ROOT. The first version re-stat'ed all 75 files on
+// every call so the cache could never be stale — and a CPU profile of the slowest step in the chain put 180
+// of its 211 seconds inside statSync and readdirSync. The parse it replaced was gone; a syscall storm had
+// taken its place, and the step got slower the more the corpus grew, exactly like the defect it fixed.
+//
+// qpu.uuidna.com refuses a request for every row and answers from a BAKED ROOT or from the one piece a key
+// sits in. A root that is re-derived per call is not a root. This one is computed on first use and kept.
+//
+// THAT IS ONLY SAFE BECAUSE NOTHING HERE READS THE CORPUS AFTER WRITING TO IT, and that was measured rather
+// than assumed: of every script that writes a .lean file, none calls leanTheorems, leanFiles, theoremOfKey or
+// fileOfKey afterwards in the same process — supersede.ts reads the corpus before it writes retained.lean,
+// and clusters.ts writes JSON, not Lean. Generators write and then hand the file to a SEPARATE lean process.
+// A future writer that needs a fresh read calls invalidateLeanCorpus(); the alternative is paying for a stat
+// of the whole directory on every lookup, forever, against a case that does not exist.
+let bakedStamp: string | null = null
+const leanStamp = (): string => bakedStamp ??=
   leanFiles().map((f) => { const st = statSync(`${PROOF_DIR}/${f}`); return `${f}:${st.size}:${st.mtimeMs}` }).join('|')
+
+/** Drop the baked corpus root. For a process that writes a .lean file and then reads theorems back — none
+ *  does today — call this between the write and the read, or the read answers from before the write. */
+export const invalidateLeanCorpus = (): void => { bakedStamp = null; leanCache = null; nameCache = null }
 
 export const leanTheorems = (): LeanTheorem[] => {
   const stamp = leanStamp()

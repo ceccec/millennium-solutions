@@ -5,18 +5,18 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `eff5f8e7-72d7-8108-a34a-88f44105b2c7`.
+`npm run forensic`. Content-address `a1885022-28ac-8bd4-80da-21bcceef82e0`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **28,352** |
-| standing — proved and sealed | 26,132 |
-| carried — withdrawn, proved by a live theorem | 627 |
+| ledger entries | **28,360** |
+| standing — proved and sealed | 25,941 |
+| carried — withdrawn, proved by a live theorem | 826 |
 | withdrawn — nothing currently proves them | 1,593 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 632 |
+| commits that changed ledger state | 633 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 
@@ -44,10 +44,10 @@ At least one of them was recoverable: `thue_morse_doubling_recurrence` was withd
 | date | net withdrawn | commit | subject |
 |---|---:|---|---|
 | 2026-08-20 | 1,864 | `e6bb01bb5` | gates: green the three that were red — by fixing the authority |
+| 2026-09-28 | 76 | `9a85ad0b3` | derive the generator's vocabulary from the ring instead of typ |
 | 2026-09-25 | 73 | `4d25e3359` | 73 keys revoked: emitted no longer, by a vocabulary that discr |
 | 2026-09-25 | 67 | `dcbb798ac` | provenance knew three records; there are 241 — and the three t |
 | 2026-08-20 | 25 | `959f8af2a` | lean: verify once instead of twice, and cache what the kernel  |
-| 2026-09-28 | 25 | `88737a3ad` | the grid widened to 24 subjects, and the joins between real da |
 
 ## What this record does NOT establish
 

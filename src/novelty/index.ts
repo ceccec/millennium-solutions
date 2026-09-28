@@ -21,6 +21,8 @@
  *  There is no fact about the literature that fixes where "relevant" begins; any number here is a judgement
  *  about how much noise to accept. So they are written AS choices, returned with every verdict, and a
  *  reader can disagree with a floor they can see. */
+import { stripTags } from '../html/index.ts'
+
 export const LIMITS = {
   relevanceFloor: 0.6,   // word-overlap at or above which a hit is considered for candidacy
   perSource: 5,          // results requested from each literature source
@@ -105,7 +107,7 @@ export const SOURCES: Record<string, { pace: number; run: (terms: string[], quer
     .map((w: any) => { const text = `${w.title ?? ''} ${invert(w.abstract_inverted_index)}`; return { source: 'openalex', title: w.title ?? '', year: w.publication_year, url: w.doi ?? w.id, relevance: relevance(terms, text), text } }) },
   // Crossref carries no subject, so a hit there must carry EVERY distinctive term.
   crossref: { pace: 1200, run: async (terms, query) => ((await get(`https://api.crossref.org/works?query=${q(query)}&rows=${LIMITS.perSource}`)).message?.items ?? [])
-    .map((w: any) => { const text = `${(w.title ?? [''])[0]} ${String(w.abstract ?? '').replace(/<[^>]+>/g, ' ')}`; const r = relevance(terms, text); return { source: 'crossref', title: (w.title ?? [''])[0], year: w.issued?.['date-parts']?.[0]?.[0], url: w.DOI ? `https://doi.org/${w.DOI}` : w.URL, relevance: r < 1 ? 0 : r, text } }) },
+    .map((w: any) => { const text = `${(w.title ?? [''])[0]} ${stripTags(String(w.abstract ?? ''))}`; const r = relevance(terms, text); return { source: 'crossref', title: (w.title ?? [''])[0], year: w.issued?.['date-parts']?.[0]?.[0], url: w.DOI ? `https://doi.org/${w.DOI}` : w.URL, relevance: r < 1 ? 0 : r, text } }) },
   arxiv: { pace: 6000, run: async (terms) => {
     // two tries, not four: a refusing arXiv costs half a minute per call
     const x: string = await get(`https://export.arxiv.org/api/query?search_query=${q(terms.slice(0, 5).map((t) => `all:${t}`).join(' AND '))}&max_results=${LIMITS.perSource}`, 'text', 2)

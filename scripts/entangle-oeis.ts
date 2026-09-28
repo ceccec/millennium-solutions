@@ -31,9 +31,12 @@
  *
  *    node scripts/entangle-oeis.ts            check every coil against the catalogue
  *    node scripts/entangle-oeis.ts --terms 10 how many terms to search on (default 8) */
+import { arg } from '../src/cli/index.ts'
 import { DOM_EXPRS, ALL_DOMS } from '../src/entangle/index.ts'
 
-const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : null }
+// argv reading comes from src/cli — one implementation, kept that way by scripts/canon-gate.ts. The copy
+// that stood here returned null where the shared one returns undefined; every call site tests it with a
+// falsy check or `??`, so the two are indistinguishable to them.
 const TERMS = Number(arg('--terms') ?? 8)
 const N = Array.from({ length: 20 }, (_, i) => i + 1)
 const UA = { 'User-Agent': 'millennium-solutions/entangle-oeis (+https://ceccec.psg.bg/millennium-solutions/; read-only)' }

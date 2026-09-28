@@ -35191,27 +35191,42 @@
   {
     "key": "lean_imagined_aff_3_0_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_3_0_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ac1a91d7-df6e-894e-aabe-51429a12f01a"
+    "receipt": "ac1a91d7-df6e-894e-aabe-51429a12f01a",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_0_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_0_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_0_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_3_0_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "f5499d47-f0e5-82d9-b74e-2ac2c481155d"
+    "receipt": "f5499d47-f0e5-82d9-b74e-2ac2c481155d",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_0_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_0_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_0_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_3_0_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a672b5bc-7398-8e09-9182-506d835fb8f6"
+    "receipt": "a672b5bc-7398-8e09-9182-506d835fb8f6",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_0_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_0_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_0_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_3_0_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d4b6e4f6-d9ca-8029-82ba-5205b9b9becd"
+    "receipt": "d4b6e4f6-d9ca-8029-82ba-5205b9b9becd",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_0_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_0_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_0_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_3_0_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5647e9e0-f869-832c-900e-541a0a4f4f9e"
+    "receipt": "5647e9e0-f869-832c-900e-541a0a4f4f9e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_0_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_0_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_0_is_injective_on_pow_2_fixed",
@@ -35251,7 +35266,10 @@
   {
     "key": "lean_imagined_aff_3_1_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_3_1_is_injective_on_reflfixed — ([5].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "96a2e121-8fab-83bb-8e26-0b09079a8e95"
+    "receipt": "96a2e121-8fab-83bb-8e26-0b09079a8e95",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_1_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_1_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_1_commutes_with_the_fold_on_reflfixed",
@@ -35261,7 +35279,10 @@
   {
     "key": "lean_imagined_aff_3_1_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_3_1_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5e91d2e2-28d5-8dab-a617-6883113a9a49"
+    "receipt": "5e91d2e2-28d5-8dab-a617-6883113a9a49",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_1_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_1_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_1_commutes_with_the_fold_on_aff_0_0_image",
@@ -35271,7 +35292,10 @@
   {
     "key": "lean_imagined_aff_3_1_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_3_1_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "dde5fbfc-8b3f-89a7-aefe-5ec2685550f4"
+    "receipt": "dde5fbfc-8b3f-89a7-aefe-5ec2685550f4",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_1_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_1_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_1_commutes_with_the_fold_on_aff_0_1_image",
@@ -35286,7 +35310,10 @@
   {
     "key": "lean_imagined_aff_3_1_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_3_1_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d3787f9b-e286-814f-b4dc-82af75c41336"
+    "receipt": "d3787f9b-e286-814f-b4dc-82af75c41336",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_1_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_1_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_1_commutes_with_the_fold_on_aff_0_2_image",
@@ -35296,7 +35323,10 @@
   {
     "key": "lean_imagined_aff_3_1_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_3_1_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9b3a9536-d098-8cdc-8443-3ef609790124"
+    "receipt": "9b3a9536-d098-8cdc-8443-3ef609790124",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_1_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_1_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_1_commutes_with_the_fold_on_aff_0_3_image",
@@ -35306,7 +35336,10 @@
   {
     "key": "lean_imagined_aff_3_1_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_3_1_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "6a8182db-4583-87fe-a3ee-911b167240fc"
+    "receipt": "6a8182db-4583-87fe-a3ee-911b167240fc",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_1_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_1_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_1_commutes_with_the_fold_on_aff_0_4_image",
@@ -35331,7 +35364,10 @@
   {
     "key": "lean_imagined_aff_3_1_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_3_1_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d61a4d5b-e247-8bb3-a889-4a52b54f2587"
+    "receipt": "d61a4d5b-e247-8bb3-a889-4a52b54f2587",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_1_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_1_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_1_commutes_with_the_fold_on_aff_0_6_image",
@@ -35341,7 +35377,10 @@
   {
     "key": "lean_imagined_aff_3_1_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_3_1_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "efc6287b-1cc5-8b8d-a4a2-342c7dd8a0df"
+    "receipt": "efc6287b-1cc5-8b8d-a4a2-342c7dd8a0df",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_1_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_1_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_1_commutes_with_the_fold_on_aff_0_7_image",
@@ -35356,7 +35395,10 @@
   {
     "key": "lean_imagined_aff_3_1_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_3_1_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (3 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5b5ea0a5-e64d-889b-b2c4-bb1434c46131"
+    "receipt": "5b5ea0a5-e64d-889b-b2c4-bb1434c46131",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_1_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_1_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_1_commutes_with_the_fold_on_aff_0_8_image",
@@ -35406,7 +35448,10 @@
   {
     "key": "lean_imagined_aff_3_2_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_3_2_is_injective_on_reflfixed — ([5].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "26f3b207-c9ba-88ef-9fe6-82feb4b3dc21"
+    "receipt": "26f3b207-c9ba-88ef-9fe6-82feb4b3dc21",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_2_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_2_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_2_commutes_with_the_fold_on_reflfixed",
@@ -35421,7 +35466,10 @@
   {
     "key": "lean_imagined_aff_3_2_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_3_2_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d1ddc38d-64b5-8e78-8552-c5916778b05f"
+    "receipt": "d1ddc38d-64b5-8e78-8552-c5916778b05f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_2_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_2_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_2_commutes_with_the_fold_on_aff_0_0_image",
@@ -35431,7 +35479,10 @@
   {
     "key": "lean_imagined_aff_3_2_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_3_2_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ca10f007-d9dc-8fa2-9011-f1a6c04f63ea"
+    "receipt": "ca10f007-d9dc-8fa2-9011-f1a6c04f63ea",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_2_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_2_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_2_commutes_with_the_fold_on_aff_0_1_image",
@@ -35441,7 +35492,10 @@
   {
     "key": "lean_imagined_aff_3_2_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_3_2_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "642f8766-4e1a-8755-aa77-3a0c443626a0"
+    "receipt": "642f8766-4e1a-8755-aa77-3a0c443626a0",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_2_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_2_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_2_commutes_with_the_fold_on_aff_0_2_image",
@@ -35456,7 +35510,10 @@
   {
     "key": "lean_imagined_aff_3_2_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_3_2_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "3725d6a4-87c0-82f7-a376-b84923a6ad7e"
+    "receipt": "3725d6a4-87c0-82f7-a376-b84923a6ad7e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_2_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_2_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_2_commutes_with_the_fold_on_aff_0_3_image",
@@ -35466,7 +35523,10 @@
   {
     "key": "lean_imagined_aff_3_2_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_3_2_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "3bd60565-6ec9-8861-a414-2d18cf521d5f"
+    "receipt": "3bd60565-6ec9-8861-a414-2d18cf521d5f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_2_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_2_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_2_commutes_with_the_fold_on_aff_0_4_image",
@@ -35476,7 +35536,10 @@
   {
     "key": "lean_imagined_aff_3_2_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_3_2_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1dc89f5b-c1f1-86f8-ba8d-a36c86a61515"
+    "receipt": "1dc89f5b-c1f1-86f8-ba8d-a36c86a61515",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_2_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_2_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_2_commutes_with_the_fold_on_aff_0_6_image",
@@ -35486,7 +35549,10 @@
   {
     "key": "lean_imagined_aff_3_2_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_3_2_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "68703478-19f1-80b5-a7d1-6fb33bc8e8f1"
+    "receipt": "68703478-19f1-80b5-a7d1-6fb33bc8e8f1",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_2_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_2_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_2_commutes_with_the_fold_on_aff_0_7_image",
@@ -35496,7 +35562,10 @@
   {
     "key": "lean_imagined_aff_3_2_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_3_2_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (3 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "23f1a0e4-32f6-8c0b-a0e6-cb693f3d2efd"
+    "receipt": "23f1a0e4-32f6-8c0b-a0e6-cb693f3d2efd",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_2_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_2_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_2_commutes_with_the_fold_on_aff_0_8_image",
@@ -35576,7 +35645,10 @@
   {
     "key": "lean_imagined_aff_3_3_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_3_3_is_injective_on_reflfixed — ([5].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "382816f4-9ce1-80b8-a197-aff15f0293aa"
+    "receipt": "382816f4-9ce1-80b8-a197-aff15f0293aa",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_3_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_3_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_3_commutes_with_the_fold_on_reflfixed",
@@ -35586,7 +35658,10 @@
   {
     "key": "lean_imagined_aff_3_3_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_3_3_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ce970787-2fa7-8519-b39c-07b196c427fd"
+    "receipt": "ce970787-2fa7-8519-b39c-07b196c427fd",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_3_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_3_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_3_commutes_with_the_fold_on_aff_0_0_image",
@@ -35601,7 +35676,10 @@
   {
     "key": "lean_imagined_aff_3_3_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_3_3_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "668ed0ac-371d-8378-9dde-fed5c17099b2"
+    "receipt": "668ed0ac-371d-8378-9dde-fed5c17099b2",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_3_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_3_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_3_commutes_with_the_fold_on_aff_0_1_image",
@@ -35611,7 +35689,10 @@
   {
     "key": "lean_imagined_aff_3_3_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_3_3_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "26ec6da2-7e98-8c8e-975e-c6fda0278cc1"
+    "receipt": "26ec6da2-7e98-8c8e-975e-c6fda0278cc1",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_3_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_3_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_3_commutes_with_the_fold_on_aff_0_2_image",
@@ -35621,7 +35702,10 @@
   {
     "key": "lean_imagined_aff_3_3_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_3_3_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ddb2289f-6944-8b56-bfa2-3174d9490580"
+    "receipt": "ddb2289f-6944-8b56-bfa2-3174d9490580",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_3_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_3_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_3_commutes_with_the_fold_on_aff_0_3_image",
@@ -35646,7 +35730,10 @@
   {
     "key": "lean_imagined_aff_3_3_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_3_3_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c09db583-56fd-8f20-9a08-7eab0d53fa08"
+    "receipt": "c09db583-56fd-8f20-9a08-7eab0d53fa08",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_3_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_3_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_3_commutes_with_the_fold_on_aff_0_4_image",
@@ -35656,7 +35743,10 @@
   {
     "key": "lean_imagined_aff_3_3_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_3_3_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "0b6a8f5e-f0f1-8873-931b-2ba95ee573aa"
+    "receipt": "0b6a8f5e-f0f1-8873-931b-2ba95ee573aa",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_3_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_3_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_3_commutes_with_the_fold_on_aff_0_6_image",
@@ -35671,7 +35761,10 @@
   {
     "key": "lean_imagined_aff_3_3_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_3_3_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "57b93112-2db2-884b-ac82-f7e435168220"
+    "receipt": "57b93112-2db2-884b-ac82-f7e435168220",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_3_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_3_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_3_commutes_with_the_fold_on_aff_0_7_image",
@@ -35681,7 +35774,10 @@
   {
     "key": "lean_imagined_aff_3_3_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_3_3_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (3 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c75ab971-3eab-84c9-aa30-afb2b2714b78"
+    "receipt": "c75ab971-3eab-84c9-aa30-afb2b2714b78",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_3_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_3_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_3_commutes_with_the_fold_on_aff_0_8_image",
@@ -35726,7 +35822,10 @@
   {
     "key": "lean_imagined_aff_3_4_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_3_4_is_injective_on_reflfixed — ([5].map (fun d => m9 (3 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b9b81b0d-0005-896d-91ef-1df07048eda9"
+    "receipt": "b9b81b0d-0005-896d-91ef-1df07048eda9",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_4_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_4_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_4_commutes_with_the_fold_on_reflfixed",
@@ -35736,7 +35835,10 @@
   {
     "key": "lean_imagined_aff_3_4_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_3_4_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (3 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "19c21a8e-6fb0-8967-bfc2-323375774a45"
+    "receipt": "19c21a8e-6fb0-8967-bfc2-323375774a45",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_4_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_4_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_4_commutes_with_the_fold_on_aff_0_0_image",
@@ -35746,7 +35848,10 @@
   {
     "key": "lean_imagined_aff_3_4_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_3_4_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (3 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4041eadf-172e-8b83-873a-752165c78a71"
+    "receipt": "4041eadf-172e-8b83-873a-752165c78a71",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_4_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_4_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_4_commutes_with_the_fold_on_aff_0_1_image",
@@ -35761,7 +35866,10 @@
   {
     "key": "lean_imagined_aff_3_4_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_3_4_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (3 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "3d3784d2-026a-83e7-974e-6e88249aa650"
+    "receipt": "3d3784d2-026a-83e7-974e-6e88249aa650",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_4_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_4_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_4_commutes_with_the_fold_on_aff_0_2_image",
@@ -35771,7 +35879,10 @@
   {
     "key": "lean_imagined_aff_3_4_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_3_4_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (3 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c0af0746-b769-8535-ba6c-dfa5c4889f9c"
+    "receipt": "c0af0746-b769-8535-ba6c-dfa5c4889f9c",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_4_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_4_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_4_commutes_with_the_fold_on_aff_0_3_image",
@@ -35781,7 +35892,10 @@
   {
     "key": "lean_imagined_aff_3_4_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_3_4_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (3 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "722937b3-4876-8060-8968-fec2e863e387"
+    "receipt": "722937b3-4876-8060-8968-fec2e863e387",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_4_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_4_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_4_commutes_with_the_fold_on_aff_0_4_image",
@@ -35796,7 +35910,10 @@
   {
     "key": "lean_imagined_aff_3_4_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_3_4_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (3 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c0072b40-1805-83cf-815d-3343e3c2488f"
+    "receipt": "c0072b40-1805-83cf-815d-3343e3c2488f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_4_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_4_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_4_commutes_with_the_fold_on_aff_0_6_image",
@@ -35806,7 +35923,10 @@
   {
     "key": "lean_imagined_aff_3_4_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_3_4_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (3 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5f15cef7-33c9-8ff6-81dc-d0e8f95c28c8"
+    "receipt": "5f15cef7-33c9-8ff6-81dc-d0e8f95c28c8",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_4_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_4_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_4_commutes_with_the_fold_on_aff_0_7_image",
@@ -35831,7 +35951,10 @@
   {
     "key": "lean_imagined_aff_3_4_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_3_4_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (3 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "21af34c2-d9d7-8881-ba02-faf4ea980f75"
+    "receipt": "21af34c2-d9d7-8881-ba02-faf4ea980f75",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_4_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_4_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_4_commutes_with_the_fold_on_aff_0_8_image",
@@ -35876,7 +35999,10 @@
   {
     "key": "lean_imagined_aff_3_5_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_3_5_is_injective_on_reflfixed — ([5].map (fun d => m9 (3 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a0482921-7a01-8427-bb7c-8968e1eb7a93"
+    "receipt": "a0482921-7a01-8427-bb7c-8968e1eb7a93",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_5_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_5_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_5_commutes_with_the_fold_on_reflfixed",
@@ -35891,7 +36017,10 @@
   {
     "key": "lean_imagined_aff_3_5_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_3_5_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (3 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "fd4c3b2f-a519-8eb4-a8cb-720a107d928f"
+    "receipt": "fd4c3b2f-a519-8eb4-a8cb-720a107d928f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_5_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_5_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_5_commutes_with_the_fold_on_aff_0_0_image",
@@ -35901,7 +36030,10 @@
   {
     "key": "lean_imagined_aff_3_5_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_3_5_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (3 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "7b762525-6666-824d-b179-3b072fff36ba"
+    "receipt": "7b762525-6666-824d-b179-3b072fff36ba",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_5_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_5_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_5_commutes_with_the_fold_on_aff_0_1_image",
@@ -35911,7 +36043,10 @@
   {
     "key": "lean_imagined_aff_3_5_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_3_5_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (3 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b1e37c84-9607-8ff0-bcbf-4427bfdbf072"
+    "receipt": "b1e37c84-9607-8ff0-bcbf-4427bfdbf072",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_5_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_5_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_5_commutes_with_the_fold_on_aff_0_2_image",
@@ -35936,7 +36071,10 @@
   {
     "key": "lean_imagined_aff_3_5_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_3_5_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (3 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2e02c572-b593-8889-a990-0af1353d4242"
+    "receipt": "2e02c572-b593-8889-a990-0af1353d4242",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_5_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_5_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_5_commutes_with_the_fold_on_aff_0_3_image",
@@ -35946,7 +36084,10 @@
   {
     "key": "lean_imagined_aff_3_5_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_3_5_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (3 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8e7ff2e8-c797-81c7-991a-e1232633831b"
+    "receipt": "8e7ff2e8-c797-81c7-991a-e1232633831b",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_5_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_5_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_5_commutes_with_the_fold_on_aff_0_4_image",
@@ -35956,7 +36097,10 @@
   {
     "key": "lean_imagined_aff_3_5_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_3_5_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (3 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "88e8a6cb-a784-8c4b-b04d-cc6b2db04627"
+    "receipt": "88e8a6cb-a784-8c4b-b04d-cc6b2db04627",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_5_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_5_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_5_commutes_with_the_fold_on_aff_0_6_image",
@@ -35966,7 +36110,10 @@
   {
     "key": "lean_imagined_aff_3_5_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_3_5_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (3 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "997e09da-e4eb-831d-875f-32551dc28557"
+    "receipt": "997e09da-e4eb-831d-875f-32551dc28557",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_5_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_5_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_5_commutes_with_the_fold_on_aff_0_7_image",
@@ -35976,7 +36123,10 @@
   {
     "key": "lean_imagined_aff_3_5_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_3_5_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (3 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1a3f6e67-6f57-8e1b-8346-c781fca3fbec"
+    "receipt": "1a3f6e67-6f57-8e1b-8346-c781fca3fbec",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_5_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_5_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_5_commutes_with_the_fold_on_aff_0_8_image",
@@ -36041,7 +36191,10 @@
   {
     "key": "lean_imagined_aff_3_6_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_3_6_is_injective_on_reflfixed — ([5].map (fun d => m9 (3 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "19017ea6-97e6-82a0-a201-e4ed2cd9f2e2"
+    "receipt": "19017ea6-97e6-82a0-a201-e4ed2cd9f2e2",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_6_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_6_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_6_commutes_with_the_fold_on_reflfixed",
@@ -36051,7 +36204,10 @@
   {
     "key": "lean_imagined_aff_3_6_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_3_6_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (3 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "94f8c621-bac1-8175-8a43-1e5a5f92b3d5"
+    "receipt": "94f8c621-bac1-8175-8a43-1e5a5f92b3d5",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_6_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_6_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_6_commutes_with_the_fold_on_aff_0_0_image",
@@ -36066,7 +36222,10 @@
   {
     "key": "lean_imagined_aff_3_6_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_3_6_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (3 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "33bd9f8f-91d9-89a3-a674-1efc9f56b9bd"
+    "receipt": "33bd9f8f-91d9-89a3-a674-1efc9f56b9bd",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_6_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_6_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_6_commutes_with_the_fold_on_aff_0_1_image",
@@ -36076,7 +36235,10 @@
   {
     "key": "lean_imagined_aff_3_6_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_3_6_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (3 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5a6c609e-3ef7-80fe-990c-403718ff5e87"
+    "receipt": "5a6c609e-3ef7-80fe-990c-403718ff5e87",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_6_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_6_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_6_commutes_with_the_fold_on_aff_0_2_image",
@@ -36086,7 +36248,10 @@
   {
     "key": "lean_imagined_aff_3_6_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_3_6_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (3 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "da814544-69d7-881b-806b-bb3dcad2fad8"
+    "receipt": "da814544-69d7-881b-806b-bb3dcad2fad8",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_6_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_6_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_6_commutes_with_the_fold_on_aff_0_3_image",
@@ -36101,7 +36266,10 @@
   {
     "key": "lean_imagined_aff_3_6_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_3_6_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (3 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "7f9accc6-495a-8e35-96b7-d0fcc599da19"
+    "receipt": "7f9accc6-495a-8e35-96b7-d0fcc599da19",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_6_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_6_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_6_commutes_with_the_fold_on_aff_0_4_image",
@@ -36111,7 +36279,10 @@
   {
     "key": "lean_imagined_aff_3_6_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_3_6_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (3 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "71865222-191c-8960-b72e-0c7fb3b5b087"
+    "receipt": "71865222-191c-8960-b72e-0c7fb3b5b087",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_6_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_6_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_6_commutes_with_the_fold_on_aff_0_6_image",
@@ -36136,7 +36307,10 @@
   {
     "key": "lean_imagined_aff_3_6_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_3_6_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (3 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "bdd41fa1-ce35-8cd6-b2a5-02589b76caa5"
+    "receipt": "bdd41fa1-ce35-8cd6-b2a5-02589b76caa5",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_6_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_6_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_6_commutes_with_the_fold_on_aff_0_7_image",
@@ -36146,7 +36320,10 @@
   {
     "key": "lean_imagined_aff_3_6_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_3_6_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (3 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "61568538-ee9c-8c7e-8442-5dcb4cd44b7a"
+    "receipt": "61568538-ee9c-8c7e-8442-5dcb4cd44b7a",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_6_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_6_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_6_commutes_with_the_fold_on_aff_0_8_image",
@@ -36191,7 +36368,10 @@
   {
     "key": "lean_imagined_aff_3_7_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_3_7_is_injective_on_reflfixed — ([5].map (fun d => m9 (3 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "e81d5438-4ffa-8754-a08c-4f5a1127e2fa"
+    "receipt": "e81d5438-4ffa-8754-a08c-4f5a1127e2fa",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_7_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_7_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_7_commutes_with_the_fold_on_reflfixed",
@@ -36201,7 +36381,10 @@
   {
     "key": "lean_imagined_aff_3_7_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_3_7_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (3 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "58478eba-86a6-8f47-a48f-478c69a161ec"
+    "receipt": "58478eba-86a6-8f47-a48f-478c69a161ec",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_7_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_7_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_7_commutes_with_the_fold_on_aff_0_0_image",
@@ -36211,7 +36394,10 @@
   {
     "key": "lean_imagined_aff_3_7_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_3_7_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (3 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ce7d28e1-f145-8d6c-bcc2-d6d24e26e390"
+    "receipt": "ce7d28e1-f145-8d6c-bcc2-d6d24e26e390",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_7_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_7_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_7_commutes_with_the_fold_on_aff_0_1_image",
@@ -36236,7 +36422,10 @@
   {
     "key": "lean_imagined_aff_3_7_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_3_7_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (3 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2cbe6815-6ae8-8336-afa6-c9a923b6bd00"
+    "receipt": "2cbe6815-6ae8-8336-afa6-c9a923b6bd00",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_7_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_7_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_7_commutes_with_the_fold_on_aff_0_2_image",
@@ -36246,7 +36435,10 @@
   {
     "key": "lean_imagined_aff_3_7_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_3_7_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (3 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4b9bfc52-50c7-83b3-9e31-a53f528047b3"
+    "receipt": "4b9bfc52-50c7-83b3-9e31-a53f528047b3",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_7_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_7_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_7_commutes_with_the_fold_on_aff_0_3_image",
@@ -36256,7 +36448,10 @@
   {
     "key": "lean_imagined_aff_3_7_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_3_7_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (3 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4a518823-c714-8b3c-843c-e33f60b43031"
+    "receipt": "4a518823-c714-8b3c-843c-e33f60b43031",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_7_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_7_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_7_commutes_with_the_fold_on_aff_0_4_image",
@@ -36271,7 +36466,10 @@
   {
     "key": "lean_imagined_aff_3_7_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_3_7_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (3 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "29bf556f-f3b7-8b6f-9556-1bc01e3d55db"
+    "receipt": "29bf556f-f3b7-8b6f-9556-1bc01e3d55db",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_7_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_7_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_7_commutes_with_the_fold_on_aff_0_6_image",
@@ -36281,7 +36479,10 @@
   {
     "key": "lean_imagined_aff_3_7_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_3_7_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (3 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "22e6df26-bcba-803b-9d53-37a6779a30aa"
+    "receipt": "22e6df26-bcba-803b-9d53-37a6779a30aa",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_7_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_7_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_7_commutes_with_the_fold_on_aff_0_7_image",
@@ -36296,7 +36497,10 @@
   {
     "key": "lean_imagined_aff_3_7_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_3_7_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (3 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d1008437-bd4c-8570-a9e2-4bc031505702"
+    "receipt": "d1008437-bd4c-8570-a9e2-4bc031505702",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_7_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_7_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_7_commutes_with_the_fold_on_aff_0_8_image",
@@ -36341,7 +36545,10 @@
   {
     "key": "lean_imagined_aff_3_8_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_3_8_is_injective_on_reflfixed — ([5].map (fun d => m9 (3 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "bea0eb6e-a047-89fd-af45-634fec6bfdd6"
+    "receipt": "bea0eb6e-a047-89fd-af45-634fec6bfdd6",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_8_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_8_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_8_commutes_with_the_fold_on_reflfixed",
@@ -36366,7 +36573,10 @@
   {
     "key": "lean_imagined_aff_3_8_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_3_8_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (3 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "fe581eb5-33f1-820d-88c4-4c784c2f497b"
+    "receipt": "fe581eb5-33f1-820d-88c4-4c784c2f497b",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_8_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_8_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_8_commutes_with_the_fold_on_aff_0_0_image",
@@ -36376,7 +36586,10 @@
   {
     "key": "lean_imagined_aff_3_8_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_3_8_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (3 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a256b824-aca5-8f85-a54c-93b93aa080ba"
+    "receipt": "a256b824-aca5-8f85-a54c-93b93aa080ba",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_8_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_8_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_8_commutes_with_the_fold_on_aff_0_1_image",
@@ -36386,7 +36599,10 @@
   {
     "key": "lean_imagined_aff_3_8_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_3_8_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (3 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "eb698d3b-9d34-8f62-8b34-9fb38dad94ff"
+    "receipt": "eb698d3b-9d34-8f62-8b34-9fb38dad94ff",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_8_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_8_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_8_commutes_with_the_fold_on_aff_0_2_image",
@@ -36401,7 +36617,10 @@
   {
     "key": "lean_imagined_aff_3_8_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_3_8_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (3 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4329b1b8-7666-89c0-b87d-c8c9ef80d902"
+    "receipt": "4329b1b8-7666-89c0-b87d-c8c9ef80d902",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_8_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_8_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_8_commutes_with_the_fold_on_aff_0_3_image",
@@ -36411,7 +36630,10 @@
   {
     "key": "lean_imagined_aff_3_8_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_3_8_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (3 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "802ad96a-70b0-869a-8722-29eaf4052c76"
+    "receipt": "802ad96a-70b0-869a-8722-29eaf4052c76",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_8_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_8_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_8_commutes_with_the_fold_on_aff_0_4_image",
@@ -36421,7 +36643,10 @@
   {
     "key": "lean_imagined_aff_3_8_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_3_8_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (3 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "58e74b49-2465-89ba-b440-1e4e38feadfa"
+    "receipt": "58e74b49-2465-89ba-b440-1e4e38feadfa",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_8_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_8_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_8_commutes_with_the_fold_on_aff_0_6_image",
@@ -36431,7 +36656,10 @@
   {
     "key": "lean_imagined_aff_3_8_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_3_8_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (3 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "225a873c-01a3-8cf2-985d-3088a1e42ff8"
+    "receipt": "225a873c-01a3-8cf2-985d-3088a1e42ff8",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_8_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_8_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_8_commutes_with_the_fold_on_aff_0_7_image",
@@ -36441,7 +36669,10 @@
   {
     "key": "lean_imagined_aff_3_8_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_3_8_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (3 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b6f505be-3c21-85c0-a38d-ae17dab44d9b"
+    "receipt": "b6f505be-3c21-85c0-a38d-ae17dab44d9b",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_3_8_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_3_8_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_3_8_commutes_with_the_fold_on_aff_0_8_image",
@@ -37696,27 +37927,42 @@
   {
     "key": "lean_imagined_aff_6_0_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_6_0_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b860fe5b-d9a0-8c90-aacc-7e74f2b58485"
+    "receipt": "b860fe5b-d9a0-8c90-aacc-7e74f2b58485",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_0_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_0_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_0_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_6_0_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a25bfe68-1fb7-80e5-902f-6b6658af8fe3"
+    "receipt": "a25bfe68-1fb7-80e5-902f-6b6658af8fe3",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_0_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_0_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_0_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_6_0_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "39f62cc3-b362-82a3-8840-55698a70f6bc"
+    "receipt": "39f62cc3-b362-82a3-8840-55698a70f6bc",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_0_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_0_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_0_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_6_0_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ce5e4711-39f0-8a53-825e-30018cc4750a"
+    "receipt": "ce5e4711-39f0-8a53-825e-30018cc4750a",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_0_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_0_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_0_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_6_0_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a129b427-336d-87e2-b251-656ab9753849"
+    "receipt": "a129b427-336d-87e2-b251-656ab9753849",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_0_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_0_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_0_is_injective_on_pow_2_fixed",
@@ -37756,7 +38002,10 @@
   {
     "key": "lean_imagined_aff_6_1_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_6_1_is_injective_on_reflfixed — ([5].map (fun d => m9 (6 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c557a521-b214-89fc-b67a-e2e2d6e5d8d0"
+    "receipt": "c557a521-b214-89fc-b67a-e2e2d6e5d8d0",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_1_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_1_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_1_commutes_with_the_fold_on_reflfixed",
@@ -37766,7 +38015,10 @@
   {
     "key": "lean_imagined_aff_6_1_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_6_1_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (6 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "44d859c8-5248-8f70-affb-b9841920135f"
+    "receipt": "44d859c8-5248-8f70-affb-b9841920135f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_1_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_1_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_1_commutes_with_the_fold_on_aff_0_0_image",
@@ -37776,7 +38028,10 @@
   {
     "key": "lean_imagined_aff_6_1_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_6_1_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (6 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b52c03ce-0255-89b6-a77e-012384dc8430"
+    "receipt": "b52c03ce-0255-89b6-a77e-012384dc8430",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_1_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_1_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_1_commutes_with_the_fold_on_aff_0_1_image",
@@ -37791,7 +38046,10 @@
   {
     "key": "lean_imagined_aff_6_1_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_6_1_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (6 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "eb2a3432-b1f0-8f83-a87a-640efec65eaa"
+    "receipt": "eb2a3432-b1f0-8f83-a87a-640efec65eaa",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_1_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_1_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_1_commutes_with_the_fold_on_aff_0_2_image",
@@ -37801,7 +38059,10 @@
   {
     "key": "lean_imagined_aff_6_1_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_6_1_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (6 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5a882f87-6378-8023-9fdd-c9ac1d1587dd"
+    "receipt": "5a882f87-6378-8023-9fdd-c9ac1d1587dd",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_1_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_1_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_1_commutes_with_the_fold_on_aff_0_3_image",
@@ -37811,7 +38072,10 @@
   {
     "key": "lean_imagined_aff_6_1_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_6_1_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (6 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "3db70bed-7c22-8ba3-90b3-1c7b8cf68e50"
+    "receipt": "3db70bed-7c22-8ba3-90b3-1c7b8cf68e50",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_1_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_1_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_1_commutes_with_the_fold_on_aff_0_4_image",
@@ -37826,7 +38090,10 @@
   {
     "key": "lean_imagined_aff_6_1_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_6_1_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (6 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2e18c306-1864-8831-a1f9-f2fe1c5eb8c6"
+    "receipt": "2e18c306-1864-8831-a1f9-f2fe1c5eb8c6",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_1_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_1_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_1_commutes_with_the_fold_on_aff_0_6_image",
@@ -37836,7 +38103,10 @@
   {
     "key": "lean_imagined_aff_6_1_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_6_1_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (6 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "41b5b212-a063-8402-94f3-7de5e7e2f3db"
+    "receipt": "41b5b212-a063-8402-94f3-7de5e7e2f3db",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_1_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_1_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_1_commutes_with_the_fold_on_aff_0_7_image",
@@ -37861,7 +38131,10 @@
   {
     "key": "lean_imagined_aff_6_1_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_6_1_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (6 * d + 1))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1e27ce91-84b8-8601-a3cc-3227085bd75f"
+    "receipt": "1e27ce91-84b8-8601-a3cc-3227085bd75f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_1_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_1_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_1_commutes_with_the_fold_on_aff_0_8_image",
@@ -37906,7 +38179,10 @@
   {
     "key": "lean_imagined_aff_6_2_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_6_2_is_injective_on_reflfixed — ([5].map (fun d => m9 (6 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "7f741ea3-868b-8950-bd58-29fb049e88b6"
+    "receipt": "7f741ea3-868b-8950-bd58-29fb049e88b6",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_2_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_2_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_2_commutes_with_the_fold_on_reflfixed",
@@ -37931,7 +38207,10 @@
   {
     "key": "lean_imagined_aff_6_2_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_6_2_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (6 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "38932bdd-8d36-82cd-bd48-13a41fefe3db"
+    "receipt": "38932bdd-8d36-82cd-bd48-13a41fefe3db",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_2_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_2_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_2_commutes_with_the_fold_on_aff_0_0_image",
@@ -37941,7 +38220,10 @@
   {
     "key": "lean_imagined_aff_6_2_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_6_2_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (6 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "698b4d4d-1322-8ceb-bd23-61b283564598"
+    "receipt": "698b4d4d-1322-8ceb-bd23-61b283564598",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_2_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_2_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_2_commutes_with_the_fold_on_aff_0_1_image",
@@ -37951,7 +38233,10 @@
   {
     "key": "lean_imagined_aff_6_2_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_6_2_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (6 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8a752190-f87e-821a-bc44-26091d6996cb"
+    "receipt": "8a752190-f87e-821a-bc44-26091d6996cb",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_2_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_2_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_2_commutes_with_the_fold_on_aff_0_2_image",
@@ -37966,7 +38251,10 @@
   {
     "key": "lean_imagined_aff_6_2_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_6_2_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (6 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "04a4463d-da53-8044-9c4b-9bea07350c51"
+    "receipt": "04a4463d-da53-8044-9c4b-9bea07350c51",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_2_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_2_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_2_commutes_with_the_fold_on_aff_0_3_image",
@@ -37976,7 +38264,10 @@
   {
     "key": "lean_imagined_aff_6_2_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_6_2_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (6 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "786c16e1-aa9c-89cd-b1a2-ad8fa5de118b"
+    "receipt": "786c16e1-aa9c-89cd-b1a2-ad8fa5de118b",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_2_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_2_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_2_commutes_with_the_fold_on_aff_0_4_image",
@@ -37986,7 +38277,10 @@
   {
     "key": "lean_imagined_aff_6_2_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_6_2_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (6 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "f0106073-d1d1-8f0a-8abd-5205c91e864a"
+    "receipt": "f0106073-d1d1-8f0a-8abd-5205c91e864a",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_2_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_2_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_2_commutes_with_the_fold_on_aff_0_6_image",
@@ -37996,7 +38290,10 @@
   {
     "key": "lean_imagined_aff_6_2_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_6_2_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (6 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "0b53e05f-14cd-8073-8a86-9a8b001d0569"
+    "receipt": "0b53e05f-14cd-8073-8a86-9a8b001d0569",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_2_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_2_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_2_commutes_with_the_fold_on_aff_0_7_image",
@@ -38006,7 +38303,10 @@
   {
     "key": "lean_imagined_aff_6_2_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_6_2_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (6 * d + 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "32875208-d989-8717-917e-c92a3fd54d44"
+    "receipt": "32875208-d989-8717-917e-c92a3fd54d44",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_2_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_2_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_2_commutes_with_the_fold_on_aff_0_8_image",
@@ -38081,7 +38381,10 @@
   {
     "key": "lean_imagined_aff_6_3_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_6_3_is_injective_on_reflfixed — ([5].map (fun d => m9 (6 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d5b8714a-a65f-85c1-bf4b-a370a11a3beb"
+    "receipt": "d5b8714a-a65f-85c1-bf4b-a370a11a3beb",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_3_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_3_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_3_commutes_with_the_fold_on_reflfixed",
@@ -38091,7 +38394,10 @@
   {
     "key": "lean_imagined_aff_6_3_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_6_3_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (6 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1e1ca8ee-f2ca-89b7-9c25-fa992f3fa36e"
+    "receipt": "1e1ca8ee-f2ca-89b7-9c25-fa992f3fa36e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_3_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_3_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_3_commutes_with_the_fold_on_aff_0_0_image",
@@ -38106,7 +38412,10 @@
   {
     "key": "lean_imagined_aff_6_3_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_6_3_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (6 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "05ad3760-2281-8921-9fca-7f0e72093583"
+    "receipt": "05ad3760-2281-8921-9fca-7f0e72093583",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_3_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_3_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_3_commutes_with_the_fold_on_aff_0_1_image",
@@ -38116,7 +38425,10 @@
   {
     "key": "lean_imagined_aff_6_3_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_6_3_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (6 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "224eefb1-02d7-88a9-8694-260de7572f36"
+    "receipt": "224eefb1-02d7-88a9-8694-260de7572f36",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_3_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_3_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_3_commutes_with_the_fold_on_aff_0_2_image",
@@ -38126,7 +38438,10 @@
   {
     "key": "lean_imagined_aff_6_3_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_6_3_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (6 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b457c54b-5101-833e-88d5-a5db299c5667"
+    "receipt": "b457c54b-5101-833e-88d5-a5db299c5667",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_3_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_3_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_3_commutes_with_the_fold_on_aff_0_3_image",
@@ -38151,7 +38466,10 @@
   {
     "key": "lean_imagined_aff_6_3_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_6_3_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (6 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "18d36074-8ac8-87e4-a66c-828a689004e1"
+    "receipt": "18d36074-8ac8-87e4-a66c-828a689004e1",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_3_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_3_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_3_commutes_with_the_fold_on_aff_0_4_image",
@@ -38161,7 +38479,10 @@
   {
     "key": "lean_imagined_aff_6_3_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_6_3_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (6 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8e258714-2d5c-8b21-b9a4-4ff9af6f8ead"
+    "receipt": "8e258714-2d5c-8b21-b9a4-4ff9af6f8ead",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_3_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_3_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_3_commutes_with_the_fold_on_aff_0_6_image",
@@ -38176,7 +38497,10 @@
   {
     "key": "lean_imagined_aff_6_3_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_6_3_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (6 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "fa311b88-742c-8697-8acc-1bac9848f982"
+    "receipt": "fa311b88-742c-8697-8acc-1bac9848f982",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_3_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_3_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_3_commutes_with_the_fold_on_aff_0_7_image",
@@ -38186,7 +38510,10 @@
   {
     "key": "lean_imagined_aff_6_3_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_6_3_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (6 * d + 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8136b0de-6229-8f69-bce2-73ee9f4a61c3"
+    "receipt": "8136b0de-6229-8f69-bce2-73ee9f4a61c3",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_3_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_3_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_3_commutes_with_the_fold_on_aff_0_8_image",
@@ -38231,7 +38558,10 @@
   {
     "key": "lean_imagined_aff_6_4_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_6_4_is_injective_on_reflfixed — ([5].map (fun d => m9 (6 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "fe870141-895b-8deb-80f8-1b86409f4d5e"
+    "receipt": "fe870141-895b-8deb-80f8-1b86409f4d5e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_4_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_4_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_4_commutes_with_the_fold_on_reflfixed",
@@ -38241,7 +38571,10 @@
   {
     "key": "lean_imagined_aff_6_4_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_6_4_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (6 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "52181b1c-238d-82dc-986d-e7fcfaf84bb2"
+    "receipt": "52181b1c-238d-82dc-986d-e7fcfaf84bb2",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_4_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_4_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_4_commutes_with_the_fold_on_aff_0_0_image",
@@ -38251,7 +38584,10 @@
   {
     "key": "lean_imagined_aff_6_4_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_6_4_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (6 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1daa3944-a455-870e-b624-6b63f76687b9"
+    "receipt": "1daa3944-a455-870e-b624-6b63f76687b9",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_4_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_4_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_4_commutes_with_the_fold_on_aff_0_1_image",
@@ -38276,7 +38612,10 @@
   {
     "key": "lean_imagined_aff_6_4_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_6_4_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (6 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ec98273d-b931-81b7-a99b-3d33a5105be7"
+    "receipt": "ec98273d-b931-81b7-a99b-3d33a5105be7",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_4_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_4_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_4_commutes_with_the_fold_on_aff_0_2_image",
@@ -38286,7 +38625,10 @@
   {
     "key": "lean_imagined_aff_6_4_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_6_4_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (6 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c4037257-4a2a-8ff0-8fc3-9828b1db7882"
+    "receipt": "c4037257-4a2a-8ff0-8fc3-9828b1db7882",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_4_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_4_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_4_commutes_with_the_fold_on_aff_0_3_image",
@@ -38296,7 +38638,10 @@
   {
     "key": "lean_imagined_aff_6_4_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_6_4_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (6 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a98c318b-0412-8d9b-a42c-5fc5ee6da8ba"
+    "receipt": "a98c318b-0412-8d9b-a42c-5fc5ee6da8ba",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_4_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_4_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_4_commutes_with_the_fold_on_aff_0_4_image",
@@ -38311,7 +38656,10 @@
   {
     "key": "lean_imagined_aff_6_4_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_6_4_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (6 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8b9e2e65-1214-8b2d-a335-8fd08d6e5a40"
+    "receipt": "8b9e2e65-1214-8b2d-a335-8fd08d6e5a40",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_4_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_4_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_4_commutes_with_the_fold_on_aff_0_6_image",
@@ -38321,7 +38669,10 @@
   {
     "key": "lean_imagined_aff_6_4_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_6_4_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (6 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "e988a845-f695-889a-9f78-d9a039123361"
+    "receipt": "e988a845-f695-889a-9f78-d9a039123361",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_4_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_4_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_4_commutes_with_the_fold_on_aff_0_7_image",
@@ -38336,7 +38687,10 @@
   {
     "key": "lean_imagined_aff_6_4_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_6_4_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (6 * d + 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "294753da-f7a7-8b52-a57b-5e753edbcd9f"
+    "receipt": "294753da-f7a7-8b52-a57b-5e753edbcd9f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_4_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_4_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_4_commutes_with_the_fold_on_aff_0_8_image",
@@ -38386,7 +38740,10 @@
   {
     "key": "lean_imagined_aff_6_5_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_6_5_is_injective_on_reflfixed — ([5].map (fun d => m9 (6 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ced46381-a329-87b2-9a55-88eb5585e486"
+    "receipt": "ced46381-a329-87b2-9a55-88eb5585e486",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_5_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_5_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_5_commutes_with_the_fold_on_reflfixed",
@@ -38401,7 +38758,10 @@
   {
     "key": "lean_imagined_aff_6_5_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_6_5_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (6 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "26d373d7-cec3-81fe-9e85-26d4807890b7"
+    "receipt": "26d373d7-cec3-81fe-9e85-26d4807890b7",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_5_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_5_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_5_commutes_with_the_fold_on_aff_0_0_image",
@@ -38411,7 +38771,10 @@
   {
     "key": "lean_imagined_aff_6_5_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_6_5_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (6 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9e92dd62-371c-8d5d-92d8-1fb1911aa53d"
+    "receipt": "9e92dd62-371c-8d5d-92d8-1fb1911aa53d",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_5_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_5_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_5_commutes_with_the_fold_on_aff_0_1_image",
@@ -38421,7 +38784,10 @@
   {
     "key": "lean_imagined_aff_6_5_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_6_5_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (6 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8246e7c0-67b6-8839-9dc1-1b67f7f29443"
+    "receipt": "8246e7c0-67b6-8839-9dc1-1b67f7f29443",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_5_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_5_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_5_commutes_with_the_fold_on_aff_0_2_image",
@@ -38436,7 +38802,10 @@
   {
     "key": "lean_imagined_aff_6_5_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_6_5_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (6 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "40081cc6-ddbf-8718-a1c4-2f4e03de277f"
+    "receipt": "40081cc6-ddbf-8718-a1c4-2f4e03de277f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_5_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_5_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_5_commutes_with_the_fold_on_aff_0_3_image",
@@ -38446,7 +38815,10 @@
   {
     "key": "lean_imagined_aff_6_5_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_6_5_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (6 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "e779a2db-4e8b-8215-ad2d-b0d6cd68fd62"
+    "receipt": "e779a2db-4e8b-8215-ad2d-b0d6cd68fd62",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_5_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_5_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_5_commutes_with_the_fold_on_aff_0_4_image",
@@ -38456,7 +38828,10 @@
   {
     "key": "lean_imagined_aff_6_5_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_6_5_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (6 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "079ffbc7-9cd9-80ee-8a91-35859ec94bda"
+    "receipt": "079ffbc7-9cd9-80ee-8a91-35859ec94bda",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_5_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_5_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_5_commutes_with_the_fold_on_aff_0_6_image",
@@ -38466,7 +38841,10 @@
   {
     "key": "lean_imagined_aff_6_5_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_6_5_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (6 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "56460404-503c-826e-bc2d-a864a0b8cc22"
+    "receipt": "56460404-503c-826e-bc2d-a864a0b8cc22",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_5_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_5_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_5_commutes_with_the_fold_on_aff_0_7_image",
@@ -38476,7 +38854,10 @@
   {
     "key": "lean_imagined_aff_6_5_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_6_5_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (6 * d + 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "76db3660-c369-827c-b36d-f01bf6b060c8"
+    "receipt": "76db3660-c369-827c-b36d-f01bf6b060c8",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_5_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_5_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_5_commutes_with_the_fold_on_aff_0_8_image",
@@ -38551,7 +38932,10 @@
   {
     "key": "lean_imagined_aff_6_6_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_6_6_is_injective_on_reflfixed — ([5].map (fun d => m9 (6 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d193ed15-f4f3-89f1-943d-04f9a92df48e"
+    "receipt": "d193ed15-f4f3-89f1-943d-04f9a92df48e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_6_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_6_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_6_commutes_with_the_fold_on_reflfixed",
@@ -38561,7 +38945,10 @@
   {
     "key": "lean_imagined_aff_6_6_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_6_6_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (6 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "3a9c2ad7-65ed-8231-8d9f-057ebcacc7f9"
+    "receipt": "3a9c2ad7-65ed-8231-8d9f-057ebcacc7f9",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_6_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_6_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_6_commutes_with_the_fold_on_aff_0_0_image",
@@ -38576,7 +38963,10 @@
   {
     "key": "lean_imagined_aff_6_6_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_6_6_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (6 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5089858a-1811-8e57-9c47-3005187faec4"
+    "receipt": "5089858a-1811-8e57-9c47-3005187faec4",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_6_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_6_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_6_commutes_with_the_fold_on_aff_0_1_image",
@@ -38586,7 +38976,10 @@
   {
     "key": "lean_imagined_aff_6_6_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_6_6_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (6 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "36e4e293-ba9e-8d89-8463-fd04f8eed1dd"
+    "receipt": "36e4e293-ba9e-8d89-8463-fd04f8eed1dd",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_6_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_6_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_6_commutes_with_the_fold_on_aff_0_2_image",
@@ -38596,7 +38989,10 @@
   {
     "key": "lean_imagined_aff_6_6_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_6_6_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (6 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2623760d-b824-8e97-884a-9fc8a62fd8e2"
+    "receipt": "2623760d-b824-8e97-884a-9fc8a62fd8e2",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_6_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_6_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_6_commutes_with_the_fold_on_aff_0_3_image",
@@ -38611,7 +39007,10 @@
   {
     "key": "lean_imagined_aff_6_6_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_6_6_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (6 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "bd69948c-27ca-893b-a578-d1d4b622d819"
+    "receipt": "bd69948c-27ca-893b-a578-d1d4b622d819",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_6_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_6_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_6_commutes_with_the_fold_on_aff_0_4_image",
@@ -38621,7 +39020,10 @@
   {
     "key": "lean_imagined_aff_6_6_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_6_6_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (6 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b1723720-39ab-88c0-90f1-7f19928d3050"
+    "receipt": "b1723720-39ab-88c0-90f1-7f19928d3050",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_6_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_6_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_6_commutes_with_the_fold_on_aff_0_6_image",
@@ -38646,7 +39048,10 @@
   {
     "key": "lean_imagined_aff_6_6_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_6_6_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (6 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "e3a4147c-5da9-8cba-9f34-bfe6c94030fb"
+    "receipt": "e3a4147c-5da9-8cba-9f34-bfe6c94030fb",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_6_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_6_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_6_commutes_with_the_fold_on_aff_0_7_image",
@@ -38656,7 +39061,10 @@
   {
     "key": "lean_imagined_aff_6_6_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_6_6_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (6 * d + 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ad1e0113-0daf-8a36-9f5b-00b28d33531a"
+    "receipt": "ad1e0113-0daf-8a36-9f5b-00b28d33531a",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_6_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_6_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_6_commutes_with_the_fold_on_aff_0_8_image",
@@ -38701,7 +39109,10 @@
   {
     "key": "lean_imagined_aff_6_7_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_6_7_is_injective_on_reflfixed — ([5].map (fun d => m9 (6 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "70e51f3a-1b4e-8346-b40c-a739e0a3da9e"
+    "receipt": "70e51f3a-1b4e-8346-b40c-a739e0a3da9e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_7_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_7_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_7_commutes_with_the_fold_on_reflfixed",
@@ -38711,7 +39122,10 @@
   {
     "key": "lean_imagined_aff_6_7_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_6_7_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (6 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9270c8c6-8524-84b3-be84-9a213933c7d7"
+    "receipt": "9270c8c6-8524-84b3-be84-9a213933c7d7",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_7_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_7_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_7_commutes_with_the_fold_on_aff_0_0_image",
@@ -38721,7 +39135,10 @@
   {
     "key": "lean_imagined_aff_6_7_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_6_7_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (6 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1c041ef9-ec09-8552-b8fa-797629681f6c"
+    "receipt": "1c041ef9-ec09-8552-b8fa-797629681f6c",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_7_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_7_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_7_commutes_with_the_fold_on_aff_0_1_image",
@@ -38736,7 +39153,10 @@
   {
     "key": "lean_imagined_aff_6_7_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_6_7_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (6 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d24283de-dc7e-824d-9c5b-ef728823d48a"
+    "receipt": "d24283de-dc7e-824d-9c5b-ef728823d48a",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_7_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_7_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_7_commutes_with_the_fold_on_aff_0_2_image",
@@ -38746,7 +39166,10 @@
   {
     "key": "lean_imagined_aff_6_7_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_6_7_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (6 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "7e592ae1-bf38-83c2-94f6-b91e5920795b"
+    "receipt": "7e592ae1-bf38-83c2-94f6-b91e5920795b",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_7_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_7_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_7_commutes_with_the_fold_on_aff_0_3_image",
@@ -38756,7 +39179,10 @@
   {
     "key": "lean_imagined_aff_6_7_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_6_7_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (6 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4f6571a3-ea14-8792-ac90-51ad580992fd"
+    "receipt": "4f6571a3-ea14-8792-ac90-51ad580992fd",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_7_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_7_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_7_commutes_with_the_fold_on_aff_0_4_image",
@@ -38781,7 +39207,10 @@
   {
     "key": "lean_imagined_aff_6_7_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_6_7_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (6 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "591407a6-9e37-8bcd-a761-8f2a8229772d"
+    "receipt": "591407a6-9e37-8bcd-a761-8f2a8229772d",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_7_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_7_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_7_commutes_with_the_fold_on_aff_0_6_image",
@@ -38791,7 +39220,10 @@
   {
     "key": "lean_imagined_aff_6_7_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_6_7_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (6 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c0dea003-d4c7-876a-88d3-5960f1c6050d"
+    "receipt": "c0dea003-d4c7-876a-88d3-5960f1c6050d",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_7_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_7_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_7_commutes_with_the_fold_on_aff_0_7_image",
@@ -38806,7 +39238,10 @@
   {
     "key": "lean_imagined_aff_6_7_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_6_7_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (6 * d + 7))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8f51753e-ff3c-88ef-a087-84306a0d5363"
+    "receipt": "8f51753e-ff3c-88ef-a087-84306a0d5363",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_7_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_7_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_7_commutes_with_the_fold_on_aff_0_8_image",
@@ -38851,7 +39286,10 @@
   {
     "key": "lean_imagined_aff_6_8_is_injective_on_reflfixed",
     "name": "lean imagined.lean: aff_6_8_is_injective_on_reflfixed — ([5].map (fun d => m9 (6 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "0174a895-3183-8bea-bd39-204db241f5b7"
+    "receipt": "0174a895-3183-8bea-bd39-204db241f5b7",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_8_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_8_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_8_commutes_with_the_fold_on_reflfixed",
@@ -38866,7 +39304,10 @@
   {
     "key": "lean_imagined_aff_6_8_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: aff_6_8_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (6 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "59993191-e89f-879d-a12c-1bd3a80f11cd"
+    "receipt": "59993191-e89f-879d-a12c-1bd3a80f11cd",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_8_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_8_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_8_commutes_with_the_fold_on_aff_0_0_image",
@@ -38876,7 +39317,10 @@
   {
     "key": "lean_imagined_aff_6_8_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: aff_6_8_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (6 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8c3ef5da-68e4-899a-a497-2ac8492c4994"
+    "receipt": "8c3ef5da-68e4-899a-a497-2ac8492c4994",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_8_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_8_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_8_commutes_with_the_fold_on_aff_0_1_image",
@@ -38886,7 +39330,10 @@
   {
     "key": "lean_imagined_aff_6_8_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: aff_6_8_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (6 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "09917bee-8870-8992-9b13-584790232e7d"
+    "receipt": "09917bee-8870-8992-9b13-584790232e7d",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_8_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_8_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_8_commutes_with_the_fold_on_aff_0_2_image",
@@ -38911,7 +39358,10 @@
   {
     "key": "lean_imagined_aff_6_8_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: aff_6_8_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (6 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4f6a734a-c588-819f-8f2c-eb7d18cadf03"
+    "receipt": "4f6a734a-c588-819f-8f2c-eb7d18cadf03",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_8_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_8_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_8_commutes_with_the_fold_on_aff_0_3_image",
@@ -38921,7 +39371,10 @@
   {
     "key": "lean_imagined_aff_6_8_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: aff_6_8_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (6 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ecaa2077-45e0-8162-a90f-92bc71b3aa6c"
+    "receipt": "ecaa2077-45e0-8162-a90f-92bc71b3aa6c",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_8_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_8_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_8_commutes_with_the_fold_on_aff_0_4_image",
@@ -38931,7 +39384,10 @@
   {
     "key": "lean_imagined_aff_6_8_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: aff_6_8_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (6 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "43758344-c6b0-87e3-8cd3-85c0b6f5f3c0"
+    "receipt": "43758344-c6b0-87e3-8cd3-85c0b6f5f3c0",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_8_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_8_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_8_commutes_with_the_fold_on_aff_0_6_image",
@@ -38941,7 +39397,10 @@
   {
     "key": "lean_imagined_aff_6_8_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: aff_6_8_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (6 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "19c79d07-0556-8eb1-a1bf-1dd224adf97a"
+    "receipt": "19c79d07-0556-8eb1-a1bf-1dd224adf97a",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_8_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_8_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_8_commutes_with_the_fold_on_aff_0_7_image",
@@ -38951,7 +39410,10 @@
   {
     "key": "lean_imagined_aff_6_8_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: aff_6_8_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (6 * d + 8))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9940f3ce-a6e3-8a50-8e15-33fb39956db5"
+    "receipt": "9940f3ce-a6e3-8a50-8e15-33fb39956db5",
+    "revoked": true,
+    "supersededBy": "lean_imagined_aff_6_8_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_aff_6_8_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_aff_6_8_commutes_with_the_fold_on_aff_0_8_image",
@@ -40256,7 +40718,10 @@
   {
     "key": "lean_imagined_pow_2_is_injective_on_reflfixed",
     "name": "lean imagined.lean: pow_2_is_injective_on_reflfixed — ([5].map (fun d => m9 (d ^ 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "35db440b-ba53-83bb-8bd3-f6195253af44"
+    "receipt": "35db440b-ba53-83bb-8bd3-f6195253af44",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_2_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_2_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_2_commutes_with_the_fold_on_reflfixed",
@@ -40266,7 +40731,10 @@
   {
     "key": "lean_imagined_pow_2_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: pow_2_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (d ^ 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1099ed30-4a4a-8ff7-a20d-f1e4865a3709"
+    "receipt": "1099ed30-4a4a-8ff7-a20d-f1e4865a3709",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_2_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_2_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_2_commutes_with_the_fold_on_aff_0_0_image",
@@ -40291,7 +40759,10 @@
   {
     "key": "lean_imagined_pow_2_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: pow_2_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (d ^ 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "eda67282-2e03-8bd5-873f-2c4289c5cdde"
+    "receipt": "eda67282-2e03-8bd5-873f-2c4289c5cdde",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_2_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_2_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_2_commutes_with_the_fold_on_aff_0_1_image",
@@ -40316,7 +40787,10 @@
   {
     "key": "lean_imagined_pow_2_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: pow_2_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (d ^ 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "72cd1fed-838e-875b-a22b-a1359da019ba"
+    "receipt": "72cd1fed-838e-875b-a22b-a1359da019ba",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_2_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_2_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_2_commutes_with_the_fold_on_aff_0_2_image",
@@ -40326,7 +40800,10 @@
   {
     "key": "lean_imagined_pow_2_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: pow_2_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (d ^ 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "7ef900d0-51df-8f9e-ab21-b7b1bb497f6e"
+    "receipt": "7ef900d0-51df-8f9e-ab21-b7b1bb497f6e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_2_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_2_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_2_commutes_with_the_fold_on_aff_0_3_image",
@@ -40341,7 +40818,10 @@
   {
     "key": "lean_imagined_pow_2_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: pow_2_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (d ^ 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1887ae5f-e680-885a-822c-293dc22341e6"
+    "receipt": "1887ae5f-e680-885a-822c-293dc22341e6",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_2_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_2_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_2_commutes_with_the_fold_on_aff_0_4_image",
@@ -40351,7 +40831,10 @@
   {
     "key": "lean_imagined_pow_2_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: pow_2_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (d ^ 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4af91529-b56d-8769-9731-3d55c6f2b7a4"
+    "receipt": "4af91529-b56d-8769-9731-3d55c6f2b7a4",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_2_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_2_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_2_commutes_with_the_fold_on_aff_0_6_image",
@@ -40366,7 +40849,10 @@
   {
     "key": "lean_imagined_pow_2_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: pow_2_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (d ^ 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4fbe0a3e-c17d-88ff-ab2d-eeae74370dc4"
+    "receipt": "4fbe0a3e-c17d-88ff-ab2d-eeae74370dc4",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_2_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_2_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_2_commutes_with_the_fold_on_aff_0_7_image",
@@ -40376,7 +40862,10 @@
   {
     "key": "lean_imagined_pow_2_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: pow_2_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (d ^ 2))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2462c79c-ef3b-8118-8b32-f9dc86501325"
+    "receipt": "2462c79c-ef3b-8118-8b32-f9dc86501325",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_2_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_2_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_2_commutes_with_the_fold_on_aff_0_8_image",
@@ -40491,7 +40980,10 @@
   {
     "key": "lean_imagined_pow_3_is_injective_on_reflfixed",
     "name": "lean imagined.lean: pow_3_is_injective_on_reflfixed — ([5].map (fun d => m9 (d ^ 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "41382aab-5ae8-84b8-8a5e-4fcb6721cbfe"
+    "receipt": "41382aab-5ae8-84b8-8a5e-4fcb6721cbfe",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_3_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_3_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_3_commutes_with_the_fold_on_reflfixed",
@@ -40501,7 +40993,10 @@
   {
     "key": "lean_imagined_pow_3_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: pow_3_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (d ^ 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "6f711bf5-fb6a-8744-9841-db12bc32ad43"
+    "receipt": "6f711bf5-fb6a-8744-9841-db12bc32ad43",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_3_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_3_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_3_commutes_with_the_fold_on_aff_0_0_image",
@@ -40521,7 +41016,10 @@
   {
     "key": "lean_imagined_pow_3_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: pow_3_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (d ^ 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "860ee688-37fc-814f-91c3-71c5169f4282"
+    "receipt": "860ee688-37fc-814f-91c3-71c5169f4282",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_3_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_3_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_3_commutes_with_the_fold_on_aff_0_1_image",
@@ -40541,7 +41039,10 @@
   {
     "key": "lean_imagined_pow_3_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: pow_3_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (d ^ 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "eddef9bb-b211-8a76-abe0-aa1f222d0f50"
+    "receipt": "eddef9bb-b211-8a76-abe0-aa1f222d0f50",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_3_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_3_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_3_commutes_with_the_fold_on_aff_0_2_image",
@@ -40551,7 +41052,10 @@
   {
     "key": "lean_imagined_pow_3_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: pow_3_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (d ^ 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "edda30eb-54de-8a25-8626-4e782a3c1ca2"
+    "receipt": "edda30eb-54de-8a25-8626-4e782a3c1ca2",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_3_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_3_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_3_commutes_with_the_fold_on_aff_0_3_image",
@@ -40561,7 +41065,10 @@
   {
     "key": "lean_imagined_pow_3_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: pow_3_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (d ^ 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "f1779435-5380-8516-90fc-85e108ba7d4d"
+    "receipt": "f1779435-5380-8516-90fc-85e108ba7d4d",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_3_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_3_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_3_commutes_with_the_fold_on_aff_0_4_image",
@@ -40571,7 +41078,10 @@
   {
     "key": "lean_imagined_pow_3_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: pow_3_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (d ^ 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2899e0ef-3e97-8d42-ab2d-f674fe69e9b7"
+    "receipt": "2899e0ef-3e97-8d42-ab2d-f674fe69e9b7",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_3_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_3_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_3_commutes_with_the_fold_on_aff_0_6_image",
@@ -40581,7 +41091,10 @@
   {
     "key": "lean_imagined_pow_3_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: pow_3_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (d ^ 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "e199b00a-e5a5-8e7e-ac7e-37907b0b9553"
+    "receipt": "e199b00a-e5a5-8e7e-ac7e-37907b0b9553",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_3_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_3_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_3_commutes_with_the_fold_on_aff_0_7_image",
@@ -40591,7 +41104,10 @@
   {
     "key": "lean_imagined_pow_3_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: pow_3_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (d ^ 3))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1961210c-de46-8bf8-8e44-4ce953cd0007"
+    "receipt": "1961210c-de46-8bf8-8e44-4ce953cd0007",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_3_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_3_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_3_commutes_with_the_fold_on_aff_0_8_image",
@@ -40691,7 +41207,10 @@
   {
     "key": "lean_imagined_pow_4_is_injective_on_reflfixed",
     "name": "lean imagined.lean: pow_4_is_injective_on_reflfixed — ([5].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9f47a298-275b-875c-b626-c695eafcff4f"
+    "receipt": "9f47a298-275b-875c-b626-c695eafcff4f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_4_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_4_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_4_commutes_with_the_fold_on_reflfixed",
@@ -40701,7 +41220,10 @@
   {
     "key": "lean_imagined_pow_4_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: pow_4_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "65e856ac-71fa-82f6-89cd-16dc8f9bee07"
+    "receipt": "65e856ac-71fa-82f6-89cd-16dc8f9bee07",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_4_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_4_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_4_commutes_with_the_fold_on_aff_0_0_image",
@@ -40721,7 +41243,10 @@
   {
     "key": "lean_imagined_pow_4_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: pow_4_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "26abc33c-ae4b-85da-98ba-84809287811d"
+    "receipt": "26abc33c-ae4b-85da-98ba-84809287811d",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_4_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_4_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_4_commutes_with_the_fold_on_aff_0_1_image",
@@ -40741,7 +41266,10 @@
   {
     "key": "lean_imagined_pow_4_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: pow_4_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "588c61cc-2b66-825c-ae95-522d6d651773"
+    "receipt": "588c61cc-2b66-825c-ae95-522d6d651773",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_4_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_4_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_4_commutes_with_the_fold_on_aff_0_2_image",
@@ -40751,7 +41279,10 @@
   {
     "key": "lean_imagined_pow_4_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: pow_4_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c4f9d370-1069-8295-be57-8adc39b4dc35"
+    "receipt": "c4f9d370-1069-8295-be57-8adc39b4dc35",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_4_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_4_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_4_commutes_with_the_fold_on_aff_0_3_image",
@@ -40761,7 +41292,10 @@
   {
     "key": "lean_imagined_pow_4_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: pow_4_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "caac8e0c-954e-84e1-b362-e55eec46cae3"
+    "receipt": "caac8e0c-954e-84e1-b362-e55eec46cae3",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_4_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_4_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_4_commutes_with_the_fold_on_aff_0_4_image",
@@ -40781,7 +41315,10 @@
   {
     "key": "lean_imagined_pow_4_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: pow_4_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d66e695b-a03a-80aa-8bf6-e706d808f17f"
+    "receipt": "d66e695b-a03a-80aa-8bf6-e706d808f17f",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_4_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_4_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_4_commutes_with_the_fold_on_aff_0_6_image",
@@ -40791,7 +41328,10 @@
   {
     "key": "lean_imagined_pow_4_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: pow_4_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "cda73cc7-d503-8e39-89f2-b993bec2ffab"
+    "receipt": "cda73cc7-d503-8e39-89f2-b993bec2ffab",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_4_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_4_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_4_commutes_with_the_fold_on_aff_0_7_image",
@@ -40811,7 +41351,10 @@
   {
     "key": "lean_imagined_pow_4_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: pow_4_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "388fc12f-3d8b-87d6-a5d5-f9d09e33eb6e"
+    "receipt": "388fc12f-3d8b-87d6-a5d5-f9d09e33eb6e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_4_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_4_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_4_commutes_with_the_fold_on_aff_0_8_image",
@@ -40986,7 +41529,10 @@
   {
     "key": "lean_imagined_pow_5_is_injective_on_reflfixed",
     "name": "lean imagined.lean: pow_5_is_injective_on_reflfixed — ([5].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "804c7fec-6899-8a0b-b81e-d07483853c48"
+    "receipt": "804c7fec-6899-8a0b-b81e-d07483853c48",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_5_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_5_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_5_commutes_with_the_fold_on_reflfixed",
@@ -40996,7 +41542,10 @@
   {
     "key": "lean_imagined_pow_5_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: pow_5_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "410a4360-eb43-8e73-8aec-acb808150389"
+    "receipt": "410a4360-eb43-8e73-8aec-acb808150389",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_5_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_5_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_5_commutes_with_the_fold_on_aff_0_0_image",
@@ -41021,7 +41570,10 @@
   {
     "key": "lean_imagined_pow_5_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: pow_5_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "497cfe35-5368-8a04-89d6-77cabd6e248e"
+    "receipt": "497cfe35-5368-8a04-89d6-77cabd6e248e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_5_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_5_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_5_commutes_with_the_fold_on_aff_0_1_image",
@@ -41046,7 +41598,10 @@
   {
     "key": "lean_imagined_pow_5_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: pow_5_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9a74c51a-528f-8a95-8b42-54af5053e022"
+    "receipt": "9a74c51a-528f-8a95-8b42-54af5053e022",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_5_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_5_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_5_commutes_with_the_fold_on_aff_0_2_image",
@@ -41056,7 +41611,10 @@
   {
     "key": "lean_imagined_pow_5_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: pow_5_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "81bd2db3-73fc-8c49-b2ef-bd8f2c3461c7"
+    "receipt": "81bd2db3-73fc-8c49-b2ef-bd8f2c3461c7",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_5_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_5_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_5_commutes_with_the_fold_on_aff_0_3_image",
@@ -41071,7 +41629,10 @@
   {
     "key": "lean_imagined_pow_5_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: pow_5_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "dc1639e2-de55-8139-92ba-431d62ea468b"
+    "receipt": "dc1639e2-de55-8139-92ba-431d62ea468b",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_5_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_5_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_5_commutes_with_the_fold_on_aff_0_4_image",
@@ -41081,7 +41642,10 @@
   {
     "key": "lean_imagined_pow_5_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: pow_5_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "3b8fb5a2-4db6-8be3-97f0-a520704c97bf"
+    "receipt": "3b8fb5a2-4db6-8be3-97f0-a520704c97bf",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_5_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_5_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_5_commutes_with_the_fold_on_aff_0_6_image",
@@ -41096,7 +41660,10 @@
   {
     "key": "lean_imagined_pow_5_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: pow_5_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "f7946ec8-5e12-8557-aca6-53c9824bc966"
+    "receipt": "f7946ec8-5e12-8557-aca6-53c9824bc966",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_5_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_5_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_5_commutes_with_the_fold_on_aff_0_7_image",
@@ -41106,7 +41673,10 @@
   {
     "key": "lean_imagined_pow_5_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: pow_5_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c882220d-045a-8401-97d4-01e8e900a4f8"
+    "receipt": "c882220d-045a-8401-97d4-01e8e900a4f8",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_5_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_5_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_5_commutes_with_the_fold_on_aff_0_8_image",
@@ -41191,7 +41761,10 @@
   {
     "key": "lean_imagined_pow_6_is_injective_on_reflfixed",
     "name": "lean imagined.lean: pow_6_is_injective_on_reflfixed — ([5].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5ee0e497-f22c-85aa-92d4-f58550698e8b"
+    "receipt": "5ee0e497-f22c-85aa-92d4-f58550698e8b",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_6_collapses_reflfixed_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_6_collapses_reflfixed_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_6_commutes_with_the_fold_on_reflfixed",
@@ -41201,7 +41774,10 @@
   {
     "key": "lean_imagined_pow_6_is_injective_on_aff_0_0_image",
     "name": "lean imagined.lean: pow_6_is_injective_on_aff_0_0_image — ([0].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "514799cc-5761-8efd-9505-872e9cd69561"
+    "receipt": "514799cc-5761-8efd-9505-872e9cd69561",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_6_collapses_aff_0_0_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_6_collapses_aff_0_0_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_6_commutes_with_the_fold_on_aff_0_0_image",
@@ -41221,7 +41797,10 @@
   {
     "key": "lean_imagined_pow_6_is_injective_on_aff_0_1_image",
     "name": "lean imagined.lean: pow_6_is_injective_on_aff_0_1_image — ([1].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "09328d93-61fd-89e7-94a4-ae0b7fd92e7b"
+    "receipt": "09328d93-61fd-89e7-94a4-ae0b7fd92e7b",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_6_collapses_aff_0_1_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_6_collapses_aff_0_1_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_6_commutes_with_the_fold_on_aff_0_1_image",
@@ -41241,7 +41820,10 @@
   {
     "key": "lean_imagined_pow_6_is_injective_on_aff_0_2_image",
     "name": "lean imagined.lean: pow_6_is_injective_on_aff_0_2_image — ([2].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b0bdb0ff-a0c1-8fa3-9092-dc9954f04d0e"
+    "receipt": "b0bdb0ff-a0c1-8fa3-9092-dc9954f04d0e",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_6_collapses_aff_0_2_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_6_collapses_aff_0_2_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_6_commutes_with_the_fold_on_aff_0_2_image",
@@ -41251,7 +41833,10 @@
   {
     "key": "lean_imagined_pow_6_is_injective_on_aff_0_3_image",
     "name": "lean imagined.lean: pow_6_is_injective_on_aff_0_3_image — ([3].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "bb9d5a1d-3f67-8d3b-aa7e-03a1fd043636"
+    "receipt": "bb9d5a1d-3f67-8d3b-aa7e-03a1fd043636",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_6_collapses_aff_0_3_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_6_collapses_aff_0_3_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_6_commutes_with_the_fold_on_aff_0_3_image",
@@ -41261,7 +41846,10 @@
   {
     "key": "lean_imagined_pow_6_is_injective_on_aff_0_4_image",
     "name": "lean imagined.lean: pow_6_is_injective_on_aff_0_4_image — ([4].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "88c0f5bf-bbe8-82d9-a583-c26e8430fe94"
+    "receipt": "88c0f5bf-bbe8-82d9-a583-c26e8430fe94",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_6_collapses_aff_0_4_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_6_collapses_aff_0_4_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_6_commutes_with_the_fold_on_aff_0_4_image",
@@ -41271,7 +41859,10 @@
   {
     "key": "lean_imagined_pow_6_is_injective_on_aff_0_6_image",
     "name": "lean imagined.lean: pow_6_is_injective_on_aff_0_6_image — ([6].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "004f90d6-6c64-8870-a6ab-95d6937e3eda"
+    "receipt": "004f90d6-6c64-8870-a6ab-95d6937e3eda",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_6_collapses_aff_0_6_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_6_collapses_aff_0_6_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_6_commutes_with_the_fold_on_aff_0_6_image",
@@ -41281,7 +41872,10 @@
   {
     "key": "lean_imagined_pow_6_is_injective_on_aff_0_7_image",
     "name": "lean imagined.lean: pow_6_is_injective_on_aff_0_7_image — ([7].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a8b1ef54-60cb-89ef-b496-1222028aed20"
+    "receipt": "a8b1ef54-60cb-89ef-b496-1222028aed20",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_6_collapses_aff_0_7_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_6_collapses_aff_0_7_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_6_commutes_with_the_fold_on_aff_0_7_image",
@@ -41291,7 +41885,10 @@
   {
     "key": "lean_imagined_pow_6_is_injective_on_aff_0_8_image",
     "name": "lean imagined.lean: pow_6_is_injective_on_aff_0_8_image — ([8].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "3bab1fc4-f55b-8914-a901-9894eae201eb"
+    "receipt": "3bab1fc4-f55b-8914-a901-9894eae201eb",
+    "revoked": true,
+    "supersededBy": "lean_imagined_pow_6_collapses_aff_0_8_image_to_one_value",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_imagined_pow_6_collapses_aff_0_8_image_to_one_value now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_pow_6_commutes_with_the_fold_on_aff_0_8_image",
@@ -148247,5 +148844,45 @@
     "key": "lean_imagined_the_chain_of_pow_6_over_pow_5_image_survives_rotation",
     "name": "lean imagined_7.lean: the_chain_of_pow_6_over_pow_5_image_survives_rotation — ([0, 1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 = ((([0, 1, 2, 4, 5, 7, 8]).drop 1 ++ ([0, 1, 2, 4, 5, 7, 8]).take 1).map (fun d => m9 (d ^ 6))).foldl (fun a b => m9 (a * 2 + b)) 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "aac2bd39-1b5f-8934-a5c0-d46f55552137"
+  },
+  {
+    "key": "lean_groups_the_pair_arithmetic_is_composition",
+    "name": "lean group.lean: the_pair_arithmetic_is_composition — aff.all (fun p => aff.all (fun q => [0,1,2,3,4,5,6,7,8].all (fun d => ap (cmp p q) d == ap p (ap q d)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cb8b8c97-fdd4-8ed8-a70d-2e5fda646545"
+  },
+  {
+    "key": "lean_groups_the_affine_maps_are_closed_under_composition",
+    "name": "lean group.lean: the_affine_maps_are_closed_under_composition — aff.all (fun p => aff.all (fun q => aff.contains (cmp p q))) ∧ aff.contains one ∧ aff.all (fun p => cmp p one == p && cmp one p == p) ∧ aff.length = 81 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "efabcbf6-129c-85b4-9c90-600d51334d43"
+  },
+  {
+    "key": "lean_groups_exactly_54_of_the_81_affine_maps_have_an_inverse",
+    "name": "lean group.lean: exactly_54_of_the_81_affine_maps_have_an_inverse — (aff.filter (fun p => aff.any (fun q => cmp p q == one && cmp q p == one))).length = 54 ∧ 54 < 81 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c37ccedd-c887-8d13-97c1-f426104cf7ac"
+  },
+  {
+    "key": "lean_groups_the_invertible_affine_maps_are_a_group_of_order_54",
+    "name": "lean group.lean: the_invertible_affine_maps_are_a_group_of_order_54 — agl.all (fun p => agl.all (fun q => agl.contains (cmp p q))) ∧ agl.contains one ∧ agl.all (fun p => agl.any (fun q => cmp p q == one && cmp q p == one)) ∧ agl.length = 54 ∧ 54 = 6 * 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "04ef377d-a6bd-81b8-8a8e-8c87d84f1ded"
+  },
+  {
+    "key": "lean_groups_the_generated_group_is_exactly_the_invertible_set",
+    "name": "lean group.lean: the_generated_group_is_exactly_the_invertible_set — agl.all (fun p => aff.any (fun q => cmp p q == one && cmp q p == one)) ∧ (aff.filter (fun p => aff.any (fun q => cmp p q == one && cmp q p == one))).all (fun p => agl.contains p) ∧ agl.length = (aff.filter (fun p => aff.any (fun q => cmp p … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a7ace576-7434-83ac-89b4-8dc3ad0bdc4a"
+  },
+  {
+    "key": "lean_groups_the_9_collapsing_maps_are_exactly_those_outside_the_group_that_kill_the_ring",
+    "name": "lean group.lean: the_9_collapsing_maps_are_exactly_those_outside_the_group_that_kill_the_ring — (aff.filter (fun p => ([0,1,2,3,4,5,6,7,8].map (fun d => ap p d)).eraseDups.length == 1)).length = 9 ∧ (aff.filter (fun p => ([0,1,2,3,4,5,6,7,8].map (fun d => ap p d)).eraseDups.length == 1)).all (fun p => ! agl.contains p) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "102b4684-f8a7-8112-a920-d7ce43b081b7"
+  },
+  {
+    "key": "lean_groups_the_group_is_not_abelian",
+    "name": "lean group.lean: the_group_is_not_abelian — cmp (1, 1) (2, 0) != cmp (2, 0) (1, 1) ∧ agl.contains (1, 1) ∧ agl.contains (2, 0) ∧ ¬ agl.all (fun p => agl.all (fun q => cmp p q == cmp q p)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1f7e3abb-f610-85e4-ac14-75914dc4747b"
+  },
+  {
+    "key": "lean_groups_the_centre_of_the_group_is_the_identity_alone",
+    "name": "lean group.lean: the_centre_of_the_group_is_the_identity_alone — (agl.filter (fun p => agl.all (fun q => cmp p q == cmp q p))).length = 1 ∧ (agl.filter (fun p => agl.all (fun q => cmp p q == cmp q p))) = [one] ∧ 1 < agl.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "01d98d6b-3309-8ffa-92e3-ef3b8f24264a"
   }
 ]

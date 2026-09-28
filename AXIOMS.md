@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **1,248** report the same thing:
+axiom fails the build rather than earning a footnote. All **25,941** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **693** definitions, and every one of them is a choice. A theorem about
+theorems rest on **715** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 693 definitions
+## What IS assumed: the 715 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -403,6 +403,19 @@ def idx : List Nat := List.range 12
 def extOf (i : Nat) : Nat := exts.getD i 0
 ```
 
+### `extension.lean` — 8 definition(s), 11 theorem(s)
+
+```lean
+def grid : List Nat := List.range 12
+def ext (f : Nat → Nat) : List Nat := grid.map f
+def dr (n : Nat) : Nat := if n = 0 then 0 else 1 + (n - 1) % 9
+def perms3 : List (List Nat) :=
+def canon (l : List Nat) : List Nat := l.foldl (fun acc x => acc ++ [x]) [] |>.eraseDups
+def sum3 (l : List Nat) : Nat := l.foldl (· + ·) 0
+def foldSum (l : List Nat) : Nat := l.foldl (· + ·) 0
+def chain : Nat → Nat → Nat
+```
+
 ### `families.lean` — 44 definition(s), 63 theorem(s)
 
 ```lean
@@ -478,6 +491,17 @@ def step (h c : Nat) : Nat :=
 def avalanche (h : Nat) : Nat :=
 def hash32 (seed : Nat) (cs : List Nat) : Nat := avalanche (cs.foldl step (xor32 FNV_OFFSET seed))
 def settledHere : Nat := 12
+```
+
+### `group.lean` — 6 definition(s), 8 theorem(s)
+
+```lean
+def A : Type := Nat × Nat
+def ap (p : Nat × Nat) (d : Nat) : Nat := (p.1 * d + p.2) % 9
+def cmp (p q : Nat × Nat) : Nat × Nat := ((p.1 * q.1) % 9, (p.1 * q.2 + p.2) % 9)
+def aff : List (Nat × Nat) := [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), (4, 7), (4, 8), (5, 0), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (5, 7), (5, 8), (6, 0), (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6), (6, 7), (6, 8), (7, 0), (7, 1), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8), (8, 0), (8, 1), (8, 2), (8, 3), (8, 4), (8, 5), (8, 6), (8, 7), (8, 8)]
+def agl : List (Nat × Nat) := [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), (4, 7), (4, 8), (5, 0), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (5, 7), (5, 8), (7, 0), (7, 1), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8), (8, 0), (8, 1), (8, 2), (8, 3), (8, 4), (8, 5), (8, 6), (8, 7), (8, 8)]
+def one : Nat × Nat := (1, 0)
 ```
 
 ### `handle.lean` — 9 definition(s), 8 theorem(s)
@@ -802,6 +826,19 @@ def flipBit (bs : List Bool) (i : Nat) : List Bool :=
 def settledHere : Nat := 21
 ```
 
+### `qpu.lean` — 8 definition(s), 8 theorem(s)
+
+```lean
+def coins : Nat := 2
+def rays : Nat := 7
+def faces : Nat := 14
+def vertices : Nat := 8
+def hexbit : Nat := 4
+def bits : Nat := 32
+def qubits : Nat := 3
+def levels : Nat := 2
+```
+
 ### `quantum.lean` — 11 definition(s), 11 theorem(s)
 
 ```lean
@@ -1106,6 +1143,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**1,248** declarations, **0** axiom dependencies, **693** definitions they rest on.
+**25,941** declarations, **0** axiom dependencies, **715** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.
