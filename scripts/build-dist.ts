@@ -34,6 +34,16 @@ execFileSync(join('node_modules', '.bin', 'tsc'), ['-p', 'tsconfig.mcp.json'], {
     copyFileSync(from, join('dist', 'data', 'discovered.json'))
     const n = (JSON.parse(readFileSync(from, 'utf8')) as unknown[]).length
     console.log(`  · ledger shipped: ${n} entries → dist/data/discovered.json (the evidence tools work from the package)`)
+  }
+  // AND THE FORMULA CATALOGUE, so `formulas` is reachable from an install. Copied, not re-serialised: the
+  // site publishes this file and scripts/e2e.ts checks what a reader opens against it, so the bytes a caller
+  // gets here are the bytes the site serves — re-emitting them would create a second source of one truth.
+  const fj = join('public', 'formulas.jsonld')
+  if (existsSync(fj)) {
+    mkdirSync(join('dist', 'data'), { recursive: true })
+    copyFileSync(fj, join('dist', 'data', 'formulas.jsonld'))
+    const n = (JSON.parse(readFileSync(fj, 'utf8')) as { numberOfItems?: number }).numberOfItems ?? 0
+    console.log(`  · formulas shipped: ${n} items → dist/data/formulas.jsonld`)
   } else {
     console.log('  ○ no ledger at src/proof/discovered.json — the published MCP entry will report it ABSENT, not zero')
   }

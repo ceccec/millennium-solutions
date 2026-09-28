@@ -104,17 +104,59 @@ const CORE_TOOLS = Object.entries(NEEDS)
 const LEDGER_TOOLS = Object.entries(NEEDS)
   .filter(([k, n]) => n.length === 1 && n[0] === 'ledger' && !CANNOT_SHIP[k])
   .map(([k]) => k)
+/** `formulas` is declared `tree` and that stays true — it reads the Lean sources in the full server. Here it
+ *  is satisfied by data the package carries, which is a different thing from the requirement disappearing. */
+const DATA_TOOLS = ['formulas']
 export const SERVED_CORE = [...CORE_TOOLS].sort()
-export const SERVED_WITH_LEDGER = [...CORE_TOOLS, ...LEDGER_TOOLS].sort()
+export const SERVED_WITH_LEDGER = [...CORE_TOOLS, ...LEDGER_TOOLS, ...DATA_TOOLS].sort()
 /** WHAT IS SERVED DEPENDS ON WHAT IS LOADED, so this is a function and not a constant. A constant would have
  *  had to pick one answer before the transport had read anything, and the honest answer differs: a caller with
  *  the ledger beside the package gets nine tools and a caller without it gets six. Both are told which. */
-export const served = (): string[] => (hasLedger() ? SERVED_WITH_LEDGER : SERVED_CORE)
+export const served = (): string[] => [
+  ...SERVED_CORE,
+  ...(hasLedger() ? LEDGER_TOOLS : []),
+  ...(hasFormulas() ? DATA_TOOLS : []),
+].sort()
+
+/** ── THE FORMULAS, OVER DATA THE PACKAGE CARRIES ───────────────────────────────────────────────────────────
+ *  `formulas` returned every proposition the kernel accepted, with its file, wing, tactic and ledger key — and
+ *  it needed the SOURCE TREE, because it read src/proof/*.lean directly. The same content already exists as
+ *  public/formulas.jsonld, which the site publishes and e2e checks: 1,248 items carrying name, statement,
+ *  identifier, source, wing and proof. So the tool needed the tree only because of where it happened to read,
+ *  not because of what it returns.
+ *
+ *  Shipped beside the ledger, and pure for the same reason: this module is compiled with no node type
+ *  definitions, so it cannot read a file, and the reading happens in mcp.bin.ts. A caller can also pass rows
+ *  obtained from anywhere — including the published JSON-LD fetched over the web — and get the same answer. */
+export type Formula = { name: string; statement: string; key: string; source: string; wing: string; proof: string }
+
+export const formulasFrom = (rows: Formula[], a: { wing?: string; file?: string; contains?: string; limit?: number } = {}) => {
+  let out = rows
+  const total = out.length
+  if (a.wing) out = out.filter((r) => r.wing === a.wing)
+  if (a.file) out = out.filter((r) => r.source === a.file)
+  if (a.contains) {
+    const q = a.contains.toLowerCase()
+    out = out.filter((r) => (r.name + ' ' + r.statement).toLowerCase().includes(q))
+  }
+  const limit = Math.max(1, Math.min(Number(a.limit ?? 40), 500))
+  return {
+    total, matched: out.length, showing: Math.min(limit, out.length),
+    wings: [...new Set(rows.map((r) => r.wing))].sort(),
+    formulas: out.slice(0, limit),
+    note: 'The proposition the Lean kernel accepted, character for character, with the file and tactic that '
+      + 'discharged it. Nothing here is summarised and nothing is authored. A formula being listed says the '
+      + 'kernel accepted it, not that it is significant.',
+  }
+}
 
 /** Injected by the transport when a ledger is present beside the package. Absent is reported as absent. */
 let ROWS: Row[] | null = null
 export const withLedger = (rows: Row[]) => { ROWS = rows }
 export const hasLedger = () => ROWS !== null
+let FORMS: Formula[] | null = null
+export const withFormulas = (rows: Formula[]) => { FORMS = rows }
+export const hasFormulas = () => FORMS !== null
 const rowsOrRefuse = (tool: string): Row[] => {
   if (!ROWS) throw new Error(`${tool} measures the discovery ledger and no ledger was loaded. `
     + 'That is NOT a ledger of zero entries — it is an absent one. The published package carries the ledger at '
@@ -123,6 +165,12 @@ const rowsOrRefuse = (tool: string): Row[] => {
 }
 
 const H: Record<string, (a: any) => string> = {
+  formulas: (a) => {
+    if (!FORMS) throw new Error('formulas: the formula catalogue is not loaded. The published package carries it '
+      + 'at dist/data/formulas.jsonld; if it is missing, pass rows, or clone the repository for the full server. '
+      + 'An absent catalogue is NOT a catalogue of zero formulas.')
+    return JSON.stringify(formulasFrom(FORMS, a ?? {}))
+  },
   ledger_status: () => JSON.stringify(ledgerStatus(rowsOrRefuse('ledger_status'))),
   forensics: () => JSON.stringify(forensicsOf(rowsOrRefuse('forensics'))),
   verify: (a) => {

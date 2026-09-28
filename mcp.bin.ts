@@ -13,7 +13,7 @@ import { createInterface } from 'node:readline'
 import { readFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { run, served, withLedger, type Row } from './src/mcp/serve.ts'
+import { run, served, withLedger, withFormulas, type Row, type Formula } from './src/mcp/serve.ts'
 
 // ── THE LEDGER IS LOADED HERE, BECAUSE ONLY HERE MAY READ A FILE ─────────────────────────────────────────
 // The four evidence tools measure the discovery ledger and the package did not ship it, which put the
@@ -27,6 +27,23 @@ for (const p of [join(here, 'data', 'discovered.json'), join(here, '..', 'src', 
   if (!existsSync(p)) continue
   try { withLedger(JSON.parse(readFileSync(p, 'utf8')) as Row[]); break }
   catch { /* a ledger that does not parse is an absent ledger, and the tools say absent rather than zero */ }
+}
+
+// AND THE FORMULA CATALOGUE, for the same reason and by the same rule. `formulas` read src/proof/*.lean and
+// so needed the source tree — but the content it returns already exists as published JSON-LD, which the site
+// serves and e2e checks. Shipping that moves the tool into reach of an install without changing what it says.
+// The JSON-LD is an ItemList, so the rows are lifted out of itemListElement here rather than in the pure
+// module: the shape of somebody else's serialisation is a transport concern.
+for (const p of [join(here, 'data', 'formulas.jsonld'), join(here, '..', 'public', 'formulas.jsonld')]) {
+  if (!existsSync(p)) continue
+  try {
+    const j = JSON.parse(readFileSync(p, 'utf8')) as { itemListElement?: { item?: Record<string, string> }[] }
+    const rows = (j.itemListElement ?? []).map((e) => {
+      const i = (e.item ?? e) as Record<string, string>
+      return { name: i.name, statement: i.description, key: i.identifier, source: i.source, wing: i.wing, proof: i.proof }
+    }).filter((r) => r.name) as Formula[]
+    if (rows.length) { withFormulas(rows); break }
+  } catch { /* an unparseable catalogue is an absent one, and the tool says absent rather than empty */ }
 }
 
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
