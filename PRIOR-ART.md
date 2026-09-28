@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 25,941 machine-checked declarations, **25,901** restate work that already has an author and
+Of 25,949 machine-checked declarations, **25,909** restate work that already has an author and
 **40** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **25,901** |
+| attributed to named earlier work | **25,909** |
 | unclassified — no search performed, status unknown | **40** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 4
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 89 sources, 25,901 theorems
+## Restated from named earlier work — 90 sources, 25,909 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -57,6 +57,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>asymmetric.lean</code></td><td>11</td><td>public-key signatures on elliptic curves</td><td>Ed25519 — Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe and Bo-Yin Yang,</td></tr>
 <tr><td><code>asymmetry.lean</code></td><td>8</td><td>the injectivity of a map on a finite set, and the involution; the one-way function of</td><td>NONE OF IT IS THIS DEPOSIT'S. An involution is its own inverse by definition, a</td></tr>
 <tr><td><code>authority.lean</code></td><td>8</td><td>elementary set and order arithmetic over finite lists</td><td>NO NOVELTY IS CLAIMED AND NONE IS DENIED. Membership, set difference and monotonicity over</td></tr>
+<tr><td><code>bridge.lean</code></td><td>8</td><td>digit roots (casting out nines) and linear congruential recurrences over Z/n</td><td>own src/proof/group.lean settles — the two halves of the deposit describing one object.</td></tr>
 <tr><td><code>capacity.lean</code></td><td>8</td><td>the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC</td><td>NEITHER IS THIS DEPOSIT'S. RFC 9562 reserves the six bits and the birthday bound is</td></tr>
 <tr><td><code>closure.lean</code></td><td>8</td><td>Cantor's diagonal argument again, turned on a vocabulary rather than a set; the</td><td>THE METHOD IS CANTOR'S AND THE FINITE CASE IS ELEMENTARY. What is this deposit's is the</td></tr>
 <tr><td><code>coils.lean</code></td><td>50</td><td>extensional equality of predicates over a finite set — that two definitions picking out</td><td>NOT THIS DEPOSIT'S. "Two descriptions of the same set are equal" is the definition of a</td></tr>
@@ -158,6 +159,7 @@ which is a contribution of verification, not of discovery.
 - **copyright law — rights arising without formality** — 8 theorems, in `rights.lean`
 - **cryptographic hash standards and integer root extraction** — 7 theorems, in `roots.lean`
 - **cyclic groups and primitive roots** — 13 theorems, in `rays.lean`
+- **digit roots (casting out nines) and linear congruential recurrences over Z/n** — 8 theorems, in `bridge.lean`
 - **dimensional analysis and the Buckingham π theorem (Buckingham, 1914; the method is** — 8 theorems, in `dimensions.lean`
 - **electrochemistry and combustion** — 28 theorems, in `energy.lean`
 - **elementary arithmetic** — 29 theorems, in `reversal.lean`
@@ -240,5 +242,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `e8e22bdd-cda1-8d38-a864-29bc663ac344` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `bdb4bd7c-1fec-8c2a-a99d-a29412615a3e` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.
