@@ -481,11 +481,23 @@ const mulOf: Record<string, string> = Object.fromEntries(
 // not lost" is a claim about WHICH theorem carries the fact.
 const nameOf = (chunk: string) => chunk.match(/^\s*([A-Za-z_][A-Za-z0-9_'.]*)/)?.[1] ?? ''
 const chunks = said.split('theorem')
+// every theorem name the corpus actually declares — the set a carrier has to be in
+const liveThmNames = new Set(leanFiles()
+  .flatMap((f) => [...readFileSync('src/proof/' + f, 'utf8').matchAll(/^theorem\s+([A-Za-z_0-9']+)/gm)].map((m) => m[1]!)))
 const coveredBy = new Map<string, string>()
 const t2 = t3.filter((c) => {
   const flat = c.prop.replace(/\s+/g, '')
-  const verbatim = chunks.find((t) => t.includes(flat))
+  // A CARRIER MUST BE A THEOREM THAT EXISTS. This took the name from whichever chunk contained the
+  // flattened proposition, and `said.split('theorem')` puts the file PREAMBLE in a chunk too — so a match
+  // landing there named `belowtouchesit.These`, prose with its whitespace stripped, as the theorem carrying
+  // a fact. covered-gate caught it, twice, because a downstream sweep in supersede.ts could not: this file
+  // rewrites covered.json from inside covered-gate's own run, so a fix after the gate never ran.
+  // The slice(1) path below already required a real name; this one did not. It picks the first chunk that
+  // holds the proposition AND names a theorem the corpus actually has, and records nothing when there is
+  // none — an entry naming a theorem that does not exist reports a fact as carried when it is not.
+  const verbatim = chunks.find((t) => t.includes(flat) && liveThmNames.has(nameOf(t)))
   if (verbatim) { coveredBy.set(c.key, nameOf(verbatim)); return false }
+  if (chunks.some((t) => t.includes(flat))) return false
   const [, mapId] = c.kind.split(':')
   // THE SET NAMES WERE TYPED HERE TOO — six of them, while the table now derives thirty-odd. Longest match
   // first, so `tetA_image` is not read as the shorter id it happens to contain.
