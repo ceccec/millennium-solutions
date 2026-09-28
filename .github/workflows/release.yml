@@ -37,7 +37,10 @@ jobs:
     # Declaring the limit turns an unknown into a measurement: if the next run is killed at 30 again the
     # boundary is not this setting and the cause is elsewhere; if it runs past 30 the boundary was a default
     # nobody had written down. Either answer is worth more than the guess.
-    timeout-minutes: 90
+    # RAISED WITH THE LANE COUNT, not instead of it. Halving the lanes to fit the runner's memory roughly
+    # doubles the wall clock for a cold checkout of 94 files, and a timeout sized for the old concurrency
+    # would have turned a memory fix into a time failure and looked like the same red.
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -70,6 +73,15 @@ jobs:
       # whether Lean accepts them, on a runner with no .olean files from any earlier run — which is the only
       # environment that tests what a reader gets when they clone.
       - name: lean (the kernel accepts every theorem, from a cold checkout)
+        # KILLED WITH SIGTERM AT 23 MINUTES against a 90-minute timeout, so this was never about time.
+        # scripts/lean.ts sizes its lanes from the memory it can see — min(cores, reclaimable / perJob) —
+        # which on this runner is four lanes of roughly 3 GB against 16 GB total, and a shard of a thousand
+        # `by decide` theorems does not stay under its share. The budget was right about the arithmetic and
+        # wrong about the machine, for the same reason the heap and the shard size were: what writes the
+        # artefact is never what has to accept it. Forced here rather than guessed there.
+        env:
+          LEAN_LANES: '2'
+          LEAN_JOB_MB: '6000'
         run: node scripts/lean.ts
       - name: contradictions (the prose and the proofs agree)
         run: node scripts/contradictions.ts
