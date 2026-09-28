@@ -95,7 +95,18 @@ for (const mod of buildOrder) {
   // "reported below", and what got reported below was ledgerclaims.lean failing to find a module — a file
   // with nothing wrong in it, named as the defect, while the build that actually failed said nothing.
   // Blaming the subject for the instrument, at the level of the build itself.
+  // ── PROGRESS GOES TO STDERR, THE REPORT TO STDOUT ────────────────────────────────────────────────────────
+  // This step produced NO OUTPUT FOR THIRTY MINUTES in CI and was then killed with SIGTERM, and the log holds
+  // nothing but the group header and the kill. The silence is deliberate for the REPORT — rows are collected
+  // by index and printed in order so a diff of two builds still means something — but a step that says
+  // nothing for half an hour is indistinguishable from a hung one, to a reader and to me. Measured
+  // 2026-09-28: I could not tell from the log which module it was on, how far it had got, or whether it was
+  // alive. That is a defect in the instrument whatever killed it.
+  // stderr keeps stdout byte-identical, so the deterministic report is untouched.
+  const t0 = Date.now()
+  process.stderr.write(`  · building ${mod}.olean …\n`)
   try { execSync(`lean -o ${olean} ${DIR}/${src}`, { stdio: 'pipe', env: ENV })
+        process.stderr.write(`  · built ${mod}.olean in ${((Date.now() - t0) / 1000).toFixed(1)}s\n`)
         cache[key] = { hash: h, format: CACHE_FORMAT, ok: true, line: '', theorems: 0 } } catch (e) {
     const msg = String((e as { stderr?: Buffer }).stderr ?? (e as Error).message ?? '').trim().split('\n').slice(0, 3).join(' · ')
     console.log(`  ✗ ${src} is imported by another file and does NOT build — every file importing ${mod} will fail after this, for this reason: ${msg}`)
@@ -120,17 +131,23 @@ const LANES = Math.max(1, Math.min(BUDGET.lanes, files.length))
 const ordered: string[] = new Array(files.length)
 let next = 0
 
+let done = 0
 const verify = async (f: string, at: number) => {
   const path = `${DIR}/${f}`
+  const vt0 = Date.now()
   const src = readFileSync(path, 'utf8')
   const names = [...src.matchAll(/^theorem ([A-Za-z_0-9]+)/gm)].map((m) => m[1])
   total += names.length
   const issues: string[] = []
 
+  const tick = (how: string) => process.stderr.write(
+    `  · ${String(++done).padStart(3)}/${files.length} ${f.padEnd(24)} ${how} ${((Date.now() - vt0) / 1000).toFixed(1)}s\n`)
+
   const hash = sha(src)
   const hit = cache[f]
   if (hit && hit.hash === hash && hit.format === CACHE_FORMAT) {
     ordered[at] = hit.line
+    tick('cached')
     // THE LEAF IS EMITTED ON THE CACHED PATH TOO, and leaving it out was the whole defect: every file was
     // cached on a warm run, no leaf was pushed, and merkleFold over an EMPTY list returns a fixed address —
     // so the root printed the same value whatever the tree contained. A constant dressed as a verification,
@@ -166,6 +183,7 @@ const verify = async (f: string, at: number) => {
     issues.push('does not compile')
     const line = `  ✗ ${f.padEnd(18)} ${String(names.length).padStart(3)}  ${issues.join(', ')}`
     ordered[at] = line; cache[f] = { hash, format: CACHE_FORMAT, ok: false, line, theorems: names.length }
+    tick('refused')
     leaves.push(toUuid(`${f}:${hash}:bad:${names.length}`)); bad++; return
   }
   unlinkSync(probe)
@@ -193,6 +211,7 @@ const verify = async (f: string, at: number) => {
     ? `  ✗ ${f.padEnd(18)} ${String(names.length).padStart(3)}  ${issues.join(', ')}`
     : `  ✓ ${f.padEnd(18)} ${String(names.length).padStart(3)}  compiles · ${audited} axiom-free${standard.length ? ` · ${standard.length} proved for every value (standard axioms: ${used})` : ''} · no sorry`
   ordered[at] = line
+  tick('checked')
   cache[f] = { hash, format: CACHE_FORMAT, ok: issues.length === 0, line, theorems: names.length }
   // THE LEAF IS WHAT THIS FILE'S VERIFICATION FOUND, ADDRESSED. Its source hash, whether the kernel accepted
   // it, and how many declarations it carries — the three things a re-run must reproduce. It deliberately

@@ -23,6 +23,21 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
+    # ── THE LIMIT IS DECLARED HERE RATHER THAN DISCOVERED ────────────────────────────────────────────────
+    # Run 36363083457: the `lean` step produced NO OUTPUT for thirty minutes and was killed with SIGTERM
+    # (exit 143) at exactly 30:01. No `timeout-minutes` existed anywhere in this workflow or its composite
+    # action, and GitHub's documented job default is 360 minutes — so I could not establish from the evidence
+    # where that boundary came from, and I am not going to assert a cause I have not shown.
+    #
+    # What IS established: the step crossed thirty minutes and did not before. The previous run reached the
+    # gates step in 28m51s, so the kernel pass fitted inside that; since then this tree gained three Lean
+    # files and eight .olean builds that nothing imported before — measured locally at 114s for program,
+    # 75s for elementary, 18s for instruments, and the olean loop is SERIAL.
+    #
+    # Declaring the limit turns an unknown into a measurement: if the next run is killed at 30 again the
+    # boundary is not this setting and the cause is elsewhere; if it runs past 30 the boundary was a default
+    # nobody had written down. Either answer is worth more than the guess.
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
