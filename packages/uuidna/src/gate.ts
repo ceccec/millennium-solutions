@@ -6,7 +6,11 @@
 // RED is the negation-BLIND floor — matches that carry their own imbalance and cannot be reprieved. A bare
 // "proven" is NOT here: it has two-sided gravity ("we have proven X" boasts, "X is not proven; it remains
 // open" is the floor), so it moved to the negation-AWARE OVERREACH where the floor can change the verdict.
-export const RED = /\bwe prove\b|confidence\s*=?\s*1\.0|ready for peer review|sealed via universal|cannot be (hacked|broken|cracked|defeated)|(no ?one|nobody) can (break|crack|hack|beat|defeat)/i
+// A CLAIM ABOUT THE ABSENCE OF OTHER PEOPLE'S WORK is the same shape as "nobody can break it" and just as
+// unfounded. A corpus with an empty cell knows that IT does not decide the question; it does not know that the
+// question is unstudied, and saying so asserts a survey nobody ran. Measured in uuidna/qpu, which reported 282
+// subject/domain combinations as ones "no one had looked at" when what it had was 282 cells of its own.
+export const RED = /\bwe prove\b|confidence\s*=?\s*1\.0|ready for peer review|sealed via universal|cannot be (hacked|broken|cracked|defeated)|(no ?one|nobody) can (break|crack|hack|beat|defeat)|(no ?one|nobody) has (ever )?(looked|studied|examined|investigated|tried)|(never|not) been (looked at|studied|examined|investigated)|\bunstudied\b|\bunexamined\b/i
 
 // HARD IN ALL 7 — the same "we prove / proven" tripwire, in the seven locales' languages, so a translated
 // overclaim cannot hide from an English-only gate. Targets the ASSERTION forms only, never the honest
