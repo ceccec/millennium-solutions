@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **1,215** report the same thing:
+axiom fails the build rather than earning a footnote. All **1,248** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **670** definitions, and every one of them is a choice. A theorem about
+theorems rest on **693** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 670 definitions
+## What IS assumed: the 693 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -183,10 +183,22 @@ def table (p : Nat → Bool) : List Bool := R.map p
 def unnamed (d : Nat) : Bool :=
 ```
 
-### `coils.lean` — 1 definition(s), 27 theorem(s)
+### `coils.lean` — 13 definition(s), 50 theorem(s)
 
 ```lean
 def m9 (n : Nat) : Nat := n % 9
+def fct : Nat → Nat
+def fibAux : Nat → Nat → Nat → Nat
+def fibN (n : Nat) : Nat := fibAux n 0 1
+def chooseN : Nat → Nat → Nat
+def catalanN (n : Nat) : Nat := chooseN (2 * n) n / (n + 1)
+def doms : List String := ["architecture", "biology", "botany", "chemistry", "computing", "cryptography", "dance", "economics", "epidemiology", "games", "geometry", "juggling", "law", "linguistics", "logistics", "metrology", "music", "navigation", "number theory", "physics", "sport", "statistics", "taxonomy", "textiles"]
+def edges : List (Nat × Nat) := [(0, 9), (0, 10), (0, 16), (0, 19), (1, 2), (1, 3), (1, 4), (1, 5), (1, 8), (1, 9), (1, 10), (1, 12), (1, 13), (1, 14), (1, 16), (1, 18), (1, 23), (2, 1), (2, 4), (2, 12), (2, 16), (2, 18), (3, 1), (3, 4), (3, 5), (3, 7), (3, 8), (3, 9), (3, 10), (3, 11), (3, 12), (3, 14), (3, 15), (3, 16), (3, 18), (3, 20), (3, 23), (4, 1), (4, 2), (4, 3), (4, 5), (4, 8), (4, 9), (4, 10), (4, 12), (4, 13), (4, 14), (4, 16), (4, 18), (4, 20), (4, 22), (4, 23), (5, 1), (5, 3), (5, 4), (5, 8), (5, 10), (5, 12), (5, 14), (5, 16), (5, 18), (5, 23), (6, 13), (6, 14), (6, 18), (7, 3), (7, 8), (7, 10), (7, 14), (7, 15), (7, 18), (7, 20), (8, 1), (8, 3), (8, 4), (8, 5), (8, 7), (8, 10), (8, 12), (8, 14), (8, 16), (8, 18), (8, 20), (8, 23), (9, 0), (9, 1), (9, 3), (9, 4), (9, 10), (9, 11), (9, 13), (9, 14), (9, 16), (9, 18), (9, 19), (9, 20), (9, 22), (10, 0), (10, 1), (10, 3), (10, 4), (10, 5), (10, 7), (10, 8), (10, 9), (10, 13), (10, 14), (10, 16), (10, 18), (10, 19), (10, 20), (11, 3), (11, 9), (11, 16), (11, 18), (12, 1), (12, 2), (12, 3), (12, 4), (12, 5), (12, 8), (12, 14), (12, 16), (12, 18), (12, 23), (13, 1), (13, 4), (13, 6), (13, 9), (13, 10), (13, 14), (13, 18), (13, 21), (14, 1), (14, 3), (14, 4), (14, 5), (14, 6), (14, 7), (14, 8), (14, 9), (14, 10), (14, 12), (14, 13), (14, 16), (14, 17), (14, 18), (14, 19), (14, 20), (14, 22), (14, 23), (15, 3), (15, 7), (16, 0), (16, 1), (16, 2), (16, 3), (16, 4), (16, 5), (16, 8), (16, 9), (16, 10), (16, 11), (16, 12), (16, 14), (16, 17), (16, 18), (16, 19), (16, 23), (17, 14), (17, 16), (17, 18), (17, 19), (18, 1), (18, 2), (18, 3), (18, 4), (18, 5), (18, 6), (18, 7), (18, 8), (18, 9), (18, 10), (18, 11), (18, 12), (18, 13), (18, 14), (18, 16), (18, 17), (18, 19), (18, 20), (18, 21), (18, 22), (18, 23), (19, 0), (19, 9), (19, 10), (19, 14), (19, 16), (19, 17), (19, 18), (19, 23), (20, 3), (20, 4), (20, 7), (20, 8), (20, 9), (20, 10), (20, 14), (20, 18), (20, 22), (21, 13), (21, 18), (22, 4), (22, 9), (22, 14), (22, 18), (22, 20), (23, 1), (23, 3), (23, 4), (23, 5), (23, 8), (23, 12), (23, 14), (23, 16), (23, 18), (23, 19)]
+def nbrs (v : Nat) : List Nat := (edges.filter (fun e => e.1 == v)).map (fun e => e.2)
+def step (s : List Nat) : List Nat := (s ++ s.flatMap nbrs).eraseDups
+def flood : Nat → List Nat → List Nat
+def lucasAux : Nat → Nat → Nat → Nat
+def lucasN (n : Nat) : Nat := lucasAux n 2 1
 ```
 
 ### `coin.lean` — 7 definition(s), 12 theorem(s)
@@ -366,6 +378,20 @@ def tdsSeawater : Nat := 35000  -- mg of dissolved solids per litre
 def tdsTapWater : Nat := 50     -- mg per litre, ordinary supply
 def residueMg (litres tds : Nat) : Nat := litres * tds
 def atomsOf (m : Nat) : Option (Nat × Nat) :=
+```
+
+### `entangled.lean` — 9 definition(s), 8 theorem(s)
+
+```lean
+def pureFifthNumer : Nat := 3
+def octaveRatio : Nat := 2
+def lands (s : List Nat) : List Nat :=
+def valid (s : List Nat) : Bool := (lands s).eraseDups.length == s.length
+def throws (s : List Nat) : Nat := s.foldl (· + ·) 0
+def closesAt (k m : Nat) : Nat :=
+def inertia (i0 m r : Nat) : Nat := i0 + 2 * m * r * r
+def traces : List Int := [-2, -1, 0, 1, 2]
+def orderOfTrace : Int → Nat
 ```
 
 ### `equivalence.lean` — 4 definition(s), 8 theorem(s)
@@ -963,13 +989,15 @@ def popcount (n : Nat) : Nat := (List.range (n + 1)).foldl (fun a i => a + n / 2
 def tm (n : Nat) : Nat := popcount n % 2
 ```
 
-### `settled.lean` — 4 definition(s), 6 theorem(s)
+### `settled.lean` — 6 definition(s), 8 theorem(s)
 
 ```lean
 def files : List String := ["address.lean", "asymmetric.lean", "elementary.lean", "families.lean", "fnv.lean", "imprint.lean", "instruments.lean", "merkle.lean", "program.lean", "quantum.lean", "rays.lean", "reversal.lean", "rights.lean", "roots.lean", "z9.lean"]
 def declared : List Nat := [Address.settledHere, Asymmetric.settledHere, Elementary.settledHere, Families.settledHere, Fnv.settledHere, Imprint.settledHere, Instruments.settledHere, Merkle.settledHere, Program.settledHere, Quantum.settledHere, Rays.settledHere, Reversal.settledHere, Rights.settledHere, Roots.settledHere, Z9.settledHere]
 def measured : List Nat := [20, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 21]
 def theorems : List Nat := [25, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24]
+def byRfl : List Nat := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+def byOther : List Nat := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]
 ```
 
 ### `speed.lean` — 8 definition(s), 12 theorem(s)
@@ -1078,6 +1106,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**1,215** declarations, **0** axiom dependencies, **670** definitions they rest on.
+**1,248** declarations, **0** axiom dependencies, **693** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

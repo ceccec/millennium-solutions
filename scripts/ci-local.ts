@@ -60,8 +60,6 @@ const STEPS: Step[] = [
   // THE WORKSPACE STEPS. packages/uuidna is NOT a declared npm workspace — package.json has no
   // `workspaces` field — so these only make sense from inside that directory, which is exactly what the
   // workflows do and exactly what I got wrong.
-  { name: 'uuidna build (workspace)',        cmd: 'npm run -s build',      cwd: 'packages/uuidna', needs: 'packages/uuidna/package.json' },
-  { name: 'uuidna pack:check (alignment)',   cmd: 'npm run -s pack:check', cwd: 'packages/uuidna', needs: 'packages/uuidna/package.json' },
 ]
 
 const SKIPPED: Step[] = [

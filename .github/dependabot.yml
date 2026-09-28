@@ -9,7 +9,8 @@
 # the cross-runtime matrix, the release gate chain, and the Pages build.
 version: 2
 updates:
-  # ── npm, from the workspace root (covers packages/uuidna too) ──
+  # ── npm, from the repository root. packages/uuidna was covered here and is gone: it was a stale copy
+  #    of a package published from another repository, which this tree resolves from the registry instead. ──
   - package-ecosystem: npm
     directory: "/"
     schedule:

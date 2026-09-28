@@ -27,8 +27,12 @@ const NAME_FORMS = [
 const namesAuthor = (src: string) => NAME_FORMS.some((re) => re.test(src))
 
 // each surface someone could cite this work from
+// packages/uuidna/package.json was here and is gone with the directory — it was a stale copy of a package
+// published from another repository, so it was never a surface a reader cites THIS work from. The gate
+// already skipped absent files; dropping it from the list says the omission is intended rather than a file
+// that happens to be missing today.
 const SURFACES = [
-  'package.json', 'packages/uuidna/package.json', 'CITATION.cff', '.zenodo.json',
+  'package.json', 'CITATION.cff', '.zenodo.json',
   'paper.tex', '.vitepress/config.ts', 'public/llms.txt',
 ]
 

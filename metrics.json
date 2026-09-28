@@ -1,9 +1,9 @@
 {
   "repo": "millennium-solutions",
-  "generatedFrom": "99ff62293",
+  "generatedFrom": "629220991",
   "specWitness": {
-    "seed": "theorems\ndeclarations closing by exhaustion or by a proof for every value — the deposit's definition of a theorem\n1169\nnode -e \"import('./src/api/index.ts').then(m=>console.log(m.theoremCount()))\"",
-    "receipt": "b660db9a-c831-8e0d-972a-2418c3836835"
+    "seed": "theorems\ndeclarations closing by exhaustion or by a proof for every value — the deposit's definition of a theorem\n1248\nnode -e \"import('./src/api/index.ts').then(m=>console.log(m.theoremCount()))\"",
+    "receipt": "fa66322b-6130-8468-bf2d-fecfe19f1e15"
   },
   "definition": "a declaration in src/proof that the Lean kernel accepts — sorry-free — and closes either by exhaustion over a stated finite domain with no axiom, or by a proof for every value on the standard axioms propext and Quot.sound",
   "protocol": {
@@ -26,51 +26,51 @@
     {
       "key": "theorems",
       "claim": "declarations closing by exhaustion or by a proof for every value — the deposit's definition of a theorem",
-      "value": "1169",
+      "value": "1248",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.theoremCount()))\"",
-      "receipt": "b660db9a-c831-8e0d-972a-2418c3836835"
+      "receipt": "fa66322b-6130-8468-bf2d-fecfe19f1e15"
     },
     {
       "key": "rfl-declarations",
       "claim": "declarations closing by rfl, counted separately and never as theorems",
-      "value": "15",
+      "value": "0",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().rfl))\"",
-      "receipt": "e19e9ff3-d20b-868b-8b14-b6cd48987060"
+      "receipt": "7711352f-cb3d-8814-ba10-361d8f36d1b5"
     },
     {
       "key": "kernel-accepted",
       "claim": "declarations the Lean kernel accepts, sorry-free and axiom-free",
-      "value": "1184",
+      "value": "1248",
       "command": "node scripts/lean.ts",
-      "receipt": "847ada60-e590-84d1-985b-d79eb20e9510"
+      "receipt": "3ce09441-bc71-8a84-a6af-2f9f71385e48"
     },
     {
       "key": "lean-files",
       "claim": "source files in src/proof",
-      "value": "60",
+      "value": "65",
       "command": "ls src/proof/*.lean | wc -l",
-      "receipt": "ed32b369-6a58-828f-850b-305774ec6334"
+      "receipt": "a5aa8e9a-4492-8c96-b9f5-fad1f4898189"
     },
     {
       "key": "live-keys",
       "claim": "live ledger keys — ADDRESSES, not theorems; some theorems carry two",
-      "value": "1169",
+      "value": "1248",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().liveKeys))\"",
-      "receipt": "646bf2bb-f8bb-8d5c-a702-33fe8b7c92f7"
+      "receipt": "33874651-a25e-8810-8078-cb0f16bcd236"
     },
     {
       "key": "ledger-entries",
       "claim": "entries in the append-only ledger — RECEIPTS, most of them withdrawn",
-      "value": "3288",
+      "value": "3392",
       "command": "node scripts/forensics.ts",
-      "receipt": "b8615b71-bd8b-8f0c-a34d-2bdd6e18b380"
+      "receipt": "e326397a-c304-8a41-b3c1-950020a15bca"
     },
     {
       "key": "census-closes",
       "claim": "liveKeys = sealed + keyed-twice + unresolvable, asserted not reconciled by a reader",
-      "value": "1169 = 1169 + 0 + 0",
+      "value": "1248 = 1248 + 0 + 0",
       "command": "node scripts/contradictions.ts",
-      "receipt": "7c8525d1-1a9a-886a-bf48-95dc190da586"
+      "receipt": "8bcf5e1f-055d-8d17-aa70-1fb743a76c77"
     },
     {
       "key": "verify-advantage",
@@ -103,9 +103,9 @@
     {
       "key": "typeset",
       "claim": "statements rendering as mathematics, each round-trip clean against its source",
-      "value": "1184/1184",
+      "value": "1248/1248",
       "command": "node scripts/latex-gate.ts",
-      "receipt": "7662e650-cb76-8115-8675-1e5decedcbb6"
+      "receipt": "598ad95d-e63f-87ec-a90e-d6c2e7d0bc43"
     },
     {
       "key": "coin-unlock",
@@ -152,10 +152,10 @@
     {
       "key": "gate:gates",
       "claim": "the gates gate, run now rather than remembered",
-      "value": "FAIL",
+      "value": "pass",
       "command": "npm run gates",
-      "receipt": "576a57a2-120b-835d-93d2-aab1b52c7d4b"
+      "receipt": "14c3168a-49d2-82b3-becf-5fb228c872ff"
     }
   ],
-  "root": "0ccbf582-36e8-8431-829c-61ce2d764749"
+  "root": "b4e2da26-dc14-8a47-978c-9e44a537c620"
 }

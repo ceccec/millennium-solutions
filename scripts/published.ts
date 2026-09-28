@@ -27,7 +27,13 @@ const rows: string[] = []
 let drift = 0
 
 // ── the packages, tree against registry ──
-for (const [path, name] of [['package.json', '@ceccec/millennium-solutions'], ['packages/uuidna/package.json', '@uuidna/uuidna']] as [string, string][]) {
+// ── ONE PACKAGE, BECAUSE THE TREE ONLY HAS ONE ───────────────────────────────────────────────────────────
+// This compared packages/uuidna/package.json against the registry's @uuidna/uuidna. That directory is gone:
+// it was a stale 0.1.1 copy of a package published from ANOTHER repository, which had reached 0.3.1, while
+// this tree resolved @uuidna/uuidna from the registry at 0.2.6 and imported nothing from the copy at all.
+// Comparing a fork nobody used against the registry measured the distance between two things this repo does
+// not ship. What it publishes is one package, and that is what is compared now.
+for (const [path, name] of [['package.json', '@ceccec/millennium-solutions']] as [string, string][]) {
   const here = JSON.parse(readFileSync(path, 'utf8')).version as string
   const there = q(`npm view ${name} version`)
   if (there === null) { rows.push(`  ? ${name.padEnd(30)} tree ${here.padEnd(8)} registry unreachable`); continue }

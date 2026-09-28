@@ -41,7 +41,7 @@
  *  that matters. FAILING is. scripts/settled.ts was written with the check and this one was not, which is
  *  the asymmetry FINDINGS.md 7o named and this closes. */
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
-import { DOM_EXPRS, ALL_DOMS, DROPPED } from '../src/entangle/index.ts'
+import { DOM_EXPRS, ALL_DOMS, type DomExpr } from '../src/entangle/index.ts'
 import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
 
 const m9 = (n: number) => ((n % 9) + 9) % 9
