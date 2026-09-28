@@ -99,13 +99,26 @@ jobs:
       #
       # `npm run gates` rather than a list of twenty-eight steps: the chain is the tree's own statement of
       # what must hold, and a copy of it here would be a second list to keep in step.
+      # ── AND THE BUILD COMES FIRST, WHICH IT DID NOT, AND EVERY RELEASE SINCE HAS FAILED ON IT ────────
+      # Measured 2026-09-28 on run 36360461630: `npm run gates` ran BEFORE `npm run docs:build`, and six
+      # gates in that chain read .vitepress/dist — import-gate, security-gate, seven, e2e,
+      # theorem-pages-gate and sitemap-mesh. import-gate refused with "no dist/ — run `npm run docs:build`
+      # first" and the release minted no tag at all. The site deployed; the provenance tag did not.
+      #
+      # IT PASSED LOCALLY EVERY TIME, and that is the whole shape of it: a developer always has dist/ lying
+      # around from the last build, so the ordering defect is invisible on this machine and fatal on a cold
+      # runner. This deposit has the lesson written down already, from when the same thing happened in
+      # pages.yml: "`npm run gates` was added BEFORE the build, and three of those gates read
+      # .vitepress/dist. It passed locally every time because a developer always has dist/ lying around."
+      # Same defect, second workflow.
+      #
+      # `npm run release` locally runs docs:build BEFORE import-gate. So CI was not a faithful mirror of the
+      # chain it claims to run, in the one respect that decides whether a tag is minted.
+      - name: build the site first — six gates below read what a reader actually opens
+        run: npm run docs:build
+
       - name: gates (every refusing check a local commit passes)
         run: npm run gates
-
-      # And the artefact, not only the source. scripts/e2e.ts checks what a reader opens — the page
-      # references its data, the counts agree, every linked theorem page exists — and it needs the build.
-      - name: build the site, then check it as a reader meets it
-        run: npm run docs:build
 
       # An ANNOTATED tag carries an author, so the runner needs an identity or `git tag -a` fails.
       - name: identity for the annotated tag
