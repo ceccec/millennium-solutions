@@ -63,7 +63,14 @@ for (const r of failed) {
     const log = execFileSync('gh', ['run', 'view', String(r.databaseId), '--log-failed'],
       { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] })
     const lines = log.split('\n')
-      .filter((l) => /✗|error|fatal|refus|does not compile/i.test(l))
+      // `refus` MATCHED THE PASSES — crypto-kat prints "✓ an altered message is refused" four times, and
+      // this reported those as the failure, burying the line that mattered. Narrowing the vocabulary then
+      // dropped the real diagnostic, which was "release: tag-only refuses a dirty tree" and carries neither
+      // a ✗ nor the word error. The word was never the discriminator: whether the line is a PASS is. Lines
+      // marked ✓ are dropped and the error vocabulary is kept wide, so a gate that reports its refusal in
+      // its own words still reaches the reader.
+      .filter((l) => !/✓/.test(l))
+      .filter((l) => /✗|##\[error\]|\bfatal:|does not compile|Cannot find|refuse|FATAL|exit code [1-9]/i.test(l))
       .filter((l) => !/extraheader|sshCommand|credentials|includeIf|submodule|orphan process/i.test(l))
       .map((l) => l.replace(/^\S+\t\S+ ?\S*\t\S+Z /, ''))
     for (const l of [...new Set(lines)].slice(0, 12)) console.log('    ' + l.trim())
