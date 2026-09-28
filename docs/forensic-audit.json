@@ -1,5 +1,5 @@
 {
-  "produced": "8ba39ef62",
+  "produced": "5017044b3",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -58,6 +58,16 @@
       "dEnt": 32
     },
     {
+      "date": "2026-09-28",
+      "commit": "88737a3ad",
+      "author": "Tsvetan Rouschev",
+      "subject": "the grid widened to 24 subjects, and the joins between real databases ar",
+      "entries": 3392,
+      "revoked": 2144,
+      "dRev": 25,
+      "dEnt": 32
+    },
+    {
       "date": "2026-09-04",
       "commit": "5d319470d",
       "author": "Tsvetan Rouschev",
@@ -66,16 +76,6 @@
       "revoked": 1896,
       "dRev": 24,
       "dEnt": 0
-    },
-    {
-      "date": "2026-09-14",
-      "commit": "1c1b53f9a",
-      "author": "Tsvetan Rouschev",
-      "subject": "Nineteen more certificates become laws — the energy, speed, light and re",
-      "entries": 2567,
-      "revoked": 1948,
-      "dRev": 19,
-      "dEnt": 19
     }
   ],
   "withdrawalReasonsAsRecorded": [
@@ -112,6 +112,6 @@
       1
     ]
   ],
-  "totalStateChangingCommits": 629,
-  "address": "346aa2db-8683-809a-8c78-ecfea23d6492"
+  "totalStateChangingCommits": 630,
+  "address": "42fcb896-ab6a-81a7-8581-06c37ae36836"
 }

@@ -5,7 +5,7 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `346aa2db-8683-809a-8c78-ecfea23d6492`.
+`npm run forensic`. Content-address `42fcb896-ab6a-81a7-8581-06c37ae36836`.
 
 ## What this record establishes
 
@@ -16,7 +16,7 @@ title: Every state change, dated
 | carried — withdrawn, proved by a live theorem | 551 |
 | withdrawn — nothing currently proves them | 1,593 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 629 |
+| commits that changed ledger state | 630 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 
@@ -47,7 +47,7 @@ At least one of them was recoverable: `thue_morse_doubling_recurrence` was withd
 | 2026-09-25 | 73 | `4d25e3359` | 73 keys revoked: emitted no longer, by a vocabulary that discr |
 | 2026-09-25 | 67 | `dcbb798ac` | provenance knew three records; there are 241 — and the three t |
 | 2026-08-20 | 25 | `959f8af2a` | lean: verify once instead of twice, and cache what the kernel  |
-| 2026-09-04 | 24 | `5d319470d` | Item 12 executed: 24 duplicate addresses retired, and it broke |
+| 2026-09-28 | 25 | `88737a3ad` | the grid widened to 24 subjects, and the joins between real da |
 
 ## What this record does NOT establish
 
