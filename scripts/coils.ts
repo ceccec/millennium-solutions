@@ -320,8 +320,9 @@ const LEAN_N: Record<string, number> = { 'fib n': 16, 'chooseN 12 n': 12, 'catal
  *  TypeScript layer and corroborated by the catalogue (A000110, A000041), and both have kernel definitions that
  *  are either expensive or need a termination proof this file is not the place for. The tempting shortcut was
  *  to have the generator emit the computed sequence as a list and prove the members equal it — but that is a
- *  generator writing both sides of its own comparison, which is exactly the certificate shape this deposit
- *  spent the day removing from 42 theorems. A named gap is honest; a self-satisfied theorem is not. */
+ *  generator writing both sides of its own comparison. That is the certificate shape that was removed from 42
+ *  theorems earlier today, and it would be worse here for wearing the look of proof. A named gap is honest;
+ *  a self-satisfied theorem is not. */
 const leanOf = (e: DomExpr): string | null => {
   if (/\bbell n\b|\bparts n\b|\bmotzkin n\b|\bderange n\b|\blucas n\b/.test(e.lean)) return null
   return e.lean
