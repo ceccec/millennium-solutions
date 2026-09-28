@@ -78,7 +78,18 @@ for (let i = 2; i < l.length; i++) if (toUuid(l[i - 1].receipt + '→' + l[i].ke
 
 const withdrawals = events.filter((e) => e.dRev > 0).sort((a, b) => b.dRev - a.dRev)
 const report = {
-  produced: sh('git log -1 --format=%H').trim().slice(0, 9),
+  // ── THE COMMIT THIS IS ABOUT, NOT THE COMMIT THAT RAN IT ─────────────────────────────────────────────
+  // This read `git log -1` — HEAD — and the content-address below covers it. That makes the file a fixed
+  // point that DOES NOT EXIST: committing it moves HEAD, which moves `produced`, which moves the address, so
+  // regenerating at the resulting commit never reproduces the committed copy. The tree is therefore dirty
+  // immediately after every commit of it, and scripts/release.ts refuses — correctly — to mint a tag
+  // claiming a content-address HEAD does not carry. That refusal is why no release has minted a tag, and the
+  // defect is here rather than in the refusal.
+  //
+  // The subject of this audit is the LEDGER, so the commit worth recording is the last one that changed the
+  // ledger — which a commit of this file does not. Now the fixed point exists: regenerate after committing
+  // and the answer is the same, because nothing the commit touched is part of the answer.
+  produced: (sh('git log -1 --format=%H -- src/proof/discovered.json').trim() || sh('git log -1 --format=%H').trim()).slice(0, 9),
   method: 'recomputed from git history of ' + FILE + ' and the ledger itself; re-runnable with `npm run forensic`',
   establishes: 'what changed, when, in which commit, and the reason recorded at the time',
   doesNotEstablish: ['intent', 'authorship beyond the git author field (every commit here carries the repository owner)'],
