@@ -37,7 +37,13 @@ if (unexpected.length) {
   console.log(`  ✗ ${unexpected.join(', ')} disagree(s) with scripts/pages.ts`)
   console.log(`      The committed text is not what the generator produces. Either a value was edited by hand`)
   console.log(`      — every constant in these files is computed, so a hand-written one is fabricated — or the`)
-  console.log(`      tree moved and the pages were not regenerated. Run: npm run pages`)
+  // THE REMEDIATION NAMED A SCRIPT THAT DOES NOT EXIST. There is no `pages` entry in package.json — the
+  // generator runs inside `predocs:build` — so following this gate's own advice printed an npm error and
+  // left the operator no better off. Worse, the advice was unnecessary: this gate has ALREADY run
+  // scripts/pages.ts a few lines above, so the files on disk are the regenerated ones by the time it speaks.
+  // What is left to do is read the diff and commit it, and that is what it now says.
+  console.log(`      This gate has already re-run scripts/pages.ts, so the files on disk are now the`)
+  console.log(`      generated ones — read the diff and commit it, or find the hand-edited value in it.`)
   process.exit(1)
 }
 const n = Number(execSync(`grep -oE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' ${GENERATED.join(' ')} | wc -l`).toString().trim())

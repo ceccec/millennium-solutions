@@ -73,7 +73,7 @@ const NUM: Record<string, string> = { '1': 'one', '2': 'two', '3': 'three', '4':
 const toks = (s: string) => new Set(String(s).toLowerCase().replace(/[0-9]/g, (d) => ' ' + (NUM[d] ?? d) + ' ')
   .split(/[^a-z]+/).filter((x) => x.length > 2))
 
-const ledger = __ledger() as { key: string; name: string; revoked?: boolean; reason?: string; supersededBy?: string }[]
+const ledger = __ledger() as { key: string; name: string; receipt: string; revoked?: boolean; reason?: string; supersededBy?: string }[]
 const T = leanTheorems()
 const live = new Set(T.map((t) => t.name))
 const withdrawn = ledger.filter((e) => statusOf(e as never, ledger as never) === 'withdrawn')

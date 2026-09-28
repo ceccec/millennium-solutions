@@ -27,12 +27,12 @@ last because the orbit never reaches it.
 
 - The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 1256 kernel-accepted declarations across 66 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `6e0dc526-75f9-8025-8b42-b2f85eec33c5`</sub>
-- 1069 of those 1256 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `667ecf52-8697-8e94-9007-52d0b89ce0c3`</sub>
-- 1536 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `90b5d38d-4dba-8678-b006-94a9b43d2f3a`</sub>
+- The formal layer holds 26132 kernel-accepted declarations across 74 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `e39569f6-e4bd-85a6-94ca-718db33425af`</sub>
+- 25945 of those 26132 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `914dbd53-534c-8203-8cf8-a3e01ecb8bf5`</sub>
+- 26488 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `ac829b7f-aeef-84f5-b7eb-f1097f8d9c63`</sub>
 
 ## 2 · The ring
 
@@ -55,10 +55,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 3400 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `482c83ae-356c-8eeb-b9dd-5bd827538579`</sub>
-- The count is an exact multiple of eight — 3400 is 425 octaves with no remainder.
-  <sub>SEALED · `90689ddf-8331-82ca-a718-367333975734`</sub>
+- The ledger records 28352 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `c692e774-6b3a-8016-a880-f53d07da5fd7`</sub>
+- The count is an exact multiple of eight — 28352 is 3544 octaves with no remainder.
+  <sub>SEALED · `760f5e45-dd8d-88ad-b62a-1ba17d32c58d`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -110,7 +110,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-66 Lean files in 7 wings, 1256 declarations of which 1256 are theorems. The prose in this section is read out of the
+74 Lean files in 7 wings, 26132 declarations of which 26132 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -161,6 +161,8 @@ this page; there is nowhere else to keep the description in step.
 **Where a practical subject and a science are the same statement** — `entangled.lean`, 8 theorem(s). prior_art_note: NONE OF IT IS THIS DEPOSIT'S, and every result below is older than this file and credited   above. What is this deposit's is only the selection and the framing: that each pair named here is not an   analogy between a craft and a science but ONE STATEMENT that both of them are, and that the statement is   decidable over a finite domain so the claim can be checked rather than admired. prior_art_search: not performed — every theorem is named with its author above. prior_art_pool: bounded prior_art_own: the pairing, and that each is decided here at every instance in range
 
 **Substitution inside a coil is sound and across coils is not** — `equivalence.lean`, 8 theorem(s). is that ITS OWN substitution licence — scripts/coils.ts, which tells a reader two formulas may stand for   one another — is put to those three properties instead of being assumed to have them. prior_art_search: not performed — all of it is named above. prior_art_pool: unbounded prior_art_own: the soundness and the separation below, and theorem 8
+
+**Why an array is the criterion of a cross formula and a hash cannot be one** — `extension.lean`, 11 theorem(s). its OWN cross-formula machinery rests on the first and that its OWN addresses are excluded by the second. prior_art_search: not performed — both are named above. prior_art_pool: bounded prior_art_own: the application to this tree's coils and receipts, and the separations
 
 **Families over the ring** — `families.lean`, 63 theorem(s). The families, quantified. Proving at scale.
 
@@ -240,7 +242,21 @@ this page; there is nowhere else to keep the description in step.
 
 ### the imagined
 
-**What enumeration proposed and the kernel kept** — `imagined.lean`, 91 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept (1 of 7)** — `imagined.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (2 of 7)** — `imagined_2.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (3 of 7)** — `imagined_3.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (4 of 7)** — `imagined_4.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (5 of 7)** — `imagined_5.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (6 of 7)** — `imagined_6.lean`, 4000 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**What enumeration proposed and the kernel kept (7 of 7)** — `imagined_7.lean`, 941 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+**Sealed before the vocabulary moved, and still decided** — `retained.lean`, 15 theorem(s). RETAINED — scripts/imagine.ts sealed these when its map table was hand-written, and its derived enumeration does not propose them. Nothing about them was refuted: each is copied here exactly as the generator last wrote it, and the kernel decides every one on every run. The ledger is append-only, so a sealed key whose source disappears is an orphan the record cannot honestly resolve — keeping the source is the only answer that neither withdraws a proved fact nor claims a carrier that does not prove it.
 
 ### the record
 
@@ -260,7 +276,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-29 of 1256 declarations carry no comment of their own and are shown here as the gap they are, not
+29 of 26132 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -269,20 +285,20 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 3,400 — 425 octaves exactly |
-| standing — carries its own proof | **1256** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **551** |
+| ledger entries | 28,352 — 3544 octaves exactly |
+| standing — carries its own proof | **26132** |
+| carried — withdrawn on its own evidence, proved by a live theorem | **627** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **1807** of 3,400 |
-| standing keys → distinct theorems | 1256 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 66 · 1256 theorems (1069 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 1069 of 1256 |
+| proved in total | **26759** of 28,352 |
+| standing keys → distinct theorems | 26132 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 74 · 26132 theorems (25945 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 25945 of 26132 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 551 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 627 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 183 other · 108 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 259 other · 108 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -331,4 +347,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 1256 Lean theorems · 3400 ledger entries · trial root `7a3e6409-bfed-8e05-943f-6702199bd9c7` · integrity, not truth*
+*20 claims, all verified · 26132 Lean theorems · 28352 ledger entries · trial root `77618abf-7deb-8151-9453-cdb61bc95f8d` · integrity, not truth*

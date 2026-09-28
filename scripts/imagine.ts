@@ -6,7 +6,11 @@
 // between every PAIR of subsets — evaluates all of them over the finite domain at once, and keeps the ones
 // that survive. Imagining is cheap and worthless on its own; the value is entirely in what the filters kill.
 //
-// Four filters, in order. Each exists because the obvious version of this script is a padding machine:
+// FIVE filters, in order. Each exists because the obvious version of this script is a padding machine:
+//   0. CROSS-FORMULATED — the statement must relate two DIFFERENT expressions over an element it actually
+//                      mentions. Deriving the map table reached the identity (whose composites are X == X)
+//                      and the constant maps (which ignore the variable they quantify over); neither states
+//                      anything, and the kernel was recursing to its depth limit on the first kind.
 //   1. TRUE          — evaluated by exhaustion over the domain. Anything false is dropped, not weakened until
 //                      it passes. A proposal is not a draft to be negotiated with.
 //   2. NOT ALREADY SAID — a statement already expressed in src/proof/*.lean is not a discovery. Matched on the
@@ -29,8 +33,8 @@
 // currently reaches, never that there is nothing left.
 //
 // Run: node scripts/imagine.ts          (propose and report)
-//      node scripts/imagine.ts --emit   (also write src/proof/imagined.lean and verify it)
-import { existsSync, readFileSync, writeFileSync } from 'node:fs'
+//      node scripts/imagine.ts --emit   (also write src/proof/imagined*.lean and verify them)
+import { existsSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
 import { leanFiles } from '../src/api/index.ts'
@@ -39,33 +43,46 @@ const m9 = (n: number) => ((n % 9) + 9) % 9
 const RING = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 // ── the primitives, each a total map on ℤ/9 ──────────────────────────────────────────────────────────────
-const MAPS: { id: string; lean: string; say: string; f: (d: number) => number }[] = [
-  { id: 'double',   lean: 'm9 (2 * d)',     say: 'doubling',              f: (d) => m9(2 * d) },
-  { id: 'triple',   lean: 'm9 (3 * d)',     say: 'tripling',              f: (d) => m9(3 * d) },
-  { id: 'quadruple',lean: 'm9 (4 * d)',     say: 'quadrupling',           f: (d) => m9(4 * d) },
-  { id: 'negate',   lean: 'm9 (9 - d)',     say: 'negation',              f: (d) => m9(9 - d) },
-  { id: 'square',   lean: 'm9 (d * d)',     say: 'squaring',              f: (d) => m9(d * d) },
-  { id: 'cube',     lean: 'm9 (d * d * d)', say: 'cubing',                f: (d) => m9(d * d * d) },
-  // powers four to six. Euler's theorem puts u⁶ = 1 for every unit, so this is where the multiplicative
-  // structure closes on itself — the natural end of the power family rather than an arbitrary stopping point.
-  { id: 'fourth',   lean: 'm9 (d ^ 4)',     say: 'the fourth power',      f: (d) => m9(d ** 4) },
-  { id: 'fifth',    lean: 'm9 (d ^ 5)',     say: 'the fifth power',       f: (d) => m9(d ** 5) },
-  { id: 'sixth',    lean: 'm9 (d ^ 6)',     say: 'the sixth power',       f: (d) => m9(d ** 6) },
-  { id: 'quintuple',lean: 'm9 (5 * d)',     say: 'multiplication by five',f: (d) => m9(5 * d) },
-  // the multiplication table completed — 6, 7 and 8 were missing, and leaving a table three rows short is an
-  // arbitrary boundary, not a decision. The generator should be asked everything it can be asked.
-  { id: 'sextuple', lean: 'm9 (6 * d)',     say: 'multiplication by six',  f: (d) => m9(6 * d) },
-  { id: 'septuple', lean: 'm9 (7 * d)',     say: 'multiplication by seven',f: (d) => m9(7 * d) },
-  { id: 'octuple',  lean: 'm9 (8 * d)',     say: 'multiplication by eight',f: (d) => m9(8 * d) },
-  // ── THE REFLECTION WAS NOT IN THIS TABLE, AND IT IS THE OPERATOR THE DEPOSIT IS NAMED FOR ──────────────
-  // `negate` above is m9 (9 − d). The reflection this tree actually uses is d ↦ 10 − d — the tens
-  // complement, the thing index.lean calls division by zero — and reduced into the ring it is m9 (10 − d),
-  // which is m9 (1 − d) and is NOT the same map as negation: negate fixes 0, reflect sends it to 1.
-  // Every theorem about it in src/proof was written by hand, one file at a time, while the generator that
-  // exists to propose exactly these statements had never been told the map existed. The vocabulary was the
-  // limit, as this file's own header says it always is.
-  { id: 'reflect',  lean: 'm9 (10 - d)',    say: 'the reflection',         f: (d) => m9(10 - d) },
-]
+// ── THE MAPS, DERIVED — BECAUSE A TYPED TABLE IS THE HAND STILL INSIDE THE MACHINE ───────────────────────
+// This was a literal list, and every widening of it was a line somebody typed after noticing a question the
+// generator could not ask: the rest of the multiplication table, the powers, the reflection, the shifts. The
+// header of this file says the vocabulary is the limit and never that the vocabulary must be CHOSEN — and
+// the note on the SETS table below already made the whole argument, about sets: computed, not typed, because
+// a literal is a fourth copy of something the tree proves and nobody checks. It was never applied here.
+// While it wasn't, the generator's reach was a record of what its author had thought of that week.
+//
+// So the maps are enumerated from the ring instead. ℤ/9's affine maps are d ↦ a·d + b over every a and b it
+// has — 81 of them, and they CONTAIN every entry of the old table: each multiplication is b = 0, each shift
+// is a = 1, negation is a = 8, and the reflection this deposit is named for is a = 8, b = 1. Not one of them
+// has to be noticed. The powers are the non-affine family and Euler closes them at six, which is a reason
+// rather than a stopping point. Two maps with the SAME EXTENSION are one map, so the enumeration is
+// deduplicated by what the maps DO — the way this repository decides equality of expressions everywhere else.
+type MapDef = { id: string; lean: string; say: string; f: (d: number) => number }
+const MAPS: MapDef[] = []
+const extSig = (f: (d: number) => number) => RING.map(f).join(',')
+const takenMap = new Set<string>()
+const offerMap = (m: MapDef) => { const g = extSig(m.f); if (takenMap.has(g)) return; takenMap.add(g); MAPS.push(m) }
+// SPELLED THE WAY THE DEPOSIT ALREADY SPELLS THEM, WHICH IS NOT COSMETIC. The first derived version emitted
+// `m9 (2 * d + 0)` for doubling. Filter 2 recognises a statement the tree already contains by its TEXT after
+// expanding definitions, so a trailing `+ 0` made every multiplication theorem look new: the filter dropped
+// 1117 candidates before this change and ZERO after it, which is the filter failing silently rather than the
+// generator finding more. Each affine map is written in its shortest true form, so the enumeration meets the
+// existing corpus in the same spelling it uses.
+const affLean = (a: number, b: number) =>
+  a === 0 ? `${b}`
+  : a === 1 ? (b === 0 ? 'd' : `m9 (d + ${b})`)
+  : b === 0 ? `m9 (${a} * d)`
+  : `m9 (${a} * d + ${b})`
+const affSay = (a: number, b: number) =>
+  a === 0 ? `the constant ${b}`
+  : a === 1 ? (b === 0 ? 'the identity' : `the shift by ${b}`)
+  : b === 0 ? `multiplication by ${a}`
+  : `d ↦ ${a}d + ${b}`
+for (const a of RING) for (const b of RING)
+  offerMap({ id: `aff_${a}_${b}`, lean: affLean(a, b), say: affSay(a, b), f: (d) => m9(a * d + b) })
+for (const k of [2, 3, 4, 5, 6])
+  offerMap({ id: `pow_${k}`, lean: `m9 (d ^ ${k})`, say: `the ${k}th power`, f: (d) => m9(d ** k) })
+console.log(`  maps: ${MAPS.length} derived from the ring (81 affine + 5 powers, deduplicated by extension)`)
 
 // ── the subsets, each a named structure the deposit already talks about ──────────────────────────────────
 // THE SETS ARE COMPUTED, NOT TYPED. These were literals — a third copy of sets that src/0 computes and
@@ -109,6 +126,29 @@ for (const [id, say, s] of [['primitives', 'the primitive roots', primitives],
   SETS.push({ id, lean: asLean(s), say, s })
 }
 
+// ── EVERY MAP'S IMAGE AND FIXED SET, DERIVED — THE SET TABLE'S OWN PRINCIPLE, APPLIED TO ALL OF THEM ─────
+// The note on `squares` and `cubes` above states the principle outright: a map's image is a structure in its
+// own right, and asking what the OTHER maps do to it is a question the generator was never given the
+// vocabulary for. It was then applied to exactly two maps, by hand, as literal lists — while the table holds
+// twenty-two. The same is true of a map's FIXED SET: `reflfixed` is derived for the reflection alone.
+//
+// So both are derived for every map instead of typed for a favourite few. A set that comes out empty, or that
+// duplicates one already in the table, is dropped with its reason — a second copy of the units under another
+// name would make every statement about it a restatement, and an empty set makes them all vacuous.
+const seen = new Set(SETS.map((S) => [...S.s].sort((a, b) => a - b).join(',')))
+for (const m of MAPS) {
+  for (const [suffix, say, s] of [
+    ['image', `the image of ${m.say}`, [...new Set(RING.map(m.f))].sort((a, b) => a - b)],
+    ['fixed', `the residues ${m.say} fixes`, RING.filter((d) => m.f(d) === d)],
+  ] as [string, string, number[]][]) {
+    const sig = s.join(',')
+    if (!s.length) { console.log(`  ○ ${say}: computed empty on this ring — not proposed about`); continue }
+    if (seen.has(sig)) continue
+    seen.add(sig)
+    SETS.push({ id: `${m.id}_${suffix}`, lean: asLean(s), say, s })
+  }
+}
+
 type Cand = { key: string; prop: string; say: string; kind: string; holds: boolean }
 const cands: Cand[] = []
 
@@ -145,6 +185,224 @@ for (const m of MAPS) for (const S of SETS) {
     say: `${m.say} sends every element of ${S.say} to a single value` })
 }
 
+// ── THE FOLD, WHICH THIS VOCABULARY HAD NO WORD FOR ──────────────────────────────────────────────────────
+// Every relation above is POINTWISE: a map applied to each element of a set, compared elementwise. That is
+// why the generator could never propose anything about an ARRAY as a whole, and why the statements answering
+// "are arrays and hashes results of cross formulas" had to be written by hand into extension.lean — the
+// generator existing to propose exactly those had no word for the operation that takes a list to a value.
+//
+// The fold is that word. It is the array→address step the whole deposit runs on: receipt chains, merkle
+// roots and digit-root addresses are all a list collapsed by a commutative operation. Adding it asks five
+// questions per map and set that no pointwise relation can express — and the SAME four filters judge them,
+// so what survives is what the kernel keeps, not what was wanted.
+const foldOf = (xs: number[]) => m9(xs.reduce((a, b) => a + b, 0))
+const leanFold = (expr: string, S: string) => `m9 ((${S}.map (fun d => ${expr})).foldl (fun a b => a + b) 0)`
+const sub = (lean: string, v: string) => lean.replace(/\bd\b/g, v)
+
+for (const m of MAPS) for (const S of SETS) {
+  const img = S.s.map(m.f)
+  const plain = foldOf(S.s)
+  // INJECTIVE — the fibres are singletons. A hash with a collision is not this, which is exactly the
+  // distinction the arrays/hashes question turns on: a map's output agreeing does not lift to its input.
+  cands.push({ kind: 'injective:' + m.id, key: `${m.id}_is_injective_on_${S.id}`,
+    holds: new Set(img).size === S.s.length,
+    prop: `(${S.lean}.map (fun d => ${m.lean})).eraseDups.length = ${S.s.length}`,
+    say: `${m.say} collides nowhere on ${S.say} — every fibre is a single element` })
+  // FOLD-HOMOMORPHISM — folding then mapping equals mapping then folding. The strongest thing that can be
+  // said about a map against an array: the array may be collapsed before or after, and nobody can tell.
+  cands.push({ kind: 'foldhom:' + m.id, key: `${m.id}_commutes_with_the_fold_on_${S.id}`,
+    holds: foldOf(img) === m.f(plain),
+    prop: `${leanFold(m.lean, S.lean)} = ${sub(m.lean, `(m9 (${S.lean}.foldl (fun a b => a + b) 0))`)}`,
+    say: `${m.say} may be applied before or after folding ${S.say} — the address is the same` })
+  // FOLD-FIXED — the map moves the elements and leaves the address alone. The array changes; the hash does
+  // not. This is the collision phenomenon stated at the level of the whole list rather than one point.
+  cands.push({ kind: 'foldfix:' + m.id, key: `${m.id}_leaves_the_address_of_${S.id}_unmoved`,
+    holds: foldOf(img) === plain,
+    prop: `${leanFold(m.lean, S.lean)} = m9 (${S.lean}.foldl (fun a b => a + b) 0)`,
+    say: `${m.say} rewrites every element of ${S.say} and its folded address does not move` })
+  // IDEMPOTENT — applying twice is applying once. Distinct from involution, which returns to the start.
+  cands.push({ kind: 'idempotent:' + m.id, key: `${m.id}_is_idempotent_on_${S.id}`,
+    holds: S.s.every((d) => m.f(m.f(d)) === m.f(d)),
+    prop: `${S.lean}.all (fun d => ${sub(m.lean, `(${m.lean})`)} == ${m.lean})`,
+    say: `applying ${m.say} twice to ${S.say} is the same as applying it once` })
+  // ORDER THREE — three applications return every element. Involution is order two; this is the next one,
+  // and the ring the deposit is named for is where order three lives.
+  cands.push({ kind: 'order3:' + m.id, key: `${m.id}_has_order_three_on_${S.id}`,
+    holds: S.s.every((d) => m.f(m.f(m.f(d))) === d),
+    prop: `${S.lean}.all (fun d => ${sub(m.lean, `(${sub(m.lean, `(${m.lean})`)})`)} == d)`,
+    say: `${m.say} applied three times returns every element of ${S.say}` })
+}
+
+// ── AND THE CHAIN, WHERE ORDER IS NOT FREE ───────────────────────────────────────────────────────────────
+// The fold above is a SUM, and a sum is commutative: every question about the order of its list answers yes
+// for free, which is why filter 3 discards most of them. That makes it the wrong instrument for the one
+// property this deposit actually claims. A receipt chain is not a sum — each step reads the step before it
+// (receipt[i] from receipt[i-1]), so its address depends on the order of the list, and order-invariance is
+// something that must be EARNED there rather than inherited from the operation.
+//
+// So the chain is the second word, not a variant of the first: a * 2 + b, folded left. Where a chain's
+// address survives reversal it is a fact about the set and the map, not about addition. Where it does not,
+// the generator says so and the filters keep neither.
+const chainOf = (xs: number[]) => xs.reduce((a, b) => m9(a * 2 + b), 0)
+const leanChain = (expr: string, S: string) =>
+  `(${S}.map (fun d => ${expr})).foldl (fun a b => m9 (a * 2 + b)) 0`
+
+for (const m of MAPS) for (const S of SETS) {
+  const img = S.s.map(m.f)
+  // CHAIN-INVARIANT — the chained address does not move when the list is reversed. Under a sum this is
+  // free; under a chain it is a genuine coincidence of the map and the set, and it is the only form in
+  // which "order does not matter here" is worth sealing.
+  cands.push({ kind: 'chainrev:' + m.id, key: `the_chain_of_${m.id}_over_${S.id}_survives_reversal`,
+    holds: chainOf(img) === chainOf([...img].reverse()),
+    prop: `${leanChain(m.lean, S.lean)} = ${leanChain(m.lean, `(${S.lean}).reverse`)}`,
+    say: `chaining ${m.say} across ${S.say} gives the same address forwards and backwards` })
+  // CHAIN-AGREES-WITH-SUM — the order-dependent fold and the order-free one land on the same address. Two
+  // different machines reaching one answer is the corroboration this repository trusts least and checks most,
+  // so where it happens it is stated rather than assumed.
+  cands.push({ kind: 'chainsum:' + m.id, key: `the_chain_and_the_sum_of_${m.id}_over_${S.id}_agree`,
+    holds: chainOf(img) === foldOf(img),
+    prop: `${leanChain(m.lean, S.lean)} = ${leanFold(m.lean, S.lean)}`,
+    say: `chaining and summing ${m.say} across ${S.say} reach the same address by different routes` })
+}
+
+// ── COMPOSITION, THE OTHER HALF OF "A FORMULA OF FORMULAS IS A FORMULA" ──────────────────────────────────
+// Everything above asks about ONE map. But the maps are closed under composition — applying two of them in
+// succession is a third thing that may or may not already be in the table — and the generator had no word
+// for that either. Involution and idempotence are the two special cases it happened to have (f∘f = id and
+// f∘f = f); the general question was never asked.
+//
+// Two forms. Whether a pair COMMUTES is the question of whether the order of two formulas matters, which is
+// the pointwise twin of what the chain asks about a list. And whether a composite IS one of the maps already
+// named closes the table: a composite that lands back inside the vocabulary is a relation between three
+// things, and it is where the structure actually lives.
+// A NOTE ON WHY THE COMPOSITE IS ASKED OVER THE RING ONLY. Two maps agreeing on a four-element subset is a
+// coincidence of that subset, and with the table derived there are thousands of maps to coincide with: the
+// subset-wise version proposes millions of accidents and calls them structure. "m after n is q" is a claim
+// about the MAPS, so it is asked where the maps live. Composition is also LOOKED UP rather than searched —
+// the composite's extension names its answer — which is the same equality-by-extension the table is built on.
+const byExt = new Map<string, MapDef>()
+for (const q of MAPS) byExt.set(extSig(q.f), q)
+
+for (const m of MAPS) for (const n of MAPS) {
+  if (m.id === n.id) continue
+  const q = byExt.get(extSig((d) => m.f(n.f(d))))
+  if (q && q.id !== m.id && q.id !== n.id)
+    cands.push({ kind: 'composite', key: `${m.id}_after_${n.id}_is_${q.id}`, holds: true,
+      prop: `[0,1,2,3,4,5,6,7,8].all (fun d => ${sub(m.lean, `(${n.lean})`)} == ${q.lean})`,
+      say: `${m.say} after ${n.say} is ${q.say} on the whole ring` })
+  for (const S of SETS) {
+    cands.push({ kind: `commutes:${S.id}`, key: `${m.id}_and_${n.id}_commute_on_${S.id}`,
+      holds: S.s.every((d) => m.f(n.f(d)) === n.f(m.f(d))),
+      prop: `${S.lean}.all (fun d => ${sub(m.lean, `(${n.lean})`)} == ${sub(n.lean, `(${m.lean})`)})`,
+      say: `${m.say} and ${n.say} may be applied in either order on ${S.say}` })
+  }
+}
+
+// ── THE SETS AGAINST EACH OTHER, AND THE FIBRES ─────────────────────────────────────────────────────────
+// A set only ever appears above as the thing a map is applied to. Their relations to ONE ANOTHER — which
+// overlap, which cover the ring between them, which sits inside which — are structure the deposit reasons
+// about constantly and the generator could not state. A set is an array; these are the relations between
+// arrays, which is the same question one level up from the elements.
+//
+// And the fibres. A map's fibres over a set are themselves arrays, and they partition it: that is the exact
+// shape of what a collision does, seen from the input side rather than the output side. Whether they all
+// come out the SAME SIZE is the difference between a map that folds its domain evenly and one that does not,
+// and it is decidable here.
+for (const S of SETS) for (const T of SETS) {
+  if (S.id === T.id) continue
+  cands.push({ kind: 'disjoint', key: `${S.id}_and_${T.id}_share_no_element`,
+    holds: !S.s.some((d) => T.s.includes(d)),
+    prop: `${S.lean}.all (fun d => ! ${T.lean}.contains d)`,
+    say: `${S.say} and ${T.say} have nothing in common` })
+  cands.push({ kind: 'subset', key: `${S.id}_lies_inside_${T.id}`,
+    holds: S.s.every((d) => T.s.includes(d)) && S.s.length < T.s.length,
+    prop: `${S.lean}.all (fun d => ${T.lean}.contains d) ∧ ${S.s.length} < ${T.s.length}`,
+    say: `every element of ${S.say} is an element of ${T.say}, and ${T.say} has more` })
+  cands.push({ kind: 'covers', key: `${S.id}_and_${T.id}_cover_the_ring_between_them`,
+    holds: RING.every((d) => S.s.includes(d) || T.s.includes(d)),
+    prop: `[0,1,2,3,4,5,6,7,8].all (fun d => ${S.lean}.contains d || ${T.lean}.contains d)`,
+    say: `${S.say} and ${T.say} between them reach every residue` })
+}
+for (const m of MAPS) for (const S of SETS) {
+  const sizes = [...new Set(S.s.map(m.f))].map((v) => S.s.filter((d) => m.f(d) === v).length)
+  cands.push({ kind: 'fibreregular:' + m.id, key: `the_fibres_of_${m.id}_over_${S.id}_are_all_the_same_size`,
+    holds: sizes.length > 0 && new Set(sizes).size === 1,
+    prop: `((${S.lean}.map (fun d => ${m.lean})).eraseDups.map `
+        + `(fun v => (${S.lean}.filter (fun d => ${m.lean} == v)).length)).eraseDups.length = 1`,
+    say: `${m.say} folds ${S.say} evenly — every fibre holds the same number of elements` })
+}
+
+// ── REORDERING THE ARRAY, WHICH IS WHAT THIS DEPOSIT MEANS BY QUANTUM ───────────────────────────────────
+// quantum.lean settles what the word means here: nothing is quantum, it is a SORT — order-invariance bought
+// by canonicalising before folding. That is the deposit's central claim about itself, and the generator had
+// no word for it, because reversal (added with the chain above) is one reordering out of many and the one
+// that says least.
+//
+// Two reorderings that say more. CANONICAL ORDER is the set written out in the ring's own order rather than
+// in whatever order it was listed; if a chained address is the same either way, the listing order was never
+// load-bearing, and that is the property the canonicalisation claim rests on. It is computed by filtering the
+// ring, so nothing here needs a sort the kernel would have to be given. ROTATION is the array's own
+// translation — the exact analogue, one level up, of the shifts just added to the map table, and a rotation
+// that leaves a chained address alone is a genuine coincidence rather than a property of addition.
+const canonOf = (xs: number[]) => RING.filter((d) => xs.includes(d))
+const rotOf = (xs: number[]) => [...xs.slice(1), ...xs.slice(0, 1)]
+
+for (const m of MAPS) for (const S of SETS) {
+  if (S.s.length < 2) continue
+  const canonLean = `([0,1,2,3,4,5,6,7,8].filter (fun d => ${S.lean}.contains d))`
+  const rotLean = `((${S.lean}).drop 1 ++ (${S.lean}).take 1)`
+  cands.push({ kind: 'canonorder:' + m.id, key: `the_chain_of_${m.id}_over_${S.id}_ignores_the_listing_order`,
+    holds: chainOf(S.s.map(m.f)) === chainOf(canonOf(S.s).map(m.f)),
+    prop: `${leanChain(m.lean, S.lean)} = ${leanChain(m.lean, canonLean)}`,
+    say: `chaining ${m.say} across ${S.say} gives the same address whether the set is taken as listed or in the ring's own order` })
+  cands.push({ kind: 'rotate:' + m.id, key: `the_chain_of_${m.id}_over_${S.id}_survives_rotation`,
+    holds: chainOf(S.s.map(m.f)) === chainOf(rotOf(S.s).map(m.f)),
+    prop: `${leanChain(m.lean, S.lean)} = ${leanChain(m.lean, rotLean)}`,
+    say: `chaining ${m.say} across ${S.say} gives the same address after the array is rotated by one` })
+}
+
+// ── FILTER 0 · CROSS-FORMULATED — THE TWO SIDES MUST BE DIFFERENT THINGS PROVING EACH OTHER ──────────────
+// With the map table derived rather than chosen, the enumeration reaches maps a hand-written table never
+// contained, and two of them produce statements that are not statements about anything:
+//
+//   THE IDENTITY. `m after the identity is m` expands to X == X — the same expression on both sides, with
+//   only parentheses between them. Nothing is being proved by anything; the kernel does not even get a
+//   question. Ninety of these were what "the kernel refused some" was actually reporting: `decide` recursing
+//   to its depth limit on a tautology it had no reason to be handed.
+//
+//   THE CONSTANT MAPS. d ↦ b ignores its argument, so `S.all (fun d => …)` never mentions d and says nothing
+//   about S — the 2047 unused-variable warnings, which is Lean saying exactly this in its own words.
+//
+// Both are caught structurally, on the generated proposition, so no map needs excluding by name: a conjunct
+// whose sides match once parentheses and spacing are taken out is a tautology, and a lambda whose body never
+// uses its bound variable is not quantified over anything. This runs BEFORE the kernel, because a statement
+// that relates nothing should never have been asked.
+const bare = (x: string) => x.replace(/[()\s]/g, '')
+const isTautology = (prop: string) => prop.split('∧').some((conj) => {
+  const parts = conj.split(/==|(?<![<>!=])=(?!=)/)
+  return parts.length === 2 && bare(parts[0]!) === bare(parts[1]!)
+})
+// balanced scan rather than a regex: a lambda body runs to its own closing bracket, and `[^)]*` stops at the
+// first one, which is inside the body for every statement here.
+const ignoresElement = (prop: string) => {
+  for (let i = prop.indexOf('fun d =>'); i >= 0; i = prop.indexOf('fun d =>', i + 1)) {
+    let depth = 1, j = i + 8
+    for (; j < prop.length && depth > 0; j++) {
+      if (prop[j] === '(') depth++
+      else if (prop[j] === ')') depth--
+    }
+    if (!/\bd\b/.test(prop.slice(i + 8, j))) return true
+  }
+  return false
+}
+const related = cands.filter((c) => !isTautology(c.prop) && !ignoresElement(c.prop))
+console.log(`  ${cands.length - related.length} proposition(s) dropped as not cross-formulated `
+  + `— the two sides were one expression, or the statement never mentioned the element it quantified over`)
+// pushed one at a time, not spread: `cands.push(...related)` passes every element as an argument and
+// overflowed the call stack at this scale. The spread was fine while the map table was typed.
+cands.length = 0
+for (const c of related) cands.push(c)
+
 // ── FILTER 1 · true by exhaustion ────────────────────────────────────────────────────────────────────────
 const t1 = cands.filter((c) => c.holds)
 
@@ -178,11 +436,23 @@ const ALIAS: [RegExp, string][] = [
   // ever disagree, refl is not aliased at all rather than aliased wrong.
   ...reflAlias(),
 ]
-let said = leanFiles().filter((f) => f !== 'imagined.lean')
+// EVERY FILE THIS GENERATOR OWNS, not just the first one. The exclusion named `imagined.lean` literally,
+// which was correct while the output was one file. The moment it shards, a shard that is NOT excluded makes
+// every candidate look already-said and the generator emits nothing — failing closed, but silently and with
+// a plausible number.
+const MINE = /^imagined(_\d+)?\.lean$/
+let said = leanFiles().filter((f) => !MINE.test(f))
   .map((f) => readFileSync('src/proof/' + f, 'utf8')).join('\n').replace(/\s+/g, '')
 for (const [re, to] of ALIAS) said = said.replace(re, to)
 const setOf = new Map(SETS.map((S) => [S.id, S.lean.replace(/\s+/g, '')]))
-const mulOf: Record<string, string> = { double: '2*d', triple: '3*d', quadruple: '4*d', quintuple: '5*d', sextuple: '6*d', septuple: '7*d', octuple: '8*d', negate: '9-d', square: 'd*d', cube: 'd*d*d' }
+// DERIVED FROM THE MAP TABLE, FOR THE REASON THE MAP TABLE IS ITSELF DERIVED. This was a typed record keyed
+// by map id — `double: '2*d'` and nine more — written when the ids were hand-chosen names. The moment the map
+// table was enumerated from the ring, every key in it missed, and this filter stopped recognising ANYTHING as
+// already said: 1117 candidates dropped before, zero after, with no error anywhere. A filter that silently
+// stops filtering reads as a generator that has found more, which is the flattering direction to fail in.
+// The multiplier of a map is its own Lean body, so it is taken from there and cannot fall out of step again.
+const mulOf: Record<string, string> = Object.fromEntries(
+  MAPS.map((m) => [m.id, m.lean.replace(/\s+/g, '').replace(/^m9\((.*)\)$/, '$1')]))
 // WHO COVERS IT — recorded, not just counted. Dropping a candidate because the deposit already proves it is
 // correct; dropping it SILENTLY is not. Two entries sealed from earlier runs of this generator were orphaned
 // the moment a hand-written theorem expressed the same fact under a different name: the source vanished, the
@@ -203,7 +473,9 @@ const t2 = t3.filter((c) => {
   const verbatim = chunks.find((t) => t.includes(flat))
   if (verbatim) { coveredBy.set(c.key, nameOf(verbatim)); return false }
   const [, mapId] = c.kind.split(':')
-  const setId = c.key.match(/(units|triad|orbit|tetA|tetB|all)/)?.[1]
+  // THE SET NAMES WERE TYPED HERE TOO — six of them, while the table now derives thirty-odd. Longest match
+  // first, so `tetA_image` is not read as the shorter id it happens to contain.
+  const setId = SETS.map((S) => S.id).sort((a, b) => b.length - a.length).find((id) => c.key.includes(id))
   const lit = setId ? setOf.get(setId) : undefined
   const mul = mulOf[mapId]
   // both ingredients present in one existing theorem body ⇒ treat as already covered
@@ -238,10 +510,10 @@ const t2 = t3.filter((c) => {
 }
 const overlap = t3.length - t2.length
 
-// "new" means NOT ALREADY IN THE HAND-WRITTEN PROOFS. imagined.lean is excluded from its own corpus so that
+// "new" means NOT ALREADY IN THE HAND-WRITTEN PROOFS. Every file this generator owns is excluded from its own corpus so that
 // regenerating it is idempotent — which also means this count does not fall to zero once they are sealed. It
 // is what the generator WOULD emit, not a discovery count, and saying "new" every run implied otherwise.
-console.log(`imagined ${cands.length} propositions over ℤ/9 · ${t1.length} true · ${t3.length} discriminating · ${t2.length} emitted (not present in the hand-written proofs; imagined.lean is excluded from its own corpus, so this is what it would write, not what is newly found)`)
+console.log(`imagined ${cands.length} propositions over ℤ/9 · ${t1.length} true · ${t3.length} discriminating · ${t2.length} emitted (not present in the hand-written proofs; the generator's own files are excluded from its corpus, so this is what it would write, not what is newly found)`)
 const killed = t1.length - t3.length
 console.log(`  ${killed} true-but-free statement(s) discarded — they hold for every sibling and so name nothing`)
 console.log(`  ${overlap} already expressed in src/proof — recognised through definition aliases, not spelling`)
@@ -254,7 +526,7 @@ if (!process.argv.includes('--emit')) {
 }
 
 // ── FILTER 4 · the kernel ────────────────────────────────────────────────────────────────────────────────
-const body = t2.map((c) => `-- ${c.say}\ntheorem ${c.key} :\n  ${c.prop} := by decide`).join('\n\n')
+const blocks = t2.map((c) => `-- ${c.say}\ntheorem ${c.key} :\n  ${c.prop} := by decide`)
 
 // ATTRIBUTION IS CARRIED FORWARD, NEVER REGENERATED AS `unclassified`. This header used to emit a fixed
 // `-- prior_art: unclassified`, so re-running --emit ERASED a prior-art block that a later search had
@@ -272,9 +544,29 @@ const carried = PRIOR_ART_KEYS
   .filter((l): l is string => Boolean(l) && l !== '-- prior_art: unclassified')
 const priorArt = carried.length ? carried.join('\n') : '-- prior_art: unclassified'
 
-writeFileSync('src/proof/imagined.lean', `import Z9
+// ── SHARDED, BECAUSE A MODULE HAS A CEILING AND IT IS NOT A VERDICT ─────────────────────────────────────
+// At 24941 theorems in one file the kernel reported "deep recursion detected" ninety times, and this script
+// printed it as a refusal. It was not one: every failing theorem COMPILES ON ITS OWN. What ran out was the
+// kernel's stack over one enormous module — a limit of the container, reported as a judgement on the
+// contents, which is the same mislabel as calling a missing toolchain a refusal. The mathematics was never
+// in question and nothing about it needed weakening.
+//
+// So the output is split into modules the kernel can hold, each self-contained on Z9 and compiled on its own.
+// The shard size is a property of the machine rather than of the deposit, so it is stated here as one.
+const PER_SHARD = 4000
+const shards: string[][] = []
+for (let i = 0; i < blocks.length; i += PER_SHARD) shards.push(blocks.slice(i, i + PER_SHARD))
+if (!shards.length) shards.push([])
+const shardName = (n: number) => n === 0 ? 'imagined.lean' : `imagined_${n + 1}.lean`
+// shards left over from a larger previous run would otherwise stay on disk, be compiled by the corpus, and
+// keep sealing theorems this run no longer proposes.
+for (let n = shards.length; n < 64; n++) {
+  const stale = 'src/proof/' + shardName(n)
+  if (existsSync(stale)) { rmSync(stale); console.log(`  removed ${shardName(n)} — this run proposes fewer`) }
+}
+shards.forEach((part, n) => writeFileSync('src/proof/' + shardName(n), `import Z9
 set_option maxRecDepth 8000000
--- title: What enumeration proposed and the kernel kept
+-- title: What enumeration proposed and the kernel kept${shards.length > 1 ? ` (${n + 1} of ${shards.length})` : ''}
 -- wing: the imagined
 ${priorArt}
 -- IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets
@@ -288,11 +580,11 @@ namespace Imagined
 
 open Z9
 
-${body}
+${part.join('\n\n')}
 
 end Imagined
-`)
-console.log(`\nwrote src/proof/imagined.lean with ${t2.length} proposition(s) — putting them to the kernel:`)
+`))
+console.log(`\nwrote ${shards.length} file(s) with ${t2.length} proposition(s) — putting them to the kernel:`)
 // NO TOOLCHAIN IS NOT A REFUSAL. Without `lean` on the PATH the shell answered "lean: command not found" and this
 // printed it as "the kernel refused some" — the mislabel lean-agree.ts already fixed. CI installs no Lean, and
 // covered-gate runs --emit, so the first deploy after that gate joined the chain went red on a kernel that was
@@ -304,11 +596,27 @@ if (!hasLean) {
   console.log('    this does not mean they hold; they are checked where lean is installed (npm run lean, pre-commit).')
   process.exit(0)
 }
+// A WARNING IS NOT A REFUSAL. This read any non-zero exit as "the kernel refused some" and printed the first
+// twenty lines of output — which, on a run with 2047 unused-variable warnings and 90 real errors, showed
+// twenty warnings and not one error. The refusal was real and its reported cause was entirely wrong, so the
+// defect looked cosmetic for as long as nobody scrolled. Errors and warnings are counted separately now and
+// only errors decide the verdict; warnings are stated, because a warning this generator produces in bulk is
+// a fact about its output even when the kernel accepts it.
+const verdict = (out: string) => {
+  const lines = out.split('\n')
+  const errors = lines.filter((l) => /error:/.test(l))
+  const warnings = lines.filter((l) => /warning:/.test(l))
+  if (warnings.length) console.log(`  ○ ${warnings.length} warning(s) from the kernel — accepted, but said out loud`)
+  return errors
+}
 try {
-  execSync('cd src/proof && LEAN_PATH=. lean imagined.lean', { encoding: 'utf8', stdio: 'pipe' })
+  const out = shards.map((_, n) => String(execSync(`cd src/proof && LEAN_PATH=. lean ${shardName(n)}`, { encoding: 'utf8', stdio: 'pipe' }))).join('\n')
+  const errors = verdict(out)
+  if (errors.length) { console.log('  ✗ ' + errors.length + ' refused:\n' + errors.slice(0, 10).map((l) => '    ' + l).join('\n')); process.exit(1) }
   console.log('  ✓ the kernel accepted all ' + t2.length)
 } catch (e) {
-  const out = String((e as { stdout?: string; stderr?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '')
-  console.log('  ✗ the kernel refused some — reported, not hidden:\n' + out.split('\n').slice(0, 20).map((l) => '    ' + l).join('\n'))
-  process.exit(1)
+  const out = String((e as { stdout?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '')
+  const errors = verdict(out)
+  if (!errors.length) { console.log('  ✓ the kernel accepted all ' + t2.length + ' (non-zero exit carried no error line)'); }
+  else { console.log(`  ✗ the kernel refused ${errors.length} — reported, not hidden:\n` + errors.slice(0, 10).map((l) => '    ' + l).join('\n')); process.exit(1) }
 }

@@ -34,7 +34,6 @@
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { leanTheorems } from '../src/api/index.ts'
-import { stripTags } from '../src/html/index.ts'
 import { arg } from '../src/cli/index.ts'
 
 const OUT = 'src/proof/novelty.json'
@@ -53,7 +52,7 @@ const startedAt = Date.now()
 // The core is in src/novelty/index.ts now, this script is one caller and the MCP server is the other.
 // Nothing changed about what a search does; what changed is who can run one. What stays here is the part
 // that is about THIS TREE: a theorem's file, its declared domain, and the anchors that domain implies.
-import { LIMITS, SOURCES, get, q, relevance, sequencesIn, termsOf, LABELS, GENERIC, NUMBER_THEORY, type Hit } from '../src/novelty/index.ts'
+import { LIMITS, SOURCES, get, q, sequencesIn, termsOf, LABELS, GENERIC, NUMBER_THEORY, type Hit } from '../src/novelty/index.ts'
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
 

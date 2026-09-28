@@ -100,7 +100,23 @@ export const leanSource = (file: string): string => readFileSync(`${PROOF_DIR}/$
 export const normalizeStatement = (raw: string): string =>
   raw.split('\n').map((l) => l.replace(/(^|\s)--.*$/, '')).join(' ').replace(/\s+/g, ' ').trim()
 
+// MEMOISED, BECAUSE CALLERS TREAT THIS AS A LOOKUP AND IT IS A FULL PARSE OF THE CORPUS.
+// `fileOfKey(key)` defaults its second argument to `leanTheorems()`, so a caller looping over the ledger
+// re-read and re-scanned every .lean file once per entry. That was invisible while both numbers were small;
+// at 28352 entries against 73 files it turned one gate into a twenty-five-minute step, and nothing reported
+// a problem — it simply got slower, which is the failure mode that never raises an error.
+//
+// The cache is keyed on what the files ARE, not on time or on a run having happened: each file's size and
+// mtime. Generators here WRITE .lean and then read theorems back in the same process, and a cache that
+// ignored that would hand them the corpus as it stood before they wrote it — stale, plausible, and silent.
+// Stat-ing the files costs one syscall each and is what makes the cache safe rather than merely fast.
+let leanCache: { stamp: string; out: LeanTheorem[] } | null = null
+const leanStamp = (): string =>
+  leanFiles().map((f) => { const st = statSync(`${PROOF_DIR}/${f}`); return `${f}:${st.size}:${st.mtimeMs}` }).join('|')
+
 export const leanTheorems = (): LeanTheorem[] => {
+  const stamp = leanStamp()
+  if (leanCache && leanCache.stamp === stamp) return leanCache.out
   const out: LeanTheorem[] = []
   for (const file of leanFiles()) {
     const src = leanSource(file)
@@ -108,6 +124,7 @@ export const leanTheorems = (): LeanTheorem[] => {
     for (const m of src.matchAll(/^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm))
       out.push({ name: m[1], file, namespace: ns, tactic: m[3], statement: normalizeStatement(m[2]) })
   }
+  leanCache = { stamp, out }
   return out
 }
 
@@ -271,6 +288,26 @@ export const census = (): Census => {
   }
 }
 
+// The name index behind theoremOfKey's lookup, rebuilt whenever the corpus itself changes.
+let nameCache: { stamp: string; by: Map<string, { t: LeanTheorem; i: number }[]> } | null = null
+const nameIndex = (thms: LeanTheorem[]): Map<string, { t: LeanTheorem; i: number }[]> => {
+  const stamp = leanStamp()
+  if (nameCache && nameCache.stamp === stamp) return nameCache.by
+  const by = new Map<string, { t: LeanTheorem; i: number }[]>()
+  thms.forEach((t, i) => { const a = by.get(t.name); if (a) a.push({ t, i }); else by.set(t.name, [{ t, i }]) })
+  nameCache = { stamp, by }
+  return by
+}
+const namedIn = (rest: string, thms: LeanTheorem[]): LeanTheorem[] => {
+  const by = nameIndex(thms)
+  const hits: { t: LeanTheorem; i: number }[] = []
+  for (let i = 0; i < rest.length; i++) {
+    if (i && rest[i - 1] !== '_' && rest[i - 1] !== '.') continue
+    for (const h of by.get(rest.slice(i)) ?? []) hits.push(h)
+  }
+  return hits.sort((a, b) => a.i - b.i).map((h) => h.t)
+}
+
 export const theoremOfKey = (key: string, thms: LeanTheorem[] = leanTheorems()): LeanTheorem | null => {
   const rest = key.replace(/^lean_/, '')
   const flat = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, '')
@@ -279,7 +316,14 @@ export const theoremOfKey = (key: string, thms: LeanTheorem[] = leanTheorems()):
   // z9.lean with DIFFERENT statements, so matching on the trailing name alone sent lean_z9_add_group to
   // mechanical.lean — the page then printed a formula that was not the one its key was minted from. The
   // namespace the key carries is what separates them, so it is tried first, exactly.
-  const named = thms.filter((t) => rest === t.name || rest.endsWith('_' + t.name) || rest.endsWith('.' + t.name))
+  // INDEXED BY NAME, because this is called once per ledger entry and was scanning every theorem each time —
+  // 28352 × 26132 string comparisons for what is a lookup. The match is unchanged: a theorem qualifies when
+  // its name IS the key's remainder, or is a suffix of it starting right after a `_` or a `.`. Those are the
+  // only candidates, and there are at most as many as the key has separators, so they are looked up instead
+  // of everything being tested. The index is built only for the shared default corpus; a caller passing its
+  // own list gets the original scan, since caching someone else's array on a global would be a stale answer
+  // waiting to happen.
+  const named = thms === leanTheorems() ? namedIn(rest, thms) : thms.filter((t) => rest === t.name || rest.endsWith('_' + t.name) || rest.endsWith('.' + t.name))
   if (named.length <= 1) return named[0] ?? null
   for (const t of named) {
     const prefix = rest.slice(0, rest.length - t.name.length).replace(/[_.]$/, '')

@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 1,256 machine-checked declarations, **1,231** restate work that already has an author and
+Of 1,267 machine-checked declarations, **1,242** restate work that already has an author and
 **25** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **1,231** |
+| attributed to named earlier work | **1,242** |
 | unclassified — no search performed, status unknown | **25** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 3
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 63 sources, 1,231 theorems
+## Restated from named earlier work — 64 sources, 1,242 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -73,6 +73,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>energy.lean</code></td><td>28</td><td>electrochemistry and combustion</td><td>the laws of electrolysis — Michael Faraday, 1834; the enthalpy of combustion of hydrogen, standard physical chemistry</td></tr>
 <tr><td><code>entangled.lean</code></td><td>8</td><td>siteswap notation for juggling (Klimek, Tiemann and Magnusson, independently c. 1985; the</td><td>NONE OF IT IS THIS DEPOSIT'S, and every result below is older than this file and credited</td></tr>
 <tr><td><code>equivalence.lean</code></td><td>8</td><td>the equivalence relation and its quotient — reflexivity, symmetry, transitivity, and</td><td>NONE OF IT IS THIS DEPOSIT'S AND ALL OF IT IS FOUNDATIONAL. That an equivalence relation</td></tr>
+<tr><td><code>extension.lean</code></td><td>11</td><td>extensional equality of functions over a finite domain; the pigeonhole principle; the</td><td>NOT THIS DEPOSIT'S. That two functions agreeing at every point of a finite domain are the</td></tr>
 <tr><td><code>families.lean</code></td><td>63</td><td>modular arithmetic, quantified</td><td>quantifies the ℤ/9 arithmetic above; the underlying results are Fermat’s, Euler’s and Gauss’s</td></tr>
 <tr><td><code>flow.lean</code></td><td>16</td><td>elementary number theory — the multiplicative order of 2 modulo 9</td><td>2⁶ = 64 ≡ 1 (mod 9), so the powers of two modulo 9 repeat with period six — Euler's</td></tr>
 <tr><td><code>fnv.lean</code></td><td>14</td><td>non-cryptographic hashing</td><td>FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991</td></tr>
@@ -150,6 +151,7 @@ which is a contribution of verification, not of discovery.
 - **elementary order theory, list processing and string matching** — 28 theorems, in `instruments.lean`
 - **elementary set and order arithmetic over finite lists** — 8 theorems, in `authority.lean`
 - **elementary set theory — the naturals are not exhausted by any finite list** — 12 theorems, in `reach.lean`
+- **extensional equality of functions over a finite domain; the pigeonhole principle; the** — 11 theorems, in `extension.lean`
 - **extensional equality of predicates over a finite set — that two definitions picking out** — 50 theorems, in `coils.lean`
 - **hash trees and membership proofs** — 36 theorems, in `ledgerclaims.lean`, `merkle.lean`, `speed.lean`
 - **identifier formats and error-detecting codes** — 21 theorems, in `program.lean`
@@ -211,5 +213,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `2a779520-e680-897f-a048-182bc4b6aa70` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `a8e8ed81-530d-8f94-9045-ff439f4e1f21` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

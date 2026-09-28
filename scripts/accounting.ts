@@ -33,8 +33,10 @@ const latest = cap('git describe --tags --abbrev=0', 'v0')
 const ledgerTag = cap('git describe --tags --abbrev=0 $(git log -1 --format=%H -- src/proof/discovered.json)', latest)
 const files = cap('git ls-files').split('\n').filter(Boolean).length
 
-// each row is (label, value) — the value is a REAL count computed above.
-const rows: [string, number][] = [
+// each row is (label, value), and every value is MEASURED above — never typed here. Most are counts; the
+// released-version row is the tag that last moved the ledger, which is a name rather than a number, so the
+// row type says so instead of the tag being coerced into looking like a count.
+const rows: [string, number | string][] = [
   ['Decidable theorems (chained receipts)', theorems],
   ['Signed statement receipts', signed],
   ['Coins per receipt', COINS_PER_RECEIPT],

@@ -88,6 +88,7 @@ const SELF_WRITERS: Record<string, string> = {
   'imagine.ts': 'reads src/proof/*.lean with `f !== imagined.lean`, excluding the file it writes',
   'sw-integrity.ts': 'SKIP holds sw.js and sw-integrity.json, so the manifest never covers itself',
   'lean.ts': 'the cache keys on each .lean file\'s own bytes, not on a listing of the directory',
+  'supersede.ts': 'lists only src/proof/imagined*.lean and writes src/proof/covered.json, which that pattern cannot match',
 }
 {
   const dirOf = (x: string) => x.replace(/\/[^/]*$/, '') || '.'

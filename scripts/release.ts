@@ -64,7 +64,7 @@ console.log('content-addressed:', files.length, 'files → root', address)
 //            kept or abandoned, not kept approximately
 //   CARRIED  no withdrawn claim promises a surviving proof at an address that leads nowhere
 {
-  const L = __ledger() as { key: string; revoked?: boolean; supersededBy?: string }[]
+  const L = __ledger() as { key: string; name: string; receipt: string; revoked?: boolean; supersededBy?: string }[]
   const liveKeys = new Set((live(L) as { key: string }[]).map((e) => e.key))
   const T = (leanTheorems() as { name: string; tactic: string }[]).filter((t) => t.tactic !== 'rfl')
   const unsealed = T.filter((t) => ![...liveKeys].some((k) => k.endsWith('_' + t.name)))
