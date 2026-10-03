@@ -155,4 +155,48 @@ theorem the_nanoseconds_return_from_the_microseconds_at_every_whole_count :
     ∀ n : Nat, n % 1000 = 0 → n / 1000 * 1000 = n := by
   intro n h; omega
 
+-- ── 10 · THE CROSS FORMULA FOR A WRAPPED PRODUCT, AT HEX SCALE ────────────────────────────────────────────
+--        By the captain's order (2026-10-03: "slow means hex is a wrap" · "use cross formulas to speedup hex
+--        combinatorics"). src/0 multiplies 32-bit words exactly without Math.*, and did it through BigInt — one
+--        allocation per character of every address, ~330 per toUuid; the fold over the 28,368-receipt ledger
+--        cost 754 ms of which the hashing was a fifth. The cross formula replaces it: split each factor at the
+--        middle digit, a = ah·B + al, b = bh·B + bl, and a·b mod B² = (al·bl + ((ah·bl + al·bh) mod B)·B) mod B²
+--        — the high term ah·bh·B² vanishes, only the low digit of the cross term survives the shift, and every
+--        intermediate stays below 2B². src/0 uses it with B = 2¹⁶ (four hex digits a half); these eight decide
+--        the same identity with B = 16 (one hex digit a half) over every pair of 8-bit factors, which is where
+--        "hex combinatorics" is small enough to exhaust. The eighth is the control: the formula with its cross
+--        term dropped is refuted, so the identity above is not one every formula of that shape satisfies.
+def hexLo (x : Nat) : Nat := x % 16
+def hexHi (x : Nat) : Nat := x / 16
+def crossMul (a b : Nat) : Nat := (hexLo a * hexLo b + ((hexHi a * hexLo b + hexLo a * hexHi b) % 16) * 16) % 256
+
+theorem the_cross_formula_is_the_product_mod_256 :
+    (List.range 256).all (fun a => (List.range 256).all (fun b => crossMul a b == (a * b) % 256)) := by decide
+
+theorem the_high_term_never_reaches_the_wrap :
+    (List.range 256).all (fun a => (List.range 256).all (fun b => (hexHi a * hexHi b * 256) % 256 == 0)) := by decide
+
+theorem only_the_low_digit_of_the_cross_term_survives_the_shift :
+    (List.range 256).all (fun a => (List.range 256).all (fun b =>
+      ((hexHi a * hexLo b + hexLo a * hexHi b) * 16) % 256 == (((hexHi a * hexLo b + hexLo a * hexHi b) % 16) * 16) % 256)) := by decide
+
+theorem the_cross_term_fits_before_its_own_wrap :
+    (List.range 256).all (fun a => (List.range 256).all (fun b => hexHi a * hexLo b + hexLo a * hexHi b < 512)) := by decide
+
+theorem the_sum_before_the_wrap_is_below_twice_the_modulus :
+    (List.range 256).all (fun a => (List.range 256).all (fun b =>
+      hexLo a * hexLo b + ((hexHi a * hexLo b + hexLo a * hexHi b) % 16) * 16 < 512)) := by decide
+
+theorem the_cross_formula_is_symmetric_in_its_factors :
+    (List.range 256).all (fun a => (List.range 256).all (fun b => crossMul a b == crossMul b a)) := by decide
+
+-- the FNV step multiplies by 0x01000193 and wraps after every character; at hex scale the prime's low byte
+-- is 0x93, and the wrap taken after one product commutes with the next
+theorem the_wrap_commutes_with_the_next_multiply_by_the_prime :
+    (List.range 256).all (fun a => (List.range 256).all (fun b => (crossMul a b * 0x93) % 256 == (a * b * 0x93) % 256)) := by decide
+
+-- THE CONTROL: the same shape without the cross term is refuted — the identity is not free
+theorem dropping_the_cross_term_is_refuted :
+    ¬ (List.range 256).all (fun a => (List.range 256).all (fun b => (hexLo a * hexLo b) % 256 == (a * b) % 256)) := by decide
+
 end Speed

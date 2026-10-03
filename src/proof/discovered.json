@@ -148924,5 +148924,45 @@
     "key": "lean_bridge_every_rule_is_a_map_the_group_file_classifies",
     "name": "lean bridge.lean: every_rule_is_a_map_the_group_file_classifies — [(2, 0), (2, 1), (1, 1), (0, 0), (0, 1)].all (fun p => [1, 2, 4, 5, 7, 8].contains p.1 || p.1 == 0) ∧ ([(2, 0), (2, 1), (1, 1), (0, 0), (0, 1)].filter (fun p => [1, 2, 4, 5, 7, 8].contains p.1)).length = 3 ∧ ([(2, 0), (2, 1), (1, 1), (0, 0)… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "269230fd-748a-8c4a-a8b1-1ce0097ecf53"
+  },
+  {
+    "key": "lean_speed_the_cross_formula_is_the_product_mod_256",
+    "name": "lean speed.lean: the_cross_formula_is_the_product_mod_256 — (List.range 256).all (fun a => (List.range 256).all (fun b => crossMul a b == (a * b) % 256)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "20394f23-7c9f-8366-b518-c331846a57cd"
+  },
+  {
+    "key": "lean_speed_the_high_term_never_reaches_the_wrap",
+    "name": "lean speed.lean: the_high_term_never_reaches_the_wrap — (List.range 256).all (fun a => (List.range 256).all (fun b => (hexHi a * hexHi b * 256) % 256 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6d8534d1-8275-85b8-a186-d5bbffdfa8e3"
+  },
+  {
+    "key": "lean_speed_only_the_low_digit_of_the_cross_term_survives_the_shift",
+    "name": "lean speed.lean: only_the_low_digit_of_the_cross_term_survives_the_shift — (List.range 256).all (fun a => (List.range 256).all (fun b => ((hexHi a * hexLo b + hexLo a * hexHi b) * 16) % 256 == (((hexHi a * hexLo b + hexLo a * hexHi b) % 16) * 16) % 256)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9f8ca4f0-9a13-82cc-87c6-d78b33756a3d"
+  },
+  {
+    "key": "lean_speed_the_cross_term_fits_before_its_own_wrap",
+    "name": "lean speed.lean: the_cross_term_fits_before_its_own_wrap — (List.range 256).all (fun a => (List.range 256).all (fun b => hexHi a * hexLo b + hexLo a * hexHi b < 512)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "54e80d61-5c00-8dcc-af74-54851e6111c7"
+  },
+  {
+    "key": "lean_speed_the_sum_before_the_wrap_is_below_twice_the_modulus",
+    "name": "lean speed.lean: the_sum_before_the_wrap_is_below_twice_the_modulus — (List.range 256).all (fun a => (List.range 256).all (fun b => hexLo a * hexLo b + ((hexHi a * hexLo b + hexLo a * hexHi b) % 16) * 16 < 512)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bb49653c-da6a-8356-9560-d84d74610c95"
+  },
+  {
+    "key": "lean_speed_the_cross_formula_is_symmetric_in_its_factors",
+    "name": "lean speed.lean: the_cross_formula_is_symmetric_in_its_factors — (List.range 256).all (fun a => (List.range 256).all (fun b => crossMul a b == crossMul b a)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b4491883-18df-89fb-93e6-a3e7e4178cac"
+  },
+  {
+    "key": "lean_speed_the_wrap_commutes_with_the_next_multiply_by_the_prime",
+    "name": "lean speed.lean: the_wrap_commutes_with_the_next_multiply_by_the_prime — (List.range 256).all (fun a => (List.range 256).all (fun b => (crossMul a b * 0x93) % 256 == (a * b * 0x93) % 256)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1528ecb6-900b-8599-9e5f-a21b13c98047"
+  },
+  {
+    "key": "lean_speed_dropping_the_cross_term_is_refuted",
+    "name": "lean speed.lean: dropping_the_cross_term_is_refuted — ¬ (List.range 256).all (fun a => (List.range 256).all (fun b => (hexLo a * hexLo b) % 256 == (a * b) % 256)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "07d43b29-86c9-8248-9d03-a59e19e677b7"
   }
 ]

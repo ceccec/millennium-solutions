@@ -14,9 +14,21 @@
 const BYTE_MASK = 0xff
 const MASK_32 = 0xffffffffn
 
-/** Exact 32-bit unsigned integer multiply (algebraic; replaces Math.imul) */
+/** Exact 32-bit unsigned integer multiply (algebraic; replaces Math.imul).
+ *
+ *  THE CROSS FORMULA, by the captain's order ("slow means hex is a wrap" · "use cross formulas to speedup hex
+ *  combinatorics", 2026-10-03). This went through BigInt — one allocation per character of every address, ~330
+ *  per toUuid, and the fold over the 28,368-receipt ledger cost 754 ms of which the hashing itself was a fifth.
+ *  Split each factor at four hex digits, a = ah·2¹⁶ + al, b = bh·2¹⁶ + bl: the product is ah·bh·2³² + (ah·bl +
+ *  al·bh)·2¹⁶ + al·bl, the first term vanishes mod 2³², and only the low sixteen bits of the cross term survive
+ *  the shift — so every intermediate is below 2³³, exact in a double, and one `>>> 0` is the whole wrap. The
+ *  identity is sealed at hex scale in src/proof/speed.lean §10 (4-bit halves of 8-bit factors, every pair decided,
+ *  with the cross term dropped as the control), and this is the same identity with 16-bit halves. Agreement with
+ *  the BigInt form was checked over the edges and a million random pairs, and every receipt in the ledger
+ *  reproduces (scripts/forensics.ts) — the precondition, as it was for the hex table below. */
 function mul32(a: number, b: number): number {
-  return Number((BigInt(a >>> 0) * BigInt(b >>> 0)) & MASK_32)
+  const al = a & 0xffff, ah = a >>> 16, bl = b & 0xffff, bh = b >>> 16
+  return (al * bl + ((ah * bl + al * bh) & 0xffff) * 0x10000) >>> 0
 }
 
 /** FNV-1a hash — 32-bit seed-based (exact integer arithmetic, no Math.*) */
