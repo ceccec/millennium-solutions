@@ -210,7 +210,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 17 theorem(s). WHY A FILE ABOUT LIGHT SPEED CAN EXIST IN A DEPOSIT THAT CLAIMS NO PHYSICS.
 
-**The three facts the unchecked files held alone** — `nucleus.lean`, 8 theorem(s). WHY THIS FILE EXISTS. Fifteen .lean files sat outside src/proof — Vortex.lean and the per-digit src/<d>/vortex.lean set — and every one of them began `import Mathlib`. scripts/lean.ts reads only src/proof, so no gate ever compiled them; the repository has no lake-manifest.json and no .lake, so Mathlib was never fetched and they have never been built here at all. They were published as the "formal layer" on /proofs, next to theorems the kernel checks on every run, and the page's own note that no toolchain is checked in is easy to read past when the heading says Proofs.
+**The three facts the unchecked files held alone** — `nucleus.lean`, 8 theorem(s). WHY THIS FILE EXISTS. Fifteen .lean files sat outside src/proof — Vortex.lean and the per-digit src/&lt;d>/vortex.lean set — and every one of them began `import Mathlib`. scripts/lean.ts reads only src/proof, so no gate ever compiled them; the repository has no lake-manifest.json and no .lake, so Mathlib was never fetched and they have never been built here at all. They were published as the "formal layer" on /proofs, next to theorems the kernel checks on every run, and the page's own note that no toolchain is checked in is easy to read past when the heading says Proofs.
 
 **Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). ADDRESSING PHENOMENA WITHOUT CLAIMING ANY.
 

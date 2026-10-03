@@ -361,7 +361,12 @@ const body = (site: boolean) => {
   for (const w of wings) {
     md += `### ${w}\n\n`
     for (const d of docs.filter((x) => (x.wing || 'unfiled') === w)) {
-      const first = d.summary.split(/\n\n/)[0].replace(/\n/g, ' ').trim()
+      // A SUMMARY IS PROSE, AND THE PAGE IS A VUE TEMPLATE. nucleus.lean's header says `src/<d>/vortex.lean`,
+      // and index.md is compiled by vitepress, where `<d>` is an element with no end tag — the build died on
+      // it the first time a summary reached that far (the leandoc slice used to cut summaries short). `<`
+      // and `{{` are the two sequences a template reads as its own; both are escaped, which GitHub's
+      // markdown renders back to the characters.
+      const first = d.summary.split(/\n\n/)[0].replace(/\n/g, ' ').trim().replace(/</g, '&lt;').replace(/\{\{/g, '&#123;{')
       md += `**${d.title}** — \`${d.file}\`, ${d.theorems.length} theorem(s)`
       md += first ? `. ${first}\n\n` : ` — *no summary in the source*\n\n`
     }
