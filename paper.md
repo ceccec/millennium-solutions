@@ -9246,7 +9246,12 @@ one := (1, 0)</code></pre>
 
 <p class="paper-src"><code>src/proof/retained.lean</code> · namespace <code>Imagined</code> · 15 theorems</p>
 
-RETAINED — scripts/imagine.ts sealed these when its map table was hand-written, and its derived
+prior_art_search: the 15 theorems keep their lean_imagined_* keys (the namespace is unchanged) and were searched under them on 2026-09-25
+prior_art_search: and 2026-09-26, recorded in src/proof/novelty.json — zbMATH Open, OpenAlex, Crossref, arXiv and the OEIS. 13 NONE_FOUND;
+prior_art_search: 2 CANDIDATES: squares_is_closed_under_quadruple (OEIS A160120 and A085787 catalogue the set, one zbMATH hit) and
+prior_art_search: cubes_is_closed_under_cube (two Crossref hits on "modular cubes" — the keyword, not the mathematics — with zbMATH and
+prior_art_search: OpenAlex not measured that run). A NONE_FOUND is what these searches returned on that date, never that nothing earlier exists.
+RETAINED —scripts/imagine.ts sealed these when its map table was hand-written, and its derived
 enumeration does not propose them. Nothing about them was refuted: each is copied here exactly as the
 generator last wrote it, and the kernel decides every one on every run. The ledger is append-only, so a
 sealed key whose source disappears is an orphan the record cannot honestly resolve — keeping the source is

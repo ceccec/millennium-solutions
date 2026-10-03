@@ -14216,12 +14216,12 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
- "lean_imagined_all_is_closed_under_fifth": {
-  "key": "lean_imagined_all_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "all_is_closed_under_fifth",
-  "statementHash": "174b16a1ad437f06",
-  "searched": "2026-09-26T00:22:05.792Z",
+ "lean_imagined_aff_3_0_collapses_primitives_to_one_value": {
+  "key": "lean_imagined_aff_3_0_collapses_primitives_to_one_value",
+  "file": "imagined_7.lean",
+  "name": "aff_3_0_collapses_primitives_to_one_value",
+  "statementHash": "b1dd189c27c2bad7",
+  "searched": "2026-09-26T00:31:55.013Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -14234,23 +14234,24 @@
    ]
   },
   "queries": {
-   "zbmath": "closed fifth",
-   "openalex": "closed fifth",
-   "crossref": "closed fifth",
-   "arxiv": "closed AND fifth"
+   "zbmath": "triple collapses primitives",
+   "openalex": "triple collapses primitives",
+   "crossref": "triple collapses primitives",
+   "arxiv": "triple AND collapses AND primitives AND value"
   },
   "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_triple_collapses_primitives_to_one_value"
  },
- "lean_imagined_all_is_closed_under_fourth": {
-  "key": "lean_imagined_all_is_closed_under_fourth",
-  "file": "imagined.lean",
-  "name": "all_is_closed_under_fourth",
-  "statementHash": "0cc1b46de41e0e72",
-  "searched": "2026-09-26T00:15:07.197Z",
+ "lean_imagined_aff_4_0_collapses_reflfixed_to_one_value": {
+  "key": "lean_imagined_aff_4_0_collapses_reflfixed_to_one_value",
+  "file": "imagined_9.lean",
+  "name": "aff_4_0_collapses_reflfixed_to_one_value",
+  "statementHash": "3aa930bd5b6efb9f",
+  "searched": "2026-09-26T00:32:21.492Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -14263,30 +14264,142 @@
    ]
   },
   "queries": {
-   "zbmath": "closed fourth",
-   "openalex": "closed fourth",
-   "crossref": "closed fourth",
-   "arxiv": "closed AND fourth"
+   "zbmath": "quadruple collapses reflfixed",
+   "openalex": "quadruple collapses reflfixed",
+   "crossref": "quadruple collapses reflfixed",
+   "arxiv": "quadruple AND collapses AND reflfixed AND value"
   },
   "notMeasured": [],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "zbmath",
-    "title": "Some fourth-order linear divisibility sequences",
-    "year": "2011",
-    "url": "https://zbmath.org/5950558",
-    "relevance": 1,
-    "text": "Some fourth-order linear divisibility sequences [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"berczes.attila\",\"reviewer_id\":\"13481\",\"name\":\"Attila Bérczes\",\"sign\":\"Attila Bérczes (Debrecen)\"},\"text\":\"Inspired by a problem of Zhou, who asked for a closed formula for the number of ways to tile a \\"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_quadruple_collapses_reflfixed_to_one_value"
  },
- "lean_imagined_all_is_closed_under_reflect": {
-  "key": "lean_imagined_all_is_closed_under_reflect",
-  "file": "imagined.lean",
-  "name": "all_is_closed_under_reflect",
+ "lean_imagined_aff_6_0_collapses_primitives_to_one_value": {
+  "key": "lean_imagined_aff_6_0_collapses_primitives_to_one_value",
+  "file": "imagined_13.lean",
+  "name": "aff_6_0_collapses_primitives_to_one_value",
+  "statementHash": "690765a208a12359",
+  "searched": "2026-09-26T00:37:15.069Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "sextuple collapses primitives",
+   "openalex": "sextuple collapses primitives",
+   "crossref": "sextuple collapses primitives",
+   "arxiv": "sextuple AND collapses AND primitives AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_sextuple_collapses_primitives_to_one_value"
+ },
+ "lean_imagined_aff_8_1_carries_tetA_onto_triad": {
+  "key": "lean_imagined_aff_8_1_carries_tetA_onto_triad",
+  "file": "imagined_18.lean",
+  "name": "aff_8_1_carries_tetA_onto_triad",
+  "statementHash": "82fe17f5a5054496",
+  "searched": "2026-09-26T00:31:28.647Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "reflect carries triad",
+   "openalex": "reflect carries triad",
+   "crossref": "reflect carries triad",
+   "arxiv": "reflect AND carries AND triad"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_reflect_carries_tetA_onto_triad"
+ },
+ "lean_imagined_aff_8_1_carries_triad_onto_tetA": {
+  "key": "lean_imagined_aff_8_1_carries_triad_onto_tetA",
+  "file": "imagined_18.lean",
+  "name": "aff_8_1_carries_triad_onto_tetA",
+  "statementHash": "394e9d342129b709",
+  "searched": "2026-09-26T00:31:15.906Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "reflect carries triad",
+   "openalex": "reflect carries triad",
+   "crossref": "reflect carries triad",
+   "arxiv": "reflect AND carries AND triad"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_reflect_carries_triad_onto_tetA"
+ },
+ "lean_imagined_aff_8_1_collapses_reflfixed_to_one_value": {
+  "key": "lean_imagined_aff_8_1_collapses_reflfixed_to_one_value",
+  "file": "imagined_18.lean",
+  "name": "aff_8_1_collapses_reflfixed_to_one_value",
+  "statementHash": "858f7ff7cf101c1f",
+  "searched": "2026-09-26T00:38:10.286Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "reflect collapses reflfixed",
+   "openalex": "reflect collapses reflfixed",
+   "crossref": "reflect collapses reflfixed",
+   "arxiv": "reflect AND collapses AND reflfixed AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_reflect_collapses_reflfixed_to_one_value"
+ },
+ "lean_imagined_all_is_closed_under_aff_8_1": {
+  "key": "lean_imagined_all_is_closed_under_aff_8_1",
+  "file": "imagined_20.lean",
+  "name": "all_is_closed_under_aff_8_1",
   "statementHash": "3ce26cb73a55f225",
   "searched": "2026-09-25T15:39:18.948Z",
   "limits": {
@@ -14322,12 +14435,82 @@
     "text": "Does repetition reflect dedication or closed-mindedness?: A matter of the primed rule "
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_all_is_closed_under_reflect"
  },
- "lean_imagined_all_is_closed_under_sixth": {
-  "key": "lean_imagined_all_is_closed_under_sixth",
-  "file": "imagined.lean",
-  "name": "all_is_closed_under_sixth",
+ "lean_imagined_all_is_closed_under_pow_4": {
+  "key": "lean_imagined_all_is_closed_under_pow_4",
+  "file": "imagined_20.lean",
+  "name": "all_is_closed_under_pow_4",
+  "statementHash": "0cc1b46de41e0e72",
+  "searched": "2026-09-26T00:15:07.197Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "closed fourth",
+   "openalex": "closed fourth",
+   "crossref": "closed fourth",
+   "arxiv": "closed AND fourth"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Some fourth-order linear divisibility sequences",
+    "year": "2011",
+    "url": "https://zbmath.org/5950558",
+    "relevance": 1,
+    "text": "Some fourth-order linear divisibility sequences [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"berczes.attila\",\"reviewer_id\":\"13481\",\"name\":\"Attila Bérczes\",\"sign\":\"Attila Bérczes (Debrecen)\"},\"text\":\"Inspired by a problem of Zhou, who asked for a closed formula for the number of ways to tile a \\"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_all_is_closed_under_fourth"
+ },
+ "lean_imagined_all_is_closed_under_pow_5": {
+  "key": "lean_imagined_all_is_closed_under_pow_5",
+  "file": "imagined_20.lean",
+  "name": "all_is_closed_under_pow_5",
+  "statementHash": "174b16a1ad437f06",
+  "searched": "2026-09-26T00:22:05.792Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "closed fifth",
+   "openalex": "closed fifth",
+   "crossref": "closed fifth",
+   "arxiv": "closed AND fifth"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_all_is_closed_under_fifth"
+ },
+ "lean_imagined_all_is_closed_under_pow_6": {
+  "key": "lean_imagined_all_is_closed_under_pow_6",
+  "file": "imagined_20.lean",
+  "name": "all_is_closed_under_pow_6",
   "statementHash": "0b8f9dc5b3020c5f",
   "searched": "2026-09-25T15:37:56.196Z",
   "limits": {
@@ -14363,85 +14546,8 @@
     "text": "On Kaplansky's sixth conjecture About $39$ years ago, Kaplansky conjectured that the dimension of a semisimple Hopf algebra over an algebraically closed field of characteristic zero is divisible by the dimensions of its simple modules. Although it still remains open, some partial answers to this con"
    }
   ],
-  "verdict": "CANDIDATES"
- },
- "lean_imagined_cube_collapses_primitives_to_one_value": {
-  "key": "lean_imagined_cube_collapses_primitives_to_one_value",
-  "file": "imagined.lean",
-  "name": "cube_collapses_primitives_to_one_value",
-  "statementHash": "1c2e83ecf54379aa",
-  "searched": "2026-09-25T15:44:35.000Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "collapses primitives value",
-   "openalex": "collapses primitives value",
-   "crossref": "collapses primitives value",
-   "arxiv": "collapses AND primitives AND value"
-  },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "QuadraSHAP: Stable and Scalable Shapley Values for Product Games via Gauss-Legendre Quadrature",
-    "year": "2026",
-    "url": "http://arxiv.org/abs/2605.05870v3",
-    "relevance": 1,
-    "text": "QuadraSHAP: Stable and Scalable Shapley Values for Product Games via Gauss-Legendre Quadrature We study the efficient computation of Shapley values for \\emph{product games} -- cooperative games in which the coalition value factorizes as a product of per-player terms. Such games arise in machine lear"
-   },
-   {
-    "source": "arxiv",
-    "title": "THEIA: Learning Complete Kleene Three-Valued Logic in a Pure-Neural Modular Architecture",
-    "year": "2026",
-    "url": "http://arxiv.org/abs/2604.11284v5",
-    "relevance": 1,
-    "text": "THEIA: Learning Complete Kleene Three-Valued Logic in a Pure-Neural Modular Architecture We present THEIA, a 2.75M-parameter modular neural architecture that learns the complete Kleene three-valued logic (K3) truth table from task data without external symbolic inference or hand-encoded K3 gate prim"
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
- "lean_imagined_cube_collapses_reflfixed_to_one_value": {
-  "key": "lean_imagined_cube_collapses_reflfixed_to_one_value",
-  "file": "imagined.lean",
-  "name": "cube_collapses_reflfixed_to_one_value",
-  "statementHash": "0896e0800bdc3c3e",
-  "searched": "2026-09-26T00:33:12.632Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "collapses reflfixed value",
-   "openalex": "collapses reflfixed value",
-   "crossref": "collapses reflfixed value",
-   "arxiv": "collapses AND reflfixed AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_all_is_closed_under_sixth"
  },
  "lean_imagined_cube_is_involutive_on_cubes": {
   "key": "lean_imagined_cube_is_involutive_on_cubes",
@@ -14465,35 +14571,6 @@
    "openalex": "involutive cubes",
    "crossref": "involutive cubes",
    "arxiv": "involutive AND cubes"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_cube_is_involutive_on_selfinv": {
-  "key": "lean_imagined_cube_is_involutive_on_selfinv",
-  "file": "imagined.lean",
-  "name": "cube_is_involutive_on_selfinv",
-  "statementHash": "9341dd04a9c18aef",
-  "searched": "2026-09-26T00:27:16.032Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "involutive selfinv",
-   "openalex": "involutive selfinv",
-   "crossref": "involutive selfinv",
-   "arxiv": "involutive AND selfinv"
   },
   "notMeasured": [],
   "oeis": [],
@@ -14566,73 +14643,6 @@
   ],
   "verdict": "CANDIDATES"
  },
- "lean_imagined_cubes_is_closed_under_fifth": {
-  "key": "lean_imagined_cubes_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "cubes_is_closed_under_fifth",
-  "statementHash": "a303572de4ba5894",
-  "searched": "2026-09-26T00:24:20.718Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "cubes closed fifth",
-   "openalex": "cubes closed fifth",
-   "crossref": "cubes closed fifth",
-   "arxiv": "cubes AND closed AND fifth"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_cubes_is_closed_under_fourth": {
-  "key": "lean_imagined_cubes_is_closed_under_fourth",
-  "file": "imagined.lean",
-  "name": "cubes_is_closed_under_fourth",
-  "statementHash": "0dc4e1a2c718e3d3",
-  "searched": "2026-09-26T00:17:43.414Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "cubes closed fourth",
-   "openalex": "cubes closed fourth",
-   "crossref": "cubes closed fourth",
-   "arxiv": "cubes AND closed AND fourth"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [
-   {
-    "source": "zbmath",
-    "title": "On summation of some series with respect to fourth powers of Bessel functions",
-    "year": "1981",
-    "url": "https://zbmath.org/3966951",
-    "relevance": 1,
-    "text": "On summation of some series with respect to fourth powers of Bessel functions [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"In a recent work of the author [(*) Dep. VINITI, N 976-80] a method for summation of series with respect to powers o"
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
  "lean_imagined_cubes_is_closed_under_negate": {
   "key": "lean_imagined_cubes_is_closed_under_negate",
   "file": "imagined.lean",
@@ -14691,48 +14701,10 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
- "lean_imagined_cubes_is_closed_under_sixth": {
-  "key": "lean_imagined_cubes_is_closed_under_sixth",
-  "file": "imagined.lean",
-  "name": "cubes_is_closed_under_sixth",
-  "statementHash": "1dffbd293373c481",
-  "searched": "2026-09-26T00:25:40.768Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "cubes closed sixth",
-   "openalex": "cubes closed sixth",
-   "crossref": "cubes closed sixth",
-   "arxiv": "cubes AND closed AND sixth"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [
-   {
-    "source": "zbmath",
-    "title": "Symmetric geodesics on cubes of low dimensions.",
-    "year": "2003",
-    "url": "https://zbmath.org/2007695",
-    "relevance": 1,
-    "text": "Symmetric geodesics on cubes of low dimensions. [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"burdujan.ilie\",\"reviewer_id\":\"9981\",\"name\":\"Ilie Burdujan\",\"sign\":\"Ilie Burdujan (Iaşi)\"},\"text\":\"The aim of the present paper is to find simple symmetric closed geodesics on the boundary \\\\(\\\\partial K"
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
- "lean_imagined_cubes_is_closed_under_square": {
-  "key": "lean_imagined_cubes_is_closed_under_square",
-  "file": "imagined.lean",
-  "name": "cubes_is_closed_under_square",
+ "lean_imagined_cubes_is_closed_under_pow_2": {
+  "key": "lean_imagined_cubes_is_closed_under_pow_2",
+  "file": "imagined_20.lean",
+  "name": "cubes_is_closed_under_pow_2",
   "statementHash": "73abd3ed77278ed3",
   "searched": "2026-09-26T00:12:48.501Z",
   "limits": {
@@ -14765,7 +14737,116 @@
     "text": "Symmetric geodesics on cubes of low dimensions. [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"burdujan.ilie\",\"reviewer_id\":\"9981\",\"name\":\"Ilie Burdujan\",\"sign\":\"Ilie Burdujan (Iaşi)\"},\"text\":\"The aim of the present paper is to find simple symmetric closed geodesics on the boundary \\\\(\\\\partial K"
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_cubes_is_closed_under_square"
+ },
+ "lean_imagined_cubes_is_closed_under_pow_4": {
+  "key": "lean_imagined_cubes_is_closed_under_pow_4",
+  "file": "imagined_20.lean",
+  "name": "cubes_is_closed_under_pow_4",
+  "statementHash": "0dc4e1a2c718e3d3",
+  "searched": "2026-09-26T00:17:43.414Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cubes closed fourth",
+   "openalex": "cubes closed fourth",
+   "crossref": "cubes closed fourth",
+   "arxiv": "cubes AND closed AND fourth"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "On summation of some series with respect to fourth powers of Bessel functions",
+    "year": "1981",
+    "url": "https://zbmath.org/3966951",
+    "relevance": 1,
+    "text": "On summation of some series with respect to fourth powers of Bessel functions [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"In a recent work of the author [(*) Dep. VINITI, N 976-80] a method for summation of series with respect to powers o"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_cubes_is_closed_under_fourth"
+ },
+ "lean_imagined_cubes_is_closed_under_pow_5": {
+  "key": "lean_imagined_cubes_is_closed_under_pow_5",
+  "file": "imagined_20.lean",
+  "name": "cubes_is_closed_under_pow_5",
+  "statementHash": "a303572de4ba5894",
+  "searched": "2026-09-26T00:24:20.718Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cubes closed fifth",
+   "openalex": "cubes closed fifth",
+   "crossref": "cubes closed fifth",
+   "arxiv": "cubes AND closed AND fifth"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_cubes_is_closed_under_fifth"
+ },
+ "lean_imagined_cubes_is_closed_under_pow_6": {
+  "key": "lean_imagined_cubes_is_closed_under_pow_6",
+  "file": "imagined_20.lean",
+  "name": "cubes_is_closed_under_pow_6",
+  "statementHash": "1dffbd293373c481",
+  "searched": "2026-09-26T00:25:40.768Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cubes closed sixth",
+   "openalex": "cubes closed sixth",
+   "crossref": "cubes closed sixth",
+   "arxiv": "cubes AND closed AND sixth"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "Symmetric geodesics on cubes of low dimensions.",
+    "year": "2003",
+    "url": "https://zbmath.org/2007695",
+    "relevance": 1,
+    "text": "Symmetric geodesics on cubes of low dimensions. [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"burdujan.ilie\",\"reviewer_id\":\"9981\",\"name\":\"Ilie Burdujan\",\"sign\":\"Ilie Burdujan (Iaşi)\"},\"text\":\"The aim of the present paper is to find simple symmetric closed geodesics on the boundary \\\\(\\\\partial K"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_cubes_is_closed_under_sixth"
  },
  "lean_imagined_double_collapses_reflfixed_to_one_value": {
   "key": "lean_imagined_double_collapses_reflfixed_to_one_value",
@@ -14795,836 +14876,6 @@
   "catalogued": false,
   "candidates": [],
   "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_carries_orbit_onto_units": {
-  "key": "lean_imagined_fifth_carries_orbit_onto_units",
-  "file": "imagined.lean",
-  "name": "fifth_carries_orbit_onto_units",
-  "statementHash": "fda6e071b580919c",
-  "searched": "2026-09-26T00:31:03.351Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
-   "zbmath": "fifth carries orbit",
-   "openalex": "fifth carries orbit",
-   "crossref": "fifth carries orbit",
-   "arxiv": "fifth AND carries AND orbit"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001370",
-    "name": "Sum of digits of 2^n.",
-    "query": "1,2,4,8,7,5"
-   },
-   {
-    "a": "A153130",
-    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
-    "query": "1,2,4,8,7,5"
-   },
-   {
-    "a": "A001651",
-    "name": "Numbers not divisible by 3.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A032924",
-    "name": "Numbers whose ternary expansion contains no 0.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A020914",
-    "name": "Number of digits in the base-2 representation of 3^n.",
-    "query": "1,2,4,5,7,8"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_carries_units_onto_orbit": {
-  "key": "lean_imagined_fifth_carries_units_onto_orbit",
-  "file": "imagined.lean",
-  "name": "fifth_carries_units_onto_orbit",
-  "statementHash": "b2e1ca6102a22fbf",
-  "searched": "2026-09-26T00:30:51.133Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
-   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "fifth carries orbit",
-   "openalex": "fifth carries orbit",
-   "crossref": "fifth carries orbit",
-   "arxiv": "fifth AND carries AND orbit"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001651",
-    "name": "Numbers not divisible by 3.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A032924",
-    "name": "Numbers whose ternary expansion contains no 0.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A020914",
-    "name": "Number of digits in the base-2 representation of 3^n.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A001370",
-    "name": "Sum of digits of 2^n.",
-    "query": "1,2,4,8,7,5"
-   },
-   {
-    "a": "A153130",
-    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
-    "query": "1,2,4,8,7,5"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_collapses_reflfixed_to_one_value": {
-  "key": "lean_imagined_fifth_collapses_reflfixed_to_one_value",
-  "file": "imagined.lean",
-  "name": "fifth_collapses_reflfixed_to_one_value",
-  "statementHash": "e97e75c5fbb10c16",
-  "searched": "2026-09-26T00:34:27.518Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fifth collapses reflfixed",
-   "openalex": "fifth collapses reflfixed",
-   "crossref": "fifth collapses reflfixed",
-   "arxiv": "fifth AND collapses AND reflfixed AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_collapses_triad_to_one_value": {
-  "key": "lean_imagined_fifth_collapses_triad_to_one_value",
-  "file": "imagined.lean",
-  "name": "fifth_collapses_triad_to_one_value",
-  "statementHash": "fc557722ff89a0b3",
-  "searched": "2026-09-26T00:34:14.679Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fifth collapses triad",
-   "openalex": "fifth collapses triad",
-   "crossref": "fifth collapses triad",
-   "arxiv": "fifth AND collapses AND triad AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_is_involutive_on_cubes": {
-  "key": "lean_imagined_fifth_is_involutive_on_cubes",
-  "file": "imagined.lean",
-  "name": "fifth_is_involutive_on_cubes",
-  "statementHash": "23cdf5e5b1ad5c60",
-  "searched": "2026-09-26T00:28:50.422Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fifth involutive cubes",
-   "openalex": "fifth involutive cubes",
-   "crossref": "fifth involutive cubes",
-   "arxiv": "fifth AND involutive AND cubes"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_is_involutive_on_orbit": {
-  "key": "lean_imagined_fifth_is_involutive_on_orbit",
-  "file": "imagined.lean",
-  "name": "fifth_is_involutive_on_orbit",
-  "statementHash": "59af3969b4169efc",
-  "searched": "2026-09-26T00:27:43.487Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "fifth involutive orbit",
-   "openalex": "fifth involutive orbit",
-   "crossref": "fifth involutive orbit",
-   "arxiv": "fifth AND involutive AND orbit"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001370",
-    "name": "Sum of digits of 2^n.",
-    "query": "1,2,4,8,7,5"
-   },
-   {
-    "a": "A153130",
-    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
-    "query": "1,2,4,8,7,5"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_is_involutive_on_primitives": {
-  "key": "lean_imagined_fifth_is_involutive_on_primitives",
-  "file": "imagined.lean",
-  "name": "fifth_is_involutive_on_primitives",
-  "statementHash": "c455324813d14100",
-  "searched": "2026-09-26T00:29:02.977Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fifth involutive primitives",
-   "openalex": "fifth involutive primitives",
-   "crossref": "fifth involutive primitives",
-   "arxiv": "fifth AND involutive AND primitives"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_is_involutive_on_reflfixed": {
-  "key": "lean_imagined_fifth_is_involutive_on_reflfixed",
-  "file": "imagined.lean",
-  "name": "fifth_is_involutive_on_reflfixed",
-  "statementHash": "50ec0d3838700d37",
-  "searched": "2026-09-26T00:29:32.613Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fifth involutive reflfixed",
-   "openalex": "fifth involutive reflfixed",
-   "crossref": "fifth involutive reflfixed",
-   "arxiv": "fifth AND involutive AND reflfixed"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_is_involutive_on_selfinv": {
-  "key": "lean_imagined_fifth_is_involutive_on_selfinv",
-  "file": "imagined.lean",
-  "name": "fifth_is_involutive_on_selfinv",
-  "statementHash": "2990429bc4f9e02c",
-  "searched": "2026-09-26T00:29:20.450Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fifth involutive selfinv",
-   "openalex": "fifth involutive selfinv",
-   "crossref": "fifth involutive selfinv",
-   "arxiv": "fifth AND involutive AND selfinv"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_is_involutive_on_squares": {
-  "key": "lean_imagined_fifth_is_involutive_on_squares",
-  "file": "imagined.lean",
-  "name": "fifth_is_involutive_on_squares",
-  "statementHash": "d21639b3422d434b",
-  "searched": "2026-09-26T00:28:38.410Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 0,1,4,7": "0,1,4,7",
-   "zbmath": "fifth involutive squares",
-   "openalex": "fifth involutive squares",
-   "crossref": "fifth involutive squares",
-   "arxiv": "fifth AND involutive AND squares"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A160120",
-    "name": "Y-toothpick sequence (see Comments lines for definition).",
-    "query": "0,1,4,7"
-   },
-   {
-    "a": "A085787",
-    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
-    "query": "0,1,4,7"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_is_involutive_on_tetA": {
-  "key": "lean_imagined_fifth_is_involutive_on_tetA",
-  "file": "imagined.lean",
-  "name": "fifth_is_involutive_on_tetA",
-  "statementHash": "04023e7dc2c05e33",
-  "searched": "2026-09-26T00:27:56.623Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fifth involutive",
-   "openalex": "fifth involutive",
-   "crossref": "fifth involutive",
-   "arxiv": "fifth AND involutive"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_is_involutive_on_tetB": {
-  "key": "lean_imagined_fifth_is_involutive_on_tetB",
-  "file": "imagined.lean",
-  "name": "fifth_is_involutive_on_tetB",
-  "statementHash": "2616a84a5cda3f48",
-  "searched": "2026-09-26T00:28:09.562Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fifth involutive",
-   "openalex": "fifth involutive",
-   "crossref": "fifth involutive",
-   "arxiv": "fifth AND involutive"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fifth_is_involutive_on_units": {
-  "key": "lean_imagined_fifth_is_involutive_on_units",
-  "file": "imagined.lean",
-  "name": "fifth_is_involutive_on_units",
-  "statementHash": "9fee6135ec7dc85c",
-  "searched": "2026-09-26T00:27:28.821Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
-   "zbmath": "fifth involutive",
-   "openalex": "fifth involutive",
-   "crossref": "fifth involutive",
-   "arxiv": "fifth AND involutive"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001651",
-    "name": "Numbers not divisible by 3.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A032924",
-    "name": "Numbers whose ternary expansion contains no 0.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A020914",
-    "name": "Number of digits in the base-2 representation of 3^n.",
-    "query": "1,2,4,5,7,8"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fourth_carries_all_onto_squares": {
-  "key": "lean_imagined_fourth_carries_all_onto_squares",
-  "file": "imagined.lean",
-  "name": "fourth_carries_all_onto_squares",
-  "statementHash": "aaff0a44e123b155",
-  "searched": "2026-09-26T00:30:38.152Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 0,1,4,7": "0,1,4,7",
-   "zbmath": "fourth carries squares",
-   "openalex": "fourth carries squares",
-   "crossref": "fourth carries squares",
-   "arxiv": "fourth AND carries AND squares"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A160120",
-    "name": "Y-toothpick sequence (see Comments lines for definition).",
-    "query": "0,1,4,7"
-   },
-   {
-    "a": "A085787",
-    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
-    "query": "0,1,4,7"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [
-   {
-    "source": "zbmath",
-    "title": "The Exact Worst-Case Tail Probability under Bounded Kurtosis",
-    "year": "2026",
-    "url": "https://zbmath.org/903097490",
-    "relevance": 1,
-    "text": "The Exact Worst-Case Tail Probability under Bounded Kurtosis [{\"language\":null,\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: We determine exactly what a kurtosis bound buys for one-sided tail control. For the class $\\\\mathcal{C}(κ)$ of real random variab"
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
- "lean_imagined_fourth_carries_orbit_onto_tetA": {
-  "key": "lean_imagined_fourth_carries_orbit_onto_tetA",
-  "file": "imagined.lean",
-  "name": "fourth_carries_orbit_onto_tetA",
-  "statementHash": "d5dabb560398b677",
-  "searched": "2026-09-26T00:30:13.590Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "fourth carries orbit",
-   "openalex": "fourth carries orbit",
-   "crossref": "fourth carries orbit",
-   "arxiv": "fourth AND carries AND orbit"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001370",
-    "name": "Sum of digits of 2^n.",
-    "query": "1,2,4,8,7,5"
-   },
-   {
-    "a": "A153130",
-    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
-    "query": "1,2,4,8,7,5"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fourth_carries_tetB_onto_tetA": {
-  "key": "lean_imagined_fourth_carries_tetB_onto_tetA",
-  "file": "imagined.lean",
-  "name": "fourth_carries_tetB_onto_tetA",
-  "statementHash": "e0e5f46e6dc568da",
-  "searched": "2026-09-26T00:30:26.214Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fourth carries",
-   "openalex": "fourth carries",
-   "crossref": "fourth carries",
-   "arxiv": "fourth AND carries"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fourth_carries_units_onto_tetA": {
-  "key": "lean_imagined_fourth_carries_units_onto_tetA",
-  "file": "imagined.lean",
-  "name": "fourth_carries_units_onto_tetA",
-  "statementHash": "988e94e1de032613",
-  "searched": "2026-09-26T00:30:00.496Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
-   "zbmath": "fourth carries",
-   "openalex": "fourth carries",
-   "crossref": "fourth carries",
-   "arxiv": "fourth AND carries"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001651",
-    "name": "Numbers not divisible by 3.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A032924",
-    "name": "Numbers whose ternary expansion contains no 0.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A020914",
-    "name": "Number of digits in the base-2 representation of 3^n.",
-    "query": "1,2,4,5,7,8"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fourth_collapses_reflfixed_to_one_value": {
-  "key": "lean_imagined_fourth_collapses_reflfixed_to_one_value",
-  "file": "imagined.lean",
-  "name": "fourth_collapses_reflfixed_to_one_value",
-  "statementHash": "9034db0e8879cdf6",
-  "searched": "2026-09-26T00:33:50.483Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fourth collapses reflfixed",
-   "openalex": "fourth collapses reflfixed",
-   "crossref": "fourth collapses reflfixed",
-   "arxiv": "fourth AND collapses AND reflfixed AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fourth_collapses_selfinv_to_one_value": {
-  "key": "lean_imagined_fourth_collapses_selfinv_to_one_value",
-  "file": "imagined.lean",
-  "name": "fourth_collapses_selfinv_to_one_value",
-  "statementHash": "1eba6cfa4be68060",
-  "searched": "2026-09-26T00:33:37.942Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fourth collapses selfinv",
-   "openalex": "fourth collapses selfinv",
-   "crossref": "fourth collapses selfinv",
-   "arxiv": "fourth AND collapses AND selfinv AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_fourth_collapses_triad_to_one_value": {
-  "key": "lean_imagined_fourth_collapses_triad_to_one_value",
-  "file": "imagined.lean",
-  "name": "fourth_collapses_triad_to_one_value",
-  "statementHash": "3daf943a696979a6",
-  "searched": "2026-09-26T00:33:24.599Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fourth collapses triad",
-   "openalex": "fourth collapses triad",
-   "crossref": "fourth collapses triad",
-   "arxiv": "fourth AND collapses AND triad AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [
-   {
-    "source": "openalex",
-    "title": "The Emblem of the Triad: z⁴ = 1 — Sign Laws and Spectrum",
-    "year": 2026,
-    "url": "https://doi.org/10.5281/zenodo.21230220",
-    "relevance": 1,
-    "text": "The Emblem of the Triad: z⁴ = 1 — Sign Laws and Spectrum This paper fixes a single equation as the emblem of the series: z⁴ = 1, with the legend \"z is a readout (eigenvalue) of the triad.\" At the level of words in the three letters, the multiplicative closure is an eight-element group; the six order"
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
- "lean_imagined_fourth_is_involutive_on_squares": {
-  "key": "lean_imagined_fourth_is_involutive_on_squares",
-  "file": "imagined.lean",
-  "name": "fourth_is_involutive_on_squares",
-  "statementHash": "942288ec175cb741",
-  "searched": "2026-09-25T15:40:20.749Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 0,1,4,7": "0,1,4,7",
-   "zbmath": "fourth involutive squares",
-   "openalex": "fourth involutive squares",
-   "crossref": "fourth involutive squares",
-   "arxiv": "fourth AND involutive AND squares"
-  },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [
-   {
-    "a": "A160120",
-    "name": "Y-toothpick sequence (see Comments lines for definition).",
-    "query": "0,1,4,7"
-   },
-   {
-    "a": "A085787",
-    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
-    "query": "0,1,4,7"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "(2+2)-free posets, ascent sequences and pattern avoiding permutations",
-    "year": "2008",
-    "url": "http://arxiv.org/abs/0806.0666v4",
-    "relevance": 0.6666666666666666,
-    "text": "(2+2)-free posets, ascent sequences and pattern avoiding permutations We present bijections between four classes of combinatorial objects. Two of them, the class of unlabeled (2+2)-free posets and a certain class of involutions (or chord diagrams), already appeared in the literature, but were appare"
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
- "lean_imagined_fourth_is_involutive_on_tetA": {
-  "key": "lean_imagined_fourth_is_involutive_on_tetA",
-  "file": "imagined.lean",
-  "name": "fourth_is_involutive_on_tetA",
-  "statementHash": "98dc27a39c9e97f2",
-  "searched": "2026-09-25T15:40:10.711Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "fourth involutive",
-   "openalex": "fourth involutive",
-   "crossref": "fourth involutive",
-   "arxiv": "fourth AND involutive"
-  },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "Integrable Lagrangians and modular forms",
-    "year": "2007",
-    "url": "http://arxiv.org/abs/0707.3433v2",
-    "relevance": 1,
-    "text": "Integrable Lagrangians and modular forms We investigate non-degenerate Lagrangians of the form $$ \\int f(u_x, u_y, u_t) dx dy dt $$ such that the corresponding Euler-Lagrange equations $ (f_{u_x})_x+ (f_{u_y})_y+ (f_{u_t})_t=0 $ are integrable by the method of hydrodynamic reductions. We demonstrate"
-   }
-  ],
-  "verdict": "CANDIDATES"
  },
  "lean_imagined_negate_collapses_reflfixed_to_one_value": {
   "key": "lean_imagined_negate_collapses_reflfixed_to_one_value",
@@ -15684,60 +14935,10 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
- "lean_imagined_orbit_is_closed_under_fifth": {
-  "key": "lean_imagined_orbit_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "orbit_is_closed_under_fifth",
-  "statementHash": "b2632e064febe399",
-  "searched": "2026-09-26T00:19:27.907Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "orbit closed fifth",
-   "openalex": "orbit closed fifth",
-   "crossref": "orbit closed fifth",
-   "arxiv": "orbit AND closed AND fifth"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001370",
-    "name": "Sum of digits of 2^n.",
-    "query": "1,2,4,8,7,5"
-   },
-   {
-    "a": "A153130",
-    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
-    "query": "1,2,4,8,7,5"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [
-   {
-    "source": "zbmath",
-    "title": "On the dimension group of unimodular \\(\\mathcal{S}\\)-adic subshifts",
-    "year": "2021",
-    "url": "https://zbmath.org/7328633",
-    "relevance": 1,
-    "text": "On the dimension group of unimodular \\(\\mathcal{S}\\)-adic subshifts [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"duchesne.bruno\",\"reviewer_id\":\"18922\",\"name\":\"Bruno Duchesne\",\"sign\":\"Bruno Duchesne (Nancy)\"},\"text\":\"In topological dynamics, shifts and subshifts play a central role. If \\\\(\\\\math"
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
- "lean_imagined_orbit_is_closed_under_fourth": {
-  "key": "lean_imagined_orbit_is_closed_under_fourth",
-  "file": "imagined.lean",
-  "name": "orbit_is_closed_under_fourth",
+ "lean_imagined_orbit_is_closed_under_pow_4": {
+  "key": "lean_imagined_orbit_is_closed_under_pow_4",
+  "file": "imagined_20.lean",
+  "name": "orbit_is_closed_under_pow_4",
   "statementHash": "3947dd03bb91c249",
   "searched": "2026-09-26T00:14:01.048Z",
   "limits": {
@@ -15790,12 +14991,64 @@
     "text": "Fixed points and cycles. [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"devillers.alice\",\"reviewer_id\":\"9496\",\"name\":\"Alice Devillers\",\"sign\":\"Alice Devillers (Bruxelles)\"},\"text\":\"This paper presents various results in the field of permutation groups, more precisely concerning the relations betw"
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_orbit_is_closed_under_fourth"
  },
- "lean_imagined_orbit_is_closed_under_sixth": {
-  "key": "lean_imagined_orbit_is_closed_under_sixth",
-  "file": "imagined.lean",
-  "name": "orbit_is_closed_under_sixth",
+ "lean_imagined_orbit_is_closed_under_pow_5": {
+  "key": "lean_imagined_orbit_is_closed_under_pow_5",
+  "file": "imagined_20.lean",
+  "name": "orbit_is_closed_under_pow_5",
+  "statementHash": "b2632e064febe399",
+  "searched": "2026-09-26T00:19:27.907Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "orbit closed fifth",
+   "openalex": "orbit closed fifth",
+   "crossref": "orbit closed fifth",
+   "arxiv": "orbit AND closed AND fifth"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "On the dimension group of unimodular \\(\\mathcal{S}\\)-adic subshifts",
+    "year": "2021",
+    "url": "https://zbmath.org/7328633",
+    "relevance": 1,
+    "text": "On the dimension group of unimodular \\(\\mathcal{S}\\)-adic subshifts [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"duchesne.bruno\",\"reviewer_id\":\"18922\",\"name\":\"Bruno Duchesne\",\"sign\":\"Bruno Duchesne (Nancy)\"},\"text\":\"In topological dynamics, shifts and subshifts play a central role. If \\\\(\\\\math"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_orbit_is_closed_under_fifth"
+ },
+ "lean_imagined_orbit_is_closed_under_pow_6": {
+  "key": "lean_imagined_orbit_is_closed_under_pow_6",
+  "file": "imagined_20.lean",
+  "name": "orbit_is_closed_under_pow_6",
   "statementHash": "2a71cfb05578d40d",
   "searched": "2026-09-26T00:25:15.342Z",
   "limits": {
@@ -15831,12 +15084,1360 @@
   ],
   "catalogued": true,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_orbit_is_closed_under_sixth"
  },
- "lean_imagined_primitives_is_closed_under_fifth": {
-  "key": "lean_imagined_primitives_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "primitives_is_closed_under_fifth",
+ "lean_imagined_pow_2_collapses_reflfixed_to_one_value": {
+  "key": "lean_imagined_pow_2_collapses_reflfixed_to_one_value",
+  "file": "imagined_20.lean",
+  "name": "pow_2_collapses_reflfixed_to_one_value",
+  "statementHash": "43fb5818273e1184",
+  "searched": "2026-09-26T00:33:00.977Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "square collapses reflfixed",
+   "openalex": "square collapses reflfixed",
+   "crossref": "square collapses reflfixed",
+   "arxiv": "square AND collapses AND reflfixed AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_square_collapses_reflfixed_to_one_value"
+ },
+ "lean_imagined_pow_2_collapses_selfinv_to_one_value": {
+  "key": "lean_imagined_pow_2_collapses_selfinv_to_one_value",
+  "file": "imagined_20.lean",
+  "name": "pow_2_collapses_selfinv_to_one_value",
+  "statementHash": "3e34cdbf53da499a",
+  "searched": "2026-09-26T00:32:44.438Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "square collapses selfinv",
+   "openalex": "square collapses selfinv",
+   "crossref": "square collapses selfinv",
+   "arxiv": "square AND collapses AND selfinv AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_square_collapses_selfinv_to_one_value"
+ },
+ "lean_imagined_pow_2_is_involutive_on_squares": {
+  "key": "lean_imagined_pow_2_is_involutive_on_squares",
+  "file": "imagined_20.lean",
+  "name": "pow_2_is_involutive_on_squares",
+  "statementHash": "b741d5e6ca749196",
+  "searched": "2026-09-25T15:39:38.512Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 0,1,4,7": "0,1,4,7",
+   "zbmath": "square involutive squares",
+   "openalex": "square involutive squares",
+   "crossref": "square involutive squares",
+   "arxiv": "square AND involutive AND squares"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A160120",
+    "name": "Y-toothpick sequence (see Comments lines for definition).",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A085787",
+    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
+    "query": "0,1,4,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "On indecomposable involutive solutions to the Yang-Baxter equation whose squaring map is a $p$-cycle",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2508.01613v4",
+    "relevance": 1,
+    "text": "On indecomposable involutive solutions to the Yang-Baxter equation whose squaring map is a $p$-cycle The pioneering work of Rump, which proved Gateva-Ivanova's conjecture concerning the decomposability of square-free solutions to the Yang-Baxter equation, significantly motivated further research int"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_square_is_involutive_on_squares"
+ },
+ "lean_imagined_pow_3_collapses_primitives_to_one_value": {
+  "key": "lean_imagined_pow_3_collapses_primitives_to_one_value",
+  "file": "imagined_21.lean",
+  "name": "pow_3_collapses_primitives_to_one_value",
+  "statementHash": "1c2e83ecf54379aa",
+  "searched": "2026-09-25T15:44:35.000Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "collapses primitives value",
+   "openalex": "collapses primitives value",
+   "crossref": "collapses primitives value",
+   "arxiv": "collapses AND primitives AND value"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "QuadraSHAP: Stable and Scalable Shapley Values for Product Games via Gauss-Legendre Quadrature",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2605.05870v3",
+    "relevance": 1,
+    "text": "QuadraSHAP: Stable and Scalable Shapley Values for Product Games via Gauss-Legendre Quadrature We study the efficient computation of Shapley values for \\emph{product games} -- cooperative games in which the coalition value factorizes as a product of per-player terms. Such games arise in machine lear"
+   },
+   {
+    "source": "arxiv",
+    "title": "THEIA: Learning Complete Kleene Three-Valued Logic in a Pure-Neural Modular Architecture",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2604.11284v5",
+    "relevance": 1,
+    "text": "THEIA: Learning Complete Kleene Three-Valued Logic in a Pure-Neural Modular Architecture We present THEIA, a 2.75M-parameter modular neural architecture that learns the complete Kleene three-valued logic (K3) truth table from task data without external symbolic inference or hand-encoded K3 gate prim"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_cube_collapses_primitives_to_one_value"
+ },
+ "lean_imagined_pow_3_collapses_reflfixed_to_one_value": {
+  "key": "lean_imagined_pow_3_collapses_reflfixed_to_one_value",
+  "file": "imagined_21.lean",
+  "name": "pow_3_collapses_reflfixed_to_one_value",
+  "statementHash": "0896e0800bdc3c3e",
+  "searched": "2026-09-26T00:33:12.632Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "collapses reflfixed value",
+   "openalex": "collapses reflfixed value",
+   "crossref": "collapses reflfixed value",
+   "arxiv": "collapses AND reflfixed AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_cube_collapses_reflfixed_to_one_value"
+ },
+ "lean_imagined_pow_3_is_involutive_on_selfinv": {
+  "key": "lean_imagined_pow_3_is_involutive_on_selfinv",
+  "file": "imagined_21.lean",
+  "name": "pow_3_is_involutive_on_selfinv",
+  "statementHash": "9341dd04a9c18aef",
+  "searched": "2026-09-26T00:27:16.032Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "involutive selfinv",
+   "openalex": "involutive selfinv",
+   "crossref": "involutive selfinv",
+   "arxiv": "involutive AND selfinv"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_cube_is_involutive_on_selfinv"
+ },
+ "lean_imagined_pow_4_carries_all_onto_squares": {
+  "key": "lean_imagined_pow_4_carries_all_onto_squares",
+  "file": "imagined_21.lean",
+  "name": "pow_4_carries_all_onto_squares",
+  "statementHash": "aaff0a44e123b155",
+  "searched": "2026-09-26T00:30:38.152Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 0,1,4,7": "0,1,4,7",
+   "zbmath": "fourth carries squares",
+   "openalex": "fourth carries squares",
+   "crossref": "fourth carries squares",
+   "arxiv": "fourth AND carries AND squares"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A160120",
+    "name": "Y-toothpick sequence (see Comments lines for definition).",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A085787",
+    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
+    "query": "0,1,4,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "The Exact Worst-Case Tail Probability under Bounded Kurtosis",
+    "year": "2026",
+    "url": "https://zbmath.org/903097490",
+    "relevance": 1,
+    "text": "The Exact Worst-Case Tail Probability under Bounded Kurtosis [{\"language\":null,\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: We determine exactly what a kurtosis bound buys for one-sided tail control. For the class $\\\\mathcal{C}(κ)$ of real random variab"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_fourth_carries_all_onto_squares"
+ },
+ "lean_imagined_pow_4_carries_orbit_onto_tetA": {
+  "key": "lean_imagined_pow_4_carries_orbit_onto_tetA",
+  "file": "imagined_21.lean",
+  "name": "pow_4_carries_orbit_onto_tetA",
+  "statementHash": "d5dabb560398b677",
+  "searched": "2026-09-26T00:30:13.590Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "fourth carries orbit",
+   "openalex": "fourth carries orbit",
+   "crossref": "fourth carries orbit",
+   "arxiv": "fourth AND carries AND orbit"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fourth_carries_orbit_onto_tetA"
+ },
+ "lean_imagined_pow_4_carries_tetB_onto_tetA": {
+  "key": "lean_imagined_pow_4_carries_tetB_onto_tetA",
+  "file": "imagined_21.lean",
+  "name": "pow_4_carries_tetB_onto_tetA",
+  "statementHash": "e0e5f46e6dc568da",
+  "searched": "2026-09-26T00:30:26.214Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fourth carries",
+   "openalex": "fourth carries",
+   "crossref": "fourth carries",
+   "arxiv": "fourth AND carries"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fourth_carries_tetB_onto_tetA"
+ },
+ "lean_imagined_pow_4_carries_units_onto_tetA": {
+  "key": "lean_imagined_pow_4_carries_units_onto_tetA",
+  "file": "imagined_21.lean",
+  "name": "pow_4_carries_units_onto_tetA",
+  "statementHash": "988e94e1de032613",
+  "searched": "2026-09-26T00:30:00.496Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "fourth carries",
+   "openalex": "fourth carries",
+   "crossref": "fourth carries",
+   "arxiv": "fourth AND carries"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fourth_carries_units_onto_tetA"
+ },
+ "lean_imagined_pow_4_collapses_reflfixed_to_one_value": {
+  "key": "lean_imagined_pow_4_collapses_reflfixed_to_one_value",
+  "file": "imagined_21.lean",
+  "name": "pow_4_collapses_reflfixed_to_one_value",
+  "statementHash": "9034db0e8879cdf6",
+  "searched": "2026-09-26T00:33:50.483Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fourth collapses reflfixed",
+   "openalex": "fourth collapses reflfixed",
+   "crossref": "fourth collapses reflfixed",
+   "arxiv": "fourth AND collapses AND reflfixed AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fourth_collapses_reflfixed_to_one_value"
+ },
+ "lean_imagined_pow_4_collapses_selfinv_to_one_value": {
+  "key": "lean_imagined_pow_4_collapses_selfinv_to_one_value",
+  "file": "imagined_21.lean",
+  "name": "pow_4_collapses_selfinv_to_one_value",
+  "statementHash": "1eba6cfa4be68060",
+  "searched": "2026-09-26T00:33:37.942Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fourth collapses selfinv",
+   "openalex": "fourth collapses selfinv",
+   "crossref": "fourth collapses selfinv",
+   "arxiv": "fourth AND collapses AND selfinv AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fourth_collapses_selfinv_to_one_value"
+ },
+ "lean_imagined_pow_4_collapses_triad_to_one_value": {
+  "key": "lean_imagined_pow_4_collapses_triad_to_one_value",
+  "file": "imagined_21.lean",
+  "name": "pow_4_collapses_triad_to_one_value",
+  "statementHash": "3daf943a696979a6",
+  "searched": "2026-09-26T00:33:24.599Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fourth collapses triad",
+   "openalex": "fourth collapses triad",
+   "crossref": "fourth collapses triad",
+   "arxiv": "fourth AND collapses AND triad AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "The Emblem of the Triad: z⁴ = 1 — Sign Laws and Spectrum",
+    "year": 2026,
+    "url": "https://doi.org/10.5281/zenodo.21230220",
+    "relevance": 1,
+    "text": "The Emblem of the Triad: z⁴ = 1 — Sign Laws and Spectrum This paper fixes a single equation as the emblem of the series: z⁴ = 1, with the legend \"z is a readout (eigenvalue) of the triad.\" At the level of words in the three letters, the multiplicative closure is an eight-element group; the six order"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_fourth_collapses_triad_to_one_value"
+ },
+ "lean_imagined_pow_4_is_involutive_on_squares": {
+  "key": "lean_imagined_pow_4_is_involutive_on_squares",
+  "file": "imagined_21.lean",
+  "name": "pow_4_is_involutive_on_squares",
+  "statementHash": "942288ec175cb741",
+  "searched": "2026-09-25T15:40:20.749Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 0,1,4,7": "0,1,4,7",
+   "zbmath": "fourth involutive squares",
+   "openalex": "fourth involutive squares",
+   "crossref": "fourth involutive squares",
+   "arxiv": "fourth AND involutive AND squares"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A160120",
+    "name": "Y-toothpick sequence (see Comments lines for definition).",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A085787",
+    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
+    "query": "0,1,4,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "(2+2)-free posets, ascent sequences and pattern avoiding permutations",
+    "year": "2008",
+    "url": "http://arxiv.org/abs/0806.0666v4",
+    "relevance": 0.6666666666666666,
+    "text": "(2+2)-free posets, ascent sequences and pattern avoiding permutations We present bijections between four classes of combinatorial objects. Two of them, the class of unlabeled (2+2)-free posets and a certain class of involutions (or chord diagrams), already appeared in the literature, but were appare"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_fourth_is_involutive_on_squares"
+ },
+ "lean_imagined_pow_4_is_involutive_on_tetA": {
+  "key": "lean_imagined_pow_4_is_involutive_on_tetA",
+  "file": "imagined_21.lean",
+  "name": "pow_4_is_involutive_on_tetA",
+  "statementHash": "98dc27a39c9e97f2",
+  "searched": "2026-09-25T15:40:10.711Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fourth involutive",
+   "openalex": "fourth involutive",
+   "crossref": "fourth involutive",
+   "arxiv": "fourth AND involutive"
+  },
+  "notMeasured": [
+   "zbmath: refusing this run (three refusals in a row) — retried next run",
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Integrable Lagrangians and modular forms",
+    "year": "2007",
+    "url": "http://arxiv.org/abs/0707.3433v2",
+    "relevance": 1,
+    "text": "Integrable Lagrangians and modular forms We investigate non-degenerate Lagrangians of the form $$ \\int f(u_x, u_y, u_t) dx dy dt $$ such that the corresponding Euler-Lagrange equations $ (f_{u_x})_x+ (f_{u_y})_y+ (f_{u_t})_t=0 $ are integrable by the method of hydrodynamic reductions. We demonstrate"
+   }
+  ],
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_fourth_is_involutive_on_tetA"
+ },
+ "lean_imagined_pow_5_carries_orbit_onto_units": {
+  "key": "lean_imagined_pow_5_carries_orbit_onto_units",
+  "file": "imagined_22.lean",
+  "name": "pow_5_carries_orbit_onto_units",
+  "statementHash": "fda6e071b580919c",
+  "searched": "2026-09-26T00:31:03.351Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "fifth carries orbit",
+   "openalex": "fifth carries orbit",
+   "crossref": "fifth carries orbit",
+   "arxiv": "fifth AND carries AND orbit"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_carries_orbit_onto_units"
+ },
+ "lean_imagined_pow_5_carries_units_onto_orbit": {
+  "key": "lean_imagined_pow_5_carries_units_onto_orbit",
+  "file": "imagined_22.lean",
+  "name": "pow_5_carries_units_onto_orbit",
+  "statementHash": "b2e1ca6102a22fbf",
+  "searched": "2026-09-26T00:30:51.133Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "fifth carries orbit",
+   "openalex": "fifth carries orbit",
+   "crossref": "fifth carries orbit",
+   "arxiv": "fifth AND carries AND orbit"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_carries_units_onto_orbit"
+ },
+ "lean_imagined_pow_5_collapses_reflfixed_to_one_value": {
+  "key": "lean_imagined_pow_5_collapses_reflfixed_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_5_collapses_reflfixed_to_one_value",
+  "statementHash": "e97e75c5fbb10c16",
+  "searched": "2026-09-26T00:34:27.518Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth collapses reflfixed",
+   "openalex": "fifth collapses reflfixed",
+   "crossref": "fifth collapses reflfixed",
+   "arxiv": "fifth AND collapses AND reflfixed AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_collapses_reflfixed_to_one_value"
+ },
+ "lean_imagined_pow_5_collapses_triad_to_one_value": {
+  "key": "lean_imagined_pow_5_collapses_triad_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_5_collapses_triad_to_one_value",
+  "statementHash": "fc557722ff89a0b3",
+  "searched": "2026-09-26T00:34:14.679Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth collapses triad",
+   "openalex": "fifth collapses triad",
+   "crossref": "fifth collapses triad",
+   "arxiv": "fifth AND collapses AND triad AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_collapses_triad_to_one_value"
+ },
+ "lean_imagined_pow_5_is_involutive_on_cubes": {
+  "key": "lean_imagined_pow_5_is_involutive_on_cubes",
+  "file": "imagined_22.lean",
+  "name": "pow_5_is_involutive_on_cubes",
+  "statementHash": "23cdf5e5b1ad5c60",
+  "searched": "2026-09-26T00:28:50.422Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth involutive cubes",
+   "openalex": "fifth involutive cubes",
+   "crossref": "fifth involutive cubes",
+   "arxiv": "fifth AND involutive AND cubes"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_is_involutive_on_cubes"
+ },
+ "lean_imagined_pow_5_is_involutive_on_orbit": {
+  "key": "lean_imagined_pow_5_is_involutive_on_orbit",
+  "file": "imagined_22.lean",
+  "name": "pow_5_is_involutive_on_orbit",
+  "statementHash": "59af3969b4169efc",
+  "searched": "2026-09-26T00:27:43.487Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "fifth involutive orbit",
+   "openalex": "fifth involutive orbit",
+   "crossref": "fifth involutive orbit",
+   "arxiv": "fifth AND involutive AND orbit"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_is_involutive_on_orbit"
+ },
+ "lean_imagined_pow_5_is_involutive_on_primitives": {
+  "key": "lean_imagined_pow_5_is_involutive_on_primitives",
+  "file": "imagined_22.lean",
+  "name": "pow_5_is_involutive_on_primitives",
+  "statementHash": "c455324813d14100",
+  "searched": "2026-09-26T00:29:02.977Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth involutive primitives",
+   "openalex": "fifth involutive primitives",
+   "crossref": "fifth involutive primitives",
+   "arxiv": "fifth AND involutive AND primitives"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_is_involutive_on_primitives"
+ },
+ "lean_imagined_pow_5_is_involutive_on_reflfixed": {
+  "key": "lean_imagined_pow_5_is_involutive_on_reflfixed",
+  "file": "imagined_22.lean",
+  "name": "pow_5_is_involutive_on_reflfixed",
+  "statementHash": "50ec0d3838700d37",
+  "searched": "2026-09-26T00:29:32.613Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth involutive reflfixed",
+   "openalex": "fifth involutive reflfixed",
+   "crossref": "fifth involutive reflfixed",
+   "arxiv": "fifth AND involutive AND reflfixed"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_is_involutive_on_reflfixed"
+ },
+ "lean_imagined_pow_5_is_involutive_on_selfinv": {
+  "key": "lean_imagined_pow_5_is_involutive_on_selfinv",
+  "file": "imagined_22.lean",
+  "name": "pow_5_is_involutive_on_selfinv",
+  "statementHash": "2990429bc4f9e02c",
+  "searched": "2026-09-26T00:29:20.450Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth involutive selfinv",
+   "openalex": "fifth involutive selfinv",
+   "crossref": "fifth involutive selfinv",
+   "arxiv": "fifth AND involutive AND selfinv"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_is_involutive_on_selfinv"
+ },
+ "lean_imagined_pow_5_is_involutive_on_squares": {
+  "key": "lean_imagined_pow_5_is_involutive_on_squares",
+  "file": "imagined_22.lean",
+  "name": "pow_5_is_involutive_on_squares",
+  "statementHash": "d21639b3422d434b",
+  "searched": "2026-09-26T00:28:38.410Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 0,1,4,7": "0,1,4,7",
+   "zbmath": "fifth involutive squares",
+   "openalex": "fifth involutive squares",
+   "crossref": "fifth involutive squares",
+   "arxiv": "fifth AND involutive AND squares"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A160120",
+    "name": "Y-toothpick sequence (see Comments lines for definition).",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A085787",
+    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
+    "query": "0,1,4,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_is_involutive_on_squares"
+ },
+ "lean_imagined_pow_5_is_involutive_on_tetA": {
+  "key": "lean_imagined_pow_5_is_involutive_on_tetA",
+  "file": "imagined_22.lean",
+  "name": "pow_5_is_involutive_on_tetA",
+  "statementHash": "04023e7dc2c05e33",
+  "searched": "2026-09-26T00:27:56.623Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth involutive",
+   "openalex": "fifth involutive",
+   "crossref": "fifth involutive",
+   "arxiv": "fifth AND involutive"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_is_involutive_on_tetA"
+ },
+ "lean_imagined_pow_5_is_involutive_on_tetB": {
+  "key": "lean_imagined_pow_5_is_involutive_on_tetB",
+  "file": "imagined_22.lean",
+  "name": "pow_5_is_involutive_on_tetB",
+  "statementHash": "2616a84a5cda3f48",
+  "searched": "2026-09-26T00:28:09.562Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "fifth involutive",
+   "openalex": "fifth involutive",
+   "crossref": "fifth involutive",
+   "arxiv": "fifth AND involutive"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_is_involutive_on_tetB"
+ },
+ "lean_imagined_pow_5_is_involutive_on_units": {
+  "key": "lean_imagined_pow_5_is_involutive_on_units",
+  "file": "imagined_22.lean",
+  "name": "pow_5_is_involutive_on_units",
+  "statementHash": "9fee6135ec7dc85c",
+  "searched": "2026-09-26T00:27:28.821Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "fifth involutive",
+   "openalex": "fifth involutive",
+   "crossref": "fifth involutive",
+   "arxiv": "fifth AND involutive"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_fifth_is_involutive_on_units"
+ },
+ "lean_imagined_pow_6_collapses_orbit_to_one_value": {
+  "key": "lean_imagined_pow_6_collapses_orbit_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_6_collapses_orbit_to_one_value",
+  "statementHash": "6768836c57c8cd3f",
+  "searched": "2026-09-26T00:35:10.687Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "sixth collapses orbit",
+   "openalex": "sixth collapses orbit",
+   "crossref": "sixth collapses orbit",
+   "arxiv": "sixth AND collapses AND orbit AND value"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_sixth_collapses_orbit_to_one_value"
+ },
+ "lean_imagined_pow_6_collapses_primitives_to_one_value": {
+  "key": "lean_imagined_pow_6_collapses_primitives_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_6_collapses_primitives_to_one_value",
+  "statementHash": "317103766b2623d2",
+  "searched": "2026-09-26T00:36:06.018Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "sixth collapses primitives",
+   "openalex": "sixth collapses primitives",
+   "crossref": "sixth collapses primitives",
+   "arxiv": "sixth AND collapses AND primitives AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_sixth_collapses_primitives_to_one_value"
+ },
+ "lean_imagined_pow_6_collapses_reflfixed_to_one_value": {
+  "key": "lean_imagined_pow_6_collapses_reflfixed_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_6_collapses_reflfixed_to_one_value",
+  "statementHash": "d69b963e601e34cd",
+  "searched": "2026-09-26T00:36:51.858Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "sixth collapses reflfixed",
+   "openalex": "sixth collapses reflfixed",
+   "crossref": "sixth collapses reflfixed",
+   "arxiv": "sixth AND collapses AND reflfixed AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_sixth_collapses_reflfixed_to_one_value"
+ },
+ "lean_imagined_pow_6_collapses_selfinv_to_one_value": {
+  "key": "lean_imagined_pow_6_collapses_selfinv_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_6_collapses_selfinv_to_one_value",
+  "statementHash": "e0507ec8519ea8d4",
+  "searched": "2026-09-26T00:36:20.418Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "sixth collapses selfinv",
+   "openalex": "sixth collapses selfinv",
+   "crossref": "sixth collapses selfinv",
+   "arxiv": "sixth AND collapses AND selfinv AND value"
+  },
+  "notMeasured": [
+   "zbmath: HTTP 404"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL",
+  "carriedFrom": "lean_imagined_sixth_collapses_selfinv_to_one_value"
+ },
+ "lean_imagined_pow_6_collapses_tetA_to_one_value": {
+  "key": "lean_imagined_pow_6_collapses_tetA_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_6_collapses_tetA_to_one_value",
+  "statementHash": "b3430d78edc8760b",
+  "searched": "2026-09-26T00:35:23.123Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "sixth collapses value",
+   "openalex": "sixth collapses value",
+   "crossref": "sixth collapses value",
+   "arxiv": "sixth AND collapses AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_sixth_collapses_tetA_to_one_value"
+ },
+ "lean_imagined_pow_6_collapses_tetB_to_one_value": {
+  "key": "lean_imagined_pow_6_collapses_tetB_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_6_collapses_tetB_to_one_value",
+  "statementHash": "422c51fdd4d2ce42",
+  "searched": "2026-09-26T00:35:44.786Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "sixth collapses value",
+   "openalex": "sixth collapses value",
+   "crossref": "sixth collapses value",
+   "arxiv": "sixth AND collapses AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_sixth_collapses_tetB_to_one_value"
+ },
+ "lean_imagined_pow_6_collapses_triad_to_one_value": {
+  "key": "lean_imagined_pow_6_collapses_triad_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_6_collapses_triad_to_one_value",
+  "statementHash": "9588cb345c517515",
+  "searched": "2026-09-26T00:34:52.894Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "sixth collapses triad",
+   "openalex": "sixth collapses triad",
+   "crossref": "sixth collapses triad",
+   "arxiv": "sixth AND collapses AND triad AND value"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_sixth_collapses_triad_to_one_value"
+ },
+ "lean_imagined_pow_6_collapses_units_to_one_value": {
+  "key": "lean_imagined_pow_6_collapses_units_to_one_value",
+  "file": "imagined_22.lean",
+  "name": "pow_6_collapses_units_to_one_value",
+  "statementHash": "61692966356c1b1a",
+  "searched": "2026-09-26T00:34:39.581Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "sixth collapses value",
+   "openalex": "sixth collapses value",
+   "crossref": "sixth collapses value",
+   "arxiv": "sixth AND collapses AND value"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_sixth_collapses_units_to_one_value"
+ },
+ "lean_imagined_primitives_is_closed_under_pow_5": {
+  "key": "lean_imagined_primitives_is_closed_under_pow_5",
+  "file": "imagined_22.lean",
+  "name": "primitives_is_closed_under_pow_5",
   "statementHash": "1657c641c164c5db",
   "searched": "2026-09-26T00:24:33.846Z",
   "limits": {
@@ -15860,36 +16461,8 @@
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_quadruple_collapses_reflfixed_to_one_value": {
-  "key": "lean_imagined_quadruple_collapses_reflfixed_to_one_value",
-  "file": "imagined.lean",
-  "name": "quadruple_collapses_reflfixed_to_one_value",
-  "statementHash": "3aa930bd5b6efb9f",
-  "searched": "2026-09-26T00:32:21.492Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "quadruple collapses reflfixed",
-   "openalex": "quadruple collapses reflfixed",
-   "crossref": "quadruple collapses reflfixed",
-   "arxiv": "quadruple AND collapses AND reflfixed AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_primitives_is_closed_under_fifth"
  },
  "lean_imagined_quintuple_collapses_reflfixed_to_one_value": {
   "key": "lean_imagined_quintuple_collapses_reflfixed_to_one_value",
@@ -15920,97 +16493,10 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
- "lean_imagined_reflect_carries_tetA_onto_triad": {
-  "key": "lean_imagined_reflect_carries_tetA_onto_triad",
-  "file": "imagined.lean",
-  "name": "reflect_carries_tetA_onto_triad",
-  "statementHash": "82fe17f5a5054496",
-  "searched": "2026-09-26T00:31:28.647Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "reflect carries triad",
-   "openalex": "reflect carries triad",
-   "crossref": "reflect carries triad",
-   "arxiv": "reflect AND carries AND triad"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_reflect_carries_triad_onto_tetA": {
-  "key": "lean_imagined_reflect_carries_triad_onto_tetA",
-  "file": "imagined.lean",
-  "name": "reflect_carries_triad_onto_tetA",
-  "statementHash": "394e9d342129b709",
-  "searched": "2026-09-26T00:31:15.906Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "reflect carries triad",
-   "openalex": "reflect carries triad",
-   "crossref": "reflect carries triad",
-   "arxiv": "reflect AND carries AND triad"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_reflect_collapses_reflfixed_to_one_value": {
-  "key": "lean_imagined_reflect_collapses_reflfixed_to_one_value",
-  "file": "imagined.lean",
-  "name": "reflect_collapses_reflfixed_to_one_value",
-  "statementHash": "858f7ff7cf101c1f",
-  "searched": "2026-09-26T00:38:10.286Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "reflect collapses reflfixed",
-   "openalex": "reflect collapses reflfixed",
-   "crossref": "reflect collapses reflfixed",
-   "arxiv": "reflect AND collapses AND reflfixed AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_reflfixed_is_closed_under_reflect": {
-  "key": "lean_imagined_reflfixed_is_closed_under_reflect",
-  "file": "imagined.lean",
-  "name": "reflfixed_is_closed_under_reflect",
+ "lean_imagined_reflfixed_is_closed_under_aff_8_1": {
+  "key": "lean_imagined_reflfixed_is_closed_under_aff_8_1",
+  "file": "imagined_22.lean",
+  "name": "reflfixed_is_closed_under_aff_8_1",
   "statementHash": "e761e07a10951335",
   "searched": "2026-09-26T00:26:47.485Z",
   "limits": {
@@ -16034,94 +16520,8 @@
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_selfinv_is_closed_under_cube": {
-  "key": "lean_imagined_selfinv_is_closed_under_cube",
-  "file": "imagined.lean",
-  "name": "selfinv_is_closed_under_cube",
-  "statementHash": "95a0dc9ffcc8e9e2",
-  "searched": "2026-09-26T00:13:16.798Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "selfinv closed",
-   "openalex": "selfinv closed",
-   "crossref": "selfinv closed",
-   "arxiv": "selfinv AND closed"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_selfinv_is_closed_under_fifth": {
-  "key": "lean_imagined_selfinv_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "selfinv_is_closed_under_fifth",
-  "statementHash": "550eb4ef7af9b1d7",
-  "searched": "2026-09-26T00:24:46.178Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "selfinv closed fifth",
-   "openalex": "selfinv closed fifth",
-   "crossref": "selfinv closed fifth",
-   "arxiv": "selfinv AND closed AND fifth"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_selfinv_is_closed_under_fourth": {
-  "key": "lean_imagined_selfinv_is_closed_under_fourth",
-  "file": "imagined.lean",
-  "name": "selfinv_is_closed_under_fourth",
-  "statementHash": "c6e2e91b32e06ed2",
-  "searched": "2026-09-26T00:18:04.011Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "selfinv closed fourth",
-   "openalex": "selfinv closed fourth",
-   "crossref": "selfinv closed fourth",
-   "arxiv": "selfinv AND closed AND fourth"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_reflfixed_is_closed_under_reflect"
  },
  "lean_imagined_selfinv_is_closed_under_negate": {
   "key": "lean_imagined_selfinv_is_closed_under_negate",
@@ -16181,39 +16581,10 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
- "lean_imagined_selfinv_is_closed_under_sixth": {
-  "key": "lean_imagined_selfinv_is_closed_under_sixth",
-  "file": "imagined.lean",
-  "name": "selfinv_is_closed_under_sixth",
-  "statementHash": "38f3ab9a0aacca9e",
-  "searched": "2026-09-26T00:25:53.913Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "selfinv closed sixth",
-   "openalex": "selfinv closed sixth",
-   "crossref": "selfinv closed sixth",
-   "arxiv": "selfinv AND closed AND sixth"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_selfinv_is_closed_under_square": {
-  "key": "lean_imagined_selfinv_is_closed_under_square",
-  "file": "imagined.lean",
-  "name": "selfinv_is_closed_under_square",
+ "lean_imagined_selfinv_is_closed_under_pow_2": {
+  "key": "lean_imagined_selfinv_is_closed_under_pow_2",
+  "file": "imagined_22.lean",
+  "name": "selfinv_is_closed_under_pow_2",
   "statementHash": "ed3b9e7f04dac1a6",
   "searched": "2026-09-26T00:13:03.502Z",
   "limits": {
@@ -16237,7 +16608,128 @@
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_selfinv_is_closed_under_square"
+ },
+ "lean_imagined_selfinv_is_closed_under_pow_3": {
+  "key": "lean_imagined_selfinv_is_closed_under_pow_3",
+  "file": "imagined_22.lean",
+  "name": "selfinv_is_closed_under_pow_3",
+  "statementHash": "95a0dc9ffcc8e9e2",
+  "searched": "2026-09-26T00:13:16.798Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "selfinv closed",
+   "openalex": "selfinv closed",
+   "crossref": "selfinv closed",
+   "arxiv": "selfinv AND closed"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_selfinv_is_closed_under_cube"
+ },
+ "lean_imagined_selfinv_is_closed_under_pow_4": {
+  "key": "lean_imagined_selfinv_is_closed_under_pow_4",
+  "file": "imagined_22.lean",
+  "name": "selfinv_is_closed_under_pow_4",
+  "statementHash": "c6e2e91b32e06ed2",
+  "searched": "2026-09-26T00:18:04.011Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "selfinv closed fourth",
+   "openalex": "selfinv closed fourth",
+   "crossref": "selfinv closed fourth",
+   "arxiv": "selfinv AND closed AND fourth"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_selfinv_is_closed_under_fourth"
+ },
+ "lean_imagined_selfinv_is_closed_under_pow_5": {
+  "key": "lean_imagined_selfinv_is_closed_under_pow_5",
+  "file": "imagined_22.lean",
+  "name": "selfinv_is_closed_under_pow_5",
+  "statementHash": "550eb4ef7af9b1d7",
+  "searched": "2026-09-26T00:24:46.178Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "selfinv closed fifth",
+   "openalex": "selfinv closed fifth",
+   "crossref": "selfinv closed fifth",
+   "arxiv": "selfinv AND closed AND fifth"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_selfinv_is_closed_under_fifth"
+ },
+ "lean_imagined_selfinv_is_closed_under_pow_6": {
+  "key": "lean_imagined_selfinv_is_closed_under_pow_6",
+  "file": "imagined_22.lean",
+  "name": "selfinv_is_closed_under_pow_6",
+  "statementHash": "38f3ab9a0aacca9e",
+  "searched": "2026-09-26T00:25:53.913Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "selfinv closed sixth",
+   "openalex": "selfinv closed sixth",
+   "crossref": "selfinv closed sixth",
+   "arxiv": "selfinv AND closed AND sixth"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_selfinv_is_closed_under_sixth"
  },
  "lean_imagined_septuple_collapses_reflfixed_to_one_value": {
   "key": "lean_imagined_septuple_collapses_reflfixed_to_one_value",
@@ -16261,35 +16753,6 @@
    "openalex": "septuple collapses reflfixed",
    "crossref": "septuple collapses reflfixed",
    "arxiv": "septuple AND collapses AND reflfixed AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_sextuple_collapses_primitives_to_one_value": {
-  "key": "lean_imagined_sextuple_collapses_primitives_to_one_value",
-  "file": "imagined.lean",
-  "name": "sextuple_collapses_primitives_to_one_value",
-  "statementHash": "690765a208a12359",
-  "searched": "2026-09-26T00:37:15.069Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "sextuple collapses primitives",
-   "openalex": "sextuple collapses primitives",
-   "crossref": "sextuple collapses primitives",
-   "arxiv": "sextuple AND collapses AND primitives AND value"
   },
   "notMeasured": [],
   "oeis": [],
@@ -16326,333 +16789,12 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
- "lean_imagined_sixth_collapses_orbit_to_one_value": {
-  "key": "lean_imagined_sixth_collapses_orbit_to_one_value",
-  "file": "imagined.lean",
-  "name": "sixth_collapses_orbit_to_one_value",
-  "statementHash": "6768836c57c8cd3f",
-  "searched": "2026-09-26T00:35:10.687Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
-   "zbmath": "sixth collapses orbit",
-   "openalex": "sixth collapses orbit",
-   "crossref": "sixth collapses orbit",
-   "arxiv": "sixth AND collapses AND orbit AND value"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001370",
-    "name": "Sum of digits of 2^n.",
-    "query": "1,2,4,8,7,5"
-   },
-   {
-    "a": "A153130",
-    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
-    "query": "1,2,4,8,7,5"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_sixth_collapses_primitives_to_one_value": {
-  "key": "lean_imagined_sixth_collapses_primitives_to_one_value",
-  "file": "imagined.lean",
-  "name": "sixth_collapses_primitives_to_one_value",
-  "statementHash": "317103766b2623d2",
-  "searched": "2026-09-26T00:36:06.018Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "sixth collapses primitives",
-   "openalex": "sixth collapses primitives",
-   "crossref": "sixth collapses primitives",
-   "arxiv": "sixth AND collapses AND primitives AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_sixth_collapses_reflfixed_to_one_value": {
-  "key": "lean_imagined_sixth_collapses_reflfixed_to_one_value",
-  "file": "imagined.lean",
-  "name": "sixth_collapses_reflfixed_to_one_value",
-  "statementHash": "d69b963e601e34cd",
-  "searched": "2026-09-26T00:36:51.858Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "sixth collapses reflfixed",
-   "openalex": "sixth collapses reflfixed",
-   "crossref": "sixth collapses reflfixed",
-   "arxiv": "sixth AND collapses AND reflfixed AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_sixth_collapses_selfinv_to_one_value": {
-  "key": "lean_imagined_sixth_collapses_selfinv_to_one_value",
-  "file": "imagined.lean",
-  "name": "sixth_collapses_selfinv_to_one_value",
-  "statementHash": "e0507ec8519ea8d4",
-  "searched": "2026-09-26T00:36:20.418Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "sixth collapses selfinv",
-   "openalex": "sixth collapses selfinv",
-   "crossref": "sixth collapses selfinv",
-   "arxiv": "sixth AND collapses AND selfinv AND value"
-  },
-  "notMeasured": [
-   "zbmath: HTTP 404"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_imagined_sixth_collapses_tetA_to_one_value": {
-  "key": "lean_imagined_sixth_collapses_tetA_to_one_value",
-  "file": "imagined.lean",
-  "name": "sixth_collapses_tetA_to_one_value",
-  "statementHash": "b3430d78edc8760b",
-  "searched": "2026-09-26T00:35:23.123Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "sixth collapses value",
-   "openalex": "sixth collapses value",
-   "crossref": "sixth collapses value",
-   "arxiv": "sixth AND collapses AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_sixth_collapses_tetB_to_one_value": {
-  "key": "lean_imagined_sixth_collapses_tetB_to_one_value",
-  "file": "imagined.lean",
-  "name": "sixth_collapses_tetB_to_one_value",
-  "statementHash": "422c51fdd4d2ce42",
-  "searched": "2026-09-26T00:35:44.786Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "sixth collapses value",
-   "openalex": "sixth collapses value",
-   "crossref": "sixth collapses value",
-   "arxiv": "sixth AND collapses AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_sixth_collapses_triad_to_one_value": {
-  "key": "lean_imagined_sixth_collapses_triad_to_one_value",
-  "file": "imagined.lean",
-  "name": "sixth_collapses_triad_to_one_value",
-  "statementHash": "9588cb345c517515",
-  "searched": "2026-09-26T00:34:52.894Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "sixth collapses triad",
-   "openalex": "sixth collapses triad",
-   "crossref": "sixth collapses triad",
-   "arxiv": "sixth AND collapses AND triad AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_sixth_collapses_units_to_one_value": {
-  "key": "lean_imagined_sixth_collapses_units_to_one_value",
-  "file": "imagined.lean",
-  "name": "sixth_collapses_units_to_one_value",
-  "statementHash": "61692966356c1b1a",
-  "searched": "2026-09-26T00:34:39.581Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
-   "zbmath": "sixth collapses value",
-   "openalex": "sixth collapses value",
-   "crossref": "sixth collapses value",
-   "arxiv": "sixth AND collapses AND value"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001651",
-    "name": "Numbers not divisible by 3.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A032924",
-    "name": "Numbers whose ternary expansion contains no 0.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A020914",
-    "name": "Number of digits in the base-2 representation of 3^n.",
-    "query": "1,2,4,5,7,8"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_square_collapses_reflfixed_to_one_value": {
-  "key": "lean_imagined_square_collapses_reflfixed_to_one_value",
-  "file": "imagined.lean",
-  "name": "square_collapses_reflfixed_to_one_value",
-  "statementHash": "43fb5818273e1184",
-  "searched": "2026-09-26T00:33:00.977Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "square collapses reflfixed",
-   "openalex": "square collapses reflfixed",
-   "crossref": "square collapses reflfixed",
-   "arxiv": "square AND collapses AND reflfixed AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_square_collapses_selfinv_to_one_value": {
-  "key": "lean_imagined_square_collapses_selfinv_to_one_value",
-  "file": "imagined.lean",
-  "name": "square_collapses_selfinv_to_one_value",
-  "statementHash": "3e34cdbf53da499a",
-  "searched": "2026-09-26T00:32:44.438Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "square collapses selfinv",
-   "openalex": "square collapses selfinv",
-   "crossref": "square collapses selfinv",
-   "arxiv": "square AND collapses AND selfinv AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_square_is_involutive_on_squares": {
-  "key": "lean_imagined_square_is_involutive_on_squares",
-  "file": "imagined.lean",
-  "name": "square_is_involutive_on_squares",
-  "statementHash": "b741d5e6ca749196",
-  "searched": "2026-09-25T15:39:38.512Z",
+ "lean_imagined_squares_is_closed_under_pow_2": {
+  "key": "lean_imagined_squares_is_closed_under_pow_2",
+  "file": "imagined_22.lean",
+  "name": "squares_is_closed_under_pow_2",
+  "statementHash": "eb9c4eabcb9e23b8",
+  "searched": "2026-09-25T15:33:14.089Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -16666,10 +16808,10 @@
   },
   "queries": {
    "oeis 0,1,4,7": "0,1,4,7",
-   "zbmath": "square involutive squares",
-   "openalex": "square involutive squares",
-   "crossref": "square involutive squares",
-   "arxiv": "square AND involutive AND squares"
+   "zbmath": "squares closed square",
+   "openalex": "squares closed square",
+   "crossref": "squares closed square",
+   "arxiv": "squares AND closed AND square"
   },
   "notMeasured": [
    "zbmath: refusing this run (three refusals in a row) — retried next run",
@@ -16691,19 +16833,36 @@
   "candidates": [
    {
     "source": "arxiv",
-    "title": "On indecomposable involutive solutions to the Yang-Baxter equation whose squaring map is a $p$-cycle",
+    "title": "On the number of Latin squares",
+    "year": "2009",
+    "url": "http://arxiv.org/abs/0909.2101v1",
+    "relevance": 0.6666666666666666,
+    "text": "On the number of Latin squares We (1) determine the number of Latin rectangles with 11 columns and each possible number of rows, including the Latin squares of order~11, (2) answer some questions of Alter by showing that the number of reduced Latin squares of order $n$ is divisible by $f!$ where $f$"
+   },
+   {
+    "source": "arxiv",
+    "title": "Distance between arithmetic progressions and perfect squares",
+    "year": "2018",
+    "url": "http://arxiv.org/abs/1801.01605v1",
+    "relevance": 0.6666666666666666,
+    "text": "Distance between arithmetic progressions and perfect squares In this paper, we study how close the terms of a finite arithmetic progression can get to a perfect square. The answer depends on the initial term, the common difference and the number of terms in the arithmetic progression."
+   },
+   {
+    "source": "arxiv",
+    "title": "Square closed pointed vector lattices",
     "year": "2025",
-    "url": "http://arxiv.org/abs/2508.01613v4",
+    "url": "http://arxiv.org/abs/2510.17510v1",
     "relevance": 1,
-    "text": "On indecomposable involutive solutions to the Yang-Baxter equation whose squaring map is a $p$-cycle The pioneering work of Rump, which proved Gateva-Ivanova's conjecture concerning the decomposability of square-free solutions to the Yang-Baxter equation, significantly motivated further research int"
+    "text": "Square closed pointed vector lattices Given an Archimedean vector lattice $E$, we present one elementary property of $E$ which is equivalent to the entire traditional list of axioms which makes $E$ a $Φ$-algebra. We call a vector lattice with this property ``square closed\". More generally, we then i"
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_squares_is_closed_under_square"
  },
- "lean_imagined_squares_is_closed_under_cube": {
-  "key": "lean_imagined_squares_is_closed_under_cube",
-  "file": "imagined.lean",
-  "name": "squares_is_closed_under_cube",
+ "lean_imagined_squares_is_closed_under_pow_3": {
+  "key": "lean_imagined_squares_is_closed_under_pow_3",
+  "file": "imagined_22.lean",
+  "name": "squares_is_closed_under_pow_3",
   "statementHash": "ee195a0dafecc72f",
   "searched": "2026-09-25T15:33:49.931Z",
   "limits": {
@@ -16751,55 +16910,13 @@
     "text": "On the number of inscribed squares of a simple closed curve in the plane We show that for every positive integer n there is a simple closed curve in the plane (which can be taken infinitely differentiable and convex) which has exactly n inscribed squares."
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_squares_is_closed_under_cube"
  },
- "lean_imagined_squares_is_closed_under_fifth": {
-  "key": "lean_imagined_squares_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "squares_is_closed_under_fifth",
-  "statementHash": "4185b717257075ac",
-  "searched": "2026-09-26T00:22:28.262Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 0,1,4,7": "0,1,4,7",
-   "zbmath": "squares closed fifth",
-   "openalex": "squares closed fifth",
-   "crossref": "squares closed fifth",
-   "arxiv": "squares AND closed AND fifth"
-  },
-  "notMeasured": [
-   "openalex: rate-limited after backoff"
-  ],
-  "oeis": [
-   {
-    "a": "A160120",
-    "name": "Y-toothpick sequence (see Comments lines for definition).",
-    "query": "0,1,4,7"
-   },
-   {
-    "a": "A085787",
-    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
-    "query": "0,1,4,7"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_imagined_squares_is_closed_under_fourth": {
-  "key": "lean_imagined_squares_is_closed_under_fourth",
-  "file": "imagined.lean",
-  "name": "squares_is_closed_under_fourth",
+ "lean_imagined_squares_is_closed_under_pow_4": {
+  "key": "lean_imagined_squares_is_closed_under_pow_4",
+  "file": "imagined_22.lean",
+  "name": "squares_is_closed_under_pow_4",
   "statementHash": "962e6d359c64f8d7",
   "searched": "2026-09-26T00:15:51.012Z",
   "limits": {
@@ -16846,7 +16963,94 @@
     "text": "Fixed points and cycles. [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"devillers.alice\",\"reviewer_id\":\"9496\",\"name\":\"Alice Devillers\",\"sign\":\"Alice Devillers (Bruxelles)\"},\"text\":\"This paper presents various results in the field of permutation groups, more precisely concerning the relations betw"
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_squares_is_closed_under_fourth"
+ },
+ "lean_imagined_squares_is_closed_under_pow_5": {
+  "key": "lean_imagined_squares_is_closed_under_pow_5",
+  "file": "imagined_22.lean",
+  "name": "squares_is_closed_under_pow_5",
+  "statementHash": "4185b717257075ac",
+  "searched": "2026-09-26T00:22:28.262Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 0,1,4,7": "0,1,4,7",
+   "zbmath": "squares closed fifth",
+   "openalex": "squares closed fifth",
+   "crossref": "squares closed fifth",
+   "arxiv": "squares AND closed AND fifth"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
+  "oeis": [
+   {
+    "a": "A160120",
+    "name": "Y-toothpick sequence (see Comments lines for definition).",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A085787",
+    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
+    "query": "0,1,4,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL",
+  "carriedFrom": "lean_imagined_squares_is_closed_under_fifth"
+ },
+ "lean_imagined_squares_is_closed_under_pow_6": {
+  "key": "lean_imagined_squares_is_closed_under_pow_6",
+  "file": "imagined_22.lean",
+  "name": "squares_is_closed_under_pow_6",
+  "statementHash": "15992c4446166020",
+  "searched": "2026-09-26T00:25:28.652Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 0,1,4,7": "0,1,4,7",
+   "zbmath": "squares closed sixth",
+   "openalex": "squares closed sixth",
+   "crossref": "squares closed sixth",
+   "arxiv": "squares AND closed AND sixth"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A160120",
+    "name": "Y-toothpick sequence (see Comments lines for definition).",
+    "query": "0,1,4,7"
+   },
+   {
+    "a": "A085787",
+    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
+    "query": "0,1,4,7"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_squares_is_closed_under_sixth"
  },
  "lean_imagined_squares_is_closed_under_quadruple": {
   "key": "lean_imagined_squares_is_closed_under_quadruple",
@@ -16939,151 +17143,10 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
- "lean_imagined_squares_is_closed_under_sixth": {
-  "key": "lean_imagined_squares_is_closed_under_sixth",
-  "file": "imagined.lean",
-  "name": "squares_is_closed_under_sixth",
-  "statementHash": "15992c4446166020",
-  "searched": "2026-09-26T00:25:28.652Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 0,1,4,7": "0,1,4,7",
-   "zbmath": "squares closed sixth",
-   "openalex": "squares closed sixth",
-   "crossref": "squares closed sixth",
-   "arxiv": "squares AND closed AND sixth"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A160120",
-    "name": "Y-toothpick sequence (see Comments lines for definition).",
-    "query": "0,1,4,7"
-   },
-   {
-    "a": "A085787",
-    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
-    "query": "0,1,4,7"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_squares_is_closed_under_square": {
-  "key": "lean_imagined_squares_is_closed_under_square",
-  "file": "imagined.lean",
-  "name": "squares_is_closed_under_square",
-  "statementHash": "eb9c4eabcb9e23b8",
-  "searched": "2026-09-25T15:33:14.089Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 0,1,4,7": "0,1,4,7",
-   "zbmath": "squares closed square",
-   "openalex": "squares closed square",
-   "crossref": "squares closed square",
-   "arxiv": "squares AND closed AND square"
-  },
-  "notMeasured": [
-   "zbmath: refusing this run (three refusals in a row) — retried next run",
-   "openalex: refusing this run (three refusals in a row) — retried next run"
-  ],
-  "oeis": [
-   {
-    "a": "A160120",
-    "name": "Y-toothpick sequence (see Comments lines for definition).",
-    "query": "0,1,4,7"
-   },
-   {
-    "a": "A085787",
-    "name": "Generalized heptagonal numbers: m*(5*m - 3)/2, m = 0, +-1, +-2 +-3, ...",
-    "query": "0,1,4,7"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "On the number of Latin squares",
-    "year": "2009",
-    "url": "http://arxiv.org/abs/0909.2101v1",
-    "relevance": 0.6666666666666666,
-    "text": "On the number of Latin squares We (1) determine the number of Latin rectangles with 11 columns and each possible number of rows, including the Latin squares of order~11, (2) answer some questions of Alter by showing that the number of reduced Latin squares of order $n$ is divisible by $f!$ where $f$"
-   },
-   {
-    "source": "arxiv",
-    "title": "Distance between arithmetic progressions and perfect squares",
-    "year": "2018",
-    "url": "http://arxiv.org/abs/1801.01605v1",
-    "relevance": 0.6666666666666666,
-    "text": "Distance between arithmetic progressions and perfect squares In this paper, we study how close the terms of a finite arithmetic progression can get to a perfect square. The answer depends on the initial term, the common difference and the number of terms in the arithmetic progression."
-   },
-   {
-    "source": "arxiv",
-    "title": "Square closed pointed vector lattices",
-    "year": "2025",
-    "url": "http://arxiv.org/abs/2510.17510v1",
-    "relevance": 1,
-    "text": "Square closed pointed vector lattices Given an Archimedean vector lattice $E$, we present one elementary property of $E$ which is equivalent to the entire traditional list of axioms which makes $E$ a $Φ$-algebra. We call a vector lattice with this property ``square closed\". More generally, we then i"
-   }
-  ],
-  "verdict": "CANDIDATES"
- },
- "lean_imagined_tetA_is_closed_under_fifth": {
-  "key": "lean_imagined_tetA_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "tetA_is_closed_under_fifth",
-  "statementHash": "c9fe48f410d2bf3c",
-  "searched": "2026-09-26T00:19:50.958Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "closed fifth",
-   "openalex": "closed fifth",
-   "crossref": "closed fifth",
-   "arxiv": "closed AND fifth"
-  },
-  "notMeasured": [
-   "openalex: rate-limited after backoff"
-  ],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
- },
- "lean_imagined_tetA_is_closed_under_fourth": {
-  "key": "lean_imagined_tetA_is_closed_under_fourth",
-  "file": "imagined.lean",
-  "name": "tetA_is_closed_under_fourth",
+ "lean_imagined_tetA_is_closed_under_pow_4": {
+  "key": "lean_imagined_tetA_is_closed_under_pow_4",
+  "file": "imagined_22.lean",
+  "name": "tetA_is_closed_under_pow_4",
   "statementHash": "a247dac7d10d98fb",
   "searched": "2026-09-26T00:14:24.076Z",
   "limits": {
@@ -17116,12 +17179,45 @@
     "text": "Some fourth-order linear divisibility sequences [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"berczes.attila\",\"reviewer_id\":\"13481\",\"name\":\"Attila Bérczes\",\"sign\":\"Attila Bérczes (Debrecen)\"},\"text\":\"Inspired by a problem of Zhou, who asked for a closed formula for the number of ways to tile a \\"
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_tetA_is_closed_under_fourth"
  },
- "lean_imagined_tetA_is_closed_under_sixth": {
-  "key": "lean_imagined_tetA_is_closed_under_sixth",
-  "file": "imagined.lean",
-  "name": "tetA_is_closed_under_sixth",
+ "lean_imagined_tetA_is_closed_under_pow_5": {
+  "key": "lean_imagined_tetA_is_closed_under_pow_5",
+  "file": "imagined_22.lean",
+  "name": "tetA_is_closed_under_pow_5",
+  "statementHash": "c9fe48f410d2bf3c",
+  "searched": "2026-09-26T00:19:50.958Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "closed fifth",
+   "openalex": "closed fifth",
+   "crossref": "closed fifth",
+   "arxiv": "closed AND fifth"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL",
+  "carriedFrom": "lean_imagined_tetA_is_closed_under_fifth"
+ },
+ "lean_imagined_tetA_is_closed_under_pow_6": {
+  "key": "lean_imagined_tetA_is_closed_under_pow_6",
+  "file": "imagined_22.lean",
+  "name": "tetA_is_closed_under_pow_6",
   "statementHash": "db4f09b92b6c506b",
   "searched": "2026-09-25T15:37:47.075Z",
   "limits": {
@@ -17157,41 +17253,13 @@
     "text": "On Kaplansky's sixth conjecture About $39$ years ago, Kaplansky conjectured that the dimension of a semisimple Hopf algebra over an algebraically closed field of characteristic zero is divisible by the dimensions of its simple modules. Although it still remains open, some partial answers to this con"
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_tetA_is_closed_under_sixth"
  },
- "lean_imagined_tetB_is_closed_under_fifth": {
-  "key": "lean_imagined_tetB_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "tetB_is_closed_under_fifth",
-  "statementHash": "d7c2d9fe9c6cbd31",
-  "searched": "2026-09-26T00:21:43.322Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "closed fifth",
-   "openalex": "closed fifth",
-   "crossref": "closed fifth",
-   "arxiv": "closed AND fifth"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_tetB_is_closed_under_reflect": {
-  "key": "lean_imagined_tetB_is_closed_under_reflect",
-  "file": "imagined.lean",
-  "name": "tetB_is_closed_under_reflect",
+ "lean_imagined_tetB_is_closed_under_aff_8_1": {
+  "key": "lean_imagined_tetB_is_closed_under_aff_8_1",
+  "file": "imagined_22.lean",
+  "name": "tetB_is_closed_under_aff_8_1",
   "statementHash": "e0ab2dc76384fdf4",
   "searched": "2026-09-25T15:39:07.934Z",
   "limits": {
@@ -17227,14 +17295,15 @@
     "text": "Does repetition reflect dedication or closed-mindedness?: A matter of the primed rule "
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_tetB_is_closed_under_reflect"
  },
- "lean_imagined_triad_is_closed_under_fifth": {
-  "key": "lean_imagined_triad_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "triad_is_closed_under_fifth",
-  "statementHash": "f5df0a3759b6929b",
-  "searched": "2026-09-26T00:18:43.964Z",
+ "lean_imagined_tetB_is_closed_under_pow_5": {
+  "key": "lean_imagined_tetB_is_closed_under_pow_5",
+  "file": "imagined_22.lean",
+  "name": "tetB_is_closed_under_pow_5",
+  "statementHash": "d7c2d9fe9c6cbd31",
+  "searched": "2026-09-26T00:21:43.322Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -17247,21 +17316,22 @@
    ]
   },
   "queries": {
-   "zbmath": "triad closed fifth",
-   "openalex": "triad closed fifth",
-   "crossref": "triad closed fifth",
-   "arxiv": "triad AND closed AND fifth"
+   "zbmath": "closed fifth",
+   "openalex": "closed fifth",
+   "crossref": "closed fifth",
+   "arxiv": "closed AND fifth"
   },
   "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_tetB_is_closed_under_fifth"
  },
- "lean_imagined_triad_is_closed_under_fourth": {
-  "key": "lean_imagined_triad_is_closed_under_fourth",
-  "file": "imagined.lean",
-  "name": "triad_is_closed_under_fourth",
+ "lean_imagined_triad_is_closed_under_pow_4": {
+  "key": "lean_imagined_triad_is_closed_under_pow_4",
+  "file": "imagined_25.lean",
+  "name": "triad_is_closed_under_pow_4",
   "statementHash": "3323069c6a1f8e89",
   "searched": "2026-09-26T00:13:43.128Z",
   "limits": {
@@ -17285,12 +17355,43 @@
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_triad_is_closed_under_fourth"
  },
- "lean_imagined_triad_is_closed_under_sixth": {
-  "key": "lean_imagined_triad_is_closed_under_sixth",
-  "file": "imagined.lean",
-  "name": "triad_is_closed_under_sixth",
+ "lean_imagined_triad_is_closed_under_pow_5": {
+  "key": "lean_imagined_triad_is_closed_under_pow_5",
+  "file": "imagined_25.lean",
+  "name": "triad_is_closed_under_pow_5",
+  "statementHash": "f5df0a3759b6929b",
+  "searched": "2026-09-26T00:18:43.964Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "triad closed fifth",
+   "openalex": "triad closed fifth",
+   "crossref": "triad closed fifth",
+   "arxiv": "triad AND closed AND fifth"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_triad_is_closed_under_fifth"
+ },
+ "lean_imagined_triad_is_closed_under_pow_6": {
+  "key": "lean_imagined_triad_is_closed_under_pow_6",
+  "file": "imagined_25.lean",
+  "name": "triad_is_closed_under_pow_6",
   "statementHash": "6b686cd28d37e05a",
   "searched": "2026-09-26T00:25:02.295Z",
   "limits": {
@@ -17314,36 +17415,8 @@
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_triple_collapses_primitives_to_one_value": {
-  "key": "lean_imagined_triple_collapses_primitives_to_one_value",
-  "file": "imagined.lean",
-  "name": "triple_collapses_primitives_to_one_value",
-  "statementHash": "b1dd189c27c2bad7",
-  "searched": "2026-09-26T00:31:55.013Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "zbmath": "triple collapses primitives",
-   "openalex": "triple collapses primitives",
-   "crossref": "triple collapses primitives",
-   "arxiv": "triple AND collapses AND primitives AND value"
-  },
-  "notMeasured": [],
-  "oeis": [],
-  "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_triad_is_closed_under_sixth"
  },
  "lean_imagined_triple_collapses_reflfixed_to_one_value": {
   "key": "lean_imagined_triple_collapses_reflfixed_to_one_value",
@@ -17374,56 +17447,10 @@
   "candidates": [],
   "verdict": "NONE_FOUND"
  },
- "lean_imagined_units_is_closed_under_fifth": {
-  "key": "lean_imagined_units_is_closed_under_fifth",
-  "file": "imagined.lean",
-  "name": "units_is_closed_under_fifth",
-  "statementHash": "ea804bc2585aca29",
-  "searched": "2026-09-26T00:18:31.599Z",
-  "limits": {
-   "relevanceFloor": 0.6,
-   "perSource": 5,
-   "sources": [
-    "zbmath",
-    "openalex",
-    "crossref",
-    "arxiv",
-    "oeis"
-   ]
-  },
-  "queries": {
-   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
-   "zbmath": "closed fifth",
-   "openalex": "closed fifth",
-   "crossref": "closed fifth",
-   "arxiv": "closed AND fifth"
-  },
-  "notMeasured": [],
-  "oeis": [
-   {
-    "a": "A001651",
-    "name": "Numbers not divisible by 3.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A032924",
-    "name": "Numbers whose ternary expansion contains no 0.",
-    "query": "1,2,4,5,7,8"
-   },
-   {
-    "a": "A020914",
-    "name": "Number of digits in the base-2 representation of 3^n.",
-    "query": "1,2,4,5,7,8"
-   }
-  ],
-  "catalogued": true,
-  "candidates": [],
-  "verdict": "NONE_FOUND"
- },
- "lean_imagined_units_is_closed_under_fourth": {
-  "key": "lean_imagined_units_is_closed_under_fourth",
-  "file": "imagined.lean",
-  "name": "units_is_closed_under_fourth",
+ "lean_imagined_units_is_closed_under_pow_4": {
+  "key": "lean_imagined_units_is_closed_under_pow_4",
+  "file": "imagined_25.lean",
+  "name": "units_is_closed_under_pow_4",
   "statementHash": "a671c6d1f05f5a99",
   "searched": "2026-09-26T00:13:29.609Z",
   "limits": {
@@ -17473,12 +17500,60 @@
     "text": "Some fourth-order linear divisibility sequences [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"berczes.attila\",\"reviewer_id\":\"13481\",\"name\":\"Attila Bérczes\",\"sign\":\"Attila Bérczes (Debrecen)\"},\"text\":\"Inspired by a problem of Zhou, who asked for a closed formula for the number of ways to tile a \\"
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_units_is_closed_under_fourth"
  },
- "lean_imagined_units_is_closed_under_sixth": {
-  "key": "lean_imagined_units_is_closed_under_sixth",
-  "file": "imagined.lean",
-  "name": "units_is_closed_under_sixth",
+ "lean_imagined_units_is_closed_under_pow_5": {
+  "key": "lean_imagined_units_is_closed_under_pow_5",
+  "file": "imagined_25.lean",
+  "name": "units_is_closed_under_pow_5",
+  "statementHash": "ea804bc2585aca29",
+  "searched": "2026-09-26T00:18:31.599Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "closed fifth",
+   "openalex": "closed fifth",
+   "crossref": "closed fifth",
+   "arxiv": "closed AND fifth"
+  },
+  "notMeasured": [],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND",
+  "carriedFrom": "lean_imagined_units_is_closed_under_fifth"
+ },
+ "lean_imagined_units_is_closed_under_pow_6": {
+  "key": "lean_imagined_units_is_closed_under_pow_6",
+  "file": "imagined_25.lean",
+  "name": "units_is_closed_under_pow_6",
   "statementHash": "ce651a01d1b80663",
   "searched": "2026-09-25T15:37:18.589Z",
   "limits": {
@@ -17531,7 +17606,8 @@
     "text": "On Kaplansky's sixth conjecture About $39$ years ago, Kaplansky conjectured that the dimension of a semisimple Hopf algebra over an algebraically closed field of characteristic zero is divisible by the dimensions of its simple modules. Although it still remains open, some partial answers to this con"
    }
   ],
-  "verdict": "CANDIDATES"
+  "verdict": "CANDIDATES",
+  "carriedFrom": "lean_imagined_units_is_closed_under_sixth"
  },
  "lean_imprint_a_shorter_message_is_not_a_longer_one": {
   "key": "lean_imprint_a_shorter_message_is_not_a_longer_one",

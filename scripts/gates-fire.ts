@@ -133,6 +133,18 @@ const CONTROLS: Control[] = [
     what: 'a vocabulary where every expression computes the same thing, so everything coils and the clustering says nothing',
     mutate: (s) => s.replace("const sortU = (xs: number[]) =>", "const sortU = (_xs: number[]) => [0] as number[]\nconst __unusedSortU = (xs: number[]) =>") },
 
+  // THE SAME SHAPE IN TWO MORE DOMAINS — the rosetta wave below, applied to the two generators leads.ts named
+  // uncontrolled the day they were written. Both printed a report without --emit and exited 0, exactly as
+  // coils.ts once did, so neither could notice its committed Lean no longer being what it generates. Each
+  // compares the whole text now, and the control is one edited character in the derived file.
+  { gate: 'group (the generated file drifts from the generator)', cmd: 'node scripts/group.ts', file: 'src/proof/group.lean',
+    what: 'a generated Lean file whose constants no longer match the walk that produced them — stale structure the kernel still accepts',
+    mutate: (s) => s.replace('def one : Nat × Nat := (1, 0)', 'def one : Nat × Nat := (1, 0)  -- edited by hand') },
+
+  { gate: 'bridge (the generated file drifts from the generator)', cmd: 'node scripts/bridge.ts', file: 'src/proof/bridge.lean',
+    what: 'a generated bridge whose orbits no longer follow src/entangle — subjects proving a map nobody computed',
+    mutate: (s) => s.replace('open Z9', 'open Z9  -- edited by hand') },
+
   // ── THE TWO WAYS A FILE'S SELF-DECLARED COUNT CAN GO WRONG, and they need separate controls because they
   //    are separate defects with separate fixes. Fifteen files declare `settledHere` — how many declarations
   //    that file closes by exhaustion — and each was followed by `settledHere = N := rfl`, a constant compared
@@ -722,9 +734,14 @@ const CONTROLS: Control[] = [
 
   // imagine only judges when it EMITS: without --emit it proposes and exits 0, so the control has to run the
   // emitting path and put a false proposition to the kernel.
+  // The mutation follows the generator: its maps were a typed table (`{ id: 'double', lean: 'm9 (2 * d)' }`)
+  // and are derived from the ring now (9a85ad0b3), rendered by affLean. The old mutation matched nothing and
+  // gates-fire reported the control as a NO-OP — the clean tree tested twice. The Lean text of every affine
+  // map with a shift gains "+ 1" while the TypeScript model keeps computing a·d + b, so the kernel refuses
+  // what the model proposes: the same false proposition as before, placed where the text is made now.
   { gate: 'imagine', cmd: 'node scripts/imagine.ts --emit', file: 'scripts/imagine.ts',
     what: 'a proposition the kernel refuses',
-    mutate: (s) => s.replace("{ id: 'double',   lean: 'm9 (2 * d)',", "{ id: 'double',   lean: 'm9 (2 * d) + 1',"),
+    mutate: (s) => s.replace("  : `m9 (${a} * d + ${b})`", "  : `m9 (${a} * d + ${b} + 1)`"),
     restore: 'node scripts/imagine.ts --emit' },
 
   { gate: 'verify', cmd: 'node scripts/verify.ts', file: 'src/proof/discovered.json',

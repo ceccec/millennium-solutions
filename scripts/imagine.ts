@@ -514,7 +514,12 @@ const t2 = t3.filter((c) => {
     for (const t of chunks.slice(1)) {
       if (!t.includes(lit) || !t.includes(mul)) continue
       const name = nameOf(t)
-      if (!name) continue
+      // A NON-EMPTY NAME IS NOT A LIVE NAME. The comment above says this path "already required a real name" and
+      // it required a non-empty one: a comment that uses the word "theorem" mid-sentence splits into a chunk
+      // whose first token is prose with its whitespace stripped, and `belowtouchesit.These` came back as a
+      // carrier through here on 2026-10-03 — found by gates-fire's leftover check, after the verbatim path above
+      // had been fixed for exactly this and the fix had not reached the second path. Same set, both paths.
+      if (!name || !liveThmNames.has(name)) continue
       coveredBy.set(c.key, name)
       return false
     }

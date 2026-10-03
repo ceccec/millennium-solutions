@@ -20,7 +20,7 @@
 //
 //   node scripts/bridge.ts          report
 //   node scripts/bridge.ts --emit   write src/proof/bridge.lean and put it to the kernel
-import { writeFileSync } from 'node:fs'
+import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { flag } from '../src/cli/index.ts'
 import { DOM_EXPRS } from '../src/entangle/index.ts'
@@ -71,9 +71,7 @@ if (without.length) {
   console.log(`  ${without.length} follow NO first-order affine rule — named, not fitted to the nearest one:`)
   for (const r of without) console.log(`    ${r.doms.join(', ')}`)
 }
-if (!flag('--emit')) process.exit(0)
-
-const nm = (r: typeof rows[number], i: number) =>
+const nm =(r: typeof rows[number], i: number) =>
   `the_reduction_shared_by_${r.doms.length}_subjects_is_the_orbit_of_d_to_${r.rule![0]}d_plus_${r.rule![1]}_${i}`
 const L = (xs: number[]) => '[' + xs.join(', ') + ']'
 
@@ -137,7 +135,7 @@ theorem every_rule_is_a_map_the_group_file_classifies :
   \u2227 (${pairsL}.filter (fun p => p.1 == 0)).length = ${rules.length - inGroup}
   \u2227 ${unitsL}.length = ${RING.filter((u) => RING.some((v) => (u * v) % B === 1)).length} := by decide
 `
-writeFileSync('src/proof/bridge.lean', `import Z9
+const text = `import Z9
 set_option maxRecDepth 8000000
 set_option maxHeartbeats 2000000
 -- title: The subjects and the group are the same object
@@ -163,7 +161,20 @@ ${body}
 ${control}
 ${closing}
 end Bridge
-`)
+`
+// THE COMMITTED FILE MUST BE WHAT THIS SCRIPT GENERATES — the same check scripts/group.ts carries, for the
+// same reason: without --emit this printed a report and exited 0, so a src/proof/bridge.lean that no longer
+// followed src/entangle would have stayed green, with subjects proving a map nobody computed.
+const OUT = 'src/proof/bridge.lean'
+const committed = existsSync(OUT) ? readFileSync(OUT, 'utf8') : ''
+if (!flag('--emit')) {
+  if (committed === text) { console.log(`  ✓ ${OUT} is exactly what this script generates`); process.exit(0) }
+  let at = 0
+  while (at < text.length && text[at] === committed[at]) at++
+  console.log(`  ✗ bridge: ${OUT} drifts from what scripts/bridge.ts generates (first difference at character ${at}) — run node scripts/bridge.ts --emit`)
+  process.exit(1)
+}
+writeFileSync(OUT, text)
 console.log(`\nwrote src/proof/bridge.lean with ${withRule.length + (ctrl ? 1 : 0) + 2} theorem(s) — putting them to the kernel:`)
 try {
   const out = String(execSync('cd src/proof && LEAN_PATH=. lean bridge.lean', { encoding: 'utf8', stdio: 'pipe' }))

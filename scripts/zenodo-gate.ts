@@ -11,6 +11,7 @@ import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { leanTheorems } from '../src/api/index.ts'
 import { deposition, namesIn, keyOf } from './zenodo-theorems.ts'
 import { ownFiles, creditedIn, closureOf, definitionsFor, SCOPE_MARK } from '../src/publication/index.ts'
+import { escapeHtml } from '../src/html/index.ts'
 import { stripTags } from '../src/html/index.ts'
 
 let bad = 0
@@ -240,7 +241,11 @@ for (const t of rows) {
   if (!existsSync(p)) continue
   const dep = JSON.parse(readFileSync(p, 'utf8')) as { description?: string }
   const needed = definitionsFor(t.statement, [t.file, ...closureOf(t.file)].map((f) => 'src/proof/' + f))
-  const missing = needed.filter((d) => !String(dep.description ?? '').includes(d.text.split('\n')[0]))
+  // COMPARED IN THE ENCODING THE RECORD USES. The description is HTML and publicationHtml escapes every
+  // definition it carries, so a raw line holding `=>` (as `def fact` does, through `fun a k => …`) was looked
+  // for where only `=&gt;` could be — and the record was failed for a symbol it defines. Found 2026-10-03, the
+  // first time the regenerated depositions reached a definition with an angle bracket.
+  const missing = needed.filter((d) => !String(dep.description ?? '').includes(escapeHtml(d.text.split('\n')[0])))
   if (missing.length) fail(`lean_${t.name} quotes ${missing.length} symbol(s) its record never defines: ${missing.map((m) => m.name).join(', ')}`)
 }
 

@@ -9,7 +9,7 @@
  *  from work that is wrong, and gating a build on an open question would only teach people to close
  *  questions cheaply. What it refuses to do is let the list be silent. */
 import { readFileSync, readdirSync, existsSync} from 'node:fs'
-import { NEEDS as MCP_NEEDS, TOOLS as MCP_TOOLS, SELF_SUFFICIENT } from '../src/mcp/index.ts'
+import { NEEDS as MCP_NEEDS, TOOLS as MCP_TOOLS, SELF_SUFFICIENT, type Need } from '../src/mcp/index.ts'
 import { SERVED_WITH_LEDGER as SERVED_BY_PACKAGE } from '../src/mcp/serve.ts'
 const TOOL_NAMES = MCP_TOOLS.map((t) => t.name)
 import { homedir } from 'node:os'
@@ -190,13 +190,22 @@ for (const f of leanFiles()) {
 // tools as out of reach while a stranger was already running three of them. What the lead is about is what an
 // install can reach, so that is what it counts now.
 const unreachable = TOOL_NAMES.filter((n) => !SERVED_BY_PACKAGE.includes(n))
-add('mcp-reach', unreachable.length,
-  `MCP tool(s) an npm install cannot reach (${SERVED_BY_PACKAGE.length} of ${TOOL_NAMES.length} are served from the package, ledger included): `
-  + unreachable.slice(0, 6).map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' ') + (unreachable.length > 6 ? ' …' : ''),
-  'each names what it needs, and list_tools tells a caller before they call rather than failing when they do. '
-  + 'Reducing the count means moving a tool onto data or logic the package carries — shipping the ledger took '
-  + 'it from 19 to 16 — and for some it cannot be done: lean_verify needs the Lean toolchain and probe needs '
-  + 'the network. Those are honest requirements, not gaps.', ['publication'])
+// ROTATED THROUGH ITS CAUSES. "Cannot reach" was two leads wearing one count. A tool whose need is the Lean
+// toolchain, the network, a git checkout or a sibling's directory is an HONEST requirement — no package can
+// carry a kernel or somebody else's server, and the lead's own text said so while counting them anyway. A
+// tool that needs only the tree or the ledger is one whose answer the package COULD carry, as formulas.jsonld
+// already does for `formulas`. Counted together, the honest ones padded the number and the actionable ones
+// hid among them; the honest set is reported beside the lead, not inside it, the way decided gates are.
+const OUTSIDE_ANY_PACKAGE: Need[] = ['lean', 'net', 'git', 'shared']
+const honest = unreachable.filter((n) => (MCP_NEEDS[n] ?? []).some((x) => OUTSIDE_ANY_PACKAGE.includes(x)))
+const bakeable = unreachable.filter((n) => !honest.includes(n))
+if (honest.length) console.log(`  (${honest.length} MCP tool(s) need a toolchain, the network, git or a sibling's directory, which no package can carry — ${honest.map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' ')} — honest requirements, named by list_tools before a call, and not leads)\n`)
+add('mcp-reach', bakeable.length,
+  `MCP tool(s) an npm install cannot reach whose only need is the tree or the ledger — an answer a package can carry (${SERVED_BY_PACKAGE.length} of ${TOOL_NAMES.length} served, ledger included): `
+  + bakeable.map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' '),
+  'move each onto data or logic the package carries — shipping the ledger took the count from 19 to 16 and '
+  + 'public/formulas.jsonld took `formulas` — or name it in src/mcp/serve.ts CANNOT_SHIP with a reason that is '
+  + 'true today, as `discover` and `recompute` are', ['publication'])
 
 const shipsMcp = (() => {
   try {

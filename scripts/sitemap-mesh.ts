@@ -24,7 +24,11 @@ const linksOf = (html: string) => {
   const out = new Set<string>()
   for (const m of html.matchAll(/href="([^"#?]+)/g)) {
     const h = m[1]
-    if (/^https?:|^mailto:|\.(css|js|png|svg|ico|xml|json|webmanifest|txt|woff2?|ttf|eot|gif|jpe?g|webp|avif)$/i.test(h)) continue
+    // `jsonld` is a data file like `json`, and `\.json$` does not match it: the formulas page's one link to
+    // public/formulas.jsonld — the link e2e REQUIRES the page to carry — was read as a page with no route.
+    // (and `jsonld?` would have matched jsonl and jsonld while dropping json itself — the mesh said so at
+    // once, naming the dashboard's sitemap.json link. A pattern is a claim the instrument checks.)
+    if (/^https?:|^mailto:|\.(css|js|png|svg|ico|xml|json(ld)?|webmanifest|txt|woff2?|ttf|eot|gif|jpe?g|webp|avif)$/i.test(h)) continue
     if (h.startsWith(BASE)) out.add(h.replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, ''))
   }
   return [...out]

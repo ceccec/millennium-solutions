@@ -8,15 +8,17 @@
  *  is what made it worth doing first: `mcp-ship` and `deposit` share the cause PUBLICATION, and of the two,
  *  only this one is closable here. The other needs the depositor's Zenodo token.
  *
- *  WHAT IS HERE AND WHY IT IS SIX AND NOT TWENTY-FIVE. 8 of the 25 tools need nothing beyond the package
- *  (src/mcp/index.ts NEEDS, checked against the handler source by scripts/mcp-gate.ts). Two of those eight
- *  still cannot ship:
- *    · honesty_gate re-exports `computes` from @uuidna/uuidna, which is a devDependency. Making it a runtime
- *      dependency would buy one tool and spend the zero-dependency core, which is a worse trade — and
- *      scripts/mcp.ts's own header commits to "node built-ins only".
+ *  WHAT IS HERE AND WHY IT IS FEWER THAN THE WHOLE SURFACE. The tools that need nothing beyond the package are
+ *  the `core` ones (src/mcp/index.ts NEEDS, checked against the handler source by scripts/mcp-gate.ts), minus
+ *  the ones named in CANNOT_SHIP with a reason that is true today:
  *    · discover needs CANDIDATES from scripts/discover.ts, which is repository logic and not a module.
- *  So SIX, each reaching nothing but src/ and node built-ins. The count is derived below rather than typed,
- *  so it cannot claim more than it serves.
+ *    · recompute re-runs those candidates' formulas — the same repository logic.
+ *  honesty_gate stood in that list with the reason that `computes` came from @uuidna/uuidna, a devDependency,
+ *  and that making it a runtime dependency would spend the zero-dependency core for one tool. That trade was
+ *  made on 2026-10-03 for the package as a whole (@uuidna/uuidna and @uuidna/qpu are runtime dependencies of
+ *  what is published), so the reason stopped being true and the exclusion with it: a reason that has stopped
+ *  being true is worse than none, because it stops the next reader doing the right thing. The count is
+ *  derived below rather than typed, so it cannot claim more than it serves.
  *
  *  WHAT THIS IS NOT. It is not a reduced copy of the full server and it duplicates no handler: each tool below
  *  is the same computation over values the CALLER passes in, which is precisely why it needs no tree. Nothing
@@ -27,6 +29,8 @@ import { handle, resolve, HANDLE_HEX } from '../handle/index.ts'
 import { checkFace, type Face } from '../face/index.ts'
 import { CORE as ROSETTA_CORE, DOMAINS as ROSETTA_DOMAINS } from '../the/rosetta/index.ts'
 import { TOOLS, NEEDS, WRITES } from './index.ts'
+// The gate itself — no local logic, by order (scripts/honesty-gate.ts carries the same line for the full server).
+import { computes } from '@uuidna/uuidna'
 
 /** ── THE EVIDENCE TOOLS, OVER A LEDGER THE CALLER IS HANDED ───────────────────────────────────────────────
  *  Four tools measure the discovery ledger, and the package did not ship it — so they were `ledger` tools,
@@ -91,7 +95,6 @@ export const verifyIn = (rows: Row[], uuid: string) => {
 /** The tools this entry serves — DERIVED from NEEDS, not listed, minus the two that need a dependency or
  *  repository logic. Those two are named with their reason so the subtraction is auditable. */
 export const CANNOT_SHIP: Record<string, string> = {
-  honesty_gate: 'its `computes` comes from @uuidna/uuidna, a devDependency; shipping it would spend the zero-dependency core to gain one tool',
   discover: 'its candidate set is scripts/discover.ts — repository logic, not a module',
   recompute: 'it re-runs every candidate\'s formula, and the formulas are in scripts/discover.ts — the same repository logic. Reading the ledger is not enough: this tool recomputes what the ledger RECORDS, which needs the code that computed it',
 }
@@ -111,7 +114,7 @@ export const SERVED_CORE = [...CORE_TOOLS].sort()
 export const SERVED_WITH_LEDGER = [...CORE_TOOLS, ...LEDGER_TOOLS, ...DATA_TOOLS].sort()
 /** WHAT IS SERVED DEPENDS ON WHAT IS LOADED, so this is a function and not a constant. A constant would have
  *  had to pick one answer before the transport had read anything, and the honest answer differs: a caller with
- *  the ledger beside the package gets nine tools and a caller without it gets six. Both are told which. */
+ *  the ledger beside the package gets the ledger tools too, and a caller without it does not. Both are told which. */
 export const served = (): string[] => [
   ...SERVED_CORE,
   ...(hasLedger() ? LEDGER_TOOLS : []),
@@ -208,6 +211,13 @@ const H: Record<string, (a: any) => string> = {
     return JSON.stringify({ handle: handle(text), hex: HANDLE_HEX, address: toUuid(text),
       note: 'The first four hex of the address. Nothing but the message ever travels — the handle plus the message determine the whole address.' })
   },
+  honesty_gate: (a) => {
+    const text = String(a?.text ?? '')
+    if (!text) throw new Error('honesty_gate: text is required — the gate reads prose the caller passes in; it reads no file here')
+    const r = computes(text)
+    return JSON.stringify({ binary: r.binary, hit: r.hit,
+      note: r.binary ? 'no overclaim shape (a lexical FLOOR, not truth — passing is not being right)' : 'drains: ' + r.hit })
+  },
   verify_face: (a) => {
     const raw = a?.json
     if (!raw) throw new Error('verify_face: json is required — pass the face object or its JSON text. This entry reads no files.')
@@ -273,5 +283,5 @@ export const run = (name: string, a: any): string => {
  *  node type definitions, because the core reaches no node builtin. `createInterface` and `process` broke
  *  that, and the break is the design telling me where the boundary is rather than an inconvenience to
  *  configure away. So this module stays pure — `run` and `listTools` are computation over values the caller
- *  passes in, which is the same property that makes these six tools self-sufficient in the first place — and
+ *  passes in, which is the same property that makes these tools self-sufficient in the first place — and
  *  the stdio loop lives in mcp.bin.ts, the one file that is allowed to know it is a process. */

@@ -42,9 +42,14 @@ jobs:
         with:
           ref: ${{ inputs.tag || github.event.release.tag_name || github.ref }}   # the tagged tree, not a later main
           fetch-depth: 0   # workflow_dispatch reads the latest tag from history
+      # deps: 'true' — INSTALLED, because the gates below import the registry packages. This stood at 'false'
+      # while the comment under it said the workspace must be installed, and the two agreed with nobody: the
+      # gates were node-built-ins-only until scripts/honesty-gate.ts became a re-export of @uuidna/uuidna, and
+      # the first publish after that (tag of 0378a5b9, 2026-10-03) died in `seal` with ERR_MODULE_NOT_FOUND
+      # '@uuidna/uuidna' — a tag minted, a package never published. release.yml runs `npm ci`; this did not.
       - uses: ./.github/actions/node
         with:
-          deps: 'false'
+          deps: 'true'
           registry-url: 'https://registry.npmjs.org'
       # Trusted publishing needs npm >= 11.5.1 (and Node >= 22.14); Node 22 ships npm 10. Pinned, like the actions.
       - name: npm 11 (trusted publishing)

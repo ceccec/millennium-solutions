@@ -2,8 +2,16 @@ import Z9
 set_option maxRecDepth 8000000
 -- title: Sealed before the vocabulary moved, and still decided
 -- wing: the imagined
--- prior_art: unclassified
--- RETAINED — scripts/imagine.ts sealed these when its map table was hand-written, and its derived
+-- prior_art: named
+-- prior_art_domain: elementary number theory — the unit group of Z/9 and the closure of its residue subsets under affine maps
+-- prior_art_note: every theorem here is one residue subset of Z/9 carried into itself by one affine map d ↦ a·d + b, an instance of the
+-- prior_art_note: monoid of 81 maps src/proof/group.lean settles. Standard elementary number theory; nothing here is claimed new.
+-- prior_art_search: the 15 theorems keep their lean_imagined_* keys (the namespace is unchanged) and were searched under them on 2026-09-25
+-- prior_art_search: and 2026-09-26, recorded in src/proof/novelty.json — zbMATH Open, OpenAlex, Crossref, arXiv and the OEIS. 13 NONE_FOUND;
+-- prior_art_search: 2 CANDIDATES: squares_is_closed_under_quadruple (OEIS A160120 and A085787 catalogue the set, one zbMATH hit) and
+-- prior_art_search: cubes_is_closed_under_cube (two Crossref hits on "modular cubes" — the keyword, not the mathematics — with zbMATH and
+-- prior_art_search: OpenAlex not measured that run). A NONE_FOUND is what these searches returned on that date, never that nothing earlier exists.
+-- RETAINED —scripts/imagine.ts sealed these when its map table was hand-written, and its derived
 -- enumeration does not propose them. Nothing about them was refuted: each is copied here exactly as the
 -- generator last wrote it, and the kernel decides every one on every run. The ledger is append-only, so a
 -- sealed key whose source disappears is an orphan the record cannot honestly resolve — keeping the source is

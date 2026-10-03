@@ -6,8 +6,8 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 25,949 machine-checked declarations, **25,909** restate work that already has an author and
-**40** are about this deposit's own construction. Each source file declares which it is, in its own
+Of 25,949 machine-checked declarations, **25,924** restate work that already has an author and
+**25** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
@@ -27,12 +27,12 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **25,909** |
-| unclassified — no search performed, status unknown | **40** |
+| attributed to named earlier work | **25,924** |
+| unclassified — no search performed, status unknown | **25** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
-that everything here already has an author. It is not that. **40** theorems have had no prior-art
+that everything here already has an author. It is not that. **25** theorems have had no prior-art
 search at all, so their status is unknown rather than conceded — and of the 27 distinct years the
 attributions carry, **23** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
@@ -42,12 +42,12 @@ looked.** It is a statement about work not done, not about work found.
 caveat cannot be separated by an edit.
 
 A source may claim novelty only if it names a prior-art search that was actually performed — what was
-searched, where, and when. An earlier version of this page claimed novelty for 4 sources and
-40 theorems on the strength of their own self-description, with nobody having looked. Asserting
+searched, where, and when. An earlier version of this page claimed novelty for 3 sources and
+25 theorems on the strength of their own self-description, with nobody having looked. Asserting
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 90 sources, 25,909 theorems
+## Restated from named earlier work — 91 sources, 25,924 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -130,6 +130,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>reached.lean</code></td><td>80</td><td>elementary finite group theory over ℤ/9, and the hue circle of colour theory</td><td>NONE OF THE MATHEMATICS IS THIS DEPOSIT'S. That every element of a finite additive group</td></tr>
 <tr><td><code>recovered.lean</code></td><td>15</td><td>elementary number theory — the unit group of ℤ/9</td><td>every fact here is standard: the units of ℤ/9 are {1,2,4,5,7,8}, their product is −1</td></tr>
 <tr><td><code>reflection.lean</code></td><td>8</td><td>the method of complements</td><td>the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04</td></tr>
+<tr><td><code>retained.lean</code></td><td>15</td><td>elementary number theory — the unit group of Z/9 and the closure of its residue subsets under affine maps</td><td>monoid of 81 maps src/proof/group.lean settles. Standard elementary number theory; nothing here is claimed new.</td></tr>
 <tr><td><code>reversal.lean</code></td><td>29</td><td>elementary arithmetic</td><td>digit reversal and digit sums; casting out nines, in use by the 12th century</td></tr>
 <tr><td><code>rights.lean</code></td><td>8</td><td>copyright law — rights arising without formality</td><td>this file already NAMED its prior art in prose while the attribution table recorded none.</td></tr>
 <tr><td><code>roots.lean</code></td><td>7</td><td>cryptographic hash standards and integer root extraction</td><td>SHA-512 and its constants are FIPS 180-4 (NIST, 2015): K[t] is the first 64 bits of the</td></tr>
@@ -170,6 +171,7 @@ which is a contribution of verification, not of discovery.
 - **elementary number theory and combinatorial game theory** — 40 theorems, in `elementary.lean`
 - **elementary number theory — the multiplicative order of 2 modulo 9** — 16 theorems, in `flow.lean`
 - **elementary number theory — the unit group of Z/9** — 24742 theorems, in `imagined.lean`, `imagined_10.lean`, `imagined_11.lean`, `imagined_12.lean`, `imagined_13.lean`, `imagined_14.lean`, `imagined_15.lean`, `imagined_16.lean`, `imagined_17.lean`, `imagined_18.lean`, `imagined_19.lean`, `imagined_2.lean`, `imagined_20.lean`, `imagined_21.lean`, `imagined_22.lean`, `imagined_23.lean`, `imagined_24.lean`, `imagined_25.lean`, `imagined_3.lean`, `imagined_4.lean`, `imagined_5.lean`, `imagined_6.lean`, `imagined_7.lean`, `imagined_8.lean`, `imagined_9.lean`
+- **elementary number theory — the unit group of Z/9 and the closure of its residue subsets under affine maps** — 15 theorems, in `retained.lean`
 - **elementary number theory — the unit group of ℤ/9** — 37 theorems, in `recovered.lean`, `split.lean`
 - **elementary number theory — the unit group of ℤ/9 and the doubling orbit** — 24 theorems, in `generated.lean`, `index.lean`
 - **elementary number theory — the unit group of ℤ/9, the doubling map, and the ten's complement** — 8 theorems, in `theology.lean`
@@ -216,7 +218,7 @@ is worth saying precisely, because it is both smaller than a discovery claim and
 Author and year are given rather than a resolver identifier. Asserting a DOI for someone else's paper without
 verifying it would be a fabricated citation, and this is the worst document in the deposit to put one in.
 
-## This deposit's own construction — 4 sources, 40 theorems, none claimed
+## This deposit's own construction — 3 sources, 25 theorems, none claimed
 
 The ℤ/9 vortex framework, its ledger, its receipts, and the enumeration its own generators proposed. These are
 **unclassified**: no prior-art search has been performed for them, so nothing is claimed about them either
@@ -229,7 +231,6 @@ refuses a `none-known` declaration that does not carry one.
 <table><thead><tr><th>source</th><th>theorems</th><th>note</th></tr></thead><tbody>
 <tr><td><code>lanes.lean</code></td><td>8</td><td>NONE OF THE ARITHMETIC IS THIS DEPOSIT'S. min, ⌊a/b⌋ and truncating subtraction on the</td></tr>
 <tr><td><code>priorart.lean</code></td><td>9</td><td>THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per</td></tr>
-<tr><td><code>retained.lean</code></td><td>15</td><td>—</td></tr>
 <tr><td><code>settled.lean</code></td><td>8</td><td>THE ARITHMETIC IS NAMED, NOT CLAIMED. What is this deposit's is only the subject: that</td></tr>
 </tbody></table>
 
@@ -242,5 +243,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `bdb4bd7c-1fec-8c2a-a99d-a29412615a3e` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `b16ffcee-f180-8c91-9ff5-403359a464f0` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

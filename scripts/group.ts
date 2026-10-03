@@ -20,7 +20,7 @@
 //
 //   node scripts/group.ts          report what it finds
 //   node scripts/group.ts --emit   write src/proof/group.lean and put it to the kernel
-import { writeFileSync } from 'node:fs'
+import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { flag } from '../src/cli/index.ts'
 import { units as apiUnits } from '../src/api/index.ts'
@@ -74,7 +74,6 @@ console.log(`  units ${facts.units} · invertible ${facts.invertible} · collaps
 console.log(`  centre ${facts.centre} · abelian ${facts.centre === facts.group}`)
 console.log(`  the closure is exactly the invertible set: ${facts.closureIsInvertible}`)
 if (!facts.closureIsInvertible) { console.error('  ✗ the walk and the property disagree — not emitting'); process.exit(1) }
-if (!flag('--emit')) process.exit(0)
 
 const body = `-- The affine maps of ℤ/9 as pairs (a, b), standing for d ↦ a·d + b. A map IS its pair here, which is
 -- why equality of maps is decidable: two pairs are the same map exactly when they act the same, and over a
@@ -159,7 +158,7 @@ theorem the_${facts.collapsing}_collapsing_maps_are_exactly_those_outside_the_gr
   ∧ (aff.filter (fun p => ([0,1,2,3,4,5,6,7,8].map (fun d => ap p d)).eraseDups.length == 1)).all
       (fun p => ! agl.contains p) := by decide`
 
-writeFileSync('src/proof/group.lean', `import Z9
+const text = `import Z9
 set_option maxRecDepth 8000000
 -- A TIME BUDGET, NOT A SOUNDNESS SETTING. Theorem 1 checks every pair of the ${facts.affine} maps at every residue —
 -- ${facts.affine} x ${facts.affine} x ${B} cases — and the default heartbeat limit stops the elaborator partway through and
@@ -192,7 +191,22 @@ open Z9
 ${body}
 
 end Groups
-`)
+`
+// THE COMMITTED FILE MUST BE WHAT THIS SCRIPT GENERATES, and without --emit that is the whole check. This
+// script printed its report and exited 0 — exactly the gap coils.ts had — so it could not notice
+// src/proof/group.lean no longer being what it generates, and leads.ts named it a refusing gate nothing had
+// shown could fail. The whole text is compared, not a count: a constant that changed while the line count
+// held is the drift that matters most.
+const OUT = 'src/proof/group.lean'
+const committed = existsSync(OUT) ? readFileSync(OUT, 'utf8') : ''
+if (!flag('--emit')) {
+  if (committed === text) { console.log(`  ✓ ${OUT} is exactly what this script generates`); process.exit(0) }
+  let at = 0
+  while (at < text.length && text[at] === committed[at]) at++
+  console.log(`  ✗ group: ${OUT} drifts from what scripts/group.ts generates (first difference at character ${at}) — run node scripts/group.ts --emit`)
+  process.exit(1)
+}
+writeFileSync(OUT, text)
 console.log('\nwrote src/proof/group.lean — putting it to the kernel:')
 try {
   const out = String(execSync('cd src/proof && LEAN_PATH=. lean group.lean', { encoding: 'utf8', stdio: 'pipe' }))

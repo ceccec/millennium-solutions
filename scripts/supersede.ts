@@ -6,8 +6,8 @@
 // proposed, still true, still decided by the kernel on every run. Only the NAME moved.
 //
 // The ledger is append-only and its keys are provenance, so a name that moves leaves a sealed key with no
-// source. seal-lean calls that an orphan and offers to withdraw it, which for 3317 entries would be this
-// deposit withdrawing facts the kernel checks on every run — an underclaim, and the one direction the record
+// source. seal-lean calls that an orphan and offers to withdraw it, which at the time, for 3317 entries,
+// would have been this deposit withdrawing facts the kernel checks on every run — an underclaim, and the one direction the record
 // must never move in. covered.json already exists to say "superseded, not lost", but imagine.ts can only
 // write it for candidates IT dropped: a rename is invisible there, because the old name is no longer a
 // candidate at all.

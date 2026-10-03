@@ -33,7 +33,7 @@
 //   --days N · --summary <file.md>
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
-import { leanTheorems } from '../src/api/index.ts'
+import { leanTheorems, ledger as discovered } from '../src/api/index.ts'
 import { arg } from '../src/cli/index.ts'
 
 const OUT = 'src/proof/novelty.json'
@@ -91,7 +91,7 @@ const domainOf = (file: string) => {
 // ── the record ───────────────────────────────────────────────────────────────────────────────────────────────────
 type Verdict = 'CANDIDATES' | 'NONE_FOUND' | 'NONE_FOUND_PARTIAL' | 'NOT_MEASURED' | 'TOO_FEW_TERMS'
 type Rec = { key: string; file: string; name: string; statementHash: string; searched: string; limits?: typeof LIMITS; queries: Record<string, string>
-  notMeasured: string[]; oeis: { a: string; name: string; query: string }[]; catalogued: boolean; candidates: Hit[]; verdict: Verdict }
+  notMeasured: string[]; oeis: { a: string; name: string; query: string }[]; catalogued: boolean; candidates: Hit[]; verdict: Verdict; carriedFrom?: string }
 const ledger: Record<string, Rec> = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {}
 const save = () => writeFileSync(OUT, JSON.stringify(Object.fromEntries(Object.entries(ledger).sort(([a], [b]) => a.localeCompare(b))), null, 1) + '\n')
 const hash = (s: string) => createHash('sha256').update(s).digest('hex').slice(0, 16)
@@ -123,7 +123,40 @@ console.log(`novelty: ${todo.length} theorem(s) to search this run · ${Object.k
 // were checked against held 908 that day.
 const CLAIMS_A_SEARCH = new Set<Verdict>(['NONE_FOUND', 'NONE_FOUND_PARTIAL'])
 const liveKeys = new Set(leanTheorems().filter((t) => t.tactic !== 'rfl').map((t) => `lean_${t.namespace.toLowerCase()}_${t.name}`))
-const hollowRows = Object.entries(ledger).filter(([, r]) => CLAIMS_A_SEARCH.has(r.verdict) && Object.keys(r.queries ?? {}).length === 0).map(([k]) => k)
+// ── A RENAME IS CARRIED BY THE STATEMENT, NOT LOST WITH THE NAME ─────────────────────────────────────────────────
+// scripts/supersede.ts joins an old ledger key to its new theorem on the STATEMENT, because the statement is what
+// the kernel decided and the name is what the generator chose. The same join applies to this record: a row whose
+// key no longer exists but whose statementHash is a live theorem's hash is evidence about a statement this tree
+// still holds, filed under a name it no longer uses. It is carried to the live key with the old key kept on the
+// row, and only a row whose statement is genuinely gone remains an orphan. Measured 2026-10-03 on this tree: every
+// orphan the refusal below named was the vocabulary rename of 2026-09-28, not a lost statement — the refusal was
+// right that the record contradicted the tree and wrong about what to do, which was to carry, not to stop.
+const liveByHash = new Map<string, { key: string; file: string; name: string }>()
+for (const t of leanTheorems()) if (t.tactic !== 'rfl') liveByHash.set(hash(t.statement), { key: `lean_${t.namespace.toLowerCase()}_${t.name}`, file: t.file, name: t.name })
+const liveByKey = new Map([...liveByHash.values()].map((v) => [v.key, v]))
+// THE SECOND JOIN IS THE LEDGER'S OWN. When the rename reached INSIDE the statement — `reflect d` became
+// `aff_8_1 d` — the statement hash moved with the name and the first join cannot see it. The ledger already
+// knows: supersede.ts revoked the old key with `supersededBy` naming the new one. A record carried this way
+// keeps its old statementHash, so `stale` re-searches it on the next run — the terms changed, so the search
+// should, and the old row stays on the record as what was searched before.
+const supersededTo = new Map(discovered().filter((e) => e.revoked && e.supersededBy).map((e) => [e.key, String(e.supersededBy)]))
+let carried = 0, covered = 0
+for (const k of Object.keys(ledger).filter((k) => !liveKeys.has(k))) {
+  const live = liveByHash.get(ledger[k]!.statementHash) ?? liveByKey.get(supersededTo.get(k) ?? '')
+  if (!live) continue
+  const r = ledger[k]!
+  delete ledger[k]
+  // the live key may already carry its own search of the same statement — then the old row adds nothing and is
+  // superseded by it, which is reported rather than silently dropped
+  if (ledger[live.key]) { covered++; continue }
+  ledger[live.key] = { ...r, key: live.key, file: live.file, name: live.name, carriedFrom: k }
+  carried++
+}
+if (carried || covered) {
+  save()
+  console.log(`novelty: ${carried} record(s) carried to the theorem that now holds their statement · ${covered} superseded by the live key's own search of the same statement`)
+}
+const hollowRows =Object.entries(ledger).filter(([, r]) => CLAIMS_A_SEARCH.has(r.verdict) && Object.keys(r.queries ?? {}).length === 0).map(([k]) => k)
 const orphanRows = Object.keys(ledger).filter((k) => !liveKeys.has(k))
 if (hollowRows.length || orphanRows.length) {
   if (hollowRows.length)
