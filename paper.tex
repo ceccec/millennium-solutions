@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 25,949 of them across 94 files and
-7 wings; 25,762 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 25,957 of them across 94 files and
+7 wings; 25,770 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -4398,6 +4398,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cross\_formula\_is\_the\_product\_mod\_256}]
+\[ \forall a \in \{0,\dots,255\},\; \forall b \in \{0,\dots,255\},\; \mathrm{crossMul}\mathopen{}\left(a,\,b\right) = a \cdot b \bmod 256 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_high\_term\_never\_reaches\_the\_wrap}]
+\[ \forall a \in \{0,\dots,255\},\; \forall b \in \{0,\dots,255\},\; \mathrm{hexHi}\mathopen{}\left(a\right) \cdot \mathrm{hexHi}\mathopen{}\left(b\right) \cdot 256 \bmod 256 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{only\_the\_low\_digit\_of\_the\_cross\_term\_survives\_the\_shift}]
+\[ \forall a \in \{0,\dots,255\},\; \forall b \in \{0,\dots,255\},\; \mathrm{hexHi}\mathopen{}\left(a\right) \cdot \mathrm{hexLo}\mathopen{}\left(b\right) + \mathrm{hexLo}\mathopen{}\left(a\right) \cdot \mathrm{hexHi}\mathopen{}\left(b\right) \cdot 16 \bmod 256 = \mathrm{hexHi}\mathopen{}\left(a\right) \cdot \mathrm{hexLo}\mathopen{}\left(b\right) + \mathrm{hexLo}\mathopen{}\left(a\right) \cdot \mathrm{hexHi}\mathopen{}\left(b\right) \bmod 16 \cdot 16 \bmod 256 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cross\_term\_fits\_before\_its\_own\_wrap}]
+\[ \forall a \in \{0,\dots,255\},\; \forall b \in \{0,\dots,255\},\; \mathrm{hexHi}\mathopen{}\left(a\right) \cdot \mathrm{hexLo}\mathopen{}\left(b\right) + \mathrm{hexLo}\mathopen{}\left(a\right) \cdot \mathrm{hexHi}\mathopen{}\left(b\right) < 512 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sum\_before\_the\_wrap\_is\_below\_twice\_the\_modulus}]
+\[ \forall a \in \{0,\dots,255\},\; \forall b \in \{0,\dots,255\},\; \mathrm{hexLo}\mathopen{}\left(a\right) \cdot \mathrm{hexLo}\mathopen{}\left(b\right) + \mathrm{hexHi}\mathopen{}\left(a\right) \cdot \mathrm{hexLo}\mathopen{}\left(b\right) + \mathrm{hexLo}\mathopen{}\left(a\right) \cdot \mathrm{hexHi}\mathopen{}\left(b\right) \bmod 16 \cdot 16 < 512 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cross\_formula\_is\_symmetric\_in\_its\_factors}]
+\[ \forall a \in \{0,\dots,255\},\; \forall b \in \{0,\dots,255\},\; \mathrm{crossMul}\mathopen{}\left(a,\,b\right) = \mathrm{crossMul}\mathopen{}\left(b,\,a\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_wrap\_commutes\_with\_the\_next\_multiply\_by\_the\_prime}]
+\[ \forall a \in \{0,\dots,255\},\; \forall b \in \{0,\dots,255\},\; \mathrm{crossMul}\mathopen{}\left(a,\,b\right) \cdot 0\mathopen{}\left(\mathrm{x93}\right) \bmod 256 = a \cdot b \cdot 0\mathopen{}\left(\mathrm{x93}\right) \bmod 256 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{dropping\_the\_cross\_term\_is\_refuted}]
+\[ \lnot \forall a \in \{0,\dots,255\},\; \forall b \in \{0,\dots,255\},\; \mathrm{hexLo}\mathopen{}\left(a\right) \cdot \mathrm{hexLo}\mathopen{}\left(b\right) \bmod 256 = a \cdot b \bmod 256 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
 
 \paragraph{\texttt{theology.lean}}
 

@@ -170206,5 +170206,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "269230fd-748a-8c4a-a8b1-1ce0097ecf53"
+  },
+  {
+    "key": "lean_speed_the_cross_formula_is_the_product_mod_256",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20394f23-7c9f-8366-b518-c331846a57cd"
+  },
+  {
+    "key": "lean_speed_the_high_term_never_reaches_the_wrap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6d8534d1-8275-85b8-a186-d5bbffdfa8e3"
+  },
+  {
+    "key": "lean_speed_only_the_low_digit_of_the_cross_term_survives_the_shift",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9f8ca4f0-9a13-82cc-87c6-d78b33756a3d"
+  },
+  {
+    "key": "lean_speed_the_cross_term_fits_before_its_own_wrap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "54e80d61-5c00-8dcc-af74-54851e6111c7"
+  },
+  {
+    "key": "lean_speed_the_sum_before_the_wrap_is_below_twice_the_modulus",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bb49653c-da6a-8356-9560-d84d74610c95"
+  },
+  {
+    "key": "lean_speed_the_cross_formula_is_symmetric_in_its_factors",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b4491883-18df-89fb-93e6-a3e7e4178cac"
+  },
+  {
+    "key": "lean_speed_the_wrap_commutes_with_the_next_multiply_by_the_prime",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1528ecb6-900b-8599-9e5f-a21b13c98047"
+  },
+  {
+    "key": "lean_speed_dropping_the_cross_term_is_refuted",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "07d43b29-86c9-8248-9d03-a59e19e677b7"
   }
 ]

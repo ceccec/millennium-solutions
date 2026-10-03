@@ -18,13 +18,13 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 28368 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 28376 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (25949)
+### lean (25957)
 
-This family has **25949** members, enumerated over a derived vocabulary and each decided by the kernel on every run. They are counted here rather than listed: the statement of each follows from its name, and the laws they instantiate are in `src/proof/group.lean`. The first 200 are shown; every one is in `src/proof/discovered.json` with its receipt.
+This family has **25957** members, enumerated over a derived vocabulary and each decided by the kernel on every run. They are counted here rather than listed: the statement of each follows from its name, and the laws they instantiate are in `src/proof/group.lean`. The first 200 are shown; every one is in `src/proof/discovered.json` with its receipt.
 
 - `lean_address_raw_bytes_of_a` — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - `lean_address_to_uuid_bytes_of_a` — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1889,4 +1889,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `a1a217f0-062f-8c9e-9782-ad10eb54a8d4`. Integrity, not truth.
+Page content-address: `6c225253-e0d6-8b51-9b5d-3c133da2a0e8`. Integrity, not truth.

@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 25,949 machine-checked declarations, **25,924** restate work that already has an author and
+Of 25,957 machine-checked declarations, **25,932** restate work that already has an author and
 **25** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **25,924** |
+| attributed to named earlier work | **25,932** |
 | unclassified — no search performed, status unknown | **25** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 3
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 91 sources, 25,924 theorems
+## Restated from named earlier work — 91 sources, 25,932 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -136,7 +136,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>roots.lean</code></td><td>7</td><td>cryptographic hash standards and integer root extraction</td><td>SHA-512 and its constants are FIPS 180-4 (NIST, 2015): K[t] is the first 64 bits of the fractional part of the cube root of the t-th prime (§4.2.3) and H[i] the same of the square root (§5.3.5). Newton's method for integer roots is classical. Neither is this deposit's. What is decided here is only that THIS deposit's derivation computes those definitions and not something near them.</td></tr>
 <tr><td><code>separation.lean</code></td><td>8</td><td>the separation of points by a family of functions — the notion behind a separating family, a faithful functor, and the Stone–Weierstrass hypothesis. Also elementary cancellation in ℕ.</td><td>NEITHER IDEA IS THIS DEPOSIT'S. "A family of maps is worth having when it tells two points apart" is as old as the definition of a separating family, and `x = x + y → y = 0` is cancellation, which predates notation. What is this deposit's is neither: it is that the test is run by the kernel, on a specific ring of labels published on a specific day, with a control that fires.</td></tr>
 <tr><td><code>sequences.lean</code></td><td>28</td><td>integer sequences and identities</td><td>Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654</td></tr>
-<tr><td><code>speed.lean</code></td><td>12</td><td>hash trees and membership proofs</td><td>the structural claim is Merkle's and is credited here as merkle.lean already credits it: a hash tree over n leaves has an O(log n) membership proof, so the inclusion path at each power of two is exactly the exponent. Ralph Merkle, 1979 (thesis); CRYPTO 1987. `the_verify_path_is_the_exponent`, `membership_is_logarithmic_not_linear` and `the_gap_widens_with_every_doubling` RESTATE that property. This file was classified `unbounded` — "the subject is this deposit's own verification cost" — which was</td></tr>
+<tr><td><code>speed.lean</code></td><td>20</td><td>hash trees and membership proofs</td><td>the structural claim is Merkle's and is credited here as merkle.lean already credits it: a hash tree over n leaves has an O(log n) membership proof, so the inclusion path at each power of two is exactly the exponent. Ralph Merkle, 1979 (thesis); CRYPTO 1987. `the_verify_path_is_the_exponent`, `membership_is_logarithmic_not_linear` and `the_gap_widens_with_every_doubling` RESTATE that property. This file was classified `unbounded` — "the subject is this deposit's own verification cost" — which was</td></tr>
 <tr><td><code>split.lean</code></td><td>22</td><td>elementary number theory — the unit group of ℤ/9</td><td>the classification this file rests on is standard and is credited: the units of ℤ/9 are {1,2,4,5,7,8} and the non-units {0,3,6}, exactly the residues coprime to 9. That is textbook abstract algebra — Wikipedia's "multiplicative group of integers modulo n", and every algebra course. So `the_singles_are_exactly_the_non_units` and `the_pairs_are_exactly_the_units_in_order` RESTATE known mathematics and claim nothing. Stated precisely so the credit does not run past the earlier work: what is NOT claimed as prior art is the tokenisation itself — reading the digits as 0|12|3|45|6|78|9 by concatenating consecutive units into two-digit tokens, and the arithmetic that follows from it (every token a multiple of three, closure of the tokens under addition and multiplication). That arrangement is this deposit's presentation of a standard fact, and its verification is by exhaustion here. Crediting an earlier author for a presentation they did not make is the same defect as claiming their result, pointed the other way.</td></tr>
 <tr><td><code>theology.lean</code></td><td>8</td><td>elementary number theory — the unit group of ℤ/9, the doubling map, and the ten's complement</td><td>the structure is the same standard one index.lean credits: U(9) = {1,2,4,5,7,8}, the non-units {0,3,6}, and the doubling orbit 1 → 2 → 4 → 8 → 7 → 5 → 1 of order six because 2 has multiplicative order six mod 9. Textbook abstract algebra, not this deposit's. The permutation count 7! = 5040 is likewise classical. What is NOT prior art is which facts were chosen and why — and that choosing is not a mathematical act, which is the whole subject of this file.</td></tr>
 <tr><td><code>turns.lean</code></td><td>8</td><td>the cycle decomposition of a permutation into disjoint cycles; the order of 2 in (ℤ/9)* being 6, which is Euler's theorem for this modulus. The Euler characteristic χ = 2 − 2g of an orientable closed surface of genus g.</td><td>NONE OF IT IS THIS DEPOSIT'S. Cycle decomposition is the first structure theorem for permutations, the order of 2 mod 9 is Euler, and χ = 2 − 2g is Euler again. What is this deposit's is the accounting: that doubling leaves exactly TWO non-trivial loops on this ring, that their step angles are 60° and 180°, and that both close at 360° — and theorem 8, which says plainly that the surface is an interpretation of the cycle structure and not a theorem about it.</td></tr>
@@ -182,7 +182,7 @@ which is a contribution of verification, not of discovery.
 - **elementary set theory — the naturals are not exhausted by any finite list** — 12 theorems, in `reach.lean`
 - **extensional equality of functions over a finite domain; the pigeonhole principle; the fibre of a map. All three are elementary and none is this deposit's.** — 11 theorems, in `extension.lean`
 - **extensional equality of predicates over a finite set — that two definitions picking out the same elements are the same subset. Elementary set theory and modular arithmetic.** — 50 theorems, in `coils.lean`
-- **hash trees and membership proofs** — 36 theorems, in `ledgerclaims.lean`, `merkle.lean`, `speed.lean`
+- **hash trees and membership proofs** — 44 theorems, in `ledgerclaims.lean`, `merkle.lean`, `speed.lean`
 - **identifier formats and error-detecting codes** — 21 theorems, in `program.lean`
 - **identifier formats and length-prefixed encodings** — 9 theorems, in `imprint.lean`
 - **integer sequences and identities** — 28 theorems, in `sequences.lean`
