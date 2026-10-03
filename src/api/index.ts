@@ -377,12 +377,31 @@ export const fileOfKey = (key: string, thms: LeanTheorem[] = leanTheorems()): st
   theoremOfKey(key, thms)?.file ?? null
 
 /** Frontmatter written as `-- key: value` at the head of a Lean file, before its prose. */
+/** ONE DEFINITION OF A FIELD LINE AND OF ITS CONTINUATION, shared with scripts/leandoc.ts — which used to
+ *  drop as many header LINES as this reader found KEYS, so every multi-line field leaked its tail into the
+ *  file's summary and README.md described capacity.lean as "4122, 2005), which fixes 4 bits of version…".
+ *  Fifty files continue a field on an indented `--   ` line; three state a key on several lines. Both are
+ *  one value here, and both are frontmatter there. */
+export const FM_FIELD = /^\s*--\s*([a-z][a-z0-9_]*):\s*(.+?)\s*$/
+export const FM_CONT = /^\s*--\s{2,}(\S.*?)\s*$/
 export const frontmatter = (file: string): Record<string, string> => {
   const fm: Record<string, string> = {}
+  let open: string | null = null
   for (const line of leanSource(file).split('\n')) {
-    const m = line.match(/^\s*--\s*([a-z][a-z0-9_]*):\s*(.+?)\s*$/)
-    if (!m) { if (/^\s*--/.test(line)) continue; if (line.trim() === '' || /^(import|set_option)/.test(line)) continue; break }
-    fm[m[1]] = m[2]
+    const m = line.match(FM_FIELD)
+    if (!m) {
+      const c = open ? line.match(FM_CONT) : null
+      if (c) { fm[open!] += ' ' + c[1]; continue }
+      open = null
+      if (/^\s*--/.test(line)) continue
+      if (line.trim() === '' || /^(import|set_option)/.test(line)) continue
+      break
+    }
+    // A KEY STATED ON SEVERAL LINES IS ONE VALUE. group.lean, bridge.lean and retained.lean state prior_art_note
+    // on three lines each, and this kept the last: PRIOR-ART.md credited group.lean with "with the group inside
+    // it named, generated to closure…" — a fragment of a sentence whose subject was on the line above.
+    fm[m[1]] = fm[m[1]] ? fm[m[1]] + ' ' + m[2] : m[2]
+    open = m[1]
   }
   return fm
 }

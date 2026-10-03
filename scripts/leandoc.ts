@@ -15,7 +15,7 @@
 // FRONTMATTER is the explicit part — `-- key: value` lines in a leading block, before the prose. Only `title`
 // and `wing` are read; anything else is carried through untouched so a field can be added without editing
 // this file. A file without frontmatter falls back to its own name, which is honest but plainer.
-import { leanFiles, leanSource, frontmatter as fmOf, domainOf, normalizeStatement } from '../src/api/index.ts'
+import { leanFiles, leanSource, frontmatter as fmOf, domainOf, normalizeStatement, FM_FIELD, FM_CONT } from '../src/api/index.ts'
 
 export { domainOf }
 
@@ -42,8 +42,19 @@ export function read(file: string): LeanDoc {
   // frontmatter — `-- key: value` lines at the top of the header, stopping at the first prose line
   // frontmatter comes from the shared reader — one definition of what a `-- key: value` head is
   const frontmatter = fmOf(file)
-  const fmLines = Object.keys(frontmatter).length
-  const summary = stripComment(headComment.split('\n').slice(fmLines).join('\n'))
+  // THE SLICE FOLLOWS THE READER'S DEFINITION. This dropped as many LINES as the reader found KEYS, and a key
+  // stated on three lines — prior_art_note in group.lean and bridge.lean — counts once, so its other lines
+  // fell into the summary and README.md described a file as "prior_art_note: cross-subject families…"; a
+  // field continued on an indented line (fifty files) leaked the same way. The reader's own two patterns
+  // decide what is a field and what continues one; the prose is what is left, which is what a summary is.
+  let open = false
+  const prose = headComment.split('\n').filter((l) => {
+    if (FM_FIELD.test(l)) { open = true; return false }
+    if (open && FM_CONT.test(l)) return false
+    open = false
+    return true
+  })
+  const summary = stripComment(prose.join('\n'))
     .replace(/^Author:.*$/gm, '').trim()
 
   // Each theorem, with the comment block immediately above it — OR, failing that, the section heading it
