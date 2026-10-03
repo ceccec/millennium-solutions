@@ -378,13 +378,6 @@ settledHere := 20</code></pre>
 
 <p class="paper-src"><code>src/proof/asymmetric.lean</code> · namespace <code>Asymmetric</code> · 11 theorems</p>
 
-2011; standardised as RFC 8032 (Josefsson and Liusvaara, 2017). SHA-512 is FIPS 180-4 (NIST). The
-  curve, the signature scheme and the hash are all theirs and none is this deposit's. The implementation
-  in src/0/ed25519.ts is checked against their published vectors by scripts/crypto-kat.ts, which is where
-  the assurance for the PRIMITIVE lives — not here. Nothing below decides that Ed25519 is secure, and a
-  file that appeared to would be claiming a result nobody has.
-
-
 WHAT THIS FILE IS FOR. Everything cryptographic in this deposit before now was SYMMETRIC — FNV, SHA-256,
 HMAC, ChaCha20-Poly1305 — and a symmetric tag proves possession of a shared secret. It cannot say WHO
 produced something, because both parties can produce it. That is a boundary the deposit kept in prose.
@@ -516,13 +509,6 @@ settledHere := 11</code></pre>
 ### The capacity a reserved bit costs, and the birthday bound that follows {#capacity}
 
 <p class="paper-src"><code>src/proof/capacity.lean</code> · namespace <code>Capacity</code> · 8 theorems</p>
-
-reservation is decided here rather than left to prose — the capacity and the collision exponent that
-  follow from a count this tree already seals in imprint.lean.
-prior_art_search: not performed — both are named above.
-prior_art_pool: named
-prior_art_own: the capacity and birthday figures derived from the sealed bit count, and theorem 8
-
 
 WHY THIS FILE EXISTS.
 
@@ -778,11 +764,6 @@ settledHere := 12</code></pre>
 
 <p class="paper-src"><code>src/proof/imprint.lean</code> · namespace <code>Imprint</code> · 9 theorems</p>
 
-4122, 2005). A length-prefixed payload is ordinary practice with no single author and no priority is
-  claimed for it. What is decided here is only that THIS deposit's codec is reversible where it says it
-  is, and refuses where it says it refuses.
-
-
 The deposit has two containers and until now the kernel knew one of them. program.lean decides the
 checksum/program/message layout; src/0/imprint.ts — older, and the one the ledger's own tooling uses —
 had no Lean at all. It is a REVERSIBLE codec: not the one-way content-address (toUuid cannot be undone),
@@ -882,17 +863,6 @@ settledHere := 9</code></pre>
 
 <p class="paper-src"><code>src/proof/ledgerclaims.lean</code> · namespace <code>LedgerClaims</code> · 8 theorems</p>
 
-Bounded: what is not prior art is what THIS ledger claims — the 967-receipt case, the saving arithmetic,
-  and the 128-bit seal width as this deposit mints it.
-prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic
-  verification path length"; prior art found and credited.
-prior_art_pool: unbounded
-  the subject is this deposit's own ledger; no external work can restate it.
-  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
-  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
-  row will stay unclassified however much work is done. They look identical in a count and need
-  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
-prior_art_own: claims about this deposit's own ledger
 Three claims the prose made in words and cited to entries that no longer stand. Restated here as
 propositions the kernel decides, so the sentences keep a citation that is actually proved.
 
@@ -1140,12 +1110,6 @@ E := toUuidBytes [101]    -- address of "e", a leaf none of A B C D is</code></p
 
 <p class="paper-src"><code>src/proof/program.lean</code> · namespace <code>Program</code> · 21 theorems</p>
 
-4122, 2005); FNV-1a, used here as the check function, is Glenn Fowler, Landon Curt Noll and Phong Vo,
-  1991, and is credited in fnv.lean where it is ported. A checksum placed in one field of an identifier
-  over the remaining fields is ordinary practice and no priority is claimed for it. What is decided here
-  is only that THIS deposit's layout is the partition it says it is.
-
-
 The author, 2026-09-18: "the middle part of uuid is the program and the end is the message", and of the
 first group, "checksum over the program and the message".
 
@@ -1355,11 +1319,6 @@ settledHere := 21</code></pre>
 
 <p class="paper-src"><code>src/proof/rays.lean</code> · namespace <code>Rays</code> · 13 theorems</p>
 
-is elementary number theory; the involution x ↦ ¬x on bit words is Boolean algebra. Neither is this
-  deposit's. What is decided here is only that THIS deposit's ray order is that orbit and that its trace
-  is that involution — the facts a reader would otherwise have to take from a comment.
-
-
 A receipt is plotted as RAYS: two hex digits each. Seven of them read 14 of a receipt's 32 hex digits and
 discarded the other 18, and the extraction was written out twice — once in the page component that draws
 the figure on every theorem page and once in the script that builds the cluster lattice, with nothing
@@ -1495,13 +1454,6 @@ settledHere := 13</code></pre>
 ### The byte constants and the bit constants are one fact, and neither file knew it {#widths}
 
 <p class="paper-src"><code>src/proof/widths.lean</code> · namespace <code>Widths</code> · 24 theorems</p>
-
-deposit's is neither: it is that its OWN two files state the same width in different units and had no
-  theorem binding them, so either could have drifted while the other stayed green.
-prior_art_search: not performed — all three are named above.
-prior_art_pool: named
-prior_art_own: the binding below, and theorem 8
-
 
 WHY THIS FILE EXISTS — TWO LEADS CROSSING.
 
@@ -1747,13 +1699,6 @@ No axioms, no Mathlib, no sorry.
 
 <p class="paper-src"><code>src/proof/asymmetry.lean</code> · namespace <code>Asymmetry</code> · 8 theorems</p>
 
-cross formulas are sorted into the two kinds and the difference is decided rather than assumed, on the
-  ring it reasons about.
-prior_art_search: not performed — all three are named above.
-prior_art_pool: unbounded
-prior_art_own: the sorting below, and theorem 8
-
-
 WHY THIS FILE EXISTS.
 
 scripts/coils.ts clusters expressions that compute the same thing and licenses substituting either for
@@ -1858,12 +1803,6 @@ No axioms, no Mathlib, no sorry.
 
 <p class="paper-src"><code>src/proof/closure.lean</code> · namespace <code>Closure</code> · 8 theorems</p>
 
-ring, using the nine properties its own files name. A limit exhibited rather than conceded.
-prior_art_search: not performed — Cantor is named above.
-prior_art_pool: unbounded
-prior_art_own: the nine named properties, the exhibited witness, and the honesty clause in theorem 8
-
-
 WHY THIS FILE EXISTS.
 
 src/proof/diagonal.lean put a published ring of labels to Cantor and it did not survive: for any list of
@@ -1960,12 +1899,6 @@ named := [isUnit, inSpan, isTriad, isOrigin, isFixed, isEven, isSquare, isPrimit
 ### Expressions that compute the same residues, clustered {#coils}
 
 <p class="paper-src"><code>src/proof/coils.lean</code> · namespace <code>Coils</code> · 50 theorems</p>
-
-it would be overwritten.
-prior_art_search: not performed — extensionality is named above.
-prior_art_pool: unbounded
-prior_art_own: the coils below, and that they are computed from the vocabulary rather than chosen
-
 
 GENERATED BY scripts/coils.ts — DO NOT EDIT BY HAND.
 
@@ -2585,14 +2518,6 @@ nonzero := [1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
 
 <p class="paper-src"><code>src/proof/diagonal.lean</code> · namespace <code>Diagonal</code> · 7 theorems</p>
 
-argument nor its finite case: it is that a specific published ring of labels, drawn three times
-  around three different subjects and captioned "THE ALGEBRA OF EVERYTHING", is put to it by the kernel
-  and the subject it misses is exhibited rather than described.
-prior_art_search: not performed — Cantor is named above. Searching would be theatre.
-prior_art_pool: unbounded
-prior_art_own: the exhibited witness, the spend bound in theorem 7, and the controls at 3 and 4
-
-
 WHY THIS FILE EXISTS.
 
 src/proof/separation.lean decided that the ring of domain labels in Zenodo record 22934883 returns the
@@ -2686,13 +2611,6 @@ No axioms, no Mathlib, no sorry.
 ### The reflection lifts digitwise, and the constant it adds to is ten times a repunit {#digits}
 
 <p class="paper-src"><code>src/proof/digits.lean</code> · namespace <code>Digits</code> · 8 theorems</p>
-
-the ring's four reflection pairs, written as two-digit numbers, are all congruent to one mod nine, and
-  that zero's exception reappears one place up as an excursion rather than a failure.
-prior_art_search: not performed — complement arithmetic is named above.
-prior_art_pool: unbounded
-prior_art_own: theorem 4 (the pairs mod nine) and theorem 6 (zero's excursion), and the controls
-
 
 WHY THIS FILE EXISTS.
 
@@ -2793,13 +2711,6 @@ No axioms, no Mathlib, no sorry.
 ### The Planck exponents are the only ones the dimensions permit {#dimensions}
 
 <p class="paper-src"><code>src/proof/dimensions.lean</code> · namespace <code>Dimensions</code> · 8 theorems</p>
-
-1899. What this deposit adds is the quantifier: the textbook SOLVES for the exponents, and this
-  EXHAUSTS every alternative in range and finds exactly one, so "these exponents" becomes "no others".
-prior_art_search: not performed — Buckingham and Planck are named above.
-prior_art_pool: unbounded
-prior_art_own: the uniqueness by exhaustion, and theorem 8
-
 
 WHY THIS FILE EXISTS.
 
@@ -2908,10 +2819,6 @@ No axioms, no Mathlib, no sorry.
 
 <p class="paper-src"><code>src/proof/discount.lean</code> · namespace <code>Discount</code> · 6 theorems</p>
 
-prior_art_pool: unbounded
-prior_art_own: the discount rule below, and the blindness bound in theorem 5
-
-
 WHY THIS FILE EXISTS.
 
 Following the posters in Zenodo record 22934883 meant asking how much of their ring of domain labels
@@ -2919,7 +2826,6 @@ this deposit covers. The matcher was crude — does any word of the label appear
 and it answered 15 of 28, which is 54% and is a flattering number about my own tree.
 
 So it was run against a control ring of twenty-eight domains this deposit demonstrably says nothing
-about: equine dentistry, neon bending, competitive dachshund grooming. It scored 4 of 28. The matcher
 has a FALSE-POSITIVE FLOOR of about one in seven, earned on words like "tea", "shoe" and "competitive"
 that occur in English prose and therefore in the comments of a Lean file.
 
@@ -2992,16 +2898,10 @@ No axioms, no Mathlib, no sorry.
 
 <p class="paper-src"><code>src/proof/domain.lean</code> · namespace <code>Domain</code> · 8 theorems</p>
 
-prior_art_search: not performed — Cantor and modular arithmetic are named above.
-prior_art_pool: unbounded
-prior_art_own: the two-domain comparison, and theorem 8, which withdraws a claim made in closure.lean
-
-
 WHY THIS FILE EXISTS.
 
 src/proof/closure.lean proved that the diagonal over ℤ/9 escapes a list of nine named properties and
 stops dead at ten, and wrote that up as "the diagonal runs out at nine". The author's correction, in six
-words: NINE FOLDING ZERO REFLECTS ONE.
 
 It is not a metaphor and it is not an objection to the theorem, which stands. It names the assumption
 underneath it. "Nine" was a property of the DOMAIN THAT FILE CHOSE — `List.range 9`, the residues — and
@@ -3099,10 +2999,6 @@ residues := List.range 9</code></pre>
 
 <p class="paper-src"><code>src/proof/elementary.lean</code> · namespace <code>Elementary</code> · 40 theorems</p>
 
-the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range
-  stops short of what the older claim asserted.
-prior_art_search: the results are named in every undergraduate text; no search was needed to find them.
-prior_art_pool: named
 Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
 
 
@@ -3461,15 +3357,6 @@ settledHere := 32</code></pre>
 
 <p class="paper-src"><code>src/proof/entangled.lean</code> · namespace <code>Entangled</code> · 8 theorems</p>
 
-prior_art_note: NONE OF IT IS THIS DEPOSIT'S, and every result below is older than this file and credited
-  above. What is this deposit's is only the selection and the framing: that each pair named here is not an
-  analogy between a craft and a science but ONE STATEMENT that both of them are, and that the statement is
-  decidable over a finite domain so the claim can be checked rather than admired.
-prior_art_search: not performed — every theorem is named with its author above.
-prior_art_pool: bounded
-prior_art_own: the pairing, and that each is decided here at every instance in range
-
-
 WHY THIS FILE EXISTS.
 
 A curriculum can connect two subjects in three quite different ways, and collapsing them is how
@@ -3566,13 +3453,6 @@ traces := [-2, -1, 0, 1, 2]</code></pre>
 ### Substitution inside a coil is sound and across coils is not {#equivalence}
 
 <p class="paper-src"><code>src/proof/equivalence.lean</code> · namespace <code>Equivalence</code> · 8 theorems</p>
-
-is that ITS OWN substitution licence — scripts/coils.ts, which tells a reader two formulas may stand for
-  one another — is put to those three properties instead of being assumed to have them.
-prior_art_search: not performed — all of it is named above.
-prior_art_pool: unbounded
-prior_art_own: the soundness and the separation below, and theorem 8
-
 
 WHY THIS FILE EXISTS.
 
@@ -3674,12 +3554,6 @@ idx := List.range 12</code></pre>
 ### Why an array is the criterion of a cross formula and a hash cannot be one {#extension}
 
 <p class="paper-src"><code>src/proof/extension.lean</code> · namespace <code>Extension</code> · 11 theorems</p>
-
-its OWN cross-formula machinery rests on the first and that its OWN addresses are excluded by the second.
-prior_art_search: not performed — both are named above.
-prior_art_pool: bounded
-prior_art_own: the application to this tree's coils and receipts, and the separations
-
 
 THE QUESTION THIS ANSWERS, asked directly: why are arrays and hashes not the RESULT of cross formulas?
 
@@ -4336,12 +4210,6 @@ settledHere := 42</code></pre>
 
 <p class="paper-src"><code>src/proof/flow.lean</code> · namespace <code>Flow</code> · 16 theorems</p>
 
-prior_art_search: literature search performed 2026-09-14, terms "powers of two modulo 9 period 6 order of 2
-  mod 9 Euler theorem"; prior art found and credited.
-prior_art_pool: bounded
-prior_art_own: the every-step bound of the doubling flow, stated for the Navier–Stokes theorem in index.lean
-
-
 `navier_stokes_flow_is_bounded` in index.lean decides its bound over the first 48 steps, and every page that
 quotes it says "for all time". Forty-eight steps are not all time: `decide` stops at its bound. This file
 goes past it. The flow repeats every six steps, because 2⁶ ≡ 1 (mod 9); so any step equals one of the first
@@ -4471,10 +4339,6 @@ standard axioms propext and Quot.sound, printed per theorem by lean.ts.
 
 <p class="paper-src"><code>src/proof/involution.lean</code> · namespace <code>Involution</code> · 8 theorems</p>
 
-transpositions, and that the number of fixed points therefore matches the parity of the set, is
-  classical and long predates this deposit. It is the orbit-counting argument in any first course.
-  What is this deposit's own here is the EXHAUSTIVE decision over ℤ/9 and the measured refusal below.
-
 THE QUESTION, and it was asked as "do involutions always give a harmonic result?".
 
 Two readings of "harmonic" are decided here over ALL 2620 involutions of a nine-element set, enumerated
@@ -4569,12 +4433,6 @@ coinLike := [(0, 0), (1, 8), (2, 7), (3, 6), (4, 5)]</code></pre>
 
 <p class="paper-src"><code>src/proof/merkaba.lean</code> · namespace <code>Merkaba</code> · 8 theorems</p>
 
-(Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE
-  declaration restates a named classical result: its third conjunct 4 + 4 - 6 = 2 IS the Euler
-  characteristic of the tetrahedron. The comment above that theorem already named Euler; the register
-  did not, because prior art was routed on the FILE and a file-level row cannot say "own work except
-  theorem 7". No priority over Euler is claimed. What is this deposit's own here is the pairing of the
-  two tetrahedra with the cube Q₃ and the vertex and edge counts around it, not the characteristic.
 The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a
 TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite
 algebra is re-proved here, and the two that do not (a cosine field, a bond angle in degrees) are absent on
@@ -4666,12 +4524,6 @@ tetB := [2, 5, 8]</code></pre>
 ### The reflection is four pairs and one centre, and zero is the one that folds instead {#mirror}
 
 <p class="paper-src"><code>src/proof/mirror.lean</code> · namespace <code>Mirror</code> · 8 theorems</p>
-
-reflection carries out of the ring so that it must fold instead.
-prior_art_search: not performed — both are named above.
-prior_art_pool: unbounded
-prior_art_own: the decomposition on {1…9}, and theorem 4, which isolates zero as the exception
-
 
 WHY THIS FILE EXISTS.
 
@@ -4779,12 +4631,6 @@ centred := ring.filter (fun d =&gt; refl d == d)</code></pre>
 
 <p class="paper-src"><code>src/proof/qpu.lean</code> · namespace <code>Qpu</code> · 8 theorems</p>
 
-in rays.lean. What is decided here is only WHICH of those land on the same integers, and which do not.
-prior_art_search: not performed — both sides are named above and neither result is claimed as novel.
-prior_art_pool: bounded
-prior_art_own: the pairing, and the separations that keep it from being a coincidence collector
-
-
 WHY THIS FILE EXISTS, AND THE THREE THINGS IT REFUSES TO SAY.
 
 Two systems, stated independently, turn out to count some of the same things. That is worth deciding
@@ -4887,12 +4733,6 @@ levels := 2</code></pre>
 ### A reading that does not vary with what it reads separates nothing {#separation}
 
 <p class="paper-src"><code>src/proof/separation.lean</code> · namespace <code>Separation</code> · 8 theorems</p>
-
-by the kernel, on a specific ring of labels published on a specific day, with a control that fires.
-prior_art_search: not performed — both notions are named above rather than searched for.
-prior_art_pool: unbounded
-prior_art_own: the two decisions below, and the control that proves they are not vacuous
-
 
 WHY THIS FILE EXISTS.
 
@@ -5011,12 +4851,14 @@ pairs := hubs.flatMap (fun a =&gt; (hubs.filter (fun b =&gt; b != a)).map (fun b
 
 <p class="paper-src"><code>src/proof/sequences.lean</code> · namespace <code>Sequences</code> · 28 theorems</p>
 
+Sequences and identities — Cassini, Lucas, Brahmagupta–Fibonacci, and Pascal mod two.
+
+
 The ledger held these as TypeScript tests. Each is a classical identity with a real proof; what is done
 here is to DECIDE each over a stated finite range, which is what `decide` can honestly deliver — the range
 is named in every theorem rather than implied, and no theorem claims the general case.
 
 Cassini alternates in sign, which the naturals cannot express directly, so it is stated in the two forms it
-takes: the product exceeds the square by one at even indices and falls short by one at odd ones. Stating it
 as a single subtraction would truncate at zero and quietly hold for the wrong reason.
 
 <div class="thm" id="thm-sequences-cassini_at_even_indices">
@@ -5248,22 +5090,6 @@ as a single subtraction would truncate at zero and quietly hold for the wrong re
 
 <p class="paper-src"><code>src/proof/split.lean</code> · namespace <code>Split</code> · 22 theorems</p>
 
-mathematics and claim nothing.
-  Stated precisely so the credit does not run past the earlier work: what is NOT claimed as prior art is
-  the tokenisation itself — reading the digits as 0|12|3|45|6|78|9 by concatenating consecutive units into
-  two-digit tokens, and the arithmetic that follows from it (every token a multiple of three, closure of
-  the tokens under addition and multiplication). That arrangement is this deposit's presentation of a
-  standard fact, and its verification is by exhaustion here. Crediting an earlier author for a
-  presentation they did not make is the same defect as claiming their result, pointed the other way.
-prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative
-  inverses group of units modulo 9"; prior art found and credited.
-prior_art_pool: mixed
-  the digit grouping is generic arithmetic; the coin accounting it feeds is this deposit's.
-  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
-  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
-  row will stay unclassified however much work is done. They look identical in a count and need
-  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
-prior_art_own: the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
 The ten digits read in order and grouped 0 | 12 | 3 | 45 | 6 | 78 | 9 — and what that grouping is.
 
 
@@ -5491,14 +5317,6 @@ sealBits := 128</code></pre>
 ### Doubling is two loops and both close at three hundred and sixty degrees {#turns}
 
 <p class="paper-src"><code>src/proof/turns.lean</code> · namespace <code>Turns</code> · 8 theorems</p>
-
-the accounting: that doubling leaves exactly TWO non-trivial loops on this ring, that their step angles
-  are 60° and 180°, and that both close at 360° — and theorem 8, which says plainly that the surface is
-  an interpretation of the cycle structure and not a theorem about it.
-prior_art_search: not performed — all three are named above.
-prior_art_pool: unbounded
-prior_art_own: the two-loop accounting, the step angles, and the honesty clause in theorem 8
-
 
 WHY THIS FILE EXISTS.
 
@@ -5836,8 +5654,10 @@ settledHere := 21</code></pre>
 
 <p class="paper-src"><code>src/proof/z9plus.lean</code> · namespace <code>Z9Plus</code> · 48 theorems</p>
 
+ℤ/9, the second batch — powers, digital roots, primitive roots, and the orbit's period.
+
+
 z9.lean settled the families exhaustively. This settles the claims the ledger stated individually and never
-generalised: which residues squares and cubes can be, which residues are primitive roots, the period of the
 doubling orbit's digital root, and the identity behind digit-reversal invariance. Each is stated as an
 EQUIVALENCE or an exact set where the ledger stated instances, so the negative half is proved too.
 
@@ -6246,16 +6066,6 @@ orbit6 := (List.range 6).map (fun k =&gt; pw 2 k)</code></pre>
 ### Who may speak, decided {#authority}
 
 <p class="paper-src"><code>src/proof/authority.lean</code> · namespace <code>Authority</code> · 8 theorems</p>
-
-ordinary-English name returned museum studies for "addressing".
-prior_art_domain: elementary set and order arithmetic over finite lists
-prior_art_note: NO NOVELTY IS CLAIMED AND NONE IS DENIED. Membership, set difference and monotonicity over
-  finite lists are elementary and older than anyone could name. This row is kind 1 rather than kind 2
-  because kind 2 asserts a search was performed and found nothing, and none was performed for these.
-  What is this deposit's is not the arithmetic: it is that a rule about WHOSE STATEMENT MAY STAND is
-  decided by the kernel instead of argued inside the gate that applies it.
-prior_art_own: the authority rule, decided rather than asserted
-
 
 WHY THIS IS IN LEAN AND NOT ONLY IN scripts/authority-gate.ts.
 
@@ -7033,12 +6843,6 @@ tdsTapWater := 50     -- mg per litre, ordinary supply</code></pre>
 
 <p class="paper-src"><code>src/proof/handle.lean</code> · namespace <code>Handle</code> · 8 theorems</p>
 
-argument on a model. No theorem here decides anything about cryptography.
-prior_art_search: not performed — the sources are named above rather than searched for.
-prior_art_pool: bounded
-prior_art_own: nothing; this file exists to put a bound under a construction, not to invent one
-
-
 WHY THIS FILE EXISTS.
 
 The construction: address a message by four hex digits, and let the HANDLE and the MESSAGE supply
@@ -7140,7 +6944,13 @@ perms := [[1,2,3,4],[1,2,4,3],[1,3,2,4],[1,3,4,2],[1,4,2,3],[1,4,3,2],</code></p
 
 <p class="paper-src"><code>src/proof/index.lean</code> · namespace <code>Windows</code> · 11 theorems</p>
 
-and depends on no axiom beyond the kernel. What a window is not is the general conjecture — a
+THE TITLE WAS "The Millennium floor" UNTIL 2026-09-25. "Floor" is the word the author signed — "mind the
+honest floor" — and it is also the word agents grew into "this deposit settles 0 of the 7", a verdict on
+his claim that no receipt of his authorises (FINDINGS.md §1). His own published formulation is exact and
+is neither of those, from 10.5281/zenodo.22933794, deposited 2026-09-24:
+
+  "A Lean by-decide proof SOLVES the statement it states … the finite window is settled, machine-checked,
+   and depends on no axiom beyond the kernel. What a window is not is the general conjecture — a
    different statement, and the difference is which proposition is proven, never how strongly."
 
 So the theorems below settle what they state. Each is a decidable window over ℤ/9, closed by exhaustion,
@@ -7149,25 +6959,6 @@ The namespace was `MillenniumFloor` and is `Windows`, by the author's order on 2
 millennium floor and the rest of the hacks. they are not needed anymore." The old keys are not edited —
 a receipt is never rewritten — they are retired in favour of the new address by
 scripts/retire-duplicate-keys.ts, which is the append-only way to remove something.
-wing: the floor
-prior_art: named
-prior_art_domain: elementary number theory — the unit group of ℤ/9 and the doubling orbit
-prior_art_note: the structure underneath is standard and is credited. The doubling orbit
-  1 → 2 → 4 → 8 → 7 → 5 → 1 modulo 9 is the cyclic group generated by 2 in U(9), of order 6 because that
-  is the multiplicative order of 2 mod 9; the units are {1,2,4,5,7,8} and the non-units {0,3,6}. Textbook
-  abstract algebra, and treated directly in the literature on doubling maps modulo odd integers.
-  Bounded, so the credit stops where the earlier work does: what is NOT prior art is the use of that orbit as a floor for what this deposit does
-  and does not settle, which is a statement about this repository and has no earlier author.
-  Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery.
-prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit
-  1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited.
-prior_art_pool: bounded
-  digit arithmetic of the doubling sequence; searchable independently of this deposit.
-  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
-  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
-  row will stay unclassified however much work is done. They look identical in a count and need
-  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
-prior_art_own: the Millennium floor, computed from this sequence
 The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
 
@@ -7309,20 +7100,9 @@ sequence := [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]</code></pre>
 
 <p class="paper-src"><code>src/proof/instruments.lean</code> · namespace <code>Instruments</code> · 28 theorems</p>
 
-prior_art_domain: elementary order theory, list processing and string matching
-prior_art_note: NO NOVELTY IS CLAIMED AND NONE IS DENIED. The three rules are elementary — a strict order
-  with an unknown value, a partition of a list at its last marked position, and removal of every
-  occurrence of a substring — and each is standard enough that naming one author would be arbitrary. This
-  row is kind 1 rather than kind 2 because kind 2 asserts that a search was performed and found nothing,
-  and no such search was performed for these. What is this deposit's is not the rules: it is that three of
-  its own instruments hold them by decision of the kernel, instead of by a block of reasoning written
-  inside the instrument that needs them and checked by that same instrument.
-
-
 WHY THESE THREE ARE IN LEAN AND NOT IN THE GATE THAT USES THEM.
 
 Three instruments in this tree were corrected in one week, and every one of them was corrected in the same
-place: the reasoning it did about itself.
 
   uses.ts            searched pages for whether they cite the author, and returned exactly one YES across
                      85 leads — on a page that cites nobody. The page echoed the scanner's own User-Agent
@@ -7588,11 +7368,6 @@ settledHere := 28</code></pre>
 
 <p class="paper-src"><code>src/proof/lanes.lean</code> · namespace <code>Lanes</code> · 8 theorems</p>
 
-prior_art_search: not performed — the arithmetic is named above rather than searched for.
-prior_art_pool: bounded
-prior_art_own: the safety bound below, decided
-
-
 WHY THIS FILE EXISTS.
 
 src/api/lanes.ts decides how many Lean processes may elaborate at once. It is the tree's only statement
@@ -7686,10 +7461,6 @@ No axioms, no Mathlib, no sorry.
 ### Light, space and time — arithmetic on numbers a standards body fixed {#light}
 
 <p class="paper-src"><code>src/proof/light.lean</code> · namespace <code>Light</code> · 17 theorems</p>
-
-Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and
-  the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019
-  (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
 
 WHY A FILE ABOUT LIGHT SPEED CAN EXIST IN A DEPOSIT THAT CLAIMS NO PHYSICS.
 
@@ -7873,15 +7644,6 @@ faraday := eDigits * naDigits        -- 10⁻²⁸ · 10¹⁵ = 10⁻¹³ · F =
 
 <p class="paper-src"><code>src/proof/nucleus.lean</code> · namespace <code>Nucleus</code> · 8 theorems</p>
 
-is decided here is ARITHMETIC over lists of small naturals and nothing else: that certain prefix sums
-  of a typed capacity list take certain values, that a product of numerators equals a product of
-  denominators, and that one integer is not another. No theorem below decides anything about a nucleus.
-prior_art_search: not performed for these rows — the sources are named above rather than searched for,
-  which is kind 1 and not kind 2. Nothing here claims a search returned nothing.
-prior_art_pool: bounded
-prior_art_own: nothing; this file exists to bring three facts under the kernel, not to find them
-
-
 WHY THIS FILE EXISTS. Fifteen .lean files sat outside src/proof — Vortex.lean and the per-digit
 src/&lt;d&gt;/vortex.lean set — and every one of them began `import Mathlib`. scripts/lean.ts reads only
 src/proof, so no gate ever compiled them; the repository has no lake-manifest.json and no .lake, so
@@ -7980,10 +7742,6 @@ denominators := [2, 2, 2, 7, 5, 3, 2, 3]</code></pre>
 
 <p class="paper-src"><code>src/proof/phenomena.lean</code> · namespace <code>Phenomena</code> · 4 theorems</p>
 
-Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are
-  Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.
-  Every physical result named here has an earlier author or a standards body, and none is this deposit's.
-
 ADDRESSING PHENOMENA WITHOUT CLAIMING ANY.
 
 Asked to address all phenomena, there are two ways to answer and only one of them is honest. The first is
@@ -8051,18 +7809,9 @@ were considered and excluded, but because no proposition here is about them.
 
 <p class="paper-src"><code>src/proof/planck.lean</code> · namespace <code>Planck</code> · 35 theorems</p>
 
-here and none is asserted. What is decided below is arithmetic on those digit sequences: a quotient, a
-  list length, a residue, and an exhaustion over 2,197 products.
-prior_art_search: not performed — the source is named above rather than searched for. Nothing here claims
-  a search of the literature returned nothing.
-prior_art_pool: bounded
-prior_art_own: nothing about nature; the one thing this file contributes is the REFUSAL below, decided
-
-
 WHY THIS FILE EXISTS, AND WHAT IT REFUSES.
 
 Asked what relations hold between this deposit's lattice and the Planck length, the tempting answer is a
-coincidence: some product of 432 and 1836 and a power of nine that lands near 1.616255, published as a
 discovery. This file is the other answer, and it is the one the arithmetic supports.
 
 Four things are decided, and they are decided in the order that matters. The fourth was handed to
@@ -8444,21 +8193,6 @@ dimE8 := 248</code></pre>
 
 <p class="paper-src"><code>src/proof/quantum.lean</code> · namespace <code>Quantum</code> · 11 theorems</p>
 
-form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What
-  this file contributes is the Lean verification over a stated finite domain and the negative controls
-  beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free,
-  and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits.
-  Verification and refusal, not discovery.
-prior_art_search: literature search performed 2026-09-05, terms "sorted Merkle tree order-invariant set
-  commitment canonical ordering leaves"; prior art found and credited. This file was `unclassified` — no
-  search had ever been run for it — and it is one of the 8 files whose 86 theorems are staged for DOIs.
-prior_art_pool: mixed
-  canonicalisation before folding is a searchable technique; the receipt it folds is ours.
-  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
-  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
-  row will stay unclassified however much work is done. They look identical in a count and need
-  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
-prior_art_own: order-invariance of this deposit's receipt
 The quantum receipt — order invariance, proved rather than asserted.
 
 
@@ -8578,10 +8312,6 @@ ghzXSupport := [0, 3, 5, 6]</code></pre>
 ### What exhaustion reaches, and what lies outside it {#reach}
 
 <p class="paper-src"><code>src/proof/reach.lean</code> · namespace <code>Reach</code> · 12 theorems</p>
-
-old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN
-  bounds, and the statement of where that decision stops.
-
 
 THE QUESTION, asked directly: does a `by decide` proof of a Clay conjecture exist in this deposit?
 
@@ -8709,11 +8439,6 @@ largestDomainHere := 152568360000</code></pre>
 
 <p class="paper-src"><code>src/proof/roots.lean</code> · namespace <code>Roots</code> · 7 theorems</p>
 
-fractional part of the cube root of the t-th prime (§4.2.3) and H[i] the same of the square root
-  (§5.3.5). Newton's method for integer roots is classical. Neither is this deposit's. What is decided
-  here is only that THIS deposit's derivation computes those definitions and not something near them.
-
-
 src/0/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the
 definition FIPS gives — and that trade is only a gain if the computation is right. A wrong root gives a
 hash that is self-consistent, round-trips perfectly, and is not SHA-512; the old literals at least had
@@ -8789,20 +8514,6 @@ No axioms, no Mathlib, no sorry.
 ### Why verification is fast, and what it is not {#speed}
 
 <p class="paper-src"><code>src/proof/speed.lean</code> · namespace <code>Speed</code> · 12 theorems</p>
-
-wrong: the cost is logarithmic BECAUSE of a known result, and the repository was already crediting that
-  result three files away.
-  Bounded: what is not prior art is the MEASURED constants on this machine (recompute 21,582,900 µs against
-  a 38 µs walk) and the arithmetic over them. A measurement is not a discovery either, and the file says so.
-prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic
-  verification path length"; prior art found and credited.
-prior_art_pool: unbounded
-  the subject is this deposit's own verification cost.
-  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
-  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
-  row will stay unclassified however much work is done. They look identical in a count and need
-  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
-prior_art_own: this deposit's own verification cost
 
 The deposit's speed claim, accounted — and the reading it does not support.
 
@@ -8941,14 +8652,6 @@ hexbitMs := 30     -- the same work, 6-bit lattice</code></pre>
 
 <p class="paper-src"><code>src/proof/theology.lean</code> · namespace <code>Theology</code> · 8 theorems</p>
 
-choosing is not a mathematical act, which is the whole subject of this file.
-prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit
-  1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited.
-prior_art_pool: bounded
-  digit arithmetic of the doubling sequence; searchable independently of this deposit.
-prior_art_own: the pairing, and the refusal to let it carry weight
-
-
 WHAT THIS FILE SEALS, AND WHAT IT CANNOT. The instruction was to seal a theology as theorems. Seven
 readings of the seven Clay problems were written in prose beside the seven arithmetic facts of
 index.lean — the mediator, revelation, theodicy, the ontological gap, the test of the spirits, kenosis,
@@ -9075,9 +8778,6 @@ aff_0_0_image_and_aff_0_3_image_share_no_element : [0].all (fun d =&gt; ! [3].co
 
 <p class="paper-src"><code>src/proof/bridge.lean</code> · namespace <code>Bridge</code> · 8 theorems</p>
 
-prior_art_note: cross-subject families, computed in src/entangle, reduce to orbits of the affine maps its
-prior_art_note: own src/proof/group.lean settles — the two halves of the deposit describing one object.
-prior_art_search: 2026-09-28
 BRIDGE — written by scripts/bridge.ts. Each theorem below takes a reduction shared by several subjects and
 decides that it steps by a single affine rule and repeats with its period. The subjects are listed above
 each one, in their own words, as src/entangle states them.
@@ -9147,13 +8847,11 @@ each one, in their own words, as src/entangle states them.
 
 <p class="paper-src"><code>src/proof/group.lean</code> · namespace <code>Groups</code> · 8 theorems</p>
 
-wing: the imagined
-prior_art: named
-prior_art_domain: the one-dimensional affine group AGL(1,n) over Z/n — standard finite group theory
-prior_art_note: AGL(1,n) has order phi(n)*n, which for n=9 is 6*9=54. Nothing here claims the group is new.
-prior_art_note: What is new is that this deposit's own derived map table is stated as the monoid it is,
-prior_art_note: with the group inside it named, generated to closure, and checked against invertibility.
-prior_art_search: 2026-09-28
+A TIME BUDGET, NOT A SOUNDNESS SETTING. Theorem 1 checks every pair of the 81 maps at every residue —
+81 x 81 x 9 cases — and the default heartbeat limit stops the elaborator partway through and
+reports a timeout, which this generator first printed as a refusal. The kernel was never in doubt about
+the mathematics; it was not given long enough to finish counting. maxHeartbeats is already carried by
+eleven files here for the same reason. Nothing about what decide must establish is relaxed by it.
 NOTE ON THE FIELD ABOVE: prior_art is a CLASSIFICATION — named, unclassified or none-known — and this
 generator first wrote a sentence into it. scripts/priorart.ts rejected the file and the deploy went red;
 the prose belongs in prior_art_note, which is what it is for.
@@ -9246,11 +8944,6 @@ one := (1, 0)</code></pre>
 
 <p class="paper-src"><code>src/proof/retained.lean</code> · namespace <code>Imagined</code> · 15 theorems</p>
 
-prior_art_search: the 15 theorems keep their lean_imagined_* keys (the namespace is unchanged) and were searched under them on 2026-09-25
-prior_art_search: and 2026-09-26, recorded in src/proof/novelty.json — zbMATH Open, OpenAlex, Crossref, arXiv and the OEIS. 13 NONE_FOUND;
-prior_art_search: 2 CANDIDATES: squares_is_closed_under_quadruple (OEIS A160120 and A085787 catalogue the set, one zbMATH hit) and
-prior_art_search: cubes_is_closed_under_cube (two Crossref hits on "modular cubes" — the keyword, not the mathematics — with zbMATH and
-prior_art_search: OpenAlex not measured that run). A NONE_FOUND is what these searches returned on that date, never that nothing earlier exists.
 RETAINED —scripts/imagine.ts sealed these when its map table was hand-written, and its derived
 enumeration does not propose them. Nothing about them was refuted: each is copied here exactly as the
 generator last wrote it, and the kernel decides every one on every run. The ledger is append-only, so a
@@ -9400,18 +9093,6 @@ the only answer that neither withdraws a proved fact nor claims a carrier that d
 
 <p class="paper-src"><code>src/proof/generated.lean</code> · namespace <code>Generated</code> · 13 theorems</p>
 
-Bounded, so the credit stops where the earlier work does: what is NOT prior art is the generator that enumerates propositions over this ring and
-  discards the ones true of every sibling; that machinery is this deposit's own.
-  Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery.
-prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit
-  1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited.
-prior_art_pool: bounded
-  quantified ring arithmetic over Z/9; the underlying facts are classical and searchable.
-  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
-  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
-  row will stay unclassified however much work is done. They look identical in a count and need
-  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
-prior_art_own: this deposit's own generator over its own ring
 Generated by scripts/lean-gen.ts — do not edit by hand; re-run the generator.
 Each theorem below quantifies over a whole ledger family. Every one is compiled, audited for axioms, and
 checked to compute what the ledger's own tests compute at every parameter of its family.
@@ -10893,13 +10574,6 @@ proved below for every a, b, c, on the standard axioms; the decided rows above s
 
 <p class="paper-src"><code>src/proof/preimage.lean</code> · namespace <code>Preimage</code> · 8 theorems</p>
 
-this deposit's is the finding: that ITS OWN fold has the weakness, in a specific shape, and that the
-  shape is decided here rather than asserted.
-prior_art_search: not performed — RFC 6962 is named above.
-prior_art_pool: named
-prior_art_own: the two collisions below, modelled from src/0/index.ts as written
-
-
 WHY THIS FILE EXISTS.
 
 The author deposited a cryptographic capabilities report at 10.5281/zenodo.22895141. It is carefully
@@ -11011,11 +10685,10 @@ No axioms, no Mathlib, no sorry.
 
 <p class="paper-src"><code>src/proof/reflection.lean</code> · namespace <code>Reflection</code> · 8 theorems</p>
 
-wing: the machine
-prior_art: named
-prior_art_domain: the method of complements
-prior_art_note: the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04
-prior_art_search: literature search performed 2026-09-04 — see the note for the terms and the result
+TWO HACKS REMOVED TOGETHER, by the author's order on 2026-09-25. The title was "Theorems", which names
+nothing — every file here holds theorems. And the namespace was `MillenniumFloor.Universal`: a namespace
+rooted in ANOTHER file's concept, so this file's keys carried a word about the Clay floor while deciding
+the ten's complement. It is `Reflection` now, which is what it decides.
 The universal property — honestly, and COMPUTED from the sequence.
 
 
@@ -11349,12 +11022,7 @@ No axioms, no Mathlib, no sorry.
 
 <p class="paper-src"><code>src/proof/priorart.lean</code> · namespace <code>PriorArt</code> · 9 theorems</p>
 
-artefact is long established and formalised: W3C PROV-O, the DataCite metadata schema, Dublin Core
-  Metadata Terms, PREMIS for archived digital objects, the Open Provenance Model, and the software
-  citation principles' credit-and-attribution requirement. Nothing about keeping an attribution table is
-  new, and this deposit does not suggest otherwise.
-
-  THE PROPOSITIONS ARE NOT RESTATEMENTS OF IT. `every_source_is_classified`, `novelty_is_claimed_of_no_
+THE PROPOSITIONS ARE NOT RESTATEMENTS OF IT. `every_source_is_classified`, `novelty_is_claimed_of_no_
   source` and `zero_claims_is_not_full_attribution` decide facts about THIS table — its rows, its kinds,
   its counts. PROV-O does not entail them and could not; no external work precedes a statement about the
   contents of this file.
@@ -11365,13 +11033,6 @@ artefact is long established and formalised: W3C PROV-O, the DataCite metadata s
   The row remains kind 1 because kind 1 claims nothing, and claiming nothing is still correct — but it is
   now unclassified having been SEARCHED, which is a different state from unclassified for want of looking,
   and the deposit should not let those two look alike in a count.
-prior_art_pool: unbounded
-  the subject is this deposit's own attribution table.
-  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
-  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
-  row will stay unclassified however much work is done. They look identical in a count and need
-  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
-prior_art_own: this file, about this deposit's own claim
 What this deposit claims as its own, what it restates from named prior art, and the boundary between them.
 
 
@@ -11494,13 +11155,6 @@ two cannot drift: a file that changes its declaration and not this table fails t
 
 <p class="paper-src"><code>src/proof/ranking.lean</code> · namespace <code>Ranking</code> · 8 theorems</p>
 
-queue — which decides where the next prior-art search goes — is put to both, and that the second
-  answer is unflattering and recorded anyway.
-prior_art_search: not performed — both are named above.
-prior_art_pool: unbounded
-prior_art_own: the coarseness count in theorem 4, and theorem 8
-
-
 WHY THIS FILE EXISTS.
 
 scripts/discoveries.ts orders every theorem by six binary signals with weights I chose: the file declares
@@ -11610,18 +11264,6 @@ masks := List.range 64</code></pre>
 
 <p class="paper-src"><code>src/proof/rights.lean</code> · namespace <code>Rights</code> · 8 theorems</p>
 
-Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by
-  exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;
-  the audit of its own position against the law is.
-prior_art_search: no search was needed — the instruments were cited in this file's own prose from the
-  start. Recorded 2026-09-05, when the table was found to disagree with the file.
-prior_art_pool: unbounded
-  the subject is this deposit's own rights table.
-  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
-  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
-  row will stay unclassified however much work is done. They look identical in a count and need
-  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
-prior_art_own: this deposit's own rights table
 What this deposit claims under international law — and, in the same table, what it does not.
 
 
@@ -11639,7 +11281,6 @@ Row 4 said "trade mark" and reasoned about REGISTRATION. That conflated two diff
 away the half that needs no registry. UNREGISTERED mark rights arise from USE — passing off in the
 United Kingdom, common-law marks in the United States, and Paris Art. 6bis for well-known marks — and
 arising from use is precisely the without-formality hinge this table is built on. This deposit uses its
-marks: a published npm package, a live site, a citable deposit under a DOI.
 
 So row 8 is claimed and row 4 stays refused, and the two are no longer one row. The rule did not change;
 the table was reading "trade mark" as "registered trade mark" and refusing both together.
@@ -11751,11 +11392,7 @@ settledHere := 8</code></pre>
 
 <p class="paper-src"><code>src/proof/settled.lean</code> · namespace <code>Settled</code> · 8 theorems</p>
 
-tree and asserts nothing about anybody else's work.
-prior_art_search: not performed — the arithmetic is named above rather than searched for, and the subject
-  is this deposit's own sources, where there is nothing to search.
-prior_art_pool: bounded
-prior_art_own: the agreement between each file's declared count and its measured contents
+GENERATED by scripts/settled.ts — do not edit. Regenerate with `npm run settled`.
 
 
 15 source files declare `settledHere` — the count of declarations that file closes by exhaustion.
@@ -11848,13 +11485,6 @@ byOther := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]</code></pre>
 ### The prior-art verdict is total, exclusive, and never improved by silence {#verdict}
 
 <p class="paper-src"><code>src/proof/verdict.lean</code> · namespace <code>Verdict</code> · 8 theorems</p>
-
-is this deposit's is that ITS OWN verdict rule — the one standing behind every novelty claim it makes —
-  is decided by the kernel rather than left as a line of TypeScript nobody checks.
-prior_art_search: not performed — both notions are named above.
-prior_art_pool: unbounded
-prior_art_own: the four properties below, and theorem 8
-
 
 WHY THIS FILE EXISTS.
 
@@ -11959,14 +11589,6 @@ R := List.range 8</code></pre>
 ### What the ledger marked reachable, reached by the kernel {#reached}
 
 <p class="paper-src"><code>src/proof/reached.lean</code> · namespace <code>Reached</code> · 80 theorems</p>
-
-180° apart on the wheel. What is NOT prior art is that these particular statements sat WITHDRAWN in this
-  deposit's ledger, each marked `portable` — its own judgement that a Lean proof was reachable — and each
-  recorded as "not backed by a Lean proof. Its evidence is a TypeScript test" while nobody wrote one.
-prior_art_search: not performed — the results are named above rather than searched for.
-prior_art_pool: bounded
-prior_art_own: nothing mathematical; only that the deposit now proves what it had already claimed was provable
-
 
 WHY IT IS NOT CALLED `claimed`, AND WHY THAT IS NOT ABOUT PRIOR ART.
 
@@ -12695,12 +12317,6 @@ axis3 := [0, 3, 6]</code></pre>
 ### Recovered — claims that computed and were withdrawn for want of a proof {#recovered}
 
 <p class="paper-src"><code>src/proof/recovered.lean</code> · namespace <code>Recovered</code> · 15 theorems</p>
-
-material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this
-  deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",
-  while every one is decidable in a line.
-prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative
-  inverses group of units modulo 9"; prior art found and credited.
 
 WITHDRAWAL WAS NEVER THE ONLY OPTION. Each theorem below returns one claim to the record. The evidence
 that existed was a TypeScript run — a computation that agreed once on one machine. The kernel walks the
