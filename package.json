@@ -195,7 +195,7 @@
     "ci:watch": "node scripts/ci-watch.ts",
     "ci:watch-wait": "node scripts/ci-watch.ts --wait",
     "cycle": "npm run gates && npm run docs:build",
-    "cycle:ship": "npm run cycle && git add -A && { git diff --cached --quiet || git commit -m 'regenerate the derived artefacts the chain rewrote'; } && git push origin main && node scripts/ci-watch.ts --wait --for 5400",
+    "cycle:ship": "git fetch -q --tags origin && npm run cycle && git add -A && { git diff --cached --quiet || git commit -m 'regenerate the derived artefacts the chain rewrote'; } && git push origin main && node scripts/ci-watch.ts --wait --for 5400",
     "bridge": "node scripts/bridge.ts",
     "qpu": "node scripts/qpu-gate.ts"
   },

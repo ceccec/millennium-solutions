@@ -10,7 +10,8 @@
 // Nothing here decides anything. It reads artefacts and returns them typed — the ledger, the Lean sources,
 // and the relation between a sealed key and the theorem on disk that carries it. Judgement stays in the gates
 // that own it.
-import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
+import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'node:fs'
+import { execSync } from 'node:child_process'
 
 export const LEDGER_PATH = 'src/proof/discovered.json'
 export const PROOF_DIR = 'src/proof'
@@ -86,6 +87,37 @@ export interface LeanTheorem { name: string; file: string; tactic: string; state
 
 export const leanFiles = (): string[] =>
   existsSync(PROOF_DIR) ? readdirSync(PROOF_DIR).filter((f) => f.endsWith('.lean')).sort() : []
+
+/** ── A GENERATED LEAN FILE IS EXACTLY WHAT ITS GENERATOR WRITES, OR IT IS DRIFT ──────────────────────────
+ *  One check for coils.ts, group.ts and bridge.ts, which carried it three times (and two of them not at all
+ *  until 2026-10-03: they printed a report without --emit and exited 0). Without `emit` the committed file is
+ *  compared to `text` byte for byte — a count is the flattering number, the bytes are what the kernel reads —
+ *  and a difference refuses, NAMING the file and its first differing line. With `emit` the file is written
+ *  and, when `kernel` is set, put to the kernel at once, refusing on any error line. */
+export const generatedLean = (file: string, text: string, o: { emit: boolean; kernel?: boolean; label: string; summary?: string }): void => {
+  const p = `${PROOF_DIR}/${file}`
+  if (!o.emit) {
+    const onDisk = existsSync(p) ? readFileSync(p, 'utf8') : ''
+    if (onDisk === text) { console.log(`\n✓ ${o.label}: ${o.summary ? o.summary + ' · ' : ''}${p} is exactly what this script generates`); return }
+    console.log(`\n✗ ${o.label}: ${p} drifts from what scripts/${o.label}.ts generates — run \`node scripts/${o.label}.ts --emit\``)
+    if (!onDisk) console.log('    the file is missing entirely')
+    else {
+      const a = onDisk.split('\n'), b = text.split('\n')
+      const i = a.findIndex((l, k) => l !== b[k])
+      console.log(`    first difference at line ${(i < 0 ? Math.min(a.length, b.length) : i) + 1}:\n      on disk:    ${a[i] ?? '(end of file)'}\n      generated:  ${b[i] ?? '(end of file)'}\n    ${a.length} line(s) on disk, ${b.length} generated`)
+    }
+    process.exit(1)
+  }
+  writeFileSync(p, text)
+  if (!o.kernel) { console.log(`\n✓ ${o.label}: ${o.summary ? o.summary + ' ' : ''}written to ${p} — run npm run lean to put it to the kernel`); return }
+  console.log(`\nwrote ${p} — putting it to the kernel:`)
+  let out = ''
+  try { out = String(execSync(`cd ${PROOF_DIR} && LEAN_PATH=. lean ${file}`, { encoding: 'utf8', stdio: 'pipe' })) }
+  catch (e) { out = String((e as { stdout?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '') }
+  const errors = out.split('\n').filter((l) => /error:/.test(l))
+  if (errors.length) { console.log('  ✗ refused:\n' + errors.slice(0, 8).map((l) => '    ' + l).join('\n')); process.exit(1) }
+  console.log(`  ✓ the kernel accepted ${o.summary ?? 'it'}`)
+}
 
 /** Files written by scripts/imagine.ts — the enumerated family, whose pages are computed from their keys
  *  rather than pre-rendered. Read from the corpus, never listed, so it cannot drift from what the generator
@@ -382,29 +414,30 @@ export const fileOfKey = (key: string, thms: LeanTheorem[] = leanTheorems()): st
  *  file's summary and README.md described capacity.lean as "4122, 2005), which fixes 4 bits of version…".
  *  Fifty files continue a field on an indented `--   ` line; three state a key on several lines. Both are
  *  one value here, and both are frontmatter there. */
-export const FM_FIELD = /^\s*--\s*([a-z][a-z0-9_]*):\s*(.+?)\s*$/
-export const FM_CONT = /^\s*--\s{2,}(\S.*?)\s*$/
-export const frontmatter = (file: string): Record<string, string> => {
-  const fm: Record<string, string> = {}
+const FM_FIELD = /^\s*--\s*([a-z][a-z0-9_]*):\s*(.+?)\s*$/
+const FM_CONT = /^\s*--\s{2,}(\S.*?)\s*$/
+/** The header of a .lean file — every comment line before the first declaration — split ONCE into its fields
+ *  and its prose. A key stated on several lines, or continued on an indented one, is one value (three files
+ *  state prior_art_note on three lines; fifty continue a field — this kept the last line of a repeated key,
+ *  and PRIOR-ART.md credited group.lean with half a sentence). The prose is every header line that is neither,
+ *  which is what a summary is; scripts/leandoc.ts and scripts/priorart-gen.ts both read this and parse nothing. */
+export const header = (file: string): { fields: Record<string, string>; prose: string[] } => {
+  const fields: Record<string, string> = {}
+  const prose: string[] = []
   let open: string | null = null
   for (const line of leanSource(file).split('\n')) {
     const m = line.match(FM_FIELD)
-    if (!m) {
-      const c = open ? line.match(FM_CONT) : null
-      if (c) { fm[open!] += ' ' + c[1]; continue }
-      open = null
-      if (/^\s*--/.test(line)) continue
-      if (line.trim() === '' || /^(import|set_option)/.test(line)) continue
-      break
-    }
-    // A KEY STATED ON SEVERAL LINES IS ONE VALUE. group.lean, bridge.lean and retained.lean state prior_art_note
-    // on three lines each, and this kept the last: PRIOR-ART.md credited group.lean with "with the group inside
-    // it named, generated to closure…" — a fragment of a sentence whose subject was on the line above.
-    fm[m[1]] = fm[m[1]] ? fm[m[1]] + ' ' + m[2] : m[2]
-    open = m[1]
+    if (m) { fields[m[1]] = fields[m[1]] ? fields[m[1]] + ' ' + m[2] : m[2]; open = m[1]; continue }
+    const c = open ? line.match(FM_CONT) : null
+    if (c) { fields[open!] += ' ' + c[1]; continue }
+    open = null
+    if (/^\s*--/.test(line)) { prose.push(line); continue }
+    if (line.trim() === '' || /^(import|set_option)/.test(line)) continue
+    break
   }
-  return fm
+  return { fields, prose }
 }
+export const frontmatter = (file: string): Record<string, string> => header(file).fields
 
 /** THE TWO QUESTIONS, ASKED ONE WAY. Eight scripts spelled "does this entry stand" as their own inline
  *  predicate — `!e.revoked` here, `filter((e) => e.revoked)` there, `e.revoked === true` elsewhere. The

@@ -5,9 +5,16 @@ description: One row per annotated git tag, each with the content-address that t
 
 # Changelog
 
-Derived by `node scripts/changelog.ts` from this repository's annotated tags. **928 releases**, 928 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
+Derived by `node scripts/changelog.ts` from this repository's annotated tags. **929 releases**, 929 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
 
 ## The last 20 releases, with what they contain
+
+### v9.8.1 — 2026-10-03
+
+Content-address `a21ed83b-d069-8671-8a00-971427042615`.
+
+- regenerate the derived artefacts the chain rewrote
+- install @uuidna/qpu, register the two MCP servers, and gate qpu.lean's constants against the install
 
 ### v9.8.0 — 2026-09-28
 
@@ -253,16 +260,11 @@ Content-address `65773a5e-4a52-886c-adcd-5dae3cfd9b41`.
 - both autonomous runs were broken, and one of them was broken in the way I had just published
 - lessons — 128 corrections the tree recorded about itself, counted instead of remembered
 
-### v9.6.1 — 2026-09-20
-
-Content-address `4c8a15b0-4e82-83e8-a574-124290768a49`.
-
-- discovery on the schedule — the generative path was the only thing not on one
-
 ## Every release
 
 | version | date | content-address |
 | --- | --- | --- |
+| v9.8.1 | 2026-10-03 | `a21ed83b-d069-8671-8a00-971427042615` |
 | v9.8.0 | 2026-09-28 | `f782b60c-dba2-88b5-900c-1197cdb52211` |
 | v9.7.9 | 2026-09-28 | `fe9255cd-c626-84b7-847c-ba0a9da88026` |
 | v9.7.8 | 2026-09-28 | `276577d5-221d-86e5-8d07-a1ce489ef5f2` |

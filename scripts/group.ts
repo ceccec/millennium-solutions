@@ -20,10 +20,8 @@
 //
 //   node scripts/group.ts          report what it finds
 //   node scripts/group.ts --emit   write src/proof/group.lean and put it to the kernel
-import { writeFileSync, readFileSync, existsSync } from 'node:fs'
-import { execSync } from 'node:child_process'
 import { flag } from '../src/cli/index.ts'
-import { units as apiUnits } from '../src/api/index.ts'
+import { units as apiUnits, generatedLean } from '../src/api/index.ts'
 
 const B = 9
 const m9 = (n: number) => ((n % B) + B) % B
@@ -192,30 +190,6 @@ ${body}
 
 end Groups
 `
-// THE COMMITTED FILE MUST BE WHAT THIS SCRIPT GENERATES, and without --emit that is the whole check. This
-// script printed its report and exited 0 — exactly the gap coils.ts had — so it could not notice
-// src/proof/group.lean no longer being what it generates, and leads.ts named it a refusing gate nothing had
-// shown could fail. The whole text is compared, not a count: a constant that changed while the line count
-// held is the drift that matters most.
-const OUT = 'src/proof/group.lean'
-const committed = existsSync(OUT) ? readFileSync(OUT, 'utf8') : ''
-if (!flag('--emit')) {
-  if (committed === text) { console.log(`  ✓ ${OUT} is exactly what this script generates`); process.exit(0) }
-  let at = 0
-  while (at < text.length && text[at] === committed[at]) at++
-  console.log(`  ✗ group: ${OUT} drifts from what scripts/group.ts generates (first difference at character ${at}) — run node scripts/group.ts --emit`)
-  process.exit(1)
-}
-writeFileSync(OUT, text)
-console.log('\nwrote src/proof/group.lean — putting it to the kernel:')
-try {
-  const out = String(execSync('cd src/proof && LEAN_PATH=. lean group.lean', { encoding: 'utf8', stdio: 'pipe' }))
-  const errors = out.split('\n').filter((l) => /error:/.test(l))
-  if (errors.length) { console.log('  ✗ refused:\n' + errors.slice(0, 8).map((l) => '    ' + l).join('\n')); process.exit(1) }
-  console.log('  ✓ the kernel accepted all 8')
-} catch (e) {
-  const out = String((e as { stdout?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '')
-  const errors = out.split('\n').filter((l) => /error:/.test(l))
-  if (!errors.length) { console.log('  ✓ the kernel accepted all 8 (non-zero exit carried no error line)') }
-  else { console.log('  ✗ refused:\n' + errors.slice(0, 8).map((l) => '    ' + l).join('\n')); process.exit(1) }
-}
+// Without --emit the committed file must be exactly this text (src/api generatedLean — the check this script
+// lacked until 2026-10-03, when it printed a report and exited 0); with it, written and put to the kernel.
+generatedLean('group.lean', text, { emit: flag('--emit'), kernel: true, label: 'group', summary: 'all 8' })

@@ -20,9 +20,8 @@
 //
 //   node scripts/bridge.ts          report
 //   node scripts/bridge.ts --emit   write src/proof/bridge.lean and put it to the kernel
-import { writeFileSync, readFileSync, existsSync } from 'node:fs'
-import { execSync } from 'node:child_process'
 import { flag } from '../src/cli/index.ts'
+import { generatedLean } from '../src/api/index.ts'
 import { DOM_EXPRS } from '../src/entangle/index.ts'
 
 const B = 9
@@ -162,28 +161,6 @@ ${control}
 ${closing}
 end Bridge
 `
-// THE COMMITTED FILE MUST BE WHAT THIS SCRIPT GENERATES — the same check scripts/group.ts carries, for the
-// same reason: without --emit this printed a report and exited 0, so a src/proof/bridge.lean that no longer
-// followed src/entangle would have stayed green, with subjects proving a map nobody computed.
-const OUT = 'src/proof/bridge.lean'
-const committed = existsSync(OUT) ? readFileSync(OUT, 'utf8') : ''
-if (!flag('--emit')) {
-  if (committed === text) { console.log(`  ✓ ${OUT} is exactly what this script generates`); process.exit(0) }
-  let at = 0
-  while (at < text.length && text[at] === committed[at]) at++
-  console.log(`  ✗ bridge: ${OUT} drifts from what scripts/bridge.ts generates (first difference at character ${at}) — run node scripts/bridge.ts --emit`)
-  process.exit(1)
-}
-writeFileSync(OUT, text)
-console.log(`\nwrote src/proof/bridge.lean with ${withRule.length + (ctrl ? 1 : 0) + 2} theorem(s) — putting them to the kernel:`)
-try {
-  const out = String(execSync('cd src/proof && LEAN_PATH=. lean bridge.lean', { encoding: 'utf8', stdio: 'pipe' }))
-  const errors = out.split('\n').filter((l) => /error:/.test(l))
-  if (errors.length) { console.log('  ✗ refused:\n' + errors.slice(0, 8).map((l) => '    ' + l).join('\n')); process.exit(1) }
-  console.log('  ✓ the kernel accepted them')
-} catch (e) {
-  const out = String((e as { stdout?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '')
-  const errors = out.split('\n').filter((l) => /error:/.test(l))
-  if (!errors.length) console.log('  ✓ the kernel accepted them (non-zero exit carried no error line)')
-  else { console.log('  ✗ refused:\n' + errors.slice(0, 8).map((l) => '    ' + l).join('\n')); process.exit(1) }
-}
+// Without --emit the committed file must be exactly this text (src/api generatedLean, shared with group.ts and
+// coils.ts); with it, written and put to the kernel.
+generatedLean('bridge.lean', text, { emit: flag('--emit'), kernel: true, label: 'bridge', summary: `${withRule.length + (ctrl ? 1 : 0) + 2} theorem(s)` })

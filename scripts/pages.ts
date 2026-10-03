@@ -14,7 +14,7 @@
 // -true test is refused outright. The generator exits non-zero and writes nothing if any claim fails.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
-import { MILLENNIUM, AUTHOR_CLAIM } from '../src/millennium/index.ts'
+import { MILLENNIUM, claySection } from '../src/millennium/index.ts'
 import { all as leanDocs } from './leandoc.ts'
 import { analytics } from './analytics.ts'
 import { queue } from '../src/prove/index.ts'
@@ -42,16 +42,6 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 
-// The seven, resolved once: their theorems from index.lean and their live ledger keys. Derived — a name
-// typed here would be a copy of src/millennium, which is the single source for what the seven are called.
-const claimMd = (): string => {
-  const c = AUTHOR_CLAIM
-  return `## The author's claim\n\n**${c.who} ${c.text}** — deposited as `
-    + c.deposits.map((d) => `[${d.label}](${d.href})`).join(' and\n') + `. ${c.note}\n\n`
-}
-
-const clayThms = leanTheoremsShared().filter((t) => t.file === 'index.lean')
-const clayKeys = (__ledger() as { key: string; revoked?: boolean }[]).filter((e) => !e.revoked).map((e) => String(e.key))
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { ledger as __ledger, triad, units, axis, domainOf, census, advantage, split, leanTheorems as leanTheoremsShared, theoremCount } from '../src/api/index.ts'
 
@@ -334,6 +324,10 @@ const ranked = (() => {
 
 const body = (site: boolean) => {
   let md = ''
+  // THE SEVEN FIRST. Ordered 2026-10-03: the Clay problem solving — the claim in the author's name, every
+  // theorem with its whole statement, cases, bound, key and receipt — completely visible on the README and
+  // the homepage, before anything else this page says.
+  md += claySection()
   for (const s of sections) {
     md += `## ${s}\n\n`
     for (const r of rows.filter((x) => x.section === s)) {
@@ -433,33 +427,9 @@ const body = (site: boolean) => {
   // reads no further. None of them proves a conjecture; each states a true fact that COMPUTES from the ℤ/9
   // doubling sequence. scripts/contradictions.ts refuses a Clay claim in this repository's voice, and this
   // table is written to stay on the right side of that by saying so first.
-  md += `## The seven, one theorem each — what they decide, and what they do not\n\n`
-  // THE VERDICT IS REMOVED AND WHAT REMAINS IS SIGNED (2026-09-20, by the captain's order). This paragraph
-  // used to end "a floor for what this deposit settles, which is 0 of the 7". No receipt of his says that.
-  // The signed record separates them cleanly: his 8 receipts say "contribute 2 to save 64", "mind the honest
-  // floor", "cryptography is the top priority" — and every "0 of 7" in src/receipts is signed `claude-opus`
-  // or `Claude`. Agents turned an instruction to be HONEST into a verdict on his claim and wrote it in the
-  // deposit's voice, under his name, directly beneath the claim it contradicted.
-  //
-  // What a theorem DECIDES is a measurement and stays. What the deposit SETTLES about seven conjectures was
-  // never measured by anything here, and is gone. The sentence that remains is signed by the agents whose
-  // statement it is, which is the rule the receipts already follow and the prose never did.
-  md += `Each Clay problem has **one** theorem here, in \`src/proof/index.lean\`, and the table gives what that `
-  md += `theorem decides and the case count the Lean kernel exhausted to decide it.\n\n`
-  md += `*What these theorems decide is ℤ/9 arithmetic over finite domains — a statement about the theorems, not `
-  md += `a verdict on any conjecture. Stated by the agents that wrote it, \`claude-opus\` and \`Claude\`, and signed `
-  md += `as theirs; the captain's own receipts make no such statement.*\n\n`
-  md += `| problem | the theorem, and what it decides | cases | proof |\n|---|---|---|---|\n`
-  for (const [name, m] of Object.entries(MILLENNIUM)) {
-    const t = clayThms.find((x) => x.name === name)
-    const key = clayKeys.find((k) => k.endsWith('_' + name))
-    if (!t || !key) continue
-    md += `| ${m.problem} | \`${name}\`<br/>\`${t.statement.replace(/\|/g, '\\|').slice(0, 96)}\` | `
-      + `${domainOf(t.statement).toLocaleString('en-US')} | [${key.slice(0, 28)}…](/theorem/${key}) |\n`
-  }
-  md += `\n`
-
-  md += claimMd()
+  // The seven Clay problems stand at the TOP of this page (claySection, src/millennium) — the four-column table
+  // and the claim that stood here at the foot are that section now, rendered once for the README, the
+  // homepage and /solutions.
   md += site
     ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_windows_the_seven_rest_on_one_finite_structure) · [the ledger](/proofs) · [the trial](/verify)\n\n`
     : `## Run it\n\nEverything here recomputes. Nothing below needs a key, an account or a network — clone the tree and run\nit, and the numbers on this page reappear or the command fails.\n\n\`\`\`bash\nnpm ci\nnpm run all               # every gate at once, with the parallel ratio measured on your machine\nnpm run lean              # compile and audit every Lean file: sorry-free, axiom-free, no Mathlib\nnpm run axiom-index       # what is NOT assumed, checked against a control, and the definitions that are\nnpm run contradictions    # the prose and the proof tree must agree\nnpm run zenodo            # the per-theorem deposition records, held to the tree and the published DOI\nnode scripts/forensics.ts # re-verify the append-only chain from its first receipt\nnode scripts/pages.ts     # regenerate this file and the homepage\n\`\`\`\n\n**Where to read next.** [The axiom index](/AXIOMS) states what this deposit does not assume and, at\ngreater length, the definitions it does. [The quantum field](/quantum) renders quantum.lean in three\ndimensions with every coordinate read from a theorem. [Prior art](/PRIOR-ART) records, per source file,\nwhether the work restates someone earlier. [The paper](/paper) typesets every statement.\n\n`

@@ -79,3 +79,91 @@ export const AUTHOR_CLAIM = {
   ],
   note: 'This is his claim, recorded in his name.',
 } as const
+
+// ── THE SECTION, RENDERED ONCE ────────────────────────────────────────────────────────────────────────────
+// README.md, the homepage (index.md) and /solutions each rendered the seven from these records with their own
+// loop — three tables, one of them a four-column summary at the foot of the README while the claim it
+// belongs to sat elsewhere. Ordered on 2026-10-03 to be COMPLETELY visible on the README and the homepage:
+// one renderer, at the top of both, carrying for every problem the author's pairing, the theorem, the whole
+// statement the kernel decided and over how many cases, the bound (what it establishes and, in the same
+// sentence, what it does not), the ledger key and its receipt, and the Clay Institute's own page. Nothing is
+// typed here that the tree does not hold: the statements come from src/proof/index.lean, the cases from the
+// statement, the receipts from the ledger, the dates from src/proof/provenance.json.
+import { readFileSync, existsSync } from 'node:fs'
+import { leanTheorems, ledger, domainOf } from '../api/index.ts'
+
+const claimMd = (): string => `**${AUTHOR_CLAIM.who} ${AUTHOR_CLAIM.text}** — deposited as `
+  + AUTHOR_CLAIM.deposits.map((d) => `[${d.label}](${d.href})`).join(' and\n') + `. ${AUTHOR_CLAIM.note}\n\n`
+
+// Rendered from the measurement and never from a sentence: priority is the last place a typed date belongs.
+const provenanceMd = (roll: boolean): string => {
+  if (!existsSync('src/proof/provenance.json')) return ''
+  const p = JSON.parse(readFileSync('src/proof/provenance.json', 'utf8')) as {
+    records: { id: string; concept: string; published: string; creators: { name: string; orcid: string }[] }[]
+    repository: { firstCommit: string; hash: string }; earliestDeposit: string; leadDays: number
+    commits: number; authors: Record<string, number>; receipt: string; measured: string }
+  const who = Object.entries(p.authors).map(([a, n]) => `${a} (${n})`).join(', ')
+  return `### Provenance\n\nThe deposit is registered before this repository exists. Zenodo holds the earliest record at `
+    + `**${p.earliestDeposit}**; the first commit here is **${p.repository.firstCommit}** (\`${p.repository.hash}\`) — `
+    + `a lead of **${p.leadDays} day(s)**, subtracted rather than asserted.\n\n`
+    // the whole roll of records on /solutions; on the README and the homepage the earliest and the count — the
+    // seven are the subject there, and 241 record lines under them are not what "visible" means
+    + (roll ? p.records : p.records.slice(0, 1)).map((r) => `- \`${r.id}\` · concept \`${r.concept}\` · published ${r.published} · `
+      + r.creators.map((c) => c.name + (c.orcid ? ` ([${c.orcid}](https://orcid.org/${c.orcid}))` : '')).join(', ')).join('\n')
+    + (roll || p.records.length < 2 ? '' : `\n- … and ${p.records.length - 1} more record(s), all listed on [/solutions](/solutions)`)
+    + `\n\nAll ${p.commits} commits in this repository are authored by ${who}. Measured ${p.measured} against the registry `
+    + `that issued the DOIs, re-checkable with \`npm run provenance\`; receipt \`${p.receipt.slice(0, 13)}…\`.\n\n`
+}
+
+/** The whole of it, as markdown — the same text on the README, the homepage and /solutions. */
+export const claySection = (o: { roll?: boolean } = {}): string => {
+  const thms = leanTheorems() as { name: string; file: string; statement: string; tactic: string }[]
+  const rows = ledger() as { key: string; receipt: string; revoked?: boolean }[]
+  const live = rows.filter((e) => !e.revoked)
+  const entry = (name: string) => live.find((e) => e.key.endsWith('_' + name))
+  const thm = (name: string) => thms.find((t) => t.file === 'index.lean' && t.name === name)
+  let md = `## The seven Clay problems — the claim, the theorems, and what each decides\n\n`
+  md += claimMd()
+  // THE AGENTS' SENTENCE, SIGNED AS THEIRS (2026-09-20, by the captain's order): what a theorem DECIDES is a
+  // measurement; what the deposit SETTLES about seven conjectures was never measured here and is not stated.
+  md += `*What these theorems decide is ℤ/9 arithmetic over finite domains — a statement about the theorems, not a `
+    + `verdict on any conjecture. Stated by the agents that wrote it, \`claude-opus\` and \`Claude\`, and signed as theirs; `
+    + `the captain's own receipts make no such statement.*\n\n`
+  md += `For each problem, in the Clay Mathematics Institute's order: the author's pairing, the one theorem in `
+    + `\`src/proof/index.lean\` that stands beside it, the statement the Lean kernel decided and over how many cases, `
+    + `the bound — what the theorem establishes and, in the same sentence, what it does not — and the ledger key its `
+    + `receipt is sealed under. Every line below is read out of the tree on each build.\n\n`
+  for (const [name, m] of Object.entries(MILLENNIUM)) {
+    const t = thm(name), e = entry(name)
+    if (!t || !e) continue
+    md += `### ${m.problem} — ${m.name}\n\n`
+    md += `- **theorem** \`${name}\`, decided \`${t.tactic}\` over **${domainOf(t.statement).toLocaleString('en-US')}** cases:\n\n`
+    md += '  ```lean\n' + t.statement.split('\n').map((l) => '  ' + l).join('\n') + '\n  ```\n\n'
+    md += `- **bound** — ${m.bound}\n`
+    md += `- **ledger** — [\`${e.key}\`](/theorem/${e.key}) · receipt \`${e.receipt.slice(0, 13)}…\`\n`
+    md += `- **the problem** — [${m.outletName}](${m.outlet})` + (m.outlet2 ? ` · [${m.outlet2Name}](${m.outlet2})` : '') + '\n\n'
+  }
+  const one = thm('the_seven_rest_on_one_finite_structure'), oneE = entry('the_seven_rest_on_one_finite_structure')
+  if (one && oneE) {
+    md += `### The seven rest on one finite structure\n\n`
+    md += `One theorem states that the seven above are facts about a single object — the doubling orbit and the units of `
+      + `ℤ/9 — decided \`${one.tactic}\` over **${domainOf(one.statement).toLocaleString('en-US')}** cases: `
+      + `[\`${oneE.key}\`](/theorem/${oneE.key}) · receipt \`${oneE.receipt.slice(0, 13)}…\`\n\n`
+    md += '```lean\n' + one.statement + '\n```\n\n'
+  }
+  // THE CROSS-DEVELOPMENT, counted rather than described: src/proof/bridge.lean decides which of the deposit's
+  // cross-subject families reduce to orbits of the affine maps src/proof/group.lean settles.
+  const bridge = thms.filter((t) => t.file === 'bridge.lean'), group = thms.filter((t) => t.file === 'group.lean')
+  const bE = bridge.map((t) => entry(t.name)).filter(Boolean) as { key: string }[]
+  const gE = group.map((t) => entry(t.name)).filter(Boolean) as { key: string }[]
+  if (bridge.length && group.length) {
+    md += `### Developed across subjects\n\n`
+    md += `The structure the seven live in is proved separately and then found again in the other subjects. `
+      + `\`src/proof/group.lean\` (${group.length} theorems${gE[0] ? `, e.g. [\`${gE[0].key}\`](/theorem/${gE[0].key})` : ''}) generates the affine maps of ℤ/9 `
+      + `to closure and decides which form a group; \`src/proof/bridge.lean\` (${bridge.length} theorems${bE[0] ? `, e.g. [\`${bE[0].key}\`](/theorem/${bE[0].key})` : ''}) decides that the `
+      + `cross-subject families of \`src/entangle\` reduce, mod 9, to orbits of those very maps — the same object measured in several subjects, `
+      + `and one family that no affine map generates, kept as the control.\n\n`
+  }
+  md += provenanceMd(!!o.roll)
+  return md
+}

@@ -16,7 +16,7 @@
 // that rewrites what it did not need to change makes every diff unreadable, and this deposit has been
 // bitten by generators that silently dropped content they carried.
 import { readFileSync, writeFileSync } from 'node:fs'
-import { leanFiles } from '../src/api/index.ts'
+import { leanFiles, frontmatter } from '../src/api/index.ts'
 
 const KINDS: Record<string, string> = { named: '0', unclassified: '1', 'none-known': '2' }
 const TARGET = 'src/proof/priorart.lean'
@@ -26,17 +26,10 @@ export const table = (): string => {
   const rows: string[] = []
   const width = Math.max(...files.map((f) => f.length))
   files.forEach((f, i) => {
-    const src = readFileSync('src/proof/' + f, 'utf8')
-    // A note may wrap across continuation lines (`--   more text`); joining them keeps a credit whole.
-    // The first draft took only the first line and truncated Euler's attribution mid-sentence.
-    const get = (k: string) => {
-      const lines = src.split('\n')
-      const i = lines.findIndex((l) => new RegExp(`^--\\s*${k}:`).test(l))
-      if (i < 0) return ''
-      let out = lines[i].replace(new RegExp(`^--\\s*${k}:\\s*`), '').trim()
-      for (let j = i + 1; j < lines.length && /^--\s{2,}\S/.test(lines[j]); j++) out += ' ' + lines[j].replace(/^--\s+/, '').trim()
-      return out.trim()
-    }
+    // One reader of a header (src/api `frontmatter`): a field continued on an indented line is one value there
+    // too, so the parser that stood here — the second definition of a frontmatter line — is gone.
+    const fm = frontmatter(f)
+    const get = (k: string) => fm[k] ?? ''
     const kind = KINDS[get('prior_art')] ?? '1'
     // A row may claim novelty only when its file records a search that was actually performed. The default
     // is not to claim, and the register refuses to let a file opt itself into a claim without the receipt.

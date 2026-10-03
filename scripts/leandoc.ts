@@ -15,7 +15,7 @@
 // FRONTMATTER is the explicit part — `-- key: value` lines in a leading block, before the prose. Only `title`
 // and `wing` are read; anything else is carried through untouched so a field can be added without editing
 // this file. A file without frontmatter falls back to its own name, which is honest but plainer.
-import { leanFiles, leanSource, frontmatter as fmOf, domainOf, normalizeStatement, FM_FIELD, FM_CONT } from '../src/api/index.ts'
+import { leanFiles, leanSource, header, domainOf, normalizeStatement } from '../src/api/index.ts'
 
 export { domainOf }
 
@@ -35,25 +35,10 @@ export function read(file: string): LeanDoc {
   const src = leanSource(file)
   const ns = src.match(/^namespace\s+([A-Za-z_0-9.]+)/m)?.[1] ?? file.replace('.lean', '')
 
-  // the header: the run of comment lines before the first namespace/def/theorem
-  const head = src.slice(0, src.search(/^(namespace|def|theorem)\s/m))
-  const headComment = head.split('\n').filter((l) => /^\s*--/.test(l)).join('\n')
-
-  // frontmatter — `-- key: value` lines at the top of the header, stopping at the first prose line
-  // frontmatter comes from the shared reader — one definition of what a `-- key: value` head is
-  const frontmatter = fmOf(file)
-  // THE SLICE FOLLOWS THE READER'S DEFINITION. This dropped as many LINES as the reader found KEYS, and a key
-  // stated on three lines — prior_art_note in group.lean and bridge.lean — counts once, so its other lines
-  // fell into the summary and README.md described a file as "prior_art_note: cross-subject families…"; a
-  // field continued on an indented line (fifty files) leaked the same way. The reader's own two patterns
-  // decide what is a field and what continues one; the prose is what is left, which is what a summary is.
-  let open = false
-  const prose = headComment.split('\n').filter((l) => {
-    if (FM_FIELD.test(l)) { open = true; return false }
-    if (open && FM_CONT.test(l)) return false
-    open = false
-    return true
-  })
+  // the header, split once by src/api `header()` into its fields and its prose — this file used to re-parse it
+  // and dropped as many LINES as the reader found KEYS, so every multi-line field leaked its tail into the
+  // summary and README.md described capacity.lean as "4122, 2005), which fixes 4 bits of version…".
+  const { fields: frontmatter, prose } = header(file)
   const summary = stripComment(prose.join('\n'))
     .replace(/^Author:.*$/gm, '').trim()
 

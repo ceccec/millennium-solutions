@@ -40,7 +40,7 @@
  *  file whose generator is in no chain step drifts and ships" — and being in the chain is not the property
  *  that matters. FAILING is. scripts/settled.ts was written with the check and this one was not, which is
  *  the asymmetry FINDINGS.md 7o named and this closes. */
-import { writeFileSync, readFileSync, existsSync } from 'node:fs'
+import { generatedLean } from '../src/api/index.ts'
 import { DOM_EXPRS, ALL_DOMS, type DomExpr } from '../src/entangle/index.ts'
 import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
 
@@ -548,29 +548,6 @@ end Coils
 // steady, and a check on the count would pass through exactly that. The bytes are what the kernel reads, so
 // the bytes are what is compared — and the first differing line is printed, because "it differs" sends the
 // reader to a 300-line diff while the line itself usually names the cause.
-const EMIT = process.argv.includes('--emit')
-if (EMIT) {
-  writeFileSync(OUT, generated)
-  console.log(`\n✓ coils: ${coils.length} coil(s) written to ${OUT} — run npm run lean to put them to the kernel`)
-} else {
-  const onDisk = existsSync(OUT) ? readFileSync(OUT, 'utf8') : ''
-  if (onDisk === generated) {
-    console.log(`\n✓ coils: ${coils.length} coil(s) · ${OUT} is what this vocabulary generates`)
-  } else {
-    console.log(`\n✗ coils: ${OUT} is not what the vocabulary generates — run \`npm run coils:emit\``)
-    if (!onDisk) console.log('    the file is missing entirely')
-    else {
-      const a = onDisk.split('\n'), b = generated.split('\n')
-      for (let i = 0; i < Math.max(a.length, b.length); i++) {
-        if (a[i] !== b[i]) {
-          console.log(`    first difference at line ${i + 1}:`)
-          console.log(`      on disk:    ${a[i] ?? '(end of file)'}`)
-          console.log(`      generated:  ${b[i] ?? '(end of file)'}`)
-          break
-        }
-      }
-      console.log(`    ${a.length} line(s) on disk, ${b.length} generated`)
-    }
-    process.exit(1)
-  }
-}
+// The check itself is src/api generatedLean, shared with group.ts and bridge.ts since 2026-10-03 — it was
+// written here first and copied twice.
+generatedLean('coils.lean', generated, { emit: process.argv.includes('--emit'), label: 'coils', summary: `${coils.length} coil(s)` })
