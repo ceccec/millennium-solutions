@@ -170584,5 +170584,59 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "799b6407-31d6-8e2a-97ed-f3e2a3914da1"
+  },
+  {
+    "key": "lean_countingrocks_pascal_rule",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d066e571-79ba-834a-9627-0d6f072ad8b9"
+  },
+  {
+    "key": "lean_countingrocks_row_sum_is_power_of_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "765f9ce9-e17b-8f0c-a5e8-f619f940f0d8"
+  },
+  {
+    "key": "lean_countingrocks_handshakes_five_people",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ba135934-8f8f-8e59-857a-cdf0ff0d989f"
+  },
+  {
+    "key": "lean_countingrocks_degrees_sum_to_twice_handshakes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "63f91dc7-ce43-8edb-8058-e370b2d1ebbb"
+  },
+  {
+    "key": "lean_countingrocks_four_objects_have_24_orderings",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8b60bfd5-b349-875c-bd4e-6608fd2f6107"
+  },
+  {
+    "key": "lean_countingrocks_derangement_values",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2d979b95-226e-8991-b917-442853292808"
+  },
+  {
+    "key": "lean_countingrocks_derangement_second_recurrence",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "149359c3-e93a-860a-b62c-06eda72a8ac3"
+  },
+  {
+    "key": "lean_countingrocks_fibonacci_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4224bbf6-5227-8c55-90c7-d90d958c4cbb"
+  },
+  {
+    "key": "lean_countingrocks_fibonacci_partial_sums",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ae3bbc50-5e81-85a3-80cb-1c6dc46fef6e"
   }
 ]

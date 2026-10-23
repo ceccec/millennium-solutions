@@ -4,7 +4,7 @@
 // @modelcontextprotocol/sdk), preserving the zero-dep-core. Tools inherit the discipline: the honesty
 // gate returns a FLOOR (not a truth oracle), content-address = integrity (not encryption/proof).
 import { createInterface } from 'node:readline'
-import { execSync, execFileSync, spawn } from 'node:child_process'
+import { execSync, execFileSync, spawn, spawnSync } from 'node:child_process'
 import { readFileSync, existsSync, readdirSync, appendFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { factor } from '../src/factor/index.ts'
@@ -309,6 +309,11 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   secure_split: (a) => { if (a?.action === 'join') return JSON.stringify(shareJoin(Array.isArray(a?.shares) ? (a.shares as unknown[]).map(String) : [])); return JSON.stringify(shareSplit(String(a?.secret ?? ''), Number(a?.parts ?? 0))) },
   factor_verify: (a) => JSON.stringify(verifyFactors(String(a?.n ?? ''), Array.isArray(a?.factors) ? (a.factors as unknown[]).map(String) : [])),
   digit_mirror: (a) => JSON.stringify(digitMirror(String(a?.n ?? ''))),
+  api_gates: () => { const r = spawnSync('node', ['scripts/api-gates.ts'], { encoding: 'utf8' })
+    return JSON.stringify({ status: r.status === 0 ? 'HELD' : 'REFUSED', output: `${r.stdout ?? ''}${r.stderr ?? ''}`.trim() }) },
+  package_gates: (a) => { const files = Array.isArray(a?.dockerfiles) ? (a.dockerfiles as unknown[]).map(String) : []
+    const r = spawnSync('node', ['scripts/package-gates.ts', ...files], { encoding: 'utf8' })
+    return JSON.stringify({ status: r.status === 0 ? 'HELD' : 'REFUSED', output: `${r.stdout ?? ''}${r.stderr ?? ''}`.trim() }) },
   semiprime_search: (a) => JSON.stringify(searchSemiprimes(Number(a?.lo ?? 1), Number(a?.hi ?? 1000), { noZero: a?.noZero === true, limit: Number(a?.limit ?? 20) })),
   // THE QPU WAVE, IN ONE CALL: every input is sent to the QPU's Shor tool, and every factorisation it returns is checked by
   // the verifier, not by a product alone. A wave reports, per input, what the QPU returned and what the verifier made of it.
