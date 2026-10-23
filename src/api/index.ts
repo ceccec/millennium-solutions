@@ -190,8 +190,23 @@ export const leanTheorems = (): LeanTheorem[] => {
   for (const file of leanFiles()) {
     const src = leanSource(file)
     const ns = src.match(/^namespace\s+([A-Za-z_0-9.]+)/m)?.[1] ?? file.replace('.lean', '')
-    for (const m of src.matchAll(/^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm))
-      out.push({ name: m[1], file, namespace: ns, tactic: m[3], statement: normalizeStatement(m[2]) })
+    // Binders may come before the statement's colon: `theorem name (r : R) (h : P) : Q := by …` is a theorem, and the
+    // verifier counts it. The statement is the text after the first colon that is outside every binder bracket, so a
+    // colon inside a binder is never taken for the statement's colon, and a binder-free theorem reads exactly as before.
+    for (const h of src.matchAll(/^theorem\s+([A-Za-z_0-9]+)/gm)) {
+      const name = h[1]
+      let depth = 0, colon = -1
+      for (let i = (h.index ?? 0) + h[0].length; i < src.length; i++) {
+        const c = src[i]
+        if (c === '(' || c === '[' || c === '{') depth++
+        else if (c === ')' || c === ']' || c === '}') depth--
+        else if (c === ':' && depth === 0 && src[i + 1] !== '=') { colon = i; break }
+      }
+      if (colon < 0) continue
+      const tail = src.slice(colon + 1).match(/^([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/)
+      if (!tail) continue
+      out.push({ name, file, namespace: ns, tactic: tail[2], statement: normalizeStatement(tail[1]) })
+    }
   }
   leanCache = { stamp, out }
   return out

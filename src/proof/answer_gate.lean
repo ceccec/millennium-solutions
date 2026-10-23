@@ -1,6 +1,7 @@
 -- title: The certificate gate, as kernel-checked rules
 -- wing: the floor
--- prior_art: not applicable (rules of the answer system, docs/ANSWER-SYSTEM.md)
+-- prior_art: unclassified
+-- prior-art note: not applicable — rules of the answer system, docs/ANSWER-SYSTEM.md
 -- prior_art_search: none performed; the claims are finite rules over flags, decided exhaustively.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

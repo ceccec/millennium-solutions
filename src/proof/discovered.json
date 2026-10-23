@@ -149154,5 +149154,90 @@
     "key": "lean_answerroute_text_only_when_nothing_else_holds",
     "name": "lean answer_route.lean: text_only_when_nothing_else_holds — allFeatures.all (fun f => (route f == Kind.text) == (!f.integer && !f.lean && !f.publication && !f.clay)) = true — proved by the Lean kernel for every value (by\n  decide), standard axioms only — checked by lean.ts",
     "receipt": "aad73c87-5093-8ad1-b892-417a94fb1e8d"
+  },
+  {
+    "key": "lean_apis_apis_live_verdicts_partition_the_catalogue",
+    "name": "lean apis.lean: apis_live_verdicts_partition_the_catalogue — reachable + notReachable + refused + gated + notMeasured = catalogue — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "67b183b0-4f1c-8032-bb51-9d4f6aa4edce"
+  },
+  {
+    "key": "lean_apis_apis_every_spec_is_proven",
+    "name": "lean apis.lean: apis_every_spec_is_proven — specProven = catalogue — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6db3aa56-3cb7-868c-9237-5a3d5c77b850"
+  },
+  {
+    "key": "lean_apis_apis_reachable_is_within_specs",
+    "name": "lean apis.lean: apis_reachable_is_within_specs — reachable ≤ specProven — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1fb5541e-a3b4-8490-a137-f2a57f529204"
+  },
+  {
+    "key": "lean_apis_apis_gated_is_not_called",
+    "name": "lean apis.lean: apis_gated_is_not_called — gated + reachable + notReachable + refused + notMeasured = catalogue — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a8515a12-57bc-8037-9c53-f597acc14cce"
+  },
+  {
+    "key": "lean_answer_c1_true_only_when_clean",
+    "name": "lean answer.lean: c1_true_only_when_clean — (r : LeanReport) (h : decideC1 r = Value.TRUE) : r.answered = true ∧ r.compiles = true ∧ r.hasSorry = false ∧ r.noAxioms = true — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "bd6e6163-50bc-8f2b-a511-4d7c537a91ad"
+  },
+  {
+    "key": "lean_answer_c2_probable_prime_is_unknown",
+    "name": "lean answer.lean: c2_probable_prime_is_unknown — (p : Bool) (f : Bool) : decideC2 { verdict := Verdict.probablePrime, proved := p, factorChecked := f } = Value.UNKNOWN — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "698a0b66-ced8-884f-b7ad-ffb85649978b"
+  },
+  {
+    "key": "lean_answer_c2_true_only_for_proved_prime",
+    "name": "lean answer.lean: c2_true_only_for_proved_prime — (r : RouteReport) (h : decideC2 r = Value.TRUE) : r.verdict = Verdict.prime ∧ r.proved = true — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "631d8858-951e-8c0d-ab20-603fa11bb3bf"
+  },
+  {
+    "key": "lean_answer_c2_false_only_for_checked_composite",
+    "name": "lean answer.lean: c2_false_only_for_checked_composite — (r : RouteReport) (h : decideC2 r = Value.FALSE) : r.verdict = Verdict.composite ∧ r.factorChecked = true — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "ef9ff38c-b0ed-851a-a809-d4e177809094"
+  },
+  {
+    "key": "lean_answergate_truth_without_a_proof_is_refused",
+    "name": "lean answer_gate.lean: truth_without_a_proof_is_refused — (f : Flags) (hv : f.value = Val.TRUE) (hc : f.cert = Cert.none) : ok f = false — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "c8d6931a-ba2e-847c-95f5-704afceea69c"
+  },
+  {
+    "key": "lean_answergate_falsehood_without_a_proof_is_refused",
+    "name": "lean answer_gate.lean: falsehood_without_a_proof_is_refused — (f : Flags) (hv : f.value = Val.FALSE) (hc : f.cert = Cert.none) : ok f = false — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "4c2a4524-ffca-89c9-aedb-f5321d2a5d11"
+  },
+  {
+    "key": "lean_answergate_sourced_without_a_doi_is_refused",
+    "name": "lean answer_gate.lean: sourced_without_a_doi_is_refused — (f : Flags) (hv : f.value = Val.SOURCED) (hc : f.cert ≠ Cert.C3) : ok f = false — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "da8b6eaf-526e-8130-bc8d-bc632226744f"
+  },
+  {
+    "key": "lean_answergate_unknown_with_a_certificate_is_refused",
+    "name": "lean answer_gate.lean: unknown_with_a_certificate_is_refused — (f : Flags) (hv : f.value = Val.UNKNOWN) (hc : f.cert ≠ Cert.none) : ok f = false — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "a2f26804-20a5-8553-9c5b-316d92f24053"
+  },
+  {
+    "key": "lean_answergate_unknown_without_a_blocking_step_is_refused",
+    "name": "lean answer_gate.lean: unknown_without_a_blocking_step_is_refused — (f : Flags) (hv : f.value = Val.UNKNOWN) (hb : f.blocking = false) : ok f = false — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "a4d6c2e6-6449-8e2c-a39c-f54727e9e508"
+  },
+  {
+    "key": "lean_answergate_unchecked_is_refused",
+    "name": "lean answer_gate.lean: unchecked_is_refused — (f : Flags) (hc : f.checkedBy = false) : ok f = false — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "3d5c31a5-b594-8a81-b090-86c9934e840a"
+  },
+  {
+    "key": "lean_answer.arith_factor_rules_out_prime",
+    "name": "lean arith.lean: factor_rules_out_prime — (n f c : Nat) (h : factorOk n f c = true) : primeB n = false — proved by the Lean kernel for every value (by\n  unfold), standard axioms only — checked by lean.ts",
+    "receipt": "9697b5c7-f2fb-84a3-8ffe-58b8c6ebe14d"
+  },
+  {
+    "key": "lean_answer.arith_no_witness_never_false",
+    "name": "lean arith.lean: no_witness_never_false — (n : Nat) : verdictOf n none ≠ Value.FALSE — proved by the Lean kernel for every value (by\n  show), standard axioms only — checked by lean.ts",
+    "receipt": "c7d4b18a-7b9b-8d9c-ad08-0dfd03e7bc62"
+  },
+  {
+    "key": "lean_answer.arith_false_implies_not_prime",
+    "name": "lean arith.lean: false_implies_not_prime — (n : Nat) (w : Nat × Nat) (h : verdictOf n (some w) = Value.FALSE) : primeB n = false — proved by the Lean kernel for every value (by\n  obtain), standard axioms only — checked by lean.ts",
+    "receipt": "799b6407-31d6-8e2a-97ed-f3e2a3914da1"
   }
 ]

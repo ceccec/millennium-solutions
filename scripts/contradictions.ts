@@ -88,7 +88,9 @@ for (const f of leanFiles()) {
 
 // ── 3 · prose scan ───────────────────────────────────────────────────────────────────────────────────────
 // Only files this repo authors. dist/ is a build product and node_modules is not ours.
-const SKIP = new Set(['node_modules', '.git', '.vitepress', 'dist', 'coverage', '.lake'])
+// evidence/ holds receipts of past runs. Their prose was true when each run wrote it and is kept as the record of that run:
+// rewriting a receipt to match today's counts would rewrite the record. The live prose is the root documents and src/.
+const SKIP = new Set(['node_modules', '.git', '.vitepress', 'dist', 'coverage', '.lake', 'evidence'])
 const files: string[] = []
 const walk = (dir: string) => {
   for (const e of readdirSync(dir)) {

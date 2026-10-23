@@ -1,3 +1,4 @@
+-- prior_art: unclassified
 -- src/proof/arith.lean — the arithmetic decision of the answer system, as kernel-checked definitions.
 --
 -- The C2 verifier (src/answer/verify-arith.ts) PROPOSES a verdict: a prime to be proved by trial division, or a

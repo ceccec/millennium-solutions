@@ -1,3 +1,4 @@
+-- prior_art: unclassified
 -- lean/answer.lean — the pure decisions of the answer system (src/answer/verify-lean.ts and verify-arith.ts), stated
 -- and proved. These are the rules the TypeScript decision functions implement; the link between the two is a runtime
 -- test until the TypeScript is generated from this file.

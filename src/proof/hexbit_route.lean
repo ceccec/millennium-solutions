@@ -1,6 +1,7 @@
 -- title: The hexbit route's combinatorics
 -- wing: the floor
--- prior_art: not applicable (arithmetic on powers of two, decided by the kernel)
+-- prior_art: unclassified
+-- prior-art note: not applicable — arithmetic on powers of two, decided by the kernel
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- The arithmetic that scripts/hexbit-route.ts depends on. A handle is the first 8 hex digits of a content address.

@@ -88,7 +88,7 @@ For each problem, in the Clay Mathematics Institute's order: the author's pairin
 - **ledger** — [`lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine`](/theorem/lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine) · receipt `d12ad83d-55fa…`
 - **the problem** — [Clay Mathematics Institute — Birch and Swinnerton-Dyer Conjecture](https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/)
 
-### Poincaré Conjecture (resolved) — Poincaré — one closed loop, no holes
+### Poincaré Conjecture (proved externally by Perelman, 2003; not proved here) — Poincaré — one closed loop, no holes
 
 - **theorem** `the_orbit_is_one_closed_loop_of_six_distinct_points`, decided `by decide` over **36** cases:
 

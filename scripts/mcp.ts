@@ -241,6 +241,8 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const docs = searchDocs(request, sources)
     return JSON.stringify({ ...u, docs, docsNote: docs.length ? 'these are lines the tree wrote in its own comments and docs; they are text, not proofs' : 'no inline doc in the tree shares enough of the request\'s words' })
   },
+  contradictions: () => { try { return execFileSync('node', ['scripts/contradictions.ts'], { encoding: 'utf8', timeout: 600_000, maxBuffer: 16 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },

@@ -1,6 +1,7 @@
 -- title: The CERN Open Data corpus, as measured, checked by its own arithmetic
 -- wing: the floor
--- prior_art: not applicable (arithmetic over measured counts)
+-- prior_art: unclassified
+-- prior-art note: not applicable — arithmetic over measured counts
 -- prior_art_search: none performed; the claims are identities and one refutation over the cached summary.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

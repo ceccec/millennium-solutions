@@ -1,6 +1,7 @@
 -- title: The router's priority, as kernel-checked rules
 -- wing: the floor
--- prior_art: not applicable (the priority of the answer system's router, docs/ANSWER-SYSTEM.md)
+-- prior_art: unclassified
+-- prior-art note: not applicable — the priority of the answer system's router, docs/ANSWER-SYSTEM.md
 -- prior_art_search: none performed; the claims are finite rules over the features of a question, decided exhaustively.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
