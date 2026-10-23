@@ -147,14 +147,10 @@ for (const g of GATES) {
 // records this morning: a per-theorem record is about a timeless proposition and must not churn when the
 // repository is tagged. A FACE is a snapshot of a moment by construction — it reports what the gates said
 // on one run — so identifying the moment is part of what it is for.
-const commit = (() => {
-  try { return execSync('git rev-parse --short HEAD', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() }
-  catch { return '(not a git checkout)' }
-})()
-
+// NO COMMIT IS NAMED IN THE FILE. A file that records the commit which contains it can never be current: committing it
+// changes the commit it names. The face is a function of the code and the ledger alone, so it is reproduced exactly.
 const face: Face = {
   repo: 'millennium-solutions',
-  generatedFrom: commit,
   // The seed of row 0, verbatim, beside the receipt it produces. Any reader reproduces the formula in one
   // step or learns immediately that the spec has drifted from the emitter.
   specWitness: { seed: rows[0].key + '\n' + rows[0].claim + '\n' + rows[0].value + '\n' + rows[0].command, receipt: rows[0].receipt },
@@ -164,13 +160,15 @@ const face: Face = {
   root: rootOf(rows),
 }
 
-writeFileSync('metrics.json', JSON.stringify(face, null, 2) + '\n')
+// METRICS_OUT lets a checker generate into a directory of its own, so it never rewrites the committed file or the shared copy.
+const OUT = process.env.METRICS_OUT ? process.env.METRICS_OUT.replace(/\/?$/, '/') : ''
+writeFileSync(OUT + 'metrics.json', JSON.stringify(face, null, 2) + '\n')
 
 // Published to the shared fusion directory when one exists, so a sibling session picks it up without
 // asking. Written only if the directory is already there: creating it would be this repo deciding where
-// five sessions coordinate, which is not its call.
+// five sessions coordinate, which is not its call. A checker (METRICS_OUT set) never writes it.
 const SHARED = process.env.HOME + '/.erpax/fusion'
-if (existsSync(SHARED)) {
+if (!process.env.METRICS_OUT && existsSync(SHARED)) {
   writeFileSync(SHARED + '/millennium-solutions.metrics.json', JSON.stringify(face, null, 2) + '\n')
   // AND THE STATEMENTS, so a sibling auditing us reads what is true now. The snapshot they had was written
   // at 02:23 and held file-level descriptions — auditing it reported 503 claims and no repeats, while the

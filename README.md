@@ -142,8 +142,8 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
-- The formal layer holds 25992 kernel-accepted declarations across 101 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `5a7036d1-94fe-8ed7-b588-e33a08b6170f`</sub>
+- The formal layer holds 25992 kernel-accepted declarations across 102 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `81b4537e-4997-8fe6-8f53-5494faf40a0a`</sub>
 - 25798 of those 25992 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 194 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
   <sub>SEALED · `f38121e0-80d6-81fe-8f36-ad7311c5aefa`</sub>
 - 26512 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
@@ -225,7 +225,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-101 Lean files in 8 wings, 25992 declarations of which 25992 are theorems. The prose in this section is read out of the
+102 Lean files in 8 wings, 25992 declarations of which 25992 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -286,6 +286,8 @@ this page; there is nowhere else to keep the description in step.
 **Interference: GHZ cancels on odd parity, a classical coin does not** — `interference.lean`, 2 theorem(s). WHAT QUANTUM MEANS HERE, IN ONE SENTENCE: amplitudes add, and two paths that reach the same outcome can cancel. A classical mixture adds probabilities, which are never negative, so nothing cancels.
 
 **How many checkers may run at once, decided** — `lanes.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
+
+**The open leads, named** — `leads.lean`, 0 theorem(s). Each open lead is named here as the `leads` MCP tool reports it on the date below. Nothing in this file removes, purges, or replaces an item: it only names them. An item is closed by the work its lead asks for, and this file is then updated to say so. The report truncates some lists; the names below are the ones it prints in full.
 
 **Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 17 theorem(s). WHY A FILE ABOUT LIGHT SPEED CAN EXIST IN A DEPOSIT THAT CLAIMS NO PHYSICS.
 
@@ -462,7 +464,7 @@ Read from the artefacts at build time, never carried between runs.
 | withdrawn — nothing proves it | 1,593 |
 | proved in total | **26783** of 28,376 |
 | standing keys → distinct theorems | 25957 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 101 · 25992 theorems (25798 closed by exhaustion, axiom-free · 194 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| Lean files · theorems | 102 · 25992 theorems (25798 closed by exhaustion, axiom-free · 194 proved for every value on propext and Quot.sound) + 0 rfl declarations |
 | proved `by decide` | 25798 of 25992 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
@@ -496,4 +498,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 25992 Lean theorems · 28376 ledger entries · trial root `24cc5371-2acc-8bdc-9fee-72686dbed54f` · integrity, not truth*
+*20 claims, all verified · 25992 Lean theorems · 28376 ledger entries · trial root `68209ba2-1a10-8873-a3a4-d1afe3d8086c` · integrity, not truth*
