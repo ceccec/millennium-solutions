@@ -496,6 +496,7 @@ The factor route takes an integer of any length, held exactly, and returns only 
 - `91`: FACTORED into 7 × 13.
 - `2^1000 − 1`, a thousand-bit integer: PARTIAL — 23 factor(s) below 10^6 (3 × 5 × 5 × 5 × 5 × 11 × 17 × 31 × 41 × 101 × 251 × 401 × 601 × 1801 × 4001 × 4051 × 7001 × 8101 × 28001 × 61681 × 96001 × 268501 × 340801); a 240-digit cofactor that is composite (a witness was found).
 - `(2^521 − 1)(2^607 − 1)`, about 1,128 bits, no small factor: PARTIAL — 0 factor(s) below 10^6 (none); a 340-digit cofactor that is composite (a witness was found).
+- A 1,000-bit integer supplied through the factor tool (301 decimal digits): PARTIAL — 0 factor(s) below 10^6 (none); a 301-digit cofactor that is composite (a witness was found).
 
 A thousand-bit integer is not solved on this page. Where no factor is found below the trial bound and the cofactor is not proved prime, the result is PARTIAL and names the step that is missing. Nothing is reported as a factor that was not checked.
 
