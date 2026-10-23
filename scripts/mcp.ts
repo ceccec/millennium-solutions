@@ -11,6 +11,7 @@ import { factor } from '../src/factor/index.ts'
 import { understand, searchDocs } from '../src/understand/index.ts'
 import { split as shareSplit, join as shareJoin } from '../src/split/index.ts'
 import { verifyFactors } from '../src/factor/verify.ts'
+import { decide as policyDecide } from '../src/policy/index.ts'
 import { factor as factorFull, millerRabin } from '../src/factor/index.ts'
 import { mirror as digitMirror, semiprimes as searchSemiprimes } from '../src/mirror/index.ts'
 import { readdirSync as __readdir, readFileSync as __read, statSync as __stat } from 'node:fs'
@@ -356,6 +357,7 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     })).sort((a, b) => a.handle.localeCompare(b.handle))
     return JSON.stringify({ tools: rows.length, lattice: rows })
   },
+  policy: (a) => JSON.stringify(policyDecide(String(a?.request ?? ''))),
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
