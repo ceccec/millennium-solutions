@@ -94,3 +94,5 @@ console.log(JSON.stringify({
   clientRules: 'robots.txt read first per host; disallowed paths skipped and named; one request in flight per host, 1 s apart.',
   problems: rows,
 }, null, 1))
+
+export {}

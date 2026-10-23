@@ -12,7 +12,6 @@
  */
 
 const BYTE_MASK = 0xff
-const MASK_32 = 0xffffffffn
 
 /** Exact 32-bit unsigned integer multiply (algebraic; replaces Math.imul).
  *
@@ -58,13 +57,16 @@ function hexByte(value: number): string {
   return HEX_BYTE[value & BYTE_MASK]
 }
 
+/** THE FOUR SEEDS, SPLIT BY WHERE THEY COME FROM (captain's order, 2026-10-03: "split astronomical values
+ *  with pi and primes and other crypto tools"). Nothing-up-my-sleeve numbers, each decided by the kernel in
+ *  src/proof/address.lean from its own source rather than trusted as a literal: 0, the first 32 fraction
+ *  bits of the golden ratio φ (bracketed by two squares), of π (the Bailey–Borwein–Plouffe series in Nat
+ *  arithmetic) and of e (its factorial series). The deposit's own comment used to call the fourth "pi's" —
+ *  the series says e's. lean-agree pairs this list with Address.SEEDS on every run. */
+export const SEEDS: readonly number[] = [0, 0x9e3779b9, 0x243f6a88, 0xb7e15162]
+
 function bytesFromSeed(seed: string): number[] {
-  const words = [
-    hash32(seed, 0),
-    hash32(seed, 0x9e3779b9),
-    hash32(seed, 0x243f6a88),
-    hash32(seed, 0xb7e15162),
-  ]
+  const words = SEEDS.map((s) => hash32(seed, s))
   return words.flatMap((word) => [
     (word >>> (8 * 3)) & BYTE_MASK,
     (word >>> 16) & BYTE_MASK,
@@ -73,12 +75,19 @@ function bytesFromSeed(seed: string): number[] {
   ])
 }
 
+// THE CACHE IS BOUNDED, because an unbounded one is a wrap that warms up and then heats. Measured 2026-10-03
+// ("the more computed at once, less temperature per computation"): a fresh address cost 40 µs alone, 2.7 µs
+// in a batch of a thousand — and 3.8 µs in a batch of a hundred thousand, the curve turning back up as this
+// Map grew with every one-shot seed the fold would never ask for twice. It is cleared when full; hot keys
+// are re-cached on the next call and the values never depend on it.
 const _uuidCache = new Map<string, string>()
+const CACHE_LIMIT = 1 << 14
 
 /** Deterministic UUID from seed (content-addressed) */
 export function toUuid(seed: string): string {
   const cached = _uuidCache.get(seed)
   if (cached !== undefined) return cached
+  if (_uuidCache.size >= CACHE_LIMIT) _uuidCache.clear()
   const bytes = bytesFromSeed(seed)
   bytes[6] = (bytes[6] & 0x0f) | 0x80
   bytes[8] = (bytes[8] & 0x3f) | 0x80

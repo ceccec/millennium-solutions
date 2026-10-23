@@ -17,9 +17,8 @@
  *  the reader to skip it. The honest scope is this one, and the peer-message surface stays a discipline
  *  rather than a check: send the PATH and the FIELD, never the value. */
 import { execSync } from 'node:child_process'
-import { readFileSync, mkdtempSync, rmSync } from 'node:fs'
-import { join } from 'node:path'
-import { tmpdir } from 'node:os'
+import { readFileSync, mkdirSync } from 'node:fs'
+import { toUuid } from '../src/0/index.ts'
 
 const GENERATED = ['README.md', 'index.md', 'paper.md']
 // CAPTURE BEFORE REGENERATING. The first version ran pages.ts and then asked git what had changed — but
@@ -34,11 +33,15 @@ const before = new Map(GENERATED.map((f) => [f, readFileSync(f, 'utf8')]))
 // `pages.ts` alone is 17.3. The cost is the page build, not the runtime that starts it.
 // The generation goes to a directory of its own. The committed files are read once, above, and never rewritten here, so
 // no other process can see this gate's output in place of the committed text, and the gate cannot change them as a side effect.
-const gen = mkdtempSync(join(tmpdir(), 'constants-'))
+// THE OUTPUT FOLDER IS A HEXBIT FOLDER UNDER evidence/, WHICH GIT TRACKS (never an ignored cache): its name is the first eight hex digits of the content address of the inputs
+// (the generator and the committed text). Same inputs, same folder, so a run can be reproduced and the folder is its own receipt.
+const inputs = readFileSync('scripts/pages.ts', 'utf8') + before.get('README.md') + before.get('index.md')
+const handle = toUuid(inputs).replace(/-/g, '').slice(0, 8)
+const gen = `evidence/constants/${handle}`
+mkdirSync(gen, { recursive: true })
 execSync('node scripts/pages.ts', { stdio: 'ignore', env: { ...process.env, PAGES_OUT: gen } })
-const generated = new Map(['README.md', 'index.md'].map((f) => [f, readFileSync(join(gen, f), 'utf8')]))
+const generated = new Map(['README.md', 'index.md'].map((f) => [f, readFileSync(`${gen}/${f}`, 'utf8')]))
 const unexpected = ['README.md', 'index.md'].filter((f) => generated.get(f) !== before.get(f))
-rmSync(gen, { recursive: true, force: true })
 
 if (unexpected.length) {
   console.log(`  ✗ ${unexpected.join(', ')} disagree(s) with scripts/pages.ts`)

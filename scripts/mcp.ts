@@ -96,6 +96,16 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   // Not mirrored, not summarised, not cached: forwarded. The registry is data in src/mcp/connectors.ts and
   // holds no client, so nothing on the verification path can open a socket by importing it.
   connect: async (a) => {
+    // ASYNC: the call is handed to a background job and the session is not blocked. Poll it with connect_status.
+    if (a?.async === true) {
+      const { spawn } = await import('node:child_process')
+      const { randomUUID } = await import('node:crypto')
+      const id = randomUUID()
+      const { connector, tool, arguments: args, timeout } = a
+      const child = spawn('node', ['scripts/connector-job.ts', id, JSON.stringify({ connector, tool, arguments: args ?? {}, timeout })], { cwd: R, detached: true, stdio: 'ignore' })
+      child.unref()
+      return JSON.stringify({ status: 'STARTED', job: id, poll: 'connect_status', note: 'the call runs in the background; poll connect_status with this job id until its status is DONE or FAILED' }, null, 1)
+    }
     const { CONNECTORS, CONNECTOR } = await import('../src/mcp/connectors.ts')
     if (!a?.connector) {
       return JSON.stringify({
@@ -235,6 +245,14 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   explain: (a) => { try { return execFileSync('node', ['scripts/explain.ts', String(a?.name ?? '')], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  novelty_batch: (a) => { try { const flags = [...(a?.limit ? ['--limit', String(Number(a.limit))] : []), ...(a?.minutes ? ['--minutes', String(Number(a.minutes))] : [])]; return execFileSync('node', ['scripts/novelty.ts', ...flags], { cwd: R, encoding: 'utf8', timeout: 3_600_000, maxBuffer: 16 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  connect_status: (a) => {
+    const id = String(a?.job ?? '')
+    if (!/^[0-9a-f-]{36}$/.test(id)) return JSON.stringify({ status: 'NOT FOUND', why: 'give the job id that connect returned with async true' })
+    try { return readFileSync(joinPath(R, '.vitepress', 'cache', 'jobs', id + '.json'), 'utf8') }
+    catch { return JSON.stringify({ status: 'NOT FOUND', job: id, why: 'no job with this id; it may have been removed' }) }
+  },
   leaks: (a) => { try { return execFileSync('node', ['scripts/leaks.ts', ...(a?.json ? ['--json'] : [])], { encoding: 'utf8', timeout: 300_000 }) }
     catch (e) { return JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
   lean_verify: (a) => { try { return execSync(`node scripts/lean.ts${a?.file ? ' ' + a.file : ''}`, { encoding: 'utf8' }) }

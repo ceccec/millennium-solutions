@@ -52,7 +52,7 @@ const startedAt = Date.now()
 // The core is in src/novelty/index.ts now, this script is one caller and the MCP server is the other.
 // Nothing changed about what a search does; what changed is who can run one. What stays here is the part
 // that is about THIS TREE: a theorem's file, its declared domain, and the anchors that domain implies.
-import { LIMITS, SOURCES, get, q, sequencesIn, termsOf, LABELS, GENERIC, NUMBER_THEORY, type Hit } from '../src/novelty/index.ts'
+import { LIMITS, SOURCES, sequencesIn, termsOf, LABELS, GENERIC, NUMBER_THEORY, type Hit } from '../src/novelty/index.ts'
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
 
@@ -212,7 +212,7 @@ for (const { t, key, h } of todo) {
     // ONE QUESTION PER SEQUENCE: the units 1,2,4,5,7,8 sit in 43 statements and would be asked 43 times.
     if (!oeisSeen.has(seq)) {
       try {
-        const j = await get(`https://oeis.org/search?q=${q(seq)}&fmt=json`); measured++
+        const j: any = await Promise.reject(new Error('oeis.org: /search is disallowed by its robots.txt; not contacted')); measured++
         const rows = Array.isArray(j) ? j : (j?.results ?? [])
         // a sequence that merely CONTAINS the terms somewhere is not the statement's sequence: its data must begin with them
         oeisSeen.set(seq, (rows ?? []).filter((s: any) => String(s.data ?? '').replace(/\s+/g, '').startsWith(seq)).slice(0, 3)

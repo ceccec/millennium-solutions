@@ -1,9 +1,9 @@
 {
   "repo": "millennium-solutions",
-  "generatedFrom": "629220991",
+  "generatedFrom": "9da96028c",
   "specWitness": {
-    "seed": "theorems\ndeclarations closing by exhaustion or by a proof for every value — the deposit's definition of a theorem\n1248\nnode -e \"import('./src/api/index.ts').then(m=>console.log(m.theoremCount()))\"",
-    "receipt": "fa66322b-6130-8468-bf2d-fecfe19f1e15"
+    "seed": "theorems\ndeclarations closing by exhaustion or by a proof for every value — the deposit's definition of a theorem\n25992\nnode -e \"import('./src/api/index.ts').then(m=>console.log(m.theoremCount()))\"",
+    "receipt": "7d116827-d573-802d-9f58-527b58057c96"
   },
   "definition": "a declaration in src/proof that the Lean kernel accepts — sorry-free — and closes either by exhaustion over a stated finite domain with no axiom, or by a proof for every value on the standard axioms propext and Quot.sound",
   "protocol": {
@@ -26,9 +26,9 @@
     {
       "key": "theorems",
       "claim": "declarations closing by exhaustion or by a proof for every value — the deposit's definition of a theorem",
-      "value": "1248",
+      "value": "25992",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.theoremCount()))\"",
-      "receipt": "fa66322b-6130-8468-bf2d-fecfe19f1e15"
+      "receipt": "7d116827-d573-802d-9f58-527b58057c96"
     },
     {
       "key": "rfl-declarations",
@@ -40,37 +40,37 @@
     {
       "key": "kernel-accepted",
       "claim": "declarations the Lean kernel accepts, sorry-free and axiom-free",
-      "value": "1248",
+      "value": "25992",
       "command": "node scripts/lean.ts",
-      "receipt": "3ce09441-bc71-8a84-a6af-2f9f71385e48"
+      "receipt": "2090ee5f-f11d-8e24-85f3-7ab4fd74309a"
     },
     {
       "key": "lean-files",
       "claim": "source files in src/proof",
-      "value": "65",
+      "value": "101",
       "command": "ls src/proof/*.lean | wc -l",
-      "receipt": "a5aa8e9a-4492-8c96-b9f5-fad1f4898189"
+      "receipt": "3c1a4394-e37f-8d43-b814-0849b2aac8e3"
     },
     {
       "key": "live-keys",
       "claim": "live ledger keys — ADDRESSES, not theorems; some theorems carry two",
-      "value": "1248",
+      "value": "25957",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().liveKeys))\"",
-      "receipt": "33874651-a25e-8810-8078-cb0f16bcd236"
+      "receipt": "a2b651d7-fbe6-898d-8e2d-936328c46805"
     },
     {
       "key": "ledger-entries",
       "claim": "entries in the append-only ledger — RECEIPTS, most of them withdrawn",
-      "value": "3392",
+      "value": "28376",
       "command": "node scripts/forensics.ts",
-      "receipt": "e326397a-c304-8a41-b3c1-950020a15bca"
+      "receipt": "436ddd88-fe5a-895c-950a-838cd468c9cb"
     },
     {
       "key": "census-closes",
       "claim": "liveKeys = sealed + keyed-twice + unresolvable, asserted not reconciled by a reader",
-      "value": "1248 = 1248 + 0 + 0",
+      "value": "25957 = 25957 + 0 + 0",
       "command": "node scripts/contradictions.ts",
-      "receipt": "8bcf5e1f-055d-8d17-aa70-1fb743a76c77"
+      "receipt": "a7e5ba69-ae12-8ea2-a00e-3b181abcdeb7"
     },
     {
       "key": "verify-advantage",
@@ -103,9 +103,9 @@
     {
       "key": "typeset",
       "claim": "statements rendering as mathematics, each round-trip clean against its source",
-      "value": "1248/1248",
+      "value": "25992/25992",
       "command": "node scripts/latex-gate.ts",
-      "receipt": "598ad95d-e63f-87ec-a90e-d6c2e7d0bc43"
+      "receipt": "908498ee-f6b3-8382-b12d-2198d06ebc1d"
     },
     {
       "key": "coin-unlock",
@@ -117,9 +117,9 @@
     {
       "key": "gate:contradictions",
       "claim": "the contradictions gate, run now rather than remembered",
-      "value": "pass",
+      "value": "FAIL",
       "command": "npm run contradictions",
-      "receipt": "67a9b48b-35db-844e-bf2a-3218e6bc1711"
+      "receipt": "b09a0175-e38c-83ec-af55-9ab865642f9c"
     },
     {
       "key": "gate:latex-gate",
@@ -131,9 +131,9 @@
     {
       "key": "gate:prior-art",
       "claim": "the prior-art gate, run now rather than remembered",
-      "value": "pass",
+      "value": "FAIL",
       "command": "npm run prior-art",
-      "receipt": "c450d904-c448-87f0-bb62-29f2ffd08f5c"
+      "receipt": "0a71611a-5ca6-8958-b3a5-9cf37c7231a2"
     },
     {
       "key": "gate:verify",
@@ -152,10 +152,10 @@
     {
       "key": "gate:gates",
       "claim": "the gates gate, run now rather than remembered",
-      "value": "pass",
+      "value": "FAIL",
       "command": "npm run gates",
-      "receipt": "14c3168a-49d2-82b3-becf-5fb228c872ff"
+      "receipt": "576a57a2-120b-835d-93d2-aab1b52c7d4b"
     }
   ],
-  "root": "b4e2da26-dc14-8a47-978c-9e44a537c620"
+  "root": "a40523d1-ee6f-84cd-b137-209d83aaa945"
 }

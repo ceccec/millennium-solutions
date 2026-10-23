@@ -50,6 +50,8 @@ const handlers = keys.map((k, i) => ({
 const REACHES: [RegExp, Need][] = [
   // The qpu checkout beside this repository is the tree the completed qpu tools read and build.
   [/\bQPU\b|uuidna\/qpu/, 'tree'],
+  // The connector's job state is read from the repository's cache folder, so a handler that reads it reaches the tree.
+  [/joinPath\(R, '\.vitepress'|\.vitepress.*jobs/, 'tree'],
   // The pre-commit hook reaches every stream it runs: the prose and ledger checks, git, the Lean gate, the network court.
   [/githooks\/pre-commit/, 'git'],
   [/githooks\/pre-commit/, 'lean'],

@@ -110,7 +110,7 @@ export const SOURCES: Record<string, { pace: number; run: (terms: string[], quer
     .map((w: any) => { const text = `${(w.title ?? [''])[0]} ${stripTags(String(w.abstract ?? ''))}`; const r = relevance(terms, text); return { source: 'crossref', title: (w.title ?? [''])[0], year: w.issued?.['date-parts']?.[0]?.[0], url: w.DOI ? `https://doi.org/${w.DOI}` : w.URL, relevance: r < 1 ? 0 : r, text } }) },
   arxiv: { pace: 6000, run: async (terms) => {
     // two tries, not four: a refusing arXiv costs half a minute per call
-    const x: string = await get(`https://export.arxiv.org/api/query?search_query=${q(terms.slice(0, 5).map((t) => `all:${t}`).join(' AND '))}&max_results=${LIMITS.perSource}`, 'text', 2)
+    const x: string = await Promise.reject(new Error('export.arxiv.org: every path is disallowed by its robots.txt; not contacted'))
     return x.split('<entry>').slice(1).filter((e) => /<category term="(math|cs)\./.test(e)).map((e) => {
       const tag = (t: string) => (e.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`)) ?? ['', ''])[1].replace(/\s+/g, ' ').trim()
       const text = `${tag('title')} ${tag('summary')}`
@@ -143,7 +143,7 @@ export async function search(statement: string, anchors: string[] = []): Promise
   for (const seq of sequencesIn(statement)) {
     queries['oeis:' + seq] = seq
     try {
-      const j = await get(`https://oeis.org/search?q=${q(seq)}&fmt=json`)
+      const j: any = await Promise.reject(new Error('oeis.org: /search is disallowed by its robots.txt; not contacted'))
       for (const r of (Array.isArray(j) ? j : j?.results ?? []).slice(0, 3)) oeis.push({ a: 'A' + String(r.number).padStart(6, '0'), name: String(r.name ?? '').slice(0, 160), query: seq })
     } catch { notMeasured.push('oeis:' + seq) }
     await sleep(1200)

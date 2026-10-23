@@ -35,7 +35,8 @@ def orF : Nat → Nat → Nat → Nat
 def and8 (a b : Nat) : Nat := andF 9 a b
 def or8  (a b : Nat) : Nat := orF 9 a b
 
-/-- the four seeds the deposit folds with: 0, the golden ratio, and two of pi's hex expansion -/
+/-- the four seeds the deposit folds with: 0, then the first 32 fraction bits of φ, of π and of e — each
+    derived from its source below (the comment here used to say "two of pi's"; the series say π and e) -/
 def SEEDS : List Nat := [0, 2654435769, 608135816, 3084996962]
 
 /-- a 32-bit word split into four bytes, most significant first -/
@@ -88,7 +89,7 @@ theorem addressing_is_not_constant : toUuidBytes [1] ≠ toUuidBytes [2] := by d
 -- ── the four seeds genuinely differ, so the four words are independent draws ──
 theorem the_four_seeds_are_distinct : (SEEDS.eraseDups).length = 4 := by decide
 
-def settledHere : Nat := 20
+def settledHere : Nat := 28
 -- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
 -- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
 -- `settledHere = N` by rfl, which compares the constant to itself and is why seal-lean refused to seal
@@ -167,5 +168,61 @@ theorem the_fourteen_hash_bits_read_back_from_the_fourth_group :
   intro b8 b9 h8 h9
   rw [the_variant_stamp_keeps_the_low_six_bits_of_every_byte b8 h8]
   exact ⟨by omega, by omega⟩
+
+-- ── THE SEEDS, SPLIT BY THEIR SOURCES — AND THE PRIME, THE BASIS, THE FINALIZERS ────────────────────────
+--    By the captain's order (2026-10-03): "split astronomical values with pi and primes and other crypto
+--    tools". SEEDS above are the four 32-bit words src/0 folds every address with, and this file took them
+--    as literals under a comment calling them "the golden ratio, and two of pi's hex expansion". Decided
+--    here instead: the second is the first 32 fraction bits of φ (bracketed between two squares, no root
+--    needed); the third of π (the Bailey–Borwein–Plouffe series, 1995, summed in Nat arithmetic with every
+--    floor taken, and the slack to the next digit boundary shown so the truncation cannot have crossed it);
+--    the fourth of e — NOT π's: the factorial series says 2.b7e15162…, and the comment was wrong by one
+--    constant. Then the hash's own two: FNV_PRIME is prime, every divisor to its square root tried, and
+--    FNV_OFFSET is FNV-0 of Landon Curt Noll's signature string, which is how it was made (Fowler–Noll–Vo).
+--    The two finalizer constants are MurmurHash3's (Appleby), found by search and derived from nothing
+--    here; what IS decided is that each is a unit mod 2³² with its inverse computed, so the finalizer is a
+--    bijection and loses no address. Nothing-up-my-sleeve numbers, checked rather than trusted; src/0 states
+--    the same four seeds and scripts/lean-agree.ts pairs them with SEEDS on every run.
+def kfact : Nat → Nat
+  | 0 => 1
+  | n + 1 => (n + 1) * kfact n
+def bbpPos (M N : Nat) : Nat := (List.range N).foldl (fun s k => s + 16 ^ (M - k) * 4 / (8 * k + 1)) 0
+def bbpNeg (M N : Nat) : Nat :=
+  (List.range N).foldl (fun s k => s + 16 ^ (M - k) * 2 / (8 * k + 4) + 16 ^ (M - k) / (8 * k + 5) + 16 ^ (M - k) / (8 * k + 6)) 0
+def bbp (M N : Nat) : Nat := bbpPos M N - bbpNeg M N
+def eSeries (M N : Nat) : Nat := (List.range N).foldl (fun s k => s + 16 ^ M / kfact k) 0
+def fnv0 (cs : List Nat) : Nat := cs.foldl (fun h c => xor32 ((h * FNV_PRIME) % M32) c) 0
+/-- "chongo <Landon Curt Noll> /\../\", as character codes -/
+def SIGNATURE : List Nat :=
+  [99, 104, 111, 110, 103, 111, 32, 60, 76, 97, 110, 100, 111, 110, 32, 67, 117, 114, 116, 32, 78, 111, 108, 108, 62, 32, 47, 92, 46, 46, 47, 92]
+
+theorem the_second_seed_is_the_first_hex_word_of_the_golden_ratio :
+    (2 * 2654435769 + 2 ^ 32) ^ 2 ≤ 5 * 2 ^ 64 ∧ 5 * 2 ^ 64 < (2 * 2654435769 + 2 + 2 ^ 32) ^ 2
+    ∧ SEEDS.getD 1 0 = 2654435769 := by decide
+
+theorem the_third_seed_is_the_first_hex_word_of_pi_by_bbp :
+    bbp 24 24 / 16 ^ 16 = 3 * 16 ^ 8 + 608135816 ∧ SEEDS.getD 2 0 = 608135816 := by decide
+
+-- twenty-four terms, four floors each: the dropped remainders are below 100, and the tail of the series
+-- below 1; the digit boundary is more than a thousand away on either side
+theorem the_bbp_truncation_cannot_cross_the_digit_boundary :
+    1000 < bbp 24 24 % 16 ^ 16 ∧ bbp 24 24 % 16 ^ 16 + 1000 < 16 ^ 16 := by decide
+
+theorem the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi :
+    eSeries 24 30 / 16 ^ 16 = 2 * 16 ^ 8 + 3084996962 ∧ SEEDS.getD 3 0 = 3084996962
+    ∧ 3084996962 ≠ 608135816 := by decide
+
+theorem the_series_truncation_cannot_cross_the_digit_boundary :
+    1000 < eSeries 24 30 % 16 ^ 16 ∧ eSeries 24 30 % 16 ^ 16 + 1000 < 16 ^ 16 := by decide
+
+theorem the_fnv_prime_is_prime_at_two_to_the_24_plus_two_to_the_8_plus_0x93 :
+    FNV_PRIME = 2 ^ 24 + 2 ^ 8 + 0x93 ∧ 4096 * 4096 < FNV_PRIME ∧ FNV_PRIME < 4097 * 4097
+    ∧ (List.range 4095).all (fun d => FNV_PRIME % (d + 2) != 0) := by decide
+
+theorem the_fnv_basis_is_fnv0_of_its_signature :
+    fnv0 SIGNATURE = FNV_OFFSET ∧ SIGNATURE.length = 32 := by decide
+
+theorem the_finalizer_constants_are_units_mod_two_to_the_32 :
+    (0x85ebca6b * 2781581891) % M32 = 1 ∧ (0xc2b2ae35 * 2127672349) % M32 = 1 := by decide
 
 end Address

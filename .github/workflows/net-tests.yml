@@ -1,0 +1,30 @@
+# The network tests. They observe live services, so they run here and nowhere else: the local hooks do not run them.
+# CI=true makes an absent network a failure, never a skip. Every suite must report PASS.
+name: net-tests
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+jobs:
+  net:
+    runs-on: ubuntu-latest
+    env:
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Lean toolchain (the Lean-backed answers need it)
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.15.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Network suites, each must PASS
+        run: |
+          for s in net-tools-test answer-doi answer-tool fallbacks; do
+            out=$(node scripts/suite-run.ts "$s")
+            echo "$out" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "$out" | node -e 'const j=JSON.parse(require("fs").readFileSync(0,"utf8")); if (j.status!=="PASS") { console.error("suite "+j.suite+" is "+j.status); process.exit(1) }'
+          done

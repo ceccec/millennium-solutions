@@ -22,7 +22,7 @@ export const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'cont
 // `ci-watch` joins NETWORK: it reads GitHub's verdict on a commit through `gh run list`, and its refusal is a
 // run that CONCLUDED IN FAILURE on their server — no mutation of this tree can produce it, and before a push
 // there is nothing to read at all.
-export const NETWORK = new Set(['qpu-crosscheck', 'clay-online', 'links-check', 'cern', 'cern-oai', 'doi-resolve', 'zenodo-mint', 'zenodo-verify', 'bench-hex', 'bench-hexbit', 'release-live', 'readers', 'entangle-oeis', 'api-discover', 'published', 'ci-watch', 'web-fetch', 'web-search', 'clay-conditions-test', 'suite-run', 'answer', 'answer-doi-test'])
+export const NETWORK = new Set(['connector-job', 'novelty', 'qpu-crosscheck', 'clay-online', 'links-check', 'cern', 'cern-oai', 'doi-resolve', 'zenodo-mint', 'zenodo-verify', 'bench-hex', 'bench-hexbit', 'release-live', 'readers', 'entangle-oeis', 'api-discover', 'published', 'ci-watch', 'web-fetch', 'web-search', 'clay-conditions-test', 'suite-run', 'answer', 'answer-doi-test'])
 
 /** Every script package.json can reach. */
 export const reachableScripts = (): Set<string> => {

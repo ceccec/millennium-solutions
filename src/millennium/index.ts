@@ -52,7 +52,7 @@ export const MILLENNIUM: Record<string, { problem: string; name: string; bound: 
     outlet: 'https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/',
     outletName: 'Clay Mathematics Institute — Birch and Swinnerton-Dyer Conjecture' },
   the_orbit_is_one_closed_loop_of_six_distinct_points: {
-    problem: 'Poincaré Conjecture (resolved)',
+    problem: 'Poincaré Conjecture (proved externally by Perelman, 2003; not proved here)',
     name: 'Poincaré — one closed loop, no holes',
     bound: "the sequence closes into a single simple loop of six distinct steps — not the 3-sphere characterization; Poincaré is Perelman's theorem (2003), not proved here",
     outlet: 'https://www.claymath.org/millennium/poincare-conjecture/',

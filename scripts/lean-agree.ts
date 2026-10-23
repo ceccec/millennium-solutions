@@ -14,7 +14,7 @@
 //
 // The triad is normalised mod 9 before comparing: the runtime writes {3,6,9} and the proofs write {3,6,0},
 // which is the same class named by its residue — stated here rather than hidden in a lenient comparison.
-import { BASE, units, triad, vortexOrbit } from '../src/0/index.ts'
+import { BASE, units, triad, vortexOrbit, SEEDS } from '../src/0/index.ts'
 import { precedes, staleTail } from '../src/api/gates.ts'
 import { unreflect } from '../src/honesty/index.ts'
 import { FIELDS, encode as encodeContainer } from '../src/0/program.ts'
@@ -60,6 +60,10 @@ const PAIRS = [
   { what: 'the units',          runtime: units(),       mod: 'Z9',      expr: 'Z9.units' },
   { what: 'the triad',          runtime: triad(),       mod: 'Merkaba', expr: 'Merkaba.axis' },
   { what: 'the doubling orbit', runtime: vortexOrbit(), mod: 'Index',   expr: 'Windows.span' },
+  // THE SEEDS THE ADDRESS FOLDS WITH — 0, φ, π and e as 32-bit fraction words. src/proof/address.lean derives
+  // each from its source (a square bracket, the BBP series, the factorial series) and src/0 states them as
+  // literals; a literal that drifted from the derivation would re-address the whole ledger, so they are paired.
+  { what: 'the address seeds',  runtime: [...SEEDS],    mod: 'Address', expr: 'Address.SEEDS' },
 
   { what: 'the time boundary',  runtime: precedesGrid(), mod: 'Instruments', raw: true,
     expr: '((List.range 12).flatMap (fun a => (List.range 12).map (fun b => if Instruments.precedes (some a) (some b) then 1 else 0))) '

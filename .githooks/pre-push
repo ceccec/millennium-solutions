@@ -1,0 +1,4 @@
+#!/bin/sh
+# HARD ENFORCE on every push: the repository's Lean is checked for fake proofs and the MCP gate must pass, in parallel.
+node scripts/gate-parallel.ts --push || { echo "✗ pre-push: refused — see the stream named above"; exit 1; }
+echo "✓ pre-push: no fake proofs in the repository, and the MCP gate passes"

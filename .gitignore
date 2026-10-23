@@ -38,3 +38,12 @@ src/readme-trial.md
 .release-snapshot.json
 .cern/
 .vacuity-cache.json
+
+# Mathlib build of the Clay statements (clay/): its own Lake project, outside the no-Mathlib src/proof gates
+clay/.lake/
+
+# the MCP call log: one line per tool call this server served (session_report reads it)
+.mcp-session.log
+
+# the verified cache: files that passed a check, by content hash (hooks re-check only what changed)
+.verified.json

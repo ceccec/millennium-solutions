@@ -129,6 +129,8 @@ export const TOOLS = [
   { name: 'clay_online', description: 'The online evidence for each Clay problem, gathered the same way every time: OpenAlex and Crossref literature hits, and the Clay Institute page, each source read through its robots.txt first (a disallowed path is skipped and named). Reports what the sources return. A literature hit is not a proof, and the Clay page status is not determined from its text; the verdicts stay with the answer tool.', inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'links_check', description: 'Check every external link in README.md and index.md, once, the same way every time: each host\'s robots.txt is read first, a disallowed path is skipped and named, one request is in flight per host, a HEAD is retried as GET where refused, and a 429 is backed off. Each link is LIVE, DEAD (with its status), or UNREACHABLE (with the reason).', inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'explain', description: 'What a named theorem or Lean file is, from its Lean documentation by default: the doc comment or the file header, as the Lean source carries it. Writes no prose of its own; a name with no doc in the Lean source is reported as having none.', inputSchema: { type: 'object', properties: { name: { type: 'string', description: 'a theorem name, or a Lean file name' } }, required: ['name'] } },
+  { name: 'novelty_batch', description: 'Run the deposit\'s prior-art search over the theorems that are unknown or stale: the incremental runner of scripts/novelty.ts. Takes at most limit theorems and at most minutes of work per call; a source that refuses is cooled down and reported as NOT_MEASURED, never as absence. Resumes where the previous call stopped.', inputSchema: { type: 'object', properties: { limit: { type: 'number', description: 'at most this many theorems in this call' }, minutes: { type: 'number', description: 'the time budget of this call, in minutes' } }, required: [] } },
+  { name: 'connect_status', description: 'The state of a background connector call started with connect async true: RUNNING, DONE with the connector\'s reply, or FAILED with its reason.', inputSchema: { type: 'object', properties: { job: { type: 'string', description: 'the job id that connect returned' } }, required: ['job'] } },
   { name: 'leads', description: 'The deposit\'s own open questions, derived from the tree rather than listed: uncontrolled refusing gates, unminted depositions, theorems that read back a hand-set value, MCP tools an install cannot reach. Also CROSSES them by cause — publication, authority, instrument, derivation, environment — because two leads sharing a cause are one problem with two faces and only one of them may be closable. Reports and does not gate: an open question is work not done, which is not work that is wrong.',
     inputSchema: { type: 'object', properties: { area: { type: 'string' } } } },
 
@@ -222,6 +224,8 @@ export const NEEDS: Record<string, Need[]> = {
   clay_online: ['net', 'tree'],
   links_check: ['net', 'tree'],
   explain: ['tree'],
+  novelty_batch: ['net', 'tree'],
+  connect_status: ['tree'],
   cern: ['net', 'tree'],
   web_search: ['net', 'tree'],
   lean_audit_library: ['lean', 'tree'],
