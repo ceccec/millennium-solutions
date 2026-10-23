@@ -49,8 +49,8 @@ def files    : List String := ["address.lean", "asymmetric.lean", "elementary.le
 def declared : List Nat := [Address.settledHere, Asymmetric.settledHere, Elementary.settledHere, Families.settledHere, Fnv.settledHere, Imprint.settledHere, Instruments.settledHere, Merkle.settledHere, Program.settledHere, Quantum.settledHere, Rays.settledHere, Reversal.settledHere, Rights.settledHere, Roots.settledHere, Z9.settledHere]
 
 -- measured by scripts/settled.ts from the tree: `by decide` theorems, then all theorems, per file
-def measured  : List Nat := [20, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 21]
-def theorems  : List Nat := [25, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24]
+def measured  : List Nat := [28, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 21]
+def theorems  : List Nat := [33, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24]
 def byRfl     : List Nat := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 def byOther   : List Nat := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]
 
@@ -76,7 +76,7 @@ theorem no_file_declares_more_than_it_holds :
 -- any one file's count leaves exactly the rest — so no row can be quietly absorbed into another.
 theorem the_parts_sum_to_the_whole_and_each_part_is_recoverable :
   declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0
-  ∧ declared.foldl (· + ·) 0 == 259
+  ∧ declared.foldl (· + ·) 0 == 267
   ∧ (List.range declared.length).all (fun i =>
       declared.foldl (· + ·) 0 - declared.getD i 0
         == ((List.range declared.length).filter (fun j => j != i)).foldl
@@ -95,7 +95,7 @@ theorem no_file_settles_nothing :
 -- constant column would read as green.
 theorem the_counts_are_not_one_number_repeated :
   1 < declared.eraseDups.length
-  ∧ declared.eraseDups.length == 12
+  ∧ declared.eraseDups.length == 11
   ∧ (declared.foldl (fun a b => if a < b then b else a) 0)
       > (declared.foldl (fun a b => if b < a then b else a) 1000) := by decide
 
