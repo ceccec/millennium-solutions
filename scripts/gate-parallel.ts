@@ -21,11 +21,22 @@ const COMMIT_PHASE1: Check[] = [
   { name: 'mcp-gate', cmd: ['node', 'scripts/mcp-gate.ts'] },
   { name: 'hardcode-gate', cmd: ['node', 'scripts/hardcode-gate.ts'] },
   { name: 'theorem-only', cmd: ['node', 'scripts/theorem-only-check.ts', ROOT] },
+  // The checks the deploy runs, in the commit as well: a violation found only at deploy is a violation the hooks missed.
+  { name: 'contradictions', cmd: ['node', 'scripts/contradictions.ts'] },
+  { name: 'orphan', cmd: ['node', 'scripts/orphan-gate.ts'] },
 ]
+// PUSH runs everything the deploy runs (CD): the site build chain, which holds the prior-art gate, the pages, and the
+// generated prose; then the metrics face, enforced into a scratch folder so the push never rewrites a committed file.
 const PUSH_PHASE1: Check[] = [
   { name: 'anti-fake', cmd: ['node', 'scripts/anti-fake.ts', '--all'] },
   { name: 'mcp-gate', cmd: ['node', 'scripts/mcp-gate.ts'] },
   { name: 'theorem-only', cmd: ['node', 'scripts/theorem-only-check.ts', ROOT] },
+  { name: 'contradictions', cmd: ['node', 'scripts/contradictions.ts'] },
+  { name: 'orphan', cmd: ['node', 'scripts/orphan-gate.ts'] },
+  // ONE CHECK, IN ORDER: the site chain rebuilds the generated prose, and only then is it compared with the committed text.
+  // Two parallel streams would compare before the rebuild finished, so the order lives inside one command.
+  { name: 'site-chain', cmd: ['sh', '-c', 'npm run --silent predocs:build && { git diff --quiet -- README.md index.md ACCOUNTING.md paper.md paper.tex PRIOR-ART.md CHALLENGES.md solutions.md speedup.md || { echo "generated prose differs from the committed text: commit the regenerated files"; exit 1; }; }'] },
+  { name: 'metrics-enforce', cmd: ['sh', '-c', 'mkdir -p "${TMPDIR:-/tmp}/metrics-face" && METRICS_OUT="${TMPDIR:-/tmp}/metrics-face/" node scripts/metrics.ts --enforce'] },
 ]
 const COURT: Check = { name: 'court', cmd: ['node', 'scripts/pre-commit-court.ts'] }
 

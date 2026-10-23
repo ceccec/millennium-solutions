@@ -66,8 +66,13 @@ const tracked = execSync('git ls-files "*.ts" "*.vue" "*.md" "*.json" "*.yml"', 
   .split('\n').filter(Boolean).filter((f) => !f.startsWith('packages/') && !f.startsWith('dist/'))
 const corpus = tracked.map((f) => { try { return readFileSync(f, 'utf8') } catch { return '' } }).join('\n')
 const dead: string[] = []
+// A COMPILE-TIME CHECK IS REACHED BY THE COMPILER, not by an import. A file whose exports are rules the typecheck verifies
+// (each refused answer is a `@ts-expect-error` that the compiler must keep honouring) has no runtime consumer by design, and
+// the typecheck is its consumer: a rule that stops holding fails `npm run typecheck`. Those files are skipped here, and only
+// those: any other export nothing names is still reported.
 for (const f of tracked.filter((x) => x.endsWith('.ts') || x.endsWith('.vue'))) {
   const body = readFileSync(f, 'utf8')
+  if (body.includes('@ts-expect-error') && /COMPILE-TIME|compile-time/.test(body)) continue
   for (const m of body.matchAll(/^export (?:const|function|class|interface|type) (\w+)/gm)) {
     const hits = (corpus.match(new RegExp('\\b' + m[1] + '\\b', 'g')) ?? []).length
     if (hits <= 1) dead.push(`${f}  ${m[1]}`)
@@ -140,7 +145,11 @@ const nameable = tracked.filter((f) => /^src\/.*\.ts$/.test(f) && !CONTENT_ADDRE
 const CODE = /\.(ts|vue|mjs)$/
 const mentions = (f: string): boolean =>
   tracked.some((x) => x !== f && CODE.test(x) && stripComments(readFileSync(x, 'utf8')).includes(f))
-const unnamed = nameable.filter((f) => !referenced.has(f) && !mentions(f))
+// A compile-time check file is reached by the typecheck (see the export check above), so no import is needed for it to run.
+const isCompileCheck = (f: string): boolean => {
+  try { const b = readFileSync(f, 'utf8'); return b.includes('@ts-expect-error') && /COMPILE-TIME|compile-time/.test(b) } catch { return false }
+}
+const unnamed = nameable.filter((f) => !referenced.has(f) && !mentions(f) && !isCompileCheck(f))
 if (unnamed.length) {
   for (const f of unnamed) console.log(`  ✗ ${f} — no tracked file imports it`)
   console.log(`\n✗ orphan-gate: ${unnamed.length} file(s) nothing imports. Check whether they are addressed by CONTENT`)
