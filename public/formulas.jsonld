@@ -466326,7 +466326,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_parts_sum_to_the_whole_and_each_part_is_recoverable",
-    "description": "declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 259 ∧ (List.range declared.length).all (fun i => declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j => j != i)).foldl (fun a j => a + declared.getD j 0) 0)",
+    "description": "declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 267 ∧ (List.range declared.length).all (fun i => declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j => j != i)).foldl (fun a j => a + declared.getD j 0) 0)",
     "identifier": "lean_settled_the_parts_sum_to_the_whole_and_each_part_is_recoverable",
     "receipt": "c100d7db-dbc8-83ef-becf-95b866375a4c",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_settled_the_parts_sum_to_the_whole_and_each_part_is_recoverable",
@@ -466364,7 +466364,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_counts_are_not_one_number_repeated",
-    "description": "1 < declared.eraseDups.length ∧ declared.eraseDups.length == 12 ∧ (declared.foldl (fun a b => if a < b then b else a) 0) > (declared.foldl (fun a b => if b < a then b else a) 1000)",
+    "description": "1 < declared.eraseDups.length ∧ declared.eraseDups.length == 11 ∧ (declared.foldl (fun a b => if a < b then b else a) 0) > (declared.foldl (fun a b => if b < a then b else a) 1000)",
     "identifier": "lean_settled_the_counts_are_not_one_number_repeated",
     "receipt": "a824ffc6-adfa-8530-8f67-8f641f44b5ad",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_settled_the_counts_are_not_one_number_repeated",
