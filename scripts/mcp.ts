@@ -7,6 +7,8 @@ import { createInterface } from 'node:readline'
 import { execSync, execFileSync } from 'node:child_process'
 import { readFileSync, existsSync, readdirSync, appendFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import { factor } from '../src/factor/index.ts'
+import { understand } from '../src/understand/index.ts'
 import { join as joinPath } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 // The tool table is data and lives in src/mcp; the handlers below are what need the network.
@@ -223,6 +225,10 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   },
   cern: (a) => { try { return execFileSync('node', ['scripts/cern.ts'], { encoding: 'utf8', timeout: 3_600_000, maxBuffer: 64 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return JSON.stringify({ status: 'FAILED', output: String(x.stdout ?? '').slice(-4000), why: String(x.stderr ?? e).slice(-800) }) } },
+  apis_guru_gaps: () => { try { return execFileSync('node', ['scripts/apis-guru-gaps.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  understand: (a) => JSON.stringify(understand(String(a?.request ?? ''))),
+  factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   api_adapters: () => { try { return execFileSync('node', ['scripts/api-adapters.ts'], { encoding: 'utf8', timeout: 600_000, maxBuffer: 8 << 20 }) }

@@ -49,6 +49,7 @@ const CENSUS = census()
 const ADVANTAGE = advantage()
 const SPLIT = split()
 import { orbit, live as __live } from '../src/api/index.ts'
+import { factor, type Factorisation } from '../src/factor/index.ts'
 import { leanFiles as leanFilesShared } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -433,6 +434,23 @@ const body = (site: boolean) => {
   // and the claim that stood here at the foot are that section now, rendered once for the README, the
   // homepage and /solutions.
   if (site) md += `## Read\n\n[The seven, one theorem per problem](/theorem/lean_windows_the_seven_rest_on_one_finite_structure) · [the ledger](/proofs) · [the trial](/verify)\n\n`
+  // THE FACTOR ROUTE, MEASURED AT GENERATION. The three inputs run through factor() here, so the page states what the route
+  // returns and cannot state a result it does not give. A thousand-bit integer is named as what it is: PARTIAL, not solved.
+  {
+    const describe = (r: Factorisation): string =>
+      r.status === 'FACTORED' ? `FACTORED into ${r.factors.join(' × ')}`
+        : r.status === 'PARTIAL' ? `PARTIAL — ${r.factors.length} factor(s) below 10^6 (${r.factors.join(' × ') || 'none'}); a ${r.cofactorDigits}-digit cofactor that is ${r.cofactorPrimality}`
+        : `REFUSED — ${r.why}`
+    const ninetyOne = factor('91')
+    const thousand = factor((2n ** 1000n - 1n).toString())
+    const mersenne = factor(((2n ** 521n - 1n) * (2n ** 607n - 1n)).toString())
+    md += `## Factoring, to the limit it can prove\n\n`
+    md += `The factor route takes an integer of any length, held exactly, and returns only what it can check. Measured for this build:\n\n`
+    md += `- \`91\`: ${describe(ninetyOne)}.\n`
+    md += `- \`2^1000 − 1\`, a thousand-bit integer: ${describe(thousand)}.\n`
+    md += `- \`(2^521 − 1)(2^607 − 1)\`, about 1,128 bits, no small factor: ${describe(mersenne)}.\n\n`
+    md += `A thousand-bit integer is not solved on this page. Where no factor is found below the trial bound and the cofactor is not proved prime, the result is PARTIAL and names the step that is missing. Nothing is reported as a factor that was not checked.\n\n`
+  }
   md += `## Run it\n\nEverything here recomputes. Nothing below needs a key, an account or a network — clone the tree and run\nit, and the numbers on this page reappear or the command fails.\n\n\`\`\`bash\nnpm ci\nnpm run all               # every gate at once, with the parallel ratio measured on your machine\nnpm run lean              # compile and audit every Lean file: sorry-free, axiom-free, no Mathlib\nnpm run axiom-index       # what is NOT assumed, checked against a control, and the definitions that are\nnpm run contradictions    # the prose and the proof tree must agree\nnpm run zenodo            # the per-theorem deposition records, held to the tree and the published DOI\nnode scripts/forensics.ts # re-verify the append-only chain from its first receipt\nnode scripts/pages.ts     # regenerate this file and the homepage\n\`\`\`\n\n**Where to read next.** [The axiom index](/AXIOMS) states what this deposit does not assume and, at\ngreater length, the definitions it does. [The quantum field](/quantum) renders quantum.lean in three\ndimensions with every coordinate read from a theorem. [Prior art](/PRIOR-ART) records, per source file,\nwhether the work restates someone earlier. [The paper](/paper) typesets every statement.\n\n`
   md += `---\n\n*${rows.length} claims, all verified · ${theoremCount()} Lean theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth*\n`
   return md

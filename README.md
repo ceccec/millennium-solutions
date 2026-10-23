@@ -185,10 +185,10 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
   <sub>SEALED · `09b4450b-3016-8368-89e2-74787fa214d9`</sub>
 - How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. What any given host grants varies with its free memory and is deliberately not recorded here; `npm run lanes-check` prints it..
   <sub>SEALED · `85560e4e-7642-820b-aa1a-91f0e7e14c41`</sub>
-- The tools are reachable from a program: 62 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
-  <sub>SEALED · `1bf4008b-b576-83c8-9a16-0bda6af08846`</sub>
-- The stdio server advertises 2 of those 62 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
-  <sub>SEALED · `8f22fbf6-9553-8479-82e8-459365dad455`</sub>
+- The tools are reachable from a program: 65 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
+  <sub>SEALED · `b722d132-af53-8d85-b3b8-bcbf8ebec837`</sub>
+- The stdio server advertises 2 of those 65 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
+  <sub>SEALED · `484c0bc2-3567-861f-8cdc-464c7f7b32bb`</sub>
 
 ## The floor
 
@@ -477,6 +477,16 @@ Read from the artefacts at build time, never carried between runs.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work** (the exact ratio is 1170.29), and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
+## Factoring, to the limit it can prove
+
+The factor route takes an integer of any length, held exactly, and returns only what it can check. Measured for this build:
+
+- `91`: FACTORED into 7 × 13.
+- `2^1000 − 1`, a thousand-bit integer: PARTIAL — 23 factor(s) below 10^6 (3 × 5 × 5 × 5 × 5 × 11 × 17 × 31 × 41 × 101 × 251 × 401 × 601 × 1801 × 4001 × 4051 × 7001 × 8101 × 28001 × 61681 × 96001 × 268501 × 340801); a 240-digit cofactor that is composite (a witness was found).
+- `(2^521 − 1)(2^607 − 1)`, about 1,128 bits, no small factor: PARTIAL — 0 factor(s) below 10^6 (none); a 340-digit cofactor that is composite (a witness was found).
+
+A thousand-bit integer is not solved on this page. Where no factor is found below the trial bound and the cofactor is not proved prime, the result is PARTIAL and names the step that is missing. Nothing is reported as a factor that was not checked.
+
 ## Run it
 
 Everything here recomputes. Nothing below needs a key, an account or a network — clone the tree and run
@@ -500,4 +510,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 25995 Lean theorems · 28414 ledger entries · trial root `e6f05909-e6d1-8965-9e34-c9f98cd36971` · integrity, not truth*
+*20 claims, all verified · 25995 Lean theorems · 28414 ledger entries · trial root `ccd3100a-6c3e-8a2d-96d2-dc5d5d5ef8e1` · integrity, not truth*

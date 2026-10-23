@@ -28,8 +28,19 @@
  *          GET  /mcp/tools   the tool list, for discovery (token required)
  *          POST /mcp         JSON-RPC 2.0: initialize · tools/list · tools/call */
 import { createServer } from 'node:http'
+import { execFile } from 'node:child_process'
 import { randomBytes } from 'node:crypto'
 import { TOOLS, LISTED, WRITES, run, version } from './mcp.ts'
+import { dispatch, type Route } from '../src/route/index.ts'
+import { factor } from '../src/factor/index.ts'
+
+// Every path this server answers, as data. A request matches a whole path or it is refused with the list below.
+const ROUTES: Route[] = [
+  { method: 'GET', pattern: '/mcp/tools', name: 'tools' },
+  { method: 'POST', pattern: '/mcp', name: 'jsonrpc' },
+  { method: 'GET', pattern: '/factor/*n', name: 'factor' },
+  { method: 'GET', pattern: '/clay/conditions', name: 'clay' },
+]
 import { arg, flag, num } from '../src/cli/index.ts'
 
 const PORT = num('--port', 8787)
@@ -81,7 +92,19 @@ const server = createServer((req, res) => {
   }
   if (!authorised(req)) return json(res, 401, { error: 'a bearer token minted at startup is required — it is printed once to the console that started this server' }, origin)
 
-  if (req.method === 'GET' && req.url?.startsWith('/mcp/tools')) {
+  const routed = dispatch(ROUTES, req.method ?? '', req.url ?? '/')
+  if (routed.status === 'REFUSED') return json(res, 404, routed, origin)
+  if (routed.name === 'factor') {
+    const n = routed.params.n ?? ''
+    return json(res, 200, factor(n), origin)
+  }
+  if (routed.name === 'clay') {
+    // The Clay conditions are a network check and can run for minutes, so it runs asynchronously and the server keeps answering.
+    execFile('node', ['scripts/clay-conditions-test.ts'], { encoding: 'utf8', timeout: 900_000 }, (err, stdout) =>
+      json(res, 200, { source: 'clay_conditions', ok: !err, output: String(stdout || err?.message || '') }, origin))
+    return
+  }
+  if (routed.name === 'tools') {
     return json(res, 200, {
       server: 'millennium-solutions', version, writesAllowed: ALLOW_WRITE,
       narrow: NARROW,
@@ -91,7 +114,6 @@ const server = createServer((req, res) => {
       })),
     }, origin)
   }
-  if (req.method !== 'POST' || !req.url?.startsWith('/mcp')) return json(res, 404, { error: 'POST /mcp for JSON-RPC, GET /mcp/tools to discover' }, origin)
 
   let body = ''
   req.on('data', (c) => { body += c; if (body.length > 1_000_000) req.destroy() })
