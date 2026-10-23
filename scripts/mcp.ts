@@ -340,6 +340,22 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     })
     return JSON.stringify({ status: rows.every((r) => r.status === 'PASS') ? 'PASS' : 'FAIL', gates: rows.length, passed: rows.filter((r) => r.status === 'PASS').length, rows })
   },
+  // ONE QPU FAMILY, BY NAME: the family tests run through qpu_families, and only the lines of the named family are returned.
+  family: async (a) => {
+    const name = String(a?.name ?? '').trim().toLowerCase()
+    if (!/^[a-z][a-z0-9]*$/.test(name)) return JSON.stringify({ status: 'REFUSED', why: 'a family name is one lowercase word, such as analytics' })
+    const out = await HANDLERS.qpu_families({})
+    const lines = out.split('\n').filter((l) => l.toLowerCase().includes(name))
+    return JSON.stringify({ family: name, lines: lines.length, status: lines.length ? 'FOUND' : 'NOT_FOUND', tests: lines.slice(0, 12) })
+  },
+  // THE API LATTICE: every MCP tool that reaches the network, keyed by its handle (the first eight hex digits of its name's
+  // content address) and set against its declared needs. The grid is the catalogue itself, so a missing API tool is a missing row.
+  api_lattice: () => {
+    const rows = TOOLS.filter((t) => (NEEDS[t.name] ?? []).includes('net')).map((t) => ({
+      handle: toUuid(t.name).replace(/-/g, '').slice(0, 8), tool: t.name, needs: NEEDS[t.name] ?? [],
+    })).sort((a, b) => a.handle.localeCompare(b.handle))
+    return JSON.stringify({ tools: rows.length, lattice: rows })
+  },
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
