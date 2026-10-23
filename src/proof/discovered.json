@@ -149239,5 +149239,50 @@
     "key": "lean_answer.arith_false_implies_not_prime",
     "name": "lean arith.lean: false_implies_not_prime — (n : Nat) (w : Nat × Nat) (h : verdictOf n (some w) = Value.FALSE) : primeB n = false — proved by the Lean kernel for every value (by\n  obtain), standard axioms only — checked by lean.ts",
     "receipt": "799b6407-31d6-8e2a-97ed-f3e2a3914da1"
+  },
+  {
+    "key": "lean_countingrocks_pascal_rule",
+    "name": "lean counting-rocks.lean: pascal_rule — ∀ n < 12, ∀ k < n, choose (n+1) (k+1) = choose n k + choose n (k+1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d066e571-79ba-834a-9627-0d6f072ad8b9"
+  },
+  {
+    "key": "lean_countingrocks_row_sum_is_power_of_two",
+    "name": "lean counting-rocks.lean: row_sum_is_power_of_two — ∀ n < 12, rowSum n = 2^n — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "765f9ce9-e17b-8f0c-a5e8-f619f940f0d8"
+  },
+  {
+    "key": "lean_countingrocks_handshakes_five_people",
+    "name": "lean counting-rocks.lean: handshakes_five_people — handshakes 5 = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ba135934-8f8f-8e59-857a-cdf0ff0d989f"
+  },
+  {
+    "key": "lean_countingrocks_degrees_sum_to_twice_handshakes",
+    "name": "lean counting-rocks.lean: degrees_sum_to_twice_handshakes — ∀ n < 60, n * (n-1) = 2 * handshakes n — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "63f91dc7-ce43-8edb-8058-e370b2d1ebbb"
+  },
+  {
+    "key": "lean_countingrocks_four_objects_have_24_orderings",
+    "name": "lean counting-rocks.lean: four_objects_have_24_orderings — fact 4 = 24 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8b60bfd5-b349-875c-bd4e-6608fd2f6107"
+  },
+  {
+    "key": "lean_countingrocks_derangement_values",
+    "name": "lean counting-rocks.lean: derangement_values — der 3 = 2 ∧ der 4 = 9 ∧ der 5 = 44 ∧ der 6 = 265 ∧ der 7 = 1854 ∧ der 8 = 14833 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2d979b95-226e-8991-b917-442853292808"
+  },
+  {
+    "key": "lean_countingrocks_derangement_second_recurrence",
+    "name": "lean counting-rocks.lean: derangement_second_recurrence — ∀ n < 12, 2 ≤ n → (der n : Int) = (n : Int) * (der (n-1) : Int) + (if n % 2 = 0 then 1 else -1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "149359c3-e93a-860a-b62c-06eda72a8ac3"
+  },
+  {
+    "key": "lean_countingrocks_fibonacci_ten",
+    "name": "lean counting-rocks.lean: fibonacci_ten — fib 10 = 55 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4224bbf6-5227-8c55-90c7-d90d958c4cbb"
+  },
+  {
+    "key": "lean_countingrocks_fibonacci_partial_sums",
+    "name": "lean counting-rocks.lean: fibonacci_partial_sums — ∀ n < 20, 1 ≤ n → (List.range n).foldl (fun acc k => acc + fib (k+1)) 0 + 1 = fib (n+2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ae3bbc50-5e81-85a3-80cb-1c6dc46fef6e"
   }
 ]
