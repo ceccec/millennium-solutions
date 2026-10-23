@@ -126,6 +126,7 @@ export const TOOLS = [
   { name: 'pre_commit_e2e', description: "Run the whole pre-commit hook end to end without committing: prose, forensics, Lean claims, the parallel gates, the court. Returns the hook output and its exit code. The commit tool runs the same hook and is the way to commit.", inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'qpu_court_local', description: "Run qpu's own gate-court test from its build, offline. Reports pass and fail counts. The public court is a separate check, through the qpu connector.", inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'qpu_families', description: "Run every qpu family test file from its build, in one invocation, and return the pass and fail counts. Each family's own test decides its verdict.", inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'clay_online', description: 'The online evidence for each Clay problem, gathered the same way every time: OpenAlex and Crossref literature hits, and the Clay Institute page, each source read through its robots.txt first (a disallowed path is skipped and named). Reports what the sources return. A literature hit is not a proof, and the Clay page status is not determined from its text; the verdicts stay with the answer tool.', inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'leads', description: 'The deposit\'s own open questions, derived from the tree rather than listed: uncontrolled refusing gates, unminted depositions, theorems that read back a hand-set value, MCP tools an install cannot reach. Also CROSSES them by cause — publication, authority, instrument, derivation, environment — because two leads sharing a cause are one problem with two faces and only one of them may be closable. Reports and does not gate: an open question is work not done, which is not work that is wrong.',
     inputSchema: { type: 'object', properties: { area: { type: 'string' } } } },
 
@@ -216,6 +217,7 @@ export const NEEDS: Record<string, Need[]> = {
   qpu_court_local: ['tree'],
   qpu_families: ['tree'],
   qpu_crosscheck: ['net', 'tree'],
+  clay_online: ['net', 'tree'],
   cern: ['net', 'tree'],
   web_search: ['net', 'tree'],
   lean_audit_library: ['lean', 'tree'],

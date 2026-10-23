@@ -478,7 +478,6 @@ theorem the_factorial_outgrows_every_other_expression :
   ∧ (List.range' 4 16).all (fun n => fct n > 2 ^ n && fct n > n * (n + 1) / 2) := by decide
 `
 
-const OUT = 'src/proof/coils.lean'
 const generated = `set_option maxRecDepth 100000
 -- title: Expressions that compute the same residues, clustered
 -- wing: the ring

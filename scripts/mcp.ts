@@ -226,6 +226,8 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return (String(x.stdout ?? '') + String(x.stderr ?? '')) || JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
   qpu_families: (a) => { try { return execSync('find dist/families -name test.js | sort | xargs node --test', { cwd: QPU, encoding: 'utf8', timeout: 900_000, maxBuffer: 64 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return (String(x.stdout ?? '') + String(x.stderr ?? '')) || JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
+  clay_online: () => { try { return execFileSync('node', ['scripts/clay-online.ts'], { encoding: 'utf8', timeout: 600_000, maxBuffer: 8 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   leaks: (a) => { try { return execFileSync('node', ['scripts/leaks.ts', ...(a?.json ? ['--json'] : [])], { encoding: 'utf8', timeout: 300_000 }) }
     catch (e) { return JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
   lean_verify: (a) => { try { return execSync(`node scripts/lean.ts${a?.file ? ' ' + a.file : ''}`, { encoding: 'utf8' }) }

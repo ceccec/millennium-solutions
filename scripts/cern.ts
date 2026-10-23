@@ -121,7 +121,13 @@ const recids = new Set([...urlIds].map((r) => {
 // ── ADDRESS AND INVOLUTE ──────────────────────────────────────────────────────────────────────────────────
 const refl = (d: number): number => 10 - d          // coin.lean: proved an involution over ten digits
 const byAddr = new Map<string, string[]>()
-let notInvolutive = 0, fixed = 0
+// THE INVOLUTION CHECK, WITH ITS CONTROL. A check that cannot fail is not a check: `refl(refl(d)) === d` is the
+// identity 10 − (10 − d) = d, true of every number, so it reads green on any corpus whatever. The check below runs
+// the SAME failure count over a control that is not an involution (d ↦ d + 1), and the run fails unless that control
+// goes red. A check that stays green on a control proves nothing about the records, and the run says so.
+const failuresOf = (f: (d: number) => number, xs: number[]): number => xs.filter((d) => f(f(d)) !== d).length
+const CONTROL = (d: number): number => d + 1
+let notInvolutive = 0, fixed = 0, leaves = 0
 const roots = new Array(10).fill(0)
 for (const u of records) {
   const addr = toUuid(u)
@@ -130,8 +136,12 @@ for (const u of records) {
   const d = digitalRoot(parseInt(addr.replace(/-/g, '').slice(0, 8), 16))
   roots[d]++
   if (refl(refl(d)) !== d) notInvolutive++
+  if (refl(d) < 0 || refl(d) > 9) leaves++
   if (refl(d) === d) fixed++
 }
+const observedDigits = roots.map((_, d) => d).filter((d) => roots[d] > 0)
+const controlFailures = failuresOf(CONTROL, observedDigits)
+const controlRed = controlFailures > 0
 const collisions = [...byAddr.entries()].filter(([, v]) => v.length > 1)
 
 mkdirSync('.cern', { recursive: true })
@@ -144,7 +154,7 @@ writeFileSync('.cern/corpus.json', JSON.stringify({
   sitemaps: children.length, urls: urls.length, listedRecordUrls: listed.length, duplicatedInSitemap: duplicated, records: records.length, distinctRecids: recids.size,
   nonRecordUrls: other, urlIds: urlIds.size, numericIds: numeric, slugAliases: urlIds.size - numeric,
   canonicalRecords: recids.size, addresses: byAddr.size, collisions: collisions.length,
-  notInvolutive, fixed, swapped: records.length - fixed, roots,
+  notInvolutive, fixed, swapped: records.length - fixed, roots, leaves, controlFailures,
   oaiCompleteListSize: 74614, recidIndexed: 72111, apiReportedTotal: 82385,
   noveltyEstablished: 0, noveltyClaimed: 0,
 }, null, 2))
@@ -182,4 +192,6 @@ console.log(`  records once slug aliases are resolved. The involution is tested 
 console.log(`  CORPUS is ${recids.size.toLocaleString('en')}, and reporting the URL count as a record count overstated it by ${(records.length - recids.size).toLocaleString('en')}.`)
 console.log(`  NOVELTY ESTABLISHED: 0 · NOVELTY CLAIMED: 0. An address says which bytes were read. It does not`)
 console.log(`  say the statement is new, and no number of waves adds up to a search that nobody performed.`)
-process.exit(collisions.length || notInvolutive || drift ? 1 : 0)
+console.log(`  involution control: the non-involution d ↦ d + 1 fails on ${controlFailures} observed digit(s) — ${controlRed ? 'RED, as required' : 'GREEN: the check cannot fail, so it is not a check'}`)
+console.log(`  reflections that leave 0..9: ${leaves}`)
+process.exit(collisions.length || notInvolutive || drift || !controlRed ? 1 : 0)

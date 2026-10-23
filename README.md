@@ -105,7 +105,7 @@ For each problem, in the Clay Mathematics Institute's order: the author's pairin
 - **ledger** — [`lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine`](/theorem/lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine) · receipt `d12ad83d-55fa…`
 - **the problem** — [Clay Mathematics Institute — Birch and Swinnerton-Dyer Conjecture](https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/)
 
-### Poincaré Conjecture (resolved) — Poincaré — one closed loop, no holes
+### Poincaré Conjecture (proved externally by Perelman, 2003; not proved here) — Poincaré — one closed loop, no holes
 
 - **theorem** `the_orbit_is_one_closed_loop_of_six_distinct_points`, decided `by decide` over **36** cases:
 
@@ -140,12 +140,12 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
 
 ## 1 · What is proved
 
-- The seven windows are decided, not judged: 7 of 7 are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
-  <sub>SEALED · `82e72d94-30b8-817c-beed-de7acd1584b8`</sub>
-- The formal layer holds 25957 kernel-accepted declarations across 94 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `a7347cb4-3e8e-8bab-b8ff-60345da356af`</sub>
-- 25770 of those 25957 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 187 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `b6915f82-169a-815d-96d5-ca26ef3de1d5`</sub>
+- The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
+  <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
+- The formal layer holds 25992 kernel-accepted declarations across 101 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `5a7036d1-94fe-8ed7-b588-e33a08b6170f`</sub>
+- 25798 of those 25992 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 194 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `f38121e0-80d6-81fe-8f36-ad7311c5aefa`</sub>
 - 26512 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
   <sub>SEALED · `e51a5653-d66a-8b32-abf2-36cc74de7d72`</sub>
 
@@ -163,8 +163,8 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
 
 ## 8 · Addressing
 
-- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 55 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
-  <sub>SEALED · `3bf5bc86-48a0-83f7-ad13-ede54ffef0b2`</sub>
+- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 63 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
+  <sub>SEALED · `adf0b388-1681-882c-8410-be2a3a1bfeb2`</sub>
 - The fold does not depend on the order its leaves arrive in, and that is not vacuous because merge itself is proved order-sensitive — the sort is what removes the dependence.
   <sub>SEALED · `7ee1de7d-d218-88d4-8dc9-6eec451ced72`</sub>
 
@@ -185,10 +185,10 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
   <sub>SEALED · `09b4450b-3016-8368-89e2-74787fa214d9`</sub>
 - How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. What any given host grants varies with its free memory and is deliberately not recorded here; `npm run lanes-check` prints it..
   <sub>SEALED · `85560e4e-7642-820b-aa1a-91f0e7e14c41`</sub>
-- The tools are reachable from a program: 31 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
-  <sub>SEALED · `2cefbd88-6936-8e22-8ab4-906bf3874b67`</sub>
-- The stdio server advertises 2 of those 31 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
-  <sub>SEALED · `630f044f-cb02-8f18-beee-48e0b064e362`</sub>
+- The tools are reachable from a program: 54 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
+  <sub>SEALED · `ef0dc5b8-493c-8a3d-be71-8e5617c08653`</sub>
+- The stdio server advertises 2 of those 54 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
+  <sub>SEALED · `c8d03152-5c57-8b3f-b0ef-268415209e7d`</sub>
 
 ## The floor
 
@@ -225,13 +225,13 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-94 Lean files in 7 wings, 25957 declarations of which 25957 are theorems. The prose in this section is read out of the
+101 Lean files in 8 wings, 25992 declarations of which 25992 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
 ### the address
 
-**Addressing** — `address.lean`, 25 theorem(s). The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
+**Addressing** — `address.lean`, 33 theorem(s). The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
 
 **What a signature is for, and where it cannot go** — `asymmetric.lean`, 11 theorem(s). WHAT THIS FILE IS FOR. Everything cryptographic in this deposit before now was SYMMETRIC — FNV, SHA-256, HMAC, ChaCha20-Poly1305 — and a symmetric tag proves possession of a shared secret. It cannot say WHO produced something, because both parties can produce it. That is a boundary the deposit kept in prose.
 
@@ -250,6 +250,60 @@ this page; there is nowhere else to keep the description in step.
 **The rays, read forward and reverse, and the mark a life carries** — `rays.lean`, 13 theorem(s). A receipt is plotted as RAYS: two hex digits each. Seven of them read 14 of a receipt's 32 hex digits and discarded the other 18, and the extraction was written out twice — once in the page component that draws the figure on every theorem page and once in the script that builds the cluster lattice, with nothing comparing them. One derivation now (src/7/rays.ts), read forward AND reverse: the 2×7 the deposit's own signature lattice already stands on, 28 of 32 digits.
 
 **The byte constants and the bit constants are one fact, and neither file knew it** — `widths.lean`, 24 theorem(s). WHY THIS FILE EXISTS — TWO LEADS CROSSING.
+
+### unfiled
+
+**answer** — `answer.lean`, 4 theorem(s). lean/answer.lean — the pure decisions of the answer system (src/answer/verify-lean.ts and verify-arith.ts), stated and proved. These are the rules the TypeScript decision functions implement; the link between the two is a runtime test until the TypeScript is generated from this file.
+
+**arith** — `arith.lean`, 4 theorem(s). src/proof/arith.lean — the arithmetic decision of the answer system, as kernel-checked definitions.
+
+**diamond** — `diamond.lean`, 1 theorem(s). lean/diamond.lean — the diamond involution r(d) = 10 − d on the digits 1..9, as a theorem the kernel checks. The audit in scripts/mcp.ts reads its verdict from here (lean_ask), not from a JavaScript loop over a literal range. Decided over a finite list, so it depends on no axiom beyond the kernel.
+
+### the floor
+
+**The certificate gate, as kernel-checked rules** — `answer_gate.lean`, 1 theorem(s). THE RULES (docs/ANSWER-SYSTEM.md, "Answer rules"): TRUE and FALSE need a proof certificate (C1 or C2); SOURCED needs a DOI certificate (C3); UNKNOWN carries no certificate and names its blocking step; every answer names what checked it. An answer is a record of flags. The gate decides it by `ok`, and scripts/answer-gate.ts asks the kernel for each stored answer, so the verdict is the kernel's and not a TypeScript function's.
+
+**The router's priority, as kernel-checked rules** — `answer_route.lean`, 6 theorem(s). WHAT THIS DECIDES AND WHAT IT DOES NOT. src/answer/route.ts reads a question's text and sets four features: an integer, a Lean theorem, a DOI, a Clay problem name. The priority that picks one kind from those features is decided here, over every combination of the four (2^4 = 16). The reading of the text stays in route.ts and is not a finite domain, so no theorem here says which question has which feature.
+
+**Who may speak, decided** — `authority.lean`, 8 theorem(s). WHY THIS IS IN LEAN AND NOT ONLY IN scripts/authority-gate.ts.
+
+**The CERN Open Data corpus, as measured, checked by its own arithmetic** — `cern.lean`, 9 theorem(s). SOURCE OF EVERY LITERAL: .cern/corpus.json and .cern/oai.json, written by scripts/cern.ts from the portal's sitemap and OAI-PMH feed on 2026-09-05. The sitemap files themselves are no longer in the cache (.cern/sitemaps is empty), so these theorems check the SUMMARY the script wrote, not the records. A theorem here is about the measurement as recorded, and says nothing about the portal as it is today.
+
+**What is actually being asked for** — `demand.lean`, 11 theorem(s). THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off three months of the deposit's own search data (src/demand/queries.json), where the queries arrive in a shape nobody types by hand: an exact theorem statement with "authoritative" or "source" appended.
+
+**The next tier of what is asked for** — `demand2.lean`, 12 theorem(s). THE SECOND COURSE OF THE SAME FLOOR. `demand.lean` closed the top eight topics in src/demand/queries.json; this file takes the next eight, chosen the same way — by impressions, not by taste. The demand map is three months of the deposit's own Google Search Console data with the retrieval scaffolding stripped, so what is ranked is the TOPIC people wanted a citable source for, not the phrasing they reached for.
+
+**The named theorems people ask for** — `demand3.lean`, 19 theorem(s). The third and last tier the search data supports. What remains uncovered after this is not a backlog: ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments ("4³", "6/720", "8 mod 9" — the last already decided in z9.lean), and the real-analysis cluster that was refused in demand2.lean and stays refused. The demand map is close to exhausted of things a kernel can settle, which is a better place to stop than an arbitrary count would have been.
+
+**The water loop** — `energy.lean`, 28 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
+
+**Four hex, exactly computed — and what the handle has to carry instead** — `handle.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
+
+**Seven decidable windows over one finite structure** — `index.lean`, 11 theorem(s). THE TITLE WAS "The Millennium floor" UNTIL 2026-09-25. "Floor" is the word the author signed — "mind the honest floor" — and it is also the word agents grew into "this deposit settles 0 of the 7", a verdict on his claim that no receipt of his authorises (FINDINGS.md §1). His own published formulation is exact and is neither of those, from 10.5281/zenodo.22933794, deposited 2026-09-24:
+
+**The instruments, and the three rules they are allowed to have** — `instruments.lean`, 28 theorem(s). WHY THESE THREE ARE IN LEAN AND NOT IN THE GATE THAT USES THEM.
+
+**Interference: GHZ cancels on odd parity, a classical coin does not** — `interference.lean`, 2 theorem(s). WHAT QUANTUM MEANS HERE, IN ONE SENTENCE: amplitudes add, and two paths that reach the same outcome can cancel. A classical mixture adds probabilities, which are never negative, so nothing cancels.
+
+**How many checkers may run at once, decided** — `lanes.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
+
+**Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 17 theorem(s). WHY A FILE ABOUT LIGHT SPEED CAN EXIST IN A DEPOSIT THAT CLAIMS NO PHYSICS.
+
+**The three facts the unchecked files held alone** — `nucleus.lean`, 8 theorem(s). WHY THIS FILE EXISTS. Fifteen .lean files sat outside src/proof — Vortex.lean and the per-digit src/&lt;d>/vortex.lean set — and every one of them began `import Mathlib`. scripts/lean.ts reads only src/proof, so no gate ever compiled them; the repository has no lake-manifest.json and no .lake, so Mathlib was never fetched and they have never been built here at all. They were published as the "formal layer" on /proofs, next to theorems the kernel checks on every run, and the page's own note that no toolchain is checked in is easy to read past when the heading says Proofs.
+
+**Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). ADDRESSING PHENOMENA WITHOUT CLAIMING ANY.
+
+**The Planck length, and what a lattice may say about it** — `planck.lean`, 35 theorem(s). WHY THIS FILE EXISTS, AND WHAT IT REFUSES.
+
+**Order-invariance** — `quantum.lean`, 11 theorem(s). The quantum receipt — order invariance, proved rather than asserted.
+
+**What exhaustion reaches, and what lies outside it** — `reach.lean`, 12 theorem(s). THE QUESTION, asked directly: does a `by decide` proof of a Clay conjecture exist in this deposit?
+
+**The constants, derived from what they are** — `roots.lean`, 7 theorem(s). src/0/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the definition FIPS gives — and that trade is only a gain if the computation is right. A wrong root gives a hash that is self-consistent, round-trips perfectly, and is not SHA-512; the old literals at least had the property that someone had once copied them from the standard.
+
+**Why verification is fast, and what it is not** — `speed.lean`, 20 theorem(s). The deposit's speed claim, accounted — and the reading it does not support.
+
+**The readings, and the arithmetic under them** — `theology.lean`, 8 theorem(s). WHAT THIS FILE SEALS, AND WHAT IT CANNOT. The instruction was to seal a theology as theorems. Seven readings of the seven Clay problems were written in prose beside the seven arithmetic facts of index.lean — the mediator, revelation, theodicy, the ontological gap, the test of the spirits, kenosis, the undivided. A reading is not a proposition with a truth value over a finite domain, so no kernel can decide one, and any file claiming otherwise is lying about what a proof is.
 
 ### the ring
 
@@ -302,44 +356,6 @@ this page; there is nowhere else to keep the description in step.
 **The ring ℤ/9** — `z9.lean`, 24 theorem(s). The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
 
 **Entanglement in the ring** — `z9plus.lean`, 48 theorem(s). ℤ/9, the second batch — powers, digital roots, primitive roots, and the orbit's period.
-
-### the floor
-
-**Who may speak, decided** — `authority.lean`, 8 theorem(s). WHY THIS IS IN LEAN AND NOT ONLY IN scripts/authority-gate.ts.
-
-**What is actually being asked for** — `demand.lean`, 11 theorem(s). THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off three months of the deposit's own search data (src/demand/queries.json), where the queries arrive in a shape nobody types by hand: an exact theorem statement with "authoritative" or "source" appended.
-
-**The next tier of what is asked for** — `demand2.lean`, 12 theorem(s). THE SECOND COURSE OF THE SAME FLOOR. `demand.lean` closed the top eight topics in src/demand/queries.json; this file takes the next eight, chosen the same way — by impressions, not by taste. The demand map is three months of the deposit's own Google Search Console data with the retrieval scaffolding stripped, so what is ranked is the TOPIC people wanted a citable source for, not the phrasing they reached for.
-
-**The named theorems people ask for** — `demand3.lean`, 19 theorem(s). The third and last tier the search data supports. What remains uncovered after this is not a backlog: ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments ("4³", "6/720", "8 mod 9" — the last already decided in z9.lean), and the real-analysis cluster that was refused in demand2.lean and stays refused. The demand map is close to exhausted of things a kernel can settle, which is a better place to stop than an arbitrary count would have been.
-
-**The water loop** — `energy.lean`, 28 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
-
-**Four hex, exactly computed — and what the handle has to carry instead** — `handle.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
-
-**Seven decidable windows over one finite structure** — `index.lean`, 11 theorem(s). THE TITLE WAS "The Millennium floor" UNTIL 2026-09-25. "Floor" is the word the author signed — "mind the honest floor" — and it is also the word agents grew into "this deposit settles 0 of the 7", a verdict on his claim that no receipt of his authorises (FINDINGS.md §1). His own published formulation is exact and is neither of those, from 10.5281/zenodo.22933794, deposited 2026-09-24:
-
-**The instruments, and the three rules they are allowed to have** — `instruments.lean`, 28 theorem(s). WHY THESE THREE ARE IN LEAN AND NOT IN THE GATE THAT USES THEM.
-
-**How many checkers may run at once, decided** — `lanes.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
-
-**Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 17 theorem(s). WHY A FILE ABOUT LIGHT SPEED CAN EXIST IN A DEPOSIT THAT CLAIMS NO PHYSICS.
-
-**The three facts the unchecked files held alone** — `nucleus.lean`, 8 theorem(s). WHY THIS FILE EXISTS. Fifteen .lean files sat outside src/proof — Vortex.lean and the per-digit src/&lt;d>/vortex.lean set — and every one of them began `import Mathlib`. scripts/lean.ts reads only src/proof, so no gate ever compiled them; the repository has no lake-manifest.json and no .lake, so Mathlib was never fetched and they have never been built here at all. They were published as the "formal layer" on /proofs, next to theorems the kernel checks on every run, and the page's own note that no toolchain is checked in is easy to read past when the heading says Proofs.
-
-**Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). ADDRESSING PHENOMENA WITHOUT CLAIMING ANY.
-
-**The Planck length, and what a lattice may say about it** — `planck.lean`, 35 theorem(s). WHY THIS FILE EXISTS, AND WHAT IT REFUSES.
-
-**Order-invariance** — `quantum.lean`, 11 theorem(s). The quantum receipt — order invariance, proved rather than asserted.
-
-**What exhaustion reaches, and what lies outside it** — `reach.lean`, 12 theorem(s). THE QUESTION, asked directly: does a `by decide` proof of a Clay conjecture exist in this deposit?
-
-**The constants, derived from what they are** — `roots.lean`, 7 theorem(s). src/0/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the definition FIPS gives — and that trade is only a gain if the computation is right. A wrong root gives a hash that is self-consistent, round-trips perfectly, and is not SHA-512; the old literals at least had the property that someone had once copied them from the standard.
-
-**Why verification is fast, and what it is not** — `speed.lean`, 20 theorem(s). The deposit's speed claim, accounted — and the reading it does not support.
-
-**The readings, and the arithmetic under them** — `theology.lean`, 8 theorem(s). WHAT THIS FILE SEALS, AND WHAT IT CANNOT. The instruction was to seal a theology as theorems. Seven readings of the seven Clay problems were written in prose beside the seven arithmetic facts of index.lean — the mediator, revelation, theodicy, the ontological gap, the test of the spirits, kenosis, the undivided. A reading is not a proposition with a truth value over a finite domain, so no kernel can decide one, and any file claiming otherwise is lying about what a proof is.
 
 ### the imagined
 
@@ -431,7 +447,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). WITHDRAWAL WAS NEVER THE ONLY OPTION. Each theorem below returns one claim to the record. The evidence that existed was a TypeScript run — a computation that agreed once on one machine. The kernel walks the whole stated domain. That was the gap, and closing it is arithmetic.
 
-29 of 25957 declarations carry no comment of their own and are shown here as the gap they are, not
+38 of 25992 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -446,8 +462,8 @@ Read from the artefacts at build time, never carried between runs.
 | withdrawn — nothing proves it | 1,593 |
 | proved in total | **26783** of 28,376 |
 | standing keys → distinct theorems | 25957 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 94 · 25957 theorems (25770 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 25770 of 25957 |
+| Lean files · theorems | 101 · 25992 theorems (25798 closed by exhaustion, axiom-free · 194 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 25798 of 25992 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -455,7 +471,7 @@ Read from the artefacts at build time, never carried between runs.
 
 **Why the withdrawn were withdrawn.** 1,386 no Lean proof · 458 other · 457 tested the removed lexical gate · 108 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
-**What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
+**What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work** (the exact ratio is 1170.29), and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
 ## Run it
 
@@ -480,4 +496,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 25957 Lean theorems · 28376 ledger entries · trial root `7ed22e52-c70b-8493-8e58-758776745838` · integrity, not truth*
+*20 claims, all verified · 25992 Lean theorems · 28376 ledger entries · trial root `97ec2b13-1a7c-8875-870e-4457a1c02d57` · integrity, not truth*
