@@ -201,7 +201,8 @@
     "qpu": "node scripts/qpu-gate.ts",
     "mcp:call": "node scripts/mcp-call.ts",
     "gate:thousand": "node scripts/thousand-bit-gate.ts",
-    "gate:thousand:control": "node scripts/thousand-bit-gate.ts --control"
+    "gate:thousand:control": "node scripts/thousand-bit-gate.ts --control",
+    "gate:leads": "node scripts/leads-closed.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

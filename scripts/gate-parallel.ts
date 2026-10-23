@@ -33,6 +33,8 @@ const PUSH_PHASE1: Check[] = [
   { name: 'theorem-only', cmd: ['node', 'scripts/theorem-only-check.ts', ROOT] },
   { name: 'contradictions', cmd: ['node', 'scripts/contradictions.ts'] },
   { name: 'orphan', cmd: ['node', 'scripts/orphan-gate.ts'] },
+  // The development standard: no push while any lead is open; an environmental restriction is not an exception.
+  { name: 'leads-closed', cmd: ['npm', 'run', '--silent', 'gate:leads'] },
   // The thousand-bit test: hard fail unless the factor route is green on a real 1,000-bit integer.
   { name: 'thousand-bit', cmd: ['npm', 'run', '--silent', 'gate:thousand'] },
   // ONE CHECK, IN ORDER: the site chain rebuilds the generated prose, and only then is it compared with the committed text.
