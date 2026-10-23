@@ -6,8 +6,8 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,012 machine-checked declarations, **25,942** restate work that already has an author and
-**70** are about this deposit's own construction. Each source file declares which it is, in its own
+Of 26,021 machine-checked declarations, **25,966** restate work that already has an author and
+**55** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
@@ -27,13 +27,13 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **25,942** |
-| unclassified — no search performed, status unknown | **70** |
+| attributed to named earlier work | **25,966** |
+| unclassified — no search performed, status unknown | **55** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
-that everything here already has an author. It is not that. **70** theorems have had no prior-art
-search at all, so their status is unknown rather than conceded — and of the 37 distinct years the
+that everything here already has an author. It is not that. **55** theorems have had no prior-art
+search at all, so their status is unknown rather than conceded — and of the 38 distinct years the
 attributions carry, **29** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
 looked.** It is a statement about work not done, not about work found.
@@ -42,18 +42,20 @@ looked.** It is a statement about work not done, not about work found.
 caveat cannot be separated by an edit.
 
 A source may claim novelty only if it names a prior-art search that was actually performed — what was
-searched, where, and when. An earlier version of this page claimed novelty for 12 sources and
-70 theorems on the strength of their own self-description, with nobody having looked. Asserting
+searched, where, and when. An earlier version of this page claimed novelty for 8 sources and
+55 theorems on the strength of their own self-description, with nobody having looked. Asserting
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 92 sources, 25,942 theorems
+## Restated from named earlier work — 97 sources, 25,966 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
 
 <table><thead><tr><th>source</th><th>theorems</th><th>domain</th><th>whose work</th></tr></thead><tbody>
 <tr><td><code>address.lean</code></td><td>33</td><td>content addressing by cryptographic hash — SHA-256 digests as immutable identifiers</td><td>composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)</td></tr>
+<tr><td><code>apis.lean</code></td><td>4</td><td>public API directories — the OpenAPI catalogue of APIs.guru</td><td>the counts are over the APIs.guru directory (apis.guru), which is the named source; the partition identities are this tree's own arithmetic over its run.</td></tr>
+<tr><td><code>arith.lean</code></td><td>7</td><td>elementary number theory — trial division and primality</td><td>trial division is the classical method for finding a prime factor (Wikipedia, "Integer factorization"); Fermat's factorization method is a second classical route (Wikipedia, "Fermat's factorization method"). The file's decisions are kernel-checked instances of these; neither method is new here.</td></tr>
 <tr><td><code>asymmetric.lean</code></td><td>11</td><td>public-key signatures on elliptic curves</td><td>Ed25519 — Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe and Bo-Yin Yang, 2011; standardised as RFC 8032 (Josefsson and Liusvaara, 2017). SHA-512 is FIPS 180-4 (NIST). The curve, the signature scheme and the hash are all theirs and none is this deposit's. The implementation in src/0/ed25519.ts is checked against their published vectors by scripts/crypto-kat.ts, which is where the assurance for the PRIMITIVE lives — not here. Nothing below decides that Ed25519 is secure, and a file that appeared to would be claiming a result nobody has.</td></tr>
 <tr><td><code>asymmetry.lean</code></td><td>8</td><td>the injectivity of a map on a finite set, and the involution; the one-way function of cryptography, whose whole content is that a relation is easy in one direction and not the other.</td><td>NONE OF IT IS THIS DEPOSIT'S. An involution is its own inverse by definition, a non-injective map loses information by definition, and "easy forwards, hard backwards" is the premise of public-key cryptography (Diffie–Hellman 1976). What is this deposit's is neither: it is that its own cross formulas are sorted into the two kinds and the difference is decided rather than assumed, on the ring it reasons about.</td></tr>
 <tr><td><code>authority.lean</code></td><td>8</td><td>elementary set and order arithmetic over finite lists</td><td>NO NOVELTY IS CLAIMED AND NONE IS DENIED. Membership, set difference and monotonicity over finite lists are elementary and older than anyone could name. This row is kind 1 rather than kind 2 because kind 2 asserts a search was performed and found nothing, and none was performed for these. What is this deposit's is not the arithmetic: it is that a rule about WHOSE STATEMENT MAY STAND is decided by the kernel instead of argued inside the gate that applies it.</td></tr>
@@ -62,10 +64,12 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>closure.lean</code></td><td>8</td><td>Cantor's diagonal argument again, turned on a vocabulary rather than a set; the observation that no finite list of definable predicates over a finite domain exhausts the predicates.</td><td>THE METHOD IS CANTOR'S AND THE FINITE CASE IS ELEMENTARY. What is this deposit's is the direction it is pointed: src/proof/diagonal.lean applies it to a diagram somebody else published, and this file applies the identical construction to THIS deposit's own vocabulary, over this deposit's own ring, using the nine properties its own files name. A limit exhibited rather than conceded.</td></tr>
 <tr><td><code>coils.lean</code></td><td>50</td><td>extensional equality of predicates over a finite set — that two definitions picking out the same elements are the same subset. Elementary set theory and modular arithmetic.</td><td>NOT THIS DEPOSIT'S. "Two descriptions of the same set are equal" is the definition of a set. What is this deposit's is which descriptions in ITS vocabulary turn out to coincide, and that the clustering is derived rather than listed — this file is generated by scripts/coils.ts and hand-editing it would be overwritten.</td></tr>
 <tr><td><code>coin.lean</code></td><td>12</td><td>the method of complements</td><td>the reflection d ↦ 10 − d is the TEN'S COMPLEMENT, and its sibling 9 − d the nines' complement — the method of complements, used to turn subtraction into addition in Pascal's calculator (1642), the Comptometer and the Curta, and in modern computer arithmetic. That it is an involution with a single fixed point is the property those machines rely on. Searched 2026-09-04, term "method of complements / nines' complement / ten's complement"; prior art found and credited</td></tr>
+<tr><td><code>counting-rocks.lean</code></td><td>9</td><td>undergraduate enumerative combinatorics</td><td>Adams, Emmrich, Gillespie, Golden and Pries, "Counting Rocks! An Introduction to Combinatorics" (Colorado State University, May 4 2025), licensed CC BY 4.0 on its copyright page. Each theorem restates a formula or value the book gives, and the kernel decides it over a stated range. None of the results is this deposit's.</td></tr>
 <tr><td><code>demand.lean</code></td><td>11</td><td>elementary number theory</td><td>the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems</td></tr>
 <tr><td><code>demand2.lean</code></td><td>12</td><td>elementary number theory, second tier</td><td>Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002</td></tr>
 <tr><td><code>demand3.lean</code></td><td>19</td><td>elementary number theory, named results</td><td>Legendre’s three-square theorem — Adrien-Marie Legendre, 1797; Carmichael numbers — Robert Carmichael, 1910; amicable pairs — known to antiquity</td></tr>
 <tr><td><code>diagonal.lean</code></td><td>7</td><td>Cantor's diagonal argument (1891), in its finite form: no list of subsets of a finite set contains the subset built by disagreeing with the i-th listed subset at the i-th element. Equivalently |2^S| &gt; |S|. Also the counting bound that L binary labels take at most 2^L values.</td><td>THE ARGUMENT IS CANTOR'S AND NOTHING HERE IMPROVES IT. It is one of the most cited arguments in mathematics and the finite case is the easy one. What is this deposit's is neither the argument nor its finite case: it is that a specific published ring of labels, drawn three times around three different subjects and captioned "THE ALGEBRA OF EVERYTHING", is put to it by the kernel and the subject it misses is exhibited rather than described.</td></tr>
+<tr><td><code>diamond.lean</code></td><td>1</td><td>elementary algebra — involutions on a finite set</td><td>r(d) = 10 − d is a reflection of the digits 1..9 about 5, and every reflection x ↦ c − x is an involution (Wikipedia, "Involution (mathematics)"). The claim here is the kernel's decision of it over that finite list; the involution itself is not new.</td></tr>
 <tr><td><code>digits.lean</code></td><td>8</td><td>the nines' and tens' complement, the basis of complement subtraction and of the check-digit arithmetic behind casting out nines. Repunits (1, 11, 111, …). Elementary place value.</td><td>COMPLEMENT ARITHMETIC IS NOT THIS DEPOSIT'S AND IS OLDER THAN THE DECIMAL POINT. That a number and its digitwise ten's-complement sum to a repunit-times-ten is a consequence of place value that any accountant's method already relies on. What is this deposit's is the accounting below: that the ring's four reflection pairs, written as two-digit numbers, are all congruent to one mod nine, and that zero's exception reappears one place up as an excursion rather than a failure.</td></tr>
 <tr><td><code>dimensions.lean</code></td><td>8</td><td>dimensional analysis and the Buckingham π theorem (Buckingham, 1914; the method is older). Planck's construction of natural units from ħ, c and G, 1899. The exponents themselves are in NIST's definitions and in every textbook that derives them.</td><td>NOTHING HERE IS NEW AND THE DERIVATION IS THE STANDARD ONE. Solving three linear equations for three exponents is what dimensional analysis IS, and the answers have been known since 1899. What this deposit adds is the quantifier: the textbook SOLVES for the exponents, and this EXHAUSTS every alternative in range and finds exactly one, so "these exponents" becomes "no others".</td></tr>
 <tr><td><code>discount.lean</code></td><td>6</td><td>the false-positive rate of a classifier, and the correction of a raw count by a negative control. Signal detection theory; a blank in analytical chemistry; a scrambled-label baseline.</td><td>NOT THIS DEPOSIT'S, AND OLD. Subtracting what a control already produces is what a blank is for and has been since titration. What is this deposit's is that the rule is decided by the kernel and sits beside the measurement it governs, so the raw figure cannot be quoted without it.</td></tr>
@@ -81,6 +85,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>generated.lean</code></td><td>13</td><td>elementary number theory — the unit group of ℤ/9 and the doubling orbit</td><td>the structure underneath is standard and is credited. The doubling orbit 1 → 2 → 4 → 8 → 7 → 5 → 1 modulo 9 is the cyclic group generated by 2 in U(9), of order 6 because that is the multiplicative order of 2 mod 9; the units are {1,2,4,5,7,8} and the non-units {0,3,6}. Textbook abstract algebra, and treated directly in the literature on doubling maps modulo odd integers. Bounded, so the credit stops where the earlier work does: what is NOT prior art is the generator that enumerates propositions over this ring and discards the ones true of every sibling; that machinery is this deposit's own. Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery.</td></tr>
 <tr><td><code>group.lean</code></td><td>8</td><td>the one-dimensional affine group AGL(1,n) over Z/n — standard finite group theory</td><td>AGL(1,n) has order phi(n)*n, which for n=9 is 6*9=54. Nothing here claims the group is new. What is new is that this deposit's own derived map table is stated as the monoid it is, with the group inside it named, generated to closure, and checked against invertibility.</td></tr>
 <tr><td><code>handle.lean</code></td><td>8</td><td>the UUID text format, and the pigeonhole principle</td><td>NONE OF THIS IS THIS DEPOSIT'S. The 8-4-4-4-12 hexadecimal form of a UUID is RFC 4122 (P. Leach, M. Mealling, R. Salz, 2005) and its successor RFC 9562 (2024). The pigeonhole principle is Dirichlet, 1834, and older in substance. What is decided below is arithmetic over finite domains: a nibble decomposition exhausted over all 65,536 values, a sum of five group widths, and a counting argument on a model. No theorem here decides anything about cryptography.</td></tr>
+<tr><td><code>hexbit_route.lean</code></td><td>3</td><td>positional notation and the counting of subsets — powers of two</td><td>positional notation (Wikipedia, "Positional notation") and the 2^n count of subsets (Wikipedia, "Power set") are classical; the file's decisions are kernel-checked instances of them.</td></tr>
 <tr><td><code>imagined.lean</code></td><td>1000</td><td>elementary number theory — the unit group of Z/9</td><td>the doubling orbit 1,2,4,8,7,5 is the cyclic group U(9), which is cyclic of order 6 generated by 2, with units {1,2,4,5,7,8} = φ(9); 2 and 5 are its only generators. Standard elementary number theory, in Gauss and in every abstract-algebra text. The closure statements quantify that structure. Searched 2026-09-04, term "multiplicative group of units mod 9 cyclic order 6 generated by 2"; prior art found and credited</td></tr>
 <tr><td><code>imagined_10.lean</code></td><td>1000</td><td>elementary number theory — the unit group of Z/9</td><td>the doubling orbit 1,2,4,8,7,5 is the cyclic group U(9), which is cyclic of order 6 generated by 2, with units {1,2,4,5,7,8} = φ(9); 2 and 5 are its only generators. Standard elementary number theory, in Gauss and in every abstract-algebra text. The closure statements quantify that structure. Searched 2026-09-04, term "multiplicative group of units mod 9 cyclic order 6 generated by 2"; prior art found and credited</td></tr>
 <tr><td><code>imagined_11.lean</code></td><td>1000</td><td>elementary number theory — the unit group of Z/9</td><td>the doubling orbit 1,2,4,8,7,5 is the cyclic group U(9), which is cyclic of order 6 generated by 2, with units {1,2,4,5,7,8} = φ(9); 2 and 5 are its only generators. Standard elementary number theory, in Gauss and in every abstract-algebra text. The closure statements quantify that structure. Searched 2026-09-04, term "multiplicative group of units mod 9 cyclic order 6 generated by 2"; prior art found and credited</td></tr>
@@ -165,6 +170,7 @@ which is a contribution of verification, not of discovery.
 - **digit roots (casting out nines) and linear congruential recurrences over Z/n** — 8 theorems, in `bridge.lean`
 - **dimensional analysis and the Buckingham π theorem (Buckingham, 1914; the method is older). Planck's construction of natural units from ħ, c and G, 1899. The exponents themselves are in NIST's definitions and in every textbook that derives them.** — 8 theorems, in `dimensions.lean`
 - **electrochemistry and combustion** — 28 theorems, in `energy.lean`
+- **elementary algebra — involutions on a finite set** — 1 theorems, in `diamond.lean`
 - **elementary arithmetic** — 29 theorems, in `reversal.lean`
 - **elementary finite group theory over ℤ/9, and the hue circle of colour theory** — 80 theorems, in `reached.lean`
 - **elementary group theory — orbit decomposition of an order-two permutation** — 8 theorems, in `involution.lean`
@@ -177,6 +183,7 @@ which is a contribution of verification, not of discovery.
 - **elementary number theory — the unit group of ℤ/9** — 37 theorems, in `recovered.lean`, `split.lean`
 - **elementary number theory — the unit group of ℤ/9 and the doubling orbit** — 24 theorems, in `generated.lean`, `index.lean`
 - **elementary number theory — the unit group of ℤ/9, the doubling map, and the ten's complement** — 8 theorems, in `theology.lean`
+- **elementary number theory — trial division and primality** — 7 theorems, in `arith.lean`
 - **elementary number theory, named results** — 19 theorems, in `demand3.lean`
 - **elementary number theory, second tier** — 12 theorems, in `demand2.lean`
 - **elementary order theory, list processing and string matching** — 28 theorems, in `instruments.lean`
@@ -194,6 +201,8 @@ which is a contribution of verification, not of discovery.
 - **modular arithmetic and periodicity** — 48 theorems, in `z9plus.lean`
 - **modular arithmetic, quantified** — 63 theorems, in `families.lean`
 - **non-cryptographic hashing** — 14 theorems, in `fnv.lean`
+- **positional notation and the counting of subsets — powers of two** — 3 theorems, in `hexbit_route.lean`
+- **public API directories — the OpenAPI catalogue of APIs.guru** — 4 theorems, in `apis.lean`
 - **public-key signatures on elliptic curves** — 11 theorems, in `asymmetric.lean`
 - **siteswap notation for juggling (Klimek, Tiemann and Magnusson, independently c. 1985; the average theorem and the permutation criterion are due to Buhler, Eisenbud, Graham and Wright, 1994); the Pythagorean comma (antiquity); Maekawa's and Kawasaki's theorems on flat-foldable vertices (1980s); the crystallographic restriction theorem (19th century, Bravais and after); the moment of inertia and angular acceleration (Euler, Newton); the least common multiple (Euclid).** — 8 theorems, in `entangled.lean`
 - **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 35 theorems, in `planck.lean`
@@ -212,6 +221,7 @@ which is a contribution of verification, not of discovery.
 - **the one-dimensional affine group AGL(1,n) over Z/n — standard finite group theory** — 8 theorems, in `group.lean`
 - **the second-preimage weakness of unpadded Merkle trees, and the standard remedy of domain separation between leaf and internal hashes (Certificate Transparency, RFC 6962 §2.1, uses 0x00 for leaves and 0x01 for nodes). Also the Kelsey–Schneier style length-extension family.** — 8 theorems, in `preimage.lean`
 - **the separation of points by a family of functions — the notion behind a separating family, a faithful functor, and the Stone–Weierstrass hypothesis. Also elementary cancellation in ℕ.** — 8 theorems, in `separation.lean`
+- **undergraduate enumerative combinatorics** — 9 theorems, in `counting-rocks.lean`
 
 Each is a field with an existing literature, and each is where this deposit's contribution actually sits: not
 a new result, but an exhaustive machine-checked decision of a known one over a **stated finite domain**. That
@@ -220,7 +230,7 @@ is worth saying precisely, because it is both smaller than a discovery claim and
 Author and year are given rather than a resolver identifier. Asserting a DOI for someone else's paper without
 verifying it would be a fabricated citation, and this is the worst document in the deposit to put one in.
 
-## This deposit's own construction — 12 sources, 70 theorems, none claimed
+## This deposit's own construction — 8 sources, 55 theorems, none claimed
 
 The ℤ/9 vortex framework, its ledger, its receipts, and the enumeration its own generators proposed. These are
 **unclassified**: no prior-art search has been performed for them, so nothing is claimed about them either
@@ -234,11 +244,7 @@ refuses a `none-known` declaration that does not carry one.
 <tr><td><code>answer.lean</code></td><td>8</td><td>—</td></tr>
 <tr><td><code>answer_gate.lean</code></td><td>7</td><td>—</td></tr>
 <tr><td><code>answer_route.lean</code></td><td>6</td><td>—</td></tr>
-<tr><td><code>apis.lean</code></td><td>4</td><td>—</td></tr>
-<tr><td><code>arith.lean</code></td><td>7</td><td>—</td></tr>
 <tr><td><code>cern.lean</code></td><td>9</td><td>—</td></tr>
-<tr><td><code>diamond.lean</code></td><td>1</td><td>—</td></tr>
-<tr><td><code>hexbit_route.lean</code></td><td>3</td><td>—</td></tr>
 <tr><td><code>lanes.lean</code></td><td>8</td><td>NONE OF THE ARITHMETIC IS THIS DEPOSIT'S. min, ⌊a/b⌋ and truncating subtraction on the naturals are older than anyone could name. What is this deposit's is not the arithmetic: it is that the rule deciding how much of a machine a verification may take is DECIDED by the kernel rather than trusted because it has not yet swapped.</td></tr>
 <tr><td><code>leads.lean</code></td><td>0</td><td>—</td></tr>
 <tr><td><code>priorart.lean</code></td><td>9</td><td>THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per artefact is long established and formalised: W3C PROV-O, the DataCite metadata schema, Dublin Core Metadata Terms, PREMIS for archived digital objects, the Open Provenance Model, and the software citation principles' credit-and-attribution requirement. Nothing about keeping an attribution table is new, and this deposit does not suggest otherwise.</td></tr>
@@ -254,5 +260,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `47a89ef9-b5a3-82c7-8691-6fe2dbdf38d3` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `1027d220-ec9b-81f1-bec4-bc124a9b8dde` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

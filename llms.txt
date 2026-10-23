@@ -5,9 +5,9 @@
 
 ## What this is
 
-A machine-checked mathematical deposit: 26012 theorems across 104 Lean 4 source
+A machine-checked mathematical deposit: 26021 theorems across 105 Lean 4 source
 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free, with a
-28431-entry append-only ledger whose receipt chain is recomputed on every build.
+28440-entry append-only ledger whose receipt chain is recomputed on every build.
 
 Author: Tsvetan Rouschev (ORCID https://orcid.org/0009-0000-7312-9778). Licence: **CC BY-NC-ND 4.0**. Concept DOI: 10.5281/zenodo.21819217.
 
@@ -68,7 +68,7 @@ Independently verifiable by a third party, without trusting the depositor — cl
   them. The git author field on every commit here is the repository owner, including for commits made by
   automated sessions acting on their behalf, so that field distinguishes nothing.
 - **It does not establish intent**, in any direction, about anyone.
-- **It does not establish novelty.** 103 of 104 source files record
+- **It does not establish novelty.** 104 of 105 source files record
   named prior art with the earlier author credited, and this deposit's own `priorart.lean` decides that
   novelty is claimed of no SOURCE. That is a measurement of this tree. It is not a limit on what the author
   claims, which is his to state and is recorded in his name: “captain claims all claimable by prior art precedence” — `src/receipts/5f56bdc7-2b2f-844d-b4a0-458dbd9b09e2.json`, signed `agent: "captain"`.
@@ -80,7 +80,7 @@ Independently verifiable by a third party, without trusting the depositor — cl
 ## Reaching this from a program, not only reading it
 
 Everything above can be asked for rather than parsed. This deposit ships an MCP server — JSON-RPC 2.0,
-87 tools, no SDK dependency — so a model client or a browser can recompute what this notice states
+91 tools, no SDK dependency — so a model client or a browser can recompute what this notice states
 instead of trusting it.
 
     node scripts/mcp.ts            JSON-RPC over stdio, for a model client
@@ -91,7 +91,7 @@ The tools that matter for checking a claim made here: `ledger_status` (compositi
 `recompute` (re-run every candidate's own test), `handle` (the four-hex short form), and `verify` (audit a
 sentence, or look a uuid up in both evidence sets). None of them requires an account or a key.
 
-4 of the 87 write to the tree. Over HTTP they are refused outright unless the server is
+4 of the 91 write to the tree. Over HTTP they are refused outright unless the server is
 started with `--allow-write`, the server binds to loopback, and every request needs a bearer token minted at
 startup — because a page in any tab can POST to localhost, and these tools compile Lean and write the ledger.
 
@@ -105,5 +105,5 @@ Machine-readable provenance for every claim is at `/forensic`, and per-theorem r
 statement and LaTeX are under `.zenodo/theorems/`.
 
 ---
-Ledger 28431 entries · 26012 standing · chain recomputed on every build.
-Notice content-address `c1110076-44b5-87a5-bc4a-0cebd860f503`.
+Ledger 28440 entries · 26021 standing · chain recomputed on every build.
+Notice content-address `c6b64be7-f701-8902-aa3c-0b09646a9993`.

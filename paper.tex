@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 25,999 of them across 104 files and
-8 wings; 25,805 close by exhaustion over a stated finite domain, 194 are proved
+(\texttt{npm run latex-gate}). There are 26,008 of them across 105 files and
+8 wings; 25,814 close by exhaustion over a stated finite domain, 194 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2825,6 +2825,53 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_nines\_complement\_pairs\_the\_ten\_digits}]
 \[ \forall d \in \mathrm{digits},\; 9 - d \in \mathrm{digits} \land 9 - 9 - d = d \land 9 - d \neq d \land \left|\{\, d \in \mathrm{digits} \mid d < 9 - d \,\}\right| \cdot 2 = \left|\mathrm{digits}\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{counting-rocks.lean}}
+
+\begin{theorem}[\texttt{pascal\_rule}]
+\texttt{∀ n < 12, ∀ k < n, choose (n+1) (k+1) = choose n k + choose n (k+1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{row\_sum\_is\_power\_of\_two}]
+\texttt{∀ n < 12, rowSum n = 2^n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{handshakes\_five\_people}]
+\[ \mathrm{handshakes}\mathopen{}\left(5\right) = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{degrees\_sum\_to\_twice\_handshakes}]
+\texttt{∀ n < 60, n * (n-1) = 2 * handshakes n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{four\_objects\_have\_24\_orderings}]
+\[ \mathrm{fact}\mathopen{}\left(4\right) = 24 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{derangement\_values}]
+\[ \mathrm{der}\mathopen{}\left(3\right) = 2 \land \mathrm{der}\mathopen{}\left(4\right) = 9 \land \mathrm{der}\mathopen{}\left(5\right) = 44 \land \mathrm{der}\mathopen{}\left(6\right) = 265 \land \mathrm{der}\mathopen{}\left(7\right) = 1854 \land \mathrm{der}\mathopen{}\left(8\right) = 14833 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{derangement\_second\_recurrence}]
+\texttt{∀ n < 12, 2 ≤ n → (der n : Int) = (n : Int) * (der (n-1) : Int) + (if n \% 2 = 0 then 1 else -1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{fibonacci\_ten}]
+\[ \mathrm{fib}\mathopen{}\left(10\right) = 55 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{fibonacci\_partial\_sums}]
+\texttt{∀ n < 20, 1 ≤ n → (List.range n).foldl (fun acc k => acc + fib (k+1)) 0 + 1 = fib (n+2)}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
