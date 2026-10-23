@@ -18,7 +18,7 @@ export const TRIAL_BOUND = 1_000_000n
 
 export type Factorisation =
   | { status: 'FACTORED'; factors: string[]; primality: 'every factor proved prime by trial division or by the deterministic test' }
-  | { status: 'PARTIAL'; factors: string[]; cofactorDigits: number; cofactorPrimality: 'probable prime by Miller–Rabin, not proved' | 'composite (a witness was found)'; blocking: string }
+  | { status: 'PARTIAL'; factors: string[]; cofactor: string; cofactorDigits: number; cofactorPrimality: 'probable prime by Miller–Rabin, not proved' | 'composite (a witness was found)'; blocking: string }
   | { status: 'REFUSED'; why: string }
 
 const modPow = (base: bigint, exp: bigint, mod: bigint): bigint => {
@@ -82,12 +82,12 @@ export const factor = (input: string): Factorisation => {
   // the deterministic range the test is a proof; above it, it is only probable, and the result says which.
   const verdict = millerRabin(n)
   if (verdict === 'COMPOSITE') {
-    return { status: 'PARTIAL', factors: found, cofactorDigits: n.toString().length, cofactorPrimality: 'composite (a witness was found)',
+    return { status: 'PARTIAL', factors: found, cofactor: n.toString(), cofactorDigits: n.toString().length, cofactorPrimality: 'composite (a witness was found)',
       blocking: `the cofactor is composite and has no factor below ${TRIAL_BOUND}; no method in this tree factors it` }
   }
   if (n < 3_317_044_064_679_887_385_961_981n) {
     return { status: 'FACTORED', factors: [...found, n.toString()], primality: 'every factor proved prime by trial division or by the deterministic test' }
   }
-  return { status: 'PARTIAL', factors: found, cofactorDigits: n.toString().length, cofactorPrimality: 'probable prime by Miller–Rabin, not proved',
+  return { status: 'PARTIAL', factors: found, cofactor: n.toString(), cofactorDigits: n.toString().length, cofactorPrimality: 'probable prime by Miller–Rabin, not proved',
     blocking: `the cofactor has no factor below ${TRIAL_BOUND} and is too large for a deterministic primality proof here; no method in this tree factors it` }
 }

@@ -33,6 +33,8 @@ const PUSH_PHASE1: Check[] = [
   { name: 'theorem-only', cmd: ['node', 'scripts/theorem-only-check.ts', ROOT] },
   { name: 'contradictions', cmd: ['node', 'scripts/contradictions.ts'] },
   { name: 'orphan', cmd: ['node', 'scripts/orphan-gate.ts'] },
+  // The thousand-bit test: hard fail unless the factor route is green on a real 1,000-bit integer.
+  { name: 'thousand-bit', cmd: ['npm', 'run', '--silent', 'gate:thousand'] },
   // ONE CHECK, IN ORDER: the site chain rebuilds the generated prose, and only then is it compared with the committed text.
   // Two parallel streams would compare before the rebuild finished, so the order lives inside one command.
   { name: 'site-chain', cmd: ['sh', '-c', 'npm run --silent predocs:build && { git diff --quiet -- README.md index.md ACCOUNTING.md paper.md paper.tex PRIOR-ART.md CHALLENGES.md solutions.md speedup.md || { echo "generated prose differs from the committed text: commit the regenerated files"; exit 1; }; }'] },
