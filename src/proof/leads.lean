@@ -50,4 +50,5 @@ Each item is a finding or an open decision. Nothing here is removed, purged or r
 - factoring — integers of any length are accepted; a thousand-bit integer with no small factor returns PARTIAL, not a factorisation.
 - CERN and NIST — the two share no physical quantity in this tree. A real pairing needs a CERN measurement compared with a NIST value under a stated uncertainty.
 - theorem counts — the pages report 25995 theorems and lean_verify reports 26008. The counting methods differ, and the difference is not yet explained.
+- license — the funding code labels uuidna.com as the commercial track, and its text says commercial use pays the two coins (110 − 108 = 2) through https://revolut.me/ceccec. Whether any deployment is commercial is a factual question this tree does not answer, and nothing here has been paid. Whether any use breaches CC BY-NC-ND 4.0 is for a court, not for this tree.
 -/
