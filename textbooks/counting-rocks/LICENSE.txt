@@ -1,0 +1,14 @@
+Counting Rocks! An Introduction to Combinatorics
+by Henry Adams, Kelly Emmrich, Maria Gillespie, Shannon Golden, and Rachel Pries
+(Colorado State University)
+
+Copyright: Counting Rocks! An Introduction to Combinatorics by Henry Adams, Kelly Emmrich,
+Maria Gillespie, Shannon Golden, and Rachel Pries is licensed under Attribution 4.0
+International. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+
+Source of this copy: CountingRocks-2025.pdf, dated May 4, 2025, linked from
+http://www.mathematicalgemstones.com/maria/OER.html
+Also listed on the Open Textbook Library as CC BY: https://open.umn.edu/opentextbooks/textbooks/1535
+
+This folder is third-party material under CC BY 4.0. It is NOT covered by the repository's
+own licence (CC BY-NC-ND 4.0, see /LICENSE at the repo root).
