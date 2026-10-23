@@ -67,6 +67,8 @@ const REACHES: [RegExp, Need][] = [
   [/git-commit-paths\.ts/, 'git'],
   [/execSync\(\s*[`'"]node scripts\/|execFileSync\(\s*['"`]node['"`]\s*,\s*\[\s*['"`]scripts\//, 'tree'],
   [/\bleanTheorems\b|\bleanFiles\b|\bleanSource\b|\bleanSealed\b/, 'tree'],
+  // A handler that names a repository script runs it, and every script reads the tree, so the path is the reach.
+  [/scripts\/[a-z0-9-]+\.ts/, 'tree'],
   // The QPU wave calls the connector, which is a network call to another service, so a handler that calls connect reaches the network.
   [/HANDLERS\.connect\(/, 'net'],
   // The QPU check helper calls the connector, so every handler that uses it reaches the network.

@@ -325,6 +325,21 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const rows = await Promise.all(inputs.map((n) => shorCheck(n, bases)))
     return JSON.stringify({ range: [Number(a?.lo ?? 1), Number(a?.hi ?? 1000)], semiprimes: semis.length, ...waveSummary(inputs.length, rows) })
   },
+  // THE TRINITY, IN ONE CALL: the four gates of the scheduled trinity workflow (gaps, seal, wholeness, lean-claims), each run in
+  // order, each with its own exit status and its last lines, so a failure names the gate that failed and why.
+  trinity: () => {
+    const gates = ['scripts/gaps.ts', 'scripts/seal.ts', 'scripts/wholeness.ts', 'scripts/lean-claims.ts']
+    const rows = gates.map((g) => {
+      try {
+        const out = execFileSync('node', [g], { encoding: 'utf8', timeout: 900_000, maxBuffer: 16 << 20 })
+        return { gate: g, status: 'PASS', tail: out.trim().split('\n').slice(-2).join(' | ').slice(0, 300) }
+      } catch (e) {
+        const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }
+        return { gate: g, status: 'FAIL', tail: String(x.stdout ?? x.stderr ?? e).trim().split('\n').slice(-2).join(' | ').slice(0, 300) }
+      }
+    })
+    return JSON.stringify({ status: rows.every((r) => r.status === 'PASS') ? 'PASS' : 'FAIL', gates: rows.length, passed: rows.filter((r) => r.status === 'PASS').length, rows })
+  },
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },

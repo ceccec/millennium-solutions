@@ -140,6 +140,7 @@ export const TOOLS = [
   { name: 'semiprime_search', description: 'Semiprimes n = p × q (p ≠ q, both prime) for n in [lo, hi], exact by trial division. noZero excludes numbers with a zero digit, so each has a digit mirror. The limit caps the number of results.', inputSchema: { type: 'object', properties: { lo: { type: 'number' }, hi: { type: 'number' }, noZero: { type: 'boolean' }, limit: { type: 'number' } }, required: ['lo', 'hi'] } },
   { name: 'shor_wave', description: 'Send a wave of integers to the QPU Shor tool and check every factorisation it returns with the verifier, not with a product alone. Reports per input: what the QPU returned, and VERIFIED, PROBABLE, REFUSED or NOT_FACTORED.', inputSchema: { type: 'object', properties: { inputs: { type: 'array', items: { type: 'string' } } }, required: ['inputs'] } },
   { name: 'qpu_wave', description: 'A whole wave in one call: search the range [lo, hi] for semiprimes with no zero digit, mirror each one, send every input and its mirror to the QPU Shor tool in parallel, and verify each factorisation with the verifier. Returns the counts and every row.', inputSchema: { type: 'object', properties: { lo: { type: 'number' }, hi: { type: 'number' }, count: { type: 'number', description: 'semiprimes to take from the range' } }, required: ['lo', 'hi'] } },
+  { name: 'trinity', description: 'The trinity in one call: the four gates of the scheduled trinity workflow (gaps, seal, wholeness, lean-claims), run in order, each with its exit status and last lines, so a failure names the gate and the reason.', inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'factor', description: 'The factors of a decimal integer of any length. FACTORED when every factor is proved (trial division, or a deterministic primality test below 3.3e24). PARTIAL when a cofactor has no factor below 10^6 and is not proved prime: the factors found and the blocking step are returned, nothing is guessed. REFUSED for a non-integer or a value below 2.', inputSchema: { type: 'object', properties: { n: { type: 'string', description: 'the integer in decimal digits, any length' } }, required: ['n'] } },
   { name: 'hexbit_route', description: 'Route a bit string to its hexbit folder: the content address of the input gives its handle (the first 8 hex digits, per the handle family), and the folder is that handle. Returns the files of the repository that share the handle, each rechecked from its own bytes. Nothing is created. With index true, returns the whole index of the repository\'s Lean sources by folder.', inputSchema: { type: 'object', properties: { input: { type: 'string', description: 'the bit string to route' }, index: { type: 'boolean', description: 'true for the whole index instead of one route' } }, required: [] } },
   { name: 'qpu_crosscheck', description: 'Cross-check the GHZ cancellation claim against the qpu connector: qpu\'s X-basis amplitudes, if it returns them, compared with the values computed from the Lean definitions. Corroboration only, never proof; reports NOT MEASURED until qpu returns the amplitudes. Token free: the comparison is a script.', inputSchema: { type: 'object', properties: {}, required: [] } },
@@ -217,7 +218,7 @@ export const NEEDS: Record<string, Need[]> = {
   leads: ['tree'],
   readers: ['net', 'tree'],
   live: ['net', 'tree'],
-  connect: ['net'],
+  connect: ['net', 'tree'],
   // BOTH: it reaches other people's servers AND it runs a script from this tree. The first declaration said
   // only `net`, which was incomplete in the direction that flatters — a tool needing one thing looks more
   // portable than one needing two, and mcp-gate refused it.
@@ -242,6 +243,7 @@ export const NEEDS: Record<string, Need[]> = {
   apis_guru_cross: ['tree'],
   apis_guru_gaps: ['tree'],
   factor: ['core'],
+  trinity: ['tree'],
   digit_mirror: ['core'],
   semiprime_search: ['tree'],
   shor_wave: ['net', 'tree'],
@@ -256,7 +258,7 @@ export const NEEDS: Record<string, Need[]> = {
   answer_verify_lean: ['lean', 'tree'],
   anti_fake: ['tree'],
   apis_guru: ['net', 'tree'],
-  apis_guru_live: ['net'],
+  apis_guru_live: ['net', 'tree'],
   apis_theorems: ['tree'],
   pre_commit_court: ['tree'],
   prefix_check: ['tree'],
