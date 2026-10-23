@@ -30,6 +30,8 @@ export type Adapter = {
   host: string
   /** The request. Absent for an adapter that needs a credential or a licence and is recorded as GATED. */
   url?: string
+  /** A file in this tree, read from disk. Set for a filesystem API: `expect` is then checked on the file's text. */
+  path?: string
   method?: 'GET' | 'POST'
   body?: string
   /** What a correct reply contains. Required whenever `url` is set. */
@@ -229,7 +231,16 @@ const fromNist: Adapter[] = [
     notFor: 'a numerical value at a point without the section that states its domain' },
 ]
 
-export const ADAPTERS: Adapter[] = [...fromReaders, ...fromCode, ...fromCodeRest, ...fromCodeLast, ...fromNist]
+// ── A FILESYSTEM API: a file this tree holds, answering the fact a correct reply contains ─────────────────
+// Read from disk, never the network. Its gate checks the file, so it fails when the file stops saying the fact.
+const fromFilesystem: Adapter[] = [
+  { name: 'fs:counting-rocks', source: 'code', host: 'local', path: 'src/proof/counting-rocks.lean', auth: 'none',
+    expect: (b) => /theorem fibonacci_ten : fib 10 = 55/.test(b),
+    purpose: 'the Counting Rocks! theorems, read from the Lean source that decides them',
+    notFor: 'the book itself. It names what the Lean file says, not what the book says beyond its formulas' },
+]
+
+export const ADAPTERS: Adapter[] = [...fromReaders, ...fromCode, ...fromCodeRest, ...fromCodeLast, ...fromNist, ...fromFilesystem]
 
 /** The hosts this registry covers. scripts/api-adapters-test.ts checks the code against it. */
 export const COVERED_HOSTS = new Set(ADAPTERS.map((a) => a.host))

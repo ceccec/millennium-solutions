@@ -202,7 +202,9 @@
     "mcp:call": "node scripts/mcp-call.ts",
     "gate:thousand": "node scripts/thousand-bit-gate.ts",
     "gate:thousand:control": "node scripts/thousand-bit-gate.ts --control",
-    "gate:leads": "node scripts/leads-closed.ts"
+    "gate:leads": "node scripts/leads-closed.ts",
+    "gate:api": "node scripts/api-gates.ts",
+    "gate:packages": "node scripts/package-gates.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
