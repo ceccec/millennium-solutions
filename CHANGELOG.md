@@ -5,9 +5,20 @@ description: One row per annotated git tag, each with the content-address that t
 
 # Changelog
 
-Derived by `node scripts/changelog.ts` from this repository's annotated tags. **929 releases**, 929 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
+Derived by `node scripts/changelog.ts` from this repository's annotated tags. **930 releases**, 930 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
 
 ## The last 20 releases, with what they contain
+
+### v9.8.2 — 2026-10-03
+
+Content-address `897400cf-e936-8ca0-bcfa-9451dc435ee0`.
+
+- cycle:ship fetches tags with --force: origin's provenance tags are authoritative
+- the seven first, rendered once; one drift check, one header reader; tags fetched before the chain runs
+- regenerate the derived artefacts the chain rewrote
+- a summary is prose and index.md is a Vue template: escape what the template reads as its own
+- one definition of a frontmatter line: a field continued on an indented line is the field, not the summary
+- rotate the rosetta through the open leads: 62 items in 6 areas become 34 in 3, with no new theorem
 
 ### v9.8.1 — 2026-10-03
 
@@ -249,21 +260,12 @@ Content-address `e5745450-2256-8790-8d09-37cfbff4cc01`.
 Content-address `35c6f403-06a0-87b7-af87-0f6ce26be9bc`.
 
 - discovery: build the kernel artefacts before emitting a module that imports them — oleans are gitignored, so only a clean runner could find this
-- accounting and dashboard follow the tag
-
-### v9.6.2 — 2026-09-20
-
-Content-address `65773a5e-4a52-886c-adcd-5dae3cfd9b41`.
-
-- lessons: the page title fits what a search result shows — seo refused 67 characters against its 60
-- LESSONS linked in the sidebar — a new page that nothing navigates to is a gap, and gaps.ts said so on a chain I had already pushed past
-- both autonomous runs were broken, and one of them was broken in the way I had just published
-- lessons — 128 corrections the tree recorded about itself, counted instead of remembered
 
 ## Every release
 
 | version | date | content-address |
 | --- | --- | --- |
+| v9.8.2 | 2026-10-03 | `897400cf-e936-8ca0-bcfa-9451dc435ee0` |
 | v9.8.1 | 2026-10-03 | `a21ed83b-d069-8671-8a00-971427042615` |
 | v9.8.0 | 2026-09-28 | `f782b60c-dba2-88b5-900c-1197cdb52211` |
 | v9.7.9 | 2026-09-28 | `fe9255cd-c626-84b7-847c-ba0a9da88026` |
@@ -283,7 +285,7 @@ Content-address `65773a5e-4a52-886c-adcd-5dae3cfd9b41`.
 | v9.6.5 | 2026-09-20 | `b658a06e-a159-8f81-8dde-2f9e8a6cd377` |
 | v9.6.4 | 2026-09-20 | `e5745450-2256-8790-8d09-37cfbff4cc01` |
 | v9.6.3 | 2026-09-20 | `35c6f403-06a0-87b7-af87-0f6ce26be9bc` |
-| v9.6.2 | 2026-09-20 | `65773a5e-4a52-886c-adcd-5dae3cfd9b41` |
+| v9.6.2 | 2026-09-20 | `7be5328b-456e-839a-b422-04b65efaebdc` |
 | v9.6.1 | 2026-09-20 | `4c8a15b0-4e82-83e8-a574-124290768a49` |
 | v9.6.0 | 2026-09-20 | `1f7032e1-dab9-876e-909e-d2801d54cc81` |
 | v9.5.9 | 2026-09-20 | `f2342af9-9896-88f9-9c7e-b79eaac319a4` |
