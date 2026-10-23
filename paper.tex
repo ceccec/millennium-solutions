@@ -129925,7 +129925,7 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_parts\_sum\_to\_the\_whole\_and\_each\_part\_is\_recoverable}]
-\texttt{declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 259 ∧ (List.range declared.length).all (fun i => declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j => j != i)).foldl (fun a j => a + declared.getD j 0) 0)}
+\texttt{declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 267 ∧ (List.range declared.length).all (fun i => declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j => j != i)).foldl (fun a j => a + declared.getD j 0) 0)}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -129935,7 +129935,7 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_counts\_are\_not\_one\_number\_repeated}]
-\[ 1 < \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| \land \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| = 12 \land \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } a < b\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 0\right) > \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } b < a\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 1000\right) \]
+\[ 1 < \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| \land \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| = 11 \land \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } a < b\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 0\right) > \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } b < a\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 1000\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

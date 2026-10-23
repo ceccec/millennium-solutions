@@ -8,7 +8,7 @@ aside: false
 <div class="paper-masthead">
 <h1 class="paper-title">The collected theorems of the ℤ/9 vortex framework</h1>
 <div class="paper-byline">Rouschev, T. · <em>Millennium Solutions</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a> · CC BY-NC-ND 4.0</div>
-<div class="paper-addr">25,805 theorems by exhaustion + 194 proved for every value + 0 rfl declarations · 104 sources · content-address <code>05fd8fe7-4121-8dad-8aed-77b22ac8c2b0</code></div>
+<div class="paper-addr">25,805 theorems by exhaustion + 194 proved for every value + 0 rfl declarations · 104 sources · content-address <code>d567fc08-ff59-89f9-b22d-3e0a07bda270</code></div>
 </div>
 
 <h2 class="paper-h">Abstract</h2>
@@ -12024,8 +12024,8 @@ matches its own contents. No axioms, no Mathlib, no sorry.
 
 <pre class="thm-statement paper-defs"><code>files := ["address.lean", "asymmetric.lean", "elementary.lean", "families.lean", "fnv.lean", "imprint.lean", "instruments.lean", "merkle.lean", "program.lean", "quantum.lean", "rays.lean", "reversal.lean", "rights.lean", "roots.lean", "z9.lean"]
 declared := [Address.settledHere, Asymmetric.settledHere, Elementary.settledHere, Families.settledHere, Fnv.settledHere, Imprint.settledHere, Instruments.settledHere, Merkle.settledHere, Program.settledHere, Quantum.settledHere, Rays.settledHere, Reversal.settledHere, Rights.settledHere, Roots.settledHere, Z9.settledHere]
-measured := [20, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 21]
-theorems := [25, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24]
+measured := [28, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 21]
+theorems := [33, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24]
 byRfl := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 byOther := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]</code></pre>
 
@@ -12045,7 +12045,7 @@ byOther := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]</code></pre>
 
 <div class="thm" id="thm-settled-the_parts_sum_to_the_whole_and_each_part_is_recoverable">
 <p class="thm-label"><strong>Theorem 1149</strong> (<code>the_parts_sum_to_the_whole_and_each_part_is_recoverable</code>)<a class="thm-cite" href="/theorem/lean_settled_the_parts_sum_to_the_whole_and_each_part_is_recoverable">sealed</a>.</p>
-<pre class="thm-statement"><code>declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 259 ∧ (List.range declared.length).all (fun i =&gt; declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j =&gt; j != i)).foldl (fun a j =&gt; a + declared.getD j 0) 0)</code></pre>
+<pre class="thm-statement"><code>declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 267 ∧ (List.range declared.length).all (fun i =&gt; declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j =&gt; j != i)).foldl (fun a j =&gt; a + declared.getD j 0) 0)</code></pre>
 </div>
 <p class="thm-remark">── 3 · THE PARTS SUM TO THE WHOLE, AND EACH PART IS RECOVERABLE ────────────────────────────────────────── Conservation with its inverse: the declared counts add to the same total the measured ones do, and removing any one file's count leaves exactly the rest — so no row can be quietly absorbed into another.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -12061,9 +12061,9 @@ byOther := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]</code></pre>
 
 <div class="thm" id="thm-settled-the_counts_are_not_one_number_repeated">
 <p class="thm-label"><strong>Theorem 1151</strong> (<code>the_counts_are_not_one_number_repeated</code>)<a class="thm-cite" href="/theorem/lean_settled_the_counts_are_not_one_number_repeated">sealed</a>.</p>
-<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>1</mn><mo>&lt;</mo><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mi>declared</mi><mo>)</mo></mrow><mo>|</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mi>declared</mi><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>12</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>fold</mi><mo>(</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>↦</mo><mrow><mo>(</mo><mi>b</mi><mo>if</mo><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><mo>;</mo><mo>otherwise</mo><mi>a</mi><mo>)</mo></mrow></mrow><mo>,</mo><mi>declared</mi><mo>,</mo><mn>0</mn><mo>)</mo></mrow><mo>&gt;</mo><mrow><mi>fold</mi><mo>(</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>↦</mo><mrow><mo>(</mo><mi>b</mi><mo>if</mo><mrow><mi>b</mi><mo>&lt;</mo><mi>a</mi></mrow><mo>;</mo><mo>otherwise</mo><mi>a</mi><mo>)</mo></mrow></mrow><mo>,</mo><mi>declared</mi><mo>,</mo><mn>1000</mn><mo>)</mo></mrow></mrow></mrow></math></div>
-<pre class="thm-statement"><code>1 &lt; declared.eraseDups.length ∧ declared.eraseDups.length == 12 ∧ (declared.foldl (fun a b =&gt; if a &lt; b then b else a) 0) &gt; (declared.foldl (fun a b =&gt; if b &lt; a then b else a) 1000)</code></pre>
-<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>1 &lt; \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| \land \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| = 12 \land \operatorname{fold}_{a,\,b \mapsto \begin{cases}b &amp; \text{if } a &lt; b\\ a &amp; \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 0\right) &gt; \operatorname{fold}_{a,\,b \mapsto \begin{cases}b &amp; \text{if } b &lt; a\\ a &amp; \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 1000\right)</code></pre></details>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>1</mn><mo>&lt;</mo><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mi>declared</mi><mo>)</mo></mrow><mo>|</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mi>declared</mi><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>11</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>fold</mi><mo>(</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>↦</mo><mrow><mo>(</mo><mi>b</mi><mo>if</mo><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><mo>;</mo><mo>otherwise</mo><mi>a</mi><mo>)</mo></mrow></mrow><mo>,</mo><mi>declared</mi><mo>,</mo><mn>0</mn><mo>)</mo></mrow><mo>&gt;</mo><mrow><mi>fold</mi><mo>(</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>↦</mo><mrow><mo>(</mo><mi>b</mi><mo>if</mo><mrow><mi>b</mi><mo>&lt;</mo><mi>a</mi></mrow><mo>;</mo><mo>otherwise</mo><mi>a</mi><mo>)</mo></mrow></mrow><mo>,</mo><mi>declared</mi><mo>,</mo><mn>1000</mn><mo>)</mo></mrow></mrow></mrow></math></div>
+<pre class="thm-statement"><code>1 &lt; declared.eraseDups.length ∧ declared.eraseDups.length == 11 ∧ (declared.foldl (fun a b =&gt; if a &lt; b then b else a) 0) &gt; (declared.foldl (fun a b =&gt; if b &lt; a then b else a) 1000)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>1 &lt; \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| \land \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| = 11 \land \operatorname{fold}_{a,\,b \mapsto \begin{cases}b &amp; \text{if } a &lt; b\\ a &amp; \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 0\right) &gt; \operatorname{fold}_{a,\,b \mapsto \begin{cases}b &amp; \text{if } b &lt; a\\ a &amp; \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 1000\right)</code></pre></details>
 </div>
 <p class="thm-remark">── 5 · THE CONTROL: THE AGREEMENT IS NOT ONE NUMBER REPEATED ───────────────────────────────────────────── THE THEOREM THAT STOPS ROW 1 FROM BEING VACUOUS. Row-wise equality between two lists would hold trivially if every entry were the same value, so it is decided here that the counts genuinely differ: the distinct values number more than one, and the extremes are far apart. Without this, a generator that emitted a constant column would read as green.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
