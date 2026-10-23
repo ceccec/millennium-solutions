@@ -11,6 +11,10 @@ if (!m) { console.log('✗ leads-closed: the leads report carries no summary lin
 const items = Number(m[2])
 if (items > 0) {
   console.log(`✗ leads-closed: ${items} lead item(s) are still open in ${m[1]} area(s). A push waits until every lead is developed online and closed.`)
+  // THE SOLUTION IS SHOWN WITH THE REFUSAL. Each open area carries its closing route (the arrow lines of the leads report): the refusal
+  // names what closes it, so nobody has to go and look for it.
+  const routes = out.split('\n').filter((l) => l.trim().startsWith('→'))
+  for (const r of routes) console.log(`    ${r.trim()}`)
   process.exit(1)
 }
 console.log('✓ leads-closed: no open lead')
