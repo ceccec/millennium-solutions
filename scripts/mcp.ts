@@ -253,6 +253,23 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     try { return readFileSync(joinPath(R, '.vitepress', 'cache', 'jobs', id + '.json'), 'utf8') }
     catch { return JSON.stringify({ status: 'NOT FOUND', job: id, why: 'no job with this id; it may have been removed' }) }
   },
+  evidence: async (a) => {
+    const { readdirSync, statSync, readFileSync: readF } = await import('node:fs')
+    const { toUuid: addr } = await import('../src/0/index.ts')
+    const root = joinPath(R, 'evidence')
+    const list = (dir: string): string[] => readdirSync(dir).flatMap((e) => {
+      const p = joinPath(dir, e)
+      return statSync(p).isDirectory() ? list(p) : [p]
+    })
+    const folders = readdirSync(root).filter((d) => !a?.folder || d === String(a.folder))
+    const out = folders.map((f) => ({
+      folder: f,
+      files: list(joinPath(root, f)).map((p) => ({ path: p.slice(R.length), address: addr(p.slice(R.length) + '\n' + readF(p, 'utf8')) })),
+    }))
+    return JSON.stringify({ evidence: out }, null, 1)
+  },
+  court_trial: (a) => { try { return execFileSync('node', ['scripts/court-trial.ts'], { encoding: 'utf8', input: String(a?.claim ?? ''), timeout: 900_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   leaks: (a) => { try { return execFileSync('node', ['scripts/leaks.ts', ...(a?.json ? ['--json'] : [])], { encoding: 'utf8', timeout: 300_000 }) }
     catch (e) { return JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
   lean_verify: (a) => { try { return execSync(`node scripts/lean.ts${a?.file ? ' ' + a.file : ''}`, { encoding: 'utf8' }) }
@@ -337,7 +354,12 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   },
   content_address: (a) => toUuid(String(a.text)),
   honesty_gate: (a) => { const r = computes(String(a.text)); return JSON.stringify({ binary: r.binary, hit: r.hit, note: r.binary ? 'no overclaim shape (floor, not truth)' : 'drains: ' + r.hit }) },
-  merkle_fold: (a) => merkleFold((a.items || []).map(String)),
+  // items is required by the declaration. A missing list is refused, never folded as if it were empty: the fold of nothing
+  // is a constant address, and a caller who sent the wrong key would otherwise receive a plausible wrong answer.
+  merkle_fold: (a) => {
+    if (!Array.isArray(a?.items)) throw new Error('merkle_fold: items (an array of strings) is required; an unrecognised key folds nothing and is refused')
+    return merkleFold(a.items.map(String))
+  },
   probe: async (a) => { const r = await apiFetch(String(a.url)); return JSON.stringify({ verdict: r.verdict, note: r.note, uuid: r.uuid }) },
   verify: (a) => {
     const t = String(a.text || '')
