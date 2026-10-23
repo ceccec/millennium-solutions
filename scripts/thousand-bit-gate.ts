@@ -12,6 +12,22 @@ import { factor, millerRabin } from '../src/factor/index.ts'
 
 const N = '7778374705630928901426385188295261064472293439767584450564762904780095317247810822721038446598127186814085438745846911396600071001374809981225413367649417301928427872874705586838153932355802114527488924178998304307438276447053410282371888984822745504021147881223973035161036008037727897669611699130903'
 
+
+// CONTROL, SO THE GATE IS SHOWN TO FAIL AND TO PASS. The same decomposition logic runs on 91 (which must be FACTORED and
+// green) and on 2^1000 − 1 (which must be PARTIAL and red). If the logic were broken in either direction, the control fails.
+if (process.argv.includes('--control')) {
+  const judge = (x: bigint) => {
+    const res = factor(x.toString())
+    if (res.status !== 'FACTORED') return 'RED'
+    const prod = res.factors.reduce((acc, f) => acc * BigInt(f), 1n)
+    return prod === x ? 'GREEN' : 'RED'
+  }
+  const greenOn91 = judge(91n) === 'GREEN'
+  const redOnPower = judge(2n ** 1000n - 1n) === 'RED'
+  if (greenOn91 && redOnPower) { console.log('✓ thousand-bit gate control: passes on 91 (GREEN) and fails on 2^1000−1 (RED), as it must'); process.exit(0) }
+  console.log(`✗ thousand-bit gate control: 91 green=${greenOn91}, 2^1000−1 red=${redOnPower}`); process.exit(1)
+}
+
 const n = BigInt(N)
 const bits = n.toString(2).length
 const r = factor(N)
