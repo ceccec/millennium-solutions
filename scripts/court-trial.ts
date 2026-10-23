@@ -44,9 +44,17 @@ const verdict = notTriable ? 'NOT TRIABLE'
   : proved(defence) && !proved(prosecution) ? 'SEALED'
   : proved(prosecution) && !proved(defence) ? 'REFUSED'
   : 'UNKNOWN'
+// THE VERDICT IN WORDS, for a chat reader: what was decided and why, in one sentence, next to the machine fields.
+const because = {
+  'SEALED': 'the defence compiled the claim as a Lean theorem and the prosecution could not compile its negation',
+  'REFUSED': 'the prosecution compiled the negation as a Lean theorem, so the claim is false',
+  'UNKNOWN': 'neither side compiled, so the court does not decide the claim',
+  'NOT TRIABLE': 'the text is not a Lean proposition, so no side can compile it',
+}[verdict]
 console.log(JSON.stringify({
   claim,
   verdict,
+  summary: `${verdict}: ${because}.`,
   defence: { proved: proved(defence) },
   prosecution: { proved: proved(prosecution) },
   checkedBy: 'lean-kernel (scripts/lean-ask.ts), both sides',
