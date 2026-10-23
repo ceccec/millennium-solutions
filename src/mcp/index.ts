@@ -167,6 +167,8 @@ export const TOOLS = [
   { name: 'leads', description: 'The deposit\'s own open questions, derived from the tree rather than listed: uncontrolled refusing gates, unminted depositions, theorems that read back a hand-set value, MCP tools an install cannot reach. Also CROSSES them by cause — publication, authority, instrument, derivation, environment — because two leads sharing a cause are one problem with two faces and only one of them may be closable. Reports and does not gate: an open question is work not done, which is not work that is wrong.',
     inputSchema: { type: 'object', properties: { area: { type: 'string' } } } },
 
+  { name: 'gates_fire', description: 'Run every refusing gate\'s negative control: each gate must reject its own mutation. It writes into tracked files to do that, so it refuses while the tree has uncommitted changes, while a commit or gate is running, or while a restore marker from a killed run is still present. Controls that fail on a clean tree or match nothing are reported as untrusted.', inputSchema: { type: 'object', properties: {} } },
+
   { name: 'readers', description: 'Ask the scientific and medical sources this deposit investigates through — Europe PMC, PubMed, PubChem, ChEMBL, UniProt, Ensembl, KEGG, Reactome, GBIF, RxNorm, openFDA, MeSH, ClinicalTrials.gov and more — whether each still answers with a fact known BEFORE it was asked. Three verdicts kept apart: PROVEN, WRONG (the reader is broken OR the expectation was), and NOT MEASURED (it did not answer — silence is not absence). 8 further sources are named as credential- or licence-gated rather than omitted, because an unrecorded gap becomes an implicit claim of completeness. CITATION INSTRUMENTS, NOT MEDICAL ADVICE: a documented traditional use is an anthropological fact, never evidence a use works, and never a dose.',
     inputSchema: { type: 'object', properties: { domain: { type: 'string' }, list: { type: 'boolean' } } } },
 
@@ -223,6 +225,7 @@ export const NEEDS: Record<string, Need[]> = {
   novelty: ['net'],
   entanglements: ['tree'],
   leads: ['tree'],
+  gates_fire: ['net', 'tree'],
   readers: ['net', 'tree'],
   live: ['net', 'tree'],
   connect: ['net', 'tree'],

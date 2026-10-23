@@ -124,6 +124,18 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const area = String(a.area)
     return out.split('\n').filter((l) => l.includes(area) || /^○|^open leads|^crossed/.test(l)).join('\n')
   },
+  gates_fire: async () => {
+    const { execFileSync } = await import('node:child_process')
+    const { createHash } = await import('node:crypto')
+    const { existsSync } = await import('node:fs')
+    const run = (cmd: string, args: string[]) => { try { return execFileSync(cmd, args, { encoding: 'utf8', maxBuffer: 64 << 20 }) } catch (e) { return (e as { stdout?: string }).stdout ?? '' } }
+    const dirty = run('git', ['status', '--porcelain', '--', '.', ':!evidence/gates-fire']).trim()
+    if (dirty) return `REFUSED: the tree has uncommitted changes, and gates-fire writes into tracked files, so it would mix with them:\n${dirty}\nCommit or set them aside first.`
+    if (run('pgrep', ['-fl', 'gate-parallel|pre-commit-court|git commit|git push']).trim()) return 'REFUSED: a commit or gate is already running in this checkout.'
+    const marker = `/tmp/gf_inflight_${createHash('sha256').update(process.cwd()).digest('hex').slice(0, 12)}.json`
+    if (existsSync(marker)) return `REFUSED: a previous gates-fire run was killed mid-control and left a restore marker at ${marker}. Restore its backup before running again.`
+    return run('node', ['--experimental-strip-types', 'scripts/gates-fire.ts'])
+  },
   readers: async (a) => {
     const { execFileSync } = await import('node:child_process')
     if (a?.list) return execFileSync('node', ['scripts/readers.ts', '--list'], { encoding: 'utf8', maxBuffer: 16 << 20 })
