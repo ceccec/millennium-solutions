@@ -22,11 +22,12 @@
 //
 // NETWORK. Registered in src/api/gates.ts NETWORK, so it is never in a build chain.
 import { ADAPTERS, type Adapter } from '../src/api/adapters.ts'
+import { arg } from '../src/cli/index.ts'
 import { decide } from '../src/api/robots.ts'
 
 const UA = 'millennium-solutions/api-adapters (+https://ceccec.psg.bg/millennium-solutions/; read-only)'
 const PAUSE_MS = 1000
-const nameArg = process.argv.includes('--name') ? process.argv[process.argv.indexOf('--name') + 1] : null
+const nameArg = arg('--name') ?? null
 
 type Verdict = 'PROVEN' | 'WRONG' | 'NOT_MEASURED' | 'REFUSED' | 'GATED'
 const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms))

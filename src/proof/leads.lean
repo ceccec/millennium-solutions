@@ -1,7 +1,6 @@
 -- title: The open leads, named
 -- wing: the floor
 -- prior_art: unclassified
--- prior-art note: not applicable — a register of this repository's own open items
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- Each open lead is named here as the `leads` MCP tool reports it on the date below. Nothing in this file removes,

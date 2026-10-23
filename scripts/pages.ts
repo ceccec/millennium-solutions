@@ -13,6 +13,7 @@
 // DISCIPLINE: a claim is written only if adjudicate() seals it — gate-clean AND its test holds. A constant
 // -true test is refused outright. The generator exits non-zero and writes nothing if any claim fails.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { escapeLt } from '../src/html/index.ts'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
 import { MILLENNIUM, claySection } from '../src/millennium/index.ts'
 import { all as leanDocs } from './leandoc.ts'
@@ -362,7 +363,7 @@ const body = (site: boolean) => {
       // it the first time a summary reached that far (the leandoc slice used to cut summaries short). `<`
       // and `{{` are the two sequences a template reads as its own; both are escaped, which GitHub's
       // markdown renders back to the characters.
-      const first = d.summary.split(/\n\n/)[0].replace(/\n/g, ' ').trim().replace(/</g, '&lt;').replace(/\{\{/g, '&#123;{')
+      const first = escapeLt(d.summary.split(/\n\n/)[0].replace(/\n/g, ' ').trim()).replace(/\{\{/g, '&#123;{')
       md += `**${d.title}** — \`${d.file}\`, ${d.theorems.length} theorem(s)`
       md += first ? `. ${first}\n\n` : ` — *no summary in the source*\n\n`
     }

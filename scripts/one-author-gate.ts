@@ -34,11 +34,15 @@ for (const f of FILES) {
   const src = readFileSync(f, 'utf8')
   // `const NAME = 'path'` — so a write through a constant resolves to what it actually writes
   const consts = new Map<string, string>()
-  for (const m of src.matchAll(/^\s*const\s+([A-Z_][A-Z_0-9]*)\s*(?::\s*string\s*)?=\s*'([^']+)'/gm)) consts.set(m[1], m[2])
+  // An empty literal is a real prefix too (`const OUT = ''`), so the value may be empty.
+  for (const m of src.matchAll(/^\s*const\s+([A-Z_][A-Z_0-9]*)\s*(?::\s*string\s*)?=\s*'([^']*)'/gm)) consts.set(m[1], m[2])
 
   const seen = new Set<string>()
-  for (const m of src.matchAll(/writeFileSync\(\s*(?:'([^']+)'|([A-Za-z_][A-Za-z_0-9]*))\s*,/g)) {
-    const path = m[1] ?? consts.get(m[2] ?? '') ?? null
+  // A CONCATENATION `PREFIX + 'name'` writes `name` under PREFIX, so the artefact is the name. pages.ts writes
+    // `OUT + 'index.md'`, where OUT comes from the environment and so has no literal value: the gate records the name
+    // it writes, and a second writer of that name is then a shared page, which is what this gate exists to see.
+  for (const m of src.matchAll(/writeFileSync\(\s*(?:'([^']+)'|([A-Za-z_][A-Za-z_0-9]*)(?:\s*\+\s*'([^']+)')?)\s*,/g)) {
+    const path = m[1] ?? (m[3] !== undefined ? m[3] : (consts.get(m[2] ?? '') ?? null))
     if (!path || path.startsWith('/tmp')) continue        // probes and scratch files are nobody's artefact
     if (seen.has(path)) continue
     seen.add(path)

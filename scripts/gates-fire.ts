@@ -47,6 +47,13 @@ type Control = { gate: string; cmd: string; what: string; file: string; mutate: 
 const PREREQ = 'node scripts/locale-fold.ts'
 
 const CONTROLS: Control[] = [
+  // ── THE API AND PACKAGE GATES: every API and every lockfile package is a gate, so each is shown to refuse. ──
+  { gate: 'api-gates', cmd: 'node scripts/api-gates.ts', file: 'src/proof/counting-rocks.lean',
+    what: 'a filesystem API whose file no longer states the fact its adapter expects',
+    mutate: (s) => s.replace('fib 10 = 55', 'fib 10 = 56') },
+  { gate: 'package-gates', cmd: 'node scripts/package-gates.ts', file: 'package-lock.json',
+    what: 'a lockfile entry with no integrity hash, so its bytes cannot be checked',
+    mutate: (s) => s.replace('"integrity": "sha512-', '"integrity_removed": "sha512-') },
   // ── THE TWO RELEASE CHECKS, CONTROLLED ─────────────────────────────────────────────────────────────────
   // Both refuse, both are mine, and leads.ts named them uncontrolled the day they were written. e2e reads
   // the BUILT site, so its control mutates what the build produced rather than a source file — a published

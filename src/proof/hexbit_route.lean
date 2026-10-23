@@ -1,7 +1,9 @@
 -- title: The hexbit route's combinatorics
 -- wing: the floor
--- prior_art: unclassified
--- prior-art note: not applicable — arithmetic on powers of two, decided by the kernel
+-- prior_art: named
+-- prior_art_domain: positional notation and the counting of subsets — powers of two
+-- prior_art_note: positional notation (Wikipedia, "Positional notation") and the 2^n count of subsets (Wikipedia, "Power set") are classical; the file's decisions are kernel-checked instances of them.
+-- prior_art_search: MCP web_search, source wikipedia, query "Power set cardinality 2^n binary positional notation", on 2026-10-23.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- The arithmetic that scripts/hexbit-route.ts depends on. A handle is the first 8 hex digits of a content address.

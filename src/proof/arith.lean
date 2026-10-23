@@ -1,4 +1,7 @@
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_domain: elementary number theory — trial division and primality
+-- prior_art_note: trial division is the classical method for finding a prime factor (Wikipedia, "Integer factorization"); Fermat's factorization method is a second classical route (Wikipedia, "Fermat's factorization method"). The file's decisions are kernel-checked instances of these; neither method is new here.
+-- prior_art_search: MCP web_search, source wikipedia, query "trial division primality factorization", on 2026-10-23; the hits named above.
 -- src/proof/arith.lean — the arithmetic decision of the answer system, as kernel-checked definitions.
 --
 -- The C2 verifier (src/answer/verify-arith.ts) PROPOSES a verdict: a prime to be proved by trial division, or a

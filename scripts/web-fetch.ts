@@ -12,6 +12,7 @@
 // returned with `window` characters of context on each side. The address is computed over the fetched body, so a
 // later reader can tell whether the page changed. Nothing is written to the tree.
 import { createHash } from 'node:crypto'
+import { TAG } from '../src/html/index.ts'
 import { spawnSync } from 'node:child_process'
 import { mkdtempSync, writeFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
@@ -88,7 +89,7 @@ const main = async () => {
   const stripped = body
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ')
+    .replace(TAG, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/\s+/g, ' ')

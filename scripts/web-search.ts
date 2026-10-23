@@ -41,7 +41,8 @@ const get = async (url: string): Promise<string> => {
   }
 }
 
-const strip = (s: string) => s.replace(/<[^>]+>/g, '').replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim()
+import { TAG } from '../src/html/index.ts'
+const strip = (s: string) => s.replace(TAG, '').replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim()
 
 const search = async () => {
   if (source === 'wikipedia') {

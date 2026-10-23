@@ -55,7 +55,7 @@ const rows: Row[] = files.map((f) => {
 // priorart.lean lists one row per file, in the order leanFiles() returns them, with kind 0 = named and
 // kind 1 = none-known. If a file is added, removed or re-declared and that table is not updated, the claim
 // rendered below would describe a set of sources that does not exist.
-const leanTable = [...leanSource('priorart.lean').matchAll(/^\s*[,[]\s*\(\d+,\s*(\d+),\s*(true|false)\s*\)\s*--\s*([A-Za-z_0-9]+\.lean)/gm)]
+const leanTable = [...leanSource('priorart.lean').matchAll(/^\s*[,[]\s*\(\d+,\s*(\d+),\s*(true|false)\s*\)\s*--\s*([A-Za-z_0-9-]+\.lean)/gm)]
   .map((m) => ({ kind: Number(m[1]), novelty: m[2] === 'true', file: m[3] }))
 
 const problems: string[] = []

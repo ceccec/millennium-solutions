@@ -34,4 +34,7 @@ export const stripTags = (s: string): string => s.replace(TAG, ' ')
 // It is a DIFFERENT JOB from escapeHtml, not a weaker version of it, and it is here rather than in paper.ts
 // because that is exactly how the nine copies this module now owns each got started: a caller with a real
 // reason to differ, keeping its reason to itself. The reason belongs next to the others.
+/** Only the opening angle, for a field that must not open a tag: the other characters are left as they are. */
+export const escapeLt = (s: string): string => s.replace(/</g, '&lt;')
+
 export const escapeAngles = (s: string): string => s.replace(/</g, '&lt;').replace(/>(?!\s)/g, '&gt;')

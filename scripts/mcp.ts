@@ -311,6 +311,10 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   digit_mirror: (a) => JSON.stringify(digitMirror(String(a?.n ?? ''))),
   api_gates: () => { const r = spawnSync('node', ['scripts/api-gates.ts'], { encoding: 'utf8' })
     return JSON.stringify({ status: r.status === 0 ? 'HELD' : 'REFUSED', output: `${r.stdout ?? ''}${r.stderr ?? ''}`.trim() }) },
+  memory_check: () => { const r = spawnSync('node', ['scripts/memory-check.ts'], { encoding: 'utf8' })
+    return JSON.stringify({ status: r.status === 0 ? 'HELD' : 'REFUSED', output: `${r.stdout ?? ''}${r.stderr ?? ''}`.trim() }) },
+  memory_derive: () => { const r = spawnSync('node', ['scripts/memory.ts'], { encoding: 'utf8' })
+    return JSON.stringify({ status: r.status === 0 ? 'DERIVED' : 'REFUSED', output: `${r.stdout ?? ''}${r.stderr ?? ''}`.trim() }) },
   package_gates: (a) => { const files = Array.isArray(a?.dockerfiles) ? (a.dockerfiles as unknown[]).map(String) : []
     const r = spawnSync('node', ['scripts/package-gates.ts', ...files], { encoding: 'utf8' })
     return JSON.stringify({ status: r.status === 0 ? 'HELD' : 'REFUSED', output: `${r.stdout ?? ''}${r.stderr ?? ''}`.trim() }) },

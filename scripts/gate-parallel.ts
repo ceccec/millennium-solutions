@@ -37,6 +37,9 @@ const PUSH_PHASE1: Check[] = [
   { name: 'leads-closed', cmd: ['npm', 'run', '--silent', 'gate:leads'] },
   // The thousand-bit test: hard fail unless the factor route is green on a real 1,000-bit integer.
   { name: 'thousand-bit', cmd: ['npm', 'run', '--silent', 'gate:thousand'] },
+  // Every API and every lockfile package is a gate: both run offline, so a push checks them too.
+  { name: 'api-gates', cmd: ['npm', 'run', '--silent', 'gate:api'] },
+  { name: 'package-gates', cmd: ['npm', 'run', '--silent', 'gate:packages'] },
   // ONE CHECK, IN ORDER: the site chain rebuilds the generated prose, and only then is it compared with the committed text.
   // Two parallel streams would compare before the rebuild finished, so the order lives inside one command.
   { name: 'site-chain', cmd: ['sh', '-c', 'npm run --silent predocs:build && { git diff --quiet -- README.md index.md ACCOUNTING.md paper.md paper.tex PRIOR-ART.md CHALLENGES.md solutions.md speedup.md || { echo "generated prose differs from the committed text: commit the regenerated files"; exit 1; }; }'] },
