@@ -223,6 +223,10 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   },
   cern: (a) => { try { return execFileSync('node', ['scripts/cern.ts'], { encoding: 'utf8', timeout: 3_600_000, maxBuffer: 64 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return JSON.stringify({ status: 'FAILED', output: String(x.stdout ?? '').slice(-4000), why: String(x.stderr ?? e).slice(-800) }) } },
+  apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  api_adapters: () => { try { return execFileSync('node', ['scripts/api-adapters.ts'], { encoding: 'utf8', timeout: 600_000, maxBuffer: 8 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   hexbit_route: (a) => { try { return execFileSync('node', ['scripts/hexbit-route.ts', ...(a?.index ? ['--index'] : [])], { encoding: 'utf8', input: String(a?.input ?? ''), timeout: 120_000 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   qpu_crosscheck: (a) => { try { return execFileSync('node', ['scripts/qpu-crosscheck.ts'], { encoding: 'utf8', timeout: 180_000, maxBuffer: 8 << 20 }) }

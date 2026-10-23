@@ -142,12 +142,12 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
-- The formal layer holds 25992 kernel-accepted declarations across 102 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `81b4537e-4997-8fe6-8f53-5494faf40a0a`</sub>
-- 25798 of those 25992 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 194 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `f38121e0-80d6-81fe-8f36-ad7311c5aefa`</sub>
-- 26512 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `e51a5653-d66a-8b32-abf2-36cc74de7d72`</sub>
+- The formal layer holds 25995 kernel-accepted declarations across 103 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `21baf168-5639-8de3-a67f-d93fc2c0c0d6`</sub>
+- 25801 of those 25995 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 194 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `011f601c-f90c-8403-a673-367ab54bb108`</sub>
+- 26550 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `927093de-08e5-8dde-862a-8e879297b29d`</sub>
 
 ## 2 · The ring
 
@@ -170,10 +170,10 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
 
 ## 7 · The ledger
 
-- The ledger records 28376 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `151ed7a0-2308-874b-8f36-c008533446d8`</sub>
-- The count is an exact multiple of eight — 28376 is 3547 octaves with no remainder.
-  <sub>SEALED · `52e0b69c-6f6d-849a-a910-62185b1e11a9`</sub>
+- The ledger records 28414 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `71dc4f0c-411e-8cbe-81d7-a163c0136961`</sub>
+- The count is 28414, which is 3551 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `a9f95254-d582-8669-a60b-a3c5cb0a58b2`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -185,10 +185,10 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
   <sub>SEALED · `09b4450b-3016-8368-89e2-74787fa214d9`</sub>
 - How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. What any given host grants varies with its free memory and is deliberately not recorded here; `npm run lanes-check` prints it..
   <sub>SEALED · `85560e4e-7642-820b-aa1a-91f0e7e14c41`</sub>
-- The tools are reachable from a program: 60 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
-  <sub>SEALED · `aba2134d-f72f-8043-8a6e-72e6db1baf84`</sub>
-- The stdio server advertises 2 of those 60 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
-  <sub>SEALED · `7412473b-f6ae-8385-a9aa-5758a9b9bbcd`</sub>
+- The tools are reachable from a program: 62 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
+  <sub>SEALED · `1bf4008b-b576-83c8-9a16-0bda6af08846`</sub>
+- The stdio server advertises 2 of those 62 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
+  <sub>SEALED · `8f22fbf6-9553-8479-82e8-459365dad455`</sub>
 
 ## The floor
 
@@ -225,7 +225,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-102 Lean files in 8 wings, 25992 declarations of which 25992 are theorems. The prose in this section is read out of the
+103 Lean files in 8 wings, 25995 declarations of which 25995 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -278,6 +278,8 @@ this page; there is nowhere else to keep the description in step.
 **The water loop** — `energy.lean`, 28 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
 
 **Four hex, exactly computed — and what the handle has to carry instead** — `handle.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
+
+**The hexbit route's combinatorics** — `hexbit_route.lean`, 3 theorem(s). The arithmetic that scripts/hexbit-route.ts depends on. A handle is the first 8 hex digits of a content address. Each hex digit carries 4 bits, so a handle carries 8 × 4 = 32 bits, and the folders are 16^8 = 2^32 in number.
 
 **Seven decidable windows over one finite structure** — `index.lean`, 11 theorem(s). THE TITLE WAS "The Millennium floor" UNTIL 2026-09-25. "Floor" is the word the author signed — "mind the honest floor" — and it is also the word agents grew into "this deposit settles 0 of the 7", a verdict on his claim that no receipt of his authorises (FINDINGS.md §1). His own published formulation is exact and is neither of those, from 10.5281/zenodo.22933794, deposited 2026-09-24:
 
@@ -449,7 +451,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). WITHDRAWAL WAS NEVER THE ONLY OPTION. Each theorem below returns one claim to the record. The evidence that existed was a TypeScript run — a computation that agreed once on one machine. The kernel walks the whole stated domain. That was the gap, and closing it is arithmetic.
 
-38 of 25992 declarations carry no comment of their own and are shown here as the gap they are, not
+41 of 25995 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -458,14 +460,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,376 — 3547 octaves exactly |
-| standing — carries its own proof | **25957** |
+| ledger entries | 28,414 — 3551 octaves and 6 over |
+| standing — carries its own proof | **25995** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **26783** of 28,376 |
-| standing keys → distinct theorems | 25957 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 102 · 25992 theorems (25798 closed by exhaustion, axiom-free · 194 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 25798 of 25992 |
+| proved in total | **26821** of 28,414 |
+| standing keys → distinct theorems | 25995 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 103 · 25995 theorems (25801 closed by exhaustion, axiom-free · 194 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 25801 of 25995 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -498,4 +500,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 25992 Lean theorems · 28376 ledger entries · trial root `68209ba2-1a10-8873-a3a4-d1afe3d8086c` · integrity, not truth*
+*20 claims, all verified · 25995 Lean theorems · 28414 ledger entries · trial root `e6f05909-e6d1-8965-9e34-c9f98cd36971` · integrity, not truth*
