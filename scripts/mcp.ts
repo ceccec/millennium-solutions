@@ -69,8 +69,10 @@ const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 
 
 // ONE INPUT, ONE CHECK: send to the QPU's Shor tool, read its factors, and check them with the verifier, never by a product alone.
-const shorCheck = async (n: string, bases: (string | undefined)[] = [undefined]): Promise<{ n: string; qpu: string[] | null; verifier: string; why?: string; note?: string; base?: string }> => {
-  let last: { n: string; qpu: string[] | null; verifier: string; why?: string; note?: string; base?: string } = { n, qpu: null, verifier: 'NOT_FACTORED', note: 'the QPU returned no factors' }
+const shorCheck = async (n: string, bases: (string | undefined)[] = [undefined]): Promise<{ n: string; uuid: string; qpu: string[] | null; verifier: string; why?: string; note?: string; base?: string }> => {
+  // The pair is signalled by its content address: the UUID of the integer's decimal digits, so a row is named by its input.
+  const uuid = toUuid(n)
+  let last: { n: string; uuid: string; qpu: string[] | null; verifier: string; why?: string; note?: string; base?: string } = { n, uuid, qpu: null, verifier: 'NOT_FACTORED', note: 'the QPU returned no factors' }
   for (const base of bases) {
     const arguments_ = base === undefined ? { n } : { n, a: base }
     const reply = await HANDLERS.connect({ connector: 'qpu', tool: 'crypto_shor', arguments: arguments_ })
@@ -80,19 +82,19 @@ const shorCheck = async (n: string, bases: (string | undefined)[] = [undefined])
       const t = JSON.parse(text) as { exact?: { p?: string; q?: string } }
       p = t.exact?.p ?? null; q = t.exact?.q ?? null
     } catch { note = 'the reply could not be read' }
-    if (!p || p === '0' || !q || q === '0') { last = { n, qpu: null, verifier: 'NOT_FACTORED', note: note || 'the QPU returned no factors', base }; continue }
+    if (!p || p === '0' || !q || q === '0') { last = { n, uuid, qpu: null, verifier: 'NOT_FACTORED', note: note || 'the QPU returned no factors', base }; continue }
     const v = verifyFactors(n, [p, q])
-    if (v.status === 'VERIFIED' || v.status === 'PROBABLE') return { n, qpu: [p, q], verifier: v.status, why: v.why, base }
+    if (v.status === 'VERIFIED' || v.status === 'PROBABLE') return { n, uuid, qpu: [p, q], verifier: v.status, why: v.why, base }
     // A composite factor is not a refusal of the number: the factor route splits it fully, and every prime is then checked.
     const composite = (p && millerRabin(BigInt(p)) === 'COMPOSITE') ? p : (q && millerRabin(BigInt(q)) === 'COMPOSITE') ? q : null
     if (composite !== null) {
       const full = factorFull(n)
       if (full.status === 'FACTORED') {
         const fv = verifyFactors(n, full.factors)
-        return { n, qpu: full.factors, verifier: fv.status, why: `the QPU's composite factor ${composite} was split by the factor route; ${fv.why}`, base }
+        return { n, uuid, qpu: full.factors, verifier: fv.status, why: `the QPU's composite factor ${composite} was split by the factor route; ${fv.why}`, base }
       }
     }
-    last = { n, qpu: [p, q], verifier: v.status, why: v.why, base }
+    last = { n, uuid, qpu: [p, q], verifier: v.status, why: v.why, base }
   }
   return last
 }
