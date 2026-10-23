@@ -16,6 +16,7 @@ import { homedir } from 'node:os'
 import { execSync } from 'node:child_process'
 import { leanFiles, leanSource, ledger, live, theoremCount } from '../src/api/index.ts'
 import { uncontrolledRefusers, refusersNoChainRuns, unrunUndecided, runByChain, UNRUN_BY_DESIGN } from '../src/api/gates.ts'
+import { flag } from '../src/cli/index.ts'
 
 type Lead = { area: string; n: number; what: string; how: string; causes: Cause[] }
 
@@ -223,7 +224,7 @@ add('mcp-ship', shipsMcp ? 0 : SELF_SUFFICIENT.length,
   + 'tools those are, so the subset is computed and not chosen', ['publication'])
 
 add('laws', certificates.length,
-  `theorem(s) that only read back a hand-set value — a certificate, not a proof: ${certificates.slice(0, 6).join(' ')}${certificates.length > 6 ? ' …' : ''}`,
+  `theorem(s) that only read back a hand-set value — a certificate, not a proof: ${flag('--all') ? certificates.join(' ') : `${certificates.slice(0, 6).join(' ')}${certificates.length > 6 ? ' …' : ''}`}`,
   'restate each as a law with its inverse over the domain its constant describes, decided at every instance (the involution discipline); where no law exists yet, the lead stays open', ['derivation'])
 if (process.argv.includes('--laws')) { for (const c of certificates) console.log(c); process.exit(0) }
 

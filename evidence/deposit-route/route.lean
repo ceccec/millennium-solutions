@@ -1,0 +1,53 @@
+-- The deposit route, decided by the kernel, not by prose.
+--
+-- EXTERNAL INPUTS (stated, not proved here): `integrationDoisPerRelease` is the policy of the Zenodo↔GitHub integration:
+-- one DOI per release. `mintedFacts` are read-only Zenodo queries made 2026-10-23 without a token, one per staged title.
+namespace DepositRoute
+
+/-- The staged deposits, one file each, read from .zenodo/theorems by the generator that wrote this file. -/
+def staged : List String := [
+    "lean_a_lane_is_always_granted",
+    "lean_an_unmeasurable_host_still_builds_and_still_fits",
+    "lean_an_unsearched_source_claims_nothing",
+    "lean_each_file_is_counted_once",
+    "lean_every_file_settles_exactly_what_it_declares",
+    "lean_every_source_is_classified",
+    "lean_lanes_never_exceed_the_cores_but_for_the_floor",
+    "lean_lanes_never_exceed_what_memory_affords",
+    "lean_more_memory_never_costs_a_lane",
+    "lean_more_neighbours_never_buys_a_lane",
+    "lean_no_declaration_in_these_files_closes_by_rfl",
+    "lean_no_file_declares_more_than_it_holds",
+    "lean_no_file_settles_nothing",
+    "lean_novelty_is_claimed_of_no_source",
+    "lean_novelty_is_claimed_only_where_a_search_was_performed",
+    "lean_some_sources_are_unsearched",
+    "lean_the_counts_are_not_one_number_repeated",
+    "lean_the_fallback_costs_half_the_lanes_at_the_size_that_prompted_this",
+    "lean_the_kinds_cover_every_source",
+    "lean_the_parts_sum_to_the_whole_and_each_part_is_recoverable",
+    "lean_the_restated_sources_are_named_and_claim_nothing",
+    "lean_the_two_proof_styles_partition_the_theorems",
+    "lean_this_deposit_claims_no_novelty_today",
+    "lean_unknown_is_never_better_than_measuring_an_empty_machine",
+    "lean_zero_claims_is_not_full_attribution"]
+
+/-- The Zenodo records found for the staged titles (exact-title matches), from the 2026-10-23 query. -/
+def mintedFacts : Nat := 0
+
+/-- The integration's policy: DOIs minted per release. -/
+def integrationDoisPerRelease : Nat := 1
+
+/-- Can the integration cover the staged deposits? Only if one release's DOI is enough for all of them. -/
+def integrationCovers (n : Nat) : Bool := decide (n ≤ integrationDoisPerRelease)
+
+theorem all_staged_are_unminted : mintedFacts = 0 := by decide
+
+theorem integration_cannot_cover_the_staged_deposits : integrationCovers staged.length = false := by decide
+
+/-- The route the facts select: the integration only when it covers everything staged; otherwise a token mints them. -/
+def route : String := if integrationCovers staged.length then "integration" else "token"
+
+theorem the_route_is_token : route = "token" := by decide
+
+end DepositRoute

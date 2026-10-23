@@ -207,7 +207,9 @@
     "gate:packages": "node scripts/package-gates.ts",
     "test:online-verify": "node scripts/online-verify-e2e-test.ts",
     "test:run-suite-security": "node scripts/run-suite-security-test.ts",
-    "cern:lean": "node scripts/cern-lean.ts"
+    "cern:lean": "node scripts/cern-lean.ts",
+    "push:green": "node scripts/push-when-green.ts",
+    "dataset:court": "node scripts/dataset-court.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
