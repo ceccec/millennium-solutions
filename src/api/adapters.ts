@@ -200,7 +200,36 @@ const fromCodeLast: Adapter[] = [
     notFor: 'a clean result as proof of safety. OSV lists what has been reported, not what is absent' },
 ]
 
-export const ADAPTERS: Adapter[] = [...fromReaders, ...fromCode, ...fromCodeRest, ...fromCodeLast]
+// ── THE NIST SERVICES NOT YET COVERED ──────────────────────────────────────────────────────────────────────────
+const fromNist: Adapter[] = [
+  { name: 'nist:nvd', source: 'code', host: 'services.nvd.nist.gov',
+    url: 'https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44228', auth: 'none',
+    expect: (b) => /CVE-2021-44228/.test(b),
+    purpose: 'the National Vulnerability Database record for a CVE identifier',
+    notFor: 'the exploitability or the exposure of any system. A CVE record describes a weakness; it is not a measurement of risk' },
+  { name: 'nist:beacon', source: 'code', host: 'beacon.nist.gov',
+    url: 'https://beacon.nist.gov/beacon/2.0/pulse/last', auth: 'none',
+    expect: (b) => /outputValue|pulse/i.test(b),
+    purpose: 'the latest value of the NIST Randomness Beacon, a public and independently verifiable random output',
+    notFor: 'a proof that a value is random. The beacon publishes a value; its unpredictability is a claim the beacon makes about itself' },
+  { name: 'nist:webbook', source: 'code', host: 'webbook.nist.gov',
+    url: 'https://webbook.nist.gov/cgi/cbook.cgi?ID=C50782&Units=SI', auth: 'none',
+    expect: (b) => /C9H8O4|Aspirin|acetylsalicylic/i.test(b),
+    purpose: 'the NIST Chemistry WebBook entry for a compound, with its measured thermochemical and phase data',
+    notFor: 'the properties of a compound in a body or in a process. A tabulated value is measured under stated conditions' },
+  { name: 'nist:asd', source: 'code', host: 'physics.nist.gov',
+    url: 'https://physics.nist.gov/PhysRefData/ASD/levels_form.html', auth: 'none',
+    expect: (b) => /Atomic Spectra Database/i.test(b),
+    purpose: 'the NIST Atomic Spectra Database, the reference for energy levels and spectral lines of atoms and ions',
+    notFor: 'a line as a prediction of a particular source. A tabulated line is a measured or computed value with its own uncertainty' },
+  { name: 'nist:dlmf', source: 'code', host: 'dlmf.nist.gov',
+    url: 'https://dlmf.nist.gov/', auth: 'none',
+    expect: (b) => /Digital Library of Mathematical Functions/i.test(b),
+    purpose: 'the NIST Digital Library of Mathematical Functions, the reference for special functions and their identities',
+    notFor: 'a numerical value at a point without the section that states its domain' },
+]
+
+export const ADAPTERS: Adapter[] = [...fromReaders, ...fromCode, ...fromCodeRest, ...fromCodeLast, ...fromNist]
 
 /** The hosts this registry covers. scripts/api-adapters-test.ts checks the code against it. */
 export const COVERED_HOSTS = new Set(ADAPTERS.map((a) => a.host))
