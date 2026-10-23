@@ -73,6 +73,8 @@ export const searchDocs = (request: string, sources: { file: string; text: strin
   for (const { file, text } of sources) {
     const lines = text.split('\n')
     lines.forEach((line, i) => {
+      // A record is data, not documentation: a line that builds a key-and-name entry is skipped.
+      if (/\bout\.push\(|\bkey:\s*'/.test(line)) return
       const low = line.toLowerCase()
       const score = words.filter((w) => low.includes(w)).length
       if (score >= Math.max(2, Math.ceil(words.length / 2))) hits.push({ file, line: i + 1, score, text: line.trim().slice(0, 240) })
