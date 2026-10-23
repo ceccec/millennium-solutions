@@ -33,9 +33,27 @@ else if (r.status === 'FACTORED') {
   }
 }
 
+// DISCOVERY, WHEN RED. The gate does not stop at "red": it names every tool in the catalogue that touches factorisation,
+// what each one can contribute, and what would turn the gate green. Nothing here computes a factor that the gate would accept.
+import { existsSync } from 'node:fs'
+import { TOOLS } from '../src/mcp/index.ts'
+const discovered = TOOLS.filter((t) => /factor|prime|shor|verify/i.test(t.name)).map((t) => t.name)
+const suppliedFile = 'evidence/thousand-bit/factors.json'
 if (failures.length) {
   console.log('✗ thousand-bit gate: RED')
   for (const f of failures) console.log(`    · ${f}`)
+  console.log('  discovered tools that touch factorisation:')
+  for (const name of discovered) {
+    const role = name === 'factor' ? 'computes factors; returns PARTIAL for this integer'
+      : name === 'factor_verify' ? 'checks a supplied factorisation; VERIFIED would turn the gate green'
+      : name.includes('shor') ? 'the QPU Shor tool; not run here: its state vector is about 2^1000 entries'
+      : 'factorisation-related; not a source of a full factorisation for this integer'
+    console.log(`    · ${name}: ${role}`)
+  }
+  console.log('  checked sources: FactorDB has no factors for this integer (recorded earlier, 2026)')
+  console.log(existsSync(suppliedFile)
+    ? `  supplied factorisation found at ${suppliedFile}: check it with factor_verify`
+    : `  missing: a full factorisation at ${suppliedFile}, which factor_verify must report VERIFIED`)
   process.exit(1)
 }
 console.log(`✓ thousand-bit gate: GREEN — ${bits} bits; status ${r.status}; the decomposition is an identity; the composite claim is recomputed.`)
