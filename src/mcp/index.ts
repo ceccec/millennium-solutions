@@ -224,7 +224,7 @@ export const NEEDS: Record<string, Need[]> = {
   apis_guru_cross: ['tree'],
   apis_guru_gaps: ['tree'],
   factor: ['core'],
-  understand: ['core'],
+  understand: ['tree'],
   api_adapters: ['net', 'tree'],
   prose_check: ['tree'],
   theorem_only: ['tree'],

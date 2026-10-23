@@ -67,6 +67,8 @@ const REACHES: [RegExp, Need][] = [
   [/git-commit-paths\.ts/, 'git'],
   [/execSync\(\s*[`'"]node scripts\/|execFileSync\(\s*['"`]node['"`]\s*,\s*\[\s*['"`]scripts\//, 'tree'],
   [/\bleanTheorems\b|\bleanFiles\b|\bleanSource\b|\bleanSealed\b/, 'tree'],
+  // The inline-doc search reads the repository's own sources and docs, so a handler that scans them reaches the tree.
+  [/__readdir|__read\(|__stat\(/, 'tree'],
   // A file this repository keeps at its root is the tree, whatever the code reading it is called.
   [/\.mcp-session\.log|SESSION_LOG/, 'tree'],
   [/scripts\/lean\.ts|lean-gen\.ts|seal-lean\.ts|lean-ask\.ts|lean-audit-library\.ts|lean-split\.ts|answer-verify-lean\.ts|scripts\/answer\.ts/, 'lean'],

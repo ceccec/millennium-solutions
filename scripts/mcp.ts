@@ -8,7 +8,8 @@ import { execSync, execFileSync } from 'node:child_process'
 import { readFileSync, existsSync, readdirSync, appendFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { factor } from '../src/factor/index.ts'
-import { understand } from '../src/understand/index.ts'
+import { understand, searchDocs } from '../src/understand/index.ts'
+import { readdirSync as __readdir, readFileSync as __read, statSync as __stat } from 'node:fs'
 import { join as joinPath } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 // The tool table is data and lives in src/mcp; the handlers below are what need the network.
@@ -227,7 +228,19 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return JSON.stringify({ status: 'FAILED', output: String(x.stdout ?? '').slice(-4000), why: String(x.stderr ?? e).slice(-800) }) } },
   apis_guru_gaps: () => { try { return execFileSync('node', ['scripts/apis-guru-gaps.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
-  understand: (a) => JSON.stringify(understand(String(a?.request ?? ''))),
+  understand: (a) => {
+    const request = String(a?.request ?? '')
+    const u = understand(request)
+    if (u.understood) return JSON.stringify(u)
+    // The inline docs of the tree: TypeScript comments under scripts/ and src/, Lean docs under src/proof, and the root prose.
+    const files: string[] = []
+    const walk = (dir: string) => { for (const f of __readdir(dir)) { const p = dir + '/' + f; if (__stat(p).isDirectory()) walk(p); else if (/\.(ts|lean|md)$/.test(f) && !/\.(json)$/.test(f)) files.push(p) } }
+    for (const d of ['scripts', 'src']) walk(d)
+    for (const f of ['FINDINGS.md', 'CHALLENGES.md', 'CHANGELOG.md']) if (existsSync(f)) files.push(f)
+    const sources = files.map((file) => ({ file, text: __read(file, 'utf8') }))
+    const docs = searchDocs(request, sources)
+    return JSON.stringify({ ...u, docs, docsNote: docs.length ? 'these are lines the tree wrote in its own comments and docs; they are text, not proofs' : 'no inline doc in the tree shares enough of the request\'s words' })
+  },
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
