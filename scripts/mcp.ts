@@ -4,8 +4,10 @@
 // @modelcontextprotocol/sdk), preserving the zero-dep-core. Tools inherit the discipline: the honesty
 // gate returns a FLOOR (not a truth oracle), content-address = integrity (not encryption/proof).
 import { createInterface } from 'node:readline'
-import { execSync } from 'node:child_process'
-import { readFileSync, existsSync, readdirSync } from 'node:fs'
+import { execSync, execFileSync } from 'node:child_process'
+import { readFileSync, existsSync, readdirSync, appendFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import { join as joinPath } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 // The tool table is data and lives in src/mcp; the handlers below are what need the network.
 import { TOOLS, LISTED, WRITES, NEEDS, SELF_SUFFICIENT, type Need } from '../src/mcp/index.ts'
@@ -14,7 +16,6 @@ import { handle as __handle, resolve as __resolve, HANDLE_HEX as __HANDLE_HEX } 
 const __toUuidForHandle = toUuid
 import { checkFace, type Face } from '../src/face/index.ts'
 import { doubleTorusGravity } from '../src/the/apple/index.ts'
-import { diamond } from '../src/5/diamond.ts'
 import { computes } from './honesty-gate.ts'
 import { proveVerdict } from './verdict.ts'
 import { apiFetch } from './api.ts'
@@ -118,8 +119,17 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
       })
       const text = await res.text()
       if (!res.ok) return JSON.stringify({ connector: c.name, status: res.status, note: `${c.name} answered HTTP ${res.status} — NOT MEASURED, never read as "it has no answer"` })
-      return JSON.stringify({ connector: c.name, endpoint: c.endpoint, attribution: c.attribution, notFor: c.notFor,
-        answer: (() => { try { return JSON.parse(text) } catch { return text.slice(0, 40_000) } })() }, null, 1)
+      // A reply that is not JSON is named UNPARSED with its text, never passed off as an answer.
+      const parsed = (() => { try { return JSON.parse(text) as { error?: { message?: string; data?: { tools?: string[] } }; result?: unknown } } catch { return { unparsed: true, text: text.slice(0, 40_000) } } })() as { error?: { message?: string; data?: { tools?: string[] } }; result?: unknown; unparsed?: boolean; text?: string }
+      // A JSON-RPC error is the server REFUSING the name, not an answer. It is reported as REFUSED, with the server's own
+      // list of tools, and the note says the list may be narrower than what the server accepts.
+      if (parsed?.error) {
+        return JSON.stringify({ connector: c.name, endpoint: c.endpoint, status: 'REFUSED', tool: a?.tool ?? null,
+          why: parsed.error.message ?? 'refused', serverTools: parsed.error.data?.tools ?? [],
+          note: 'the server refused this name. Its list is the list it declares, which may be narrower than the names it accepts: other calls to the same server have answered names outside this list.' }, null, 1)
+      }
+      if (parsed.unparsed) return JSON.stringify({ connector: c.name, endpoint: c.endpoint, status: 'UNPARSED', note: 'the server replied with text that is not JSON', text: parsed.text }, null, 1)
+      return JSON.stringify({ connector: c.name, endpoint: c.endpoint, attribution: c.attribution, notFor: c.notFor, status: 'ANSWERED', answer: parsed }, null, 1)
     } catch (e) {
       const m = e instanceof Error ? e.message : String(e)
       return JSON.stringify({ connector: c.name, note: /abort/i.test(m) ? 'timed out at 40s — NOT MEASURED, never "unreachable"' : m.slice(0, 200) })
@@ -157,9 +167,19 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   discoveries: async (a) => {
     const { execFileSync } = await import('node:child_process')
     const out = execFileSync('node', ['scripts/discoveries.ts', '--all'], { encoding: 'utf8', maxBuffer: 32 << 20 })
-    const n = Number(a?.limit ?? 40)
+    // NO DEFAULT CAP: without a limit every line is returned. A caller who passes one still gets that cap.
+    // PAGED BY BYTES. Each page fills up to PAGE_BUDGET of body text, so no reply exceeds the client buffer, and returns
+    // the cursor of the next page. The caller's limit still caps the body when given, as before.
+    const n = a?.limit === undefined ? Infinity : Number(a.limit)
     const lines = out.split('\n')
-    return lines.slice(0, 5).concat(lines.slice(5, 5 + n * 2)).concat(lines.slice(-4)).join('\n')
+    const head = lines.slice(0, 5), tail = lines.slice(-4)
+    const body = lines.slice(5, lines.length - 4).slice(0, n === Infinity ? undefined : n * 2)
+    const start = Number(a?.cursor ?? 0)
+    let end = start, bytes = 0
+    while (end < body.length) { const s = body[end].length + 1; if (bytes + s > PAGE_BUDGET && end > start) break; bytes += s; end++ }
+    const page = [...head, ...body.slice(start, end), ...tail]
+    if (end < body.length) page.push(`next cursor: ${end} of ${body.length} body lines`)
+    return page.join('\n')
   },
   formulas: async (a) => {
     const { leanTheorems, leanFiles, leanSource } = await import('../src/api/index.ts')
@@ -169,9 +189,15 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     if (a?.wing) rows = rows.filter((r) => r.wing === String(a.wing))
     if (a?.file) rows = rows.filter((r) => r.file === String(a.file))
     if (a?.contains) rows = rows.filter((r) => (r.name + ' ' + r.statement).toLowerCase().includes(String(a.contains).toLowerCase()))
-    const shown = rows.slice(0, Number(a?.limit ?? 50))
+    // NO DEFAULT CAP: without a limit every matching formula is returned.
+    // PAGED BY BYTES: a page fills up to PAGE_BUDGET of serialised formulas and returns the cursor of the next page.
+    const pool = a?.limit === undefined ? rows : rows.slice(0, Number(a.limit))
+    const from = Number(a?.cursor ?? 0)
+    let end = from, bytes = 0
+    while (end < pool.length) { const s = JSON.stringify(pool[end]).length; if (bytes + s > PAGE_BUDGET && end > from) break; bytes += s; end++ }
+    const shown = pool.slice(from, end)
     // THE COUNTS ARE RETURNED so a filter matching nothing cannot be read as an empty deposit.
-    return JSON.stringify({ total, matched: rows.length, shown: shown.length, formulas: shown }, null, 1)
+    return JSON.stringify({ total, matched: rows.length, shown: shown.length, from, next: end < pool.length ? end : null, formulas: shown }, null, 1)
   },
   handle: (a) => {
     const text = String(a?.text ?? '')
@@ -182,7 +208,50 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     }
     return JSON.stringify({ handle: __handle(text), uuid: __toUuidForHandle(text), width: __HANDLE_HEX, note: 'send the handle and the message; the address is recomputable from the message alone' }, null, 1)
   },
+  cern: (a) => { try { return execFileSync('node', ['scripts/cern.ts'], { encoding: 'utf8', timeout: 3_600_000, maxBuffer: 64 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return JSON.stringify({ status: 'FAILED', output: String(x.stdout ?? '').slice(-4000), why: String(x.stderr ?? e).slice(-800) }) } },
+  hexbit_route: (a) => { try { return execFileSync('node', ['scripts/hexbit-route.ts', ...(a?.index ? ['--index'] : [])], { encoding: 'utf8', input: String(a?.input ?? ''), timeout: 120_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  qpu_crosscheck: (a) => { try { return execFileSync('node', ['scripts/qpu-crosscheck.ts'], { encoding: 'utf8', timeout: 180_000, maxBuffer: 8 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  prose_check: (a) => { try { return execFileSync('node', ['scripts/precommit.ts'], { cwd: R, encoding: 'utf8', timeout: 300_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return (String(x.stdout ?? '') + String(x.stderr ?? '')) || JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
+  theorem_only: (a) => { try { return execFileSync('node', ['scripts/theorem-only-check.ts', R], { cwd: R, encoding: 'utf8', timeout: 300_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return (String(x.stdout ?? '') + String(x.stderr ?? '')) || JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
+  constants_check: (a) => { try { return execFileSync('node', ['scripts/constants-gate.ts'], { cwd: R, encoding: 'utf8', timeout: 300_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return (String(x.stdout ?? '') + String(x.stderr ?? '')) || JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
+  pre_commit_e2e: (a) => { try { return execSync('sh .githooks/pre-commit', { cwd: R, encoding: 'utf8', timeout: 900_000, stdio: ['ignore', 'pipe', 'pipe'] }) }
+    catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return (String(x.stdout ?? '') + String(x.stderr ?? '')) || JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
+  qpu_court_local: (a) => { try { return execFileSync('node', ['--test', 'dist/payload/plugins/gate-court.test.js'], { cwd: QPU, encoding: 'utf8', timeout: 300_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return (String(x.stdout ?? '') + String(x.stderr ?? '')) || JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
+  qpu_families: (a) => { try { return execSync('find dist/families -name test.js | sort | xargs node --test', { cwd: QPU, encoding: 'utf8', timeout: 900_000, maxBuffer: 64 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return (String(x.stdout ?? '') + String(x.stderr ?? '')) || JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
+  leaks: (a) => { try { return execFileSync('node', ['scripts/leaks.ts', ...(a?.json ? ['--json'] : [])], { encoding: 'utf8', timeout: 300_000 }) }
+    catch (e) { return JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
   lean_verify: (a) => { try { return execSync(`node scripts/lean.ts${a?.file ? ' ' + a.file : ''}`, { encoding: 'utf8' }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  lean_audit_library: (a) => { try { return execFileSync('node', ['scripts/lean-audit-library.ts', String(a?.project ?? ''), String(a?.src ?? ''), String(a?.prefix ?? '')], { encoding: 'utf8' }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  web_search: (a) => { try { return execFileSync('node', ['scripts/web-search.ts', String(a?.source ?? ''), String(a?.query ?? ''), String(a?.limit ?? 5)], { encoding: 'utf8', timeout: 60_000 }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  clay_conditions: () => { try { return execFileSync('node', ['scripts/clay-conditions-test.ts'], { encoding: 'utf8', timeout: 900_000 }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  web_fetch: (a) => { try { return execFileSync('node', ['scripts/web-fetch.ts', String(a?.url ?? ''), String(a?.pattern ?? ''), String(a?.window ?? 160), a?.raw ? 'raw' : ''], { encoding: 'utf8', timeout: 60_000 }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  lean_split: (a) => { try { return execSync('node scripts/lean-split.ts', { input: String(a?.source ?? ''), encoding: 'utf8', timeout: 900_000 }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  task_route: (a) => { try { return execSync('node scripts/task-route.ts', { input: String(a?.input ?? ''), encoding: 'utf8', timeout: 120_000 }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  run_suite: (a) => { try { return execFileSync('node', ['scripts/suite-run.ts', String(a?.suite ?? '')], { encoding: 'utf8', timeout: 900_000 }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  stall_check: (a) => { try { return execSync('node scripts/stall-check.ts', { input: String(a?.text ?? ''), encoding: 'utf8', timeout: 60_000 }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  session_report: () => sessionReport(SESSION_LOG),
+  git_commit_paths: (a) => { try { return execSync('node scripts/git-commit-paths.ts', { input: JSON.stringify({ repo: a?.repo, message: a?.message, paths: a?.paths }), encoding: 'utf8', timeout: 900_000 }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  answer: (a) => { try { return execSync('node scripts/answer.ts', { input: String(a?.question ?? ''), encoding: 'utf8', timeout: 900_000 }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  lean_ask: (a) => { try { return execSync('node scripts/lean-ask.ts', { input: String(a?.source ?? ''), encoding: 'utf8' }) }
     catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
   lean_seal: (a) => { try { return execSync(`node scripts/seal-lean.ts${a?.dry ? '' : ' --seal'}`, { encoding: 'utf8' }) }
     catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
@@ -316,13 +385,21 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const everyMultiwordLinked = links.filter((l) => l.words.length > 1).every((l) => l.words.every((w) => toUuid('word:' + w).length === 36) && l.address.length === 36)
     // ALL IS COMPUTABLE BY THEOREMS, NO EXCEPTION — the audit recomputes its checks as decidable predicates,
     // and RE-RUNS the recorded audit diamonds from the ledger's theorems (their test() must recompute true).
+    const leanHolds = (file: string, name: string): boolean => {
+      try {
+        const a = JSON.parse(execSync('node scripts/lean-ask.ts', { input: readFileSync(file, 'utf8'), encoding: 'utf8' })) as { status: string; compiles: boolean; sorry: boolean; axioms: string[] }
+        return a.status === 'ANSWERED' && a.compiles && !a.sorry && a.axioms.includes(`'${name}' does not depend on any axioms`)
+      } catch { return false }
+    }
     const AUDIT_DIAMONDS = ['every_multiword_mcp_tool_links_to_its_single_words', 'the_double_torus_covers_seven_distinct_dimensions', 'the_diamond_is_a_tens_complement_involution', 'the_audit_recomputes_all_by_theorems_no_exception', 'a_theorem_is_a_usable_diamond_certified_by_recompute']
     const diamonds = AUDIT_DIAMONDS.map((k) => { const c = CANDIDATES.find((x) => x.key === k); return { key: k, certified: !!c && c.test() === true && computes(c.name).binary === 1 } })
     const theorems = {
       everyToolHandled: undeclared.length === 0,
       everyHandlerDeclared: orphans.length === 0,
       everyMultiwordLinked,
-      diamondInvolution: [1, 2, 3, 4, 5, 6, 7, 8, 9].every((d) => diamond(diamond(d)) === d),
+      // THE KERNEL'S VERDICT, NOT A JAVASCRIPT LOOP: the theorem is compiled by lean_ask and must come back
+      // compiling, sorry-free, and depending on no axiom. Anything else reads as false.
+      diamondInvolution: leanHolds('src/proof/diamond.lean', 'diamond_involution'),
       everyDiamondCertified: diamonds.every((d) => d.certified),
     }
     const allComputeTrue = Object.values(theorems).every(Boolean)
@@ -336,6 +413,11 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
 // only when it needs it. Unlisted but still answered, so no caller breaks: every tool's own name, and the first door
 // (`run {op, args}`, `describe {op}`, with its old reply). TOOLS remains the catalogue the audit checks against HANDLERS;
 // the doors are not tools, so they are in neither.
+/** Bytes of body text per page: half the 8 MB client buffer, so a page always fits with room for its wrapper. */
+const PAGE_BUDGET = 4 << 20
+/** The repositories the completed tools operate on: this one, and qpu beside it. */
+const R = '/Users/ceci/github/ceccec/millennium-solutions/'
+const QPU = '/Users/ceci/github/uuidna/qpu/'
 const first = (d: string) => (d.split(/(?<=[.—])\s/)[0] ?? d).slice(0, 140)
 const toolOf = (name: unknown) => {
   const t = TOOLS.find((x) => x.name === String(name))
@@ -398,7 +480,82 @@ const describeFirstDoor = (op?: unknown): string => {
   if (op) { const t = toolOf(op); return JSON.stringify({ op: t.name, description: t.description, args: t.inputSchema }) }
   return JSON.stringify({ ops: TOOLS.map((t) => ({ op: t.name, does: first(t.description) })) })
 }
+// ── THE CALL LOG — one line per tool call this server serves, for session_report ─────────────────────────
+// Only what this server sees: its own calls, their status, and how long each took. It cannot see a client's tokens.
+const SESSION_LOG = joinPath(fileURLToPath(new URL('..', import.meta.url)), '.mcp-session.log')
+const statusOf = (out: string): string => {
+  const m = /"status":\s*"([A-Z_]+)"/.exec(out)
+  if (m) return m[1]!
+  return out.startsWith('FAILED') ? 'FAILED' : 'OK'
+}
+// THE RECEIPT CHAIN: each entry carries the hash of the entry before it (`prev`) and its own hash (`h`), computed with
+// the repository's content address over prev + the entry. Editing or removing any line breaks every hash after it, and
+// session_report says where. These are content-addressed receipts, not quantum receipts.
+const lastHash = (): string => {
+  if (!existsSync(SESSION_LOG)) return 'genesis'
+  const lines = readFileSync(SESSION_LOG, 'utf8').split('\n').filter(Boolean)
+  const last = lines[lines.length - 1]
+  if (!last) return 'genesis'
+  return (JSON.parse(last) as { h?: string }).h ?? 'genesis'
+}
+const logCall = (tool: string, status: string, ms: number): void => {
+  try {
+    const entry = { ts: new Date().toISOString(), tool, status, ms }
+    const prev = lastHash()
+    const h = toUuid(prev + '|' + JSON.stringify(entry))
+    appendFileSync(SESSION_LOG, JSON.stringify({ ...entry, prev, h }) + '\n')
+  } catch {
+    // logging must never fail a call; a missing log is reported by session_report, which names the absence
+  }
+}
+// The chain check: recompute every hash in order. Lines without a hash predate the chain and are counted, not hidden.
+const verifyChain = (rows: { ts: string; tool: string; status: string; ms: number; prev?: string; h?: string }[]) => {
+  let prev = 'genesis'
+  let chained = 0
+  let unchained = 0
+  for (let i = 0; i < rows.length; i++) {
+    const r = rows[i]!
+    if (r.h === undefined) { unchained++; continue }
+    const { prev: _p, h: _h, ...entry } = r
+    if (r.prev !== prev || toUuid(prev + '|' + JSON.stringify(entry)) !== r.h) return { intact: false, chained, unchained, brokenAt: i + 1 }
+    prev = r.h
+    chained++
+  }
+  return { intact: true, chained, unchained, brokenAt: null as number | null }
+}
+// The dispatch names call_tool, list_tools and run are wrappers: the tool they reach is logged once, by its own name.
+const WRAPPERS = new Set(['call_tool', 'list_tools', 'run'])
 export const run = async (name: string, a: any): Promise<string> => {
+  if (WRAPPERS.has(name)) return runInner(name, a)
+  const t0 = Date.now()
+  try {
+    const out = await runInner(name, a)
+    logCall(name, statusOf(out), Date.now() - t0)
+    return out
+  } catch (e) {
+    logCall(name, 'THREW', Date.now() - t0)
+    throw e
+  }
+}
+// session_report — the calls this server served: totals, by tool, by status, and time. It reads the log and nothing else.
+const sessionReport = (logPath: string): string => {
+  if (!existsSync(logPath)) return JSON.stringify({ status: 'ABSENT', note: 'no call log yet: nothing has been served by this server, or the log was removed' }, null, 1)
+  const rows = readFileSync(logPath, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l) as { ts: string; tool: string; status: string; ms: number })
+  const chain = verifyChain(rows)
+  const count = (key: (r: typeof rows[number]) => string) => rows.reduce<Record<string, number>>((acc, r) => { const k = key(r); acc[k] = (acc[k] ?? 0) + 1; return acc }, {})
+  return JSON.stringify({
+    status: 'REPORTED',
+    calls: rows.length,
+    firstCall: rows[0]?.ts ?? null,
+    lastCall: rows[rows.length - 1]?.ts ?? null,
+    totalMs: rows.reduce((t, r) => t + r.ms, 0),
+    byStatus: count((r) => r.status),
+    byTool: count((r) => r.tool),
+    chain,
+    note: 'only this server\'s calls are counted. Tokens are not visible to the server: a client reports its own spend.',
+  }, null, 1)
+}
+const runInner = async (name: string, a: any): Promise<string> => {
   if (name === 'call_tool') return run(String(a?.name ?? ''), a?.arguments ?? {})
   if (name === 'list_tools') return listTools(a?.name)
   if (name === 'run') return run(String(a?.op ?? ''), a?.args ?? {})

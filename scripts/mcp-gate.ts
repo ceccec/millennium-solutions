@@ -48,10 +48,22 @@ const handlers = keys.map((k, i) => ({
 
 /** WHAT EACH SYMBOL REACHES. The one judgement in this file; everything else is derived from it. */
 const REACHES: [RegExp, Need][] = [
+  // The qpu checkout beside this repository is the tree the completed qpu tools read and build.
+  [/\bQPU\b|uuidna\/qpu/, 'tree'],
+  // The pre-commit hook reaches every stream it runs: the prose and ledger checks, git, the Lean gate, the network court.
+  [/githooks\/pre-commit/, 'git'],
+  [/githooks\/pre-commit/, 'lean'],
+  [/githooks\/pre-commit/, 'ledger'],
+  [/githooks\/pre-commit/, 'net'],
+  [/githooks\/pre-commit/, 'tree'],
   [/execSync\(\s*['"`]git\b|execFileSync\(\s*['"`]git['"`]/, 'git'],
+  // The commit script runs git itself, so a handler that spawns it needs a git checkout.
+  [/git-commit-paths\.ts/, 'git'],
   [/execSync\(\s*[`'"]node scripts\/|execFileSync\(\s*['"`]node['"`]\s*,\s*\[\s*['"`]scripts\//, 'tree'],
   [/\bleanTheorems\b|\bleanFiles\b|\bleanSource\b|\bleanSealed\b/, 'tree'],
-  [/scripts\/lean\.ts|lean-gen\.ts|seal-lean\.ts/, 'lean'],
+  // A file this repository keeps at its root is the tree, whatever the code reading it is called.
+  [/\.mcp-session\.log|SESSION_LOG/, 'tree'],
+  [/scripts\/lean\.ts|lean-gen\.ts|seal-lean\.ts|lean-ask\.ts|lean-audit-library\.ts|lean-split\.ts|answer-verify-lean\.ts|scripts\/answer\.ts/, 'lean'],
   [/\bapiFetch\b|\bfetch\(|novelty\/index/, 'net'],
   [/discovered\.json|__ledger\(|\bloadLedger\b|\bisLive\b|\bisWithdrawn\b/, 'ledger'],
   [/FUSION|faceDir|peer_faces|\bfaces\b/, 'shared'],
@@ -68,9 +80,17 @@ const REACHES: [RegExp, Need][] = [
 const spawned = (t: string): string[] =>
   [...t.matchAll(/scripts\/([a-z0-9-]+)\.ts/g)].map((m) => m[1])
 
+const touchesNetwork = (script: string): boolean => {
+  try {
+    const src = readFileSync(`scripts/${script}.ts`, 'utf8').replace(/\/\*[\s\S]*?\*\//g, ' ').replace(/\/\/[^\n]*/g, ' ')
+    return /\bfetch\(|https?:\/\//.test(src)
+  } catch { return false }
+}
 const derive = (t: string): Need[] => {
   const direct = REACHES.filter(([re]) => re.test(t)).map(([, need]) => need)
-  const viaSpawn: Need[] = spawned(t).some((s) => NETWORK.has(s)) ? ['net'] : []
+  // A spawned script reaches the network if it is registered in NETWORK, or if its own source (comments removed) calls
+  // fetch or names a web address. Derived from the source, so a new network script needs no registry entry.
+  const viaSpawn: Need[] = spawned(t).some((s) => NETWORK.has(s) || touchesNetwork(s)) ? ['net'] : []
   const n = [...new Set([...direct, ...viaSpawn])].sort()
   return n.length ? n : ['core']
 }
