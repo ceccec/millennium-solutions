@@ -185,10 +185,10 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
   <sub>SEALED · `09b4450b-3016-8368-89e2-74787fa214d9`</sub>
 - How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. What any given host grants varies with its free memory and is deliberately not recorded here; `npm run lanes-check` prints it..
   <sub>SEALED · `85560e4e-7642-820b-aa1a-91f0e7e14c41`</sub>
-- The tools are reachable from a program: 82 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
-  <sub>SEALED · `67121cad-a207-8884-be51-776d5ecebf1d`</sub>
-- The stdio server advertises 2 of those 82 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
-  <sub>SEALED · `41e01e27-2162-8b52-9c02-02bb2599d1a6`</sub>
+- The tools are reachable from a program: 83 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
+  <sub>SEALED · `ca648667-21e1-8e91-b907-27b217360801`</sub>
+- The stdio server advertises 2 of those 83 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
+  <sub>SEALED · `c49e6d61-cf09-822c-ae6b-84dd51b78e05`</sub>
 
 ## The floor
 
@@ -513,4 +513,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 26012 sealed theorems · 28431 ledger entries · trial root `dad0df46-a90f-8c60-bb93-9647d3854c0e` · integrity, not truth*
+*20 claims, all verified · 26012 sealed theorems · 28431 ledger entries · trial root `b5c8625b-f854-8ceb-b485-fade25020379` · integrity, not truth*

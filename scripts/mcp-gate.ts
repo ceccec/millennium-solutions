@@ -69,6 +69,8 @@ const REACHES: [RegExp, Need][] = [
   [/\bleanTheorems\b|\bleanFiles\b|\bleanSource\b|\bleanSealed\b/, 'tree'],
   // The QPU wave calls the connector, which is a network call to another service, so a handler that calls connect reaches the network.
   [/HANDLERS\.connect\(/, 'net'],
+  // The QPU check helper calls the connector, so every handler that uses it reaches the network.
+  [/\bshorCheck\(/, 'net'],
   // The inline-doc search reads the repository's own sources and docs, so a handler that scans them reaches the tree.
   [/__readdir|__read\(|__stat\(/, 'tree'],
   // A file this repository keeps at its root is the tree, whatever the code reading it is called.

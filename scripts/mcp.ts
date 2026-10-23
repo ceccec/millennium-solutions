@@ -67,6 +67,24 @@ const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 // writing tool through by being named differently.
 
 
+// ONE INPUT, ONE CHECK: send to the QPU's Shor tool, read its factors, and check them with the verifier, never by a product alone.
+const shorCheck = async (n: string): Promise<{ n: string; qpu: string[] | null; verifier: string; why?: string; note?: string }> => {
+  const reply = await HANDLERS.connect({ connector: 'qpu', tool: 'crypto_shor', arguments: { n } })
+  let p: string | null = null, q: string | null = null, note = ''
+  try {
+    const text = String((JSON.parse(reply) as { answer?: { result?: { content?: { text?: string }[] } } }).answer?.result?.content?.[0]?.text ?? '')
+    const t = JSON.parse(text) as { exact?: { p?: string; q?: string } }
+    p = t.exact?.p ?? null; q = t.exact?.q ?? null
+  } catch { note = 'the reply could not be read' }
+  if (!p || p === '0' || !q || q === '0') return { n, qpu: null, verifier: 'NOT_FACTORED', note: note || 'the QPU returned no factors' }
+  const v = verifyFactors(n, [p, q])
+  return { n, qpu: [p, q], verifier: v.status, why: v.why }
+}
+const waveSummary = (count: number, rows: { verifier: string }[]) => {
+  const counts: Record<string, number> = {}
+  for (const r of rows) counts[r.verifier] = (counts[r.verifier] ?? 0) + 1
+  return { inputs: count, counts, rows }
+}
 export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   // ── THE COMBINATORIAL LAYER, ANSWERED HERE ─────────────────────────────────────────────────────────────
   // All four read and none writes. `novelty` in particular RETURNS its search instead of filing it:
@@ -277,21 +295,16 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   // the verifier, not by a product alone. A wave reports, per input, what the QPU returned and what the verifier made of it.
   shor_wave: async (a) => {
     const inputs = Array.isArray(a?.inputs) ? (a.inputs as unknown[]).map(String) : []
-    const rows: unknown[] = []
-    for (const n of inputs) {
-      const reply = await HANDLERS.connect({ connector: 'qpu', tool: 'crypto_shor', arguments: { n } })
-      let p: string | null = null, q: string | null = null, note = ''
-      try {
-        const text = String((JSON.parse(reply) as { answer?: { result?: { content?: { text?: string }[] } } }).answer?.result?.content?.[0]?.text ?? '')
-        const t = JSON.parse(text) as { exact?: { p?: string; q?: string } }
-        p = t.exact?.p ?? null; q = t.exact?.q ?? null
-      } catch { note = 'the reply could not be read' }
-      if (!p || p === '0' || !q || q === '0') { rows.push({ n, qpu: null, verifier: 'NOT_FACTORED', note: note || 'the QPU returned no factors' }); continue }
-      const v = verifyFactors(n, [p, q])
-      rows.push({ n, qpu: [p, q], verifier: v.status, why: v.why })
-    }
-    const counts = rows.reduce((acc: Record<string, number>, r) => { const k = (r as { verifier: string }).verifier; acc[k] = (acc[k] ?? 0) + 1; return acc }, {})
-    return JSON.stringify({ inputs: inputs.length, counts, rows })
+    const rows = await Promise.all(inputs.map((n) => shorCheck(n)))
+    return JSON.stringify(waveSummary(inputs.length, rows))
+  },
+  // A WHOLE WAVE IN ONE CALL: search the range, mirror every semiprime, send all the inputs to the QPU in parallel, and verify
+  // each factorisation. Nothing is looped in a shell and nothing is looped by hand: the range in, the verdicts out.
+  qpu_wave: async (a) => {
+    const semis = searchSemiprimes(Number(a?.lo ?? 1), Number(a?.hi ?? 1000), { noZero: true, limit: Number(a?.count ?? 8) })
+    const inputs = semis.flatMap((s) => [s.n, s.mirror ?? ''].filter((x) => x !== ''))
+    const rows = await Promise.all(inputs.map((n) => shorCheck(n)))
+    return JSON.stringify({ range: [Number(a?.lo ?? 1), Number(a?.hi ?? 1000)], semiprimes: semis.length, ...waveSummary(inputs.length, rows) })
   },
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
