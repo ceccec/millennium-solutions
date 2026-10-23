@@ -88,10 +88,17 @@ export const runByChain = (): Set<string> => {
     }
   }
   for (const root of ['release', 'gates', 'all', 'ci:local']) expand(root)
-  let text = bodies.join(' ')
-  for (const c of ['scripts/ci-local.ts', 'scripts/gate.ts', 'scripts/precommit.ts', 'scripts/all.ts']) {
-    try { text += readFileSync(c, 'utf8') } catch { /* absent chains are not chains */ }
+  // scripts/gate-parallel.ts runs the pre-commit and pre-push checks BY NPM NAME (`npm run --silent gate:thousand`,
+  // `gate:leads`), not by path, so its npm names are expanded as well. Reading only its paths left the thousand-bit
+  // gate and the leads gate outside every chain, and both were reported as unrun while the push refused on them.
+  let files = ''
+  for (const c of ['scripts/ci-local.ts', 'scripts/gate.ts', 'scripts/precommit.ts', 'scripts/all.ts', 'scripts/gate-parallel.ts']) {
+    try { files += readFileSync(c, 'utf8') + ' ' } catch { /* absent chains are not chains */ }
   }
+  for (const m of files.matchAll(/npm run (?:--silent )?([a-zA-Z0-9:._-]+)/g)) expand(m[1])
+  // ...and in argv form: ['npm', 'run', '--silent', 'gate:thousand'] (gate-parallel's own list).
+  for (const m of files.matchAll(/'npm',\s*'run',\s*(?:'--silent',\s*)?'([a-zA-Z0-9:._-]+)'/g)) expand(m[1])
+  let text = bodies.join(' ') + ' ' + files
   const reach = reachableScripts()
   const out = new Set<string>()
   for (const m of text.matchAll(/scripts\/([a-z0-9-]+)\.ts/g)) out.add(m[1])
