@@ -204,7 +204,9 @@
     "gate:thousand:control": "node scripts/thousand-bit-gate.ts --control",
     "gate:leads": "node scripts/leads-closed.ts",
     "gate:api": "node scripts/api-gates.ts",
-    "gate:packages": "node scripts/package-gates.ts"
+    "gate:packages": "node scripts/package-gates.ts",
+    "test:online-verify": "node scripts/online-verify-e2e-test.ts",
+    "test:run-suite-security": "node scripts/run-suite-security-test.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

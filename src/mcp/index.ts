@@ -268,7 +268,7 @@ export const NEEDS: Record<string, Need[]> = {
   answer_gate: ['tree'],
   answer_verify_arith: ['tree'],
   answer_verify_arxiv: ['tree'],
-  answer_verify_doi: ['tree'],
+  answer_verify_doi: ['net', 'tree'],
   answer_verify_lean: ['lean', 'tree'],
   anti_fake: ['tree'],
   apis_guru: ['net', 'tree'],

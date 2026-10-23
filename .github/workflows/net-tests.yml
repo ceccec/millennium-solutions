@@ -28,3 +28,7 @@ jobs:
             echo "$out" | tee -a "$GITHUB_STEP_SUMMARY"
             echo "$out" | node -e 'const j=JSON.parse(require("fs").readFileSync(0,"utf8")); if (j.status!=="PASS") { console.error("suite "+j.suite+" is "+j.status); process.exit(1) }'
           done
+      - name: Online verification and suite security (MCP client)
+        run: |
+          node scripts/online-verify-e2e-test.ts
+          node scripts/run-suite-security-test.ts
