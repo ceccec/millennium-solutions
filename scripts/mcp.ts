@@ -11,6 +11,7 @@ import { factor } from '../src/factor/index.ts'
 import { understand, searchDocs } from '../src/understand/index.ts'
 import { split as shareSplit, join as shareJoin } from '../src/split/index.ts'
 import { verifyFactors } from '../src/factor/verify.ts'
+import { mirror as digitMirror, semiprimes as searchSemiprimes } from '../src/mirror/index.ts'
 import { readdirSync as __readdir, readFileSync as __read, statSync as __stat } from 'node:fs'
 import { join as joinPath } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
@@ -270,6 +271,28 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   secure_split: (a) => { if (a?.action === 'join') return JSON.stringify(shareJoin(Array.isArray(a?.shares) ? (a.shares as unknown[]).map(String) : [])); return JSON.stringify(shareSplit(String(a?.secret ?? ''), Number(a?.parts ?? 0))) },
   factor_verify: (a) => JSON.stringify(verifyFactors(String(a?.n ?? ''), Array.isArray(a?.factors) ? (a.factors as unknown[]).map(String) : [])),
+  digit_mirror: (a) => JSON.stringify(digitMirror(String(a?.n ?? ''))),
+  semiprime_search: (a) => JSON.stringify(searchSemiprimes(Number(a?.lo ?? 1), Number(a?.hi ?? 1000), { noZero: a?.noZero === true, limit: Number(a?.limit ?? 20) })),
+  // THE QPU WAVE, IN ONE CALL: every input is sent to the QPU's Shor tool, and every factorisation it returns is checked by
+  // the verifier, not by a product alone. A wave reports, per input, what the QPU returned and what the verifier made of it.
+  shor_wave: async (a) => {
+    const inputs = Array.isArray(a?.inputs) ? (a.inputs as unknown[]).map(String) : []
+    const rows: unknown[] = []
+    for (const n of inputs) {
+      const reply = await HANDLERS.connect({ connector: 'qpu', tool: 'crypto_shor', arguments: { n } })
+      let p: string | null = null, q: string | null = null, note = ''
+      try {
+        const text = String((JSON.parse(reply) as { answer?: { result?: { content?: { text?: string }[] } } }).answer?.result?.content?.[0]?.text ?? '')
+        const t = JSON.parse(text) as { exact?: { p?: string; q?: string } }
+        p = t.exact?.p ?? null; q = t.exact?.q ?? null
+      } catch { note = 'the reply could not be read' }
+      if (!p || p === '0' || !q || q === '0') { rows.push({ n, qpu: null, verifier: 'NOT_FACTORED', note: note || 'the QPU returned no factors' }); continue }
+      const v = verifyFactors(n, [p, q])
+      rows.push({ n, qpu: [p, q], verifier: v.status, why: v.why })
+    }
+    const counts = rows.reduce((acc: Record<string, number>, r) => { const k = (r as { verifier: string }).verifier; acc[k] = (acc[k] ?? 0) + 1; return acc }, {})
+    return JSON.stringify({ inputs: inputs.length, counts, rows })
+  },
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
