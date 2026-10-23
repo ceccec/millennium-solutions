@@ -134,7 +134,11 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     if (run('pgrep', ['-fl', 'gate-parallel|pre-commit-court|git commit|git push']).trim()) return 'REFUSED: a commit or gate is already running in this checkout.'
     const marker = `/tmp/gf_inflight_${createHash('sha256').update(process.cwd()).digest('hex').slice(0, 12)}.json`
     if (existsSync(marker)) return `REFUSED: a previous gates-fire run was killed mid-control and left a restore marker at ${marker}. Restore its backup before running again.`
-    return run('node', ['--experimental-strip-types', 'scripts/gates-fire.ts'])
+    const out = run('node', ['--experimental-strip-types', 'scripts/gates-fire.ts'])
+    // A control that fails on a clean tree, or matches nothing, has not tested what it claims: say so in one place.
+    const untrusted = out.split('\n').filter((l) => /FAILS ON A CLEAN TREE|CONTROL IS A NO-OP/.test(l))
+    const unnamed = out.split('\n').filter((l) => /^  \? /.test(l))
+    return `${out}\nUNTRUSTED: ${untrusted.length} control(s) cannot be trusted as tests; ${unnamed.length} have no target file to control.`
   },
   readers: async (a) => {
     const { execFileSync } = await import('node:child_process')
