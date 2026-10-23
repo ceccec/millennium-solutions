@@ -111,12 +111,13 @@ const CLAIMS: Claim[] = [
       // strongly." Every agent-written version of this sentence in this tree has drifted toward a verdict
       // in one direction or the other; his does not, it is on the public record, and a concept DOI
       // resolves to whatever he says latest. Quoting him is the only version that cannot be rewritten here.
-      return { text: `the seven windows are decided, not judged: ${sealed.length} of ${w.length} are settled by the Lean kernel over their whole finite domain, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly"`,
+      return { text: `the seven windows are decided, not judged: ${sealed.length} of ${w.length} are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly"`,
         ok: sealed.length === w.length && w.length === 7, from: [sealed.length, w.length] } } },
 
   { section: S(0, 'What is proved'),
     derive: () => { const n = leanTheorems.length, f = leanFiles.length
-      const clean = leanFiles.every((x) => !/\bsorry\b|native_decide/.test(leanSrc[x].replace(/^\s*--.*$/gm, '')))
+      // Comments are removed first, block comments (/- … -/ and doc comments /-- … -/) as well as line comments: a word in a comment is not a proof gap.
+      const clean = leanFiles.every((x) => !/\bsorry\b|native_decide/.test(leanSrc[x].replace(/\/-[\s\S]*?-\//g, ' ').replace(/^\s*--.*$/gm, '')))
       return { text: `the formal layer holds ${n} kernel-accepted declarations across ${f} files, and ${clean ? 'no file uses sorry or native_decide outside a comment' : 'AT LEAST ONE FILE USES sorry OR native_decide'}`, ok: n > 0 && clean, from: [n, f] } } },
 
   // WHAT IS NOT AN EXHAUSTION IS NOT THEREFORE A DECLARATION, and this sentence said it was. It computed the
@@ -405,7 +406,8 @@ const body = (site: boolean) => {
   // sibling per level. That ratio is exact, machine-independent, and the thing the claim rests on. The
   // wall-clock measurement stays in the build output, where a figure that moves belongs.
   const ops = Math.round(A.verification.leaves / A.verification.pathNodes)
-  md += `**What verification costs.** Proving the set touches all ${A.verification.leaves.toLocaleString('en-US')} leaves; verifying membership afterwards touches ${A.verification.pathNodes} — one sibling per level. That is **${ops.toLocaleString('en-US')}× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in \`speed.lean\`.\n\n`
+  const exactRatio = (A.verification.leaves / A.verification.pathNodes).toFixed(2)
+  md += `**What verification costs.** Proving the set touches all ${A.verification.leaves.toLocaleString('en-US')} leaves; verifying membership afterwards touches ${A.verification.pathNodes} — one sibling per level. That is **${ops.toLocaleString('en-US')}× less work** (the exact ratio is ${exactRatio}), and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in \`speed.lean\`.\n\n`
 
   // THE AUTHOR'S CLAIM, IN HIS NAME (2026-09-14). This section read "What is deliberately absent … no sentence above
   // claims a Millennium problem settled", which spoke for the author as though the claim had been withdrawn. He: "I did
@@ -430,9 +432,8 @@ const body = (site: boolean) => {
   // The seven Clay problems stand at the TOP of this page (claySection, src/millennium) — the four-column table
   // and the claim that stood here at the foot are that section now, rendered once for the README, the
   // homepage and /solutions.
-  md += site
-    ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_windows_the_seven_rest_on_one_finite_structure) · [the ledger](/proofs) · [the trial](/verify)\n\n`
-    : `## Run it\n\nEverything here recomputes. Nothing below needs a key, an account or a network — clone the tree and run\nit, and the numbers on this page reappear or the command fails.\n\n\`\`\`bash\nnpm ci\nnpm run all               # every gate at once, with the parallel ratio measured on your machine\nnpm run lean              # compile and audit every Lean file: sorry-free, axiom-free, no Mathlib\nnpm run axiom-index       # what is NOT assumed, checked against a control, and the definitions that are\nnpm run contradictions    # the prose and the proof tree must agree\nnpm run zenodo            # the per-theorem deposition records, held to the tree and the published DOI\nnode scripts/forensics.ts # re-verify the append-only chain from its first receipt\nnode scripts/pages.ts     # regenerate this file and the homepage\n\`\`\`\n\n**Where to read next.** [The axiom index](/AXIOMS) states what this deposit does not assume and, at\ngreater length, the definitions it does. [The quantum field](/quantum) renders quantum.lean in three\ndimensions with every coordinate read from a theorem. [Prior art](/PRIOR-ART) records, per source file,\nwhether the work restates someone earlier. [The paper](/paper) typesets every statement.\n\n`
+  if (site) md += `## Read\n\n[The seven, one theorem per problem](/theorem/lean_windows_the_seven_rest_on_one_finite_structure) · [the ledger](/proofs) · [the trial](/verify)\n\n`
+  md += `## Run it\n\nEverything here recomputes. Nothing below needs a key, an account or a network — clone the tree and run\nit, and the numbers on this page reappear or the command fails.\n\n\`\`\`bash\nnpm ci\nnpm run all               # every gate at once, with the parallel ratio measured on your machine\nnpm run lean              # compile and audit every Lean file: sorry-free, axiom-free, no Mathlib\nnpm run axiom-index       # what is NOT assumed, checked against a control, and the definitions that are\nnpm run contradictions    # the prose and the proof tree must agree\nnpm run zenodo            # the per-theorem deposition records, held to the tree and the published DOI\nnode scripts/forensics.ts # re-verify the append-only chain from its first receipt\nnode scripts/pages.ts     # regenerate this file and the homepage\n\`\`\`\n\n**Where to read next.** [The axiom index](/AXIOMS) states what this deposit does not assume and, at\ngreater length, the definitions it does. [The quantum field](/quantum) renders quantum.lean in three\ndimensions with every coordinate read from a theorem. [Prior art](/PRIOR-ART) records, per source file,\nwhether the work restates someone earlier. [The paper](/paper) typesets every statement.\n\n`
   md += `---\n\n*${rows.length} claims, all verified · ${theoremCount()} Lean theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth*\n`
   return md
 }
@@ -464,8 +465,10 @@ last because the orbit never reaches it.
 
 `
 
-writeFileSync('README.md', header + body(false))
-writeFileSync('index.md', `---\ntitle: Millennium Solutions\n---\n\n<Hero />\n\n` + header + body(true))
+// PAGES_OUT lets a checker generate into a directory of its own, so it never rewrites the committed files.
+const OUT = process.env.PAGES_OUT ? process.env.PAGES_OUT.replace(/\/?$/, '/') : ''
+writeFileSync(OUT + 'README.md', header + body(false))
+writeFileSync(OUT + 'index.md', `---\ntitle: Millennium Solutions\n---\n\n<Hero />\n\n` + header + body(true))
 // A GENERATOR THAT EMITS A DEAD CITATION IS THE BUG THAT WROTE THIS LINE. Every /theorem/ link this file
 // produces is checked against the live ledger before either page is written, so a revoked key cannot be
 // re-emitted by the next run after the prose was fixed by hand.

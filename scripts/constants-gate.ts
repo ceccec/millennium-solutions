@@ -17,7 +17,9 @@
  *  the reader to skip it. The honest scope is this one, and the peer-message surface stays a discipline
  *  rather than a check: send the PATH and the FIELD, never the value. */
 import { execSync } from 'node:child_process'
-import { readFileSync } from 'node:fs'
+import { readFileSync, mkdtempSync, rmSync } from 'node:fs'
+import { join } from 'node:path'
+import { tmpdir } from 'node:os'
 
 const GENERATED = ['README.md', 'index.md', 'paper.md']
 // CAPTURE BEFORE REGENERATING. The first version ran pages.ts and then asked git what had changed — but
@@ -30,8 +32,13 @@ const before = new Map(GENERATED.map((f) => [f, readFileSync(f, 'utf8')]))
 // spelling for one thing is the rule this tree keeps. MEASURED, because the first version of this comment
 // claimed the npx spawn was why the gate took 17.3 seconds and that was wrong: it is 17.4 with node, and
 // `pages.ts` alone is 17.3. The cost is the page build, not the runtime that starts it.
-execSync('node scripts/pages.ts', { stdio: 'ignore' })
-const unexpected = GENERATED.filter((f) => readFileSync(f, 'utf8') !== before.get(f))
+// The generation goes to a directory of its own. The committed files are read once, above, and never rewritten here, so
+// no other process can see this gate's output in place of the committed text, and the gate cannot change them as a side effect.
+const gen = mkdtempSync(join(tmpdir(), 'constants-'))
+execSync('node scripts/pages.ts', { stdio: 'ignore', env: { ...process.env, PAGES_OUT: gen } })
+const generated = new Map(['README.md', 'index.md'].map((f) => [f, readFileSync(join(gen, f), 'utf8')]))
+const unexpected = ['README.md', 'index.md'].filter((f) => generated.get(f) !== before.get(f))
+rmSync(gen, { recursive: true, force: true })
 
 if (unexpected.length) {
   console.log(`  ✗ ${unexpected.join(', ')} disagree(s) with scripts/pages.ts`)

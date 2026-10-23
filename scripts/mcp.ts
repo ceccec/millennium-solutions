@@ -109,8 +109,11 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const body = a?.tool
       ? { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: String(a.tool), arguments: a.arguments ?? {} } }
       : { jsonrpc: '2.0', id: 1, method: 'tools/list' }
+    // The wait is the caller's to set: a long run (train, compete, prove) needs more than the default. Clamped to 5 s … 10 min.
+    const waitS = Math.min(600, Math.max(5, Number(a?.timeout ?? 40)))
+    const started = Date.now()
     const ctl = new AbortController()
-    const t = setTimeout(() => ctl.abort(), 40_000)
+    const t = setTimeout(() => ctl.abort(), waitS * 1000)
     try {
       const res = await fetch(c.endpoint, {
         method: 'POST', signal: ctl.signal,
@@ -132,7 +135,7 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
       return JSON.stringify({ connector: c.name, endpoint: c.endpoint, attribution: c.attribution, notFor: c.notFor, status: 'ANSWERED', answer: parsed }, null, 1)
     } catch (e) {
       const m = e instanceof Error ? e.message : String(e)
-      return JSON.stringify({ connector: c.name, note: /abort/i.test(m) ? 'timed out at 40s — NOT MEASURED, never "unreachable"' : m.slice(0, 200) })
+      return JSON.stringify({ connector: c.name, status: /abort/i.test(m) ? 'TIMEOUT' : 'UNREACHABLE', waitedS: waitS, ms: Date.now() - started, note: /abort/i.test(m) ? `timed out at ${waitS}s — NOT MEASURED, never "unreachable"; pass a longer timeout (seconds) to wait more` : m.slice(0, 200) })
     } finally { clearTimeout(t) }
   },
 
@@ -227,6 +230,10 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   qpu_families: (a) => { try { return execSync('find dist/families -name test.js | sort | xargs node --test', { cwd: QPU, encoding: 'utf8', timeout: 900_000, maxBuffer: 64 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string; stderr?: Buffer | string }; return (String(x.stdout ?? '') + String(x.stderr ?? '')) || JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
   clay_online: () => { try { return execFileSync('node', ['scripts/clay-online.ts'], { encoding: 'utf8', timeout: 600_000, maxBuffer: 8 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  links_check: () => { try { return execFileSync('node', ['scripts/links-check.ts'], { encoding: 'utf8', timeout: 900_000, maxBuffer: 8 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  explain: (a) => { try { return execFileSync('node', ['scripts/explain.ts', String(a?.name ?? '')], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   leaks: (a) => { try { return execFileSync('node', ['scripts/leaks.ts', ...(a?.json ? ['--json'] : [])], { encoding: 'utf8', timeout: 300_000 }) }
     catch (e) { return JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) }) } },
