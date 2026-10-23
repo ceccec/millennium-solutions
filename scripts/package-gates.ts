@@ -18,10 +18,20 @@ const declared = { ...pkg.dependencies, ...pkg.devDependencies }
 const npmNames = Object.keys(declared)
 
 const failures: string[] = []
+// EVERY lockfile entry is a gate, at its deepest path: a nested copy such as node_modules/a/node_modules/b is its own gate,
+// because it can be pinned, and unpinned, separately from the top-level copy of the same name.
+const entries = Object.entries(lock.packages ?? {}).filter(([k]) => k !== '') as [string, { version?: string; integrity?: string }][]
 for (const name of npmNames) {
-  const pinned = lock.packages?.[`node_modules/${name}`]?.version
-  if (!pinned) failures.push(`npm:${name} is declared in package.json but has no pin in package-lock.json`)
+  if (!lock.packages?.[`node_modules/${name}`]?.version) failures.push(`npm:${name} is declared in package.json but has no pin in package-lock.json`)
 }
+const unverified: string[] = []
+for (const [path, meta] of entries) {
+  const deepest = path.slice(path.lastIndexOf('node_modules/') + 'node_modules/'.length)
+  if (!meta.version) failures.push(`npm:${deepest} (${path}) has no version`)
+  else if (!meta.integrity) unverified.push(`npm:${deepest} (${path})`)
+}
+// A pin without an integrity hash is a version nobody can check the bytes of, so it is refused, and each is named.
+for (const u of unverified) failures.push(`${u} has no integrity hash in package-lock.json`)
 
 // An `apk add` line names its packages after the verb, skipping flags such as --no-cache and -t.
 const alpine: string[] = []
@@ -35,8 +45,8 @@ const apkNames = [...new Set(alpine)]
 
 if (failures.length) {
   for (const f of failures) console.log(`✗ ${f}`)
-  console.log(`✗ package-gates: ${failures.length} failure(s) across ${npmNames.length} npm gate(s)`)
+  console.log(`✗ package-gates: ${failures.length} failure(s) across ${entries.length} lockfile gate(s)`)
   process.exit(1)
 }
 const dockerNote = process.argv.length > 2 ? '' : ' — no Dockerfile named, so no apk gates are derived'
-console.log(`✓ package-gates: ${npmNames.length} npm gate(s) hold (each pinned in the lockfile); ${apkNames.length} apk gate(s)${dockerNote}`)
+console.log(`✓ package-gates: ${entries.length} lockfile gate(s) hold (each pinned, each with an integrity hash); ${apkNames.length} apk gate(s)${dockerNote}`)
