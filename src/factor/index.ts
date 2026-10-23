@@ -16,10 +16,16 @@
 
 export const TRIAL_BOUND = 1_000_000n
 
+// Pollard's rho with Brent's cycle detection finds a divisor of a composite without knowing it in advance. It is a search,
+// not a proof, so it is bounded: when the step budget runs out it reports nothing, and the piece stays open.
+export const RHO_BUDGET = 500_000
+
 export type Factorisation =
   | { status: 'FACTORED'; factors: string[]; primality: 'every factor proved prime by trial division or by the deterministic test' }
-  | { status: 'PARTIAL'; factors: string[]; cofactor: string; cofactorDigits: number; cofactorPrimality: 'probable prime by Miller–Rabin, not proved' | 'composite (a witness was found)'; blocking: string }
+  | { status: 'PARTIAL'; factors: string[]; cofactor: string; cofactorDigits: number; cofactorPrimality: 'probable prime by Miller–Rabin, not proved' | 'composite (a witness was found)' | 'composite (split into open pieces, each above the trial bound)'; blocking: string }
   | { status: 'REFUSED'; why: string }
+
+const DETERMINISTIC_LIMIT = 3_317_044_064_679_887_385_961_981n
 
 const modPow = (base: bigint, exp: bigint, mod: bigint): bigint => {
   let result = 1n
@@ -78,16 +84,61 @@ export const factor = (input: string): Factorisation => {
   // with no test needed: a composite cofactor has a factor no larger than its square root.
   if (d * d > n) return { status: 'FACTORED', factors: [...found, n.toString()], primality: 'every factor proved prime by trial division or by the deterministic test' }
 
-  // Case 2: the search stopped at the bound, with the square root still beyond it. The cofactor is then tested. Below
-  // the deterministic range the test is a proof; above it, it is only probable, and the result says which.
-  const verdict = millerRabin(n)
-  if (verdict === 'COMPOSITE') {
-    return { status: 'PARTIAL', factors: found, cofactor: n.toString(), cofactorDigits: n.toString().length, cofactorPrimality: 'composite (a witness was found)',
-      blocking: `the cofactor is composite and has no factor below ${TRIAL_BOUND}; no method in this tree factors it` }
+  // Case 2: the cofactor still has no factor below the bound. Rho splits it into pieces; a piece is proved prime only
+  // below the deterministic range, and any piece that stays open is reported, not called prime.
+  const primes: bigint[] = []
+  const open: bigint[] = []
+  splitWithRho(n, primes, open)
+  const all = [...found, ...primes.map((p) => p.toString())]
+  if (open.length === 0) return { status: 'FACTORED', factors: all, primality: 'every factor proved prime by trial division or by the deterministic test' }
+  const cofactor = open.reduce((acc, v) => acc * v, 1n)
+  const cofactorPrimality = open.length > 1
+    ? 'composite (split into open pieces, each above the trial bound)' as const
+    : millerRabin(cofactor) === 'COMPOSITE' ? 'composite (a witness was found)' as const : 'probable prime by Miller–Rabin, not proved' as const
+  return { status: 'PARTIAL', factors: all, cofactor: cofactor.toString(), cofactorDigits: cofactor.toString().length, cofactorPrimality,
+    blocking: `the cofactor has no factor below ${TRIAL_BOUND} and Pollard rho did not split it within ${RHO_BUDGET} steps; no method in this tree factors it` }
+}
+
+/** Pollard–Brent rho: a proper divisor of n, or null when the budget runs out. Even n returns 2. */
+export const rho = (n: bigint, budget: number = RHO_BUDGET): bigint | null => {
+  if (n % 2n === 0n) return 2n
+  const gcd = (a: bigint, b: bigint): bigint => { while (b) { [a, b] = [b, a % b] } return a }
+  const diff = (a: bigint, b: bigint) => (a > b ? a - b : b - a)
+  let steps = 0
+  for (let c = 1n; c < 20n; c++) {
+    const f = (v: bigint) => (v * v + c) % n
+    let y = 2n, x = y, ys = y, g = 1n, q = 1n, r = 1
+    const m = 128
+    while (g === 1n) {
+      x = y
+      for (let i = 0; i < r; i++) y = f(y)
+      let k = 0
+      while (k < r && g === 1n) {
+        ys = y
+        for (let i = 0; i < Math.min(m, r - k); i++) { y = f(y); q = (q * diff(x, y)) % n }
+        g = gcd(q, n)
+        k += m
+      }
+      steps += r
+      r *= 2
+      if (steps > budget) return null
+    }
+    if (g === n) {
+      g = 1n
+      while (g === 1n) { ys = f(ys); g = gcd(diff(x, ys), n) }
+    }
+    if (g !== n) return g
   }
-  if (n < 3_317_044_064_679_887_385_961_981n) {
-    return { status: 'FACTORED', factors: [...found, n.toString()], primality: 'every factor proved prime by trial division or by the deterministic test' }
-  }
-  return { status: 'PARTIAL', factors: found, cofactor: n.toString(), cofactorDigits: n.toString().length, cofactorPrimality: 'probable prime by Miller–Rabin, not proved',
-    blocking: `the cofactor has no factor below ${TRIAL_BOUND} and is too large for a deterministic primality proof here; no method in this tree factors it` }
+  return null
+}
+
+/** Split m into primes proved by the deterministic test (pushed to primes) and open pieces the search could not split. */
+const splitWithRho = (m: bigint, primes: bigint[], open: bigint[]): void => {
+  if (m === 1n) return
+  const verdict = millerRabin(m)
+  if (m < DETERMINISTIC_LIMIT && verdict === 'PRIME') { primes.push(m); return }
+  const d = verdict === 'COMPOSITE' || m >= DETERMINISTIC_LIMIT ? rho(m) : null
+  if (d === null || d === 1n || d === m) { open.push(m); return }
+  splitWithRho(d, primes, open)
+  splitWithRho(m / d, primes, open)
 }
