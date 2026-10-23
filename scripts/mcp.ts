@@ -9,6 +9,7 @@ import { readFileSync, existsSync, readdirSync, appendFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { factor } from '../src/factor/index.ts'
 import { understand, searchDocs } from '../src/understand/index.ts'
+import { split as shareSplit, join as shareJoin } from '../src/split/index.ts'
 import { readdirSync as __readdir, readFileSync as __read, statSync as __stat } from 'node:fs'
 import { join as joinPath } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
@@ -266,6 +267,7 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   prefix_check: (a) => { try { return execFileSync('node', ['scripts/prefix-check.ts', String(a?.repo ?? '.'), ...((a?.prefixes ?? []) as string[]).map(String)], { encoding: 'utf8', timeout: 120_000 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  secure_split: (a) => { if (a?.action === 'join') return JSON.stringify(shareJoin(Array.isArray(a?.shares) ? (a.shares as unknown[]).map(String) : [])); return JSON.stringify(shareSplit(String(a?.secret ?? ''), Number(a?.parts ?? 0))) },
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
