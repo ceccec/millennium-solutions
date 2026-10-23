@@ -5,8 +5,9 @@
 -- prior_art_search: none performed; the claims are identities and one refutation over the cached summary.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
--- SOURCE OF EVERY LITERAL: .cern/corpus.json and .cern/oai.json, written by scripts/cern.ts from the portal's sitemap
--- and OAI-PMH feed on 2026-09-05. The sitemap files themselves are no longer in the cache (.cern/sitemaps is empty),
+-- SOURCE OF EVERY LITERAL: .cern/corpus.json and .cern/oai.json, written by scripts/cern.ts and scripts/cern-oai.ts
+-- from the portal's sitemap and OAI-PMH feed. The literals below are REWRITTEN from those caches by scripts/cern-lean.ts; do
+-- not edit them by hand. The sitemap files themselves are no longer in the cache (.cern/sitemaps is empty),
 -- so these theorems check the SUMMARY the script wrote, not the records. A theorem here is about the measurement as
 -- recorded, and says nothing about the portal as it is today.
 --
@@ -19,21 +20,21 @@
 namespace Cern
 
 -- ── THE MEASURED FIGURES (from .cern/corpus.json) ─────────────────────────────────────────────────────────
-def sitemaps : Nat := 317
-def urls : Nat := 158489
-def listedRecordUrls : Nat := 150102
-def duplicatedInSitemap : Nat := 36873
-def records : Nat := 113229
-def distinctRecids : Nat := 61497
-def nonRecordUrls : Nat := 8387
-def numericIds : Nat := 57408
-def slugAliases : Nat := 55821
-def canonicalRecords : Nat := 61497
-def addresses : Nat := 113229
+def sitemaps : Nat := 318
+def urls : Nat := 158518
+def listedRecordUrls : Nat := 151435
+def duplicatedInSitemap : Nat := 41728
+def records : Nat := 109707
+def distinctRecids : Nat := 62229
+def nonRecordUrls : Nat := 7083
+def numericIds : Nat := 51375
+def slugAliases : Nat := 58332
+def canonicalRecords : Nat := 62229
+def addresses : Nat := 109707
 def collisions : Nat := 0
 def notInvolutive : Nat := 0
-def fixed : Nat := 12400
-def swapped : Nat := 100829
+def fixed : Nat := 12063
+def swapped : Nat := 97644
 
 -- ── THE MEASURED FIGURES (from .cern/oai.json) ───────────────────────────────────────────────────────────
 def oaiHarvested : Nat := 74614
@@ -73,7 +74,7 @@ theorem oai_union_is_the_sum_of_its_parts :
 -- "notInvolutive = 0" is the identity 10 − (10 − d) = d, which holds for every digit and cannot fail. The check is
 -- unfalsifiable as written, and it says nothing about the address map of the records. The measured counts are the
 -- ten digit buckets: they sum to the record count, and the fixed count is the bucket of digit 5.
-def roots : List Nat := [0, 12517, 12499, 12534, 12769, 12400, 12681, 12508, 12777, 12544]
+def roots : List Nat := [0, 12077, 12112, 12147, 12381, 12063, 12222, 12199, 12350, 12156]
 
 theorem the_digit_buckets_sum_to_the_records :
   roots.foldl (fun a b => a + b) 0 = records := by decide
