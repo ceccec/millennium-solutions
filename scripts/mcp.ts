@@ -11,6 +11,7 @@ import { factor } from '../src/factor/index.ts'
 import { understand, searchDocs } from '../src/understand/index.ts'
 import { split as shareSplit, join as shareJoin } from '../src/split/index.ts'
 import { verifyFactors } from '../src/factor/verify.ts'
+import { factor as factorFull, millerRabin } from '../src/factor/index.ts'
 import { mirror as digitMirror, semiprimes as searchSemiprimes } from '../src/mirror/index.ts'
 import { readdirSync as __readdir, readFileSync as __read, statSync as __stat } from 'node:fs'
 import { join as joinPath } from 'node:path'
@@ -68,17 +69,32 @@ const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 
 
 // ONE INPUT, ONE CHECK: send to the QPU's Shor tool, read its factors, and check them with the verifier, never by a product alone.
-const shorCheck = async (n: string): Promise<{ n: string; qpu: string[] | null; verifier: string; why?: string; note?: string }> => {
-  const reply = await HANDLERS.connect({ connector: 'qpu', tool: 'crypto_shor', arguments: { n } })
-  let p: string | null = null, q: string | null = null, note = ''
-  try {
-    const text = String((JSON.parse(reply) as { answer?: { result?: { content?: { text?: string }[] } } }).answer?.result?.content?.[0]?.text ?? '')
-    const t = JSON.parse(text) as { exact?: { p?: string; q?: string } }
-    p = t.exact?.p ?? null; q = t.exact?.q ?? null
-  } catch { note = 'the reply could not be read' }
-  if (!p || p === '0' || !q || q === '0') return { n, qpu: null, verifier: 'NOT_FACTORED', note: note || 'the QPU returned no factors' }
-  const v = verifyFactors(n, [p, q])
-  return { n, qpu: [p, q], verifier: v.status, why: v.why }
+const shorCheck = async (n: string, bases: (string | undefined)[] = [undefined]): Promise<{ n: string; qpu: string[] | null; verifier: string; why?: string; note?: string; base?: string }> => {
+  let last: { n: string; qpu: string[] | null; verifier: string; why?: string; note?: string; base?: string } = { n, qpu: null, verifier: 'NOT_FACTORED', note: 'the QPU returned no factors' }
+  for (const base of bases) {
+    const arguments_ = base === undefined ? { n } : { n, a: base }
+    const reply = await HANDLERS.connect({ connector: 'qpu', tool: 'crypto_shor', arguments: arguments_ })
+    let p: string | null = null, q: string | null = null, note = ''
+    try {
+      const text = String((JSON.parse(reply) as { answer?: { result?: { content?: { text?: string }[] } } }).answer?.result?.content?.[0]?.text ?? '')
+      const t = JSON.parse(text) as { exact?: { p?: string; q?: string } }
+      p = t.exact?.p ?? null; q = t.exact?.q ?? null
+    } catch { note = 'the reply could not be read' }
+    if (!p || p === '0' || !q || q === '0') { last = { n, qpu: null, verifier: 'NOT_FACTORED', note: note || 'the QPU returned no factors', base }; continue }
+    const v = verifyFactors(n, [p, q])
+    if (v.status === 'VERIFIED' || v.status === 'PROBABLE') return { n, qpu: [p, q], verifier: v.status, why: v.why, base }
+    // A composite factor is not a refusal of the number: the factor route splits it fully, and every prime is then checked.
+    const composite = (p && millerRabin(BigInt(p)) === 'COMPOSITE') ? p : (q && millerRabin(BigInt(q)) === 'COMPOSITE') ? q : null
+    if (composite !== null) {
+      const full = factorFull(n)
+      if (full.status === 'FACTORED') {
+        const fv = verifyFactors(n, full.factors)
+        return { n, qpu: full.factors, verifier: fv.status, why: `the QPU's composite factor ${composite} was split by the factor route; ${fv.why}`, base }
+      }
+    }
+    last = { n, qpu: [p, q], verifier: v.status, why: v.why, base }
+  }
+  return last
 }
 const waveSummary = (count: number, rows: { verifier: string }[]) => {
   const counts: Record<string, number> = {}
@@ -303,7 +319,8 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   qpu_wave: async (a) => {
     const semis = searchSemiprimes(Number(a?.lo ?? 1), Number(a?.hi ?? 1000), { noZero: true, limit: Number(a?.count ?? 8) })
     const inputs = semis.flatMap((s) => [s.n, s.mirror ?? ''].filter((x) => x !== ''))
-    const rows = await Promise.all(inputs.map((n) => shorCheck(n)))
+    const bases = Array.isArray(a?.bases) ? (a.bases as unknown[]).map(String) : [undefined]
+    const rows = await Promise.all(inputs.map((n) => shorCheck(n, bases)))
     return JSON.stringify({ range: [Number(a?.lo ?? 1), Number(a?.hi ?? 1000)], semiprimes: semis.length, ...waveSummary(inputs.length, rows) })
   },
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
