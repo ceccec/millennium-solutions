@@ -24,6 +24,10 @@ const srcText = scripts.map((f) => readFileSync('scripts/' + f, 'utf8')).join('\
       .map((f) => { try { return readFileSync('src/' + f, 'utf8') } catch { return '' } }).join('\n')
 const wfText = existsSync('.github/workflows')
   ? readdirSync('.github/workflows').map((f) => readFileSync('.github/workflows/' + f, 'utf8')).join('\n') : ''
+// The MCP server runs scripts by path: every tool that spawns one is a run path, the same as an npm script. A script the
+// server serves is not dead, and an MCP-only script read as orphaned was a false alarm this gate would otherwise keep raising.
+const mcpText = [...readdirSync('src/mcp').map((f) => 'src/mcp/' + f), 'scripts/mcp.ts', 'scripts/mcp-http.ts', 'scripts/mcp-gate.ts']
+  .filter((f) => existsSync(f)).map((f) => readFileSync(f, 'utf8')).join('\n')
 const hookText = existsSync('.githooks')
   ? readdirSync('.githooks').map((f) => { try { return readFileSync('.githooks/' + f, 'utf8') } catch { return '' } }).join('\n') : ''
 
@@ -32,6 +36,7 @@ const orphans = scripts.filter((f) => {
   if (npmText.includes(`scripts/${f}`)) return false
   if (new RegExp(`from '\\.\\/${n}\\.ts'|from '\\.\\.\\/scripts\\/${n}\\.ts'`).test(srcText)) return false
   if (wfText.includes(`scripts/${f}`) || hookText.includes(`scripts/${f}`)) return false
+  if (mcpText.includes(`scripts/${f}`)) return false
   return true
 })
 

@@ -22,7 +22,7 @@ const FILE_OR_THEOREM = /\b[a-z_][a-z0-9_]*\.lean\b|\btheorem\b/i
 
 export const understand = (request: string): Understood => {
   const text = request.trim()
-  if (!text) return { understood: false, request, reason: 'the request is empty', options: ['state a Lean proposition, an integer, or a repository file or theorem name'] }
+  if (!text) return { understood: false, request, reason: 'the request is empty', options: ['state a Lean proposition, an integer, or a repository file or theorem name'], docs: [], docsNote: 'no request was given, so no inline docs were searched' }
 
   if (INTEGER.test(text)) return { understood: true, tool: 'factor', arguments: { n: text }, reason: 'an integer alone is a factorisation request' }
 

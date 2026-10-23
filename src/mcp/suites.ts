@@ -8,6 +8,7 @@ export const SUITES: Record<string, string[]> = {
   'clay-conditions-self-test': ['node', 'scripts/clay-conditions-test.ts', '--self-test'],
   'clay-conditions': ['node', 'scripts/clay-conditions-test.ts'],
   'environment': ['node', 'scripts/environment.ts'],
+  'doi-precedence': ['node', 'scripts/doi-precedence-test.ts'],
   'answer-doi': ['node', 'scripts/answer-doi-test.ts'],
   'answer-tool': ['node', 'scripts/answer-tool-test.ts'],
   'fallbacks': ['node', 'scripts/fallbacks-test.ts'],

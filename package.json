@@ -198,7 +198,8 @@
     "cycle": "npm run gates && npm run docs:build",
     "cycle:ship": "git fetch -q --force --tags origin && npm run cycle && git add -A && { git diff --cached --quiet || git commit -m 'regenerate the derived artefacts the chain rewrote'; } && git push origin main && node scripts/ci-watch.ts --wait --for 5400",
     "bridge": "node scripts/bridge.ts",
-    "qpu": "node scripts/qpu-gate.ts"
+    "qpu": "node scripts/qpu-gate.ts",
+    "mcp:call": "node scripts/mcp-call.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

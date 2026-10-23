@@ -24,9 +24,9 @@
 // OUTPUT. The snapshot is written to evidence/apis-guru/<handle>/ where the handle is the content address of the
 // catalogue body, so a run is reproducible and the folder is its own receipt. Only summaries are printed. The full
 // 8.8 MB list is never printed and never read into a model's context.
-import { mkdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs'
+import { mkdirSync, writeFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
-import { decide, parseRobots } from '../src/api/robots.ts'
+import { decide } from '../src/api/robots.ts'
 
 const CATALOGUE_URL = 'https://api.apis.guru/v2/list.json'
 const UA = 'millennium-solutions/apis-guru (+https://ceccec.psg.bg/millennium-solutions/; read-only)'

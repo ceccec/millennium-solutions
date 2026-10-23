@@ -63,9 +63,3 @@ export const decide = (text: string, agent: string, pathAndQuery: string): { all
   if (!best) return { allowed: true, rule: null }
   return { allowed: best.allow, rule: best }
 }
-
-/** Convenience for callers that hold a URL rather than a path. */
-export const mayFetch = (text: string, agent: string, url: string): { allowed: boolean; rule: Rule | null } => {
-  const u = new URL(url)
-  return decide(text, agent, u.pathname + u.search)
-}

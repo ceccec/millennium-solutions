@@ -4,7 +4,7 @@
 // @modelcontextprotocol/sdk), preserving the zero-dep-core. Tools inherit the discipline: the honesty
 // gate returns a FLOOR (not a truth oracle), content-address = integrity (not encryption/proof).
 import { createInterface } from 'node:readline'
-import { execSync, execFileSync } from 'node:child_process'
+import { execSync, execFileSync, spawn } from 'node:child_process'
 import { readFileSync, existsSync, readdirSync, appendFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { factor } from '../src/factor/index.ts'
@@ -242,6 +242,29 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     return JSON.stringify({ ...u, docs, docsNote: docs.length ? 'these are lines the tree wrote in its own comments and docs; they are text, not proofs' : 'no inline doc in the tree shares enough of the request\'s words' })
   },
   contradictions: () => { try { return execFileSync('node', ['scripts/contradictions.ts'], { encoding: 'utf8', timeout: 600_000, maxBuffer: 16 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  answer_gate: (a) => { try { return execFileSync('node', ['scripts/answer-gate.ts'], { input: JSON.stringify(a?.answers ?? []), encoding: 'utf8', timeout: 300_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  answer_verify_arith: (a) => { try { return execFileSync('node', ['scripts/answer-verify-arith.ts'], { input: String(a?.input ?? ''), encoding: 'utf8', timeout: 300_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  answer_verify_arxiv: (a) => { try { return execFileSync('node', ['scripts/answer-verify-arxiv.ts', String(a?.id ?? ''), String(a?.title ?? '')], { encoding: 'utf8', timeout: 300_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  answer_verify_doi: (a) => { try { return execFileSync('node', ['scripts/answer-verify-doi.ts', String(a?.doi ?? '')], { encoding: 'utf8', timeout: 300_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  answer_verify_lean: (a) => { try { return execFileSync('node', ['scripts/answer-verify-lean.ts', String(a?.theorem ?? '')], { input: String(a?.source ?? ''), encoding: 'utf8', timeout: 600_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  anti_fake: (a) => { try { return execFileSync('node', ['scripts/anti-fake.ts', ...(a?.staged === false ? [] : ['--staged'])], { encoding: 'utf8', timeout: 600_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  apis_guru: (a) => { if (a?.mode === 'catalogue') { try { return execFileSync('node', ['scripts/apis-guru.ts', '--catalogue'], { encoding: 'utf8', timeout: 600_000, maxBuffer: 16 << 20 }) } catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } }
+    // The full probe asks every specification, which takes about an hour: it runs detached and writes its own run folder.
+    spawn('node', ['scripts/apis-guru.ts'], { detached: true, stdio: 'ignore' }).unref()
+    return JSON.stringify({ status: 'STARTED', why: 'the probe of every catalogued specification runs in the background; its result is written to evidence/apis-guru/<handle>/probe.json', check: 'apis_guru_cross, once probe.json exists' }) },
+  apis_guru_live: (a) => { spawn('node', ['scripts/apis-guru-live.ts'], { detached: true, stdio: 'ignore' }).unref(); return JSON.stringify({ status: 'STARTED', why: 'the live reachability pass runs in the background; its result is written to evidence/apis-guru/<handle>/live.json', check: 'apis_guru_cross, once live.json exists' }) },
+  apis_theorems: () => { try { return execFileSync('node', ['scripts/apis-theorems.ts'], { encoding: 'utf8', timeout: 120_000 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  pre_commit_court: () => { try { return execFileSync('node', ['scripts/pre-commit-court.ts'], { encoding: 'utf8', timeout: 900_000, maxBuffer: 16 << 20 }) }
+    catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
+  prefix_check: (a) => { try { return execFileSync('node', ['scripts/prefix-check.ts', String(a?.repo ?? '.'), ...((a?.prefixes ?? []) as string[]).map(String)], { encoding: 'utf8', timeout: 120_000 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
