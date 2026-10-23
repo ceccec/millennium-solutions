@@ -148964,5 +148964,195 @@
     "key": "lean_speed_dropping_the_cross_term_is_refuted",
     "name": "lean speed.lean: dropping_the_cross_term_is_refuted — ¬ (List.range 256).all (fun a => (List.range 256).all (fun b => (hexLo a * hexLo b) % 256 == (a * b) % 256)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "07d43b29-86c9-8248-9d03-a59e19e677b7"
+  },
+  {
+    "key": "lean_address_the_second_seed_is_the_first_hex_word_of_the_golden_ratio",
+    "name": "lean address.lean: the_second_seed_is_the_first_hex_word_of_the_golden_ratio — (2 * 2654435769 + 2 ^ 32) ^ 2 ≤ 5 * 2 ^ 64 ∧ 5 * 2 ^ 64 < (2 * 2654435769 + 2 + 2 ^ 32) ^ 2 ∧ SEEDS.getD 1 0 = 2654435769 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d23de002-cad9-876d-a499-98f67b85cb65"
+  },
+  {
+    "key": "lean_address_the_third_seed_is_the_first_hex_word_of_pi_by_bbp",
+    "name": "lean address.lean: the_third_seed_is_the_first_hex_word_of_pi_by_bbp — bbp 24 24 / 16 ^ 16 = 3 * 16 ^ 8 + 608135816 ∧ SEEDS.getD 2 0 = 608135816 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "41c1c330-4462-8e84-9756-9f9613f39631"
+  },
+  {
+    "key": "lean_address_the_bbp_truncation_cannot_cross_the_digit_boundary",
+    "name": "lean address.lean: the_bbp_truncation_cannot_cross_the_digit_boundary — 1000 < bbp 24 24 % 16 ^ 16 ∧ bbp 24 24 % 16 ^ 16 + 1000 < 16 ^ 16 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "644d6d54-f0c8-8d84-beb4-cecb1ff21233"
+  },
+  {
+    "key": "lean_address_the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi",
+    "name": "lean address.lean: the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi — eSeries 24 30 / 16 ^ 16 = 2 * 16 ^ 8 + 3084996962 ∧ SEEDS.getD 3 0 = 3084996962 ∧ 3084996962 ≠ 608135816 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6527882b-187f-86d3-9226-4be30e938b00"
+  },
+  {
+    "key": "lean_address_the_series_truncation_cannot_cross_the_digit_boundary",
+    "name": "lean address.lean: the_series_truncation_cannot_cross_the_digit_boundary — 1000 < eSeries 24 30 % 16 ^ 16 ∧ eSeries 24 30 % 16 ^ 16 + 1000 < 16 ^ 16 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c1c01bff-ac82-804e-b258-e7919cb10891"
+  },
+  {
+    "key": "lean_address_the_fnv_prime_is_prime_at_two_to_the_24_plus_two_to_the_8_plus_0x93",
+    "name": "lean address.lean: the_fnv_prime_is_prime_at_two_to_the_24_plus_two_to_the_8_plus_0x93 — FNV_PRIME = 2 ^ 24 + 2 ^ 8 + 0x93 ∧ 4096 * 4096 < FNV_PRIME ∧ FNV_PRIME < 4097 * 4097 ∧ (List.range 4095).all (fun d => FNV_PRIME % (d + 2) != 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "63b1cc21-1d46-899e-8b37-d880c314c3dc"
+  },
+  {
+    "key": "lean_address_the_fnv_basis_is_fnv0_of_its_signature",
+    "name": "lean address.lean: the_fnv_basis_is_fnv0_of_its_signature — fnv0 SIGNATURE = FNV_OFFSET ∧ SIGNATURE.length = 32 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "37c672b6-8afc-88bf-a4c7-9e4c007b7db0"
+  },
+  {
+    "key": "lean_address_the_finalizer_constants_are_units_mod_two_to_the_32",
+    "name": "lean address.lean: the_finalizer_constants_are_units_mod_two_to_the_32 — (0x85ebca6b * 2781581891) % M32 = 1 ∧ (0xc2b2ae35 * 2127672349) % M32 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a10d2423-9b1a-8ba8-b011-f3b586ac450e"
+  },
+  {
+    "key": "lean_answergate_exactly_eleven_are_accepted",
+    "name": "lean answer_gate.lean: exactly_eleven_are_accepted — (allFlags.filter ok).length = 11 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bf5958c6-210f-8dd9-b63e-792a6e860716"
+  },
+  {
+    "key": "lean_answerroute_integer_wins",
+    "name": "lean answer_route.lean: integer_wins — allFeatures.all (fun f => !f.integer || route f == Kind.integer) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "200bc7bc-fafe-8357-8046-9043f670be8e"
+  },
+  {
+    "key": "lean_answerroute_publication_wins_over_clay_and_text",
+    "name": "lean answer_route.lean: publication_wins_over_clay_and_text — allFeatures.all (fun f => !(!f.integer && !f.lean && f.publication) || route f == Kind.publication) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f391ecf7-a12e-84e3-a413-7e49131a4876"
+  },
+  {
+    "key": "lean_answerroute_the_kinds_cover_the_sixteen",
+    "name": "lean answer_route.lean: the_kinds_cover_the_sixteen — (allFeatures.filter (fun f => route f == Kind.integer)).length = 8 ∧ (allFeatures.filter (fun f => route f == Kind.lean)).length = 4 ∧ (allFeatures.filter (fun f => route f == Kind.publication)).length = 2 ∧ (allFeatures.filter (fun f => ro… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a26d737c-849b-84de-bf28-0a8b5dd85c2d"
+  },
+  {
+    "key": "lean_answer.arith_case_91_false",
+    "name": "lean arith.lean: case_91_false — verdictOf 91 (some (7, 13)) = Value.FALSE — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6f4a4970-de75-8c65-bd01-d836a7201498"
+  },
+  {
+    "key": "lean_answer.arith_case_97_true",
+    "name": "lean arith.lean: case_97_true — verdictOf 97 none = Value.TRUE — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d6284eb1-b45b-845f-92b0-8dffb4d67146"
+  },
+  {
+    "key": "lean_answer.arith_case_91_no_witness_unknown",
+    "name": "lean arith.lean: case_91_no_witness_unknown — verdictOf 91 none = Value.UNKNOWN — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f2237b3a-2d1e-86f3-88ea-3340559bbe4b"
+  },
+  {
+    "key": "lean_answer.arith_wrong_witness_refused",
+    "name": "lean arith.lean: wrong_witness_refused — verdictOf 97 (some (7, 13)) = Value.UNKNOWN — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7d6cb69b-90bd-8b33-a3f8-a005a7290466"
+  },
+  {
+    "key": "lean_cern_records_are_numeric_plus_slug",
+    "name": "lean cern.lean: records_are_numeric_plus_slug — records = numericIds + slugAliases — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1ef787d9-f481-82fb-8f91-4b6deac4317e"
+  },
+  {
+    "key": "lean_cern_listed_urls_are_records_plus_duplicates",
+    "name": "lean cern.lean: listed_urls_are_records_plus_duplicates — listedRecordUrls = records + duplicatedInSitemap — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "072967b1-d730-80b4-a62a-4017e8873a55"
+  },
+  {
+    "key": "lean_cern_urls_are_listed_records_plus_non_records",
+    "name": "lean cern.lean: urls_are_listed_records_plus_non_records — urls = listedRecordUrls + nonRecordUrls — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cfc45f5f-63cf-89f2-89a5-7b402c7c363f"
+  },
+  {
+    "key": "lean_cern_fixed_and_swapped_partition_the_records",
+    "name": "lean cern.lean: fixed_and_swapped_partition_the_records — fixed + swapped = records — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1b91917e-b4c5-81e4-880b-c615af452b83"
+  },
+  {
+    "key": "lean_cern_oai_harvest_is_complete",
+    "name": "lean cern.lean: oai_harvest_is_complete — oaiHarvested = oaiCompleteListSize — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "883de117-ad54-81d3-845b-9584181eb37c"
+  },
+  {
+    "key": "lean_cern_oai_union_is_the_sum_of_its_parts",
+    "name": "lean cern.lean: oai_union_is_the_sum_of_its_parts — oaiHarvested = oaiInBoth + oaiOnly ∧ oaiUnion = oaiInBoth + oaiOnly + siteOnly — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "df70e4d8-e985-8d10-9c59-de2ae643cc5c"
+  },
+  {
+    "key": "lean_cern_the_digit_buckets_sum_to_the_records",
+    "name": "lean cern.lean: the_digit_buckets_sum_to_the_records — roots.foldl (fun a b => a + b) 0 = records — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f240f9b3-f39f-8682-a528-d57b5991fd97"
+  },
+  {
+    "key": "lean_cern_the_fixed_count_is_the_bucket_of_digit_five",
+    "name": "lean cern.lean: the_fixed_count_is_the_bucket_of_digit_five — roots.getD 5 0 = fixed — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1a5ac5a1-7816-82f1-90e4-70928b22984f"
+  },
+  {
+    "key": "lean_cern_the_reflection_is_an_involution_on_the_digits",
+    "name": "lean cern.lean: the_reflection_is_an_involution_on_the_digits — (List.range 10).all (fun d => 10 - (10 - d) == d) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2c0d6122-e0c0-8e23-a991-52d3d167839e"
+  },
+  {
+    "key": "lean_diamond_diamond_involution",
+    "name": "lean diamond.lean: diamond_involution — (List.range' 1 9).all (fun d => diamond (diamond d) == d) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d9777bfa-0f77-8b1c-96a5-7241c58d003c"
+  },
+  {
+    "key": "lean_hexbit_route_handle_has_thirty_two_bits",
+    "name": "lean hexbit_route.lean: handle_has_thirty_two_bits — 4 * 8 = 32 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6b03784b-2b04-853f-9a35-dc4c64bd4ec7"
+  },
+  {
+    "key": "lean_hexbit_route_folders_are_sixteen_to_the_eight",
+    "name": "lean hexbit_route.lean: folders_are_sixteen_to_the_eight — 16 ^ 8 = 4294967296 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0677fd65-3e3a-8785-9f30-08b994f4826d"
+  },
+  {
+    "key": "lean_hexbit_route_folders_are_two_to_the_thirty_two",
+    "name": "lean hexbit_route.lean: folders_are_two_to_the_thirty_two — 2 ^ 32 = 16 ^ 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c83406b1-3edc-8bd0-ae23-b2847f69d85c"
+  },
+  {
+    "key": "lean_interference_ghz_cancels_exactly_on_odd_parity",
+    "name": "lean interference.lean: ghz_cancels_exactly_on_odd_parity — (List.range 8).all (fun s => ghzCancels s == (par3 s == 1)) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6d7029b5-414a-8bb7-90ee-a99ddcaa765d"
+  },
+  {
+    "key": "lean_interference_ghz_reaches_exactly_the_four_even_outcomes",
+    "name": "lean interference.lean: ghz_reaches_exactly_the_four_even_outcomes — ((List.range 8).filter (fun s => !ghzCancels s)).length = 4 ∧ (List.range 8).all (fun s => !ghzCancels s == (par3 s == 0)) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "55af59a5-5cc3-88d6-bfe3-27775392caab"
+  },
+  {
+    "key": "lean_answer_c1_exhaustive",
+    "name": "lean answer.lean: c1_exhaustive — allReports.all (fun r => (decideC1 r == Value.TRUE) == (r.answered && r.compiles && !r.hasSorry && r.noAxioms)) = true — proved by the Lean kernel for every value (by\n  decide), standard axioms only — checked by lean.ts",
+    "receipt": "612f83ca-9d34-87cf-a3ed-c94f1325dc45"
+  },
+  {
+    "key": "lean_answer_c2_exhaustive",
+    "name": "lean answer.lean: c2_exhaustive — allRoutes.all (fun r => (decideC2 r == Value.TRUE) == (r.verdict == Verdict.prime && r.proved) && (decideC2 r == Value.FALSE) == (!(r.verdict == Verdict.prime && r.proved) && r.verdict == Verdict.composite && r.factorChecked)) = true — proved by the Lean kernel for every value (by\n  decide), standard axioms only — checked by lean.ts",
+    "receipt": "a4d8471d-ef4d-8c52-9a0c-2fa1131bc72d"
+  },
+  {
+    "key": "lean_answer_gate_matches_rules",
+    "name": "lean answer.lean: gate_matches_rules — [Val.TRUE, Val.FALSE, Val.SOURCED, Val.UNKNOWN].all (fun v => [Cert.none, Cert.C1, Cert.C2, Cert.C3].all (fun c => gateOk v c == ruleOk v c)) = true — proved by the Lean kernel for every value (by\n  decide), standard axioms only — checked by lean.ts",
+    "receipt": "e0555512-46df-8100-bc9c-22436dc969f8"
+  },
+  {
+    "key": "lean_answer_gate_refuses_uncertified_truth",
+    "name": "lean answer.lean: gate_refuses_uncertified_truth — [Val.TRUE, Val.FALSE].all (fun v => gateOk v Cert.none == false) = true — proved by the Lean kernel for every value (by\n  decide), standard axioms only — checked by lean.ts",
+    "receipt": "ff9045ee-ecda-8c07-914b-5b9cfd6f5f5b"
+  },
+  {
+    "key": "lean_answerroute_lean_wins_over_the_rest",
+    "name": "lean answer_route.lean: lean_wins_over_the_rest — allFeatures.all (fun f => !(!f.integer && f.lean) || route f == Kind.lean) = true — proved by the Lean kernel for every value (by\n  decide), standard axioms only — checked by lean.ts",
+    "receipt": "16aaa687-6cd6-8da6-ade7-b8cde92eb357"
+  },
+  {
+    "key": "lean_answerroute_clay_wins_over_text",
+    "name": "lean answer_route.lean: clay_wins_over_text — allFeatures.all (fun f => !(!f.integer && !f.lean && !f.publication && f.clay) || route f == Kind.clay) = true — proved by the Lean kernel for every value (by\n  decide), standard axioms only — checked by lean.ts",
+    "receipt": "8f86d103-2d76-8044-ac09-74eb55ad76b2"
+  },
+  {
+    "key": "lean_answerroute_text_only_when_nothing_else_holds",
+    "name": "lean answer_route.lean: text_only_when_nothing_else_holds — allFeatures.all (fun f => (route f == Kind.text) == (!f.integer && !f.lean && !f.publication && !f.clay)) = true — proved by the Lean kernel for every value (by\n  decide), standard axioms only — checked by lean.ts",
+    "receipt": "aad73c87-5093-8ad1-b892-417a94fb1e8d"
   }
 ]

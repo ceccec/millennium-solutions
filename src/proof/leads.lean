@@ -33,4 +33,21 @@ The report truncates the remaining items. Each is restated as a law with its inv
 ## controls — 1 item, refuses but never shown to fail
 `qpu-gate`. Its refusal path is unreachable while the installed @uuidna/qpu cannot load; it needs a control in
 scripts/gates-fire.ts, or a named reason for being uncontrolled.
+
+## realisations — named this session, none closed
+Each item is a finding or an open decision. Nothing here is removed, purged or replaced; an item closes only when the work it names is done.
+
+- ledger — 38 entries appended by an accidental seal, kept (purge nothing). The octave remainder stays 6 until the next seal.
+- api registry — zbmath:search answers 200, but the stated fact is not in the reply. Unresolved; the expected fact is not yet verified.
+- APIs.guru live — 155 catalogued APIs have a served spec whose server does not answer (SPEC-ONLY); 237 were not measured; 2006 need a key and were not called.
+- APIs.guru gaps — 11 GitHub v3 catalogue entries list github.com as their server, while the adapter uses api.github.com. Which is right is not yet checked against the spec.
+- NIST — five services are covered. The Standard Reference Data and the Fundamental Constants pages are not.
+- payload CRUD — the integration suite cannot reach its database under vitest: the D1 binding hangs at schema pull. The existing api spec hangs the same way.
+- qpu connector — its ask source reads a phrase as text and returns a recognition record, not an answer. The understand tool now reports such a request as not understood.
+- qpu build — a stopped build left dist/ possibly incomplete. Not rebuilt.
+- qpu refactor — branch claude/hungry-cerf-2cd7f0 has 16 residual sites that need a decision. Not merged.
+- Clay — the tools check the three eligibility conditions. They do not solve the problems, and the conditions are not met.
+- factoring — integers of any length are accepted; a thousand-bit integer with no small factor returns PARTIAL, not a factorisation.
+- CERN and NIST — the two share no physical quantity in this tree. A real pairing needs a CERN measurement compared with a NIST value under a stated uncertainty.
+- theorem counts — the pages report 25995 theorems and lean_verify reports 26008. The counting methods differ, and the difference is not yet explained.
 -/
