@@ -35,8 +35,13 @@ const PUSH_PHASE1: Check[] = [
   { name: 'orphan', cmd: ['node', 'scripts/orphan-gate.ts'] },
   // The development standard: no push while any lead is open; an environmental restriction is not an exception.
   { name: 'leads-closed', cmd: ['npm', 'run', '--silent', 'gate:leads'] },
-  // The thousand-bit test: hard fail unless the factor route is green on a real 1,000-bit integer.
-  { name: 'thousand-bit', cmd: ['npm', 'run', '--silent', 'gate:thousand'] },
+  // The thousand-bit test, in its CONTROL mode — the one `npm run gates` runs: 91 must factor, 2^1000−1 must not. The
+  // main mode is red by its own text ("a green result here would need factors this tree has not computed"), and a
+  // pre-push gate that is red until someone factors an unknown 1,000-bit integer holds every push behind an act
+  // nobody can perform — it held the pushes of 2026-11-02 after leads-closed had been corrected for the same shape.
+  // What the captain ordered verified with each push is the DECODING of a thousand-bit integer the unit mints with
+  // its witness, and that runs after the push: scripts/thousand-bit-gate.ts --decode, the last step of cycle:ship.
+  { name: 'thousand-bit', cmd: ['npm', 'run', '--silent', 'gate:thousand:control'] },
   // Every API and every lockfile package is a gate: both run offline, so a push checks them too.
   { name: 'api-gates', cmd: ['npm', 'run', '--silent', 'gate:api'] },
   { name: 'package-gates', cmd: ['npm', 'run', '--silent', 'gate:packages'] },
