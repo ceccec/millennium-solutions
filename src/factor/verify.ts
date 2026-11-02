@@ -10,7 +10,7 @@
 // The status is VERIFIED only when the product holds and every factor is proved prime. PROBABLE when the product holds
 // and some factor is only probably prime. REFUSED when the product or the range fails. A verifier that returned VERIFIED
 // for a wrong product would be a lie, so the product is checked first and alone decides the refusal.
-import { millerRabin } from './index.ts'
+import { millerRabin, parseInteger } from './index.ts'
 
 const DETERMINISTIC_LIMIT = 3_317_044_064_679_887_385_961_981n
 
@@ -19,10 +19,13 @@ export type Verification =
   | { status: 'PROBABLE'; n: string; factors: string[]; primality: string; why: string }
   | { status: 'REFUSED'; n: string; why: string }
 
-export const verifyFactors = (n: string, factors: string[]): Verification => {
-  if (!/^\d+$/.test(n)) return { status: 'REFUSED', n, why: 'the integer is not a non-negative decimal integer' }
-  if (factors.length === 0) return { status: 'REFUSED', n, why: 'no factors were given' }
-  if (!factors.every((f) => /^\d+$/.test(f))) return { status: 'REFUSED', n, why: 'a factor is not a non-negative decimal integer' }
+export const verifyFactors = (nIn: string, factorsIn: string[]): Verification => {
+  // any binary variant is read here as in factor(): decimal, 0b binary or 0x hex; the verdict names the decimal digits
+  const n = parseInteger(nIn) ?? nIn
+  if (!/^\d+$/.test(n)) return { status: 'REFUSED', n, why: 'the integer is not a non-negative integer in decimal, 0b binary or 0x hex' }
+  if (factorsIn.length === 0) return { status: 'REFUSED', n, why: 'no factors were given' }
+  const factors = factorsIn.map((f) => parseInteger(f) ?? f)
+  if (!factors.every((f) => /^\d+$/.test(f))) return { status: 'REFUSED', n, why: 'a factor is not a non-negative integer in decimal, 0b binary or 0x hex' }
   const values = factors.map((f) => BigInt(f))
   if (values.some((v) => v < 2n)) return { status: 'REFUSED', n, why: 'a factor is below 2, which proves nothing about a factorisation' }
   const product = values.reduce((acc, v) => acc * v, 1n)

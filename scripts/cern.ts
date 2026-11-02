@@ -167,25 +167,53 @@ console.log(`  digital roots 1..9: ${roots.slice(1).join(' ')}`)
 console.log(collisions.length
   ? `  ✗ ${collisions.length} address collision(s): ${collisions.slice(0, 3).map(([a, v]) => a + ' ← ' + v.join(' ')).join(' · ')}`
   : `  address collisions: 0 — WEAK evidence of distinctness, not a proof of it`)
-// ── THE DOCUMENT IS CHECKED AGAINST THIS RUN ─────────────────────────────────────────────────────────────
+// ── THE DOCUMENT IS DERIVED FROM THE LAST RUN, AND CHECKED AGAINST IT ─────────────────────────────────────
 // docs/CERN-ENUMERATION.md states figures about an EXTERNAL portal, so stale-figures cannot hold them — it
-// compares prose against the proof tree, and none of these numbers live there. Unheld external figures go
-// stale silently, which is the whole failure this document is about. So the figures are re-derived here and
-// the run fails if the prose has drifted from what was just measured.
-const doc = readFileSync('docs/CERN-ENUMERATION.md', 'utf8')
-const stated = (label: string, n: number): void => {
-  if (!doc.includes(n.toLocaleString('en'))) {
-    console.log(`  ✗ docs/CERN-ENUMERATION.md does not state the measured ${label} (${n.toLocaleString('en')})`)
-    drift++
-  }
-}
+// compares prose against the proof tree, and none of these numbers live there. The first form of this check
+// asked the prose to state TODAY's figures, and the portal grows: on 2026-11-02 it had moved by 1,289 canonical
+// records since the document was measured, and the check was red on every run with no act in this tree that
+// could turn it green except typing the new numbers in by hand. So the figures the document carries are
+// written by this script into one marked block, from one small tracked record (docs/cern-measured.json), and
+// the check is the derived-file one: the block must be exactly what the record renders. Hand-editing either
+// side turns it red; the portal moving does not — that movement is reported, as the lead it is.
+const MEASURED = 'docs/cern-measured.json'
+const DOC = 'docs/CERN-ENUMERATION.md'
+const OPEN = '<!-- cern:measured -->', CLOSE = '<!-- /cern:measured -->'
+type Measured = { canonicalRecords: number; urlIds: number; slugAliases: number; sitemaps: number; listedRecordUrls: number }
+const now: Measured = { canonicalRecords: recids.size, urlIds: urlIds.size, slugAliases: urlIds.size - numeric, sitemaps: children.length, listedRecordUrls: listed.length }
+const en = (n: number): string => n.toLocaleString('en')
+const render = (m: Measured): string => [
+  OPEN,
+  `*Figures below are written by \`npm run cern\` from its last run, never by hand (\`docs/cern-measured.json\` is the record; this block is its rendering).*`,
+  '',
+  '| measured | count |',
+  '|---|---|',
+  `| canonical records (slug aliases resolved) | ${en(m.canonicalRecords)} |`,
+  `| sitemap URL ids | ${en(m.urlIds)} |`,
+  `| slug aliases among them | ${en(m.slugAliases)} |`,
+  `| child sitemaps | ${en(m.sitemaps)} |`,
+  `| record URLs listed | ${en(m.listedRecordUrls)} |`,
+  CLOSE,
+].join('\n')
+const doc = readFileSync(DOC, 'utf8')
+const o = doc.indexOf(OPEN), c = doc.indexOf(CLOSE)
 let drift = 0
-stated('canonical record count', recids.size)
-stated('sitemap URL id count', urlIds.size)
-stated('slug alias count', urlIds.size - numeric)
+if (o < 0 || c < 0) { console.log(`  ✗ ${DOC} has no measured block (${OPEN} … ${CLOSE}); nothing can hold its figures`); drift++ }
+let prev: Measured | null = null
+try { prev = JSON.parse(readFileSync(MEASURED, 'utf8')) as Measured } catch { /* first run: the record is written below */ }
+if (prev && o >= 0 && c >= 0) {
+  const held = doc.slice(o, c + CLOSE.length)
+  if (held !== render(prev)) { console.log(`  ✗ ${DOC}'s measured block is not what ${MEASURED} renders — one of them was edited by hand`); drift++ }
+  const moved = (Object.keys(now) as (keyof Measured)[]).filter((k) => now[k] !== prev![k])
+  console.log(moved.length
+    ? `  ○ the portal moved since the recorded run: ${moved.map((k) => `${k} ${en(prev![k])} → ${en(now[k])}`).join(' · ')} — the record and the block are rewritten below`
+    : `  the portal has not moved since the recorded run`)
+}
 console.log(drift
-  ? `  ✗ cern: ${drift} figure(s) in docs/CERN-ENUMERATION.md disagree with this run`
-  : `  docs/CERN-ENUMERATION.md agrees with this run on every figure re-derived here`)
+  ? `  ✗ cern: ${drift} defect(s) between ${DOC} and ${MEASURED}`
+  : `  ${DOC} agrees with ${MEASURED} on every figure it renders`)
+writeFileSync(MEASURED, JSON.stringify(now, null, 2) + '\n')
+if (o >= 0 && c >= 0) writeFileSync(DOC, doc.slice(0, o) + render(now) + doc.slice(c + CLOSE.length))
 
 console.log(`\n○ cern: ${records.length.toLocaleString('en')} record URLs addressed and involuted → ${recids.size.toLocaleString('en')} canonical`)
 console.log(`  records once slug aliases are resolved. The involution is tested per URL, which is right; the`)

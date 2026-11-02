@@ -7633,9 +7633,9 @@
  },
  {
   "id": "bridgedb.org",
-  "verdict": "REACHABLE",
+  "verdict": "NOT_MEASURED",
   "server": "https://webservice.bridgedb.org",
-  "why": "answered 200"
+  "why": "robots.txt of webservice.bridgedb.org could not be read"
  },
  {
   "id": "britbox.co.uk",
@@ -8263,9 +8263,9 @@
  },
  {
   "id": "easypdfserver.com",
-  "verdict": "NOT_MEASURED",
+  "verdict": "NOT_REACHABLE",
   "server": "https://api.easypdfserver.com/",
-  "why": "robots.txt of api.easypdfserver.com could not be read"
+  "why": "answered 404"
  },
  {
   "id": "ebay.com:buy-browse",
@@ -11821,9 +11821,9 @@
  },
  {
   "id": "mermade.org.uk:openapi-converter",
-  "verdict": "NOT_MEASURED",
+  "verdict": "NOT_REACHABLE",
   "server": "https://mermade.org.uk/api/v1",
-  "why": "robots.txt of mermade.org.uk could not be read"
+  "why": "answered 404"
  },
  {
   "id": "meshery.local",
@@ -13159,9 +13159,9 @@
  },
  {
   "id": "rawg.io",
-  "verdict": "REACHABLE",
+  "verdict": "NOT_MEASURED",
   "server": "https://api.rawg.io/api",
-  "why": "answered 200"
+  "why": "robots.txt of api.rawg.io could not be read"
  },
  {
   "id": "rbaskets.in",
@@ -13183,15 +13183,15 @@
  },
  {
   "id": "redeal.io",
-  "verdict": "NOT_REACHABLE",
+  "verdict": "NOT_MEASURED",
   "server": "https://analytics.redeal.io/api/1.0.0",
-  "why": "answered 404"
+  "why": "robots.txt of analytics.redeal.io could not be read"
  },
  {
   "id": "redeal.io:analytics",
-  "verdict": "NOT_REACHABLE",
+  "verdict": "NOT_MEASURED",
   "server": "https://analytics.redeal.io/api/1.0.0",
-  "why": "answered 404"
+  "why": "robots.txt of analytics.redeal.io could not be read"
  },
  {
   "id": "redhat.com:catalog_inventory",

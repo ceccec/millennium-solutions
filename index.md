@@ -148,12 +148,12 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
-- The formal layer holds 26037 kernel-accepted declarations across 105 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `c9ddab28-ac9d-8f01-ba7a-c541d80da624`</sub>
-- 25830 of those 26037 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 207 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `b1d146aa-44ef-824f-9dd8-44582a0c3063`</sub>
-- 26592 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `f058e5be-a09d-8d89-861c-f93199b05cc1`</sub>
+- The formal layer holds 26045 kernel-accepted declarations across 105 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `53c82ac8-230d-80a6-b1d7-8b2485b999bd`</sub>
+- 25838 of those 26045 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 207 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `f1bb401a-7cb5-82b3-90d7-5bcaf4bce684`</sub>
+- 26600 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `f3828d0b-1269-8f6f-8a2c-70d052df047b`</sub>
 
 ## 2 · The ring
 
@@ -176,10 +176,10 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
 
 ## 7 · The ledger
 
-- The ledger records 28456 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `e465fe3f-7780-84c7-ba11-5311aab25551`</sub>
-- The count is an exact multiple of eight — 28456 is 3557 octaves with no remainder.
-  <sub>SEALED · `61d31c37-fcdf-8ef3-b05b-0e910dd40a35`</sub>
+- The ledger records 28464 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `1df41d73-f4de-8db6-8cf7-a46e81e82db3`</sub>
+- The count is an exact multiple of eight — 28464 is 3558 octaves with no remainder.
+  <sub>SEALED · `80d8fbf7-12f6-8c95-b8b9-3e9e94a45cd5`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -231,7 +231,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-105 Lean files in 8 wings, 26024 declarations, of which 26037 are sealed (a live ledger key each) and -13 are not yet sealed. The prose in this section is read out of the
+105 Lean files in 8 wings, 26045 declarations, of which 26045 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -259,15 +259,15 @@ this page; there is nowhere else to keep the description in step.
 
 ### unfiled
 
-**answer** — `answer.lean`, 4 theorem(s). lean/answer.lean — the pure decisions of the answer system (src/answer/verify-lean.ts and verify-arith.ts), stated and proved. These are the rules the TypeScript decision functions implement; the link between the two is a runtime test until the TypeScript is generated from this file.
+**answer** — `answer.lean`, 8 theorem(s). lean/answer.lean — the pure decisions of the answer system (src/answer/verify-lean.ts and verify-arith.ts), stated and proved. These are the rules the TypeScript decision functions implement; the link between the two is a runtime test until the TypeScript is generated from this file.
 
-**arith** — `arith.lean`, 4 theorem(s). src/proof/arith.lean — the arithmetic decision of the answer system, as kernel-checked definitions.
+**arith** — `arith.lean`, 7 theorem(s). src/proof/arith.lean — the arithmetic decision of the answer system, as kernel-checked definitions.
 
 **diamond** — `diamond.lean`, 1 theorem(s). lean/diamond.lean — the diamond involution r(d) = 10 − d on the digits 1..9, as a theorem the kernel checks. The audit in scripts/mcp.ts reads its verdict from here (lean_ask), not from a JavaScript loop over a literal range. Decided over a finite list, so it depends on no axiom beyond the kernel.
 
 ### the floor
 
-**The certificate gate, as kernel-checked rules** — `answer_gate.lean`, 1 theorem(s). prior-art note: not applicable — rules of the answer system, docs/ANSWER-SYSTEM.md
+**The certificate gate, as kernel-checked rules** — `answer_gate.lean`, 7 theorem(s). prior-art note: not applicable — rules of the answer system, docs/ANSWER-SYSTEM.md
 
 **The router's priority, as kernel-checked rules** — `answer_route.lean`, 6 theorem(s). prior-art note: not applicable — the priority of the answer system's router, docs/ANSWER-SYSTEM.md
 
@@ -357,7 +357,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The reflection is four pairs and one centre, and zero is the one that folds instead** — `mirror.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
 
-**What qpu.uuidna.com and this deposit independently count the same way** — `qpu.lean`, 16 theorem(s). WHY THIS FILE EXISTS, AND THE THREE THINGS IT REFUSES TO SAY.
+**What qpu.uuidna.com and this deposit independently count the same way** — `qpu.lean`, 24 theorem(s). WHY THIS FILE EXISTS, AND THE THREE THINGS IT REFUSES TO SAY.
 
 **A reading that does not vary with what it reads separates nothing** — `separation.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
 
@@ -461,7 +461,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). WITHDRAWAL WAS NEVER THE ONLY OPTION. Each theorem below returns one claim to the record. The evidence that existed was a TypeScript run — a computation that agreed once on one machine. The kernel walks the whole stated domain. That was the gap, and closing it is arithmetic.
 
-55 of 26024 declarations carry no comment of their own and are shown here as the gap they are, not
+62 of 26045 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -470,14 +470,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,456 — 3557 octaves exactly |
-| standing — carries its own proof | **26037** |
+| ledger entries | 28,464 — 3558 octaves exactly |
+| standing — carries its own proof | **26045** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **26863** of 28,456 |
-| standing keys → distinct theorems | 26037 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 105 · 26037 sealed theorems (25830 closed by exhaustion, axiom-free · 207 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 25830 of 26037 |
+| proved in total | **26871** of 28,464 |
+| standing keys → distinct theorems | 26045 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 105 · 26045 sealed theorems (25838 closed by exhaustion, axiom-free · 207 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 25838 of 26045 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -525,4 +525,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 26037 sealed theorems · 28456 ledger entries · trial root `1b6424cb-09af-830b-922c-09dfe4effbfb` · integrity, not truth*
+*20 claims, all verified · 26045 sealed theorems · 28464 ledger entries · trial root `dd3dccac-a6c7-8c5f-8617-9728f4ae814f` · integrity, not truth*

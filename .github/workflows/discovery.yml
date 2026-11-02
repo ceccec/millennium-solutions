@@ -38,12 +38,8 @@ jobs:
       # workflow finished in sixteen seconds and reported success: no lean on the runner, so lean.ts read
       # "41 files · 939 theorems · 41 FAILING", seal-lean refused, and `| tail | tee` swallowed both exit
       # codes. A daily job that proposes nothing and passes is worse than no daily job.
-      - name: install the kernel this repository pins
-        run: |
-          set -euo pipefail
-          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
-          sh elan-init.sh -y --default-toolchain "$(cat lean-toolchain)"
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      # (the composite action's kernel input installs it above, piped to sh; a second download here wrote elan-init.sh
+      # into the checkout — the untracked file the action's own comment records)
       - name: the kernel answers before anything is proposed
         run: lean --version
 

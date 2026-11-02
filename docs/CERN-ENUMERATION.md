@@ -2,6 +2,18 @@
 
 Measured 2026-09-05 against `opendata.cern.ch`. Reproduce with `npm run cern` and `npm run cern:oai`.
 
+<!-- cern:measured -->
+*Figures below are written by `npm run cern` from its last run, never by hand (`docs/cern-measured.json` is the record; this block is its rendering).*
+
+| measured | count |
+|---|---|
+| canonical records (slug aliases resolved) | 62,889 |
+| sitemap URL ids | 111,605 |
+| slug aliases among them | 59,175 |
+| child sitemaps | 318 |
+| record URLs listed | 151,383 |
+<!-- /cern:measured -->
+
 ## The headline
 
 **No route enumerates the portal completely, and two of them fail silently.** The four sources do not

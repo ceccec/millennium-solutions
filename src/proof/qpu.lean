@@ -28,6 +28,7 @@
 -- No axioms, no Mathlib, no sorry.
 import Rays
 import Capacity
+set_option maxRecDepth 4000000
 
 namespace Qpu
 
@@ -199,5 +200,69 @@ theorem register_relations_16_and_10_meet_at_the_hexbit :
 
 theorem register_relation_4294967296_the_amplitudes :
     clayAmplitudes = clayMint clayBits ∧ clayAmplitudes = clayQftStates clayBits := by decide
+
+-- ── 3 · THE FOURTEEN STATES: THE REGISTER ROTATED OVER A FACTORISATION ─────────────────────────────────────
+-- src/factor/index.ts answers every integer with a witness: faces = coins × rays = 2 × 7 states, each a change of
+-- representation the fact must survive — two coins (the integer and its digit mirror d ↦ 10 − d, defined when no
+-- digit is 0) and seven rays (the integer written in radix 2^k, k = 1..7, and read back). The TypeScript checks
+-- each state at run time; what is decided here is that the two reflections ARE reflections on a shared grid:
+-- reading back what was written is the identity for every ray, and the mirror is an involution wherever it is
+-- defined. The law is stated through the functions and their inverses, not as a readback of constants, and
+-- its control names the one radix that is not a binary variant: radix 2^0 = 1 has no digits to carry a number.
+
+/-- the digits of n in radix b, most significant first (fuel-bounded for the kernel; b ≥ 2) -/
+def digitsIn (b : Nat) : Nat → Nat → List Nat
+  | 0, _ => []
+  | fuel + 1, n => if n < b then [n] else digitsIn b fuel (n / b) ++ [n % b]
+
+/-- the inverse: digits in radix b back to the number -/
+def ofDigits (b : Nat) (ds : List Nat) : Nat := ds.foldl (fun acc d => acc * b + d) 0
+
+/-- the integer rendered in binary variant 2^k and read back -/
+def rayRoundTrip (k n : Nat) : Nat := ofDigits (2 ^ k) (digitsIn (2 ^ k) (n + 1) n)
+
+/-- the digit mirror on the decimal digits (10 − d), as a number; 0 when a digit is 0 (the mirror is then undefined) -/
+def mirrorNat (fuel n : Nat) : Nat :=
+  if (digitsIn 10 fuel n).any (· == 0) then 0 else ofDigits 10 ((digitsIn 10 fuel n).map (10 - ·))
+
+/-- every radix 2^k, k = 1..7, is a reflection: write then read is the identity on the grid n < 512 -/
+theorem fourteen_states_every_ray_reads_back_what_it_wrote :
+    (List.range 7).all (fun i => (List.range 512).all (fun n => rayRoundTrip (i + 1) n == n)) := by decide
+
+/-- the mirror coin is an involution wherever it is defined, on the grid of three-digit numbers with no zero digit -/
+theorem fourteen_states_the_mirror_coin_is_an_involution :
+    (List.range 1000).all (fun n => mirrorNat 4 n == 0 || mirrorNat 4 (mirrorNat 4 n) == n) := by decide
+
+/-- the register: the states counted by the TypeScript witness are exactly faces, and faces is coins × rays at the
+    served values only (the pinned relation above) — so the witness has fourteen states by qpu's own arithmetic -/
+theorem fourteen_states_are_the_served_faces :
+    coins * (List.range 7).length = faces ∧ faces = 14 := by decide
+
+/-- control: radix 2^0 is not a binary variant — a single digit cannot carry 2, so the round trip is not the identity -/
+theorem radix_one_is_refuted_as_a_ray :
+    ¬ (List.range 512).all (fun n => rayRoundTrip 0 n == n) := by decide
+
+/-- the bit length of n (fuel-bounded) -/
+def bitLen (fuel n : Nat) : Nat := (digitsIn 2 fuel n).length
+
+/-- a ray's digit count is the bit length rounded up to whole rays: radix 2^k carries k bits a digit -/
+theorem fourteen_states_a_ray_has_as_many_digits_as_bits_in_whole_rays :
+    (List.range 7).all (fun i => (List.range 511).all (fun m =>
+      (digitsIn (2 ^ (i + 1)) (m + 2) (m + 1)).length == (bitLen (m + 2) (m + 1) + i) / (i + 1))) := by decide
+
+/-- the mirror coin keeps the digit count wherever it is defined: a reflection changes digits, not their number -/
+theorem fourteen_states_the_mirror_coin_keeps_the_digit_count :
+    (List.range 1000).all (fun n => mirrorNat 4 n == 0 || (digitsIn 10 4 (mirrorNat 4 n)).length == (digitsIn 10 4 n).length) := by decide
+
+/-- the factorisation survives every ray: factors written in radix 2^k and read back multiply to the product -/
+theorem fourteen_states_the_factor_product_survives_every_ray :
+    (List.range 7).all (fun i => (List.range 24).all (fun p => (List.range 24).all (fun q =>
+      rayRoundTrip (i + 1) p * rayRoundTrip (i + 1) q == p * q))) := by decide
+
+/-- control: the mirror coin is a reflection of the digits, not a homomorphism — it does not distribute over a product
+    (3 · 5 = 15 mirrors to 95, while 7 · 5 = 35), so the witness factors the mirror coin on its own, never by mirroring factors -/
+theorem the_mirror_coin_does_not_distribute_over_a_product :
+    ¬ (List.range 24).all (fun p => (List.range 24).all (fun q =>
+      mirrorNat 4 (p * q) == 0 || mirrorNat 4 (p * q) == mirrorNat 4 p * mirrorNat 4 q)) := by decide
 
 end Qpu

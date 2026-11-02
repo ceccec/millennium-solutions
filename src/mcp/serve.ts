@@ -25,6 +25,10 @@
  *  here reads the ledger, compiles Lean, shells out or opens a socket. A caller wanting the other nineteen
  *  clones the repository, and `list_tools` says so per tool instead of failing when they try. */
 import { toUuid, merkleFold, merge } from '../0/index.ts'
+import { factorWitnessed } from '../factor/index.ts'
+import { verifyFactors } from '../factor/verify.ts'
+import { mirror as digitMirror } from '../mirror/index.ts'
+import { decide as policyDecide } from '../policy/index.ts'
 import { handle, resolve, HANDLE_HEX } from '../handle/index.ts'
 import { checkFace, type Face } from '../face/index.ts'
 import { CORE as ROSETTA_CORE, DOMAINS as ROSETTA_DOMAINS } from '../the/rosetta/index.ts'
@@ -95,6 +99,7 @@ export const verifyIn = (rows: Row[], uuid: string) => {
 /** The tools this entry serves — DERIVED from NEEDS, not listed, minus the two that need a dependency or
  *  repository logic. Those two are named with their reason so the subtraction is auditable. */
 export const CANNOT_SHIP: Record<string, string> = {
+  secure_split: 'its shares are drawn from node:crypto randomBytes, and this entry opens no node module — clone the repository for it',
   discover: 'its candidate set is scripts/discover.ts — repository logic, not a module',
   recompute: 'it re-runs every candidate\'s formula, and the formulas are in scripts/discover.ts — the same repository logic. Reading the ledger is not enough: this tool recomputes what the ledger RECORDS, which needs the code that computed it',
 }
@@ -206,6 +211,19 @@ const rowsOrRefuse = (tool: string): Row[] => {
 }
 
 const H: Record<string, (a: any) => string> = {
+  // THE PRODUCTION FACTOR, SERVED FROM EVERY INSTALL. Declared core and refused by this entry until 2026-11-02 ("it takes
+  // n") — the one tool a stranger most needs was the one an install did not reach. Pure BigInt over the caller's integer in
+  // any binary variant, with its fourteen-state witness (src/factor/index.ts).
+  factor: (a) => JSON.stringify(factorWitnessed(String(a?.n ?? ''))),
+  factor_verify: (a) => JSON.stringify(verifyFactors(String(a?.n ?? ''), Array.isArray(a?.factors) ? (a.factors as unknown[]).map(String) : [])),
+  digit_mirror: (a) => JSON.stringify(digitMirror(String(a?.n ?? ''))),
+  policy: (a) => JSON.stringify(policyDecide(String(a?.request ?? ''))),
+  api_lattice: () => {
+    const rows = TOOLS.filter((t) => (NEEDS[t.name] ?? []).includes('net')).map((t) => ({
+      handle: toUuid(t.name).replace(/-/g, '').slice(0, 8), tool: t.name, needs: NEEDS[t.name] ?? [],
+    })).sort((a, b) => a.handle.localeCompare(b.handle))
+    return JSON.stringify({ tools: rows.length, lattice: rows })
+  },
   formulas: (a) => {
     if (!FORMS) throw new Error('formulas: the formula catalogue is not loaded. The published package carries it '
       + 'at dist/data/formulas.jsonld; if it is missing, pass rows, or clone the repository for the full server. '

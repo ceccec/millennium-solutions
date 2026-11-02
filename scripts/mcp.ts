@@ -7,7 +7,7 @@ import { createInterface } from 'node:readline'
 import { execSync, execFileSync, spawn, spawnSync } from 'node:child_process'
 import { readFileSync, existsSync, readdirSync, appendFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { factor } from '../src/factor/index.ts'
+import { factor, factorWitnessed, parseInteger } from '../src/factor/index.ts'
 import { understand, searchDocs } from '../src/understand/index.ts'
 import { split as shareSplit, join as shareJoin } from '../src/split/index.ts'
 import { verifyFactors } from '../src/factor/verify.ts'
@@ -70,34 +70,46 @@ const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 
 
 // ONE INPUT, ONE CHECK: send to the QPU's Shor tool, read its factors, and check them with the verifier, never by a product alone.
-const shorCheck = async (n: string, bases: (string | undefined)[] = [undefined]): Promise<{ n: string; uuid: string; qpu: string[] | null; verifier: string; why?: string; note?: string; base?: string }> => {
-  // The pair is signalled by its content address: the UUID of the integer's decimal digits, so a row is named by its input.
+const shorCheck = async (n: string, bases: (string | undefined)[] = [undefined]): Promise<{ n: string; uuid: string; qpu: string[] | null; verifier: string; why?: string; note?: string; base?: string; by: string; door?: string; witness?: { faces: number; agree: boolean; failures: string[] } }> => {
+  // THE PRODUCTION PATH IS THIS TREE'S: src/factor factors any binary variant of any width (trial division, Pollard–Brent
+  // rho under a stated budget, deterministic primality below 3.3e24) and carries the fourteen-state witness. The served
+  // door algorithm{name:'shor'} is a state-vector Shor over N in 3..21; within that bound it is asked too and its answer is
+  // cross-checked against the factors found here — a door that answered other factors would be named. Outside the bound
+  // its refusal is kept in its own words. Before 2026-11-02 this called a door no longer served and every wave read
+  // "the reply could not be read" — NOT_FACTORED for 91 was the instrument, not the number.
   const uuid = toUuid(n)
-  let last: { n: string; uuid: string; qpu: string[] | null; verifier: string; why?: string; note?: string; base?: string } = { n, uuid, qpu: null, verifier: 'NOT_FACTORED', note: 'the QPU returned no factors' }
-  for (const base of bases) {
-    const arguments_ = base === undefined ? { n } : { n, a: base }
-    const reply = await HANDLERS.connect({ connector: 'qpu', tool: 'crypto_shor', arguments: arguments_ })
-    let p: string | null = null, q: string | null = null, note = ''
-    try {
-      const text = String((JSON.parse(reply) as { answer?: { result?: { content?: { text?: string }[] } } }).answer?.result?.content?.[0]?.text ?? '')
-      const t = JSON.parse(text) as { exact?: { p?: string; q?: string } }
-      p = t.exact?.p ?? null; q = t.exact?.q ?? null
-    } catch { note = 'the reply could not be read' }
-    if (!p || p === '0' || !q || q === '0') { last = { n, uuid, qpu: null, verifier: 'NOT_FACTORED', note: note || 'the QPU returned no factors', base }; continue }
-    const v = verifyFactors(n, [p, q])
-    if (v.status === 'VERIFIED' || v.status === 'PROBABLE') return { n, uuid, qpu: [p, q], verifier: v.status, why: v.why, base }
-    // A composite factor is not a refusal of the number: the factor route splits it fully, and every prime is then checked.
-    const composite = (p && millerRabin(BigInt(p)) === 'COMPOSITE') ? p : (q && millerRabin(BigInt(q)) === 'COMPOSITE') ? q : null
-    if (composite !== null) {
-      const full = factorFull(n)
-      if (full.status === 'FACTORED') {
-        const fv = verifyFactors(n, full.factors)
-        return { n, uuid, qpu: full.factors, verifier: fv.status, why: `the QPU's composite factor ${composite} was split by the factor route; ${fv.why}`, base }
-      }
+  const local = factorWitnessed(n)
+  const digits = parseInteger(n) ?? n
+  let door: string | undefined
+  let doorFactors: string[] | null = null
+  const N = /^\d+$/.test(digits) ? BigInt(digits) : null
+  if (N !== null && N >= 3n && N <= 21n) {
+    // the door's own default base is not always coprime to N (21 was refused on it, 2026-11-02); when no base is given, the
+    // smallest coprime base follows the default, as the door's contract asks — the retry is the client reading the contract
+    const gcd = (x: bigint, y: bigint): bigint => (y === 0n ? x : gcd(y, x % y))
+    const coprime = [...Array(Number(N) - 2).keys()].map((i) => BigInt(i + 2)).find((a) => gcd(a, N) === 1n)
+    const tries = bases.length === 1 && bases[0] === undefined && coprime !== undefined ? [undefined, coprime.toString()] : bases
+    for (const base of tries) {
+      const arguments_ = base === undefined ? { name: 'shor', N: Number(N) } : { name: 'shor', N: Number(N), a: Number(base) }
+      const reply = await HANDLERS.connect({ connector: 'qpu', tool: 'algorithm', arguments: arguments_ })
+      try {
+        const r = JSON.parse(reply) as { status?: string; why?: string; answer?: { result?: { content?: { text?: string }[] } } }
+        if (r.status !== 'ANSWERED') { door = `refused: ${r.why ?? r.status}`; continue }
+        const t = JSON.parse(String(r.answer?.result?.content?.[0]?.text ?? '')) as { summary?: [string, string][] }
+        const pair = (t.summary ?? []).find(([k]) => k === 'Factors')?.[1] ?? ''
+        const m = /^(\d+)\s*×\s*(\d+)$/.exec(pair)
+        if (m) { doorFactors = [m[1]!, m[2]!]; door = `answered ${pair}`; break }
+        door = 'answered without a factor pair'
+      } catch { door = 'the reply could not be read' }
     }
-    last = { n, uuid, qpu: [p, q], verifier: v.status, why: v.why, base }
-  }
-  return last
+  } else if (N !== null) door = 'not asked: the served Shor is bounded to N in 3..21'
+  const w = local.witness ? { faces: local.witness.register.faces, agree: local.witness.agree, failures: local.witness.failures } : undefined
+  if (local.status === 'REFUSED') return { n, uuid, qpu: doorFactors, verifier: 'REFUSED', why: local.why, by: 'factor (this tree)', door }
+  if (local.status === 'PARTIAL') return { n, uuid, qpu: doorFactors, verifier: 'NOT_FACTORED', note: local.blocking, by: 'factor (this tree)', door, witness: w }
+  const v = verifyFactors(digits, local.factors)
+  const row = { n, uuid, qpu: doorFactors, verifier: v.status, why: 'why' in v ? v.why : undefined, by: 'factor (this tree)', door, witness: w }
+  if (doorFactors && [...doorFactors].sort().join('·') !== [...local.factors].sort().join('·')) return { ...row, verifier: 'REFUSED', why: `the served door answered ${doorFactors.join(' × ')} and this tree found ${local.factors.join(' × ')}` }
+  return row
 }
 const waveSummary = (count: number, rows: { verifier: string }[]) => {
   const counts: Record<string, number> = {}
@@ -383,7 +395,7 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     return JSON.stringify({ tools: rows.length, lattice: rows })
   },
   policy: (a) => JSON.stringify(policyDecide(String(a?.request ?? ''))),
-  factor: (a) => JSON.stringify(factor(String(a?.n ?? ''))),
+  factor: (a) => JSON.stringify(factorWitnessed(String(a?.n ?? ''))),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   api_adapters: () => { try { return execFileSync('node', ['scripts/api-adapters.ts'], { encoding: 'utf8', timeout: 600_000, maxBuffer: 8 << 20 }) }

@@ -24,6 +24,21 @@ const installed = JSON.parse(readFileSync('node_modules/@uuidna/qpu/package.json
 console.log(`qpu-gate: qpu.lean declares ${declared.size} constant(s) — ${[...declared].map(([k, v]) => `${k} ${v}`).join(' · ')}`)
 console.log(`          installed @uuidna/qpu ${installed.version}`)
 
+// the lock is what CI installs; the tree is what this gate measures. A version in node_modules that the lock does not
+// resolve makes a local pass certify a CI run on another package — exactly what hid 1.0.0's missing module behind a
+// local 1.0.1 for one push. Both units are checked, by the same rule, before anything else is measured.
+const lock = JSON.parse(readFileSync('package-lock.json', 'utf8')) as { packages: Record<string, { version: string }> }
+const drift = ['@uuidna/qpu', '@uuidna/uuidna'].flatMap((u) => {
+  const locked = lock.packages[`node_modules/${u}`]?.version
+  const tree = (JSON.parse(readFileSync(`node_modules/${u}/package.json`, 'utf8')) as { version: string }).version
+  return locked === tree ? [] : [`${u}: lock resolves ${locked ?? 'nothing'}, the tree runs ${tree}`]
+})
+if (drift.length) {
+  console.log(`✗ qpu-gate: ${drift.length} unit(s) installed outside the lock — ${drift.join(' · ')}`)
+  console.log('  npm ci installs the lock; a gate that passes on the tree certifies nothing about CI. npm update <unit> brings the lock to the registry')
+  process.exit(1)
+}
+
 let qpu: Record<string, (...a: unknown[]) => Record<string, unknown>>
 try { qpu = (await import('@uuidna/qpu')) as unknown as typeof qpu }
 catch (e) {

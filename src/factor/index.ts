@@ -64,9 +64,19 @@ export const millerRabin = (n: bigint): 'PRIME' | 'COMPOSITE' => {
   return 'PRIME'
 }
 
+/** Any binary variant of an integer — `0b` binary, `0x` hex, or plain decimal, with optional `_` grouping — as the decimal
+ *  digits every tool here reads. null when the text is none of the three. A 1,000-bit integer arrives as readily as 91. */
+export const parseInteger = (input: string): string | null => {
+  const t = input.trim().replace(/_/g, '')
+  if (/^0b[01]+$/i.test(t)) return BigInt(t).toString()
+  if (/^0x[0-9a-f]+$/i.test(t)) return BigInt(t).toString()
+  if (/^\d+$/.test(t)) return t
+  return null
+}
+
 export const factor = (input: string): Factorisation => {
-  const digits = input.trim()
-  if (!/^\d+$/.test(digits)) return { status: 'REFUSED', why: 'the input is not a non-negative decimal integer' }
+  const digits = parseInteger(input)
+  if (digits === null) return { status: 'REFUSED', why: 'the input is not a non-negative integer in decimal, 0b binary or 0x hex' }
   let n = BigInt(digits)
   if (n < 2n) return { status: 'REFUSED', why: `${n} has no factorisation to give` }
 
@@ -141,4 +151,76 @@ const splitWithRho = (m: bigint, primes: bigint[], open: bigint[]): void => {
   if (d === null || d === 1n || d === m) { open.push(m); return }
   splitWithRho(d, primes, open)
   splitWithRho(m / d, primes, open)
+}
+
+// ── THE WITNESS: FOURTEEN REFLECTIVE STATES ──────────────────────────────────────────────────────────────────
+// A factorisation is a fact about an integer, not about one spelling of it. qpu.lean pins the register the served unit
+// states: faces = coins × rays = 2 × 7 = 14. The witness here is that register rotated over the fact: two coins — the
+// integer and its digit mirror (d ↦ 10 − d, an involution defined when no digit is 0) — and seven rays — the integer
+// rendered in every binary variant 2^k for k = 1..7 (binary, base 4, octal, hex, base 32, 64, 128) and parsed back.
+// A fact that survives a change of representation is a fact about the number, the way a dimensionless ratio (the
+// proton-to-electron mass ratio nucleus.lean brings under the kernel) survives a change of units. Each state is checked,
+// not assumed: a renderer that lost a digit, a mirror that was not an involution, or factors that did not multiply back
+// would each turn one named state red. Nothing physical is claimed; the register is the served unit's and the arithmetic
+// is this tree's.
+export const RAYS: readonly number[] = [1, 2, 3, 4, 5, 6, 7]
+const GLYPHS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+/** n in radix 2^k, as a list of digit values (most significant first). Pure, any width. */
+export const renderDigits = (n: bigint, k: number): number[] => {
+  const b = 1n << BigInt(k), out: number[] = []
+  let m = n
+  if (m === 0n) return [0]
+  while (m > 0n) { out.unshift(Number(m % b)); m /= b }
+  return out
+}
+/** the inverse: digit values in radix 2^k back to the integer */
+export const parseDigits = (ds: readonly number[], k: number): bigint => ds.reduce((acc, d) => (acc << BigInt(k)) + BigInt(d), 0n)
+/** the digit mirror as a string, or null when a digit is 0 (10 − 0 is not a digit) */
+export const mirrorDigits = (digits: string): string | null => /0/.test(digits) ? null : digits.split('').map((c) => String(10 - Number(c))).join('')
+
+export type WitnessState = { coin: 'integer' | 'mirror'; ray: number; radix: number; digits: number; roundTrip: boolean }
+export type Witness = {
+  register: { coins: 2; rays: 7; faces: 14; source: 'qpu.lean — the served register, faces = coins × rays' }
+  coins: { integer: Factorisation & { n: string }; mirror: (Factorisation & { n: string }) | { status: 'UNDEFINED'; why: string } }
+  states: WitnessState[]
+  agree: boolean
+  failures: string[]
+}
+/** The factorisation of any binary variant of an integer, with its fourteen-state witness. */
+export const factorWitnessed = (input: string): (Factorisation & { n?: string; witness?: Witness }) => {
+  const digits = parseInteger(input)
+  const base = factor(input)
+  if (digits === null || base.status === 'REFUSED') return base
+  const n = BigInt(digits)
+  const m = mirrorDigits(digits)
+  const states: WitnessState[] = []
+  const failures: string[] = []
+  const coinsOf: [('integer' | 'mirror'), bigint][] = m === null ? [['integer', n]] : [['integer', n], ['mirror', BigInt(m)]]
+  for (const [coin, v] of coinsOf) for (const k of RAYS) {
+    const ds = renderDigits(v, k)
+    const ok = parseDigits(ds, k) === v && ds.every((d) => d >= 0 && d < (1 << k))
+    states.push({ coin, ray: k, radix: 1 << k, digits: ds.length, roundTrip: ok })
+    if (!ok) failures.push(`${coin} does not survive radix ${1 << k}`)
+  }
+  const check = (label: string, r: Factorisation, v: string): void => {
+    if (r.status === 'FACTORED') {
+      const prod = r.factors.reduce((acc, x) => acc * BigInt(x), 1n)
+      if (prod.toString() !== v) failures.push(`${label}: the factors do not multiply back`)
+    } else if (r.status === 'PARTIAL') failures.push(`${label}: ${r.cofactorDigits}-digit cofactor left open — ${r.cofactorPrimality}`)
+    else failures.push(`${label}: ${r.why}`)
+  }
+  check('integer', base, digits)
+  const mirrorFact = m === null
+    ? { status: 'UNDEFINED' as const, why: 'a digit is 0, and 10 − 0 is not a digit: the mirror coin is undefined, which is stated rather than counted' }
+    : { n: m, ...factor(m) }
+  if (mirrorFact.status !== 'UNDEFINED') check('mirror', mirrorFact, m!)
+  // an undefined mirror is not a failure: the register has fourteen faces and the integer shows as many as its digits allow
+  return {
+    ...base, n: digits,
+    witness: {
+      register: { coins: 2, rays: 7, faces: 14, source: 'qpu.lean — the served register, faces = coins × rays' },
+      coins: { integer: { n: digits, ...base }, mirror: mirrorFact },
+      states, agree: failures.length === 0, failures,
+    },
+  }
 }

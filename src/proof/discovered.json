@@ -149364,5 +149364,45 @@
     "key": "lean_speed_the_two_tables_fold_order_free_and_apart",
     "name": "lean speed.lean: the_two_tables_fold_order_free_and_apart — foldHex (hexOf measuredUnbounded) = foldHex (hexOf measuredUnbounded.reverse) ∧ foldHex (hexOf measuredBounded) = foldHex (hexOf measuredBounded.reverse) ∧ foldHex (hexOf measuredUnbounded) ≠ foldHex (hexOf measuredBounded) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "975d948f-34a5-84d9-856f-4cd3b30e989c"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_every_ray_reads_back_what_it_wrote",
+    "name": "lean qpu.lean: fourteen_states_every_ray_reads_back_what_it_wrote — (List.range 7).all (fun i => (List.range 512).all (fun n => rayRoundTrip (i + 1) n == n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5559a040-7dff-8366-a606-7bb948b7ab8b"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_the_mirror_coin_is_an_involution",
+    "name": "lean qpu.lean: fourteen_states_the_mirror_coin_is_an_involution — (List.range 1000).all (fun n => mirrorNat 4 n == 0 || mirrorNat 4 (mirrorNat 4 n) == n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "58ab8506-6295-83bd-854a-6b92a245e819"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_are_the_served_faces",
+    "name": "lean qpu.lean: fourteen_states_are_the_served_faces — coins * (List.range 7).length = faces ∧ faces = 14 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "64fc00f1-621f-839a-9132-d11350a5a9df"
+  },
+  {
+    "key": "lean_qpu_radix_one_is_refuted_as_a_ray",
+    "name": "lean qpu.lean: radix_one_is_refuted_as_a_ray — ¬ (List.range 512).all (fun n => rayRoundTrip 0 n == n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fcc597f0-3ee1-8712-9fc3-2d51ce0f5488"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_a_ray_has_as_many_digits_as_bits_in_whole_rays",
+    "name": "lean qpu.lean: fourteen_states_a_ray_has_as_many_digits_as_bits_in_whole_rays — (List.range 7).all (fun i => (List.range 511).all (fun m => (digitsIn (2 ^ (i + 1)) (m + 2) (m + 1)).length == (bitLen (m + 2) (m + 1) + i) / (i + 1))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "75f22b10-386a-8c31-87de-9c5b94fa75ce"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_the_mirror_coin_keeps_the_digit_count",
+    "name": "lean qpu.lean: fourteen_states_the_mirror_coin_keeps_the_digit_count — (List.range 1000).all (fun n => mirrorNat 4 n == 0 || (digitsIn 10 4 (mirrorNat 4 n)).length == (digitsIn 10 4 n).length) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ff6b3bdc-8544-8ea5-945d-8e52710a214a"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_the_factor_product_survives_every_ray",
+    "name": "lean qpu.lean: fourteen_states_the_factor_product_survives_every_ray — (List.range 7).all (fun i => (List.range 24).all (fun p => (List.range 24).all (fun q => rayRoundTrip (i + 1) p * rayRoundTrip (i + 1) q == p * q))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b49bf7f9-320f-87de-a582-a31cfcd21b05"
+  },
+  {
+    "key": "lean_qpu_the_mirror_coin_does_not_distribute_over_a_product",
+    "name": "lean qpu.lean: the_mirror_coin_does_not_distribute_over_a_product — ¬ (List.range 24).all (fun p => (List.range 24).all (fun q => mirrorNat 4 (p * q) == 0 || mirrorNat 4 (p * q) == mirrorNat 4 p * mirrorNat 4 q)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "438bc706-f838-8544-8fa7-9b80aa130576"
   }
 ]

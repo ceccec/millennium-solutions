@@ -14,13 +14,13 @@ jobs:
       CI: 'true'
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      # deps 'false' ran these suites with no node_modules: the first case to import a registry unit failed before it
+      # measured anything, and the Lean pin was typed here a second time instead of read from lean-toolchain. The
+      # composite action installs both from the one place each is declared.
       - uses: ./.github/actions/node
         with:
-          deps: 'false'
-      - name: Lean toolchain (the Lean-backed answers need it)
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.15.0
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          deps: 'true'
+          kernel: 'true'
       - name: Network suites, each must PASS
         run: |
           for s in net-tools-test answer-doi answer-tool fallbacks; do

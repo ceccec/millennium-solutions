@@ -326,7 +326,7 @@
   "file": "address.lean",
   "name": "raw_bytes_of_a",
   "statementHash": "22d7f250d5a60df9",
-  "searched": "2026-09-25T14:10:02.415Z",
+  "searched": "2026-11-02T22:03:31.824Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -345,21 +345,13 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND bytes"
   },
   "notMeasured": [
-   "openalex: rate-limited after backoff"
+   "openalex: rate-limited after backoff",
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [
-   {
-    "source": "arxiv",
-    "title": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection",
-    "year": "2026",
-    "url": "http://arxiv.org/abs/2602.15376v1",
-    "relevance": 1,
-    "text": "A Unified Evaluation of Learning-Based Similarity Techniques for Malware Detection Cryptographic digests (e.g., MD5, SHA-256) are designed to provide exact identity. Any single-bit change in the input produces a completely different hash, which is ideal for integrity verification but limits their us"
-   }
-  ],
-  "verdict": "CANDIDATES"
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
  },
  "lean_address_stamping_twice_is_stamping_once": {
   "key": "lean_address_stamping_twice_is_stamping_once",

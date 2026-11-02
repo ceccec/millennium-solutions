@@ -50,15 +50,17 @@ export function read(file: string): LeanDoc {
   // 'own' is a comment written for this theorem, 'section' is the heading it inherits, 'none' is a real gap.
   const theorems: Theorem[] = []
   let lastSection = ''
-  for (const m of src.matchAll(/((?:^[ \t]*--.*\n)*)^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm)) {
-    const statement = normalizeStatement(m[3])
+  for (const m of src.matchAll(/((?:^[ \t]*--.*\n)*)^theorem\s+([A-Za-z_0-9]+)\s*((?:[({[](?:[^(){}\[\]]|\([^()]*\))*[)}\]]\s*)*):([\s\S]*?):=\s*(by decide|rfl|by\s+\w+|\S+)/gm)) {
+    // the last alternative: a proof that is a term (fun, ⟨…⟩, a lemma applied) is a declaration too — 13 of them were
+    // invisible to this reader at HEAD on 2026-11-03, and the front page printed "-13 are not yet sealed"
+    const statement = normalizeStatement((m[3] ? m[3].trim() + ' ' : '') + m[4])
     const own = stripComment(m[1])
     if (own) lastSection = own
     theorems.push({
       name: m[2],
       doc: own || lastSection,
       docFrom: own ? 'own' : lastSection ? 'section' : 'none',
-      statement, tactic: m[4], cases: domainOf(statement),
+      statement, tactic: m[5], cases: domainOf(statement),
     })
   }
 

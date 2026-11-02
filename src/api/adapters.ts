@@ -173,7 +173,8 @@ const fromCodeRest: Adapter[] = [
     notFor: 'a legal reading of the rules. The text is quoted, and any reading of it is a claim for a court to decide' },
   { name: 'zbmath:search', source: 'code', host: 'api.zbmath.org',
     url: 'https://api.zbmath.org/v1/document/_search?search_string=millennium%20problems&results_per_page=1', auth: 'none',
-    expect: (b) => /"(hits|results|total)"/.test(b),
+    expect: (b) => /"(result|hits|results|total)"/.test(b),
+    // measured 2026-11-02: the v1 search answers {"result":[…]} — the earlier keys were not in the reply, and the adapter read WRONG
     purpose: 'the zbMATH document search, for mathematical literature on a topic',
     notFor: 'a hit as a review. zbMATH indexes documents; it does not assess them' },
   { name: 'zbmath:site', source: 'code', host: 'zbmath.org',
