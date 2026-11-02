@@ -18,6 +18,16 @@ type Spec = { id: string; verdict: string }
 const live = JSON.parse(readFileSync(`${root}/${folder}/live.json`, 'utf8')) as Live[]
 const spec = JSON.parse(readFileSync(`${root}/${folder}/probe.json`, 'utf8')) as Spec[]
 const count = (rows: { verdict: string }[], v: string) => rows.filter((r) => r.verdict === v).length
+// THE LAW NEEDS THE INSTANCES, NOT THE TOTALS. Five counts summing to a sixth is arithmetic the kernel can only
+// read back — leads.ts filed every theorem here under "a certificate, not a proof". The evidence holds one
+// verdict per API, so the file carries them: a code per entry in catalogue order, the partition decided over
+// every entry, its inverse (a sixth code breaks it), and "reachable ⇒ spec proven" decided per API, which is
+// the law the inequality reachable ≤ specProven was standing in for.
+const LIVE_CODE: Record<string, number> = { REACHABLE: 0, NOT_REACHABLE: 1, REFUSED: 2, GATED: 3, NOT_MEASURED: 4 }
+const specById = new Map(spec.map((r) => [r.id, r.verdict]))
+const liveCodes = live.map((r) => { const c = LIVE_CODE[r.verdict]; if (c === undefined) throw new Error(`apis-theorems: unknown live verdict ${r.verdict} for ${r.id}`); return c })
+const specCodes = live.map((r) => (specById.get(r.id) === 'PROVEN' ? 1 : 0))
+const lean = (xs: number[]) => '[' + xs.join(', ') + ']'
 
 const n = {
   catalogue: live.length,
@@ -47,6 +57,8 @@ specification is served and parses (probe), and its own server answers (live). T
 and the partition is what these theorems state.
 -/
 
+set_option maxRecDepth 100000
+
 def catalogue : Nat := ${n.catalogue}
 def specProven : Nat := ${n.specProven}
 def reachable : Nat := ${n.reachable}
@@ -55,18 +67,36 @@ def refused : Nat := ${n.refused}
 def gated : Nat := ${n.gated}
 def notMeasured : Nat := ${n.notMeasured}
 
-/-- Every catalogued API has exactly one live verdict, so the five verdicts sum to the catalogue. -/
+/-- one live verdict per catalogued API, in catalogue order: 0 reachable · 1 not reachable · 2 refused · 3 gated · 4 not measured -/
+def liveVerdicts : List Nat := ${lean(liveCodes)}
+/-- one spec verdict per API, in the same order: 1 proven, 0 not -/
+def specVerdicts : List Nat := ${lean(specCodes)}
+def tally (vs : List Nat) (k : Nat) : Nat := (vs.filter (fun v => v == k)).length
+/-- k codes partition a list when every entry carries a code below k and the k tallies sum back to the length -/
+def isPartition (vs : List Nat) (k : Nat) : Bool :=
+  vs.all (fun v => v < k) && (List.range k).foldl (fun s i => s + tally vs i) 0 == vs.length
+
+/-- Every catalogued API has exactly one of the five live verdicts — decided entry by entry — and a sixth code breaks it. -/
 theorem apis_live_verdicts_partition_the_catalogue :
-    reachable + notReachable + refused + gated + notMeasured = catalogue := by decide
+    isPartition liveVerdicts 5 = true ∧ isPartition (liveVerdicts ++ [5]) 5 = false
+    ∧ liveVerdicts.length = catalogue ∧ tally liveVerdicts 0 = reachable ∧ tally liveVerdicts 1 = notReachable
+    ∧ tally liveVerdicts 2 = refused ∧ tally liveVerdicts 3 = gated ∧ tally liveVerdicts 4 = notMeasured := by decide
 
-/-- Every catalogued specification was served and parsed, so the spec verdict covers the whole catalogue. -/
-theorem apis_every_spec_is_proven : specProven = catalogue := by decide
+/-- Every catalogued specification was served and parsed — every entry, not a count — and one unproven entry would show. -/
+theorem apis_every_spec_is_proven :
+    specVerdicts.all (fun v => v == 1) = true ∧ (specVerdicts ++ [0]).all (fun v => v == 1) = false
+    ∧ specVerdicts.length = catalogue ∧ tally specVerdicts 1 = specProven := by decide
 
-/-- A reachable server is always an API with a proven spec: reachability is counted within specification. -/
-theorem apis_reachable_is_within_specs : reachable ≤ specProven := by decide
+/-- A reachable server always belongs to an API with a proven spec: decided for every API, and refuted the moment one
+    reachable entry is paired with an unproven spec. -/
+theorem apis_reachable_is_within_specs :
+    (liveVerdicts.zip specVerdicts).all (fun p => p.1 != 0 || p.2 == 1) = true
+    ∧ ([0].zip [0]).all (fun p => p.1 != 0 || p.2 == 1) = false := by decide
 
-/-- Keyed APIs are never called, so the gated count is exactly the ones a key would unlock. -/
-theorem apis_gated_is_not_called : gated + reachable + notReachable + refused + notMeasured = catalogue := by decide
+/-- Keyed APIs are never called: take the gated out and exactly the called-or-unmeasured remain, none of them gated. -/
+theorem apis_gated_is_not_called :
+    tally liveVerdicts 3 = gated ∧ (liveVerdicts.filter (fun v => v != 3)).length + gated = catalogue
+    ∧ tally (liveVerdicts.filter (fun v => v != 3)) 3 = 0 ∧ tally (liveVerdicts.filter (fun v => v != 3) ++ [3]) 3 = 1 := by decide
 `
 writeFileSync('src/proof/apis.lean', out)
 console.log(`src/proof/apis.lean written from ${folder}: catalogue ${n.catalogue}, spec proven ${n.specProven}, reachable ${n.reachable}, not reachable ${n.notReachable}, refused ${n.refused}, gated ${n.gated}, not measured ${n.notMeasured}`)

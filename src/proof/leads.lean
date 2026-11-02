@@ -1,6 +1,7 @@
 -- title: The open leads, named
 -- wing: the floor
 -- prior_art: unclassified
+-- prior_art_search: not applicable — this file declares no theorem; it names the open leads, and a search needs a statement to search for
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- Each open lead is named here as the `leads` MCP tool reports it on the date below. Nothing in this file removes,

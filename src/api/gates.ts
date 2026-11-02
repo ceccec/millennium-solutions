@@ -14,7 +14,9 @@ import { readFileSync, existsSync } from 'node:fs'
 // dirty-tree refusal — firing for the wrong reason, which is the 1-in-39 mistake gates-fire warns about —
 // or, worse, succeed and cut a tag. Its own preconditions (sealed, octave-exact, carried) were exercised
 // by hand with a planted ledger row and it refused, naming the remainder.
-export const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'control-probe', 'leads', 'wire', 'metrics', 'release'])
+// leads-closed RUNS leads.ts and refuses on its summary; push-when-green runs the push gate and then pushes — both
+// are chains over other scripts, and the second is the outward act itself. Neither is a gate to control by mutation.
+export const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'control-probe', 'leads', 'wire', 'metrics', 'release', 'leads-closed', 'push-when-green'])
 /** Scripts whose subject is a remote nobody here may perturb. */
 // `release-live` joins NETWORK: its refusal is ABSENT, a fact about npm's registry and Zenodo's, and no
 // mutation of any file in this tree can produce it. It is exercised by ARGUMENT instead —
@@ -22,7 +24,7 @@ export const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'cont
 // `ci-watch` joins NETWORK: it reads GitHub's verdict on a commit through `gh run list`, and its refusal is a
 // run that CONCLUDED IN FAILURE on their server — no mutation of this tree can produce it, and before a push
 // there is nothing to read at all.
-export const NETWORK = new Set(['connector-job', 'novelty', 'qpu-crosscheck', 'clay-online', 'links-check', 'cern', 'cern-oai', 'doi-resolve', 'zenodo-mint', 'zenodo-verify', 'bench-hex', 'bench-hexbit', 'release-live', 'readers', 'entangle-oeis', 'api-discover', 'published', 'ci-watch', 'web-fetch', 'web-search', 'clay-conditions-test', 'suite-run', 'answer', 'answer-doi-test', 'api-adapters', 'apis-guru'])
+export const NETWORK = new Set(['online-verify-e2e-test', 'connector-job', 'novelty', 'qpu-crosscheck', 'clay-online', 'links-check', 'cern', 'cern-oai', 'doi-resolve', 'zenodo-mint', 'zenodo-verify', 'bench-hex', 'bench-hexbit', 'release-live', 'readers', 'entangle-oeis', 'api-discover', 'published', 'ci-watch', 'web-fetch', 'web-search', 'clay-conditions-test', 'suite-run', 'answer', 'answer-doi-test', 'api-adapters', 'apis-guru'])
 
 /** Every script package.json can reach. */
 export const reachableScripts = (): Set<string> => {

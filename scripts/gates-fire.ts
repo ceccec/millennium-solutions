@@ -159,6 +159,24 @@ const CONTROLS: Control[] = [
     what: 'qpu.lean declaring a bit width the installed @uuidna/qpu does not compute — a proof about a unit that is not the one installed',
     mutate: (s) => s.replace(/^(def\s+bits\s*:\s*Nat\s*:=\s*)32\b/m, '$133') },
 
+  // TWO OF THE PEERS' GATES, CONTROLLED (2026-11-02). run-suite-security-test asserts the suite allowlist refuses every
+  // unlisted name; with the check in scripts/suite-run.ts disabled, an unlisted name is no longer REFUSED and the test
+  // must say so. thousand-bit-gate's control mode must see 91 factored and 2^1000−1 not; with trial division never
+  // entered, 91 is not factored and the control must go red.
+  { gate: 'run-suite-security-test (the allowlist check is disabled)', cmd: 'node scripts/run-suite-security-test.ts', file: 'scripts/suite-run.ts',
+    what: 'a suite runner that no longer refuses an unlisted name — a shell reachable through the MCP client',
+    mutate: (s) => s.replace('if (!(suite in SUITES)) {', 'if (false && !(suite in SUITES)) {') },
+
+  { gate: 'thousand-bit-gate (trial division never runs)', cmd: 'node scripts/thousand-bit-gate.ts --control', file: 'src/factor/index.ts',
+    what: 'a factor route that cannot factor 91 — a control that would then pass nothing it is meant to pass',
+    mutate: (s) => s.replace('for (; d <= TRIAL_BOUND && d * d <= n; d += 2n) divide(d)', 'for (; d <= 1n; d += 2n) divide(d)') },
+
+  // apis-theorems GENERATES src/proof/apis.lean from the evidence folder and refuses a verdict it does not know — a
+  // new verdict string in the evidence would otherwise become a count nobody classified.
+  { gate: 'apis-theorems (an unknown verdict in the evidence)', cmd: 'node scripts/apis-theorems.ts', file: 'evidence/apis-guru/3022dd48/live.json',
+    what: 'a live verdict the generator has no code for — an entry that would fall out of the partition unseen',
+    mutate: (s) => s.replace('"verdict": "REACHABLE"', '"verdict": "UNCLASSIFIED"'), restore: 'node scripts/apis-theorems.ts' },
+
   // ── THE TWO WAYS A FILE'S SELF-DECLARED COUNT CAN GO WRONG, and they need separate controls because they
   //    are separate defects with separate fixes. Fifteen files declare `settledHere` — how many declarations
   //    that file closes by exhaustion — and each was followed by `settledHere = N := rfl`, a constant compared

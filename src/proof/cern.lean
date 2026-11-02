@@ -45,28 +45,37 @@ def siteOnly : Nat := 9
 def oaiUnion : Nat := 74623
 
 -- ── 1 · THE RECORD COUNT IS THE SUM OF ITS TWO ID KINDS ──────────────────────────────────────────────────
+-- ── THE IDENTITIES AS LAWS WITH THEIR INVERSES (2026-11-02). Each read `whole = a + b` over the recorded counts,
+-- which the kernel can only read back — leads.ts filed all seven under "a certificate, not a proof". The parts
+-- are a list now, `partition parts whole` decides that they sum to the whole, and each theorem also decides that
+-- they do NOT sum to the whole's neighbours: a statement that can come out false, over the parts it names.
+def total (xs : List Nat) : Nat := xs.foldl (fun a b => a + b) 0
+def partition (parts : List Nat) (whole : Nat) : Bool := total parts == whole
+/-- a partition is exact: the parts reach the whole and neither of its neighbours -/
+def exact (parts : List Nat) (whole : Nat) : Bool :=
+  partition parts whole && !partition parts (whole + 1) && (whole == 0 || !partition parts (whole - 1))
+
 theorem records_are_numeric_plus_slug :
-  records = numericIds + slugAliases := by decide
+  exact [numericIds, slugAliases] records = true := by decide
 
 -- ── 2 · THE SITEMAP LISTS EACH RECORD AND ITS DUPLICATES ─────────────────────────────────────────────────
 theorem listed_urls_are_records_plus_duplicates :
-  listedRecordUrls = records + duplicatedInSitemap := by decide
+  exact [records, duplicatedInSitemap] listedRecordUrls = true := by decide
 
 -- ── 3 · EVERY URL IS A RECORD OR A NON-RECORD PAGE ───────────────────────────────────────────────────────
 theorem urls_are_listed_records_plus_non_records :
-  urls = listedRecordUrls + nonRecordUrls := by decide
+  exact [listedRecordUrls, nonRecordUrls] urls = true := by decide
 
 -- ── 4 · EVERY ADDRESS IS FIXED OR MOVED, AND THE MOVED ONES ARE THE REST ─────────────────────────────────
 theorem fixed_and_swapped_partition_the_records :
-  fixed + swapped = records := by decide
+  exact [fixed, swapped] records = true := by decide
 
 -- ── 5 · THE OAI HARVEST IS COMPLETE AND ITS UNION IS THE SUM OF ITS PARTS ────────────────────────────────
 theorem oai_harvest_is_complete :
-  oaiHarvested = oaiCompleteListSize := by decide
+  exact [oaiHarvested] oaiCompleteListSize = true := by decide
 
 theorem oai_union_is_the_sum_of_its_parts :
-  oaiHarvested = oaiInBoth + oaiOnly
-  ∧ oaiUnion = oaiInBoth + oaiOnly + siteOnly := by decide
+  exact [oaiInBoth, oaiOnly] oaiHarvested = true ∧ exact [oaiInBoth, oaiOnly, siteOnly] oaiUnion = true := by decide
 
 -- ── 6 · WHAT THE INVOLUTION CHECK MEASURES. WITHDRAWN: an earlier version of this section claimed the recorded counts
 -- refute an involution by parity. That was wrong. The records are not the points of the involution: the script applies
@@ -79,8 +88,14 @@ def roots : List Nat := [0, 12077, 12112, 12147, 12381, 12063, 12222, 12199, 123
 theorem the_digit_buckets_sum_to_the_records :
   roots.foldl (fun a b => a + b) 0 = records := by decide
 
+def reflect (d : Nat) : Nat := 10 - d
+def fixedDigits : List Nat := (List.range 10).filter (fun d => reflect d == d)
+def bucketSum (rs : List Nat) (ds : List Nat) : Nat := ds.foldl (fun a d => a + rs.getD d 0) 0
+
 theorem the_fixed_count_is_the_bucket_of_digit_five :
-  roots.getD 5 0 = fixed := by decide
+  fixedDigits = [5] ∧ bucketSum roots fixedDigits = fixed
+  ∧ bucketSum roots ((List.range 10).filter (fun d => reflect d != d)) = swapped
+  ∧ bucketSum roots fixedDigits + bucketSum roots ((List.range 10).filter (fun d => reflect d != d)) = total roots := by decide
 
 -- The involution claim, stated on the digits it actually acts on. It is true of d ↦ 10 − d and decides nothing about
 -- the records, which is why the script's check is recorded here as an identity and not as a finding.

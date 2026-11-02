@@ -196,8 +196,13 @@ def fnv0 (cs : List Nat) : Nat := cs.foldl (fun h c => xor32 ((h * FNV_PRIME) % 
 def SIGNATURE : List Nat :=
   [99, 104, 111, 110, 103, 111, 32, 60, 76, 97, 110, 100, 111, 110, 32, 67, 117, 114, 116, 32, 78, 111, 108, 108, 62, 32, 47, 92, 46, 46, 47, 92]
 
+/-- w is the first 32 fraction bits of φ exactly when 2w + 2³² brackets √5·2³² from below within 2 -/
+def bracketsPhi (w : Nat) : Bool := (2 * w + 2 ^ 32) ^ 2 ≤ 5 * 2 ^ 64 && 5 * 2 ^ 64 < (2 * w + 2 + 2 ^ 32) ^ 2
+
+-- the bracket is tight: the seed passes and neither neighbour does, so exactly one word is φ's
 theorem the_second_seed_is_the_first_hex_word_of_the_golden_ratio :
-    (2 * SEEDS.getD 1 0 + 2 ^ 32) ^ 2 ≤ 5 * 2 ^ 64 ∧ 5 * 2 ^ 64 < (2 * SEEDS.getD 1 0 + 2 + 2 ^ 32) ^ 2 := by decide
+    bracketsPhi (SEEDS.getD 1 0) = true ∧ bracketsPhi (SEEDS.getD 1 0 + 1) = false
+    ∧ bracketsPhi (SEEDS.getD 1 0 - 1) = false := by decide
 
 theorem the_third_seed_is_the_first_hex_word_of_pi_by_bbp :
     bbp 24 24 / 16 ^ 16 = 3 * 16 ^ 8 + SEEDS.getD 2 0 := by decide
