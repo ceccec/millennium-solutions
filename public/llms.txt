@@ -5,9 +5,9 @@
 
 ## What this is
 
-A machine-checked mathematical deposit: 26021 theorems across 105 Lean 4 source
+A machine-checked mathematical deposit: 26037 theorems across 105 Lean 4 source
 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free, with a
-28440-entry append-only ledger whose receipt chain is recomputed on every build.
+28456-entry append-only ledger whose receipt chain is recomputed on every build.
 
 Author: Tsvetan Rouschev (ORCID https://orcid.org/0009-0000-7312-9778). Licence: **CC BY-NC-ND 4.0**. Concept DOI: 10.5281/zenodo.21819217.
 
@@ -105,5 +105,5 @@ Machine-readable provenance for every claim is at `/forensic`, and per-theorem r
 statement and LaTeX are under `.zenodo/theorems/`.
 
 ---
-Ledger 28440 entries · 26021 standing · chain recomputed on every build.
-Notice content-address `c6b64be7-f701-8902-aa3c-0b09646a9993`.
+Ledger 28456 entries · 26037 standing · chain recomputed on every build.
+Notice content-address `ee7b5f96-ece3-8eb4-8948-9c58cae79edc`.

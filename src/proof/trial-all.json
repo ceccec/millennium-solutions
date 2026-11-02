@@ -170638,5 +170638,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "ae3bbc50-5e81-85a3-80cb-1c6dc46fef6e"
+  },
+  {
+    "key": "lean_qpu_the_served_constants_are_the_ones_the_definitions_derive",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c53ca84f-bd8e-8572-a498-ecf4c59052d1"
+  },
+  {
+    "key": "lean_qpu_register_relation_32_bits_from_two_definitions",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ffadb63a-7359-89f3-9f2f-9c14d9f3fc75"
+  },
+  {
+    "key": "lean_qpu_register_relation_14_faces_is_the_coil_and_the_qaoa_parameters_of_the_rays",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d4112a07-47bf-8f1b-83ad-e807b7be9202"
+  },
+  {
+    "key": "lean_qpu_register_relation_128_the_mint_of_the_rays",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d327e506-caa7-89e1-8995-fef2294d86ef"
+  },
+  {
+    "key": "lean_qpu_register_relation_28_the_plane_is_a_binomial_two_ways",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ee97cb2d-6488-80b7-baed-9b3d0a342298"
+  },
+  {
+    "key": "lean_qpu_register_relation_256_the_mint_of_the_vertices",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ea53e759-46cd-8c6a-a96d-7daf37f48bfc"
+  },
+  {
+    "key": "lean_qpu_register_relations_16_and_10_meet_at_the_hexbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9192982d-6947-8ca1-acec-1f17231a0949"
+  },
+  {
+    "key": "lean_qpu_register_relation_4294967296_the_amplitudes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f04a43eb-a1d0-8ecd-905d-791b3a045957"
+  },
+  {
+    "key": "lean_speed_temperature_falls_with_the_batch_when_a_part_is_shared",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c416924c-1be9-82f7-bce2-43259c82b3cb"
+  },
+  {
+    "key": "lean_speed_temperature_is_flat_when_nothing_is_shared",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "83b7ab3a-606c-80db-819c-6d3cb811eb00"
+  },
+  {
+    "key": "lean_speed_the_fall_is_exactly_the_shared_part_spread_over_the_batch",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0b925ccc-7cdb-86f6-be3f-2769dd20bc23"
+  },
+  {
+    "key": "lean_speed_time_falls_with_the_lanes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "97859698-3d29-80e9-a5ba-6f1d20328ed4"
+  },
+  {
+    "key": "lean_speed_time_saturates_when_the_lanes_reach_the_batch",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ac7d9835-21b9-827e-aa08-9c1a5af2ef09"
+  },
+  {
+    "key": "lean_speed_the_hex_fold_is_order_free",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20a416ad-9d30-8919-9b7a-fbd1ea3e1cf7"
+  },
+  {
+    "key": "lean_speed_the_measured_temperature_fell_tenfold_and_then_rose",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9d4e7c9e-2485-8b18-ad9e-08c52ddb5684"
+  },
+  {
+    "key": "lean_speed_the_two_tables_fold_order_free_and_apart",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "975d948f-34a5-84d9-856f-4cd3b30e989c"
   }
 ]

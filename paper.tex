@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,008 of them across 105 files and
-8 wings; 25,814 close by exhaustion over a stated finite domain, 194 are proved
+(\texttt{npm run latex-gate}). There are 26,024 of them across 105 files and
+8 wings; 25,830 close by exhaustion over a stated finite domain, 194 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2386,6 +2386,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{temperature\_falls\_with\_the\_batch\_when\_a\_part\_is\_shared}]
+\[ \forall F \in \{0,\dots,15\},\; \forall c \in \{0,\dots,15\},\; \forall n \in \{0,\dots,14\},\; \mathrm{perItem}\mathopen{}\left(F,\,c,\,n + 2\right) \le \mathrm{perItem}\mathopen{}\left(F,\,c,\,n + 1\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3,840 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{temperature\_is\_flat\_when\_nothing\_is\_shared}]
+\[ \forall c \in \{0,\dots,15\},\; \forall n \in \{0,\dots,14\},\; \mathrm{perItem}\mathopen{}\left(0,\,c,\,n + 1\right) = c \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 240 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fall\_is\_exactly\_the\_shared\_part\_spread\_over\_the\_batch}]
+\[ \forall F \in \{0,\dots,15\},\; \forall c \in \{0,\dots,15\},\; \forall n \in \{0,\dots,14\},\; \mathrm{perItem}\mathopen{}\left(F,\,c,\,n + 1\right) = c + \frac{F}{n + 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3,840 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{time\_falls\_with\_the\_lanes}]
+\[ \forall F \in \{0,\dots,7\},\; \forall c \in \{0,\dots,7\},\; \forall n \in \{0,\dots,15\},\; \forall k \in \{0,\dots,14\},\; \mathrm{wall}\mathopen{}\left(F,\,c,\,n,\,k + 2\right) \le \mathrm{wall}\mathopen{}\left(F,\,c,\,n,\,k + 1\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 15,360 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{time\_saturates\_when\_the\_lanes\_reach\_the\_batch}]
+\[ \forall F \in \{0,\dots,7\},\; \forall c \in \{0,\dots,7\},\; \forall n \in \{0,\dots,14\},\; \forall k \in \{0,\dots,15\},\; \lnot n + 1 \le k \lor \mathrm{wall}\mathopen{}\left(F,\,c,\,n + 1,\,k\right) = F + c \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 15,360 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_hex\_fold\_is\_order\_free}]
+\[ \forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \forall c \in \{0,\dots,15\},\; \mathrm{foldHex}\mathopen{}\left([a,\,b,\,c]\right) = \mathrm{foldHex}\mathopen{}\left([b,\,c,\,a]\right) \land \mathrm{foldHex}\mathopen{}\left([a,\,b,\,c]\right) = \mathrm{foldHex}\mathopen{}\left([c,\,b,\,a]\right) \land \mathrm{foldHex}\mathopen{}\left([a,\,b,\,c]\right) = \mathrm{foldHex}\mathopen{}\left([b,\,a,\,c]\right) \land \mathrm{foldHex}\mathopen{}\left([1,\,2,\,3]\right) \neq \mathrm{foldHex}\mathopen{}\left([1,\,2,\,4]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36,864 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_measured\_temperature\_fell\_tenfold\_and\_then\_rose}]
+\texttt{fellTenfold measuredUnbounded 0 3 = true ∧ fellTenfold measuredBounded 0 3 = true ∧ rises measuredUnbounded 3 5 = true ∧ rises measuredBounded 3 6 = true ∧ rises measuredBounded 3 4 = true ∧ fellTenfold measuredBounded 0 1 = false ∧ measuredBounded.getD 5 0 < measuredUnbounded.getD 5 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_tables\_fold\_order\_free\_and\_apart}]
+\[ \mathrm{foldHex}\mathopen{}\left(\mathrm{hexOf}\mathopen{}\left(\mathrm{measuredUnbounded}\right)\right) = \mathrm{foldHex}\mathopen{}\left(\mathrm{hexOf}\mathopen{}\left(\operatorname{reverse}\left(\mathrm{measuredUnbounded}\right)\right)\right) \land \mathrm{foldHex}\mathopen{}\left(\mathrm{hexOf}\mathopen{}\left(\mathrm{measuredBounded}\right)\right) = \mathrm{foldHex}\mathopen{}\left(\mathrm{hexOf}\mathopen{}\left(\operatorname{reverse}\left(\mathrm{measuredBounded}\right)\right)\right) \land \mathrm{foldHex}\mathopen{}\left(\mathrm{hexOf}\mathopen{}\left(\mathrm{measuredUnbounded}\right)\right) \neq \mathrm{foldHex}\mathopen{}\left(\mathrm{hexOf}\mathopen{}\left(\mathrm{measuredBounded}\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{theology.lean}}
 
 \begin{theorem}[\texttt{the\_mirror\_and\_the\_doubling\_agree\_at\_no\_residue}]
@@ -4024,6 +4064,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \forall n \in \{1,\dots,20\},\; 2^{n + 1} = 2^{n} + 2^{n} \land 240518168576 = 120259084288 + 120259084288 \land 240518168576 = 2 \cdot 120259084288 \land \mathrm{vertices} = \mathrm{levels}^{\mathrm{qubits}} \land \mathrm{vertices} + \mathrm{vertices} = 2^{\mathrm{qubits} + 1} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_served\_constants\_are\_the\_ones\_the\_definitions\_derive}]
+\[ \mathrm{clayCoins} = \mathrm{coins} \land \mathrm{clayRays} = \mathrm{rays} \land \mathrm{clayFaces} = \mathrm{faces} \land \mathrm{clayVertices} = \mathrm{vertices} \land \mathrm{clayHexbit} = \mathrm{hexbit} \land \mathrm{clayBits} = \mathrm{bits} \land \mathrm{clayN} = \mathrm{qubits} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{register\_relation\_32\_bits\_from\_two\_definitions}]
+\[ \mathrm{clayBits} = \mathrm{clayChimera}\mathopen{}\left(\mathrm{clayCoins}\right) \land \mathrm{clayBits} = \mathrm{clayQaoaZz}\mathopen{}\left(\mathrm{clayVertices},\,\mathrm{clayHexbit}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{register\_relation\_14\_faces\_is\_the\_coil\_and\_the\_qaoa\_parameters\_of\_the\_rays}]
+\[ \mathrm{clayFaces} = \mathrm{clayCoil} \land \mathrm{clayFaces} = \mathrm{clayQaoaParams}\mathopen{}\left(\mathrm{clayRays}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{register\_relation\_128\_the\_mint\_of\_the\_rays}]
+\[ \mathrm{clayMint}\mathopen{}\left(\mathrm{clayRays}\right) = \mathrm{clayChimera}\mathopen{}\left(\mathrm{clayHexbit}\right) \land \mathrm{clayMint}\mathopen{}\left(\mathrm{clayRays}\right) = \mathrm{clayIsingFusion}\mathopen{}\left(\mathrm{clayVertices}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{register\_relation\_28\_the\_plane\_is\_a\_binomial\_two\_ways}]
+\[ \mathrm{clayPlane} = \mathrm{clayChoose}\mathopen{}\left(\mathrm{clayVertices},\,\mathrm{clayCoins}\right) \land \mathrm{clayChoose}\mathopen{}\left(\mathrm{clayVertices},\,\mathrm{clayHexbit}\right) \neq \mathrm{clayPlane} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{register\_relation\_256\_the\_mint\_of\_the\_vertices}]
+\[ \mathrm{clayMint}\mathopen{}\left(\mathrm{clayVertices}\right) = \mathrm{clayGroverSize}\mathopen{}\left(\mathrm{clayHexbit}\right) \land \mathrm{clayMint}\mathopen{}\left(\mathrm{clayVertices}\right) = \mathrm{clayQaoaZz}\mathopen{}\left(\mathrm{clayVertices},\,\mathrm{clayBits}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{register\_relations\_16\_and\_10\_meet\_at\_the\_hexbit}]
+\[ \mathrm{clayMint}\mathopen{}\left(\mathrm{clayHexbit}\right) = \mathrm{clayPowMod}\mathopen{}\left(\mathrm{clayCoins},\,\mathrm{clayRays},\,\mathrm{clayPlane}\right) \land \mathrm{clayMint}\mathopen{}\left(\mathrm{clayHexbit}\right) = \mathrm{clayPowMod}\mathopen{}\left(\mathrm{clayCoins},\,\mathrm{clayHexbit},\,\mathrm{clayBits}\right) \land \mathrm{clayTriangular}\mathopen{}\left(\mathrm{clayHexbit}\right) = \mathrm{clayQftGates}\mathopen{}\left(\mathrm{clayHexbit}\right) \land \mathrm{clayTriangular}\mathopen{}\left(\mathrm{clayBits}\right) = \mathrm{clayQftGates}\mathopen{}\left(\mathrm{clayBits}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{register\_relation\_4294967296\_the\_amplitudes}]
+\[ \mathrm{clayAmplitudes} = \mathrm{clayMint}\mathopen{}\left(\mathrm{clayBits}\right) \land \mathrm{clayAmplitudes} = \mathrm{clayQftStates}\mathopen{}\left(\mathrm{clayBits}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{separation.lean}}
 
