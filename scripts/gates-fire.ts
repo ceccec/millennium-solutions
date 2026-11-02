@@ -152,6 +152,13 @@ const CONTROLS: Control[] = [
     what: 'a generated bridge whose orbits no longer follow src/entangle — subjects proving a map nobody computed',
     mutate: (s) => s.replace('open Z9', 'open Z9  -- edited by hand') },
 
+  // qpu-gate COULD NOT BE CONTROLLED while its instrument would not load (the registry's @uuidna/qpu 1.0.0 excluded
+  // a module its own entry imported); 1.0.1 loads, the gate measures, and the control is the obvious one: a
+  // constant qpu.lean declares moved away from what the installed unit computes must be refused by name.
+  { gate: 'qpu-gate (a declared constant drifts from the installed unit)', cmd: 'node scripts/qpu-gate.ts', file: 'src/proof/qpu.lean',
+    what: 'qpu.lean declaring a bit width the installed @uuidna/qpu does not compute — a proof about a unit that is not the one installed',
+    mutate: (s) => s.replace(/^(def\s+bits\s*:\s*Nat\s*:=\s*)32\b/m, '$133') },
+
   // ── THE TWO WAYS A FILE'S SELF-DECLARED COUNT CAN GO WRONG, and they need separate controls because they
   //    are separate defects with separate fixes. Fifteen files declare `settledHere` — how many declarations
   //    that file closes by exhaustion — and each was followed by `settledHere = N := rfl`, a constant compared

@@ -197,11 +197,10 @@ def SIGNATURE : List Nat :=
   [99, 104, 111, 110, 103, 111, 32, 60, 76, 97, 110, 100, 111, 110, 32, 67, 117, 114, 116, 32, 78, 111, 108, 108, 62, 32, 47, 92, 46, 46, 47, 92]
 
 theorem the_second_seed_is_the_first_hex_word_of_the_golden_ratio :
-    (2 * 2654435769 + 2 ^ 32) ^ 2 ≤ 5 * 2 ^ 64 ∧ 5 * 2 ^ 64 < (2 * 2654435769 + 2 + 2 ^ 32) ^ 2
-    ∧ SEEDS.getD 1 0 = 2654435769 := by decide
+    (2 * SEEDS.getD 1 0 + 2 ^ 32) ^ 2 ≤ 5 * 2 ^ 64 ∧ 5 * 2 ^ 64 < (2 * SEEDS.getD 1 0 + 2 + 2 ^ 32) ^ 2 := by decide
 
 theorem the_third_seed_is_the_first_hex_word_of_pi_by_bbp :
-    bbp 24 24 / 16 ^ 16 = 3 * 16 ^ 8 + 608135816 ∧ SEEDS.getD 2 0 = 608135816 := by decide
+    bbp 24 24 / 16 ^ 16 = 3 * 16 ^ 8 + SEEDS.getD 2 0 := by decide
 
 -- twenty-four terms, four floors each: the dropped remainders are below 100, and the tail of the series
 -- below 1; the digit boundary is more than a thousand away on either side
@@ -209,8 +208,7 @@ theorem the_bbp_truncation_cannot_cross_the_digit_boundary :
     1000 < bbp 24 24 % 16 ^ 16 ∧ bbp 24 24 % 16 ^ 16 + 1000 < 16 ^ 16 := by decide
 
 theorem the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi :
-    eSeries 24 30 / 16 ^ 16 = 2 * 16 ^ 8 + 3084996962 ∧ SEEDS.getD 3 0 = 3084996962
-    ∧ 3084996962 ≠ 608135816 := by decide
+    eSeries 24 30 / 16 ^ 16 = 2 * 16 ^ 8 + SEEDS.getD 3 0 ∧ SEEDS.getD 3 0 ≠ SEEDS.getD 2 0 := by decide
 
 theorem the_series_truncation_cannot_cross_the_digit_boundary :
     1000 < eSeries 24 30 % 16 ^ 16 ∧ eSeries 24 30 % 16 ^ 16 + 1000 < 16 ^ 16 := by decide
