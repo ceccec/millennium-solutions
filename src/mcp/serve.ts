@@ -283,7 +283,7 @@ const H: Record<string, (a: any) => string> = {
     const missing = here.filter((n) => !H[n])
     const extra = Object.keys(H).filter((n) => !here.includes(n))
     return JSON.stringify({
-      entry: 'self-sufficient', ledgerLoaded: hasLedger(), served: here.length, of: TOOLS.length,
+      entry: 'self-sufficient', ledgerLoaded: hasLedger(), bakeLoaded: hasBake(), served: here.length, of: TOOLS.length,
       declaredWithoutHandler: missing, handlerWithoutDeclaration: extra,
       writes: [...WRITES].filter((w) => here.includes(w)),
       root: merkleFold(here.map((n) => toUuid(n + ':' + (TOOLS.find((t) => t.name === n)?.description ?? '')))),
@@ -306,7 +306,7 @@ export const listTools = (name?: unknown): string => {
   return JSON.stringify({
     entry: 'self-sufficient — runs from the published package with no account, key, model, network or clone',
     serves: `${served().length} of ${TOOLS.length} tools`,
-    ledgerLoaded: hasLedger(),
+    ledgerLoaded: hasLedger(), bakeLoaded: hasBake(),
     tools: served().map((n) => ({ name: n, description: first(TOOLS.find((t) => t.name === n)?.description ?? '') })),
     baked: bakedNames().length ? { tools: bakedNames().length, ...(BAKE?.stamp ?? {}) } : null,
     elsewhere: TOOLS.filter((t) => !served().includes(t.name)).map((t) => ({ name: t.name, needs: NEEDS[t.name], why: whyNot(t.name) })),
