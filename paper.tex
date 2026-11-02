@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,024 of them across 105 files and
-8 wings; 25,830 close by exhaustion over a stated finite domain, 194 are proved
+(\texttt{npm run latex-gate}). There are 26,045 of them across 105 files and
+8 wings; 25,838 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -884,6 +884,30 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \paragraph{\texttt{answer.lean}}
 
+\begin{theorem}[\texttt{c1\_true\_only\_when\_clean}]
+\texttt{r.answered = true ∧ r.compiles = true ∧ r.hasSorry = false ∧ r.noAxioms = true}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{c2\_probable\_prime\_is\_unknown}]
+\texttt{decideC2 { verdict := Verdict.probablePrime, proved := p, factorChecked := f } = Value.UNKNOWN}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{c2\_true\_only\_for\_proved\_prime}]
+\texttt{r.verdict = Verdict.prime ∧ r.proved = true}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{c2\_false\_only\_for\_checked\_composite}]
+\texttt{r.verdict = Verdict.composite ∧ r.factorChecked = true}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{c1\_exhaustive}]
 \texttt{allReports.all (fun r => (decideC1 r == Value.TRUE) == (r.answered \&\& r.compiles \&\& !r.hasSorry \&\& r.noAxioms)) = true}
 \end{theorem}
@@ -910,6 +934,12 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \paragraph{\texttt{arith.lean}}
 
+\begin{theorem}[\texttt{factor\_rules\_out\_prime}]
+\[ \mathrm{primeB}\mathopen{}\left(n\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{case\_91\_false}]
 \[ \mathrm{verdictOf}\mathopen{}\left(91,\,\mathrm{some}\mathopen{}\left(\left(7,\,13\right)\right)\right) = \mathrm{Value.FALSE} \]
 \end{theorem}
@@ -930,6 +960,18 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{no\_witness\_never\_false}]
+\[ \mathrm{verdictOf}\mathopen{}\left(n,\,\mathrm{none}\right) \neq \mathrm{Value.FALSE} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  show} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{false\_implies\_not\_prime}]
+\[ \mathrm{primeB}\mathopen{}\left(n\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  obtain} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{diamond.lean}}
 
 \begin{theorem}[\texttt{diamond\_involution}]
@@ -945,6 +987,42 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \left|\{\, x \in \mathrm{allFlags} \mid \mathrm{ok}\mathopen{}\left(x\right) \,\}\right| = 11 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{truth\_without\_a\_proof\_is\_refused}]
+\[ \mathrm{ok}\mathopen{}\left(f\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{falsehood\_without\_a\_proof\_is\_refused}]
+\[ \mathrm{ok}\mathopen{}\left(f\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{sourced\_without\_a\_doi\_is\_refused}]
+\[ \mathrm{ok}\mathopen{}\left(f\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{unknown\_with\_a\_certificate\_is\_refused}]
+\[ \mathrm{ok}\mathopen{}\left(f\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{unknown\_without\_a\_blocking\_step\_is\_refused}]
+\[ \mathrm{ok}\mathopen{}\left(f\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{unchecked\_is\_refused}]
+\[ \mathrm{ok}\mathopen{}\left(f\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  unfold} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{answer\_route.lean}}
 
@@ -4104,6 +4182,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \mathrm{clayAmplitudes} = \mathrm{clayMint}\mathopen{}\left(\mathrm{clayBits}\right) \land \mathrm{clayAmplitudes} = \mathrm{clayQftStates}\mathopen{}\left(\mathrm{clayBits}\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{fourteen\_states\_every\_ray\_reads\_back\_what\_it\_wrote}]
+\[ \forall i \in \{0,\dots,6\},\; \forall n \in \{0,\dots,511\},\; \mathrm{rayRoundTrip}\mathopen{}\left(i + 1,\,n\right) = n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3,584 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourteen\_states\_the\_mirror\_coin\_is\_an\_involution}]
+\[ \forall n \in \{0,\dots,999\},\; \mathrm{mirrorNat}\mathopen{}\left(4,\,n\right) = 0 \lor \mathrm{mirrorNat}\mathopen{}\left(4,\,\mathrm{mirrorNat}\mathopen{}\left(4,\,n\right)\right) = n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourteen\_states\_are\_the\_served\_faces}]
+\[ \mathrm{coins} \cdot \left|\{0,\dots,6\}\right| = \mathrm{faces} \land \mathrm{faces} = 14 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{radix\_one\_is\_refuted\_as\_a\_ray}]
+\[ \lnot \forall n \in \{0,\dots,511\},\; \mathrm{rayRoundTrip}\mathopen{}\left(0,\,n\right) = n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 512 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourteen\_states\_a\_ray\_has\_as\_many\_digits\_as\_bits\_in\_whole\_rays}]
+\[ \forall i \in \{0,\dots,6\},\; \forall m \in \{0,\dots,510\},\; \left|\mathrm{digitsIn}\mathopen{}\left(2^{i + 1},\,m + 2,\,m + 1\right)\right| = \frac{\mathrm{bitLen}\mathopen{}\left(m + 2,\,m + 1\right) + i}{i + 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3,577 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourteen\_states\_the\_mirror\_coin\_keeps\_the\_digit\_count}]
+\[ \forall n \in \{0,\dots,999\},\; \mathrm{mirrorNat}\mathopen{}\left(4,\,n\right) = 0 \lor \left|\mathrm{digitsIn}\mathopen{}\left(10,\,4,\,\mathrm{mirrorNat}\mathopen{}\left(4,\,n\right)\right)\right| = \left|\mathrm{digitsIn}\mathopen{}\left(10,\,4,\,n\right)\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourteen\_states\_the\_factor\_product\_survives\_every\_ray}]
+\[ \forall i \in \{0,\dots,6\},\; \forall p \in \{0,\dots,23\},\; \forall q \in \{0,\dots,23\},\; \mathrm{rayRoundTrip}\mathopen{}\left(i + 1,\,p\right) \cdot \mathrm{rayRoundTrip}\mathopen{}\left(i + 1,\,q\right) = p \cdot q \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,032 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_mirror\_coin\_does\_not\_distribute\_over\_a\_product}]
+\[ \lnot \forall p \in \{0,\dots,23\},\; \forall q \in \{0,\dots,23\},\; \mathrm{mirrorNat}\mathopen{}\left(4,\,p \cdot q\right) = 0 \lor \mathrm{mirrorNat}\mathopen{}\left(4,\,p \cdot q\right) = \mathrm{mirrorNat}\mathopen{}\left(4,\,p\right) \cdot \mathrm{mirrorNat}\mathopen{}\left(4,\,q\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 576 cases. \hfill$\square$
 
 \paragraph{\texttt{separation.lean}}
 

@@ -19,10 +19,10 @@ Last run: **9 of 9 passed**.
 | the data file parses as JSON-LD | ✓ | parses |
 | it declares the schema.org context | ✓ | ["https://schema.org",{"wing":"https://schema.org/genre","source":"https://schem |
 | it is an ItemList | ✓ | ItemList |
-| numberOfItems matches what the list holds | ✓ | declared 26037, holds 26037 |
-| the page and the data agree on the count | ✓ | page says 26037, data holds 26037 |
-| every linked theorem page is built | ✓ | 1295 links, 0 dead |
-| every item carries the three facets the widget filters by | ✓ | 26037 of 26037 complete |
+| numberOfItems matches what the list holds | ✓ | declared 26045, holds 26045 |
+| the page and the data agree on the count | ✓ | page says 26045, data holds 26045 |
+| every linked theorem page is built | ✓ | 1303 links, 0 dead |
+| every item carries the three facets the widget filters by | ✓ | 26045 of 26045 complete |
 
 ## What this cannot tell you
 

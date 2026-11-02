@@ -170734,5 +170734,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "975d948f-34a5-84d9-856f-4cd3b30e989c"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_every_ray_reads_back_what_it_wrote",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5559a040-7dff-8366-a606-7bb948b7ab8b"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_the_mirror_coin_is_an_involution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "58ab8506-6295-83bd-854a-6b92a245e819"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_are_the_served_faces",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "64fc00f1-621f-839a-9132-d11350a5a9df"
+  },
+  {
+    "key": "lean_qpu_radix_one_is_refuted_as_a_ray",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fcc597f0-3ee1-8712-9fc3-2d51ce0f5488"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_a_ray_has_as_many_digits_as_bits_in_whole_rays",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "75f22b10-386a-8c31-87de-9c5b94fa75ce"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_the_mirror_coin_keeps_the_digit_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ff6b3bdc-8544-8ea5-945d-8e52710a214a"
+  },
+  {
+    "key": "lean_qpu_fourteen_states_the_factor_product_survives_every_ray",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b49bf7f9-320f-87de-a582-a31cfcd21b05"
+  },
+  {
+    "key": "lean_qpu_the_mirror_coin_does_not_distribute_over_a_product",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "438bc706-f838-8544-8fa7-9b80aa130576"
   }
 ]
