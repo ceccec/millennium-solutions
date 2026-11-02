@@ -149284,5 +149284,85 @@
     "key": "lean_countingrocks_fibonacci_partial_sums",
     "name": "lean counting-rocks.lean: fibonacci_partial_sums — ∀ n < 20, 1 ≤ n → (List.range n).foldl (fun acc k => acc + fib (k+1)) 0 + 1 = fib (n+2) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "ae3bbc50-5e81-85a3-80cb-1c6dc46fef6e"
+  },
+  {
+    "key": "lean_qpu_the_served_constants_are_the_ones_the_definitions_derive",
+    "name": "lean qpu.lean: the_served_constants_are_the_ones_the_definitions_derive — clayCoins = coins ∧ clayRays = rays ∧ clayFaces = faces ∧ clayVertices = vertices ∧ clayHexbit = hexbit ∧ clayBits = bits ∧ clayN = qubits — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c53ca84f-bd8e-8572-a498-ecf4c59052d1"
+  },
+  {
+    "key": "lean_qpu_register_relation_32_bits_from_two_definitions",
+    "name": "lean qpu.lean: register_relation_32_bits_from_two_definitions — clayBits = clayChimera clayCoins ∧ clayBits = clayQaoaZz clayVertices clayHexbit — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ffadb63a-7359-89f3-9f2f-9c14d9f3fc75"
+  },
+  {
+    "key": "lean_qpu_register_relation_14_faces_is_the_coil_and_the_qaoa_parameters_of_the_rays",
+    "name": "lean qpu.lean: register_relation_14_faces_is_the_coil_and_the_qaoa_parameters_of_the_rays — clayFaces = clayCoil ∧ clayFaces = clayQaoaParams clayRays — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d4112a07-47bf-8f1b-83ad-e807b7be9202"
+  },
+  {
+    "key": "lean_qpu_register_relation_128_the_mint_of_the_rays",
+    "name": "lean qpu.lean: register_relation_128_the_mint_of_the_rays — clayMint clayRays = clayChimera clayHexbit ∧ clayMint clayRays = clayIsingFusion clayVertices — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d327e506-caa7-89e1-8995-fef2294d86ef"
+  },
+  {
+    "key": "lean_qpu_register_relation_28_the_plane_is_a_binomial_two_ways",
+    "name": "lean qpu.lean: register_relation_28_the_plane_is_a_binomial_two_ways — clayPlane = clayChoose clayVertices clayCoins ∧ clayChoose clayVertices clayHexbit ≠ clayPlane — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ee97cb2d-6488-80b7-baed-9b3d0a342298"
+  },
+  {
+    "key": "lean_qpu_register_relation_256_the_mint_of_the_vertices",
+    "name": "lean qpu.lean: register_relation_256_the_mint_of_the_vertices — clayMint clayVertices = clayGroverSize clayHexbit ∧ clayMint clayVertices = clayQaoaZz clayVertices clayBits — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ea53e759-46cd-8c6a-a96d-7daf37f48bfc"
+  },
+  {
+    "key": "lean_qpu_register_relations_16_and_10_meet_at_the_hexbit",
+    "name": "lean qpu.lean: register_relations_16_and_10_meet_at_the_hexbit — clayMint clayHexbit = clayPowMod clayCoins clayRays clayPlane ∧ clayMint clayHexbit = clayPowMod clayCoins clayHexbit clayBits ∧ clayTriangular clayHexbit = clayQftGates clayHexbit ∧ clayTriangular clayBits = clayQftGates clayBits — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9192982d-6947-8ca1-acec-1f17231a0949"
+  },
+  {
+    "key": "lean_qpu_register_relation_4294967296_the_amplitudes",
+    "name": "lean qpu.lean: register_relation_4294967296_the_amplitudes — clayAmplitudes = clayMint clayBits ∧ clayAmplitudes = clayQftStates clayBits — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f04a43eb-a1d0-8ecd-905d-791b3a045957"
+  },
+  {
+    "key": "lean_speed_temperature_falls_with_the_batch_when_a_part_is_shared",
+    "name": "lean speed.lean: temperature_falls_with_the_batch_when_a_part_is_shared — (List.range 16).all (fun F => (List.range 16).all (fun c => (List.range 15).all (fun n => perItem F c (n + 2) ≤ perItem F c (n + 1)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c416924c-1be9-82f7-bce2-43259c82b3cb"
+  },
+  {
+    "key": "lean_speed_temperature_is_flat_when_nothing_is_shared",
+    "name": "lean speed.lean: temperature_is_flat_when_nothing_is_shared — (List.range 16).all (fun c => (List.range 15).all (fun n => perItem 0 c (n + 1) == c)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "83b7ab3a-606c-80db-819c-6d3cb811eb00"
+  },
+  {
+    "key": "lean_speed_the_fall_is_exactly_the_shared_part_spread_over_the_batch",
+    "name": "lean speed.lean: the_fall_is_exactly_the_shared_part_spread_over_the_batch — (List.range 16).all (fun F => (List.range 16).all (fun c => (List.range 15).all (fun n => perItem F c (n + 1) == c + F / (n + 1)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0b925ccc-7cdb-86f6-be3f-2769dd20bc23"
+  },
+  {
+    "key": "lean_speed_time_falls_with_the_lanes",
+    "name": "lean speed.lean: time_falls_with_the_lanes — (List.range 8).all (fun F => (List.range 8).all (fun c => (List.range 16).all (fun n => (List.range 15).all (fun k => wall F c n (k + 2) ≤ wall F c n (k + 1))))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "97859698-3d29-80e9-a5ba-6f1d20328ed4"
+  },
+  {
+    "key": "lean_speed_time_saturates_when_the_lanes_reach_the_batch",
+    "name": "lean speed.lean: time_saturates_when_the_lanes_reach_the_batch — (List.range 8).all (fun F => (List.range 8).all (fun c => (List.range 15).all (fun n => (List.range 16).all (fun k => !(n + 1 ≤ k) || wall F c (n + 1) k == F + c)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ac7d9835-21b9-827e-aa08-9c1a5af2ef09"
+  },
+  {
+    "key": "lean_speed_the_hex_fold_is_order_free",
+    "name": "lean speed.lean: the_hex_fold_is_order_free — (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun c => foldHex [a, b, c] == foldHex [b, c, a] && foldHex [a, b, c] == foldHex [c, b, a] && foldHex [a, b, c] == foldHex [b, a, c]))) ∧ foldHex [1, 2, 3] ≠ fo… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "20a416ad-9d30-8919-9b7a-fbd1ea3e1cf7"
+  },
+  {
+    "key": "lean_speed_the_measured_temperature_fell_tenfold_and_then_rose",
+    "name": "lean speed.lean: the_measured_temperature_fell_tenfold_and_then_rose — fellTenfold measuredUnbounded 0 3 = true ∧ fellTenfold measuredBounded 0 3 = true ∧ rises measuredUnbounded 3 5 = true ∧ rises measuredBounded 3 6 = true ∧ rises measuredBounded 3 4 = true ∧ fellTenfold measuredBounded 0 1 = false ∧ measure… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9d4e7c9e-2485-8b18-ad9e-08c52ddb5684"
+  },
+  {
+    "key": "lean_speed_the_two_tables_fold_order_free_and_apart",
+    "name": "lean speed.lean: the_two_tables_fold_order_free_and_apart — foldHex (hexOf measuredUnbounded) = foldHex (hexOf measuredUnbounded.reverse) ∧ foldHex (hexOf measuredBounded) = foldHex (hexOf measuredBounded.reverse) ∧ foldHex (hexOf measuredUnbounded) ≠ foldHex (hexOf measuredBounded) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "975d948f-34a5-84d9-856f-4cd3b30e989c"
   }
 ]

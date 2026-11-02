@@ -132,4 +132,72 @@ theorem both_sides_grow_by_doubling :
   ∧ 240518168576 = 2 * 120259084288
   ∧ vertices = levels ^ qubits ∧ vertices + vertices = 2 ^ (qubits + 1) := by decide
 
+-- ── THE REGISTER, FROM qpu's DEFINITIONS AND NOT FROM ITS NUMERALS (2026-11-02) ────────────────────────────
+--    qpu.uuidna.com's `clay` door recomputes its Clay register — 54 relation_N identities between the unit's
+--    constants — in integer arithmetic and reports each as holding. That is the unit's report of itself. The
+--    definitions behind it are in its own Lean (Qpu/Lattice, Mint, Qaoa, Annealing, Grover, Qft, Anyon, Shor,
+--    Combinatorics), read from ~/github/uuidna/qpu on 2026-11-02 and ported below under the prefix `clay` —
+--    one for one, with mintOf in the closed form 2^k that its doubling recursion (mintOf k + mintOf k) denotes,
+--    so this kernel does not walk 2^32 calls to reach the amplitudes. The eight constants served and recorded
+--    above must be the ones that tower derives (one theorem), and seven of the register's relations must hold
+--    from the definitions (seven more). Decided here, the register has two independent derivations — the
+--    unit's door and this tree — and a relation the tower did not reach would separate them. Ordered: "continue
+--    improving from qpu quantum clay".
+def clayMint (k : Nat) : Nat := 2 ^ k
+def clayN : Nat := ["quantum", "processing", "unit"].length
+def claySeed : Nat := clayMint (clayN - clayN)
+def clayCoins : Nat := claySeed + claySeed
+def clayRays : Nat := clayN + clayCoins + clayCoins
+def clayVertices : Nat := clayMint clayN
+def clayHexbit : Nat := clayMint clayCoins
+def clayBits : Nat := clayMint (clayN + clayCoins)
+def clayFaces : Nat := clayVertices + clayHexbit + clayCoins
+def clayPlane : Nat := clayCoins * clayCoins * clayRays
+def clayAmplitudes : Nat := clayMint clayBits
+def clayChimera (m : Nat) : Nat := clayVertices * m ^ 2
+def clayQaoaZz (p e : Nat) : Nat := p * e
+def clayGroverSize (k : Nat) : Nat := clayMint (2 * k)
+def clayQftStates (q : Nat) : Nat := 2 ^ q
+def clayQftGates (q : Nat) : Nat := q * (q + 1) / 2
+def clayTriangular : Nat → Nat
+  | 0 => 0
+  | n + 1 => (n + 1) + clayTriangular n
+def clayChoose : Nat → Nat → Nat
+  | _, 0 => 1
+  | 0, _ + 1 => 0
+  | n + 1, k + 1 => clayChoose n (k + 1) + clayChoose n k
+def clayIsingFusion (m : Nat) : Nat := clayMint (m - claySeed)
+def clayCoil : Nat := clayCoins * clayRays
+def clayQaoaParams (p : Nat) : Nat := clayCoins * p
+def clayPowMod (a e m : Nat) : Nat := a ^ e % m
+
+theorem the_served_constants_are_the_ones_the_definitions_derive :
+    clayCoins = coins ∧ clayRays = rays ∧ clayFaces = faces ∧ clayVertices = vertices ∧ clayHexbit = hexbit
+    ∧ clayBits = bits ∧ clayN = qubits := by decide
+
+theorem register_relation_32_bits_from_two_definitions :
+    clayBits = clayChimera clayCoins ∧ clayBits = clayQaoaZz clayVertices clayHexbit := by decide
+
+theorem register_relation_14_faces_is_the_coil_and_the_qaoa_parameters_of_the_rays :
+    clayFaces = clayCoil ∧ clayFaces = clayQaoaParams clayRays := by decide
+
+theorem register_relation_128_the_mint_of_the_rays :
+    clayMint clayRays = clayChimera clayHexbit ∧ clayMint clayRays = clayIsingFusion clayVertices := by decide
+
+-- with its inverse: the binomial that reaches the plane is C(vertices, coins), and C(vertices, hexbit) does not
+theorem register_relation_28_the_plane_is_a_binomial_two_ways :
+    clayPlane = clayChoose clayVertices clayCoins ∧ clayChoose clayVertices clayHexbit ≠ clayPlane := by decide
+
+theorem register_relation_256_the_mint_of_the_vertices :
+    clayMint clayVertices = clayGroverSize clayHexbit ∧ clayMint clayVertices = clayQaoaZz clayVertices clayBits := by decide
+
+-- two laws meet at the hexbit: its mint by two modular powers (relation_16), and the triangular number of the
+-- hexbit equal to the QFT gate count at the hexbit (relation_10) — and at the bits as well
+theorem register_relations_16_and_10_meet_at_the_hexbit :
+    clayMint clayHexbit = clayPowMod clayCoins clayRays clayPlane ∧ clayMint clayHexbit = clayPowMod clayCoins clayHexbit clayBits
+    ∧ clayTriangular clayHexbit = clayQftGates clayHexbit ∧ clayTriangular clayBits = clayQftGates clayBits := by decide
+
+theorem register_relation_4294967296_the_amplitudes :
+    clayAmplitudes = clayMint clayBits ∧ clayAmplitudes = clayQftStates clayBits := by decide
+
 end Qpu

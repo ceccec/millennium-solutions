@@ -199,4 +199,80 @@ theorem the_wrap_commutes_with_the_next_multiply_by_the_prime :
 theorem dropping_the_cross_term_is_refuted :
     ¬ (List.range 256).all (fun a => (List.range 256).all (fun b => (hexLo a * hexLo b) % 256 == (a * b) % 256)) := by decide
 
+-- ── 11 · TIME AND TEMPERATURE, FOLDED IN HEX SPACE ────────────────────────────────────────────────────────
+--        By the captain's order (2026-11-02: "the more computed at once, less temperature per computation …
+--        use quantum to fold time and temperature in hex space"). Temperature is his word for the cost of ONE
+--        computation; time is the wall clock of the batch; quantum is this deposit's word for order-invariance
+--        (merkle.lean: sorting_is_what_makes_the_fold_order_free); hex space is the 16-symbol address space.
+--        The law under the curve: a batch shares a fixed part F and pays c per item, so the cost per item is
+--        c + F/n and FALLS with n — and it falls ONLY because something is shared: with F = 0 it is flat (the
+--        control). Across k lanes the wall clock is F + ⌈n/k⌉·c, falling with k until k reaches n and then flat
+--        (saturation). Decided here at hex scale, every F, c, n, k below sixteen. Then the measurement, named
+--        as this machine's on 2026-10-03 (src/0 toUuid, fresh 80-character seeds): per address, in ns, at
+--        batches 1, 10, 100, 1000, 10000, 100000 — with the address cache unbounded, and again bounded (plus
+--        a millionth row). Both fall more than tenfold to a thousand, as the law says; both RISE again later,
+--        which the law does not say — a second cost (the cache's growth, then allocation) entering the regime,
+--        the violation shape the order names, measured and left standing rather than fitted. The two tables
+--        fold to the same root in any order of their rows: the quantum part, at hex scale.
+def perItem (F c n : Nat) : Nat := (F + n * c) / n
+def wall (F c n k : Nat) : Nat := F + ((n + k - 1) / k) * c
+def sortN : List Nat → List Nat
+  | [] => []
+  | x :: xs => insertN x (sortN xs)
+where insertN : Nat → List Nat → List Nat
+  | x, [] => [x]
+  | x, y :: ys => if x ≤ y then x :: y :: ys else y :: insertN x ys
+/-- a fold over hex digits that reads the same whatever order the digits arrive in: sort first, then fold -/
+def foldHex (xs : List Nat) : Nat := (sortN xs).foldl (fun a d => (16 * a + d) % 4294967296) 7
+def hexOf (xs : List Nat) : List Nat := xs.map (fun v => v / 256 % 16)
+/-- this machine, 2026-10-03: ns per fresh address, batches 1 · 10 · 100 · 1000 · 10000 · 100000, cache unbounded -/
+def measuredUnbounded : List Nat := [40459, 6912, 5184, 2661, 3370, 3820]
+/-- the same, cache bounded at 2^14, with a millionth row -/
+def measuredBounded : List Nat := [28667, 7337, 5143, 2654, 2940, 2748, 4373]
+
+theorem temperature_falls_with_the_batch_when_a_part_is_shared :
+    (List.range 16).all (fun F => (List.range 16).all (fun c => (List.range 15).all (fun n =>
+      perItem F c (n + 2) ≤ perItem F c (n + 1)))) := by decide
+
+-- THE CONTROL: nothing shared, nothing falls — the per-item cost is exactly c at every batch
+theorem temperature_is_flat_when_nothing_is_shared :
+    (List.range 16).all (fun c => (List.range 15).all (fun n => perItem 0 c (n + 1) == c)) := by decide
+
+theorem the_fall_is_exactly_the_shared_part_spread_over_the_batch :
+    (List.range 16).all (fun F => (List.range 16).all (fun c => (List.range 15).all (fun n =>
+      perItem F c (n + 1) == c + F / (n + 1)))) := by decide
+
+theorem time_falls_with_the_lanes :
+    (List.range 8).all (fun F => (List.range 8).all (fun c => (List.range 16).all (fun n => (List.range 15).all (fun k =>
+      wall F c n (k + 2) ≤ wall F c n (k + 1))))) := by decide
+
+-- saturation: once there are at least as many lanes as items, one more lane buys nothing
+theorem time_saturates_when_the_lanes_reach_the_batch :
+    (List.range 8).all (fun F => (List.range 8).all (fun c => (List.range 15).all (fun n => (List.range 16).all (fun k =>
+      !(n + 1 ≤ k) || wall F c (n + 1) k == F + c)))) := by decide
+
+-- the quantum part at hex scale: every ordering of three hex digits folds to one value, and the fold is not
+-- the constant it would be if sorting erased the digits (two different triples fold apart)
+theorem the_hex_fold_is_order_free :
+    (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun c =>
+      foldHex [a, b, c] == foldHex [b, c, a] && foldHex [a, b, c] == foldHex [c, b, a] && foldHex [a, b, c] == foldHex [b, a, c])))
+    ∧ foldHex [1, 2, 3] ≠ foldHex [1, 2, 4] := by decide
+
+-- the measurement: both tables fall more than tenfold from a batch of one to a thousand, as the law says —
+-- and both rise again after it, which the law does not say: the regime where a second cost enters
+def fellTenfold (xs : List Nat) (i j : Nat) : Bool := xs.getD i 0 ≥ 10 * xs.getD j 0
+def rises (xs : List Nat) (i j : Nat) : Bool := xs.getD j 0 > xs.getD i 0
+theorem the_measured_temperature_fell_tenfold_and_then_rose :
+    fellTenfold measuredUnbounded 0 3 = true ∧ fellTenfold measuredBounded 0 3 = true
+    ∧ rises measuredUnbounded 3 5 = true ∧ rises measuredBounded 3 6 = true
+    ∧ rises measuredBounded 3 4 = true ∧ fellTenfold measuredBounded 0 1 = false
+    ∧ measuredBounded.getD 5 0 < measuredUnbounded.getD 5 0 := by decide
+
+-- time and temperature folded in hex space: the rows of each table fold to one root whatever order they were
+-- run in, and the two tables fold apart — the bounded cache changed the curve
+theorem the_two_tables_fold_order_free_and_apart :
+    foldHex (hexOf measuredUnbounded) = foldHex (hexOf measuredUnbounded.reverse)
+    ∧ foldHex (hexOf measuredBounded) = foldHex (hexOf measuredBounded.reverse)
+    ∧ foldHex (hexOf measuredUnbounded) ≠ foldHex (hexOf measuredBounded) := by decide
+
 end Speed

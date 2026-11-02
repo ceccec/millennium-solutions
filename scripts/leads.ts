@@ -9,7 +9,7 @@
  *  from work that is wrong, and gating a build on an open question would only teach people to close
  *  questions cheaply. What it refuses to do is let the list be silent. */
 import { readFileSync, readdirSync, existsSync} from 'node:fs'
-import { NEEDS as MCP_NEEDS, TOOLS as MCP_TOOLS, SELF_SUFFICIENT, type Need } from '../src/mcp/index.ts'
+import { NEEDS as MCP_NEEDS, TOOLS as MCP_TOOLS, SELF_SUFFICIENT, WRITES as MCP_WRITES, type Need } from '../src/mcp/index.ts'
 import { SERVED_WITH_LEDGER as SERVED_BY_PACKAGE, FROM_BAKE } from '../src/mcp/serve.ts'
 const TOOL_NAMES = MCP_TOOLS.map((t) => t.name)
 import { homedir } from 'node:os'
@@ -203,9 +203,13 @@ const unreachable = TOOL_NAMES.filter((n) => !SERVED_BY_PACKAGE.includes(n) && !
 // already does for `formulas`. Counted together, the honest ones padded the number and the actionable ones
 // hid among them; the honest set is reported beside the lead, not inside it, the way decided gates are.
 const OUTSIDE_ANY_PACKAGE: Need[] = ['lean', 'net', 'git', 'shared']
-const honest = unreachable.filter((n) => (MCP_NEEDS[n] ?? []).some((x) => OUTSIDE_ANY_PACKAGE.includes(x)))
+// AND A TOOL WITH NO BARE ANSWER TO CARRY IS AN HONEST REQUIREMENT TOO (2026-11-02, after the bake): one whose answer
+// depends on an argument the caller chooses (free text, a range, a job id, a theorem name) has nothing a package can
+// precompute, and one that writes has no tree to write to. Both are named by list_tools with that reason.
+const requiresArgument = (n: string) => (((MCP_TOOLS.find((t) => t.name === n)?.inputSchema as { required?: string[] } | undefined)?.required ?? []).length > 0)
+const honest = unreachable.filter((n) => (MCP_NEEDS[n] ?? []).some((x) => OUTSIDE_ANY_PACKAGE.includes(x)) || requiresArgument(n) || MCP_WRITES.has(n))
 const bakeable = unreachable.filter((n) => !honest.includes(n))
-if (honest.length) console.log(`  (${honest.length} MCP tool(s) need a toolchain, the network, git or a sibling's directory, which no package can carry — ${honest.map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' ')} — honest requirements, named by list_tools before a call, and not leads)\n`)
+if (honest.length) console.log(`  (${honest.length} MCP tool(s) need a toolchain, the network, git or a sibling's directory, an argument the caller chooses, or a tree to write to, which no package can carry — ${honest.map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' ')} — honest requirements, named by list_tools before a call, and not leads)\n`)
 add('mcp-reach', bakeable.length,
   `MCP tool(s) an npm install cannot reach whose only need is the tree or the ledger — an answer a package can carry (${SERVED_BY_PACKAGE.length + bakedNow.length + derivedNow.length} of ${TOOL_NAMES.length} served, ledger, ${bakedNow.length} baked answer(s) and ${derivedNow.length} derived from them included): `
   + bakeable.map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' '),
@@ -266,6 +270,13 @@ if (uncaused.length) {
 }
 
 console.log(`\n○ leads: ${leads.length} open area(s), ${leads.reduce((a, b) => a + b.n, 0)} item(s).`)
+// WHAT A PUSH CAN BE HELD FOR, AND WHAT IT CANNOT. A lead whose cause is AUTHORITY needs an act only the depositor can
+// perform — a token, a signature, a DOI minted — and no commit from anyone else closes it. scripts/leads-closed.ts held
+// every push on the whole count, which held 49 commits for ten days behind the depositor's Zenodo token: a gate that no
+// act in the tree can turn green is not a gate. The two counts are printed apart, and the push gate reads the first.
+const depositor = leads.filter((L) => L.causes.includes('authority'))
+const closable = leads.filter((L) => !L.causes.includes('authority'))
+console.log(`  closable here: ${closable.length} area(s), ${closable.reduce((a, b) => a + b.n, 0)} item(s) · waiting on the depositor: ${depositor.length} area(s), ${depositor.reduce((a, b) => a + b.n, 0)} item(s)${depositor.length ? ' (' + depositor.map((L) => L.area).join(', ') + ')' : ''}`)
 console.log(`  ${theoremCount()} theorems · ${live().length} live keys · ${l.length} ledger entries.`)
 console.log(`  Reports and does not fail: an open question is work not done, which is not the same as work`)
 console.log(`  that is wrong, and a build that failed on open questions would teach cheap answers.`)

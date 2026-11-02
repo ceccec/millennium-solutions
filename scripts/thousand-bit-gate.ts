@@ -9,6 +9,60 @@
 //   3 · the cofactor the route reports as composite is composite by a witness this script recomputes
 // A PARTIAL answer is RED: it is an honest account, and the gate does not accept an account in place of a factorisation.
 import { factor, millerRabin } from '../src/factor/index.ts'
+import { execFileSync } from 'node:child_process'
+
+// ── VERIFY DECODING THE THOUSAND BIT, WITH EACH PUSH (ordered 2026-11-02) ────────────────────────────────────
+// qpu.uuidna.com mints an impossible integer — a semiprime N = p·q of a thousand bits with its σ-reflection
+// witness, the centre (p + q)/2 — and decodes it by the witness in one reflection. Its claim is not taken: N and
+// the witness go back through the door WITHOUT p and q, and what comes back is checked here — the factors
+// multiplied, each tested prime by this tree's millerRabin, the bit width read. Three states, never two:
+//   ✓ VERIFIED (0)      the unit's decoding reproduces N from primes at the width it claims
+//   ✗ FALSE CLAIM (1)   a factor that does not multiply back, or is not prime — a violation, and it fails the chain
+//   ○ NOT MEASURED (2)  the unit did not answer, or does not serve the door yet (the served unit lags local main
+//                       1.4.0, whose algorithm door answers `factor`; the served one lists qft … shor) — never read
+//                       as green, never as a defect in this tree
+// `npm run cycle:ship` runs this after its push and its CI watch. `--from <path>` exercises a local unit's handler
+// by argument instead of the served door — an instrument check, not a chain step.
+if (process.argv.includes('--decode')) {
+  const want = 1000
+  const fromIdx = process.argv.indexOf('--from')
+  type Answer = Record<string, unknown> & { integer?: string; witness?: string; bits?: number; factors?: string[]; decoded?: boolean; receipt?: string; address?: string }
+  const ask = async (args: Record<string, unknown>): Promise<{ ok: true; a: Answer } | { ok: false; why: string }> => {
+    if (fromIdx > 0) {
+      const { handle } = await import(process.argv[fromIdx + 1] + '/src/quantum/processing/mcp.ts') as { handle: (m: unknown) => { result?: { content?: { text?: string }[] }; error?: unknown } }
+      const r = handle({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'algorithm', arguments: args } })
+      const t = r?.result?.content?.[0]?.text
+      if (!t) return { ok: false, why: 'the local unit returned no text: ' + JSON.stringify(r?.error ?? r).slice(0, 160) }
+      return { ok: true, a: JSON.parse(t) as Answer }
+    }
+    let out = ''
+    try { out = execFileSync('node', ['scripts/mcp-call.ts', 'connect', JSON.stringify({ connector: 'qpu', tool: 'algorithm', arguments: args })], { encoding: 'utf8', timeout: 240_000, maxBuffer: 16 << 20 }) }
+    catch (e) { return { ok: false, why: 'the connector did not answer: ' + String((e as { message?: string }).message ?? e).slice(0, 160) } }
+    let j: { status?: string; why?: string; answer?: { result?: { content?: { text?: string }[] } } }
+    try { j = JSON.parse(out) } catch { return { ok: false, why: 'the connector answered something that is not JSON: ' + out.slice(0, 160) } }
+    if (j.status !== 'ANSWERED') return { ok: false, why: /not one of/.test(j.why ?? '') ? `the served unit's algorithm door does not serve \`factor\` yet (${(j.why ?? '').slice(0, 120)}) — local main 1.4.0 does; the deploy is pending` : `${j.status ?? 'no status'}: ${(j.why ?? '').slice(0, 160)}` }
+    const t = j.answer?.result?.content?.[0]?.text
+    if (!t) return { ok: false, why: 'the door answered without a text body' }
+    try { return { ok: true, a: JSON.parse(t) as Answer } } catch { return { ok: false, why: 'the door\'s text is not JSON: ' + t.slice(0, 160) } }
+  }
+  const made = await ask({ name: 'factor', create: { bits: want } })
+  if (!made.ok) { console.log(`○ thousand-bit decode: NOT MEASURED — ${made.why}`); process.exit(2) }
+  if (!made.a.integer || !made.a.witness) { console.log('○ thousand-bit decode: NOT MEASURED — the unit minted no integer/witness pair: ' + JSON.stringify(made.a).slice(0, 160)); process.exit(2) }
+  const dec = await ask({ name: 'factor', integer: made.a.integer, witness: made.a.witness })
+  if (!dec.ok) { console.log(`○ thousand-bit decode: NOT MEASURED — minted, but the decode did not answer: ${dec.why}`); process.exit(2) }
+  const N = BigInt(made.a.integer), fs = (dec.a.factors ?? []).map((f) => BigInt(f)), bits = N.toString(2).length
+  const prod = fs.reduce((x, y) => x * y, 1n)
+  const primality = fs.map((f) => millerRabin(f))
+  const faults: string[] = []
+  if (fs.length < 2) faults.push(`${fs.length} factor(s) returned — a decoding is at least two`)
+  if (prod !== N) faults.push('the factors do not multiply back to N')
+  if (primality.some((p) => p !== 'PRIME')) faults.push('a returned factor is not prime by this tree\'s test: ' + primality.join(','))
+  if (bits < want) faults.push(`N is ${bits} bits, below the ${want} asked for`)
+  if (dec.a.decoded === false) faults.push('the unit itself says decoded: false')
+  if (faults.length) { console.log(`✗ thousand-bit decode: FALSE CLAIM — ${faults.join('; ')} (receipt ${String(dec.a.receipt ?? '').slice(0, 13)}…)`); process.exit(1) }
+  console.log(`✓ thousand-bit decode: VERIFIED — a ${bits}-bit N decoded by its witness into ${fs.length} primes that multiply back; checked here, not taken (address ${String(dec.a.address ?? '').slice(0, 13)}…, receipt ${String(dec.a.receipt ?? '').slice(0, 13)}…)`)
+  process.exit(0)
+}
 
 const N = '7778374705630928901426385188295261064472293439767584450564762904780095317247810822721038446598127186814085438745846911396600071001374809981225413367649417301928427872874705586838153932355802114527488924178998304307438276447053410282371888984822745504021147881223973035161036008037727897669611699130903'
 

@@ -75,3 +75,22 @@ console.log(`  gate sweep of ~8 s and a site build of ~75 s. ${(100 * saving).to
 console.log(`\n✓ bench-hex: the table is genuinely ${(base / best).toFixed(1)}× faster and it is not worth changing`)
 console.log(`  toUuid for — the multiply dominates the encoder, and the encoder is not on any critical path.`)
 console.log(`  Reported so the claim can be checked rather than repeated.`)
+
+// ── TEMPERATURE: THE COST OF ONE ADDRESS AGAINST THE BATCH, FOLDED ───────────────────────────────────────────
+// "The more computed at once, less temperature per computation" — measured: ns per fresh address at batches
+// 1 … 100000, best of three. The rows are content-addressed and folded, so the table has one root that does not
+// depend on the order the batches ran (speed.lean §11 decides the law and seals two tables of this machine).
+{
+  const { toUuid, merkleFold } = await import('../src/0/index.ts')
+  const rows: { batch: number; ns: number }[] = []
+  for (const n of [1, 10, 100, 1000, 10000, 100000]) {
+    let best = Infinity
+    for (let r = 0; r < 3; r++) { const t = performance.now(); for (let i = 0; i < n; i++) toUuid('temperature:' + n + ':' + r + ':' + i + ':' + 'z'.repeat(60)); best = Math.min(best, (performance.now() - t) * 1e6 / n) }
+    rows.push({ batch: n, ns: Math.round(best) })
+  }
+  console.log('\n  temperature — ns per fresh address, best of three:')
+  for (const r of rows) console.log(`    batch ${String(r.batch).padStart(6)} → ${String(r.ns).padStart(6)} ns`)
+  const falls = rows[3]!.ns * 10 <= rows[0]!.ns
+  console.log(`    ${falls ? '✓' : '○'} from 1 to 1000 the cost per address ${falls ? 'fell more than tenfold' : 'fell less than tenfold on this run'} — a shared part spread over the batch (speed.lean §11)`)
+  console.log(`    root of the table, order-free: ${merkleFold(rows.map((r) => toUuid(JSON.stringify(r))))}`)
+}
