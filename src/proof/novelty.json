@@ -142,7 +142,7 @@
   "file": "address.lean",
   "name": "addressing_is_not_constant",
   "statementHash": "910e5ee5119c88b1",
-  "searched": "2026-09-25T20:45:24.801Z",
+  "searched": "2026-10-24T01:19:47.784Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -161,12 +161,21 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND constant"
   },
   "notMeasured": [
-   "zbmath: HTTP 404"
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "SHA-1 and MD5 Cryptographic Hash Functions: Security Overview",
+    "year": 2015,
+    "url": "https://doi.org/10.26552/com.c.2015.1.73-80",
+    "relevance": 0.75,
+    "text": "SHA-1 and MD5 Cryptographic Hash Functions: Security Overview Despite their obsolescence and recommendations they are phased out from production environment, MD5 and SHA-1 cryptographic hash functions remain defaults frequently offered in many applications, e.g., database managers. In the article, w"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_addressing_is_not_the_identity": {
   "key": "lean_address_addressing_is_not_the_identity",
@@ -397,7 +406,7 @@
   "file": "address.lean",
   "name": "the_address_is_not_the_payload",
   "statementHash": "ca319e5e865e7452",
-  "searched": "2026-09-25T20:47:36.341Z",
+  "searched": "2026-10-24T01:20:12.194Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -416,12 +425,29 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND payload"
   },
   "notMeasured": [
-   "zbmath: HTTP 502"
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Analyses, Mitigation and Applications of Secure Hash Algorithms",
+    "year": 2020,
+    "url": "https://openalex.org/W3196487787",
+    "relevance": 1,
+    "text": "Analyses, Mitigation and Applications of Secure Hash Algorithms Cryptographic hash functions are one of the widely used cryptographic primitives with a purpose to ensure the integrity of the system or data. Hash functions are also utilized in conjunction with digital signatures to provide authentica"
+   },
+   {
+    "source": "openalex",
+    "title": "Theoretical Implications of a Perfectly Reversible SHA-256 Function: State Trajectories, Infinite Compression, and the Geometric Framework of Cryptographic Computation",
+    "year": 2026,
+    "url": "https://doi.org/10.5281/zenodo.19211628",
+    "relevance": 1,
+    "text": "Theoretical Implications of a Perfectly Reversible SHA-256 Function: State Trajectories, Infinite Compression, and the Geometric Framework of Cryptographic Computation Theoretical Implications of a Perfectly Reversible SHA-256 Function: State Trajectories, Infinite Compression, and the Geometric Fra"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_the_address_is_order_sensitive": {
   "key": "lean_address_the_address_is_order_sensitive",
@@ -468,7 +494,7 @@
   "file": "address.lean",
   "name": "the_address_is_sixteen_bytes_whatever_the_input_length",
   "statementHash": "2680d024bb1ecac6",
-  "searched": "2026-09-25T20:46:48.275Z",
+  "searched": "2026-10-24T01:20:58.511Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -487,7 +513,156 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND sixteen"
   },
   "notMeasured": [
-   "zbmath: HTTP 502"
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_address_the_bbp_truncation_cannot_cross_the_digit_boundary": {
+  "key": "lean_address_the_bbp_truncation_cannot_cross_the_digit_boundary",
+  "file": "address.lean",
+  "name": "the_bbp_truncation_cannot_cross_the_digit_boundary",
+  "statementHash": "8ae36231dde7c426",
+  "searched": "2026-10-24T01:21:51.082Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cryptographic hash sha digests truncation cannot cross",
+   "openalex": "cryptographic hash sha digests truncation cannot cross",
+   "crossref": "cryptographic hash sha digests truncation cannot cross",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND truncation"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 63s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_address_the_finalizer_constants_are_units_mod_two_to_the_32": {
+  "key": "lean_address_the_finalizer_constants_are_units_mod_two_to_the_32",
+  "file": "address.lean",
+  "name": "the_finalizer_constants_are_units_mod_two_to_the_32",
+  "statementHash": "c50437c8d8c215a7",
+  "searched": "2026-10-24T01:22:17.705Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cryptographic hash sha digests finalizer constants",
+   "openalex": "cryptographic hash sha digests finalizer constants",
+   "crossref": "cryptographic hash sha digests finalizer constants",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND finalizer"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 36s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_address_the_fnv_basis_is_fnv0_of_its_signature": {
+  "key": "lean_address_the_fnv_basis_is_fnv0_of_its_signature",
+  "file": "address.lean",
+  "name": "the_fnv_basis_is_fnv0_of_its_signature",
+  "statementHash": "3be3fa6f502d0a5d",
+  "searched": "2026-10-24T01:22:12.208Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cryptographic hash sha digests basis signature",
+   "openalex": "cryptographic hash sha digests basis signature",
+   "crossref": "cryptographic hash sha digests basis signature",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND basis"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 42s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Secure Message Hashing with SHA-256: Cryptographic Implementation",
+    "year": 2024,
+    "url": "https://doi.org/10.22214/ijraset.2024.65078",
+    "relevance": 0.6,
+    "text": "Secure Message Hashing with SHA-256: Cryptographic Implementation Hash Functions are fundamental devices in the information security on the internet. The hash function used in various security applications are known as cryptographic hash function. The cryptographic hash function plays a crucial role"
+   },
+   {
+    "source": "openalex",
+    "title": "SHA-1 and MD5 Cryptographic Hash Functions: Security Overview",
+    "year": 2015,
+    "url": "https://doi.org/10.26552/com.c.2015.1.73-80",
+    "relevance": 0.6,
+    "text": "SHA-1 and MD5 Cryptographic Hash Functions: Security Overview Despite their obsolescence and recommendations they are phased out from production environment, MD5 and SHA-1 cryptographic hash functions remain defaults frequently offered in many applications, e.g., database managers. In the article, w"
+   },
+   {
+    "source": "openalex",
+    "title": "Hash functions in Cryptography",
+    "year": 2008,
+    "url": "https://openalex.org/W2126530758",
+    "relevance": 0.6,
+    "text": "Hash functions in Cryptography This thesis is concerned with giving both an overview of the application of hash functions in cryptography and a presentation of today's standard cryptographic hash functions. Cryptographic hash functions are a valuable tool in cryptography. They are applied in many ar"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_address_the_fnv_prime_is_prime_at_two_to_the_24_plus_two_to_the_8_plus_0x93": {
+  "key": "lean_address_the_fnv_prime_is_prime_at_two_to_the_24_plus_two_to_the_8_plus_0x93",
+  "file": "address.lean",
+  "name": "the_fnv_prime_is_prime_at_two_to_the_24_plus_two_to_the_8_plus_0x93",
+  "statementHash": "7a0122f73edf2e57",
+  "searched": "2026-10-24T01:22:07.127Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cryptographic hash sha digests prime",
+   "openalex": "cryptographic hash sha digests prime",
+   "crossref": "cryptographic hash sha digests prime",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND prime"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 48s"
   ],
   "oeis": [],
   "catalogued": false,
@@ -622,12 +797,131 @@
   ],
   "verdict": "CANDIDATES"
  },
+ "lean_address_the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi": {
+  "key": "lean_address_the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi",
+  "file": "address.lean",
+  "name": "the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi",
+  "statementHash": "c981ff9c8622de7e",
+  "searched": "2026-10-24T01:21:56.336Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cryptographic hash sha digests fourth",
+   "openalex": "cryptographic hash sha digests fourth",
+   "crossref": "cryptographic hash sha digests fourth",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND fourth"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 58s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Performance Analysis of Cryptographic Hash Functions Suitable for Use in Blockchain",
+    "year": 2021,
+    "url": "https://doi.org/10.5815/ijcnis.2021.02.01",
+    "relevance": 0.75,
+    "text": "Performance Analysis of Cryptographic Hash Functions Suitable for Use in Blockchain A blockchain, or in other words a chain of transaction blocks, is a distributed database that maintains an ordered chain of blocks that reliably connect the information contained in them. Copies of chain blocks are u"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_address_the_second_seed_is_the_first_hex_word_of_the_golden_ratio": {
+  "key": "lean_address_the_second_seed_is_the_first_hex_word_of_the_golden_ratio",
+  "file": "address.lean",
+  "name": "the_second_seed_is_the_first_hex_word_of_the_golden_ratio",
+  "statementHash": "8185ba0f0c079612",
+  "searched": "2026-10-24T01:21:40.878Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cryptographic hash sha digests golden ratio",
+   "openalex": "cryptographic hash sha digests golden ratio",
+   "crossref": "cryptographic hash sha digests golden ratio",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND golden"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 73s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Geometric Topology and the Deterministic Inversion of Cryptographic Hash Functions: An Exhaustive Analysis of the Nexus Recursive Harmonic Framework",
+    "year": 2026,
+    "url": "https://doi.org/10.5281/zenodo.19212601",
+    "relevance": 1,
+    "text": "Geometric Topology and the Deterministic Inversion of Cryptographic Hash Functions: An Exhaustive Analysis of the Nexus Recursive Harmonic Framework Geometric Topology and the Deterministic Inversion of Cryptographic Hash Functions: An Exhaustive Analysis of the Nexus Recursive Harmonic Framework In"
+   },
+   {
+    "source": "openalex",
+    "title": "On integer sequences in cryptography",
+    "year": 2026,
+    "url": "https://doi.org/10.1515/jmc-2024-0033",
+    "relevance": 0.6,
+    "text": "On integer sequences in cryptography Abstract Integer sequences play a pivotal role in cryptography, acting as foundational elements for numerous cryptographic algorithms. This comprehensive investigation examines integer sequences that have significantly impacted the sector in domains such as key g"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_address_the_series_truncation_cannot_cross_the_digit_boundary": {
+  "key": "lean_address_the_series_truncation_cannot_cross_the_digit_boundary",
+  "file": "address.lean",
+  "name": "the_series_truncation_cannot_cross_the_digit_boundary",
+  "statementHash": "b6c2f13194a15b4a",
+  "searched": "2026-10-24T01:22:01.634Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cryptographic hash sha digests series truncation cannot",
+   "openalex": "cryptographic hash sha digests series truncation cannot",
+   "crossref": "cryptographic hash sha digests series truncation cannot",
+   "arxiv": "cryptographic AND hash AND sha AND digests AND series"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 53s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits": {
   "key": "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits",
   "file": "address.lean",
   "name": "the_third_group_is_version_eight_over_twelve_hash_bits",
   "statementHash": "80e63c5d6eb082f2",
-  "searched": "2026-09-25T20:48:14.327Z",
+  "searched": "2026-10-24T01:20:30.567Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -646,19 +940,100 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND version"
   },
   "notMeasured": [
-   "zbmath: resting after three refusals, asked again in 69s"
+   "arxiv: resting after three refusals, asked again in 73s"
   ],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Design and Analysis of New Version of Cryptographic Hash Function Based on Improved Chaotic Maps With Induced DNA Sequences",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/access.2023.3298545",
+    "relevance": 0.8,
+    "text": "Design and Analysis of New Version of Cryptographic Hash Function Based on Improved Chaotic Maps With Induced DNA Sequences One of the first and most used hashing algorithms in blockchains is SHA-256 so the main aim of this paper is how to increase the security level of the blockchain based on the i"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_address_the_third_seed_is_the_first_hex_word_of_pi_by_bbp": {
+  "key": "lean_address_the_third_seed_is_the_first_hex_word_of_pi_by_bbp",
+  "file": "address.lean",
+  "name": "the_third_seed_is_the_first_hex_word_of_pi_by_bbp",
+  "statementHash": "86e507560e9c2414",
+  "searched": "2026-10-24T01:21:46.276Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "cryptographic hash sha digests",
+   "openalex": "cryptographic hash sha digests",
+   "crossref": "cryptographic hash sha digests",
+   "arxiv": "cryptographic AND hash AND sha AND digests"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 69s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Algorithmic Design And Analysis Of Cryptographic Sha-256 Hash Function With Proposed Sha-288 Hash Model",
+    "year": 2017,
+    "url": "https://doi.org/10.5281/zenodo.290136",
+    "relevance": 1,
+    "text": "Algorithmic Design And Analysis Of Cryptographic Sha-256 Hash Function With Proposed Sha-288 Hash Model Cryptography is the art of providing security to the message .It gives freedom to the user from hacking of the original message. The here are multiple techniques to provide cryptographic security "
+   },
+   {
+    "source": "openalex",
+    "title": "SHA-1 and MD5 Cryptographic Hash Functions: Security Overview",
+    "year": 2015,
+    "url": "https://doi.org/10.26552/com.c.2015.1.73-80",
+    "relevance": 1,
+    "text": "SHA-1 and MD5 Cryptographic Hash Functions: Security Overview Despite their obsolescence and recommendations they are phased out from production environment, MD5 and SHA-1 cryptographic hash functions remain defaults frequently offered in many applications, e.g., database managers. In the article, w"
+   },
+   {
+    "source": "openalex",
+    "title": "S-HASH: A Crack Towards Cryptographic Hash Functions",
+    "year": 2021,
+    "url": "https://doi.org/10.30732/csvturj.20211001005",
+    "relevance": 1,
+    "text": "S-HASH: A Crack Towards Cryptographic Hash Functions S-HASH is tool based on Perl, is used to hack/crack the cryptographic hash function, which is a combination of message which is defined to be of arbitrary length and a message digest defined of fixed length. For cracking the hash values two techni"
+   },
+   {
+    "source": "openalex",
+    "title": "Third-Round Report of the SHA-3 Cryptographic Hash Algorithm Competition",
+    "year": 2012,
+    "url": "https://doi.org/10.6028/nist.ir.7896",
+    "relevance": 0.6666666666666666,
+    "text": "Third-Round Report of the SHA-3 Cryptographic Hash Algorithm Competition The National Institute of Standards and Technology (NIST) opened a public competition on November 2, 2007, to develop a new cryptographic hash algorithm -SHA-3, which will augment the hash algorithms specified in the Federal In"
+   },
+   {
+    "source": "openalex",
+    "title": "VLSI Implementation of Cryptography Hash Algorithms",
+    "year": 2014,
+    "url": "https://openalex.org/W2183826724",
+    "relevance": 1,
+    "text": "VLSI Implementation of Cryptography Hash Algorithms Providing security to data and information which is to be transferred to and fro has its increasing demand where various remedy measures are to be undertaken for that. It is ensured by providing out some cryptographic algorithms for enhanced securi"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_the_twelve_hash_bits_read_back_from_the_third_group": {
   "key": "lean_address_the_twelve_hash_bits_read_back_from_the_third_group",
   "file": "address.lean",
   "name": "the_twelve_hash_bits_read_back_from_the_third_group",
   "statementHash": "747a1f623136680f",
-  "searched": "2026-09-25T20:48:34.124Z",
+  "searched": "2026-10-24T01:21:35.191Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -677,7 +1052,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND twelve"
   },
   "notMeasured": [
-   "zbmath: resting after three refusals, asked again in 49s"
+   "arxiv: resting after three refusals, asked again in 79s"
   ],
   "oeis": [],
   "catalogued": false,
@@ -689,7 +1064,7 @@
   "file": "address.lean",
   "name": "the_unstamped_bits_read_back_from_every_stamped_byte",
   "statementHash": "871e2e806d8995bc",
-  "searched": "2026-09-25T20:48:24.390Z",
+  "searched": "2026-10-24T01:21:23.334Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -708,7 +1083,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND unstamped"
   },
   "notMeasured": [
-   "zbmath: resting after three refusals, asked again in 59s"
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
   ],
   "oeis": [],
   "catalogued": false,
@@ -760,7 +1135,7 @@
   "file": "address.lean",
   "name": "the_version_stamp_keeps_the_low_nibble_of_every_byte",
   "statementHash": "0b0ee57f5138594c",
-  "searched": "2026-09-25T20:48:04.324Z",
+  "searched": "2026-10-24T01:21:11.109Z",
   "limits": {
    "relevanceFloor": 0.6,
    "perSource": 5,
@@ -779,7 +1154,7 @@
    "arxiv": "cryptographic AND hash AND sha AND digests AND version"
   },
   "notMeasured": [
-   "zbmath: resting after three refusals, asked again in 79s"
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
   ],
   "oeis": [],
   "catalogued": false,
@@ -934,6 +1309,1042 @@
   "catalogued": false,
   "candidates": [],
   "verdict": "NONE_FOUND"
+ },
+ "lean_answer_c1_exhaustive": {
+  "key": "lean_answer_c1_exhaustive",
+  "file": "answer.lean",
+  "name": "c1_exhaustive",
+  "statementHash": "527f909b18deb690",
+  "searched": "2026-10-24T01:22:40.780Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "exhaustive",
+   "openalex": "exhaustive",
+   "crossref": "exhaustive",
+   "arxiv": "exhaustive"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_answer_c1_true_only_when_clean": {
+  "key": "lean_answer_c1_true_only_when_clean",
+  "file": "answer.lean",
+  "name": "c1_true_only_when_clean",
+  "statementHash": "340e91cfaefc6213",
+  "searched": "2026-10-24T01:22:23.349Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "clean",
+   "openalex": "clean",
+   "crossref": "clean",
+   "arxiv": "clean"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_answer_c2_exhaustive": {
+  "key": "lean_answer_c2_exhaustive",
+  "file": "answer.lean",
+  "name": "c2_exhaustive",
+  "statementHash": "e527b2234a72903c",
+  "searched": "2026-10-24T01:22:40.780Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "exhaustive",
+   "openalex": "exhaustive",
+   "crossref": "exhaustive",
+   "arxiv": "exhaustive"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_answer_c2_false_only_for_checked_composite": {
+  "key": "lean_answer_c2_false_only_for_checked_composite",
+  "file": "answer.lean",
+  "name": "c2_false_only_for_checked_composite",
+  "statementHash": "a584fb403b105658",
+  "searched": "2026-11-02T18:37:12.636Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "checked composite",
+   "openalex": "checked composite",
+   "crossref": "checked composite",
+   "arxiv": "checked AND composite"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff",
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_answer_c2_probable_prime_is_unknown": {
+  "key": "lean_answer_c2_probable_prime_is_unknown",
+  "file": "answer.lean",
+  "name": "c2_probable_prime_is_unknown",
+  "statementHash": "573f1dfdfbfe7eea",
+  "searched": "2026-11-02T18:33:29.897Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "probable prime unknown",
+   "openalex": "probable prime unknown",
+   "crossref": "probable prime unknown",
+   "arxiv": "probable AND prime AND unknown"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff",
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_answer_c2_true_only_for_proved_prime": {
+  "key": "lean_answer_c2_true_only_for_proved_prime",
+  "file": "answer.lean",
+  "name": "c2_true_only_for_proved_prime",
+  "statementHash": "e1a91e704681eed3",
+  "searched": "2026-11-02T18:35:21.739Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "proved prime",
+   "openalex": "proved prime",
+   "crossref": "proved prime",
+   "arxiv": "proved AND prime"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff",
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_answer_gate_matches_rules": {
+  "key": "lean_answer_gate_matches_rules",
+  "file": "answer.lean",
+  "name": "gate_matches_rules",
+  "statementHash": "425c117f60ddb93d",
+  "searched": "2026-11-02T18:39:03.249Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "matches rules",
+   "openalex": "matches rules",
+   "crossref": "matches rules",
+   "arxiv": "matches AND rules"
+  },
+  "notMeasured": [
+   "openalex: resting after three refusals, asked again in 80s",
+   "arxiv: resting after three refusals, asked again in 81s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_answer_gate_refuses_uncertified_truth": {
+  "key": "lean_answer_gate_refuses_uncertified_truth",
+  "file": "answer.lean",
+  "name": "gate_refuses_uncertified_truth",
+  "statementHash": "8c9db1b92c776057",
+  "searched": "2026-11-02T18:39:06.772Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "refuses uncertified truth",
+   "openalex": "refuses uncertified truth",
+   "crossref": "refuses uncertified truth",
+   "arxiv": "refuses AND uncertified AND truth"
+  },
+  "notMeasured": [
+   "openalex: resting after three refusals, asked again in 76s",
+   "arxiv: resting after three refusals, asked again in 77s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_answer.arith_case_91_false": {
+  "key": "lean_answer.arith_case_91_false",
+  "file": "arith.lean",
+  "name": "case_91_false",
+  "statementHash": "d2df4278f8f75db4",
+  "searched": "2026-10-24T01:24:15.678Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "trial division primality",
+   "openalex": "trial division primality",
+   "crossref": "trial division primality",
+   "arxiv": "trial AND division AND primality"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 33s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "A Monte Carlo method for factorization",
+    "year": "1975",
+    "url": "https://zbmath.org/3487526",
+    "relevance": 0.6666666666666666,
+    "text": "A Monte Carlo method for factorization [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":\"J. M. Pollard (Maidenhead)\"},\"text\":\"The following simple method will find small prime factors \\\\(p\\\\) of a number \\\\(n\\\\) in \\\\(O(p^{1/2})\\\\) arithmetical operations a"
+   },
+   {
+    "source": "zbmath",
+    "title": "The joy of factoring",
+    "year": "2013",
+    "url": "https://zbmath.org/6235481",
+    "relevance": 1,
+    "text": "The joy of factoring [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"tena-ayuso.juan-gabriel\",\"reviewer_id\":\"10022\",\"name\":\"Juan Tena Ayuso\",\"sign\":\"Juan Tena Ayuso (Valladolid)\"},\"text\":\"The present book is a summary of the state of the knowledge in integer factorization. With the emphasis in mot"
+   },
+   {
+    "source": "zbmath",
+    "title": "Factorization of integers",
+    "year": "2000",
+    "url": "https://zbmath.org/1470814",
+    "relevance": 1,
+    "text": "Factorization of integers [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"ninnemann.olaf\",\"reviewer_id\":\"1250\",\"name\":\"Olaf Ninnemann\",\"sign\":\"Olaf Ninnemann (Berlin)\"},\"text\":\"The author provides a very readable survey of methods for factoring integers and primality testing. The tests include sev"
+   },
+   {
+    "source": "zbmath",
+    "title": "Average case error estimates of the strong Lucas test",
+    "year": "2024",
+    "url": "https://zbmath.org/7844450",
+    "relevance": 1,
+    "text": "Average case error estimates of the strong Lucas test [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"tena-ayuso.juan-gabriel\",\"reviewer_id\":\"10022\",\"name\":\"Juan Tena Ayuso\",\"sign\":\"Juan Tena Ayuso (Valladolid)\"},\"text\":\"This paper investigates the average error estimates for the strong Lucas prob"
+   },
+   {
+    "source": "zbmath",
+    "title": "Arithmetics. A computational approach",
+    "year": "2007",
+    "url": "https://zbmath.org/5083835",
+    "relevance": 1,
+    "text": "Arithmetics. A computational approach [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"cangelmi.leonardo\",\"reviewer_id\":\"8158\",\"name\":\"Leonardo Cangelmi\",\"sign\":\"Leonardo Cangelmi (Pescara)\"},\"text\":\"This textbook is an invitation to elementary number theory from a computational point of view, and "
+   },
+   {
+    "source": "openalex",
+    "title": "Improved Trial Division Technique for Primality Checking in RSA Algorithm",
+    "year": 2013,
+    "url": "https://doi.org/10.5815/ijcnis.2013.09.07",
+    "relevance": 1,
+    "text": "Improved Trial Division Technique for Primality Checking in RSA Algorithm The RSA cryptosystem, invented by Ron Rivest, Adi Shamir and Len Adleman was first publicized in the August 1977 issue of Scientific A merican.The security level of this algorith m very much depends on two large prime nu mbers"
+   },
+   {
+    "source": "openalex",
+    "title": "Probabilistic Analysis on the Optimal Combination of Trial Division and Probabilistic Primality Tests for Safe Prime Generation",
+    "year": 2011,
+    "url": "https://doi.org/10.1587/transinf.e94.d.1210",
+    "relevance": 1,
+    "text": "Probabilistic Analysis on the Optimal Combination of Trial Division and Probabilistic Primality Tests for Safe Prime Generation A safe prime p is a prime such that (p-1)/2 is also a prime. A primality test or a safe primality test is normally a combination of trial division and a probabilistic prima"
+   },
+   {
+    "source": "openalex",
+    "title": "Optimal Trial-Division Prefilters for Primality Testing: A Rigorous Budget--Rate Tradeoff",
+    "year": 2026,
+    "url": "https://doi.org/10.5281/zenodo.20100890",
+    "relevance": 1,
+    "text": "Optimal Trial-Division Prefilters for Primality Testing: A Rigorous Budget--Rate Tradeoff This archive contains the paper, supplementary code, and data for thearticle: \"Optimal Trial-Division Prefilters for Primality Testing: A Rigorous Budget-Rate Tradeoff\" The paper provides the first rigorous, n-"
+   },
+   {
+    "source": "openalex",
+    "title": "Modular Multiplication Without Trial Division",
+    "year": 1985,
+    "url": "https://doi.org/10.1090/s0025-5718-1985-0777282-x",
+    "relevance": 0.6666666666666666,
+    "text": "Modular Multiplication Without Trial Division Let $N > 1$. We present a method for multiplying two integers (called N-residues) modulo N while avoiding division by N. N-residues are represented in a nonstandard way, so this method is useful only if several computations are done modulo one N. The add"
+   },
+   {
+    "source": "crossref",
+    "title": "Probabilistic Analysis on the Optimal Combination of Trial Division and Probabilistic Primality Tests for Safe Prime Generation",
+    "year": 2011,
+    "url": "https://doi.org/10.1587/transinf.e94.d.1210",
+    "relevance": 1,
+    "text": "Probabilistic Analysis on the Optimal Combination of Trial Division and Probabilistic Primality Tests for Safe Prime Generation "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_answer.arith_case_97_true": {
+  "key": "lean_answer.arith_case_97_true",
+  "file": "arith.lean",
+  "name": "case_97_true",
+  "statementHash": "e162393030ada32c",
+  "searched": "2026-10-24T01:24:20.438Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "trial division primality",
+   "openalex": "trial division primality",
+   "crossref": "trial division primality",
+   "arxiv": "trial AND division AND primality"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 29s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "A Monte Carlo method for factorization",
+    "year": "1975",
+    "url": "https://zbmath.org/3487526",
+    "relevance": 0.6666666666666666,
+    "text": "A Monte Carlo method for factorization [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":\"J. M. Pollard (Maidenhead)\"},\"text\":\"The following simple method will find small prime factors \\\\(p\\\\) of a number \\\\(n\\\\) in \\\\(O(p^{1/2})\\\\) arithmetical operations a"
+   },
+   {
+    "source": "zbmath",
+    "title": "The joy of factoring",
+    "year": "2013",
+    "url": "https://zbmath.org/6235481",
+    "relevance": 1,
+    "text": "The joy of factoring [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"tena-ayuso.juan-gabriel\",\"reviewer_id\":\"10022\",\"name\":\"Juan Tena Ayuso\",\"sign\":\"Juan Tena Ayuso (Valladolid)\"},\"text\":\"The present book is a summary of the state of the knowledge in integer factorization. With the emphasis in mot"
+   },
+   {
+    "source": "zbmath",
+    "title": "Factorization of integers",
+    "year": "2000",
+    "url": "https://zbmath.org/1470814",
+    "relevance": 1,
+    "text": "Factorization of integers [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"ninnemann.olaf\",\"reviewer_id\":\"1250\",\"name\":\"Olaf Ninnemann\",\"sign\":\"Olaf Ninnemann (Berlin)\"},\"text\":\"The author provides a very readable survey of methods for factoring integers and primality testing. The tests include sev"
+   },
+   {
+    "source": "zbmath",
+    "title": "Average case error estimates of the strong Lucas test",
+    "year": "2024",
+    "url": "https://zbmath.org/7844450",
+    "relevance": 1,
+    "text": "Average case error estimates of the strong Lucas test [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"tena-ayuso.juan-gabriel\",\"reviewer_id\":\"10022\",\"name\":\"Juan Tena Ayuso\",\"sign\":\"Juan Tena Ayuso (Valladolid)\"},\"text\":\"This paper investigates the average error estimates for the strong Lucas prob"
+   },
+   {
+    "source": "zbmath",
+    "title": "Arithmetics. A computational approach",
+    "year": "2007",
+    "url": "https://zbmath.org/5083835",
+    "relevance": 1,
+    "text": "Arithmetics. A computational approach [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"cangelmi.leonardo\",\"reviewer_id\":\"8158\",\"name\":\"Leonardo Cangelmi\",\"sign\":\"Leonardo Cangelmi (Pescara)\"},\"text\":\"This textbook is an invitation to elementary number theory from a computational point of view, and "
+   },
+   {
+    "source": "openalex",
+    "title": "Improved Trial Division Technique for Primality Checking in RSA Algorithm",
+    "year": 2013,
+    "url": "https://doi.org/10.5815/ijcnis.2013.09.07",
+    "relevance": 1,
+    "text": "Improved Trial Division Technique for Primality Checking in RSA Algorithm The RSA cryptosystem, invented by Ron Rivest, Adi Shamir and Len Adleman was first publicized in the August 1977 issue of Scientific A merican.The security level of this algorith m very much depends on two large prime nu mbers"
+   },
+   {
+    "source": "openalex",
+    "title": "Probabilistic Analysis on the Optimal Combination of Trial Division and Probabilistic Primality Tests for Safe Prime Generation",
+    "year": 2011,
+    "url": "https://doi.org/10.1587/transinf.e94.d.1210",
+    "relevance": 1,
+    "text": "Probabilistic Analysis on the Optimal Combination of Trial Division and Probabilistic Primality Tests for Safe Prime Generation A safe prime p is a prime such that (p-1)/2 is also a prime. A primality test or a safe primality test is normally a combination of trial division and a probabilistic prima"
+   },
+   {
+    "source": "openalex",
+    "title": "Optimal Trial-Division Prefilters for Primality Testing: A Rigorous Budget--Rate Tradeoff",
+    "year": 2026,
+    "url": "https://doi.org/10.5281/zenodo.20100890",
+    "relevance": 1,
+    "text": "Optimal Trial-Division Prefilters for Primality Testing: A Rigorous Budget--Rate Tradeoff This archive contains the paper, supplementary code, and data for thearticle: \"Optimal Trial-Division Prefilters for Primality Testing: A Rigorous Budget-Rate Tradeoff\" The paper provides the first rigorous, n-"
+   },
+   {
+    "source": "openalex",
+    "title": "Modular Multiplication Without Trial Division",
+    "year": 1985,
+    "url": "https://doi.org/10.1090/s0025-5718-1985-0777282-x",
+    "relevance": 0.6666666666666666,
+    "text": "Modular Multiplication Without Trial Division Let $N > 1$. We present a method for multiplying two integers (called N-residues) modulo N while avoiding division by N. N-residues are represented in a nonstandard way, so this method is useful only if several computations are done modulo one N. The add"
+   },
+   {
+    "source": "crossref",
+    "title": "Probabilistic Analysis on the Optimal Combination of Trial Division and Probabilistic Primality Tests for Safe Prime Generation",
+    "year": 2011,
+    "url": "https://doi.org/10.1587/transinf.e94.d.1210",
+    "relevance": 1,
+    "text": "Probabilistic Analysis on the Optimal Combination of Trial Division and Probabilistic Primality Tests for Safe Prime Generation "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_answer.arith_factor_rules_out_prime": {
+  "key": "lean_answer.arith_factor_rules_out_prime",
+  "file": "arith.lean",
+  "name": "factor_rules_out_prime",
+  "statementHash": "53f44e0092b14855",
+  "searched": "2026-10-24T01:24:10.522Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "trial division primality factor rules prime",
+   "openalex": "trial division primality factor rules prime",
+   "crossref": "trial division primality factor rules prime",
+   "arxiv": "trial AND division AND primality AND factor AND rules"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 38s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "Multi-Base Analysis of Additive Offset of Digit Sums of Prime Numbers",
+    "year": 2026,
+    "url": "https://doi.org/10.5281/zenodo.20774666",
+    "relevance": 1,
+    "text": "Multi-Base Analysis of Additive Offset of Digit Sums of Prime Numbers Abstract: This paper presents a systematic analysis of the effect of additive bias n on the primality of the expression s_b(p) + n, where s_b(p) is the sum of digits of a prime number p in base b. The study covers 14 numeral syste"
+   },
+   {
+    "source": "openalex",
+    "title": "Faktorizacija velikih prirodnih brojeva",
+    "year": 2019,
+    "url": "https://openalex.org/W2987622294",
+    "relevance": 1,
+    "text": "Faktorizacija velikih prirodnih brojeva This paper focuses on prime numbers and factorisation algorithms of large numbers. Prime numbers have only two factors, number 1 and itself, and are one of the fundamental terms in mathematics. Algorithm is a process or set of rules to be followed in calculati"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_answergate_exactly_eleven_are_accepted": {
+  "key": "lean_answergate_exactly_eleven_are_accepted",
+  "file": "answer_gate.lean",
+  "name": "exactly_eleven_are_accepted",
+  "statementHash": "37fa74218fee38e1",
+  "searched": "2026-10-24T01:22:51.411Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "eleven accepted",
+   "openalex": "eleven accepted",
+   "crossref": "eleven accepted",
+   "arxiv": "eleven AND accepted"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 3s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_answergate_falsehood_without_a_proof_is_refused": {
+  "key": "lean_answergate_falsehood_without_a_proof_is_refused",
+  "file": "answer_gate.lean",
+  "name": "falsehood_without_a_proof_is_refused",
+  "statementHash": "675ca5c1250cede1",
+  "searched": "2026-10-24T01:23:07.203Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "falsehood without proof",
+   "openalex": "falsehood without proof",
+   "crossref": "falsehood without proof",
+   "arxiv": "falsehood AND without AND proof AND refused"
+  },
+  "notMeasured": [
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_answergate_sourced_without_a_doi_is_refused": {
+  "key": "lean_answergate_sourced_without_a_doi_is_refused",
+  "file": "answer_gate.lean",
+  "name": "sourced_without_a_doi_is_refused",
+  "statementHash": "675ca5c1250cede1",
+  "searched": "2026-10-24T01:23:18.135Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "sourced without refused",
+   "openalex": "sourced without refused",
+   "crossref": "sourced without refused",
+   "arxiv": "sourced AND without AND refused"
+  },
+  "notMeasured": [
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_answergate_truth_without_a_proof_is_refused": {
+  "key": "lean_answergate_truth_without_a_proof_is_refused",
+  "file": "answer_gate.lean",
+  "name": "truth_without_a_proof_is_refused",
+  "statementHash": "675ca5c1250cede1",
+  "searched": "2026-10-24T01:22:56.352Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "truth without proof",
+   "openalex": "truth without proof",
+   "crossref": "truth without proof",
+   "arxiv": "truth AND without AND proof AND refused"
+  },
+  "notMeasured": [
+   "arxiv: export.arxiv.org: every path is disallowed by its robots.txt; not contacted"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_answergate_unchecked_is_refused": {
+  "key": "lean_answergate_unchecked_is_refused",
+  "file": "answer_gate.lean",
+  "name": "unchecked_is_refused",
+  "statementHash": "675ca5c1250cede1",
+  "searched": "2026-10-24T01:23:39.937Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "unchecked refused",
+   "openalex": "unchecked refused",
+   "crossref": "unchecked refused",
+   "arxiv": "unchecked AND refused"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 69s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_answergate_unknown_with_a_certificate_is_refused": {
+  "key": "lean_answergate_unknown_with_a_certificate_is_refused",
+  "file": "answer_gate.lean",
+  "name": "unknown_with_a_certificate_is_refused",
+  "statementHash": "675ca5c1250cede1",
+  "searched": "2026-10-24T01:23:29.372Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "unknown certificate refused",
+   "openalex": "unknown certificate refused",
+   "crossref": "unknown certificate refused",
+   "arxiv": "unknown AND certificate AND refused"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 79s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_answergate_unknown_without_a_blocking_step_is_refused": {
+  "key": "lean_answergate_unknown_without_a_blocking_step_is_refused",
+  "file": "answer_gate.lean",
+  "name": "unknown_without_a_blocking_step_is_refused",
+  "statementHash": "675ca5c1250cede1",
+  "searched": "2026-10-24T01:23:34.496Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "unknown without blocking",
+   "openalex": "unknown without blocking",
+   "crossref": "unknown without blocking",
+   "arxiv": "unknown AND without AND blocking AND refused"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 74s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_answerroute_clay_wins_over_text": {
+  "key": "lean_answerroute_clay_wins_over_text",
+  "file": "answer_route.lean",
+  "name": "clay_wins_over_text",
+  "statementHash": "d7ab3cba59489ad0",
+  "searched": "2026-10-24T01:23:45.104Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "",
+   "openalex": "",
+   "crossref": "",
+   "arxiv": ""
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_answerroute_integer_wins": {
+  "key": "lean_answerroute_integer_wins",
+  "file": "answer_route.lean",
+  "name": "integer_wins",
+  "statementHash": "3be8f0ad857896c2",
+  "searched": "2026-10-24T01:23:45.083Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "integer",
+   "openalex": "integer",
+   "crossref": "integer",
+   "arxiv": "integer"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_answerroute_lean_wins_over_the_rest": {
+  "key": "lean_answerroute_lean_wins_over_the_rest",
+  "file": "answer_route.lean",
+  "name": "lean_wins_over_the_rest",
+  "statementHash": "70a175b07836893a",
+  "searched": "2026-10-24T01:23:45.083Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "",
+   "openalex": "",
+   "crossref": "",
+   "arxiv": ""
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_answerroute_publication_wins_over_clay_and_text": {
+  "key": "lean_answerroute_publication_wins_over_clay_and_text",
+  "file": "answer_route.lean",
+  "name": "publication_wins_over_clay_and_text",
+  "statementHash": "6718137a13fd9054",
+  "searched": "2026-10-24T01:23:45.083Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "publication",
+   "openalex": "publication",
+   "crossref": "publication",
+   "arxiv": "publication"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_answerroute_text_only_when_nothing_else_holds": {
+  "key": "lean_answerroute_text_only_when_nothing_else_holds",
+  "file": "answer_route.lean",
+  "name": "text_only_when_nothing_else_holds",
+  "statementHash": "e946136b865b9ebf",
+  "searched": "2026-10-24T01:23:45.105Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nothing",
+   "openalex": "nothing",
+   "crossref": "nothing",
+   "arxiv": "nothing"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_answerroute_the_kinds_cover_the_sixteen": {
+  "key": "lean_answerroute_the_kinds_cover_the_sixteen",
+  "file": "answer_route.lean",
+  "name": "the_kinds_cover_the_sixteen",
+  "statementHash": "4491697fe30701a9",
+  "searched": "2026-10-24T01:23:45.105Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "kinds cover sixteen",
+   "openalex": "kinds cover sixteen",
+   "crossref": "kinds cover sixteen",
+   "arxiv": "kinds AND cover AND sixteen"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 64s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_apis_apis_every_spec_is_proven": {
+  "key": "lean_apis_apis_every_spec_is_proven",
+  "file": "apis.lean",
+  "name": "apis_every_spec_is_proven",
+  "statementHash": "dab81d6e7dd37f22",
+  "searched": "2026-10-24T01:23:54.975Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "public api directories openapi proven",
+   "openalex": "public api directories openapi proven",
+   "crossref": "public api directories openapi proven",
+   "arxiv": "public AND api AND directories AND openapi AND proven"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 54s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_apis_apis_gated_is_not_called": {
+  "key": "lean_apis_apis_gated_is_not_called",
+  "file": "apis.lean",
+  "name": "apis_gated_is_not_called",
+  "statementHash": "e7bc4a7533f64467",
+  "searched": "2026-10-24T01:24:05.371Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "public api directories openapi gated called",
+   "openalex": "public api directories openapi gated called",
+   "crossref": "public api directories openapi gated called",
+   "arxiv": "public AND api AND directories AND openapi AND gated"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 43s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_apis_apis_live_verdicts_partition_the_catalogue": {
+  "key": "lean_apis_apis_live_verdicts_partition_the_catalogue",
+  "file": "apis.lean",
+  "name": "apis_live_verdicts_partition_the_catalogue",
+  "statementHash": "7ddbd82a1097fa3d",
+  "searched": "2026-10-24T01:23:49.976Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "public api directories openapi verdicts partition catalogue",
+   "openalex": "public api directories openapi verdicts partition catalogue",
+   "crossref": "public api directories openapi verdicts partition catalogue",
+   "arxiv": "public AND api AND directories AND openapi AND verdicts"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 59s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_apis_apis_reachable_is_within_specs": {
+  "key": "lean_apis_apis_reachable_is_within_specs",
+  "file": "apis.lean",
+  "name": "apis_reachable_is_within_specs",
+  "statementHash": "25c5286d59813012",
+  "searched": "2026-10-24T01:24:00.220Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "public api directories openapi reachable within specs",
+   "openalex": "public api directories openapi reachable within specs",
+   "crossref": "public api directories openapi reachable within specs",
+   "arxiv": "public AND api AND directories AND openapi AND reachable"
+  },
+  "notMeasured": [
+   "arxiv: resting after three refusals, asked again in 48s"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
  },
  "lean_asymmetric_a_checksum_is_the_same_whoever_computes_it": {
   "key": "lean_asymmetric_a_checksum_is_the_same_whoever_computes_it",

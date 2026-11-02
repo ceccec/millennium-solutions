@@ -1,4 +1,9 @@
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_domain: primality certificates — a probable prime is not a proved prime (Miller–Rabin, 1976/1980; a proof is a certificate or a deterministic test)
+-- prior_art_note: the c2 rules restate that distinction and claim nothing of it; the c1 rules and the gate's own agreement with
+--   its rules are this deposit's answer system (src/answer), stated here so the TypeScript can be held to the file.
+-- prior_art_search: attempted 2026-10-24 and 2026-11-02 (src/proof/novelty.json): 3 statements carry too few terms to search, 5 were
+--   NOT MEASURED — OpenAlex and arXiv did not answer. No NONE_FOUND is claimed; the record says what was asked and what came back.
 -- lean/answer.lean — the pure decisions of the answer system (src/answer/verify-lean.ts and verify-arith.ts), stated
 -- and proved. These are the rules the TypeScript decision functions implement; the link between the two is a runtime
 -- test until the TypeScript is generated from this file.
