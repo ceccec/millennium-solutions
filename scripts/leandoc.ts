@@ -50,10 +50,12 @@ export function read(file: string): LeanDoc {
   // 'own' is a comment written for this theorem, 'section' is the heading it inherits, 'none' is a real gap.
   const theorems: Theorem[] = []
   let lastSection = ''
-  for (const m of src.matchAll(/((?:^[ \t]*--.*\n)*)^theorem\s+([A-Za-z_0-9]+)\s*((?:[({[](?:[^(){}\[\]]|\([^()]*\))*[)}\]]\s*)*):([\s\S]*?):=\s*(by decide|rfl|by\s+\w+|\S+)/gm)) {
-    // the last alternative: a proof that is a term (fun, ⟨…⟩, a lemma applied) is a declaration too — 13 of them were
-    // invisible to this reader at HEAD on 2026-11-03, and the front page printed "-13 are not yet sealed"
-    const statement = normalizeStatement((m[3] ? m[3].trim() + ' ' : '') + m[4])
+  for (const m of src.matchAll(/((?:^[ \t]*--.*\n)*)^theorem\s+([A-Za-z_0-9]+)\s*((?:[({[](?:[^(){}\[\]]|\([^()]*\))*[)}\]]\s*)*):([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm)) {
+    // binders before the colon are read (13 theorems were invisible to this reader at HEAD on 2026-11-03, and the front
+    // page printed "-13 are not yet sealed"); the proof forms accepted are exactly those src/api/index.ts accepts
+    // the statement is the text after the colon outside the binders — the same cut src/api/index.ts makes, so paper.ts's
+    // comparison of the two readers holds; the binders are read so the theorem is counted, not folded into its statement
+    const statement = normalizeStatement(m[4])
     const own = stripComment(m[1])
     if (own) lastSection = own
     theorems.push({
