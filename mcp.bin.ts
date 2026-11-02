@@ -13,7 +13,7 @@ import { createInterface } from 'node:readline'
 import { readFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { run, served, withLedger, withFormulas, type Row, type Formula } from './src/mcp/serve.ts'
+import { run, served, withLedger, withFormulas, withBake, type Row, type Formula, type Bake } from './src/mcp/serve.ts'
 
 // ── THE LEDGER IS LOADED HERE, BECAUSE ONLY HERE MAY READ A FILE ─────────────────────────────────────────
 // The four evidence tools measure the discovery ledger and the package did not ship it, which put the
@@ -44,6 +44,19 @@ for (const p of [join(here, 'data', 'formulas.jsonld'), join(here, '..', 'public
     }).filter((r) => r.name) as Formula[]
     if (rows.length) { withFormulas(rows); break }
   } catch { /* an unparseable catalogue is an absent one, and the tool says absent rather than empty */ }
+}
+
+// AND THE BAKED ANSWERS, by the same rule: dist/data/baked/index.json names the tree they came from and which tools
+// the build could not bake and why; each answer sits beside it as one file, read here and handed to the pure module.
+for (const dir of [join(here, 'data', 'baked')]) {
+  const idx = join(dir, 'index.json')
+  if (!existsSync(idx)) continue
+  try {
+    const j = JSON.parse(readFileSync(idx, 'utf8')) as { stamp: Record<string, unknown>; baked: string[]; notBaked: Record<string, string> }
+    const answers: Record<string, string> = {}
+    for (const n of j.baked) { const p = join(dir, n + '.json'); if (existsSync(p)) answers[n] = (JSON.parse(readFileSync(p, 'utf8')) as { answer: string }).answer }
+    withBake({ stamp: j.stamp, answers, notBaked: j.notBaked } as Bake); break
+  } catch { /* an unreadable bake is an absent one, and the tools say so rather than serving a guess */ }
 }
 
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')

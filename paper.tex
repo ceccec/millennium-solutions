@@ -201,12 +201,12 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_second\_seed\_is\_the\_first\_hex\_word\_of\_the\_golden\_ratio}]
-\[ 2 \cdot 2654435769 + 2^{32}^{2} \le 5 \cdot 2^{64} \land 5 \cdot 2^{64} < 2 \cdot 2654435769 + 2 + 2^{32}^{2} \land \mathrm{SEEDS.getD}\mathopen{}\left(1,\,0\right) = 2654435769 \]
+\[ \mathrm{bracketsPhi}\mathopen{}\left(\mathrm{SEEDS.getD}\mathopen{}\left(1,\,0\right)\right) = \mathrm{true} \land \mathrm{bracketsPhi}\mathopen{}\left(\mathrm{SEEDS.getD}\mathopen{}\left(1,\,0\right) + 1\right) = \mathrm{false} \land \mathrm{bracketsPhi}\mathopen{}\left(\mathrm{SEEDS.getD}\mathopen{}\left(1,\,0\right) - 1\right) = \mathrm{false} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_third\_seed\_is\_the\_first\_hex\_word\_of\_pi\_by\_bbp}]
-\[ \frac{\mathrm{bbp}\mathopen{}\left(24,\,24\right)}{16^{16}} = 3 \cdot 16^{8} + 608135816 \land \mathrm{SEEDS.getD}\mathopen{}\left(2,\,0\right) = 608135816 \]
+\[ \frac{\mathrm{bbp}\mathopen{}\left(24,\,24\right)}{16^{16}} = 3 \cdot 16^{8} + \mathrm{SEEDS.getD}\mathopen{}\left(2,\,0\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -216,7 +216,7 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_fourth\_seed\_is\_the\_first\_hex\_word\_of\_e\_not\_of\_pi}]
-\[ \frac{\mathrm{eSeries}\mathopen{}\left(24,\,30\right)}{16^{16}} = 2 \cdot 16^{8} + 3084996962 \land \mathrm{SEEDS.getD}\mathopen{}\left(3,\,0\right) = 3084996962 \land 3084996962 \neq 608135816 \]
+\[ \frac{\mathrm{eSeries}\mathopen{}\left(24,\,30\right)}{16^{16}} = 2 \cdot 16^{8} + \mathrm{SEEDS.getD}\mathopen{}\left(3,\,0\right) \land \mathrm{SEEDS.getD}\mathopen{}\left(3,\,0\right) \neq \mathrm{SEEDS.getD}\mathopen{}\left(2,\,0\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -984,22 +984,22 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \paragraph{\texttt{apis.lean}}
 
 \begin{theorem}[\texttt{apis\_live\_verdicts\_partition\_the\_catalogue}]
-\[ \mathrm{reachable} + \mathrm{notReachable} + \mathrm{refused} + \mathrm{gated} + \mathrm{notMeasured} = \mathrm{catalogue} \]
+\[ \mathrm{isPartition}\mathopen{}\left(\mathrm{liveVerdicts},\,5\right) = \mathrm{true} \land \mathrm{isPartition}\mathopen{}\left(\mathrm{liveVerdicts} \mathbin{+\!\!+} [5],\,5\right) = \mathrm{false} \land \left|\mathrm{liveVerdicts}\right| = \mathrm{catalogue} \land \mathrm{tally}\mathopen{}\left(\mathrm{liveVerdicts},\,0\right) = \mathrm{reachable} \land \mathrm{tally}\mathopen{}\left(\mathrm{liveVerdicts},\,1\right) = \mathrm{notReachable} \land \mathrm{tally}\mathopen{}\left(\mathrm{liveVerdicts},\,2\right) = \mathrm{refused} \land \mathrm{tally}\mathopen{}\left(\mathrm{liveVerdicts},\,3\right) = \mathrm{gated} \land \mathrm{tally}\mathopen{}\left(\mathrm{liveVerdicts},\,4\right) = \mathrm{notMeasured} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{apis\_every\_spec\_is\_proven}]
-\[ \mathrm{specProven} = \mathrm{catalogue} \]
+\[ \forall v \in \mathrm{specVerdicts},\; v = 1 = \mathrm{true} \land \forall v \in \mathrm{specVerdicts} \mathbin{+\!\!+} [0],\; v = 1 = \mathrm{false} \land \left|\mathrm{specVerdicts}\right| = \mathrm{catalogue} \land \mathrm{tally}\mathopen{}\left(\mathrm{specVerdicts},\,1\right) = \mathrm{specProven} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{apis\_reachable\_is\_within\_specs}]
-\[ \mathrm{reachable} \le \mathrm{specProven} \]
+\texttt{(liveVerdicts.zip specVerdicts).all (fun p => p.1 != 0 || p.2 == 1) = true ∧ ([0].zip [0]).all (fun p => p.1 != 0 || p.2 == 1) = false}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{apis\_gated\_is\_not\_called}]
-\[ \mathrm{gated} + \mathrm{reachable} + \mathrm{notReachable} + \mathrm{refused} + \mathrm{notMeasured} = \mathrm{catalogue} \]
+\[ \mathrm{tally}\mathopen{}\left(\mathrm{liveVerdicts},\,3\right) = \mathrm{gated} \land \left|\{\, v \in \mathrm{liveVerdicts} \mid v \neq 3 \,\}\right| + \mathrm{gated} = \mathrm{catalogue} \land \mathrm{tally}\mathopen{}\left(\{\, v \in \mathrm{liveVerdicts} \mid v \neq 3 \,\},\,3\right) = 0 \land \mathrm{tally}\mathopen{}\left(\{\, v \in \mathrm{liveVerdicts} \mid v \neq 3 \,\} \mathbin{+\!\!+} [3],\,3\right) = 1 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1048,32 +1048,32 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \paragraph{\texttt{cern.lean}}
 
 \begin{theorem}[\texttt{records\_are\_numeric\_plus\_slug}]
-\[ \mathrm{records} = \mathrm{numericIds} + \mathrm{slugAliases} \]
+\[ \mathrm{exact}\mathopen{}\left([\mathrm{numericIds},\,\mathrm{slugAliases}],\,\mathrm{records}\right) = \mathrm{true} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{listed\_urls\_are\_records\_plus\_duplicates}]
-\[ \mathrm{listedRecordUrls} = \mathrm{records} + \mathrm{duplicatedInSitemap} \]
+\[ \mathrm{exact}\mathopen{}\left([\mathrm{records},\,\mathrm{duplicatedInSitemap}],\,\mathrm{listedRecordUrls}\right) = \mathrm{true} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{urls\_are\_listed\_records\_plus\_non\_records}]
-\[ \mathrm{urls} = \mathrm{listedRecordUrls} + \mathrm{nonRecordUrls} \]
+\[ \mathrm{exact}\mathopen{}\left([\mathrm{listedRecordUrls},\,\mathrm{nonRecordUrls}],\,\mathrm{urls}\right) = \mathrm{true} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{fixed\_and\_swapped\_partition\_the\_records}]
-\[ \mathrm{fixed} + \mathrm{swapped} = \mathrm{records} \]
+\[ \mathrm{exact}\mathopen{}\left([\mathrm{fixed},\,\mathrm{swapped}],\,\mathrm{records}\right) = \mathrm{true} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{oai\_harvest\_is\_complete}]
-\[ \mathrm{oaiHarvested} = \mathrm{oaiCompleteListSize} \]
+\[ \mathrm{exact}\mathopen{}\left([\mathrm{oaiHarvested}],\,\mathrm{oaiCompleteListSize}\right) = \mathrm{true} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{oai\_union\_is\_the\_sum\_of\_its\_parts}]
-\[ \mathrm{oaiHarvested} = \mathrm{oaiInBoth} + \mathrm{oaiOnly} \land \mathrm{oaiUnion} = \mathrm{oaiInBoth} + \mathrm{oaiOnly} + \mathrm{siteOnly} \]
+\[ \mathrm{exact}\mathopen{}\left([\mathrm{oaiInBoth},\,\mathrm{oaiOnly}],\,\mathrm{oaiHarvested}\right) = \mathrm{true} \land \mathrm{exact}\mathopen{}\left([\mathrm{oaiInBoth},\,\mathrm{oaiOnly},\,\mathrm{siteOnly}],\,\mathrm{oaiUnion}\right) = \mathrm{true} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1083,9 +1083,9 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_fixed\_count\_is\_the\_bucket\_of\_digit\_five}]
-\texttt{roots.getD 5 0 = fixed}
+\[ \mathrm{fixedDigits} = [5] \land \mathrm{bucketSum}\mathopen{}\left(\mathrm{roots},\,\mathrm{fixedDigits}\right) = \mathrm{fixed} \land \mathrm{bucketSum}\mathopen{}\left(\mathrm{roots},\,\{\, d \in \{0,\dots,9\} \mid \mathrm{reflect}\mathopen{}\left(d\right) \neq d \,\}\right) = \mathrm{swapped} \land \mathrm{bucketSum}\mathopen{}\left(\mathrm{roots},\,\mathrm{fixedDigits}\right) + \mathrm{bucketSum}\mathopen{}\left(\mathrm{roots},\,\{\, d \in \{0,\dots,9\} \mid \mathrm{reflect}\mathopen{}\left(d\right) \neq d \,\}\right) = \mathrm{total}\mathopen{}\left(\mathrm{roots}\right) \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 100 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_reflection\_is\_an\_involution\_on\_the\_digits}]
 \[ \forall d \in \{0,\dots,9\},\; 10 - 10 - d = d = \mathrm{true} \]

@@ -5,6 +5,7 @@
 // with the source's on the same input: a build that changed an address would be a different package with our name on it.
 import { execFileSync } from 'node:child_process'
 import { readFileSync, readdirSync, rmSync, statSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from 'node:fs'
+import { spawnSync } from 'node:child_process'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
@@ -67,3 +68,62 @@ const names = Object.keys(built).sort().join(',')
 if (names !== Object.keys(source).sort().join(',')) throw new Error('dist/ exports a different set of names than mod.core.ts')
 const files = walk('dist')
 console.log(`✓ dist: ${files.filter((f) => f.endsWith('.js')).length} modules + ${files.filter((f) => f.endsWith('.d.ts')).length} declarations (${fixed} declaration specifier file(s) rewritten) · ${Object.keys(built).length} exports · toUuid agrees with the source`)
+
+// ── THE BAKE: EVERY TOOL WHOSE BARE ANSWER CAN TRAVEL ─────────────────────────────────────────────────────
+// src/mcp/serve.ts BAKEABLE names the tools (tree/ledger-only, no writes, no required argument). Each is run
+// here through the full server's own handler, in a child process with a time budget — a handler that hangs
+// must not hang the build — TWICE: an answer that differs between two runs on one tree is not an answer, and
+// is not baked. Over the size budget is not baked either. Everything not baked is named with its reason in
+// index.json, which the transport hands to the pure module so list_tools says why.
+{
+  const { BAKEABLE } = await import('../src/mcp/serve.ts')
+  const { toUuid, merkleFold } = await import('../src/0/index.ts')
+  const budgetMs = Number(process.env.BAKE_BUDGET_MS ?? 180_000), budgetBytes = 4 * 1024 * 1024 // an npm tarball beside a 15 MB catalogue, not a Worker isolate: 4 MB, which lets discoveries (2.9 MB) and recompute (1.5 MB) travel
+  const dir = join('dist', 'data', 'baked'); rmSync(dir, { recursive: true, force: true }); mkdirSync(dir, { recursive: true })
+  const once = (name: string): { ok: true; answer: string } | { ok: false; why: string } => {
+    const r = spawnSync(process.execPath, ['--input-type=module', '-e',
+      `const { HANDLERS } = await import(process.cwd() + '/scripts/mcp.ts'); const a = await HANDLERS[${JSON.stringify(name)}]({}); process.stdout.write(typeof a === 'string' ? a : JSON.stringify(a))`],
+      { encoding: 'utf8', timeout: budgetMs, maxBuffer: 64 << 20 })
+    if (r.error && (r.error as { code?: string }).code === 'ETIMEDOUT') return { ok: false, why: `the bare call ran past the ${budgetMs / 1000}s bake budget` }
+    if (r.status !== 0) return { ok: false, why: 'the bare call refused: ' + (r.stderr || r.stdout || '').trim().split('\n').filter(Boolean).slice(-1)[0]?.slice(0, 160) }
+    return { ok: true, answer: r.stdout }
+  }
+  // A BARE CALL THAT WRITES IS NOT BAKED. WRITES names four tools; a handler can also spawn a generator that
+  // rewrites a tracked file (apis_theorems does). The tree is read before and after each call, and new dirt
+  // names the tool as a writer — reported, never restored: an uncommitted edit under a path is not this
+  // build's to revert.
+  // BY CONTENT, NOT BY LISTING: a path already dirty before the call hides a writer that rewrites it (metrics_face
+  // baked once that way, after its own earlier run had left metrics.json dirty). Each modified or untracked path is
+  // hashed before and after; a path whose hash moved, or a new path, names the writer.
+  const dirt = (): Map<string, string> => {
+    const m = new Map<string, string>()
+    try {
+      for (const l of execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8' }).split('\n').filter(Boolean)) {
+        const p = l.slice(3).replace(/^.* -> /, '')
+        try { m.set(p, statSync(p).isDirectory() ? 'dir' : toUuid(readFileSync(p, 'utf8'))) } catch { m.set(p, 'gone') }
+      }
+    } catch { /* no git: nothing can be compared, and nothing is named */ }
+    return m
+  }
+  const baked: string[] = []
+  const notBaked: Record<string, string> = {}
+  for (const name of BAKEABLE) {
+    const before = dirt()
+    const a = once(name)
+    const wrote = [...dirt()].filter(([p, h]) => before.get(p) !== h).map(([p]) => p)
+    if (wrote.length) { notBaked[name] = `the bare call wrote to the tree (${wrote.slice(0, 3).join(', ')}${wrote.length > 3 ? ', …' : ''}) — a writer is not baked`; continue }
+    if (!a.ok) { notBaked[name] = a.why; continue }
+    const c = once(name); if (!c.ok) { notBaked[name] = c.why; continue }
+    if (a.answer !== c.answer) { notBaked[name] = 'the bare call answered differently on two runs of one tree — not an answer, not baked'; continue }
+    if (Buffer.byteLength(a.answer) > budgetBytes) { notBaked[name] = `the bare answer is ${Math.round(Buffer.byteLength(a.answer) / 1024)} KB, over the 4 MB bake budget`; continue }
+    writeFileSync(join(dir, name + '.json'), JSON.stringify({ tool: name, bytes: Buffer.byteLength(a.answer), answer: a.answer }))
+    baked.push(name)
+  }
+  let head = 'unknown'; try { head = execFileSync('git', ['rev-parse', '--short', 'HEAD'], { encoding: 'utf8' }).trim() } catch { /* a tarball has no git */ }
+  const ledgerRows = existsSync('src/proof/discovered.json') ? (JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { receipt: string }[]) : []
+  const stamp = { bakedFrom: head, ledger: ledgerRows.length, ledgerSeal: merkleFold(ledgerRows.map((r) => r.receipt)),
+    bakeRoot: merkleFold(baked.map((n) => toUuid(n + ':' + readFileSync(join(dir, n + '.json'), 'utf8')))) }
+  writeFileSync(join(dir, 'index.json'), JSON.stringify({ stamp, baked, notBaked }, null, 1) + '\n')
+  console.log(`  · baked: ${baked.length} of ${BAKEABLE.length} bakeable tool(s) → dist/data/baked/ (${Object.keys(notBaked).length} not baked, each with its reason)`)
+  for (const [n, why] of Object.entries(notBaked)) console.log(`      ○ ${n}: ${why}`)
+}

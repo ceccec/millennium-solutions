@@ -80,7 +80,7 @@ Independently verifiable by a third party, without trusting the depositor — cl
 ## Reaching this from a program, not only reading it
 
 Everything above can be asked for rather than parsed. This deposit ships an MCP server — JSON-RPC 2.0,
-91 tools, no SDK dependency — so a model client or a browser can recompute what this notice states
+92 tools, no SDK dependency — so a model client or a browser can recompute what this notice states
 instead of trusting it.
 
     node scripts/mcp.ts            JSON-RPC over stdio, for a model client
@@ -91,7 +91,7 @@ The tools that matter for checking a claim made here: `ledger_status` (compositi
 `recompute` (re-run every candidate's own test), `handle` (the four-hex short form), and `verify` (audit a
 sentence, or look a uuid up in both evidence sets). None of them requires an account or a key.
 
-4 of the 91 write to the tree. Over HTTP they are refused outright unless the server is
+4 of the 92 write to the tree. Over HTTP they are refused outright unless the server is
 started with `--allow-write`, the server binds to loopback, and every request needs a bearer token minted at
 startup — because a page in any tab can POST to localhost, and these tools compile Lean and write the ledger.
 

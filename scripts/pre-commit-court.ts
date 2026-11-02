@@ -38,7 +38,10 @@ const main = async () => {
   // The remote court is requested at the same time as the local suites, so its network wait overlaps their runtime.
   const env0 = await probe()
   const courtRequest = env0.net.present
-    ? viaMcpAsync('connect', { connector: 'qpu', tool: 'court', arguments: { court: true, full: true } })
+    // THE DOOR MOVED (2026-11-02): qpu.uuidna.com 1.4.0 serves no `court`; its `audit` replays every example and every
+    // toolbox selftest and answers passed/total/failed with each check named — the same question under the name the
+    // unit serves. A door the unit does not serve is SKIPPED, not FAIL: a moved door is not a defect in this tree.
+    ? viaMcpAsync('connect', { connector: 'qpu', tool: 'audit', arguments: {} })
     : Promise.resolve('')
   const results = await Promise.all(SUITES.map(async (suite) => ({ suite, text: await viaMcpAsync('run_suite', { suite }) })))
   for (const { suite, text } of results) {
@@ -51,18 +54,18 @@ const main = async () => {
     lines.push({ court: 'qpu court', verdict: 'SKIPPED', detail: `no network: ${env.net.why}. The commit is NOT cleared by the court` })
   } else {
     const text = await courtRequest
-    const held = /held\\?":\s*(\d+),\s*\\?"of\\?":\s*(\d+)/.exec(text) ?? /"held":\s*(\d+),\s*"of":\s*(\d+)/.exec(text)
-    if (!held) {
-      lines.push({ court: 'qpu court', verdict: 'FAIL', detail: 'the court did not return a held count through the connector' })
+    const unescaped = text.replace(/\\"/g, '"')
+    const total = /"total":\s*(\d+)/.exec(unescaped), passed = /"passed":\s*(\d+)/.exec(unescaped), failedN = /"failed":\s*(\d+)/.exec(unescaped)
+    if (/"status":\s*"REFUSED"/.test(text) && /no tool audit/.test(text)) {
+      lines.push({ court: 'qpu court', verdict: 'SKIPPED', detail: 'the unit serves no `audit` door today — a moved door, not a defect here. The commit is NOT cleared by the court' })
+    } else if (!total || !passed) {
+      lines.push({ court: 'qpu court', verdict: 'FAIL', detail: 'the audit did not return passed/total counts through the connector: ' + text.replace(/\s+/g, ' ').slice(0, 160) })
     } else {
-      const [, h, o] = held
-      const pass = h === o
-      // THE TEACHER: name each case whose OWN gate does not hold. A case's gate verdict is the first `holds` in its gate
-      // object; nested fields (the law.* checks) also say `holds` and must not be read as the case's verdict.
-      const unescaped = text.replace(/\\"/g, '"')
-      const failing = [...unescaped.matchAll(/"case":"([^"]+)","gate":\{[^{}]*?"holds":(true|false)/g)].filter((m) => m[2] === 'false').map((m) => m[1])
-      const named = failing.length ? ` — failing case(s): ${failing.join(', ')}` : ''
-      lines.push({ court: 'qpu court', verdict: pass ? 'PASS' : 'FAIL', detail: `${h} of ${o} of its cases hold${named}${pass ? '' : ': the commit is refused until all hold'}` })
+      const pass = passed[1] === total[1] && (failedN ? failedN[1] === '0' : true)
+      // THE TEACHER: name each check that did not pass, by the id the unit gives it.
+      const failing = [...unescaped.matchAll(/"id":"([^"]+)","passed":false/g)].map((m) => m[1])
+      const named = failing.length ? ` — failing check(s): ${failing.slice(0, 8).join(', ')}${failing.length > 8 ? ', …' : ''}` : ''
+      lines.push({ court: 'qpu court', verdict: pass ? 'PASS' : 'FAIL', detail: `${passed[1]} of ${total[1]} of its checks pass${named}${pass ? '' : ': the commit is refused until all pass'}` })
     }
   }
 

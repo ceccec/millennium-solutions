@@ -277,7 +277,8 @@ export const NEEDS: Record<string, Need[]> = {
   apis_guru: ['net', 'tree'],
   apis_guru_live: ['net', 'tree'],
   apis_theorems: ['tree'],
-  pre_commit_court: ['tree'],
+  // it asks qpu.uuidna.com through the connector for its court — net, and the door it asks for moved (2026-11-02)
+  pre_commit_court: ['net', 'tree'],
   prefix_check: ['tree'],
   understand: ['tree'],
   api_adapters: ['net', 'tree'],

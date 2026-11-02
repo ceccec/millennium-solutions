@@ -79,7 +79,7 @@ def novelty (s : Source) : Bool := s.2.2
 -- One row per .lean file, in the order scripts/priorart.ts reads them.
 def sources : List Source :=
   [ (1,  0, false)   -- address.lean        — composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)
-  , (2,  1, false)   -- answer.lean         — 
+  , (2,  0, false)   -- answer.lean         — the c2 rules restate that distinction and claim nothing of it; the c1 rules and the gate's own agreement with its rules are this deposit's answer system (src/answer), stated here so the TypeScript can be held to the file.
   , (3,  1, false)   -- answer_gate.lean    — 
   , (4,  1, false)   -- answer_route.lean   — 
   , (5,  0, false)   -- apis.lean           — the counts are over the APIs.guru directory (apis.guru), which is the named source; the partition identities are this tree's own arithmetic over its run.

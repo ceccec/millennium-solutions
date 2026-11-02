@@ -1,0 +1,124 @@
+  · rescued /Users/ceci/github/ceccec/millennium-solutions/src/0/index.ts — a previous run was killed mid-control and left its mutation in place
+gates-fire — each gate must reject its negative control:
+
+  ✓ api-gates         rejects a filesystem API whose file no longer states the fact its adapter expects
+  ✓ package-gates     rejects a lockfile entry with no integrity hash, so its bytes cannot be checked
+  ? e2e (page stops referencing its data) .vitepress/dist/formulas.html absent — cannot control
+  ✓ formulas (empty catalogue) rejects a reader that returns no formulas — a catalogue of nothing, which would publish as an achievement
+  ✓ discoveries (signals collapse) rejects a queue whose signals all weigh the same, so every candidate ties and the ranking orders nothing  ○ but does not name the mutated file
+  ✓ mcp-gate (a requirement that travels through a spawn is dropped) rejects a tool that shells out to a networked script while declaring it needs no network — available, to a caller who has none  ○ but does not name the mutated file
+  ✓ mcp-gate (a tool's declared requirement drifts from its handler) rejects an MCP tool declaring it needs nothing while its handler reaches the tree — a caller told the surface is larger than it is  ○ but does not name the mutated file
+  ✗ ci-drift (a step runs before the build it depends on) FAILS ON A CLEAN TREE — it is not testing what it claims
+  ✗ derived (a committed derived file nobody regenerates) FAILS ON A CLEAN TREE — it is not testing what it claims
+  ✓ coils (the generated file drifts from the vocabulary) rejects a generated Lean file that no longer matches the vocabulary it was derived from — stale clustering the kernel still accepts
+  ✓ coils (vocabulary collapse) rejects a vocabulary where every expression computes the same thing, so everything coils and the clustering says nothing  ○ but does not name the mutated file
+  ✓ group (the generated file drifts from the generator) rejects a generated Lean file whose constants no longer match the walk that produced them — stale structure the kernel still accepts
+  ✓ bridge (the generated file drifts from the generator) rejects a generated bridge whose orbits no longer follow src/entangle — subjects proving a map nobody computed
+  ✓ settled (a file's count drifts from its contents) rejects a file declaring it settles more than it holds — the drift that ships a number no reader can check
+  ✗ settled (the generated file drifts from the tree) CONTROL IS A NO-OP — its mutation matched nothing, so this run
+      tested the clean tree twice and proved nothing about the gate
+  ✓ runnable (leading word) rejects an npm script whose interpreter is not installed anywhere  ○ but does not name the mutated file
+  ✓ runnable (after &&) rejects the same defect in the SECOND command of a chain, where a first-word-only check would miss it  ○ but does not name the mutated file
+  ✓ stale-figures (overclaim) rejects a comment claiming MORE theorems than the tree holds
+  ✓ stale-figures (underclaim) rejects a comment claiming FEWER theorems than the tree holds — the same defect reflected
+  ✓ axiom-index       rejects an assumption introduced into a source and absent from the published index
+  ✗ ci-drift          FAILS ON A CLEAN TREE — it is not testing what it claims
+  ✓ lean-gen          rejects a generated theorem the kernel will not accept  ○ but does not name the mutated file
+  ✓ xrepo             rejects a normaliser under which a peer's published pin no longer reproduces  ○ but does not name the mutated file
+  ✓ quantum-field     rejects geometry drawn from a number the proposition no longer decides
+  ✓ priorart          rejects a source whose attribution changed without the table following
+  ✓ latex-gate        rejects a conjunction typeset as a disjunction on every published page  ○ but does not name the mutated file
+  ✓ priorart-gen      rejects a source whose recorded attribution no longer matches what the file declares  ○ but does not name the mutated file
+  ✓ carry             rejects a ledger entry whose recorded value has been replaced  ○ but does not name the mutated file
+  ? seo               .vitepress/dist/paper.html absent — cannot control
+  ✓ paper             rejects a declaration the kernel cannot close  ○ but does not name the mutated file
+  ✓ verify-theorems   rejects a ledger entry citing a theorem that is not in the tree  ○ but does not name the mutated file
+  ✓ docs-gate         rejects prose telling a reader to run a command that does not exist
+  ✓ handle-gate       rejects a handle window moved onto the forced version nibble, where it carries fewer bits than the module claims  ○ but does not name the mutated file
+  ✓ handle-gate (no-payload invariant) rejects a receipt whose message no longer mints its own address — so the message cannot travel alone
+  ✓ authority-gate    rejects a verdict on the author's claim back in the deposit's own voice, on the page a reader opens first
+  ✓ wholeness         rejects a fused module whose report() no longer computes, so the deposit cannot state itself  ○ but does not name the mutated file
+  ✓ metrics           rejects a published face whose row no longer matches the receipt it was sealed under  ○ but does not name the mutated file
+  ✗ changelog         FAILS ON A CLEAN TREE — it is not testing what it claims
+  ✗ zenodo-json       FAILS ON A CLEAN TREE — it is not testing what it claims
+  ✗ zenodo-sync       FAILS ON A CLEAN TREE — it is not testing what it claims
+  ✗ zenodo-gate       FAILS ON A CLEAN TREE — it is not testing what it claims
+  ✓ contradictions (self-certifying literal) rejects a constant decided against its own literal and used nowhere else
+  ✓ contradictions (a declared choice spreading) rejects a second theorem leaning on the one list the file types out as a choice
+  ✓ orphan-files      rejects a module whose only referrer stopped naming it  ○ but does not name the mutated file
+  ✗ orphan-exports    FAILS ON A CLEAN TREE — it is not testing what it claims
+  ✗ lessons           FAILS ON A CLEAN TREE — it is not testing what it claims
+  ✓ css (the derived ray) rejects the themed hue starting somewhere other than the heart the ring computes
+  ? seven             .vitepress/dist/zh/index.html absent — cannot control
+  ✓ css               rejects a custom property used on every page and defined nowhere
+  ✓ canon             rejects a second implementation of a job this tree derives exactly once
+  ✓ provenance        rejects a recorded priority date the issuing registry no longer agrees with  ○ but does not name the mutated file
+  ✓ sources           rejects a live reader that answers without the answer known to be in it  ○ but does not name the mutated file
+  ✓ novelty           rejects a prior-art record claiming a completed search that records no query
+  ✓ uses              rejects a citation search run without the identity it is supposed to search for
+  ✓ prose-trial       rejects a Clay prize claimed in the front page's own voice
+  ✓ contradictions (a medical claim in its own voice) rejects a module named for a disease claiming to cure it, which its own header denies
+  ✓ contradictions (a physical force in its own voice) rejects a module named for gravity claiming to explain gravitation, which its own header denies
+  ✓ contradictions (physical claim in a name) rejects a refusing file publishing a theorem NAME that asserts a physical fact  ○ but does not name the mutated file
+  ✓ fixture-addresses (cross-repo pin) rejects a published address pin that no longer matches what the implementation computes  ○ but does not name the mutated file
+  ✓ constants-gate    rejects a hand-written constant in prose that only a generator may write
+  ✓ hardcode-gate     rejects a ℤ/9 set written out as a literal
+  ✓ one-author-gate   rejects a second script generating a page pages.ts already owns
+  ✓ seal              rejects prose citing a theorem that is not in the ledger
+  ✓ claims-gate       rejects the front page quoting a registry size that is not the registry size
+  ✓ forensics         rejects a receipt altered mid-chain  ○ but does not name the mutated file
+  ? lean              src/proof/theorems.lean absent — cannot control
+  ✓ lean-agree        rejects a constant the proofs reason about drifting from the one the runtime uses
+  ? theorem-pages-gate .vitepress/dist/theorem/lean_units_are_six.html absent — cannot control
+  ✓ receipt-audit     rejects a receipt whose uuid no longer addresses its own message  ○ but does not name the mutated file
+  ✓ gate-corpus       rejects an honest sentence being asserted to drain  ○ but does not name the mutated file
+  ? seal-lean         src/proof/theorems.lean absent — cannot control
+  ✓ lean-claims       rejects the runtime computing a doubling orbit that is not the one the proofs assert  ○ but does not name the mutated file
+  ? import-gate       .vitepress/dist/compare.html absent — cannot control
+  ✓ rights            rejects a right claimed that does not arise without formality — a registry's act asserted as an author's  ○ but does not name the mutated file
+  ✓ notice-reads-the-whole-table rejects a reader that silently sees fewer instruments than the table holds, publishing a partial rights list  ○ but does not name the mutated file
+  ✓ lanes-check       rejects a neighbour count that could not be measured reported as zero, so the budget claims a machine somebody else is already using  ○ but does not name the mutated file
+  ✓ cite-audit        rejects a published /theorem/ link repointed at a key the ledger does not stand behind
+  ✓ citations-gate    rejects a legal article number that drifted — the deposit citing a provision it does not mean
+  ✓ vacuity           rejects a theorem whose quantifier ranges over nothing — green, named, and deciding no case at all
+  ✓ probe             rejects a control harness whose mutation never reaches the theorem, so every control it runs reports a pass  ○ but does not name the mutated file
+  ✓ covered-gate      rejects a generator silently erasing the record of where a dropped proof went
+  ✓ independent       rejects a network call on the verification path — a remote party standing between a checker and the answer
+  ✓ recover-dead-rule rejects a carry rule that matches no ledger key at all — silently carrying nothing while the report looks healthy
+  ✓ notice-refuses-an-overclaim rejects a right published in llms.txt that does not arise without formality — the overclaim reaching the public surface
+  ✓ readme            rejects a statement quantified over an infinite domain, which the finite-domain claim says is not there  ○ but does not name the mutated file
+  ? security-gate     .vitepress/dist/compare.html absent — cannot control
+  ✓ harmony-currency  rejects a reporting module that no longer computes
+  ? sitemap-mesh      .vitepress/dist/verify.html absent — cannot control
+  ✓ attribution-gate  rejects a citable surface naming the author without their ORCID
+  ✓ parallel-seal     rejects a fold whose root depends on the order its segments arrive in  ○ but does not name the mutated file
+  ✓ retire-lexical    rejects an entry filed as testing the removed gate whose test now passes  ○ but does not name the mutated file
+  ✓ pages             rejects the front page citing a theorem that is not live in the ledger  ○ but does not name the mutated file
+  ✓ orphan-gate       rejects a script nothing can reach  ○ but does not name the mutated file
+  ✓ imagine           rejects a proposition the kernel refuses  ○ but does not name the mutated file
+  ✓ verify            rejects an entry citing a theorem that is not sealed  ○ but does not name the mutated file
+  ✓ translate-gate    rejects a rendering that substitutes a rebound name and still type-checks  ○ but does not name the mutated file
+  ✓ clusters          rejects a fold under which a cluster's joint address depends on the order its receipts arrive in  ○ but does not name the mutated file
+  ✓ crypto-kat        rejects a curve whose published test vectors no longer reproduce — self-consistent and not Ed25519  ○ but does not name the mutated file
+  ✓ gaps              rejects a published page dropped from the sidebar  ○ but does not name the mutated file
+
+✗ gates-fire changed the tree and did not restore it:
+.github/workflows/net-tests.yml
+ACCOUNTING.md
+CHALLENGES.md
+HEART.md
+LESSONS.md
+  6 of them are named by a control here and have been put back; the failure stands.
+  14 changed during this run but are named by NO control here, so they are NOT this run's
+  to revert and have been LEFT ALONE — an edit made while the suite ran looks exactly like a
+  stranded mutation, and reverting it would destroy work. Check them yourself:
+    · .github/workflows/net-tests.yml
+    · ACCOUNTING.md
+    · HEART.md
+    · PRIOR-ART.md
+    · llms.txt
+    · paper.md
+    · public/llms.txt
+    · scripts/answer-verify-doi.ts
+    · scripts/online-verify-e2e-test.ts
+    · scripts/run-suite-security-test.ts

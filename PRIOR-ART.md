@@ -6,8 +6,8 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,021 machine-checked declarations, **25,966** restate work that already has an author and
-**55** are about this deposit's own construction. Each source file declares which it is, in its own
+Of 26,021 machine-checked declarations, **25,974** restate work that already has an author and
+**47** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
@@ -27,12 +27,12 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **25,966** |
-| unclassified — no search performed, status unknown | **55** |
+| attributed to named earlier work | **25,974** |
+| unclassified — no search performed, status unknown | **47** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
-that everything here already has an author. It is not that. **55** theorems have had no prior-art
+that everything here already has an author. It is not that. **47** theorems have had no prior-art
 search at all, so their status is unknown rather than conceded — and of the 38 distinct years the
 attributions carry, **29** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
@@ -42,18 +42,19 @@ looked.** It is a statement about work not done, not about work found.
 caveat cannot be separated by an edit.
 
 A source may claim novelty only if it names a prior-art search that was actually performed — what was
-searched, where, and when. An earlier version of this page claimed novelty for 8 sources and
-55 theorems on the strength of their own self-description, with nobody having looked. Asserting
+searched, where, and when. An earlier version of this page claimed novelty for 7 sources and
+47 theorems on the strength of their own self-description, with nobody having looked. Asserting
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 97 sources, 25,966 theorems
+## Restated from named earlier work — 98 sources, 25,974 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
 
 <table><thead><tr><th>source</th><th>theorems</th><th>domain</th><th>whose work</th></tr></thead><tbody>
 <tr><td><code>address.lean</code></td><td>33</td><td>content addressing by cryptographic hash — SHA-256 digests as immutable identifiers</td><td>composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)</td></tr>
+<tr><td><code>answer.lean</code></td><td>8</td><td>primality certificates — a probable prime is not a proved prime (Miller–Rabin, 1976/1980; a proof is a certificate or a deterministic test)</td><td>the c2 rules restate that distinction and claim nothing of it; the c1 rules and the gate's own agreement with its rules are this deposit's answer system (src/answer), stated here so the TypeScript can be held to the file.</td></tr>
 <tr><td><code>apis.lean</code></td><td>4</td><td>public API directories — the OpenAPI catalogue of APIs.guru</td><td>the counts are over the APIs.guru directory (apis.guru), which is the named source; the partition identities are this tree's own arithmetic over its run.</td></tr>
 <tr><td><code>arith.lean</code></td><td>7</td><td>elementary number theory — trial division and primality</td><td>trial division is the classical method for finding a prime factor (Wikipedia, "Integer factorization"); Fermat's factorization method is a second classical route (Wikipedia, "Fermat's factorization method"). The file's decisions are kernel-checked instances of these; neither method is new here.</td></tr>
 <tr><td><code>asymmetric.lean</code></td><td>11</td><td>public-key signatures on elliptic curves</td><td>Ed25519 — Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe and Bo-Yin Yang, 2011; standardised as RFC 8032 (Josefsson and Liusvaara, 2017). SHA-512 is FIPS 180-4 (NIST). The curve, the signature scheme and the hash are all theirs and none is this deposit's. The implementation in src/0/ed25519.ts is checked against their published vectors by scripts/crypto-kat.ts, which is where the assurance for the PRIMITIVE lives — not here. Nothing below decides that Ed25519 is secure, and a file that appeared to would be claiming a result nobody has.</td></tr>
@@ -202,6 +203,7 @@ which is a contribution of verification, not of discovery.
 - **modular arithmetic, quantified** — 63 theorems, in `families.lean`
 - **non-cryptographic hashing** — 14 theorems, in `fnv.lean`
 - **positional notation and the counting of subsets — powers of two** — 3 theorems, in `hexbit_route.lean`
+- **primality certificates — a probable prime is not a proved prime (Miller–Rabin, 1976/1980; a proof is a certificate or a deterministic test)** — 8 theorems, in `answer.lean`
 - **public API directories — the OpenAPI catalogue of APIs.guru** — 4 theorems, in `apis.lean`
 - **public-key signatures on elliptic curves** — 11 theorems, in `asymmetric.lean`
 - **siteswap notation for juggling (Klimek, Tiemann and Magnusson, independently c. 1985; the average theorem and the permutation criterion are due to Buhler, Eisenbud, Graham and Wright, 1994); the Pythagorean comma (antiquity); Maekawa's and Kawasaki's theorems on flat-foldable vertices (1980s); the crystallographic restriction theorem (19th century, Bravais and after); the moment of inertia and angular acceleration (Euler, Newton); the least common multiple (Euclid).** — 8 theorems, in `entangled.lean`
@@ -230,7 +232,7 @@ is worth saying precisely, because it is both smaller than a discovery claim and
 Author and year are given rather than a resolver identifier. Asserting a DOI for someone else's paper without
 verifying it would be a fabricated citation, and this is the worst document in the deposit to put one in.
 
-## This deposit's own construction — 8 sources, 55 theorems, none claimed
+## This deposit's own construction — 7 sources, 47 theorems, none claimed
 
 The ℤ/9 vortex framework, its ledger, its receipts, and the enumeration its own generators proposed. These are
 **unclassified**: no prior-art search has been performed for them, so nothing is claimed about them either
@@ -241,7 +243,6 @@ To move a source out of this table, add `-- prior_art_search:` to it naming the 
 refuses a `none-known` declaration that does not carry one.
 
 <table><thead><tr><th>source</th><th>theorems</th><th>note</th></tr></thead><tbody>
-<tr><td><code>answer.lean</code></td><td>8</td><td>—</td></tr>
 <tr><td><code>answer_gate.lean</code></td><td>7</td><td>—</td></tr>
 <tr><td><code>answer_route.lean</code></td><td>6</td><td>—</td></tr>
 <tr><td><code>cern.lean</code></td><td>9</td><td>—</td></tr>
@@ -260,5 +261,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `1027d220-ec9b-81f1-bec4-bc124a9b8dde` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `ed105ced-8927-8c52-a518-f2f735758401` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

@@ -507,7 +507,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_second_seed_is_the_first_hex_word_of_the_golden_ratio",
-    "description": "(2 * 2654435769 + 2 ^ 32) ^ 2 ≤ 5 * 2 ^ 64 ∧ 5 * 2 ^ 64 < (2 * 2654435769 + 2 + 2 ^ 32) ^ 2 ∧ SEEDS.getD 1 0 = 2654435769",
+    "description": "bracketsPhi (SEEDS.getD 1 0) = true ∧ bracketsPhi (SEEDS.getD 1 0 + 1) = false ∧ bracketsPhi (SEEDS.getD 1 0 - 1) = false",
     "identifier": "lean_address_the_second_seed_is_the_first_hex_word_of_the_golden_ratio",
     "receipt": "d23de002-cad9-876d-a499-98f67b85cb65",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_second_seed_is_the_first_hex_word_of_the_golden_ratio",
@@ -526,7 +526,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_third_seed_is_the_first_hex_word_of_pi_by_bbp",
-    "description": "bbp 24 24 / 16 ^ 16 = 3 * 16 ^ 8 + 608135816 ∧ SEEDS.getD 2 0 = 608135816",
+    "description": "bbp 24 24 / 16 ^ 16 = 3 * 16 ^ 8 + SEEDS.getD 2 0",
     "identifier": "lean_address_the_third_seed_is_the_first_hex_word_of_pi_by_bbp",
     "receipt": "41c1c330-4462-8e84-9756-9f9613f39631",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_third_seed_is_the_first_hex_word_of_pi_by_bbp",
@@ -564,7 +564,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi",
-    "description": "eSeries 24 30 / 16 ^ 16 = 2 * 16 ^ 8 + 3084996962 ∧ SEEDS.getD 3 0 = 3084996962 ∧ 3084996962 ≠ 608135816",
+    "description": "eSeries 24 30 / 16 ^ 16 = 2 * 16 ^ 8 + SEEDS.getD 3 0 ∧ SEEDS.getD 3 0 ≠ SEEDS.getD 2 0",
     "identifier": "lean_address_the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi",
     "receipt": "6527882b-187f-86d3-9226-4be30e938b00",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_fourth_seed_is_the_first_hex_word_of_e_not_of_pi",
@@ -1058,7 +1058,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "apis_live_verdicts_partition_the_catalogue",
-    "description": "reachable + notReachable + refused + gated + notMeasured = catalogue",
+    "description": "isPartition liveVerdicts 5 = true ∧ isPartition (liveVerdicts ++ [5]) 5 = false ∧ liveVerdicts.length = catalogue ∧ tally liveVerdicts 0 = reachable ∧ tally liveVerdicts 1 = notReachable ∧ tally liveVerdicts 2 = refused ∧ tally liveVerdicts 3 = gated ∧ tally liveVerdicts 4 = notMeasured",
     "identifier": "lean_apis_apis_live_verdicts_partition_the_catalogue",
     "receipt": "67b183b0-4f1c-8032-bb51-9d4f6aa4edce",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_apis_apis_live_verdicts_partition_the_catalogue",
@@ -1077,7 +1077,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "apis_every_spec_is_proven",
-    "description": "specProven = catalogue",
+    "description": "specVerdicts.all (fun v => v == 1) = true ∧ (specVerdicts ++ [0]).all (fun v => v == 1) = false ∧ specVerdicts.length = catalogue ∧ tally specVerdicts 1 = specProven",
     "identifier": "lean_apis_apis_every_spec_is_proven",
     "receipt": "6db3aa56-3cb7-868c-9237-5a3d5c77b850",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_apis_apis_every_spec_is_proven",
@@ -1096,7 +1096,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "apis_reachable_is_within_specs",
-    "description": "reachable ≤ specProven",
+    "description": "(liveVerdicts.zip specVerdicts).all (fun p => p.1 != 0 || p.2 == 1) = true ∧ ([0].zip [0]).all (fun p => p.1 != 0 || p.2 == 1) = false",
     "identifier": "lean_apis_apis_reachable_is_within_specs",
     "receipt": "1fb5541e-a3b4-8490-a137-f2a57f529204",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_apis_apis_reachable_is_within_specs",
@@ -1115,7 +1115,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "apis_gated_is_not_called",
-    "description": "gated + reachable + notReachable + refused + notMeasured = catalogue",
+    "description": "tally liveVerdicts 3 = gated ∧ (liveVerdicts.filter (fun v => v != 3)).length + gated = catalogue ∧ tally (liveVerdicts.filter (fun v => v != 3)) 3 = 0 ∧ tally (liveVerdicts.filter (fun v => v != 3) ++ [3]) 3 = 1",
     "identifier": "lean_apis_apis_gated_is_not_called",
     "receipt": "a8515a12-57bc-8037-9c53-f597acc14cce",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_apis_apis_gated_is_not_called",
@@ -2084,7 +2084,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "records_are_numeric_plus_slug",
-    "description": "records = numericIds + slugAliases",
+    "description": "exact [numericIds, slugAliases] records = true",
     "identifier": "lean_cern_records_are_numeric_plus_slug",
     "receipt": "1ef787d9-f481-82fb-8f91-4b6deac4317e",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_cern_records_are_numeric_plus_slug",
@@ -2103,7 +2103,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "listed_urls_are_records_plus_duplicates",
-    "description": "listedRecordUrls = records + duplicatedInSitemap",
+    "description": "exact [records, duplicatedInSitemap] listedRecordUrls = true",
     "identifier": "lean_cern_listed_urls_are_records_plus_duplicates",
     "receipt": "072967b1-d730-80b4-a62a-4017e8873a55",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_cern_listed_urls_are_records_plus_duplicates",
@@ -2122,7 +2122,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "urls_are_listed_records_plus_non_records",
-    "description": "urls = listedRecordUrls + nonRecordUrls",
+    "description": "exact [listedRecordUrls, nonRecordUrls] urls = true",
     "identifier": "lean_cern_urls_are_listed_records_plus_non_records",
     "receipt": "cfc45f5f-63cf-89f2-89a5-7b402c7c363f",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_cern_urls_are_listed_records_plus_non_records",
@@ -2141,7 +2141,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fixed_and_swapped_partition_the_records",
-    "description": "fixed + swapped = records",
+    "description": "exact [fixed, swapped] records = true",
     "identifier": "lean_cern_fixed_and_swapped_partition_the_records",
     "receipt": "1b91917e-b4c5-81e4-880b-c615af452b83",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_cern_fixed_and_swapped_partition_the_records",
@@ -2160,7 +2160,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "oai_harvest_is_complete",
-    "description": "oaiHarvested = oaiCompleteListSize",
+    "description": "exact [oaiHarvested] oaiCompleteListSize = true",
     "identifier": "lean_cern_oai_harvest_is_complete",
     "receipt": "883de117-ad54-81d3-845b-9584181eb37c",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_cern_oai_harvest_is_complete",
@@ -2179,7 +2179,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "oai_union_is_the_sum_of_its_parts",
-    "description": "oaiHarvested = oaiInBoth + oaiOnly ∧ oaiUnion = oaiInBoth + oaiOnly + siteOnly",
+    "description": "exact [oaiInBoth, oaiOnly] oaiHarvested = true ∧ exact [oaiInBoth, oaiOnly, siteOnly] oaiUnion = true",
     "identifier": "lean_cern_oai_union_is_the_sum_of_its_parts",
     "receipt": "df70e4d8-e985-8d10-9c59-de2ae643cc5c",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_cern_oai_union_is_the_sum_of_its_parts",
@@ -2217,7 +2217,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fixed_count_is_the_bucket_of_digit_five",
-    "description": "roots.getD 5 0 = fixed",
+    "description": "fixedDigits = [5] ∧ bucketSum roots fixedDigits = fixed ∧ bucketSum roots ((List.range 10).filter (fun d => reflect d != d)) = swapped ∧ bucketSum roots fixedDigits + bucketSum roots ((List.range 10).filter (fun d => reflect d != d)) = total roots",
     "identifier": "lean_cern_the_fixed_count_is_the_bucket_of_digit_five",
     "receipt": "1a5ac5a1-7816-82f1-90e4-70928b22984f",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_cern_the_fixed_count_is_the_bucket_of_digit_five",

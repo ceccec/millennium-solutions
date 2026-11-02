@@ -110,6 +110,42 @@ const LEDGER_TOOLS = Object.entries(NEEDS)
 /** `formulas` is declared `tree` and that stays true — it reads the Lean sources in the full server. Here it
  *  is satisfied by data the package carries, which is a different thing from the requirement disappearing. */
 const DATA_TOOLS = ['formulas']
+/** ── BAKED: THE ANSWER SHIPS WHERE THE LOGIC CANNOT ──────────────────────────────────────────────────────
+ *  Thirty-nine tools needed only the tree or the ledger and an install reached none of them (leads.ts,
+ *  mcp-reach). Their logic is repository logic, but their BARE answer is a value, and a value can travel the
+ *  way the ledger and the formula catalogue do: computed at build by scripts/build-dist.ts from the very
+ *  handlers the full server runs, twice (an answer that flaps is not baked), under a size budget, and shipped as
+ *  dist/data/baked/<tool>.json beside a stamp of the tree it came from. What can be baked is decided here, from
+ *  the declarations: needs within tree/ledger/core, writes nothing, requires no argument. What WAS baked is
+ *  decided by the build and loaded by the transport — a tool the build could not bake stays unreachable and
+ *  says why. A baked call carries its stamp; a call WITH arguments is refused, because the bake is the bare
+ *  answer and nothing here can recompute another. Ordered 2026-11-02: "bake the 39 so an npm install reaches
+ *  them"; the same move took uuidna.com's refusing doors to answers (its ledger-deposit --bake). */
+const OUTSIDE_ANY_PACKAGE = new Set(['lean', 'net', 'git', 'shared'])
+export const BAKEABLE: string[] = TOOLS.map((t) => t.name).filter((n) =>
+  !CORE_TOOLS.includes(n) && !LEDGER_TOOLS.includes(n) && !DATA_TOOLS.includes(n)
+  && (NEEDS[n] ?? ['tree']).every((x) => !OUTSIDE_ANY_PACKAGE.has(x))
+  && !WRITES.has(n)
+  && ((TOOLS.find((t) => t.name === n)?.inputSchema as { required?: string[] } | undefined)?.required ?? []).length === 0).sort()
+export type Bake = { stamp: Record<string, unknown>; answers: Record<string, string>; notBaked: Record<string, string> }
+let BAKE: Bake | null = null
+export const withBake = (b: Bake) => { BAKE = b }
+export const hasBake = () => BAKE !== null
+const bakedNames = (): string[] => (BAKE ? Object.keys(BAKE.answers).filter((n) => BAKEABLE.includes(n)) : [])
+/** Tools that are a pure function of a baked answer — the full server computes `family` by filtering the lines of
+ *  `qpu_families`, and so can this entry once that answer is loaded. Served when their source is. */
+export const FROM_BAKE: Record<string, string> = { family: 'qpu_families' }
+const fromBakeNames = (): string[] => Object.entries(FROM_BAKE).filter(([, src]) => BAKE?.answers[src] !== undefined).map(([n]) => n)
+/** Why a tool the package does not serve is not served — derived from its declaration, never a shrug. */
+export const whyNot = (name: string): string => {
+  if (CANNOT_SHIP[name]) return CANNOT_SHIP[name]
+  if (BAKE?.notBaked[name]) return BAKE.notBaked[name]
+  if (WRITES.has(name)) return 'it writes to the tree, and a package has no tree to write to'
+  const req = (TOOLS.find((t) => t.name === name)?.inputSchema as { required?: string[] } | undefined)?.required ?? []
+  if (req.length && BAKEABLE.every((n) => n !== name) && (NEEDS[name] ?? []).every((x) => !OUTSIDE_ANY_PACKAGE.has(x)))
+    return `it takes \`${req.join(', ')}\`, and no bare answer stands in for an argument the caller chooses — clone the repository for it`
+  return `it needs ${(NEEDS[name] ?? ['the repository']).join('+')}: clone the repository and run \`npm run mcp\``
+}
 export const SERVED_CORE = [...CORE_TOOLS].sort()
 export const SERVED_WITH_LEDGER = [...CORE_TOOLS, ...LEDGER_TOOLS, ...DATA_TOOLS].sort()
 /** WHAT IS SERVED DEPENDS ON WHAT IS LOADED, so this is a function and not a constant. A constant would have
@@ -119,6 +155,8 @@ export const served = (): string[] => [
   ...SERVED_CORE,
   ...(hasLedger() ? LEDGER_TOOLS : []),
   ...(hasFormulas() ? DATA_TOOLS : []),
+  ...bakedNames(),
+  ...fromBakeNames(),
 ].sort()
 
 /** ── THE FORMULAS, OVER DATA THE PACKAGE CARRIES ───────────────────────────────────────────────────────────
@@ -211,6 +249,15 @@ const H: Record<string, (a: any) => string> = {
     return JSON.stringify({ handle: handle(text), hex: HANDLE_HEX, address: toUuid(text),
       note: 'The first four hex of the address. Nothing but the message ever travels — the handle plus the message determine the whole address.' })
   },
+  family: (a) => {
+    const src = BAKE?.answers[FROM_BAKE.family]
+    if (src === undefined) throw new Error('family filters the lines of qpu_families, and that answer is not loaded here — the published package carries it at dist/data/baked/qpu_families.json')
+    const name = String(a?.name ?? '').trim().toLowerCase()
+    if (!/^[a-z][a-z0-9]*$/.test(name)) return JSON.stringify({ status: 'REFUSED', why: 'a family name is one lowercase word, such as analytics' })
+    const lines = src.split('\n').filter((l) => l.toLowerCase().includes(name))
+    return JSON.stringify({ family: name, lines: lines.length, status: lines.length ? 'FOUND' : 'NOT_FOUND', tests: lines.slice(0, 12),
+      baked: true, ...(BAKE?.stamp ?? {}), note: 'filtered from the qpu_families answer baked at build — the same filter the full server applies, over the same lines' })
+  },
   honesty_gate: (a) => {
     const text = String(a?.text ?? '')
     if (!text) throw new Error('honesty_gate: text is required — the gate reads prose the caller passes in; it reads no file here')
@@ -253,14 +300,16 @@ export const listTools = (name?: unknown): string => {
     if (!t) throw new Error(`unknown tool: ${String(name)} — call list_tools with no name for the list`)
     const avail = served().includes(t.name)
     return JSON.stringify({ name: t.name, description: t.description, inputSchema: t.inputSchema, available: avail,
-      ...(avail ? {} : { needs: NEEDS[t.name], why: CANNOT_SHIP[t.name] ?? 'needs the repository: clone it and run `npm run mcp` for the full surface' }) })
+      ...(bakedNames().includes(t.name) ? { baked: true, ...(BAKE?.stamp ?? {}) } : {}),
+      ...(avail ? {} : { needs: NEEDS[t.name], why: whyNot(t.name) }) })
   }
   return JSON.stringify({
     entry: 'self-sufficient — runs from the published package with no account, key, model, network or clone',
     serves: `${served().length} of ${TOOLS.length} tools`,
     ledgerLoaded: hasLedger(),
     tools: served().map((n) => ({ name: n, description: first(TOOLS.find((t) => t.name === n)?.description ?? '') })),
-    elsewhere: TOOLS.filter((t) => !served().includes(t.name)).map((t) => ({ name: t.name, needs: NEEDS[t.name], why: CANNOT_SHIP[t.name] ?? 'needs the repository' })),
+    baked: bakedNames().length ? { tools: bakedNames().length, ...(BAKE?.stamp ?? {}) } : null,
+    elsewhere: TOOLS.filter((t) => !served().includes(t.name)).map((t) => ({ name: t.name, needs: NEEDS[t.name], why: whyNot(t.name) })),
     note: 'The other tools are not hidden and not broken: each names what it needs. Clone the repository for the full surface.',
   })
 }
@@ -269,10 +318,18 @@ export const run = (name: string, a: any): string => {
   if (name === 'list_tools') return listTools(a?.name)
   if (name === 'call_tool') return run(String(a?.name ?? ''), a?.arguments ?? {})
   const h = H[name]
+  if (!h && BAKE && BAKE.answers[name] !== undefined && BAKEABLE.includes(name)) {
+    const args = a && typeof a === 'object' ? Object.keys(a as Record<string, unknown>) : []
+    if (args.length) throw new Error(`${name} is served BAKED — its bare answer, computed at build from the repository — and a call with `
+      + `arguments (${args.join(', ')}) asks for an answer the package cannot recompute. Call it without arguments, or clone the repository and run \`npm run mcp\`.`)
+    let answer: unknown = BAKE.answers[name]
+    try { answer = JSON.parse(BAKE.answers[name]) } catch { /* a text answer stays text */ }
+    return JSON.stringify({ baked: true, ...BAKE.stamp, tool: name, answer,
+      note: 'The bare answer this tool gave at build, from the tree the stamp names — not a recomputation here. Integrity of the stamp, not truth of the answer.' })
+  }
   if (!h) {
     const declared = TOOLS.find((t) => t.name === name)
-    if (declared) throw new Error(`${name} is a tool of this deposit but is not served by the self-sufficient entry: `
-      + (CANNOT_SHIP[name] ?? `it needs ${(NEEDS[name] ?? []).join('+')}`) + '. Clone the repository and run `npm run mcp`.')
+    if (declared) throw new Error(`${name} is a tool of this deposit but is not served by the self-sufficient entry: ${whyNot(name)}`)
     throw new Error(`unknown tool: ${name} — call list_tools for what this entry serves`)
   }
   return h(a)

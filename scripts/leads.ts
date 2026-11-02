@@ -10,7 +10,7 @@
  *  questions cheaply. What it refuses to do is let the list be silent. */
 import { readFileSync, readdirSync, existsSync} from 'node:fs'
 import { NEEDS as MCP_NEEDS, TOOLS as MCP_TOOLS, SELF_SUFFICIENT, type Need } from '../src/mcp/index.ts'
-import { SERVED_WITH_LEDGER as SERVED_BY_PACKAGE } from '../src/mcp/serve.ts'
+import { SERVED_WITH_LEDGER as SERVED_BY_PACKAGE, FROM_BAKE } from '../src/mcp/serve.ts'
 const TOOL_NAMES = MCP_TOOLS.map((t) => t.name)
 import { homedir } from 'node:os'
 import { execSync } from 'node:child_process'
@@ -190,7 +190,12 @@ for (const f of leanFiles()) {
 // package, which is a different thing. A requirement met is not a requirement absent, and the proxy reported
 // tools as out of reach while a stranger was already running three of them. What the lead is about is what an
 // install can reach, so that is what it counts now.
-const unreachable = TOOL_NAMES.filter((n) => !SERVED_BY_PACKAGE.includes(n))
+// WHAT THE LAST BUILD BAKED COUNTS AS REACHED — read from dist/data/baked/index.json, which the build writes and
+// which names, for every bakeable tool it could not bake, why. No build yet means nothing baked, which is the truth
+// of an install made from this tree today.
+const bakedNow: string[] = (() => { try { return (JSON.parse(readFileSync('dist/data/baked/index.json', 'utf8')) as { baked: string[] }).baked } catch { return [] } })()
+const derivedNow = Object.entries(FROM_BAKE).filter(([, src]) => bakedNow.includes(src)).map(([n]) => n)
+const unreachable = TOOL_NAMES.filter((n) => !SERVED_BY_PACKAGE.includes(n) && !bakedNow.includes(n) && !derivedNow.includes(n))
 // ROTATED THROUGH ITS CAUSES. "Cannot reach" was two leads wearing one count. A tool whose need is the Lean
 // toolchain, the network, a git checkout or a sibling's directory is an HONEST requirement — no package can
 // carry a kernel or somebody else's server, and the lead's own text said so while counting them anyway. A
@@ -202,7 +207,7 @@ const honest = unreachable.filter((n) => (MCP_NEEDS[n] ?? []).some((x) => OUTSID
 const bakeable = unreachable.filter((n) => !honest.includes(n))
 if (honest.length) console.log(`  (${honest.length} MCP tool(s) need a toolchain, the network, git or a sibling's directory, which no package can carry — ${honest.map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' ')} — honest requirements, named by list_tools before a call, and not leads)\n`)
 add('mcp-reach', bakeable.length,
-  `MCP tool(s) an npm install cannot reach whose only need is the tree or the ledger — an answer a package can carry (${SERVED_BY_PACKAGE.length} of ${TOOL_NAMES.length} served, ledger included): `
+  `MCP tool(s) an npm install cannot reach whose only need is the tree or the ledger — an answer a package can carry (${SERVED_BY_PACKAGE.length + bakedNow.length + derivedNow.length} of ${TOOL_NAMES.length} served, ledger, ${bakedNow.length} baked answer(s) and ${derivedNow.length} derived from them included): `
   + bakeable.map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' '),
   'move each onto data or logic the package carries — shipping the ledger took the count from 19 to 16 and '
   + 'public/formulas.jsonld took `formulas` — or name it in src/mcp/serve.ts CANNOT_SHIP with a reason that is '
