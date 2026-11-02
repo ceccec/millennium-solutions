@@ -31,7 +31,10 @@ const signed = existsSync('src/receipts') ? readdirSync('src/receipts').filter((
 const tags = cap('git tag').split('\n').filter(Boolean).length
 const latest = cap('git describe --tags --abbrev=0', 'v0')
 const ledgerTag = cap('git describe --tags --abbrev=0 $(git log -1 --format=%H -- src/proof/discovered.json)', latest)
-const files = cap('git ls-files').split('\n').filter(Boolean).length
+// tracked PLUS what `git add -A` is about to track: the chain regenerates this page and then commits new files it made in
+// the same run (a constants snapshot under a new handle), so a count of tracked files alone moved by 2 across the commit it
+// rode in, and the pre-push regeneration refused the push (2026-11-03). Counting the not-ignored set is stable across that commit.
+const files = cap('git ls-files --cached --others --exclude-standard').split('\n').filter(Boolean).length
 
 // each row is (label, value), and every value is MEASURED above — never typed here. Most are counts; the
 // released-version row is the tag that last moved the ledger, which is a name rather than a number, so the
