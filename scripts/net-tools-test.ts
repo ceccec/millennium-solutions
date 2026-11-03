@@ -210,6 +210,12 @@ const main = async () => {
     if (why) {
       failed += 1
       console.log(`✗ ${c.tool} — ${c.name}: ${why}`)
+      // the tool's own words, so a run on another machine names its cause without a second run: the lines that carry a
+      // verdict or a refusal, else the head of the answer (a CI run on 2026-11-02 reported three cases red with only
+      // "no hook verdict" and "searched undefined" to go on)
+      const telling = text.split('\n').filter((l) => /✗|REFUSED|FAILED|SKIPPED|Error|error:|not found|ENOENT/.test(l)).slice(0, 6)
+      for (const l of (telling.length ? telling : [text.slice(0, 300)])) console.log(`    │ ${l.trim().slice(0, 240)}`)
+      if (run.status !== 0) console.log(`    │ exit ${run.status}${run.signal ? ' signal ' + run.signal : ''}`)
     } else {
       console.log(`✓ ${c.tool} — ${c.name}`)
     }

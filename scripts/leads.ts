@@ -30,7 +30,7 @@ type Lead = { area: string; n: number; what: string; how: string; causes: Cause[
  *
  *  The cause vocabulary is deliberately small. A cause per lead would cross nothing, which is the failure mode
  *  of every taxonomy invented to make a report look organised. */
-type Cause = 'publication' | 'authority' | 'instrument' | 'derivation' | 'environment'
+type Cause = 'publication' | 'authority' | 'instrument' | 'derivation' | 'environment' | 'unbuilt'
 const CAUSES: Record<Cause, string> = {
   publication: 'the surface a stranger receives is narrower than the tree — work exists here and does not reach them',
   authority: 'it needs an act only the depositor can perform: a credential, a token, a signature',
@@ -193,7 +193,13 @@ for (const f of leanFiles()) {
 // WHAT THE LAST BUILD BAKED COUNTS AS REACHED — read from dist/data/baked/index.json, which the build writes and
 // which names, for every bakeable tool it could not bake, why. No build yet means nothing baked, which is the truth
 // of an install made from this tree today.
-const bakedNow: string[] = (() => { try { return (JSON.parse(readFileSync('dist/data/baked/index.json', 'utf8')) as { baked: string[] }).baked } catch { return [] } })()
+// WHICH LAYER OBSERVES THE CLAIM. The bake runs at pack (prepack → build-dist), so a release runner, which never packs,
+// has no index — and on 2026-11-02 that absence was counted as 30 closable leads and refused the tag push, while the same
+// tree with a bake beside it counted 0. An absent bake on this machine is not 30 open items: it is a measurement this
+// machine cannot make. The area is then reported UNBUILT — not closable here, not the depositor's — and the published
+// surface is measured where it exists: publish.yml installs the packed tarball and asks it.
+const bakeIndex = (() => { try { return JSON.parse(readFileSync('dist/data/baked/index.json', 'utf8')) as { baked: string[] } } catch { return null } })()
+const bakedNow: string[] = bakeIndex?.baked ?? []
 const derivedNow = Object.entries(FROM_BAKE).filter(([, src]) => bakedNow.includes(src)).map(([n]) => n)
 const unreachable = TOOL_NAMES.filter((n) => !SERVED_BY_PACKAGE.includes(n) && !bakedNow.includes(n) && !derivedNow.includes(n))
 // ROTATED THROUGH ITS CAUSES. "Cannot reach" was two leads wearing one count. A tool whose need is the Lean
@@ -210,12 +216,13 @@ const requiresArgument = (n: string) => (((MCP_TOOLS.find((t) => t.name === n)?.
 const honest = unreachable.filter((n) => (MCP_NEEDS[n] ?? []).some((x) => OUTSIDE_ANY_PACKAGE.includes(x)) || requiresArgument(n) || MCP_WRITES.has(n))
 const bakeable = unreachable.filter((n) => !honest.includes(n))
 if (honest.length) console.log(`  (${honest.length} MCP tool(s) need a toolchain, the network, git or a sibling's directory, an argument the caller chooses, or a tree to write to, which no package can carry — ${honest.map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' ')} — honest requirements, named by list_tools before a call, and not leads)\n`)
+if (!bakeIndex && bakeable.length) console.log(`  (${bakeable.length} bakeable MCP tool(s) are counted UNBUILT: no dist/data/baked on this machine, so what an install reaches is not measurable here — node scripts/build-dist.ts bakes, publish.yml measures the tarball)`)
 add('mcp-reach', bakeable.length,
   `MCP tool(s) an npm install cannot reach whose only need is the tree or the ledger — an answer a package can carry (${SERVED_BY_PACKAGE.length + bakedNow.length + derivedNow.length} of ${TOOL_NAMES.length} served, ledger, ${bakedNow.length} baked answer(s) and ${derivedNow.length} derived from them included): `
   + bakeable.map((n) => `${n}:${(MCP_NEEDS[n] ?? []).join('+')}`).join(' '),
   'move each onto data or logic the package carries — shipping the ledger took the count from 19 to 16 and '
   + 'public/formulas.jsonld took `formulas` — or name it in src/mcp/serve.ts CANNOT_SHIP with a reason that is '
-  + 'true today, as `discover` and `recompute` are', ['publication'])
+  + 'true today, as `discover` and `recompute` are', bakeIndex ? ['publication'] : ['publication', 'unbuilt'])
 
 const shipsMcp = (() => {
   try {
@@ -275,7 +282,9 @@ console.log(`\n○ leads: ${leads.length} open area(s), ${leads.reduce((a, b) =>
 // every push on the whole count, which held 49 commits for ten days behind the depositor's Zenodo token: a gate that no
 // act in the tree can turn green is not a gate. The two counts are printed apart, and the push gate reads the first.
 const depositor = leads.filter((L) => L.causes.includes('authority'))
-const closable = leads.filter((L) => !L.causes.includes('authority'))
+const unbuilt = leads.filter((L) => L.causes.includes('unbuilt'))
+const closable = leads.filter((L) => !L.causes.includes('authority') && !L.causes.includes('unbuilt'))
+if (unbuilt.length) console.log(`  not measurable on this machine: ${unbuilt.length} area(s), ${unbuilt.reduce((a, b) => a + b.n, 0)} item(s) (no bake here; the packed tarball is where an install's reach is measured)`)
 console.log(`  closable here: ${closable.length} area(s), ${closable.reduce((a, b) => a + b.n, 0)} item(s) · waiting on the depositor: ${depositor.length} area(s), ${depositor.reduce((a, b) => a + b.n, 0)} item(s)${depositor.length ? ' (' + depositor.map((L) => L.area).join(', ') + ')' : ''}`)
 console.log(`  ${theoremCount()} theorems · ${live().length} live keys · ${l.length} ledger entries.`)
 console.log(`  Reports and does not fail: an open question is work not done, which is not the same as work`)
