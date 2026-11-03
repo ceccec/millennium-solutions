@@ -34,7 +34,12 @@ const ledgerTag = cap('git describe --tags --abbrev=0 $(git log -1 --format=%H -
 // tracked PLUS what `git add -A` is about to track: the chain regenerates this page and then commits new files it made in
 // the same run (a constants snapshot under a new handle), so a count of tracked files alone moved by 2 across the commit it
 // rode in, and the pre-push regeneration refused the push (2026-11-03). Counting the not-ignored set is stable across that commit.
+// A FIGURE ABOUT THE OBSERVER, NOT THE SUBJECT. The count of files in this repository changes with the very commit that
+// records it (the chain adds a constants snapshot in the same run) and with what a given machine leaves untracked (a
+// release runner refused the tag push on 2026-11-03 over exactly this row, after the chain's own commit had moved it by
+// 2 the day before). It is printed to the console and left out of the committed page, as the live count was before it.
 const files = cap('git ls-files --cached --others --exclude-standard').split('\n').filter(Boolean).length
+console.log(`  files in the not-ignored set on this machine: ${files} (console only — an observer figure, not committed)`)
 
 // each row is (label, value), and every value is MEASURED above — never typed here. Most are counts; the
 // released-version row is the tag that last moved the ledger, which is a name rather than a number, so the
@@ -46,7 +51,6 @@ const rows: [string, number | string][] = [
   ['Coins on the ledger (theorems × 2)', theorems * COINS_PER_RECEIPT],
   ['Coins on signed receipts (× 2)', signed * COINS_PER_RECEIPT],
   ['Released versions (as of the last ledger change)', ledgerTag],
-  ['Tracked, content-addressed files', files],
 ]
 const address = merkleFold(rows.map(([k, v]) => toUuid(k + ':' + v)))
 

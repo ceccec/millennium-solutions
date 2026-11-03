@@ -228,7 +228,7 @@ export const NEEDS: Record<string, Need[]> = {
   gates_fire: ['net', 'tree'],
   readers: ['net', 'tree'],
   live: ['net', 'tree'],
-  connect: ['net', 'tree'],
+  connect: ['net', 'tree', 'git'],
   // BOTH: it reaches other people's servers AND it runs a script from this tree. The first declaration said
   // only `net`, which was incomplete in the direction that flatters — a tool needing one thing looks more
   // portable than one needing two, and mcp-gate refused it.

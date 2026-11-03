@@ -95,6 +95,17 @@ const CASES: Case[] = [
   // connect — a name the connector does not serve is refused with the server's own list, never read as an answer
   { tool: 'connect', name: 'an unknown qpu tool is refused, not answered', args: { connector: 'qpu', tool: 'no_such_tool_zz', arguments: {} },
     check: (t) => need(t.includes('"status": "REFUSED"'), 'unknown tool was not refused') },
+  // connect — THE SOURCE AS FALLBACK: a door the served endpoint lacks is answered by the repository at its main sha (via names it,
+  // the served verdict rides beside); once the Worker serves it, the same case holds with no via. A door nobody has is refused by both.
+  { tool: 'connect', name: 'the source at its sha answers a door the served endpoint lacks, or the served door answers it: 91 decoded by witness 10 into 7 and 13', args: { connector: 'qpu', tool: 'algorithm', arguments: { name: 'factor', integer: '91', witness: '10' } },
+    check: (t) => { const j = json(t) as { status?: string; via?: string; served?: { status?: string }; answer?: { result?: { content?: { text?: string }[] } } } | null
+      if (j?.status !== 'ANSWERED') return `status ${j?.status}`
+      let f: string[] = []
+      try { f = (JSON.parse(String(j.answer?.result?.content?.[0]?.text ?? '')) as { factors?: string[] }).factors ?? [] } catch { return 'the factor answer could not be read' }
+      const ok = [...f].sort().join('·') === '13·7'
+      return need(ok && (!j.via || (/^github:uuidna\/qpu@[0-9a-f]{9}$/.test(j.via) && j.served?.status === 'REFUSED')), `factors ${f.join(' × ')}; via ${j.via}; served ${j.served?.status}`) } },
+  { tool: 'connect', name: 'a door nobody has is refused by the served endpoint and by the source alike', args: { connector: 'qpu', tool: 'no_such_tool_zz', arguments: {} },
+    check: (t) => need(json(t)?.status === 'REFUSED' && /no tool no_such_tool_zz/.test(String(json(t)?.why)), `status ${json(t)?.status}: ${json(t)?.why}`) },
 
   // answer — the routed answer tool: an integer goes to the arithmetic verifier and returns its certificate
   { tool: 'answer', name: 'an integer is answered FALSE with its witness', args: { question: '91' },

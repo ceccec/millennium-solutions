@@ -75,7 +75,16 @@ console.log(`✓ dist: ${files.filter((f) => f.endsWith('.js')).length} modules 
 // must not hang the build — TWICE: an answer that differs between two runs on one tree is not an answer, and
 // is not baked. Over the size budget is not baked either. Everything not baked is named with its reason in
 // index.json, which the transport hands to the pure module so list_tools says why.
-{
+// NO_BAKE=1 builds the entry and skips the bake: a machine that only needs to START the published entry (mcp-check's smoke
+// test on a runner with no dist) should not pay thirty bounded runs for answers it will not read. The index then names
+// every bakeable tool as not baked for that reason, so nothing reads an unbaked tool as reached.
+if (process.env.NO_BAKE === '1') {
+  const { BAKEABLE } = await import('../src/mcp/serve.ts')
+  const dir = join('dist', 'data', 'baked'); rmSync(dir, { recursive: true, force: true }); mkdirSync(dir, { recursive: true })
+  const notBaked = Object.fromEntries(BAKEABLE.map((n) => [n, 'not baked: NO_BAKE=1 built the entry only (mcp-check smoke); the packed tarball bakes']))
+  writeFileSync(join(dir, 'index.json'), JSON.stringify({ baked: [], notBaked, bakedFrom: 'NO_BAKE' }, null, 2))
+  console.log(`  bake skipped (NO_BAKE=1): ${BAKEABLE.length} bakeable tool(s) named not baked`)
+} else {
   const { BAKEABLE } = await import('../src/mcp/serve.ts')
   const { toUuid, merkleFold } = await import('../src/0/index.ts')
   const budgetMs = Number(process.env.BAKE_BUDGET_MS ?? 180_000), budgetBytes = 4 * 1024 * 1024 // an npm tarball beside a 15 MB catalogue, not a Worker isolate: 4 MB, which lets discoveries (2.9 MB) and recompute (1.5 MB) travel

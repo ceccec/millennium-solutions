@@ -47,7 +47,7 @@ const PUSH_PHASE1: Check[] = [
   { name: 'package-gates', cmd: ['npm', 'run', '--silent', 'gate:packages'] },
   // ONE CHECK, IN ORDER: the site chain rebuilds the generated prose, and only then is it compared with the committed text.
   // Two parallel streams would compare before the rebuild finished, so the order lives inside one command.
-  { name: 'site-chain', cmd: ['sh', '-c', 'npm run --silent predocs:build && { git diff --quiet -- README.md index.md ACCOUNTING.md paper.md paper.tex PRIOR-ART.md CHALLENGES.md solutions.md speedup.md || { echo "generated prose differs from the committed text: commit the regenerated files"; exit 1; }; }'] },
+  { name: 'site-chain', cmd: ['sh', '-c', 'npm run --silent predocs:build && { git diff --quiet -- README.md index.md ACCOUNTING.md paper.md paper.tex PRIOR-ART.md CHALLENGES.md solutions.md speedup.md || { echo "generated prose differs from the committed text: commit the regenerated files"; git --no-pager diff --stat -- README.md index.md ACCOUNTING.md paper.md paper.tex PRIOR-ART.md CHALLENGES.md solutions.md speedup.md; git --no-pager diff -U0 -- README.md index.md ACCOUNTING.md paper.md paper.tex PRIOR-ART.md CHALLENGES.md solutions.md speedup.md | grep -E "^[-+][^-+]" | head -12; exit 1; }; }'] },
   { name: 'metrics-enforce', cmd: ['sh', '-c', 'mkdir -p "${TMPDIR:-/tmp}/metrics-face" && METRICS_OUT="${TMPDIR:-/tmp}/metrics-face/" node scripts/metrics.ts --enforce'] },
 ]
 const COURT: Check = { name: 'court', cmd: ['node', 'scripts/pre-commit-court.ts'] }

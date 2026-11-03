@@ -191,6 +191,21 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
       ? { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: String(a.tool), arguments: a.arguments ?? {} } }
       : { jsonrpc: '2.0', id: 1, method: 'tools/list' }
     // The wait is the caller's to set: a long run (train, compete, prove) needs more than the default. Clamped to 5 s … 10 min.
+    // THE SOURCE AS FALLBACK (ordered 2026-11-03: "use the github qpu repo as fallback"). The served Worker was last deployed
+    // 2026-10-26 and refuses the doors its own main already has; the repository at its main sha is the same unit, run here.
+    // `source: 'served'` asks the endpoint only; `source: 'github'` asks the repository only. The answer names `via` and
+    // carries the served verdict beside it, so a door the Worker does not serve is never read as served.
+    const fallback = async (served: Record<string, unknown>) => {
+      const { fromSource } = await import('../src/mcp/connectors.ts')
+      const src = await fromSource(c)
+      if (src.via === null) return { ...served, fallback: { status: 'NOT MEASURED', why: src.why } }
+      try {
+        const r = src.handle(body) as { result?: unknown; error?: { message?: string } }
+        if (r?.error) return { connector: c.name, status: 'REFUSED', via: src.via, tool: a?.tool ?? null, why: r.error.message ?? 'refused', served }
+        return { connector: c.name, status: 'ANSWERED', via: src.via, attribution: c.attribution + ` Answered here from its source at ${src.via}, not by the served endpoint.`, notFor: c.notFor, served, answer: r }
+      } catch (e) { return { ...served, fallback: { status: 'FAILED', via: src.via, why: String((e as Error).message ?? e).slice(0, 200) } } }
+    }
+    if (a?.source === 'github' && c.source) return JSON.stringify(await fallback({ status: 'NOT ASKED', why: 'source github was asked for' }), null, 1)
     const waitS = Math.min(600, Math.max(5, Number(a?.timeout ?? 40)))
     const started = Date.now()
     const ctl = new AbortController()
@@ -202,15 +217,17 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
         body: JSON.stringify(body),
       })
       const text = await res.text()
-      if (!res.ok) return JSON.stringify({ connector: c.name, status: res.status, note: `${c.name} answered HTTP ${res.status} — NOT MEASURED, never read as "it has no answer"` })
+      if (!res.ok) { const served = { connector: c.name, status: res.status, note: `${c.name} answered HTTP ${res.status} — NOT MEASURED, never read as "it has no answer"` }; return JSON.stringify(a?.source === 'served' || !c.source ? served : await fallback(served), null, 1) }
       // A reply that is not JSON is named UNPARSED with its text, never passed off as an answer.
       const parsed = (() => { try { return JSON.parse(text) as { error?: { message?: string; data?: { tools?: string[] } }; result?: unknown } } catch { return { unparsed: true, text: text.slice(0, 40_000) } } })() as { error?: { message?: string; data?: { tools?: string[] } }; result?: unknown; unparsed?: boolean; text?: string }
       // A JSON-RPC error is the server REFUSING the name, not an answer. It is reported as REFUSED, with the server's own
       // list of tools, and the note says the list may be narrower than what the server accepts.
       if (parsed?.error) {
-        return JSON.stringify({ connector: c.name, endpoint: c.endpoint, status: 'REFUSED', tool: a?.tool ?? null,
+        const served = { connector: c.name, endpoint: c.endpoint, status: 'REFUSED', tool: a?.tool ?? null,
           why: parsed.error.message ?? 'refused', serverTools: parsed.error.data?.tools ?? [],
-          note: 'the server refused this name. Its list is the list it declares, which may be narrower than the names it accepts: other calls to the same server have answered names outside this list.' }, null, 1)
+          note: 'the server refused this name. Its list is the list it declares, which may be narrower than the names it accepts: other calls to the same server have answered names outside this list.' }
+        if (a?.source === 'served' || !c.source) return JSON.stringify(served, null, 1)
+        return JSON.stringify(await fallback(served), null, 1)
       }
       if (parsed.unparsed) return JSON.stringify({ connector: c.name, endpoint: c.endpoint, status: 'UNPARSED', note: 'the server replied with text that is not JSON', text: parsed.text }, null, 1)
       return JSON.stringify({ connector: c.name, endpoint: c.endpoint, attribution: c.attribution, notFor: c.notFor, status: 'ANSWERED', answer: parsed }, null, 1)
@@ -642,8 +659,12 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
 /** Bytes of body text per page: half the 8 MB client buffer, so a page always fits with room for its wrapper. */
 const PAGE_BUDGET = 4 << 20
 /** The repositories the completed tools operate on: this one, and qpu beside it. */
-const R = '/Users/ceci/github/ceccec/millennium-solutions/'
-const QPU = '/Users/ceci/github/uuidna/qpu/'
+// THE ROOT IS WHERE THIS FILE IS, NOT WHERE ONE MACHINE KEPT IT. Both were typed absolute paths of the author's laptop; on a
+// CI runner the working directory did not exist, and every handler spawning with it answered "spawnSync node ENOENT" — read as
+// a tool failure for a day (2026-11-03). The sibling unit is the sibling by layout (../../uuidna/qpu beside this checkout), a
+// `shared` need that is honestly absent elsewhere.
+const R = fileURLToPath(new URL('..', import.meta.url))
+const QPU = process.env.QPU_DIR ?? fileURLToPath(new URL('../../../uuidna/qpu/', import.meta.url))
 const first = (d: string) => (d.split(/(?<=[.—])\s/)[0] ?? d).slice(0, 140)
 const toolOf = (name: unknown) => {
   const t = TOOLS.find((x) => x.name === String(name))

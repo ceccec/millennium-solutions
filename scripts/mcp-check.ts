@@ -13,6 +13,7 @@
 //
 // It exits non-zero if any check fails. Open leads are reported, not failed, as the leads tool itself intends.
 import { spawnSync } from 'node:child_process'
+import { existsSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -52,6 +53,9 @@ const run = (name: string, cmd: string, args: string[]) => {
 }
 
 if (build) run('rebuild dist', 'npm', ['run', '--silent', 'build:dist'])
+// a machine with no dist (a CI runner never packs) builds the entry without the bake, so the smoke test measures the entry
+// rather than reporting the absence of a build as a failure of the entry (the court failed on exactly this, 2026-11-03)
+else if (!existsSync(resolve(ROOT, 'dist', 'mcp.bin.js'))) { process.env.NO_BAKE = '1'; run('build the entry (no bake: none here)', 'npm', ['run', '--silent', 'build:dist']) }
 
 try {
   const audit = JSON.parse(devCall('audit')) as { allComputeTrue: boolean; undeclared: string[]; orphans: string[]; tools: number }

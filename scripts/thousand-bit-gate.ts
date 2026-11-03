@@ -9,6 +9,7 @@
 //   3 · the cofactor the route reports as composite is composite by a witness this script recomputes
 // A PARTIAL answer is RED: it is an honest account, and the gate does not accept an account in place of a factorisation.
 import { factor, millerRabin } from '../src/factor/index.ts'
+import { randomBytes } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 
 // ── VERIFY DECODING THE THOUSAND BIT, WITH EACH PUSH (ordered 2026-11-02) ────────────────────────────────────
@@ -26,6 +27,7 @@ import { execFileSync } from 'node:child_process'
 if (process.argv.includes('--decode')) {
   const want = 1000
   const fromIdx = process.argv.indexOf('--from')
+  const VIA = new Set<string>()
   type Answer = Record<string, unknown> & { integer?: string; witness?: string; bits?: number; factors?: string[]; decoded?: boolean; receipt?: string; address?: string }
   const ask = async (args: Record<string, unknown>): Promise<{ ok: true; a: Answer } | { ok: false; why: string }> => {
     if (fromIdx > 0) {
@@ -38,14 +40,19 @@ if (process.argv.includes('--decode')) {
     let out = ''
     try { out = execFileSync('node', ['scripts/mcp-call.ts', 'connect', JSON.stringify({ connector: 'qpu', tool: 'algorithm', arguments: args })], { encoding: 'utf8', timeout: 240_000, maxBuffer: 16 << 20 }) }
     catch (e) { return { ok: false, why: 'the connector did not answer: ' + String((e as { message?: string }).message ?? e).slice(0, 160) } }
-    let j: { status?: string; why?: string; answer?: { result?: { content?: { text?: string }[] } } }
+    let j: { status?: string; why?: string; via?: string; served?: { status?: string; why?: string }; answer?: { result?: { content?: { text?: string }[] } } }
     try { j = JSON.parse(out) } catch { return { ok: false, why: 'the connector answered something that is not JSON: ' + out.slice(0, 160) } }
     if (j.status !== 'ANSWERED') return { ok: false, why: /not one of/.test(j.why ?? '') ? `the served unit's algorithm door does not serve \`factor\` yet (${(j.why ?? '').slice(0, 120)}) — local main 1.4.0 does; the deploy is pending` : `${j.status ?? 'no status'}: ${(j.why ?? '').slice(0, 160)}` }
     const t = j.answer?.result?.content?.[0]?.text
     if (!t) return { ok: false, why: 'the door answered without a text body' }
+    // where the answer came from is part of the reading: the served door, or the source at its sha with the served verdict beside it
+    VIA.add(j.via ? `${j.via} (served: ${j.served?.status ?? 'NOT ASKED'} — ${(j.served?.why ?? '').slice(0, 60)})` : 'the served door')
     try { return { ok: true, a: JSON.parse(t) as Answer } } catch { return { ok: false, why: 'the door\'s text is not JSON: ' + t.slice(0, 160) } }
   }
-  const made = await ask({ name: 'factor', create: { bits: want } })
+  // the door mints from the caller's entropy (it is pure and cached by call address, so it draws none): 256 bits drawn
+  // here as a decimal string — never a constant, never the same mint twice
+  const seed = BigInt('0x' + randomBytes(32).toString('hex')).toString()
+  const made = await ask({ name: 'factor', create: { bits: want, seed } })
   if (!made.ok) { console.log(`○ thousand-bit decode: NOT MEASURED — ${made.why}`); process.exit(2) }
   if (!made.a.integer || !made.a.witness) { console.log('○ thousand-bit decode: NOT MEASURED — the unit minted no integer/witness pair: ' + JSON.stringify(made.a).slice(0, 160)); process.exit(2) }
   const dec = await ask({ name: 'factor', integer: made.a.integer, witness: made.a.witness })
@@ -60,7 +67,7 @@ if (process.argv.includes('--decode')) {
   if (bits < want) faults.push(`N is ${bits} bits, below the ${want} asked for`)
   if (dec.a.decoded === false) faults.push('the unit itself says decoded: false')
   if (faults.length) { console.log(`✗ thousand-bit decode: FALSE CLAIM — ${faults.join('; ')} (receipt ${String(dec.a.receipt ?? '').slice(0, 13)}…)`); process.exit(1) }
-  console.log(`✓ thousand-bit decode: VERIFIED — a ${bits}-bit N decoded by its witness into ${fs.length} primes that multiply back; checked here, not taken (address ${String(dec.a.address ?? '').slice(0, 13)}…, receipt ${String(dec.a.receipt ?? '').slice(0, 13)}…)`)
+  console.log(`✓ thousand-bit decode: VERIFIED via ${[...VIA].join(' · ') || 'the local unit'} — a ${bits}-bit N decoded by its witness into ${fs.length} primes that multiply back; checked here, not taken (address ${String(dec.a.address ?? '').slice(0, 13)}…, receipt ${String(dec.a.receipt ?? '').slice(0, 13)}…)`)
   process.exit(0)
 }
 

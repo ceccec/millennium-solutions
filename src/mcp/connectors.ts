@@ -30,6 +30,11 @@ export type Connector = {
   /** Reads only. A connector that could write to somebody else's server is not in this registry, and the
    *  field is here so that adding one is a visible decision rather than an omission. */
   readOnly: true
+  /** THE FALLBACK IS THE SOURCE, NOT ANOTHER SERVER. When the served endpoint refuses a door or does not answer, the same
+   *  unit can be run from its public repository at a named sha: cloned once into the ignored cache, keyed by that sha,
+   *  and imported as a module (the qpu package's exports point at TypeScript sources, so a checkout is runnable as is).
+   *  An answer from it says so (`via`) beside the served refusal, so the served surface's gap stays visible. */
+  source?: { github: string; ref: string; entry: string }
 }
 
 export const CONNECTORS: Connector[] = [
@@ -45,7 +50,33 @@ export const CONNECTORS: Connector[] = [
       + '"this record is self-consistent and recomputes to itself; not a claim that the test it describes '
       + 'passed", and `pass` is a separate field that can be false beside it. Read its glossary before its verdicts.',
     readOnly: true,
+    source: { github: 'uuidna/qpu', ref: 'main', entry: 'src/quantum/processing/mcp.ts' },
   },
 ]
 
 export const CONNECTOR = (name: string): Connector | undefined => CONNECTORS.find((c) => c.name === name)
+
+import { execFileSync } from 'node:child_process'
+import { existsSync, mkdirSync } from 'node:fs'
+import { join, resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
+
+/** the connector's source, resolved: the ref's sha from the remote, a depth-one clone keyed by it, the entry imported */
+export const fromSource = async (c: Connector): Promise<{ via: string; dir: string; handle: (m: unknown) => unknown } | { via: null; why: string }> => {
+  if (!c.source) return { via: null, why: `${c.name} names no source to fall back on` }
+  const url = `https://github.com/${c.source.github}.git`
+  let sha = ''
+  try { sha = execFileSync('git', ['ls-remote', url, `refs/heads/${c.source.ref}`], { encoding: 'utf8', timeout: 60_000 }).split(/\s+/)[0] ?? '' } catch (e) { return { via: null, why: `the remote did not answer ls-remote: ${String((e as Error).message).slice(0, 120)}` } }
+  if (!/^[0-9a-f]{40}$/.test(sha)) return { via: null, why: `no sha for ${c.source.ref} at ${url}` }
+  const root = resolve('.vitepress', 'cache', 'connectors', c.name)
+  const dir = join(root, sha)
+  if (!existsSync(join(dir, c.source.entry))) {
+    mkdirSync(root, { recursive: true })
+    try { execFileSync('git', ['clone', '--quiet', '--depth', '1', '--branch', c.source.ref, url, dir], { encoding: 'utf8', timeout: 300_000 }) } catch (e) { return { via: null, why: `the clone failed: ${String((e as Error).message).slice(0, 160)}` } }
+    const got = execFileSync('git', ['-C', dir, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim()
+    if (got !== sha) return { via: null, why: `the ref moved between ls-remote (${sha.slice(0, 9)}) and the clone (${got.slice(0, 9)}); call again` }
+  }
+  const mod = await import(pathToFileURL(join(dir, c.source.entry)).href) as { handle?: (m: unknown) => unknown }
+  if (typeof mod.handle !== 'function') return { via: null, why: `${c.source.entry} at ${sha.slice(0, 9)} exports no handle` }
+  return { via: `github:${c.source.github}@${sha.slice(0, 9)}`, dir, handle: mod.handle }
+}

@@ -63,6 +63,9 @@ const REACHES: [RegExp, Need][] = [
   [/githooks\/pre-commit/, 'net'],
   [/githooks\/pre-commit/, 'tree'],
   [/execSync\(\s*['"`]git\b|execFileSync\(\s*['"`]git['"`]/, 'git'],
+  // a handler that resolves a connector's SOURCE (src/mcp/connectors.ts fromSource) clones it with git: the git call is in the
+  // module, not the handler's text, so the name of the resolver is the mark — otherwise this gate's domain stops at the handler
+  [/fromSource\(/, 'git'],
   // The commit script runs git itself, so a handler that spawns it needs a git checkout.
   [/git-commit-paths\.ts/, 'git'],
   [/execSync\(\s*[`'"]node scripts\/|execFileSync\(\s*['"`]node['"`]\s*,\s*\[\s*['"`]scripts\//, 'tree'],
