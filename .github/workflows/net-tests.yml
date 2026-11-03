@@ -21,6 +21,10 @@ jobs:
         with:
           deps: 'true'
           kernel: 'true'
+      # web_fetch reads a PDF's text through pdftotext (poppler); the runner image has none, and the rules-PDF case read
+      # INCONCLUSIVE with no cause printed (2026-11-03). The tool is installed here, where the suite that needs it runs.
+      - name: pdftotext (poppler), for the PDF cases
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils && pdftotext -v 2>&1 | head -1
       - name: Network suites, each must PASS
         run: |
           for s in net-tools-test answer-doi answer-tool fallbacks; do

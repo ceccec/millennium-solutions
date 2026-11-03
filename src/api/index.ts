@@ -598,3 +598,16 @@ export const tetB = (): number[] =>
 export const axis = (): number[] =>
   backedBy('lean_merkaba_the_three_classes_partition_z9',
     Array.from({ length: 9 }, (_, d) => d).filter((d) => d % 3 === 0), 'the axis')
+
+/** THE RELEASE BEFORE THIS COMMIT — the tag a committed page may name. release.ts mints the next tag on the runner and
+ *  pushes it with the hooks on; the hook regenerates the pages, and a page that embeds "the latest tag" then reads the
+ *  tag being minted while the committed text names the one before — so the tag push refuses itself (ACCOUNTING.md,
+ *  2026-11-03, and the dirty-tree release before it). A tag pointing at HEAD is the release of THIS commit, not a release
+ *  this commit can describe; the newest tag not at HEAD is the same string on the author's machine and on the runner. */
+export const releasedBefore = (fallback = 'v0'): string => {
+  try {
+    const tags = execSync('git tag --sort=-version:refname', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().split('\n').filter(Boolean)
+    const atHead = new Set(execSync('git tag --points-at HEAD', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().split('\n').filter(Boolean))
+    return tags.find((t) => !atHead.has(t)) ?? fallback
+  } catch { return fallback }
+}

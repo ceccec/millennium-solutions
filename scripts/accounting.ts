@@ -7,7 +7,7 @@
 import { readdirSync, existsSync, writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { ledger as __ledger, releasedBefore } from '../src/api/index.ts'
 
 const COINS_PER_RECEIPT = 2 // 110 − 108 = 2 = −χ(genus-2); the fair-exchange unit (2 coins = 2 bits)
 const cap = (c: string, fallback = '') => { try { return execSync(c, { encoding: 'utf8' }).trim() } catch { return fallback } }
@@ -29,8 +29,11 @@ const signed = existsSync('src/receipts') ? readdirSync('src/receipts').filter((
 // The live count is still printed to the console and still on the site, which rebuilds every deploy. What
 // leaves the committed document is only the number that cannot be committed.
 const tags = cap('git tag').split('\n').filter(Boolean).length
-const latest = cap('git describe --tags --abbrev=0', 'v0')
-const ledgerTag = cap('git describe --tags --abbrev=0 $(git log -1 --format=%H -- src/proof/discovered.json)', latest)
+// the release BEFORE this commit (src/api releasedBefore): a tag at HEAD is the one the runner is minting right now
+const latest = releasedBefore()
+// the same exclusion for the tag that last moved the ledger: a describe from that commit would pick a tag at HEAD on the runner
+const excludeAtHead = cap('git tag --points-at HEAD').split('\n').filter(Boolean).map((t) => `--exclude='${t}'`).join(' ')
+const ledgerTag = cap(`git describe --tags --abbrev=0 ${excludeAtHead} $(git log -1 --format=%H -- src/proof/discovered.json)`, latest)
 // tracked PLUS what `git add -A` is about to track: the chain regenerates this page and then commits new files it made in
 // the same run (a constants snapshot under a new handle), so a count of tracked files alone moved by 2 across the commit it
 // rode in, and the pre-push regeneration refused the push (2026-11-03). Counting the not-ignored set is stable across that commit.

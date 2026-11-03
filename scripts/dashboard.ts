@@ -6,10 +6,12 @@
 // Perception-aware: static SVG, no motion (respects reduced-motion by having none). NO "convincing" rhetoric,
 // NO neurological/health claims. Regenerated each build => computed, not hardcoded.
 import { writeFileSync } from 'node:fs'
+import { releasedBefore } from '../src/api/index.ts'
 import { hue, A432_STEP } from '../src/0/index.ts'
 import { execSync } from 'node:child_process'
 
-const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
+// the release BEFORE this commit (src/api releasedBefore): a committed page cannot name the tag its own release mints
+const version = releasedBefore()
 // coverage = gate-enforced 100% (build fails otherwise); the live seal root is linked to /sitemap.json
 // (source of truth) — no stale/absent embed.
 

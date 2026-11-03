@@ -39,11 +39,12 @@ const main = async () => {
   ]
   for (const c of webCases) {
     const run = spawnSync('node', ['scripts/mcp-call.ts', 'web_fetch', JSON.stringify(c.args)], { cwd: ROOT, encoding: 'utf8', timeout: 300_000 })
-    let j: { status?: string; matches?: number; view?: string } = {}
+    let j: { status?: string; matches?: number; view?: string; why?: string } = {}
     try { j = JSON.parse(String(run.stdout)) } catch { /* stays empty: fails */ }
     const ok = c.check(j)
     if (!ok) failed++
-    console.log(`${ok ? '✓' : '✗'} ${c.name}: ${j.status ?? 'NO ANSWER'}, ${j.matches ?? 0} match(es), view ${j.view ?? '-'}`)
+    // the answer's own cause rides with a failure, so a run elsewhere names it (INCONCLUSIVE alone said nothing, 2026-11-03)
+    console.log(`${ok ? '✓' : '✗'} ${c.name}: ${j.status ?? 'NO ANSWER'}, ${j.matches ?? 0} match(es), view ${j.view ?? '-'}${ok ? '' : ` — ${j.why ?? String(run.stdout ?? run.stderr ?? '').slice(0, 200)}`}`)
   }
   console.log(`\n${failed === 0 ? '✓' : '✗'} fallbacks: ${4 - failed}/4 cases as required`)
   process.exit(failed === 0 ? 0 : 1)
