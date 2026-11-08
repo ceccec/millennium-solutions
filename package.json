@@ -182,6 +182,7 @@
     "derived-gate": "node scripts/derived-gate.ts",
     "mcp:self": "node mcp.bin.ts",
     "mcp-gate": "node scripts/mcp-gate.ts",
+    "signal:qpu": "node scripts/signal-qpu.ts",
     "entanglements": "node scripts/entanglements.ts",
     "entanglements:control": "node scripts/entanglements.ts --control",
     "readers": "node scripts/readers.ts",
