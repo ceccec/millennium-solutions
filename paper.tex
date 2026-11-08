@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,077 of them across 108 files and
-8 wings; 25,870 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,085 of them across 109 files and
+8 wings; 25,878 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2237,6 +2237,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ 2 \cdot \mathrm{dimE8} = \mathrm{dimSO}\mathopen{}\left(32\right) \land \mathrm{transverse}\mathopen{}\left(26\right) = 3 \cdot \mathrm{transverse}\mathopen{}\left(10\right) \land \mathrm{lhcGeV} \cdot 10^{14} < \mathrm{planckEnergyMantissa} \cdot 10^{5} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{qec.lean}}
+
+\begin{theorem}[\texttt{the\_surface\_code\_physical\_count\_is\_two\_d\_squared\_minus\_two\_d\_plus\_one}]
+\[ \mathrm{surfacePhysical}[\{1,\dots,9\}] = [1,\,5,\,13,\,25,\,41,\,61,\,85,\,113,\,145] \land \mathrm{surfacePhysical}\mathopen{}\left(3\right) = 13 \land \forall d \in \{1,\dots,9\},\; \mathrm{surfacePhysical}\mathopen{}\left(d\right) = 2 \cdot d^{2} - 2 \cdot d + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_distance\_d\_code\_corrects\_the\_floor\_of\_d\_minus\_one\_over\_two}]
+\[ \mathrm{corrects}[\{1,\dots,9\}] = [0,\,0,\,1,\,1,\,2,\,2,\,3,\,3,\,4] \land \mathrm{corrects}\mathopen{}\left(5\right) = 2 \land \forall d \in \{1,\dots,9\},\; 2 \cdot \mathrm{corrects}\mathopen{}\left(d\right) + 1 \le d \land d \le 2 \cdot \mathrm{corrects}\mathopen{}\left(d\right) + 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{distance\_one\_corrects\_nothing\_and\_distance\_three\_corrects\_one}]
+\[ \mathrm{corrects}\mathopen{}\left(1\right) = 0 \land \mathrm{corrects}\mathopen{}\left(3\right) = 1 \land \mathrm{surfacePhysical}\mathopen{}\left(1\right) = 1 \land \mathrm{surfacePhysical}\mathopen{}\left(3\right) = 13 \land \mathrm{surfacePhysical}\mathopen{}\left(1\right) < \mathrm{surfacePhysical}\mathopen{}\left(3\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{shors\_nine\_qubit\_code\_is\_three\_by\_three\_distance\_three\_correcting\_one}]
+\[ 3 \cdot 3 = 9 \land \mathrm{corrects}\mathopen{}\left(3\right) = 1 \land \frac{3 - 1}{2} = 1 \land 1 \le \mathrm{corrects}\mathopen{}\left(3\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_pauli\_group\_order\_is\_two\_to\_the\_two\_n\_plus\_two}]
+\[ \mathrm{pauliOrder}[\{1,\dots,4\}] = [16,\,64,\,256,\,1024] \land \mathrm{pauliOrder}\mathopen{}\left(1\right) = 16 \land \forall \mathrm{nn} \in \{1,\dots,4\},\; \mathrm{pauliOrder}\mathopen{}\left(\mathrm{nn}\right) = 4 \cdot 4^{\mathrm{nn}} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_surface\_count\_is\_quadratic\_not\_linear\_in\_the\_distance}]
+\[ \mathrm{surfacePhysical}\mathopen{}\left(2\right) - \mathrm{surfacePhysical}\mathopen{}\left(1\right) = 4 \land \mathrm{surfacePhysical}\mathopen{}\left(3\right) - \mathrm{surfacePhysical}\mathopen{}\left(2\right) = 8 \land \mathrm{surfacePhysical}\mathopen{}\left(2\right) - \mathrm{surfacePhysical}\mathopen{}\left(1\right) \neq \mathrm{surfacePhysical}\mathopen{}\left(3\right) - \mathrm{surfacePhysical}\mathopen{}\left(2\right) \land \forall d \in \{1,\dots,8\},\; \mathrm{surfacePhysical}\mathopen{}\left(d + 1\right) - \mathrm{surfacePhysical}\mathopen{}\left(d\right) = 4 \cdot d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_higher\_distance\_costs\_more\_qubits\_and\_corrects\_no\_fewer}]
+\[ \forall d \in \{1,\dots,8\},\; \mathrm{surfacePhysical}\mathopen{}\left(d\right) < \mathrm{surfacePhysical}\mathopen{}\left(d + 1\right) \land \forall d \in \{1,\dots,8\},\; \mathrm{corrects}\mathopen{}\left(d\right) \le \mathrm{corrects}\mathopen{}\left(d + 1\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_counts\_at\_distance\_nine\_and\_their\_finite\_bound}]
+\[ \mathrm{surfacePhysical}\mathopen{}\left(9\right) = 145 \land \mathrm{corrects}\mathopen{}\left(9\right) = 4 \land \forall d \in \{1,\dots,9\},\; \mathrm{corrects}\mathopen{}\left(d\right) < 5 \land \mathrm{surfacePhysical}\mathopen{}\left(d\right) < 200 \land \forall d \in \{1,\dots,9\},\; 2 \cdot \mathrm{corrects}\mathopen{}\left(d\right) \le d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
 
 \paragraph{\texttt{quantum.lean}}
 

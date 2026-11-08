@@ -149564,5 +149564,45 @@
     "key": "lean_width_the_cost_exponent_is_more_than_the_square_root_exponent_at_every_width",
     "name": "lean width.lean: the_cost_exponent_is_more_than_the_square_root_exponent_at_every_width — widths.all (fun w => grover w < reg w) ∧ widths.all (fun w => reg w - grover w == (reg w + 1) / 2) ∧ (reg 4 - grover 4) < (reg 32 - grover 32) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "1f8c76c6-acdf-8590-95eb-60bd60367edb"
+  },
+  {
+    "key": "lean_qec_the_surface_code_physical_count_is_two_d_squared_minus_two_d_plus_one",
+    "name": "lean qec.lean: the_surface_code_physical_count_is_two_d_squared_minus_two_d_plus_one — (List.range' 1 9).map surfacePhysical = [1, 5, 13, 25, 41, 61, 85, 113, 145] ∧ surfacePhysical 3 = 13 ∧ (List.range' 1 9).all (fun d => surfacePhysical d == 2 * d ^ 2 - 2 * d + 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2f5a9e47-88be-81ee-b176-22af11b0a9ce"
+  },
+  {
+    "key": "lean_qec_a_distance_d_code_corrects_the_floor_of_d_minus_one_over_two",
+    "name": "lean qec.lean: a_distance_d_code_corrects_the_floor_of_d_minus_one_over_two — (List.range' 1 9).map corrects = [0, 0, 1, 1, 2, 2, 3, 3, 4] ∧ corrects 5 = 2 ∧ (List.range' 1 9).all (fun d => 2 * corrects d + 1 ≤ d && d ≤ 2 * corrects d + 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "850a2e71-e603-86ad-b0cf-72a15ef31470"
+  },
+  {
+    "key": "lean_qec_distance_one_corrects_nothing_and_distance_three_corrects_one",
+    "name": "lean qec.lean: distance_one_corrects_nothing_and_distance_three_corrects_one — corrects 1 = 0 ∧ corrects 3 = 1 ∧ surfacePhysical 1 = 1 ∧ surfacePhysical 3 = 13 ∧ surfacePhysical 1 < surfacePhysical 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2a40933b-9a3d-8f90-886a-a774ae248313"
+  },
+  {
+    "key": "lean_qec_shors_nine_qubit_code_is_three_by_three_distance_three_correcting_one",
+    "name": "lean qec.lean: shors_nine_qubit_code_is_three_by_three_distance_three_correcting_one — 3 * 3 = 9 ∧ corrects 3 = 1 ∧ (3 - 1) / 2 = 1 ∧ 1 ≤ corrects 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "56934b0c-f9c6-8be2-bc54-079e3b9fcd99"
+  },
+  {
+    "key": "lean_qec_the_pauli_group_order_is_two_to_the_two_n_plus_two",
+    "name": "lean qec.lean: the_pauli_group_order_is_two_to_the_two_n_plus_two — (List.range' 1 4).map pauliOrder = [16, 64, 256, 1024] ∧ pauliOrder 1 = 16 ∧ (List.range' 1 4).all (fun nn => pauliOrder nn == 4 * 4 ^ nn) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8081d489-50d4-820c-93be-bd4ae0ead537"
+  },
+  {
+    "key": "lean_qec_the_surface_count_is_quadratic_not_linear_in_the_distance",
+    "name": "lean qec.lean: the_surface_count_is_quadratic_not_linear_in_the_distance — surfacePhysical 2 - surfacePhysical 1 = 4 ∧ surfacePhysical 3 - surfacePhysical 2 = 8 ∧ (surfacePhysical 2 - surfacePhysical 1) ≠ (surfacePhysical 3 - surfacePhysical 2) ∧ (List.range' 1 8).all (fun d => surfacePhysical (d + 1) - surfacePhy… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c1485e96-3455-880f-b19b-8ee56aee2506"
+  },
+  {
+    "key": "lean_qec_a_higher_distance_costs_more_qubits_and_corrects_no_fewer",
+    "name": "lean qec.lean: a_higher_distance_costs_more_qubits_and_corrects_no_fewer — (List.range' 1 8).all (fun d => surfacePhysical d < surfacePhysical (d + 1)) ∧ (List.range' 1 8).all (fun d => corrects d ≤ corrects (d + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5ea2b3b7-8b31-854e-887d-b9dcda7396e1"
+  },
+  {
+    "key": "lean_qec_the_counts_at_distance_nine_and_their_finite_bound",
+    "name": "lean qec.lean: the_counts_at_distance_nine_and_their_finite_bound — surfacePhysical 9 = 145 ∧ corrects 9 = 4 ∧ (List.range' 1 9).all (fun d => corrects d < 5 && surfacePhysical d < 200) ∧ (List.range' 1 9).all (fun d => 2 * corrects d ≤ d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "94df7814-6a9b-8175-91fc-29a84d7fda95"
   }
 ]
