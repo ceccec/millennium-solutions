@@ -149404,5 +149404,60 @@
     "key": "lean_qpu_the_mirror_coin_does_not_distribute_over_a_product",
     "name": "lean qpu.lean: the_mirror_coin_does_not_distribute_over_a_product — ¬ (List.range 24).all (fun p => (List.range 24).all (fun q => mirrorNat 4 (p * q) == 0 || mirrorNat 4 (p * q) == mirrorNat 4 p * mirrorNat 4 q)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "438bc706-f838-8544-8fa7-9b80aa130576"
+  },
+  {
+    "key": "lean_qpucrypto_the_seal_exponent_is_an_rsa_permutation_of_the_residues_mod_ninety_one",
+    "name": "lean qpu_crypto.lean: the_seal_exponent_is_an_rsa_permutation_of_the_residues_mod_ninety_one — sealModulus = 91 ∧ sealExponent = 7 ∧ sealFold = 8 ∧ totient = 72 ∧ sealExponent * rsaInverse = 3 * totient + 1 ∧ (List.range sealModulus).all (fun r => rsa rsaInverse (rsa sealExponent r) == r) ∧ (List.range' 2 6).map permutes = [false, fa… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7b1cb7f0-6e09-8643-9e81-549e0433ebd8"
+  },
+  {
+    "key": "lean_qpucrypto_the_fold_mod_eight_is_where_the_seal_misses_one_tamper_in_eight",
+    "name": "lean qpu_crypto.lean: the_fold_mod_eight_is_where_the_seal_misses_one_tamper_in_eight — (List.range' 1 8).all (fun v => nibbleCount v == (if v ≤ 3 then 12 else 11)) ∧ nibbleCount 0 = 0 ∧ (List.range' 9 7).all (fun v => nibbleCount v == 0) ∧ (List.range' 1 8).foldl (fun acc v => acc + nibbleCount v) 0 = sealModulus ∧ (List.rang… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2882a7f0-b5be-82f5-b401-dbade1f9e213"
+  },
+  {
+    "key": "lean_qpucrypto_the_fixed_version_eight_and_the_decided_nibble_agree_on_eleven_residues_in_ninety_one",
+    "name": "lean qpu_crypto.lean: the_fixed_version_eight_and_the_decided_nibble_agree_on_eleven_residues_in_ninety_one — nibbleCount 8 = 11 ∧ 11 * 8 < sealModulus ∧ sealModulus < 12 * 8 ∧ (List.range sealModulus).all (fun r => 1 ≤ sealOf r && sealOf r ≤ 8) ∧ (List.range sealModulus).any (fun r => sealOf r == 8) ∧ (List.range sealModulus).all (fun r => sealOf … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "66f5b5f0-fd03-8cf4-9403-93bca14fb093"
+  },
+  {
+    "key": "lean_qpucrypto_the_free_register_is_one_hundred_twenty_two_on_both_sides",
+    "name": "lean qpu_crypto.lean: the_free_register_is_one_hundred_twenty_two_on_both_sides — (List.range 9).all (fun w => (qpuRegister w == Capacity.free) == (w == Qpu.hexbit)) ∧ qpuRegister Qpu.hexbit = Capacity.free ∧ Capacity.free = 122 ∧ 32 * Qpu.hexbit = Capacity.container ∧ Qpu.hexbit + 2 = Capacity.reserved ∧ qpuRegister Qpu… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "326edcf3-72dd-81ba-89cd-6356cb805f85"
+  },
+  {
+    "key": "lean_qpucrypto_one_coin_sits_sixty_seven_bits_below_the_iso_post_quantum_floor_under_grover",
+    "name": "lean qpu_crypto.lean: one_coin_sits_sixty_seven_bits_below_the_iso_post_quantum_floor_under_grover — groverExponent = 61 ∧ collisionExponent = 40 ∧ 3 * collisionExponent < Capacity.free ∧ Capacity.free < 3 * (collisionExponent + 1) ∧ 2 ^ collisionExponent < 2 ^ groverExponent ∧ 2 ^ groverExponent < 2 ^ isoFloor ∧ 2 ^ isoFloor < 2 ^ (2 * is… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ff9ca0d0-791c-8669-89cb-e1a227f850cd"
+  },
+  {
+    "key": "lean_qpucrypto_shor_on_ninety_one_splits_from_qpus_base_and_from_fifty_three_others",
+    "name": "lean qpu_crypto.lean: shor_on_ninety_one_splits_from_qpus_base_and_from_fifty_three_others — shorBase = 8 ∧ period shorBase sealModulus = 4 ∧ gcd (powMod shorBase 2 sealModulus - 1) sealModulus = Qpu.rays ∧ gcd (powMod shorBase 2 sealModulus + 1) sealModulus = Qpu.faces - 1 ∧ (List.range' 1 20).all (fun a => (List.range' 1 20).all … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "961ea69a-548d-808b-b346-ed0564fc1779"
+  },
+  {
+    "key": "lean_qpucrypto_the_sigma_trapdoor_is_fermats_difference_of_squares",
+    "name": "lean qpu_crypto.lean: the_sigma_trapdoor_is_fermats_difference_of_squares — oddPrimes = [3, 5, 7, 11, 13, 17, 19, 23, 29] ∧ oddPrimes.all (fun p => oddPrimes.all (fun q => !(p < q) || witness p q * witness p q - p * q == ((q - p) / 2) * ((q - p) / 2))) ∧ oddPrimes.all (fun p => oddPrimes.all (fun q => !(p < q) || s… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c6b38fad-65f3-8e6f-a0f8-896921884d39"
+  },
+  {
+    "key": "lean_qpucrypto_a_wrong_witness_decodes_nothing_because_a_semiprime_has_one_split",
+    "name": "lean qpu_crypto.lean: a_wrong_witness_decodes_nothing_because_a_semiprime_has_one_split — small = [3, 5, 7, 11, 13, 17, 19] ∧ small.all (fun p => small.all (fun q => !(p < q) || (List.range' (ceilSqrt (p * q)) ((p * q + 1) / 2 - ceilSqrt (p * q))).all (fun x => decodes (p * q) x == (x == witness p q)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7cd9b9c8-5b7b-881f-a0dc-f2a535d48bb1"
+  },
+  {
+    "key": "lean_qpucrypto_an_impossible_integer_with_twin_primes_is_opened_blind_in_one_reflection",
+    "name": "lean qpu_crypto.lean: an_impossible_integer_with_twin_primes_is_opened_blind_in_one_reflection — blind 11 13 = 1 ∧ blind 5 7 = 1 ∧ blind 3 29 = 7 ∧ (oddPrimes.filter (fun p => isPrime (p + 2))) = [3, 5, 11, 17, 29] ∧ oddPrimes.all (fun p => !(isPrime (p + 2)) || blind p (p + 2) == 1) ∧ oddPrimes.all (fun p => oddPrimes.all (fun q => !(… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8d734da1-4537-8cf8-8522-080e983d634b"
+  },
+  {
+    "key": "lean_qpucrypto_the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes",
+    "name": "lean qpu_crypto.lean: the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes — 2 ^ 999 ≤ thousand ∧ thousand < 2 ^ 1000 ∧ (List.range' 1 6).all (fun k => (thousand % 3 ^ k == 0) == (k ≤ 4)) ∧ 999 = 27 * 37 ∧ (2 ^ 333 + 1) * (2 ^ 666 - 2 ^ 333 + 1) = thousand ∧ (2 ^ 111 + 1) * (2 ^ 222 - 2 ^ 111 + 1) = 2 ^ 333 + 1 ∧ (2… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a27fc1e7-abce-8861-887f-eadf9c491982"
+  },
+  {
+    "key": "lean_qpucrypto_this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back",
+    "name": "lean qpu_crypto.lean: this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back — found.foldl (· * ·) 1 * cofactor = thousand ∧ found.length = 14 ∧ (found.filter (· == 3)).length = 4 ∧ found.all (fun p => 1 < p && cofactor % p != 0) ∧ cofactor % 2 = 1 ∧ cofactor % 3 = 1 ∧ powModBin 2 (cofactor - 1) cofactor ≠ 1 ∧ powModB… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "215f8bbc-e55e-8529-b6d2-e3089499c01b"
   }
 ]

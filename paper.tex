@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,045 of them across 105 files and
-8 wings; 25,838 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,056 of them across 106 files and
+8 wings; 25,849 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -4222,6 +4222,63 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \lnot \forall p \in \{0,\dots,23\},\; \forall q \in \{0,\dots,23\},\; \mathrm{mirrorNat}\mathopen{}\left(4,\,p \cdot q\right) = 0 \lor \mathrm{mirrorNat}\mathopen{}\left(4,\,p \cdot q\right) = \mathrm{mirrorNat}\mathopen{}\left(4,\,p\right) \cdot \mathrm{mirrorNat}\mathopen{}\left(4,\,q\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 576 cases. \hfill$\square$
+
+\paragraph{\texttt{qpu\_crypto.lean}}
+
+\begin{theorem}[\texttt{the\_seal\_exponent\_is\_an\_rsa\_permutation\_of\_the\_residues\_mod\_ninety\_one}]
+\[ \mathrm{sealModulus} = 91 \land \mathrm{sealExponent} = 7 \land \mathrm{sealFold} = 8 \land \mathrm{totient} = 72 \land \mathrm{sealExponent} \cdot \mathrm{rsaInverse} = 3 \cdot \mathrm{totient} + 1 \land \forall r \in \{0,\dots,\mathrm{sealModulus}-1\},\; \mathrm{rsa}\mathopen{}\left(\mathrm{rsaInverse},\,\mathrm{rsa}\mathopen{}\left(\mathrm{sealExponent},\,r\right)\right) = r \land \mathrm{permutes}[\{2,\dots,7\}] = [\mathrm{false},\,\mathrm{false},\,\mathrm{false},\,\mathrm{true},\,\mathrm{false},\,\mathrm{true}] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fold\_mod\_eight\_is\_where\_the\_seal\_misses\_one\_tamper\_in\_eight}]
+\[ \forall v \in \{1,\dots,8\},\; \mathrm{nibbleCount}\mathopen{}\left(v\right) = \begin{cases}12 & \text{if } v \le 3\\ 11 & \text{otherwise}\end{cases} \land \mathrm{nibbleCount}\mathopen{}\left(0\right) = 0 \land \forall v \in \{9,\dots,15\},\; \mathrm{nibbleCount}\mathopen{}\left(v\right) = 0 \land \operatorname{fold}_{\mathrm{acc},\,v \mapsto \mathrm{acc} + \mathrm{nibbleCount}\mathopen{}\left(v\right)}\left(\{1,\dots,8\},\, 0\right) = \mathrm{sealModulus} \land \operatorname{fold}_{\mathrm{acc},\,v \mapsto \mathrm{acc} + \mathrm{nibbleCount}\mathopen{}\left(v\right) \cdot \mathrm{nibbleCount}\mathopen{}\left(v\right)}\left(\{1,\dots,8\},\, 0\right) = 1037 \land 8 \cdot 1037 - \mathrm{sealModulus} \cdot \mathrm{sealModulus} = 15 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3,584 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fixed\_version\_eight\_and\_the\_decided\_nibble\_agree\_on\_eleven\_residues\_in\_ninety\_one}]
+\[ \mathrm{nibbleCount}\mathopen{}\left(8\right) = 11 \land 11 \cdot 8 < \mathrm{sealModulus} \land \mathrm{sealModulus} < 12 \cdot 8 \land \forall r \in \{0,\dots,\mathrm{sealModulus}-1\},\; 1 \le \mathrm{sealOf}\mathopen{}\left(r\right) \land \mathrm{sealOf}\mathopen{}\left(r\right) \le 8 \land \exists r \in \{0,\dots,\mathrm{sealModulus}-1\} : \mathrm{sealOf}\mathopen{}\left(r\right) = 8 \land \forall r \in \{0,\dots,\mathrm{sealModulus}-1\},\; \mathrm{sealOf}\mathopen{}\left(r\right) \neq 0 \land \mathrm{sealOf}\mathopen{}\left(r\right) \neq 15 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_free\_register\_is\_one\_hundred\_twenty\_two\_on\_both\_sides}]
+\[ \forall w \in \{0,\dots,8\},\; \mathrm{qpuRegister}\mathopen{}\left(w\right) = \mathrm{Capacity.free} = w = \mathrm{Qpu.hexbit} \land \mathrm{qpuRegister}\mathopen{}\left(\mathrm{Qpu.hexbit}\right) = \mathrm{Capacity.free} \land \mathrm{Capacity.free} = 122 \land 32 \cdot \mathrm{Qpu.hexbit} = \mathrm{Capacity.container} \land \mathrm{Qpu.hexbit} + 2 = \mathrm{Capacity.reserved} \land \mathrm{qpuRegister}\mathopen{}\left(\mathrm{Qpu.hexbit}\right) = \mathrm{Capacity.container} - \mathrm{Capacity.reserved} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_coin\_sits\_sixty\_seven\_bits\_below\_the\_iso\_post\_quantum\_floor\_under\_grover}]
+\[ \mathrm{groverExponent} = 61 \land \mathrm{collisionExponent} = 40 \land 3 \cdot \mathrm{collisionExponent} < \mathrm{Capacity.free} \land \mathrm{Capacity.free} < 3 \cdot \mathrm{collisionExponent} + 1 \land 2^{\mathrm{collisionExponent}} < 2^{\mathrm{groverExponent}} \land 2^{\mathrm{groverExponent}} < 2^{\mathrm{isoFloor}} \land 2^{\mathrm{isoFloor}} < 2^{2 \cdot \mathrm{isoFloor}} \land \mathrm{isoFloor} - \mathrm{groverExponent} = 67 \land \forall n \in \{0,\dots,299\},\; \frac{n}{2} \ge \mathrm{isoFloor} = n \ge 2 \cdot \mathrm{isoFloor} \land \mathrm{Capacity.container} < 2 \cdot \mathrm{isoFloor} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 300 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{shor\_on\_ninety\_one\_splits\_from\_qpus\_base\_and\_from\_fifty\_three\_others}]
+\[ \mathrm{shorBase} = 8 \land \mathrm{period}\mathopen{}\left(\mathrm{shorBase},\,\mathrm{sealModulus}\right) = 4 \land \mathrm{gcd}\mathopen{}\left(\mathrm{powMod}\mathopen{}\left(\mathrm{shorBase},\,2,\,\mathrm{sealModulus}\right) - 1,\,\mathrm{sealModulus}\right) = \mathrm{Qpu.rays} \land \mathrm{gcd}\mathopen{}\left(\mathrm{powMod}\mathopen{}\left(\mathrm{shorBase},\,2,\,\mathrm{sealModulus}\right) + 1,\,\mathrm{sealModulus}\right) = \mathrm{Qpu.faces} - 1 \land \forall a \in \{1,\dots,20\},\; \forall b \in \{1,\dots,20\},\; a \bmod \mathrm{gcd}\mathopen{}\left(a,\,b\right) = 0 \land b \bmod \mathrm{gcd}\mathopen{}\left(a,\,b\right) = 0 \land \forall d \in \{\mathrm{gcd}\mathopen{}\left(a,\,b\right) + 1,\dots,\mathrm{gcd}\mathopen{}\left(a,\,b\right) + 1+20-1\},\; a \bmod d \neq 0 \lor b \bmod d \neq 0 \land \mathrm{Qpu.rays} \cdot \mathrm{Qpu.faces} - 1 = \mathrm{sealModulus} \land \left|\mathrm{units}\right| = 71 \land \left|\{\, x \in \mathrm{units} \mid \mathrm{splitsBy}\mathopen{}\left(x\right) \,\}\right| = 54 \land \left|\{\, x \in \mathrm{units} \mid \mathrm{oddPeriod}\mathopen{}\left(x\right) \,\}\right| = 8 \land \left|\{\, x \in \mathrm{units} \mid \mathrm{landsOnMinusOne}\mathopen{}\left(x\right) \,\}\right| = 9 \land \mathrm{period}\mathopen{}\left(9,\,\mathrm{sealModulus}\right) = 3 \land \mathrm{period}\mathopen{}\left(\mathrm{sealModulus} - 1,\,\mathrm{sealModulus}\right) = 2 \land \mathrm{splitsBy}\mathopen{}\left(9\right) = \mathrm{false} \land \mathrm{splitsBy}\mathopen{}\left(\mathrm{sealModulus} - 1\right) = \mathrm{false} \land \mathrm{splitsBy}\mathopen{}\left(\mathrm{shorBase}\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 400 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sigma\_trapdoor\_is\_fermats\_difference\_of\_squares}]
+\[ \mathrm{oddPrimes} = [3,\,5,\,7,\,11,\,13,\,17,\,19,\,23,\,29] \land \forall p \in \mathrm{oddPrimes},\; \forall q \in \mathrm{oddPrimes},\; \lnot p < q \lor \mathrm{witness}\mathopen{}\left(p,\,q\right) \cdot \mathrm{witness}\mathopen{}\left(p,\,q\right) - p \cdot q = \frac{q - p}{2} \cdot \frac{q - p}{2} \land \forall p \in \mathrm{oddPrimes},\; \forall q \in \mathrm{oddPrimes},\; \lnot p < q \lor \mathrm{splits}\mathopen{}\left(p \cdot q\right) = [\left(p,\,q\right)] \land \forall p \in \mathrm{oddPrimes},\; \forall q \in \mathrm{oddPrimes},\; \lnot p < q \lor \mathrm{decodes}\mathopen{}\left(p \cdot q,\,\mathrm{witness}\mathopen{}\left(p,\,q\right)\right) \land \forall q \in \mathrm{oddPrimes},\; 2 + q \bmod 2 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_wrong\_witness\_decodes\_nothing\_because\_a\_semiprime\_has\_one\_split}]
+\[ \mathrm{small} = [3,\,5,\,7,\,11,\,13,\,17,\,19] \land \forall p \in \mathrm{small},\; \forall q \in \mathrm{small},\; \lnot p < q \lor \forall x \in \{\mathrm{ceilSqrt}\mathopen{}\left(p \cdot q\right),\dots,\mathrm{ceilSqrt}\mathopen{}\left(p \cdot q\right)+\frac{p \cdot q + 1}{2} - \mathrm{ceilSqrt}\mathopen{}\left(p \cdot q\right)-1\},\; \mathrm{decodes}\mathopen{}\left(p \cdot q,\,x\right) = x = \mathrm{witness}\mathopen{}\left(p,\,q\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{an\_impossible\_integer\_with\_twin\_primes\_is\_opened\_blind\_in\_one\_reflection}]
+\[ \mathrm{blind}\mathopen{}\left(11,\,13\right) = 1 \land \mathrm{blind}\mathopen{}\left(5,\,7\right) = 1 \land \mathrm{blind}\mathopen{}\left(3,\,29\right) = 7 \land \{\, p \in \mathrm{oddPrimes} \mid \mathrm{isPrime}\mathopen{}\left(p + 2\right) \,\} = [3,\,5,\,11,\,17,\,29] \land \forall p \in \mathrm{oddPrimes},\; \lnot \mathrm{isPrime}\mathopen{}\left(p + 2\right) \lor \mathrm{blind}\mathopen{}\left(p,\,p + 2\right) = 1 \land \forall p \in \mathrm{oddPrimes},\; \forall q \in \mathrm{oddPrimes},\; \lnot p < q \lor \mathrm{blind}\mathopen{}\left(p,\,q\right) \ge 1 \land \mathrm{blind}\mathopen{}\left(3,\,29\right) > \mathrm{blind}\mathopen{}\left(3,\,5\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 5 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_thousand\_bit\_integer\_has\_a\_thousand\_bits\_and\_exactly\_four\_threes}]
+\[ 2^{999} \le \mathrm{thousand} \land \mathrm{thousand} < 2^{1000} \land \forall k \in \{1,\dots,6\},\; \mathrm{thousand} \bmod 3^{k} = 0 = k \le 4 \land 999 = 27 \cdot 37 \land 2^{333} + 1 \cdot 2^{666} - 2^{333} + 1 = \mathrm{thousand} \land 2^{111} + 1 \cdot 2^{222} - 2^{111} + 1 = 2^{333} + 1 \land 2^{37} + 1 \cdot 2^{74} - 2^{37} + 1 = 2^{111} + 1 \land 2^{37} + 1 = 3 \cdot 1777 \cdot 25781083 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{this\_deposits\_factor\_route\_returns\_a\_partial\_answer\_that\_multiplies\_back}]
+\texttt{found.foldl (· * ·) 1 * cofactor = thousand ∧ found.length = 14 ∧ (found.filter (· == 3)).length = 4 ∧ found.all (fun p => 1 < p \&\& cofactor \% p != 0) ∧ cofactor \% 2 = 1 ∧ cofactor \% 3 = 1 ∧ powModBin 2 (cofactor - 1) cofactor ≠ 1 ∧ powModBin 2 4 7 = 2 ∧ powModBin 3 6 7 = 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{separation.lean}}
 

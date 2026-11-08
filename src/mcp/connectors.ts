@@ -40,8 +40,12 @@ export type Connector = {
 export const CONNECTORS: Connector[] = [
   {
     name: 'qpu',
-    endpoint: 'https://qpu.uuidna.com/mcp',
-    attribution: 'qpu.uuidna.com — a Cloudflare Worker serving JSON-LD, built from ~/github/uuidna/qpu. Not this repository.',
+    // THE DOOR THE UNIT DECLARES. Its own source names the API as https://qpu.uuidna.com/api/mcp (src/quantum/net/
+    // cloudflare.ts) and redirects /mcp there; a POST does not follow a redirect, so on 2026-11-08 the old path
+    // answered the app's HTML page and every court through it read UNPARSED. The served MCP there is the Payload
+    // plugin's, and a door it does not list falls back to the unit's source below.
+    endpoint: 'https://qpu.uuidna.com/api/mcp',
+    attribution: 'qpu.uuidna.com — the QPU app on Cloudflare (Payload, Next.js), built from ~/github/uuidna/qpu. Not this repository.',
     for: 'its sixteen tools: the state-vector circuit, its Lean rows, the Shor run that factors 91 = 7 x 13 by '
       + 'period-finding, the crypto catalogue, and its own end-to-end proof. src/proof/qpu.lean decides which of '
       + 'its constants this deposit independently counts the same way — 14 = 2 x 7, hexbit x rays = 28, 2^bits.',
@@ -76,7 +80,12 @@ export const fromSource = async (c: Connector): Promise<{ via: string; dir: stri
     const got = execFileSync('git', ['-C', dir, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim()
     if (got !== sha) return { via: null, why: `the ref moved between ls-remote (${sha.slice(0, 9)}) and the clone (${got.slice(0, 9)}); call again` }
   }
-  const mod = await import(pathToFileURL(join(dir, c.source.entry)).href) as { handle?: (m: unknown) => unknown }
+  // THE IMPORT CAN FAIL ON THE UNIT'S OWN TREE (measured 2026-11-08: qpu main at dfddbd70 imports src/quantum/apps/
+  // calculator/index.ts, which that commit does not carry). An exception here escaped `connect` as a bare JSON-RPC
+  // error with no status, and the court read it as its own failure. It is the source not answering: NOT MEASURED, named.
+  let mod: { handle?: (m: unknown) => unknown }
+  try { mod = await import(pathToFileURL(join(dir, c.source.entry)).href) as { handle?: (m: unknown) => unknown } }
+  catch (e) { return { via: null, why: `${c.source.entry} at ${sha.slice(0, 9)} does not import: ${String((e as Error).message ?? e).slice(0, 240)}` } }
   if (typeof mod.handle !== 'function') return { via: null, why: `${c.source.entry} at ${sha.slice(0, 9)} exports no handle` }
   return { via: `github:${c.source.github}@${sha.slice(0, 9)}`, dir, handle: mod.handle }
 }

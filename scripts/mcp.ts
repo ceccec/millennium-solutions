@@ -213,7 +213,9 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     try {
       const res = await fetch(c.endpoint, {
         method: 'POST', signal: ctl.signal,
-        headers: { 'content-type': 'application/json', 'User-Agent': 'millennium-solutions/connect (+https://ceccec.psg.bg/millennium-solutions/; read-only)' },
+        // Accept names both media types the MCP Streamable HTTP transport may answer with; without it the Payload MCP at
+        // /api/mcp answers 406 (measured 2026-11-08), which read as the unit not answering at all.
+        headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream', 'User-Agent': 'millennium-solutions/connect (+https://ceccec.psg.bg/millennium-solutions/; read-only)' },
         body: JSON.stringify(body),
       })
       const text = await res.text()
@@ -229,7 +231,15 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
         if (a?.source === 'served' || !c.source) return JSON.stringify(served, null, 1)
         return JSON.stringify(await fallback(served), null, 1)
       }
-      if (parsed.unparsed) return JSON.stringify({ connector: c.name, endpoint: c.endpoint, status: 'UNPARSED', note: 'the server replied with text that is not JSON', text: parsed.text }, null, 1)
+      // A NON-JSON REPLY IS A MOVED DOOR, NOT SILENCE (measured 2026-11-08: qpu.uuidna.com/mcp became the app's HTML page
+      // when the Worker gave way to the Payload site, whose JSON-RPC lives at /api/mcp). It falls back to the source
+      // exactly as a REFUSED name and an HTTP error do, so the pre-commit court is measured from the unit's own code
+      // instead of failing on a page it cannot parse. The served text stays beside the answer, named UNPARSED.
+      if (parsed.unparsed) {
+        const served = { connector: c.name, endpoint: c.endpoint, status: 'UNPARSED', note: 'the server replied with text that is not JSON', text: parsed.text?.slice(0, 2_000) }
+        if (a?.source === 'served' || !c.source) return JSON.stringify(served, null, 1)
+        return JSON.stringify(await fallback(served), null, 1)
+      }
       return JSON.stringify({ connector: c.name, endpoint: c.endpoint, attribution: c.attribution, notFor: c.notFor, status: 'ANSWERED', answer: parsed }, null, 1)
     } catch (e) {
       const m = e instanceof Error ? e.message : String(e)

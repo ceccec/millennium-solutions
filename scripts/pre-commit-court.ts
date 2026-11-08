@@ -56,8 +56,17 @@ const main = async () => {
     const text = await courtRequest
     const unescaped = text.replace(/\\"/g, '"')
     const total = /"total":\s*(\d+)/.exec(unescaped), passed = /"passed":\s*(\d+)/.exec(unescaped), failedN = /"failed":\s*(\d+)/.exec(unescaped)
-    if (/"status":\s*"REFUSED"/.test(text) && /no tool audit/.test(text)) {
-      lines.push({ court: 'qpu court', verdict: 'SKIPPED', detail: 'the unit serves no `audit` door today — a moved door, not a defect here. The commit is NOT cleared by the court' })
+    // A MOVED DOOR IS READ FROM THE CONNECTOR'S STRUCTURE, NOT FROM A PHRASE. The served unit refusing the name
+    // (REFUSED), answering a page (UNPARSED) or an HTTP status, with the source fallback unable to answer either
+    // (NOT MEASURED, FAILED, or no fallback at all), is "the unit serves no audit today" — SKIPPED, and the commit
+    // is not cleared by it. Matching the words `no tool audit` read one server's wording as the law, and the
+    // Payload MCP that now answers at /api/mcp words its refusal differently.
+    // an HTTP status is carried as a bare number, the named states as strings — both are the served unit not answering
+    const servedRefused = /"status":\s*("(REFUSED|UNPARSED|UNREACHABLE|TIMEOUT)"|\d{3}\b)/.test(text) && !/"status":\s*"ANSWERED"/.test(text)
+    if (servedRefused && (!total || !passed)) {
+      const via = /"via":\s*"([^"]+)"/.exec(text)?.[1]
+      const why = /"fallback":\s*\{[^}]*"why":\s*"((?:[^"\\]|\\.)*)"/.exec(text)?.[1]
+      lines.push({ court: 'qpu court', verdict: 'SKIPPED', detail: `the unit serves no \`audit\` door today${via ? ` (asked at its source ${via} too)` : ''}${why ? ` — its source: ${why.slice(0, 200)}` : ''} — a moved door, not a defect here. The commit is NOT cleared by the court` })
     } else if (!total || !passed) {
       lines.push({ court: 'qpu court', verdict: 'FAIL', detail: 'the audit did not return passed/total counts through the connector: ' + text.replace(/\s+/g, ' ').slice(0, 160) })
     } else {

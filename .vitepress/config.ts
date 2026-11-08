@@ -176,8 +176,12 @@ export default defineConfig({
 
   locales: i18nLocales,
 
-  // Repo/dev docs and npm-package sources are not site pages.
-  srcExclude: ['README.md', 'DEPLOY.md', 'src/**', 'packages/**'],
+  // Repo/dev docs and npm-package sources are not site pages. Neither is evidence/: it holds receipts — the
+  // constants gate writes its regenerated README.md and index.md into a tracked hexbit folder there on every
+  // run — and a receipt built as a page is a duplicate of the homepage wearing the excluded README's title,
+  // which scripts/seo.ts refuses at 70 characters. Excluding the root README and building its copies was the
+  // domain being narrower than the defect: 31 folders, 31 refused pages, and no ship past the SEO gate.
+  srcExclude: ['README.md', 'DEPLOY.md', 'src/**', 'packages/**', 'evidence/**'],
 
   themeConfig: {
     // Navigation pyramid (structure borrowed from ceccec.github.io's vortexGatewayPyramids —
