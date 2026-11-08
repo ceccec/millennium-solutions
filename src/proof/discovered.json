@@ -149604,5 +149604,45 @@
     "key": "lean_qec_the_counts_at_distance_nine_and_their_finite_bound",
     "name": "lean qec.lean: the_counts_at_distance_nine_and_their_finite_bound — surfacePhysical 9 = 145 ∧ corrects 9 = 4 ∧ (List.range' 1 9).all (fun d => corrects d < 5 && surfacePhysical d < 200) ∧ (List.range' 1 9).all (fun d => 2 * corrects d ≤ d) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "94df7814-6a9b-8175-91fc-29a84d7fda95"
+  },
+  {
+    "key": "lean_synthesis_the_single_qubit_clifford_group_has_order_twenty_four",
+    "name": "lean synthesis.lean: the_single_qubit_clifford_group_has_order_twenty_four — symp 1 = 6 ∧ clifford 1 = 24 ∧ 24 = 4 * 6 ∧ 6 = 1 * 2 * 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d020524d-9854-8f40-96fd-2c2b0dd9f301"
+  },
+  {
+    "key": "lean_synthesis_the_symplectic_group_order_at_each_rank",
+    "name": "lean synthesis.lean: the_symplectic_group_order_at_each_rank — (List.range' 1 3).map symp = [6, 720, 1451520] ∧ (List.range' 1 3).all (fun nn => symp nn == 2 ^ (nn * nn) * sympProd nn) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8f6ec87e-58e7-8f6b-bd2a-8d7929502ea9"
+  },
+  {
+    "key": "lean_synthesis_the_two_qubit_clifford_group_has_order_eleven_thousand_five_hundred_twenty",
+    "name": "lean synthesis.lean: the_two_qubit_clifford_group_has_order_eleven_thousand_five_hundred_twenty — clifford 2 = 11520 ∧ clifford 2 = 16 * 720 ∧ clifford 1 < clifford 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2251b51d-3eb6-80e8-94c8-935933a6808e"
+  },
+  {
+    "key": "lean_synthesis_fibonacci_anyon_fusion_is_the_fibonacci_number",
+    "name": "lean synthesis.lean: fibonacci_anyon_fusion_is_the_fibonacci_number — (List.range' 1 10).map fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55] ∧ fib 5 = 5 ∧ fib 10 = 55 ∧ (List.range' 1 10).all (fun n => fib (n + 2) == fib (n + 1) + fib n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d88a129e-299e-8253-8d39-331bafd2d227"
+  },
+  {
+    "key": "lean_synthesis_ising_anyon_fusion_is_two_to_the_m_minus_one_and_differs_from_fibonacci",
+    "name": "lean synthesis.lean: ising_anyon_fusion_is_two_to_the_m_minus_one_and_differs_from_fibonacci — (List.range' 1 5).map ising = [1, 2, 4, 8, 16] ∧ ising 3 = 4 ∧ fib 5 ≠ ising 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d5d458e8-1805-8a13-aa51-0339ef3def8d"
+  },
+  {
+    "key": "lean_synthesis_the_fifteen_to_one_magic_code_is_fifteen_one_three",
+    "name": "lean synthesis.lean: the_fifteen_to_one_magic_code_is_fifteen_one_three — 2 ^ 4 - 1 = 15 ∧ (3 - 1) / 2 = 1 ∧ 35 = 28 + 7 ∧ 15 = 1 + 14 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7886acdc-5b54-89b9-b414-9871622fbc3e"
+  },
+  {
+    "key": "lean_synthesis_qaoa_resource_counts_over_the_layers",
+    "name": "lean synthesis.lean: qaoa_resource_counts_over_the_layers — (List.range' 1 5).map qaoaParams = [2, 4, 6, 8, 10] ∧ qaoaZz 2 5 = 10 ∧ qaoaX 3 4 = 12 ∧ (List.range' 1 5).all (fun p => qaoaParams p == 2 * p) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "618c7a94-a77f-85e2-88b2-d303de952704"
+  },
+  {
+    "key": "lean_synthesis_these_are_exact_orders_and_counts_decided_over_a_finite_domain",
+    "name": "lean synthesis.lean: these_are_exact_orders_and_counts_decided_over_a_finite_domain — (List.range' 1 3).all (fun nn => clifford nn == 2 ^ (2 * nn) * symp nn) ∧ (List.range' 1 10).all (fun n => 0 < fib (n + 1)) ∧ clifford 2 = 11520 ∧ symp 3 = 1451520 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4d407f23-69c3-87d2-ba25-2c1a0750966a"
   }
 ]

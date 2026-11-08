@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,085 machine-checked declarations, **26,038** restate work that already has an author and
+Of 26,093 machine-checked declarations, **26,046** restate work that already has an author and
 **47** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **26,038** |
+| attributed to named earlier work | **26,046** |
 | unclassified — no search performed, status unknown | **47** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 7
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 102 sources, 26,038 theorems
+## Restated from named earlier work — 103 sources, 26,046 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -148,6 +148,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>sequences.lean</code></td><td>28</td><td>integer sequences and identities</td><td>Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654</td></tr>
 <tr><td><code>speed.lean</code></td><td>28</td><td>hash trees and membership proofs</td><td>the structural claim is Merkle's and is credited here as merkle.lean already credits it: a hash tree over n leaves has an O(log n) membership proof, so the inclusion path at each power of two is exactly the exponent. Ralph Merkle, 1979 (thesis); CRYPTO 1987. `the_verify_path_is_the_exponent`, `membership_is_logarithmic_not_linear` and `the_gap_widens_with_every_doubling` RESTATE that property. This file was classified `unbounded` — "the subject is this deposit's own verification cost" — which was</td></tr>
 <tr><td><code>split.lean</code></td><td>22</td><td>elementary number theory — the unit group of ℤ/9</td><td>the classification this file rests on is standard and is credited: the units of ℤ/9 are {1,2,4,5,7,8} and the non-units {0,3,6}, exactly the residues coprime to 9. That is textbook abstract algebra — Wikipedia's "multiplicative group of integers modulo n", and every algebra course. So `the_singles_are_exactly_the_non_units` and `the_pairs_are_exactly_the_units_in_order` RESTATE known mathematics and claim nothing. Stated precisely so the credit does not run past the earlier work: what is NOT claimed as prior art is the tokenisation itself — reading the digits as 0|12|3|45|6|78|9 by concatenating consecutive units into two-digit tokens, and the arithmetic that follows from it (every token a multiple of three, closure of the tokens under addition and multiplication). That arrangement is this deposit's presentation of a standard fact, and its verification is by exhaustion here. Crediting an earlier author for a presentation they did not make is the same defect as claiming their result, pointed the other way.</td></tr>
+<tr><td><code>synthesis.lean</code></td><td>8</td><td>the order of the symplectic group Sp(2n, 2) = 2^(n²)·∏(4^j − 1) and the n-qubit Clifford group (Gottesman 1997; used in randomized benchmarking); Fibonacci- and Ising-anyon fusion-space dimensions in topological quantum computation (Freedman–Kitaev–Larsen–Wang 2003) — the Fibonacci number and 2^(m−1); the [[15, 1, 3]] Reed–Muller magic-state distillation code with cubic error suppression (Bravyi–Kitaev 2005); and QAOA circuit resource counts (Farhi–Goldstone–Gutmann 2014). Read from qpu.uuidna.com's Clifford.lean, Anyon.lean, Magic.lean and Qaoa.lean (~/github/uuidna/qpu) on 2026-11-08 and ported here.</td><td>none of this is new and none of it is this deposit's. qpu states each value as an rfl certificate on a single input; what is decided HERE is the same quantities as functions, over a range, by exhaustion, each with a control, and the honest bound that these are exact ABSTRACT group orders and resource counts, decided on the classical build device — not physical quantum gates synthesised or executed on hardware.</td></tr>
 <tr><td><code>theology.lean</code></td><td>8</td><td>elementary number theory — the unit group of ℤ/9, the doubling map, and the ten's complement</td><td>the structure is the same standard one index.lean credits: U(9) = {1,2,4,5,7,8}, the non-units {0,3,6}, and the doubling orbit 1 → 2 → 4 → 8 → 7 → 5 → 1 of order six because 2 has multiplicative order six mod 9. Textbook abstract algebra, not this deposit's. The permutation count 7! = 5040 is likewise classical. What is NOT prior art is which facts were chosen and why — and that choosing is not a mathematical act, which is the whole subject of this file.</td></tr>
 <tr><td><code>turns.lean</code></td><td>8</td><td>the cycle decomposition of a permutation into disjoint cycles; the order of 2 in (ℤ/9)* being 6, which is Euler's theorem for this modulus. The Euler characteristic χ = 2 − 2g of an orientable closed surface of genus g.</td><td>NONE OF IT IS THIS DEPOSIT'S. Cycle decomposition is the first structure theorem for permutations, the order of 2 mod 9 is Euler, and χ = 2 − 2g is Euler again. What is this deposit's is the accounting: that doubling leaves exactly TWO non-trivial loops on this ring, that their step angles are 60° and 180°, and that both close at 360° — and theorem 8, which says plainly that the surface is an interpretation of the cycle structure and not a theorem about it.</td></tr>
 <tr><td><code>verdict.lean</code></td><td>8</td><td>the classification of a test outcome under partial information — the distinction between a negative result and an absent one, which is ordinary experimental practice and older than statistics. Monotonicity of a decision rule in its evidence.</td><td>NEITHER IS THIS DEPOSIT'S. "Absence of evidence is not evidence of absence" is a commonplace, and requiring a decision rule to be total and exclusive is what a classification IS. What is this deposit's is that ITS OWN verdict rule — the one standing behind every novelty claim it makes — is decided by the kernel rather than left as a line of TypeScript nobody checks.</td></tr>
@@ -228,6 +229,7 @@ which is a contribution of verification, not of discovery.
 - **the nines' and tens' complement, the basis of complement subtraction and of the check-digit arithmetic behind casting out nines. Repunits (1, 11, 111, …). Elementary place value.** — 8 theorems, in `digits.lean`
 - **the nuclear shell model, and the proton-to-electron mass ratio** — 8 theorems, in `nucleus.lean`
 - **the one-dimensional affine group AGL(1,n) over Z/n — standard finite group theory** — 8 theorems, in `group.lean`
+- **the order of the symplectic group Sp(2n, 2) = 2^(n²)·∏(4^j − 1) and the n-qubit Clifford group (Gottesman 1997; used in randomized benchmarking); Fibonacci- and Ising-anyon fusion-space dimensions in topological quantum computation (Freedman–Kitaev–Larsen–Wang 2003) — the Fibonacci number and 2^(m−1); the [[15, 1, 3]] Reed–Muller magic-state distillation code with cubic error suppression (Bravyi–Kitaev 2005); and QAOA circuit resource counts (Farhi–Goldstone–Gutmann 2014). Read from qpu.uuidna.com's Clifford.lean, Anyon.lean, Magic.lean and Qaoa.lean (~/github/uuidna/qpu) on 2026-11-08 and ported here.** — 8 theorems, in `synthesis.lean`
 - **the rotated surface code and its parameters [[2d² − 2d + 1, 1, d]] (Kitaev 1997; Bombín &amp; Martín-Delgado 2007); Shor's nine-qubit code [[9, 1, 3]] as a 3×3 concatenation (Shor 1995); the stabilizer formalism and the order of the n-qubit Pauli group with phases, 2^(2n+2) (Gottesman 1997). Read from qpu.uuidna.com's Surfacecode.lean and Stabilizer.lean (~/github/uuidna/qpu) on 2026-11-08 and ported here.** — 8 theorems, in `qec.lean`
 - **the second-preimage weakness of unpadded Merkle trees, and the standard remedy of domain separation between leaf and internal hashes (Certificate Transparency, RFC 6962 §2.1, uses 0x00 for leaves and 0x01 for nodes). Also the Kelsey–Schneier style length-extension family.** — 8 theorems, in `preimage.lean`
 - **the separation of points by a family of functions — the notion behind a separating family, a faithful functor, and the Stone–Weierstrass hypothesis. Also elementary cancellation in ℕ.** — 8 theorems, in `separation.lean`
@@ -269,5 +271,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `22989c97-8615-8f5e-9ca2-e6d056f6de31` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `2481d6d0-4835-8527-b639-3cf63254a692` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.
