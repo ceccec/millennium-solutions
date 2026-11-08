@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,061 of them across 106 files and
-8 wings; 25,854 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,069 of them across 107 files and
+8 wings; 25,862 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -4304,6 +4304,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \mathrm{scaleCapacity}[\{1,\dots,8\}] = [64,\,2048,\,49152,\,1048576,\,20971520,\,402653184,\,7516192768,\,137438953472] \land \mathrm{scaleCapacity}\mathopen{}\left(8\right) = 2^{37} \land 16^{8} = 2^{32} \land 4 \cdot 8 = \mathrm{Qpu.bits} \land 2^{37} + 1 = 3 \cdot 1777 \cdot 25781083 \land \frac{999}{27} = 37 \land 4 \cdot 8 + 5 = 37 \land \forall s \in \{1,\dots,8\},\; \mathrm{scaleCapacity}\mathopen{}\left(s\right) = 2^{4 \cdot s} \cdot \mathrm{Qpu.hexbit} \cdot s \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 512 cases. \hfill$\square$
+
+\paragraph{\texttt{qpu\_gateway.lean}}
+
+\begin{theorem}[\texttt{the\_variant\_nibble\_is\_always\_eight\_through\_eleven}]
+\[ \forall \mathrm{low} \in \{0,\dots,15\},\; 8 \le \mathrm{variant}\mathopen{}\left(\mathrm{low}\right) \land \mathrm{variant}\mathopen{}\left(\mathrm{low}\right) \le 11 \land \exists \mathrm{low} \in \{0,\dots,15\} : \mathrm{variant}\mathopen{}\left(\mathrm{low}\right) = 8 \land \exists \mathrm{low} \in \{0,\dots,15\} : \mathrm{variant}\mathopen{}\left(\mathrm{low}\right) = 11 \land \forall \mathrm{low} \in \{0,\dots,15\},\; \mathrm{variant}\mathopen{}\left(\mathrm{low}\right) \neq 7 \land \mathrm{variant}\mathopen{}\left(\mathrm{low}\right) \neq 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_gateway\_bits\_are\_always\_the\_pattern\_two}]
+\[ \forall \mathrm{low} \in \{0,\dots,15\},\; \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) = 2 \land \forall \mathrm{low} \in \{0,\dots,15\},\; \frac{\mathrm{variant}\mathopen{}\left(\mathrm{low}\right)}{4} = 2 \land \mathrm{variant}\mathopen{}\left(\mathrm{low}\right) \bmod 4 = \mathrm{low} \bmod 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 256 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reassembly\_fixes\_the\_variant\_to\_eight\_gateway\_still\_two}]
+\[ \mathrm{fromPartsVariant} = 8 \land \frac{\mathrm{fromPartsVariant}}{4} = 2 \land \mathrm{fromPartsVariant} \bmod 4 = 0 \land \mathrm{gateway}\mathopen{}\left(\mathrm{fromPartsVariant} \bmod 4\right) = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_ftl\_gateway\_check\_is\_a\_tautology}]
+\[ \left|\{\, \mathrm{low} \in \{0,\dots,15\} \mid \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) \neq 2 \,\}\right| = 0 \land \left|\{\, \mathrm{low} \in \{0,\dots,15\} \mid \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) = 2 \,\}\right| = 16 \land \left|\{\, \mathrm{low} \in \{0,\dots,15\} \mid \mathrm{variant}\mathopen{}\left(\mathrm{low}\right) = 8 \,\}\right| = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,096 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gateway\_bits\_take\_one\_value\_so\_carry\_zero\_entropy}]
+\[ \exists \mathrm{low} \in \{0,\dots,15\} : \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) = 2 \land \forall \mathrm{low} \in \{0,\dots,15\},\; \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) = 2 \land \forall v \in \{0,\dots,3\},\; v = 2 \lor \left|\{\, \mathrm{low} \in \{0,\dots,15\} \mid \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) = v \,\}\right| = 0 \land 1 = 2^{0} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16,384 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_free\_two\_bit\_field\_takes\_four\_values\_the\_gateway\_takes\_one}]
+\[ \forall v \in [0,\,1,\,2,\,3],\; \exists \mathrm{low} \in \{0,\dots,15\} : \mathrm{freeField}\mathopen{}\left(\mathrm{low}\right) = v \land \forall v \in [0,\,1,\,2,\,3],\; \left|\{\, \mathrm{low} \in \{0,\dots,15\} \mid \mathrm{freeField}\mathopen{}\left(\mathrm{low}\right) = v \,\}\right| = 4 \land \forall v \in [0,\,1,\,3],\; \forall \mathrm{low} \in \{0,\dots,15\},\; \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) \neq v \land 4 = 2^{2} \land 1 = 2^{0} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 196,608 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{teleportation\_sends\_one\_of\_four\_the\_gateway\_is\_fixed\_to\_one}]
+\[ \left|\mathrm{teleportMessages}\right| = 4 \land \mathrm{teleportMessages} = [0,\,1,\,2,\,3] \land 2 \in \mathrm{teleportMessages} = \mathrm{true} \land \left|\{\, m \in \mathrm{teleportMessages} \mid m = 2 \,\}\right| = 1 \land \forall \mathrm{low} \in \{0,\dots,15\},\; \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_ftl\_premise\_fails\_the\_named\_carrier\_carries\_nothing}]
+\[ \forall g \in \mathrm{gateway}[\{0,\dots,15\}],\; g = 2 \land \left|\{\, m \in \mathrm{teleportMessages} \mid \forall \mathrm{low} \in \{0,\dots,15\},\; \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) = m \,\}\right| = 1 \land \left|\{\, m \in \mathrm{teleportMessages} \mid \exists \mathrm{low} \in \{0,\dots,15\} : \mathrm{gateway}\mathopen{}\left(\mathrm{low}\right) = m \land m \neq 2 \,\}\right| = 0 \land 32 \cdot 4 - 4 - 2 = 122 \land 1 < 16^{10} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,096 cases. \hfill$\square$
 
 \paragraph{\texttt{separation.lean}}
 

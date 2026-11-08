@@ -149484,5 +149484,45 @@
     "key": "lean_qpucrypto_the_eight_scales_reach_two_to_the_thirty_seven_and_the_thousand_bit_piece_is_one_more_for_no_reason",
     "name": "lean qpu_crypto.lean: the_eight_scales_reach_two_to_the_thirty_seven_and_the_thousand_bit_piece_is_one_more_for_no_reason — (List.range' 1 8).map scaleCapacity = [64, 2048, 49152, 1048576, 20971520, 402653184, 7516192768, 137438953472] ∧ scaleCapacity 8 = 2 ^ 37 ∧ 16 ^ 8 = 2 ^ 32 ∧ 4 * 8 = Qpu.bits ∧ 2 ^ 37 + 1 = 3 * 1777 * 25781083 ∧ 999 / 27 = 37 ∧ 4 * 8 + 5 =… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "42aaaec0-af4a-8fe9-8834-13cd59fb004a"
+  },
+  {
+    "key": "lean_qpugateway_the_variant_nibble_is_always_eight_through_eleven",
+    "name": "lean qpu_gateway.lean: the_variant_nibble_is_always_eight_through_eleven — (List.range 16).all (fun low => 8 ≤ variant low && variant low ≤ 11) ∧ (List.range 16).any (fun low => variant low == 8) ∧ (List.range 16).any (fun low => variant low == 11) ∧ (List.range 16).all (fun low => variant low != 7 && variant low … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f4d42ee8-2110-8d0d-a801-15e780f1d536"
+  },
+  {
+    "key": "lean_qpugateway_the_two_gateway_bits_are_always_the_pattern_two",
+    "name": "lean qpu_gateway.lean: the_two_gateway_bits_are_always_the_pattern_two — (List.range 16).all (fun low => gateway low == 2) ∧ (List.range 16).all (fun low => variant low / 4 == 2 && variant low % 4 == low % 4) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d44c8833-8a37-803e-a005-50649e75b9cc"
+  },
+  {
+    "key": "lean_qpugateway_reassembly_fixes_the_variant_to_eight_gateway_still_two",
+    "name": "lean qpu_gateway.lean: reassembly_fixes_the_variant_to_eight_gateway_still_two — fromPartsVariant = 8 ∧ fromPartsVariant / 4 = 2 ∧ fromPartsVariant % 4 = 0 ∧ gateway (fromPartsVariant % 4) = 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e6db2c92-f5ef-81de-a43a-442e02123b32"
+  },
+  {
+    "key": "lean_qpugateway_the_ftl_gateway_check_is_a_tautology",
+    "name": "lean qpu_gateway.lean: the_ftl_gateway_check_is_a_tautology — ((List.range 16).filter (fun low => gateway low != 2)).length = 0 ∧ ((List.range 16).filter (fun low => gateway low == 2)).length = 16 ∧ ((List.range 16).filter (fun low => variant low == 8)).length = 4 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c81e9dd1-c90d-85c0-b41d-ed0c8115c602"
+  },
+  {
+    "key": "lean_qpugateway_the_gateway_bits_take_one_value_so_carry_zero_entropy",
+    "name": "lean qpu_gateway.lean: the_gateway_bits_take_one_value_so_carry_zero_entropy — (List.range 16).any (fun low => gateway low == 2) ∧ (List.range 16).all (fun low => gateway low == 2) ∧ (List.range 4).all (fun v => (v == 2) || ((List.range 16).filter (fun low => gateway low == v)).length == 0) ∧ 1 = 2 ^ 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "546d55e9-6e3b-8db7-914b-b4229bc67880"
+  },
+  {
+    "key": "lean_qpugateway_a_free_two_bit_field_takes_four_values_the_gateway_takes_one",
+    "name": "lean qpu_gateway.lean: a_free_two_bit_field_takes_four_values_the_gateway_takes_one — [0, 1, 2, 3].all (fun v => (List.range 16).any (fun low => freeField low == v)) ∧ [0, 1, 2, 3].all (fun v => ((List.range 16).filter (fun low => freeField low == v)).length == 4) ∧ [0, 1, 3].all (fun v => (List.range 16).all (fun low => gat… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "24c1171e-784f-83ca-8253-4f977ffce4c0"
+  },
+  {
+    "key": "lean_qpugateway_teleportation_sends_one_of_four_the_gateway_is_fixed_to_one",
+    "name": "lean qpu_gateway.lean: teleportation_sends_one_of_four_the_gateway_is_fixed_to_one — teleportMessages.length = 4 ∧ teleportMessages = [0, 1, 2, 3] ∧ teleportMessages.contains 2 = true ∧ (teleportMessages.filter (fun m => m == 2)).length = 1 ∧ (List.range 16).all (fun low => gateway low == 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4326302c-3322-8dd3-a6a4-45311867002b"
+  },
+  {
+    "key": "lean_qpugateway_the_ftl_premise_fails_the_named_carrier_carries_nothing",
+    "name": "lean qpu_gateway.lean: the_ftl_premise_fails_the_named_carrier_carries_nothing — ((List.range 16).map gateway).all (fun g => g == 2) ∧ (teleportMessages.filter (fun m => (List.range 16).all (fun low => gateway low == m))).length = 1 ∧ (teleportMessages.filter (fun m => (List.range 16).any (fun low => gateway low == m &&… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b9147af4-255c-84bd-b2d7-85171125d39b"
   }
 ]

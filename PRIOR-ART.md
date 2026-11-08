@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,061 machine-checked declarations, **26,014** restate work that already has an author and
+Of 26,069 machine-checked declarations, **26,022** restate work that already has an author and
 **47** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **26,014** |
+| attributed to named earlier work | **26,022** |
 | unclassified — no search performed, status unknown | **47** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 7
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 99 sources, 26,014 theorems
+## Restated from named earlier work — 100 sources, 26,022 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -131,6 +131,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>program.lean</code></td><td>21</td><td>identifier formats and error-detecting codes</td><td>the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC 4122, 2005); FNV-1a, used here as the check function, is Glenn Fowler, Landon Curt Noll and Phong Vo, 1991, and is credited in fnv.lean where it is ported. A checksum placed in one field of an identifier over the remaining fields is ordinary practice and no priority is claimed for it. What is decided here is only that THIS deposit's layout is the partition it says it is.</td></tr>
 <tr><td><code>qpu.lean</code></td><td>24</td><td>the constants on the left are qpu.uuidna.com's, read from the served JSON-LD on 2026-09-28. They are that service's declarations about its own unit and none of them is this deposit's. The arithmetic relating them is elementary multiplication and powers of two, older than both.</td><td>NEITHER SIDE IS BEING CREDITED WITH THE OTHER'S WORK. qpu states faces = coins * rays and bits = vertices * hexbit in its own Lean; this deposit states DIMENSIONS = 2 * N and DIGITS_READ = 4 * N in rays.lean. What is decided here is only WHICH of those land on the same integers, and which do not.</td></tr>
 <tr><td><code>qpu_crypto.lean</code></td><td>16</td><td>Fermat's difference-of-squares factorisation (1643); RSA (Rivest, Shamir, Adleman, 1977) on the textbook modulus 91 = 7 · 13 with φ(91) = 72; the classical half of Shor's reduction (1994) — an even period r with a^(r/2) ≢ −1 (mod N) gives the factors gcd(a^(r/2) ± 1, N); Grover's square-root search cost (1996) and the birthday bound; the lifting-the-exponent lemma, v_3(2^n + 1) = v_3(3) + v_3(n) for odd n, and the algebraic split a^3 + 1 = (a + 1)(a^2 − a + 1); Fermat's little theorem as a compositeness witness; RFC 9562's version and variant fields; the 128-quantum-bit floor that qpu.uuidna.com reads from the Classic McEliece ISO page; the order of the general linear group over two elements, |GL(n, 2)| = ∏ (2^n − 2^i); Mersenne primes and the composite 2^11 − 1 = 23 · 89; triangular numbers T(q) = q(q + 1)/2 = C(q + 1, 2); and Zu Chongzhi's rational π = 355/113 (5th century), which qpu's own Grover.lean names as pi_zu.</td><td>NONE OF THE MATHEMATICS IS THIS DEPOSIT'S, AND NONE OF IT IS qpu's. qpu.uuidna.com's seal, σ-trapdoor, Shor run and thousand-bit surface are that service's constructions, read from ~/github/uuidna/qpu on 2026-11-08 (src/quantum/uuid/index.ts `version`, `seal`, `uuidQubits`; src/quantum/processing/algorithms.ts `createImpossible`, `decodeImpossible`; src/quantum/CRYPTO.md; the root README.md, committed at d0f1dd01, lines 49–81 for the scale table and the Grover comparison). What is decided here is only which NAMED LAW each construction is, on the same integers, and exactly where each one stops.</td></tr>
+<tr><td><code>qpu_gateway.lean</code></td><td>8</td><td>quantum teleportation (Bennett, Brassard, Crépeau, Jozsa, Peres, Wootters, Phys. Rev. Lett. 70, 1895, 1993), which sends two classical bits per teleported qubit and proves fewer than two would permit superluminal signalling, so the two bits are random and must be transmitted; and RFC 9562 (2024), which fixes the UUID variant field to the two-bit pattern 10.</td><td>NEITHER IS THIS DEPOSIT'S. The teleportation protocol and its two-bit minimum are Bennett et al.'s; the variant field is the RFC's. What is this deposit's is the decision, on qpu's own variant rule read from ~/github/uuidna/qpu/src/quantum/uuid/index.ts at 4ce19dde6 on 2026-11-08, that the two bits qpu calls "gateway" and offers as the carrier of a faster-than-light teleport are CONSTANT across every coin — so they are not the random, transmitted bits the protocol needs, and the analogy's premise fails by computation rather than by prose.</td></tr>
 <tr><td><code>quantum.lean</code></td><td>11</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a discovery here. Sorted-leaf Merkle trees are the recommended construction for multiproofs and are shipped that way in OpenZeppelin's merkle-tree library; canonical ordering before hashing is long-established in cryptographic serialisation generally. The mathematical content is elementary: any function of a canonical form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What this file contributes is the Lean verification over a stated finite domain and the negative controls beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free, and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits. Verification and refusal, not discovery.</td></tr>
 <tr><td><code>ranking.lean</code></td><td>8</td><td>additive scoring over binary criteria — a weighted sum, the simplest form of multi-criteria decision analysis; and the pigeonhole counting that says a sum over few weights cannot separate many subsets.</td><td>NEITHER IS THIS DEPOSIT'S. A weighted sum of indicators is the oldest scoring rule there is, and counting how many subsets share a total is pigeonhole. What is this deposit's is that ITS OWN queue — which decides where the next prior-art search goes — is put to both, and that the second answer is unflattering and recorded anyway.</td></tr>
 <tr><td><code>rays.lean</code></td><td>13</td><td>cyclic groups and primitive roots</td><td>that 3 is a primitive root modulo 7 and that (ℤ/7)* is cyclic of order six is Gauss and is elementary number theory; the involution x ↦ ¬x on bit words is Boolean algebra. Neither is this deposit's. What is decided here is only that THIS deposit's ray order is that orbit and that its trace is that involution — the facts a reader would otherwise have to take from a comment.</td></tr>
@@ -208,6 +209,7 @@ which is a contribution of verification, not of discovery.
 - **primality certificates — a probable prime is not a proved prime (Miller–Rabin, 1976/1980; a proof is a certificate or a deterministic test)** — 8 theorems, in `answer.lean`
 - **public API directories — the OpenAPI catalogue of APIs.guru** — 4 theorems, in `apis.lean`
 - **public-key signatures on elliptic curves** — 11 theorems, in `asymmetric.lean`
+- **quantum teleportation (Bennett, Brassard, Crépeau, Jozsa, Peres, Wootters, Phys. Rev. Lett. 70, 1895, 1993), which sends two classical bits per teleported qubit and proves fewer than two would permit superluminal signalling, so the two bits are random and must be transmitted; and RFC 9562 (2024), which fixes the UUID variant field to the two-bit pattern 10.** — 8 theorems, in `qpu_gateway.lean`
 - **siteswap notation for juggling (Klimek, Tiemann and Magnusson, independently c. 1985; the average theorem and the permutation criterion are due to Buhler, Eisenbud, Graham and Wright, 1994); the Pythagorean comma (antiquity); Maekawa's and Kawasaki's theorems on flat-foldable vertices (1980s); the crystallographic restriction theorem (19th century, Bravais and after); the moment of inertia and angular acceleration (Euler, Newton); the least common multiple (Euclid).** — 8 theorems, in `entangled.lean`
 - **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 35 theorems, in `planck.lean`
 - **the Ed25519 signature scheme's parameter sizes — 32-byte public key, 64-byte signature (Bernstein, Duif, Lange, Schwabe, Yang, 2011; RFC 8032). The 128-bit UUID layout, RFC 9562. A byte is eight bits.** — 24 theorems, in `widths.lean`
@@ -263,5 +265,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `802e8398-e159-887f-ad0d-7c0d4c655f61` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `a4567420-59bf-848e-a465-69036286a955` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.
