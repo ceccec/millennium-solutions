@@ -149684,5 +149684,45 @@
     "key": "lean_resources_these_are_exact_counts_and_rational_convergents_not_pi_itself",
     "name": "lean resources.lean: these_are_exact_counts_and_rational_convergents_not_pi_itself — chimera 16 = 2048 ∧ pegasus 16 = 5760 ∧ qftGates 10 = 55 ∧ 22 * 7 = 154 ∧ 355 * 113 = 40115 ∧ (List.range' 1 8).all (fun q => qftGates q < qftStates q) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "1ebfd2f4-000b-8f6a-abd4-eb7c3ad7f076"
+  },
+  {
+    "key": "lean_combinatorics_the_factorial_counts_the_orderings",
+    "name": "lean combinatorics.lean: the_factorial_counts_the_orderings — (List.range 8).map factorial = [1, 1, 2, 6, 24, 120, 720, 5040] ∧ factorial 3 = 6 ∧ (List.range 7).all (fun n => factorial (n + 1) == (n + 1) * factorial n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9ecd10ea-f751-8a27-b3dd-6c8249b14dfd"
+  },
+  {
+    "key": "lean_combinatorics_the_binomial_coefficients_follow_pascals_rule",
+    "name": "lean combinatorics.lean: the_binomial_coefficients_follow_pascals_rule — (List.range 6).map (fun k => choose 5 k) = [1, 5, 10, 10, 5, 1] ∧ choose 5 2 = 10 ∧ (List.range 6).all (fun n => (List.range 6).all (fun k => choose (n + 1) (k + 1) == choose n (k + 1) + choose n k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ea786f87-603d-85b2-828f-3f30db7bc51e"
+  },
+  {
+    "key": "lean_combinatorics_the_binomial_is_symmetric",
+    "name": "lean combinatorics.lean: the_binomial_is_symmetric — choose 5 2 = choose 5 3 ∧ choose 6 2 = choose 6 4 ∧ (List.range 7).all (fun k => choose 6 k == choose 6 (6 - k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7a026991-51ed-8536-ad98-9ed8cbca9c36"
+  },
+  {
+    "key": "lean_combinatorics_the_triangular_numbers_are_the_handshake_count",
+    "name": "lean combinatorics.lean: the_triangular_numbers_are_the_handshake_count — (List.range 9).map triangular = [0, 1, 3, 6, 10, 15, 21, 28, 36] ∧ triangular 4 = 10 ∧ (List.range 8).all (fun n => 2 * triangular (n + 1) == (n + 1) * (n + 2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "feb4da67-debf-88ec-ae86-3254b90eee3d"
+  },
+  {
+    "key": "lean_combinatorics_ramsey_two_n_is_n_and_two_people_make_one_pair",
+    "name": "lean combinatorics.lean: ramsey_two_n_is_n_and_two_people_make_one_pair — (List.range' 2 6).map ramsey22 = [2, 3, 4, 5, 6, 7] ∧ ramsey22 2 = 2 ∧ triangular 1 = 1 ∧ (List.range 10).all (fun n => ramsey22 n == n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0bb8f2b9-74ab-83d1-8458-eabf585cc85b"
+  },
+  {
+    "key": "lean_combinatorics_the_factorial_outgrows_the_power_of_two",
+    "name": "lean combinatorics.lean: the_factorial_outgrows_the_power_of_two — (List.range' 1 7).all (fun n => 2 ^ (n - 1) ≤ factorial n) ∧ factorial 4 = 24 ∧ 2 ^ 3 = 8 ∧ 8 < 24 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "74f6f6a2-86da-8873-9dcc-ff54debdbe3c"
+  },
+  {
+    "key": "lean_combinatorics_the_binomial_row_sums_to_two_to_the_n",
+    "name": "lean combinatorics.lean: the_binomial_row_sums_to_two_to_the_n — ((List.range 6).map (fun k => choose 5 k)).foldl (· + ·) 0 = 32 ∧ 32 = 2 ^ 5 ∧ (List.range 7).all (fun n => ((List.range (n + 1)).map (fun k => choose n k)).foldl (· + ·) 0 == 2 ^ n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "07959ae0-e8d2-8729-8521-167556c9a8e2"
+  },
+  {
+    "key": "lean_combinatorics_these_are_exact_counts_decided_not_a_physical_machine",
+    "name": "lean combinatorics.lean: these_are_exact_counts_decided_not_a_physical_machine — factorial 7 = 5040 ∧ choose 5 2 = 10 ∧ triangular 8 = 36 ∧ ramsey22 9 = 9 ∧ (List.range 7).all (fun n => choose n 0 == 1 && choose n n == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "03e80abe-991e-8c25-a3bc-1fbf431001e7"
   }
 ]

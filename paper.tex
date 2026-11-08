@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,101 of them across 111 files and
-8 wings; 25,894 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,109 of them across 112 files and
+8 wings; 25,902 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1211,6 +1211,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \forall d \in \{0,\dots,9\},\; 10 - 10 - d = d = \mathrm{true} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 10 cases. \hfill$\square$
+
+\paragraph{\texttt{combinatorics.lean}}
+
+\begin{theorem}[\texttt{the\_factorial\_counts\_the\_orderings}]
+\[ \mathrm{factorial}[\{0,\dots,7\}] = [1,\,1,\,2,\,6,\,24,\,120,\,720,\,5040] \land \mathrm{factorial}\mathopen{}\left(3\right) = 6 \land \forall n \in \{0,\dots,6\},\; \mathrm{factorial}\mathopen{}\left(n + 1\right) = n + 1 \cdot \mathrm{factorial}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 448 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_binomial\_coefficients\_follow\_pascals\_rule}]
+\[ \{\, \mathrm{choose}\mathopen{}\left(5,\,k\right) \mid k \in \{0,\dots,5\} \,\} = [1,\,5,\,10,\,10,\,5,\,1] \land \mathrm{choose}\mathopen{}\left(5,\,2\right) = 10 \land \forall n \in \{0,\dots,5\},\; \forall k \in \{0,\dots,5\},\; \mathrm{choose}\mathopen{}\left(n + 1,\,k + 1\right) = \mathrm{choose}\mathopen{}\left(n,\,k + 1\right) + \mathrm{choose}\mathopen{}\left(n,\,k\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,296 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_binomial\_is\_symmetric}]
+\[ \mathrm{choose}\mathopen{}\left(5,\,2\right) = \mathrm{choose}\mathopen{}\left(5,\,3\right) \land \mathrm{choose}\mathopen{}\left(6,\,2\right) = \mathrm{choose}\mathopen{}\left(6,\,4\right) \land \forall k \in \{0,\dots,6\},\; \mathrm{choose}\mathopen{}\left(6,\,k\right) = \mathrm{choose}\mathopen{}\left(6,\,6 - k\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_triangular\_numbers\_are\_the\_handshake\_count}]
+\[ \mathrm{triangular}[\{0,\dots,8\}] = [0,\,1,\,3,\,6,\,10,\,15,\,21,\,28,\,36] \land \mathrm{triangular}\mathopen{}\left(4\right) = 10 \land \forall n \in \{0,\dots,7\},\; 2 \cdot \mathrm{triangular}\mathopen{}\left(n + 1\right) = n + 1 \cdot n + 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 648 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{ramsey\_two\_n\_is\_n\_and\_two\_people\_make\_one\_pair}]
+\[ \mathrm{ramsey22}[\{2,\dots,7\}] = [2,\,3,\,4,\,5,\,6,\,7] \land \mathrm{ramsey22}\mathopen{}\left(2\right) = 2 \land \mathrm{triangular}\mathopen{}\left(1\right) = 1 \land \forall n \in \{0,\dots,9\},\; \mathrm{ramsey22}\mathopen{}\left(n\right) = n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 360 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_factorial\_outgrows\_the\_power\_of\_two}]
+\[ \forall n \in \{1,\dots,7\},\; 2^{n - 1} \le \mathrm{factorial}\mathopen{}\left(n\right) \land \mathrm{factorial}\mathopen{}\left(4\right) = 24 \land 2^{3} = 8 \land 8 < 24 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_binomial\_row\_sums\_to\_two\_to\_the\_n}]
+\[ \sum \{\, \mathrm{choose}\mathopen{}\left(5,\,k\right) \mid k \in \{0,\dots,5\} \,\} = 32 \land 32 = 2^{5} \land \forall n \in \{0,\dots,6\},\; \sum \{\, \mathrm{choose}\mathopen{}\left(n,\,k\right) \mid k \in \{0,\dots,n + 1-1\} \,\} = 2^{n} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 42 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{these\_are\_exact\_counts\_decided\_not\_a\_physical\_machine}]
+\[ \mathrm{factorial}\mathopen{}\left(7\right) = 5040 \land \mathrm{choose}\mathopen{}\left(5,\,2\right) = 10 \land \mathrm{triangular}\mathopen{}\left(8\right) = 36 \land \mathrm{ramsey22}\mathopen{}\left(9\right) = 9 \land \forall n \in \{0,\dots,6\},\; \mathrm{choose}\mathopen{}\left(n,\,0\right) = 1 \land \mathrm{choose}\mathopen{}\left(n,\,n\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
 
 \paragraph{\texttt{demand.lean}}
 
