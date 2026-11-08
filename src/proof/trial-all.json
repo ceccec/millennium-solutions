@@ -170878,5 +170878,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "42aaaec0-af4a-8fe9-8834-13cd59fb004a"
+  },
+  {
+    "key": "lean_qpugateway_the_variant_nibble_is_always_eight_through_eleven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f4d42ee8-2110-8d0d-a801-15e780f1d536"
+  },
+  {
+    "key": "lean_qpugateway_the_two_gateway_bits_are_always_the_pattern_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d44c8833-8a37-803e-a005-50649e75b9cc"
+  },
+  {
+    "key": "lean_qpugateway_reassembly_fixes_the_variant_to_eight_gateway_still_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e6db2c92-f5ef-81de-a43a-442e02123b32"
+  },
+  {
+    "key": "lean_qpugateway_the_ftl_gateway_check_is_a_tautology",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c81e9dd1-c90d-85c0-b41d-ed0c8115c602"
+  },
+  {
+    "key": "lean_qpugateway_the_gateway_bits_take_one_value_so_carry_zero_entropy",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "546d55e9-6e3b-8db7-914b-b4229bc67880"
+  },
+  {
+    "key": "lean_qpugateway_a_free_two_bit_field_takes_four_values_the_gateway_takes_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "24c1171e-784f-83ca-8253-4f977ffce4c0"
+  },
+  {
+    "key": "lean_qpugateway_teleportation_sends_one_of_four_the_gateway_is_fixed_to_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4326302c-3322-8dd3-a6a4-45311867002b"
+  },
+  {
+    "key": "lean_qpugateway_the_ftl_premise_fails_the_named_carrier_carries_nothing",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b9147af4-255c-84bd-b2d7-85171125d39b"
+  },
+  {
+    "key": "lean_width_the_register_at_each_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "09832000-1d91-8df1-b0c6-d5c1d7bba3cf"
+  },
+  {
+    "key": "lean_width_the_grover_exponent_at_each_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a35c6282-efa4-8801-a75b-3a969e0e5d1b"
+  },
+  {
+    "key": "lean_width_the_iso_floor_is_cleared_exactly_from_width_sixteen",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "09aeba49-34f9-85ec-a4f1-3bba002abf7d"
+  },
+  {
+    "key": "lean_width_clearing_the_floor_is_two_hundred_fifty_six_free_bits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "07ab92f3-334b-807f-9dba-04fbdde7be4d"
+  },
+  {
+    "key": "lean_width_the_uuid_is_width_four_and_sits_sixty_seven_below",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "86e3cce5-7ea8-87d1-b7ee-bc32e3dd36a1"
+  },
+  {
+    "key": "lean_width_the_register_grows_strictly_with_the_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9aa19d70-0ee0-8cec-aee8-39fec7ee49d6"
+  },
+  {
+    "key": "lean_width_clearing_the_floor_needs_a_cost_exponent_of_at_least_256",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3660343e-b344-8be2-b409-b9e320cdcd4d"
+  },
+  {
+    "key": "lean_width_the_cost_exponent_is_more_than_the_square_root_exponent_at_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1f8c76c6-acdf-8590-95eb-60bd60367edb"
   }
 ]
