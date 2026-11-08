@@ -1,3 +1,7 @@
+---
+title: Answer system
+---
+
 # Answer system: TRUE, FALSE, or UNKNOWN, each with a certificate
 
 ## Purpose
