@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,093 machine-checked declarations, **26,046** restate work that already has an author and
+Of 26,101 machine-checked declarations, **26,054** restate work that already has an author and
 **47** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **26,046** |
+| attributed to named earlier work | **26,054** |
 | unclassified — no search performed, status unknown | **47** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 7
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 103 sources, 26,046 theorems
+## Restated from named earlier work — 104 sources, 26,054 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -140,6 +140,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>reached.lean</code></td><td>80</td><td>elementary finite group theory over ℤ/9, and the hue circle of colour theory</td><td>NONE OF THE MATHEMATICS IS THIS DEPOSIT'S. That every element of a finite additive group has an inverse, that negation is an involution, that the cosets of a subgroup partition the group, and that the 3-cube has 8 vertices and 12 edges are all textbook and long prior — Lagrange for the cosets, the hypercube counts older still. The RGB/CMY hue relations are ordinary colour theory: complements sit 180° apart on the wheel. What is NOT prior art is that these particular statements sat WITHDRAWN in this deposit's ledger, each marked `portable` — its own judgement that a Lean proof was reachable — and each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test" while nobody wrote one.</td></tr>
 <tr><td><code>recovered.lean</code></td><td>15</td><td>elementary number theory — the unit group of ℤ/9</td><td>every fact here is standard: the units of ℤ/9 are {1,2,4,5,7,8}, their product is −1 (Wilson), 2 generates them with order 6, and the Pisano period of Fibonacci mod 9 is 24. Textbook material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test", while every one is decidable in a line.</td></tr>
 <tr><td><code>reflection.lean</code></td><td>8</td><td>the method of complements</td><td>the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04</td></tr>
+<tr><td><code>resources.lean</code></td><td>8</td><td>D-Wave Chimera and Pegasus annealer qubit counts (vertices·m², vertices·n·m·(m−1)); the quantum Fourier transform's resource counts over q qubits — gate count q(q+1)/2 (a triangular number), swaps ⌊q/2⌋, depth 2q−1, dimension 2^q; and the classical rational convergents of π — Archimedes' 22/7 (upper bound) and Zu Chongzhi's 355/113 (5th century). Read from qpu.uuidna.com's Annealing.lean, Qft.lean and Pi.lean (~/github/uuidna/qpu) on 2026-11-08 and ported here.</td><td>none of this is new and none of it is this deposit's. qpu states each as an rfl certificate on a single input; what is decided HERE is the same quantities as functions over a range, by exhaustion, each with a control. The honest bound: these are exact integer counts and exact RATIONAL convergents — not a closed form for π (which is irrational) and not a physical annealer or QFT circuit; the counts are the structure, decided on silicon.</td></tr>
 <tr><td><code>retained.lean</code></td><td>15</td><td>elementary number theory — the unit group of Z/9 and the closure of its residue subsets under affine maps</td><td>every theorem here is one residue subset of Z/9 carried into itself by one affine map d ↦ a·d + b, an instance of the monoid of 81 maps src/proof/group.lean settles. Standard elementary number theory; nothing here is claimed new.</td></tr>
 <tr><td><code>reversal.lean</code></td><td>29</td><td>elementary arithmetic</td><td>digit reversal and digit sums; casting out nines, in use by the 12th century</td></tr>
 <tr><td><code>rights.lean</code></td><td>8</td><td>copyright law — rights arising without formality</td><td>this file already NAMED its prior art in prose while the attribution table recorded none. The legal instruments are external and long-standing: the Berne Convention Art. 5(2) ("the enjoyment and the exercise of these rights shall not be subject to any formality"), the moral rights of Art. 6bis, and the sui generis database right of Directive 96/9/EC. `claims_exactly_what_arises_without_formality` and `the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them. Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's; the audit of its own position against the law is.</td></tr>
@@ -164,6 +165,7 @@ which is a contribution of verification, not of discovery.
 - **Cantor's diagonal argument (1891), in its finite form: no list of subsets of a finite set contains the subset built by disagreeing with the i-th listed subset at the i-th element. Equivalently |2^S| &gt; |S|. Also the counting bound that L binary labels take at most 2^L values.** — 7 theorems, in `diagonal.lean`
 - **Cantor's diagonal argument again, turned on a vocabulary rather than a set; the observation that no finite list of definable predicates over a finite domain exhausts the predicates.** — 8 theorems, in `closure.lean`
 - **Cantor's diagonal argument, and the elementary fact that a diagonal over a domain of n points separates a list of at most n. Modular reduction 9 ≡ 0 (mod 9) and the tens-complement 10 − d.** — 8 theorems, in `domain.lean`
+- **D-Wave Chimera and Pegasus annealer qubit counts (vertices·m², vertices·n·m·(m−1)); the quantum Fourier transform's resource counts over q qubits — gate count q(q+1)/2 (a triangular number), swaps ⌊q/2⌋, depth 2q−1, dimension 2^q; and the classical rational convergents of π — Archimedes' 22/7 (upper bound) and Zu Chongzhi's 355/113 (5th century). Read from qpu.uuidna.com's Annealing.lean, Qft.lean and Pi.lean (~/github/uuidna/qpu) on 2026-11-08 and ported here.** — 8 theorems, in `resources.lean`
 - **Fermat's difference-of-squares factorisation (1643); RSA (Rivest, Shamir, Adleman, 1977) on the textbook modulus 91 = 7 · 13 with φ(91) = 72; the classical half of Shor's reduction (1994) — an even period r with a^(r/2) ≢ −1 (mod N) gives the factors gcd(a^(r/2) ± 1, N); Grover's square-root search cost (1996) and the birthday bound; the lifting-the-exponent lemma, v_3(2^n + 1) = v_3(3) + v_3(n) for odd n, and the algebraic split a^3 + 1 = (a + 1)(a^2 − a + 1); Fermat's little theorem as a compositeness witness; RFC 9562's version and variant fields; the 128-quantum-bit floor that qpu.uuidna.com reads from the Classic McEliece ISO page; the order of the general linear group over two elements, |GL(n, 2)| = ∏ (2^n − 2^i); Mersenne primes and the composite 2^11 − 1 = 23 · 89; triangular numbers T(q) = q(q + 1)/2 = C(q + 1, 2); and Zu Chongzhi's rational π = 355/113 (5th century), which qpu's own Grover.lean names as pi_zu.** — 16 theorems, in `qpu_crypto.lean`
 - **GHZ states and the X-basis parity witness (Greenberger, Horne, Zeilinger 1989)** — 2 theorems, in `interference.lean`
 - **additive scoring over binary criteria — a weighted sum, the simplest form of multi-criteria decision analysis; and the pigeonhole counting that says a sum over few weights cannot separate many subsets.** — 8 theorems, in `ranking.lean`
@@ -271,5 +273,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `2481d6d0-4835-8527-b639-3cf63254a692` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `8b756759-3155-8444-be22-b2158e772ddf` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

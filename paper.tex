@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,093 of them across 110 files and
-8 wings; 25,886 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,101 of them across 111 files and
+8 wings; 25,894 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2406,6 +2406,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{resources.lean}}
+
+\begin{theorem}[\texttt{the\_chimera\_annealer\_qubit\_count\_is\_eight\_m\_squared}]
+\[ \mathrm{chimera}[\{1,\dots,8\}] = [8,\,32,\,72,\,128,\,200,\,288,\,392,\,512] \land \mathrm{chimera}\mathopen{}\left(16\right) = 2048 \land \forall m \in \{1,\dots,16\},\; \mathrm{chimera}\mathopen{}\left(m\right) = 8 \cdot m^{2} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,024 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_pegasus\_annealer\_count\_is\_twenty\_four\_m\_times\_m\_minus\_one}]
+\[ \mathrm{pegasus}\mathopen{}\left(16\right) = 5760 \land \mathrm{pegasus}\mathopen{}\left(1\right) = 0 \land \mathrm{pegasus}\mathopen{}\left(2\right) = 48 \land \forall m \in \{1,\dots,16\},\; \mathrm{pegasus}\mathopen{}\left(m\right) = 24 \cdot m \cdot m - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_qft\_gate\_count\_is\_the\_triangular\_number}]
+\[ \mathrm{qftGates}[\{1,\dots,8\}] = [1,\,3,\,6,\,10,\,15,\,21,\,28,\,36] \land \mathrm{qftGates}\mathopen{}\left(3\right) = 6 \land \mathrm{qftGates}\mathopen{}\left(4\right) = 10 \land \forall q \in \{1,\dots,8\},\; 2 \cdot \mathrm{qftGates}\mathopen{}\left(q\right) = q \cdot q + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 512 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_qft\_swaps\_depth\_and\_states}]
+\[ \mathrm{qftSwaps}\mathopen{}\left(4\right) = 2 \land \mathrm{qftDepth}\mathopen{}\left(4\right) = 7 \land \mathrm{qftStates}\mathopen{}\left(4\right) = 16 \land \forall q \in \{1,\dots,8\},\; \mathrm{qftStates}\mathopen{}\left(q\right) = 2^{q} \land \forall q \in \{1,\dots,8\},\; \mathrm{qftDepth}\mathopen{}\left(q\right) = 2 \cdot q - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{archimedes\_twenty\_two\_over\_seven\_bounds\_pi\_above\_and\_the\_floor\_is\_three}]
+\[ 14 + 8 = 22 \land 22 \cdot 100000 > 314159 \cdot 7 \land 3 \cdot 7 < 22 \land 22 < 4 \cdot 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{zu\_chongzhis\_three\_fifty\_five\_over\_one\_thirteen\_brackets\_pi\_to\_six\_places}]
+\[ 28 \cdot 14 - 1 - 3 \cdot 3 = 355 \land 28 \cdot 4 + 1 = 113 \land 3141592 \cdot 113 < 355 \cdot 1000000 \land 355 \cdot 1000000 < 3141593 \cdot 113 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_turn\_is\_three\_hundred\_sixty\_degrees\_and\_the\_half\_turn\_one\_eighty}]
+\[ 14 - 2 \cdot 28 + 2 = 360 \land 14 - 2 \cdot 14 + 1 = 180 \land 360 = 2 \cdot 180 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{these\_are\_exact\_counts\_and\_rational\_convergents\_not\_pi\_itself}]
+\[ \mathrm{chimera}\mathopen{}\left(16\right) = 2048 \land \mathrm{pegasus}\mathopen{}\left(16\right) = 5760 \land \mathrm{qftGates}\mathopen{}\left(10\right) = 55 \land 22 \cdot 7 = 154 \land 355 \cdot 113 = 40115 \land \forall q \in \{1,\dots,8\},\; \mathrm{qftGates}\mathopen{}\left(q\right) < \mathrm{qftStates}\mathopen{}\left(q\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
 
 \paragraph{\texttt{roots.lean}}
 

@@ -149644,5 +149644,45 @@
     "key": "lean_synthesis_these_are_exact_orders_and_counts_decided_over_a_finite_domain",
     "name": "lean synthesis.lean: these_are_exact_orders_and_counts_decided_over_a_finite_domain — (List.range' 1 3).all (fun nn => clifford nn == 2 ^ (2 * nn) * symp nn) ∧ (List.range' 1 10).all (fun n => 0 < fib (n + 1)) ∧ clifford 2 = 11520 ∧ symp 3 = 1451520 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "4d407f23-69c3-87d2-ba25-2c1a0750966a"
+  },
+  {
+    "key": "lean_resources_the_chimera_annealer_qubit_count_is_eight_m_squared",
+    "name": "lean resources.lean: the_chimera_annealer_qubit_count_is_eight_m_squared — (List.range' 1 8).map chimera = [8, 32, 72, 128, 200, 288, 392, 512] ∧ chimera 16 = 2048 ∧ (List.range' 1 16).all (fun m => chimera m == 8 * m ^ 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6341e55b-e8e9-89d4-8d9c-86df76c9218a"
+  },
+  {
+    "key": "lean_resources_the_pegasus_annealer_count_is_twenty_four_m_times_m_minus_one",
+    "name": "lean resources.lean: the_pegasus_annealer_count_is_twenty_four_m_times_m_minus_one — pegasus 16 = 5760 ∧ pegasus 1 = 0 ∧ pegasus 2 = 48 ∧ (List.range' 1 16).all (fun m => pegasus m == 24 * m * (m - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9f843d7d-8ff1-8811-bc89-2f35d471c70e"
+  },
+  {
+    "key": "lean_resources_the_qft_gate_count_is_the_triangular_number",
+    "name": "lean resources.lean: the_qft_gate_count_is_the_triangular_number — (List.range' 1 8).map qftGates = [1, 3, 6, 10, 15, 21, 28, 36] ∧ qftGates 3 = 6 ∧ qftGates 4 = 10 ∧ (List.range' 1 8).all (fun q => 2 * qftGates q == q * (q + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b1349979-7935-87f6-8691-97ff7771672c"
+  },
+  {
+    "key": "lean_resources_the_qft_swaps_depth_and_states",
+    "name": "lean resources.lean: the_qft_swaps_depth_and_states — qftSwaps 4 = 2 ∧ qftDepth 4 = 7 ∧ qftStates 4 = 16 ∧ (List.range' 1 8).all (fun q => qftStates q == 2 ^ q) ∧ (List.range' 1 8).all (fun q => qftDepth q == 2 * q - 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ce12b693-0614-887e-930b-030b907227d1"
+  },
+  {
+    "key": "lean_resources_archimedes_twenty_two_over_seven_bounds_pi_above_and_the_floor_is_three",
+    "name": "lean resources.lean: archimedes_twenty_two_over_seven_bounds_pi_above_and_the_floor_is_three — 14 + 8 = 22 ∧ 22 * 100000 > 314159 * 7 ∧ 3 * 7 < 22 ∧ 22 < 4 * 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ec31e290-c514-88be-9a70-184fc62d860c"
+  },
+  {
+    "key": "lean_resources_zu_chongzhis_three_fifty_five_over_one_thirteen_brackets_pi_to_six_places",
+    "name": "lean resources.lean: zu_chongzhis_three_fifty_five_over_one_thirteen_brackets_pi_to_six_places — 28 * (14 - 1) - 3 * 3 = 355 ∧ 28 * 4 + 1 = 113 ∧ 3141592 * 113 < 355 * 1000000 ∧ 355 * 1000000 < 3141593 * 113 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1e43cac7-ff77-848f-992f-230420530cf6"
+  },
+  {
+    "key": "lean_resources_the_turn_is_three_hundred_sixty_degrees_and_the_half_turn_one_eighty",
+    "name": "lean resources.lean: the_turn_is_three_hundred_sixty_degrees_and_the_half_turn_one_eighty — (14 - 2) * (28 + 2) = 360 ∧ (14 - 2) * (14 + 1) = 180 ∧ 360 = 2 * 180 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "097b1d2b-8b94-8f99-b029-8f53b00cb1b3"
+  },
+  {
+    "key": "lean_resources_these_are_exact_counts_and_rational_convergents_not_pi_itself",
+    "name": "lean resources.lean: these_are_exact_counts_and_rational_convergents_not_pi_itself — chimera 16 = 2048 ∧ pegasus 16 = 5760 ∧ qftGates 10 = 55 ∧ 22 * 7 = 154 ∧ 355 * 113 = 40115 ∧ (List.range' 1 8).all (fun q => qftGates q < qftStates q) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1ebfd2f4-000b-8f6a-abd4-eb7c3ad7f076"
   }
 ]
