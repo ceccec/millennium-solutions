@@ -15,7 +15,7 @@ Every figure recomputes from `src/` and the git tree on each build; nothing is e
 | Coins on signed receipts (× 2) | **64** |
 | Released versions (as of the last ledger change) | **v9.8.3** |
 
-Latest release: **v9.8.4**. The fair-exchange unit is **2 coins = 2 bits** (110 − 108 = 2 = −χ genus-2) per receipt. One 64-bit harmony coin is minted per fused `src` `report()` module — see the [state dashboard](/dashboard) for the harmonic root.
+Latest release: **v9.8.5**. The fair-exchange unit is **2 coins = 2 bits** (110 − 108 = 2 = −χ genus-2) per receipt. One 64-bit harmony coin is minted per fused `src` `report()` module — see the [state dashboard](/dashboard) for the harmonic root.
 
 ## Bounty — denominated in bits
 

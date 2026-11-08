@@ -13,7 +13,8 @@
 -- prior_art_note: NONE OF THE MATHEMATICS IS THIS DEPOSIT'S, AND NONE OF IT IS qpu's. qpu.uuidna.com's seal,
 --   σ-trapdoor, Shor run and thousand-bit surface are that service's constructions, read from ~/github/uuidna/qpu
 --   on 2026-11-08 (src/quantum/uuid/index.ts `version`, `seal`, `uuidQubits`; src/quantum/processing/algorithms.ts
---   `createImpossible`, `decodeImpossible`; src/quantum/CRYPTO.md). What is decided here is only which NAMED LAW
+--   `createImpossible`, `decodeImpossible`; src/quantum/CRYPTO.md; the root README.md, committed at d0f1dd01,
+--   lines 49–81 for the scale table and the Grover comparison). What is decided here is only which NAMED LAW
 --   each construction is, on the same integers, and exactly where each one stops.
 -- prior_art_search: not performed — every law is named above and none is claimed as new.
 -- prior_art_pool: bounded
@@ -104,7 +105,7 @@ theorem the_free_register_is_one_hundred_twenty_two_on_both_sides :
   ∧ qpuRegister Qpu.hexbit = Capacity.container - Capacity.reserved := by decide
 
 -- ── 3 · THE GROVER FLOOR: A SQUARE ROOT OF THE FREE REGISTER, AND WHERE 128 SITS ──────────────────────────
--- qpu's CRYPTO.md writes 2^(122/3) < 2^61 < 2^128 < 2^256 and reads the 128 as the floor ISO asked of its
+-- qpu's README.md (line 81) writes 2^(122/3) < 2^61 < 2^128 < 2^256 and reads the 128 as the floor ISO asked of its
 -- post-quantum mechanisms. Decided here on Capacity.free: Grover's exponent is free / 2 = 61, the collision
 -- exponent free / 3 sits between 40 and 41, and the floor is 67 bits above the coin. The 61 is the SAME integer
 -- capacity.lean reaches as the birthday exponent, and for the same reason — both are the square root of the
@@ -280,7 +281,7 @@ theorem qpus_grover_count_carries_pi_as_zu_chongzhis_three_hundred_fifty_five_ov
   ∧ groverIters 22 7 5 = 25 ∧ groverIters 3 1 5 = 24
   ∧ (List.range 8).all (fun k => groverIters 355 113 k * groverIters 355 113 k ≤ 2 ^ (2 * k)) := by decide
 
--- 7e · THE EIGHT SCALES, AND A COINCIDENCE NAMED. qpu's CRYPTO.md tables handles 16^s, qubits 4s and capacity 16^s · 4s
+-- 7e · THE EIGHT SCALES, AND A COINCIDENCE NAMED. qpu's README.md (lines 49–62) tables handles 16^s, qubits 4s and capacity 16^s · 4s
 -- for s = 1 … 8; at s = 8 the capacity is 2^37 = 137,438,953,472. The smallest piece of its thousand-bit split in
 -- section 6 is 2^37 + 1. THERE IS NO CONNECTION: one 37 is 4 · 8 + 5, the exponent of 16^8 · 32; the other is 999 / 27.
 -- The integers differ by one and the reasons share nothing, and it is written down so it is not found later.
