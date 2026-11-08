@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,056 of them across 106 files and
-8 wings; 25,849 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,061 of them across 106 files and
+8 wings; 25,854 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -4279,6 +4279,31 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \texttt{found.foldl (· * ·) 1 * cofactor = thousand ∧ found.length = 14 ∧ (found.filter (· == 3)).length = 4 ∧ found.all (fun p => 1 < p \&\& cofactor \% p != 0) ∧ cofactor \% 2 = 1 ∧ cofactor \% 3 = 1 ∧ powModBin 2 (cofactor - 1) cofactor ≠ 1 ∧ powModBin 2 4 7 = 2 ∧ powModBin 3 6 7 = 1}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{qpus\_gl2\_is\_the\_general\_linear\_group\_over\_two\_elements\_not\_over\_a\_field\_of\_two\_to\_the\_n}]
+\[ \mathrm{gl}\mathopen{}\left(2\right) = 6 \land \mathrm{gl}\mathopen{}\left(3\right) = 168 \land \mathrm{gl}\mathopen{}\left(4\right) = 20160 \land \mathrm{gl}\mathopen{}\left(5\right) = 9999360 \land \mathrm{gl}\mathopen{}\left(2\right) = 1 \cdot 2 \cdot 3 \land \mathrm{gl}\mathopen{}\left(3\right) = \frac{7 \cdot 7 \cdot 7 - 1}{2} \land \forall \mathrm{nn} \in \{1,\dots,6\},\; \mathrm{gl}\mathopen{}\left(\mathrm{nn}\right) \bmod 2^{\mathrm{nn}} - 1 = 0 \land \forall \mathrm{nn} \in \{2,\dots,6\},\; \mathrm{gl}\mathopen{}\left(\mathrm{nn}\right) < 2^{\mathrm{nn} \cdot \mathrm{nn}} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_prime\_exponent\_is\_necessary\_for\_a\_mersenne\_prime\_and\_eleven\_shows\_it\_is\_not\_sufficient}]
+\[ \forall n \in \{0,\dots,59\},\; \mathrm{smallPrime}\mathopen{}\left(n\right) = \mathrm{isPrime}\mathopen{}\left(n\right) \land 2^{13} - 1 < 100 \cdot 100 \land \forall p \in \{2,\dots,13\},\; \lnot \mathrm{smallPrime}\mathopen{}\left(2^{p} - 1\right) \lor \mathrm{smallPrime}\mathopen{}\left(p\right) \land \forall p \in [2,\,3,\,5,\,7,\,13],\; \mathrm{smallPrime}\mathopen{}\left(p\right) \land \mathrm{smallPrime}\mathopen{}\left(2^{p} - 1\right) \land \mathrm{smallPrime}\mathopen{}\left(11\right) = \mathrm{true} \land \mathrm{smallPrime}\mathopen{}\left(2^{11} - 1\right) = \mathrm{false} \land 2^{11} - 1 = 23 \cdot 89 \land 2^{\mathrm{Qpu.rays}} - 1 = 127 \land 2^{5} - 1 = 31 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3,600 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_seal\_modulus\_is\_the\_thirteenth\_triangular\_number\_and\_the\_gates\_of\_a\_thirteen\_qubit\_qft}]
+\[ \mathrm{triangular}\mathopen{}\left(13\right) = \mathrm{sealModulus} \land \frac{\mathrm{Qpu.faces} \cdot \mathrm{Qpu.faces} - 1}{2} = \mathrm{sealModulus} \land \forall q \in \{0,\dots,39\},\; \mathrm{triangular}\mathopen{}\left(q\right) = \mathrm{sealModulus} = q = 13 \land \forall q \in \{0,\dots,39\},\; \mathrm{triangular}\mathopen{}\left(q\right) = \mathrm{Qpu.clayQftGates}\mathopen{}\left(q\right) \land \mathrm{triangular}\mathopen{}\left(\mathrm{Qpu.faces} - 1\right) = \mathrm{Qpu.rays} \cdot \mathrm{Qpu.faces} - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,600 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{qpus\_grover\_count\_carries\_pi\_as\_zu\_chongzhis\_three\_hundred\_fifty\_five\_over\_one\_hundred\_thirteen}]
+\[ \mathrm{milu} = \left(355,\,113\right) \land 3141592 \cdot 113 < 355 \cdot 1000000 \land 355 \cdot 1000000 < 3141593 \cdot 113 \land \mathrm{groverIters}\mathopen{}\left(355,\,113,\,2\right) = 3 \land \mathrm{groverIters}\mathopen{}\left(355,\,113,\,5\right) = 25 \land \mathrm{groverIters}\mathopen{}\left(355,\,113,\,6\right) = 50 \land \mathrm{groverIters}\mathopen{}\left(22,\,7,\,5\right) = 25 \land \mathrm{groverIters}\mathopen{}\left(3,\,1,\,5\right) = 24 \land \forall k \in \{0,\dots,7\},\; \mathrm{groverIters}\mathopen{}\left(355,\,113,\,k\right) \cdot \mathrm{groverIters}\mathopen{}\left(355,\,113,\,k\right) \le 2^{2 \cdot k} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_eight\_scales\_reach\_two\_to\_the\_thirty\_seven\_and\_the\_thousand\_bit\_piece\_is\_one\_more\_for\_no\_reason}]
+\[ \mathrm{scaleCapacity}[\{1,\dots,8\}] = [64,\,2048,\,49152,\,1048576,\,20971520,\,402653184,\,7516192768,\,137438953472] \land \mathrm{scaleCapacity}\mathopen{}\left(8\right) = 2^{37} \land 16^{8} = 2^{32} \land 4 \cdot 8 = \mathrm{Qpu.bits} \land 2^{37} + 1 = 3 \cdot 1777 \cdot 25781083 \land \frac{999}{27} = 37 \land 4 \cdot 8 + 5 = 37 \land \forall s \in \{1,\dots,8\},\; \mathrm{scaleCapacity}\mathopen{}\left(s\right) = 2^{4 \cdot s} \cdot \mathrm{Qpu.hexbit} \cdot s \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 512 cases. \hfill$\square$
 
 \paragraph{\texttt{separation.lean}}
 

@@ -149459,5 +149459,30 @@
     "key": "lean_qpucrypto_this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back",
     "name": "lean qpu_crypto.lean: this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back — found.foldl (· * ·) 1 * cofactor = thousand ∧ found.length = 14 ∧ (found.filter (· == 3)).length = 4 ∧ found.all (fun p => 1 < p && cofactor % p != 0) ∧ cofactor % 2 = 1 ∧ cofactor % 3 = 1 ∧ powModBin 2 (cofactor - 1) cofactor ≠ 1 ∧ powModB… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "215f8bbc-e55e-8529-b6d2-e3089499c01b"
+  },
+  {
+    "key": "lean_qpucrypto_qpus_gl2_is_the_general_linear_group_over_two_elements_not_over_a_field_of_two_to_the_n",
+    "name": "lean qpu_crypto.lean: qpus_gl2_is_the_general_linear_group_over_two_elements_not_over_a_field_of_two_to_the_n — gl 2 = 6 ∧ gl 3 = 168 ∧ gl 4 = 20160 ∧ gl 5 = 9999360 ∧ gl 2 = 1 * 2 * 3 ∧ gl 3 = 7 * (7 * 7 - 1) / 2 ∧ (List.range' 1 6).all (fun nn => gl nn % (2 ^ nn - 1) == 0) ∧ (List.range' 2 5).all (fun nn => gl nn < 2 ^ (nn * nn)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0bcfa091-9fbd-8222-ac32-05a80d9bb360"
+  },
+  {
+    "key": "lean_qpucrypto_a_prime_exponent_is_necessary_for_a_mersenne_prime_and_eleven_shows_it_is_not_sufficient",
+    "name": "lean qpu_crypto.lean: a_prime_exponent_is_necessary_for_a_mersenne_prime_and_eleven_shows_it_is_not_sufficient — (List.range 60).all (fun n => smallPrime n == isPrime n) ∧ 2 ^ 13 - 1 < 100 * 100 ∧ (List.range' 2 12).all (fun p => !(smallPrime (2 ^ p - 1)) || smallPrime p) ∧ [2, 3, 5, 7, 13].all (fun p => smallPrime p && smallPrime (2 ^ p - 1)) ∧ small… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "77132148-88fe-8779-9c60-fa759fc83b07"
+  },
+  {
+    "key": "lean_qpucrypto_the_seal_modulus_is_the_thirteenth_triangular_number_and_the_gates_of_a_thirteen_qubit_qft",
+    "name": "lean qpu_crypto.lean: the_seal_modulus_is_the_thirteenth_triangular_number_and_the_gates_of_a_thirteen_qubit_qft — triangular 13 = sealModulus ∧ Qpu.faces * (Qpu.faces - 1) / 2 = sealModulus ∧ (List.range 40).all (fun q => (triangular q == sealModulus) == (q == 13)) ∧ (List.range 40).all (fun q => triangular q == Qpu.clayQftGates q) ∧ triangular (Qpu.fa… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a2d3e9ae-2b89-80b9-a3ea-af5c05dd2810"
+  },
+  {
+    "key": "lean_qpucrypto_qpus_grover_count_carries_pi_as_zu_chongzhis_three_hundred_fifty_five_over_one_hundred_thirteen",
+    "name": "lean qpu_crypto.lean: qpus_grover_count_carries_pi_as_zu_chongzhis_three_hundred_fifty_five_over_one_hundred_thirteen — milu = (355, 113) ∧ 3141592 * 113 < 355 * 1000000 ∧ 355 * 1000000 < 3141593 * 113 ∧ groverIters 355 113 2 = 3 ∧ groverIters 355 113 5 = 25 ∧ groverIters 355 113 6 = 50 ∧ groverIters 22 7 5 = 25 ∧ groverIters 3 1 5 = 24 ∧ (List.range 8).all … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c07d5f0c-6fa7-8fa2-961d-0ccbee5e1dcb"
+  },
+  {
+    "key": "lean_qpucrypto_the_eight_scales_reach_two_to_the_thirty_seven_and_the_thousand_bit_piece_is_one_more_for_no_reason",
+    "name": "lean qpu_crypto.lean: the_eight_scales_reach_two_to_the_thirty_seven_and_the_thousand_bit_piece_is_one_more_for_no_reason — (List.range' 1 8).map scaleCapacity = [64, 2048, 49152, 1048576, 20971520, 402653184, 7516192768, 137438953472] ∧ scaleCapacity 8 = 2 ^ 37 ∧ 16 ^ 8 = 2 ^ 32 ∧ 4 * 8 = Qpu.bits ∧ 2 ^ 37 + 1 = 3 * 1777 * 25781083 ∧ 999 / 27 = 37 ∧ 4 * 8 + 5 =… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "42aaaec0-af4a-8fe9-8834-13cd59fb004a"
   }
 ]

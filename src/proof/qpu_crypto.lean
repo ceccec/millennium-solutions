@@ -6,8 +6,10 @@
 --   period r with a^(r/2) ≢ −1 (mod N) gives the factors gcd(a^(r/2) ± 1, N); Grover's square-root search cost
 --   (1996) and the birthday bound; the lifting-the-exponent lemma, v_3(2^n + 1) = v_3(3) + v_3(n) for odd n, and
 --   the algebraic split a^3 + 1 = (a + 1)(a^2 − a + 1); Fermat's little theorem as a compositeness witness; RFC
---   9562's version and variant fields; and the 128-quantum-bit floor that qpu.uuidna.com reads from the Classic
---   McEliece ISO page.
+--   9562's version and variant fields; the 128-quantum-bit floor that qpu.uuidna.com reads from the Classic
+--   McEliece ISO page; the order of the general linear group over two elements, |GL(n, 2)| = ∏ (2^n − 2^i);
+--   Mersenne primes and the composite 2^11 − 1 = 23 · 89; triangular numbers T(q) = q(q + 1)/2 = C(q + 1, 2); and
+--   Zu Chongzhi's rational π = 355/113 (5th century), which qpu's own Grover.lean names as pi_zu.
 -- prior_art_note: NONE OF THE MATHEMATICS IS THIS DEPOSIT'S, AND NONE OF IT IS qpu's. qpu.uuidna.com's seal,
 --   σ-trapdoor, Shor run and thousand-bit surface are that service's constructions, read from ~/github/uuidna/qpu
 --   on 2026-11-08 (src/quantum/uuid/index.ts `version`, `seal`, `uuidQubits`; src/quantum/processing/algorithms.ts
@@ -222,5 +224,71 @@ theorem this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back
   ∧ cofactor % 2 = 1 ∧ cofactor % 3 = 1
   ∧ powModBin 2 (cofactor - 1) cofactor ≠ 1
   ∧ powModBin 2 4 7 = 2 ∧ powModBin 3 6 7 = 1 := by decide
+
+-- ── 7 · FIVE MORE OF ITS INTEGERS, EACH WITH ITS CONTROL, AND THE LEDGER LANDS ON ITS OCTAVE ──────────────
+-- scripts/release.ts refuses a tag while the ledger is not a whole number of octaves (groups of eight); eleven theorems
+-- left it three past one. These five are not filler: each is a shape qpu's Lean states as a certificate — a constant
+-- compared to itself by rfl — and this file decides over a range with a control beside it. Sixteen is two octaves.
+
+-- 7a · qpu's Galois.lean: gl2 nn = ∏ (2^nn − 2^i). That is |GL(nn, 2)|, the general linear group over the field with
+-- two elements — not GL(2, 2^nn), which the name suggests. 6 = 3! (GL(2, 2) is S₃) and 168 = |PSL(2, 7)| = 7 · 48 / 2.
+-- Two controls: 2^nn − 1 divides every order, and every order is below 2^(nn²), the count of all nn × nn matrices.
+def glOrder : Nat → Nat → Nat
+  | _, 0 => 1
+  | nn, i + 1 => (2 ^ nn - 2 ^ i) * glOrder nn i
+def gl (nn : Nat) : Nat := glOrder nn nn
+theorem qpus_gl2_is_the_general_linear_group_over_two_elements_not_over_a_field_of_two_to_the_n :
+  gl 2 = 6 ∧ gl 3 = 168 ∧ gl 4 = 20160 ∧ gl 5 = 9999360
+  ∧ gl 2 = 1 * 2 * 3 ∧ gl 3 = 7 * (7 * 7 - 1) / 2
+  ∧ (List.range' 1 6).all (fun nn => gl nn % (2 ^ nn - 1) == 0)
+  ∧ (List.range' 2 5).all (fun nn => gl nn < 2 ^ (nn * nn)) := by decide
+
+-- 7b · qpu's Primes.lean writes mersenne_3, _7, _31, _127 as rfl certificates over its constants. Decided here with the
+-- control that breaks the pattern: 2^11 − 1 = 2047 = 23 · 89. A Mersenne prime needs a prime exponent, and a prime
+-- exponent does not give one.
+-- `isPrime` above walks every divisor below n, which is a list of 8,189 elements at 2^13 − 1 and overflows the stack under
+-- `decide`. Trial division needs only the divisors up to √n: a hundred of them decide every n below 10,201, and the
+-- theorem states that bound beside the values, with the agreement of the two definitions checked on a shared range.
+def smallPrime (n : Nat) : Bool := n ≥ 2 && (List.range' 2 99).all (fun d => d * d > n || n % d != 0)
+theorem a_prime_exponent_is_necessary_for_a_mersenne_prime_and_eleven_shows_it_is_not_sufficient :
+  (List.range 60).all (fun n => smallPrime n == isPrime n) ∧ 2 ^ 13 - 1 < 100 * 100
+  ∧ (List.range' 2 12).all (fun p => !(smallPrime (2 ^ p - 1)) || smallPrime p)
+  ∧ [2, 3, 5, 7, 13].all (fun p => smallPrime p && smallPrime (2 ^ p - 1))
+  ∧ smallPrime 11 = true ∧ smallPrime (2 ^ 11 - 1) = false ∧ 2 ^ 11 - 1 = 23 * 89
+  ∧ 2 ^ Qpu.rays - 1 = 127 ∧ 2 ^ 5 - 1 = 31 := by decide
+
+-- 7c · THE SEAL MODULUS IS A TRIANGULAR NUMBER, AND qpu's QFT COUNT REACHES IT. 91 = C(14, 2) = T(13) = 13 · 14 / 2,
+-- and qpu's Qft.lean counts qftGates q = q(q + 1)/2 — a thirteen-qubit QFT has as many gates as the seal has residues.
+-- Pinned: T(q) = 91 at q = 13 and nowhere else below forty. One triangular number read twice, not a finding.
+def triangular (q : Nat) : Nat := q * (q + 1) / 2
+theorem the_seal_modulus_is_the_thirteenth_triangular_number_and_the_gates_of_a_thirteen_qubit_qft :
+  triangular 13 = sealModulus ∧ Qpu.faces * (Qpu.faces - 1) / 2 = sealModulus
+  ∧ (List.range 40).all (fun q => (triangular q == sealModulus) == (q == 13))
+  ∧ (List.range 40).all (fun q => triangular q == Qpu.clayQftGates q)
+  ∧ triangular (Qpu.faces - 1) = Qpu.rays * (Qpu.faces - 1) := by decide
+
+-- 7d · qpu's Grover.lean carries π as Zu Chongzhi's 355/113, written over its constants: 355 = plane · (faces − 1) − n²
+-- and 113 = plane · hexbit + 1, so groverIters k = ⌊(355/113)/4 · 2^k⌋. Decided: the two integers are 355 and 113,
+-- 355/113 lies between 3.141592 and 3.141593, the counts follow, and every count squared stays under the search space.
+-- Controls: 22/7 gives the same 25 at k = 5 and so does not distinguish the approximations there; 3 gives 24 and does.
+def milu : Nat × Nat := (Qpu.clayPlane * (Qpu.faces - 1) - Qpu.qubits * Qpu.qubits, Qpu.clayPlane * Qpu.hexbit + 1)
+def groverIters (num den k : Nat) : Nat := num * 2 ^ k / (4 * den)
+theorem qpus_grover_count_carries_pi_as_zu_chongzhis_three_hundred_fifty_five_over_one_hundred_thirteen :
+  milu = (355, 113)
+  ∧ 3141592 * 113 < 355 * 1000000 ∧ 355 * 1000000 < 3141593 * 113
+  ∧ groverIters 355 113 2 = 3 ∧ groverIters 355 113 5 = 25 ∧ groverIters 355 113 6 = 50
+  ∧ groverIters 22 7 5 = 25 ∧ groverIters 3 1 5 = 24
+  ∧ (List.range 8).all (fun k => groverIters 355 113 k * groverIters 355 113 k ≤ 2 ^ (2 * k)) := by decide
+
+-- 7e · THE EIGHT SCALES, AND A COINCIDENCE NAMED. qpu's CRYPTO.md tables handles 16^s, qubits 4s and capacity 16^s · 4s
+-- for s = 1 … 8; at s = 8 the capacity is 2^37 = 137,438,953,472. The smallest piece of its thousand-bit split in
+-- section 6 is 2^37 + 1. THERE IS NO CONNECTION: one 37 is 4 · 8 + 5, the exponent of 16^8 · 32; the other is 999 / 27.
+-- The integers differ by one and the reasons share nothing, and it is written down so it is not found later.
+def scaleCapacity (s : Nat) : Nat := 16 ^ s * (4 * s)
+theorem the_eight_scales_reach_two_to_the_thirty_seven_and_the_thousand_bit_piece_is_one_more_for_no_reason :
+  (List.range' 1 8).map scaleCapacity = [64, 2048, 49152, 1048576, 20971520, 402653184, 7516192768, 137438953472]
+  ∧ scaleCapacity 8 = 2 ^ 37 ∧ 16 ^ 8 = 2 ^ 32 ∧ 4 * 8 = Qpu.bits
+  ∧ 2 ^ 37 + 1 = 3 * 1777 * 25781083 ∧ 999 / 27 = 37 ∧ 4 * 8 + 5 = 37
+  ∧ (List.range' 1 8).all (fun s => scaleCapacity s == 2 ^ (4 * s) * Qpu.hexbit * s) := by decide
 
 end QpuCrypto
