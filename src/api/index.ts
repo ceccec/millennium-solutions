@@ -603,11 +603,21 @@ export const axis = (): number[] =>
  *  pushes it with the hooks on; the hook regenerates the pages, and a page that embeds "the latest tag" then reads the
  *  tag being minted while the committed text names the one before — so the tag push refuses itself (ACCOUNTING.md,
  *  2026-11-03, and the dirty-tree release before it). A tag pointing at HEAD is the release of THIS commit, not a release
- *  this commit can describe; the newest tag not at HEAD is the same string on the author's machine and on the runner. */
+ *  this commit can describe; the newest tag not at HEAD is the same string on the author's machine and on the runner.
+ *
+ *  WHICH COMMIT IS "THIS COMMIT" DEPENDS ON WHO IS ASKING (measured 2026-11-08, the second release in a row). A page
+ *  being GENERATED goes into the next commit, whose parent is HEAD — so a tag at HEAD is a release before it and must be
+ *  named. A committed page being CHECKED at push time sits in HEAD itself, whose parent is HEAD^ — so a tag at HEAD is
+ *  its own release and must not be. "The newest tag not at HEAD" answered both questions with one rule and was wrong for
+ *  the first whenever HEAD was itself a release commit: the page generated at v9.8.4's commit named v9.8.3, the push
+ *  check at v9.8.5's commit regenerated v9.8.4, and the push refused itself. No function of HEAD alone satisfies both
+ *  readings, so the reader says which page it holds: PAGE_COMMIT=HEAD means "the page committed at HEAD" (the push
+ *  gate sets it), anything else means "the page for the commit about to be made". Both read the tags MERGED into the
+ *  page's parent, newest by version, so an unrelated tag on another branch is never named. */
 export const releasedBefore = (fallback = 'v0'): string => {
   try {
-    const tags = execSync('git tag --sort=-version:refname', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().split('\n').filter(Boolean)
-    const atHead = new Set(execSync('git tag --points-at HEAD', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().split('\n').filter(Boolean))
-    return tags.find((t) => !atHead.has(t)) ?? fallback
+    const parent = process.env.PAGE_COMMIT === 'HEAD' ? 'HEAD^' : 'HEAD'
+    const tags = execSync(`git tag --merged ${parent} --sort=-version:refname`, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().split('\n').filter(Boolean)
+    return tags.find((t) => /^v\d+\.\d+\.\d+$/.test(t)) ?? fallback
   } catch { return fallback }
 }

@@ -59,6 +59,11 @@ if (!mode) {
 }
 const phase1 = mode === 'push' ? PUSH_PHASE1 : COMMIT_PHASE1
 const phase2: Check[] = mode === 'commit' ? [COURT] : []
+// THE PUSH CHECKS A COMMITTED PAGE. Every generator that names "the release before this commit" (src/api releasedBefore)
+// must read it for the page committed at HEAD — whose parent is HEAD^ — and not for a page about to be committed, or a
+// release commit regenerated at push time names the tag it is minting and refuses its own push. The pre-commit checks
+// keep the default: at commit time the page is for the commit being made, whose parent is HEAD. Inherited by every spawn.
+if (mode === 'push') process.env.PAGE_COMMIT = 'HEAD'
 
 const runAll = (checks: Check[]): Promise<{ ok: boolean; failed?: string }> =>
   new Promise((done) => {
