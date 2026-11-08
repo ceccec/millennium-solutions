@@ -200,7 +200,6 @@ export default defineConfig({
         { text: 'The organism', link: '/organism' },
         { text: 'The quantum field', link: '/quantum' },
         { text: 'The harness', link: '/harness' },
-        { text: 'The aura', link: '/aura' },
         { text: 'The', link: '/the' },
         { text: 'Theorems', link: '/THEOREMS' },
         { text: 'Formulas', link: '/formulas' },
@@ -298,7 +297,6 @@ export default defineConfig({
         items: [
           { text: 'Computed results', link: '/compute' },
           { text: 'Harness (dashboard)', link: '/harness' },
-          { text: 'The aura (coin capacity)', link: '/aura' },
           { text: 'Real advantage', link: '/speedup' },
           { text: 'State dashboard', link: '/dashboard' },
           { text: 'Accounting', link: '/ACCOUNTING' },
