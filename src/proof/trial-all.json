@@ -170782,5 +170782,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "438bc706-f838-8544-8fa7-9b80aa130576"
+  },
+  {
+    "key": "lean_qpucrypto_the_seal_exponent_is_an_rsa_permutation_of_the_residues_mod_ninety_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7b1cb7f0-6e09-8643-9e81-549e0433ebd8"
+  },
+  {
+    "key": "lean_qpucrypto_the_fold_mod_eight_is_where_the_seal_misses_one_tamper_in_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2882a7f0-b5be-82f5-b401-dbade1f9e213"
+  },
+  {
+    "key": "lean_qpucrypto_the_fixed_version_eight_and_the_decided_nibble_agree_on_eleven_residues_in_ninety_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "66f5b5f0-fd03-8cf4-9403-93bca14fb093"
+  },
+  {
+    "key": "lean_qpucrypto_the_free_register_is_one_hundred_twenty_two_on_both_sides",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "326edcf3-72dd-81ba-89cd-6356cb805f85"
+  },
+  {
+    "key": "lean_qpucrypto_one_coin_sits_sixty_seven_bits_below_the_iso_post_quantum_floor_under_grover",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ff9ca0d0-791c-8669-89cb-e1a227f850cd"
+  },
+  {
+    "key": "lean_qpucrypto_shor_on_ninety_one_splits_from_qpus_base_and_from_fifty_three_others",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "961ea69a-548d-808b-b346-ed0564fc1779"
+  },
+  {
+    "key": "lean_qpucrypto_the_sigma_trapdoor_is_fermats_difference_of_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c6b38fad-65f3-8e6f-a0f8-896921884d39"
+  },
+  {
+    "key": "lean_qpucrypto_a_wrong_witness_decodes_nothing_because_a_semiprime_has_one_split",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7cd9b9c8-5b7b-881f-a0dc-f2a535d48bb1"
+  },
+  {
+    "key": "lean_qpucrypto_an_impossible_integer_with_twin_primes_is_opened_blind_in_one_reflection",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8d734da1-4537-8cf8-8522-080e983d634b"
+  },
+  {
+    "key": "lean_qpucrypto_the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a27fc1e7-abce-8861-887f-eadf9c491982"
+  },
+  {
+    "key": "lean_qpucrypto_this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "215f8bbc-e55e-8529-b6d2-e3089499c01b"
+  },
+  {
+    "key": "lean_qpucrypto_qpus_gl2_is_the_general_linear_group_over_two_elements_not_over_a_field_of_two_to_the_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0bcfa091-9fbd-8222-ac32-05a80d9bb360"
+  },
+  {
+    "key": "lean_qpucrypto_a_prime_exponent_is_necessary_for_a_mersenne_prime_and_eleven_shows_it_is_not_sufficient",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "77132148-88fe-8779-9c60-fa759fc83b07"
+  },
+  {
+    "key": "lean_qpucrypto_the_seal_modulus_is_the_thirteenth_triangular_number_and_the_gates_of_a_thirteen_qubit_qft",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a2d3e9ae-2b89-80b9-a3ea-af5c05dd2810"
+  },
+  {
+    "key": "lean_qpucrypto_qpus_grover_count_carries_pi_as_zu_chongzhis_three_hundred_fifty_five_over_one_hundred_thirteen",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c07d5f0c-6fa7-8fa2-961d-0ccbee5e1dcb"
+  },
+  {
+    "key": "lean_qpucrypto_the_eight_scales_reach_two_to_the_thirty_seven_and_the_thousand_bit_piece_is_one_more_for_no_reason",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "42aaaec0-af4a-8fe9-8834-13cd59fb004a"
   }
 ]
