@@ -23,6 +23,7 @@ import Organism from './Organism.vue'
 import QuantumField from './QuantumField.vue'
 import TheoremField from './TheoremField.vue'
 import Harness from './Harness.vue'
+import ClayLeads from './ClayLeads.vue'
 import './custom.css'
 
 export default {
@@ -68,6 +69,7 @@ export default {
     app.component('QuantumField', QuantumField)
     app.component('TheoremField', TheoremField)
     app.component('Harness', Harness)
+    app.component('ClayLeads', ClayLeads)
     // PWA: register the offline service worker (client-only; HTTPS or localhost).
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       window.addEventListener('load', () => {

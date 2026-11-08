@@ -15,7 +15,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { escapeLt } from '../src/html/index.ts'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
-import { MILLENNIUM, claySection } from '../src/millennium/index.ts'
+import { MILLENNIUM, claySection, thousandBitSection } from '../src/millennium/index.ts'
 import { all as leanDocs } from './leandoc.ts'
 import { analytics } from './analytics.ts'
 import { queue } from '../src/prove/index.ts'
@@ -331,6 +331,7 @@ const body = (site: boolean) => {
   // theorem with its whole statement, cases, bound, key and receipt — completely visible on the README and
   // the homepage, before anything else this page says.
   md += claySection()
+  md += thousandBitSection()
   for (const s of sections) {
     md += `## ${s}\n\n`
     for (const r of rows.filter((x) => x.section === s)) {

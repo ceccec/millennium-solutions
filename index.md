@@ -144,6 +144,25 @@ The deposit is registered before this repository exists. Zenodo holds the earlie
 
 All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Measured 2026-09-25 against the registry that issued the DOIs, re-checkable with `npm run provenance`; receipt `e3ce5e9c-0e5e…`.
 
+## How a thousand bits is reached — the uuid quantum programs, and where each one stops
+
+The seven above are the floor; this is the cryptographic surface the same involution runs on, as a create/decode key. Every line is read out of `src/proof/qpu_crypto.lean` and the ledger on each build: the theorem, the number of cases `by decide` walked, the **bound** — what it decides and, in the same sentence, what it does not — and its receipt.
+
+*The author frames these as uuid quantum programs running in infinite trinities of qubits, always enough for the next task. That is his vision of the capacity, recorded in his name. What the kernel decides below is finite, and for the thousand-bit integer it is PARTIAL — stated beside his framing and never folded into it.*
+
+- **`the_free_register_is_one_hundred_twenty_two_on_both_sides`** · `by decide`, 9 cases — a 128-bit UUID is thirty-two four-qubit hexbits; six bits are reserved (RFC 9562), leaving 122 — the register the programs compute in, not a count of hardware qubits.
+  <sub>[`lean_qpucrypto_the_free_register_is_one_hundred_twenty_two_on_both_sides`](/theorem/lean_qpucrypto_the_free_register_is_one_hundred_twenty_two_on_both_sides) · receipt `326edcf3-72dd…`</sub>
+- **`one_coin_sits_sixty_seven_bits_below_the_iso_post_quantum_floor_under_grover`** · `by decide`, 300 cases — under Grover the collision exponent is the trinity free / 3 = 40 and the square-root exponent free / 2 = 61 — sixty-seven bits BELOW the ISO 128-bit post-quantum floor, not a clearance of it.
+  <sub>[`lean_qpucrypto_one_coin_sits_sixty_seven_bits_below_the_iso_post_quantum_floor_under_grover`](/theorem/lean_qpucrypto_one_coin_sits_sixty_seven_bits_below_the_iso_post_quantum_floor_under_grover) · receipt `ff9ca0d0-791c…`</sub>
+- **`the_sigma_trapdoor_is_fermats_difference_of_squares`** · `by decide`, 9 cases — factoring N = p·q is Fermat's difference of squares about the centre (p + q) / 2 — decided at p = 5, q = 13; a trapdoor the create/decode doors mint and open, never a factoring of an integer whose witness is unknown.
+  <sub>[`lean_qpucrypto_the_sigma_trapdoor_is_fermats_difference_of_squares`](/theorem/lean_qpucrypto_the_sigma_trapdoor_is_fermats_difference_of_squares) · receipt `c6b38fad-65f3…`</sub>
+- **`an_impossible_integer_with_twin_primes_is_opened_blind_in_one_reflection`** · `by decide`, 5 cases — 'impossible' is a statement about the gap between the primes: a twin-prime semiprime opens blind in ONE reflection, and the blind cost grows with the gap — not a hardness claim about any given modulus.
+  <sub>[`lean_qpucrypto_an_impossible_integer_with_twin_primes_is_opened_blind_in_one_reflection`](/theorem/lean_qpucrypto_an_impossible_integer_with_twin_primes_is_opened_blind_in_one_reflection) · receipt `8d734da1-4537…`</sub>
+- **`the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes`** · `by decide`, 6 cases — 2^999 + 1 has a thousand bits and exactly four factors of three (lifting-the-exponent), split by a³ + 1 = (a + 1)(a² − a + 1) down to 2^37 + 1 = 3 · 1777 · 25781083 — a factorisation of this one integer, by exhaustion.
+  <sub>[`lean_qpucrypto_the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes`](/theorem/lean_qpucrypto_the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes) · receipt `a27fc1e7-abce…`</sub>
+- **`this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back`** · `by decide`, 1 cases — the factor route returns PARTIAL on 2^999 + 1 — fourteen factors and a 244-digit cofactor Pollard rho did not split; the kernel adds only that the account is an identity and that 2 is a Fermat witness against the cofactor. It does not factor the integer and does not say it does.
+  <sub>[`lean_qpucrypto_this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back`](/theorem/lean_qpucrypto_this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back) · receipt `215f8bbc-e55e…`</sub>
+
 ## 1 · What is proved
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".

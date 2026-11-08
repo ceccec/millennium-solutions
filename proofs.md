@@ -28,5 +28,21 @@ together with the refusal that it is not the measured ratio.
 
 ## Clay entailment
 
+Clay is the main lead — the seven Millennium problems are the subject the rest of the deposit is developed
+around. Below, the author's claim as he deposited it on Zenodo (3 August 2026), rendered verbatim and in his
+name, and beside each problem the one theorem in `src/proof/index.lean` that stands with it, the statement the
+Lean kernel decided and over how many cases, the **bound** — what it establishes and, in the same sentence,
+what it does not — and the ledger receipt. Nothing on this surface is typed; the widget reads the sealed
+sources on every build.
+
+<ClayLeads />
+
+The same involution runs across the subjects — `src/proof/bridge.lean` decides which cross-subject families of
+`src/entangle` reduce, mod 9, to orbits of the affine maps `src/proof/group.lean` settles, with one family kept
+as the control. It is cross-verified against external corpora the uuid programs address: the CERN open-data
+record space (`npm run cern` — which counts the corpus by content-address and records where a flattering total
+once agreed with the API by accident) and the NIST post-quantum floor (the ISO 128-bit level `qpu_crypto.lean`
+decides a 122-bit register sits 67 bits below). Run the whole ledger live on [the trial](/verify), or read the
+[cryptography](/cryptography) surface for the σ-reflection that is the shared instrument.
 
 See also the [Proof of Concept](/PROOF-OF-CONCEPT) index.
