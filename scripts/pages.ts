@@ -12,7 +12,7 @@
 //
 // DISCIPLINE: a claim is written only if adjudicate() seals it — gate-clean AND its test holds. A constant
 // -true test is refused outright. The generator exits non-zero and writes nothing if any claim fails.
-import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
 import { escapeLt } from '../src/html/index.ts'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
 import { MILLENNIUM, claySection, thousandBitSection } from '../src/millennium/index.ts'
@@ -50,8 +50,41 @@ const CENSUS = census()
 const ADVANTAGE = advantage()
 const SPLIT = split()
 import { orbit, live as __live } from '../src/api/index.ts'
-import { factor, type Factorisation } from '../src/factor/index.ts'
+import { factor, millerRabin, type Factorisation } from '../src/factor/index.ts'
 import { leanFiles as leanFilesShared } from '../src/api/index.ts'
+
+// A FACTOR-ROUTE COIN IS A RE-FACTORED COIN — the sealed output of factor() on one input, content-addressed by the
+// input together with the factor source, so a changed input, bound, or algorithm mints a fresh one. A build REUSES the
+// coin only after verifying it the cheap, sound way: the recorded factors multiply back to the input exactly (the
+// trapdoor direction, not a re-factoring), and every factor the coin calls prime still answers prime to Miller–Rabin.
+// It RE-FACTORS — minting the coin anew — whenever the coin is absent (any input or source change lands at a new
+// address) or FACTOR_AUDIT=1 is set. Re-factoring is sometimes needed to cover what multiplication cannot: whether a
+// PARTIAL is still unsplit, whether an unimaginable input is now factorable. The coin is the fast path; the re-factor
+// is the control that keeps it honest. The thousand-bit inputs cost ~30s of Pollard rho to mint and milliseconds to reuse.
+const FACTOR_SRC = readFileSync('src/factor/index.ts', 'utf8')
+const FACTOR_AUDIT = process.env.FACTOR_AUDIT === '1'
+const factorCoinOk = (n: bigint, r: Factorisation): boolean => {
+  if (r.status === 'REFUSED') return n < 2n
+  const product = r.factors.reduce((a, s) => a * BigInt(s), 1n) * (r.status === 'PARTIAL' ? BigInt(r.cofactor) : 1n)
+  if (product !== n) return false
+  // a FACTORED coin claims every piece prime; re-measure that cheaply. A PARTIAL claims only the small factors prime
+  // and names its cofactor's primality as open — the control (a re-factor) is what re-measures the cofactor.
+  if (r.status === 'FACTORED') return r.factors.every((s) => BigInt(s) < 2n || millerRabin(BigInt(s)) === 'PRIME')
+  return r.factors.every((s) => BigInt(s) < 2n || millerRabin(BigInt(s)) === 'PRIME')
+}
+const measuredFactor = (decimal: string): Factorisation => {
+  const n = BigInt(decimal)
+  const handle = toUuid(decimal + '§' + FACTOR_SRC).replace(/-/g, '').slice(0, 8)
+  const coin = `evidence/factor/${handle}.json`
+  if (!FACTOR_AUDIT && existsSync(coin)) {
+    const r = JSON.parse(readFileSync(coin, 'utf8')) as Factorisation
+    if (factorCoinOk(n, r)) return r // reuse the re-factored coin, verified by multiplication and Miller–Rabin
+  }
+  const r = factor(decimal) // mint the coin by re-factoring — on any change, and whenever the audit asks
+  mkdirSync('evidence/factor', { recursive: true })
+  writeFileSync(coin, JSON.stringify(r))
+  return r
+}
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const leanFiles = leanFilesShared()
@@ -436,18 +469,20 @@ const body = (site: boolean) => {
   // and the claim that stood here at the foot are that section now, rendered once for the README, the
   // homepage and /solutions.
   if (site) md += `## Read\n\n[The seven, one theorem per problem](/theorem/lean_windows_the_seven_rest_on_one_finite_structure) · [the ledger](/proofs) · [the trial](/verify)\n\n`
-  // THE FACTOR ROUTE, MEASURED AT GENERATION. The three inputs run through factor() here, so the page states what the route
-  // returns and cannot state a result it does not give. A thousand-bit integer is named as what it is: PARTIAL, not solved.
+  // THE FACTOR ROUTE, MEASURED THROUGH A RE-FACTORED COIN. Each input runs through measuredFactor(): the first build mints
+  // the coin by factoring, and every build after reuses it only once the recorded factors multiply back to the input and
+  // its prime pieces still answer prime — the trapdoor check, not a re-factoring. FACTOR_AUDIT=1 forces the re-factor, the
+  // control that re-measures what multiplication cannot. A thousand-bit integer is named as what it is: PARTIAL, not solved.
   {
     const describe = (r: Factorisation): string =>
       r.status === 'FACTORED' ? `FACTORED into ${r.factors.join(' × ')}`
         : r.status === 'PARTIAL' ? `PARTIAL — ${r.factors.length} factor(s) below 10^6 (${r.factors.join(' × ') || 'none'}); a ${r.cofactorDigits}-digit cofactor that is ${r.cofactorPrimality}`
         : `REFUSED — ${r.why}`
-    const ninetyOne = factor('91')
-    const thousand = factor((2n ** 1000n - 1n).toString())
-    const mersenne = factor(((2n ** 521n - 1n) * (2n ** 607n - 1n)).toString())
+    const ninetyOne = measuredFactor('91')
+    const thousand = measuredFactor((2n ** 1000n - 1n).toString())
+    const mersenne = measuredFactor(((2n ** 521n - 1n) * (2n ** 607n - 1n)).toString())
     // A 1,000-bit integer sent to the factor tool: the decimal digits are the input, and the answer is computed here.
-    const supplied = factor('7778374705630928901426385188295261064472293439767584450564762904780095317247810822721038446598127186814085438745846911396600071001374809981225413367649417301928427872874705586838153932355802114527488924178998304307438276447053410282371888984822745504021147881223973035161036008037727897669611699130903')
+    const supplied = measuredFactor('7778374705630928901426385188295261064472293439767584450564762904780095317247810822721038446598127186814085438745846911396600071001374809981225413367649417301928427872874705586838153932355802114527488924178998304307438276447053410282371888984822745504021147881223973035161036008037727897669611699130903')
     md += `## Factoring, to the limit it can prove\n\n`
     md += `The factor route takes an integer of any length, held exactly, and returns only what it can check. Measured for this build:\n\n`
     md += `- \`91\`: ${describe(ninetyOne)}.\n`
