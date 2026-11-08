@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,069 of them across 107 files and
-8 wings; 25,862 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,077 of them across 108 files and
+8 wings; 25,870 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -757,6 +757,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \forall a \in \{0,\dots,8\},\; \forall b \in \{0,\dots,8\},\; \forall c \in \{0,\dots,8\},\; \mathrm{decide}\mathopen{}\left(\mathrm{d1}\mathopen{}\left(a,\,c\right) \le \mathrm{d1}\mathopen{}\left(a,\,b\right) + \mathrm{d1}\mathopen{}\left(b,\,c\right)\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
+
+\paragraph{\texttt{width.lean}}
+
+\begin{theorem}[\texttt{the\_register\_at\_each\_width}]
+\[ \mathrm{reg}[\mathrm{widths}] = [122,\,246,\,494,\,990] \land \forall w \in \mathrm{widths},\; \mathrm{reg}\mathopen{}\left(w\right) = 32 \cdot w - w - 2 \land \forall w \in \mathrm{widths},\; \mathrm{reg}\mathopen{}\left(w\right) = 31 \cdot w - 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_grover\_exponent\_at\_each\_width}]
+\[ \mathrm{grover}[\mathrm{widths}] = [61,\,123,\,247,\,495] \land \forall w \in \mathrm{widths},\; \mathrm{grover}\mathopen{}\left(w\right) = \frac{\mathrm{reg}\mathopen{}\left(w\right)}{2} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_iso\_floor\_is\_cleared\_exactly\_from\_width\_sixteen}]
+\[ \forall w \in \mathrm{widths},\; \mathrm{isoFloor} \le \mathrm{grover}\mathopen{}\left(w\right) = 16 \le w \land \mathrm{grover}\mathopen{}\left(4\right) < \mathrm{isoFloor} \land \mathrm{grover}\mathopen{}\left(8\right) < \mathrm{isoFloor} \land \mathrm{isoFloor} \le \mathrm{grover}\mathopen{}\left(16\right) \land \mathrm{isoFloor} \le \mathrm{grover}\mathopen{}\left(32\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{clearing\_the\_floor\_is\_two\_hundred\_fifty\_six\_free\_bits}]
+\[ \forall w \in \mathrm{widths},\; \mathrm{isoFloor} \le \mathrm{grover}\mathopen{}\left(w\right) = 256 \le \mathrm{reg}\mathopen{}\left(w\right) \land \mathrm{reg}\mathopen{}\left(8\right) < 256 \land 256 \le \mathrm{reg}\mathopen{}\left(16\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_uuid\_is\_width\_four\_and\_sits\_sixty\_seven\_below}]
+\[ \mathrm{reg}\mathopen{}\left(4\right) = 122 \land \mathrm{grover}\mathopen{}\left(4\right) = 61 \land \mathrm{isoFloor} - \mathrm{grover}\mathopen{}\left(4\right) = 67 \land 32 \cdot 4 = 128 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_register\_grows\_strictly\_with\_the\_width}]
+\[ \mathrm{reg}\mathopen{}\left(4\right) < \mathrm{reg}\mathopen{}\left(8\right) \land \mathrm{reg}\mathopen{}\left(8\right) < \mathrm{reg}\mathopen{}\left(16\right) \land \mathrm{reg}\mathopen{}\left(16\right) < \mathrm{reg}\mathopen{}\left(32\right) \land \mathrm{grover}\mathopen{}\left(4\right) < \mathrm{grover}\mathopen{}\left(8\right) \land \mathrm{grover}\mathopen{}\left(8\right) < \mathrm{grover}\mathopen{}\left(16\right) \land \mathrm{grover}\mathopen{}\left(16\right) < \mathrm{grover}\mathopen{}\left(32\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{clearing\_the\_floor\_needs\_a\_cost\_exponent\_of\_at\_least\_256}]
+\[ 256 \le \mathrm{reg}\mathopen{}\left(16\right) \land \mathrm{reg}\mathopen{}\left(8\right) < 256 \land 2^{128} < 2^{256} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cost\_exponent\_is\_more\_than\_the\_square\_root\_exponent\_at\_every\_width}]
+\[ \forall w \in \mathrm{widths},\; \mathrm{grover}\mathopen{}\left(w\right) < \mathrm{reg}\mathopen{}\left(w\right) \land \forall w \in \mathrm{widths},\; \mathrm{reg}\mathopen{}\left(w\right) - \mathrm{grover}\mathopen{}\left(w\right) = \frac{\mathrm{reg}\mathopen{}\left(w\right) + 1}{2} \land \mathrm{reg}\mathopen{}\left(4\right) - \mathrm{grover}\mathopen{}\left(4\right) < \mathrm{reg}\mathopen{}\left(32\right) - \mathrm{grover}\mathopen{}\left(32\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{widths.lean}}
 

@@ -149524,5 +149524,45 @@
     "key": "lean_qpugateway_the_ftl_premise_fails_the_named_carrier_carries_nothing",
     "name": "lean qpu_gateway.lean: the_ftl_premise_fails_the_named_carrier_carries_nothing — ((List.range 16).map gateway).all (fun g => g == 2) ∧ (teleportMessages.filter (fun m => (List.range 16).all (fun low => gateway low == m))).length = 1 ∧ (teleportMessages.filter (fun m => (List.range 16).any (fun low => gateway low == m &&… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "b9147af4-255c-84bd-b2d7-85171125d39b"
+  },
+  {
+    "key": "lean_width_the_register_at_each_width",
+    "name": "lean width.lean: the_register_at_each_width — widths.map reg = [122, 246, 494, 990] ∧ widths.all (fun w => reg w == 32 * w - w - 2) ∧ widths.all (fun w => reg w == 31 * w - 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "09832000-1d91-8df1-b0c6-d5c1d7bba3cf"
+  },
+  {
+    "key": "lean_width_the_grover_exponent_at_each_width",
+    "name": "lean width.lean: the_grover_exponent_at_each_width — widths.map grover = [61, 123, 247, 495] ∧ widths.all (fun w => grover w == reg w / 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a35c6282-efa4-8801-a75b-3a969e0e5d1b"
+  },
+  {
+    "key": "lean_width_the_iso_floor_is_cleared_exactly_from_width_sixteen",
+    "name": "lean width.lean: the_iso_floor_is_cleared_exactly_from_width_sixteen — widths.all (fun w => (isoFloor ≤ grover w) == (16 ≤ w)) ∧ grover 4 < isoFloor ∧ grover 8 < isoFloor ∧ isoFloor ≤ grover 16 ∧ isoFloor ≤ grover 32 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "09aeba49-34f9-85ec-a4f1-3bba002abf7d"
+  },
+  {
+    "key": "lean_width_clearing_the_floor_is_two_hundred_fifty_six_free_bits",
+    "name": "lean width.lean: clearing_the_floor_is_two_hundred_fifty_six_free_bits — widths.all (fun w => (isoFloor ≤ grover w) == (256 ≤ reg w)) ∧ reg 8 < 256 ∧ 256 ≤ reg 16 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "07ab92f3-334b-807f-9dba-04fbdde7be4d"
+  },
+  {
+    "key": "lean_width_the_uuid_is_width_four_and_sits_sixty_seven_below",
+    "name": "lean width.lean: the_uuid_is_width_four_and_sits_sixty_seven_below — reg 4 = 122 ∧ grover 4 = 61 ∧ isoFloor - grover 4 = 67 ∧ 32 * 4 = 128 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "86e3cce5-7ea8-87d1-b7ee-bc32e3dd36a1"
+  },
+  {
+    "key": "lean_width_the_register_grows_strictly_with_the_width",
+    "name": "lean width.lean: the_register_grows_strictly_with_the_width — reg 4 < reg 8 ∧ reg 8 < reg 16 ∧ reg 16 < reg 32 ∧ grover 4 < grover 8 ∧ grover 8 < grover 16 ∧ grover 16 < grover 32 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9aa19d70-0ee0-8cec-aee8-39fec7ee49d6"
+  },
+  {
+    "key": "lean_width_clearing_the_floor_needs_a_cost_exponent_of_at_least_256",
+    "name": "lean width.lean: clearing_the_floor_needs_a_cost_exponent_of_at_least_256 — 256 ≤ reg 16 ∧ reg 8 < 256 ∧ 2 ^ 128 < 2 ^ 256 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3660343e-b344-8be2-b409-b9e320cdcd4d"
+  },
+  {
+    "key": "lean_width_the_cost_exponent_is_more_than_the_square_root_exponent_at_every_width",
+    "name": "lean width.lean: the_cost_exponent_is_more_than_the_square_root_exponent_at_every_width — widths.all (fun w => grover w < reg w) ∧ widths.all (fun w => reg w - grover w == (reg w + 1) / 2) ∧ (reg 4 - grover 4) < (reg 32 - grover 32) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1f8c76c6-acdf-8590-95eb-60bd60367edb"
   }
 ]
