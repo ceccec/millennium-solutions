@@ -149724,5 +149724,45 @@
     "key": "lean_combinatorics_these_are_exact_counts_decided_not_a_physical_machine",
     "name": "lean combinatorics.lean: these_are_exact_counts_decided_not_a_physical_machine — factorial 7 = 5040 ∧ choose 5 2 = 10 ∧ triangular 8 = 36 ∧ ramsey22 9 = 9 ∧ (List.range 7).all (fun n => choose n 0 == 1 && choose n n == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "03e80abe-991e-8c25-a3bc-1fbf431001e7"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_bit_case_is_one_hundred_twenty_five_octaves",
+    "name": "lean thousandbit.lean: the_thousand_bit_case_is_one_hundred_twenty_five_octaves — 1000 = 125 * 8 ∧ 1000 % 8 = 0 ∧ 999 % 8 ≠ 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d9b1d5f8-5e70-861c-9190-b842d849a1f0"
+  },
+  {
+    "key": "lean_thousandbit_the_binary_units_tile_the_thousand_exactly",
+    "name": "lean thousandbit.lean: the_binary_units_tile_the_thousand_exactly — 1000 = 500 * 2 ∧ 1000 = 250 * 4 ∧ 1000 = 125 * 8 ∧ 1000 % 2 = 0 ∧ 1000 % 4 = 0 ∧ 1000 % 8 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8e10d5d0-4fd5-8270-bd9a-fbe92e54dafd"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_is_the_cube_octave_times_pentagram_cubed",
+    "name": "lean thousandbit.lean: the_thousand_is_the_cube_octave_times_pentagram_cubed — 10 ^ 3 = 1000 ∧ 2 ^ 3 * 5 ^ 3 = 1000 ∧ 2 ^ 3 = 8 ∧ 5 ^ 3 = 125 ∧ 125 * 8 = 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6c535031-7658-894f-9d12-f18103af15a2"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_carries_residue_one_mod_nine",
+    "name": "lean thousandbit.lean: the_thousand_carries_residue_one_mod_nine — 1000 % 9 = 1 ∧ 1000 = 9 * 111 + 1 ∧ 999 % 9 = 0 ∧ 1008 % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bb60beff-feee-8f49-af32-8fdf48844a97"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_bit_case_overflows_the_width_thirty_two_ceiling",
+    "name": "lean thousandbit.lean: the_thousand_bit_case_overflows_the_width_thirty_two_ceiling — 32 * 32 - 32 - 2 = 990 ∧ 990 < 1000 ∧ 32 * 33 - 33 - 2 = 1021 ∧ 1000 ≤ 1021 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fb28d220-8bc2-878c-93bb-87754b1f7cd6"
+  },
+  {
+    "key": "lean_thousandbit_the_minimal_register_for_the_thousand_is_width_thirty_three",
+    "name": "lean thousandbit.lean: the_minimal_register_for_the_thousand_is_width_thirty_three — 1000 - 990 = 10 ∧ 1021 - 1000 = 21 ∧ 990 < 1000 ∧ 1000 ≤ 1021 ∧ (32 * 33 - 33 - 2) / 2 = 510 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e00c13fe-c68a-8e49-8004-4b456917e12a"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_fills_between_ninety_seven_and_ninety_eight_percent_of_its_register",
+    "name": "lean thousandbit.lean: the_thousand_fills_between_ninety_seven_and_ninety_eight_percent_of_its_register — 97 * 1021 < 1000 * 100 ∧ 1000 * 100 < 98 * 1021 ∧ 97 * 1021 = 99037 ∧ 98 * 1021 = 100058 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2283c459-1a73-8ab3-8878-c69f8884fc75"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_bit_structure_is_decided_not_a_quantum_machine",
+    "name": "lean thousandbit.lean: the_thousand_bit_structure_is_decided_not_a_quantum_machine — 10 ^ 3 = 1000 ∧ 1000 % 8 = 0 ∧ 1000 % 9 = 1 ∧ 990 < 1000 ∧ 1000 ≤ 1021 ∧ 2 ^ 3 * 5 ^ 3 = 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "54965178-f8b9-8feb-8dfc-9a5dfb6e0ae3"
   }
 ]

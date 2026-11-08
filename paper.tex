@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,109 of them across 112 files and
-8 wings; 25,902 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,117 of them across 113 files and
+8 wings; 25,910 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2755,6 +2755,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \left|\operatorname{dedup}\left(\mathrm{pairing}\right)\right| = 7 \land \forall i \in \{0,\dots,6\},\; i \in \mathrm{pairing} \land \left|\mathrm{pairing}\right| = \left|\{0,\dots,6\}\right| \land \mathrm{fact}\mathopen{}\left(\left|\mathrm{pairing}\right|\right) = 5040 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 49 cases. \hfill$\square$
+
+\paragraph{\texttt{thousandbit.lean}}
+
+\begin{theorem}[\texttt{the\_thousand\_bit\_case\_is\_one\_hundred\_twenty\_five\_octaves}]
+\[ 1000 = 125 \cdot 8 \land 1000 \bmod 8 = 0 \land 999 \bmod 8 \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_binary\_units\_tile\_the\_thousand\_exactly}]
+\[ 1000 = 500 \cdot 2 \land 1000 = 250 \cdot 4 \land 1000 = 125 \cdot 8 \land 1000 \bmod 2 = 0 \land 1000 \bmod 4 = 0 \land 1000 \bmod 8 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_thousand\_is\_the\_cube\_octave\_times\_pentagram\_cubed}]
+\[ 10^{3} = 1000 \land 2^{3} \cdot 5^{3} = 1000 \land 2^{3} = 8 \land 5^{3} = 125 \land 125 \cdot 8 = 1000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_thousand\_carries\_residue\_one\_mod\_nine}]
+\[ 1000 \bmod 9 = 1 \land 1000 = 9 \cdot 111 + 1 \land 999 \bmod 9 = 0 \land 1008 \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_thousand\_bit\_case\_overflows\_the\_width\_thirty\_two\_ceiling}]
+\[ 32 \cdot 32 - 32 - 2 = 990 \land 990 < 1000 \land 32 \cdot 33 - 33 - 2 = 1021 \land 1000 \le 1021 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_minimal\_register\_for\_the\_thousand\_is\_width\_thirty\_three}]
+\[ 1000 - 990 = 10 \land 1021 - 1000 = 21 \land 990 < 1000 \land 1000 \le 1021 \land \frac{32 \cdot 33 - 33 - 2}{2} = 510 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_thousand\_fills\_between\_ninety\_seven\_and\_ninety\_eight\_percent\_of\_its\_register}]
+\[ 97 \cdot 1021 < 1000 \cdot 100 \land 1000 \cdot 100 < 98 \cdot 1021 \land 97 \cdot 1021 = 99037 \land 98 \cdot 1021 = 100058 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_thousand\_bit\_structure\_is\_decided\_not\_a\_quantum\_machine}]
+\[ 10^{3} = 1000 \land 1000 \bmod 8 = 0 \land 1000 \bmod 9 = 1 \land 990 < 1000 \land 1000 \le 1021 \land 2^{3} \cdot 5^{3} = 1000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \subsection{the ring}
 
