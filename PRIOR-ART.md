@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,069 machine-checked declarations, **26,022** restate work that already has an author and
+Of 26,077 machine-checked declarations, **26,030** restate work that already has an author and
 **47** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **26,022** |
+| attributed to named earlier work | **26,030** |
 | unclassified — no search performed, status unknown | **47** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 7
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 100 sources, 26,022 theorems
+## Restated from named earlier work — 101 sources, 26,030 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -150,6 +150,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>theology.lean</code></td><td>8</td><td>elementary number theory — the unit group of ℤ/9, the doubling map, and the ten's complement</td><td>the structure is the same standard one index.lean credits: U(9) = {1,2,4,5,7,8}, the non-units {0,3,6}, and the doubling orbit 1 → 2 → 4 → 8 → 7 → 5 → 1 of order six because 2 has multiplicative order six mod 9. Textbook abstract algebra, not this deposit's. The permutation count 7! = 5040 is likewise classical. What is NOT prior art is which facts were chosen and why — and that choosing is not a mathematical act, which is the whole subject of this file.</td></tr>
 <tr><td><code>turns.lean</code></td><td>8</td><td>the cycle decomposition of a permutation into disjoint cycles; the order of 2 in (ℤ/9)* being 6, which is Euler's theorem for this modulus. The Euler characteristic χ = 2 − 2g of an orientable closed surface of genus g.</td><td>NONE OF IT IS THIS DEPOSIT'S. Cycle decomposition is the first structure theorem for permutations, the order of 2 mod 9 is Euler, and χ = 2 − 2g is Euler again. What is this deposit's is the accounting: that doubling leaves exactly TWO non-trivial loops on this ring, that their step angles are 60° and 180°, and that both close at 360° — and theorem 8, which says plainly that the surface is an interpretation of the cycle structure and not a theorem about it.</td></tr>
 <tr><td><code>verdict.lean</code></td><td>8</td><td>the classification of a test outcome under partial information — the distinction between a negative result and an absent one, which is ordinary experimental practice and older than statistics. Monotonicity of a decision rule in its evidence.</td><td>NEITHER IS THIS DEPOSIT'S. "Absence of evidence is not evidence of absence" is a commonplace, and requiring a decision rule to be total and exclusive is what a classification IS. What is this deposit's is that ITS OWN verdict rule — the one standing behind every novelty claim it makes — is decided by the kernel rather than left as a line of TypeScript nobody checks.</td></tr>
+<tr><td><code>width.lean</code></td><td>8</td><td>the UUID 128-bit layout and its version/variant reservation (RFC 9562); qpu.uuidna.com's register formula 32·w − w − 2 and its four hexbit widths 4 / 8 / 16 / 32; the birthday/Grover square-root exponent; the ISO 128-bit post-quantum floor qpu reads from the Classic McEliece ISO page; and the 2^n cost of a classical state-vector over n qubits.</td><td>none of this mathematics is new. The register formula and the widths are qpu's; the square root and the ISO floor are standard. What is decided here is only that the floor is a FUNCTION of the width — a dial — so the 128-bit UUID (width 4) sitting 67 bits below it is one instance and a wider identifier clears it; and that the SAME dial is the exponent of the simulation cost, so capacity and the cost of simulating it rise together. The capability gap (quantum speedup) is untouched: a wider register is a bigger classical simulation, never a faster one.</td></tr>
 <tr><td><code>widths.lean</code></td><td>24</td><td>the Ed25519 signature scheme's parameter sizes — 32-byte public key, 64-byte signature (Bernstein, Duif, Lange, Schwabe, Yang, 2011; RFC 8032). The 128-bit UUID layout, RFC 9562. A byte is eight bits.</td><td>EVERY CONSTANT HERE IS SOMEBODY ELSE'S AND IS CITED ABOVE. Ed25519's sizes are its designers'; the UUID's width is the RFC's; eight bits to a byte is older than both. What is this deposit's is neither: it is that its OWN two files state the same width in different units and had no theorem binding them, so either could have drifted while the other stayed green.</td></tr>
 <tr><td><code>z9.lean</code></td><td>24</td><td>modular arithmetic</td><td>Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801</td></tr>
 <tr><td><code>z9plus.lean</code></td><td>48</td><td>modular arithmetic and periodicity</td><td>digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774</td></tr>
@@ -213,6 +214,7 @@ which is a contribution of verification, not of discovery.
 - **siteswap notation for juggling (Klimek, Tiemann and Magnusson, independently c. 1985; the average theorem and the permutation criterion are due to Buhler, Eisenbud, Graham and Wright, 1994); the Pythagorean comma (antiquity); Maekawa's and Kawasaki's theorems on flat-foldable vertices (1980s); the crystallographic restriction theorem (19th century, Bravais and after); the moment of inertia and angular acceleration (Euler, Newton); the least common multiple (Euclid).** — 8 theorems, in `entangled.lean`
 - **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 35 theorems, in `planck.lean`
 - **the Ed25519 signature scheme's parameter sizes — 32-byte public key, 64-byte signature (Bernstein, Duif, Lange, Schwabe, Yang, 2011; RFC 8032). The 128-bit UUID layout, RFC 9562. A byte is eight bits.** — 24 theorems, in `widths.lean`
+- **the UUID 128-bit layout and its version/variant reservation (RFC 9562); qpu.uuidna.com's register formula 32·w − w − 2 and its four hexbit widths 4 / 8 / 16 / 32; the birthday/Grover square-root exponent; the ISO 128-bit post-quantum floor qpu reads from the Classic McEliece ISO page; and the 2^n cost of a classical state-vector over n qubits.** — 8 theorems, in `width.lean`
 - **the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC 4122, 2005), which fixes 4 bits of version and 2 of variant. The birthday bound: a collision among uniformly drawn values from a space of size 2^n is expected near 2^(n/2) draws.** — 8 theorems, in `capacity.lean`
 - **the UUID text format, and the pigeonhole principle** — 8 theorems, in `handle.lean`
 - **the classification of a test outcome under partial information — the distinction between a negative result and an absent one, which is ordinary experimental practice and older than statistics. Monotonicity of a decision rule in its evidence.** — 8 theorems, in `verdict.lean`
@@ -265,5 +267,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `a4567420-59bf-848e-a465-69036286a955` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `4f8f9c4b-b414-8c76-bb7b-0de8bc4a8629` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.
