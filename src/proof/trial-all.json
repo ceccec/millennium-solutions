@@ -171646,5 +171646,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "af6a8c7d-9084-8b32-bfd0-a1af4659aab3"
+  },
+  {
+    "key": "lean_quantumsoftware_superdense_coding_sends_two_classical_bits_through_one_qubit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5b5cd483-8cf1-8278-9ff5-f92397af7792"
+  },
+  {
+    "key": "lean_quantumsoftware_without_the_shared_pair_one_qubit_carries_only_one_bit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b0d33f75-900f-8203-8b9d-aff74d56baae"
+  },
+  {
+    "key": "lean_quantumsoftware_the_bit_flip_code_corrects_every_single_bit_flip_on_every_state",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5408dd41-1aff-84b1-8e76-8183459d8e3c"
+  },
+  {
+    "key": "lean_quantumsoftware_two_bit_flips_turn_the_correction_into_a_logical_error",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bb414d4d-e502-823e-9db4-c2d7c64b9da7"
+  },
+  {
+    "key": "lean_quantumsoftware_the_phase_flip_code_corrects_every_single_phase_flip_on_every_state",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "35bda5b6-d997-8005-bb7b-6a234603c46c"
+  },
+  {
+    "key": "lean_quantumsoftware_the_toffoli_gate_is_reversible_and_computes_and_which_no_affine_circuit_can",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8441e7a6-e603-855f-be29-56908754dc2b"
+  },
+  {
+    "key": "lean_quantumsoftware_the_swap_test_reads_the_squared_overlap_on_every_pair_in_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a90cec74-3501-89e4-be9a-40ceb5b2892b"
+  },
+  {
+    "key": "lean_quantumsoftware_a_compilers_cnot_and_swap_rewrites_are_exact_and_dropping_a_gate_breaks_them",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a37c2279-2a5a-8e11-a804-4aced1f12fb5"
   }
 ]
