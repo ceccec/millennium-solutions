@@ -162,6 +162,12 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const { execFileSync } = await import('node:child_process')
     return execFileSync('node', ['scripts/published.ts'], { encoding: 'utf8', maxBuffer: 16 << 20 })
   },
+  // GITHUB, FUSED: per version tag, the GitHub release, the npm version and the Zenodo record it produced.
+  release_reach: async (a) => {
+    const { execFileSync } = await import('node:child_process')
+    const args = ['scripts/release-reach.ts', ...(a?.since ? [`--since=${String(a.since)}`] : []), ...(a?.json ? ['--json'] : [])]
+    return execFileSync('node', args, { encoding: 'utf8', maxBuffer: 16 << 20, cwd: R })
+  },
 
   // ── THE CONNECTOR. This server speaks JSON-RPC to ANOTHER MCP server and returns its answer unchanged. ──
   // Not mirrored, not summarised, not cached: forwarded. The registry is data in src/mcp/connectors.ts and

@@ -98,6 +98,7 @@
     "orphan-gate": "node scripts/orphan-gate.ts",
     "ci-health": "node scripts/ci-health.ts",
     "published": "node scripts/published.ts",
+    "release-reach": "node scripts/release-reach.ts",
     "translate-gate": "node scripts/translate-gate.ts",
     "paper": "node scripts/paper.ts",
     "latex-gate": "node scripts/latex-gate.ts",

@@ -117,7 +117,14 @@ jobs:
           # exchange's result only at verbose level ("Failed token exchange request with body message: …") and then
           # publishes WITHOUT credentials, so the registry's 404 is all a default log shows. The verbose output goes
           # to a file and only its oidc lines and errors are printed — npm writes no token to its log.
-          if npm publish --access public --provenance --loglevel verbose > /tmp/publish.log 2>&1; then
+          # A BACKFILL MUST NOT MOVE `latest`, AND NPM REFUSES TO LET IT. v9.8.4 and v9.8.5, released after 9.8.6 was on the
+          # registry, failed with "Cannot implicitly apply the latest tag because previously published version 9.8.6 is
+          # higher". npm is right; the publish names a tag instead: `backfill` for a version below the current latest.
+          LATEST=$(npm view "@ceccec/millennium-solutions" dist-tags.latest 2>/dev/null || echo 0.0.0)
+          DIST=latest
+          if node -e 'const [a,b]=process.argv.slice(1).map((v)=>v.split(".").map(Number));process.exit((a[0]-b[0]||a[1]-b[1]||a[2]-b[2])<0?0:1)' "$V" "$LATEST"; then DIST=backfill; fi
+          echo "dist-tag: $DIST (registry latest is $LATEST)"
+          if npm publish --access public --provenance --tag "$DIST" --loglevel verbose > /tmp/publish.log 2>&1; then
             grep -E "verbose oidc|provenance|\+ @ceccec|^npm notice (name|version|shasum|integrity):" /tmp/publish.log
           else
             grep -E "verbose oidc|silly oidc|npm error" /tmp/publish.log

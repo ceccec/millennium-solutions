@@ -68,6 +68,8 @@ const REACHES: [RegExp, Need][] = [
   [/fromSource\(/, 'git'],
   // The commit script runs git itself, so a handler that spawns it needs a git checkout.
   [/git-commit-paths\.ts/, 'git'],
+  // release-reach reads the tags on origin and each tagged tree's .zenodo.json with git, inside the script it spawns.
+  [/release-reach\.ts/, 'git'],
   [/execSync\(\s*[`'"]node scripts\/|execFileSync\(\s*['"`]node['"`]\s*,\s*\[\s*['"`]scripts\//, 'tree'],
   [/\bleanTheorems\b|\bleanFiles\b|\bleanSource\b|\bleanSealed\b/, 'tree'],
   // A handler that calls the QPU family runner reads the QPU repository, so it reaches the tree.

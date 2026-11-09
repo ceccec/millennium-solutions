@@ -172,6 +172,8 @@ export const TOOLS = [
   { name: 'readers', description: 'Ask the scientific and medical sources this deposit investigates through — Europe PMC, PubMed, PubChem, ChEMBL, UniProt, Ensembl, KEGG, Reactome, GBIF, RxNorm, openFDA, MeSH, ClinicalTrials.gov and more — whether each still answers with a fact known BEFORE it was asked. Three verdicts kept apart: PROVEN, WRONG (the reader is broken OR the expectation was), and NOT MEASURED (it did not answer — silence is not absence). 8 further sources are named as credential- or licence-gated rather than omitted, because an unrecorded gap becomes an implicit claim of completeness. CITATION INSTRUMENTS, NOT MEDICAL ADVICE: a documented traditional use is an anthropological fact, never evidence a use works, and never a dose.',
     inputSchema: { type: 'object', properties: { domain: { type: 'string' }, list: { type: 'boolean' } } } },
 
+  { name: 'release_reach', description: 'GitHub, fused: for every version tag on origin, whether it reached the three places a release is for — the GitHub release (read through gh, the depositor\'s login), the npm version, and the Zenodo record the GitHub integration archived, with the version label Zenodo gave it. The Zenodo join is the label the tagged .zenodo.json implies plus a creation time within ten minutes of the release. Reports, never gates; a column it could not read says NOT MEASURED.',
+    inputSchema: { type: 'object', properties: { since: { type: 'string', description: 'the oldest tag to report, e.g. v9.8.0 (the default)' }, json: { type: 'boolean' } } } },
   { name: 'live', description: 'What this deposit has actually SHIPPED, asked of the registries rather than the tree: the npm version against package.json, the newest provenance tag, and the site against the ledger this tree holds. A green publish workflow says npm was called, not that the version on the registry is the one here — that gap has been real for three releases. Reports, never gates: network state must not decide whether a local build is allowed.',
     inputSchema: { type: 'object', properties: {} } },
 
@@ -228,6 +230,7 @@ export const NEEDS: Record<string, Need[]> = {
   gates_fire: ['net', 'tree'],
   readers: ['net', 'tree'],
   live: ['net', 'tree'],
+  release_reach: ['net', 'tree', 'git'],
   connect: ['net', 'tree', 'git'],
   // BOTH: it reaches other people's servers AND it runs a script from this tree. The first declaration said
   // only `net`, which was incomplete in the direction that flatters — a tool needing one thing looks more
