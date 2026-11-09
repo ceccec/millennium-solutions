@@ -24,7 +24,7 @@ export const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'cont
 // `ci-watch` joins NETWORK: it reads GitHub's verdict on a commit through `gh run list`, and its refusal is a
 // run that CONCLUDED IN FAILURE on their server — no mutation of this tree can produce it, and before a push
 // there is nothing to read at all.
-export const NETWORK = new Set(['online-verify-e2e-test', 'pre-commit-court', 'connector-job', 'novelty', 'qpu-crosscheck', 'clay-online', 'links-check', 'cern', 'cern-oai', 'doi-resolve', 'zenodo-mint', 'zenodo-verify', 'bench-hex', 'bench-hexbit', 'release-live', 'readers', 'entangle-oeis', 'api-discover', 'published', 'ci-watch', 'web-fetch', 'web-search', 'clay-conditions-test', 'suite-run', 'answer', 'answer-doi-test', 'api-adapters', 'apis-guru'])
+export const NETWORK = new Set(['online-verify-e2e-test', 'pre-commit-court', 'connector-job', 'novelty', 'qpu-crosscheck', 'qpu-register-gate', 'clay-online', 'links-check', 'cern', 'cern-oai', 'doi-resolve', 'zenodo-mint', 'zenodo-verify', 'bench-hex', 'bench-hexbit', 'release-live', 'readers', 'entangle-oeis', 'api-discover', 'published', 'ci-watch', 'web-fetch', 'web-search', 'clay-conditions-test', 'suite-run', 'answer', 'answer-doi-test', 'api-adapters', 'apis-guru'])
 
 /** Every script package.json can reach. */
 export const reachableScripts = (): Set<string> => {
@@ -170,6 +170,9 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   'run-suite-security-test': 'an MCP-client check that every unlisted run_suite name is refused. It runs in .github/workflows/net-tests.yml, and is listed in src/ci-only.ts by decision',
   textbooks: 'decodes qpu\'s Qpu/Textbook.lean from its checkout OUTSIDE this repository (QPU_DIR, default ~/github/uuidna/qpu) — the reason xrepo stands here: on any clone without that sibling it answers NOT MEASURED, and a chain that ran it would turn an absent neighbour into a failed build about this tree. Its receipt, evidence/textbooks/latest.json, names the qpu commit it read, so the /textbooks page is dated by its subject; gates-fire holds its control, and the MCP suite `textbooks` runs it on demand',
   probe: 'the control harness, not a gate: it takes a file, a theorem and a mutation as arguments, so no chain can run it bare; gates-fire holds its control — a mutation that never reaches the theorem must be refused',
+  // ── MINE (2026-11-10), decided the day leads.ts named them ──────────────────────────────────────────────────
+  // qpu-register-gate is in NETWORK, not here: it IS run by `npm run gates`, and its refusal reaches the qpu
+  // connector — a network check, excluded from the uncontrolled census the same way qpu-crosscheck is.
 }
 
 /** Gates that REFUSE and that no routine chain runs. `seo` sat here with a real defect — paper.html

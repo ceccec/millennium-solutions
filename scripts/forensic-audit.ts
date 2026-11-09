@@ -149,7 +149,7 @@ At least one of them was recoverable: \`thue_morse_doubling_recurrence\` was wit
 
 | date | net withdrawn | commit | subject |
 |---|---:|---|---|
-${withdrawals.slice(0, 5).map((w) => `| ${w.date} | ${w.dRev.toLocaleString('en')} | \`${w.commit}\` | ${w.subject.replace(/\|/g, '·').slice(0, 62)} |`).join('\n')}
+${withdrawals.slice(0, 5).map((w) => `| ${w.date} | ${w.dRev.toLocaleString('en')} | \`${w.commit}\` | ${w.subject.replace(/\|/g, '·').replace(/</g, '&lt;').replace(/>/g, '&gt;').slice(0, 62)} |`).join('\n')}
 
 ## What this record does NOT establish
 

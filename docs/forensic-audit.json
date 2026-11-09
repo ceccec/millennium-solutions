@@ -1,5 +1,5 @@
 {
-  "produced": "570be36b5",
+  "produced": "91cc5a3dc",
   "method": "recomputed from git history of src/ledger/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -18,64 +18,14 @@
   },
   "largestWithdrawalEvents": [
     {
-      "date": "2026-08-20",
-      "commit": "e6bb01bb5",
+      "date": "2026-11-09",
+      "commit": "91cc5a3dc",
       "author": "Tsvetan Rouschev",
-      "subject": "gates: green the three that were red — by fixing the authority, not the ",
-      "entries": 2064,
-      "revoked": 1864,
-      "dRev": 1864,
-      "dEnt": 200
-    },
-    {
-      "date": "2026-09-28",
-      "commit": "b4acdd82e",
-      "author": "Tsvetan Rouschev",
-      "subject": "size the generated modules for the machine that checks them, not the one",
-      "entries": 28360,
+      "subject": "the proofs group by ISO classification: src/iso/<standard>/, the ledger ",
+      "entries": 28632,
       "revoked": 2419,
-      "dRev": 199,
-      "dEnt": 8
-    },
-    {
-      "date": "2026-09-28",
-      "commit": "9a85ad0b3",
-      "author": "Tsvetan Rouschev",
-      "subject": "derive the generator's vocabulary from the ring instead of typing it",
-      "entries": 28352,
-      "revoked": 2220,
-      "dRev": 76,
-      "dEnt": 24941
-    },
-    {
-      "date": "2026-09-25",
-      "commit": "4d25e3359",
-      "author": "Tsvetan Rouschev",
-      "subject": "73 keys revoked: emitted no longer, by a vocabulary that discriminates b",
-      "entries": 3272,
-      "revoked": 2119,
-      "dRev": 73,
-      "dEnt": 0
-    },
-    {
-      "date": "2026-09-25",
-      "commit": "dcbb798ac",
-      "author": "Tsvetan Rouschev",
-      "subject": "provenance knew three records; there are 241 — and the three that prove ",
-      "entries": 3088,
-      "revoked": 2023,
-      "dRev": 67,
-      "dEnt": 80
-    },
-    {
-      "date": "2026-08-20",
-      "commit": "959f8af2a",
-      "author": "Tsvetan Rouschev",
-      "subject": "lean: verify once instead of twice, and cache what the kernel already sa",
-      "entries": 2218,
-      "revoked": 1890,
-      "dRev": 25,
-      "dEnt": 32
+      "dRev": 2419,
+      "dEnt": 28632
     }
   ],
   "withdrawalReasonsAsRecorded": [
@@ -112,6 +62,6 @@
       1
     ]
   ],
-  "totalStateChangingCommits": 658,
-  "address": "fe8ba71e-939c-8cde-be20-117fc51a60f8"
+  "totalStateChangingCommits": 1,
+  "address": "b0cd1264-84b9-8c15-a8b2-1c73a8f3c2a6"
 }

@@ -15,7 +15,9 @@ import { leanFiles, OLEAN_DIR } from '../src/api/index.ts'
 type Pair = { file: string; leaf: string }
 const shardFiles = existsSync(OLEAN_DIR) ? readdirSync(OLEAN_DIR).filter((f) => /^shard-\d+-of-\d+\.json$/.test(f)) : []
 if (!shardFiles.length) {
-  console.log(`✗ lean-fanout: no shard files in ${OLEAN_DIR} — run \`LEAN_SHARD=i/N node scripts/lean.ts\` on each runner first`)
+  // usage: this is the combine step of a sharded run, not a gate a single machine fires — it needs the shard
+  // files the matrix in verify-fanout.yml produces, the same way probe needs a file and a theorem as arguments.
+  console.log(`lean-fanout usage: no shard files in ${OLEAN_DIR} — run \`LEAN_SHARD=i/N node scripts/lean.ts\` on each runner first, then this folds them into the whole-tree root`)
   process.exit(1)
 }
 const pairs: Pair[] = shardFiles.flatMap((s) => JSON.parse(readFileSync(`${OLEAN_DIR}/${s}`, 'utf8')) as Pair[])

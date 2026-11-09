@@ -173,6 +173,10 @@ const CONTROLS: Control[] = [
     what: 'qpu.lean declaring a bit width the installed @uuidna/qpu does not compute — a proof about a unit that is not the one installed',
     mutate: (s) => s.replace(/^(def\s+bits\s*:\s*Nat\s*:=\s*)32\b/m, '$133') },
 
+  { gate: 'lean-paths-gate (a .lean names a src/ path that does not resolve)', cmd: 'node scripts/lean-paths-gate.ts', file: 'src/iso/iec-4879-quantum/qpu.lean',
+    what: 'a proof file citing a source path that is not in the tree — a claim about where code lives that no longer resolves',
+    mutate: (s) => s.replace('namespace Qpu', '-- src/iso/iec-4879-quantum/no_such_control.lean\nnamespace Qpu') },
+
   // TWO OF THE PEERS' GATES, CONTROLLED (2026-11-02). run-suite-security-test asserts the suite allowlist refuses every
   // unlisted name; with the check in scripts/suite-run.ts disabled, an unlisted name is no longer REFUSED and the test
   // must say so. thousand-bit-gate's control mode must see 91 factored and 2^1000−1 not; with trial division never
