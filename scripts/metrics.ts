@@ -30,7 +30,7 @@
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { receiptOf, rootOf, checkFace, protocolId, PROTOCOL, type Metric, type Face } from '../src/face/index.ts'
-import { census, advantage, split, ledger, leanFiles, leanTheorems, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
+import { census, advantage, split, ledger, leanFiles, leanTheorems, leanPathOf, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
 
 // The shape and its checker live in src/face — a leaf that imports only the address primitives, so the MCP
 // server can verify a face without importing THIS file, whose top level runs the gates.
@@ -176,7 +176,7 @@ if (!process.env.METRICS_OUT && existsSync(SHARED)) {
   // it is handed, and handing them a stale file is a way of passing an audit rather than surviving one.
   // Each line carries the STATEMENT, which is what a cross-repository address is computed over.
   const lines = leanTheorems().map((t) => JSON.stringify({
-    repo: 'millennium-solutions', path: `src/proof/${t.file}`, claim: t.name,
+    repo: 'millennium-solutions', path: leanPathOf(t.file), claim: t.name,
     statement: t.statement, tactic: t.tactic, origin: 'self',
   })).join('\n')
   writeFileSync(SHARED + '/millennium-solutions.jsonl', lines + '\n')

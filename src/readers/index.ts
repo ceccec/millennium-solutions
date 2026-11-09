@@ -262,12 +262,12 @@ export const READERS: Reader[] = [
     notFor: 'anything, until a key is held; a credential gap, recorded' },
 
   // ── METROLOGY — the one domain where a value is defined rather than measured ──────────────────────────────
-  { source: 'nist:codata', domain: 'metrology', why: 'the defined constants are exact by definition of the SI, and src/proof/light.lean already decides consequences of them',
+  { source: 'nist:codata', domain: 'metrology', why: 'the defined constants are exact by definition of the SI, and src/iso/80000-physics/light.lean already decides consequences of them',
     url: 'https://physics.nist.gov/cuu/Constants/Table/allascii.txt',
     expect: (b) => /299 792 458/.test(b) && /6\.626 070 15/.test(b),
     attribution: 'CODATA, via NIST. The SI defining constants are exact.',
     for: 'the values this deposit\'s physical theorems are stated over, and the uncertainties attached to the measured ones',
-    notFor: 'treating a measured constant\'s digits as exact. src/proof/planck.lean exists because that error is easy to make and this deposit made it' },
+    notFor: 'treating a measured constant\'s digits as exact. src/iso/80000-physics/planck.lean exists because that error is easy to make and this deposit made it' },
 ]
 
 export const DOMAINS = [...new Set(READERS.map((r) => r.domain))].sort()

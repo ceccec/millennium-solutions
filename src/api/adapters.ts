@@ -235,7 +235,7 @@ const fromNist: Adapter[] = [
 // ── A FILESYSTEM API: a file this tree holds, answering the fact a correct reply contains ─────────────────
 // Read from disk, never the network. Its gate checks the file, so it fails when the file stops saying the fact.
 const fromFilesystem: Adapter[] = [
-  { name: 'fs:counting-rocks', source: 'code', host: 'local', path: 'src/proof/counting-rocks.lean', auth: 'none',
+  { name: 'fs:counting-rocks', source: 'code', host: 'local', path: 'src/iso/80000-2-mathematics/counting-rocks.lean', auth: 'none',
     expect: (b) => /theorem fibonacci_ten : fib 10 = 55/.test(b),
     purpose: 'the Counting Rocks! theorems, read from the Lean source that decides them',
     notFor: 'the book itself. It names what the Lean file says, not what the book says beyond its formulas' },

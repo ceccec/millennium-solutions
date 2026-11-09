@@ -1,5 +1,5 @@
 <!-- ── ONE LIST COMPONENT, READING public/formulas.jsonld ──────────────────────────────────────────────────
-     This folds AllTheorems.vue into itself. That component imported src/proof/discovered.json directly, so
+     This folds AllTheorems.vue into itself. That component imported src/ledger/discovered.json directly, so
      the whole ledger was bundled into the site's JavaScript to render a list of names; this one fetches the
      schema.org ItemList the build already writes, and nothing is bundled. Two components rendered one kind
      of thing — a list of what this deposit has decided — in two shapes, from two sources, with two copies

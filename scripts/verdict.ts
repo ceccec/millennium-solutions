@@ -16,8 +16,8 @@ import { createHash } from 'node:crypto'
 import { join } from 'node:path'
 
 /** Where scripts/lean.ts records each file's kernel verification, keyed by a hash of its bytes. */
-const LEAN_CACHE = 'src/proof/.lean-cache.json'
-import { ledger as __ledger, live, leanTheorems, fileOfKey } from '../src/api/index.ts'
+import { ledger as __ledger, live, leanTheorems, fileOfKey, leanPathOf, OLEAN_DIR } from '../src/api/index.ts'
+const LEAN_CACHE = `${OLEAN_DIR}/.lean-cache.json`
 
 // A supporting formula is a ledger theorem whose predicate establishes the FLOOR relevant to the statement: the
 // trial theorems always apply; the disputed-cluster theorems apply when the statement names a disputed problem.
@@ -72,7 +72,7 @@ export function proveVerdict(statement: string, decidableTest?: () => boolean): 
   const verifiedFile = (file: string): boolean => {
     const entry = leanCache[file]
     if (entry?.ok !== true) return false
-    const src = join('src/proof', file)
+    const src = leanPathOf(file)
     if (!existsSync(src)) return false
     return entry.hash === createHash('sha256').update(readFileSync(src, 'utf8')).digest('hex')
   }

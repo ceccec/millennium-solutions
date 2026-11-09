@@ -9,8 +9,9 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { queue } from './index.ts'
 import { translate, PREAMBLE, importsFor } from './translate.ts'
+import { leanPathOf, OLEAN_DIR } from '../api/index.ts'
 
-const OUT = 'src/proof/mechanical.lean'
+const OUT = 'src/iso/iec-2382-computing/mechanical.lean'
 
 export function emit(): { written: number; skipped: number; file: string } {
   const q = queue()
@@ -47,7 +48,7 @@ export function emit(): { written: number; skipped: number; file: string } {
   // words. A claim that cannot be rendered is not a failure of the build; it is the work list. What must never
   // happen is the two being confused, because then a bad rendering looks like a broken deposit.
   const compiles = (): string | null => {
-    try { execSync('cd src/proof && LEAN_PATH=. lean mechanical.lean', { encoding: 'utf8', stdio: 'pipe' }); return null }
+    try { execSync(`LEAN_PATH=${OLEAN_DIR} lean ${leanPathOf('mechanical.lean')}`, { encoding: 'utf8', stdio: 'pipe' }); return null }
     catch (e) { return String((e as { stdout?: string; stderr?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '') }
   }
   const quarantined: string[] = []

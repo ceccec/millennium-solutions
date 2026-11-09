@@ -1,6 +1,6 @@
 // THE REUSABLE API — one place that knows how to read this deposit.
 //
-// Thirty-two scripts loaded src/proof/discovered.json themselves and nine parsed Lean theorem names with
+// Thirty-two scripts loaded src/ledger/discovered.json themselves and nine parsed Lean theorem names with
 // their own regex. That is not a style problem: every one of those copies is a place where the deposit can
 // start disagreeing with itself, and this session found several that had. forensics counted key families by
 // splitting key TEXT and reported 377 development leads that did not exist; seal-lean matched whole keys and
@@ -10,11 +10,14 @@
 // Nothing here decides anything. It reads artefacts and returns them typed — the ledger, the Lean sources,
 // and the relation between a sealed key and the theorem on disk that carries it. Judgement stays in the gates
 // that own it.
-import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'node:fs'
+import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 
-export const LEDGER_PATH = 'src/proof/discovered.json'
-export const PROOF_DIR = 'src/proof'
+export const LEDGER_PATH = 'src/ledger/discovered.json'
+// Oleans and the verification cache are build artefacts, not sources — they live in a gitignored build dir
+// OUTSIDE src/, so dissolving the old src/proof source folder leaves nothing behind. Imports resolve by
+// module name from the flat oleans here (LEAN_PATH), so the layout of the .lean sources is free to change.
+export const OLEAN_DIR = '.lean-build'
 
 /** THE RECORD HAS FOUR STATES, NOT TWO. `revoked` was carrying two different meanings: a claim that stopped
  *  holding, and a claim that was withdrawn for want of a proof and has since been given one. Reporting the
@@ -89,13 +92,14 @@ export interface LeanTheorem { name: string; file: string; tactic: string; state
  *  deposit identifies a proof file by BASENAME everywhere — t.file, the ledger key's namespace, the theorem
  *  pages — so grouping files into src/proof/<domain>/ subdirs keeps that identity: this is the one place that
  *  knows a basename can sit in a subdir, and every consumer still sees 'qpu.lean'. A basename is unique tree-wide. */
-/** subdirectories of src/proof that are NOT sealed proofs and stay outside the enumeration, exactly as the old
- *  flat readdirSync excluded them: fixtures/ holds controls like axiom-control.lean (deliberately unsealed). */
+/** subdirectories that are NOT sealed proofs and stay outside the enumeration: fixtures/ holds controls like
+ *  axiom-control.lean (deliberately unsealed), and node_modules/ is never ours. */
 const LEAN_IGNORE_DIRS = new Set(['fixtures', 'node_modules'])
-/** The roots a .lean can live under. Each domain keeps its own proofs beside its code — src/crypto/*.lean and
- *  src/quantum/*.lean sit with their .ts families — while every other domain's proofs stay in src/proof. The
- *  identity is still the BASENAME (t.file, the ledger key's namespace), so a file is found wherever it lives. */
-export const LEAN_ROOTS = ['src/proof', 'src/crypto', 'src/quantum']
+/** The root the walk descends to find every .lean. Each domain keeps its own proofs beside the thing they
+ *  prove — src/crypto/*.lean and src/quantum/*.lean with their .ts families, the rest grouped by the ISO
+ *  standard they formalise under src/iso/<standard>/ — so there is no "proof" catch-all folder. The identity
+ *  is still the BASENAME (t.file, the ledger key's namespace), so a file is found wherever it lives. */
+export const LEAN_ROOTS = ['src']
 const leanPathMap = (): Map<string, string> => {
   const out = new Map<string, string>()
   const walk = (dir: string): void => {
@@ -112,8 +116,8 @@ const leanPathMap = (): Map<string, string> => {
   for (const r of LEAN_ROOTS) if (existsSync(r)) walk(r)
   return out
 }
-/** the repository-relative path of a proof file, by basename — src/crypto/roots.lean, src/quantum/qpu.lean, src/proof/z9.lean */
-export const leanPathOf = (file: string): string => leanPathMap().get(file) ?? `${PROOF_DIR}/${file}`
+/** the repository-relative path of a proof file, by basename — src/crypto/roots.lean, src/quantum/qpu.lean, src/iso/80000-2-mathematics/z9.lean */
+export const leanPathOf = (file: string): string => leanPathMap().get(file) ?? `src/${file}`
 export const leanFiles = (): string[] => [...leanPathMap().keys()].sort()
 
 /** ── A GENERATED LEAN FILE IS EXACTLY WHAT ITS GENERATOR WRITES, OR IT IS DRIFT ──────────────────────────
@@ -140,7 +144,8 @@ export const generatedLean = (file: string, text: string, o: { emit: boolean; ke
   if (!o.kernel) { console.log(`\n✓ ${o.label}: ${o.summary ? o.summary + ' ' : ''}written to ${p} — run npm run lean to put it to the kernel`); return }
   console.log(`\nwrote ${p} — putting it to the kernel:`)
   let out = ''
-  try { out = String(execSync(`LEAN_PATH=${PROOF_DIR} lean ${leanPathOf(file)}`, { encoding: 'utf8', stdio: 'pipe' })) }
+  mkdirSync(OLEAN_DIR, { recursive: true })
+  try { out = String(execSync(`LEAN_PATH=${OLEAN_DIR} lean ${leanPathOf(file)}`, { encoding: 'utf8', stdio: 'pipe' })) }
   catch (e) { out = String((e as { stdout?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '') }
   const errors = out.split('\n').filter((l) => /error:/.test(l))
   if (errors.length) { console.log('  ✗ refused:\n' + errors.slice(0, 8).map((l) => '    ' + l).join('\n')); process.exit(1) }
@@ -280,7 +285,7 @@ export interface Census {
 // proves nothing about a conjecture. The author: "this code proves nothing … remove the hacked code misleading the
 // public". The author's claim is stated in his name on the front page.
 
-/** THE VERIFICATION ADVANTAGE, read off src/proof/speed.lean rather than retyped.
+/** THE VERIFICATION ADVANTAGE, read off src/iso/80000-2-mathematics/speed.lean rather than retyped.
  *
  *  The deposit proves this and does not say it where anyone reads: measured over the front pages, four of
  *  eight proved properties were stated, and the four missing ones were the whole advantage. A boundary that
@@ -330,12 +335,12 @@ export const advantage = (): Advantage => {
  *  (The first deploy after the proofs landed failed on exactly this: PRIOR-ART.md counted 629 sealed
  *  theorems while this count still read 625 exhaustions.) */
 export const THEOREM_DEFINITION =
-  'a declaration in src/proof that the Lean kernel accepts — sorry-free — and closes either by exhaustion over a stated finite domain with no axiom, or by a proof for every value on the standard axioms propext and Quot.sound'
+  'a declaration in the deposit\'s Lean sources that the Lean kernel accepts — sorry-free — and closes either by exhaustion over a stated finite domain with no axiom, or by a proof for every value on the standard axioms propext and Quot.sound'
 
 /** The count that definition yields. Everything reporting "theorems" should read this. */
 export const theoremCount = (): number => { const c = census(); return c.byDecide + c.proved }
 
-/** THE DIGIT SPLIT, read off src/proof/split.lean rather than retyped.
+/** THE DIGIT SPLIT, read off src/iso/80000-2-mathematics/split.lean rather than retyped.
  *
  *  Measured after the theorems were written: not one of them reached the front pages. They were in the
  *  collected paper — a hundred pages — and on their own theorem pages, and a reader of the homepage saw

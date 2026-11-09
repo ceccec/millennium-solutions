@@ -12,7 +12,7 @@
  *  SERVER'S answer, attributed, so there is one source and the reader knows whose it is.
  *
  *  WHAT A CONNECTED ANSWER IS. It is a third party's report of itself, fetched on a date, and it carries no
- *  more authority than that. src/proof/qpu.lean decides what FOLLOWS from qpu's constants if they are as
+ *  more authority than that. src/quantum/qpu.lean decides what FOLLOWS from qpu's constants if they are as
  *  served — an implication, not a corroboration — and nothing reachable from here can check a remote claim.
  *  Two services agreeing is a join key, never a truth: this tree has the lesson at first hand from a broken
  *  filter that returned exactly the API's own total and was believed BECAUSE the number agreed. */
@@ -47,7 +47,7 @@ export const CONNECTORS: Connector[] = [
     endpoint: 'https://qpu.uuidna.com/api/mcp',
     attribution: 'qpu.uuidna.com — the QPU app on Cloudflare (Payload, Next.js), built from ~/github/uuidna/qpu. Not this repository.',
     for: 'its sixteen tools: the state-vector circuit, its Lean rows, the Shor run that factors 91 = 7 x 13 by '
-      + 'period-finding, the crypto catalogue, and its own end-to-end proof. src/proof/qpu.lean decides which of '
+      + 'period-finding, the crypto catalogue, and its own end-to-end proof. src/quantum/qpu.lean decides which of '
       + 'its constants this deposit independently counts the same way — 14 = 2 x 7, hexbit x rays = 28, 2^bits.',
     notFor: 'quantum advantage, and it does not claim any: its device field reads "exact-amplitudes" — exact '
       + 'computation, not a physical quantum processor\'s counts. Nor does a green answer mean a test passed — that service\'s OWN glossary says `holds` means '

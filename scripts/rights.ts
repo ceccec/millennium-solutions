@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // RIGHTS.md — the claim this deposit makes under international law, PARSED FROM THE SEALED PROOF.
 //
-// Nothing here is written by hand. The instrument table lives in src/proof/rights.lean, where the kernel
+// Nothing here is written by hand. The instrument table lives in src/iso/690-record/rights.lean, where the kernel
 // decides that the claimed set is exactly the without-formality set; this script reads that table and renders
 // it. A rights notice maintained separately from the thing that proves it drifts, and a drifted rights notice
 // either abandons a right or claims one that is not held — both are worse than having no notice at all.
@@ -11,7 +11,7 @@ import { escapeHtml } from '../src/html/index.ts'
 import { computes } from './honesty-gate.ts'
 import { liveKeys } from '../src/api/index.ts'
 
-const LEAN = 'src/proof/rights.lean'
+const LEAN = 'src/iso/690-record/rights.lean'
 const src = readFileSync(LEAN, 'utf8')
 
 // each row of `instruments` carries its own citation in the trailing comment — the comment IS the prose

@@ -22,7 +22,7 @@ const claim = data.author.text.replace(/\n/g, ' ')
     </blockquote>
 
     <p class="reads">Each line below is read out of the tree on every build: the statement from
-      <code>src/proof/index.lean</code>, the case count from the statement, the receipt from the ledger. The
+      <code>src/iso/9001-governance/index.lean</code>, the case count from the statement, the receipt from the ledger. The
       <strong>bound</strong> states what the theorem establishes and, in the same sentence, what it does not.</p>
 
     <article v-for="p in data.seven" :key="p.theorem" class="lead">

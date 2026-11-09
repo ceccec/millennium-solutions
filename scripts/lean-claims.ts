@@ -60,7 +60,7 @@ ck('self_inverse_only_1_and_8: d²≡1 ⇔ d∈{1,8}', digits().filter(d => m9(B
 // candidate AND still hold. A discovery that silently regresses (or an author's error, like the earlier
 // Cassini sign) fails here, not in production. This makes the ledger continuously proven, not just appended.
 {
-  const LEDGER = 'src/proof/discovered.json'
+  const LEDGER = 'src/ledger/discovered.json'
   const all: { key: string; revoked?: boolean }[] = existsSync(LEDGER) ? __ledger() : []
   const ledger = all.filter(isLive)
   const byKey = new Map(CANDIDATES.map((c) => [c.key, c]))

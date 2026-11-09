@@ -16,7 +16,7 @@
 //
 //   node scripts/lean.ts            verify every file
 //   node scripts/lean.ts <file>     verify one
-import { readFileSync, writeFileSync, unlinkSync, existsSync } from 'node:fs'
+import { readFileSync, writeFileSync, unlinkSync, existsSync, mkdirSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 
 // THE CACHE — a file whose bytes have not changed cannot have stopped being axiom-free. Verification was
@@ -25,7 +25,7 @@ import { createHash } from 'node:crypto'
 // verdict format, so editing a file, or changing what counts as a pass, re-verifies it and nothing else does.
 // This is a cache of work, never of trust: the recorded verdict is the one the kernel gave for those exact
 // bytes, and `--full` ignores it entirely.
-const CACHE = 'src/proof/.lean-cache.json'
+const CACHE = `${OLEAN_DIR}/.lean-cache.json`
 const CACHE_FORMAT = 3
 const FULL = process.argv.includes('--full')
 type Cached = { hash: string; format: number; ok: boolean; line: string; theorems: number }
@@ -34,11 +34,12 @@ const sha = (t: string) => createHash('sha256').update(t).digest('hex')
 import { execSync, execFile } from 'node:child_process'
 import { laneBudget } from '../src/api/lanes.ts'
 import { merkleFold, toUuid } from '../src/0/index.ts'
-import { leanFiles, leanPathOf } from '../src/api/index.ts'
+import { leanFiles, leanPathOf, OLEAN_DIR } from '../src/api/index.ts'
 import { promisify } from 'node:util'
 const run = promisify(execFile)
 
-const DIR = 'src/proof'
+const DIR = OLEAN_DIR
+mkdirSync(DIR, { recursive: true })
 // Files may import one another (address.lean imports Fnv). Lean resolves an import from a compiled .olean on
 // LEAN_PATH, so any file that is imported is built first and the directory is put on the path. Dependency
 // order is read from the imports themselves rather than hard-coded.
@@ -48,9 +49,10 @@ const ENV = { ...process.env, LEAN_PATH: DIR }
 const arg = process.argv.slice(2).find((a) => !a.startsWith('-'))
 const files = arg ? [arg.replace(/^.*\//, '')] : leanFiles()
 
-// build oleans for every file that something imports. leanFiles() walks src/proof recursively (the files are
-// grouped into src/proof/<domain>/ subdirs), so a file is read through leanPathOf(basename); the OLEAN stays
-// flat at src/proof/<Module>.olean, which keeps LEAN_PATH=src/proof and every `import Qpu` resolving unchanged.
+// build oleans for every file that something imports. leanFiles() walks all of src/ recursively (the files
+// are grouped by domain — src/crypto, src/quantum, src/iso/<standard>/ — and read through leanPathOf(basename));
+// the OLEAN stays flat at .lean-build/<Module>.olean, which keeps LEAN_PATH=.lean-build and every `import Qpu`
+// resolving by module name, unchanged, wherever the source happens to live.
 const all = leanFiles()
 const imported = new Set(all.flatMap((f) => [...readFileSync(`${leanPathOf(f)}`, 'utf8').matchAll(/^import\s+([A-Za-z_0-9.]+)/gm)].map((m) => m[1])))
 // AND THE OLEANS ARE CACHED TOO. Rebuilding one is a full elaboration of that file, so doing it

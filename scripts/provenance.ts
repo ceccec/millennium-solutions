@@ -20,7 +20,7 @@ import { execSync } from 'node:child_process'
 import { flag } from '../src/cli/index.ts'
 import { toUuid } from '../src/0/index.ts'
 
-const OUT = 'src/proof/provenance.json'
+const OUT = 'src/ledger/provenance.json'
 const UA = { 'User-Agent': 'millennium-solutions/provenance (+https://ceccec.psg.bg/millennium-solutions/; read-only)' }
 // THE POPULATION IS DISCOVERED, NOT LISTED. This read `const RECORDS = ['21781603', '21819217',
 // '22256707']` and then printed "proven against the registry that issued the DOIs — not one figure above is

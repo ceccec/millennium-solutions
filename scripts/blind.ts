@@ -40,7 +40,7 @@ const pick = <A>(xs: A[]): A => xs[Math.floor(rnd() * xs.length)]
 const TARGETS = [
   'README.md', 'index.md', 'paper.md', 'dashboard.md', 'AXIOMS.md', 'CHALLENGES.md',
   'PRIOR-ART.md', 'ACCOUNTING.md', 'llms.txt', 'rights.md', 'metrics.json',
-  'src/proof/rights.lean', 'src/proof/priorart.lean', 'src/proof/discovered.json',
+  'src/iso/690-record/rights.lean', 'src/iso/690-record/priorart.lean', 'src/ledger/discovered.json',
 ]
 
 /** The line a mutation lands on, with the change shown. "A figure moved by one" without saying WHICH is a

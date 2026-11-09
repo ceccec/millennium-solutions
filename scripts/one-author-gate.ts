@@ -53,7 +53,7 @@ for (const f of FILES) {
     // changes shape, and it will not notice on its own.
     const escaped = path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
     const readsFile = new RegExp(`readFileSync\\(\\s*(?:'${escaped}'|${m[2] ?? '\\u0000'})`).test(src)
-    const readsViaApi = path === 'src/proof/discovered.json'
+    const readsViaApi = path === 'src/ledger/discovered.json'
       && /from '\.\.\/src\/api\/index\.ts'/.test(src)
       && /\b(__ledger|ledger|loadLedger|ledgerOf)\s*\(/.test(src)
     const reads = readsFile || readsViaApi
@@ -92,7 +92,7 @@ const SELF_WRITERS: Record<string, string> = {
   'imagine.ts': 'reads src/proof/*.lean with `f !== imagined.lean`, excluding the file it writes',
   'sw-integrity.ts': 'SKIP holds sw.js and sw-integrity.json, so the manifest never covers itself',
   'lean.ts': 'the cache keys on each .lean file\'s own bytes, not on a listing of the directory',
-  'supersede.ts': 'lists only src/proof/imagined*.lean and writes src/proof/covered.json, which that pattern cannot match',
+  'supersede.ts': 'lists only src/proof/imagined*.lean and writes src/ledger/covered.json, which that pattern cannot match',
 }
 {
   const dirOf = (x: string) => x.replace(/\/[^/]*$/, '') || '.'

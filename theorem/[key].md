@@ -84,14 +84,14 @@ const desc = computed(() => isLean.value
 <h2>Statement — Lean 4 (machine-checked, axiom-free)</h2>
 <p>The Clay problem <strong>{{ $params.problem }}</strong>, to the honest floor. The statement below is a true fact <em>computed</em> from the ℤ/9 doubling sequence — genuinely <em>adjacent</em> to the problem, and <strong>not</strong> the conjecture.</p>
 <pre class="lean-proof"><code itemprop="text">{{ $params.lean }}</code></pre>
-<p>Verified sorry-free by <code>lean src/proof/index.lean</code>; <code>#print axioms {{ $params.key }}</code> → <em>does not depend on any axioms</em>. No Mathlib, no <code>native_decide</code>, no <code>sorry</code>.</p>
+<p>Verified sorry-free by <code>lean src/iso/9001-governance/index.lean</code>; <code>#print axioms {{ $params.key }}</code> → <em>does not depend on any axioms</em>. No Mathlib, no <code>native_decide</code>, no <code>sorry</code>.</p>
 <p><strong>Honest bound.</strong> {{ $params.bound }}.</p>
 <h2>References — qualified outlets</h2>
 <ul>
 <li><strong>The problem:</strong> <a :href="$params.outlet" target="_blank" rel="noopener">{{ $params.outletName }}</a> — the authoritative statement.</li>
 <li v-if="$params.outlet2"><strong>The resolution:</strong> <a :href="$params.outlet2" target="_blank" rel="noopener">{{ $params.outlet2Name }}</a>.</li>
 <li><strong>This work:</strong> Rouschev, T. <em>Millennium Solutions — the ℤ/9 vortex framework.</em> CC&nbsp;BY-NC&nbsp;4.0. Zenodo DOI <a href="https://doi.org/10.5281/zenodo.21819217" target="_blank" rel="noopener">10.5281/zenodo.21819217</a>.</li>
-<li><strong>Source (verify):</strong> <a href="https://github.com/ceccec/millennium-solutions/blob/main/src/proof/index.lean" target="_blank" rel="noopener">src/proof/index.lean</a> — clone and run <code>lean src/proof/index.lean</code>.</li>
+<li><strong>Source (verify):</strong> <a href="https://github.com/ceccec/millennium-solutions/blob/main/src/iso/9001-governance/index.lean" target="_blank" rel="noopener">src/iso/9001-governance/index.lean</a> — clone and run <code>lean src/iso/9001-governance/index.lean</code>.</li>
 </ul>
 <p>A content-address proves integrity, not truth.</p>
 </div>
@@ -156,7 +156,7 @@ So the URL stays resolvable and the record stays honest about its own history �
 statement is no longer offered as a theorem, and nothing in the deposit may cite it.
 
 <p v-if="$params.floorStripped">The name above is shown without the Clay floor wording, removed at the author's order on
-2026-09-14. The name as sealed is unchanged in the append-only ledger (<code>src/proof/discovered.json</code>), and the
+2026-09-14. The name as sealed is unchanged in the append-only ledger (<code>src/ledger/discovered.json</code>), and the
 receipt addresses that sealed name.</p>
 
 The live record: [the standing theorems](/CHALLENGES) · [the ledger](/proofs). Verify the chain yourself with

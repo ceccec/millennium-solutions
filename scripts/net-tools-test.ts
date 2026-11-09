@@ -14,9 +14,10 @@ import { spawnSync } from 'node:child_process'
 import { probe, skipOrFail } from './environment.ts'
 import { NEEDS } from '../src/mcp/index.ts'
 import { readFileSync } from 'node:fs'
+import { leanPathOf } from '../src/api/index.ts'
 
 // the constants qpu.lean pins (def name : Nat := value), for the live clay reading to be compared with
-const LEAN_QPU = new Map([...readFileSync('src/proof/quantum/qpu.lean', 'utf8').matchAll(/^def\s+([a-z]+)\s*:\s*Nat\s*:=\s*(\d+)/gm)].map((m) => [m[1]!, Number(m[2])]))
+const LEAN_QPU = new Map([...readFileSync(leanPathOf('qpu.lean'), 'utf8').matchAll(/^def\s+([a-z]+)\s*:\s*Nat\s*:=\s*(\d+)/gm)].map((m) => [m[1]!, Number(m[2])]))
 const CANONICAL_DOI = /^doi:\s*"([^"]+)"/m.exec(readFileSync('CITATION.cff', 'utf8'))?.[1] ?? ''
 
 type Case = { tool: string; name: string; args: object; check: (text: string) => string | null; seconds?: number }

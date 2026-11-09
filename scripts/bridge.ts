@@ -2,7 +2,7 @@
 // BRIDGE — the domains and the group are the same object, and nothing in this deposit had said so.
 //
 // src/entangle holds 80 expressions over 24 subjects — octaves, cell divisions, dilution factors, register
-// widths — and scripts/coils.ts proves which of them are one function on a shared grid. src/proof/group.lean
+// widths — and scripts/coils.ts proves which of them are one function on a shared grid. src/iso/80000-2-mathematics/group.lean
 // proves what the affine maps of ℤ/9 are: a monoid of 81, a group of 54, generated to closure.
 //
 // Those are the two halves of the deposit and they never met. Reduce an entangle expression mod 9 and the
@@ -19,7 +19,7 @@
 // reductions coincide over the grid — and never that the subjects are the same phenomenon.
 //
 //   node scripts/bridge.ts          report
-//   node scripts/bridge.ts --emit   write src/proof/bridge.lean and put it to the kernel
+//   node scripts/bridge.ts --emit   write src/iso/80000-2-mathematics/bridge.lean and put it to the kernel
 import { flag } from '../src/cli/index.ts'
 import { generatedLean } from '../src/api/index.ts'
 import { DOM_EXPRS } from '../src/entangle/index.ts'
@@ -123,7 +123,7 @@ theorem the_${rules.length}_rules_are_${rules.length}_different_maps :
 
 -- ── AND THEY ARE THE MAPS group.lean SETTLES ────────────────────────────────────────────────────────────
 -- The bridge itself. A rule's multiplier is either a unit of \u2124/9 — in which case the map is an element of
--- AGL(1, \u2124/9), the group src/proof/group.lean generates to closure and proves has order 54 — or it is zero,
+-- AGL(1, \u2124/9), the group src/iso/80000-2-mathematics/group.lean generates to closure and proves has order 54 — or it is zero,
 -- and group.lean proves those collapse the ring and sit OUTSIDE the group. That is exactly the difference
 -- visible in the families above: the ones with a unit multiplier cycle with a period, and the ones with a
 -- zero multiplier flatten to a constant. The subjects and the group are not analogous here. They are the
@@ -144,7 +144,7 @@ set_option maxHeartbeats 2000000
 -- prior_art_note: That 2^n mod 9 cycles with period 6, and that x -> ax+b mod n is the linear congruential
 -- prior_art_note: map, are both standard. What is stated here is neither: it is that this deposit's OWN
 -- prior_art_note: cross-subject families, computed in src/entangle, reduce to orbits of the affine maps its
--- prior_art_note: own src/proof/group.lean settles — the two halves of the deposit describing one object.
+-- prior_art_note: own src/iso/80000-2-mathematics/group.lean settles — the two halves of the deposit describing one object.
 -- prior_art_search: 2026-09-28
 -- BRIDGE — written by scripts/bridge.ts. Each theorem below takes a reduction shared by several subjects and
 -- decides that it steps by a single affine rule and repeats with its period. The subjects are listed above

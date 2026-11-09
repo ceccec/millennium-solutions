@@ -12,8 +12,8 @@ const A432_HEART_HUE = 5 * A432_STEP // 200 — the heart's hue, derived not typ
 const THEME_COLOR = `hsl(${A432_HEART_HUE} 68% 45%)`
 
 // Config computed from the ledger: the site metadata reflects the LIVE count of decidable theorems,
-// recomputed from src/proof/discovered.json at build — the config is derived by the theorems, not typed.
-const THEOREMS: number = (() => { try { return JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')).length } catch { return 0 } })()
+// recomputed from src/ledger/discovered.json at build — the config is derived by the theorems, not typed.
+const THEOREMS: number = (() => { try { return JSON.parse(readFileSync('src/ledger/discovered.json', 'utf8')).length } catch { return 0 } })()
 // ONE keyword list for the JSON-LD and the meta tag, which had drifted into two copies of the same terms.
 const KEYWORDS = ['ℤ/9', 'vortex', 'Pliska rosette', 'Clay Millennium Problems', 'Lean 4', 'recomputable', THEOREMS + ' decidable theorems',
   'ISO/IEC 4879', 'quantum computer', 'quantum hardware', 'Bell test', 'CHSH', 'Tsirelson bound', 'Mermin inequality', 'GHZ state',

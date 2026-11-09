@@ -67,7 +67,7 @@ computed; interpretation is the reader's.
 
 ## Lean coverage
 Per-digit theorems in `src/proof` (the checked tree), plus `src/proof/theorems.lean`,
-`src/proof/nucleus.lean`, `src/proof/nucleus.lean`. All are decidable
+`src/iso/80000-physics/nucleus.lean`, `src/iso/80000-physics/nucleus.lean`. All are decidable
 (`decide`) or numeric (`norm_num`). Not compiled here (no toolchain in repo).
 
 ## Reproduce

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Generate the millennium-challenges + discovered-theorems UI page — COMPUTED from the core, never
 // hand-written. The challenge status is cited (Poincaré settled externally); the deposit's own count
-// and the discovered theorems are computed from src/proof/discovered.json. gitignored (generated at
+// and the discovered theorems are computed from src/ledger/discovered.json. gitignored (generated at
 // build), so it never enters the content-address and never churns a phantom version.
 import { writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
@@ -21,7 +21,7 @@ const CLAY = [
 const settled = CLAY.filter((c) => c.status === 'settled').length
 const open = CLAY.length - settled
 const ledger: { key: string; name: string; receipt: string; revoked?: boolean; reason?: string }[] =
-  existsSync('src/proof/discovered.json') ? __ledger() : []
+  existsSync('src/ledger/discovered.json') ? __ledger() : []
 
 let o = '---\ntitle: Challenges\n---\n\n# Millennium challenges — computed status\n\n'
 o += '<NextObserver />\n\n' // when no next is defined, next computes from the observer\'s referrer\n
@@ -60,8 +60,8 @@ for (const c of multi.sort((a, b) => groups[b].length - groups[a].length || a.lo
   if (groups[c].length > LISTED) {
     o += 'This family has **' + groups[c].length + '** members, enumerated over a derived vocabulary and each '
     o += 'decided by the kernel on every run. They are counted here rather than listed: the statement of each '
-    o += 'follows from its name, and the laws they instantiate are in `src/proof/group.lean`. '
-    o += 'The first ' + LISTED + ' are shown; every one is in `src/proof/discovered.json` with its receipt.\n\n'
+    o += 'follows from its name, and the laws they instantiate are in `src/iso/80000-2-mathematics/group.lean`. '
+    o += 'The first ' + LISTED + ' are shown; every one is in `src/ledger/discovered.json` with its receipt.\n\n'
     // NOT LINKED, because these keys no longer have a page — theorem/[key].paths.ts stopped pre-rendering
     // the enumerated family, and a link to a page that is not built is exactly the dead /theorem/ link this
     // repository refuses to publish. The key and the receipt are printed, which is what a reader needs to
@@ -94,7 +94,7 @@ if (goneL.length) {
   }
   // BY KEY AND RECEIPT ONLY (2026-09-14). This reprinted the full NAME of every withdrawn entry, and about a thousand
   // of those names restate the Clay floor ("0/7") the author ordered removed from what the public reads. The names
-  // stay in the append-only ledger (src/proof/discovered.json) for anyone auditing the chain; the page lists keys.
+  // stay in the append-only ledger (src/ledger/discovered.json) for anyone auditing the chain; the page lists keys.
   o += '\n<details><summary>List all ' + goneL.length + ' withdrawn keys — nothing proves these</summary>\n\n'
   for (const e of goneL) o += '- ~~`' + e.key + '`~~  ·  `' + e.receipt.slice(0, 13) + '…`\n'
   o += '\n</details>\n'

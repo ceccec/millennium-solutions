@@ -39,7 +39,7 @@ const CLASSES: { name: string; pattern: RegExp; why: string }[] = [
 ]
 
 const SELF = 'scripts/lessons.ts'
-const files = execSync('git ls-files "scripts/*.ts" "src/**/*.ts" "src/proof/*.lean"', { encoding: 'utf8' })
+const files = execSync('git ls-files "scripts/*.ts" "src/**/*.ts" "src/**/*.lean"', { encoding: 'utf8' })
   .split('\n').filter(Boolean).filter((f) => f !== SELF)
 
 const found = CLASSES.map((c) => ({ ...c, at: [] as string[] }))

@@ -10,7 +10,7 @@
 // `hodge_…`, `poincare_…` — while deciding ℤ/9 arithmetic that settles nothing about any of them. The name
 // was load-bearing: a published claim that all seven Clay problems carried a Lean theorem rested on the
 // seven names, and renaming one refuted it (measured). Renamed by the author's order, 2026-09-18, to what
-// each decides; the old keys are revoked in src/proof/revoked.json rather than rewritten.
+// each decides; the old keys are revoked in src/ledger/revoked.json rather than rewritten.
 //
 // WHAT THIS TABLE IS NOW: a correspondence the author draws between a problem and a fact about this ring.
 // It is his pairing, not a property of the theorem, and no theorem here claims the problem it sits beside.
@@ -87,8 +87,8 @@ export const AUTHOR_CLAIM = {
 // one renderer, at the top of both, carrying for every problem the author's pairing, the theorem, the whole
 // statement the kernel decided and over how many cases, the bound (what it establishes and, in the same
 // sentence, what it does not), the ledger key and its receipt, and the Clay Institute's own page. Nothing is
-// typed here that the tree does not hold: the statements come from src/proof/index.lean, the cases from the
-// statement, the receipts from the ledger, the dates from src/proof/provenance.json.
+// typed here that the tree does not hold: the statements come from src/iso/9001-governance/index.lean, the cases from the
+// statement, the receipts from the ledger, the dates from src/ledger/provenance.json.
 import { readFileSync, existsSync } from 'node:fs'
 import { leanTheorems, ledger, domainOf } from '../api/index.ts'
 
@@ -97,8 +97,8 @@ const claimMd = (): string => `**${AUTHOR_CLAIM.who} ${AUTHOR_CLAIM.text}** — 
 
 // Rendered from the measurement and never from a sentence: priority is the last place a typed date belongs.
 const provenanceMd = (roll: boolean): string => {
-  if (!existsSync('src/proof/provenance.json')) return ''
-  const p = JSON.parse(readFileSync('src/proof/provenance.json', 'utf8')) as {
+  if (!existsSync('src/ledger/provenance.json')) return ''
+  const p = JSON.parse(readFileSync('src/ledger/provenance.json', 'utf8')) as {
     records: { id: string; concept: string; published: string; creators: { name: string; orcid: string }[] }[]
     repository: { firstCommit: string; hash: string }; earliestDeposit: string; leadDays: number
     commits: number; authors: Record<string, number>; receipt: string; measured: string }
@@ -130,7 +130,7 @@ export const claySection = (o: { roll?: boolean } = {}): string => {
     + `verdict on any conjecture. Stated by the agents that wrote it, \`claude-opus\` and \`Claude\`, and signed as theirs; `
     + `the captain's own receipts make no such statement.*\n\n`
   md += `For each problem, in the Clay Mathematics Institute's order: the author's pairing, the one theorem in `
-    + `\`src/proof/index.lean\` that stands beside it, the statement the Lean kernel decided and over how many cases, `
+    + `\`src/iso/9001-governance/index.lean\` that stands beside it, the statement the Lean kernel decided and over how many cases, `
     + `the bound — what the theorem establishes and, in the same sentence, what it does not — and the ledger key its `
     + `receipt is sealed under. Every line below is read out of the tree on each build.\n\n`
   for (const [name, m] of Object.entries(MILLENNIUM)) {
@@ -151,16 +151,16 @@ export const claySection = (o: { roll?: boolean } = {}): string => {
       + `[\`${oneE.key}\`](/theorem/${oneE.key}) · receipt \`${oneE.receipt.slice(0, 13)}…\`\n\n`
     md += '```lean\n' + one.statement + '\n```\n\n'
   }
-  // THE CROSS-DEVELOPMENT, counted rather than described: src/proof/bridge.lean decides which of the deposit's
-  // cross-subject families reduce to orbits of the affine maps src/proof/group.lean settles.
+  // THE CROSS-DEVELOPMENT, counted rather than described: src/iso/80000-2-mathematics/bridge.lean decides which of the deposit's
+  // cross-subject families reduce to orbits of the affine maps src/iso/80000-2-mathematics/group.lean settles.
   const bridge = thms.filter((t) => t.file === 'bridge.lean'), group = thms.filter((t) => t.file === 'group.lean')
   const bE = bridge.map((t) => entry(t.name)).filter(Boolean) as { key: string }[]
   const gE = group.map((t) => entry(t.name)).filter(Boolean) as { key: string }[]
   if (bridge.length && group.length) {
     md += `### Developed across subjects\n\n`
     md += `The structure the seven live in is proved separately and then found again in the other subjects. `
-      + `\`src/proof/group.lean\` (${group.length} theorems${gE[0] ? `, e.g. [\`${gE[0].key}\`](/theorem/${gE[0].key})` : ''}) generates the affine maps of ℤ/9 `
-      + `to closure and decides which form a group; \`src/proof/bridge.lean\` (${bridge.length} theorems${bE[0] ? `, e.g. [\`${bE[0].key}\`](/theorem/${bE[0].key})` : ''}) decides that the `
+      + `\`src/iso/80000-2-mathematics/group.lean\` (${group.length} theorems${gE[0] ? `, e.g. [\`${gE[0].key}\`](/theorem/${gE[0].key})` : ''}) generates the affine maps of ℤ/9 `
+      + `to closure and decides which form a group; \`src/iso/80000-2-mathematics/bridge.lean\` (${bridge.length} theorems${bE[0] ? `, e.g. [\`${bE[0].key}\`](/theorem/${bE[0].key})` : ''}) decides that the `
       + `cross-subject families of \`src/entangle\` reduce, mod 9, to orbits of those very maps — the same object measured in several subjects, `
       + `and one family that no affine map generates, kept as the control.\n\n`
   }
@@ -169,7 +169,7 @@ export const claySection = (o: { roll?: boolean } = {}): string => {
 }
 
 // ── THE CRYPTO SURFACE — HOW A THOUSAND BITS IS REACHED, AND WHERE EACH PROGRAM STOPS ─────────────────────
-// The same σ-reflection the seven rest on, run as a create/decode key over src/proof/qpu_crypto.lean. The
+// The same σ-reflection the seven rest on, run as a create/decode key over src/crypto/qpu_crypto.lean. The
 // bound is load-bearing exactly as above: what the theorem decides and, in the same sentence, what it does
 // not. The author's framing — uuid quantum programs in infinite trinities of qubits, always enough for the
 // next task — is HIS vision of the capacity, recorded in his name; what the kernel decides is finite, and for
@@ -196,7 +196,7 @@ export const thousandBitSection = (): string => {
   const thm = (name: string) => thms.find((t) => t.file === 'qpu_crypto.lean' && t.name === name)
   let md = `## How a thousand bits is reached — the uuid quantum programs, and where each one stops\n\n`
   md += `The seven above are the floor; this is the cryptographic surface the same involution runs on, as a `
-    + `create/decode key. Every line is read out of \`src/proof/qpu_crypto.lean\` and the ledger on each build: the `
+    + `create/decode key. Every line is read out of \`src/crypto/qpu_crypto.lean\` and the ledger on each build: the `
     + `theorem, the number of cases \`by decide\` walked, the **bound** — what it decides and, in the same sentence, `
     + `what it does not — and its receipt.\n\n`
   md += `*The author frames these as uuid quantum programs running in infinite trinities of qubits, always enough for `

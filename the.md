@@ -13,7 +13,7 @@ pure content-addressing, so SSR and hydration agree). Every card lands on the sa
 
 ## All theorems — the ledger
 
-Every decidable fact the deposit has discovered, rendered from `src/proof/discovered.json` — the
+Every decidable fact the deposit has discovered, rendered from `src/ledger/discovered.json` — the
 complete ledger, re-verified by exhaustion on each build. None is a Clay Millennium result; all land
 on
 

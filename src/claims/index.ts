@@ -18,7 +18,7 @@ export interface Claim {
   text: string
   recompute: () => string
   expect: string
-  theorems?: string[] // keys in src/proof/discovered.json — provable backing, re-checked by the gate
+  theorems?: string[] // keys in src/ledger/discovered.json — provable backing, re-checked by the gate
 }
 
 // a battery of messages that must all round-trip through the imprint codec (boundary cases included).

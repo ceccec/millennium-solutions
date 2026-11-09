@@ -18,14 +18,14 @@ import { ledger as ledgerOf, live as liveOf } from '../src/api/index.ts'
 // THE SEALED LEAN THEOREMS ARE THIS DEPOSIT'S OWN, not the package's. Reading THEOREMS from @uuidna/uuidna
 // compared 2184 entries against a ledger of 1329 mul9_* keys that shares NOTHING with ours, so every entry
 // came back UNVERIFIED — a category error reported as a result, and the same one seal.ts carried until it
-// was found. The authority is src/proof/discovered.json: the lean_* entries are exactly the theorems the
+// was found. The authority is src/ledger/discovered.json: the lean_* entries are exactly the theorems the
 // kernel checks on every run of scripts/lean.ts, and a revoked one is not sealed.
 const ALL = ledgerOf()
 const THEOREMS = liveOf(ALL).filter((e) => e.key.startsWith('lean_'))
   .map((e) => ({ key: e.key, name: e.name, statement: e.statement ?? e.name }))
 import { toUuid, merkleFold } from '../src/0/index.ts'
 
-const LEDGER = 'src/proof/discovered.json'
+const LEDGER = 'src/ledger/discovered.json'
 const led = JSON.parse(readFileSync(LEDGER, 'utf8')) as { key: string; name: string; receipt: string; revoked?: boolean }[]
 const sealed = new Set(THEOREMS.map((t: { key: string }) => t.key))
 

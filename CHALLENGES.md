@@ -24,7 +24,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 ### lean (26213)
 
-This family has **26213** members, enumerated over a derived vocabulary and each decided by the kernel on every run. They are counted here rather than listed: the statement of each follows from its name, and the laws they instantiate are in `src/proof/group.lean`. The first 200 are shown; every one is in `src/proof/discovered.json` with its receipt.
+This family has **26213** members, enumerated over a derived vocabulary and each decided by the kernel on every run. They are counted here rather than listed: the statement of each follows from its name, and the laws they instantiate are in `src/iso/80000-2-mathematics/group.lean`. The first 200 are shown; every one is in `src/ledger/discovered.json` with its receipt.
 
 - `lean_address_raw_bytes_of_a` — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - `lean_address_to_uuid_bytes_of_a` — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`

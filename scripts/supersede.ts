@@ -69,8 +69,8 @@ const parse = (src: string): Map<string, string> => {
 // with itself and find every key its own successor.
 const before = new Map<string, string>()
 const heads: string[] = []
-for (const f of execSync('git ls-tree --name-only HEAD src/proof/', { encoding: 'utf8' }).split('\n')
-  .map((l) => l.replace('src/proof/', '').trim()).filter((f) => /^imagined(_\d+)?\.lean$/.test(f)))
+for (const f of execSync('git ls-tree -r --name-only HEAD', { encoding: 'utf8' }).split('\n')
+  .map((l) => l.replace(/^.*\//, '').trim()).filter((f) => /^imagined(_\d+)?\.lean$/.test(f)))
   { // maxBuffer RAISED FROM ITS 1 MB DEFAULT. This read HEAD's generated Lean back through a pipe, which was
     // fine while the generator wrote one small file and threw at the first commit where it wrote seven
     // multi-megabyte shards — as a crash dumping a megabyte of Lean into the error, not as a clear limit.
@@ -93,8 +93,8 @@ for (const f of leanFiles())
 const byProp = new Map<string, string[]>()
 for (const [n, p] of after) (byProp.get(p) ?? byProp.set(p, []).get(p)!).push(n)
 
-const covered: Record<string, string> = existsSync('src/proof/covered.json')
-  ? JSON.parse(readFileSync('src/proof/covered.json', 'utf8')) : {}
+const covered: Record<string, string> = existsSync('src/ledger/covered.json')
+  ? JSON.parse(readFileSync('src/ledger/covered.json', 'utf8')) : {}
 let moved = 0, gone = 0
 const share: string[] = [], lost: string[] = []
 for (const [oldName, prop] of before) {
@@ -162,7 +162,7 @@ for (const name of lost) {
   if (m) retained.push(m[0])
 }
 if (retained.length) {
-  writeFileSync('src/proof/retained.lean', `import Z9
+  writeFileSync('src/iso/80000-2-mathematics/retained.lean', `import Z9
 set_option maxRecDepth 8000000
 -- title: Sealed before the vocabulary moved, and still decided
 -- wing: the imagined
@@ -183,7 +183,7 @@ ${retained.join('\n\n')}
 
 end Imagined
 `)
-  console.log(`  ✓ ${retained.length} kept in src/proof/retained.lean — sealed, still true, no longer proposed`)
+  console.log(`  ✓ ${retained.length} kept in src/iso/80000-2-mathematics/retained.lean — sealed, still true, no longer proposed`)
 }
 // ── AND THE CITATIONS FOLLOW, OR THE RENAME IS NOT FINISHED ─────────────────────────────────────────────
 // Carrying a key marks it revoked with a `supersededBy`, and cite-audit reads a revoked key in prose as
@@ -231,7 +231,7 @@ let dropped = 0
 for (const [k, v] of Object.entries(covered))
   if (!liveNames.has(v)) { console.log(`  ○ dropped carrier ${k} → ${v} — no such theorem in src/proof`); delete covered[k]; dropped++ }
 if (dropped) console.log(`  ✓ ${dropped} entr(ies) named a theorem that does not exist and were removed`)
-writeFileSync('src/proof/covered.json', JSON.stringify(covered, null, 2) + '\n')
+writeFileSync('src/ledger/covered.json', JSON.stringify(covered, null, 2) + '\n')
 console.log(`before ${before.size} · after ${after.size}`)
 console.log(`  ✓ ${moved} old name(s) carried — a live theorem computes each one's statement value for value`)
 if (share.length) { console.log(`  ○ ${share.length} are proved by several live theorems; the first is named, deterministically:`); for (const l of share) console.log('      ' + l) }

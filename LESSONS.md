@@ -22,7 +22,7 @@ the untouched files are the ones nobody has checked this hard.
 
 - `scripts/gates-fire.ts` — 15
 - `scripts/imagine.ts` — 8
-- `src/proof/instruments.lean` — 6
+- `src/iso/9001-governance/instruments.lean` — 6
 - `scripts/contradictions.ts` — 5
 - `scripts/paper.ts` — 5
 - `scripts/provenance.ts` — 5

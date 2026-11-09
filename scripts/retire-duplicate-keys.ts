@@ -17,7 +17,7 @@
 // unchanged. The entry stays in the chain and is marked in place.
 //
 // derived-gate: not-a-generator — a completed one-off migration that MARKED its duplicates in place with
-// supersededBy; it does not own src/proof/discovered.json, which seal-lean.ts and carry.ts write. The census
+// supersededBy; it does not own src/ledger/discovered.json, which seal-lean.ts and carry.ts write. The census
 // now reports "0 keyed twice", so there is nothing left for it to do and no chain step should run it again:
 // putting a migration in the chain is how a migration runs twice.
 //
@@ -109,7 +109,7 @@ for (const [name, keys] of byThm) {
   retiredBare++
 }
 
-if (process.argv.includes('--retire')) writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
+if (process.argv.includes('--retire')) writeFileSync('src/ledger/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
 // THE SUMMARY NAMED ONE CASE AND COUNTED TWO. This script retires bare keys AND keys naming a namespace the
 // tree no longer declares — CASE 2, written for exactly a rename — and reported the total as "bare key(s)".
 // Renaming `claimed` to `reached` produced 66 stale addresses that this would have retired while calling

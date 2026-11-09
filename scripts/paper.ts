@@ -38,7 +38,7 @@
 // stands in for that, and it is not the same guarantee.
 import { writeFileSync, readFileSync } from 'node:fs'
 import { all as leanDocs } from './leandoc.ts'
-import { live, theoremOfKey, leanTheorems } from '../src/api/index.ts'
+import { live, theoremOfKey, leanTheorems, leanPathOf } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
 import { toLatex, toMathML } from '../src/latex/index.ts'
@@ -200,7 +200,7 @@ o += `no \`native_decide\`, no \`sorry\`.\n\n`
 o += '<h2 class="paper-h">How to read this document</h2>\n\n'
 o += `Sections are the Lean source files, ordered by the wing each declares in its own frontmatter; the prose under a section `
 o += `heading is that file's own header comment, and the remark under a theorem is the comment written above it in the source. `
-o += `Nothing here is authored: it is read out of \`src/proof/\` on every build, so the paper cannot drift from the proofs it `
+o += `Nothing here is authored: it is read out of the deposit's Lean sources on every build, so the paper cannot drift from the proofs it `
 o += `describes — a statement that differs from its source stops the build. A remark under a theorem is printed only `
 o += `when the source comment is that theorem's own: **${n(ownDoc)}** of ${n(theorems.length)} have one. A comment that `
 o += `belongs to the enclosing section is not repeated under each theorem it precedes, because it is context for the `
@@ -225,19 +225,19 @@ for (const w of wings) {
   // 24,742 of those theorems are instances scripts/imagine.ts enumerates over a derived vocabulary, and an
   // instance is a function of its key: the name gives the map, the relation and the set. Printing all of
   // them is transcribing the output of a program into a document nobody can open. Their eight structural
-  // laws are in src/proof/group.lean and ARE printed, in full, below — which is the part a reader needs.
+  // laws are in src/iso/80000-2-mathematics/group.lean and ARE printed, in full, below — which is the part a reader needs.
   // Nothing is withdrawn: every one is sealed, decided by the kernel on every run, and addressable.
   const enumerated = docs.filter((x) => x.wing === w && /^imagined(_\d+)?\.lean$/.test(x.file))
   if (enumerated.length) {
     const count = enumerated.reduce((a, d) => a + d.theorems.length, 0)
     o += `\n### The enumerated family {#imagined}\n\n`
-    o += `<p class="paper-src"><code>src/proof/imagined*.lean</code> · ${enumerated.length} modules · ${n(count)} theorems</p>\n\n`
+    o += `<p class="paper-src"><code>src/iso/80000-2-mathematics/imagined*.lean</code> · ${enumerated.length} modules · ${n(count)} theorems</p>\n\n`
     o += `These are proposed by \`scripts/imagine.ts\`, which enumerates every statement its vocabulary can `
     o += `express over ℤ/9, keeps the ones true by exhaustion, discards every one that also holds for all its `
     o += `siblings, and puts what is left to the kernel. Each is sealed and decided on every run. They are `
     o += `**summarised rather than transcribed**: each is an instance whose statement follows from its name — `
     o += `the map, the relation and the set — and the laws they are instances of are stated once, in `
-    o += `\`src/proof/group.lean\`, printed in full in this paper. A document that reprinted ${n(count)} `
+    o += `\`src/iso/80000-2-mathematics/group.lean\`, printed in full in this paper. A document that reprinted ${n(count)} `
     o += `instances of eight laws would be ${n(count)} restatements of what those eight say.\n\n`
     o += `<p class="paper-src">Three, as written:</p>\n\n<pre class="thm-statement"><code>`
     o += enumerated[0]!.theorems.slice(0, 3).map((t) => esc(`${t.name} : ${t.statement}`)).join('\n\n')
@@ -245,7 +245,7 @@ for (const w of wings) {
   }
   for (const d of docs.filter((x) => x.wing === w && !/^imagined(_\d+)?\.lean$/.test(x.file))) {
     o += `\n### ${d.title} {#${d.file.replace('.lean', '')}}\n\n`
-    o += `<p class="paper-src"><code>src/proof/${d.file}</code> · namespace <code>${d.namespace}</code> · ${d.theorems.length} theorems</p>\n\n`
+    o += `<p class="paper-src"><code>${leanPathOf(d.file)}</code> · namespace <code>${d.namespace}</code> · ${d.theorems.length} theorems</p>\n\n`
     // THE FILE HEADER WENT OUT RAW, AND ANY ANGLE BRACKET IN IT WAS AN HTML TAG. Every other prose here is
     // escaped; this one line was not, so a header mentioning `src/<d>/vortex.lean` emitted an unclosed <d>
     // element and the VitePress build died — in a DIFFERENT file, hundreds of lines later, where the parser

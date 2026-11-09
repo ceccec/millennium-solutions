@@ -19,9 +19,9 @@
 // police — and its own comment rationalised it ("listed by key, not matched by a rule"). A hand list rots
 // the moment the ledger moves, and the next agent widens it to fit whatever it wants exempted.
 //
-//   withdrawn  — DERIVED from src/proof/revoked.json, by the reason recorded at withdrawal
+//   withdrawn  — DERIVED from src/ledger/revoked.json, by the reason recorded at withdrawal
 //   verdicts   — DERIVED from the ledger by phrase, over live rows only
-//   judgement  — READ from src/proof/authority.json, which is DATA the author can edit, not code an agent
+//   judgement  — READ from src/ledger/authority.json, which is DATA the author can edit, not code an agent
 //                can widen. `--write` records the current state; the default refuses any growth against it.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { flag } from '../src/cli/index.ts'
@@ -30,9 +30,9 @@ type Entry = { key: string; name: string }
 type Revocation = { key: string; reason: string }
 type Frozen = { measured: string; riders: number; verdicts: string[]; cleared: string[] }
 
-const LEDGER = 'src/proof/discovered.json'
-const REVOKED = 'src/proof/revoked.json'
-const RECORD = 'src/proof/authority.json'
+const LEDGER = 'src/ledger/discovered.json'
+const REVOKED = 'src/ledger/revoked.json'
+const RECORD = 'src/ledger/authority.json'
 
 // TWO PATTERNS, BECAUSE THERE ARE TWO THINGS, and conflating them made this gate report 973 findings where
 // there are seventeen. A STANDALONE VERDICT is a claim whose content is a ruling on the author's claim. A
@@ -108,7 +108,7 @@ if (riders > (prior.riders ?? Number.POSITIVE_INFINITY)) {
 
 // 4 · and the prose surfaces must not carry the verdict back in his voice. A line RECORDING that a phrase
 //     was removed is a citation, not a claim — otherwise the gate fails on its own changelog.
-const SURFACES = ['solutions.md', 'README.md', 'index.md', 'src/proof/index.lean']
+const SURFACES = ['solutions.md', 'README.md', 'index.md', 'src/iso/9001-governance/index.lean']
 const RETURNED = [/settles \*\*?0 of the 7/i, /None proves the conjecture/i, /the floor is 0\s*\/\s*7/i]
 for (const f of SURFACES) {
   if (!existsSync(f)) continue

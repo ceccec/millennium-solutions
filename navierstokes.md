@@ -9,7 +9,7 @@ head:
 // Every theorem on this page is linked from the live ledger: an entry shows only while its key is live, so a
 // withdrawal removes it without an edit. Nothing here is typed as a count.
 import { withBase } from 'vitepress'
-import ledger from './src/proof/discovered.json'
+import ledger from './src/ledger/discovered.json'
 const live = ledger.filter((e) => !e.revoked)
 const find = (name) => live.find((e) => e.key.endsWith('_' + name) || e.key.endsWith('.' + name))
 const ROWS = [

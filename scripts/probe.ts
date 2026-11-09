@@ -18,13 +18,14 @@
  */
 import { readFileSync, writeFileSync, mkdtempSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
+import { leanPathOf, OLEAN_DIR } from '../src/api/index.ts'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
 const [file, thm, find, repl] = process.argv.slice(2)
 if (!file || !thm) { console.log('usage: node scripts/probe.ts <file.lean> <theorem> [find replace]'); process.exit(1) }
 
-const path = file.startsWith('src/proof/') ? file : `src/proof/${file}`
+const path = file.includes('/') ? file : leanPathOf(file)
 const src = readFileSync(path, 'utf8')
 
 // The theorem, from its `theorem <name>` to the end of its proof. Any `set_option ... in` lines immediately
@@ -52,7 +53,7 @@ writeFileSync(out, [head, ns ? `namespace ${ns}` : '', opens, defs, body, ns ? `
 
 const t0 = Date.now()
 let ok = true, log = ''
-try { log = String(execFileSync('lean', [out], { env: { ...process.env, LEAN_PATH: 'src/proof' }, stdio: 'pipe' })) }
+try { log = String(execFileSync('lean', [out], { env: { ...process.env, LEAN_PATH: OLEAN_DIR }, stdio: 'pipe' })) }
 catch (e: any) { ok = false; log = String(e?.stdout ?? '') + String(e?.stderr ?? '') }
 const secs = ((Date.now() - t0) / 1000).toFixed(1)
 

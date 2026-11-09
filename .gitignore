@@ -21,11 +21,10 @@ build/
 #   dashboard.md · boundaries.md · CHALLENGES.md · HEART.md · ACCOUNTING.md
 public/greeting.json
 
-# Lean build artefacts — oleans are rebuilt by scripts/lean.ts from the .lean sources
+# Lean build artefacts — oleans and the verification cache live in a build dir outside src/,
+# rebuilt by scripts/lean.ts from the .lean sources (so no "proof" source folder is needed)
 *.olean
-
-# verification cache — a record of what the kernel said about exact bytes, rebuilt on demand
-src/proof/.lean-cache.json
+.lean-build/
 
 # agent worktrees — transient, removed when the agent finishes
 .claude/worktrees/

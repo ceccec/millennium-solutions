@@ -21,7 +21,7 @@ const BYTE_MASK = 0xff
  *  Split each factor at four hex digits, a = ah·2¹⁶ + al, b = bh·2¹⁶ + bl: the product is ah·bh·2³² + (ah·bl +
  *  al·bh)·2¹⁶ + al·bl, the first term vanishes mod 2³², and only the low sixteen bits of the cross term survive
  *  the shift — so every intermediate is below 2³³, exact in a double, and one `>>> 0` is the whole wrap. The
- *  identity is sealed at hex scale in src/proof/speed.lean §10 (4-bit halves of 8-bit factors, every pair decided,
+ *  identity is sealed at hex scale in src/iso/80000-2-mathematics/speed.lean §10 (4-bit halves of 8-bit factors, every pair decided,
  *  with the cross term dropped as the control), and this is the same identity with 16-bit halves. Agreement with
  *  the BigInt form was checked over the edges and a million random pairs, and every receipt in the ledger
  *  reproduces (scripts/forensics.ts) — the precondition, as it was for the hex table below. */
@@ -59,7 +59,7 @@ function hexByte(value: number): string {
 
 /** THE FOUR SEEDS, SPLIT BY WHERE THEY COME FROM (captain's order, 2026-10-03: "split astronomical values
  *  with pi and primes and other crypto tools"). Nothing-up-my-sleeve numbers, each decided by the kernel in
- *  src/proof/address.lean from its own source rather than trusted as a literal: 0, the first 32 fraction
+ *  src/iso/iec-9834-8-identifiers/address.lean from its own source rather than trusted as a literal: 0, the first 32 fraction
  *  bits of the golden ratio φ (bracketed by two squares), of π (the Bailey–Borwein–Plouffe series in Nat
  *  arithmetic) and of e (its factorial series). The deposit's own comment used to call the fourth "pi's" —
  *  the series says e's. lean-agree pairs this list with Address.SEEDS on every run. */
@@ -142,7 +142,7 @@ export function foldPair(a: string, b: string): { forward: string; reverse: stri
 /** ── A FOLD OF ONE IS NOT ITS LEAF ────────────────────────────────────────────────────────────────────────
  *  This returned a lone leaf UNHASHED, so for any root R the single-leaf set [R] produced R again — two
  *  different leaf multisets, one root, which is a second preimage and disqualifies the result as a
- *  commitment. `src/proof/preimage.lean` decides the old shape and this fixes it.
+ *  commitment. `src/iso/iec-2382-computing/preimage.lean` decides the old shape and this fixes it.
  *
  *  Every leaf is now hashed under the leaf domain before anything pairs it, so a root is always a node
  *  value and can never be mistaken for a leaf. The empty case gets its own domain rather than a bare

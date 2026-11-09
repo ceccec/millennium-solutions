@@ -2,7 +2,7 @@
 //
 // The `answer` tool used to return "an open problem" and nothing else. This module is the join it now makes:
 //   formal      the problem's statement in clay/Clay/Statements.lean, when one is written there (checked by reading the file)
-//   adjacent    the theorem in src/proof/index.lean that stands beside the problem, with its live ledger key, receipt,
+//   adjacent    the theorem in src/iso/9001-governance/index.lean that stands beside the problem, with its live ledger key, receipt,
 //               the cases it was decided over, and its bound (what it establishes and, in the same sentence, what it does not)
 //   outlet      the Clay Institute's own page for the problem
 // Every field is read from the tree when the answer is computed. Nothing here says a problem is solved. A problem with no
@@ -28,7 +28,7 @@ export type ClayProblem = {
   formal: string | null
   /** why there is no formal statement, when there is none */
   formalGap?: string
-  /** the theorem beside it in src/proof/index.lean (a key of MILLENNIUM) */
+  /** the theorem beside it in src/iso/9001-governance/index.lean (a key of MILLENNIUM) */
   adjacent: string
   /** a settled problem whose proof lies outside this repository */
   external?: { citation: string; why: string; arxiv?: string; titleHead?: string }

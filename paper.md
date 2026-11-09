@@ -33,7 +33,7 @@ Each theorem is a proposition over a finite domain, discharged by exhaustion: th
 
 <h2 class="paper-h">How to read this document</h2>
 
-Sections are the Lean source files, ordered by the wing each declares in its own frontmatter; the prose under a section heading is that file's own header comment, and the remark under a theorem is the comment written above it in the source. Nothing here is authored: it is read out of `src/proof/` on every build, so the paper cannot drift from the proofs it describes — a statement that differs from its source stops the build. A remark under a theorem is printed only when the source comment is that theorem's own: **25,652** of 26,213 have one. A comment that belongs to the enclosing section is not repeated under each theorem it precedes, because it is context for the section and not a statement about any one of them. Integrity, not truth.
+Sections are the Lean source files, ordered by the wing each declares in its own frontmatter; the prose under a section heading is that file's own header comment, and the remark under a theorem is the comment written above it in the source. Nothing here is authored: it is read out of the deposit's Lean sources on every build, so the paper cannot drift from the proofs it describes — a statement that differs from its source stops the build. A remark under a theorem is printed only when the source comment is that theorem's own: **25,652** of 26,213 have one. A comment that belongs to the enclosing section is not repeated under each theorem it precedes, because it is context for the section and not a statement about any one of them. Integrity, not truth.
 
 <h2 class="paper-h">Contents</h2>
 
@@ -184,7 +184,7 @@ Sections are the Lean source files, ordered by the wing each declares in its own
 
 ### Addressing {#address}
 
-<p class="paper-src"><code>src/proof/address.lean</code> · namespace <code>Address</code> · 33 theorems</p>
+<p class="paper-src"><code>src/iso/iec-9834-8-identifiers/address.lean</code> · namespace <code>Address</code> · 33 theorems</p>
 
 The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
 
@@ -476,7 +476,7 @@ SIGNATURE := [99, 104, 111, 110, 103, 111, 32, 60, 76, 97, 110, 100, 111, 110, 3
 
 ### What a signature is for, and where it cannot go {#asymmetric}
 
-<p class="paper-src"><code>src/proof/asymmetric.lean</code> · namespace <code>Asymmetric</code> · 11 theorems</p>
+<p class="paper-src"><code>src/crypto/asymmetric.lean</code> · namespace <code>Asymmetric</code> · 11 theorems</p>
 
 WHAT THIS FILE IS FOR. Everything cryptographic in this deposit before now was SYMMETRIC — FNV, SHA-256,
 HMAC, ChaCha20-Poly1305 — and a symmetric tag proves possession of a shared secret. It cannot say WHO
@@ -608,16 +608,16 @@ settledHere := 11</code></pre>
 
 ### The capacity a reserved bit costs, and the birthday bound that follows {#capacity}
 
-<p class="paper-src"><code>src/proof/capacity.lean</code> · namespace <code>Capacity</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/22739-ledger/capacity.lean</code> · namespace <code>Capacity</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
-src/proof/imprint.lean already decides the bit count: `FREE.length = 122 ∧ RESERVED.length = 6 ∧
+src/iso/iec-9834-8-identifiers/imprint.lean already decides the bit count: `FREE.length = 122 ∧ RESERVED.length = 6 ∧
 FREE.length + RESERVED.length = 128`. That is sealed and it is honest.
 
 WHAT WAS NOT DECIDED ANYWHERE IS WHAT FOLLOWS FROM IT. The number a reader actually quotes is not the bit
 count — it is the CAPACITY (how many addresses) and the COLLISION EXPONENT (how hard a forgery is), and
-neither had a theorem. src/proof/address.lean states 122 correctly in a COMMENT; the ledger, which is
+neither had a theorem. src/iso/iec-9834-8-identifiers/address.lean states 122 correctly in a COMMENT; the ledger, which is
 what the MCP server, the site and the trial all consume, carried nothing. A gap where the honest figure
 should be does not stay empty: prose fills it with the container size, 2^128, because 128 is the number
 printed on the tin.
@@ -715,7 +715,7 @@ reservations := List.range (container + 1)</code></pre>
 
 ### FNV-1a, the address function {#fnv}
 
-<p class="paper-src"><code>src/proof/fnv.lean</code> · namespace <code>Fnv</code> · 14 theorems</p>
+<p class="paper-src"><code>src/crypto/fnv.lean</code> · namespace <code>Fnv</code> · 14 theorems</p>
 
 FNV-1a, ported to Lean — the hash the whole deposit's addressing rests on.
 
@@ -862,7 +862,7 @@ settledHere := 12</code></pre>
 
 ### The imprint — a uuid that carries a message and gives it back {#imprint}
 
-<p class="paper-src"><code>src/proof/imprint.lean</code> · namespace <code>Imprint</code> · 9 theorems</p>
+<p class="paper-src"><code>src/iso/iec-9834-8-identifiers/imprint.lean</code> · namespace <code>Imprint</code> · 9 theorems</p>
 
 The deposit has two containers and until now the kernel knew one of them. program.lean decides the
 checksum/program/message layout; src/0/imprint.ts — older, and the one the ledger's own tooling uses —
@@ -961,7 +961,7 @@ settledHere := 9</code></pre>
 
 ### What the ledger claims {#ledgerclaims}
 
-<p class="paper-src"><code>src/proof/ledgerclaims.lean</code> · namespace <code>LedgerClaims</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/22739-ledger/ledgerclaims.lean</code> · namespace <code>LedgerClaims</code> · 8 theorems</p>
 
 Three claims the prose made in words and cited to entries that no longer stand. Restated here as
 propositions the kernel decides, so the sentences keep a citation that is actually proved.
@@ -1041,7 +1041,7 @@ No axioms, no Mathlib, no sorry. Merkle (and through it Address, Fnv) is importe
 
 ### The fold {#merkle}
 
-<p class="paper-src"><code>src/proof/merkle.lean</code> · namespace <code>Merkle</code> · 16 theorems</p>
+<p class="paper-src"><code>src/iso/iec-9834-8-identifiers/merkle.lean</code> · namespace <code>Merkle</code> · 16 theorems</p>
 
 The fold, ported to Lean — merge, merkleFold, and the order-independence the deposit calls its receipt.
 
@@ -1208,7 +1208,7 @@ E := toUuidBytes [101]    -- address of "e", a leaf none of A B C D is</code></p
 
 ### The uuid as a container — a checksum, a program, and a message {#program}
 
-<p class="paper-src"><code>src/proof/program.lean</code> · namespace <code>Program</code> · 21 theorems</p>
+<p class="paper-src"><code>src/crypto/program.lean</code> · namespace <code>Program</code> · 21 theorems</p>
 
 The author, 2026-09-18: "the middle part of uuid is the program and the end is the message", and of the
 first group, "checksum over the program and the message".
@@ -1417,7 +1417,7 @@ settledHere := 21</code></pre>
 
 ### The rays, read forward and reverse, and the mark a life carries {#rays}
 
-<p class="paper-src"><code>src/proof/rays.lean</code> · namespace <code>Rays</code> · 13 theorems</p>
+<p class="paper-src"><code>src/iso/iec-9834-8-identifiers/rays.lean</code> · namespace <code>Rays</code> · 13 theorems</p>
 
 A receipt is plotted as RAYS: two hex digits each. Seven of them read 14 of a receipt's 32 hex digits and
 discarded the other 18, and the extraction was written out twice — once in the page component that draws
@@ -1553,7 +1553,7 @@ settledHere := 13</code></pre>
 
 ### The register is a dial — a wider hexbit width clears the ISO floor, and costs exactly that much more to simulate {#width}
 
-<p class="paper-src"><code>src/proof/width.lean</code> · namespace <code>Width</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-9834-8-identifiers/width.lean</code> · namespace <code>Width</code> · 8 theorems</p>
 
 No axioms, no Mathlib, no sorry.
 
@@ -1637,7 +1637,7 @@ widths := [4, 8, 16, 32]         -- qpu's four hexbit widths; width 4 is the 128
 
 ### The byte constants and the bit constants are one fact, and neither file knew it {#widths}
 
-<p class="paper-src"><code>src/proof/widths.lean</code> · namespace <code>Widths</code> · 24 theorems</p>
+<p class="paper-src"><code>src/iso/iec-9834-8-identifiers/widths.lean</code> · namespace <code>Widths</code> · 24 theorems</p>
 
 WHY THIS FILE EXISTS — TWO LEADS CROSSING.
 
@@ -1647,7 +1647,7 @@ over `uuidBytes = 16`, `publicKeyBytes = 32`, `signatureBytes = 64`.
 
 scripts/coils.ts reports which expressions compute the same thing and may stand for one another.
 
-Crossing them finds something neither reports alone. src/proof/capacity.lean types `container = 128` —
+Crossing them finds something neither reports alone. src/iso/22739-ledger/capacity.lean types `container = 128` —
 the UUID's width IN BITS — and asymmetric.lean types `uuidBytes = 16` — the same width IN BYTES. They
 are ONE FACT in two units, in two files, with no theorem between them. Either could have been edited
 while the other stayed green, and every gate in this tree would have passed: the constants are internally
@@ -1881,7 +1881,7 @@ No axioms, no Mathlib, no sorry.
 
 ### answer {#answer}
 
-<p class="paper-src"><code>src/proof/answer.lean</code> · namespace <code>Answer</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/answer.lean</code> · namespace <code>Answer</code> · 8 theorems</p>
 
 lean/answer.lean — the pure decisions of the answer system (src/answer/verify-lean.ts and verify-arith.ts), stated
 and proved. These are the rules the TypeScript decision functions implement; the link between the two is a runtime
@@ -1957,9 +1957,9 @@ allRoutes := allVerdicts.flatMap fun v =&gt; allBools.flatMap fun p =&gt; allBoo
 
 ### arith {#arith}
 
-<p class="paper-src"><code>src/proof/arith.lean</code> · namespace <code>Answer.Arith</code> · 7 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/arith.lean</code> · namespace <code>Answer.Arith</code> · 7 theorems</p>
 
-src/proof/arith.lean — the arithmetic decision of the answer system, as kernel-checked definitions.
+src/iso/80000-2-mathematics/arith.lean — the arithmetic decision of the answer system, as kernel-checked definitions.
 
 The C2 verifier (src/answer/verify-arith.ts) PROPOSES a verdict: a prime to be proved by trial division, or a
 composite with a factor. The kernel decides it here. A proposal the kernel cannot check comes back UNKNOWN, so a
@@ -2028,7 +2028,7 @@ that a missing witness can never produce FALSE.
 
 ### diamond {#diamond}
 
-<p class="paper-src"><code>src/proof/diamond.lean</code> · namespace <code>diamond</code> · 1 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/diamond.lean</code> · namespace <code>diamond</code> · 1 theorems</p>
 
 lean/diamond.lean — the diamond involution r(d) = 10 − d on the digits 1..9, as a theorem the kernel checks.
 The audit in scripts/mcp.ts reads its verdict from here (lean_ask), not from a JavaScript loop over a literal range.
@@ -2048,7 +2048,7 @@ Decided over a finite list, so it depends on no axiom beyond the kernel.
 
 ### The certificate gate, as kernel-checked rules {#answer_gate}
 
-<p class="paper-src"><code>src/proof/answer_gate.lean</code> · namespace <code>AnswerGate</code> · 7 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/answer_gate.lean</code> · namespace <code>AnswerGate</code> · 7 theorems</p>
 
 prior-art note: not applicable — rules of the answer system, docs/ANSWER-SYSTEM.md
 
@@ -2137,7 +2137,7 @@ allFlags := allVals.flatMap fun v =&gt; allCerts.flatMap fun c =&gt; allBools.fl
 
 ### The router's priority, as kernel-checked rules {#answer_route}
 
-<p class="paper-src"><code>src/proof/answer_route.lean</code> · namespace <code>AnswerRoute</code> · 6 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/answer_route.lean</code> · namespace <code>AnswerRoute</code> · 6 theorems</p>
 
 prior-art note: not applicable — the priority of the answer system's router, docs/ANSWER-SYSTEM.md
 
@@ -2202,7 +2202,7 @@ allFeatures := allBools.flatMap fun i =&gt; allBools.flatMap fun l =&gt; allBool
 
 ### The API layer, as numbers the kernel decides {#apis}
 
-<p class="paper-src"><code>src/proof/apis.lean</code> · namespace <code>apis</code> · 4 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/apis.lean</code> · namespace <code>apis</code> · 4 theorems</p>
 
 GENERATED by scripts/apis-theorems.ts from evidence/apis-guru/3022dd48. Do not edit by hand: a count typed here is
 a fabrication, and the constants gate would not catch it. The numbers below are the live run's own counts.
@@ -2252,7 +2252,7 @@ specVerdicts := [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 
 ### Who may speak, decided {#authority}
 
-<p class="paper-src"><code>src/proof/authority.lean</code> · namespace <code>Authority</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/authority.lean</code> · namespace <code>Authority</code> · 8 theorems</p>
 
 WHY THIS IS IN LEAN AND NOT ONLY IN scripts/authority-gate.ts.
 
@@ -2354,7 +2354,7 @@ cleared := [3, 4]</code></pre>
 
 ### The CERN Open Data corpus, as measured, checked by its own arithmetic {#cern}
 
-<p class="paper-src"><code>src/proof/cern.lean</code> · namespace <code>Cern</code> · 9 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/cern.lean</code> · namespace <code>Cern</code> · 9 theorems</p>
 
 prior-art note: not applicable — arithmetic over measured counts
 
@@ -2477,7 +2477,7 @@ fixedDigits := (List.range 10).filter (fun d =&gt; reflect d == d)</code></pre>
 
 ### Enumerative combinatorics, the decidable laws — learned from qpu's Combinatorics {#combinatorics}
 
-<p class="paper-src"><code>src/proof/combinatorics.lean</code> · namespace <code>Combinatorics</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/combinatorics.lean</code> · namespace <code>Combinatorics</code> · 8 theorems</p>
 
 No axioms, no Mathlib, no sorry.
 
@@ -2556,7 +2556,7 @@ No axioms, no Mathlib, no sorry.
 
 ### What is actually being asked for {#demand}
 
-<p class="paper-src"><code>src/proof/demand.lean</code> · namespace <code>Demand</code> · 11 theorems</p>
+<p class="paper-src"><code>src/iso/22739-ledger/demand.lean</code> · namespace <code>Demand</code> · 11 theorems</p>
 
 THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the
 ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off
@@ -2662,7 +2662,7 @@ facts, which is the one gap that can simply be closed rather than argued about.
 
 ### The next tier of what is asked for {#demand2}
 
-<p class="paper-src"><code>src/proof/demand2.lean</code> · namespace <code>Demand2</code> · 12 theorems</p>
+<p class="paper-src"><code>src/iso/22739-ledger/demand2.lean</code> · namespace <code>Demand2</code> · 12 theorems</p>
 
 THE SECOND COURSE OF THE SAME FLOOR. `demand.lean` closed the top eight topics in src/demand/queries.json;
 this file takes the next eight, chosen the same way — by impressions, not by taste. The demand map is three
@@ -2783,7 +2783,7 @@ pp2000 := perfectPowersUpTo 2000</code></pre>
 
 ### The named theorems people ask for {#demand3}
 
-<p class="paper-src"><code>src/proof/demand3.lean</code> · namespace <code>Demand3</code> · 19 theorems</p>
+<p class="paper-src"><code>src/iso/22739-ledger/demand3.lean</code> · namespace <code>Demand3</code> · 19 theorems</p>
 
 The third and last tier the search data supports. What remains uncovered after this is not a backlog:
 ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments
@@ -2948,7 +2948,7 @@ statement true of everything in its range establishes nothing about the range.
 
 ### The water loop {#energy}
 
-<p class="paper-src"><code>src/proof/energy.lean</code> · namespace <code>Energy</code> · 28 theorems</p>
+<p class="paper-src"><code>src/iso/80000-physics/energy.lean</code> · namespace <code>Energy</code> · 28 theorems</p>
 
 THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the
 clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
@@ -3230,7 +3230,7 @@ tdsTapWater := 50     -- mg per litre, ordinary supply</code></pre>
 
 ### Four hex, exactly computed — and what the handle has to carry instead {#handle}
 
-<p class="paper-src"><code>src/proof/handle.lean</code> · namespace <code>Handle</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-9834-8-identifiers/handle.lean</code> · namespace <code>Handle</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -3331,7 +3331,7 @@ perms := [[1,2,3,4],[1,2,4,3],[1,3,2,4],[1,3,4,2],[1,4,2,3],[1,4,3,2],</code></p
 
 ### The hexbit route's combinatorics {#hexbit_route}
 
-<p class="paper-src"><code>src/proof/hexbit_route.lean</code> · namespace <code>hexbit_route</code> · 3 theorems</p>
+<p class="paper-src"><code>src/iso/iec-9834-8-identifiers/hexbit_route.lean</code> · namespace <code>hexbit_route</code> · 3 theorems</p>
 
 The arithmetic that scripts/hexbit-route.ts depends on. A handle is the first 8 hex digits of a content address.
 Each hex digit carries 4 bits, so a handle carries 8 × 4 = 32 bits, and the folders are 16^8 = 2^32 in number.
@@ -3367,7 +3367,7 @@ would seal anything. The control is not compiled into this file, because a false
 
 ### Seven decidable windows over one finite structure {#index}
 
-<p class="paper-src"><code>src/proof/index.lean</code> · namespace <code>Windows</code> · 11 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/index.lean</code> · namespace <code>Windows</code> · 11 theorems</p>
 
 THE TITLE WAS "The Millennium floor" UNTIL 2026-09-25. "Floor" is the word the author signed — "mind the
 honest floor" — and it is also the word agents grew into "this deposit settles 0 of the 7", a verdict on
@@ -3523,7 +3523,7 @@ sequence := [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]</code></pre>
 
 ### The instruments, and the three rules they are allowed to have {#instruments}
 
-<p class="paper-src"><code>src/proof/instruments.lean</code> · namespace <code>Instruments</code> · 28 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/instruments.lean</code> · namespace <code>Instruments</code> · 28 theorems</p>
 
 WHY THESE THREE ARE IN LEAN AND NOT IN THE GATE THAT USES THEM.
 
@@ -3791,7 +3791,7 @@ settledHere := 28</code></pre>
 
 ### Interference: GHZ cancels on odd parity, a classical coin does not {#interference}
 
-<p class="paper-src"><code>src/proof/interference.lean</code> · namespace <code>Interference</code> · 2 theorems</p>
+<p class="paper-src"><code>src/quantum/interference.lean</code> · namespace <code>Interference</code> · 2 theorems</p>
 
 WHAT QUANTUM MEANS HERE, IN ONE SENTENCE: amplitudes add, and two paths that reach the same outcome can cancel.
 A classical mixture adds probabilities, which are never negative, so nothing cancels.
@@ -3827,7 +3827,7 @@ Everything is Nat and Bool, so each theorem is closed by `decide` and carries no
 
 ### How many checkers may run at once, decided {#lanes}
 
-<p class="paper-src"><code>src/proof/lanes.lean</code> · namespace <code>Lanes</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/lanes.lean</code> · namespace <code>Lanes</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -3921,7 +3921,7 @@ No axioms, no Mathlib, no sorry.
 
 ### The open leads, named {#leads}
 
-<p class="paper-src"><code>src/proof/leads.lean</code> · namespace <code>leads</code> · 0 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/leads.lean</code> · namespace <code>leads</code> · 0 theorems</p>
 
 Each open lead is named here as the `leads` MCP tool reports it on the date below. Nothing in this file removes,
 purges, or replaces an item: it only names them. An item is closed by the work its lead asks for, and this file
@@ -3930,7 +3930,7 @@ is then updated to say so. The report truncates some lists; the names below are 
 
 ### Light, space and time — arithmetic on numbers a standards body fixed {#light}
 
-<p class="paper-src"><code>src/proof/light.lean</code> · namespace <code>Light</code> · 17 theorems</p>
+<p class="paper-src"><code>src/iso/80000-physics/light.lean</code> · namespace <code>Light</code> · 17 theorems</p>
 
 WHY A FILE ABOUT LIGHT SPEED CAN EXIST IN A DEPOSIT THAT CLAIMS NO PHYSICS.
 
@@ -4112,7 +4112,7 @@ faraday := eDigits * naDigits        -- 10⁻²⁸ · 10¹⁵ = 10⁻¹³ · F =
 
 ### The three facts the unchecked files held alone {#nucleus}
 
-<p class="paper-src"><code>src/proof/nucleus.lean</code> · namespace <code>Nucleus</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-physics/nucleus.lean</code> · namespace <code>Nucleus</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS. Fifteen .lean files sat outside src/proof — Vortex.lean and the per-digit
 src/&lt;d&gt;/vortex.lean set — and every one of them began `import Mathlib`. scripts/lean.ts reads only
@@ -4210,7 +4210,7 @@ denominators := [2, 2, 2, 7, 5, 3, 2, 3]</code></pre>
 
 ### Pauli paths — the conjugation rules that let any Clifford+T circuit be computed exactly at any width, decided against the matrices in ℤ[ω], with the T-count as the only cost {#pauli_paths}
 
-<p class="paper-src"><code>src/proof/pauli_paths.lean</code> · namespace <code>PauliPaths</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/pauli_paths.lean</code> · namespace <code>PauliPaths</code> · 8 theorems</p>
 
 ℤ[ω], ω = e^{iπ/4}, as four integer coordinates on 1, ω, ω², ω³ with ω⁴ = −1. A 2×2 matrix is four entries a b c d
 (rows a b / c d); a 4×4 matrix is a function of row and column, the first tensor factor the high index bit. The Hadamard
@@ -4309,7 +4309,7 @@ wrongTY := add2 X2 (neg2 Y2)</code></pre>
 
 ### Every phenomenon this deposit touches, and the rule for the rest {#phenomena}
 
-<p class="paper-src"><code>src/proof/phenomena.lean</code> · namespace <code>Phenomena</code> · 4 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/phenomena.lean</code> · namespace <code>Phenomena</code> · 4 theorems</p>
 
 ADDRESSING PHENOMENA WITHOUT CLAIMING ANY.
 
@@ -4376,7 +4376,7 @@ were considered and excluded, but because no proposition here is about them.
 
 ### The Planck length, and what a lattice may say about it {#planck}
 
-<p class="paper-src"><code>src/proof/planck.lean</code> · namespace <code>Planck</code> · 35 theorems</p>
+<p class="paper-src"><code>src/iso/80000-physics/planck.lean</code> · namespace <code>Planck</code> · 35 theorems</p>
 
 WHY THIS FILE EXISTS, AND WHAT IT REFUSES.
 
@@ -4387,7 +4387,7 @@ Four things are decided, and they are decided in the order that matters. The fou
 this file after the first three were sealed, and it subsumes the second: the dimensional skeleton.
 
 FIRST, the Planck length is not an exact quantity and cannot be matched exactly. The SI fixes seven
-constants by definition with no uncertainty — src/proof/light.lean decides arithmetic over those, and it
+constants by definition with no uncertainty — src/iso/80000-physics/light.lean decides arithmetic over those, and it
 is honest arithmetic precisely because c is a defined integer. The Planck length is not among them. It is
 built from G, which is MEASURED, and is the least well known of the fundamental constants. So there is no
 number to hit: there is an interval, and its width is published.
@@ -4760,7 +4760,7 @@ dimE8 := 248</code></pre>
 
 ### Quantum error-correcting codes, the decidable parameters — learned from qpu's Surfacecode and Stabilizer {#qec}
 
-<p class="paper-src"><code>src/proof/qec.lean</code> · namespace <code>Qec</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/qec.lean</code> · namespace <code>Qec</code> · 8 theorems</p>
 
 No axioms, no Mathlib, no sorry.
 
@@ -4839,7 +4839,7 @@ No axioms, no Mathlib, no sorry.
 
 ### Order-invariance {#quantum}
 
-<p class="paper-src"><code>src/proof/quantum.lean</code> · namespace <code>Quantum</code> · 11 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum.lean</code> · namespace <code>Quantum</code> · 11 theorems</p>
 
 The quantum receipt — order invariance, proved rather than asserted.
 
@@ -4959,7 +4959,7 @@ ghzXSupport := [0, 3, 5, 6]</code></pre>
 
 ### The rest of the quantum ideas, and the software layer — superdense coding, the two repetition codes correcting a state, the Toffoli gate, the swap test, and a compiler's rewrites, each decided exactly beside a control {#quantum_software}
 
-<p class="paper-src"><code>src/proof/quantum_software.lean</code> · namespace <code>QuantumSoftware</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum_software.lean</code> · namespace <code>QuantumSoftware</code> · 8 theorems</p>
 
 THE MODEL. An n-qubit state is a list of 2^n integer amplitudes; qubit k is bit k of the index. Gates act by index
 arithmetic only — the bit flip is `i ± 2^k`, never Nat.xor, which would carry propext through well-founded recursion.
@@ -5045,7 +5045,7 @@ minus3 := (List.range 8).map (fun i =&gt; if (bit i 0 + bit i 1 + bit i 2) % 2 =
 
 ### What exhaustion reaches, and what lies outside it {#reach}
 
-<p class="paper-src"><code>src/proof/reach.lean</code> · namespace <code>Reach</code> · 12 theorems</p>
+<p class="paper-src"><code>src/iso/9001-governance/reach.lean</code> · namespace <code>Reach</code> · 12 theorems</p>
 
 THE QUESTION, asked directly: does a `by decide` proof of a Clay conjecture exist in this deposit?
 
@@ -5171,7 +5171,7 @@ largestDomainHere := 152568360000</code></pre>
 
 ### Annealer topology, QFT resource counts, and π's rational convergents — learned from qpu's Annealing, Qft, Pi {#resources}
 
-<p class="paper-src"><code>src/proof/resources.lean</code> · namespace <code>Resources</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/resources.lean</code> · namespace <code>Resources</code> · 8 theorems</p>
 
 No axioms, no Mathlib, no sorry.
 
@@ -5250,9 +5250,9 @@ No axioms, no Mathlib, no sorry.
 
 ### The constants, derived from what they are {#roots}
 
-<p class="paper-src"><code>src/proof/roots.lean</code> · namespace <code>Roots</code> · 7 theorems</p>
+<p class="paper-src"><code>src/crypto/roots.lean</code> · namespace <code>Roots</code> · 7 theorems</p>
 
-src/0/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the
+src/crypto/hash/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the
 definition FIPS gives — and that trade is only a gain if the computation is right. A wrong root gives a
 hash that is self-consistent, round-trips perfectly, and is not SHA-512; the old literals at least had
 the property that someone had once copied them from the standard.
@@ -5326,7 +5326,7 @@ No axioms, no Mathlib, no sorry.
 
 ### Why verification is fast, and what it is not {#speed}
 
-<p class="paper-src"><code>src/proof/speed.lean</code> · namespace <code>Speed</code> · 28 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/speed.lean</code> · namespace <code>Speed</code> · 28 theorems</p>
 
 The deposit's speed claim, accounted — and the reading it does not support.
 
@@ -5597,7 +5597,7 @@ measuredBounded := [28667, 7337, 5143, 2654, 2940, 2748, 4373]</code></pre>
 
 ### Gate synthesis and fault-tolerance counts — learned from qpu's Clifford, Anyon, Magic and Qaoa {#synthesis}
 
-<p class="paper-src"><code>src/proof/synthesis.lean</code> · namespace <code>Synthesis</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/synthesis.lean</code> · namespace <code>Synthesis</code> · 8 theorems</p>
 
 No axioms, no Mathlib, no sorry.
 
@@ -5676,7 +5676,7 @@ No axioms, no Mathlib, no sorry.
 
 ### The T-count wall — why a classical Pauli-path computation, which has no width limit, still cannot run Shor's circuit on a thousand-bit modulus, and why a physical processor is needed there: a statement about cost, not a factoring {#t_count_wall}
 
-<p class="paper-src"><code>src/proof/t_count_wall.lean</code> · namespace <code>TCountWall</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/t_count_wall.lean</code> · namespace <code>TCountWall</code> · 8 theorems</p>
 
 No axioms, no Mathlib, no sorry.
 
@@ -5760,7 +5760,7 @@ sevenT := [.h 2, .cx 1 2, .tdg 2, .cx 0 2, .t 2, .cx 1 2, .tdg 2, .cx 0 2, .t 1,
 
 ### The readings, and the arithmetic under them {#theology}
 
-<p class="paper-src"><code>src/proof/theology.lean</code> · namespace <code>Theology</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/theology.lean</code> · namespace <code>Theology</code> · 8 theorems</p>
 
 WHAT THIS FILE SEALS, AND WHAT IT CANNOT. The instruction was to seal a theology as theorems. Seven
 readings of the seven Clay problems were written in prose beside the seven arithmetic facts of
@@ -5868,7 +5868,7 @@ pairing := [0, 1, 2, 3, 4, 5, 6]</code></pre>
 
 ### The thousand-bit case, decided — its octave/trinity/cube structure and its utilisation of the register {#thousandbit}
 
-<p class="paper-src"><code>src/proof/thousandbit.lean</code> · namespace <code>ThousandBit</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/thousandbit.lean</code> · namespace <code>ThousandBit</code> · 8 theorems</p>
 
 No axioms, no Mathlib, no sorry.
 
@@ -5950,13 +5950,13 @@ No axioms, no Mathlib, no sorry.
 
 ### Two kinds of cross formula — one that runs both ways and one that does not {#asymmetry}
 
-<p class="paper-src"><code>src/proof/asymmetry.lean</code> · namespace <code>Asymmetry</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/asymmetry.lean</code> · namespace <code>Asymmetry</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
 scripts/coils.ts clusters expressions that compute the same thing and licenses substituting either for
 the other. Every coil it finds is SYMMETRIC — the relation is equality of extension, which is an
-equivalence, decided in src/proof/equivalence.lean. That is one kind of cross formula and the tree had
+equivalence, decided in src/iso/80000-2-mathematics/equivalence.lean. That is one kind of cross formula and the tree had
 only that kind.
 
 The other kind is the one this deposit is named for. A cross formula may run ONE WAY: from d you can
@@ -6054,11 +6054,11 @@ No axioms, no Mathlib, no sorry.
 
 ### The named properties of this ring are not closed under their own diagonal {#closure}
 
-<p class="paper-src"><code>src/proof/closure.lean</code> · namespace <code>Closure</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/closure.lean</code> · namespace <code>Closure</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
-src/proof/diagonal.lean put a published ring of labels to Cantor and it did not survive: for any list of
+src/iso/80000-2-mathematics/diagonal.lean put a published ring of labels to Cantor and it did not survive: for any list of
 named properties there is a subject the list does not address, and the subject can be constructed rather
 than argued for. That was about somebody else's drawing, which is the easy direction.
 
@@ -6129,7 +6129,7 @@ named := [isUnit, inSpan, isTriad, isOrigin, isFixed, isEven, isSquare, isPrimit
 <p class="thm-label"><strong>Theorem 553</strong> (<code>the_diagonal_escapes_nine_and_stops</code>)<a class="thm-cite" href="/theorem/lean_closure_the_diagonal_escapes_nine_and_stops">sealed</a>.</p>
 <pre class="thm-statement"><code>let ten := named ++ [unnamed] let next := fun d =&gt; !((ten.getD d (fun _ =&gt; false)) d) ten.length == 10 &amp;&amp; (List.range 9).all (fun i =&gt; table next != table (named.getD i (fun _ =&gt; false))) &amp;&amp; table next == table unnamed &amp;&amp; table next == table (ten.getD 9 (fun _ =&gt; false))</code></pre>
 </div>
-<p class="thm-remark">── 6 · THE DIAGONAL EXHAUSTS THIS DOMAIN AT NINE ───────────────────────────────────────────────────────── READ src/proof/domain.lean BEFORE TAKING THIS FOR MORE THAN IT SAYS. This heading read "the diagonal runs out at nine", and the author's correction was six words: nine folding zero reflects one. The theorem is untouched and still holds — over the NINE RESIDUES the construction escapes nine and stops at ten. What was wrong is the sentence around it. Nine is the size of the domain this file chose, and index.lean:167 defines an eleven-position one on the same page the nine came from, whose two extra positions are exactly the fold (9 ≡ 0) and the return (refl 9 = 1). domain.lean decides the reach at both sizes and withdraws the sentence. WRITTEN FIRST AS "naming the witness leaves another unnamed", WHICH IS FALSE, AND THE KERNEL SAID SO. Diagonalisation needs one point per property. ℤ/9 has nine points, so it escapes a list of nine and it CANNOT escape a list of ten: the construction reads residue i against property i and there is no residue to read the tenth property against. The failure is exact and it is exhibited rather than described. Add the witness to the nine and the diagonal of the resulting ten is the witness ITSELF — the tenth entry — because indices 0 to 8 are unchanged and index 9 is never consulted. The trick does not weaken here, it stops. This is why theorem 7 exists. Past nine, the escape is a COUNT and not a construction, and the two are not interchangeable: counting proves something is missing and never says which, while the diagonal hands you the thing. A file that claimed one and used the other would be trading a witness for an assurance.</p>
+<p class="thm-remark">── 6 · THE DIAGONAL EXHAUSTS THIS DOMAIN AT NINE ───────────────────────────────────────────────────────── READ src/iso/80000-2-mathematics/domain.lean BEFORE TAKING THIS FOR MORE THAN IT SAYS. This heading read "the diagonal runs out at nine", and the author's correction was six words: nine folding zero reflects one. The theorem is untouched and still holds — over the NINE RESIDUES the construction escapes nine and stops at ten. What was wrong is the sentence around it. Nine is the size of the domain this file chose, and index.lean:167 defines an eleven-position one on the same page the nine came from, whose two extra positions are exactly the fold (9 ≡ 0) and the return (refl 9 = 1). domain.lean decides the reach at both sizes and withdraws the sentence. WRITTEN FIRST AS "naming the witness leaves another unnamed", WHICH IS FALSE, AND THE KERNEL SAID SO. Diagonalisation needs one point per property. ℤ/9 has nine points, so it escapes a list of nine and it CANNOT escape a list of ten: the construction reads residue i against property i and there is no residue to read the tenth property against. The failure is exact and it is exhibited rather than described. Add the witness to the nine and the diagonal of the resulting ten is the witness ITSELF — the tenth entry — because indices 0 to 8 are unchanged and index 9 is never consulted. The trick does not weaken here, it stops. This is why theorem 7 exists. Past nine, the escape is a COUNT and not a construction, and the two are not interchangeable: counting proves something is missing and never says which, while the diagonal hands you the thing. A file that claimed one and used the other would be trading a witness for an assurance.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-closure-nine_residues_carry_five_hundred_and_twelve_properties">
@@ -6151,7 +6151,7 @@ named := [isUnit, inSpan, isTriad, isOrigin, isFixed, isEven, isSquare, isPrimit
 
 ### Expressions that compute the same residues, clustered {#coils}
 
-<p class="paper-src"><code>src/proof/coils.lean</code> · namespace <code>Coils</code> · 50 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/coils.lean</code> · namespace <code>Coils</code> · 50 theorems</p>
 
 GENERATED BY scripts/coils.ts — DO NOT EDIT BY HAND.
 
@@ -6159,7 +6159,7 @@ A COIL is a set of two or more different expressions with the same extension ove
 one is two formulas proving each other: compute either and the other is computed. 131 expressions in
 the vocabulary collapse to 30 extensions, leaving 24 coils and 435 such pairs.
 
-src/proof/closure.lean found one of these by hand and by accident: `isUnit` and `inSpan` denote the same
+src/iso/80000-2-mathematics/closure.lean found one of these by hand and by accident: `isUnit` and `inSpan` denote the same
 six residues, which is this deposit's span-equals-units theorem arriving through a truth table. That coil
 has sixteen members, and finding the other fifteen by hand was never going to happen.
 
@@ -6601,7 +6601,7 @@ edges := [(0, 9), (0, 10), (0, 16), (0, 19), (1, 2), (1, 3), (1, 4), (1, 5), (1,
 <pre class="thm-statement"><code>2 ^ 0 == 3 ^ 0 ∧ (List.range' 1 20).all (fun n =&gt; 2 ^ n != 3 ^ n) ∧ (List.range' 1 20).all (fun n =&gt; 2 ^ n &lt; 3 ^ n)</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{0} = 3^{0} \land \forall n \in \{1,\dots,20\},\; 2^{n} \neq 3^{n} \land \forall n \in \{1,\dots,20\},\; 2^{n} &lt; 3^{n}</code></pre></details>
 </div>
-<p class="thm-remark">3 · THE OCTAVE AND THE FIFTH MEET ONLY WHERE NOTHING IS STACKED. 2^n and 3^n coincide at n = 0 and nowhere after, which is the same fact src/proof/entangled.lean states about the comma, arriving here from the other side: the two coils are separate coils, and no amount of stacking merges them.</p>
+<p class="thm-remark">3 · THE OCTAVE AND THE FIFTH MEET ONLY WHERE NOTHING IS STACKED. 2^n and 3^n coincide at n = 0 and nowhere after, which is the same fact src/iso/80000-2-mathematics/entangled.lean states about the comma, arriving here from the other side: the two coils are separate coils, and no amount of stacking merges them.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 400 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-coils-the_digit_root_leaves_the_integers_at_ten">
@@ -6625,7 +6625,7 @@ edges := [(0, 9), (0, 10), (0, 16), (0, 19), (1, 2), (1, 3), (1, 4), (1, 5), (1,
 
 ### The two-sided coin {#coin}
 
-<p class="paper-src"><code>src/proof/coin.lean</code> · namespace <code>Coin</code> · 12 theorems</p>
+<p class="paper-src"><code>src/iso/22739-ledger/coin.lean</code> · namespace <code>Coin</code> · 12 theorems</p>
 
 One involution on ten digits, two sides, one fixed point, and one digit that leaves.
 
@@ -6769,7 +6769,7 @@ nonzero := [1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
 
 ### Counting Rocks — the counting identities {#counting-rocks}
 
-<p class="paper-src"><code>src/proof/counting-rocks.lean</code> · namespace <code>CountingRocks</code> · 9 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/counting-rocks.lean</code> · namespace <code>CountingRocks</code> · 9 theorems</p>
 
 Counting identities from Counting Rocks!, decided by the kernel over the ranges the theorems state.
 
@@ -6842,11 +6842,11 @@ The Catalan numbers, the Cayley count of labeled trees, and the other sections a
 
 ### No ring of labels addresses the subject built from its own diagonal {#diagonal}
 
-<p class="paper-src"><code>src/proof/diagonal.lean</code> · namespace <code>Diagonal</code> · 7 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/diagonal.lean</code> · namespace <code>Diagonal</code> · 7 theorems</p>
 
 WHY THIS FILE EXISTS.
 
-src/proof/separation.lean decided that the ring of domain labels in Zenodo record 22934883 returns the
+src/iso/80000-2-mathematics/separation.lean decided that the ring of domain labels in Zenodo record 22934883 returns the
 same answer whatever subject it is drawn around, and therefore separates nothing. That is a defect of
 one drawing, and a better drawing would fix it.
 
@@ -6936,7 +6936,7 @@ No axioms, no Mathlib, no sorry.
 
 ### The reflection lifts digitwise, and the constant it adds to is ten times a repunit {#digits}
 
-<p class="paper-src"><code>src/proof/digits.lean</code> · namespace <code>Digits</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/digits.lean</code> · namespace <code>Digits</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -6949,7 +6949,7 @@ deposit uses on a single residue is the width-one case of it, which theorem 1 st
 so the pattern is decided rather than noticed.
 
 THE SECOND HALF OF THE CLAUSE POINTS SOMEWHERE ELSE. 8 × 8 = 64, and 6 and 4 are not any two digits:
-they are the fourth of the four transpositions in src/proof/mirror.lean. So 64 and 46 are one reflection
+they are the fourth of the four transpositions in src/iso/80000-2-mathematics/mirror.lean. So 64 and 46 are one reflection
 pair read in both directions, and 64 + 46 = 110 is theorem 1 and theorem 2 of that file meeting.
 
 AND ALL FIVE ARE ONE MOD NINE. Write each of the four pairs, and the fixed point, as a two-digit number
@@ -7036,12 +7036,12 @@ No axioms, no Mathlib, no sorry.
 
 ### The Planck exponents are the only ones the dimensions permit {#dimensions}
 
-<p class="paper-src"><code>src/proof/dimensions.lean</code> · namespace <code>Dimensions</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-physics/dimensions.lean</code> · namespace <code>Dimensions</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
 Six of the thirteen files in Zenodo record 22895141 derive the Planck units by dimensional analysis:
-ℓ_P = √(ħG/c³), t_P = √(ħG/c⁵), m_P = √(ħc/G). src/proof/planck.lean already RECORDS those exponents,
+ℓ_P = √(ħG/c³), t_P = √(ħG/c⁵), m_P = √(ħc/G). src/iso/80000-physics/planck.lean already RECORDS those exponents,
 doubled so they stay integers — (1,1,−3), (1,1,−5), (1,−1,1) — and reasons with them.
 
 WHAT IT DOES NOT DECIDE IS THAT THEY ARE FORCED. A recorded exponent triple is a value someone read off
@@ -7143,7 +7143,7 @@ No axioms, no Mathlib, no sorry.
 
 ### A coverage figure is worth what its control does not already explain {#discount}
 
-<p class="paper-src"><code>src/proof/discount.lean</code> · namespace <code>Discount</code> · 6 theorems</p>
+<p class="paper-src"><code>src/iso/22739-ledger/discount.lean</code> · namespace <code>Discount</code> · 6 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -7222,16 +7222,16 @@ No axioms, no Mathlib, no sorry.
 
 ### The reach of the diagonal is the domain you read against, and nine folds past nine {#domain}
 
-<p class="paper-src"><code>src/proof/domain.lean</code> · namespace <code>Domain</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/domain.lean</code> · namespace <code>Domain</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
-src/proof/closure.lean proved that the diagonal over ℤ/9 escapes a list of nine named properties and
+src/iso/80000-2-mathematics/closure.lean proved that the diagonal over ℤ/9 escapes a list of nine named properties and
 stops dead at ten, and wrote that up as "the diagonal runs out at nine". The author's correction, in six
 
 It is not a metaphor and it is not an objection to the theorem, which stands. It names the assumption
 underneath it. "Nine" was a property of the DOMAIN THAT FILE CHOSE — `List.range 9`, the residues — and
-this deposit defines a larger one on the very page the nine came from. src/proof/index.lean:167 reads
+this deposit defines a larger one on the very page the nine came from. src/iso/9001-governance/index.lean:167 reads
 
     sequence = [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]
 
@@ -7323,7 +7323,7 @@ residues := List.range 9</code></pre>
 
 ### Elementary arithmetic {#elementary}
 
-<p class="paper-src"><code>src/proof/elementary.lean</code> · namespace <code>Elementary</code> · 40 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/elementary.lean</code> · namespace <code>Elementary</code> · 40 theorems</p>
 
 Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
 
@@ -7681,7 +7681,7 @@ settledHere := 32</code></pre>
 
 ### Where a practical subject and a science are the same statement {#entangled}
 
-<p class="paper-src"><code>src/proof/entangled.lean</code> · namespace <code>Entangled</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/entangled.lean</code> · namespace <code>Entangled</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -7778,13 +7778,13 @@ traces := [-2, -1, 0, 1, 2]</code></pre>
 
 ### Substitution inside a coil is sound and across coils is not {#equivalence}
 
-<p class="paper-src"><code>src/proof/equivalence.lean</code> · namespace <code>Equivalence</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/equivalence.lean</code> · namespace <code>Equivalence</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
 scripts/coils.ts clusters expressions by their extension and calls each cluster a COIL, and the whole
 point of a coil is a LICENCE: any member may stand for any other, because computing either computes the
-other. src/proof/coils.lean seals twenty-four of them and the address vocabulary's two.
+other. src/iso/80000-2-mathematics/coils.lean seals twenty-four of them and the address vocabulary's two.
 
 A licence to substitute is only sound if the relation behind it is an EQUIVALENCE. If it were not
 transitive, a and b could coil, and b and c, while a and c do not — and a reader following the licence
@@ -7879,7 +7879,7 @@ idx := List.range 12</code></pre>
 
 ### Why an array is the criterion of a cross formula and a hash cannot be one {#extension}
 
-<p class="paper-src"><code>src/proof/extension.lean</code> · namespace <code>Extension</code> · 11 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/extension.lean</code> · namespace <code>Extension</code> · 11 theorems</p>
 
 THE QUESTION THIS ANSWERS, asked directly: why are arrays and hashes not the RESULT of cross formulas?
 
@@ -8009,7 +8009,7 @@ perms3 := [[1, 2, 4], [1, 4, 2], [2, 1, 4], [2, 4, 1], [4, 1, 2], [4, 2, 1]]</co
 
 ### Families over the ring {#families}
 
-<p class="paper-src"><code>src/proof/families.lean</code> · namespace <code>Families</code> · 63 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/families.lean</code> · namespace <code>Families</code> · 63 theorems</p>
 
 The families, quantified. Proving at scale.
 
@@ -8534,7 +8534,7 @@ settledHere := 42</code></pre>
 
 ### The doubling flow, for every step {#flow}
 
-<p class="paper-src"><code>src/proof/flow.lean</code> · namespace <code>Flow</code> · 16 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/flow.lean</code> · namespace <code>Flow</code> · 16 theorems</p>
 
 `navier_stokes_flow_is_bounded` in index.lean decides its bound over the first 48 steps, and every page that
 quotes it says "for all time". Forty-eight steps are not all time: `decide` stops at its bound. This file
@@ -8663,7 +8663,7 @@ standard axioms propext and Quot.sound, printed per theorem by lean.ts.
 
 ### What every involution gives, and what it does not {#involution}
 
-<p class="paper-src"><code>src/proof/involution.lean</code> · namespace <code>Involution</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/involution.lean</code> · namespace <code>Involution</code> · 8 theorems</p>
 
 THE QUESTION, and it was asked as "do involutions always give a harmonic result?".
 
@@ -8757,7 +8757,7 @@ coinLike := [(0, 0), (1, 8), (2, 7), (3, 6), (4, 5)]</code></pre>
 
 ### The merkaba {#merkaba}
 
-<p class="paper-src"><code>src/proof/merkaba.lean</code> · namespace <code>Merkaba</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/merkaba.lean</code> · namespace <code>Merkaba</code> · 8 theorems</p>
 
 The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a
 TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite
@@ -8849,11 +8849,11 @@ tetB := [2, 5, 8]</code></pre>
 
 ### The reflection is four pairs and one centre, and zero is the one that folds instead {#mirror}
 
-<p class="paper-src"><code>src/proof/mirror.lean</code> · namespace <code>Mirror</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/mirror.lean</code> · namespace <code>Mirror</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
-The author's correction to src/proof/domain.lean continued: "6 through 0 reflected 4 and 3 reflected 7
+The author's correction to src/iso/80000-2-mathematics/domain.lean continued: "6 through 0 reflected 4 and 3 reflected 7
 and 0 folded 2×90 degrees = 3×60 degrees". Each clause is arithmetic and each is decided below.
 
 refl(6) = 4 and refl(3) = 7 are two of exactly FOUR transpositions the tens-complement performs on
@@ -8871,7 +8871,7 @@ the word is not decoration.
 AND THE CLOSE REFLECTS THE OPEN. index.lean's sequence opens at 1, reaches 9 at position eight, and
 returns to 1. refl(9) = 1 — so the return is not a convention chosen to make the loop close, it is the
 reflection of the value at which it closes. Theorem 3 decides that, and it is the same fact
-src/proof/domain.lean uses to say the domain is eleven positions rather than nine.
+src/iso/80000-2-mathematics/domain.lean uses to say the domain is eleven positions rather than nine.
 
 No axioms, no Mathlib, no sorry.
 
@@ -8955,7 +8955,7 @@ centred := ring.filter (fun d =&gt; refl d == d)</code></pre>
 
 ### What qpu.uuidna.com and this deposit independently count the same way {#qpu}
 
-<p class="paper-src"><code>src/proof/qpu.lean</code> · namespace <code>Qpu</code> · 24 theorems</p>
+<p class="paper-src"><code>src/quantum/qpu.lean</code> · namespace <code>Qpu</code> · 24 theorems</p>
 
 WHY THIS FILE EXISTS, AND THE THREE THINGS IT REFUSES TO SAY.
 
@@ -9009,7 +9009,7 @@ clayCoil := clayCoins * clayRays</code></pre>
 <pre class="thm-statement"><code>(List.range 24).all (fun n =&gt; (2 * n == Rays.DIMENSIONS) == (n == Rays.N)) ∧ (List.range 24).all (fun n =&gt; (coins * n == faces) == (2 * n == Rays.DIMENSIONS)) ∧ faces = Rays.DIMENSIONS ∧ rays = Rays.N ∧ Rays.DIMENSIONS = 14</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{0,\dots,23\},\; 2 \cdot n = \mathrm{Rays.DIMENSIONS} = n = \mathrm{Rays.N} \land \forall n \in \{0,\dots,23\},\; \mathrm{coins} \cdot n = \mathrm{faces} = 2 \cdot n = \mathrm{Rays.DIMENSIONS} \land \mathrm{faces} = \mathrm{Rays.DIMENSIONS} \land \mathrm{rays} = \mathrm{Rays.N} \land \mathrm{Rays.DIMENSIONS} = 14</code></pre></details>
 </div>
-<p class="thm-remark">── 2 · AND THE FIRST CROSS FORMULA: FOURTEEN, FROM TWO SIDES ───────────────────────────────────────────── qpu reaches 14 as coins * rays = 2 * 7. src/proof/rays.lean reaches it as DIMENSIONS = 2 * N with N = 7, written before this file existed and for an unrelated purpose — the reading width of a vortex trace. The integer is the same and the DERIVATIONS ARE THE SAME SHAPE: a pair times seven.</p>
+<p class="thm-remark">── 2 · AND THE FIRST CROSS FORMULA: FOURTEEN, FROM TWO SIDES ───────────────────────────────────────────── qpu reaches 14 as coins * rays = 2 * 7. src/iso/iec-9834-8-identifiers/rays.lean reaches it as DIMENSIONS = 2 * N with N = 7, written before this file existed and for an unrelated purpose — the reading width of a vortex trace. The integer is the same and the DERIVATIONS ARE THE SAME SHAPE: a pair times seven.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 576 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-qpu-hexbit_times_rays_is_what_this_deposit_reads">
@@ -9036,7 +9036,7 @@ clayCoil := clayCoins * clayRays</code></pre>
 <pre class="thm-statement"><code>(List.range 128).all (fun w =&gt; 2 ^ w * 2 ^ (Capacity.free - w) == 2 ^ Capacity.free || Capacity.free &lt; w) ∧ (List.range 128).all (fun w =&gt; (2 ^ w == 4294967296) == (w == bits)) ∧ 2 ^ bits = 4294967296 ∧ 2 ^ Capacity.free = 2 ^ bits * 2 ^ (Capacity.free - bits) ∧ Capacity.free - bits = 90</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall w \in \{0,\dots,127\},\; 2^{w} \cdot 2^{\mathrm{Capacity.free} - w} = 2^{\mathrm{Capacity.free}} \lor \mathrm{Capacity.free} &lt; w \land \forall w \in \{0,\dots,127\},\; 2^{w} = 4294967296 = w = \mathrm{bits} \land 2^{\mathrm{bits}} = 4294967296 \land 2^{\mathrm{Capacity.free}} = 2^{\mathrm{bits}} \cdot 2^{\mathrm{Capacity.free} - \mathrm{bits}} \land \mathrm{Capacity.free} - \mathrm{bits} = 90</code></pre></details>
 </div>
-<p class="thm-remark">── 5 · THE CAPACITY LAW IS ONE LAW AT TWO WIDTHS ───────────────────────────────────────────────────────── qpu reports amplitudes = 2^bits = 2^32. src/proof/capacity.lean decides capacity = 2^free = 2^122. Neither number is the other; the LAW is identical — a space is two to the width that addresses it — and it is decided here at both widths at once, with the ratio between them stated so the gap is a quantity rather than an impression.</p>
+<p class="thm-remark">── 5 · THE CAPACITY LAW IS ONE LAW AT TWO WIDTHS ───────────────────────────────────────────────────────── qpu reports amplitudes = 2^bits = 2^32. src/iso/22739-ledger/capacity.lean decides capacity = 2^free = 2^122. Neither number is the other; the LAW is identical — a space is two to the width that addresses it — and it is decided here at both widths at once, with the ratio between them stated so the gap is a quantity rather than an impression.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16,384 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-qpu-the_constants_that_do_not_meet">
@@ -9199,11 +9199,11 @@ clayCoil := clayCoins * clayRays</code></pre>
 
 ### What qpu.uuidna.com's cryptographic surface is, decided on its own integers {#qpu_crypto}
 
-<p class="paper-src"><code>src/proof/qpu_crypto.lean</code> · namespace <code>QpuCrypto</code> · 16 theorems</p>
+<p class="paper-src"><code>src/crypto/qpu_crypto.lean</code> · namespace <code>QpuCrypto</code> · 16 theorems</p>
 
 WHY THIS FILE EXISTS, AND WHAT IT REFUSES TO SAY.
 
-src/proof/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
+src/quantum/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
 CRYPTOGRAPHIC surface, which is the part a reader is most likely to quote and least likely to check. The
 method is the one that file set: the service's numbers are recorded as its own declarations, and the kernel
 decides what follows from them — never that the service is right, never that this deposit is.
@@ -9367,11 +9367,11 @@ milu := (Qpu.clayPlane * (Qpu.faces - 1) - Qpu.qubits * Qpu.qubits, Qpu.clayPlan
 
 ### qpu's coin is a function of a 64-bit fold, so it spans at most 2^64 of its 2^122 layout {#qpu_fold}
 
-<p class="paper-src"><code>src/proof/qpu_fold.lean</code> · namespace <code>QpuFold</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/qpu_fold.lean</code> · namespace <code>QpuFold</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
-src/proof/capacity.lean decides that a UUID leaves 122 free bits, and qpu's README reads that as 2^122
+src/iso/22739-ledger/capacity.lean decides that a UUID leaves 122 free bits, and qpu's README reads that as 2^122
 values and a Grover cost of 2^61 = √(2^122). But qpu's coins are not drawn from the 122-bit layout. They are
 content addresses: `uuid(text)` folds the text to a 64-bit FNV-1a state and lays every output digit out from
 that state (the high half is the state; the low half is `foldFrom(state, '\u0000shape')`, a function of the
@@ -9474,7 +9474,7 @@ Pbits := 8</code></pre>
 
 ### The two gateway bits are constant, so the teleport analogy has no bits to send {#qpu_gateway}
 
-<p class="paper-src"><code>src/proof/qpu_gateway.lean</code> · namespace <code>QpuGateway</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/qpu_gateway.lean</code> · namespace <code>QpuGateway</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -9573,7 +9573,7 @@ teleportMessages := [0, 1, 2, 3]</code></pre>
 
 ### A reading that does not vary with what it reads separates nothing {#separation}
 
-<p class="paper-src"><code>src/proof/separation.lean</code> · namespace <code>Separation</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/separation.lean</code> · namespace <code>Separation</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -9586,7 +9586,7 @@ EVERYTHING".
 
 That construction is a claim, made by the drawing rather than by its text, and it is the only claim in
 the record that can be decided: THE RING DOES NOT DEPEND ON THE HUB. It is worth deciding because the
-claim is flattering to this deposit — "one structure, many readings" is what src/proof/index.lean says
+claim is flattering to this deposit — "one structure, many readings" is what src/iso/9001-governance/index.lean says
 about seven windows — and a result that agrees with you is the one that gets checked least.
 
 It does not survive. A family of readings earns the word FRAME by separating what it reads; a family
@@ -9690,7 +9690,7 @@ pairs := hubs.flatMap (fun a =&gt; (hubs.filter (fun b =&gt; b != a)).map (fun b
 
 ### Sequences {#sequences}
 
-<p class="paper-src"><code>src/proof/sequences.lean</code> · namespace <code>Sequences</code> · 28 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/sequences.lean</code> · namespace <code>Sequences</code> · 28 theorems</p>
 
 Sequences and identities — Cassini, Lucas, Brahmagupta–Fibonacci, and Pascal mod two.
 
@@ -9929,7 +9929,7 @@ as a single subtraction would truncate at zero and quietly hold for the wrong re
 
 ### The digit split {#split}
 
-<p class="paper-src"><code>src/proof/split.lean</code> · namespace <code>Split</code> · 22 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/split.lean</code> · namespace <code>Split</code> · 22 theorems</p>
 
 The ten digits read in order and grouped 0 | 12 | 3 | 45 | 6 | 78 | 9 — and what that grouping is.
 
@@ -10157,13 +10157,13 @@ sealBits := 128</code></pre>
 
 ### Doubling is two loops and both close at three hundred and sixty degrees {#turns}
 
-<p class="paper-src"><code>src/proof/turns.lean</code> · namespace <code>Turns</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/turns.lean</code> · namespace <code>Turns</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
 The author's fourth clause: "note the double torus to complete 360 degrees."
 
-src/proof/mirror.lean decided that a fold is a half turn — 2 × 90° = 3 × 60° = 180°. A half turn does not
+src/iso/80000-2-mathematics/mirror.lean decided that a fold is a half turn — 2 × 90° = 3 × 60° = 180°. A half turn does not
 close. What closes is a pair of them, and the structure that carries a pair of independent loops is a
 double torus, which is what this deposit's /organism page has drawn from the beginning and what the PDF
 in Zenodo record 22934883 calls a "parametric Genus-2 manifold" while claiming nothing checkable about it.
@@ -10226,7 +10226,7 @@ No axioms, no Mathlib, no sorry.
 <pre class="thm-statement"><code>3 * 60 == 180 &amp;&amp; 2 * 90 == 180 &amp;&amp; 180 * 2 == 360 &amp;&amp; 6 / 2 == 3 &amp;&amp; iter dbl 1 3 == 8 &amp;&amp; iter dbl 3 1 == 6</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>3 \cdot 60 = 180 \land 2 \cdot 90 = 180 \land 180 \cdot 2 = 360 \land \frac{6}{2} = 3 \land \mathrm{iter}\mathopen{}\left(\mathrm{dbl},\,1,\,3\right) = 8 \land \mathrm{iter}\mathopen{}\left(\mathrm{dbl},\,3,\,1\right) = 6</code></pre></details>
 </div>
-<p class="thm-remark">── 4 · THE SHORT LOOP'S STEP IS THE FOLD ───────────────────────────────────────────────────────────────── 3 × 60 = 180 = 2 × 90. Three steps of the long loop are one step of the short one, and that step is the half turn src/proof/mirror.lean calls the fold — the author's arithmetic identity read as geometry.</p>
+<p class="thm-remark">── 4 · THE SHORT LOOP'S STEP IS THE FOLD ───────────────────────────────────────────────────────────────── 3 × 60 = 180 = 2 × 90. Three steps of the long loop are one step of the short one, and that step is the half turn src/iso/80000-2-mathematics/mirror.lean calls the fold — the author's arithmetic identity read as geometry.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-turns-the_orbits_are_disjoint_and_cover_the_ring">
@@ -10268,7 +10268,7 @@ No axioms, no Mathlib, no sorry.
 
 ### The ring ℤ/9 {#z9}
 
-<p class="paper-src"><code>src/proof/z9.lean</code> · namespace <code>Z9</code> · 24 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/z9.lean</code> · namespace <code>Z9</code> · 24 theorems</p>
 
 The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
 
@@ -10493,7 +10493,7 @@ settledHere := 21</code></pre>
 
 ### Entanglement in the ring {#z9plus}
 
-<p class="paper-src"><code>src/proof/z9plus.lean</code> · namespace <code>Z9Plus</code> · 48 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/z9plus.lean</code> · namespace <code>Z9Plus</code> · 48 theorems</p>
 
 ℤ/9, the second batch — powers, digital roots, primitive roots, and the orbit's period.
 
@@ -10906,9 +10906,9 @@ orbit6 := (List.range 6).map (fun k =&gt; pw 2 k)</code></pre>
 
 ### The enumerated family {#imagined}
 
-<p class="paper-src"><code>src/proof/imagined*.lean</code> · 25 modules · 24,742 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/imagined*.lean</code> · 25 modules · 24,742 theorems</p>
 
-These are proposed by `scripts/imagine.ts`, which enumerates every statement its vocabulary can express over ℤ/9, keeps the ones true by exhaustion, discards every one that also holds for all its siblings, and puts what is left to the kernel. Each is sealed and decided on every run. They are **summarised rather than transcribed**: each is an instance whose statement follows from its name — the map, the relation and the set — and the laws they are instances of are stated once, in `src/proof/group.lean`, printed in full in this paper. A document that reprinted 24,742 instances of eight laws would be 24,742 restatements of what those eight say.
+These are proposed by `scripts/imagine.ts`, which enumerates every statement its vocabulary can express over ℤ/9, keeps the ones true by exhaustion, discards every one that also holds for all its siblings, and puts what is left to the kernel. Each is sealed and decided on every run. They are **summarised rather than transcribed**: each is an instance whose statement follows from its name — the map, the relation and the set — and the laws they are instances of are stated once, in `src/iso/80000-2-mathematics/group.lean`, printed in full in this paper. A document that reprinted 24,742 instances of eight laws would be 24,742 restatements of what those eight say.
 
 <p class="paper-src">Three, as written:</p>
 
@@ -10921,7 +10921,7 @@ aff_0_0_image_and_aff_0_3_image_share_no_element : [0].all (fun d =&gt; ! [3].co
 
 ### The subjects and the group are the same object {#bridge}
 
-<p class="paper-src"><code>src/proof/bridge.lean</code> · namespace <code>Bridge</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/bridge.lean</code> · namespace <code>Bridge</code> · 8 theorems</p>
 
 BRIDGE — written by scripts/bridge.ts. Each theorem below takes a reduction shared by several subjects and
 decides that it steps by a single affine rule and repeats with its period. The subjects are listed above
@@ -10984,13 +10984,13 @@ each one, in their own words, as src/entangle states them.
 <pre class="thm-statement"><code>[(2, 0), (2, 1), (1, 1), (0, 0), (0, 1)].all (fun p =&gt; [1, 2, 4, 5, 7, 8].contains p.1 || p.1 == 0) ∧ ([(2, 0), (2, 1), (1, 1), (0, 0), (0, 1)].filter (fun p =&gt; [1, 2, 4, 5, 7, 8].contains p.1)).length = 3 ∧ ([(2, 0), (2, 1), (1, 1), (0, 0), (0, 1)].filter (fun p =&gt; p.1 == 0)).length = 2 ∧ [1, 2, 4, 5, 7, 8].length = 6</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in [\left(2,\,0\right),\,\left(2,\,1\right),\,\left(1,\,1\right),\,\left(0,\,0\right),\,\left(0,\,1\right)],\; p_{1} \in [1,\,2,\,4,\,5,\,7,\,8] \lor p_{1} = 0 \land \left|\{\, p \in [\left(2,\,0\right),\,\left(2,\,1\right),\,\left(1,\,1\right),\,\left(0,\,0\right),\,\left(0,\,1\right)] \mid p_{1} \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right| = 3 \land \left|\{\, p \in [\left(2,\,0\right),\,\left(2,\,1\right),\,\left(1,\,1\right),\,\left(0,\,0\right),\,\left(0,\,1\right)] \mid p_{1} = 0 \,\}\right| = 2 \land \left|[1,\,2,\,4,\,5,\,7,\,8]\right| = 6</code></pre></details>
 </div>
-<p class="thm-remark">── AND THEY ARE THE MAPS group.lean SETTLES ──────────────────────────────────────────────────────────── The bridge itself. A rule's multiplier is either a unit of ℤ/9 — in which case the map is an element of AGL(1, ℤ/9), the group src/proof/group.lean generates to closure and proves has order 54 — or it is zero, and group.lean proves those collapse the ring and sit OUTSIDE the group. That is exactly the difference visible in the families above: the ones with a unit multiplier cycle with a period, and the ones with a zero multiplier flatten to a constant. The subjects and the group are not analogous here. They are the same object, measured twice.</p>
+<p class="thm-remark">── AND THEY ARE THE MAPS group.lean SETTLES ──────────────────────────────────────────────────────────── The bridge itself. A rule's multiplier is either a unit of ℤ/9 — in which case the map is an element of AGL(1, ℤ/9), the group src/iso/80000-2-mathematics/group.lean generates to closure and proves has order 54 — or it is zero, and group.lean proves those collapse the ring and sit OUTSIDE the group. That is exactly the difference visible in the families above: the ones with a unit multiplier cycle with a period, and the ones with a zero multiplier flatten to a constant. The subjects and the group are not analogous here. They are the same object, measured twice.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 
 ### The structure the statements live in {#group}
 
-<p class="paper-src"><code>src/proof/group.lean</code> · namespace <code>Groups</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/group.lean</code> · namespace <code>Groups</code> · 8 theorems</p>
 
 A TIME BUDGET, NOT A SOUNDNESS SETTING. Theorem 1 checks every pair of the 81 maps at every residue —
 81 x 81 x 9 cases — and the default heartbeat limit stops the elaborator partway through and
@@ -11087,7 +11087,7 @@ one := (1, 0)</code></pre>
 
 ### Sealed before the vocabulary moved, and still decided {#retained}
 
-<p class="paper-src"><code>src/proof/retained.lean</code> · namespace <code>Imagined</code> · 15 theorems</p>
+<p class="paper-src"><code>src/iso/80000-2-mathematics/retained.lean</code> · namespace <code>Imagined</code> · 15 theorems</p>
 
 RETAINED —scripts/imagine.ts sealed these when its map table was hand-written, and its derived
 enumeration does not propose them. Nothing about them was refuted: each is copied here exactly as the
@@ -11236,7 +11236,7 @@ the only answer that neither withdraws a proved fact nor claims a carrier that d
 
 ### Generated at scale {#generated}
 
-<p class="paper-src"><code>src/proof/generated.lean</code> · namespace <code>Generated</code> · 13 theorems</p>
+<p class="paper-src"><code>src/iso/iec-2382-computing/generated.lean</code> · namespace <code>Generated</code> · 13 theorems</p>
 
 Generated by scripts/lean-gen.ts — do not edit by hand; re-run the generator.
 Each theorem below quantifies over a whole ledger family. Every one is compiled, audited for axioms, and
@@ -11360,7 +11360,7 @@ checked to compute what the ledger's own tests compute at every parameter of its
 
 ### Mechanically translated {#mechanical}
 
-<p class="paper-src"><code>src/proof/mechanical.lean</code> · namespace <code>Mechanical</code> · 127 theorems</p>
+<p class="paper-src"><code>src/iso/iec-2382-computing/mechanical.lean</code> · namespace <code>Mechanical</code> · 127 theorems</p>
 
 Generated by src/prove/emit.ts from the ledger's own tests — do not hand-edit; re-run the prover.
 
@@ -12481,7 +12481,7 @@ CLAIMS: physical
 
 ### Nim {#nim}
 
-<p class="paper-src"><code>src/proof/nim.lean</code> · namespace <code>Nim</code> · 28 theorems</p>
+<p class="paper-src"><code>src/iso/iec-2382-computing/nim.lean</code> · namespace <code>Nim</code> · 28 theorems</p>
 
 Nim — Bouton's theorem and Sprague–Grundy, decided.
 
@@ -12717,7 +12717,7 @@ proved below for every a, b, c, on the standard axioms; the decided rows above s
 
 ### A fold that returns a lone leaf unchanged admits a second preimage {#preimage}
 
-<p class="paper-src"><code>src/proof/preimage.lean</code> · namespace <code>Preimage</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-2382-computing/preimage.lean</code> · namespace <code>Preimage</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -12828,7 +12828,7 @@ No axioms, no Mathlib, no sorry.
 
 ### The CHSH circuits sent to a quantum device give exactly 2√2, decided over the cyclotomic integers {#quantum_circuits}
 
-<p class="paper-src"><code>src/proof/quantum_circuits.lean</code> · namespace <code>QuantumCircuits</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum_circuits.lean</code> · namespace <code>QuantumCircuits</code> · 8 theorems</p>
 
 WHY ℤ[ω] AND NOT FLOATS. Every angle the circuits use is a multiple of π/4, so with each rz written as diag(1, ω^k)
 (it differs from the device's rz by a global phase, which no probability can see) and sx as ½[[1+i, 1−i], [1−i, 1+i]]
@@ -12909,7 +12909,7 @@ bell := [.rz 0 2, .sx 0, .rz 0 2, .rz 1 2, .sx 1, .rz 1 2, .cz, .rz 1 2, .sx 1, 
 
 ### When a quantum device's counts are above the classical bound, decided on exact integers {#quantum_hardware}
 
-<p class="paper-src"><code>src/proof/quantum_hardware.lean</code> · namespace <code>QuantumHardware</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum_hardware.lean</code> · namespace <code>QuantumHardware</code> · 8 theorems</p>
 
 WHAT THIS DECIDES AND WHAT IT REFUSES TO SAY. Per CHSH setting i, D_i = n00 + n11 − n01 − n10 and N_i is its shots,
 so E_i = D_i / N_i. S > 2 is decided as D₀N₁N₂N₃ + D₁N₀N₂N₃ + D₂N₀N₁N₃ − D₃N₀N₁N₂ > 2·N₀N₁N₂N₃, with no division.
@@ -12981,7 +12981,7 @@ came from a quantum processor is the provider's job record, read by scripts/quan
 
 ### Every quantum computing model ISO/IEC 4879 names, one exact instance each, decided over the cyclotomic integers {#quantum_models}
 
-<p class="paper-src"><code>src/proof/quantum_models.lean</code> · namespace <code>QuantumModels</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum_models.lean</code> · namespace <code>QuantumModels</code> · 8 theorems</p>
 
 WHAT IT DECIDES. Each model at its known optimum: the one-way pattern for every π/4 angle and both outcomes, the
 whole group Ising braids generate (24 classes, closed), every balanced beam splitter, the adiabatic gap for every
@@ -13070,7 +13070,7 @@ triangle := [1, -1].flatMap (fun a : Int =&gt; [1, -1].flatMap (fun b : Int =&gt
 
 ### The 124-qubit Mermin sum — the UUID minus one hex digit — as eight UUID particles {#quantum_octave_124}
 
-<p class="paper-src"><code>src/proof/quantum_octave_124.lean</code> · namespace <code>QuantumOctave124</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum_octave_124.lean</code> · namespace <code>QuantumOctave124</code> · 8 theorems</p>
 
 <div class="thm" id="thm-quantum_octave_124-particle_zero_of_the_124_qubit_sum">
 <p class="thm-label"><strong>Theorem 1259</strong> (<code>particle_zero_of_the_124_qubit_sum</code>)<a class="thm-cite" href="/theorem/lean_quantumoctave124_particle_zero_of_the_124_qubit_sum">sealed</a>.</p>
@@ -13139,7 +13139,7 @@ triangle := [1, -1].flatMap (fun a : Int =&gt; [1, -1].flatMap (fun b : Int =&gt
 
 ### The 128-qubit octave, split into eight UUID particles — the Mermin lead 2⁶³ at the UUID width {#quantum_octave_128}
 
-<p class="paper-src"><code>src/proof/quantum_octave_128.lean</code> · namespace <code>QuantumOctave128</code> · 9 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum_octave_128.lean</code> · namespace <code>QuantumOctave128</code> · 9 theorems</p>
 
 WHY EIGHT PARTICLES. Particle b holds the weights k with ⌊k/16⌋ = b (the last one also k = 128). Each checks that its
 strings' GHZ expectations are real, Re(iᵏ), and sums its share of Σ C(128, k)·Re(iᵏ)·2⟨string_k⟩. Every particle
@@ -13226,7 +13226,7 @@ scripts/lean.ts checks it in a lane of its own beside them, on the machine's cor
 
 ### The Bell test scaled in octaves — 2, 4, 8 … 128 qubits — with the quantum lead doubling its exponent {#quantum_octaves}
 
-<p class="paper-src"><code>src/proof/quantum_octaves.lean</code> · namespace <code>QuantumOctaves</code> · 7 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum_octaves.lean</code> · namespace <code>QuantumOctaves</code> · 7 theorems</p>
 
 WHY 128 QUBITS FIT. The GHZ state (|0…0⟩ + |1…1⟩)/√2 has two basis states, and a string of X and Y flips every bit, so
 its expectation is read from two phases carried qubit by qubit — Y contributes i on the way up and −i on the way down —
@@ -13300,7 +13300,7 @@ and the 2-qubit Bell test is CHSH, decided in quantum_circuits.lean. Nothing her
 
 ### qpu's quantum textbook numbers, each derived exactly from the quantum mechanics that produces it {#quantum_textbooks}
 
-<p class="paper-src"><code>src/proof/quantum_textbooks.lean</code> · namespace <code>QuantumTextbooks</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum_textbooks.lean</code> · namespace <code>QuantumTextbooks</code> · 8 theorems</p>
 
 textbook_holevo (χ ≤ 1 bit for a qubit) is not re-derived: it is an entropy, a logarithm, outside ℤ[ω]. It stands
 on qpu's TypeScript holevoChi and its own integer seal, and nothing here adds to or subtracts from it.
@@ -13374,7 +13374,7 @@ on qpu's TypeScript holevoChi and its own integer seal, and nothing here adds to
 
 ### 124 qubits from the UUID — the Mermin lead 2⁶¹, the odd bound, and the 124-qubit cluster state, as coins {#quantum_uuid_cluster}
 
-<p class="paper-src"><code>src/proof/quantum_uuid_cluster.lean</code> · namespace <code>QuantumUuidCluster</code> · 8 theorems</p>
+<p class="paper-src"><code>src/quantum/quantum_uuid_cluster.lean</code> · namespace <code>QuantumUuidCluster</code> · 8 theorems</p>
 
 WHAT IT REFUSES TO SAY. A stabilizer state is exactly what a classical computer describes in polynomial time; that
 is why 124 qubits fit in this file, and why nothing here is a quantum device or its output.
@@ -13447,7 +13447,7 @@ is why 124 qubits fit in this file, and why nothing here is a quantum device or 
 
 ### The universal reflection, and where it stops being one {#reflection}
 
-<p class="paper-src"><code>src/proof/reflection.lean</code> · namespace <code>Reflection</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-2382-computing/reflection.lean</code> · namespace <code>Reflection</code> · 8 theorems</p>
 
 TWO HACKS REMOVED TOGETHER, by the author's order on 2026-09-25. The title was "Theorems", which names
 nothing — every file here holds theorems. And the namespace was `MillenniumFloor.Universal`: a namespace
@@ -13535,7 +13535,7 @@ axioms, every proof `by decide`, no Mathlib.
 
 ### Digit reversal {#reversal}
 
-<p class="paper-src"><code>src/proof/reversal.lean</code> · namespace <code>Reversal</code> · 29 theorems</p>
+<p class="paper-src"><code>src/iso/iec-2382-computing/reversal.lean</code> · namespace <code>Reversal</code> · 29 theorems</p>
 
 Digit reversal — arithmetic, not string handling.
 
@@ -13784,7 +13784,7 @@ No axioms, no Mathlib, no sorry.
 
 ### Prior art, and what novelty is claimed {#priorart}
 
-<p class="paper-src"><code>src/proof/priorart.lean</code> · namespace <code>PriorArt</code> · 9 theorems</p>
+<p class="paper-src"><code>src/iso/690-record/priorart.lean</code> · namespace <code>PriorArt</code> · 9 theorems</p>
 
 THE PROPOSITIONS ARE NOT RESTATEMENTS OF IT. `every_source_is_classified`, `novelty_is_claimed_of_no_
   source` and `zero_claims_is_not_full_attribution` decide facts about THIS table — its rows, its kinds,
@@ -13917,7 +13917,7 @@ two cannot drift: a file that changes its declaration and not this table fails t
 
 ### The discovery ranking is monotone, and it is far coarser than it looks {#ranking}
 
-<p class="paper-src"><code>src/proof/ranking.lean</code> · namespace <code>Ranking</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/690-record/ranking.lean</code> · namespace <code>Ranking</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -14020,13 +14020,13 @@ masks := List.range 64</code></pre>
 <pre class="thm-statement"><code>score 63 == 11 &amp;&amp; score 0 == 0 &amp;&amp; (masks.filter (fun m =&gt; score m ≥ 8)).length == 14 &amp;&amp; (masks.filter (fun m =&gt; score m ≥ 8)).length &lt; masks.length</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{score}\mathopen{}\left(63\right) = 11 \land \mathrm{score}\mathopen{}\left(0\right) = 0 \land \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) \ge 8 \,\}\right| = 14 \land \left|\{\, m \in \mathrm{masks} \mid \mathrm{score}\mathopen{}\left(m\right) \ge 8 \,\}\right| &lt; \left|\mathrm{masks}\right|</code></pre></details>
 </div>
-<p class="thm-remark">── 8 · WHAT A HIGH SCORE DOES NOT MEAN ─────────────────────────────────────────────────────────────────── It does not mean a statement is novel, or interesting, or unpublished. It means six checkable facts about WHERE IT SITS IN THIS TREE happen to coincide, and the queue exists to spend a search on it. Only a performed search says anything about the literature, which is decided in src/proof/verdict.lean and is a different file for a reason. A ranking that could establish novelty would not need the search.</p>
+<p class="thm-remark">── 8 · WHAT A HIGH SCORE DOES NOT MEAN ─────────────────────────────────────────────────────────────────── It does not mean a statement is novel, or interesting, or unpublished. It means six checkable facts about WHERE IT SITS IN THIS TREE happen to coincide, and the queue exists to spend a search on it. Only a performed search says anything about the literature, which is decided in src/iso/690-record/verdict.lean and is a different file for a reason. A ranking that could establish novelty would not need the search.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 
 ### Rights {#rights}
 
-<p class="paper-src"><code>src/proof/rights.lean</code> · namespace <code>Rights</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/690-record/rights.lean</code> · namespace <code>Rights</code> · 8 theorems</p>
 
 What this deposit claims under international law — and, in the same table, what it does not.
 
@@ -14154,7 +14154,7 @@ settledHere := 8</code></pre>
 
 ### What each file says it settles, checked against what it does {#settled}
 
-<p class="paper-src"><code>src/proof/settled.lean</code> · namespace <code>Settled</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/690-record/settled.lean</code> · namespace <code>Settled</code> · 8 theorems</p>
 
 GENERATED by scripts/settled.ts — do not edit. Regenerate with `npm run settled`.
 
@@ -14248,11 +14248,11 @@ byOther := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]</code></pre>
 
 ### The prior-art verdict is total, exclusive, and never improved by silence {#verdict}
 
-<p class="paper-src"><code>src/proof/verdict.lean</code> · namespace <code>Verdict</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/690-record/verdict.lean</code> · namespace <code>Verdict</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
-src/proof/priorart.lean's kind 2 — the only class allowed to claim novelty — rests on a record whose rows
+src/iso/690-record/priorart.lean's kind 2 — the only class allowed to claim novelty — rests on a record whose rows
 each carry a VERDICT: CANDIDATES, NONE_FOUND, NONE_FOUND_PARTIAL, NOT_MEASURED, TOO_FEW_TERMS. Those
 verdicts are what a reader of this deposit is asked to believe about prior art, and the rule producing
 them was four lines of TypeScript in src/novelty/index.ts that nothing verified.
@@ -14352,7 +14352,7 @@ R := List.range 8</code></pre>
 
 ### What the ledger marked reachable, reached by the kernel {#reached}
 
-<p class="paper-src"><code>src/proof/reached.lean</code> · namespace <code>Reached</code> · 80 theorems</p>
+<p class="paper-src"><code>src/iso/690-record/reached.lean</code> · namespace <code>Reached</code> · 80 theorems</p>
 
 WHY IT IS NOT CALLED `claimed`, AND WHY THAT IS NOT ABOUT PRIOR ART.
 
@@ -15080,7 +15080,7 @@ axis3 := [0, 3, 6]</code></pre>
 
 ### Recovered — claims that computed and were withdrawn for want of a proof {#recovered}
 
-<p class="paper-src"><code>src/proof/recovered.lean</code> · namespace <code>Recovered</code> · 15 theorems</p>
+<p class="paper-src"><code>src/iso/690-record/recovered.lean</code> · namespace <code>Recovered</code> · 15 theorems</p>
 
 WITHDRAWAL WAS NEVER THE ONLY OPTION. Each theorem below returns one claim to the record. The evidence
 that existed was a TypeScript run — a computation that agreed once on one machine. The kernel walks the

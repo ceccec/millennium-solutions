@@ -61,7 +61,7 @@ const SELF_REFERENTIAL: Record<string, string> = {
   'authority.lean': 'its subject is who may speak for this deposit — a rule about the record, not a proposition anyone else has stated',
 }
 
-const nov = existsSync('src/proof/novelty.json') ? JSON.parse(readFileSync('src/proof/novelty.json', 'utf8')) : {}
+const nov = existsSync('src/ledger/novelty.json') ? JSON.parse(readFileSync('src/ledger/novelty.json', 'utf8')) : {}
 const searched = new Set(Object.keys(nov))
 const keyOf = (t: { name: string }) => [...LIVE].find((k) => k.endsWith('_' + t.name)) ?? ''
 
@@ -118,13 +118,13 @@ for (const c of show) {
   console.log(`      ${c.why.join(' · ')}`)
 }
 console.log(`\n  showing ${show.length} of ${cands.length}${process.argv.includes('--all') ? '' : ' — run with --all for the rest'}`)
-// THE RANKING IS COARSER THAN A SORTED LIST LOOKS, and src/proof/ranking.lean counts exactly how much:
+// THE RANKING IS COARSER THAN A SORTED LIST LOOKS, and src/iso/690-record/ranking.lean counts exactly how much:
 // six binary signals make 64 distinguishable states and this scoring collapses them onto 12 scores, with
 // NINE different signal sets sharing the score 4, and nine more sharing 5, 6 and 7. That is the middle of
 // this queue, where most theorems sit. Only 0 and 11 identify their evidence uniquely. Printed here
 // because a reader meets the list, not the theorem.
 console.log(`  ORDINAL ONLY: 64 signal states collapse onto 12 scores — nine sets share each of 4, 5, 6, 7.`)
-console.log(`  Only the extremes are unambiguous. See src/proof/ranking.lean, which decides it.`)
+console.log(`  Only the extremes are unambiguous. See src/iso/690-record/ranking.lean, which decides it.`)
 console.log(`  A RANK IS NOT A NOVELTY CLAIM. This orders where to look; only a performed search, recorded`)
 console.log(`  with its queries and results, can say whether a statement has an earlier author. Run`)
 console.log(`  \`npm run novelty\` to perform them — it reaches five registries, so no build chain runs it.`)

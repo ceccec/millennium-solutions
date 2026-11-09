@@ -20,7 +20,7 @@
 // deposition prose, which told every record it had walked its whole domain. 112 of 336 had not.
 import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
-import { domainOf, leanSource, frontmatter, type LeanTheorem } from '../api/index.ts'
+import { domainOf, leanSource, leanPathOf, frontmatter, type LeanTheorem } from '../api/index.ts'
 import { toUuid } from '../0/index.ts'
 import { toLatex } from '../latex/index.ts'
 import { treeOf, stats } from '../quantum/tree.ts'
@@ -192,7 +192,7 @@ export const theoremTex = (t: LeanTheorem, opts: { key: string | null }): string
     + `\\noindent\\emph{Proof.} \\texttt{${t.tactic}} --- the Lean~4 kernel evaluated the proposition over its\n`
     + `domain, sorry-free, with \\texttt{\\#print axioms} reporting no axiom dependency. \\hfill$\\square$\n\n`
     + `\\section*{Source and provenance}\n`
-    + `Declared in \\texttt{src/proof/${t.file}}. Repository: \\url{${REPO}}.\n`
+    + `Declared in \\texttt{${leanPathOf(t.file)}}. Repository: \\url{${REPO}}.\n`
     + (opts.key ? `Content-addressed record: \\url{${SITE}/theorem/${opts.key}}.\n` : '')
     + `Part of \\url{https://doi.org/${CONCEPT_DOI}}. Recompute with \\texttt{npm run lean}.\n\n`
     + `\\end{document}\n`
@@ -221,7 +221,7 @@ export const structuredData = (t: LeanTheorem, opts: { novelty: string; files: s
   inLanguage: 'en',
   isPartOf: { '@type': 'Dataset', name: 'Millennium Solutions — the ℤ/9 vortex framework', identifier: `https://doi.org/${CONCEPT_DOI}` },
   citation: [
-    { '@type': 'CreativeWork', name: `src/proof/${t.file}`, url: `${REPO}/blob/main/src/proof/${t.file}` },
+    { '@type': 'CreativeWork', name: `${leanPathOf(t.file)}`, url: `${REPO}/blob/main/${leanPathOf(t.file)}` },
     { '@type': 'CreativeWork', name: 'The paper — every statement typeset', url: `${SITE}/paper` },
     { '@type': 'CreativeWork', name: 'The axiom index', url: `${SITE}/AXIOMS` },
   ],
@@ -289,7 +289,7 @@ export const definitionsFor = (statement: string, files: readonly string[]): { n
 // THE RACE, FOR THE READER WHO ARRIVES AT ZENODO AND NOT AT THE REPOSITORY. A deposition is read by people
 // who will never open the code, so the standing of the work — when it was registered, and who has taken it
 // up — belongs in the record they are actually holding. Every figure is read out of the measurements this
-// tree records and re-checks (src/proof/provenance.json, src/proof/citations.json); nothing here is a
+// tree records and re-checks (src/ledger/provenance.json, src/ledger/citations.json); nothing here is a
 // sentence somebody wrote about the state of play.
 //
 // It reports reception WITHOUT flattery: a self-citation is provenance, not uptake, and is counted
@@ -297,8 +297,8 @@ export const definitionsFor = (statement: string, files: readonly string[]): { n
 // much as the number — an absent citation is not evidence of honest use OR of dishonest use.
 export const raceHtml = (): string => {
   let prov: any, cites: any
-  try { prov = JSON.parse(readFileSync('src/proof/provenance.json', 'utf8')) } catch { return '' }
-  try { cites = JSON.parse(readFileSync('src/proof/citations.json', 'utf8')) } catch { cites = { tracked: [] } }
+  try { prov = JSON.parse(readFileSync('src/ledger/provenance.json', 'utf8')) } catch { return '' }
+  try { cites = JSON.parse(readFileSync('src/ledger/citations.json', 'utf8')) } catch { cites = { tracked: [] } }
   const all = (cites.tracked ?? []).flatMap((t: any) => t.citing ?? [])
   const self = all.filter((c: any) => c.self).length
   const third = all.length - self
@@ -439,11 +439,11 @@ export const SCOPE_MARK = 'decided over a finite domain'
 // that will not say what it claims is not being modest, it is being unreadable.
 export const NOVELTY: Record<string, string> = {
   '0': 'Prior art: NAMED AND CREDITED. This declaration restates or builds on work with an earlier author, '
-    + 'recorded in src/proof/priorart.lean. No priority over that work is claimed here.',
+    + 'recorded in src/iso/690-record/priorart.lean. No priority over that work is claimed here.',
   '1': 'Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for '
     + 'this source file, so this record asserts priority of deposit and nothing about the literature.',
   '2': 'Novelty: CLAIMED. A named prior-art search was performed for this source file and returned nothing; '
-    + 'the search itself is on the record in src/proof/priorart.lean.',
+    + 'the search itself is on the record in src/iso/690-record/priorart.lean.',
 }
 export const KIND: Record<string, string> = {
   '0': 'restates named prior art, the earlier author credited',

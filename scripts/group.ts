@@ -19,7 +19,7 @@
 // below and rendered into Lean; the only constants in the emitted file are ones this script measured.
 //
 //   node scripts/group.ts          report what it finds
-//   node scripts/group.ts --emit   write src/proof/group.lean and put it to the kernel
+//   node scripts/group.ts --emit   write src/iso/80000-2-mathematics/group.lean and put it to the kernel
 import { flag } from '../src/cli/index.ts'
 import { units as apiUnits, generatedLean } from '../src/api/index.ts'
 

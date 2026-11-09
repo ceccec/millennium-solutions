@@ -48,7 +48,7 @@ const PREREQ = 'node scripts/locale-fold.ts'
 
 const CONTROLS: Control[] = [
   // ── THE API AND PACKAGE GATES: every API and every lockfile package is a gate, so each is shown to refuse. ──
-  { gate: 'api-gates', cmd: 'node scripts/api-gates.ts', file: 'src/proof/counting-rocks.lean',
+  { gate: 'api-gates', cmd: 'node scripts/api-gates.ts', file: 'src/iso/80000-2-mathematics/counting-rocks.lean',
     what: 'a filesystem API whose file no longer states the fact its adapter expects',
     mutate: (s) => s.replace('fib 10 = 55', 'fib 10 = 56') },
   { gate: 'package-gates', cmd: 'node scripts/package-gates.ts', file: 'package-lock.json',
@@ -102,7 +102,7 @@ const CONTROLS: Control[] = [
 
   // WHAT EACH MCP TOOL NEEDS, DECLARED IN ONE PLACE AND DERIVED FROM ANOTHER. src/mcp/index.ts declares the
   // requirement per tool; scripts/mcp-gate.ts derives it from the handler source in scripts/mcp.ts and fails
-  // on any disagreement — the two-independent-reads discipline that src/proof/settled.lean uses for the
+  // on any disagreement — the two-independent-reads discipline that src/iso/690-record/settled.lean uses for the
   // theorem counts. The control moves a declaration away from what its handler reaches, which is exactly what
   // happens when a handler gains an import and nobody updates the table. Its first derivation read three
   // tools as needing nothing at all, always in the flattering direction, so this gate is the one that keeps
@@ -141,12 +141,12 @@ const CONTROLS: Control[] = [
 
   // AND THE DRIFT, which for a generator is the defect the vocabulary collapse cannot reach. coils.ts used to
   // print its report without --emit and exit 0 — so it sat in the `gates` chain and still could not notice
-  // that src/proof/coils.lean no longer matched what its own vocabulary generates. Measured: adding one map
+  // that src/iso/80000-2-mathematics/coils.lean no longer matched what its own vocabulary generates. Measured: adding one map
   // to the vocabulary moves 131 expressions to 142 and the file from 247 lines to 258, and the old form
   // called that green. It compares the WHOLE generated file now, because the coil COUNT is the flattering
   // number here: the vocabulary can change which expressions fall into which coil while the count holds
   // steady, and a check on the count passes through exactly that.
-  { gate: 'coils (the generated file drifts from the vocabulary)', cmd: 'node scripts/coils.ts', file: 'src/proof/coils.lean',
+  { gate: 'coils (the generated file drifts from the vocabulary)', cmd: 'node scripts/coils.ts', file: 'src/iso/80000-2-mathematics/coils.lean',
     what: 'a generated Lean file that no longer matches the vocabulary it was derived from — stale clustering the kernel still accepts',
     mutate: (s) => s.replace('def m9 (n : Nat) : Nat := n % 9', 'def m9 (n : Nat) : Nat := n % 9  -- edited by hand') },
 
@@ -158,18 +158,18 @@ const CONTROLS: Control[] = [
   // uncontrolled the day they were written. Both printed a report without --emit and exited 0, exactly as
   // coils.ts once did, so neither could notice its committed Lean no longer being what it generates. Each
   // compares the whole text now, and the control is one edited character in the derived file.
-  { gate: 'group (the generated file drifts from the generator)', cmd: 'node scripts/group.ts', file: 'src/proof/group.lean',
+  { gate: 'group (the generated file drifts from the generator)', cmd: 'node scripts/group.ts', file: 'src/iso/80000-2-mathematics/group.lean',
     what: 'a generated Lean file whose constants no longer match the walk that produced them — stale structure the kernel still accepts',
     mutate: (s) => s.replace('def one : Nat × Nat := (1, 0)', 'def one : Nat × Nat := (1, 0)  -- edited by hand') },
 
-  { gate: 'bridge (the generated file drifts from the generator)', cmd: 'node scripts/bridge.ts', file: 'src/proof/bridge.lean',
+  { gate: 'bridge (the generated file drifts from the generator)', cmd: 'node scripts/bridge.ts', file: 'src/iso/80000-2-mathematics/bridge.lean',
     what: 'a generated bridge whose orbits no longer follow src/entangle — subjects proving a map nobody computed',
     mutate: (s) => s.replace('open Z9', 'open Z9  -- edited by hand') },
 
   // qpu-gate COULD NOT BE CONTROLLED while its instrument would not load (the registry's @uuidna/qpu 1.0.0 excluded
   // a module its own entry imported); 1.0.1 loads, the gate measures, and the control is the obvious one: a
   // constant qpu.lean declares moved away from what the installed unit computes must be refused by name.
-  { gate: 'qpu-gate (a declared constant drifts from the installed unit)', cmd: 'node scripts/qpu-gate.ts', file: 'src/proof/quantum/qpu.lean',
+  { gate: 'qpu-gate (a declared constant drifts from the installed unit)', cmd: 'node scripts/qpu-gate.ts', file: 'src/quantum/qpu.lean',
     what: 'qpu.lean declaring a bit width the installed @uuidna/qpu does not compute — a proof about a unit that is not the one installed',
     mutate: (s) => s.replace(/^(def\s+bits\s*:\s*Nat\s*:=\s*)32\b/m, '$133') },
 
@@ -185,7 +185,7 @@ const CONTROLS: Control[] = [
     what: 'a factor route that cannot factor 91 — a control that would then pass nothing it is meant to pass',
     mutate: (s) => s.replace('for (; d <= TRIAL_BOUND && d * d <= n; d += 2n) divide(d)', 'for (; d <= 1n; d += 2n) divide(d)') },
 
-  // apis-theorems GENERATES src/proof/apis.lean from the evidence folder and refuses a verdict it does not know — a
+  // apis-theorems GENERATES src/iso/9001-governance/apis.lean from the evidence folder and refuses a verdict it does not know — a
   // new verdict string in the evidence would otherwise become a count nobody classified.
   { gate: 'apis-theorems (an unknown verdict in the evidence)', cmd: 'node scripts/apis-theorems.ts', file: 'evidence/apis-guru/3022dd48/live.json',
     what: 'a live verdict the generator has no code for — an entry that would fall out of the partition unseen',
@@ -198,7 +198,7 @@ const CONTROLS: Control[] = [
   //    checking them. scripts/settled.ts now reads the declaration and COUNTS the theorems independently.
   //    (a) THE SUBJECT DRIFTS: a source file's count stops matching its contents. Planted by bumping one
   //    count, which is exactly what happens when a theorem is added and the count is not.
-  { gate: 'settled (a file\'s count drifts from its contents)', cmd: 'node scripts/settled.ts', file: 'src/proof/crypto/fnv.lean',
+  { gate: 'settled (a file\'s count drifts from its contents)', cmd: 'node scripts/settled.ts', file: 'src/crypto/fnv.lean',
     what: 'a file declaring it settles more than it holds — the drift that ships a number no reader can check',
     mutate: (s) => s.replace('def settledHere : Nat := 12', 'def settledHere : Nat := 13') },
 
@@ -206,7 +206,7 @@ const CONTROLS: Control[] = [
   //    recorded as "a derived file whose generator is in no chain step drifts and ships". scripts/coils.ts,
   //    the other generator of a Lean file, prints without --emit and exits 0 — so it is in the chain and
   //    still cannot catch this. settled.ts compares the file on disk to what the tree generates and fails.
-  { gate: 'settled (the generated file drifts from the tree)', cmd: 'node scripts/settled.ts', file: 'src/proof/settled.lean',
+  { gate: 'settled (the generated file drifts from the tree)', cmd: 'node scripts/settled.ts', file: 'src/iso/690-record/settled.lean',
     what: 'a generated Lean file edited by hand, or left behind after the sources moved — green while it lies',
     mutate: (s) => s.replace('def measured  : List Nat := [20,', 'def measured  : List Nat := [19,') },
 
@@ -271,7 +271,7 @@ const CONTROLS: Control[] = [
   //
   // Written this way they cross-check: one of them failing while the others hold points at that gate, and
   // all three failing together points at the shape being wrong.
-  { gate: 'axiom-index', cmd: 'node scripts/axiom-index.ts', file: 'src/proof/coin.lean',
+  { gate: 'axiom-index', cmd: 'node scripts/axiom-index.ts', file: 'src/iso/22739-ledger/coin.lean',
     what: 'an assumption introduced into a source and absent from the published index',
     mutate: (s) => s.replace('namespace Coin', 'namespace Coin\naxiom probeAssumption : Nat') },
 
@@ -304,11 +304,11 @@ const CONTROLS: Control[] = [
     what: 'a normaliser under which a peer\'s published pin no longer reproduces',
     mutate: (s) => s.replace("    .replace(/\\s(?![\\p{L}\\p{N}_])|(?<![\\p{L}\\p{N}_.])\\s/gu, '')", '') },
 
-  { gate: 'quantum-field', cmd: 'node scripts/quantum-field.ts', file: 'src/proof/quantum/quantum.lean',
+  { gate: 'quantum-field', cmd: 'node scripts/quantum-field.ts', file: 'src/quantum/quantum.lean',
     what: 'geometry drawn from a number the proposition no longer decides',
     mutate: (s) => s.replace('(perms [1, 2, 4, 8]).length = 24', '(perms [1, 2, 4, 8]).length = 25') },
 
-  { gate: 'priorart', cmd: 'node scripts/priorart.ts', file: 'src/proof/merkle.lean',
+  { gate: 'priorart', cmd: 'node scripts/priorart.ts', file: 'src/iso/iec-9834-8-identifiers/merkle.lean',
     what: 'a source whose attribution changed without the table following',
     mutate: (s) => s.replace('-- prior_art: named', '-- prior_art: unclassified') },
 
@@ -319,11 +319,11 @@ const CONTROLS: Control[] = [
 
   // --check, because priorart-gen REGENERATES by default: run plain it rewrote the table to match the
   // mutation and exited 0, so the control accepted. A generator run in write mode cannot be a gate.
-  { gate: 'priorart-gen', cmd: 'node scripts/priorart-gen.ts --check', file: 'src/proof/merkle.lean',
+  { gate: 'priorart-gen', cmd: 'node scripts/priorart-gen.ts --check', file: 'src/iso/iec-9834-8-identifiers/merkle.lean',
     what: 'a source whose recorded attribution no longer matches what the file declares',
     mutate: (s) => s.replace('-- prior_art: named', '-- prior_art: unclassified') },
 
-  { gate: 'carry', cmd: 'node scripts/carry.ts', file: 'src/proof/discovered.json',
+  { gate: 'carry', cmd: 'node scripts/carry.ts', file: 'src/ledger/discovered.json',
     what: 'a ledger entry whose recorded value has been replaced',
     mutate: (s) => s.replace(/"([a-zA-Z_]+)":\s*"([^"]{4,})"/, '"$1": "PROBE_CORRUPTED_VALUE"') },
 
@@ -331,11 +331,11 @@ const CONTROLS: Control[] = [
     what: 'a published page with no h1 for a reader to navigate by',
     mutate: (s) => s.replace(/<h1([^>]*)>/, '<div$1>').replace(/<\/h1>/, '</div>') },
 
-  { gate: 'paper', cmd: 'node scripts/paper.ts', file: 'src/proof/coin.lean',
+  { gate: 'paper', cmd: 'node scripts/paper.ts', file: 'src/iso/22739-ledger/coin.lean',
     what: 'a declaration the kernel cannot close',
     mutate: (s) => s.replace(/\nend Coin\s*$/, '\ntheorem probe_false : 1 = 2 := by decide\n$&') },
 
-  { gate: 'verify-theorems', cmd: 'node scripts/verify-theorems.ts', file: 'src/proof/discovered.json',
+  { gate: 'verify-theorems', cmd: 'node scripts/verify-theorems.ts', file: 'src/ledger/discovered.json',
     what: 'a ledger entry citing a theorem that is not in the tree',
     mutate: (s) => s.replace(/\n\]\s*$/, ',\n  { "key": "lean_probe_absent", "name": "lean probe.lean: probe_absent — a key with nothing behind it", "receipt": "00000000-0000-8000-8000-000000000000" }\n]') },
 
@@ -394,7 +394,7 @@ const CONTROLS: Control[] = [
     mutate: (s) => s.replace(/"version": "[^"]+"/, '"version": "1.3.5"') },
 
   { gate: 'zenodo-sync', cmd: 'node scripts/zenodo-sync.ts --check',
-    file: 'src/proof/citations.json',
+    file: 'src/ledger/citations.json',
     what: 'a reception measurement with no date — which would publish "0 citing works" where the truth is NOT MEASURED',
     mutate: (s) => s.replace(/"measured":\s*"[^"]*"/, '"measured": ""') },
 
@@ -404,7 +404,7 @@ const CONTROLS: Control[] = [
     mutate: (s) => s.replace('"description": "', '"description": "FALSIFIED CONTROL — this no longer matches its theorem. ') },
 
   { gate: 'contradictions (self-certifying literal)', cmd: 'node scripts/contradictions.ts',
-    file: 'src/proof/phenomena.lean',
+    file: 'src/iso/9001-governance/phenomena.lean',
     what: 'a constant decided against its own literal and used nowhere else',
     mutate: (s) => s.replace('end Phenomena', 'def probeClaims : Nat := 0\ntheorem probe_is_zero : probeClaims = 0 := by decide\n\nend Phenomena') },
 
@@ -414,7 +414,7 @@ const CONTROLS: Control[] = [
   // theorem that does. The defect it guards is the one the seven Clay names carried for months undetected:
   // something typed by a person quietly becoming load-bearing while every gate stays green.
   { gate: 'contradictions (a declared choice spreading)', cmd: 'node scripts/contradictions.ts',
-    file: 'src/proof/theology.lean',
+    file: 'src/iso/80000-2-mathematics/theology.lean',
     what: 'a second theorem leaning on the one list the file types out as a choice',
     mutate: (s) => s.replace('end Theology', 'theorem probe_leans_on_the_choice :\n  pairing.length = span.length + 1 := by decide\n\nend Theology') },
 
@@ -521,14 +521,14 @@ const CONTROLS: Control[] = [
   // bad afternoon would make a green build depend on somebody else's uptime. It is `npm run sources`, run
   // before an investigation is believed — which is exactly when it matters.
   // PRIORITY IS THE STRONGEST THING THE AUTHOR HAS, so its record is the last place a typed date belongs.
-  // src/proof/provenance.json is computed from the registry that issued the DOIs and from this repository's
+  // src/ledger/provenance.json is computed from the registry that issued the DOIs and from this repository's
   // root commit; the page renders every figure out of it. The mutation moves the recorded deposit date, and
   // the check must notice that the registry no longer says what the record says.
   //
   // The first version of the measurement had `git log --reverse -1`, which applies the limit BEFORE
   // reversing and returns the NEWEST commit — it reported the lead as 48 days instead of 3, inflating the
   // author's priority. A wrong number that flatters the claim its page is about is the kind that survives.
-  { gate: 'provenance', cmd: 'node scripts/provenance.ts', file: 'src/proof/provenance.json',
+  { gate: 'provenance', cmd: 'node scripts/provenance.ts', file: 'src/ledger/provenance.json',
     what: 'a recorded priority date the issuing registry no longer agrees with',
     mutate: (s) => s.replace(/"earliestDeposit":\s*"[0-9-]+"/, '"earliestDeposit": "2026-08-01"') },
 
@@ -536,7 +536,7 @@ const CONTROLS: Control[] = [
     what: 'a live reader that answers without the answer known to be in it',
     mutate: (s) => s.replace('/Powers of 2/i', '/a string no sequence database will ever return/i') },
 
-  { gate: 'novelty', cmd: 'node scripts/novelty.ts --limit 0', file: 'src/proof/novelty.json',
+  { gate: 'novelty', cmd: 'node scripts/novelty.ts --limit 0', file: 'src/ledger/novelty.json',
     what: 'a prior-art record claiming a completed search that records no query',
     mutate: (s) => s.replace(/"queries": \{[^}]*\}/g, '"queries": {}') },
 
@@ -565,7 +565,7 @@ const CONTROLS: Control[] = [
     mutate: (s) => s.replace('// the apple — gravity.', '// This framework explains gravitation.\n// the apple — gravity.') },
 
   { gate: 'contradictions (physical claim in a name)', cmd: 'node scripts/contradictions.ts',
-    file: 'src/proof/coin.lean',
+    file: 'src/iso/22739-ledger/coin.lean',
     what: 'a refusing file publishing a theorem NAME that asserts a physical fact',
     mutate: (s) => s.replace('end Coin', 'theorem the_reflection_is_the_mass_of_a_star : digits.length = 10 := by decide\n\nend Coin') },
 
@@ -595,7 +595,7 @@ const CONTROLS: Control[] = [
     what: 'the front page quoting a registry size that is not the registry size',
     mutate: (s) => s.replace(/(\d+) registered claims/, '9999 registered claims') },
 
-  { gate: 'forensics', cmd: 'node scripts/forensics.ts', file: 'src/proof/discovered.json',
+  { gate: 'forensics', cmd: 'node scripts/forensics.ts', file: 'src/ledger/discovered.json',
     what: 'a receipt altered mid-chain',
     mutate: (s) => { const l = JSON.parse(s); l[400].receipt = '00000000-0000-8000-8000-000000000000'; return JSON.stringify(l, null, 2) + '\n' } },
 
@@ -603,7 +603,7 @@ const CONTROLS: Control[] = [
     what: 'a theorem that does not hold',   // no --full: the cache keys on content, so a mutated file re-verifies and an untouched one does not
     mutate: (s) => s.replace('.length = 1', '.length = 2') },
 
-  { gate: 'lean-agree', cmd: 'node scripts/lean-agree.ts', file: 'src/proof/merkaba.lean',
+  { gate: 'lean-agree', cmd: 'node scripts/lean-agree.ts', file: 'src/iso/80000-2-mathematics/merkaba.lean',
     what: 'a constant the proofs reason about drifting from the one the runtime uses',
     mutate: (s) => s.replace('def axis  : List Nat := [3, 6, 0]', 'def axis  : List Nat := [3, 6, 1]') },
 
@@ -650,7 +650,7 @@ const CONTROLS: Control[] = [
   // rendered as a legal notice on the strength of an old seal. It checks the property on the rows it parsed
   // now, and this is the control: claiming a registered trade mark, which a registry grants and an author
   // cannot, must stop the page being written.
-  { gate: 'rights', cmd: 'node scripts/rights.ts', file: 'src/proof/rights.lean',
+  { gate: 'rights', cmd: 'node scripts/rights.ts', file: 'src/iso/690-record/rights.lean',
     what: 'a right claimed that does not arise without formality — a registry\'s act asserted as an author\'s',
     mutate: (s) => s.replace('  , (4, 1, false, false)', '  , (4, 1, false, true )') },
 
@@ -681,13 +681,13 @@ const CONTROLS: Control[] = [
   // FOUND BY scripts/blind.ts, NOT BY ME. A seeded trial moved one digit in the rights table and the whole
   // chain stayed green: EPC Art. 52 — what may be patented — became Art. 53, a different provision. The
   // control is that exact drift.
-  { gate: 'citations-gate', cmd: 'node scripts/citations-gate.ts', file: 'src/proof/rights.lean',
+  { gate: 'citations-gate', cmd: 'node scripts/citations-gate.ts', file: 'src/iso/690-record/rights.lean',
     what: 'a legal article number that drifted — the deposit citing a provision it does not mean',
     mutate: (s) => s.replace('EPC Art. 52(2)(a)', 'EPC Art. 53(2)(a)') },
 
   // A theorem quantified over an empty domain is true and decides nothing. The control plants exactly that
   // and vacuity must find it; without this the sweep is trusted only because it reports zero.
-  { gate: 'vacuity', cmd: 'node scripts/vacuity.ts', file: 'src/proof/elementary.lean',
+  { gate: 'vacuity', cmd: 'node scripts/vacuity.ts', file: 'src/iso/80000-2-mathematics/elementary.lean',
     what: 'a theorem whose quantifier ranges over nothing — green, named, and deciding no case at all',
     mutate: (s) => s.replace('-- ── what these settle ──', 'theorem vacuity_control_plant :\n  (List.range 0).all (fun n => n * n == n + 12345) := by decide\n\n-- ── what these settle ──') },
 
@@ -718,7 +718,7 @@ const CONTROLS: Control[] = [
     what: 'a carry rule that matches no ledger key at all — silently carrying nothing while the report looks healthy',
     mutate: (s) => s.replace('/^digrev_?(\\d+)$/', '/^digrev(\\d+)$/') },
 
-  { gate: 'notice-refuses-an-overclaim', cmd: 'node scripts/notice.ts', file: 'src/proof/rights.lean',
+  { gate: 'notice-refuses-an-overclaim', cmd: 'node scripts/notice.ts', file: 'src/iso/690-record/rights.lean',
     what: 'a right published in llms.txt that does not arise without formality — the overclaim reaching the public surface',
     mutate: (s) => s.replace('  , (5, 2, false, false)', '  , (5, 2, false, true )'), restore: 'node scripts/notice.ts' },
 
@@ -730,7 +730,7 @@ const CONTROLS: Control[] = [
   // first run, which is the whole reason a control is checked for matching anything at all: a mutation that
   // edits nothing makes any gate look vigilant. This one breaks the FINITE-DOMAIN claim, whose test reads
   // the source for a quantifier over ℕ — readme must refuse to write a sentence the file has stopped earning.
-  { gate: 'readme', cmd: 'node scripts/readme.ts', file: 'src/proof/index.lean',
+  { gate: 'readme', cmd: 'node scripts/readme.ts', file: 'src/iso/9001-governance/index.lean',
     what: 'a statement quantified over an infinite domain, which the finite-domain claim says is not there',
     mutate: (s) => s.replace('theorem the_seven_rest_on_one_finite_structure :',
       'theorem the_seven_reach_past_the_finite (n : Nat) : \u2200 m : \u2115, m = m := by intro m; rfl\ntheorem the_seven_rest_on_one_finite_structure :') },
@@ -762,7 +762,7 @@ const CONTROLS: Control[] = [
     what: 'a fold whose root depends on the order its segments arrive in',
     mutate: (s) => s.replace('let layer = [...leaves].sort()', 'let layer = [...leaves]') },
 
-  { gate: 'retire-lexical', cmd: 'node scripts/retire-lexical.ts', file: 'src/proof/discovered.json',
+  { gate: 'retire-lexical', cmd: 'node scripts/retire-lexical.ts', file: 'src/ledger/discovered.json',
     what: 'an entry filed as testing the removed gate whose test now passes',
     mutate: (s) => { const l = JSON.parse(s)
       const holds = l.find((e: { key: string; reason?: string }) => e.key === 'the_seven_locales_all_hold_the_honest_floor')
@@ -790,7 +790,7 @@ const CONTROLS: Control[] = [
     mutate: (s) => s.replace("  : `m9 (${a} * d + ${b})`", "  : `m9 (${a} * d + ${b} + 1)`"),
     restore: 'node scripts/imagine.ts --emit' },
 
-  { gate: 'verify', cmd: 'node scripts/verify.ts', file: 'src/proof/discovered.json',
+  { gate: 'verify', cmd: 'node scripts/verify.ts', file: 'src/ledger/discovered.json',
     what: 'an entry citing a theorem that is not sealed',
     mutate: (s) => { const l = JSON.parse(s)
       const e = l.find((x: { key: string; revoked?: boolean }) => !x.revoked && x.key.startsWith('lean_'))

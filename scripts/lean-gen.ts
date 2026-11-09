@@ -190,7 +190,7 @@ const rows: { fam: string; members: number; agree: boolean; note: string }[] = [
 // The whole CONTIGUOUS block, in order — not a list of keys. Keying it lost `prior_art_pool` (absent from
 // my list) while keeping its continuation lines, producing a header that read as an orphaned fragment. An
 // attribution is prose written by a person: carry the region, not the fields someone remembered.
-const priorPrev = existsSync('src/proof/generated.lean') ? readFileSync('src/proof/generated.lean', 'utf8').split('\n') : []
+const priorPrev = existsSync('src/iso/iec-2382-computing/generated.lean') ? readFileSync('src/iso/iec-2382-computing/generated.lean', 'utf8').split('\n') : []
 const firstArt = priorPrev.findIndex((l) => /^-- prior_art/.test(l))
 let lastArt = firstArt
 if (firstArt >= 0) {
@@ -230,7 +230,7 @@ for (const [key, f] of Object.entries(FAMILIES)) {
     subsumes: f.params.map((n) => key + (key.endsWith('_') ? '' : '_') + n) })
 }
 
-const OUT = 'src/proof/generated.lean'
+const OUT = 'src/iso/iec-2382-computing/generated.lean'
 if (emit) {
   writeFileSync(OUT, body)
   // GATE 1 — compile
@@ -241,7 +241,7 @@ if (emit) {
   const ax = execSync('lean /tmp/gen_ax.lean', { encoding: 'utf8' })
   const dirty = ax.split('\n').filter((l) => l.includes('depends on axioms'))
   if (dirty.length) { console.error('✗ AXIOMS — not axiom-free:\n' + dirty.map((d) => '  ' + d).join('\n')); process.exit(1) }
-  writeFileSync('src/proof/generated-theorems.json', JSON.stringify(records, null, 2) + '\n')
+  writeFileSync('src/ledger/generated-theorems.json', JSON.stringify(records, null, 2) + '\n')
   console.log(`✓ ${OUT} — ${names.length} theorems: compiled, axiom-free, agreeing with the ledger`)
   console.log(`✓ generated-theorems.json — ${records.length} records, content-addressed, in uuidna's shape`)
 }

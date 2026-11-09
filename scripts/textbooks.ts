@@ -9,7 +9,7 @@
 // A PARTICLE per theorem: its key, its base and variant kind, the human sentence, the qpu examples it names, the
 // statement, its coin (toUuid of "<key> : <statement>"), the numerals the sentence and the statement share, whether it
 // is physics, the derivation its sentence names, and whether this deposit derives it independently
-// (src/proof/quantum_textbooks.lean). Nothing is judged by hand: every field is read off the two texts.
+// (src/quantum/quantum_textbooks.lean). Nothing is judged by hand: every field is read off the two texts.
 //
 // THE CONTROL: a synthetic sentence and statement with no numeral in common must decode as "the sentence states none of the statement's numbers", or the run fails
 // — a decoder that cannot say "these disagree" decodes nothing.

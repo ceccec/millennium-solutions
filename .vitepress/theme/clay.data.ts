@@ -2,7 +2,7 @@
 //
 // NOTHING IS TYPED HERE. The author's claim comes verbatim from src/millennium (AUTHOR_CLAIM, moved never
 // edited), the seven problems and their bounds from MILLENNIUM, the decided statement and case count from
-// src/proof/index.lean, and the receipt from the append-only ledger — the same sources claySection() reads
+// src/iso/9001-governance/index.lean, and the receipt from the append-only ledger — the same sources claySection() reads
 // for the README and the homepage. This loader only reshapes them for a Vue component; it mints no claim.
 import { MILLENNIUM, AUTHOR_CLAIM } from '../../src/millennium/index.ts'
 import { leanTheorems, ledger, domainOf } from '../../src/api/index.ts'
@@ -18,7 +18,7 @@ export { data }
 
 export default {
   // re-run the loader when any of the sealed sources changes
-  watch: ['../../src/proof/index.lean', '../../src/millennium/index.ts'],
+  watch: ['../../src/iso/9001-governance/index.lean', '../../src/millennium/index.ts'],
   load(): ClayData {
     const thms = leanTheorems() as { name: string; file: string; statement: string; tactic: string }[]
     const live = (ledger() as { key: string; receipt: string; revoked?: boolean }[]).filter((e) => !e.revoked)

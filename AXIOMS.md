@@ -5,18 +5,18 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **26,021** report the same thing:
+axiom fails the build rather than earning a footnote. All **26,213** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **787** definitions, and every one of them is a choice. A theorem about
+theorems rest on **1,091** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
 ## The check can tell the difference
 
 "No theorem depends on an axiom" reads identically whether the check works or is pointed at nothing, so
-a negative control is kept at [`src/proof/fixtures/axiom-control.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/fixtures/axiom-control.lean)
+a negative control is kept at [`src/ledger/fixtures/axiom-control.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/ledger/fixtures/axiom-control.lean)
 and run by this page's generator. It holds two theorems about the same kind of fact — one decided, one
 obtained classically — and Lean reports:
 
@@ -90,13 +90,13 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 787 definitions
+## What IS assumed: the 1,091 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
 deposit that reports its axiom count and hides its definition count is reporting the flattering half.
 
-### `address.lean` — 19 definition(s), 33 theorem(s)
+### `address.lean` — 20 definition(s), 33 theorem(s)
 
 ```lean
 def andF : Nat → Nat → Nat → Nat
@@ -118,6 +118,7 @@ def bbp (M N : Nat) : Nat := bbpPos M N - bbpNeg M N
 def eSeries (M N : Nat) : Nat := (List.range N).foldl (fun s k => s + 16 ^ M / kfact k) 0
 def fnv0 (cs : List Nat) : Nat := cs.foldl (fun h c => xor32 ((h * FNV_PRIME) % M32) c) 0
 def SIGNATURE : List Nat :=
+def bracketsPhi (w : Nat) : Bool := (2 * w + 2 ^ 32) ^ 2 ≤ 5 * 2 ^ 64 && 5 * 2 ^ 64 < (2 * w + 2 + 2 ^ 32) ^ 2
 ```
 
 ### `answer.lean` — 8 definition(s), 8 theorem(s)
@@ -152,16 +153,20 @@ def allBools : List Bool := [false, true]
 def allFeatures : List Features :=
 ```
 
-### `apis.lean` — 7 definition(s), 4 theorem(s)
+### `apis.lean` — 11 definition(s), 4 theorem(s)
 
 ```lean
 def catalogue : Nat := 2529
 def specProven : Nat := 2529
-def reachable : Nat := 104
+def reachable : Nat := 102
 def notReachable : Nat := 155
 def refused : Nat := 27
 def gated : Nat := 2006
-def notMeasured : Nat := 237
+def notMeasured : Nat := 239
+def liveVerdicts : List Nat := [0, 3, 3, 1, 3, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 3, 3, 3, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 1, 0, 0, 1, 3, 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 4, 3, 4, 4, 3, 4, 2, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 4, 1, 3, 3, 2, 2, 3, 4, 1, 4, 1, 0, 3, 2, 4, 3, 3, 1, 3, 4, 3, 4, 3, 4, 3, 1, 3, 2, 3, 4, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 4, 0, 3, 3, 3, 4, 3, 3, 3, 1, 3, 3, 3, 4, 4, 3, 1, 0, 2, 3, 3, 3, 4, 3, 4, 1, 3, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 1, 3, 3, 0, 3, 3, 3, 3, 1, 4, 3, 3, 4, 4, 3, 4, 0, 4, 3, 3, 3, 4, 4, 3, 4, 1, 3, 1, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 3, 4, 0, 3, 1, 0, 0, 4, 1, 3, 3, 3, 3, 4, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 2, 3, 3, 3, 4, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 4, 0, 4, 3, 2, 1, 3, 1, 3, 1, 3, 4, 3, 3, 4, 3, 3, 3, 1, 3, 4, 4, 3, 2, 3, 3, 2, 2, 1, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 1, 1, 0, 3, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 3, 1, 1, 3, 3, 1, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 0, 3, 0, 3, 1, 1, 0, 3, 3, 4, 2, 1, 4, 3, 1, 3, 3, 3, 3, 4, 0, 3, 3, 4, 4, 1, 1, 1, 4, 4, 4, 4, 0, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 3, 4, 3, 1, 1, 1, 4, 3, 3, 0, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 4, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 1, 4, 4, 1, 3, 3, 3, 4, 3, 3, 3, 3, 3, 4, 3, 3, 0, 4, 1, 3, 3, 0, 0, 2, 3, 3, 3, 3, 4, 4, 3, 0, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 2, 0, 3, 1, 3, 3, 3, 3, 3, 1, 4, 3, 2, 1, 2, 3, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 4, 3, 3, 4, 0, 1, 3, 4, 3, 4, 4, 4, 4, 3, 1, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 3, 3, 0, 3, 1, 4, 3, 4, 1, 3, 3, 3, 3, 0, 4, 4, 4, 0, 3, 4, 4, 3, 4, 4, 3, 4, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 1, 3, 3, 3, 1, 3, 3, 3, 1, 3, 3, 1, 3, 1, 3, 3, 4, 3, 3, 3, 4, 1, 3, 3, 3, 3, 3, 4, 1, 4, 1, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 3, 0, 4, 0, 3, 3, 3, 1, 4, 0, 3, 4, 4, 3, 3, 3, 3, 3, 2, 3, 4, 3, 3, 4, 3, 4, 4, 4, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 0, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 4, 4, 3, 3, 4, 0, 0, 4, 4, 4, 4, 0, 1, 4, 4, 4, 4, 0, 4, 3, 3, 3, 3, 4, 3, 3, 3, 4, 3, 4, 4, 1, 3, 4, 1, 3, 3, 3, 3, 0, 3, 3, 2, 2, 3, 4, 4, 3, 3, 3, 4, 3, 4, 3, 3, 4, 0, 4, 3, 0, 4, 3, 4, 2, 2, 2, 2, 4, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 3, 4, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 4, 4, 3, 4, 0, 0, 3, 4, 3, 1, 1, 3, 4, 3, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 4, 0, 3, 3, 1, 3, 4, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 1, 3, 1, 3, 3, 4, 1, 0, 3, 4, 4, 4, 1, 3, 4, 3, 3, 3, 0, 3, 3, 3, 1, 1, 1, 1, 1, 3, 1, 4, 3, 3, 3, 3, 3, 3, 3, 4, 4, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 4, 0, 3, 3, 3, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 4, 3, 0, 3, 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 3, 3, 1, 0, 1, 4, 4, 3, 3, 1, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 0, 4, 3, 3, 1, 3, 3, 3, 3, 3, 0, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 0, 3, 1, 3, 0, 3, 4, 3, 3, 3, 3, 3, 1]
+def specVerdicts : List Nat := [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+def tally (vs : List Nat) (k : Nat) : Nat := (vs.filter (fun v => v == k)).length
+def isPartition (vs : List Nat) (k : Nat) : Bool :=
 ```
 
 ### `arith.lean` — 3 definition(s), 7 theorem(s)
@@ -224,31 +229,37 @@ def free : Nat := freeOf reserved
 def reservations : List Nat := List.range (container + 1)
 ```
 
-### `cern.lean` — 22 definition(s), 9 theorem(s)
+### `cern.lean` — 28 definition(s), 9 theorem(s)
 
 ```lean
-def sitemaps : Nat := 317
-def urls : Nat := 158489
-def listedRecordUrls : Nat := 150102
-def duplicatedInSitemap : Nat := 36873
-def records : Nat := 113229
-def distinctRecids : Nat := 61497
-def nonRecordUrls : Nat := 8387
-def numericIds : Nat := 57408
-def slugAliases : Nat := 55821
-def canonicalRecords : Nat := 61497
-def addresses : Nat := 113229
+def sitemaps : Nat := 318
+def urls : Nat := 158518
+def listedRecordUrls : Nat := 151435
+def duplicatedInSitemap : Nat := 41728
+def records : Nat := 109707
+def distinctRecids : Nat := 62229
+def nonRecordUrls : Nat := 7083
+def numericIds : Nat := 51375
+def slugAliases : Nat := 58332
+def canonicalRecords : Nat := 62229
+def addresses : Nat := 109707
 def collisions : Nat := 0
 def notInvolutive : Nat := 0
-def fixed : Nat := 12400
-def swapped : Nat := 100829
+def fixed : Nat := 12063
+def swapped : Nat := 97644
 def oaiHarvested : Nat := 74614
 def oaiCompleteListSize : Nat := 74614
 def oaiInBoth : Nat := 61488
 def oaiOnly : Nat := 13126
 def siteOnly : Nat := 9
 def oaiUnion : Nat := 74623
-def roots : List Nat := [0, 12517, 12499, 12534, 12769, 12400, 12681, 12508, 12777, 12544]
+def total (xs : List Nat) : Nat := xs.foldl (fun a b => a + b) 0
+def partition (parts : List Nat) (whole : Nat) : Bool := total parts == whole
+def exact (parts : List Nat) (whole : Nat) : Bool :=
+def roots : List Nat := [0, 12077, 12112, 12147, 12381, 12063, 12222, 12199, 12350, 12156]
+def reflect (d : Nat) : Nat := 10 - d
+def fixedDigits : List Nat := (List.range 10).filter (fun d => reflect d == d)
+def bucketSum (rs : List Nat) (ds : List Nat) : Nat := ds.foldl (fun a d => a + rs.getD d 0) 0
 ```
 
 ### `closure.lean` — 13 definition(s), 8 theorem(s)
@@ -297,6 +308,15 @@ def axis : List Nat := [3, 6, 9]
 def digits : List Nat := [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 def fall (n : Nat) : Nat := if n == 0 then 9 else 1 + (n - 1) % 9
 def nonzero : List Nat := [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+### `combinatorics.lean` — 4 definition(s), 8 theorem(s)
+
+```lean
+def factorial : Nat → Nat
+def choose : Nat → Nat → Nat
+def triangular : Nat → Nat
+def ramsey22 (n : Nat) : Nat := n            -- the two-colour Ramsey number R(2, n)
 ```
 
 ### `counting-rocks.lean` — 6 definition(s), 9 theorem(s)
@@ -820,6 +840,49 @@ def denominators : List Nat := [2, 2, 2, 7, 5, 3, 2, 3]
 def product (l : List Nat) : Nat := l.foldr (· * ·) 1
 ```
 
+### `pauli_paths.lean` — 38 definition(s), 8 theorem(s)
+
+```lean
+abbrev Zw := Int × Int × Int × Int
+def zadd (x y : Zw) : Zw := (x.1 + y.1, x.2.1 + y.2.1, x.2.2.1 + y.2.2.1, x.2.2.2 + y.2.2.2)
+def zneg (x : Zw) : Zw := (-x.1, -x.2.1, -x.2.2.1, -x.2.2.2)
+def zmul (x y : Zw) : Zw :=
+def zconj (x : Zw) : Zw := (x.1, -x.2.2.2, -x.2.2.1, -x.2.1)
+def z0 : Zw := (0, 0, 0, 0)
+def z1 : Zw := (1, 0, 0, 0)
+def zi : Zw := (0, 0, 1, 0)        -- i = ω²
+def w1 : Zw := (0, 1, 0, 0)        -- ω
+def root2 : Zw := (0, 1, 0, -1)    -- √2 = ω − ω³
+abbrev M2 := Zw × Zw × Zw × Zw
+def mul2 (p q : M2) : M2 :=
+def add2 (p q : M2) : M2 := (zadd p.1 q.1, zadd p.2.1 q.2.1, zadd p.2.2.1 q.2.2.1, zadd p.2.2.2 q.2.2.2)
+def scale2 (s : Zw) (p : M2) : M2 := (zmul s p.1, zmul s p.2.1, zmul s p.2.2.1, zmul s p.2.2.2)
+def neg2 (p : M2) : M2 := scale2 (zneg z1) p
+def dag2 (p : M2) : M2 := (zconj p.1, zconj p.2.2.1, zconj p.2.1, zconj p.2.2.2)
+def I2 : M2 := (z1, z0, z0, z1)
+def X2 : M2 := (z0, z1, z1, z0)
+def Y2 : M2 := (z0, zneg zi, zi, z0)
+def Z2 : M2 := (z1, z0, z0, zneg z1)
+def H2 : M2 := (z1, z1, z1, zneg z1)            -- unnormalised: H2·H2 = 2·I
+def S2 : M2 := (z1, z0, z0, zi)
+def T2 : M2 := (z1, z0, z0, w1)
+def pauli (x z : Nat) : M2 := if x == 0 && z == 0 then I2 else if x == 1 && z == 0 then X2 else if x == 0 then Z2 else Y2
+def conj2 (g p : M2) : M2 := mul2 (dag2 g) (mul2 p g)
+def ent (p : M2) (r c : Nat) : Zw := if r == 0 then (if c == 0 then p.1 else p.2.1) else (if c == 0 then p.2.2.1 else p.2.2.2)
+def kron (a b : M2) (r c : Nat) : Zw := zmul (ent a (r / 2) (c / 2)) (ent b (r % 2) (c % 2))
+def mul4 (a b : Nat → Nat → Zw) (r c : Nat) : Zw := (List.range 4).foldl (fun s k => zadd s (zmul (a r k) (b k c))) z0
+def eq4 (a b : Nat → Nat → Zw) : Bool := (List.range 4).all (fun r => (List.range 4).all (fun c => a r c == b r c))
+def neg4 (a : Nat → Nat → Zw) (r c : Nat) : Zw := zneg (a r c)
+def CX4 (r c : Nat) : Zw := if (if c / 2 == 1 then 2 + (1 - c % 2) else c) == r then z1 else z0   -- |a b⟩ ↦ |a, b ⊕ a⟩
+def CZ4 (r c : Nat) : Zw := if r == c then (if r == 3 then zneg z1 else z1) else z0
+def cxRule (xc zc xt zt : Nat) (r c : Nat) : Zw :=
+def czRule (xc zc xt zt : Nat) (r c : Nat) : Zw :=
+def bits4 : List (Nat × Nat × Nat × Nat) := (List.range 16).map (fun i => (i % 2, i / 2 % 2, i / 4 % 2, i / 8 % 2))
+def terms (m : M2) : Nat := ([I2, X2, Y2, Z2].filter (fun p => let t := mul2 p m; zadd t.1 t.2.2.2 != z0)).length
+def wrongTX : M2 := add2 X2 Y2
+def wrongTY : M2 := add2 X2 (neg2 Y2)
+```
+
 ### `phenomena.lean` — 3 definition(s), 4 theorem(s)
 
 ```lean
@@ -940,7 +1003,15 @@ def flipBit (bs : List Bool) (i : Nat) : List Bool :=
 def settledHere : Nat := 21
 ```
 
-### `qpu.lean` — 8 definition(s), 8 theorem(s)
+### `qec.lean` — 3 definition(s), 8 theorem(s)
+
+```lean
+def surfacePhysical (d : Nat) : Nat := 2 * d ^ 2 - 2 * d + 1   -- rotated surface code, qpu's coins·d² − coins·d + seed
+def corrects (d : Nat) : Nat := (d - 1) / 2             -- a distance-d code corrects ⌊(d − 1)/2⌋ errors
+def pauliOrder (nn : Nat) : Nat := 2 ^ (2 * nn + 2)        -- qpu's paulis: order of the n-qubit Pauli group with phases
+```
+
+### `qpu.lean` — 35 definition(s), 24 theorem(s)
 
 ```lean
 def coins : Nat := 2
@@ -951,6 +1022,110 @@ def hexbit : Nat := 4
 def bits : Nat := 32
 def qubits : Nat := 3
 def levels : Nat := 2
+def clayMint (k : Nat) : Nat := 2 ^ k
+def clayN : Nat := ["quantum", "processing", "unit"].length
+def claySeed : Nat := clayMint (clayN - clayN)
+def clayCoins : Nat := claySeed + claySeed
+def clayRays : Nat := clayN + clayCoins + clayCoins
+def clayVertices : Nat := clayMint clayN
+def clayHexbit : Nat := clayMint clayCoins
+def clayBits : Nat := clayMint (clayN + clayCoins)
+def clayFaces : Nat := clayVertices + clayHexbit + clayCoins
+def clayPlane : Nat := clayCoins * clayCoins * clayRays
+def clayAmplitudes : Nat := clayMint clayBits
+def clayChimera (m : Nat) : Nat := clayVertices * m ^ 2
+def clayQaoaZz (p e : Nat) : Nat := p * e
+def clayGroverSize (k : Nat) : Nat := clayMint (2 * k)
+def clayQftStates (q : Nat) : Nat := 2 ^ q
+def clayQftGates (q : Nat) : Nat := q * (q + 1) / 2
+def clayTriangular : Nat → Nat
+def clayChoose : Nat → Nat → Nat
+def clayIsingFusion (m : Nat) : Nat := clayMint (m - claySeed)
+def clayCoil : Nat := clayCoins * clayRays
+def clayQaoaParams (p : Nat) : Nat := clayCoins * p
+def clayPowMod (a e m : Nat) : Nat := a ^ e % m
+def digitsIn (b : Nat) : Nat → Nat → List Nat
+def ofDigits (b : Nat) (ds : List Nat) : Nat := ds.foldl (fun acc d => acc * b + d) 0
+def rayRoundTrip (k n : Nat) : Nat := ofDigits (2 ^ k) (digitsIn (2 ^ k) (n + 1) n)
+def mirrorNat (fuel n : Nat) : Nat :=
+def bitLen (fuel n : Nat) : Nat := (digitsIn 2 fuel n).length
+```
+
+### `qpu_crypto.lean` — 43 definition(s), 16 theorem(s)
+
+```lean
+def sealModulus : Nat := Qpu.rays * (Qpu.faces - 1)
+def sealExponent : Nat := Qpu.rays
+def sealFold : Nat := 2 ^ Qpu.qubits
+def totient : Nat := (Qpu.rays - 1) * (Qpu.faces - 1 - 1)
+def rsaInverse : Nat := 31
+def rsa (e r : Nat) : Nat := r ^ e % sealModulus
+def sealOf (r : Nat) : Nat := 1 + rsa sealExponent r % sealFold
+def permutes (e : Nat) : Bool := (List.range sealModulus).all (fun y => ((List.range sealModulus).filter (fun r => rsa e r == y)).length == 1)
+def nibbleCount (v : Nat) : Nat := ((List.range sealModulus).filter (fun r => sealOf r == v)).length
+def qpuRegister (width : Nat) : Nat := 32 * width - width - 2
+def groverExponent : Nat := Capacity.free / 2
+def collisionExponent : Nat := Capacity.free / 3
+def isoFloor : Nat := 128
+def powMod (a e m : Nat) : Nat := a ^ e % m
+def periodAux : Nat → Nat → Nat → Nat → Nat
+def period (a m : Nat) : Nat := periodAux m a m 1
+def shorBase : Nat := 2 ^ Qpu.qubits
+def gcdAux : Nat → Nat → Nat → Nat
+def gcd (a b : Nat) : Nat := gcdAux (a + b) a b
+def units : List Nat := (List.range' 2 (sealModulus - 2)).filter (fun a => gcd a sealModulus == 1)
+def oddPeriod (a : Nat) : Bool := period a sealModulus % 2 == 1
+def landsOnMinusOne (a : Nat) : Bool := period a sealModulus % 2 == 0 && powMod a (period a sealModulus / 2) sealModulus == sealModulus - 1
+def splitsBy (a : Nat) : Bool := !(oddPeriod a || landsOnMinusOne a)
+def isPrime (n : Nat) : Bool := n ≥ 2 && (List.range' 2 (n - 2)).all (fun d => n % d != 0)
+def oddPrimes : List Nat := (List.range' 3 27).filter isPrime
+def small : List Nat := (List.range' 3 17).filter isPrime
+def splits (N : Nat) : List (Nat × Nat) := ((List.range' 2 N).filter (fun u => N % u == 0 && u * u ≤ N)).map (fun u => (u, N / u))
+def ceilSqrt (N : Nat) : Nat := ((List.range' 0 (N + 1)).find? (fun x => x * x ≥ N)).getD 0
+def witness (p q : Nat) : Nat := (p + q) / 2
+def decodes (N x : Nat) : Bool := (List.range' 0 (x - 1)).any (fun b => (x - b) * (x + b) == N)
+def blind (p q : Nat) : Nat := witness p q - ceilSqrt (p * q) + 1
+def thousand : Nat := 2 ^ 999 + 1
+def found : List Nat := [3, 3, 3, 3, 19, 1777, 3331, 17539, 23977, 87211, 304363, 25781083, 5814899281, 97377658867]
+def cofactor : Nat := 3609104950099351833043508337831612057396401348775709961277801618185533776454902446192620269318904367011984674065478055484306453675012250321071523714940753877783971448660823020399749748515419197076882611704620121314559503976901003284138222351507
+def powModAux : Nat → Nat → Nat → Nat → Nat → Nat
+def powModBin (b e m : Nat) : Nat := powModAux 1024 (b % m) e m (1 % m)
+def glOrder : Nat → Nat → Nat
+def gl (nn : Nat) : Nat := glOrder nn nn
+def smallPrime (n : Nat) : Bool := n ≥ 2 && (List.range' 2 99).all (fun d => d * d > n || n % d != 0)
+def triangular (q : Nat) : Nat := q * (q + 1) / 2
+def milu : Nat × Nat := (Qpu.clayPlane * (Qpu.faces - 1) - Qpu.qubits * Qpu.qubits, Qpu.clayPlane * Qpu.hexbit + 1)
+def groverIters (num den k : Nat) : Nat := num * 2 ^ k / (4 * den)
+def scaleCapacity (s : Nat) : Nat := 16 ^ s * (4 * s)
+```
+
+### `qpu_fold.lean` — 14 definition(s), 8 theorem(s)
+
+```lean
+def mask : Nat := 65536
+def prime : Nat := 435
+def bit (n i : Nat) : Nat := n / 2 ^ i % 2
+def xor16 (a b : Nat) : Nat := (List.range 16).foldl (fun acc i => acc + ((bit a i + bit b i) % 2) * 2 ^ i) 0
+def t0 (h0 c : Nat) : Nat := xor16 h0 c * prime
+def t1 (h0 h1 c : Nat) : Nat := h1 * prime + t0 h0 c / mask
+def t2 (h0 h1 h2 c : Nat) : Nat := h2 * prime + xor16 h0 c * 256 + t1 h0 h1 c / mask
+def newH3 (h0 h1 h2 h3 c : Nat) : Nat := (h3 * prime + h1 * 256 + t2 h0 h1 h2 c / mask) % mask
+def W : Nat := 4
+def Pbits : Nat := 8
+def coinOf (state : Nat) : Nat := state          -- the address as a function of the state (an embedding)
+def stateOf (text : Nat) : Nat := text % 2 ^ W   -- distinct texts collapse onto 2^W states
+def coin (text : Nat) : Nat := coinOf (stateOf text)
+def pairFill (a b : Nat) : Nat := a * 2 ^ W + b
+```
+
+### `qpu_gateway.lean` — 5 definition(s), 8 theorem(s)
+
+```lean
+def variant (low : Nat) : Nat := (low % 4) + 8
+def gateway (low : Nat) : Nat := variant low / 4
+def fromPartsVariant : Nat := 8
+def freeField (low : Nat) : Nat := low % 4
+def teleportMessages : List Nat := [0, 1, 2, 3]
 ```
 
 ### `quantum.lean` — 11 definition(s), 11 theorem(s)
@@ -967,6 +1142,161 @@ def settledHere : Nat := 11
 def bit (n i : Nat) : Nat := n / (2 ^ i) % 2
 def par3 (n : Nat) : Nat := (bit n 0 + bit n 1 + bit n 2) % 2
 def ghzXSupport : List Nat := [0, 3, 5, 6]
+```
+
+### `quantum_circuits.lean` — 17 definition(s), 8 theorem(s)
+
+```lean
+abbrev Zw := Int × Int × Int × Int
+def zadd (x y : Zw) : Zw := (x.1 + y.1, x.2.1 + y.2.1, x.2.2.1 + y.2.2.1, x.2.2.2 + y.2.2.2)
+def zneg (x : Zw) : Zw := (-x.1, -x.2.1, -x.2.2.1, -x.2.2.2)
+def zmul (x y : Zw) : Zw :=
+def zconj (x : Zw) : Zw := (x.1, -x.2.2.2, -x.2.2.1, -x.2.1)
+def norm (x : Zw) : Zw := zmul x (zconj x)
+def wpow (k : Nat) : Zw :=
+def P : Zw := (1, 0, 1, 0)   -- 1 + i
+def M : Zw := (1, 0, -1, 0)  -- 1 − i
+def root2 (n : Int) : Zw := (0, n, 0, -n)
+abbrev State := Zw × Zw × Zw × Zw
+def step (s : State) : Gate → State
+def run (gs : List Gate) : State := gs.foldl step ((1, 0, 0, 0), (0, 0, 0, 0), (0, 0, 0, 0), (0, 0, 0, 0))
+def bell : List Gate := [.rz 0 2, .sx 0, .rz 0 2, .rz 1 2, .sx 1, .rz 1 2, .cz, .rz 1 2, .sx 1, .rz 1 2]
+def chsh (ka kb : Nat) : List Gate := bell ++ [.rz 0 4, .sx 0, .rz 0 ka, .sx 0, .rz 1 4, .sx 1, .rz 1 kb, .sx 1]
+def corr (gs : List Gate) : Zw := let s := run gs; zadd (zadd (norm s.1) (norm s.2.2.2)) (zneg (zadd (norm s.2.1) (norm s.2.2.1)))
+def total (gs : List Gate) : Zw := let s := run gs; zadd (zadd (norm s.1) (norm s.2.1)) (zadd (norm s.2.2.1) (norm s.2.2.2))
+```
+
+### `quantum_hardware.lean` — 3 definition(s), 8 theorem(s)
+
+```lean
+def lhs (d0 n0 d1 n1 d2 n2 d3 n3 : Int) : Int := d0 * n1 * n2 * n3 + d1 * n0 * n2 * n3 + d2 * n0 * n1 * n3 - d3 * n0 * n1 * n2
+def rhs (n0 n1 n2 n3 : Int) : Int := 2 * n0 * n1 * n2 * n3
+def aboveClassical (d0 n0 d1 n1 d2 n2 d3 n3 : Int) : Bool := decide (lhs d0 n0 d1 n1 d2 n2 d3 n3 > rhs n0 n1 n2 n3)
+```
+
+### `quantum_models.lean` — 26 definition(s), 8 theorem(s)
+
+```lean
+def sgn (m : Nat) (x : Zw) : Zw := if m == 0 then x else zneg x
+def psi0 : Zw := (1, 0, 0, 0)
+def psi1 : Zw := (0, 1, 0, 0)
+def oneWay (cz : Bool) (k m : Nat) : Zw × Zw :=
+def gateOut (k m : Nat) : Zw × Zw :=
+abbrev Mat := Zw × Zw × Zw × Zw
+def mmul (a b : Mat) : Mat :=
+def zero : Zw := (0, 0, 0, 0)
+def one : Zw := (1, 0, 0, 0)
+def prop (a b : Mat) : Bool :=
+def sigma1 : Mat := (one, zero, zero, wpow 2)
+def hs : Mat := (one, one, one, zneg one)
+def sigma2 : Mat := mmul hs (mmul sigma1 hs)
+def ident : Mat := (one, zero, zero, one)
+def addIfNew (acc : List Mat) (m : Mat) : List Mat := if acc.any (fun a => prop a m) then acc else acc ++ [m]
+def grow (acc : List Mat) : List Mat := acc.foldl (fun r a => addIfNew (addIfNew r (mmul a sigma1)) (mmul a sigma2)) acc
+def braidGroup : Nat → List Mat
+def u00 : Zw := one
+def u01 : Zw := wpow 2
+def u10 : Zw := wpow 2
+def u11 : Zw := one
+def perm : Zw := zadd (zmul u00 u11) (zmul u01 u10)
+def splitter (a b : Nat) : Mat := (one, wpow a, wpow b, zneg (wpow (a + b)))
+def permOf (u : Mat) : Zw := zadd (zmul u.1 u.2.2.2) (zmul u.2.1 u.2.2.1)
+def unitary2 (u : Mat) : Bool :=
+def triangle : List Int :=
+```
+
+### `quantum_octave_124.lean` — 3 definition(s), 8 theorem(s)
+
+```lean
+def inParticle (b k : Nat) : Bool := k / 16 == b || (b == 7 && k ≥ 112)
+def particleReal (b : Nat) : Bool :=
+def particleSum (b : Nat) : Int :=
+```
+
+### `quantum_octave_128.lean` — 4 definition(s), 9 theorem(s)
+
+```lean
+def inParticle (b k : Nat) : Bool := k / 16 == b || (b == 7 && k == 128)
+def particleReal (b : Nat) : Bool :=
+def particleSum (b : Nat) : Int :=
+def covered : Bool := (List.range 129).all (fun k => ((List.range 8).filter (fun b => inParticle b k)).length == 1)
+```
+
+### `quantum_octaves.lean` — 7 definition(s), 7 theorem(s)
+
+```lean
+def row : Nat → List Nat
+def re4 (k : Nat) : Int := match k % 4 with | 0 => 1 | 2 => -1 | _ => 0
+def phases (k n : Nat) : Zw × Zw :=
+def twiceExpect (k n : Nat) : Zw := zadd (phases k n).1 (phases k n).2
+def twiceQuantum (n : Nat) : Int :=
+def reach : Nat → List Nat
+def expectationsReal (n : Nat) : Bool := (List.range (n + 1)).all (fun k => twiceExpect k n == (2 * re4 k, 0, 0, 0))
+```
+
+### `quantum_software.lean` — 33 definition(s), 8 theorem(s)
+
+```lean
+def bit (i k : Nat) : Nat := i / 2 ^ k % 2
+def flip (i k : Nat) : Nat := if bit i k == 1 then i - 2 ^ k else i + 2 ^ k
+def at ' (v : List Int) (i : Nat) : Int := v.getD i 0
+def gen (v : List Int) (f : Nat → Int) : List Int := (List.range v.length).map f
+def X (k : Nat) (v : List Int) : List Int := gen v (fun i => at' v (flip i k))
+def Z (k : Nat) (v : List Int) : List Int := gen v (fun i => if bit i k == 1 then -(at' v i) else at' v i)
+def H (k : Nat) (v : List Int) : List Int := gen v (fun i => if bit i k == 0 then at' v i + at' v (flip i k) else at' v (flip i k) - at' v i)
+def CX (c t : Nat) (v : List Int) : List Int := gen v (fun i => at' v (if bit i c == 1 then flip i t else i))
+def CZ (a b : Nat) (v : List Int) : List Int := gen v (fun i => if bit i a == 1 && bit i b == 1 then -(at' v i) else at' v i)
+def CCX (a b t : Nat) (v : List Int) : List Int := gen v (fun i => at' v (if bit i a == 1 && bit i b == 1 then flip i t else i))
+def swapIdx (i p q : Nat) : Nat := if bit i p == bit i q then i else flip (flip i p) q
+def CSWAP (c p q : Nat) (v : List Int) : List Int := gen v (fun i => at' v (if bit i c == 1 then swapIdx i p q else i))
+def neg (v : List Int) : List Int := v.map (fun a => -a)
+def scale (s : Int) (v : List Int) : List Int := v.map (fun a => s * a)
+def basis (n i : Nat) : List Int := (List.range n).map (fun j => if j == i then 1 else 0)
+def support (v : List Int) : List Nat := (List.range v.length).filter (fun i => at' v i != 0)
+def sq (v : List Int) : List Nat := v.map (fun a => a.natAbs * a.natAbs)
+def eig (op : List Int → List Int) (v : List Int) : Int := if op v == v then 1 else if op v == neg v then -1 else 0
+def range5 : List Int := [-2, -1, 0, 1, 2]
+def bell : List Int := [1, 0, 0, 1]
+def encode (m : Nat) (v : List Int) : List Int :=
+def decode (v : List Int) : List Int := H 0 (CX 0 1 v)
+def bitCode (a b : Int) : List Int := [a, 0, 0, 0, 0, 0, 0, b]
+def bitFix (v : List Int) : List Int :=
+def bitErr (e : Nat) (v : List Int) : List Int := if e == 0 then v else X (e - 1) v
+def plus3 : List Int := (List.range 8).map (fun _ => 1)
+def minus3 : List Int := (List.range 8).map (fun i => if (bit i 0 + bit i 1 + bit i 2) % 2 == 1 then -1 else 1)
+def phaseCode (a b : Int) : List Int := (List.range 8).map (fun i => a * at' plus3 i + b * at' minus3 i)
+def phaseFix (v : List Int) : List Int :=
+def phaseErr (e : Nat) (v : List Int) : List Int := if e == 0 then v else Z (e - 1) v
+def pair (p0 p1 f0 f1 : Int) : List Int :=
+def swapTest (v : List Int) : List Int := H 0 (CSWAP 0 1 2 (H 0 v))
+def weight (v : List Int) (o : Nat) : Int := ((List.range 8).filter (fun i => bit i 0 == o)).foldl (fun s i => s + at' v i * at' v i) 0
+```
+
+### `quantum_textbooks.lean` — 6 definition(s), 8 theorem(s)
+
+```lean
+def closeUnder (gens : List Mat) (acc : List Mat) : List Mat :=
+def generated (gens : List Mat) : Nat → List Mat
+def tgate : Mat := (one, zero, zero, wpow 1)
+def mpow (m : Mat) : Nat → Mat
+def dot (s x : Nat) : Nat := ((s % 2) * (x % 2) + (s / 2 % 2) * (x / 2 % 2) + (s / 4 % 2) * (x / 4 % 2)) % 2
+def sign (b : Nat) : Int := if b == 0 then 1 else -1
+```
+
+### `quantum_uuid_cluster.lean` — 11 definition(s), 8 theorem(s)
+
+```lean
+def bit (m a : Nat) : Nat := m / 2 ^ a % 2
+def flip (m a : Nat) : Nat := if bit m a == 1 then m - 2 ^ a else m + 2 ^ a
+def cz (a b : Nat) (p : Nat × Nat × Bool) : Nat × Nat × Bool :=
+def chain (n : Nat) (p : Nat × Nat × Bool) : Nat × Nat × Bool := (List.range (n - 1)).foldl (fun q a => cz a (a + 1) q) p
+def gen (n j : Nat) : Nat × Nat × Bool := chain n (2 ^ j, 0, false)
+def want (n j : Nat) : Nat × Nat × Bool := (2 ^ j, (if j > 0 then 2 ^ (j - 1) else 0) + (if j + 1 < n then 2 ^ (j + 1) else 0), false)
+def support (n i : Nat) : List Nat := (if i > 0 then [i - 1] else []) ++ [i] ++ (if i + 1 < n then [i + 1] else [])
+def xAt (i k : Nat) : Nat := if k == i then 1 else 0
+def zAt (i k : Nat) : Nat := if k + 1 == i || k == i + 1 then 1 else 0
+def commutes (n i j : Nat) : Bool :=
+def patterned (i : Nat) : Bool := (List.range 124).all (fun k => bit (want 124 i).1 k == xAt i k && bit (want 124 i).2.1 k == zAt i k)
 ```
 
 ### `ranking.lean` — 4 definition(s), 8 theorem(s)
@@ -1083,6 +1413,17 @@ def pow9 (b k : Nat) : Nat := Z9.pow9 b k
 def refl (d : Nat) : Nat := 10 - d  -- the shared reflection r(d) = 10 − d (the ½/heart-analogue centre)
 ```
 
+### `resources.lean` — 6 definition(s), 8 theorem(s)
+
+```lean
+def chimera (m : Nat) : Nat := 8 * m ^ 2        -- D-Wave Chimera: vertices (8) qubits per cell, m² cells
+def pegasus (m : Nat) : Nat := 24 * m * (m - 1) -- D-Wave Pegasus: vertices·n·m·(m−1) = 8·3·m·(m−1)
+def qftGates (q : Nat) : Nat := q * (q + 1) / 2  -- controlled-phase gates: the q-th triangular number
+def qftSwaps (q : Nat) : Nat := q / 2
+def qftDepth (q : Nat) : Nat := 2 * q - 1
+def qftStates (q : Nat) : Nat := 2 ^ q
+```
+
 ### `reversal.lean` — 6 definition(s), 29 theorem(s)
 
 ```lean
@@ -1151,7 +1492,7 @@ def byRfl : List Nat := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 def byOther : List Nat := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]
 ```
 
-### `speed.lean` — 11 definition(s), 20 theorem(s)
+### `speed.lean` — 20 definition(s), 28 theorem(s)
 
 ```lean
 def recomputeUs : Nat := 21582900   -- folding 2^20 leaves
@@ -1165,6 +1506,15 @@ def charsFor (b : Nat) : Nat := (128 + b - 1) / b
 def hexLo (x : Nat) : Nat := x % 16
 def hexHi (x : Nat) : Nat := x / 16
 def crossMul (a b : Nat) : Nat := (hexLo a * hexLo b + ((hexHi a * hexLo b + hexLo a * hexHi b) % 16) * 16) % 256
+def perItem (F c n : Nat) : Nat := (F + n * c) / n
+def wall (F c n k : Nat) : Nat := F + ((n + k - 1) / k) * c
+def sortN : List Nat → List Nat
+def foldHex (xs : List Nat) : Nat := (sortN xs).foldl (fun a d => (16 * a + d) % 4294967296) 7
+def hexOf (xs : List Nat) : List Nat := xs.map (fun v => v / 256 % 16)
+def measuredUnbounded : List Nat := [40459, 6912, 5184, 2661, 3370, 3820]
+def measuredBounded : List Nat := [28667, 7337, 5143, 2654, 2940, 2748, 4373]
+def fellTenfold (xs : List Nat) (i j : Nat) : Bool := xs.getD i 0 ≥ 10 * xs.getD j 0
+def rises (xs : List Nat) (i j : Nat) : Bool := xs.getD j 0 > xs.getD i 0
 ```
 
 ### `split.lean` — 8 definition(s), 22 theorem(s)
@@ -1178,6 +1528,46 @@ def isUnit9 (d : Nat) : Bool := (List.range 9).any (fun e => (d * e) % 9 == 1)
 def coins : Nat := 2
 def coinStep : Nat := 3 * coins
 def sealBits : Nat := 128
+```
+
+### `synthesis.lean` — 8 definition(s), 8 theorem(s)
+
+```lean
+def sympProd : Nat → Nat                                  -- ∏_{j=1}^{k} (4^j − 1)
+def symp (nn : Nat) : Nat := 2 ^ (nn * nn) * sympProd nn   -- |Sp(2n, 2)|
+def clifford (nn : Nat) : Nat := 2 ^ (2 * nn) * symp nn        -- |C_n|, the n-qubit Clifford group
+def fib : Nat → Nat                                       -- Fibonacci-anyon fusion dimension
+def ising (m : Nat) : Nat := 2 ^ (m - 1)                  -- Ising-anyon fusion dimension (m pairs)
+def qaoaParams (p : Nat)   : Nat := 2 * p                 -- two variational parameters per layer
+def qaoaZz (p e : Nat) : Nat := p * e                 -- cost-layer ZZ gates over e edges, p layers
+def qaoaX (p q : Nat) : Nat := p * q                 -- mixer X gates over q qubits, p layers
+```
+
+### `t_count_wall.lean` — 22 definition(s), 8 theorem(s)
+
+```lean
+abbrev Zw := Int × Int × Int × Int
+def zadd (x y : Zw) : Zw := (x.1 + y.1, x.2.1 + y.2.1, x.2.2.1 + y.2.2.1, x.2.2.2 + y.2.2.2)
+def zneg (x : Zw) : Zw := (-x.1, -x.2.1, -x.2.2.1, -x.2.2.2)
+def zmul (x y : Zw) : Zw :=
+def w1 : Zw := (0, 1, 0, 0)          -- ω
+def w7 : Zw := (0, 0, 0, -1)         -- ω⁷ = ω̄ = −ω³
+def bit (i k : Nat) : Nat := i / 2 ^ k % 2
+def flip (i k : Nat) : Nat := if bit i k == 1 then i - 2 ^ k else i + 2 ^ k
+def at ' (v : List Zw) (i : Nat) : Zw := v.getD i (0, 0, 0, 0)
+def gen (f : Nat → Zw) : List Zw := (List.range 8).map f
+def step (v : List Zw) : G → List Zw
+def run (gs : List G) (v : List Zw) : List Zw := gs.foldl step v
+def basis (i : Nat) : List Zw := gen (fun j => if j == i then (1, 0, 0, 0) else (0, 0, 0, 0))
+def toffoliOf (i : Nat) : Nat := if bit i 0 == 1 && bit i 1 == 1 then flip i 2 else i
+def sevenT : List G :=
+def tGates (gs : List G) : Nat := (gs.filter (fun g => match g with | .t _ => true | .tdg _ => true | _ => false)).length
+def adderToffolis (n : Nat) : Nat := 2 * n
+def shorToffolis (n : Nat) : Nat := (2 * n) * n * adderToffolis n
+def shorT (n : Nat) : Nat := 7 * shorToffolis n
+def shorQubits (n : Nat) : Nat := 2 * n + 3
+def worstTerms (t : Nat) : Nat := 2 ^ t
+def cost (t _width : Nat) : Nat := worstTerms t
 ```
 
 ### `theology.lean` — 13 definition(s), 8 theorem(s)
@@ -1215,6 +1605,15 @@ def ring : List Nat := List.range 9
 def sources : Nat := 5
 def verdict (keyTerms relevant silent : Nat) : Nat :=
 def R : List Nat := List.range 8
+```
+
+### `width.lean` — 4 definition(s), 8 theorem(s)
+
+```lean
+def reg (w : Nat) : Nat := 32 * w - w - 2   -- qpu's uuidQubits: the free register at hexbit width w (also the state-vector cost exponent: 2^(reg w) amplitudes)
+def grover (w : Nat) : Nat := reg w / 2        -- the square-root (Grover / birthday) exponent on that register
+def isoFloor : Nat := 128                       -- the ISO post-quantum floor
+def widths : List Nat := [4, 8, 16, 32]         -- qpu's four hexbit widths; width 4 is the 128-bit UUID
 ```
 
 ### `widths.lean` — 2 definition(s), 24 theorem(s)
@@ -1260,6 +1659,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**26,021** declarations, **0** axiom dependencies, **787** definitions they rest on.
+**26,213** declarations, **0** axiom dependencies, **1,091** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

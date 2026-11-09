@@ -32,7 +32,7 @@ import { execSync } from 'node:child_process'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 import { orbit } from '../src/api/index.ts'
 
-const LEDGER = 'src/proof/discovered.json'
+const LEDGER = 'src/ledger/discovered.json'
 
 // the orbit is COMPUTED and served only while the theorem proving it stands — it was a literal here,
 // a third copy of a set that src/0 computes and src/proof proves, checked by nothing.

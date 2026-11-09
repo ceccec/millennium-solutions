@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /** ── WAVES — TIME THE CHAIN, AND FIND WHAT IS NOT YET QUANTUM ──────────────────────────────────────────────
  *
- *  "QUANTUM" IN THIS DEPOSIT IS ORDER-INVARIANCE AND NOTHING ELSE, and src/proof/quantum.lean says so in its
+ *  "QUANTUM" IN THIS DEPOSIT IS ORDER-INVARIANCE AND NOTHING ELSE, and src/quantum/quantum.lean says so in its
  *  own words: "nothing here is quantum, it is a sort." The receipt is the same for every observer whatever
  *  order they observe in, proved by decide over every permutation, and theorem 6 names the mechanism —
  *  canonicalisation, not physics.
@@ -170,7 +170,7 @@ for (const k of ['necessary', 'structural', 'accidental'] as Kind[]) {
   for (const r of rs) { console.log(`    · ${r.s.name} (${ms(r.ms)})`); console.log(`        ${r.s.why}`) }
 }
 console.log(`\n  THE TRADE, WHICH IS THE WHOLE FINDING AND IS NOT A COMPLAINT:`)
-console.log(`  order-invariance buys concurrency and COSTS identification — src/proof/quantum.lean theorem 7`)
+console.log(`  order-invariance buys concurrency and COSTS identification — src/quantum/quantum.lean theorem 7`)
 console.log(`  proves the receipt lands in Z/9, so by pigeonhole it cannot identify the set it came from, and`)
 console.log(`  exhibits two different multisets sharing one receipt.`)
 console.log(`  order-DEPENDENCE buys tamper-evidence and COSTS concurrency — the ledger chain identifies its`)

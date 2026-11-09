@@ -22,7 +22,7 @@ They were removed on 2026-09-20. Almost everything they held is decided already 
 fixed digit, the (ℤ/7)* orbit, 432 = 2⁴·3³. That was two derivations of one fact, and the unchecked one was
 the second. Three facts existed nowhere else and were brought under the kernel first, because deleting the
 only copy of something is a loss and not a purge — they are in
-[`src/proof/nucleus.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/nucleus.lean):
+[`src/iso/80000-physics/nucleus.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/iso/80000-physics/nucleus.lean):
 the shell-model closure sums, the self-seal product cleared of its denominators, and the 108·17 = 1836 fit
 together with the refusal that it is not the measured ratio.
 
@@ -30,15 +30,15 @@ together with the refusal that it is not the measured ratio.
 
 Clay is the main lead — the seven Millennium problems are the subject the rest of the deposit is developed
 around. Below, the author's claim as he deposited it on Zenodo (3 August 2026), rendered verbatim and in his
-name, and beside each problem the one theorem in `src/proof/index.lean` that stands with it, the statement the
+name, and beside each problem the one theorem in `src/iso/9001-governance/index.lean` that stands with it, the statement the
 Lean kernel decided and over how many cases, the **bound** — what it establishes and, in the same sentence,
 what it does not — and the ledger receipt. Nothing on this surface is typed; the widget reads the sealed
 sources on every build.
 
 <ClayLeads />
 
-The same involution runs across the subjects — `src/proof/bridge.lean` decides which cross-subject families of
-`src/entangle` reduce, mod 9, to orbits of the affine maps `src/proof/group.lean` settles, with one family kept
+The same involution runs across the subjects — `src/iso/80000-2-mathematics/bridge.lean` decides which cross-subject families of
+`src/entangle` reduce, mod 9, to orbits of the affine maps `src/iso/80000-2-mathematics/group.lean` settles, with one family kept
 as the control. It is cross-verified against external corpora the uuid programs address: the CERN open-data
 record space (`npm run cern` — which counts the corpus by content-address and records where a flattering total
 once agreed with the API by accident) and the NIST post-quantum floor (the ISO 128-bit level `qpu_crypto.lean`

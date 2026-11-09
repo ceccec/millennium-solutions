@@ -8,7 +8,7 @@
 // The concept DOI is read from CITATION.cff, not typed here, and cross-checked against README.md and
 // .zenodo.json. Three files stating one identifier is three chances for it to drift.
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
-import { leanTheorems } from '../src/api/index.ts'
+import { leanTheorems, leanPathOf } from '../src/api/index.ts'
 import { deposition, namesIn, keyOf } from './zenodo-theorems.ts'
 import { ownFiles, creditedIn, closureOf, definitionsFor, SCOPE_MARK } from '../src/publication/index.ts'
 import { escapeHtml } from '../src/html/index.ts'
@@ -72,8 +72,8 @@ for (const t of rows) {
       + `record that is silent on the literature claims novelty by omission`)
   for (const f of listed) if (!existsSync(f)) fail(`${p5} names ${f}, which is not in the tree`)
   for (const need of closureOf(t.file))
-    if (!listed.includes('src/proof/' + need))
-      fail(`${p5} omits src/proof/${need}, which its proof imports — the record would not compile for a reader`)
+    if (!listed.includes(leanPathOf(need)))
+      fail(`${p5} omits ${leanPathOf(need)}, which its proof imports — the record would not compile for a reader`)
 }
 
 // ── EVERY FIELD IS ONE ZENODO DOCUMENTS, AND EVERY RELATION IS ONE IT ACCEPTS ───────────────────────────
@@ -218,8 +218,8 @@ if (!existsSync(DIST)) {
 for (const f of new Set(leanTheorems().map((t) => t.file))) {
   for (const [name, credit] of creditedIn(f)) {
     const t = leanTheorems().find((x) => x.file === f && x.name === name)
-    if (!t) { fail(`src/proof/${f} credits prior art to \`${name}\`, which is not a theorem in that file`); continue }
-    if (!credit.trim()) { fail(`src/proof/${f}: the credit for ${name} is empty`); continue }
+    if (!t) { fail(`${leanPathOf(f)} credits prior art to \`${name}\`, which is not a theorem in that file`); continue }
+    if (!credit.trim()) { fail(`${leanPathOf(f)}: the credit for ${name} is empty`); continue }
     const p4 = `${OUT}/lean_${name}.json`
     if (existsSync(p4) && !readFileSync(p4, 'utf8').includes('NAMED AND CREDITED for this declaration'))
       fail(`${p4} does not carry the per-theorem credit its source declares`)
@@ -240,7 +240,7 @@ for (const t of rows) {
   const p = `${OUT}/lean_${t.name}.json`
   if (!existsSync(p)) continue
   const dep = JSON.parse(readFileSync(p, 'utf8')) as { description?: string }
-  const needed = definitionsFor(t.statement, [t.file, ...closureOf(t.file)].map((f) => 'src/proof/' + f))
+  const needed = definitionsFor(t.statement, [t.file, ...closureOf(t.file)].map((f) => leanPathOf(f)))
   // COMPARED IN THE ENCODING THE RECORD USES. The description is HTML and publicationHtml escapes every
   // definition it carries, so a raw line holding `=>` (as `def fact` does, through `fun a k => …`) was looked
   // for where only `=&gt;` could be — and the record was failed for a symbol it defines. Found 2026-10-03, the

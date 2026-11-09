@@ -7,7 +7,7 @@
 //   with an earlier author declare `named` and carry the attribution; files about this deposit's own
 //   construction declare `none-known`. This reads those declarations and renders them.
 //
-//   THE GUARD. src/proof/priorart.lean holds the same partition as a table the kernel decides over. A table
+//   THE GUARD. src/iso/690-record/priorart.lean holds the same partition as a table the kernel decides over. A table
 //   written in one place and the truth living in another is the drift this repository keeps finding, so the
 //   two are compared here and the build stops if they disagree — the Lean table cannot quietly describe a
 //   set of files that is not the set on disk.
@@ -109,7 +109,7 @@ head:
 
 Of ${n(T.length)} machine-checked declarations, **${n(namedThms)}** restate work that already has an author and
 **${n(ownThms)}** are about this deposit's own construction. Each source file declares which it is, in its own
-frontmatter; [\`src/proof/priorart.lean\`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
+frontmatter; [\`src/iso/690-record/priorart.lean\`](https://github.com/ceccec/millennium-solutions/blob/main/src/iso/690-record/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
 ## What is claimed

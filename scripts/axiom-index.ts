@@ -17,11 +17,11 @@
 //     read the definition or the theorem means nothing. That is the honest base of the research.
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
-import { leanTheorems, leanFiles, leanSource } from '../src/api/index.ts'
+import { leanTheorems, leanFiles, leanSource, leanPathOf } from '../src/api/index.ts'
 
-const CONTROL = 'src/proof/fixtures/axiom-control.lean'
+const CONTROL = 'src/ledger/fixtures/axiom-control.lean'
 const TOOLCHAIN = (() => {
-  for (const c of ['src/proof/lean-toolchain', 'lean-toolchain'])
+  for (const c of ['lean-toolchain'])
     if (existsSync(c)) return readFileSync(c, 'utf8').trim()
   return '(unknown)'
 })()
@@ -65,7 +65,7 @@ let compiles = true
 // fifteen Mathlib sources nothing compiled. It kept EXITING ZERO, because lake resolves a package from
 // outside this repository — so the control went on elaborating and nothing said the command no longer
 // described the tree. scripts/lean.ts has always called `lean` directly; this does now too.
-try { execSync('lean axiom-control.lean', { cwd: 'src/proof/fixtures', encoding: 'utf8' }) }
+try { execSync('lean axiom-control.lean', { cwd: 'src/ledger/fixtures', encoding: 'utf8' }) }
 catch (e) { compiles = false; control = String((e as { stdout?: string }).stdout ?? (e as Error).message) }
 const fixture = existsSync(CONTROL) ? readFileSync(CONTROL, 'utf8') : ''
 const pinnedFree = fixture.includes(`/-- info: ${EXPECT_FREE} -/`)
@@ -87,7 +87,7 @@ for (const f of leanFiles()) {
     defs.push({ file: f, kind: m[1], name: m[2], body: (m[3] ?? '').trim() })
 }
 for (const f of leanFiles())
-  if (/^axiom\s+/m.test(leanSource(f))) fail(`src/proof/${f} declares an axiom of its own`)
+  if (/^axiom\s+/m.test(leanSource(f))) fail(`${leanPathOf(f)} declares an axiom of its own`)
 
 // ── the page ─────────────────────────────────────────────────────────────────────────────────────────────
 const n = (x: number) => x.toLocaleString('en-US')

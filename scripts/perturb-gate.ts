@@ -36,7 +36,7 @@
  *
  *  usage:  node scripts/perturb-gate.ts [--file planck.lean] [--list] */
 import { readFileSync, writeFileSync, mkdtempSync, rmSync } from 'node:fs'
-import { leanFiles, leanPathOf } from '../src/api/index.ts'
+import { leanFiles, leanPathOf, OLEAN_DIR } from '../src/api/index.ts'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 import { laneBudget } from '../src/api/lanes.ts'
@@ -45,7 +45,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { arg, flag } from '../src/cli/index.ts'
 
-const DIR = 'src/proof'
+const DIR = OLEAN_DIR
 // THE COMMENT IS NOT OPTIONAL IN THIS TREE, SO THE PATTERN CANNOT TREAT IT AS ABSENT. This required the
 // line to END with the literal, and every constant carrying an explanation was skipped:
 //   def splitCost : Nat := 52000  -- Wh to electrolyse 1 kg H₂
@@ -77,7 +77,7 @@ let unprobed = 0, unusable = 0, filesWithDefs = 0
 // arrived in. Run the same work over two lanes or over ten and the address is the same, which is what makes
 // the split safe to trust rather than merely fast.
 //
-// The lane count is the one src/proof/lanes.lean decides: never zero, never more than the cores, and never
+// The lane count is the one src/iso/9001-governance/lanes.lean decides: never zero, never more than the cores, and never
 // more than the measured memory affords at ~2.9 GB per lean process. Those theorems are why raising it here
 // is safe — and why it is bounded rather than set to the number of jobs.
 const runAsync = promisify(execFile)

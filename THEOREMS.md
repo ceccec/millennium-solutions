@@ -90,7 +90,7 @@ All eight are integrity- and method-level theorems.
 ## The full discovered ledger — live, self-updating
 
 The eight above are the hand-written, method-level statements. Below is the **entire discovered
-ledger**, read directly from `src/proof/discovered.json` and re-bundled on every build — so this page
+ledger**, read directly from `src/ledger/discovered.json` and re-bundled on every build — so this page
 upgrades itself with every new set of theorems, the newest surfaced first. Each is decidable, verified
 by exhaustion in `scripts/discover.ts`, and re-verified each build.
 

@@ -17,7 +17,7 @@ import { toUuid } from '../src/0/index.ts'
 import { leanTheorems, ledger as __ledger } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
-const DIR = 'src/proof', LEDGER = 'src/proof/discovered.json'
+const DIR = 'src/ledger', LEDGER = 'src/ledger/discovered.json'
 
 // GATE: the whole Lean layer must verify before anything is sealed.
 try { execSync('node scripts/lean.ts', { stdio: 'pipe' }) }
@@ -91,7 +91,7 @@ if (returned.length) {
       delete e.revoked
       e.reason = 'reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased.'
     }
-    writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
+    writeFileSync('src/ledger/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
     console.log(`  ✓ reinstated ${returned.length} — receipts untouched, the withdrawal recorded in the reason`)
   } else {
     console.log('  re-run with --seal to reinstate them')
@@ -117,8 +117,8 @@ if (orphans.length) {
   // and that theorem carries a name of its own choosing. Two sealed entries were orphaned exactly that way,
   // and this gate offered to withdraw two facts the kernel checks on every run. imagine.ts now writes down
   // which theorem covered what it dropped, and that record is read here: a covered orphan is superseded.
-  const covered: Record<string, string> = existsSync('src/proof/covered.json')
-    ? JSON.parse(readFileSync('src/proof/covered.json', 'utf8')) : {}
+  const covered: Record<string, string> = existsSync('src/ledger/covered.json')
+    ? JSON.parse(readFileSync('src/ledger/covered.json', 'utf8')) : {}
   const bare = (k: string) => k.replace(/^lean_/, '')
   // ── AND A RENAME COULD NEVER BE CARRIED IN ONE RUN, WHICH IS AN ORDERING BUG AND NOT A POLICY ────────────
   // This looked for the successor among LEDGER keys only. The orphan sweep runs before the sealing below, so a
@@ -126,7 +126,7 @@ if (orphans.length) {
   // returned nothing, `successorOf` gave up, and the run refused with "N have no source" while offering to
   // WITHDRAW facts the kernel had just checked. A second run did not help: nothing had been sealed, so the
   // successor was still not a live key, and the refusal was stable.
-  // Found by renaming 25 generated theorems at once: src/proof/coils.lean names each cross-domain identity
+  // Found by renaming 25 generated theorems at once: src/iso/80000-2-mathematics/coils.lean names each cross-domain identity
   // after the invariant now instead of after its domain list, because a name that enumerates cannot survive
   // the vocabulary growing. Every one of the 25 was a pure rename with the same statement on both sides, and
   // this gate could not express that. The fix is to let the successor be a key this run is ABOUT to write:
@@ -156,7 +156,7 @@ if (orphans.length) {
         e.supersededBy = successorOf(c)
         e.reason = `carried: the theorem this key was sealed from is no longer in src/proof, because ${e.supersededBy} now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain.`
       }
-      writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
+      writeFileSync('src/ledger/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
       console.log(`  ✓ ${carried.length} carried — marked in place with the key that now proves them:`)
       for (const c of carried) console.log(`      ${c.key} → ${ledger.find((x) => x.key === c.key)!.supersededBy}`)
     } else {
@@ -172,13 +172,13 @@ if (orphans.length) {
       e.revoked = true
       e.reason = 'orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand.'
     }
-    writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
+    writeFileSync('src/ledger/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
     console.log(`  ✓ revoked ${stillOrphaned.length} in place — receipts kept, claims withdrawn`)
   } else if (stillOrphaned.length) {
     // ── A DELETION NOBODY HAS COMMITTED IS NOT A WITHDRAWAL ──────────────────────────────────────────────
     // Revocation is append-only and irreversible: once a key is marked revoked, the claim is withdrawn on
     // the public record. This refused to seal anything until two keys were revoked whose theorems had been
-    // deleted from src/proof/imagined.lean IN THE WORKING TREE ONLY — both still present at HEAD, both
+    // deleted from src/iso/80000-2-mathematics/imagined.lean IN THE WORKING TREE ONLY — both still present at HEAD, both
     // true, both removed by another session working in this same checkout with nothing committed.
     //
     // Withdrawing a proved claim because a peer's in-flight edit has not been saved yet is the destructive
@@ -193,7 +193,7 @@ if (orphans.length) {
     const theoremName = (e: { name: string; key: string }): string =>
       e.name.match(/^lean\s+\S+:\s+(\S+)/)?.[1] ?? e.key.replace(/^lean_/, '')
     const atHead = (e: { name: string; key: string }): boolean => {
-      try { return execSync(`git grep -lF ${JSON.stringify('theorem ' + theoremName(e))} HEAD -- src/proof/`, { stdio: 'pipe', encoding: 'utf8' }).trim().length > 0 }
+      try { return execSync(`git grep -lF ${JSON.stringify('theorem ' + theoremName(e))} HEAD -- src/`, { stdio: 'pipe', encoding: 'utf8' }).trim().length > 0 }
       catch { return false }
     }
     const uncommitted = stillOrphaned.filter((o) => atHead(o))

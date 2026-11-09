@@ -20,7 +20,7 @@ export const stripComments = (s: string): string =>
  *
  *  Two kinds of dependency, and only one of them is an import. A script reaches its modules with
  *  `import … from '…'`, and it reaches its DATA with a quoted path it opens at run time —
- *  `src/proof/discovered.json`, `CITATION.cff`. A closure built from imports alone would call a script
+ *  `src/ledger/discovered.json`, `CITATION.cff`. A closure built from imports alone would call a script
  *  unaffected by a change to the very ledger it reads, which is the failure mode that makes a selective
  *  runner worse than useless: it would say "nothing to check" about the thing that changed.
  *

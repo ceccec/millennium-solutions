@@ -12,7 +12,7 @@
  *  from the same vocabulary scripts/imagine.ts proposes with, the extensions are computed, and the
  *  clustering is equality of extension. A coil nobody wrote appears the moment the vocabulary grows.
  *
- *  src/proof/closure.lean found ONE of these by hand and by accident — `isUnit` and `inSpan` turned out to
+ *  src/iso/80000-2-mathematics/closure.lean found ONE of these by hand and by accident — `isUnit` and `inSpan` turned out to
  *  denote the same set, which is this deposit's span-equals-units theorem arriving through a truth table.
  *  That coil has sixteen members. Finding the first fifteen by hand was never going to happen.
  *
@@ -30,12 +30,12 @@
  *  Adding a vocabulary is adding a grid and some expressions. Nothing else changes, and every coil it finds
  *  is found the same way as every other.
  *
- *    node scripts/coils.ts            report the coils AND CHECK src/proof/coils.lean against them
- *    node scripts/coils.ts --emit     write src/proof/coils.lean and put it to the kernel
+ *    node scripts/coils.ts            report the coils AND CHECK src/iso/80000-2-mathematics/coils.lean against them
+ *    node scripts/coils.ts --emit     write src/iso/80000-2-mathematics/coils.lean and put it to the kernel
  *
  *  WITHOUT --emit THIS CHECKS, AND IT FAILS ON A DIFFERENCE. It used to print the report and exit 0, which
  *  made it a generator that is IN the `gates` chain and still could not catch its own drift: the vocabulary
- *  could grow, a coil could appear or change shape, and src/proof/coils.lean would keep compiling the old
+ *  could grow, a coil could appear or change shape, and src/iso/80000-2-mathematics/coils.lean would keep compiling the old
  *  clustering while every gate read green. This deposit already carries that defect by name — "a derived
  *  file whose generator is in no chain step drifts and ships" — and being in the chain is not the property
  *  that matters. FAILING is. scripts/settled.ts was written with the check and this one was not, which is
@@ -338,7 +338,7 @@ const domBody = emittable.map((g, i) => {
   // ── NAMED AFTER THE INVARIANT, NOT THE MEMBERS ──────────────────────────────────────────────────────────
   // The first version named each theorem after its DOMAIN LIST, and widening the vocabulary from 11 domains to
   // 24 changed every name and orphaned 11 sealed keys in one run. This tree already had the lesson written
-  // down, in src/proof/rights.lean: "A name that enumerates cannot survive growth; a name that quantifies
+  // down, in src/iso/690-record/rights.lean: "A name that enumerates cannot survive growth; a name that quantifies
   // can." I wrote a name that enumerates and the ledger paid for it the first time the vocabulary grew.
   // The expression IS the invariant — which subjects happen to share it is exactly the part that changes when
   // more subjects are added — so the name is the expression and adding a domain now leaves the key alone.
@@ -452,7 +452,7 @@ theorem the_three_polygon_counts_are_pairwise_distinct_from_four :
   ∧ (List.range' 1 20).all (fun n => n * (n + 1) / 2 == n * (n - 1) / 2 + n) := by decide
 
 -- 3 · THE OCTAVE AND THE FIFTH MEET ONLY WHERE NOTHING IS STACKED. 2^n and 3^n coincide at n = 0 and nowhere
--- after, which is the same fact src/proof/entangled.lean states about the comma, arriving here from the other
+-- after, which is the same fact src/iso/80000-2-mathematics/entangled.lean states about the comma, arriving here from the other
 -- side: the two coils are separate coils, and no amount of stacking merges them.
 theorem the_octave_and_the_fifth_meet_only_at_zero :
   2 ^ 0 == 3 ^ 0
@@ -499,7 +499,7 @@ const generated = `set_option maxRecDepth 100000
 -- one is two formulas proving each other: compute either and the other is computed. ${exprs.length} expressions in
 -- the vocabulary collapse to ${by.size} extensions, leaving ${coils.length} coils and ${pairs} such pairs.
 --
--- src/proof/closure.lean found one of these by hand and by accident: \`isUnit\` and \`inSpan\` denote the same
+-- src/iso/80000-2-mathematics/closure.lean found one of these by hand and by accident: \`isUnit\` and \`inSpan\` denote the same
 -- six residues, which is this deposit's span-equals-units theorem arriving through a truth table. That coil
 -- has sixteen members, and finding the other fifteen by hand was never going to happen.
 --

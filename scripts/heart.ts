@@ -8,7 +8,7 @@ import { toUuid, merkleFold, A432_STEP } from '../src/0/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 
 const ledger: { key: string; name: string; receipt: string }[] =
-  existsSync('src/proof/discovered.json') ? __ledger() : []
+  existsSync('src/ledger/discovered.json') ? __ledger() : []
 const pick = (pred: (k: string) => boolean) => ledger.filter((e) => pred(e.key))
 const games = pick((k) => /^(nim|wythoff|grundy|chess|both_games|duel|trial)/.test(k))
 const arts = pick((k) => /^(arts|geom|harmonic|gematria)/.test(k))

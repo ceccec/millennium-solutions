@@ -39,7 +39,7 @@ export const DETECTORS: readonly [RegExp, string][] = [
  *
  *  This is the one path in the whole sweep that turns a catch into a pass, so it is the place a widening
  *  would go unnoticed — widen it and every claim is excused while the report stays green and the count
- *  stays large. It is decided by the kernel over its whole shape in src/proof/instruments.lean
+ *  stays large. It is decided by the kernel over its whole shape in src/iso/9001-governance/instruments.lean
  *  (any_negator_before_the_claim_refuses_it, the_window_is_monotone_in_the_claim_s_position,
  *  with_no_negator_nothing_is_cleared), and scripts/lean-agree.ts compares this against that over a grid,
  *  so the rule the kernel decided and the rule the sweep runs cannot part company. */

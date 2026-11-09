@@ -15,7 +15,7 @@
 // The triad is normalised mod 9 before comparing: the runtime writes {3,6,9} and the proofs write {3,6,0},
 // which is the same class named by its residue — stated here rather than hidden in a lenient comparison.
 import { BASE, units, triad, vortexOrbit, SEEDS } from '../src/0/index.ts'
-import { leanPathOf } from '../src/api/index.ts'
+import { leanPathOf, OLEAN_DIR } from '../src/api/index.ts'
 import { precedes, staleTail } from '../src/api/gates.ts'
 import { unreflect } from '../src/honesty/index.ts'
 import { FIELDS, encode as encodeContainer } from '../src/crypto/container/program.ts'
@@ -61,7 +61,7 @@ const PAIRS = [
   { what: 'the units',          runtime: units(),       mod: 'Z9',      expr: 'Z9.units' },
   { what: 'the triad',          runtime: triad(),       mod: 'Merkaba', expr: 'Merkaba.axis' },
   { what: 'the doubling orbit', runtime: vortexOrbit(), mod: 'Index',   expr: 'Windows.span' },
-  // THE SEEDS THE ADDRESS FOLDS WITH — 0, φ, π and e as 32-bit fraction words. src/proof/address.lean derives
+  // THE SEEDS THE ADDRESS FOLDS WITH — 0, φ, π and e as 32-bit fraction words. src/iso/iec-9834-8-identifiers/address.lean derives
   // each from its source (a square bracket, the BBP series, the factorial series) and src/0 states them as
   // literals; a literal that drifted from the derivation would re-address the whole ledger, so they are paired.
   { what: 'the address seeds',  runtime: [...SEEDS],    mod: 'Address', expr: 'Address.SEEDS' },
@@ -90,7 +90,7 @@ const PAIRS = [
   { what: 'the program field',  runtime: FIELDS.program, mod: 'Program', raw: true, expr: 'Program.programF' },
   { what: 'the message field',  runtime: FIELDS.message, mod: 'Program', raw: true, expr: 'Program.messageF' },
 
-  // THE CODEC END TO END, not only where its fields sit. src/proof/program.lean now builds the whole 128
+  // THE CODEC END TO END, not only where its fields sit. src/crypto/program.lean now builds the whole 128
   // bits — the deposit's FNV over the packed payload, the fields at their own positions, the reserved six —
   // and that is a SECOND implementation of the shipped codec. Two implementations nobody compares is the
   // defect this repository keeps finding, so the two are compared on the same payload, bit for bit: if they
@@ -154,7 +154,7 @@ if (!hasLean) {
   process.exit(0)
 }
 
-const ENV = { ...process.env, LEAN_PATH: 'src/proof' }
+const ENV = { ...process.env, LEAN_PATH: OLEAN_DIR }
 // AN OLEAN IS A CACHE OF WORK, NEVER OF TRUST — the same rule scripts/lean.ts states for its own. This
 // rebuilt every module on every run and took 9.4 seconds to compare a handful of values, and the number of
 // modules only grows: four constants became nine rows across five modules today. A rebuild is skipped when

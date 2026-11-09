@@ -9,7 +9,7 @@ import { withBase } from 'vitepress'
 import { toUuid, merkleFold, digitalRoot } from '../../src/0/index.ts'
 import { computes } from '../../scripts/honesty-gate.ts'
 import { reeducate, harness7 } from '../../scripts/harness.ts'
-import ledger from '../../src/proof/discovered.json'
+import ledger from '../../src/ledger/discovered.json'
 
 const theorems = ledger as { key: string; name: string; receipt: string }[]
 

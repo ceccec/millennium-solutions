@@ -102,7 +102,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   // USE THE THEOREMS TO CATCH AND LEARN — every sealed theorem is honest floor prose, so each must PASS the
   // gate in isolation (as it renders on its own /theorem page). Any drain here is a false positive the trial
   // just discovered on real content — the more it resists, the more we learn. This runs on every ship.
-  const L = (createRequire(import.meta.url)('../src/proof/discovered.json') as { key: string; name: string; revoked?: boolean }[]).filter(isLive)
+  const L = (createRequire(import.meta.url)('../src/ledger/discovered.json') as { key: string; name: string; revoked?: boolean }[]).filter(isLive)
   let falseDrains = 0
   for (const e of L) { const { binary, hit } = computes(e.name); if (!binary) { falseDrains++; console.log(`FALSE-DRAIN ${e.key} ← ${JSON.stringify(hit)}`) } }
   console.log(falseDrains ? `✗ ${falseDrains}/${L.length} theorems false-drained in isolation` : `✓ all ${L.length} theorems pass the gate in isolation`)

@@ -16,7 +16,7 @@ const wheel = Array.from({ length: 9 }, (_, i) => {
   return { x: (Math.cos(ang) * 40).toFixed(2), y: (Math.sin(ang) * 40).toFixed(2), hue: (d * 40) % 360, d }
 })
 import { withBase } from 'vitepress'
-import ledger from './src/proof/discovered.json'
+import ledger from './src/ledger/discovered.json'
 const theoremCount = ledger.length
 const latest = ledger.slice(-5).reverse()
 </script>

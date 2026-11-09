@@ -18,7 +18,7 @@
  *      node scripts/vacuity.ts --list   also name the theorems whose domain could not be read
  */
 import { writeFileSync, mkdtempSync, readFileSync, existsSync } from 'node:fs'
-import { leanPathOf } from '../src/api/index.ts'
+import { leanPathOf, OLEAN_DIR } from '../src/api/index.ts'
 import { createHash } from 'node:crypto'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
@@ -150,7 +150,7 @@ await lanes([...byFile.entries()], async ([file, rows]) => {
   const out = join(dir, `V_${file.replace('.lean', '')}.lean`)
   writeFileSync(out, [head, ns ? `namespace ${ns}` : '', opens, defs, body, ns ? `end ${ns}` : ''].filter(Boolean).join('\n\n') + '\n')
   let log = ''
-  try { await leanRun('lean', [out], { env: { ...process.env, LEAN_PATH: 'src/proof' } }) }
+  try { await leanRun('lean', [out], { env: { ...process.env, LEAN_PATH: OLEAN_DIR } }) }
   catch (e: any) { log = String(e?.stdout ?? '') + String(e?.stderr ?? '') }
   if (!log) return
   // PER MESSAGE, NOT PER LOG. This tested `/proved that the proposition/` against the WHOLE log, so one
@@ -270,7 +270,7 @@ await lanes([...byFile2.entries()], async ([file, rows]) => {
   // second into minutes, and one such file held the whole sweep for over three minutes before this existed.
   // The budget is per file and a file that exceeds it is UNTESTED, by name — not a pass, and not a hang.
   let log = '', timedOut = false
-  try { await leanRun('lean', [out], { env: { ...process.env, LEAN_PATH: 'src/proof' }, timeout: BUDGET_MS }) }
+  try { await leanRun('lean', [out], { env: { ...process.env, LEAN_PATH: OLEAN_DIR }, timeout: BUDGET_MS }) }
   catch (e: any) {
     if (e?.signal === 'SIGTERM' || e?.code === 'ETIMEDOUT') timedOut = true
     log = String(e?.stdout ?? '') + String(e?.stderr ?? '')

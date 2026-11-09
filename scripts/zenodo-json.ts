@@ -16,8 +16,8 @@
  *    · license          — from CITATION.cff, lowercased to Zenodo's spelling
  *    · keywords         — the authored list, UNION the ledger's own domain families, so the record says
  *                         what the deposit now contains rather than what it contained when someone typed
- *    · related_identifiers — the version chain from src/proof/provenance.json and every citing work from
- *                         src/proof/citations.json, each with its relation; nothing hand-listed
+ *    · related_identifiers — the version chain from src/ledger/provenance.json and every citing work from
+ *                         src/ledger/citations.json, each with its relation; nothing hand-listed
  *    · novelty          — counted from the prior-art classification: how many sources restate named work,
  *                         how many were searched and found nothing, how many were never searched. THAT is
  *                         what "novel" can honestly mean here, and it is a measurement with a shape:
@@ -72,9 +72,9 @@ for (const [, k] of kinds()) byKind.set(k, (byKind.get(k) ?? 0) + 1)
 const novelty = [...byKind.entries()].sort().map(([k, n]) => `${n} ${KIND[k] ?? 'unclassified'}`).join('; ')
 
 const prov: { records?: { id: string; concept: string }[] } =
-  existsSync('src/proof/provenance.json') ? JSON.parse(readFileSync('src/proof/provenance.json', 'utf8')) : {}
+  existsSync('src/ledger/provenance.json') ? JSON.parse(readFileSync('src/ledger/provenance.json', 'utf8')) : {}
 const cites: { tracked?: { citing?: { doi: string }[] }[] } =
-  existsSync('src/proof/citations.json') ? JSON.parse(readFileSync('src/proof/citations.json', 'utf8')) : {}
+  existsSync('src/ledger/citations.json') ? JSON.parse(readFileSync('src/ledger/citations.json', 'utf8')) : {}
 
 const bare = (d: string) => String(d).replace(/^https?:\/\/doi\.org\//, '')
 type Related = { identifier: string; relation: string; scheme: string }

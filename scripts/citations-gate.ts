@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /** ── THE LEGAL CITATIONS THIS DEPOSIT RESTS ON, CHECKED AGAINST ONE DECLARATION ───────────────────────────
  *
- *  Found by scripts/blind.ts, not by anyone here: a seeded trial moved one digit in src/proof/rights.lean,
+ *  Found by scripts/blind.ts, not by anyone here: a seeded trial moved one digit in src/iso/690-record/rights.lean,
  *  turning `EPC Art. 52(2)(a)` into `Art. 53(2)(a)`, and the whole gate chain stayed green. Article 52 is
  *  what may be patented; Article 53 is a different provision entirely. The rights table names specific legal
  *  instruments as the reason each right is claimed or refused, and nothing checked that the article numbers

@@ -63,7 +63,7 @@ theorem the_served_constants_satisfy_the_relations_qpu_states :
   ∧ faces = coins * rays ∧ bits = vertices * hexbit ∧ faces = 14 ∧ bits = 32 := by decide
 
 -- ── 2 · AND THE FIRST CROSS FORMULA: FOURTEEN, FROM TWO SIDES ─────────────────────────────────────────────
--- qpu reaches 14 as coins * rays = 2 * 7. src/proof/rays.lean reaches it as DIMENSIONS = 2 * N with N = 7,
+-- qpu reaches 14 as coins * rays = 2 * 7. src/iso/iec-9834-8-identifiers/rays.lean reaches it as DIMENSIONS = 2 * N with N = 7,
 -- written before this file existed and for an unrelated purpose — the reading width of a vortex trace. The
 -- integer is the same and the DERIVATIONS ARE THE SAME SHAPE: a pair times seven.
 theorem fourteen_is_two_sevens_on_both_sides :
@@ -89,7 +89,7 @@ theorem thirty_two_is_derived_there_and_declared_here :
   ∧ bits = Rays.DIGITS_TOTAL ∧ bits = vertices * hexbit ∧ Rays.DIGITS_TOTAL = 32 := by decide
 
 -- ── 5 · THE CAPACITY LAW IS ONE LAW AT TWO WIDTHS ─────────────────────────────────────────────────────────
--- qpu reports amplitudes = 2^bits = 2^32. src/proof/capacity.lean decides capacity = 2^free = 2^122. Neither
+-- qpu reports amplitudes = 2^bits = 2^32. src/iso/22739-ledger/capacity.lean decides capacity = 2^free = 2^122. Neither
 -- number is the other; the LAW is identical — a space is two to the width that addresses it — and it is
 -- decided here at both widths at once, with the ratio between them stated so the gap is a quantity rather
 -- than an impression.

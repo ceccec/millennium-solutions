@@ -181,4 +181,4 @@ This is §3.4.22 by definition: a classical program computing what each model's 
 
 ## The verdict rule
 
-Per setting, D = n₀₀ + n₁₁ − n₀₁ − n₁₀ over N shots, and S = Σ sign · D / N. S > 2 is decided as Σ sign · D · Π(other N) > 2 · Π N on exact integers — the rule, its one-count controls on both sides of 2, and the classical bound itself are Lean theorems in `src/proof/quantum_hardware.lean`, closed by `decide`. A wrong gate or a noisy device can only lower S, so a false positive cannot come from this code. It is not a loophole-free Bell test: it trusts the provider's device and readout.
+Per setting, D = n₀₀ + n₁₁ − n₀₁ − n₁₀ over N shots, and S = Σ sign · D / N. S > 2 is decided as Σ sign · D · Π(other N) > 2 · Π N on exact integers — the rule, its one-count controls on both sides of 2, and the classical bound itself are Lean theorems in `src/quantum/quantum_hardware.lean`, closed by `decide`. A wrong gate or a noisy device can only lower S, so a false positive cannot come from this code. It is not a loophole-free Bell test: it trusts the provider's device and readout.

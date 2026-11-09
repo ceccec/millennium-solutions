@@ -8,7 +8,7 @@ head:
 <script setup>
 // Computed from the ledger: an entry is shown only while its theorem is live. Nothing here is typed as a count.
 import { withBase } from 'vitepress'
-import ledger from './src/proof/discovered.json'
+import ledger from './src/ledger/discovered.json'
 const live = new Map(ledger.filter((e) => !e.revoked).map((e) => [e.key, e]))
 const ENTRIES = [
   { kind: 'fact', where: 'Sunflowers, pinecones, pineapples', what: 'The spiral counts on a seed head are usually two consecutive Fibonacci numbers — 34 and 55, 55 and 89. Consecutive Fibonacci numbers share no common divisor but 1, at every size, so the two families of spirals never fall into a common sub-rhythm.', keys: ['lean_z9plus_consecutive_fibonacci_are_coprime_for_every_n', 'lean_families_cassinis_identity_for_every_m'] },

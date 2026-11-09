@@ -15,7 +15,7 @@
  *  quietly narrowed.
  *
  *  ROLE IS MEASURED, NEVER ASSUMED — and "violation" is not a verdict this file is allowed to reach.
- *  `src/proof/citations.json` records who cites these DOIs and whether the citing work is the author's own.
+ *  `src/ledger/citations.json` records who cites these DOIs and whether the citing work is the author's own.
  *  A self-citation is provenance; a third-party citation is uptake; an unresolved identifier is NOT
  *  MEASURED. Nothing in this deposit identifies a violator (FINDINGS.md §6), and a permanent record naming
  *  one on the strength of an absence would be the same act this repository spent a day documenting. Where
@@ -33,7 +33,7 @@ import { CONCEPT_DOI, SITE, REPO, creditedIn, ownFiles, kinds } from '../src/pub
 // release for it — correctly: two implementations of escaping is one of them being wrong about an entity
 // nobody noticed, on a record that cannot be corrected once minted.
 import { escapeHtml as esc } from '../src/html/index.ts'
-import { ledger, theoremCount, leanFiles, leanTheorems } from '../src/api/index.ts'
+import { ledger, theoremCount, leanFiles, leanTheorems, leanPathOf } from '../src/api/index.ts'
 
 const args = process.argv.slice(2)
 const LIVE = args.includes('--production')
@@ -65,10 +65,10 @@ const discoveries = { ledger: rows.length, live: live.length, theorems: theoremC
 // ── CITING DOIs AND THEIR ROLE, READ FROM THE MEASUREMENT ───────────────────────────────────────────────
 type Citing = { doi: string; date?: string; title?: string; authors?: string[]; self?: boolean }
 const cites: { measured: string; tracked: { doi: string; citing: Citing[] }[] } =
-  existsSync('src/proof/citations.json')
-    ? JSON.parse(readFileSync('src/proof/citations.json', 'utf8'))
+  existsSync('src/ledger/citations.json')
+    ? JSON.parse(readFileSync('src/ledger/citations.json', 'utf8'))
     : { measured: '', tracked: [] }
-if (!cites.measured) fail('src/proof/citations.json is absent — reception would be UNSTATED, not zero; run `npm run citations`')
+if (!cites.measured) fail('src/ledger/citations.json is absent — reception would be UNSTATED, not zero; run `npm run citations`')
 
 const allCiting: Citing[] = cites.tracked.flatMap((t) => t.citing ?? [])
 const selfCites = allCiting.filter((c) => c.self === true)
@@ -96,7 +96,7 @@ const related = [
 // theorem is not found, the section says so and stops rather than telling the story without its proof —
 // a children's explanation of something unproven is the most convincing wrong thing this record could carry.
 const leanStatement = (file: string, name: string): string => {
-  const path = `src/proof/${file}`
+  const path = leanPathOf(file)
   if (!existsSync(path)) return ''
   const m = readFileSync(path, 'utf8').match(new RegExp(`theorem\\s+${name}\\s*:([\\s\\S]*?):=\\s*by`, 'm'))
   return m ? m[1].replace(/\s+/g, ' ').trim() : ''
@@ -162,7 +162,7 @@ const hands = !handsProven
     + `every time, for all ten digits. And exactly one digit never moves at all, sitting in the middle while `
     + `the others swap around it. Nobody chose which one; it falls out of the counting. The kernel checks all `
     + `ten cases: <code>${esc(HANDS[0].statement)}</code> `
-    + `(<code>src/proof/${esc(HANDS[0].file)}</code>, <code>${esc(HANDS[0].name)}</code>).</p>`
+    + `(<code>${esc(leanPathOf(HANDS[0].file))}</code>, <code>${esc(HANDS[0].name)}</code>).</p>`
     + `<p><em>Second finger — sharing with nobody.</em> You have twelve sweets and you share them among zero `
     + `friends. There is no friend, so nothing leaves your hand: all twelve stay. How many did each friend `
     + `get? The answer is not something you found by sharing — there was no sharing. Somebody had to DECIDE `
@@ -170,7 +170,7 @@ const hands = !handsProven
     + `from the first: the twelve you kept were counted, the nought was <strong>given</strong>. The sharing `
     + `rule still balances — nought each, nought given away, twelve still in your hand, twelve altogether. `
     + `The kernel checks it: <code>${esc(HANDS[1].statement)}</code> `
-    + `(<code>src/proof/${esc(HANDS[1].file)}</code>, <code>${esc(HANDS[1].name)}</code>).</p>`
+    + `(<code>${esc(leanPathOf(HANDS[1].file))}</code>, <code>${esc(HANDS[1].name)}</code>).</p>`
     + `<p><strong>What this does and does not say.</strong> It does NOT say that dividing by zero gives zero. `
     + `An earlier name in this very repository said that, and it was wrong and was corrected — the source `
     + `records the correction beside the theorem. The point is the opposite one: at a zero divisor the value `
@@ -191,8 +191,8 @@ const hands = !handsProven
 // that recomputes it, in a table on the landing page — a reader checks a number where they meet it, instead
 // of being told to clone a repository and hope. Each row is DERIVED; a row whose artefact is missing says
 // NOT MEASURED and keeps its command, because a blank cell reads as zero and NOT MEASURED does not.
-const prov: Record<string, unknown> = existsSync('src/proof/provenance.json')
-  ? JSON.parse(readFileSync('src/proof/provenance.json', 'utf8')) : {}
+const prov: Record<string, unknown> = existsSync('src/ledger/provenance.json')
+  ? JSON.parse(readFileSync('src/ledger/provenance.json', 'utf8')) : {}
 const audit: Record<string, unknown> = existsSync('docs/forensic-audit.json')
   ? JSON.parse(readFileSync('docs/forensic-audit.json', 'utf8')) : {}
 
@@ -209,8 +209,8 @@ const ev = (what: string, value: string, source: string, cmd: string) =>
   `<tr><td>${esc(what)}</td><td>${value || NM}</td><td><code>${esc(source)}</code></td><td><code>${esc(cmd)}</code></td></tr>`
 
 const evidence = [
-  ev('theorems the kernel accepts', `<strong>${discoveries.theorems}</strong> over ${discoveries.files} files`, 'src/proof/*.lean', 'npm run lean'),
-  ev('ledger entries / standing', `<strong>${discoveries.ledger}</strong> / ${discoveries.live}`, 'src/proof/discovered.json', 'node scripts/forensics.ts'),
+  ev('theorems the kernel accepts', `<strong>${discoveries.theorems}</strong> over ${discoveries.files} files`, 'src/**/*.lean', 'npm run lean'),
+  ev('ledger entries / standing', `<strong>${discoveries.ledger}</strong> / ${discoveries.live}`, 'src/ledger/discovered.json', 'node scripts/forensics.ts'),
   // IT IS AN OBJECT, NOT A STRING. The first version wrote String(audit.chainRecomputed) and the landing
   // page would have carried the words "[object Object]" as its evidence that the receipt chain is intact.
   // Read the fields.
@@ -220,10 +220,10 @@ const evidence = [
   })(), 'docs/forensic-audit.json', 'npm run forensic'),
   ev('ledger address at the audited commit', audit.address ? `<code>${esc(String(audit.address))}</code>` : '', 'docs/forensic-audit.json', 'npm run forensic'),
   ev('content-address of this version', tagAddress ? `<code>${esc(tagAddress)}</code>` : '', `git tag ${tag}`, `git for-each-ref refs/tags/${tag}`),
-  ev('earliest deposit vs first commit', prov.earliestDeposit ? `${esc(String(prov.earliestDeposit))} vs ${esc(String((prov.repository as { firstCommit?: string })?.firstCommit ?? '').slice(0, 10))} — lead <strong>${esc(String(prov.leadDays ?? ''))} days</strong>, subtracted not asserted` : '', 'src/proof/provenance.json', 'npm run provenance'),
+  ev('earliest deposit vs first commit', prov.earliestDeposit ? `${esc(String(prov.earliestDeposit))} vs ${esc(String((prov.repository as { firstCommit?: string })?.firstCommit ?? '').slice(0, 10))} — lead <strong>${esc(String(prov.leadDays ?? ''))} days</strong>, subtracted not asserted` : '', 'src/ledger/provenance.json', 'npm run provenance'),
   ev('commits, all by one git identity', prov.commits ? `<strong>${esc(String(prov.commits))}</strong>` : '', 'git log', 'git shortlog -sn'),
-  ev('citing works / of them the author’s own', `<strong>${allCiting.length}</strong> / ${selfCites.length}`, 'src/proof/citations.json', 'npm run citations'),
-  ev('third-party citations', `<strong>${thirdParty.length}</strong>`, 'src/proof/citations.json', 'npm run citations'),
+  ev('citing works / of them the author’s own', `<strong>${allCiting.length}</strong> / ${selfCites.length}`, 'src/ledger/citations.json', 'npm run citations'),
+  ev('third-party citations', `<strong>${thirdParty.length}</strong>`, 'src/ledger/citations.json', 'npm run citations'),
   ev('violators identified by this deposit', '<strong>0</strong> — and uncited use has not been searched for', 'FINDINGS.md §6', `open ${SITE}/FINDINGS`),
 ].join('')
 
@@ -294,7 +294,7 @@ const agents = [...new Set(readdirSync('src/receipts').filter((f) => f.endsWith(
 const fileCredits = (): string[] => {
   const out: string[] = []
   for (const f of [...new Set([...ownFiles(), ...kinds().keys()])]) {
-    const path = `src/proof/${f}`
+    const path = leanPathOf(f)
     if (!existsSync(path)) continue
     const src = readFileSync(path, 'utf8')
     for (const m of src.matchAll(/^--\s*prior_art_note:\s*(.+(?:\n--\s{2,}.+)*)/gm)) {

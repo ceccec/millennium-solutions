@@ -1,14 +1,14 @@
 // Dynamic route: one page per theorem (a stable, referrer-able URL /theorem/<key>), from ONE template.
 // Two sources feed the same template:
 //   • src/proof/discovered.json — the ℤ/9 discovery ledger (computed by exhaustion), and
-//   • the seven Millennium-floor theorems in src/proof/index.lean — each carrying its Lean proof in
+//   • the seven Millennium-floor theorems in src/iso/9001-governance/index.lean — each carrying its Lean proof in
 //     publication form and a link to the qualified outlet (Clay Mathematics Institute; Perelman's arXiv).
 // Each page also carries the hues of its SURROUNDING theorems so its hero background is computed by the
 // neighbourhood — the mesh, seen locally. The Lean proof text is READ FROM index.lean (single source), and
 // every receipt is the content-address of the exact statement (reproducible by anyone via toUuid).
 import { readdirSync, readFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
-import { leanTheorems, theoremOfKey, domainOf, enumeratedNames, isComputedKey } from '../src/api/index.ts'
+import { leanTheorems, theoremOfKey, domainOf, enumeratedNames, isComputedKey, leanPathOf } from '../src/api/index.ts'
 import { publicationHtml, structuredData, NOVELTY, kinds, closureOf, creditedIn } from '../src/publication/index.ts'
 import { treeOf } from '../src/quantum/tree.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
@@ -79,7 +79,7 @@ const withHues = <T extends { receipt: string }>(list: T[], i: number, N: number
 
 
 // read each theorem's exact statement+proof from index.lean — Lean is the single source of the proof
-const leanSrc = readFileSync('src/proof/index.lean', 'utf8')
+const leanSrc = readFileSync(leanPathOf('index.lean'), 'utf8')
 const extractLean = (key: string): string => {
   const m = leanSrc.match(new RegExp('theorem\\s+' + key + '\\s*:([\\s\\S]*?):= by decide'))
   return m ? ('theorem ' + key + ' :' + m[1] + ':= by decide').replace(/[ \t]+$/gm, '') : ''
@@ -98,7 +98,7 @@ export default {
   paths() {
     // 1 · the discovery ledger — unchanged
     const ledger: { key: string; name: string; receipt: string; revoked?: boolean; reason?: string; supersededBy?: string }[] =
-      JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
+      JSON.parse(readFileSync('src/ledger/discovered.json', 'utf8'))
     const N = ledger.length
     // A REVOKED ENTRY KEEPS ITS PAGE AND MUST SAY SO. The record is append-only, so the URL stays resolvable
     // and the receipt stays checkable — but the template's standing claims ("re-verified on every build", "if

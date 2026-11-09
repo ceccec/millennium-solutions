@@ -17,7 +17,7 @@
 // This script WRITES the depositions. It does not upload them: minting a DOI is permanent and public, and
 // that is the author's call to make, not a build step's.
 import { writeFileSync, mkdirSync, rmSync, readFileSync, existsSync } from 'node:fs'
-import { leanTheorems, leanSource, ledger, theoremOfKey, type LeanTheorem } from '../src/api/index.ts'
+import { leanTheorems, leanSource, leanPathOf, ledger, theoremOfKey, type LeanTheorem } from '../src/api/index.ts'
 import { publicationHtml, NOVELTY, kinds, ownFiles, closureOf, creditedIn, SITE, REPO, CONCEPT_DOI, FUNDING, statementAddress, STATEMENT_ADDRESS_SPEC } from '../src/publication/index.ts'
 import { toUuid } from '../src/0/index.ts'
 
@@ -42,7 +42,7 @@ const siblingEdges = (t: LeanTheorem) => {
   return out.slice(0, 12)
 }
 
-/** The files whose theorems are this deposit's OWN construction — kind 1 in src/proof/priorart.lean,
+/** The files whose theorems are this deposit's OWN construction — kind 1 in src/iso/690-record/priorart.lean,
  *  derived from that table rather than listed here, so the two cannot drift apart. */
 
 
@@ -112,7 +112,7 @@ export const deposition = (t: LeanTheorem) => {
   const page = key ? `${SITE}/theorem/${key}` : null
   const credit = creditedIn(t.file).get(t.name) ?? null
   const needs = closureOf(t.file)
-  const needs2 = ['src/proof/' + t.file, ...needs.map((f) => 'src/proof/' + f)]
+  const needs2 = [leanPathOf(t.file), ...needs.map((f) => leanPathOf(f))]
   const novelty = credit
     ? `Prior art: NAMED AND CREDITED for this declaration specifically. ${credit} The file it sits in is `
       + `otherwise this deposit's own construction; this record claims no priority over the earlier work it names.`
@@ -171,7 +171,7 @@ export const deposition = (t: LeanTheorem) => {
       ...(page ? [{ identifier: page, relation: 'isDocumentedBy' }] : []),
       { identifier: `${SITE}/paper`, relation: 'isDocumentedBy' },
       { identifier: `${SITE}/proofs`, relation: 'isDocumentedBy' },
-      { identifier: `${REPO}/blob/main/src/proof/${t.file}`, relation: 'isSupplementTo' },
+      { identifier: `${REPO}/blob/main/${leanPathOf(t.file)}`, relation: 'isSupplementTo' },
       { identifier: REPO, relation: 'isSupplementTo' },
       { identifier: HOME, relation: 'isPartOf' },
       { identifier: PKG, relation: 'isSupplementedBy' },
@@ -179,7 +179,7 @@ export const deposition = (t: LeanTheorem) => {
     ],
     references: [
       `Rouschev, T. The ℤ/9 Vortex Framework. Zenodo. https://doi.org/${CONCEPT_DOI}`,
-      `Declaration \`${t.name}\`, src/proof/${t.file}, Lean 4, closed by ${t.tactic}. ${REPO}/blob/main/src/proof/${t.file}`,
+      `Declaration \`${t.name}\`, ${leanPathOf(t.file)}, Lean 4, closed by ${t.tactic}. ${REPO}/blob/main/${leanPathOf(t.file)}`,
       `Typeset statement and proof census: ${SITE}/paper`,
       ...(page ? [`Content-addressed record ${key}, receipt ${toUuid(key!)}: ${page}`] : []),
       `Verifier and recomputation instructions: ${SITE}/verify`,
@@ -191,7 +191,7 @@ export const deposition = (t: LeanTheorem) => {
     // aware of the other. This address is computed from the statement alone by a published rule, so any
     // repository reproduces it — and a match is a candidate for `isIdenticalTo`, judged by a reader rather
     // than merged here. Carried in `notes`, which is a documented Zenodo field; `alternateName` is not one.
-    notes: `statement-address ${statementAddress(t.statement)} (${STATEMENT_ADDRESS_SPEC}) · ${FUNDING.statement} · key ${key ?? '(no live ledger key)'} · receipt ${key ? toUuid(key) : '—'} · source file src/proof/${t.file} · `
+    notes: `statement-address ${statementAddress(t.statement)} (${STATEMENT_ADDRESS_SPEC}) · ${FUNDING.statement} · key ${key ?? '(no live ledger key)'} · receipt ${key ? toUuid(key) : '—'} · source file ${leanPathOf(t.file)} · `
       + `namespace ${t.namespace || '(none)'} · closed by ${t.tactic} · concept DOI ${CONCEPT_DOI} · `
       + `recompute: lean ${needs2.join(' ')} — or git clone ${REPO} && npm ci && npm run lean`,
   }
@@ -206,7 +206,7 @@ if (process.argv[2] === '--write') {
   for (const t of rows) writeFileSync(`${OUT}/lean_${t.name}.json`, JSON.stringify(deposition(t), null, 2) + '\n')
   writeFileSync('.zenodo/index.json', JSON.stringify({
     concept_doi: CONCEPT_DOI,
-    generated_from: 'src/proof/priorart.lean kind 1 · src/proof/*.lean',
+    generated_from: 'src/iso/690-record/priorart.lean kind 1 · src/**/*.lean',
     count: rows.length,
     files: [...own].sort(),
     depositions: rows.map((t) => `lean_${t.name}`).sort(),

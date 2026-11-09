@@ -48,7 +48,7 @@ if (inj) {
 }
 
 console.log(bad
-  ? `\n✗ quantum-field: ${bad} disagreement(s) — the rendered field does not match src/proof/quantum.lean`
+  ? `\n✗ quantum-field: ${bad} disagreement(s) — the rendered field does not match src/quantum/quantum.lean`
   : `\n✓ quantum-field: the geometry agrees with the kernel — ${got.perms_of_four_is_factorial} orderings collapse to `
     + `${got.superposition_collapses_to_one} receipt where the uncanonicalised control gives `
     + `${got.the_uncanonicalised_fold_gives_many_answers}; ${got.the_receipt_is_not_injective_sets} multisets share `

@@ -5,7 +5,7 @@
 // otherwise — the build-embedded count always holds. Not a live MCP server; deterministic, not AI.
 import { ref, onMounted } from 'vue'
 import { withBase } from 'vitepress'
-import ledger from '../../src/proof/discovered.json'
+import ledger from '../../src/ledger/discovered.json'
 
 const count = ledger.length
 const latest = ledger[ledger.length - 1]

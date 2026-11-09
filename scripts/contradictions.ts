@@ -22,7 +22,7 @@
 //      sentence claiming one in the repository's own voice ("we", "this work") is refused.
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, advantage, split, ledger, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
+import { census, leanFiles, leanSource, leanTheorems, leanPathOf, theoremOfKey, advantage, split, ledger, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
 import { CLAIMS_A_PRIZE, QUANTUM_CLAIM, NEGATOR, CURE_CLAIM, FORCE_CLAIM } from '../src/honesty/claims.ts'
 
 // ── A FILE THAT HOLDS THE DETECTORS MUST BE ABLE TO QUOTE WHAT THEY CATCH ────────────────────────────────
@@ -413,7 +413,7 @@ for (const [claim, shown, evidence] of PROVED)
     fail(`the front pages do not state "${claim}" — it is established by ${evidence}. Proved and unsaid is an underclaim, and this repo's gates were all pointed the other way`)
 
 // ── 5 · no assertion may certify an assignment ───────────────────────────────────────────────────────────
-// The defect removed from src/proof/index.lean, swept across the tree. `def provenHere : Nat := 0` with a
+// The defect removed from src/iso/9001-governance/index.lean, swept across the tree. `def provenHere : Nat := 0` with a
 // theorem deciding `provenHere = 0` certifies that a number the author typed equals itself; in TypeScript
 // the same shape is `const solved = 0` followed by a test asserting `solved === 0`. erpax-94 found 507 of
 // these in its own tree after I reported mine, which is why this is a standing check and not a one-off:
@@ -474,7 +474,7 @@ for (const f of leanFiles()) {
     if (!asserts) continue
     const uses = [...src.matchAll(new RegExp(`\\b${name}\\b`, 'g'))].length
     if (uses <= 2 + 1) {   // the def, the assertion, and nothing else
-      fail(`src/proof/${f}: \`${name}\` is defined as ${lit} and \`${asserts[1]}\` decides it equals ${lit}, and it is `
+      fail(`${leanPathOf(f)}: \`${name}\` is defined as ${lit} and \`${asserts[1]}\` decides it equals ${lit}, and it is `
         + `used nowhere else — a number compared to itself. It certifies nothing and cannot go red however much `
         + `the file claims. Derive it, or delete the declaration and let a check that reads the corpus carry the claim.`)
     }
@@ -528,7 +528,7 @@ for (const f of leanFiles()) {
     // the vocabulary of the property being decided — reaching, bounds, ranges, exhaustion — rather than
     // naming a subject the proposition never mentions.
     if (/reach|bound|range|exhaust|never_contains|own_/i.test(t[1])) continue
-    fail(`src/proof/${f}: \`${t[1]}\` filters on \`(List.range n).contains n\`, false for every n, so the `
+    fail(`${leanPathOf(f)}: \`${t[1]}\` filters on \`(List.range n).contains n\`, false for every n, so the `
       + `conjunct cannot fail — and the name speaks of something the proposition never mentions`)
   }
 
@@ -540,7 +540,7 @@ for (const f of leanFiles()) {
   for (const t of src.matchAll(/^theorem\s+(\w+)\s*:([\s\S]*?):=\s*by\s+decide/gm)) {
     const parts = t[2].split('∧').map((x) => x.replace(/\s+/g, ' ').replace(/[()]/g, '').trim()).filter(Boolean)
     const dup = parts.find((x, i) => parts.indexOf(x) !== i)
-    if (dup) fail(`src/proof/${f}: \`${t[1]}\` conjoins \`${dup}\` with itself — a conjunct that cannot fail, `
+    if (dup) fail(`${leanPathOf(f)}: \`${t[1]}\` conjoins \`${dup}\` with itself — a conjunct that cannot fail, `
       + `so the theorem decides exactly what it would without it`)
   }
 
@@ -565,7 +565,7 @@ for (const f of leanFiles()) {
   // theorem that a change of unit destroys the pattern. The claim is bold and its limit is decided.
   if (/^-- CLAIMS: physical$/m.test(src)) {
     if (!/falsifier|destroys it|would break/i.test(src))
-      fail(`src/proof/${f}: claims physically and names no falsifier — a bold claim without the computation `
+      fail(`${leanPathOf(f)}: claims physically and names no falsifier — a bold claim without the computation `
         + `that would break it asks a reader to trust rather than to check`)
   }
 
@@ -576,11 +576,11 @@ for (const f of leanFiles()) {
       // exactly what the refusal asks. This exemption is COUNTED AND PRINTED rather than applied silently,
       // because an exemption nobody sees is how a word list quietly stops covering anything.
       if (hit.length && /(^|_)(not|never|no|nothing|nor)(_|$)/.test(t[1])) {
-        exempted.push(`src/proof/${f}: ${t[1]}`)
+        exempted.push(`${leanPathOf(f)}: ${t[1]}`)
         continue
       }
       if (hit.length) {
-        fail(`src/proof/${f}: the file refuses physical claims, and \`${t[1]}\` is published under a name that `
+        fail(`${leanPathOf(f)}: the file refuses physical claims, and \`${t[1]}\` is published under a name that `
           + `makes one (${hit.join(', ')}). The proposition decides arithmetic on defined constants; the name `
           + `is the Zenodo title and the page heading, and it is what a reader is asked to believe.`)
       }
@@ -591,10 +591,10 @@ for (const f of leanFiles()) {
   if (!m) continue
   const decided = leanTheorems().filter((t) => t.file.endsWith(f) && t.tactic === 'by decide').length
   if (+m[1] !== decided)
-    fail(`src/proof/${f}: settledHere = ${m[1]} but the file holds ${decided} declarations closing by exhaustion — a hand-typed count, published as typeset mathematics in paper.md, that nothing recomputed`)
+    fail(`${leanPathOf(f)}: settledHere = ${m[1]} but the file holds ${decided} declarations closing by exhaustion — a hand-typed count, published as typeset mathematics in paper.md, that nothing recomputed`)
   const named = src.match(/^theorem (\w+) : settledHere = (\d+) := rfl$/m)
   if (named && +named[2] !== +m[1])
-    fail(`src/proof/${f}: ${named[1]} decides settledHere = ${named[2]} while the def says ${m[1]}`)
+    fail(`${leanPathOf(f)}: ${named[1]} decides settledHere = ${named[2]} while the def says ${m[1]}`)
 }
 
 // ── 4g · THE LEDGER AND THE PROOF TREE COMPARED AS SETS, NOT COUNTS ──────────────────────────────────────

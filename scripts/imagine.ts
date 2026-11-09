@@ -35,12 +35,12 @@
 // Run: node scripts/imagine.ts          (propose and report)
 //      node scripts/imagine.ts --emit   (also write src/proof/imagined*.lean and verify them)
 import { existsSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
-import { leanPathOf } from '../src/api/index.ts'
+import { leanPathOf, OLEAN_DIR } from '../src/api/index.ts'
 import { flag } from '../src/cli/index.ts'
 import { execSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 // the cache scripts/lean.ts writes; its shape is that file's, read here and never written here.
-const LEAN_CACHE = 'src/proof/.lean-cache.json'
+const LEAN_CACHE = `${OLEAN_DIR}/.lean-cache.json`
 const LEAN_CACHE_FORMAT = 3
 import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
 import { leanFiles } from '../src/api/index.ts'
@@ -110,7 +110,7 @@ const SETS: { id: string; lean: string; say: string; s: number[] }[] = [
   { id: 'cubes',   lean: '[0, 1, 8]',    say: 'the cubes mod nine',   s: [0, 1, 8] },
 ]
 // ── THREE MORE STRUCTURES, DERIVED RATHER THAN LISTED ───────────────────────────────────────────────────
-// src/proof/closure.lean named nine properties of ℤ/9 that this deposit reasons about, and three of them
+// src/iso/80000-2-mathematics/closure.lean named nine properties of ℤ/9 that this deposit reasons about, and three of them
 // were structures this generator had no word for: the primitive roots, the self-inverse residues, and the
 // residues the reflection fixes. Each is COMPUTED from the ring below — a literal here would be a fourth
 // copy of a set the tree already proves, which is the defect the note above this table records.
@@ -535,10 +535,10 @@ const t2 = t3.filter((c) => {
 // the shape. An entry this run did not produce is somebody's record of where a proof went; it is kept, and a
 // key this run DOES produce wins, because for that key this run is the newer evidence.
 {
-  const prior: Record<string, string> = existsSync('src/proof/covered.json')
-    ? JSON.parse(readFileSync('src/proof/covered.json', 'utf8')) : {}
+  const prior: Record<string, string> = existsSync('src/ledger/covered.json')
+    ? JSON.parse(readFileSync('src/ledger/covered.json', 'utf8')) : {}
   const merged = { ...prior, ...Object.fromEntries([...coveredBy]) }
-  writeFileSync('src/proof/covered.json', JSON.stringify(Object.fromEntries(Object.entries(merged).sort()), null, 2) + '\n')
+  writeFileSync('src/ledger/covered.json', JSON.stringify(Object.fromEntries(Object.entries(merged).sort()), null, 2) + '\n')
 }
 const overlap = t3.length - t2.length
 
@@ -549,7 +549,7 @@ console.log(`imagined ${cands.length} propositions over ℤ/9 · ${t1.length} tr
 const killed = t1.length - t3.length
 console.log(`  ${killed} true-but-free statement(s) discarded — they hold for every sibling and so name nothing`)
 console.log(`  ${overlap} already expressed in src/proof — recognised through definition aliases, not spelling`)
-console.log(`  covering theorem named for ${coveredBy.size} of them in src/proof/covered.json — a dropped candidate whose key is still sealed is superseded, not lost`)
+console.log(`  covering theorem named for ${coveredBy.size} of them in src/ledger/covered.json — a dropped candidate whose key is still sealed is superseded, not lost`)
 
 if (!process.argv.includes('--emit')) {
   for (const c of t2.slice(0, 40)) console.log('  · ' + c.say)
@@ -573,7 +573,7 @@ if (!process.argv.includes('--emit')) {
 // it. The ledger is append-only: what this writes cannot be taken back, which is the whole reason for a gate
 // in front of it rather than an apology behind it.
 const SEALED = (() => {
-  try { return (JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as unknown[]).length } catch { return 0 }
+  try { return (JSON.parse(readFileSync('src/ledger/discovered.json', 'utf8')) as unknown[]).length } catch { return 0 }
 })()
 if (t2.length > 0 && !flag('--grow')) {
   const already = new Set(leanFiles().filter(MINE.test.bind(MINE))
@@ -599,7 +599,7 @@ const blocks = t2.map((c) => `-- ${c.say}\ntheorem ${c.key} :\n  ${c.prop} := by
 // A prior-art search is a human act performed outside this program; nothing here can redo it, so nothing
 // here may overwrite its record.
 const PRIOR_ART_KEYS = ['prior_art', 'prior_art_domain', 'prior_art_note', 'prior_art_search']
-const existing = existsSync('src/proof/imagined.lean') ? readFileSync('src/proof/imagined.lean', 'utf8') : ''
+const existing = existsSync('src/iso/80000-2-mathematics/imagined.lean') ? readFileSync('src/iso/80000-2-mathematics/imagined.lean', 'utf8') : ''
 const carried = PRIOR_ART_KEYS
   .map((k) => existing.match(new RegExp(`^-- ${k}: .*$`, 'm'))?.[0])
   .filter((l): l is string => Boolean(l) && l !== '-- prior_art: unclassified')
@@ -626,13 +626,15 @@ const shards: string[][] = []
 for (let i = 0; i < blocks.length; i += PER_SHARD) shards.push(blocks.slice(i, i + PER_SHARD))
 if (!shards.length) shards.push([])
 const shardName = (n: number) => n === 0 ? 'imagined.lean' : `imagined_${n + 1}.lean`
+// the imagined shards home in the mathematics foundation (ISO 80000-2), with the other pure-math proofs
+const IMAGINED_DIR = 'src/iso/80000-2-mathematics'
 // shards left over from a larger previous run would otherwise stay on disk, be compiled by the corpus, and
 // keep sealing theorems this run no longer proposes.
 for (let n = shards.length; n < 64; n++) {
-  const stale = 'src/proof/' + shardName(n)
+  const stale = `${IMAGINED_DIR}/${shardName(n)}`
   if (existsSync(stale)) { rmSync(stale); console.log(`  removed ${shardName(n)} — this run proposes fewer`) }
 }
-shards.forEach((part, n) => writeFileSync('src/proof/' + shardName(n), `import Z9
+shards.forEach((part, n) => writeFileSync(`${IMAGINED_DIR}/${shardName(n)}`, `import Z9
 set_option maxRecDepth 8000000
 -- title: What enumeration proposed and the kernel kept${shards.length > 1 ? ` (${n + 1} of ${shards.length})` : ''}
 -- wing: the imagined
@@ -693,7 +695,7 @@ try {
   })
   if (fresh.length < shards.length)
     console.log(`  · ${shards.length - fresh.length} shard(s) unchanged — the kernel's verdict on those exact bytes is on record`)
-  const out = fresh.map((name) => String(execSync(`cd src/proof && LEAN_PATH=. lean ${name}`, { encoding: 'utf8', stdio: 'pipe' }))).join('\n')
+  const out = fresh.map((name) => String(execSync(`LEAN_PATH=${OLEAN_DIR} lean ${leanPathOf(name)}`, { encoding: 'utf8', stdio: 'pipe' }))).join('\n')
   const errors = verdict(out)
   if (errors.length) { console.log('  ✗ ' + errors.length + ' refused:\n' + errors.slice(0, 10).map((l) => '    ' + l).join('\n')); process.exit(1) }
   console.log('  ✓ the kernel accepted all ' + t2.length)

@@ -2,10 +2,10 @@
 // The human organism, decoded from the ledger and encoded in the UI. Every theorem is an ORGAN — a decidable
 // fact that computes true — grouped by the type its KEY reflects (the label is translatable surface, the key is
 // the identity). What is NOT an organ never enters the ledger: it goes to trial (the honesty gate drains a boast,
-// forensics names a non-theorem). This page reads src/proof/discovered.json directly, so it updates every build.
+// forensics names a non-theorem). This page reads src/ledger/discovered.json directly, so it updates every build.
 import { computed } from 'vue'
 import { withBase } from 'vitepress'
-import ledger from '../../src/proof/discovered.json'
+import ledger from '../../src/ledger/discovered.json'
 import { withoutFloor } from '../../src/honesty/index'
 // names as SHOWN: the sealed names of revoked entries carried the removed Clay floor; the ledger keeps them as sealed.
 const theorems = (ledger as { key: string; name: string; receipt: string }[]).map((t) => ({ ...t, name: withoutFloor(t.name) }))

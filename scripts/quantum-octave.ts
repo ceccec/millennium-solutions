@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // QUANTUM OCTAVE — Mermin's GHZ lead and the cluster state's stabilizers at ANY width, from src/quantum/hardware/hardware.ts.
 //
-// The kernel seals the octaves 2 … 128 (src/proof/quantum_octaves.lean, quantum_octave_128.lean); this answers any n by
+// The kernel seals the octaves 2 … 128 (src/quantum/quantum_octaves.lean, quantum_octave_128.lean); this answers any n by
 // the same method, with no cap. The width is a number, or read from a UUID's own fields: 128 bits minus the version hex
 // digit (124), minus the variant bits too (122).
 //

@@ -14,7 +14,7 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 *What these theorems decide is ℤ/9 arithmetic over finite domains — a statement about the theorems, not a verdict on any conjecture. Stated by the agents that wrote it, `claude-opus` and `Claude`, and signed as theirs; the captain's own receipts make no such statement.*
 
-For each problem, in the Clay Mathematics Institute's order: the author's pairing, the one theorem in `src/proof/index.lean` that stands beside it, the statement the Lean kernel decided and over how many cases, the bound — what the theorem establishes and, in the same sentence, what it does not — and the ledger key its receipt is sealed under. Every line below is read out of the tree on each build.
+For each problem, in the Clay Mathematics Institute's order: the author's pairing, the one theorem in `src/iso/9001-governance/index.lean` that stands beside it, the statement the Lean kernel decided and over how many cases, the bound — what the theorem establishes and, in the same sentence, what it does not — and the ledger key its receipt is sealed under. Every line below is read out of the tree on each build.
 
 ### Riemann Hypothesis — Riemann — the reflection's symmetry and its one computed heart
 
@@ -110,7 +110,7 @@ One theorem states that the seven above are facts about a single object — the 
 
 ### Developed across subjects
 
-The structure the seven live in is proved separately and then found again in the other subjects. `src/proof/group.lean` (8 theorems, e.g. [`lean_groups_the_pair_arithmetic_is_composition`](/theorem/lean_groups_the_pair_arithmetic_is_composition)) generates the affine maps of ℤ/9 to closure and decides which form a group; `src/proof/bridge.lean` (8 theorems, e.g. [`lean_bridge_the_reduction_shared_by_10_subjects_is_the_orbit_of_d_to_2d_plus_0_0`](/theorem/lean_bridge_the_reduction_shared_by_10_subjects_is_the_orbit_of_d_to_2d_plus_0_0)) decides that the cross-subject families of `src/entangle` reduce, mod 9, to orbits of those very maps — the same object measured in several subjects, and one family that no affine map generates, kept as the control.
+The structure the seven live in is proved separately and then found again in the other subjects. `src/iso/80000-2-mathematics/group.lean` (8 theorems, e.g. [`lean_groups_the_pair_arithmetic_is_composition`](/theorem/lean_groups_the_pair_arithmetic_is_composition)) generates the affine maps of ℤ/9 to closure and decides which form a group; `src/iso/80000-2-mathematics/bridge.lean` (8 theorems, e.g. [`lean_bridge_the_reduction_shared_by_10_subjects_is_the_orbit_of_d_to_2d_plus_0_0`](/theorem/lean_bridge_the_reduction_shared_by_10_subjects_is_the_orbit_of_d_to_2d_plus_0_0)) decides that the cross-subject families of `src/entangle` reduce, mod 9, to orbits of those very maps — the same object measured in several subjects, and one family that no affine map generates, kept as the control.
 
 ### Provenance
 

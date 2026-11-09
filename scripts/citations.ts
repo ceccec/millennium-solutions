@@ -4,7 +4,7 @@
 // "Use without citing" is the violation this deposit cares about, and the citation graph answers only half
 // of it: it names everyone who DID cite. Whoever used the work and said nothing is, by construction, absent
 // from it. So this reports what the graph holds and refuses to read silence as innocence or as guilt — the
-// boundary src/proof/instruments.lean decides for other instruments, applied where it matters most, because
+// boundary src/iso/9001-governance/instruments.lean decides for other instruments, applied where it matters most, because
 // the wrong side of it here is an accusation against a real person.
 //
 // A self-citation is not a citation for this purpose. The author citing his own deposit from his own later
@@ -94,12 +94,12 @@ console.log(`  the instrument rather than the work.`)
 if (flag('--write')) {
   // The boundary travels with the measurement, so anything reading this file inherits it rather than
   // inheriting a bare zero.
-  writeFileSync('src/proof/citations.json', JSON.stringify({
+  writeFileSync('src/ledger/citations.json', JSON.stringify({
     measured: new Date().toISOString().slice(0, 10),
     consulted: CONSULTED,
     notConsulted: ZENODO_USES,
     boundary: 'Zenodo\'s own record pages use NASA ADS, DataCite and Crossref Event Data, and Europe PMC. Only DataCite is common with this measurement, so a third-party citation may appear there and not here.',
     tracked,
   }, null, 2) + '\n')
-  console.log('\n  recorded → src/proof/citations.json')
+  console.log('\n  recorded → src/ledger/citations.json')
 }

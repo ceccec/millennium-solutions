@@ -51,7 +51,7 @@ type LedgerEntry = { key: string; name: string; receipt: string }
 // the published package does not include src/proof/. Zero theorems is a finding about this deposit; an absent
 // file is a fact about the caller's environment, and a tool that cannot tell them apart reports the first
 // when it means the second. The throw is caught per tool and becomes a note the caller can read.
-export const LEDGER_PATH = 'src/proof/discovered.json'
+export const LEDGER_PATH = 'src/ledger/discovered.json'
 export const ledgerPresent = (): boolean => existsSync(LEDGER_PATH)
 const loadLedger = (): LedgerEntry[] => {
   if (!ledgerPresent()) throw new Error(
@@ -120,7 +120,7 @@ const waveSummary = (count: number, rows: { verifier: string }[]) => {
 export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   // ── THE COMBINATORIAL LAYER, ANSWERED HERE ─────────────────────────────────────────────────────────────
   // All four read and none writes. `novelty` in particular RETURNS its search instead of filing it:
-  // src/proof/novelty.json is the evidence priorart.lean's kind 2 rests on, and a public caller must be
+  // src/ledger/novelty.json is the evidence priorart.lean's kind 2 rests on, and a public caller must be
   // able to ask the question without being able to amend the answer.
   novelty: async (a) => {
     const statement = String(a?.statement ?? '')
@@ -660,7 +660,7 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
       everyMultiwordLinked,
       // THE KERNEL'S VERDICT, NOT A JAVASCRIPT LOOP: the theorem is compiled by lean_ask and must come back
       // compiling, sorry-free, and depending on no axiom. Anything else reads as false.
-      diamondInvolution: leanHolds('src/proof/diamond.lean', 'diamond_involution'),
+      diamondInvolution: leanHolds('src/iso/80000-2-mathematics/diamond.lean', 'diamond_involution'),
       everyDiamondCertified: diamonds.every((d) => d.certified),
     }
     const allComputeTrue = Object.values(theorems).every(Boolean)
@@ -702,7 +702,7 @@ const has = (() => {
   const q = (c: string) => { try { execSync(c, { stdio: 'ignore' }); return true } catch { return false } }
   return {
     core: true,
-    tree: existsSync('src/proof') && existsSync('scripts'),
+    tree: existsSync('src/iso') && existsSync('scripts'),
     git: q('git rev-parse --is-inside-work-tree'),
     lean: q('lean --version'),
     ledger: existsSync(LEDGER_PATH),

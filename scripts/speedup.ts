@@ -8,7 +8,7 @@ import { digitalRoot } from '../src/0/index.ts'
 import { report as rosetta } from '../src/the/rosetta/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 
-const ledger: { key: string; receipt: string }[] = existsSync('src/proof/discovered.json')
+const ledger: { key: string; receipt: string }[] = existsSync('src/ledger/discovered.json')
   ? __ledger() : []
 // N IS A COUNT OF LEDGER ENTRIES, NOT OF THEOREMS. This page said "generated from the N theorems" three
 // lines after saying "the N receipts" correctly — the same number, named two ways in one file. There are

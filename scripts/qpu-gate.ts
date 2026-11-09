@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// QPU GATE — the installed @uuidna/qpu against what src/proof/qpu.lean declares, read on both sides, typed on neither.
+// QPU GATE — the installed @uuidna/qpu against what src/quantum/qpu.lean declares, read on both sides, typed on neither.
 //
 // qpu.lean carries eight constants "read from the served JSON-LD on 2026-09-28" and proves what follows from them
 // IF they are as stated. A date and a hand are the weakest provenance this tree accepts: the service can change,

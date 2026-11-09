@@ -2,7 +2,7 @@
  *
  *  A notice that overclaims is worth less than one that does not, and it is worth less in exactly the
  *  setting where it matters: a reader who finds one false statement in it stops believing the rest. So every
- *  right asserted here is read from src/proof/rights.lean — the table the kernel decides — and every
+ *  right asserted here is read from src/iso/690-record/rights.lean — the table the kernel decides — and every
  *  capability of the provenance record is stated with its limit attached.
  *
  *  This is a NOTICE, not legal advice, and it says so. What it does is tell a machine reader precisely what
@@ -41,7 +41,7 @@ const captainClaim = (): { message: string; uuid: string } | null => {
 }
 const CLAIM = captainClaim()
 
-const rights = readFileSync('src/proof/rights.lean', 'utf8')
+const rights = readFileSync('src/iso/690-record/rights.lean', 'utf8')
 
 // READ THE ROWS, NOT THE LEGEND. The first version of this matched `--   kind 0 — …`, which is the comment
 // explaining what kind 0 MEANS — one line, present whatever the table says. It printed "1 right(s) read
@@ -65,13 +65,13 @@ const decidedIds = rights.match(/^\s*instruments\.map idOf = \[([\d, ]+)\]/m)?.[
 if (!decidedIds) { console.log('✗ notice: rights.lean states no decided enumeration to check the parse against'); process.exit(1) }
 const readIds = rows.map((m) => m[1]).join(', ')
 if (readIds !== decidedIds) {
-  console.log(`✗ notice: read instruments [${readIds}] from src/proof/rights.lean but the kernel decides [${decidedIds}] — refusing to publish a rights notice built on a partial read of the table`)
+  console.log(`✗ notice: read instruments [${readIds}] from src/iso/690-record/rights.lean but the kernel decides [${decidedIds}] — refusing to publish a rights notice built on a partial read of the table`)
   process.exit(1)
 }
 const autoIds = rows.filter((m) => m[2] === 'true').map((m) => m[1]).join(', ')
 const claimedIds = claimedRows.map((m) => m[1]).join(', ')
 if (autoIds !== claimedIds) {
-  console.log(`✗ notice: in src/proof/rights.lean, rows arising without formality [${autoIds}] but rows claimed [${claimedIds}] — the kernel decides these are the same set; refusing to publish`)
+  console.log(`✗ notice: in src/iso/690-record/rights.lean, rows arising without formality [${autoIds}] but rows claimed [${claimedIds}] — the kernel decides these are the same set; refusing to publish`)
   process.exit(1)
 }
 
@@ -101,7 +101,7 @@ claimed as having occurred.
 ${claimed.map((c) => `- ${c}`).join('\n')}
 
 The deposit claims **exactly** the without-formality set and nothing requiring an act it has not performed.
-That boundary is decided by exhaustion in \`src/proof/rights.lean\`, not asserted here.
+That boundary is decided by exhaustion in \`src/iso/690-record/rights.lean\`, not asserted here.
 
 ## Checking this without trusting anyone
 

@@ -39,7 +39,7 @@ const cands: { name: string; prop: string; discriminates: string }[] = [
 // they belong beside it — and a /tmp file cannot see `Address` on the path anyway, which is how the first
 // attempt failed. The repo's own runner compiles it.
 if (process.argv.includes('--write')) {
-  const target = 'src/proof/address.lean'
+  const target = 'src/iso/iec-9834-8-identifiers/address.lean'
   const src = readFileSync(target, 'utf8')
   if (src.includes(cands[0].name)) { console.log('  already emitted — nothing to write'); process.exit(0) }
   const block = `\n-- ── RECOVERED FROM THE WITHDRAWN POOL ──────────────────────────────────────────────────────────────────\n`

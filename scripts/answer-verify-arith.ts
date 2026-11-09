@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// ANSWER-VERIFY-ARITH — the C2 verifier. The arithmetic decision is in Lean (src/proof/arith.lean); this script only
+// ANSWER-VERIFY-ARITH — the C2 verifier. The arithmetic decision is in Lean (src/iso/80000-2-mathematics/arith.lean); this script only
 // PROPOSES. task-route finds a factor or proves a prime, and the proposed claim is compiled by the Lean kernel together
 // with the definitions. The verdict is TRUE or FALSE only if the kernel accepts the claim with no axiom beyond the
 // standard ones. A claim the kernel refuses, or cannot finish in time, is UNKNOWN.
@@ -27,7 +27,7 @@ const proposeFrom = (report: RouteReport): Claim | null => {
 
 const kernelCheck = (claim: Claim): { ok: boolean; why: string } => {
   // the claim is a theorem outside the namespace, so lean-ask can audit its axioms by its bare name
-  const source = readFileSync(resolve(ROOT, 'src/proof/arith.lean'), 'utf8') + `\ntheorem claim : ${claim.statement} := by decide\n`
+  const source = readFileSync(resolve(ROOT, 'src/iso/80000-2-mathematics/arith.lean'), 'utf8') + `\ntheorem claim : ${claim.statement} := by decide\n`
   const run = spawnSync('node', ['scripts/lean-ask.ts'], { cwd: ROOT, input: source, encoding: 'utf8', timeout: 300_000 })
   let ask: { compiles?: boolean; sorry?: boolean; axioms?: string[]; messages?: string[] } = {}
   try { ask = JSON.parse(String(run.stdout)) } catch { return { ok: false, why: 'the kernel gave no answer' } }
@@ -50,5 +50,5 @@ console.log(JSON.stringify({
   question: `is ${input} prime?`,
   reason: value === 'UNKNOWN' ? checked.why : `${claim!.value}: ${checked.why}`,
   certificate: value === 'UNKNOWN' ? null : { type: 'C2', statement: claim!.statement, witness: claim!.witness ?? { compositeBase: 'trial division, kernel-checked' } },
-  checkedBy: 'lean-kernel (src/proof/arith.lean) via task-route proposal',
+  checkedBy: 'lean-kernel (src/iso/80000-2-mathematics/arith.lean) via task-route proposal',
 }, null, 1))

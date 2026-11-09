@@ -48,8 +48,8 @@ const git = (...a: string[]) => execFileSync('git', a, { encoding: 'utf8' }).tri
 const HEAD = git('rev-parse', 'HEAD'), HEAD_DATE = git('log', '-1', '--format=%cs')
 const AT = (f: string) => `${REPO}/blob/${HEAD}/${f}`
 // THE LEDGER IS NOT SIMPLY APPEND-ONLY. revoked.json lists rows removed from it outright; the drafts said "append-only".
-const REMOVED = (JSON.parse(readFileSync('src/proof/revoked.json', 'utf8')) as unknown[]).length
-const REMOVED_ON = git('log', '--diff-filter=A', '--format=%cs', '--', 'src/proof/revoked.json').split('\n').pop() ?? ''
+const REMOVED = (JSON.parse(readFileSync('src/ledger/revoked.json', 'utf8')) as unknown[]).length
+const REMOVED_ON = git('log', '--diff-filter=A', '--format=%cs', '--', 'src/ledger/revoked.json').split('\n').pop() ?? ''
 const pl = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`
 const sentence = (t: string) => { const x = t.trim(); if (!x) return ''; const y = x.charAt(0).toUpperCase() + x.slice(1); return /[.!?]$/.test(y) ? y : y + '.' }
 const src = (f: string) => readFileSync(`${leanPathOf(f)}`, 'utf8')
@@ -63,7 +63,7 @@ const front = (f: string, k: string) => {
 const zen = JSON.parse(readFileSync('.zenodo.json', 'utf8'))
 
 // ── the ledger: which declarations are sealed live, and their receipts ──────────────────────────────────────────
-const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; receipt: string; revoked?: boolean }[]
+const ledger = JSON.parse(readFileSync('src/ledger/discovered.json', 'utf8')) as { key: string; receipt: string; revoked?: boolean }[]
 const live = new Map(ledger.filter((e) => !e.revoked).map((e) => [e.key, e.receipt]))
 const keyOf = (t: LeanTheorem) => `lean_${t.namespace.toLowerCase()}_${t.name}`
 
@@ -205,12 +205,12 @@ function deposition(c: Cluster) {
   const files = [leanPathOf(c.file), ...closureOf(c.file).map((f) => leanPathOf(f))]
   const code = (t: string) => t.replace(/`([^`]+)`/g, '<code>$1</code>')
   const lede = [
-    `${pl(c.sealed.length, 'machine-checked theorem', 'machine-checked theorems')} from the Lean 4 source file <code>src/proof/${c.file}</code>, `
+    `${pl(c.sealed.length, 'machine-checked theorem', 'machine-checked theorems')} from the Lean 4 source file <code>${leanPathOf(c.file)}</code>, `
       + `by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose.`,
     decided ? `${decided === c.sealed.length ? (decided === 1 ? 'It is' : 'All are') : `${decided} ${decided === 1 ? 'is' : 'are'}`} checked case by case over a stated finite domain (<code>by decide</code>).` : '',
     proved ? `${proved === c.sealed.length ? (proved === 1 ? 'It is' : 'All are') : `${proved} ${proved === 1 ? 'is' : 'are'}`} proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other).` : '',
     c.declarations.length ? `${c.declarations.length === 1 ? 'One further declaration closes' : `${c.declarations.length} further declarations close`} by <code>rfl</code>, checked by evaluation, and ${c.declarations.length === 1 ? 'is' : 'are'} not included here, by design.` : '',
-    `Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; ${REMOVED} earlier rows removed on ${REMOVED_ON} are listed in <a href="${AT('src/proof/revoked.json')}">src/proof/revoked.json</a>.`,
+    `Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; ${REMOVED} earlier rows removed on ${REMOVED_ON} are listed in <a href="${AT('src/ledger/revoked.json')}">src/ledger/revoked.json</a>.`,
   ].filter(Boolean).join(' ')
   const verdictLine = n.chanceShare >= 0.05 ? 'consistent with chance'
     : `above chance by this measure, though with ${pl(proven.length, 'cluster', 'clusters')} about ${(proven.length * 0.05).toFixed(2)} are expected there by chance alone`
@@ -240,7 +240,7 @@ function deposition(c: Cluster) {
       + `${credits.size ? ` Credited per theorem: ${[...credits].map(([t, cr]) => `<code>${esc(t)}</code> — ${code(esc(cr))}`).join('; ')}.` : ''}`
       // A PERMANENT RECORD CARRIES NO TALLY THAT WILL CHANGE: the per-theorem searches live in a ledger searched again as sources allow.
       + ` Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, `
-      + `in the living ledger <a href="${REPO}/blob/main/src/proof/novelty.json">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p>`,
+      + `in the living ledger <a href="${REPO}/blob/main/src/ledger/novelty.json">src/ledger/novelty.json</a> (main branch). No novelty is claimed here.</p>`,
     `<p><strong>The theorems.</strong></p><ol>${c.sealed.map((t) => `<li><code>${esc(t.name)}</code> — <code>${esc(t.statement.length > 400 ? t.statement.slice(0, 400) + ' …' : t.statement)}</code> `
       + `<a href="${SITE}/theorem/${keyOf(t)}">record</a></li>`).join('')}</ol>`,
     `<p><strong>Recompute.</strong> Clone <a href="${REPO}">${REPO}</a> at commit <code>${HEAD.slice(0, 12)}</code> and run <code>npm ci && npm run lean</code>, `
@@ -255,7 +255,7 @@ function deposition(c: Cluster) {
     communities: zen.communities ?? [],
     related_identifiers: [
       { identifier: CONCEPT_DOI, relation: 'isPartOf', scheme: 'doi' },
-      { identifier: AT(`src/proof/${c.file}`), relation: 'isSupplementTo', scheme: 'url' },
+      { identifier: AT(`${leanPathOf(c.file)}`), relation: 'isSupplementTo', scheme: 'url' },
       ...importsOf(c.file).map((f) => ({ identifier: AT(`${leanPathOf(f)}`), relation: 'references', scheme: 'url' })),
       ...c.sealed.map((t) => ({ identifier: `${SITE}/theorem/${keyOf(t)}`, relation: 'hasPart', scheme: 'url' })),
     ],

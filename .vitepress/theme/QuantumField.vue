@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// THE QUANTUM FIELD, in three dimensions — src/proof/quantum.lean rendered, not illustrated.
+// THE QUANTUM FIELD, in three dimensions — src/quantum/quantum.lean rendered, not illustrated.
 //
 // Twenty-four spheres: the orderings of the doubling orbit [1,2,4,8], which `perms_of_four_is_factorial`
 // decides there are exactly 24 of. Each sits at the height of the value the CONTROL fold returns for that

@@ -43,7 +43,7 @@ export const reclaimableMB = (): number => {
   // is the kernel's own estimate of what a new process can take without swapping: the same quantity the
   // vm_stat branch assembles by hand, already computed, on the platform that was getting the guess.
   //
-  // Safe to prefer because src/proof/lanes.lean decides it: `more_memory_never_costs_a_lane` says a host
+  // Safe to prefer because src/iso/9001-governance/lanes.lean decides it: `more_memory_never_costs_a_lane` says a host
   // that reports honestly is never punished for it, and `lanes_never_exceed_what_memory_affords` bounds
   // what any reading can grant. A larger true number cannot produce an unsafe budget.
   try {

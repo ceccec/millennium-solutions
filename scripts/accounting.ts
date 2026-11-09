@@ -12,7 +12,7 @@ import { ledger as __ledger, releasedBefore } from '../src/api/index.ts'
 const COINS_PER_RECEIPT = 2 // 110 − 108 = 2 = −χ(genus-2); the fair-exchange unit (2 coins = 2 bits)
 const cap = (c: string, fallback = '') => { try { return execSync(c, { encoding: 'utf8' }).trim() } catch { return fallback } }
 
-const ledger: { key: string }[] = existsSync('src/proof/discovered.json') ? __ledger() : []
+const ledger: { key: string }[] = existsSync('src/ledger/discovered.json') ? __ledger() : []
 const theorems = ledger.length
 const signed = existsSync('src/receipts') ? readdirSync('src/receipts').filter((f) => f.endsWith('.json')).length : 0
 // ── THE RELEASE COUNT IS THE OBSERVER, NOT THE SUBJECT, AND IT POISONED EVERY RELEASE AFTER ONE ──────────
@@ -37,8 +37,8 @@ const excludeAtHead = cap('git tag --points-at HEAD').split('\n').filter(Boolean
 // generated before sealing named the tag before the PREVIOUS ledger commit (v9.8.6) and the same page checked after the
 // commit named v9.8.8 — so every octave sealed made this page stale, and the push refused v9.8.9 on it. The commit that
 // will carry the change has HEAD as its parent, so the release before it is `latest`: a fixed point either side.
-const ledgerDirty = cap('git status --porcelain -- src/proof/discovered.json') !== ''
-const ledgerTag = ledgerDirty ? latest : cap(`git describe --tags --abbrev=0 ${excludeAtHead} $(git log -1 --format=%H -- src/proof/discovered.json)`, latest)
+const ledgerDirty = cap('git status --porcelain -- src/ledger/discovered.json') !== ''
+const ledgerTag = ledgerDirty ? latest : cap(`git describe --tags --abbrev=0 ${excludeAtHead} $(git log -1 --format=%H -- src/ledger/discovered.json)`, latest)
 // tracked PLUS what `git add -A` is about to track: the chain regenerates this page and then commits new files it made in
 // the same run (a constants snapshot under a new handle), so a count of tracked files alone moved by 2 across the commit it
 // rode in, and the pre-push regeneration refused the push (2026-11-03). Counting the not-ignored set is stable across that commit.

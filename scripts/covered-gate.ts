@@ -21,7 +21,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { leanTheorems, liveKeys } from '../src/api/index.ts'
 
-const P = 'src/proof/covered.json'
+const P = 'src/ledger/covered.json'
 const before = readFileSync(P, 'utf8')
 const prior = JSON.parse(before) as Record<string, string>
 

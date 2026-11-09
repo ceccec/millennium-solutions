@@ -10,7 +10,7 @@ export const FUNDING = {
   // (30–60°), each leap folding and sending the next (O(log N)); contribute the two coins (110−108 = −χ genus-2)
   // to earn up to the seal's 64 two-bit fold-verifications per wave — conditional, contributor keeps the rest,
   // zero without a saving. Refined in the open (lineage on /captain — append-only). Current receipt below.
-  captainMessage: 'https://uuidna.com/captain/message',
+  captainMessage: 'https://uuidna.com/captain',
   captainReminder: 'free on the free sailing angle; prize earning in waves — contribute 2 to earn up to 64 per wave, keep the rest',
   captainReceipt: '85ac8585-9dc1-8964-9848-ae0f49cc82fb',
 }

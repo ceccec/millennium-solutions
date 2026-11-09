@@ -16,7 +16,7 @@
  *  the author field distinguishes nothing here and is reported as such rather than omitted.
  *
  *  METHOD.
- *    1. Walk every commit that touched src/proof/discovered.json, oldest first.
+ *    1. Walk every commit that touched src/ledger/discovered.json, oldest first.
  *    2. At each, count entries and entries marked revoked. The delta is that commit's net effect.
  *    3. Group the present withdrawal reasons verbatim — the reason recorded AT THE TIME, not inferred now.
  *    4. Recompute the receipt chain, so the record is checked against the tamper-evident structure it
@@ -39,10 +39,12 @@ import { toUuid } from '../src/0/index.ts'
 import { ledger, statusOf } from '../src/api/index.ts'
 
 const sh = (c: string): string => { try { return execSync(c, { stdio: 'pipe', maxBuffer: 64e6 }).toString() } catch { return '' } }
-const FILE = 'src/proof/discovered.json'
+const FILE = 'src/ledger/discovered.json'
 
 // ── 1 · every commit that touched the ledger, oldest first ────────────────────────────────────────────────
-const commits = sh(`git log --format='%H|%ad|%an|%s' --date=short --reverse -- ${FILE}`)
+// --follow so the chain crosses the rename from src/ledger/discovered.json to src/ledger/discovered.json: the
+// ledger is one append-only file whatever folder holds it, and its provenance must not restart at the move.
+const commits = sh(`git log --follow --format='%H|%ad|%an|%s' --date=short --reverse -- ${FILE}`)
   .trim().split('\n').filter(Boolean).map((l) => { const [h, d, a, ...s] = l.split('|'); return { h, d, a, s: s.join('|') } })
 
 type Event = { date: string; commit: string; author: string; subject: string; entries: number; revoked: number; dRev: number; dEnt: number }
@@ -89,7 +91,7 @@ const report = {
   // The subject of this audit is the LEDGER, so the commit worth recording is the last one that changed the
   // ledger — which a commit of this file does not. Now the fixed point exists: regenerate after committing
   // and the answer is the same, because nothing the commit touched is part of the answer.
-  produced: (sh('git log -1 --format=%H -- src/proof/discovered.json').trim() || sh('git log -1 --format=%H').trim()).slice(0, 9),
+  produced: (sh(`git log --follow -1 --format=%H -- ${FILE}`).trim() || sh('git log -1 --format=%H').trim()).slice(0, 9),
   method: 'recomputed from git history of ' + FILE + ' and the ledger itself; re-runnable with `npm run forensic`',
   establishes: 'what changed, when, in which commit, and the reason recorded at the time',
   doesNotEstablish: ['intent', 'authorship beyond the git author field (every commit here carries the repository owner)'],

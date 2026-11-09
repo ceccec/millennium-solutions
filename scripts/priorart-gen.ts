@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // THE ATTRIBUTION TABLE IS GENERATED — adding a proof file must not mean renumbering a list by hand.
 //
-// src/proof/priorart.lean carried a positional table: one row per .lean file, each numbered, each with a
+// src/iso/690-record/priorart.lean carried a positional table: one row per .lean file, each numbered, each with a
 // hand-written description. Every fact in it was ALREADY declared in the file it described, in that file's
 // own frontmatter. So the table was a second copy, kept in step by hand — and when involution.lean was
 // added earlier today, twenty-six rows had to be renumbered to make room for it. Manual work of that shape
@@ -19,7 +19,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { leanFiles, frontmatter } from '../src/api/index.ts'
 
 const KINDS: Record<string, string> = { named: '0', unclassified: '1', 'none-known': '2' }
-const TARGET = 'src/proof/priorart.lean'
+const TARGET = 'src/iso/690-record/priorart.lean'
 
 export const table = (): string => {
   const files = leanFiles()

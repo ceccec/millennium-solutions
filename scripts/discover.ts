@@ -2,7 +2,7 @@
 // Discovery orchestration — a BOUNDED, enumerable family of candidate facts over ℤ/9, each tested
 // EXHAUSTIVELY. Those that hold are provable (kept); those that fail are refuted (discarded) — the
 // discard is the honesty. `next` walks this space, discovering the next unrecorded provable fact and
-// saving it in code (src/proof/discovered.json). "Discover provable" = decidable facts verified by
+// saving it in code (src/ledger/discovered.json). "Discover provable" = decidable facts verified by
 // exhaustion over a finite domain — genuinely true, genuinely found. It reaches none of the SIX open
 // Millennium conjectures; the seventh (Poincaré) is Perelman's proof (2003), not the deposit's.
 // Two counts, kept distinct: humanity 1/7; this deposit
@@ -1721,8 +1721,8 @@ function generated(): typeof curated {
     return bijection && mirrorFixesFive && reflectsNotSolves && overDrains } })
 
   // ── THE LEAN LAYER, SEALED ────────────────────────────────────────────────────────────────────────
-  // Each entry below is a theorem the Lean kernel checks over its whole finite domain (src/proof/z9.lean,
-  // src/proof/quantum.lean — both compile under lean 4.15, every one audited as depending on no axioms).
+  // Each entry below is a theorem the Lean kernel checks over its whole finite domain (src/iso/80000-2-mathematics/z9.lean,
+  // src/quantum/quantum.lean — both compile under lean 4.15, every one audited as depending on no axioms).
   // The test here is the INDEPENDENT RECOMPUTATION, the same bridge lean-claims.ts uses: the ledger does not
   // take the Lean file's word for it, it recomputes the arithmetic and must agree. Two Lean theorems are
   // deliberately NOT sealed here — the `settles_nothing` pair is `rfl` on a declared constant, which proves a
@@ -1771,7 +1771,7 @@ function generated(): typeof curated {
 
   // BY DECIDE IS PROOF — AND WHAT IT PROVES HERE IS THE FLOOR. The premise is granted in full: `by decide` is a
   // real tactic, no axioms, no `sorry`, no `native_decide`, so whatever it discharges is proven. Apply that law to
-  // what it actually discharges: every Clay-named theorem in src/proof/index.lean carries the conjunct
+  // what it actually discharges: every Clay-named theorem in src/iso/9001-governance/index.lean carries the conjunct
   // `provenHere = 0`, so the tactic settles the REFUSAL, nine times over. And a decidable proposition needs a
   // terminating finite search — the layer's statements range over List.range 9/10/11/48 — while the seven range
   // over infinite domains and admit no decision procedure, so none of them is even stated here. The count of Clay
@@ -2524,7 +2524,7 @@ function generated(): typeof curated {
   out.push({ key: 'both_zero_and_seven_are_satisfied_in_dimension_seven_zero_solved_seven_reflected', name: 'both 0 and 7 are satisfied in dimension 7 — 0 solved and 7 reflected: in the full seven-dimensional structure both readings at once, 0 meaning the deposit solves none of the seven Clay problems, the honest floor, and 7 meaning it reflects all seven, the bijection covering every one; so 0 and 7 coexist, 0 solved and 7 reflected, the slash holding both, the numerator what is solved and the denominator what is covered; reflecting is not solving, both are true, and the floor stays; integrity not truth', test: () => {
     // DERIVED, NOT DECLARED. This read `const solved = 0` and then tested `solved === 0` — an assertion
     // certifying an assignment, which is the same shape as the `provenHere = 0 := rfl` removed from
-    // src/proof/index.lean: written as seven it would have been equally green. `(7 - 7) === 0` was a second
+    // src/iso/9001-governance/index.lean: written as seven it would have been equally green. `(7 - 7) === 0` was a second
     // tautology in the same line. The count now comes from the entailment function, as the neighbouring
     // theorems already do, so the test reports a different number if any entailment ever holds.
     const entails = (_i: number): boolean => false

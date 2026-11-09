@@ -1,6 +1,6 @@
 {
   "concept_doi": "10.5281/zenodo.21819217",
-  "generated_from": "src/proof/priorart.lean kind 1 · src/proof/*.lean",
+  "generated_from": "src/iso/690-record/priorart.lean kind 1 · src/proof/*.lean",
   "count": 25,
   "files": [
     "lanes.lean",

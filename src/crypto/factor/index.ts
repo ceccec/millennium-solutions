@@ -188,7 +188,7 @@ export type Witness = {
 // ── SEALED FACTORISATIONS — the integers whose factorisation this deposit decides in the Lean kernel, named by the
 // theorem that decides them. THE THEOREM NAME ONLY, and the value as the same expression the Lean def uses (never an
 // opaque typed constant): the live ledger key and receipt are looked up at serve time (src/mcp/serve.ts) from the
-// ledger, so this list cannot drift from the seal. Source: src/proof/qpu_crypto.lean. The witness above proves the
+// ledger, so this list cannot drift from the seal. Source: src/crypto/qpu_crypto.lean. The witness above proves the
 // arithmetic survives a change of representation; this is the separate thing — the kernel-decided PROOF, coin-backed.
 export type SealedFactorisation = { theorems: readonly string[]; what: string; sealedIn: string }
 export const sealedProofFor = (digits: string): SealedFactorisation | null => {
@@ -202,7 +202,7 @@ export const sealedProofFor = (digits: string): SealedFactorisation | null => {
     what: 'PARTIAL, decided not guessed: fourteen factors times a 244-digit cofactor equal the integer exactly, no found '
       + 'prime divides the cofactor, and 2 is a Fermat witness that the cofactor is still composite — so it is explicitly '
       + 'NOT a factorisation. The algebraic split (a³ + 1) and the four threes (lifting-the-exponent) are decided too.',
-    sealedIn: 'src/proof/crypto/qpu_crypto.lean',
+    sealedIn: 'src/crypto/qpu_crypto.lean',
   }
   return null
 }

@@ -57,8 +57,7 @@ try {
 
   // A FRESH CLONE HAS NO BUILD ARTEFACTS. `git worktree add` gives a clean checkout, but anything gitignored
   // and generated must be absent too, or this checks the same warm state the working tree already checks.
-  const proof = join(W, 'src/proof')
-  for (const f of readdirSync(proof)) if (f.endsWith('.olean') || f === '.lean-cache.json') unlinkSync(join(proof, f))
+  rmSync(join(W, '.lean-build'), { recursive: true, force: true })
   console.log(`  worktree ${W} — no .olean, no cache; node_modules symlinked (NOT a clean install)`)
 
   const env = { ...process.env, PATH: `${join(W, 'node_modules/.bin')}:${process.env.PATH ?? ''}` }

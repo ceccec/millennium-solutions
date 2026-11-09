@@ -21,8 +21,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { leanFiles, leanPathOf } from '../src/api/index.ts'
 
-const DIR = 'src/proof'
-const OUT = `${DIR}/settled.lean`
+const OUT = leanPathOf('settled.lean')
 
 type Row = { file: string; mod: string; ns: string; declared: number; byDecide: number; theorems: number
              byRfl: number; byOther: number }

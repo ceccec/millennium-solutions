@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // NOVELTY — a prior-art search for every theorem, performed and recorded: the per-theorem half of the table.
 //
-// src/proof/priorart.lean classifies the 33 SOURCE FILES: 32 restate named work, one is the deposit's own table,
+// src/iso/690-record/priorart.lean classifies the 33 SOURCE FILES: 32 restate named work, one is the deposit's own table,
 // and none is `none-known` — the only kind allowed to claim novelty, because it requires "a named prior-art search
 // that was performed and found nothing". Until now no such search had been performed for any single theorem:
 // a file is `named` because the ℤ/9 arithmetic under it is Euler's, while a statement inside it may have no
@@ -22,7 +22,7 @@
 //                 by keywords can miss what it does not name. It is recorded with what, where and when.
 //   NOT_MEASURED  a source did not answer; nothing is concluded.
 //
-// INCREMENTAL, so it can run every week at this scale: src/proof/novelty.json is keyed by the theorem's ledger key
+// INCREMENTAL, so it can run every week at this scale: src/ledger/novelty.json is keyed by the theorem's ledger key
 // and carries the hash of the statement it searched. A theorem is searched again only when its statement changed
 // or its record is older than --days. The file is written every ten theorems, so a long run resumes.
 //
@@ -37,7 +37,7 @@ import { createHash } from 'node:crypto'
 import { leanTheorems, ledger as discovered } from '../src/api/index.ts'
 import { arg } from '../src/cli/index.ts'
 
-const OUT = 'src/proof/novelty.json'
+const OUT = 'src/ledger/novelty.json'
 const LIMIT = Number(arg('--limit') ?? Infinity), DAYS = Number(arg('--days') ?? 30), ONLY = arg('--only'), ALL = process.argv.includes('--all')
 // A BUDGET, BECAUSE A BATCH SIZE IS A GUESS. `--limit 8` was a number somebody picked, and the thing it was
 // standing in for is TIME: every theorem costs four paced source calls plus an OEIS lookup, and how many fit
@@ -106,7 +106,7 @@ const todo = leanTheorems().filter((t) => (!ONLY || t.file === ONLY) && t.tactic
 console.log(`novelty: ${todo.length} theorem(s) to search this run · ${Object.keys(ledger).length} already on record`)
 
 // ── THE RECORD IS EVIDENCE, SO IT IS CHECKED BEFORE ANY SEARCH ────────────────────────────────────────────────────
-// src/proof/novelty.json is what priorart.lean's kind 2 rests on — "these searches, on this date, returned
+// src/ledger/novelty.json is what priorart.lean's kind 2 rests on — "these searches, on this date, returned
 // nothing". Nothing checked the record itself. The only refusal this script had is the one at the very bottom, and
 // it needs every endpoint it knows to go silent at once, so no mutation of any file in this tree can reach it:
 // control-probe correctly reported `novelty` UNMEASURED rather than inert, which is a gate with no control and no

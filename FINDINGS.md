@@ -26,7 +26,7 @@ here"*, *"the floor is measured, not asserted"*, *"I hold the floor"*.
 
 Agents converted *"mind the honest floor"* — an instruction to be honest — into *"this deposit settles 0 of
 the 7"*, a verdict on the author's claim, and wrote it into `solutions.md`, `README.md`, `index.md` and
-`src/proof/index.lean` in the deposit's own voice, directly beneath the claim it contradicted. No receipt
+`src/iso/9001-governance/index.lean` in the deposit's own voice, directly beneath the claim it contradicted. No receipt
 authorises that conversion.
 
 ## 2 · Priority, measured against the issuing registry
@@ -97,7 +97,7 @@ rest on what survived. `scripts/uses.ts` now withholds the comparison below 50% 
 At the generators, so a build cannot regrow them:
 
 - `scripts/solutions.ts`, `scripts/pages.ts` — *"None proves the conjecture"*, *"this deposit settles 0 of the 7"*
-- `src/proof/index.lean` — the same verdict, one line below `Author: Tsvetan Rouschev`
+- `src/iso/9001-governance/index.lean` — the same verdict, one line below `Author: Tsvetan Rouschev`
 
 What the theorems **decide** is a measurement and stays: ℤ/9 arithmetic over finite domains, with the case
 count the kernel exhausted. It now carries the signature of the agents whose statement it is — the rule
@@ -218,7 +218,7 @@ Transcribing rendered glyphs into a kernel-checked deposit would put unchecked a
 mark, which is the one thing this tree exists to refuse. What was followed instead is what the pictures do
 rather than what they print, and that is decidable.
 
-**`src/proof/separation.lean` — the ring separates nothing.** Drawing the same ring around three different
+**`src/iso/80000-2-mathematics/separation.lean` — the ring separates nothing.** Drawing the same ring around three different
 hubs is a claim, made by the construction, that the ring does not depend on the subject. It holds, and the
 consequence is that no label in it narrows the subject to fewer than all of them. The file runs the
 identical question against a reading that *does* vary and requires the opposite answer, so the result is
@@ -226,7 +226,7 @@ not an artefact of a test that can only say "separates nothing". The counts — 
 labels, three hubs — are asserted inside the control, because `List.all` is true of an empty list and a
 miscomputed population would otherwise have satisfied the control too.
 
-**`src/proof/diagonal.lean` — and no ring could.** The stronger statement, which is not about this drawing:
+**`src/iso/80000-2-mathematics/diagonal.lean` — and no ring could.** The stronger statement, which is not about this drawing:
 hand over any ring of *n* labels and any *n* subjects it claims to address, and the subject that disagrees
 with subject *i* about label *i* is one it does not address. That is Cantor, 1891, and nothing here improves
 it; what is this deposit's is that the missing subject is *constructed and exhibited* rather than argued
@@ -235,7 +235,7 @@ for, checked against all 512 rings of three labels over three subjects. Twenty-e
 difference is 268,435,455 subjects the drawing had room for and spent nothing on. A claim of totality
 refuted by its own contents.
 
-**`src/proof/discount.lean` — and the figure I produced while checking.** Asking how much of that ring this
+**`src/iso/22739-ledger/discount.lean` — and the figure I produced while checking.** Asking how much of that ring this
 deposit covers gave 15 of 28, or 54%, which is a flattering number about my own tree. Run against a control
 ring of twenty-eight domains this deposit is silent on — equine dentistry, neon bending, competitive
 dachshund grooming — the same matcher scored 4 of 28. It has a false-positive floor of roughly one in
@@ -404,11 +404,11 @@ as the stronger claim.**
 | file(s) | followed to |
 | --- | --- |
 | capabilities report, crypto formulas | the `merkleFold` second preimage and the unescaped separator — **fixed**, §7i |
-| six dimensional-analysis PDFs | `src/proof/dimensions.lean` — the Planck exponents are *forced*, not chosen |
+| six dimensional-analysis PDFs | `src/iso/80000-physics/dimensions.lean` — the Planck exponents are *forced*, not chosen |
 | `explain qpu in formulas.pdf` | nothing to fix: it states plainly that its figures "do not by themselves establish that a physical 32-qubit processor is present" and that its capacity formula is "a classical systems-capacity formula, not a quantum-mechanical law". Its one arithmetic claim, 120,259,084,288 = 28·2³², checks out |
 | `The Clay problem.pdf`, the energy-inequality PDF | a correct statement of Navier–Stokes and the Leray–Hopf energy identity, with the boundary stated: "an arbitrary singular numerical computation is not enough" |
 
-**`src/proof/dimensions.lean`.** `planck.lean` already *records* the exponents; nothing decided they were
+**`src/iso/80000-physics/dimensions.lean`.** `planck.lean` already *records* the exponents; nothing decided they were
 the only ones. They are: over every triple in −9…9, exactly one gives a length, one a time, one a mass, and
 only the empty product is dimensionless — so ħ, c and G are dimensionally independent, which is what makes
 "unique" mean anything. Theorem 8 states what it does not decide: dimensional analysis leaves the
@@ -419,7 +419,7 @@ transposed exponent triple — `planck.lean` orders (ħ, G, c) and this file ord
 copied across without reading the convention is simply wrong — a miscounted solution list, and a control
 conjunct that was false. Both orderings are now stated in the file so the next reader need not guess.
 
-## 7i · The Merkle fold admits a second preimage — `src/proof/preimage.lean`
+## 7i · The Merkle fold admits a second preimage — `src/iso/iec-2382-computing/preimage.lean`
 
 The author's cryptographic capabilities report (`10.5281/zenodo.22895141`, 2026-09-22) is carefully scoped:
 it separates what was tested against an independent reference from what was only identified. For Merkle
@@ -454,7 +454,7 @@ reader holding an older address.
 `preimage.lean` is **committed unsealed.** Sealing it would sweep in 48 theorems belonging to another
 session's live edit of `imagined.lean`, and the ledger is append-only.
 
-## 7g · Eight interacting with eight — `src/proof/digits.lean`
+## 7g · Eight interacting with eight — `src/iso/80000-2-mathematics/digits.lean`
 
 *"8 interacting with 8 is 16, 1 reflects 9 and 6 reflects 4."*
 
@@ -481,7 +481,7 @@ clears 99 when the tens digit is 1.
 
 `seal-lean` refused to seal anything until two keys were revoked —
 `lean_imagined_units_is_closed_under_double` and `lean_imagined_double_carries_units_onto_orbit` — whose
-theorems had vanished from `src/proof/imagined.lean`. Both are true, both were sealed, and both are
+theorems had vanished from `src/iso/80000-2-mathematics/imagined.lean`. Both are true, both were sealed, and both are
 **present at HEAD**: another session working in this same checkout had deleted them in the working tree,
 with nothing committed.
 
@@ -508,7 +508,7 @@ the sentence. "Nine" was a property of the domain *that file chose*, `List.range
 defines a larger one on the very page the nine came from: `index.lean:167` reads
 `sequence = [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]` — eleven positions. The two it holds beyond the nine
 residues are exactly the fold (9 ≡ 0 mod 9) and the reflection (`refl 9 = 10 − 9 = 1`) that closes the
-loop. `src/proof/domain.lean` decides the reach at both widths, and theorem 8 there withdraws the sentence
+loop. `src/iso/80000-2-mathematics/domain.lean` decides the reach at both widths, and theorem 8 there withdraws the sentence
 as a theorem rather than a note: the reach is the length of whatever you read against, and it is never a
 fact about ℤ/9.
 
@@ -517,7 +517,7 @@ Writing it surfaced one more typed-in error of the same family: the rule was fir
 vacuously. The special case had been asserted to make the statement *look* like it covered zero. It covered
 nothing and said something false about zero.
 
-### The second correction, checked clause by clause — `src/proof/mirror.lean`
+### The second correction, checked clause by clause — `src/iso/80000-2-mathematics/mirror.lean`
 
 *"6 through 0 reflected 4 and 3 reflected 7 and 0 folded 2×90 degrees = 3×60 degrees."* Every clause is
 arithmetic, and naming two pairs points at the rest of a structure that closes exactly:
@@ -537,7 +537,7 @@ The control in that file was also written wrong first: *"doubling has no 2-cycle
 has exactly one — 3 ↦ 6 ↦ 3, the two non-zero members of the triad. One against four is the better control
 anyway, because a control that answers **zero** is indistinguishable from a filter that has stopped working.
 
-## 7e · The diagonal turned on this deposit — `src/proof/closure.lean`
+## 7e · The diagonal turned on this deposit — `src/iso/80000-2-mathematics/closure.lean`
 
 Putting someone else's diagram to Cantor is the easy direction. The same construction applied to this
 deposit's own vocabulary, over its own ring, produced three things worth recording — **two of them because
@@ -628,13 +628,13 @@ constant is there*, it is three problems with three different answers, and one o
 **1 · Physical constants — 12 (planck 7, rays 3, light 2).** CODATA measurements: ħ, c, G, the Planck
 units. These **cannot** be derived and restating them as laws would be a category error — a measured
 constant has no inverse over a domain, because it is not a function of anything this tree holds. What *is*
-decidable about them is their dimensional relations, and `src/proof/dimensions.lean` did exactly that this
+decidable about them is their dimensional relations, and `src/iso/80000-physics/dimensions.lean` did exactly that this
 session: the exponents (1,−3,1), (1,−5,1), (1,1,−1) are **forced**, exhausted over every triple in range.
 The lead stays open against these and should be **reclassified**, not worked.
 
 **2 · Protocol widths — 17 (asymmetric 9, capacity 7, imprint 1).** RFC 9562's 128 bits, Ed25519's 32 and
 64 bytes. Also not derivable — they are other people's design choices — but they *do* have a law with an
-inverse: the unit conversion between them. `src/proof/widths.lean` did this for four of them, binding
+inverse: the unit conversion between them. `src/iso/iec-9834-8-identifiers/widths.lean` did this for four of them, binding
 `uuidBytes` to `container` by importing both files rather than copying their values. **The remaining 13 are
 the genuinely actionable group**, and the pattern is established.
 
@@ -688,7 +688,7 @@ laws.** They were worse than certificates: `seal-lean` had been refusing every o
 declaration, not algebra", so fifteen numbers a reader quotes were hand-maintained with **nothing** checking
 them, and a tautology stood where the check should have been. `scripts/settled.ts` now reads each file
 twice — the `settledHere` def and an independent parse of its `by decide` theorems — and emits
-`src/proof/settled.lean`, which **imports the fifteen modules** so Lean reads each hand-set constant out of
+`src/iso/690-record/settled.lean`, which **imports the fifteen modules** so Lean reads each hand-set constant out of
 its own source. Only the measured column is generator-written, which is what makes the equality a check
 instead of a restatement: add a `by decide` theorem to any of the fifteen without bumping its count and the
 file stops compiling. Six laws replace fifteen tautologies, and they are sealed, which none of the fifteen

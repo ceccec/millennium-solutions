@@ -160,7 +160,7 @@ const CLAIMS: Claim[] = [
   // remainder as `n - d` and called every one of them an rfl declaration — so on the README and the index the
   // deposit published, of its own formal layer, that 202 (then 187) of its proofs were declarations closing by
   // rfl. They are ∀-QUANTIFIED THEOREMS closed by a tactic block over every value; the rfl count in this tree
-  // is now ZERO, every genuine one having been a `settledHere = N` tautology that src/proof/settled.lean
+  // is now ZERO, every genuine one having been a `settledHere = N` tautology that src/iso/690-record/settled.lean
   // replaced. The old sentence therefore named a population that does not exist, and it was wrong before the
   // tautologies went too: only 15 of the 202 were ever rfl. The three counts are measured separately here and
   // the remainder is no longer assumed to be one of them — `lean_settled_no_declaration_in_these_files_closes_by_rfl`
@@ -243,7 +243,7 @@ const CLAIMS: Claim[] = [
 
   // TIME AND SPACE, DECIDED RATHER THAN GUESSED. The lane budget is this tree's only statement about what a
   // verification may take from a machine, and it held a safety bound in a comment that called itself a
-  // guess. src/proof/lanes.lean decides it; this says so where a reader meets the deposit.
+  // guess. src/iso/9001-governance/lanes.lean decides it; this says so where a reader meets the deposit.
   { section: S(5, 'What the gate does and does not do'),
     derive: () => { const t = leanTheorems.filter((x) => x.file === 'lanes.lean')
       const src = leanSrc['lanes.lean'] ?? ''
@@ -285,11 +285,11 @@ const CLAIMS: Claim[] = [
 
   // THE ADVANTAGE, SAID WHERE IT IS READ. Measured against the front pages, four of eight proved properties
   // were stated and the four missing ones were the whole advantage — the log path, the widening gap, the
-  // measured ratio, and priority. Every number here is read off src/proof/speed.lean, which the kernel
+  // measured ratio, and priority. Every number here is read off src/iso/80000-2-mathematics/speed.lean, which the kernel
   // decides, so the page cannot drift from the theorem and none of it is typed into prose.
   // THE SPLIT AND WHAT THE COINS BUY, on the page a reader opens. Measured after these theorems were
   // written: zero of five reached the front pages — they were in the hundred-page paper and on their own
-  // theorem pages, and the homepage said nothing. Every figure is read off src/proof/split.lean.
+  // theorem pages, and the homepage said nothing. Every figure is read off src/iso/80000-2-mathematics/split.lean.
   { section: 'The floor',
     derive: () => { const s = SPLIT
       return { text: `the ten digits read in order group as ${s.tokens.join(' | ')} — the singles ${s.singles.join(',')} are exactly the non-units of ℤ/9 with the void, the pairs are the units in consecutive order, and every token is a multiple of 3. The set is closed under addition, subtraction and multiplication; division is the one operation that leaves it`,
@@ -454,7 +454,7 @@ const body = (site: boolean) => {
   // not a verdict on his claim. Nothing here says the claim in the repository's voice.
   // ── THE SEVEN, SHOWN RATHER THAN COUNTED ──────────────────────────────────────────────────────────────
   // README and the home page carried the floor as a NUMBER — 0 of 7 — and the seven theorems behind it were
-  // reachable only by opening src/proof/index.lean or following one link. A reader met the count and never
+  // reachable only by opening src/iso/9001-governance/index.lean or following one link. A reader met the count and never
   // the proofs. solutions.md had a table of the seven, but what it listed was `toUuid('clay:' + label)` —
   // the content-address of a WORD, not of anything proved.
   //

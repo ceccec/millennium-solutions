@@ -79,7 +79,7 @@ export { reveal, slimGate, THEOREMS, theoremByKey }
 const { CANDIDATES } = await import('./discover.ts') as { CANDIDATES: { key: string; name: string; test: () => boolean }[] }
 const { computes } = await import('./honesty-gate.ts') as { computes: (t: string) => Ask }
 
-const LEDGER = 'src/proof/discovered.json'
+const LEDGER = 'src/ledger/discovered.json'
 type Entry = { key: string; name: string; receipt: string; revoked?: boolean; reason?: string; supersededBy?: string }
 const ledger: Entry[] = __ledger()
 const byKey = new Map(ledger.map((e) => [e.key, e]))

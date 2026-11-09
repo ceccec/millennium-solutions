@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ANSWER-GATE — refuse stored or emitted answers that break the certificate rules. The rules are kernel-checked Lean
-// (src/proof/answer_gate.lean): this script only reads each answer's flags and asks the kernel whether `AnswerGate.ok`
+// (src/iso/9001-governance/answer_gate.lean): this script only reads each answer's flags and asks the kernel whether `AnswerGate.ok`
 // holds for them. A flag set the kernel refuses is REFUSED. Reads a JSON array on stdin.
 //
 //   echo '[{"value":"TRUE","question":"q","checkedBy":"x"}]' | node scripts/answer-gate.ts
@@ -10,7 +10,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const RULES = readFileSync(resolve(ROOT, 'src/proof/answer_gate.lean'), 'utf8')
+const RULES = readFileSync(resolve(ROOT, 'src/iso/9001-governance/answer_gate.lean'), 'utf8')
 const VALUES: Record<string, string> = { TRUE: 'TRUE', FALSE: 'FALSE', SOURCED: 'SOURCED', UNKNOWN: 'UNKNOWN' }
 
 type Flags = { value: string; cert: 'none' | 'C1' | 'C2' | 'C3' | 'other'; checkedBy: boolean; blocking: boolean }

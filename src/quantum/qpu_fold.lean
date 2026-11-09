@@ -25,7 +25,7 @@
 --
 -- WHY THIS FILE EXISTS.
 --
--- src/proof/capacity.lean decides that a UUID leaves 122 free bits, and qpu's README reads that as 2^122
+-- src/iso/22739-ledger/capacity.lean decides that a UUID leaves 122 free bits, and qpu's README reads that as 2^122
 -- values and a Grover cost of 2^61 = √(2^122). But qpu's coins are not drawn from the 122-bit layout. They are
 -- content addresses: `uuid(text)` folds the text to a 64-bit FNV-1a state and lays every output digit out from
 -- that state (the high half is the state; the low half is `foldFrom(state, '\u0000shape')`, a function of the

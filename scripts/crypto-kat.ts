@@ -101,7 +101,7 @@ console.log('\nthe container — checksum, program, message:')
 // pieces ARE those primes — the originals are in memory, so the decode is verified against them, nothing stored.
 // The DEFAULT integer carries no primes in this file: finding its factors cold and the multiply-back on the
 // integer is the real test. And 2^999 + 1 is the saved, sealed case — PARTIAL, because its 244-digit cofactor is
-// proved composite (not factored), exactly as src/proof/qpu_crypto.lean decides it. Deterministic, so it repeats.
+// proved composite (not factored), exactly as src/crypto/qpu_crypto.lean decides it. Deterministic, so it repeats.
 console.log('\nfactoring — generated from primes, decoded back, and a default integer found cold:')
 {
   const nextPrime = (from: bigint): bigint => { let p = from | 1n; while (millerRabin(p) !== 'PRIME') p += 2n; return p }

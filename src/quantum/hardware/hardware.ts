@@ -83,7 +83,7 @@ export const toQasm = (gates: QuantumCircuit, p: number, q: number): string => {
 // ── THE VERDICT, ON EXACT INTEGERS ───────────────────────────────────────────────────────────────────────────────
 // Per setting i: D_i = n00 + n11 − n01 − n10 and N_i = the shots, so E_i = D_i / N_i and S = Σ sign_i · E_i.
 // S > 2  ⇔  Σ sign_i · D_i · Π_{j≠i} N_j  >  2 · Π N_j, which BigInt decides with no rounding anywhere. The same rule,
-// its one-count controls on both sides of 2, and the classical bound itself are sealed in src/proof/quantum_hardware.lean.
+// its one-count controls on both sides of 2, and the classical bound itself are sealed in src/quantum/quantum_hardware.lean.
 
 /** ISO/IEC 4879 §3.2.16 quantum measurement, as the counts of its four two-bit outcomes */
 export type MeasurementCounts = { n00: number; n01: number; n10: number; n11: number }
@@ -128,7 +128,7 @@ export const simulate = (gates: QuantumCircuit): [number, number, number, number
 }
 
 // ── ANY WIDTH: the octave proofs, ported ────────────────────────────────────────────────────────────────────────
-// src/proof/quantum_octaves.lean and quantum_octave_128.lean seal the octaves 2 … 128. The same two computations run
+// src/quantum/quantum_octaves.lean and quantum_octave_128.lean seal the octaves 2 … 128. The same two computations run
 // here for ANY n — no cap — so a width taken from a UUID (124 = 128 minus the version hex digit, 122 minus the variant
 // bits too) is answered by the method the kernel checked at the octaves, not by a formula typed beside it.
 

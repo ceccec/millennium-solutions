@@ -61,8 +61,8 @@ Each item is done only when its acceptance test passes. An item that is not done
 - [x] T1 Types. `src/answer/types.ts` defines the answer, certificate, and value types above.
   Acceptance: a type error on an answer that has TRUE without a C1 or C2 certificate. Evidence: `scripts/answer-types-test.ts`, run through the MCP as suite `answer-types`: 11 of 11 cases.
 - [x] T2 Router. `src/answer/route.ts` classifies a question as integer, Lean, text, publication claim, or Clay.
-  Acceptance: a fixed table of inputs, each classified as stated in the Routing section. Evidence: the priority is decided in `src/proof/answer_route.lean` (exhaustive over the 16 feature combinations). The text reading stays in `src/answer/route.ts` and is not a finite domain.
-- [x] T3 C1 verifier. Wraps `lean_ask`; returns TRUE only when compiles, no sorry, and no axioms. Evidence: the decision is in `src/proof/arith.lean` and `src/proof/answer.lean`. Every verdict of the arithmetic verifier is checked by the kernel in the answer path.
+  Acceptance: a fixed table of inputs, each classified as stated in the Routing section. Evidence: the priority is decided in `src/iso/9001-governance/answer_route.lean` (exhaustive over the 16 feature combinations). The text reading stays in `src/answer/route.ts` and is not a finite domain.
+- [x] T3 C1 verifier. Wraps `lean_ask`; returns TRUE only when compiles, no sorry, and no axioms. Evidence: the decision is in `src/iso/80000-2-mathematics/arith.lean` and `src/iso/80000-2-mathematics/answer.lean`. Every verdict of the arithmetic verifier is checked by the kernel in the answer path.
   Acceptance: the true test theorem returns TRUE, a false one returns UNKNOWN, a sorry one returns UNKNOWN.
 - [x] T4 C2 verifier. Wraps `task_route`; returns TRUE or FALSE only from an exact witness. Evidence: `scripts/answer-arith-test.ts`, run through the MCP as suite `answer-arith`: 3 of 3 cases.
   Acceptance: 91 is FALSE with factor 7; 97 is TRUE; the probable prime input returns UNKNOWN.
@@ -70,7 +70,7 @@ Each item is done only when its acceptance test passes. An item that is not done
   Acceptance: the canonical DOI returns SOURCED; a non-canonical DOI returns UNKNOWN.
 - [x] T6 `answer` MCP tool. Routes through T2 to T3, T4, or T5, and returns the output shape above. Evidence: suite `answer-tool` through the MCP: an integer, a Lean theorem, the canonical DOI, a Clay problem, and a text question, each answered as the rules require.
   Acceptance: an e2e test calls it through the MCP for one input of each route.
-- [x] T7 No-certificate gate. A test that fails if any answer carries TRUE or FALSE without a certificate. Evidence: `src/proof/answer_gate.lean` decides the rules, and `scripts/answer-gate.ts` asks the kernel for each stored answer; suite `answer-gate` refuses five planted violations and accepts a compliant set; real answers from the `answer` tool pass (4 of 4 after the output shape was fixed to name `checkedBy` and `blockingStep`).
+- [x] T7 No-certificate gate. A test that fails if any answer carries TRUE or FALSE without a certificate. Evidence: `src/iso/9001-governance/answer_gate.lean` decides the rules, and `scripts/answer-gate.ts` asks the kernel for each stored answer; suite `answer-gate` refuses five planted violations and accepts a compliant set; real answers from the `answer` tool pass (4 of 4 after the output shape was fixed to name `checkedBy` and `blockingStep`).
   Acceptance: a planted answer with TRUE and no certificate is refused.
 - [ ] T8 Clay questions. Each of the six open problems answers UNKNOWN, with its blocking step recorded.
   Acceptance: six UNKNOWN answers, one per problem, each naming its formal status.

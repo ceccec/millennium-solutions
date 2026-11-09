@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Forensics — chain-of-custody for the discovery ledger (src/proof/discovered.json). Each receipt is
+// Forensics — chain-of-custody for the discovery ledger (src/ledger/discovered.json). Each receipt is
 // chained: receipt[i] = toUuid(receipt[i-1] → key[i]), seeded at 'axiom:TRINITY'. Recomputing the chain
 // link-by-link reproduces every receipt; altering or removing one breaks its link AND every link after
 // it, pinpointing the tamper. This complements receipt-audit (which cross-checks the agent-statement
@@ -21,7 +21,7 @@ const SEED = 'axiom:TRINITY'
 // before the chain seed existed. Left in place as honest record (rewriting them would be tampering).
 const GENESIS_BASELINE = new Set(['euler_units_pow6', 'units_sum_zero'])
 
-const LEDGER = 'src/proof/discovered.json'
+const LEDGER = 'src/ledger/discovered.json'
 const ledger: { key: string; name: string; receipt: string; revoked?: boolean }[] = JSON.parse(readFileSync(LEDGER, 'utf8'))
 
 let bad = 0
@@ -50,16 +50,16 @@ for (let i = 0; i < ledger.length; i++) {
 // touched) is a CONSTRUCTIVE intention (development); altering an existing receipt is TAMPER, removing
 // an entry is DESTROY — both DESTRUCTIVE (the traitor act). The intent is the diff, observable and exact.
 let prevLedger: { key: string; receipt: string }[] | null = null
-try { prevLedger = JSON.parse(execSync('git show HEAD:src/proof/discovered.json', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] })) } catch { /* no HEAD / first run */ }
+try { prevLedger = JSON.parse(execSync('git show HEAD:src/ledger/discovered.json', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] })) } catch { /* no HEAD / first run */ }
 if (prevLedger) {
   const prevMap = new Map(prevLedger.map((e) => [e.key, e.receipt]))
   const currMap = new Map(ledger.map((e) => [e.key, e.receipt]))
-  // REVOKED — documented removals, read from src/proof/revoked.json (kept on the record, MERGED not hidden — the
+  // REVOKED — documented removals, read from src/ledger/revoked.json (kept on the record, MERGED not hidden — the
   // honest opposite of a silent deletion). Includes the forged captain's message and the 62 valid theorems the
   // captain ordered merged into the revocation ledger to cap the count at exactly 1024. A removal listed there is
   // documented, not a DESTROY finding.
   let REVOKED = new Set<string>()
-  try { REVOKED = new Set((JSON.parse(readFileSync('src/proof/revoked.json', 'utf8')) as { key: string }[]).map((r) => r.key)) } catch { /* no revocation ledger */ }
+  try { REVOKED = new Set((JSON.parse(readFileSync('src/ledger/revoked.json', 'utf8')) as { key: string }[]).map((r) => r.key)) } catch { /* no revocation ledger */ }
   const removed = [...prevMap.keys()].filter((k) => !currMap.has(k) && !REVOKED.has(k))
   const revoked = [...prevMap.keys()].filter((k) => !currMap.has(k) && REVOKED.has(k))
   const altered = [...currMap.keys()].filter((k) => prevMap.has(k) && prevMap.get(k) !== currMap.get(k))
@@ -129,7 +129,7 @@ console.log('  clusters (digital-root of receipt — a LOSSY hint, not a verdict
 // and nearly-complete but SKIPS an index has a precise hole — a specific theorem not yet discovered (or removed).
 // Named directly, excluding documented revocations. A lead to investigate, never a verdict; never fails the build.
 let REVOKED_G = new Set<string>()
-try { REVOKED_G = new Set((JSON.parse(readFileSync('src/proof/revoked.json', 'utf8')) as { key: string }[]).map((r) => r.key)) } catch { /* no revocation ledger */ }
+try { REVOKED_G = new Set((JSON.parse(readFileSync('src/ledger/revoked.json', 'utf8')) as { key: string }[]).map((r) => r.key)) } catch { /* no revocation ledger */ }
 const idxSeries = new Map<string, number[]>()
 for (const e of ledger) { const m = e.key.match(/^(.*?)(\d+)$/); if (m) { const p = m[1]; if (!idxSeries.has(p)) idxSeries.set(p, []); idxSeries.get(p)!.push(parseInt(m[2], 10)) } }
 const exactGaps: string[] = []

@@ -19,14 +19,14 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { ledger, statusOf } from '../src/api/index.ts'
 
-const P = 'src/proof/discovered.json'
+const P = 'src/ledger/discovered.json'
 const write = process.argv.includes('--write')
 const l = ledger()
 const live = new Set(l.filter((e) => statusOf(e, l) === 'standing').map((e) => String(e.key)))
 const pool = l.filter((e) => statusOf(e, l) === 'withdrawn' && /not backed by a Lean proof/i.test(String(e.reason)))
 
-const gen = existsSync('src/proof/generated-theorems.json')
-  ? JSON.parse(readFileSync('src/proof/generated-theorems.json', 'utf8')) : []
+const gen = existsSync('src/ledger/generated-theorems.json')
+  ? JSON.parse(readFileSync('src/ledger/generated-theorems.json', 'utf8')) : []
 const recs: any[] = Array.isArray(gen) ? gen : (gen.records ?? [])
 
 // The heir must resolve to EXACTLY ONE live ledger key. An ambiguous family name is not carried — a carry

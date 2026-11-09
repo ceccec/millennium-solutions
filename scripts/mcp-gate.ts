@@ -133,7 +133,7 @@ const rows = handlers.map((h) => ({
 const moduleSilent: string[] = []
 const head = src.slice(0, src.indexOf('export const HANDLERS'))
 if (/catch\s*\{\s*return\s*'v0'\s*\}/.test(head)) moduleSilent.push("`version` returns 'v0' outside a git checkout — the published package has no tags, so every answer would carry a version that is not a version")
-if (/\?\s*__ledger\(\)\s*:\s*\[\]/.test(head)) moduleSilent.push('`loadLedger` returns an empty list when src/proof/discovered.json is absent — a caller reads zero theorems where the truth is that the ledger was not shipped')
+if (/\?\s*__ledger\(\)\s*:\s*\[\]/.test(head)) moduleSilent.push('`loadLedger` returns an empty list when src/ledger/discovered.json is absent — a caller reads zero theorems where the truth is that the ledger was not shipped')
 
 const declaredNames = new Set(TOOLS.map((t) => t.name))
 const noTool = rows.filter((r) => !declaredNames.has(r.name)).map((r) => r.name)

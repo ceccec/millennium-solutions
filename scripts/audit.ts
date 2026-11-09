@@ -5,7 +5,7 @@
 //
 // A file is audited on two questions:
 //   (1) CITATIONS — does every /theorem/KEY it cites name a theorem that is LIVE in this deposit's own
-//       chain-verified ledger? The authority is src/proof/discovered.json, whose link-by-link integrity
+//       chain-verified ledger? The authority is src/ledger/discovered.json, whose link-by-link integrity
 //       forensics.ts proves separately. The packaged gate ships a disjoint ledger (1329 mul9_* keys, zero
 //       overlap with ours) and answers "fabricated" for every key we hold, Lean-proven ones included — that
 //       is a category error, not a verdict, so citations are decided here. A REVOKED entry is not citable:

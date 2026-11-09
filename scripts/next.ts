@@ -24,7 +24,7 @@ const message = process.argv.slice(2).join(' ').trim()
 // ── status mode: a read-only health report — version, ledger, chain-of-custody, floor. No ship. ──
 if (message === '--status' || message === 'status') {
   const ver = (() => { try { return execSync('git describe --tags --abbrev=0', { encoding: 'utf8' }).trim() } catch { return 'v0' } })()
-  const led: { key: string; receipt: string }[] = existsSync('src/proof/discovered.json') ? __ledger() : []
+  const led: { key: string; receipt: string }[] = existsSync('src/ledger/discovered.json') ? __ledger() : []
   const GENESIS = new Set(['euler_units_pow6', 'units_sum_zero'])
   let prev = 'axiom:TRINITY', newBreaks = 0
   for (const e of led) { if (toUuid(prev + '→' + e.key) !== e.receipt && !GENESIS.has(e.key)) newBreaks++; prev = e.receipt }
@@ -105,19 +105,19 @@ if (message) {
 
 // ── no-message mode: FIRST discover the next provable fact, save it in code ─────
 // `next` walks the bounded discovery space (scripts/discover.ts): the next provable fact not yet on
-// record is verified by exhaustion and saved to src/proof/discovered.json — each next discovers the
+// record is verified by exhaustion and saved to src/ledger/discovered.json — each next discovers the
 // next. When the space is exhausted, nothing new is saved and next falls through to the rest/ship
 // logic below. Only exhaustively-true facts are saved; refuted candidates never enter the ledger.
 {
-  const LEDGER = 'src/proof/discovered.json'
+  const LEDGER = 'src/ledger/discovered.json'
   const ledger: { key: string; name: string; receipt: string }[] =
     existsSync(LEDGER) ? __ledger() : []
   const known = new Set(ledger.map((e) => e.key))
   // CAP LIFTED (the captain's order: "lift the cap and finish the full pure-TS crypto"). The ledger grows
   // again — every provable fact is discovered. The revocation ledger still excludes merged keys (the forged
   // message + the earlier capped theorems) — documented, not re-added silently.
-  const revokedKeys = existsSync('src/proof/revoked.json')
-    ? new Set((JSON.parse(readFileSync('src/proof/revoked.json', 'utf8')) as { key: string }[]).map((r) => r.key))
+  const revokedKeys = existsSync('src/ledger/revoked.json')
+    ? new Set((JSON.parse(readFileSync('src/ledger/revoked.json', 'utf8')) as { key: string }[]).map((r) => r.key))
     : new Set<string>()
   const fresh = provable()
     .filter((c) => !known.has(c.key) && !revokedKeys.has(c.key))

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// CERN-LEAN — the measured figures of src/proof/cern.lean, derived from the cache the measurement scripts wrote.
+// CERN-LEAN — the measured figures of src/iso/9001-governance/cern.lean, derived from the cache the measurement scripts wrote.
 //
-//   node scripts/cern-lean.ts          rewrite the literals in src/proof/cern.lean from .cern/corpus.json and .cern/oai.json
+//   node scripts/cern-lean.ts          rewrite the literals in src/iso/9001-governance/cern.lean from .cern/corpus.json and .cern/oai.json
 //
 // The theorems are not generated and are not touched: only the numbers in the definitions change, so each theorem is
 // checked again against the current measurement. Before this existed, the literals were typed by hand and went stale:
@@ -19,7 +19,7 @@ const value = new Map<string, number>()
 for (const k of FROM_CORPUS) value.set(k, corpus[k] as number)
 for (const [name, key] of Object.entries(FROM_OAI)) value.set(name, oai[key]!)
 
-const PATH = 'src/proof/cern.lean'
+const PATH = 'src/iso/9001-governance/cern.lean'
 let src = readFileSync(PATH, 'utf8')
 let changed = 0
 src = src.replace(/^def ([A-Za-z]+) : Nat := (\d+)$/gm, (line, name: string, old: string) => {

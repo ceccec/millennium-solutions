@@ -4,7 +4,7 @@
 //   node scripts/apis-theorems.ts
 //
 // The counts are read from the committed runs (evidence/apis-guru/<handle>/probe.json and live.json), never typed.
-// The file it writes, src/proof/apis.lean, holds the counts as definitions and the partition identities as theorems.
+// The file it writes, src/iso/9001-governance/apis.lean, holds the counts as definitions and the partition identities as theorems.
 // Each identity is decided by the kernel over the numbers the live run recorded. If a later run changes a verdict,
 // the generated count changes, the identity still holds only if the partition still sums, and a stale file is refused by
 // the constants and pre-commit gates rather than silently kept.
@@ -98,5 +98,5 @@ theorem apis_gated_is_not_called :
     tally liveVerdicts 3 = gated ∧ (liveVerdicts.filter (fun v => v != 3)).length + gated = catalogue
     ∧ tally (liveVerdicts.filter (fun v => v != 3)) 3 = 0 ∧ tally (liveVerdicts.filter (fun v => v != 3) ++ [3]) 3 = 1 := by decide
 `
-writeFileSync('src/proof/apis.lean', out)
-console.log(`src/proof/apis.lean written from ${folder}: catalogue ${n.catalogue}, spec proven ${n.specProven}, reachable ${n.reachable}, not reachable ${n.notReachable}, refused ${n.refused}, gated ${n.gated}, not measured ${n.notMeasured}`)
+writeFileSync('src/iso/9001-governance/apis.lean', out)
+console.log(`src/iso/9001-governance/apis.lean written from ${folder}: catalogue ${n.catalogue}, spec proven ${n.specProven}, reachable ${n.reachable}, not reachable ${n.notReachable}, refused ${n.refused}, gated ${n.gated}, not measured ${n.notMeasured}`)

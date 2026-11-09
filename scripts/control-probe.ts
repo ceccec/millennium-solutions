@@ -19,7 +19,7 @@ import { readFileSync, writeFileSync, existsSync, mkdtempSync, rmSync, symlinkSy
 import { execSync } from 'node:child_process'
 import { resolve, dirname, join } from 'node:path'
 import { tmpdir } from 'node:os'
-import { leanFiles } from '../src/api/index.ts'
+import { leanFiles, leanPathOf } from '../src/api/index.ts'
 import { uncontrolledRefusers } from '../src/api/gates.ts'
 
 // A TIMEOUT IS NOT A REFUSAL, AND READING IT AS ONE IS THE INSTRUMENT LYING ABOUT ITS SUBJECT.
@@ -72,13 +72,13 @@ process.on('exit', teardown)
 const targets = uncontrolledRefusers()
 
 // ── generic perturbations: each is a shape a deposit of this kind should never accept ────────────────────
-const LEAN = 'src/proof/' + (leanFiles().includes('coin.lean') ? 'coin.lean' : leanFiles()[0])
+const LEAN = leanPathOf(leanFiles().includes('coin.lean') ? 'coin.lean' : leanFiles()[0])
 const PROBES: { name: string; file: string; mutate: (s: string) => string }[] = [
   { name: 'a theorem the kernel cannot close', file: LEAN,
     mutate: (s) => s.replace(/\nend [A-Za-z]+\s*$/, '\ntheorem probe_false : 1 = 2 := by decide\n$&') },
   { name: 'a declaration with no proof at all', file: LEAN,
     mutate: (s) => s + '\n-- probe\ntheorem probe_sorry : 1 = 1 := by sorry\n' },
-  { name: 'a ledger entry citing a theorem that does not exist', file: 'src/proof/discovered.json',
+  { name: 'a ledger entry citing a theorem that does not exist', file: 'src/ledger/discovered.json',
     mutate: (s) => s.replace(/\n\]\s*$/, ',\n  { "key": "lean_probe_absent", "name": "lean probe.lean: probe_absent — a key with nothing behind it", "receipt": "00000000-0000-8000-8000-000000000000" }\n]') },
   { name: 'prose citing a command that is not wired', file: 'README.md',
     mutate: (s) => s + '\n\nRun `npm run a-command-that-was-never-wired` to verify.\n' },
@@ -98,8 +98,8 @@ const readsOf = (script: string): string[] => {
   // ledger() — so a literal-path extractor found NOTHING for all nine, and the probe reported "not reached
   // even by perturbing the files it reads" while perturbing nothing. A vacuous negative, produced by the
   // instrument built to detect vacuous checks.
-  if (/\bleanFiles\b|\bleanSource\b|\bleanTheorems\b/.test(src)) out.add('src/proof/coin.lean')
-  if (/\bledger\b|\blive\b\(|\bstatusOf\b/.test(src)) out.add('src/proof/discovered.json')
+  if (/\bleanFiles\b|\bleanSource\b|\bleanTheorems\b/.test(src)) out.add('src/iso/22739-ledger/coin.lean')
+  if (/\bledger\b|\blive\b\(|\bstatusOf\b/.test(src)) out.add('src/ledger/discovered.json')
   if (/\bmergeKey\b|\bstatementAddress\b/.test(src)) out.add('docs/statement-address-fixture.json')
   // AND THE FIX FOR THAT WAS THREE MORE REMEMBERED NAMES, which is the same defect with a longer list. It
   // left `clusters` reported as "not reached, even by perturbing the files it reads" — a sentence that was
@@ -137,7 +137,7 @@ const unmeasured: string[] = []
 // refuses to start on a dirty tree, so anything changed after that point is the probe's doing.
 // IT RAN AFTER THE PROBES AND THE TWO EARLY EXITS JUMPED OVER IT. A gate that is already red, or that never
 // finishes, is skipped by `continue` — and both had already RUN once by then. `novelty` rewrote
-// src/proof/novelty.json on the clean-tree run, the skip jumped the restore, and the probe ended with
+// src/ledger/novelty.json on the clean-tree run, the skip jumped the restore, and the probe ended with
 // "the tree did not come back clean" about a file its own control flow had left there. It is a function now,
 // called on every path out.
 //

@@ -113,7 +113,7 @@ for (const e of withdrawn) {
 }
 
 if (process.argv.includes('--carry')) {
-  writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
+  writeFileSync('src/ledger/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
 }
 
 const after = ledger.filter((e) => statusOf(e as never, ledger as never) === 'withdrawn').length

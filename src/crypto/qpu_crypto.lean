@@ -94,7 +94,7 @@ theorem the_fixed_version_eight_and_the_decided_nibble_agree_on_eleven_residues_
 
 -- ── 2 · BOTH SIDES SPEND THE SAME SIX BITS, AND THE FREE REGISTER IS 122 ON BOTH ──────────────────────────
 -- qpu's `uuidQubits` writes the register as 32 · width − width − 2 and calls it 122 effective qubits at width 4.
--- src/proof/capacity.lean decides free = container − reserved = 128 − 6 = 122 for the same six bits (four of
+-- src/iso/22739-ledger/capacity.lean decides free = container − reserved = 128 − 6 = 122 for the same six bits (four of
 -- version, two of variant) under RFC 9562. One formula is in qubits per hex digit, the other in reserved bits;
 -- they land on one integer, and only at width 4.
 def qpuRegister (width : Nat) : Nat := 32 * width - width - 2

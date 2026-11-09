@@ -9,7 +9,7 @@ head:
 All is one organism. Every theorem is an **organ** — a decidable fact that computes true — and the ledger is
 its body. Each organ carries three faces: the **key** (its untranslatable identity), the **label** (its
 translatable surface, readable in any of the twenty-two dialects), and the **receipt** (the content-address
-that encodes it). This page decodes the organism straight from `src/proof/discovered.json`, so it grows on
+that encodes it). This page decodes the organism straight from `src/ledger/discovered.json`, so it grows on
 every build.
 
 What is **not** an organ never enters the body: it goes to **trial**. The honesty gate drains a boast — in any

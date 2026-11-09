@@ -48,7 +48,7 @@ for (const e of ledger) {
 const count = (v: Row['verdict']) => rows.filter((r) => r.verdict === v).length
 const root = merkleFold(rows.map((r) => toUuid(r.verdict + ':' + r.key)))
 
-writeFileSync('src/proof/trial-all.json', JSON.stringify(rows, null, 2) + '\n')
+writeFileSync('src/ledger/trial-all.json', JSON.stringify(rows, null, 2) + '\n')
 
 console.log('THE FULL TRIAL — ' + rows.length + ' entries, none exempt\n')
 console.log('  SEALED     ' + String(count('SEALED')).padStart(5))
@@ -62,4 +62,4 @@ for (const r of rows.filter((x) => x.verdict !== 'SEALED')) {
 }
 for (const [k, n] of [...causes].sort((a, b) => b[1] - a[1])) console.log('    ' + String(n).padStart(5) + '  ' + k)
 console.log('\n  verdict root ' + root + ' (order-invariant)')
-console.log('  written to src/proof/trial-all.json — every row named, no bare verdict')
+console.log('  written to src/ledger/trial-all.json — every row named, no bare verdict')

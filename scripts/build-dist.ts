@@ -22,7 +22,7 @@ execFileSync(join('node_modules', '.bin', 'tsc'), ['-p', 'tsconfig.dist.json'], 
 execFileSync(join('node_modules', '.bin', 'tsc'), ['-p', 'tsconfig.mcp.json'], { stdio: 'inherit' })
 
 // ── AND THE LEDGER TRAVELS WITH IT ───────────────────────────────────────────────────────────────────────
-// The four evidence tools measure src/proof/discovered.json, and the package did not carry it — so the
+// The four evidence tools measure src/ledger/discovered.json, and the package did not carry it — so the
 // deposit's own evidence was the one artefact a stranger could not examine, which is the worst place for a
 // publication gap to sit. Copied rather than imported: it is data, tsc has no business with it, and the MCP
 // entry reads it from beside itself. Nothing is transformed on the way, so the bytes a reader checks are the
@@ -46,7 +46,7 @@ execFileSync(join('node_modules', '.bin', 'tsc'), ['-p', 'tsconfig.mcp.json'], {
     const n = (JSON.parse(readFileSync(fj, 'utf8')) as { numberOfItems?: number }).numberOfItems ?? 0
     console.log(`  · formulas shipped: ${n} items → dist/data/formulas.jsonld`)
   } else {
-    console.log('  ○ no ledger at src/proof/discovered.json — the published MCP entry will report it ABSENT, not zero')
+    console.log('  ○ no ledger at src/ledger/discovered.json — the published MCP entry will report it ABSENT, not zero')
   }
 }
 
@@ -129,7 +129,7 @@ if (process.env.NO_BAKE === '1') {
     baked.push(name)
   }
   let head = 'unknown'; try { head = execFileSync('git', ['rev-parse', '--short', 'HEAD'], { encoding: 'utf8' }).trim() } catch { /* a tarball has no git */ }
-  const ledgerRows = existsSync('src/proof/discovered.json') ? (JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { receipt: string }[]) : []
+  const ledgerRows = existsSync('src/ledger/discovered.json') ? (JSON.parse(readFileSync('src/ledger/discovered.json', 'utf8')) as { receipt: string }[]) : []
   const stamp = { bakedFrom: head, ledger: ledgerRows.length, ledgerSeal: merkleFold(ledgerRows.map((r) => r.receipt)),
     bakeRoot: merkleFold(baked.map((n) => toUuid(n + ':' + readFileSync(join(dir, n + '.json'), 'utf8')))) }
   writeFileSync(join(dir, 'index.json'), JSON.stringify({ stamp, baked, notBaked }, null, 1) + '\n')

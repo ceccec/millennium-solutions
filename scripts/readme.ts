@@ -22,7 +22,7 @@ import { AUTHOR_CLAIM } from '../src/millennium/index.ts'
 import { isLive, fileOfKey } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
-const lean = readFileSync('src/proof/index.lean', 'utf8')
+const lean = readFileSync('src/iso/9001-governance/index.lean', 'utf8')
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const refl = (d: number) => 10 - d
 const CLAY = ['riemann', 'p vs np', 'navier stokes', 'yang mills', 'hodge', 'birch and swinnerton-dyer', 'poincare']

@@ -2,14 +2,14 @@
  *
  *  scripts/novelty.ts performed this search and was the only thing that could: the five sources, the term
  *  extraction, the relevance floor and the verdict vocabulary all lived inside a script that runs once,
- *  writes src/proof/novelty.json and exits. A reader wanting to check a claim of novelty could read the
+ *  writes src/ledger/novelty.json and exits. A reader wanting to check a claim of novelty could read the
  *  recorded answer and could not ask the question themselves.
  *
  *  The search is now here, and the script is one caller. The MCP server is the other, so the public can run
  *  the deposit's own prior-art search against any statement and get the same verdict vocabulary the record
  *  uses — CANDIDATES, NONE_FOUND, NOT_MEASURED — computed the same way.
  *
- *  NOTHING HERE WRITES. Recording a search in src/proof/novelty.json is the depositor's act: the file is
+ *  NOTHING HERE WRITES. Recording a search in src/ledger/novelty.json is the depositor's act: the file is
  *  what priorart.lean's kind 2 rests on, and a public caller must be able to ASK without being able to
  *  amend the deposit's evidence. Searching is free; filing is not.
  *

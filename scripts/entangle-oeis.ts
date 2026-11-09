@@ -177,7 +177,7 @@ console.log(`    subjects independently, written by people who were not running 
 if (uncatalogued) console.log(`  ${uncatalogued} coil(s) match NO catalogued sequence — true on the grid, not established as known`)
 if (mismatched) console.log(`  ${mismatched} coil(s) got an answer that does not line up — counted as no corroboration, not as agreement`)
 if (unmeasured) console.log(`  ${unmeasured} NOT MEASURED — one run, one network, today; never read as absence`)
-console.log(`\n  A MATCH DOES NOT MAKE AN IDENTITY TRUE — the kernel did that, in src/proof/coils.lean, and it would`)
+console.log(`\n  A MATCH DOES NOT MAKE AN IDENTITY TRUE — the kernel did that, in src/iso/80000-2-mathematics/coils.lean, and it would`)
 console.log(`  hold if every catalogue vanished. What a match adds is that the identity was already known and`)
 console.log(`  that its cross-domain reach is somebody else's observation as well as this grid's. And a NON-match`)
 console.log(`  adds nothing either way: the OEIS is a catalogue, not the set of all true sequences.`)

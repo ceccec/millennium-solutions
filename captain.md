@@ -10,7 +10,7 @@ head:
 
 Given by the captain, recorded as receipt `85ac8585-9dc1-8964-9848-ae0f49cc82fb` (the content-address of the
 message itself), gate-passed, every claim recomputable below. Canonical link, reminded in every contribution
-block: [https://uuidna.com/captain/message](https://uuidna.com/captain/message).
+block: [https://uuidna.com/captain](https://uuidna.com/captain).
 
 ## The double torus — earth navigation
 
