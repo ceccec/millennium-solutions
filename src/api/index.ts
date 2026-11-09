@@ -614,6 +614,29 @@ export const axis = (): number[] =>
  *  readings, so the reader says which page it holds: PAGE_COMMIT=HEAD means "the page committed at HEAD" (the push
  *  gate sets it), anything else means "the page for the commit about to be made". Both read the tags MERGED into the
  *  page's parent, newest by version, so an unrelated tag on another branch is never named. */
+/** THE PUBLISHED LINE, AND THE DRAFTS ABOVE IT DELETED. Only a tag on origin is published provenance; a local tag past
+ *  the last one there was minted here and never pushed. It was counted as history twice on 2026-11-09: release.ts
+ *  derived v9.8.8 from a refused v9.8.7 (burning a number nobody saw), and next read an unpushed v9.8.8 as "the tree
+ *  is released" and pushed nothing. Deleting a draft frees its number for the run about to mint it again. Returns the
+ *  version tags on origin, oldest first — empty offline, when nothing is deleted and the caller falls back to the
+ *  local tags, the old behaviour and the old risk. */
+export const semverOf = (t: string): number[] | undefined => t.match(/^v(\d+)\.(\d+)\.(\d+)$/)?.slice(1).map(Number)
+export const byVersion = (a: string, b: string): number => { const x = semverOf(a)!, y = semverOf(b)!; return x[0] - y[0] || x[1] - y[1] || x[2] - y[2] }
+export const publishedTags = (): string[] => {
+  let published: string[] = []
+  try {
+    published = execSync('git ls-remote --tags --refs origin', { encoding: 'utf8', timeout: 20_000, stdio: ['ignore', 'pipe', 'ignore'] })
+      .split('\n').map((l) => l.split('refs/tags/')[1] ?? '').filter((t) => semverOf(t)).sort(byVersion)
+  } catch { return [] }
+  const top = published.at(-1)
+  if (!top) return published
+  for (const t of execSync('git tag', { encoding: 'utf8' }).trim().split('\n').filter((x) => semverOf(x) && byVersion(x, top) > 0)) {
+    execSync(`git tag -d ${t}`, { stdio: 'ignore' })
+    console.log(`  · deleted unpublished tag ${t} — never on origin, so its number is reused`)
+  }
+  return published
+}
+
 export const releasedBefore = (fallback = 'v0'): string => {
   try {
     const parent = process.env.PAGE_COMMIT === 'HEAD' ? 'HEAD^' : 'HEAD'

@@ -4,7 +4,7 @@ import { execSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { merkleGravity } from '../src/the/apple/index.ts'
-import { live, leanTheorems } from '../src/api/index.ts'
+import { live, leanTheorems, publishedTags, semverOf, byVersion } from '../src/api/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 
 // Version: explicit arg wins; otherwise DERIVE the next patch from the latest tag.
@@ -20,29 +20,11 @@ function nextVersion() {
     // read the same history. Offline, the fetch fails and the local tags are used, which is the old
     // behaviour and the old risk — stated rather than hidden.
     try { execSync('git fetch --tags --quiet', { stdio: 'ignore', timeout: 20_000 }) } catch { /* offline */ }
-    // THE NEXT AVAILABLE NUMBER IS THE REMOTE'S, NOT THE CHECKOUT'S. v9.8.7 was minted here on 2026-11-09 and
-    // its push refused by the pre-push court, so it never left this machine — yet counting local tags made the
-    // next run v9.8.8, burning a number nobody ever saw. Only a tag on origin is published provenance; a
-    // local-only tag above it is an unpublished draft, and the re-tag below replaces it under the same number.
-    const semver = (t: string) => t.match(/^v(\d+)\.(\d+)\.(\d+)$/)?.slice(1).map(Number)
-    const byVersion = (a: string, b: string) => { const x = semver(a)!, y = semver(b)!; return x[0] - y[0] || x[1] - y[1] || x[2] - y[2] }
-    let published: string[] = []
-    try {
-      published = execSync('git ls-remote --tags --refs origin', { encoding: 'utf8', timeout: 20_000 })
-        .split('\n').map((l) => l.split('refs/tags/')[1] ?? '').filter((t) => semver(t))
-    } catch { /* offline: the local tags stand in, the old behaviour and the old risk */ }
-    // AND THE DRAFTS ARE DELETED, NOT LEFT ABOVE THE LINE. A local tag past the last published one would still
-    // win the "no delta" comparison below and stand in `git tag` as if it were history; deleting it frees its
-    // number, which this run then mints again.
-    if (published.length) {
-      const top = published.slice().sort(byVersion).at(-1)!
-      for (const t of execSync('git tag', { encoding: 'utf8' }).trim().split('\n').filter((x) => semver(x) && byVersion(x, top) > 0)) {
-        execSync(`git tag -d ${t}`, { stdio: 'ignore' })
-        console.log(`  · deleted unpublished tag ${t} — never on origin, so its number is reused`)
-      }
-    }
-    const tags = (published.length ? published
-      : execSync('git tag', { encoding: 'utf8' }).trim().split('\n').filter((t) => semver(t))).sort(byVersion)
+    // THE NEXT AVAILABLE NUMBER IS THE REMOTE'S, NOT THE CHECKOUT'S — publishedTags() reads origin and deletes the
+    // unpushed drafts above it, so a refused v9.8.7 is minted again as v9.8.7, not skipped to v9.8.8.
+    const published = publishedTags()
+    const tags = published.length ? published
+      : execSync('git tag', { encoding: 'utf8' }).trim().split('\n').filter((t) => semverOf(t)).sort(byVersion)
     const last = tags[tags.length - 1]
     const m = last && last.match(/^v(\d+)\.(\d+)\.(\d+)$/)
     if (m) {

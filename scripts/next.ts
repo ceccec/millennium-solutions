@@ -17,7 +17,7 @@ import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { provable } from './discover.ts'
 import { report as rosettaReport } from '../src/the/rosetta/index.ts'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { ledger as __ledger, publishedTags } from '../src/api/index.ts'
 
 const message = process.argv.slice(2).join(' ').trim()
 
@@ -153,6 +153,9 @@ const address = merkleFold(files.map((f) => toUuid(f + ':' + readFileSync(f))))
 
 let lastAddr = '', lastTag = ''
 try {
+  // WHOLE MEANS RELEASED, AND RELEASED MEANS ON ORIGIN. An unpushed tag carrying this address made next rest on a
+  // release nobody had received; publishedTags() deletes such drafts first, so the release path mints and pushes.
+  publishedTags()
   lastTag = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean).pop() || ''
   if (lastTag) { const msg = execSync("git for-each-ref '--format=%(contents)' refs/tags/" + lastTag, { encoding: 'utf8' }); lastAddr = (msg.match(/content-address ([0-9a-f-]+)/) || [])[1] || '' }
 } catch { /* no repo/tags */ }
