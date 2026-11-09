@@ -47,7 +47,12 @@ const ENV = { ...process.env, LEAN_PATH: DIR }
 // the optional file argument is the first NON-FLAG word: `--full` was being read as a filename, which only
 // showed up once a flag existed to be misread.
 const arg = process.argv.slice(2).find((a) => !a.startsWith('-'))
-const files = arg ? [arg.replace(/^.*\//, '')] : leanFiles()
+// LEAN_SHARD=i/N — verify only the content-addressed slice i of N, for a fan-out across runners that recombines
+// to the same root (scripts/lean-fanout.ts). toUuid(basename) assigns each file to exactly one shard, so the
+// shards partition the tree: their union is every file, with no overlap, whatever order the runners finish in.
+const SHARD = (!arg && process.env.LEAN_SHARD) ? process.env.LEAN_SHARD.split('/').map(Number) as [number, number] : null
+const inShard = (f: string): boolean => !SHARD || Number('0x' + toUuid(f).replace(/-/g, '').slice(0, 8)) % SHARD[1] === SHARD[0]
+const files = arg ? [arg.replace(/^.*\//, '')] : leanFiles().filter(inShard)
 
 // build oleans for every file that something imports. leanFiles() walks all of src/ recursively (the files
 // are grouped by domain — src/crypto, src/quantum, src/iso/<standard>/ — and read through leanPathOf(basename));
@@ -112,7 +117,14 @@ for (const mod of buildOrder) {
   process.stderr.write(`  · building ${mod}.olean …\n`)
   try { execSync(`lean -o ${olean} ${leanPathOf(src)}`, { stdio: 'pipe', env: ENV })
         process.stderr.write(`  · built ${mod}.olean in ${((Date.now() - t0) / 1000).toFixed(1)}s\n`)
-        cache[key] = { hash: h, format: CACHE_FORMAT, ok: true, line: '', theorems: 0 } } catch (e) {
+        cache[key] = { hash: h, format: CACHE_FORMAT, ok: true, line: '', theorems: 0 }
+        // PERSIST EACH OLEAN AS IT IS BUILT, not only at the end of the run. The olean loop is serial and the
+        // slow part (families.lean alone is ~2 minutes), and a run killed partway — a CI step SIGTERM'd at its
+        // timeout, a cancelled job, a developer's Ctrl-C — used to lose every olean it had built, because the
+        // cache was written once at the very end. The next run then started cold and, on a slow machine, could
+        // not finish either. Written here, a killed run leaves the oleans it reached on disk with their hashes
+        // recorded, so the next run resumes from where it stopped instead of from nothing.
+        writeFileSync(CACHE, JSON.stringify(cache, null, 2) + '\n') } catch (e) {
     const msg = String((e as { stderr?: Buffer }).stderr ?? (e as Error).message ?? '').trim().split('\n').slice(0, 3).join(' · ')
     console.log(`  ✗ ${src} is imported by another file and does NOT build — every file importing ${mod} will fail after this, for this reason: ${msg}`)
   }
@@ -248,4 +260,14 @@ console.log(rows.join('\n'))
 console.log(`\n  ${files.length} files · ${total} theorems · ${bad ? bad + ' FILE(S) FAILING' : 'all clean'}`)
 console.log(`  ${LANES} lane(s): ${BUDGET.why}`)
 console.log(`  verification root ${merkleFold(leaves)} — over ${leaves.length} file(s), the same at any lane count`)
+// A SHARD EMITS ITS LEAVES so a combine job can fold every shard's into the one whole-tree root (verify-beats-
+// recompute across runners). The leaf is reconstructed from the cache the verify loop just wrote, exactly as
+// above — `file:hash:ok:theorems`, carrying no lane, order or runner — so the fold is order-invariant and the
+// root a function of the set alone. scripts/lean-fanout.ts asserts the shards partition the tree and recombine.
+if (SHARD) {
+  const pairs = files.map((f) => ({ file: f, leaf: toUuid(`${f}:${cache[f]!.hash}:${cache[f]!.ok ? 'ok' : 'bad'}:${cache[f]!.theorems}`) }))
+  const out = `${DIR}/shard-${SHARD[0]}-of-${SHARD[1]}.json`
+  writeFileSync(out, JSON.stringify(pairs, null, 1) + '\n')
+  console.log(`  shard ${SHARD[0]}/${SHARD[1]}: ${pairs.length} file(s) emitted to ${out}`)
+}
 process.exit(bad ? 1 : 0)

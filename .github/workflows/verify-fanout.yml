@@ -1,0 +1,74 @@
+# VERIFY (FAN-OUT) — the whole-tree kernel check, spread across runners and recombined to one root.
+#
+# The verification is order-invariant: the root is merkleFold of the per-file kernel outcomes, each a function of
+# that file's bytes alone, so the tree can be PARTITIONED and checked in parallel. Each runner verifies one
+# content-addressed slice (LEAN_SHARD=i/N — toUuid(basename) mod N) and emits its leaves; the combine job folds
+# every slice back and asserts they partition the tree and recombine to the whole-tree root. That the parts fold
+# to the whole is the falsifiable form of order-invariance: drop a file, double-count one, or verify it
+# differently on one runner, and the set no longer matches and the root moves.
+#
+# Actions pinned to full commit SHAs — this repo rejects tag refs.
+
+name: Verify (fan-out) — sharded kernel verification, recombined
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shard:
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: ./.github/actions/node
+        with:
+          kernel: 'true'
+      # VERIFY-BEATS-RECOMPUTE, shared across the shards: the content-addressed cache keys on the .lean bytes, so
+      # a warm run re-verifies only what changed and the four shards restore the same oleans instead of each
+      # cold-building them. The key is every .lean's hash, so a changed proof misses and is rebuilt.
+      - name: restore the content-addressed verification cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .lean-build
+          key: lean-build-${{ hashFiles('src/**/*.lean') }}
+          restore-keys: lean-build-
+      - name: the kernel answers before any slice is verified
+        run: lean --version
+      - name: verify shard ${{ matrix.shard }} of 4
+        run: |
+          set -euo pipefail
+          LEAN_SHARD=${{ matrix.shard }}/4 node scripts/lean.ts | tail -4 | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: emit this shard's leaves
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: lean-shard-${{ matrix.shard }}
+          path: .lean-build/shard-${{ matrix.shard }}-of-4.json
+          if-no-files-found: error
+
+  combine:
+    needs: shard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: ./.github/actions/node
+        with:
+          deps: 'true'
+      - name: collect every shard's leaves
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          path: .lean-build
+          pattern: lean-shard-*
+          merge-multiple: true
+      # RECOMBINE. The shards must partition the tree — every file once, none twice — and their leaves must fold
+      # to the whole-tree root. A gap or an overlap fails here, before the result is trusted.
+      - name: recombine — the shards fold to the one whole-tree root
+        run: |
+          set -euo pipefail
+          node scripts/lean-fanout.ts | tee -a "$GITHUB_STEP_SUMMARY"

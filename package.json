@@ -202,6 +202,7 @@
     "bridge": "node scripts/bridge.ts",
     "qpu": "node scripts/qpu-gate.ts",
     "qpu-register": "node scripts/qpu-register-gate.ts",
+    "verify:fanout": "node scripts/lean-fanout.ts",
     "mcp:call": "node scripts/mcp-call.ts",
     "gate:thousand": "node scripts/thousand-bit-gate.ts",
     "gate:thousand:control": "node scripts/thousand-bit-gate.ts --control",
