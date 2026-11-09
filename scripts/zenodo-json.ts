@@ -7,7 +7,11 @@
  *  that is not the one it belongs to.
  *
  *  WHAT IS COMPUTED, every run:
- *    · version          — from the latest annotated tag, not typed
+ *    · version          — NOT WRITTEN. Zenodo names a GitHub-release archive from this field when it is present
+ *                         and from the release tag when it is absent, and this file is committed BEFORE its own
+ *                         tag exists — so the latest tag it could read was always the previous one. v9.8.3 was
+ *                         archived on Zenodo as "v9.8.2" (record 23905708) for exactly that reason. The tag is
+ *                         the one thing that names the release, so it names the record.
  *    · creators, title  — read from CITATION.cff, the one place that already carries them with an ORCID
  *    · license          — from CITATION.cff, lowercased to Zenodo's spelling
  *    · keywords         — the authored list, UNION the ledger's own domain families, so the record says
@@ -31,7 +35,6 @@
  *  usage:  node scripts/zenodo-json.ts            write .zenodo.json
  *          node scripts/zenodo-json.ts --check    fail if it is not what the tree derives */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
-import { execFileSync } from 'node:child_process'
 import { flag } from '../src/cli/index.ts'
 import { ledger, theoremCount, leanFiles, leanTheorems } from '../src/api/index.ts'
 import { kinds, KIND } from '../src/publication/index.ts'
@@ -55,10 +58,6 @@ const LICENSE = one(/^license:\s*(\S+)\s*$/m, 'licence').toLowerCase()
 const DOI = one(/^doi:\s*"?(10\.\d{4,}\/[^\s"]+)"?/m, 'concept DOI')
 const ABSTRACT = (cff.match(/^abstract:\s*>-\n((?:\s{2}.*\n?)+)/m)?.[1] ?? '').replace(/\s+/g, ' ').trim()
 
-const VERSION = (() => {
-  try { return execFileSync('git', ['describe', '--tags', '--abbrev=0'], { encoding: 'utf8' }).trim() } catch { return '' }
-})()
-if (!VERSION) throw new Error('no tag to name this version — a deposition whose version is guessed is worse than one with none')
 
 // ── the record's own figures ────────────────────────────────────────────────────────────────────────────
 const rows = ledger()
@@ -103,7 +102,7 @@ const quantumSentence = `${quantum} of them decide every quantum computing model
   + `Mermin's GHZ test to 128 qubits; ${deviceRun ? `a run on ${deviceRun.backend} returned ${deviceRun.status}` : 'no run on real quantum hardware is recorded yet'}. `
 
 const computed =
-  `${OPEN} As of ${VERSION}: ${theoremCount()} theorems across ${leanFiles().length} Lean 4 files, each closed by `
+  `${OPEN} At this release: ${theoremCount()} theorems across ${leanFiles().length} Lean 4 files, each closed by `
   + `exhaustion over a stated finite domain, sorry-free and axiom-free; an append-only ledger of ${rows.length} entries, `
   + `${live.length} standing, across ${families.length} domain families, with a receipt chain recomputed on every build. `
   + quantumSentence
@@ -134,7 +133,6 @@ const out = {
   keywords: (cff.match(/^keywords:\n((?:\s+-\s.*\n?)+)/m)?.[1] ?? '').split('\n').map((l) => l.replace(/^\s*-\s*/, '').trim()).filter(Boolean),
   license: LICENSE,
   access_right: 'open',
-  version: VERSION,
   related_identifiers: related,
 }
 const body = JSON.stringify(out, null, 2) + '\n'
@@ -142,11 +140,11 @@ const body = JSON.stringify(out, null, 2) + '\n'
 if (flag('--check')) {
   if (!existsSync(OUT)) { console.log(`  ✗ zenodo-json: ${OUT} is missing — run \`node scripts/zenodo-json.ts\``); process.exit(1) }
   if (readFileSync(OUT, 'utf8') !== body) { console.log(`  ✗ zenodo-json: ${OUT} is not what the tree derives — run \`node scripts/zenodo-json.ts\``); process.exit(1) }
-  console.log(`  ✓ zenodo-json: ${OUT} agrees with the tree at ${VERSION}`)
+  console.log(`  ✓ zenodo-json: ${OUT} agrees with the tree`)
   process.exit(0)
 }
 writeFileSync(OUT, body)
 // The status line said "(61 from the ledger's own families)" after the families stopped feeding keywords.
 // A line describing what the code used to do is the cheapest kind of false statement to ship.
-console.log(`✓ zenodo-json: ${OUT} — ${VERSION} · ${out.keywords.length} authored keyword(s) · ${related.length} related identifier(s) · ${families.length} ledger families counted in the description, none in the keywords · novelty: ${novelty}`)
+console.log(`✓ zenodo-json: ${OUT} — ${out.keywords.length} authored keyword(s) · ${related.length} related identifier(s) · ${families.length} ledger families counted in the description, none in the keywords · novelty: ${novelty}`)
 console.log(`  the author's description (${authored.length} chars) was carried through unchanged; only the computed block was rewritten.`)

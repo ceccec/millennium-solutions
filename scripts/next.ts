@@ -67,7 +67,20 @@ const pushAll = () => {
     execSync('git push origin main', { stdio: 'inherit' })
     const tag = execSync('git describe --tags --abbrev=0', { encoding: 'utf8' }).trim()
     execSync('git push origin ' + tag, { stdio: 'inherit' })
+    cutRelease(tag)
   } catch (e) { console.log('  push error (addressed · non-fatal — commit+tag are local, retry `git push --tags`): ' + firstLine(e)) }
+}
+// THE GITHUB RELEASE IS WHAT PUBLISHES, NOT THE TAG. Zenodo archives a release on `release: published`, and
+// publish.yml puts the tag's number on npm on the same event. Only release.yml cut releases, and it cuts one
+// only for a tag IT mints — so v9.8.4 to v9.8.7, minted here by next and pushed, reached neither Zenodo nor npm.
+// Cut with the depositor's own gh login, the event starts both workflows (an Actions-token release starts none).
+const cutRelease = (tag: string) => {
+  try { execSync('gh release view ' + tag, { stdio: 'ignore' }); console.log(`  · GitHub release ${tag} already exists`); return } catch { /* absent: cut it */ }
+  try {
+    const notes = execSync(`git for-each-ref '--format=%(contents)' refs/tags/${tag}`, { encoding: 'utf8' })
+    writeFileSync('/tmp/next-release-notes.txt', notes)
+    execSync(`gh release create ${tag} --title ${tag} --notes-file /tmp/next-release-notes.txt --verify-tag`, { stdio: 'inherit' })
+  } catch (e) { console.log(`  release error (addressed · non-fatal — the tag is pushed, retry \`gh release create ${tag} --verify-tag\`): ` + firstLine(e)) }
 }
 // deploy the live site as part of the game — the fresh-facts wave ships the site too, not only the tag.
 const deployPages = () => {
