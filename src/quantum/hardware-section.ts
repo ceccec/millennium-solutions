@@ -73,8 +73,9 @@ export const hardwareSection = (): string => {
     + `computer describes in polynomial time (Gottesman–Knill), which is why 128 qubits fit here — and why only a device's `
     + `measured counts, never this computation, make "hardware" true.\n\n`
   md += `**Terminology.** The types are named by the standard's terms (\`QuantumGate\` §3.4.2, \`QuantumCircuit\` §3.4.5, `
-    + `\`MeasurementCounts\` §3.2.16, \`AcceptedQuantumComputer\` §3.4.10), and the ${TERMS.length} ISO/IEC 4879 clauses `
-    + `realised here are listed once in \`src/quantum/terminology.ts\`, each with what realises it and its coin — the content `
-    + `address of its clause and term — on [/hardware](/hardware).\n\n`
+    + `\`MeasurementCounts\` §3.2.16, \`AcceptedQuantumComputer\` §3.4.10), and all ${TERMS.length} terms of ISO/IEC 4879 are `
+    + `listed once in \`src/quantum/terminology.ts\`, each a coin — the content address of its clause and term — with where `
+    + `it is realised: ${TERMS.filter((t) => t.here.length).length} in this tree, the other ${TERMS.filter((t) => !t.here.length).length} `
+    + `by a named check in qpu — on [/hardware](/hardware).\n\n`
   return md
 }

@@ -99,11 +99,11 @@ At 2 qubits there is no Mermin lead — that octave's Bell test is CHSH, above. 
 
 ## The terminology, as coins
 
-The types are named by the standard's own terms — `QuantumGate` §3.4.2, `QuantumCircuit` §3.4.5, `MeasurementCounts` §3.2.16, `AcceptedQuantumComputer` §3.4.10 — and every ISO/IEC 4879 clause realised here is listed once, in `src/quantum/terminology.ts`, with what realises it and its coin: the content address of the clause number and term, which any reader recomputes with no key.
+The types are named by the standard's own terms — `QuantumGate` §3.4.2, `QuantumCircuit` §3.4.5, `MeasurementCounts` §3.2.16, `AcceptedQuantumComputer` §3.4.10 — and all {{ data.terms.length }} terms of ISO/IEC 4879, clauses 3.1.1 to 3.6.4, are listed once in `src/quantum/terminology.ts`, each with its coin — the content address of the clause number and term, which any reader recomputes with no key — what realises it here, and the check that realises it in qpu ({{ data.qpuSource }}). {{ data.terms.filter(t => t.here).length }} are realised in this tree; the rest are realised in qpu only, and the table says which.
 
 <table>
-<thead><tr><th>Clause</th><th>Term</th><th>Realised by</th><th>Coin</th></tr></thead>
-<tbody><tr v-for="t in data.terms" :key="t.clause"><td>§{{ t.clause }}</td><td>{{ t.term }}</td><td><code>{{ t.realisedBy }}</code>{{ t.leanOk ? '' : ' — a named Lean file is missing' }}</td><td><code>{{ t.coin.slice(0, 8) }}</code></td></tr></tbody>
+<thead><tr><th>Clause</th><th>Term</th><th>Here</th><th>qpu</th><th>Coin</th></tr></thead>
+<tbody><tr v-for="t in data.terms" :key="t.clause"><td>§{{ t.clause }}</td><td>{{ t.term }}</td><td><code v-if="t.here">{{ t.here }}</code><span v-else>—</span>{{ t.leanOk ? '' : ' — a named Lean file is missing' }}</td><td><code>{{ t.qpu }}</code></td><td><code>{{ t.coin.slice(0, 8) }}</code></td></tr></tbody>
 </table>
 
 ## The textbooks, cross-verified

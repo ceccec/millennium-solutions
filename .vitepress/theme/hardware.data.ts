@@ -7,7 +7,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, simulate, mermin, cluster, type AcceptedQuantumComputer } from '../../src/quantum/hardware.ts'
 import { leanTheorems, ledger } from '../../src/api/index.ts'
-import { TERMS } from '../../src/quantum/terminology.ts'
+import { TERMS, QPU_VOCABULARY } from '../../src/quantum/terminology.ts'
 
 export interface HardwareData {
   accepted: readonly AcceptedQuantumComputer[]
@@ -20,8 +20,10 @@ export interface HardwareData {
   octaves: { n: number; quantum: number; classical: number; lead: number; sealed: boolean }[]
   /** the 124-qubit linear cluster: its stabilizers propagated through every CZ */
   cluster124: { generators: number; isCluster: boolean; commute: boolean; middle: string }
-  /** every ISO/IEC 4879 clause realised here, with its coin; a Lean realisation is checked against the kernel's records */
-  terms: { clause: string; term: string; realisedBy: string; coin: string; leanOk: boolean }[]
+  /** all 86 ISO/IEC 4879 clauses, with their coin, what realises each here (a Lean file checked against the kernel's
+   *  records) and qpu's realising check */
+  terms: { clause: string; term: string; here: string; qpu: string; coin: string; leanOk: boolean }[]
+  qpuSource: string
 }
 
 const MODEL_FILES = ['quantum_circuits.lean', 'quantum_models.lean', 'quantum_textbooks.lean', 'quantum_octaves.lean', 'quantum_octave_128.lean', 'quantum_octave_124.lean', 'quantum_uuid_cluster.lean', 'quantum_hardware.lean']
@@ -58,11 +60,12 @@ export default {
       terms: (() => {
         const files = new Set((leanTheorems() as { file: string }[]).map((t) => t.file))
         return TERMS.map((t) => ({
-          clause: t.clause, term: t.term, coin: t.coin,
-          realisedBy: t.realisedBy.map((r) => (r.kind === 'lean' ? r.name : `${r.name}${r.kind === 'function' ? '()' : ''}`)).join(', '),
-          leanOk: t.realisedBy.every((r) => r.kind !== 'lean' || files.has(r.name)),
+          clause: t.clause, term: t.term, coin: t.coin, qpu: t.qpu,
+          here: t.here.map((r) => (r.kind === 'lean' ? r.name : `${r.name}${r.kind === 'function' ? '()' : ''}`)).join(', '),
+          leanOk: t.here.every((r) => r.kind !== 'lean' || files.has(r.name)),
         }))
       })(),
+      qpuSource: `${QPU_VOCABULARY.repo} ${QPU_VOCABULARY.file} at ${QPU_VOCABULARY.commit.slice(0, 8)}${QPU_VOCABULARY.pushed ? '' : ' (local to qpu’s tree, not yet on GitHub)'}`,
     }
   },
 }
