@@ -3,7 +3,7 @@
 // them, and the live check that the served unit still agrees. Two layers, one for each sense of the link:
 //
 //   1 · THE ADDRESS (local, always runs). Each constant qpu.lean records is linked to the coin — toUuid of the
-//       unit's own declaration (src/quantum/qpu-coins.ts) — and to the ported program that derives it (the clay*
+//       unit's own declaration (src/iso/iec-4879-quantum/qpu-coins.ts) — and to the ported program that derives it (the clay*
 //       section). This resolves by recomputation: anyone computing toUuid of the same words gets the same coin,
 //       so the integer carries a checkable address instead of a date and a hand. A coin that does not recompute,
 //       or a value that is not in qpu.lean, fails here.
@@ -16,7 +16,7 @@
 //
 //   node scripts/qpu-register-gate.ts
 import { spawnSync } from 'node:child_process'
-import { qpuRegister, registerSpec } from '../src/quantum/qpu-coins.ts'
+import { qpuRegister, registerSpec } from '../src/iso/iec-4879-quantum/qpu-coins.ts'
 import { toUuid } from '../src/0/index.ts'
 
 const reg = qpuRegister()

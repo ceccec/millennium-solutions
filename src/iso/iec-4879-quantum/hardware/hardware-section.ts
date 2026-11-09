@@ -1,4 +1,4 @@
-// THE QUANTUM HARDWARE SECTION of README.md and the homepage — read from src/proof, the ledger, src/quantum/hardware.ts
+// THE QUANTUM HARDWARE SECTION of README.md and the homepage — read from src/proof, the ledger, src/iso/iec-4879-quantum/hardware.ts
 // and the device receipt on every build, the way thousandBitSection() reads qpu_crypto.lean.
 //
 // The bound beside each theorem is authored — what it decides and, in the same sentence, what it does not — and keyed
@@ -6,7 +6,7 @@
 // nothing. Case counts, keys and receipts are the ledger's. The octave table is computed by mermin(), the cluster by
 // cluster(), and the device verdict is the receipt scripts/quantum-hardware.ts wrote — or the plain fact that none exists.
 import { existsSync, readFileSync } from 'node:fs'
-import { leanTheorems, ledger, domainOf } from '../../api/index.ts'
+import { leanTheorems, ledger, domainOf } from '../../../api/index.ts'
 import { ACCEPTED_HARDWARE, mermin, cluster } from './hardware.ts'
 import { TERMS, SKILLS } from '../terms/terminology.ts'
 
@@ -124,7 +124,7 @@ export const hardwareSection = (): string => {
     + `measured counts, never this computation, make "hardware" true.\n\n`
   md += `**Terminology.** The types are named by the standard's terms (\`QuantumGate\` §3.4.2, \`QuantumCircuit\` §3.4.5, `
     + `\`MeasurementCounts\` §3.2.16, \`AcceptedQuantumComputer\` §3.4.10), and all ${TERMS.length} terms of ISO/IEC 4879 are `
-    + `listed once in \`src/quantum/terminology.ts\`, each a coin — the content address of its clause and term — with where `
+    + `listed once in \`src/iso/iec-4879-quantum/terminology.ts\`, each a coin — the content address of its clause and term — with where `
     + `it is realised: ${TERMS.filter((t) => t.here.length).length} in this tree, the other ${TERMS.filter((t) => !t.here.length).length} `
     + `by a named check in qpu. Each coin holds its skill — its section of the standard, with the ESCO skills search — `
     + `and its tools: what computes or verifies it and the entry point that runs it, every one resolved in the tree; each `

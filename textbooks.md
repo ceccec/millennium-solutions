@@ -13,7 +13,7 @@ qpu seals each textbook example as an integer theorem whose docstring is its hum
 
 <div v-if="data.present">
 
-Read from qpu commit `{{ data.qpu.commit.slice(0, 8) }}`{{ data.qpu.pushed ? '' : ' — local to qpu’s tree, not yet on github.com/uuidna/qpu' }}: **{{ data.theorems }} theorems**, {{ data.base }} base and the rest their variants (reflected {{ data.variants.reflected }}, contrapositive {{ data.variants.contrapositive }}, converse {{ data.variants.converse }}, refuted converse {{ data.variants.converse_refuted }}). **{{ data.physics.length }}** are physics, **{{ data.derivedHere }}** of them re-derived independently from the operators in `src/quantum/quantum_textbooks.lean`.
+Read from qpu commit `{{ data.qpu.commit.slice(0, 8) }}`{{ data.qpu.pushed ? '' : ' — local to qpu’s tree, not yet on github.com/uuidna/qpu' }}: **{{ data.theorems }} theorems**, {{ data.base }} base and the rest their variants (reflected {{ data.variants.reflected }}, contrapositive {{ data.variants.contrapositive }}, converse {{ data.variants.converse }}, refuted converse {{ data.variants.converse_refuted }}). **{{ data.physics.length }}** are physics, **{{ data.derivedHere }}** of them re-derived independently from the operators in `src/iso/iec-4879-quantum/quantum_textbooks.lean`.
 
 **{{ data.statesNone.length }}** sentences state none of their statement's numbers — not a contradiction, a sentence that says the rule in words where the statement says it in numbers: <code v-for="k in data.statesNone" :key="k" style="margin-right:.4em">{{ k.replace(/^textbook_/, '') }}</code>
 

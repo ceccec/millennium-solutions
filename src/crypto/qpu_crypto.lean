@@ -13,7 +13,7 @@
 -- prior_art_note: NONE OF THE MATHEMATICS IS THIS DEPOSIT'S, AND NONE OF IT IS qpu's. qpu.uuidna.com's seal,
 --   σ-trapdoor, Shor run and thousand-bit surface are that service's constructions, read from ~/github/uuidna/qpu
 --   on 2026-11-08 (src/quantum/uuid/index.ts `version`, `seal`, `uuidQubits`; src/quantum/processing/algorithms.ts
---   `createImpossible`, `decodeImpossible`; src/quantum/CRYPTO.md; the root README.md, committed at d0f1dd01,
+--   `createImpossible`, `decodeImpossible`; src/iso/iec-4879-quantum/CRYPTO.md; the root README.md, committed at d0f1dd01,
 --   lines 49–81 for the scale table and the Grover comparison). What is decided here is only which NAMED LAW
 --   each construction is, on the same integers, and exactly where each one stops.
 -- prior_art_search: not performed — every law is named above and none is claimed as new.
@@ -24,7 +24,7 @@
 --
 -- WHY THIS FILE EXISTS, AND WHAT IT REFUSES TO SAY.
 --
--- src/quantum/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
+-- src/iso/iec-4879-quantum/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
 -- CRYPTOGRAPHIC surface, which is the part a reader is most likely to quote and least likely to check. The
 -- method is the one that file set: the service's numbers are recorded as its own declarations, and the kernel
 -- decides what follows from them — never that the service is right, never that this deposit is.

@@ -3,7 +3,7 @@
 //
 // The citations gate's domain was narrower than its name: it passed stale file paths written inside .lean
 // frontmatter (prior_art_note) and comments, so when the crypto and quantum .ts moved into src/crypto/ and
-// src/quantum/ families, and the .lean themselves into src/proof/<domain>/, the old paths were left dangling
+// src/iso/iec-4879-quantum/ families, and the .lean themselves into src/proof/<domain>/, the old paths were left dangling
 // and nothing turned red. A path a proof file names is a claim about where its code lives; a claim that no
 // longer resolves is false, and a move that can leave one unseen is a move that can rot the record.
 //
@@ -14,7 +14,7 @@ import { existsSync } from 'node:fs'
 import { leanFiles, leanSource, leanPathOf } from '../src/api/index.ts'
 
 const PATH_RE = /(?<![\w/~.])(src\/[A-Za-z0-9_./-]+\.(?:ts|lean|vue|mjs))/g
-// EXTERNAL — qpu.uuidna.com's own tree, cited as prior art ("read from ~/github/uuidna/qpu"). Its src/quantum/
+// EXTERNAL — qpu.uuidna.com's own tree, cited as prior art ("read from ~/github/uuidna/qpu"). Its src/iso/iec-4879-quantum/
 // subdirs (uuid, processing, …) and its /Qpu/ Lean modules are not this repository's files and never resolve here.
 const EXTERNAL = /^src\/quantum\/(uuid|processing|net|os|generators|apps)\/|\/Qpu\//
 // HISTORICAL — prose that names a file reorganised away before this gate existed; the reference is to what a now

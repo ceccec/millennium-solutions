@@ -4,7 +4,7 @@
 -- prior_art_domain: Mermin's inequality for the n-qubit GHZ state (Mermin, 1990; values as restated in arXiv:0905.0151
 --   §2, Eq. 5): quantum 2^(n−1), local hidden-variable maximum 2^(n/2) for even n.
 -- prior_art_note: NONE OF THE PHYSICS IS THIS DEPOSIT'S. 124 = 128 − 4 is the UUID's width without its version hex
---   digit. Its Mermin sum over the 125 Pauli-string weights was first computed by src/quantum/hardware/hardware.ts; here it is a
+--   digit. Its Mermin sum over the 125 Pauli-string weights was first computed by src/iso/iec-4879-quantum/hardware/hardware.ts; here it is a
 --   coin — eight particles of sixteen weights (the last holds 112 … 124), each its own theorem and ledger key, and
 --   quantum_uuid_cluster.lean recombines them.
 -- prior_art_search: not performed — every law is named above and none is claimed as new.

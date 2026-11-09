@@ -5,7 +5,7 @@
 --   |S| > 2 for S = E(a,b) + E(a,b') + E(a',b) − E(a',b'); Tsirelson's bound 2√2 (1980) for quantum strategies;
 --   ISO/IEC 4879:2024 §3.4.8 and §3.4.10 (quantum processor, quantum computer) and ISO/IEC 2382:2015 (hardware).
 -- prior_art_note: NONE OF THE PHYSICS OR THE INEQUALITY IS THIS DEPOSIT'S. What is decided here is only the integer
---   form of the verdict src/quantum/hardware/hardware.ts `chshVerdict` applies to a device's counts, so that the rule a run on
+--   form of the verdict src/iso/iec-4879-quantum/hardware/hardware.ts `chshVerdict` applies to a device's counts, so that the rule a run on
 --   IBM Quantum is judged by is the kernel's, not a float comparison.
 -- prior_art_search: not performed — every law is named above and none is claimed as new.
 -- prior_art_pool: named

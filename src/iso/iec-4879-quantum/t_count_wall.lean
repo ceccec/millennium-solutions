@@ -7,7 +7,7 @@ set_option exponentiation.threshold 1100
 --   4.9; its T-count of 7 shown optimal by Amy, Maslov, Mosca, Roetteler 2013); the Cuccaro ripple-carry adder of 2n
 --   Toffolis (Cuccaro, Draper, Kutin, Moulton 2004); schoolbook modular exponentiation for Shor's algorithm as 2n controlled
 --   modular multiplications of n controlled additions each (Vedral, Barenco, Ekert 1996); Beauregard's 2n + 3-qubit circuit
---   (Beauregard 2003); and the Pauli-path cost of non-Clifford gates, at most doubling per T (src/quantum/pauli_paths.lean).
+--   (Beauregard 2003); and the Pauli-path cost of non-Clifford gates, at most doubling per T (src/iso/iec-4879-quantum/pauli_paths.lean).
 -- prior_art_note: none of this is new and none of it is a factoring. What is decided HERE is the COST: the seven-T Toffoli
 --   checked exactly against the Toffoli gate in ℤ[ω]; the T-count of one NAMED construction as a function of the bit length
 --   n — 28n³, an UNDERCOUNT for that construction because its modular reduction is left out, so the wall it shows is if

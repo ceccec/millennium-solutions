@@ -138,7 +138,7 @@ do resolve, each to exactly one statement: <code>{{ ambiguous }}</code>. Cite on
 <div class="paper-body" v-html="$params.publication"></div>
 
 <!-- Every theorem is presentable through three.js, and the geometry is the statement's own parse tree —
-     not an ornament that would look identical whatever proposition it was handed. See src/quantum/tree.ts. -->
+     not an ornament that would look identical whatever proposition it was handed. See src/iso/iec-4879-quantum/tree.ts. -->
 <TheoremField v-if="showFormula" :statement="statement" :nodes="String($params.treeNodes || '[]')" />
 
 </div>

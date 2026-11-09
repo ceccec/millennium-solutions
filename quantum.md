@@ -6,7 +6,7 @@ head:
 
 # The quantum field
 
-This page renders [`src/quantum/quantum.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/quantum/quantum.lean)
+This page renders [`src/iso/iec-4879-quantum/quantum.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/iso/iec-4879-quantum/quantum.lean)
 in three dimensions. Nothing in the scene is decoration: every coordinate is a value the Lean file decides
 over, and a gate recomputes all five figures on each build, reading what they *should* be out of the theorem
 statements themselves rather than from a number typed into the check.

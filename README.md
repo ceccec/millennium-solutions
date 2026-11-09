@@ -226,7 +226,7 @@ Every quantum computing model ISO/IEC 4879 names is decided at its known optimum
 
 The **124-qubit cluster state** — the UUID minus its version hex digit — has 124 stabilizers, propagated through every CZ by a Pauli tableau: each is Z·X·Z on its neighbourhood and they all commute. Stabilizer states are exactly what a classical computer describes in polynomial time (Gottesman–Knill), which is why 128 qubits fit here — and why only a device's measured counts, never this computation, make "hardware" true.
 
-**Terminology.** The types are named by the standard's terms (`QuantumGate` §3.4.2, `QuantumCircuit` §3.4.5, `MeasurementCounts` §3.2.16, `AcceptedQuantumComputer` §3.4.10), and all 86 terms of ISO/IEC 4879 are listed once in `src/quantum/terminology.ts`, each a coin — the content address of its clause and term — with where it is realised: 34 in this tree, the other 52 by a named check in qpu. Each coin holds its skill — its section of the standard, with the ESCO skills search — and its tools: what computes or verifies it and the entry point that runs it, every one resolved in the tree; each of the 6 skill families is a coin too, the fold of its members' coins — on [/hardware](/hardware).
+**Terminology.** The types are named by the standard's terms (`QuantumGate` §3.4.2, `QuantumCircuit` §3.4.5, `MeasurementCounts` §3.2.16, `AcceptedQuantumComputer` §3.4.10), and all 86 terms of ISO/IEC 4879 are listed once in `src/iso/iec-4879-quantum/terminology.ts`, each a coin — the content address of its clause and term — with where it is realised: 34 in this tree, the other 52 by a named check in qpu. Each coin holds its skill — its section of the standard, with the ESCO skills search — and its tools: what computes or verifies it and the entry point that runs it, every one resolved in the tree; each of the 6 skill families is a coin too, the fold of its members' coins — on [/hardware](/hardware).
 
 ## 1 · What is proved
 
@@ -616,9 +616,9 @@ Read from the artefacts at build time, never carried between runs.
 The factor route takes an integer of any length, held exactly, and returns only what it can check. Measured for this build:
 
 - `91`: FACTORED into 7 × 13.
-- `2^1000 − 1`, a thousand-bit integer: PARTIAL — 30 factor(s) below 10^6 (3 × 5 × 5 × 5 × 5 × 11 × 17 × 31 × 41 × 101 × 251 × 401 × 601 × 1801 × 4001 × 4051 × 7001 × 8101 × 28001 × 61681 × 96001 × 268501 × 340801 × 1074001 × 2787601 × 2020001 × 3775501 × 229668251 × 22624001 × 3173389601); a 189-digit cofactor that is composite (a witness was found).
-- `(2^521 − 1)(2^607 − 1)`, about 1,128 bits, no small factor: PARTIAL — 0 factor(s) below 10^6 (none); a 340-digit cofactor that is composite (a witness was found).
-- A 1,000-bit integer supplied through the factor tool (301 decimal digits): PARTIAL — 0 factor(s) below 10^6 (none); a 301-digit cofactor that is composite (a witness was found).
+- `2^1000 − 1`, a thousand-bit integer: PARTIAL — 30 factor(s) below the trial bound (3 × 5 × 5 × 5 × 5 × 11 × 17 × 31 × 41 × 101 × 251 × 401 × 601 × 1801 × 4001 × 4051 × 7001 × 8101 × 28001 × 61681 × 1074001 × 96001 × 340801 × 268501 × 2787601 × 2020001 × 3775501 × 229668251 × 22624001 × 3173389601); a 189-digit cofactor that is composite (a witness was found).
+- `(2^521 − 1)(2^607 − 1)`, about 1,128 bits, no small factor: PARTIAL — 0 factor(s) below the trial bound (none); a 340-digit cofactor that is composite (a witness was found).
+- A 1,000-bit integer supplied through the factor tool (301 decimal digits): PARTIAL — 0 factor(s) below the trial bound (none); a 301-digit cofactor that is composite (a witness was found).
 
 A thousand-bit integer is not solved on this page. Where no factor is found below the trial bound and the cofactor is not proved prime, the result is PARTIAL and names the step that is missing. Nothing is reported as a factor that was not checked.
 

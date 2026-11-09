@@ -11,7 +11,7 @@
 // Depth in Z is the size of the subtree under it, so a heavy conjunction stands behind a bare numeral. Two
 // theorems with the same structure get the same shape, which is the property that makes the picture worth
 // looking at: shape differences are statement differences.
-import { parse, roundTrips } from '../latex/index.ts'
+import { parse, roundTrips } from '../../latex/index.ts'
 
 export type TreeNode = {
   id: number; parent: number | null

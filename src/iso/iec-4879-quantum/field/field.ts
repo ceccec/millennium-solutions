@@ -1,4 +1,4 @@
-// THE QUANTUM FIELD — the geometry of src/quantum/quantum.lean, computed rather than drawn.
+// THE QUANTUM FIELD — the geometry of src/iso/iec-4879-quantum/quantum.lean, computed rather than drawn.
 //
 // Every coordinate below comes from a function the Lean file decides over. Nothing here is a layout
 // choice dressed as a result: the ring angle is the permutation's index in Lean's OWN enumeration order,

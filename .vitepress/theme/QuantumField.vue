@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// THE QUANTUM FIELD, in three dimensions — src/quantum/quantum.lean rendered, not illustrated.
+// THE QUANTUM FIELD, in three dimensions — src/iso/iec-4879-quantum/quantum.lean rendered, not illustrated.
 //
 // Twenty-four spheres: the orderings of the doubling orbit [1,2,4,8], which `perms_of_four_is_factorial`
 // decides there are exactly 24 of. Each sits at the height of the value the CONTROL fold returns for that
@@ -16,7 +16,7 @@
 // and WebGLRenderer needs a DOM. Without a canvas the numbers below still render, which is the part that
 // carries the result.
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
-import { field, naiveLevels, collisions, receipt, ORBIT } from '../../src/quantum/field/field.ts'
+import { field, naiveLevels, collisions, receipt, ORBIT } from '../../src/iso/iec-4879-quantum/field/field.ts'
 
 const host = ref<HTMLDivElement | null>(null)
 const live = ref(false)

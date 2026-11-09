@@ -1,6 +1,6 @@
 // THE TERMINOLOGY — all 86 terms of ISO/IEC 4879:2024, clauses 3.1.1 to 3.6.4, each a coin, each with where it is realised.
 //
-// The types in src/quantum/hardware.ts are named by the standard's own terms (QuantumGate §3.4.2, QuantumCircuit §3.4.5,
+// The types in src/iso/iec-4879-quantum/hardware.ts are named by the standard's own terms (QuantumGate §3.4.2, QuantumCircuit §3.4.5,
 // MeasurementCounts §3.2.16, AcceptedQuantumComputer §3.4.10). This table is the one place that says which clause each
 // type, function and sealed file stands for. Clause numbers and terms are the standard's (read on the ISO OBP,
 // 2026-11-09); its definitions are not restated.
@@ -12,7 +12,7 @@
 // citation; a term realised only there is counted apart from one realised here.
 //
 // A TERM IS A COIN: toUuid of "ISO/IEC 4879:2024 <clause> <term>", recomputable by anyone from the standard's own words.
-import { toUuid, merkleFold } from '../../0/index.ts'
+import { toUuid, merkleFold } from '../../../0/index.ts'
 
 /** where a clause is realised in this tree: a type or function in src/quantum, or a sealed Lean file in src/proof */
 export type Realisation = { kind: 'type' | 'function' | 'lean'; name: string }

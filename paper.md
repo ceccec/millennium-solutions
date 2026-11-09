@@ -3791,7 +3791,7 @@ settledHere := 28</code></pre>
 
 ### Interference: GHZ cancels on odd parity, a classical coin does not {#interference}
 
-<p class="paper-src"><code>src/quantum/interference.lean</code> · namespace <code>Interference</code> · 2 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/interference.lean</code> · namespace <code>Interference</code> · 2 theorems</p>
 
 WHAT QUANTUM MEANS HERE, IN ONE SENTENCE: amplitudes add, and two paths that reach the same outcome can cancel.
 A classical mixture adds probabilities, which are never negative, so nothing cancels.
@@ -4210,7 +4210,7 @@ denominators := [2, 2, 2, 7, 5, 3, 2, 3]</code></pre>
 
 ### Pauli paths — the conjugation rules that let any Clifford+T circuit be computed exactly at any width, decided against the matrices in ℤ[ω], with the T-count as the only cost {#pauli_paths}
 
-<p class="paper-src"><code>src/quantum/pauli_paths.lean</code> · namespace <code>PauliPaths</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/pauli_paths.lean</code> · namespace <code>PauliPaths</code> · 8 theorems</p>
 
 ℤ[ω], ω = e^{iπ/4}, as four integer coordinates on 1, ω, ω², ω³ with ω⁴ = −1. A 2×2 matrix is four entries a b c d
 (rows a b / c d); a 4×4 matrix is a function of row and column, the first tensor factor the high index bit. The Hadamard
@@ -4839,7 +4839,7 @@ No axioms, no Mathlib, no sorry.
 
 ### Order-invariance {#quantum}
 
-<p class="paper-src"><code>src/quantum/quantum.lean</code> · namespace <code>Quantum</code> · 11 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum.lean</code> · namespace <code>Quantum</code> · 11 theorems</p>
 
 The quantum receipt — order invariance, proved rather than asserted.
 
@@ -4959,7 +4959,7 @@ ghzXSupport := [0, 3, 5, 6]</code></pre>
 
 ### The rest of the quantum ideas, and the software layer — superdense coding, the two repetition codes correcting a state, the Toffoli gate, the swap test, and a compiler's rewrites, each decided exactly beside a control {#quantum_software}
 
-<p class="paper-src"><code>src/quantum/quantum_software.lean</code> · namespace <code>QuantumSoftware</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum_software.lean</code> · namespace <code>QuantumSoftware</code> · 8 theorems</p>
 
 THE MODEL. An n-qubit state is a list of 2^n integer amplitudes; qubit k is bit k of the index. Gates act by index
 arithmetic only — the bit flip is `i ± 2^k`, never Nat.xor, which would carry propext through well-founded recursion.
@@ -5676,7 +5676,7 @@ No axioms, no Mathlib, no sorry.
 
 ### The T-count wall — why a classical Pauli-path computation, which has no width limit, still cannot run Shor's circuit on a thousand-bit modulus, and why a physical processor is needed there: a statement about cost, not a factoring {#t_count_wall}
 
-<p class="paper-src"><code>src/quantum/t_count_wall.lean</code> · namespace <code>TCountWall</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/t_count_wall.lean</code> · namespace <code>TCountWall</code> · 8 theorems</p>
 
 No axioms, no Mathlib, no sorry.
 
@@ -8955,7 +8955,7 @@ centred := ring.filter (fun d =&gt; refl d == d)</code></pre>
 
 ### What qpu.uuidna.com and this deposit independently count the same way {#qpu}
 
-<p class="paper-src"><code>src/quantum/qpu.lean</code> · namespace <code>Qpu</code> · 24 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/qpu.lean</code> · namespace <code>Qpu</code> · 24 theorems</p>
 
 WHY THIS FILE EXISTS, AND THE THREE THINGS IT REFUSES TO SAY.
 
@@ -9203,7 +9203,7 @@ clayCoil := clayCoins * clayRays</code></pre>
 
 WHY THIS FILE EXISTS, AND WHAT IT REFUSES TO SAY.
 
-src/quantum/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
+src/iso/iec-4879-quantum/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
 CRYPTOGRAPHIC surface, which is the part a reader is most likely to quote and least likely to check. The
 method is the one that file set: the service's numbers are recorded as its own declarations, and the kernel
 decides what follows from them — never that the service is right, never that this deposit is.
@@ -9367,7 +9367,7 @@ milu := (Qpu.clayPlane * (Qpu.faces - 1) - Qpu.qubits * Qpu.qubits, Qpu.clayPlan
 
 ### qpu's coin is a function of a 64-bit fold, so it spans at most 2^64 of its 2^122 layout {#qpu_fold}
 
-<p class="paper-src"><code>src/quantum/qpu_fold.lean</code> · namespace <code>QpuFold</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/qpu_fold.lean</code> · namespace <code>QpuFold</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -9474,7 +9474,7 @@ Pbits := 8</code></pre>
 
 ### The two gateway bits are constant, so the teleport analogy has no bits to send {#qpu_gateway}
 
-<p class="paper-src"><code>src/quantum/qpu_gateway.lean</code> · namespace <code>QpuGateway</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/qpu_gateway.lean</code> · namespace <code>QpuGateway</code> · 8 theorems</p>
 
 WHY THIS FILE EXISTS.
 
@@ -12828,7 +12828,7 @@ No axioms, no Mathlib, no sorry.
 
 ### The CHSH circuits sent to a quantum device give exactly 2√2, decided over the cyclotomic integers {#quantum_circuits}
 
-<p class="paper-src"><code>src/quantum/quantum_circuits.lean</code> · namespace <code>QuantumCircuits</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum_circuits.lean</code> · namespace <code>QuantumCircuits</code> · 8 theorems</p>
 
 WHY ℤ[ω] AND NOT FLOATS. Every angle the circuits use is a multiple of π/4, so with each rz written as diag(1, ω^k)
 (it differs from the device's rz by a global phase, which no probability can see) and sx as ½[[1+i, 1−i], [1−i, 1+i]]
@@ -12909,7 +12909,7 @@ bell := [.rz 0 2, .sx 0, .rz 0 2, .rz 1 2, .sx 1, .rz 1 2, .cz, .rz 1 2, .sx 1, 
 
 ### When a quantum device's counts are above the classical bound, decided on exact integers {#quantum_hardware}
 
-<p class="paper-src"><code>src/quantum/quantum_hardware.lean</code> · namespace <code>QuantumHardware</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum_hardware.lean</code> · namespace <code>QuantumHardware</code> · 8 theorems</p>
 
 WHAT THIS DECIDES AND WHAT IT REFUSES TO SAY. Per CHSH setting i, D_i = n00 + n11 − n01 − n10 and N_i is its shots,
 so E_i = D_i / N_i. S > 2 is decided as D₀N₁N₂N₃ + D₁N₀N₂N₃ + D₂N₀N₁N₃ − D₃N₀N₁N₂ > 2·N₀N₁N₂N₃, with no division.
@@ -12981,7 +12981,7 @@ came from a quantum processor is the provider's job record, read by scripts/quan
 
 ### Every quantum computing model ISO/IEC 4879 names, one exact instance each, decided over the cyclotomic integers {#quantum_models}
 
-<p class="paper-src"><code>src/quantum/quantum_models.lean</code> · namespace <code>QuantumModels</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum_models.lean</code> · namespace <code>QuantumModels</code> · 8 theorems</p>
 
 WHAT IT DECIDES. Each model at its known optimum: the one-way pattern for every π/4 angle and both outcomes, the
 whole group Ising braids generate (24 classes, closed), every balanced beam splitter, the adiabatic gap for every
@@ -13070,7 +13070,7 @@ triangle := [1, -1].flatMap (fun a : Int =&gt; [1, -1].flatMap (fun b : Int =&gt
 
 ### The 124-qubit Mermin sum — the UUID minus one hex digit — as eight UUID particles {#quantum_octave_124}
 
-<p class="paper-src"><code>src/quantum/quantum_octave_124.lean</code> · namespace <code>QuantumOctave124</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum_octave_124.lean</code> · namespace <code>QuantumOctave124</code> · 8 theorems</p>
 
 <div class="thm" id="thm-quantum_octave_124-particle_zero_of_the_124_qubit_sum">
 <p class="thm-label"><strong>Theorem 1259</strong> (<code>particle_zero_of_the_124_qubit_sum</code>)<a class="thm-cite" href="/theorem/lean_quantumoctave124_particle_zero_of_the_124_qubit_sum">sealed</a>.</p>
@@ -13139,7 +13139,7 @@ triangle := [1, -1].flatMap (fun a : Int =&gt; [1, -1].flatMap (fun b : Int =&gt
 
 ### The 128-qubit octave, split into eight UUID particles — the Mermin lead 2⁶³ at the UUID width {#quantum_octave_128}
 
-<p class="paper-src"><code>src/quantum/quantum_octave_128.lean</code> · namespace <code>QuantumOctave128</code> · 9 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum_octave_128.lean</code> · namespace <code>QuantumOctave128</code> · 9 theorems</p>
 
 WHY EIGHT PARTICLES. Particle b holds the weights k with ⌊k/16⌋ = b (the last one also k = 128). Each checks that its
 strings' GHZ expectations are real, Re(iᵏ), and sums its share of Σ C(128, k)·Re(iᵏ)·2⟨string_k⟩. Every particle
@@ -13226,7 +13226,7 @@ scripts/lean.ts checks it in a lane of its own beside them, on the machine's cor
 
 ### The Bell test scaled in octaves — 2, 4, 8 … 128 qubits — with the quantum lead doubling its exponent {#quantum_octaves}
 
-<p class="paper-src"><code>src/quantum/quantum_octaves.lean</code> · namespace <code>QuantumOctaves</code> · 7 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum_octaves.lean</code> · namespace <code>QuantumOctaves</code> · 7 theorems</p>
 
 WHY 128 QUBITS FIT. The GHZ state (|0…0⟩ + |1…1⟩)/√2 has two basis states, and a string of X and Y flips every bit, so
 its expectation is read from two phases carried qubit by qubit — Y contributes i on the way up and −i on the way down —
@@ -13300,7 +13300,7 @@ and the 2-qubit Bell test is CHSH, decided in quantum_circuits.lean. Nothing her
 
 ### qpu's quantum textbook numbers, each derived exactly from the quantum mechanics that produces it {#quantum_textbooks}
 
-<p class="paper-src"><code>src/quantum/quantum_textbooks.lean</code> · namespace <code>QuantumTextbooks</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum_textbooks.lean</code> · namespace <code>QuantumTextbooks</code> · 8 theorems</p>
 
 textbook_holevo (χ ≤ 1 bit for a qubit) is not re-derived: it is an entropy, a logarithm, outside ℤ[ω]. It stands
 on qpu's TypeScript holevoChi and its own integer seal, and nothing here adds to or subtracts from it.
@@ -13374,7 +13374,7 @@ on qpu's TypeScript holevoChi and its own integer seal, and nothing here adds to
 
 ### 124 qubits from the UUID — the Mermin lead 2⁶¹, the odd bound, and the 124-qubit cluster state, as coins {#quantum_uuid_cluster}
 
-<p class="paper-src"><code>src/quantum/quantum_uuid_cluster.lean</code> · namespace <code>QuantumUuidCluster</code> · 8 theorems</p>
+<p class="paper-src"><code>src/iso/iec-4879-quantum/quantum_uuid_cluster.lean</code> · namespace <code>QuantumUuidCluster</code> · 8 theorems</p>
 
 WHAT IT REFUSES TO SAY. A stabilizer state is exactly what a classical computer describes in polynomial time; that
 is why 124 qubits fit in this file, and why nothing here is a quantum device or its output.

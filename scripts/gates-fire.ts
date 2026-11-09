@@ -169,7 +169,7 @@ const CONTROLS: Control[] = [
   // qpu-gate COULD NOT BE CONTROLLED while its instrument would not load (the registry's @uuidna/qpu 1.0.0 excluded
   // a module its own entry imported); 1.0.1 loads, the gate measures, and the control is the obvious one: a
   // constant qpu.lean declares moved away from what the installed unit computes must be refused by name.
-  { gate: 'qpu-gate (a declared constant drifts from the installed unit)', cmd: 'node scripts/qpu-gate.ts', file: 'src/quantum/qpu.lean',
+  { gate: 'qpu-gate (a declared constant drifts from the installed unit)', cmd: 'node scripts/qpu-gate.ts', file: 'src/iso/iec-4879-quantum/qpu.lean',
     what: 'qpu.lean declaring a bit width the installed @uuidna/qpu does not compute — a proof about a unit that is not the one installed',
     mutate: (s) => s.replace(/^(def\s+bits\s*:\s*Nat\s*:=\s*)32\b/m, '$133') },
 
@@ -304,7 +304,7 @@ const CONTROLS: Control[] = [
     what: 'a normaliser under which a peer\'s published pin no longer reproduces',
     mutate: (s) => s.replace("    .replace(/\\s(?![\\p{L}\\p{N}_])|(?<![\\p{L}\\p{N}_.])\\s/gu, '')", '') },
 
-  { gate: 'quantum-field', cmd: 'node scripts/quantum-field.ts', file: 'src/quantum/quantum.lean',
+  { gate: 'quantum-field', cmd: 'node scripts/quantum-field.ts', file: 'src/iso/iec-4879-quantum/quantum.lean',
     what: 'geometry drawn from a number the proposition no longer decides',
     mutate: (s) => s.replace('(perms [1, 2, 4, 8]).length = 24', '(perms [1, 2, 4, 8]).length = 25') },
 

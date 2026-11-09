@@ -1,11 +1,11 @@
-// QPU REGISTER COINS — each constant src/quantum/qpu.lean records from qpu.uuidna.com, linked to the UUID of the
+// QPU REGISTER COINS — each constant src/iso/iec-4879-quantum/qpu.lean records from qpu.uuidna.com, linked to the UUID of the
 // quantum program that derives it, instead of standing as a bare integer read by a hand on a date.
 //
 // qpu.lean carries eight constants "read from the served JSON-LD on 2026-09-28" and the clay* section ports the
 // unit's own definitions (Mint, Lattice, Qaoa, Grover, Qft, …) so each constant is DERIVED, not transcribed —
 // `theorem the_served_constants_are_the_ones_the_definitions_derive` decides clayCoins = coins, and so on. What is
 // still missing is the ADDRESS: a reader of the integer cannot resolve it to the program it came from. A quantum
-// term is a coin in this deposit (toUuid of the standard's words — src/quantum/terms/terminology.ts); so is a
+// term is a coin in this deposit (toUuid of the standard's words — src/iso/iec-4879-quantum/terms/terminology.ts); so is a
 // register constant. The coin is toUuid of the unit's declaration, recomputable by anyone from the same words, so
 // the integer carries a resolvable link to its quantum program rather than a date and a hand.
 //
@@ -14,8 +14,8 @@
 // served value through the qpu connector (served→source fallback) and checking it still matches — is
 // scripts/qpu-register-gate.ts; this module is the address it checks against.
 import { readFileSync } from 'node:fs'
-import { toUuid } from '../0/index.ts'
-import { leanPathOf } from '../api/index.ts'
+import { toUuid } from '../../0/index.ts'
+import { leanPathOf } from '../../api/index.ts'
 
 /** a register constant, its value (from qpu.lean), the quantum program that derives it, and the live door that serves it */
 export type RegisterCoin = {

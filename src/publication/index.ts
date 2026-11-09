@@ -23,7 +23,7 @@ import { createHash } from 'node:crypto'
 import { domainOf, leanSource, leanPathOf, frontmatter, type LeanTheorem } from '../api/index.ts'
 import { toUuid } from '../0/index.ts'
 import { toLatex } from '../latex/index.ts'
-import { treeOf, stats } from '../quantum/tree.ts'
+import { treeOf, stats } from '../iso/iec-4879-quantum/tree.ts'
 import { escapeHtml as esc } from '../html/index.ts'
 
 /** THE FUNDING STATEMENT, read from .github/FUNDING.yml so the repository declares it in one place.

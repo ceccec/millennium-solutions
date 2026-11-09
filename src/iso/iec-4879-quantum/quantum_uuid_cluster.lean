@@ -6,7 +6,7 @@
 --   stabilizers K_j = Z_{j−1} X_j Z_{j+1} (Briegel, Raussendorf, 2001); Pauli conjugation by CZ, X_a ↦ X_a Z_b, and the
 --   stabilizer tableau (Gottesman–Knill; Aaronson, Gottesman, 2004).
 -- prior_art_note: NONE OF THE PHYSICS IS THIS DEPOSIT'S. Every number here was first computed by hand or by
---   src/quantum/hardware/hardware.ts this session — 124 = 128 − one hex digit, the 124-qubit Mermin lead, the odd-n bound at
+--   src/iso/iec-4879-quantum/hardware/hardware.ts this session — 124 = 128 − one hex digit, the 124-qubit Mermin lead, the odd-n bound at
 --   3, 5, 7, 9, the 124-qubit cluster's stabilizers — and in this deposit a fact is a coin or it is nothing, so each
 --   is sealed. The tableau is Nat bit masks, which the kernel computes natively, so 124 qubits is 124 · 123 CZ steps.
 -- prior_art_search: not performed — every law is named above and none is claimed as new.

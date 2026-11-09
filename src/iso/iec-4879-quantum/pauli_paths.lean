@@ -6,7 +6,7 @@ set_option maxRecDepth 100000
 --   conjugation rules, including the CNOT phase rule (Gottesman 1998; Aaronson, Gottesman 2004, "Improved simulation of
 --   stabilizer circuits"); the T gate's action T†XT = (X − Y)/√2 and the cost of non-Clifford gates in Pauli-path and
 --   stabilizer-rank methods (Bravyi, Gosset 2016).
--- prior_art_note: none of these rules is new. What is decided HERE is each rule src/quantum/pauli/paulipath.ts applies, checked
+-- prior_art_note: none of these rules is new. What is decided HERE is each rule src/iso/iec-4879-quantum/pauli/paulipath.ts applies, checked
 --   against the actual 2×2 and 4×4 matrices over ℤ[ω] — every single-qubit Pauli through H, S, T and T†, every one of the
 --   sixteen two-qubit Paulis through CNOT and CZ against the tableau's own bit-and-sign formula — and the cost law: a
 --   Clifford gate maps one Pauli to one, T to at most two. The width never appears, because every rule is local to the

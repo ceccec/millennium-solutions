@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // QPU-CROSSCHECK — an independent, attributed check of the GHZ cancellation claim against the qpu connector.
-// It is corroboration, never proof: the verdict comes from the Lean theorem (src/quantum/interference.lean), and qpu's
+// It is corroboration, never proof: the verdict comes from the Lean theorem (src/iso/iec-4879-quantum/interference.lean), and qpu's
 // answer is a third party's report of itself. Nothing here runs on the verification path. Token free: a script decides,
 // no reading by hand. Until qpu returns the X-basis amplitudes, the result is NOT MEASURED, never a pass.
 //
@@ -31,7 +31,7 @@ const status = !ghz && !coin ? 'NOT MEASURED' : (ghz && JSON.stringify(ghz.value
 console.log(JSON.stringify({
   status,
   attribution: 'qpu.uuidna.com (a third party, read-only connector): corroboration only, never proof',
-  verdictSource: 'src/quantum/interference.lean, theorem ghz_cancels_exactly_on_odd_parity',
+  verdictSource: 'src/iso/iec-4879-quantum/interference.lean, theorem ghz_cancels_exactly_on_odd_parity',
   expected: { ghz: expectedGhz, coinWeight: expectedCoinWeight },
   qpu: { ghz: ghz ?? null, coin: coin ?? null },
   reason: status === 'NOT MEASURED' ? 'qpu did not return X-basis amplitudes under a ghz or coin key' : status,

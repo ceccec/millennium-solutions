@@ -2,14 +2,14 @@
 // TEXTBOOKS — every theorem in qpu's Qpu/Textbook.lean decoded into a human particle, read from the sibling checkout.
 //
 // qpu seals each textbook example as an integer theorem with one docstring — the human sentence — generated from its
-// src/quantum/textbook-theorems.ts. That file is in qpu's local tree only: not on github.com/uuidna/qpu's public main,
+// src/iso/iec-4879-quantum/textbook-theorems.ts. That file is in qpu's local tree only: not on github.com/uuidna/qpu's public main,
 // not in the installed @uuidna/qpu. So this reads the sibling checkout (QPU_DIR, default ~/github/uuidna/qpu), records
 // the exact commit and whether it is pushed, and says NOT MEASURED — exit 2 — when the checkout is absent.
 //
 // A PARTICLE per theorem: its key, its base and variant kind, the human sentence, the qpu examples it names, the
 // statement, its coin (toUuid of "<key> : <statement>"), the numerals the sentence and the statement share, whether it
 // is physics, the derivation its sentence names, and whether this deposit derives it independently
-// (src/quantum/quantum_textbooks.lean). Nothing is judged by hand: every field is read off the two texts.
+// (src/iso/iec-4879-quantum/quantum_textbooks.lean). Nothing is judged by hand: every field is read off the two texts.
 //
 // THE CONTROL: a synthetic sentence and statement with no numeral in common must decode as "the sentence states none of the statement's numbers", or the run fails
 // — a decoder that cannot say "these disagree" decodes nothing.
@@ -138,7 +138,7 @@ for (const p of particles) if (p.variant !== 'base') p.statesNumbers = bases.get
 
 // EVERY TOOL A COIN NAMES MUST RESOLVE: each qpu example door against qpu's own examples table, read from the same commit
 // qpu's examples live in processing/examples.ts AND in every toolbox file — each { id, tool } names its door
-const PROCESSING = join(QPU, 'src/quantum/processing')
+const PROCESSING = join(QPU, 'src/iso/iec-4879-quantum/processing')
 const tsFiles = (d: string): string[] => readdirSync(d).flatMap((e) => { const f = join(d, e); return statSync(f).isDirectory() ? tsFiles(f) : f.endsWith('.ts') && !f.endsWith('.test.ts') ? [f] : [] })
 const toolOfDoor = new Map<string, string>()
 for (const f of tsFiles(PROCESSING)) for (const m of readFileSync(f, 'utf8').matchAll(/\{\s*id:\s*'([^']+)',\s*tool:\s*'([^']+)'/g)) toolOfDoor.set(m[1], m[2])
