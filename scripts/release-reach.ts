@@ -41,10 +41,20 @@ if (!tags.length) { console.log(`NOT MEASURED — no version tag on origin at or
 
 const npmRaw = q('npm', ['view', pkg, 'versions', '--json'])
 const npm: Set<string> | null = npmRaw ? new Set(JSON.parse(npmRaw) as string[]) : null
-const zen = await getJson(`https://zenodo.org/api/records?q=${encodeURIComponent(`metadata.related_identifiers.identifier:"https://github.com/${repo}"`)}&all_versions=true&sort=newest&size=25`)   // Zenodo answers 400 above 25 for an anonymous caller
-const records: { id: number; version: string; created: number }[] | null = zen
-  ? (zen.hits?.hits ?? []).map((h: any) => ({ id: h.id, version: h.metadata?.version ?? '', created: Date.parse(h.created) }))
-  : null
+// PAGED BACK TO THE OLDEST RELEASE IN RANGE. Zenodo answers 400 above 25 per page for an anonymous caller, and its search
+// guide (zenodo.org/help/search) pages with `page=` and `size=`; one page held the newest 25 of 206 records, enough for
+// recent tags and silently short for an older --since. Pages are read newest first until one reaches past the oldest
+// release time, or runs out.
+const releaseTimes = tags.map((t) => Date.parse(q('gh', ['api', `repos/${repo}/releases/tags/${t}`, '--jq', '.published_at']) ?? '')).filter(Number.isFinite)
+const oldest = releaseTimes.length ? Math.min(...releaseTimes) : Infinity
+let records: { id: number; version: string; created: number }[] | null = []
+for (let page = 1; page <= 20; page++) {
+  const zen = await getJson(`https://zenodo.org/api/records?q=${encodeURIComponent(`metadata.related_identifiers.identifier:"https://github.com/${repo}"`)}&all_versions=true&sort=newest&size=25&page=${page}`)
+  if (!zen) { if (page === 1) records = null; break }
+  const hits = (zen.hits?.hits ?? []).map((h: any) => ({ id: h.id, version: h.metadata?.version ?? '', created: Date.parse(h.created) }))
+  records!.push(...hits)
+  if (hits.length < 25 || hits[hits.length - 1].created < oldest) break
+}
 
 // THE LABEL A RECORD SHOULD CARRY IS READ FROM THE TAGGED TREE, and it is half the join. Four releases published
 // within seconds of each other all fall in one record's time window, so time alone matched one record to all four.

@@ -89,24 +89,35 @@ const HERE: Readonly<Record<string, Realisation[]>> = {
   '3.2.7': [F('phases'), L('quantum_circuits.lean')],
   '3.2.8': [F('chshGates')],
   '3.2.10': [L('quantum_circuits.lean'), F('mermin'), L('quantum_octaves.lean')],
+  '3.2.12': [L('quantum_models.lean')],                           // the adiabatic gap is the spectrum of a Hamiltonian H(s)
+  '3.2.14': [L('quantum_software.lean')],                         // a syndrome measurement returns a stabilizer's eigenvalue
   '3.2.16': [T('MeasurementCounts'), F('countsOf')],
+  '3.3.2': [L('quantum_software.lean')],                          // superdense coding; a|000⟩ + b|111⟩
+  '3.3.7': [L('quantum_software.lean')],                          // the repetition codes' encoded qubit
+  '3.3.9': [L('quantum_software.lean')],                          // two flips complete a logical X
+  '3.3.10': [L('quantum_software.lean')],                         // the swap test reads |⟨ψ|φ⟩|², the pure-state fidelity
   '3.3.3': [T('QuantumGate')],
   '3.3.5': [F('toQasm')],
   '3.4.2': [T('QuantumGate')],
   '3.4.3': [L('quantum_models.lean')],
   '3.4.5': [T('QuantumCircuit'), F('chshGates'), F('toQasm')],
+  '3.4.6': [L('quantum_software.lean'), L('qec.lean')],          // the bit- and phase-flip codes correct a state; qec counts the codes
+  '3.4.9': [L('quantum_software.lean')],                          // the swap test
   '3.4.8': [T('AcceptedQuantumComputer')],
   '3.4.10': [T('AcceptedQuantumComputer'), F('ACCEPTED_HARDWARE')],
   '3.4.13': [L('quantum_circuits.lean'), L('quantum_hardware.lean')],
   '3.4.14': [L('quantum_models.lean'), F('cluster'), L('quantum_uuid_cluster.lean')],
   '3.4.15': [L('quantum_models.lean')],
   '3.4.16': [L('quantum_models.lean')],
+  '3.4.17': [L('quantum_software.lean'), L('qec.lean')],         // the three-qubit repetition codes; the surface and Shor codes' parameters
+  '3.4.21': [L('quantum_software.lean')],                         // a compiler's CNOT and SWAP rewrites, exact
   '3.4.22': [F('simulate'), F('mermin'), F('cluster')],
   '3.4.26': [F('ACCEPTED_HARDWARE')],
   '3.4.31': [L('quantum_models.lean')],
   '3.5.6': [L('quantum_textbooks.lean')],
   '3.5.7': [L('quantum_textbooks.lean')],
   '3.5.8': [L('quantum_models.lean')],
+  '3.6.1': [L('quantum_software.lean')],                          // superdense coding: two bits through one qubit
 }
 
 /** the coin of a clause: the content address of the standard's own clause number and term */

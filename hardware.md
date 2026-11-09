@@ -86,6 +86,19 @@ ISO/IEC 4879 names the quantum computing models. Each is decided here at its kno
 | Adiabatic | §3.4.15 | for every rational schedule point the gap is never below its midpoint value and reaches it there, g_min = √2 — proved for every value, not sampled | — | [Adiabatic quantum computation](https://en.wikipedia.org/wiki/Adiabatic_quantum_computation) |
 | Quantum annealer | §3.4.31 | the frustrated triangle's whole spectrum: ground state −1 six-fold, only all-up and all-down at +3 | — | [Geometrical frustration](https://en.wikipedia.org/wiki/Geometrical_frustration) |
 
+## The software, communication and error-correction layer
+
+The ISO/IEC 4879 terms beyond the computing models, decided in `quantum_software.lean` on exact integer amplitudes — the Hadamard kept unnormalised (H·H = 2·I), so every equality is between integer vectors — over every input in a stated range, each beside a control that must come out the other way. The two control theorems are folded into the rows they control:
+
+| Idea | Clause | What is decided | Control | Named prior art |
+|---|---|---|---|---|
+| Superdense coding | §3.6.1 quantum communication, §3.3.2 quantum encoding | from a shared Bell pair, each of the four two-bit messages lands on its own basis state | from the product state \|00⟩ only two distributions are distinguishable — one bit | Bennett, Wiesner 1992 |
+| Bit-flip code | §3.4.6 quantum error correction, §3.4.17 quantum code, §3.3.7 logical qubit | the Z₀Z₁, Z₁Z₂ stabilizer eigenvalues (§3.2.14) name every single X error, and correcting it restores a\|000⟩ + b\|111⟩ for every a, b in −2..2 | two flips complete a logical X (§3.3.9): the state comes back as b\|000⟩ + a\|111⟩ | Shor 1995; Gottesman 1997 |
+| Phase-flip code | §3.4.6 quantum error correction | the X₀X₁, X₁X₂ syndromes name every single Z error on a\|+++⟩ + b\|−−−⟩, and correcting it restores the state | the bit-flip code does not undo a Z — the two halves Shor's nine-qubit code concatenates | Shor 1995 |
+| Toffoli gate | §3.4.13 circuit-based | self-inverse on all eight basis states, and writes a ∧ b into a zero target | no affine c₀ ⊕ c₁a ⊕ c₂b equals a ∧ b, so CNOT and NOT alone cannot compute it | Toffoli 1980 |
+| Swap test | §3.4.9 quantum algorithm, §3.3.10 state fidelity | the ancilla weights are 2(‖ψ‖²‖φ‖² ± ⟨ψ,φ⟩²) for all 625 real pairs in range, so P(0) = (1 + \|⟨ψ\|φ⟩\|²)/2 | identical states never read 1; orthogonal ones read 0 and 1 equally | Buhrman, Cleve, Watrous, de Wolf 2001 |
+| Compiler rewrites | §3.4.21 quantum programming | CNOT = (I⊗H)·CZ·(I⊗H) and SWAP = three alternating CNOTs, exact on every basis state | drop the second H — a transpiler bug — and the result differs | Nielsen, Chuang §4.2–4.3 |
+
 ## Scaled in octaves, up to the UUID width
 
 The Bell test doubles: on n qubits the GHZ state reaches Mermin's value 2ⁿ⁻¹ while every classical assignment stops at 2^(n/2) — values as in [arXiv:0905.0151](https://ar5iv.labs.arxiv.org/html/0905.0151) §2. Each octave is a Lean theorem; the 128-qubit octave and 124 — the UUID minus its version hex digit — are each split into eight UUID particles, sealed on their own and recombined. Any other width is computed by the literal port of the same definitions in `src/quantum/hardware.ts` (`npm run quantum:octave -- --qubits N` or `-- --uuid U`).

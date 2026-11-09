@@ -37,6 +37,7 @@ const CAUSES: Record<Cause, string> = {
   instrument: 'the check does not exist, or its domain is narrower than the defect it is named for',
   derivation: 'a value that should be computed is kept by hand, so it drifts and ships',
   environment: 'it depends on something outside this repository: a network, a toolchain, another session',
+  unbuilt: 'it is not measurable on this machine: nothing is baked here, and an install\'s reach is measured on the packed tarball',
 }
 const leads: Lead[] = []
 const add = (area: string, n: number, what: string, how: string, causes: Cause[] = []) => {
@@ -140,11 +141,14 @@ const minted = deps.filter((f) => { try { return Boolean(JSON.parse(readFileSync
 // triggered publish.yml, whose own comment calls it "also the Zenodo DOI trigger, if enabled" — and the
 // concept DOI still resolves to the record issued a month earlier, with one version relation. So the
 // webhook is NOT enabled, which is a separate blocker from the missing token and has a separate fix.
-add('deposit', deps.length - minted.length, `deposition(s) staged and not minted (${minted.length} minted)`,
-  'TWO paths, both the depositor\'s: (a) enable the Zenodo↔GitHub integration for this repo, which mints ONE '
-  + 'DOI per release for the whole deposit — verified NOT active, a release cut today minted nothing; '
-  + '(b) a token with deposit:write and deposit:actions, which mints the per-theorem records individually. '
-  + 'They are different artefacts and "a DOI for all" could mean either.', ['authority', 'publication'])
+// AND THE FIRST PATH IS OPEN NOW — MEASURED, NOT REMEMBERED. The line above said "verified NOT active" long after it
+// stopped being true: on 2026-11-09 the repository's Zenodo webhook answered 202 to every release, and v9.8.8 and v9.8.9
+// were each archived within seconds as a record carrying their own tag. `npm run release-reach` reads that per tag, so
+// the per-release DOI is no longer a lead; what stays staged is the per-theorem record, which only path (b) mints.
+add('deposit', deps.length - minted.length, `per-theorem deposition(s) staged and not minted (${minted.length} minted)`,
+  'the per-release DOI is ACTIVE — the Zenodo↔GitHub integration archives every published release (npm run '
+  + 'release-reach shows each record); the per-theorem records are a different artefact and need the depositor\'s '
+  + 'token with deposit:write and deposit:actions.', ['authority', 'publication'])
 
 // ── 7 · CERTIFICATES TO DEVELOP INTO LEAN LAWS ───────────────────────────────────────────────────────────
 // "The purges are leads to develop in lean theorems" (user, 2026-09-14). A theorem whose statement rests only on
