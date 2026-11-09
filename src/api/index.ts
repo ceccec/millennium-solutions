@@ -96,7 +96,7 @@ export interface LeanTheorem { name: string; file: string; tactic: string; state
  *  axiom-control.lean (deliberately unsealed), and node_modules/ is never ours. */
 const LEAN_IGNORE_DIRS = new Set(['fixtures', 'node_modules'])
 /** The root the walk descends to find every .lean. Each domain keeps its own proofs beside the thing they
- *  prove — src/crypto/*.lean and src/iso/iec-4879-quantum/*.lean with their .ts families, the rest grouped by the ISO
+ *  prove — src/iso/iec-18033-cryptography/*.lean and src/iso/iec-4879-quantum/*.lean with their .ts families, the rest grouped by the ISO
  *  standard they formalise under src/iso/<standard>/ — so there is no "proof" catch-all folder. The identity
  *  is still the BASENAME (t.file, the ledger key's namespace), so a file is found wherever it lives. */
 export const LEAN_ROOTS = ['src']
@@ -116,7 +116,7 @@ const leanPathMap = (): Map<string, string> => {
   for (const r of LEAN_ROOTS) if (existsSync(r)) walk(r)
   return out
 }
-/** the repository-relative path of a proof file, by basename — src/crypto/roots.lean, src/iso/iec-4879-quantum/qpu.lean, src/iso/80000-2-mathematics/z9.lean */
+/** the repository-relative path of a proof file, by basename — src/iso/iec-18033-cryptography/roots.lean, src/iso/iec-4879-quantum/qpu.lean, src/iso/80000-2-mathematics/z9.lean */
 export const leanPathOf = (file: string): string => leanPathMap().get(file) ?? `src/${file}`
 export const leanFiles = (): string[] => [...leanPathMap().keys()].sort()
 

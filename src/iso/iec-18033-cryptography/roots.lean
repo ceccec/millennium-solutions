@@ -9,7 +9,7 @@ set_option maxRecDepth 100000
 --   here is only that THIS deposit's derivation computes those definitions and not something near them.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
--- src/crypto/hash/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the
+-- src/iso/iec-18033-cryptography/hash/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the
 -- definition FIPS gives — and that trade is only a gain if the computation is right. A wrong root gives a
 -- hash that is self-consistent, round-trips perfectly, and is not SHA-512; the old literals at least had
 -- the property that someone had once copied them from the standard.

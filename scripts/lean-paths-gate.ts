@@ -2,7 +2,7 @@
 // LEAN PATH GATE — a path a .lean file names in a header or comment must resolve on disk.
 //
 // The citations gate's domain was narrower than its name: it passed stale file paths written inside .lean
-// frontmatter (prior_art_note) and comments, so when the crypto and quantum .ts moved into src/crypto/ and
+// frontmatter (prior_art_note) and comments, so when the crypto and quantum .ts moved into src/iso/iec-18033-cryptography/ and
 // src/iso/iec-4879-quantum/ families, and the .lean themselves into src/proof/<domain>/, the old paths were left dangling
 // and nothing turned red. A path a proof file names is a claim about where its code lives; a claim that no
 // longer resolves is false, and a move that can leave one unseen is a move that can rot the record.

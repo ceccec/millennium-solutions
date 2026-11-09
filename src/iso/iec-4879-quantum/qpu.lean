@@ -208,7 +208,7 @@ theorem register_relation_4294967296_the_amplitudes :
     clayAmplitudes = clayMint clayBits ∧ clayAmplitudes = clayQftStates clayBits := by decide
 
 -- ── 3 · THE FOURTEEN STATES: THE REGISTER ROTATED OVER A FACTORISATION ─────────────────────────────────────
--- src/crypto/factor/index.ts answers every integer with a witness: faces = coins × rays = 2 × 7 states, each a change of
+-- src/iso/iec-18033-cryptography/factor/index.ts answers every integer with a witness: faces = coins × rays = 2 × 7 states, each a change of
 -- representation the fact must survive — two coins (the integer and its digit mirror d ↦ 10 − d, defined when no
 -- digit is 0) and seven rays (the integer written in radix 2^k, k = 1..7, and read back). The TypeScript checks
 -- each state at run time; what is decided here is that the two reflections ARE reflections on a shared grid:

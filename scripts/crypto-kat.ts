@@ -13,11 +13,11 @@
 // A run that proved only the first and reported "verified" would be the overclaim this tree exists to stop,
 // so the negative cases are checked as hard as the positive ones: an altered message, an altered signature
 // and another party's key must each be REFUSED.
-import { sha512, hex, unhex } from '../src/crypto/hash/sha512.ts'
-import { publicKey, sign, verify, PUBLIC_KEY_BYTES, SIGNATURE_BYTES } from '../src/crypto/sign/ed25519.ts'
-import { encode, decode, signContainer, verifyContainer, PROGRAM_BITS, MESSAGE_BITS, CHECK_BITS } from '../src/crypto/container/program.ts'
-import { factor, millerRabin } from '../src/crypto/factor/index.ts'
-import { verifyFactors } from '../src/crypto/factor/verify.ts'
+import { sha512, hex, unhex } from '../src/iso/iec-18033-cryptography/hash/sha512.ts'
+import { publicKey, sign, verify, PUBLIC_KEY_BYTES, SIGNATURE_BYTES } from '../src/iso/iec-18033-cryptography/sign/ed25519.ts'
+import { encode, decode, signContainer, verifyContainer, PROGRAM_BITS, MESSAGE_BITS, CHECK_BITS } from '../src/iso/iec-18033-cryptography/container/program.ts'
+import { factor, millerRabin } from '../src/iso/iec-18033-cryptography/factor/index.ts'
+import { verifyFactors } from '../src/iso/iec-18033-cryptography/factor/verify.ts'
 
 let bad = 0
 const check = (ok: boolean, what: string, detail = '') => {
@@ -101,7 +101,7 @@ console.log('\nthe container — checksum, program, message:')
 // pieces ARE those primes — the originals are in memory, so the decode is verified against them, nothing stored.
 // The DEFAULT integer carries no primes in this file: finding its factors cold and the multiply-back on the
 // integer is the real test. And 2^999 + 1 is the saved, sealed case — PARTIAL, because its 244-digit cofactor is
-// proved composite (not factored), exactly as src/crypto/qpu_crypto.lean decides it. Deterministic, so it repeats.
+// proved composite (not factored), exactly as src/iso/iec-18033-cryptography/qpu_crypto.lean decides it. Deterministic, so it repeats.
 console.log('\nfactoring — generated from primes, decoded back, and a default integer found cold:')
 {
   const nextPrime = (from: bigint): bigint => { let p = from | 1n; while (millerRabin(p) !== 'PRIME') p += 2n; return p }

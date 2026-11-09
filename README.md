@@ -144,7 +144,7 @@ All 1127 commits in this repository are authored by Tsvetan Rouschev (1127). Mea
 
 ## How a thousand bits is reached — the uuid quantum programs, and where each one stops
 
-The seven above are the floor; this is the cryptographic surface the same involution runs on, as a create/decode key. Every line is read out of `src/crypto/qpu_crypto.lean` and the ledger on each build: the theorem, the number of cases `by decide` walked, the **bound** — what it decides and, in the same sentence, what it does not — and its receipt.
+The seven above are the floor; this is the cryptographic surface the same involution runs on, as a create/decode key. Every line is read out of `src/iso/iec-18033-cryptography/qpu_crypto.lean` and the ledger on each build: the theorem, the number of cases `by decide` walked, the **bound** — what it decides and, in the same sentence, what it does not — and its receipt.
 
 *The author frames these as uuid quantum programs running in infinite trinities of qubits, always enough for the next task. That is his vision of the capacity, recorded in his name. What the kernel decides below is finite, and for the thousand-bit integer it is PARTIAL — stated beside his framing and never folded into it.*
 
@@ -407,7 +407,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Annealer topology, QFT resource counts, and π's rational convergents — learned from qpu's Annealing, Qft, Pi** — `resources.lean`, 8 theorem(s). No axioms, no Mathlib, no sorry.
 
-**The constants, derived from what they are** — `roots.lean`, 7 theorem(s). src/crypto/hash/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the definition FIPS gives — and that trade is only a gain if the computation is right. A wrong root gives a hash that is self-consistent, round-trips perfectly, and is not SHA-512; the old literals at least had the property that someone had once copied them from the standard.
+**The constants, derived from what they are** — `roots.lean`, 7 theorem(s). src/iso/iec-18033-cryptography/hash/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the definition FIPS gives — and that trade is only a gain if the computation is right. A wrong root gives a hash that is self-consistent, round-trips perfectly, and is not SHA-512; the old literals at least had the property that someone had once copied them from the standard.
 
 **Why verification is fast, and what it is not** — `speed.lean`, 28 theorem(s). The deposit's speed claim, accounted — and the reading it does not support.
 

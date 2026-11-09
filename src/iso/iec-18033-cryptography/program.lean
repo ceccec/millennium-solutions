@@ -38,7 +38,7 @@ open Fnv
 -- nibble of byte 6 and the top two bits of byte 8 — and typed as six numerals nothing connects them to it.
 -- Every partition theorem below would hold just as well over the WRONG six, and the codec would emit
 -- identifiers that are not uuids. The 8-4-4-4-12 group sizes are the one thing stated; everything else is
--- arithmetic on them, on both sides of the kernel (src/crypto/container/program.ts derives the same way).
+-- arithmetic on them, on both sides of the kernel (src/iso/iec-18033-cryptography/container/program.ts derives the same way).
 def GROUPS : List Nat := [4, 2, 2, 2, 6]
 def byteAt (g : Nat) : Nat := ((GROUPS.take g).foldl (· + ·) 0)
 

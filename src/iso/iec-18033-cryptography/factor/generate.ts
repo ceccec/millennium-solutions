@@ -9,7 +9,7 @@
 // physical quantum processor (§3.4.8) is needed, which scripts/quantum-hardware.ts asks IBM's for. Nothing is
 // stored: the trapdoor lives in the caller's memory, the way the generated vectors in crypto-kat do.
 import { sha512 } from '../hash/sha512.ts'
-import { toUuid } from '../../0/index.ts'
+import { toUuid } from '../../../0/index.ts'
 import { millerRabin } from './index.ts'
 
 export type Generated =

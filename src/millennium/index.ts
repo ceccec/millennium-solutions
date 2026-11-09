@@ -169,7 +169,7 @@ export const claySection = (o: { roll?: boolean } = {}): string => {
 }
 
 // ── THE CRYPTO SURFACE — HOW A THOUSAND BITS IS REACHED, AND WHERE EACH PROGRAM STOPS ─────────────────────
-// The same σ-reflection the seven rest on, run as a create/decode key over src/crypto/qpu_crypto.lean. The
+// The same σ-reflection the seven rest on, run as a create/decode key over src/iso/iec-18033-cryptography/qpu_crypto.lean. The
 // bound is load-bearing exactly as above: what the theorem decides and, in the same sentence, what it does
 // not. The author's framing — uuid quantum programs in infinite trinities of qubits, always enough for the
 // next task — is HIS vision of the capacity, recorded in his name; what the kernel decides is finite, and for
@@ -196,7 +196,7 @@ export const thousandBitSection = (): string => {
   const thm = (name: string) => thms.find((t) => t.file === 'qpu_crypto.lean' && t.name === name)
   let md = `## How a thousand bits is reached — the uuid quantum programs, and where each one stops\n\n`
   md += `The seven above are the floor; this is the cryptographic surface the same involution runs on, as a `
-    + `create/decode key. Every line is read out of \`src/crypto/qpu_crypto.lean\` and the ledger on each build: the `
+    + `create/decode key. Every line is read out of \`src/iso/iec-18033-cryptography/qpu_crypto.lean\` and the ledger on each build: the `
     + `theorem, the number of cases \`by decide\` walked, the **bound** — what it decides and, in the same sentence, `
     + `what it does not — and its receipt.\n\n`
   md += `*The author frames these as uuid quantum programs running in infinite trinities of qubits, always enough for `

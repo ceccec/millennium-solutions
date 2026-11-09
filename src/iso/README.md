@@ -1,8 +1,10 @@
 # src/iso — the proofs, grouped by the ISO standard they formalise
 
-Each folder holds the Lean proofs for one ISO standard's domain; there is no "proof" catch-all. Crypto and
-quantum proofs stay beside their code in `src/crypto` and `src/quantum`. The ledger and the deposit's data
-live in `src/ledger`. A proof's identity is its basename, so a file is found wherever it lives.
+Each folder holds the Lean proofs for one ISO standard's domain; there is no "proof" catch-all, and no bare
+domain folder outside `src/iso` answers to an ISO standard. The quantum domain (code and proofs) lives under
+`src/iso/iec-4879-quantum` and the cryptography domain under `src/iso/iec-18033-cryptography`, each `.lean`
+beside the `.ts` it realises. The ledger and the deposit's data live in `src/ledger`. A proof's identity is its
+basename, so a file is found wherever it lives.
 
 ## ISO/IEC 4879:2024 — `src/iso/iec-4879-quantum/` (3)
 quantum computing — vocabulary & models.

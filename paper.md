@@ -476,7 +476,7 @@ SIGNATURE := [99, 104, 111, 110, 103, 111, 32, 60, 76, 97, 110, 100, 111, 110, 3
 
 ### What a signature is for, and where it cannot go {#asymmetric}
 
-<p class="paper-src"><code>src/crypto/asymmetric.lean</code> · namespace <code>Asymmetric</code> · 11 theorems</p>
+<p class="paper-src"><code>src/iso/iec-18033-cryptography/asymmetric.lean</code> · namespace <code>Asymmetric</code> · 11 theorems</p>
 
 WHAT THIS FILE IS FOR. Everything cryptographic in this deposit before now was SYMMETRIC — FNV, SHA-256,
 HMAC, ChaCha20-Poly1305 — and a symmetric tag proves possession of a shared secret. It cannot say WHO
@@ -715,7 +715,7 @@ reservations := List.range (container + 1)</code></pre>
 
 ### FNV-1a, the address function {#fnv}
 
-<p class="paper-src"><code>src/crypto/fnv.lean</code> · namespace <code>Fnv</code> · 14 theorems</p>
+<p class="paper-src"><code>src/iso/iec-18033-cryptography/fnv.lean</code> · namespace <code>Fnv</code> · 14 theorems</p>
 
 FNV-1a, ported to Lean — the hash the whole deposit's addressing rests on.
 
@@ -1208,7 +1208,7 @@ E := toUuidBytes [101]    -- address of "e", a leaf none of A B C D is</code></p
 
 ### The uuid as a container — a checksum, a program, and a message {#program}
 
-<p class="paper-src"><code>src/crypto/program.lean</code> · namespace <code>Program</code> · 21 theorems</p>
+<p class="paper-src"><code>src/iso/iec-18033-cryptography/program.lean</code> · namespace <code>Program</code> · 21 theorems</p>
 
 The author, 2026-09-18: "the middle part of uuid is the program and the end is the message", and of the
 first group, "checksum over the program and the message".
@@ -5250,9 +5250,9 @@ No axioms, no Mathlib, no sorry.
 
 ### The constants, derived from what they are {#roots}
 
-<p class="paper-src"><code>src/crypto/roots.lean</code> · namespace <code>Roots</code> · 7 theorems</p>
+<p class="paper-src"><code>src/iso/iec-18033-cryptography/roots.lean</code> · namespace <code>Roots</code> · 7 theorems</p>
 
-src/crypto/hash/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the
+src/iso/iec-18033-cryptography/hash/sha512.ts used to carry eighty-eight hexadecimal literals. It computes them now, from the
 definition FIPS gives — and that trade is only a gain if the computation is right. A wrong root gives a
 hash that is self-consistent, round-trips perfectly, and is not SHA-512; the old literals at least had
 the property that someone had once copied them from the standard.
@@ -9199,7 +9199,7 @@ clayCoil := clayCoins * clayRays</code></pre>
 
 ### What qpu.uuidna.com's cryptographic surface is, decided on its own integers {#qpu_crypto}
 
-<p class="paper-src"><code>src/crypto/qpu_crypto.lean</code> · namespace <code>QpuCrypto</code> · 16 theorems</p>
+<p class="paper-src"><code>src/iso/iec-18033-cryptography/qpu_crypto.lean</code> · namespace <code>QpuCrypto</code> · 16 theorems</p>
 
 WHY THIS FILE EXISTS, AND WHAT IT REFUSES TO SAY.
 

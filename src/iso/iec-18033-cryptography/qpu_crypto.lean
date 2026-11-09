@@ -206,7 +206,7 @@ theorem the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes :
   ∧ (2 ^ 37 + 1) * (2 ^ 74 - 2 ^ 37 + 1) = 2 ^ 111 + 1
   ∧ 2 ^ 37 + 1 = 3 * 1777 * 25781083 := by decide
 
--- MEASURED 2026-11-08 with src/crypto/factor/index.ts on the decimal of 2^999 + 1: status PARTIAL, fourteen factors
+-- MEASURED 2026-11-08 with src/iso/iec-18033-cryptography/factor/index.ts on the decimal of 2^999 + 1: status PARTIAL, fourteen factors
 -- found below the trial bound (3 four times, then 19 … 97377658867), and a 244-digit cofactor that Pollard rho
 -- did not split in 500 000 steps, reported composite by a witness. The route does not factor the integer and
 -- does not say it does. What the kernel adds is that the account is an IDENTITY: the fourteen factors times the
