@@ -478,7 +478,7 @@ const body = (site: boolean) => {
   {
     const describe = (r: Factorisation): string =>
       r.status === 'FACTORED' ? `FACTORED into ${r.factors.join(' × ')}`
-        : r.status === 'PARTIAL' ? `PARTIAL — ${r.factors.length} factor(s) below 10^6 (${r.factors.join(' × ') || 'none'}); a ${r.cofactorDigits}-digit cofactor that is ${r.cofactorPrimality}`
+        : r.status === 'PARTIAL' ? `PARTIAL — ${r.factors.length} factor(s) below the trial bound (${r.factors.join(' × ') || 'none'}); a ${r.cofactorDigits}-digit cofactor that is ${r.cofactorPrimality}`
         : `REFUSED — ${r.why}`
     const ninetyOne = measuredFactor('91')
     const thousand = measuredFactor((2n ** 1000n - 1n).toString())

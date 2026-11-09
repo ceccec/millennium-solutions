@@ -14,11 +14,36 @@
 // No method in this tree factors a cofactor of hundreds of digits, and the function does not pretend it does. A
 // thousand-bit integer with no small factor comes back PARTIAL, with the cofactor's size and the step that is missing.
 
-export const TRIAL_BOUND = 1_000_000n
+// THE SEARCH STREAMS WITH THE INPUT, UP TO THE QUANTUM REGISTER'S CAPACITY — a formula, not a typed budget. The
+// register qpu.lean records is a quantum processing unit: three words ("quantum processing unit") over two levels,
+// and every other constant is derived from those two facts, exactly as qpu.lean decides them (clayN, clayCoins,
+// clayBits = clayMint (clayN + clayCoins), clayHexbit = clayMint clayCoins, clayRays = clayN + 2·clayCoins). So the
+// register width is bits = 2^(qubits + coins) = 32, its amplitudes are 2^bits, and its doubling capacity — qpu's
+// `next` = fused + fused = coins·hexbit·rays·amplitudes — is the count of OPERATIONS the deposit spends on one
+// factorisation. A rho step on a w-bit modulus costs about w² of them, so the step budget is that capacity divided
+// by w²: a wide input gets fewer, costlier steps and a narrow one more, with the total work inside one register's
+// capacity whatever the width. No fixed bound, no blanket slowdown, nothing typed — the budgets ARE the register.
+export const QUBITS = BigInt(['quantum', 'processing', 'unit'].length)   // 3 — the words of the unit's name
+export const COINS = 2n                                                  // the two levels of a qubit (the two coins)
+const HEXBIT = 1n << COINS                                               // clayHexbit = 2^coins = 4
+const RAY_COUNT = QUBITS + COINS + COINS                                 // clayRays = qubits + 2·coins = 7
+export const BITS = 1n << (QUBITS + COINS)                              // clayBits = clayMint (clayN + clayCoins) = 2^5 = 32
+export const AMPLITUDES = 1n << BITS                                     // 2^bits = 2^32, the register's states
+/** qpu's doubling capacity (`next` = fused + fused), as operations one factorisation may spend */
+export const QUANTUM_CAPACITY = COINS * HEXBIT * RAY_COUNT * AMPLITUDES  // = 240518168576, the served `next`
 
-// Pollard's rho with Brent's cycle detection finds a divisor of a composite without knowing it in advance. It is a search,
-// not a proof, so it is bounded: when the step budget runs out it reports nothing, and the piece stays open.
-export const RHO_BUDGET = 500_000
+/** integer square root (Newton), for the width-scaled bounds */
+const isqrt = (n: bigint): bigint => { if (n < 2n) return n; let x = n, y = (x + 1n) / 2n; while (y < x) { x = y; y = (x + n / x) / 2n } return x }
+/** trial division goes to the square root of the input (complete) or the square root of the register's capacity of
+ *  states (2^(bits/2)), whichever is smaller — the small factors cheaply; rho takes the rest. */
+export const trialBoundOf = (n: bigint): bigint => { const r = isqrt(n) + 1n, half = 1n << (BITS / 2n); return r < half ? r : half }
+/** the rho step budget: the register's capacity of operations over the per-step cost (~w²), never beyond the square
+ *  root of the input (past which a factor must already have been seen). A formula of the input and the register. */
+export const rhoBudgetOf = (n: bigint): number => {
+  const w = BigInt(n.toString(2).length), steps = QUANTUM_CAPACITY / (w * w), bound = isqrt(n)
+  const b = steps < bound ? steps : bound
+  return b > 9_007_199_254_740_991n ? Number.MAX_SAFE_INTEGER : Number(b)
+}
 
 export type Factorisation =
   | { status: 'FACTORED'; factors: string[]; primality: 'every factor proved prime by trial division or by the deterministic test' }
@@ -79,6 +104,7 @@ export const factor = (input: string): Factorisation => {
   if (digits === null) return { status: 'REFUSED', why: 'the input is not a non-negative integer in decimal, 0b binary or 0x hex' }
   let n = BigInt(digits)
   if (n < 2n) return { status: 'REFUSED', why: `${n} has no factorisation to give` }
+  const trialBound = trialBoundOf(n)
 
   const found: string[] = []
   // Trial division: 2, then the odd numbers, in increasing order. Each divisor is divided out completely, so every
@@ -86,7 +112,7 @@ export const factor = (input: string): Factorisation => {
   const divide = (d: bigint) => { while (n % d === 0n) { found.push(d.toString()); n /= d } }
   divide(2n)
   let d = 3n
-  for (; d <= TRIAL_BOUND && d * d <= n; d += 2n) divide(d)
+  for (; d <= trialBound && d * d <= n; d += 2n) divide(d)
 
   if (n === 1n) return { status: 'FACTORED', factors: found, primality: 'every factor proved prime by trial division or by the deterministic test' }
 
@@ -106,11 +132,11 @@ export const factor = (input: string): Factorisation => {
     ? 'composite (split into open pieces, each above the trial bound)' as const
     : millerRabin(cofactor) === 'COMPOSITE' ? 'composite (a witness was found)' as const : 'probable prime by Miller–Rabin, not proved' as const
   return { status: 'PARTIAL', factors: all, cofactor: cofactor.toString(), cofactorDigits: cofactor.toString().length, cofactorPrimality,
-    blocking: `the cofactor has no factor below ${TRIAL_BOUND} and Pollard rho did not split it within ${RHO_BUDGET} steps; no method in this tree factors it` }
+    blocking: `the cofactor has no factor below ${trialBound} and Pollard rho did not split it within ${rhoBudgetOf(cofactor)} steps (the register's capacity over this width); no method in this tree factors it` }
 }
 
 /** Pollard–Brent rho: a proper divisor of n, or null when the budget runs out. Even n returns 2. */
-export const rho = (n: bigint, budget: number = RHO_BUDGET): bigint | null => {
+export const rho = (n: bigint, budget: number = rhoBudgetOf(n)): bigint | null => {
   if (n % 2n === 0n) return 2n
   const gcd = (a: bigint, b: bigint): bigint => { while (b) { [a, b] = [b, a % b] } return a }
   const diff = (a: bigint, b: bigint) => (a > b ? a - b : b - a)

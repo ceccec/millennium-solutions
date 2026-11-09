@@ -106,7 +106,7 @@ console.log('\nfactoring — generated from primes, decoded back, and a default 
 {
   const nextPrime = (from: bigint): bigint => { let p = from | 1n; while (millerRabin(p) !== 'PRIME') p += 2n; return p }
   const asc = (a: bigint, b: bigint) => (a < b ? -1 : a > b ? 1 : 0)
-  // both seeds above the 10^6 trial bound, so trial division misses the primes and Pollard rho must find them
+  // both seeds above the trial bound, so trial division misses the primes and Pollard rho must find them
   const SEEDS: [bigint, bigint][] = [[2_000_003n, 5_000_011n], [10_000_019n, 70_000_027n], [1_500_000_001n, 3_000_000_019n]]
   for (const [sa, sb] of SEEDS) {
     const p = nextPrime(sa), q = nextPrime(sb), N = p * q

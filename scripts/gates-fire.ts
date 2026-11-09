@@ -183,7 +183,7 @@ const CONTROLS: Control[] = [
 
   { gate: 'thousand-bit-gate (trial division never runs)', cmd: 'node scripts/thousand-bit-gate.ts --control', file: 'src/crypto/factor/index.ts',
     what: 'a factor route that cannot factor 91 — a control that would then pass nothing it is meant to pass',
-    mutate: (s) => s.replace('for (; d <= TRIAL_BOUND && d * d <= n; d += 2n) divide(d)', 'for (; d <= 1n; d += 2n) divide(d)') },
+    mutate: (s) => s.replace('for (; d <= trialBound && d * d <= n; d += 2n) divide(d)', 'for (; d <= 1n; d += 2n) divide(d)') },
 
   // apis-theorems GENERATES src/iso/9001-governance/apis.lean from the evidence folder and refuses a verdict it does not know — a
   // new verdict string in the evidence would otherwise become a count nobody classified.
