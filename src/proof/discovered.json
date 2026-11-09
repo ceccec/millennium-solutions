@@ -149804,5 +149804,85 @@
     "key": "lean_quantumhardware_the_one_count_control_is_four_hundred_ninety_nine_agreements_short_of_five_hundred",
     "name": "lean quantum_hardware.lean: the_one_count_control_is_four_hundred_ninety_nine_agreements_short_of_five_hundred — (499 + 500 - 1 - 0 : Int) = 998 ∧ (499 + 1 + 0 + 500 : Int) = 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "923841a0-97d3-834b-b376-265a7eb49c43"
+  },
+  {
+    "key": "lean_quantumcircuits_the_sent_preparation_is_a_bell_pair",
+    "name": "lean quantum_circuits.lean: the_sent_preparation_is_a_bell_pair — (run bell).2.1 = (0, 0, 0, 0) ∧ (run bell).2.2.1 = (0, 0, 0, 0) ∧ (run bell).1 = (run bell).2.2.2 ∧ zadd (norm (run bell).1) (norm (run bell).2.2.2) = (64, 0, 0, 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "da2dc76d-7b59-86e4-b216-0e0e66a191b7"
+  },
+  {
+    "key": "lean_quantumcircuits_alice_zero_bob_plus_quarter_correlates_root_two_over_two",
+    "name": "lean quantum_circuits.lean: alice_zero_bob_plus_quarter_correlates_root_two_over_two — total (chsh 4 5) = (16384, 0, 0, 0) ∧ corr (chsh 4 5) = root2 8192 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3c70945e-a70b-8e54-98ab-4205a929fcd5"
+  },
+  {
+    "key": "lean_quantumcircuits_alice_zero_bob_minus_quarter_correlates_root_two_over_two",
+    "name": "lean quantum_circuits.lean: alice_zero_bob_minus_quarter_correlates_root_two_over_two — total (chsh 4 3) = (16384, 0, 0, 0) ∧ corr (chsh 4 3) = root2 8192 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "84c1cfd1-8be9-82e7-bf66-7aa8e84ca7d2"
+  },
+  {
+    "key": "lean_quantumcircuits_alice_half_bob_plus_quarter_correlates_root_two_over_two",
+    "name": "lean quantum_circuits.lean: alice_half_bob_plus_quarter_correlates_root_two_over_two — total (chsh 6 5) = (16384, 0, 0, 0) ∧ corr (chsh 6 5) = root2 8192 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7f5e5a33-69c9-8f16-87ca-eeee366977a3"
+  },
+  {
+    "key": "lean_quantumcircuits_alice_half_bob_minus_quarter_anticorrelates_root_two_over_two",
+    "name": "lean quantum_circuits.lean: alice_half_bob_minus_quarter_anticorrelates_root_two_over_two — total (chsh 6 3) = (16384, 0, 0, 0) ∧ corr (chsh 6 3) = root2 (-8192) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "352c5e78-715b-8102-a100-4efcd3b62440"
+  },
+  {
+    "key": "lean_quantumcircuits_the_sent_circuits_reach_s_two_root_two",
+    "name": "lean quantum_circuits.lean: the_sent_circuits_reach_s_two_root_two — zadd (zadd (corr (chsh 4 5)) (corr (chsh 4 3))) (zadd (corr (chsh 6 5)) (zneg (corr (chsh 6 3)))) = root2 32768 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4688e005-e75d-8aea-a014-e7f725c28c96"
+  },
+  {
+    "key": "lean_quantumcircuits_bob_at_angle_zero_correlates_fully_not_root_two_over_two",
+    "name": "lean quantum_circuits.lean: bob_at_angle_zero_correlates_fully_not_root_two_over_two — corr (chsh 4 4) = (16384, 0, 0, 0) ∧ corr (chsh 4 4) ≠ root2 8192 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1e25ee29-0fb6-8ad8-901c-fdc646d661f7"
+  },
+  {
+    "key": "lean_quantumcircuits_without_the_entangler_the_correlation_vanishes",
+    "name": "lean quantum_circuits.lean: without_the_entangler_the_correlation_vanishes — corr ((bell.filter (fun g => match g with | .cz => false | _ => true)) ++ [.rz 0 4, .sx 0, .rz 0 4, .sx 0, .rz 1 4, .sx 1, .rz 1 5, .sx 1]) = (0, 0, 0, 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5947cb2c-eefc-8844-b0bf-b5e428b02aae"
+  },
+  {
+    "key": "lean_quantummodels_one_way_measurement_applies_h_rz_for_every_angle_and_both_outcomes",
+    "name": "lean quantum_models.lean: one_way_measurement_applies_h_rz_for_every_angle_and_both_outcomes — (List.range 8).all (fun k => (List.range 2).all (fun m => oneWay true k m == gateOut k m)) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "769136b1-2e36-8a13-b4a6-0580adfa92ae"
+  },
+  {
+    "key": "lean_quantummodels_one_way_without_the_cluster_bond_does_not_apply_the_gate",
+    "name": "lean quantum_models.lean: one_way_without_the_cluster_bond_does_not_apply_the_gate — oneWay false 0 0 ≠ gateOut 0 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c6462474-585b-8741-9141-a4e423e9f642"
+  },
+  {
+    "key": "lean_quantummodels_ising_anyon_braids_satisfy_the_braid_relation",
+    "name": "lean quantum_models.lean: ising_anyon_braids_satisfy_the_braid_relation — prop (mmul sigma1 (mmul sigma2 sigma1)) (mmul sigma2 (mmul sigma1 sigma2)) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e13c5091-6b94-86d4-ac4f-f80342b379e1"
+  },
+  {
+    "key": "lean_quantummodels_ising_anyon_braids_generate_exactly_the_twenty_four_clifford_classes",
+    "name": "lean quantum_models.lean: ising_anyon_braids_generate_exactly_the_twenty_four_clifford_classes — (braidGroup 8).length = 24 ∧ (grow (braidGroup 8)).length = 24 ∧ prop sigma1 ident = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "953f132c-e01e-8320-987c-86e32fa27965"
+  },
+  {
+    "key": "lean_quantummodels_every_balanced_beam_splitter_gives_a_full_depth_hong_ou_mandel_dip",
+    "name": "lean quantum_models.lean: every_balanced_beam_splitter_gives_a_full_depth_hong_ou_mandel_dip — (List.range 8).all (fun a => (List.range 8).all (fun b => unitary2 (splitter a b) && permOf (splitter a b) == zero)) = true ∧ perm = zero ∧ zadd (zadd (norm (zmul u00 u10)) (norm (zmul u00 u10))) (zadd (norm (zmul u01 u11)) (norm (zmul u01 … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f6d41c2d-7720-8a74-a782-b24909bf5dac"
+  },
+  {
+    "key": "lean_quantummodels_distinguishable_photons_coincide_half_the_time",
+    "name": "lean quantum_models.lean: distinguishable_photons_coincide_half_the_time — zadd (norm (zmul u00 u11)) (norm (zmul u01 u10)) = (2, 0, 0, 0) ∧ norm perm = zero — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6f6a9450-5c5a-8af3-8c68-1785dfc1b6b0"
+  },
+  {
+    "key": "lean_quantummodels_the_adiabatic_gap_is_smallest_exactly_at_the_midpoint_at_every_resolution",
+    "name": "lean quantum_models.lean: the_adiabatic_gap_is_smallest_exactly_at_the_midpoint_at_every_resolution — (List.range 101).all (fun n => (List.range (n + 1)).all (fun t => let n' : Int := n; let t' : Int := t 2 * ((n' - t') ^ 2 + t' ^ 2) == n' ^ 2 + (2 * t' - n') ^ 2 && (2 * ((n' - t') ^ 2 + t' ^ 2) == n' ^ 2) == (2 * t' == n'))) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f6e9816c-c2b7-8ba2-b9b2-e63ba4655471"
+  },
+  {
+    "key": "lean_quantummodels_the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one",
+    "name": "lean quantum_models.lean: the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one — triangle.all (fun e => e ≥ -1) = true ∧ (triangle.filter (fun e => e == -1)).length = 6 ∧ (triangle.filter (fun e => e == 3)).length = 2 ∧ triangle.length = 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5ad73761-1088-8e58-b0a6-60d48636a945"
   }
 ]

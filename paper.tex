@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,125 of them across 114 files and
-8 wings; 25,918 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,141 of them across 116 files and
+8 wings; 25,934 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -130190,6 +130190,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,728 cases. \hfill$\square$
 
+\paragraph{\texttt{quantum\_circuits.lean}}
+
+\begin{theorem}[\texttt{the\_sent\_preparation\_is\_a\_bell\_pair}]
+\[ \mathrm{run}\mathopen{}\left(\mathrm{bell}\right)_{2}_{1} = \left(0,\,0,\,0,\,0\right) \land \mathrm{run}\mathopen{}\left(\mathrm{bell}\right)_{2}_{2}_{1} = \left(0,\,0,\,0,\,0\right) \land \mathrm{run}\mathopen{}\left(\mathrm{bell}\right)_{1} = \mathrm{run}\mathopen{}\left(\mathrm{bell}\right)_{2}_{2}_{2} \land \mathrm{zadd}\mathopen{}\left(\mathrm{norm}\mathopen{}\left(\mathrm{run}\mathopen{}\left(\mathrm{bell}\right)_{1}\right),\,\mathrm{norm}\mathopen{}\left(\mathrm{run}\mathopen{}\left(\mathrm{bell}\right)_{2}_{2}_{2}\right)\right) = \left(64,\,0,\,0,\,0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{alice\_zero\_bob\_plus\_quarter\_correlates\_root\_two\_over\_two}]
+\[ \mathrm{total}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,5\right)\right) = \left(16384,\,0,\,0,\,0\right) \land \mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,5\right)\right) = \mathrm{root2}\mathopen{}\left(8192\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{alice\_zero\_bob\_minus\_quarter\_correlates\_root\_two\_over\_two}]
+\[ \mathrm{total}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,3\right)\right) = \left(16384,\,0,\,0,\,0\right) \land \mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,3\right)\right) = \mathrm{root2}\mathopen{}\left(8192\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{alice\_half\_bob\_plus\_quarter\_correlates\_root\_two\_over\_two}]
+\[ \mathrm{total}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(6,\,5\right)\right) = \left(16384,\,0,\,0,\,0\right) \land \mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(6,\,5\right)\right) = \mathrm{root2}\mathopen{}\left(8192\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{alice\_half\_bob\_minus\_quarter\_anticorrelates\_root\_two\_over\_two}]
+\[ \mathrm{total}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(6,\,3\right)\right) = \left(16384,\,0,\,0,\,0\right) \land \mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(6,\,3\right)\right) = \mathrm{root2}\mathopen{}\left(-8192\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sent\_circuits\_reach\_s\_two\_root\_two}]
+\[ \mathrm{zadd}\mathopen{}\left(\mathrm{zadd}\mathopen{}\left(\mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,5\right)\right),\,\mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,3\right)\right)\right),\,\mathrm{zadd}\mathopen{}\left(\mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(6,\,5\right)\right),\,\mathrm{zneg}\mathopen{}\left(\mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(6,\,3\right)\right)\right)\right)\right) = \mathrm{root2}\mathopen{}\left(32768\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{bob\_at\_angle\_zero\_correlates\_fully\_not\_root\_two\_over\_two}]
+\[ \mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,4\right)\right) = \left(16384,\,0,\,0,\,0\right) \land \mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,4\right)\right) \neq \mathrm{root2}\mathopen{}\left(8192\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{without\_the\_entangler\_the\_correlation\_vanishes}]
+\texttt{corr ((bell.filter (fun g => match g with | .cz => false | \_ => true)) ++ [.rz 0 4, .sx 0, .rz 0 4, .sx 0, .rz 1 4, .sx 1, .rz 1 5, .sx 1]) = (0, 0, 0, 0)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{quantum\_hardware.lean}}
 
 \begin{theorem}[\texttt{every\_deterministic\_local\_strategy\_gives\_chsh\_plus\_or\_minus\_two}]
@@ -130229,6 +130271,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_one\_count\_control\_is\_four\_hundred\_ninety\_nine\_agreements\_short\_of\_five\_hundred}]
 \[ \left(499 + 500 - 1 - 0 : \mathbb{Z}\right) = 998 \land \left(499 + 1 + 0 + 500 : \mathbb{Z}\right) = 1000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{quantum\_models.lean}}
+
+\begin{theorem}[\texttt{one\_way\_measurement\_applies\_h\_rz\_for\_every\_angle\_and\_both\_outcomes}]
+\[ \forall k \in \{0,\dots,7\},\; \forall m \in \{0,\dots,1\},\; \mathrm{oneWay}\mathopen{}\left(\mathrm{true},\,k,\,m\right) = \mathrm{gateOut}\mathopen{}\left(k,\,m\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_way\_without\_the\_cluster\_bond\_does\_not\_apply\_the\_gate}]
+\[ \mathrm{oneWay}\mathopen{}\left(\mathrm{false},\,0,\,0\right) \neq \mathrm{gateOut}\mathopen{}\left(0,\,0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{ising\_anyon\_braids\_satisfy\_the\_braid\_relation}]
+\[ \mathrm{prop}\mathopen{}\left(\mathrm{mmul}\mathopen{}\left(\mathrm{sigma1},\,\mathrm{mmul}\mathopen{}\left(\mathrm{sigma2},\,\mathrm{sigma1}\right)\right),\,\mathrm{mmul}\mathopen{}\left(\mathrm{sigma2},\,\mathrm{mmul}\mathopen{}\left(\mathrm{sigma1},\,\mathrm{sigma2}\right)\right)\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{ising\_anyon\_braids\_generate\_exactly\_the\_twenty\_four\_clifford\_classes}]
+\[ \left|\mathrm{braidGroup}\mathopen{}\left(8\right)\right| = 24 \land \left|\mathrm{grow}\mathopen{}\left(\mathrm{braidGroup}\mathopen{}\left(8\right)\right)\right| = 24 \land \mathrm{prop}\mathopen{}\left(\mathrm{sigma1},\,\mathrm{ident}\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_balanced\_beam\_splitter\_gives\_a\_full\_depth\_hong\_ou\_mandel\_dip}]
+\[ \forall a \in \{0,\dots,7\},\; \forall b \in \{0,\dots,7\},\; \mathrm{unitary2}\mathopen{}\left(\mathrm{splitter}\mathopen{}\left(a,\,b\right)\right) \land \mathrm{permOf}\mathopen{}\left(\mathrm{splitter}\mathopen{}\left(a,\,b\right)\right) = \mathrm{zero} = \mathrm{true} \land \mathrm{perm} = \mathrm{zero} \land \mathrm{zadd}\mathopen{}\left(\mathrm{zadd}\mathopen{}\left(\mathrm{norm}\mathopen{}\left(\mathrm{zmul}\mathopen{}\left(\mathrm{u00},\,\mathrm{u10}\right)\right),\,\mathrm{norm}\mathopen{}\left(\mathrm{zmul}\mathopen{}\left(\mathrm{u00},\,\mathrm{u10}\right)\right)\right),\,\mathrm{zadd}\mathopen{}\left(\mathrm{norm}\mathopen{}\left(\mathrm{zmul}\mathopen{}\left(\mathrm{u01},\,\mathrm{u11}\right)\right),\,\mathrm{norm}\mathopen{}\left(\mathrm{zmul}\mathopen{}\left(\mathrm{u01},\,\mathrm{u11}\right)\right)\right)\right) = \left(4,\,0,\,0,\,0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{distinguishable\_photons\_coincide\_half\_the\_time}]
+\[ \mathrm{zadd}\mathopen{}\left(\mathrm{norm}\mathopen{}\left(\mathrm{zmul}\mathopen{}\left(\mathrm{u00},\,\mathrm{u11}\right)\right),\,\mathrm{norm}\mathopen{}\left(\mathrm{zmul}\mathopen{}\left(\mathrm{u01},\,\mathrm{u10}\right)\right)\right) = \left(2,\,0,\,0,\,0\right) \land \mathrm{norm}\mathopen{}\left(\mathrm{perm}\right) = \mathrm{zero} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_adiabatic\_gap\_is\_smallest\_exactly\_at\_the\_midpoint\_at\_every\_resolution}]
+\texttt{(List.range 101).all (fun n => (List.range (n + 1)).all (fun t => let n' : Int := n; let t' : Int := t 2 * ((n' - t') ^ 2 + t' ^ 2) == n' ^ 2 + (2 * t' - n') ^ 2 \&\& (2 * ((n' - t') ^ 2 + t' ^ 2) == n' ^ 2) == (2 * t' == n'))) = true}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 101 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_frustrated\_triangle\_has\_a\_six\_fold\_ground\_state\_at\_minus\_one}]
+\[ \forall e \in \mathrm{triangle},\; e \ge -1 = \mathrm{true} \land \left|\{\, e \in \mathrm{triangle} \mid e = -1 \,\}\right| = 6 \land \left|\{\, e \in \mathrm{triangle} \mid e = 3 \,\}\right| = 2 \land \left|\mathrm{triangle}\right| = 8 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

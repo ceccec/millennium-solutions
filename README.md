@@ -161,12 +161,12 @@ The seven above are the floor; this is the cryptographic surface the same involu
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
-- The formal layer holds 26125 kernel-accepted declarations across 114 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `549590cc-fa17-8bbe-9613-7875b1cca32d`</sub>
-- 25918 of those 26125 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 207 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `4d569b4a-fd8d-86ef-b900-442dc0f25693`</sub>
-- 26680 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `1653c4af-4d41-8fac-872c-e2d9b587f2e4`</sub>
+- The formal layer holds 26141 kernel-accepted declarations across 116 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `0b6bbe7f-ea0f-89c8-b17f-d61223aa2212`</sub>
+- 25934 of those 26141 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 207 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `023d30c1-1bee-8499-8b1b-31324a607f7e`</sub>
+- 26696 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `a49a246a-1974-815a-aa58-f1daec6be350`</sub>
 
 ## 2 · The ring
 
@@ -189,10 +189,10 @@ The seven above are the floor; this is the cryptographic surface the same involu
 
 ## 7 · The ledger
 
-- The ledger records 28544 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `43a3179d-9453-8924-81de-c7b0bb666dd9`</sub>
-- The count is an exact multiple of eight — 28544 is 3568 octaves with no remainder.
-  <sub>SEALED · `aabd9550-7e37-8db3-b091-bda9e35b3f9a`</sub>
+- The ledger records 28560 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `7d39f2e8-61e6-874c-96ce-1bda76604961`</sub>
+- The count is an exact multiple of eight — 28560 is 3570 octaves with no remainder.
+  <sub>SEALED · `cc60fbbf-f50b-8ec4-9d82-b2bb5a772240`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -244,7 +244,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-114 Lean files in 8 wings, 26125 declarations, of which 26125 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
+116 Lean files in 8 wings, 26141 declarations, of which 26141 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -468,7 +468,11 @@ this page; there is nowhere else to keep the description in step.
 
 **A fold that returns a lone leaf unchanged admits a second preimage** — `preimage.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
 
+**The CHSH circuits sent to a quantum device give exactly 2√2, decided over the cyclotomic integers** — `quantum_circuits.lean`, 8 theorem(s). WHY ℤ[ω] AND NOT FLOATS. Every angle the circuits use is a multiple of π/4, so with each rz written as diag(1, ω^k) (it differs from the device's rz by a global phase, which no probability can see) and sx as ½[[1+i, 1−i], [1−i, 1+i]] with i = ω², every amplitude is an element of ℤ[ω] over a power of two. Probabilities are then elements of ℤ[√2] over 2¹⁴, and E = ±√2/2 is an equality of integer quadruples the kernel decides.
+
 **When a quantum device's counts are above the classical bound, decided on exact integers** — `quantum_hardware.lean`, 8 theorem(s). WHAT THIS DECIDES AND WHAT IT REFUSES TO SAY. Per CHSH setting i, D_i = n00 + n11 − n01 − n10 and N_i is its shots, so E_i = D_i / N_i. S > 2 is decided as D₀N₁N₂N₃ + D₁N₀N₂N₃ + D₂N₀N₁N₃ − D₃N₀N₁N₂ > 2·N₀N₁N₂N₃, with no division. The kernel decides the rule and the classical bound. It decides nothing about any device: whether a run's counts came from a quantum processor is the provider's job record, read by scripts/quantum-hardware.ts, never this file.
+
+**Every quantum computing model ISO/IEC 4879 names, one exact instance each, decided over the cyclotomic integers** — `quantum_models.lean`, 8 theorem(s). WHAT IT REFUSES TO SAY. The adiabatic model's continuum is not decided: its gap is decided on a grid of 101 schedule points, and the file says so. Ising braiding is decided to have finite-order generators, which is consistent with — not a proof of — the prior art that it reaches only the Clifford gates.
 
 **The universal reflection, and where it stops being one** — `reflection.lean`, 8 theorem(s). TWO HACKS REMOVED TOGETHER, by the author's order on 2026-09-25. The title was "Theorems", which names nothing — every file here holds theorems. And the namespace was `MillenniumFloor.Universal`: a namespace rooted in ANOTHER file's concept, so this file's keys carried a word about the Clay floor while deciding the ten's complement. It is `Reflection` now, which is what it decides. The universal property — honestly, and COMPUTED from the sequence.
 
@@ -492,7 +496,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). WITHDRAWAL WAS NEVER THE ONLY OPTION. Each theorem below returns one claim to the record. The evidence that existed was a TypeScript run — a computation that agreed once on one machine. The kernel walks the whole stated domain. That was the gap, and closing it is arithmetic.
 
-70 of 26125 declarations carry no comment of their own and are shown here as the gap they are, not
+86 of 26141 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -501,14 +505,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,544 — 3568 octaves exactly |
-| standing — carries its own proof | **26125** |
+| ledger entries | 28,560 — 3570 octaves exactly |
+| standing — carries its own proof | **26141** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **26951** of 28,544 |
-| standing keys → distinct theorems | 26125 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 114 · 26125 sealed theorems (25918 closed by exhaustion, axiom-free · 207 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 25918 of 26125 |
+| proved in total | **26967** of 28,560 |
+| standing keys → distinct theorems | 26141 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 116 · 26141 sealed theorems (25934 closed by exhaustion, axiom-free · 207 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 25934 of 26141 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -552,4 +556,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 26125 sealed theorems · 28544 ledger entries · trial root `1e2ecee2-8a5e-8441-b773-50793cf0a862` · integrity, not truth*
+*20 claims, all verified · 26141 sealed theorems · 28560 ledger entries · trial root `97ff1712-023a-8cb8-93a0-9cd633af3fdc` · integrity, not truth*

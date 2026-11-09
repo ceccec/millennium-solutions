@@ -72,6 +72,30 @@ Ideal S (simulated): **{{ data.idealS.toFixed(4) }}** — the quantum bound 2√
 
 </details>
 
+## Every model, computed here
+
+ISO/IEC 4879 names the quantum computing models. Each is decided here at its known optimum — in the cyclotomic integers ℤ[ω], ω = e^{iπ/4}, so no float stands anywhere — beside a control that must come out the other way, and each decided value matches an independent public source (read 2026-11-09):
+
+| Model | Clause | What is decided | Control | Cross-checked against |
+|---|---|---|---|---|
+| Circuit-based | §3.4.13 | the sent CHSH gates make a Bell pair and reach S = 2√2 exactly — Tsirelson's maximum | Bob at angle 0 gives E = 1; no CZ gives E = 0 | [CHSH inequality](https://en.wikipedia.org/wiki/CHSH_inequality), [Tsirelson's bound](https://en.wikipedia.org/wiki/Tsirelson%27s_bound) |
+| One-way (measurement-based) | §3.4.14 | measuring a cluster qubit applies J(θ) = H·diag(1, e^{iθ}) to its neighbour with an X^m byproduct — all 8 angles, both outcomes | without the cluster bond the gate does not arrive | [One-way quantum computer](https://en.wikipedia.org/wiki/One-way_quantum_computer) |
+| Topological (Ising anyons) | §3.4.16 | the braids satisfy the braid relation and generate exactly 24 classes up to phase, closed — the whole single-qubit Clifford group, so not universal | the equal-up-to-phase test refuses σ₁ ∝ 1 | [Clifford group](https://en.wikipedia.org/wiki/Clifford_group), [Topological quantum computer](https://en.wikipedia.org/wiki/Topological_quantum_computer) |
+| Boson sampling | §3.5.8 | every balanced beam splitter (all 64 phase pairs) is unitary with permanent 0 — a full-depth Hong–Ou–Mandel dip | distinguishable photons coincide half the time | [Hong–Ou–Mandel effect](https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect), [Boson sampling](https://en.wikipedia.org/wiki/Boson_sampling) |
+| Adiabatic | §3.4.15 | at every grid resolution up to 100 the schedule's gap is smallest exactly at the midpoint, g_min = √2 — the continuum is the limit, not decided | — | [Adiabatic quantum computation](https://en.wikipedia.org/wiki/Adiabatic_quantum_computation) |
+| Quantum annealer | §3.4.31 | the frustrated triangle's whole spectrum: ground state −1 six-fold, only all-up and all-down at +3 | — | [Geometrical frustration](https://en.wikipedia.org/wiki/Geometrical_frustration) |
+
+This is §3.4.22 by definition: a classical program computing what each model's ideal device would. It is the specification a device run is checked against, never evidence that a device computed it.
+
+<details><summary>The theorems and their ledger receipts</summary>
+
+<table>
+<thead><tr><th>File</th><th>Theorem</th><th>Receipt</th></tr></thead>
+<tbody><tr v-for="t in data.models" :key="t.name"><td><code>{{ t.file }}</code></td><td><code>{{ t.name }}</code></td><td><code>{{ t.receipt.slice(0, 8) }}</code></td></tr></tbody>
+</table>
+
+</details>
+
 ## The verdict rule
 
 Per setting, D = n₀₀ + n₁₁ − n₀₁ − n₁₀ over N shots, and S = Σ sign · D / N. S > 2 is decided as Σ sign · D · Π(other N) > 2 · Π N on exact integers — the rule, its one-count controls on both sides of 2, and the classical bound itself are Lean theorems in `src/proof/quantum_hardware.lean`, closed by `decide`. A wrong gate or a noisy device can only lower S, so a false positive cannot come from this code. It is not a loophole-free Bell test: it trusts the provider's device and readout.
