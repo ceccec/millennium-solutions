@@ -12,11 +12,34 @@
 // citation; a term realised only there is counted apart from one realised here.
 //
 // A TERM IS A COIN: toUuid of "ISO/IEC 4879:2024 <clause> <term>", recomputable by anyone from the standard's own words.
-import { toUuid } from '../0/index.ts'
+import { toUuid, merkleFold } from '../0/index.ts'
 
 /** where a clause is realised in this tree: a type or function in src/quantum, or a sealed Lean file in src/proof */
 export type Realisation = { kind: 'type' | 'function' | 'lean'; name: string }
-export type Term = { clause: string; term: string; here: readonly Realisation[]; qpu: string; coin: string }
+/** EACH COIN HOLDS ITS SKILL AND ITS TOOLS. The skill is the standard's own section the term belongs to, with the ESCO
+ *  search for it (the EU skills taxonomy, as uuidna's skills carry); the tools are what computes or verifies the term —
+ *  the entry point that runs each realisation (an npm script or MCP suite), and qpu's check. */
+export type Skill = { family: string; esco: string }
+export type Term = { clause: string; term: string; here: readonly Realisation[]; qpu: string; coin: string; skill: Skill; tools: readonly string[] }
+
+/** the standard's six sections, as titled in ISO/IEC 4879:2024 clause 3 */
+const SECTIONS: Readonly<Record<string, string>> = {
+  '3.1': 'Background', '3.2': 'Quantum physics background', '3.3': 'Quantum information',
+  '3.4': 'Quantum processing', '3.5': 'Quantum technologies', '3.6': 'Related quantum technologies',
+}
+const esco = (text: string) => `https://ec.europa.eu/esco/api/search?text=${encodeURIComponent(text)}&type=skill`
+
+/** the entry point that runs a realisation: every function in hardware.ts runs under one of two npm scripts, every Lean
+ *  file under the kernel check. Derived from what calls what, and checked by unresolvedTools against the tree. */
+const RUNS: Readonly<Record<string, string>> = {
+  simulate: 'npm run quantum:hardware', chshGates: 'npm run quantum:hardware', toQasm: 'npm run quantum:hardware',
+  countsOf: 'npm run quantum:hardware', ACCEPTED_HARDWARE: 'npm run quantum:hardware',
+  mermin: 'npm run quantum:octave', cluster: 'npm run quantum:octave', phases: 'npm run quantum:octave',
+}
+const toolsOf = (here: readonly Realisation[], qpu: string): string[] => [...new Set([
+  ...here.flatMap((r) => r.kind === 'lean' ? [`npm run lean · ${r.name}`] : r.kind === 'function' ? [`${r.name}()`, RUNS[r.name] ?? ''] : [r.name]),
+  `qpu check · ${qpu}`,
+].filter(Boolean))]
 
 /** qpu's realising checks: its VOCABULARY.md at this commit, local to its tree, not yet pushed */
 export const QPU_VOCABULARY = { repo: 'uuidna/qpu', commit: 'b2b455bb91633ff97498dde0bd8243fa625f3148', file: 'src/quantum/VOCABULARY.md', pushed: false } as const
@@ -89,4 +112,25 @@ const HERE: Readonly<Record<string, Realisation[]>> = {
 /** the coin of a clause: the content address of the standard's own clause number and term */
 export const coinOf = (clause: string, term: string): string => toUuid(`ISO/IEC 4879:2024 ${clause} ${term}`)
 
-export const TERMS: readonly Term[] = ISO_4879.map(([clause, term, qpu]) => ({ clause, term, here: HERE[clause] ?? [], qpu, coin: coinOf(clause, term) }))
+export const TERMS: readonly Term[] = ISO_4879.map(([clause, term, qpu]) => {
+  const section = clause.split('.').slice(0, 2).join('.'), here = HERE[clause] ?? []
+  return { clause, term, here, qpu, coin: coinOf(clause, term), skill: { family: `${section} ${SECTIONS[section]}`, esco: esco(term) }, tools: toolsOf(here, qpu) }
+})
+
+/** each skill family is a coin too: the Merkle fold of its members' coins, as uuidna's skills carry their fold */
+export const SKILLS: readonly { family: string; members: number; coin: string; esco: string }[] =
+  Object.entries(SECTIONS).map(([s, title]) => {
+    const members = TERMS.filter((t) => t.clause.startsWith(s + '.'))
+    return { family: `${s} ${title}`, members: members.length, coin: merkleFold(members.map((t) => t.coin)), esco: esco(title) }
+  })
+
+/** every tool a coin names that does not resolve in the tree: a function not exported, a Lean file not in the kernel's
+ *  records, an npm script not in package.json. Empty when every coin's tools are real. */
+export const unresolvedTools = (exports: ReadonlySet<string>, leanFiles: ReadonlySet<string>, scripts: ReadonlySet<string>): string[] =>
+  TERMS.flatMap((t) => t.tools.filter((tool) => {
+    const fn = tool.match(/^(\w+)\(\)$/), lean = tool.match(/^npm run lean · (.+)$/), npm = tool.match(/^npm run ([\w:-]+)$/)
+    if (fn) return !exports.has(fn[1])
+    if (lean) return !leanFiles.has(lean[1])
+    if (npm) return !scripts.has(npm[1])
+    return false
+  }).map((tool) => `${t.clause} ${tool}`))

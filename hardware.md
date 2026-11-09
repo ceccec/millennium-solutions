@@ -101,9 +101,16 @@ At 2 qubits there is no Mermin lead — that octave's Bell test is CHSH, above. 
 
 The types are named by the standard's own terms — `QuantumGate` §3.4.2, `QuantumCircuit` §3.4.5, `MeasurementCounts` §3.2.16, `AcceptedQuantumComputer` §3.4.10 — and all {{ data.terms.length }} terms of ISO/IEC 4879, clauses 3.1.1 to 3.6.4, are listed once in `src/quantum/terminology.ts`, each with its coin — the content address of the clause number and term, which any reader recomputes with no key — what realises it here, and the check that realises it in qpu ({{ data.qpuSource }}). {{ data.terms.filter(t => t.here).length }} are realised in this tree; the rest are realised in qpu only, and the table says which.
 
+**Each coin holds its skill and its tools.** Its skill is the standard's own section, with the [ESCO](https://esco.ec.europa.eu/) skills search for the term; its tools are what computes or verifies it — each realisation and the entry point that runs it (`npm run quantum:hardware`, `quantum:octave`, `lean`), and qpu's check. Every tool named resolves in the tree: {{ data.unresolved.length === 0 ? 'all of them' : 'NOT ' + data.unresolved.length + ' — ' + data.unresolved.join(', ') }} (the resolver's control — an empty tree — {{ data.resolverSees ? 'finds unresolved tools, as it must' : 'finds NONE, so the check is blind' }}). Each skill family is a coin too, the fold of its members' coins:
+
 <table>
-<thead><tr><th>Clause</th><th>Term</th><th>Here</th><th>qpu</th><th>Coin</th></tr></thead>
-<tbody><tr v-for="t in data.terms" :key="t.clause"><td>§{{ t.clause }}</td><td>{{ t.term }}</td><td><code v-if="t.here">{{ t.here }}</code><span v-else>—</span>{{ t.leanOk ? '' : ' — a named Lean file is missing' }}</td><td><code>{{ t.qpu }}</code></td><td><code>{{ t.coin.slice(0, 8) }}</code></td></tr></tbody>
+<thead><tr><th>Skill</th><th>Terms</th><th>Coin</th></tr></thead>
+<tbody><tr v-for="s in data.skills" :key="s.family"><td><a :href="s.esco">{{ s.family }}</a></td><td>{{ s.members }}</td><td><code>{{ s.coin.slice(0, 8) }}</code></td></tr></tbody>
+</table>
+
+<table>
+<thead><tr><th>Clause</th><th>Term</th><th>Skill</th><th>Tools</th><th>Coin</th></tr></thead>
+<tbody><tr v-for="t in data.terms" :key="t.clause"><td>§{{ t.clause }}</td><td><a :href="t.esco">{{ t.term }}</a></td><td>{{ t.skill }}</td><td><code>{{ t.tools }}</code>{{ t.leanOk ? '' : ' — a named Lean file is missing' }}</td><td><code>{{ t.coin.slice(0, 8) }}</code></td></tr></tbody>
 </table>
 
 ## The textbooks, cross-verified

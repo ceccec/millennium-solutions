@@ -19,18 +19,20 @@ Read from qpu commit `{{ data.qpu.commit.slice(0, 8) }}`{{ data.qpu.pushed ? '' 
 
 The decoder's own control: a sentence sharing no numeral with its statement must decode as stating none of them, or the run fails.
 
+**Each coin holds its skills and tools.** Its skills are the qpu doors that exercise it, read from qpu's own examples ({{ data.skills }} skills); its tools are those example doors, this decoder, and the Lean theorem that re-derives it here when one does. Every door a coin names is resolved against qpu's examples: {{ data.unresolvedDoors.length === 0 ? 'all resolve' : data.unresolvedDoors.length + ' do not — named in the qpu textbook table and defined nowhere in its code:' }} <code v-for="d in data.unresolvedDoors" :key="d" style="margin-right:.4em">{{ d }}</code>
+
 ## Physics
 
 <table>
-<thead><tr><th>Theorem</th><th>Sentence</th><th>Statement</th><th>Variants</th><th>Coin</th></tr></thead>
-<tbody><tr v-for="r in data.physics" :key="r.key"><td><code>{{ r.key }}</code><br><sub v-if="r.derivedHere">derived here: <code>{{ r.derivedHere }}</code></sub></td><td>{{ r.sentence }}</td><td><code>{{ r.statement }}</code></td><td>{{ r.variants }}</td><td><code>{{ r.coin.slice(0, 8) }}</code></td></tr></tbody>
+<thead><tr><th>Theorem</th><th>Sentence</th><th>Statement</th><th>Skills · tools</th><th>Variants</th><th>Coin</th></tr></thead>
+<tbody><tr v-for="r in data.physics" :key="r.key"><td><code>{{ r.key }}</code><br><sub v-if="r.derivedHere">derived here: <code>{{ r.derivedHere }}</code></sub></td><td>{{ r.sentence }}</td><td><code>{{ r.statement }}</code></td><td>{{ r.skills }}<br><sub>{{ r.tools }}</sub></td><td>{{ r.variants }}</td><td><code>{{ r.coin.slice(0, 8) }}</code></td></tr></tbody>
 </table>
 
 ## The rest of the textbook
 
 <table>
-<thead><tr><th>Theorem</th><th>Sentence</th><th>Statement</th><th>Variants</th><th>Coin</th></tr></thead>
-<tbody><tr v-for="r in data.other" :key="r.key"><td><code>{{ r.key }}</code></td><td>{{ r.sentence }}</td><td><code>{{ r.statement }}</code></td><td>{{ r.variants }}</td><td><code>{{ r.coin.slice(0, 8) }}</code></td></tr></tbody>
+<thead><tr><th>Theorem</th><th>Sentence</th><th>Statement</th><th>Skills · tools</th><th>Variants</th><th>Coin</th></tr></thead>
+<tbody><tr v-for="r in data.other" :key="r.key"><td><code>{{ r.key }}</code></td><td>{{ r.sentence }}</td><td><code>{{ r.statement }}</code></td><td>{{ r.skills }}<br><sub>{{ r.tools }}</sub></td><td>{{ r.variants }}</td><td><code>{{ r.coin.slice(0, 8) }}</code></td></tr></tbody>
 </table>
 
 </div>

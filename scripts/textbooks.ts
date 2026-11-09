@@ -16,7 +16,7 @@
 //
 //   node scripts/textbooks.ts                  decode and write evidence/textbooks/
 import { execFileSync } from 'node:child_process'
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { join } from 'node:path'
 import { toUuid } from '../src/0/index.ts'
@@ -66,15 +66,19 @@ const DERIVED_HERE: Record<string, string> = {
   textbook_no_cloning: 'linearity_forbids_perfect_cloning_and_the_optimal_copy_has_fidelity_five_sixths',
 }
 
+/** EACH COIN HOLDS ITS SKILLS AND TOOLS: its skills are the families of the qpu doors that exercise it — the door
+ *  `algorithm-shor-15` is the skill `algorithm` — and its tools are those doors, this decoder, and the Lean theorem that
+ *  re-derives it here when one does. Read off the sentence's own (examples: …), not assigned. */
 export type Particle = {
   key: string; base: string; variant: 'base' | (typeof VARIANTS)[number]; sentence: string; examples: string[]
   statement: string; coin: string; shared: string[]; statesNumbers: boolean; physics: boolean; derivedBy: string | null; derivedHere: string | null
+  skills: string[]; tools: string[]
 }
 
 const decode = (key: string, doc: string, statement: string): Particle => {
   const variant = VARIANTS.find((v) => key.endsWith('_' + v)) ?? 'base'
   const base = variant === 'base' ? key : key.slice(0, -(variant.length + 1))
-  const examples = [...doc.matchAll(/\(examples:\s*([^)]*)\)/g)].flatMap((m) => m[1].split(',').map((x) => x.trim()).filter(Boolean))
+  const examples = [...doc.matchAll(/\(examples:\s*([^)]*)\)/g)].flatMap((m) => m[1].split(',').map((x) => x.trim()).filter((x) => x && x !== 'none yet'))
   const sentence = doc.replace(/\s*\(examples:[^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim()
   const a = numerals(sentence), b = numerals(statement)
   const shared = [...b].filter((n) => a.has(n))
@@ -85,6 +89,8 @@ const decode = (key: string, doc: string, statement: string): Particle => {
     physics: PHYSICS.test(sentence + ' ' + base.replace(/_/g, ' ')),
     derivedBy: sentence.match(/proven by (\w+)/)?.[1] ?? null,
     derivedHere: DERIVED_HERE[base] ?? null,
+    skills: [...new Set(examples.map((e) => e.split('-')[0]))],
+    tools: [...examples.map((e) => `qpu example · ${e}`), 'npm run textbooks', ...(DERIVED_HERE[base] ? ['npm run lean · quantum_textbooks.lean'] : [])],
   }
 }
 
@@ -130,6 +136,17 @@ for (let i = 0; i < lines.length; i++) {
 const bases = new Map(particles.filter((p) => p.variant === 'base').map((p) => [p.key, p]))
 for (const p of particles) if (p.variant !== 'base') p.statesNumbers = bases.get(p.base)?.statesNumbers ?? p.statesNumbers
 
+// EVERY TOOL A COIN NAMES MUST RESOLVE: each qpu example door against qpu's own examples table, read from the same commit
+// qpu's examples live in processing/examples.ts AND in every toolbox file — each { id, tool } names its door
+const PROCESSING = join(QPU, 'src/quantum/processing')
+const tsFiles = (d: string): string[] => readdirSync(d).flatMap((e) => { const f = join(d, e); return statSync(f).isDirectory() ? tsFiles(f) : f.endsWith('.ts') && !f.endsWith('.test.ts') ? [f] : [] })
+const toolOfDoor = new Map<string, string>()
+for (const f of tsFiles(PROCESSING)) for (const m of readFileSync(f, 'utf8').matchAll(/\{\s*id:\s*'([^']+)',\s*tool:\s*'([^']+)'/g)) toolOfDoor.set(m[1], m[2])
+const doors = new Set(toolOfDoor.keys())
+const unresolvedDoors = [...new Set(particles.flatMap((p) => p.examples.filter((e) => !doors.has(e))))]
+// a coin's skills are the doors' own tools, read from qpu's examples — the id prefix only when a door is unknown
+for (const p of particles) p.skills = [...new Set(p.examples.map((e) => toolOfDoor.get(e) ?? e.split('-')[0]))]
+
 const base = particles.filter((p) => p.variant === 'base')
 const summary = {
   qpu: { repo: 'uuidna/qpu', file: FILE, commit, pushed, remoteMain: remoteMain || null },
@@ -138,6 +155,8 @@ const summary = {
   physics: base.filter((p) => p.physics).length, notPhysics: base.filter((p) => !p.physics).length,
   namesDerivation: base.filter((p) => p.derivedBy).length, derivedHere: base.filter((p) => p.derivedHere).length,
   sentenceStatesNone: base.filter((p) => !p.statesNumbers).map((p) => p.key),
+  skills: [...new Set(base.flatMap((p) => p.skills))].length,
+  doorsKnown: doors.size, unresolvedDoors,
   control: "a sentence sharing no numeral with its statement decoded as stating none of the statement's numbers",
 }
 mkdirSync(OUT, { recursive: true })

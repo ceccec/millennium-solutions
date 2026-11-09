@@ -8,7 +8,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { leanTheorems, ledger, domainOf } from '../api/index.ts'
 import { ACCEPTED_HARDWARE, mermin, cluster } from './hardware.ts'
-import { TERMS } from './terminology.ts'
+import { TERMS, SKILLS } from './terminology.ts'
 
 /** theorem → [ISO/IEC 4879 clause or role, bound] */
 const BOUNDS: Record<string, [string, string]> = {
@@ -76,6 +76,8 @@ export const hardwareSection = (): string => {
     + `\`MeasurementCounts\` §3.2.16, \`AcceptedQuantumComputer\` §3.4.10), and all ${TERMS.length} terms of ISO/IEC 4879 are `
     + `listed once in \`src/quantum/terminology.ts\`, each a coin — the content address of its clause and term — with where `
     + `it is realised: ${TERMS.filter((t) => t.here.length).length} in this tree, the other ${TERMS.filter((t) => !t.here.length).length} `
-    + `by a named check in qpu — on [/hardware](/hardware).\n\n`
+    + `by a named check in qpu. Each coin holds its skill — its section of the standard, with the ESCO skills search — `
+    + `and its tools: what computes or verifies it and the entry point that runs it, every one resolved in the tree; each `
+    + `of the ${SKILLS.length} skill families is a coin too, the fold of its members' coins — on [/hardware](/hardware).\n\n`
   return md
 }
