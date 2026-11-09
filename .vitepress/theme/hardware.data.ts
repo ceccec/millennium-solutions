@@ -1,15 +1,15 @@
 // VitePress build-time data loader for /hardware.
 //
-// NOTHING IS TYPED HERE. The accepted systems, the circuits and the verdict rule come from src/quantum/hardware.ts; the
+// NOTHING IS TYPED HERE. The accepted systems, the circuits and the verdict rule come from src/quantum/hardware/hardware.ts; the
 // ideal value is that module's own simulation of the exact gate list that is sent (§3.4.22, and labelled so); the
 // device verdict is the receipt scripts/quantum-hardware.ts wrote from the provider's job, or the plain fact that no
 // run exists yet. This loader only reshapes them for the page; it mints no claim.
 import { existsSync, readFileSync } from 'node:fs'
-import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, simulate, mermin, cluster, type AcceptedQuantumComputer } from '../../src/quantum/hardware.ts'
+import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, simulate, mermin, cluster, type AcceptedQuantumComputer } from '../../src/quantum/hardware/hardware.ts'
 import { leanTheorems, ledger } from '../../src/api/index.ts'
-import { TERMS, QPU_VOCABULARY, SKILLS, unresolvedTools } from '../../src/quantum/terminology.ts'
-import * as HARDWARE from '../../src/quantum/hardware.ts'
-import { expectation, q2str, particles, FREE_BITS, type Gate } from '../../src/quantum/paulipath.ts'
+import { TERMS, QPU_VOCABULARY, SKILLS, unresolvedTools } from '../../src/quantum/terms/terminology.ts'
+import * as HARDWARE from '../../src/quantum/hardware/hardware.ts'
+import { expectation, q2str, particles, FREE_BITS, type Gate } from '../../src/quantum/pauli/paulipath.ts'
 import { toUuid } from '../../src/0/index.ts'
 
 export interface HardwareData {
@@ -49,7 +49,7 @@ const RUN = 'evidence/quantum-hardware/latest.json'
 const angle = (x: number) => (x === 0 ? '0' : `${x < 0 ? '−' : ''}π/${Math.round(Math.PI / Math.abs(x))}`)
 
 export default {
-  watch: ['../../src/quantum/hardware.ts', `../../${RUN}`, ...MODEL_FILES.map((f) => `../../src/proof/${f}`)],
+  watch: ['../../src/quantum/hardware/hardware.ts', `../../${RUN}`, ...MODEL_FILES.map((f) => `../../src/proof/${f}`)],
   load(): HardwareData {
     const settings = SETTINGS.map((s) => {
       const [p00, p01, p10, p11] = simulate(chshGates(s))

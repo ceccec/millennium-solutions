@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // THE FIELD AGREES WITH THE PROOF, or the build fails.
 //
-// src/quantum/field.ts computes the geometry the /quantum page renders. A picture derived from a
+// src/quantum/field/field.ts computes the geometry the /quantum page renders. A picture derived from a
 // transcription is only as good as the transcription, so this gate recomputes the figures and compares
 // them with the kernel's.
 //
@@ -10,7 +10,7 @@
 // removed from index.lean and found again in eight proof files this session. Here the numbers come from
 // the theorem text, so editing the Lean moves the target and editing the TypeScript fails the gate.
 import { leanTheorems } from '../src/api/index.ts'
-import { agreesWithLean } from '../src/quantum/field.ts'
+import { agreesWithLean } from '../src/quantum/field/field.ts'
 
 let bad = 0
 const fail = (m: string) => { console.log('  ✗ ' + m); bad++ }
@@ -34,7 +34,7 @@ for (const [label, name, value] of CHECKS) {
   const s = stmt(name); if (!s) continue
   const want = numerals(s)[0]
   if (want === undefined) fail(`${name}: no numeral found in its statement, so nothing can be compared`)
-  else if (want !== value) fail(`${label}: quantum.lean decides ${want}, src/quantum/field.ts computes ${value}`)
+  else if (want !== value) fail(`${label}: quantum.lean decides ${want}, src/quantum/field/field.ts computes ${value}`)
 }
 
 // the limit theorem carries two numerals — the multisets and the receipts they collapse onto

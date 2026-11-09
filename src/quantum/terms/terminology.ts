@@ -12,7 +12,7 @@
 // citation; a term realised only there is counted apart from one realised here.
 //
 // A TERM IS A COIN: toUuid of "ISO/IEC 4879:2024 <clause> <term>", recomputable by anyone from the standard's own words.
-import { toUuid, merkleFold } from '../0/index.ts'
+import { toUuid, merkleFold } from '../../0/index.ts'
 
 /** where a clause is realised in this tree: a type or function in src/quantum, or a sealed Lean file in src/proof */
 export type Realisation = { kind: 'type' | 'function' | 'lean'; name: string }

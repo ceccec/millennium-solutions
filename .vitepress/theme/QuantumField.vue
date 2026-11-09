@@ -16,7 +16,7 @@
 // and WebGLRenderer needs a DOM. Without a canvas the numbers below still render, which is the part that
 // carries the result.
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
-import { field, naiveLevels, collisions, receipt, ORBIT } from '../../src/quantum/field.ts'
+import { field, naiveLevels, collisions, receipt, ORBIT } from '../../src/quantum/field/field.ts'
 
 const host = ref<HTMLDivElement | null>(null)
 const live = ref(false)

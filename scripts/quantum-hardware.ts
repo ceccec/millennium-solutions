@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// QUANTUM HARDWARE RUN — CHSH on a real device from src/quantum/hardware.ts ACCEPTED_HARDWARE, and the receipt the
+// QUANTUM HARDWARE RUN — CHSH on a real device from src/quantum/hardware/hardware.ts ACCEPTED_HARDWARE, and the receipt the
 // VitePress page /hardware shows.
 //
 // The depositor's act, not a gate's: it spends their QPU minutes on somebody else's system, so no chain runs it.
@@ -13,7 +13,7 @@
 // backend configuration fields, and the result encoding. An answer this file cannot decode is written as UNDECODED
 // with its raw shape — never guessed into counts.
 import { mkdirSync, writeFileSync } from 'node:fs'
-import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, chshVerdict, countsOf, type MeasurementCounts } from '../src/quantum/hardware.ts'
+import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, chshVerdict, countsOf, type MeasurementCounts } from '../src/quantum/hardware/hardware.ts'
 
 const HW = ACCEPTED_HARDWARE.find((h) => h.name === 'ibm-quantum')!
 const OUT = 'evidence/quantum-hardware'

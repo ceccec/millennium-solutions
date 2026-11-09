@@ -73,7 +73,7 @@ import { report as shell } from './src/8/nucleus/shell-model-magic'
 import { report as frequency } from './src/2/frequency-scales'
 import { report as stringScale } from './src/2/string-scale'
 import { report as primesVortex } from './src/2/primes-vortex'
-import { report as quantum } from './src/2/quantum'
+import { report as quantum } from './src/quantum/sim/quantum'
 import { report as iching } from './src/2/iching'
 import { report as piBBP } from './src/3/pi-bbp'
 import { report as trinity } from './src/3/trinity'
@@ -355,7 +355,7 @@ that silently skipped what it could not translate would look complete and be wor
 <pre>{{ primesVortex() }}</pre>
 </details>
 
-### Classical simulator of a quantum algorithm — the paradox computes · `src/2/quantum.ts`
+### Classical simulator of a quantum algorithm — the paradox computes · `src/quantum/sim/quantum.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ quantum() }}</pre>
 </details>

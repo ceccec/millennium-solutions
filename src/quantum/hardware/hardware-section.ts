@@ -6,9 +6,9 @@
 // nothing. Case counts, keys and receipts are the ledger's. The octave table is computed by mermin(), the cluster by
 // cluster(), and the device verdict is the receipt scripts/quantum-hardware.ts wrote — or the plain fact that none exists.
 import { existsSync, readFileSync } from 'node:fs'
-import { leanTheorems, ledger, domainOf } from '../api/index.ts'
+import { leanTheorems, ledger, domainOf } from '../../api/index.ts'
 import { ACCEPTED_HARDWARE, mermin, cluster } from './hardware.ts'
-import { TERMS, SKILLS } from './terminology.ts'
+import { TERMS, SKILLS } from '../terms/terminology.ts'
 
 /** theorem → [ISO/IEC 4879 clause or role, bound] */
 const BOUNDS: Record<string, [string, string]> = {

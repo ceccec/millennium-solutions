@@ -182,7 +182,7 @@ const NOT_MEASURED = [
   ['ISO/IEC 40500 (WCAG 2.0)', '1.4.3 for colours set outside the theme tokens, 1.1.1 whether alt text is meaningful, 2.1.1 keyboard operation of scripted widgets — need rendering and judgment, not markup'],
   ['ISO/IEC 27001', 'an information security management system is an organisation\'s process, certified by audit — no page can evidence it'],
   ['ISO/IEC 25010', 'the characteristics beyond link correctness and page weight are assessed against stated requirements by evaluation'],
-  ['ISO/IEC 4879', 'the quantum vocabulary is realised in src/quantum/terminology.ts (all 86 terms, each a coin) — audited there, not per page'],
+  ['ISO/IEC 4879', 'the quantum vocabulary is realised in src/quantum/terms/terminology.ts (all 86 terms, each a coin) — audited there, not per page'],
 ]
 
 let failed = 0

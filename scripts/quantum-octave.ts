@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// QUANTUM OCTAVE — Mermin's GHZ lead and the cluster state's stabilizers at ANY width, from src/quantum/hardware.ts.
+// QUANTUM OCTAVE — Mermin's GHZ lead and the cluster state's stabilizers at ANY width, from src/quantum/hardware/hardware.ts.
 //
 // The kernel seals the octaves 2 … 128 (src/proof/quantum_octaves.lean, quantum_octave_128.lean); this answers any n by
 // the same method, with no cap. The width is a number, or read from a UUID's own fields: 128 bits minus the version hex
@@ -8,7 +8,7 @@
 //   node scripts/quantum-octave.ts --qubits 124
 //   node scripts/quantum-octave.ts --uuid 3f2a9c1e-7b4d-4e8a-9c21-5d6f7a8b9c0d
 //
-// ANY CIRCUIT, AT THAT WIDTH: Clifford+T, the universal set, by Pauli paths (src/quantum/paulipath.ts). The width costs
+// ANY CIRCUIT, AT THAT WIDTH: Clifford+T, the universal set, by Pauli paths (src/quantum/pauli/paulipath.ts). The width costs
 // nothing; each T the observable passes through can double the terms, so the T-count is the bound — and it is reported.
 //
 //   node scripts/quantum-octave.ts --qubits 128 --circuit "h0 cx0,1 cx1,2 t2" --observable "X0 X1 X2"
@@ -23,8 +23,8 @@
 //
 //   node scripts/quantum-octave.ts --stream 100 --ghz --t 6
 //   node scripts/quantum-octave.ts --stream 2 --circuit "h u0.0 cx u0.0,u1.121 t u1.121" --observable "X u0.0 X u1.121"
-import { mermin, cluster, qubitsOf } from '../src/quantum/hardware.ts'
-import { expectation, q2str, tCount, particle, particles, ofParticle, FREE_BITS, type Gate, type Pauli } from '../src/quantum/paulipath.ts'
+import { mermin, cluster, qubitsOf } from '../src/quantum/hardware/hardware.ts'
+import { expectation, q2str, tCount, particle, particles, ofParticle, FREE_BITS, type Gate, type Pauli } from '../src/quantum/pauli/paulipath.ts'
 import { toUuid } from '../src/0/index.ts'
 
 const arg = (name: string) => { const i = process.argv.indexOf(name); return i > 0 ? process.argv[i + 1] : undefined }
