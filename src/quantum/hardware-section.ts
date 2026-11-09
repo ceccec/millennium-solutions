@@ -26,6 +26,18 @@ const BOUNDS: Record<string, [string, string]> = {
   the_group_generated_by_h_and_s_has_exactly_twenty_four_classes: ['textbook cross-check', 'qpu\'s Eastin–Knill 24 derived from ⟨H, S⟩ itself; quantum_textbooks.lean re-derives every qpu textbook number this way except Holevo\'s entropy, and each matches'],
 }
 
+/** the software / communication / error-correction layer — ISO/IEC 4879 terms BEYOND the computing models (so a
+ *  separate list from BOUNDS, not mislabelled as a "model"). Each positive theorem's own control is folded into its
+ *  bound, the way distinguishable_photons is folded into the Hong–Ou–Mandel bound above — not surfaced as its own row. */
+const SOFTWARE_BOUNDS: Record<string, [string, string]> = {
+  superdense_coding_sends_two_classical_bits_through_one_qubit: ['§3.6.1 quantum communication', 'with a shared Bell pair, Alice\'s X^x then Z^z on one qubit lets Bob\'s Bell measurement read all four two-bit messages on distinct basis states — two classical bits through one qubit; its control shows the same protocol on a product state leaves only two distinguishable distributions (one bit, the Holevo limit), so the entanglement is required — an exact-amplitude protocol on the ideal state, not a device channel'],
+  the_bit_flip_code_corrects_every_single_bit_flip_on_every_state: ['§3.4.6 quantum error correction', 'the three-qubit code a|000⟩ + b|111⟩ with the Z₀Z₁, Z₁Z₂ syndrome names and undoes any single bit flip, every a, b in −2..2 and every error in {none, X₀, X₁, X₂} — 100 cases; its control shows two flips complete a logical X, so it corrects one bit-flip error exactly, not a phase error and not two flips'],
+  the_phase_flip_code_corrects_every_single_phase_flip_on_every_state: ['§3.4.6 quantum error correction', 'the same code in the Hadamard basis names any single phase flip by the X₀X₁, X₁X₂ syndrome and undoes it, every a, b in −2..2 and every error in {none, Z₀, Z₁, Z₂}; with the bit-flip code these are the two halves Shor\'s nine-qubit code concatenates — one phase error, not two at once'],
+  the_toffoli_gate_is_reversible_and_computes_and_which_no_affine_circuit_can: ['§3.4.13 circuit-based', 'on all eight basis states Toffoli is its own inverse and writes a ∧ b, and its control checks that no affine GF(2) function c₀ ⊕ c₁a ⊕ c₂b equals a ∧ b — so CNOTs and NOTs alone cannot compute it; a reversibility and universality fact over the basis, not a gate run on a device'],
+  the_swap_test_reads_the_squared_overlap_on_every_pair_in_range: ['§3.3.10 state fidelity', 'H, controlled-swap, H make the ancilla\'s outcome weights 2(‖ψ‖²‖φ‖² ± ⟨ψ,φ⟩²) — P(0) = (1 + |⟨ψ|φ⟩|²)/2 — for all 625 real pairs in −2..2, with identical states never reading 1 and orthogonal ones reading 1 as often as 0 as its controls; the exact overlap on the ideal state, not a sampled estimate'],
+  a_compilers_cnot_and_swap_rewrites_are_exact_and_dropping_a_gate_breaks_them: ['§3.4.21 quantum programming', 'CNOT run as (I⊗H)·CZ·(I⊗H) and SWAP as three alternating CNOTs agree with the gate they replace on every basis state, and the control shows dropping one H breaks it — the compiler rewrites are exact, a software-layer equivalence, not a claim about a device\'s native gates'],
+}
+
 const RUN = 'evidence/quantum-hardware/latest.json'
 
 /** The quantum hardware section as markdown. */
@@ -41,6 +53,20 @@ export const hardwareSection = (): string => {
     + `programmable, any unitary on its Hilbert space). A classical program computing the same numbers is §3.4.22, a `
     + `quantum simulator. What separates them is where the counts come from, so the test is **CHSH S > 2 from a device's `
     + `own counts**, decided on exact integers.\n\n`
+  // THE LEAD, SURFACED AT THE TOP OF THE SECTION, NOT ONLY IN THE TABLE BELOW. The two numbers are computed by
+  // mermin() — never typed — so a headline that disagreed with the table would be impossible, and the disclaimer
+  // that these are ideal-state computations and not hardware is carried in the same sentence, where a reader meets it.
+  const octave128 = live.find((x) => x.key.endsWith('_octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third'))
+  const octave124 = live.find((x) => x.key.endsWith('_the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first'))
+  const L128 = mermin(128), L124 = mermin(124), lgv = (v: bigint) => v.toString(2).length - 1
+  md += `**The lead, proved and bounded.** On the UUID's own 128-bit width the ideal GHZ state's Mermin value is `
+    + `2^${lgv(L128.quantum)} against the best classical assignment's 2^${lgv(L128.classical)} — a lead of `
+    + `**2^${lgv(L128.lead)}** (and **2^${lgv(L124.lead)}** on the 124-qubit cluster, the UUID less its version hex digit), `
+    + `decided exactly over the cyclotomic integers and recombined from eight sealed particles each. It is the ideal state `
+    + `computed classically (§3.4.22), the specification a device is checked against — never, by itself, hardware; that is `
+    + `what the Bell test below decides. The two leads are the last rows of the octave table.`
+    + (octave128 ? ` <sub>[\`${octave128.key}\`](/theorem/${octave128.key})${octave124 ? ` · [\`${octave124.key}\`](/theorem/${octave124.key})` : ''}</sub>` : '')
+    + `\n\n`
   md += run
     ? `**Device verdict:** ${run.status} — ${hw.name} \`${run.backend ?? ''}\`, job \`${run.job ?? ''}\`${run.S !== undefined ? `, S = ${run.S}` : ''}.\n\n`
     : `**Device verdict: no run yet.** The accepted system is ${hw.attribution}; the run is \`npm run quantum:hardware\` with `
@@ -48,23 +74,33 @@ export const hardwareSection = (): string => {
       + `specification a run is checked against.\n\n`
   md += `Every quantum computing model ISO/IEC 4879 names is decided at its known optimum, each beside a control and each `
     + `cross-checked against a public source (linked on [/hardware](/hardware)):\n\n`
-  for (const [name, [clause, bound]] of Object.entries(BOUNDS)) {
-    const t = thms.find((x) => x.name === name), e = live.find((x) => x.key.endsWith('_' + name))
-    if (!t || !e) continue
-    // HOW IT IS PROVED, said only as far as it is read: domainOf counts a domain it can parse and answers 1 for the
-    // list sweeps these files use, so a count is printed only when it read one — never a "1 case" that undercounts.
-    const n = domainOf(t.statement)
-    const how = t.tactic === 'by decide' ? (n > 1 ? `decided by exhaustion over ${n.toLocaleString('en-US')} cases` : 'decided by exhaustion')
-      : /^\s*∀/.test(t.statement) ? 'proved for every value' : 'rewritten from sealed theorems, then decided'
-    md += `- **${clause}** · \`${name}\` · ${how} — ${bound}.\n`
-      + `  <sub>[\`${e.key}\`](/theorem/${e.key}) · receipt \`${e.receipt.slice(0, 13)}…\`</sub>\n`
+  // ONE RENDERER FOR BOTH LISTS. HOW IT IS PROVED is said only as far as it is read: domainOf counts a domain it can
+  // parse and answers 1 for the list sweeps these files use, so a count is printed only when it read one — never a
+  // "1 case" that undercounts. A theorem whose name is in the table but not in the tree or the live ledger drops its
+  // line (the `continue`), so a renamed or withdrawn theorem never leaves a sentence about nothing.
+  const renderBounds = (table: Record<string, [string, string]>) => {
+    for (const [name, [clause, bound]] of Object.entries(table)) {
+      const t = thms.find((x) => x.name === name), e = live.find((x) => x.key.endsWith('_' + name))
+      if (!t || !e) continue
+      const n = domainOf(t.statement)
+      const how = t.tactic === 'by decide' ? (n > 1 ? `decided by exhaustion over ${n.toLocaleString('en-US')} cases` : 'decided by exhaustion')
+        : /^\s*∀/.test(t.statement) ? 'proved for every value' : 'rewritten from sealed theorems, then decided'
+      md += `- **${clause}** · \`${name}\` · ${how} — ${bound}.\n`
+        + `  <sub>[\`${e.key}\`](/theorem/${e.key}) · receipt \`${e.receipt.slice(0, 13)}…\`</sub>\n`
+    }
   }
+  renderBounds(BOUNDS)
+  md += `\n**The software, communication and error-correction layer** — the ISO/IEC 4879 terms beyond the computing `
+    + `models, shipped as the quantum_software.lean octave, each decided exactly over its whole finite domain beside its control:\n\n`
+  renderBounds(SOFTWARE_BOUNDS)
   md += `\n**Scaled in octaves.** Mermin's GHZ test doubles with the qubits — the quantum value 2ⁿ⁻¹ against the classical `
     + `2^(n/2) (arXiv:0905.0151 §2), computed here by the literal Node port of the Lean (\`npm run quantum:octave\`):\n\n`
   md += `| qubits | quantum | classical | lead |\n|---:|---:|---:|---:|\n`
   for (const n of [2, 4, 8, 16, 32, 64, 124, 128]) {
     const m = mermin(n), lg = (v: bigint) => v.toString(2).length - 1
-    md += `| ${n}${n === 124 ? ' (128 − one hex digit)' : ''} | 2^${lg(m.quantum)} | 2^${lg(m.classical)} | 2^${lg(m.lead)} |\n`
+    // The two widths that are sealed theorems carry a link on the lead itself — the row's headline fact pointing at its proof.
+    const key = n === 128 ? octave128?.key : n === 124 ? octave124?.key : undefined
+    md += `| ${n}${n === 124 ? ' (128 − one hex digit)' : ''} | 2^${lg(m.quantum)} | 2^${lg(m.classical)} | 2^${lg(m.lead)}${key ? ` [↗](/theorem/${key})` : ''} |\n`
   }
   const c = cluster(124)
   md += `\nThe **124-qubit cluster state** — the UUID minus its version hex digit — has ${c.stabilizers.length} stabilizers, `

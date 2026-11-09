@@ -109,11 +109,10 @@ theorem the_receipt_is_not_injective :
 theorem the_uncanonicalised_fold_gives_many_answers :
   ((perms [1, 2, 4, 8]).map naive).eraseDups.length = 5 := by decide
 
--- ── WHAT THIS FILE SETTLES, stated positively. Two earlier names here were wrong in the same direction:
---    "quantum_settles_nothing" is refuted by the file itself, and "settles_no_clay_conjecture" states a negative
---    where the true statement is positive. Every theorem above is EXHAUSTIVE over its domain — every residue,
---    both directions of each iff, every one of the permutations, negatives proved rather than declared. Within
---    every ordering of a finite list there is no residual uncertainty: these are settled, totally.
+-- ── WHAT THIS FILE SETTLES, stated positively. Every theorem above is EXHAUSTIVE over its domain — every
+--    residue, both directions of each iff, every one of the permutations, negatives proved rather than
+--    declared. Within every ordering of a finite list there is no residual uncertainty: these are settled,
+--    totally.
 def settledHere : Nat := 11
 -- The count above is checked against this file's contents in src/proof/settled.lean, which reads this
 -- very def and compares it to a parse of the theorems here. A tautology stood in this place: it stated
