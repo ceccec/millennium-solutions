@@ -11,7 +11,7 @@
  "@type": "ItemList",
  "name": "Formulas — every proposition this deposit decides",
  "description": "Each entry is the statement the Lean 4 kernel accepted, character for character, with its source, its wing and how it was proved.",
- "numberOfItems": 26197,
+ "numberOfItems": 26213,
  "itemListOrder": "https://schema.org/ItemListUnordered",
  "author": {
   "@type": "Person",
@@ -460397,6 +460397,158 @@
    "position": 25533,
    "item": {
     "@type": "ScholarlyArticle",
+    "name": "hadamard_swaps_x_and_z_and_negates_y",
+    "description": "(conj2 H2 X2 == scale2 (2, 0, 0, 0) Z2 && conj2 H2 Z2 == scale2 (2, 0, 0, 0) X2 && conj2 H2 Y2 == scale2 (-2, 0, 0, 0) Y2 && mul2 H2 H2 == scale2 (2, 0, 0, 0) I2) = true",
+    "identifier": "lean_paulipaths_hadamard_swaps_x_and_z_and_negates_y",
+    "receipt": "a76cc76a-eedb-8f3b-bc49-ae42920d4ad3",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_paulipaths_hadamard_swaps_x_and_z_and_negates_y",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "PauliPaths"
+    },
+    "wing": "the floor",
+    "source": "pauli_paths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 25534,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_phase_gate_turns_x_into_minus_y_and_y_into_x",
+    "description": "(conj2 S2 X2 == neg2 Y2 && conj2 S2 Y2 == X2 && conj2 S2 Z2 == Z2) = true",
+    "identifier": "lean_paulipaths_the_phase_gate_turns_x_into_minus_y_and_y_into_x",
+    "receipt": "1a4545b7-8bc4-81cb-8bdb-6faaecc5bb9a",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_paulipaths_the_phase_gate_turns_x_into_minus_y_and_y_into_x",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "PauliPaths"
+    },
+    "wing": "the floor",
+    "source": "pauli_paths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 25535,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_t_gate_splits_x_and_y_into_two_paulis_over_root_two",
+    "description": "(scale2 root2 (conj2 T2 X2) == add2 X2 (neg2 Y2) && scale2 root2 (conj2 T2 Y2) == add2 X2 Y2 && conj2 T2 Z2 == Z2) = true",
+    "identifier": "lean_paulipaths_the_t_gate_splits_x_and_y_into_two_paulis_over_root_two",
+    "receipt": "f665aedb-e18b-8138-aa1b-e2206004cac7",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_paulipaths_the_t_gate_splits_x_and_y_into_two_paulis_over_root_two",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "PauliPaths"
+    },
+    "wing": "the floor",
+    "source": "pauli_paths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 25536,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_inverse_t_gate_splits_them_the_other_way",
+    "description": "(scale2 root2 (mul2 T2 (mul2 X2 (dag2 T2))) == add2 X2 Y2 && scale2 root2 (mul2 T2 (mul2 Y2 (dag2 T2))) == add2 (neg2 X2) Y2 && mul2 T2 (dag2 T2) == I2) = true",
+    "identifier": "lean_paulipaths_the_inverse_t_gate_splits_them_the_other_way",
+    "receipt": "f82169da-f403-8c31-9005-5488642e67c1",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_paulipaths_the_inverse_t_gate_splits_them_the_other_way",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "PauliPaths"
+    },
+    "wing": "the floor",
+    "source": "pauli_paths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 25537,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_cnot_tableau_rule_is_the_matrix_conjugation_on_all_sixteen_paulis",
+    "description": "bits4.all (fun b => eq4 (mul4 CX4 (mul4 (kron (pauli b.1 b.2.1) (pauli b.2.2.1 b.2.2.2)) CX4)) (cxRule b.1 b.2.1 b.2.2.1 b.2.2.2))",
+    "identifier": "lean_paulipaths_the_cnot_tableau_rule_is_the_matrix_conjugation_on_all_sixteen_paulis",
+    "receipt": "e23c7279-bb6c-8546-8731-b7e17fe5a633",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_paulipaths_the_cnot_tableau_rule_is_the_matrix_conjugation_on_all_sixteen_paulis",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "PauliPaths"
+    },
+    "wing": "the floor",
+    "source": "pauli_paths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 25538,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_cz_rule_is_the_matrix_conjugation_on_all_sixteen_paulis",
+    "description": "bits4.all (fun b => eq4 (mul4 CZ4 (mul4 (kron (pauli b.1 b.2.1) (pauli b.2.2.1 b.2.2.2)) CZ4)) (czRule b.1 b.2.1 b.2.2.1 b.2.2.2))",
+    "identifier": "lean_paulipaths_the_cz_rule_is_the_matrix_conjugation_on_all_sixteen_paulis",
+    "receipt": "d24f9e1d-c9b0-8261-a71e-a3b80d50c3db",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_paulipaths_the_cz_rule_is_the_matrix_conjugation_on_all_sixteen_paulis",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "PauliPaths"
+    },
+    "wing": "the floor",
+    "source": "pauli_paths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 25539,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "a_clifford_gate_keeps_one_term_and_t_makes_at_most_two",
+    "description": "[X2, Y2, Z2].all (fun p => terms (conj2 H2 p) == 1 && terms (conj2 S2 p) == 1) ∧ [X2, Y2].all (fun p => terms (scale2 root2 (conj2 T2 p)) == 2) ∧ terms (conj2 T2 Z2) = 1",
+    "identifier": "lean_paulipaths_a_clifford_gate_keeps_one_term_and_t_makes_at_most_two",
+    "receipt": "6d37173f-2d02-83c4-a833-95889d876e04",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_paulipaths_a_clifford_gate_keeps_one_term_and_t_makes_at_most_two",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "PauliPaths"
+    },
+    "wing": "the floor",
+    "source": "pauli_paths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 25540,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_sign_flipped_t_rule_breaks_the_pauli_product_and_the_true_rule_keeps_it",
+    "description": "(mul2 (scale2 root2 (conj2 T2 X2)) (scale2 root2 (conj2 T2 Y2)) == scale2 (zmul (2, 0, 0, 0) zi) Z2 && mul2 wrongTX wrongTY == scale2 (zmul (-2, 0, 0, 0) zi) Z2 && mul2 X2 Y2 == scale2 zi Z2) = true",
+    "identifier": "lean_paulipaths_the_sign_flipped_t_rule_breaks_the_pauli_product_and_the_true_rule_keeps_it",
+    "receipt": "5fc261d1-d8eb-85e1-a646-3803517c44ea",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_paulipaths_the_sign_flipped_t_rule_breaks_the_pauli_product_and_the_true_rule_keeps_it",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "PauliPaths"
+    },
+    "wing": "the floor",
+    "source": "pauli_paths.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 25541,
+   "item": {
+    "@type": "ScholarlyArticle",
     "name": "every_phenomenon_is_definitional_or_credited",
     "description": "entries.all (fun e => statusOf e == 0 || statusOf e == 1)",
     "identifier": "lean_phenomena_every_phenomenon_is_definitional_or_credited",
@@ -460413,7 +460565,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25534,
+   "position": 25542,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "seven_definitional_and_two_credited",
@@ -460432,7 +460584,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25535,
+   "position": 25543,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_definitional_half_is_the_whole_si",
@@ -460451,7 +460603,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25536,
+   "position": 25544,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_table_is_closed_and_that_is_all_this_file_decides",
@@ -460470,7 +460622,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25537,
+   "position": 25545,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_three_planck_units_share_one_relative_uncertainty",
@@ -460489,7 +460641,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25538,
+   "position": 25546,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_square_root_halves_what_is_known_about_the_measured_constant",
@@ -460508,7 +460660,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25539,
+   "position": 25547,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_measurement_admits_thirty_seven_values_and_not_one",
@@ -460527,7 +460679,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25540,
+   "position": 25548,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_digital_root_tracks_the_unit_and_not_the_scale",
@@ -460546,7 +460698,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25541,
+   "position": 25549,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_holds_two_thirds_of_the_ring_so_landing_on_it_says_little",
@@ -460565,7 +460717,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25542,
+   "position": 25550,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_product_of_three_lattice_constants_lands_where_the_planck_length_is",
@@ -460584,7 +460736,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25543,
+   "position": 25551,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_same_search_does_reach_the_magnitude",
@@ -460603,7 +460755,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25544,
+   "position": 25552,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_search_expecting_less_than_one_hit_settles_nothing_either_way",
@@ -460622,7 +460774,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25545,
+   "position": 25553,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_planck_unit_is_a_square_root_and_not_a_plain_product",
@@ -460641,7 +460793,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25546,
+   "position": 25554,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "length_over_time_cancels_both_and_leaves_the_defined_constant",
@@ -460660,7 +460812,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25547,
+   "position": 25555,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "length_times_mass_cancels_gravity_and_leaves_the_quantum",
@@ -460679,7 +460831,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25548,
+   "position": 25556,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "length_over_mass_cancels_the_quantum_and_leaves_gravity",
@@ -460698,7 +460850,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25549,
+   "position": 25557,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_gravitational_exponent_predicts_every_published_uncertainty",
@@ -460717,7 +460869,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25550,
+   "position": 25558,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_three_uncertainties_are_one_uncertainty_wearing_three_faces",
@@ -460736,7 +460888,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25551,
+   "position": 25559,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_published_digits_miss_an_identity_that_has_no_measurement_in_it",
@@ -460755,7 +460907,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25552,
+   "position": 25560,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_miss_is_rounding_and_sits_far_below_the_uncertainty",
@@ -460774,7 +460926,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25553,
+   "position": 25561,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "not_one_value_the_world_admits_is_reachable_from_this_lattice",
@@ -460793,7 +460945,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25554,
+   "position": 25562,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_seed_factors_over_those_primes_so_every_product_does",
@@ -460812,7 +460964,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25555,
+   "position": 25563,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_exponent_predicts_the_registry_with_a_literal_on_neither_side",
@@ -460831,7 +460983,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25556,
+   "position": 25564,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_exact_halving_survives_only_because_the_division_truncated",
@@ -460850,7 +461002,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25557,
+   "position": 25565,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_power_of_ten_moves_the_root",
@@ -460869,7 +461021,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25558,
+   "position": 25566,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "an_exactly_defined_non_decimal_unit_moves_the_root",
@@ -460888,7 +461040,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25559,
+   "position": 25567,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_miss_fits_inside_the_printed_precision_and_not_inside_the_measurement",
@@ -460907,7 +461059,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25560,
+   "position": 25568,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_planck_mantissa_factors_outside_the_lattice",
@@ -460926,7 +461078,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25561,
+   "position": 25569,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "length_times_mass_meets_the_quantum_in_the_digits",
@@ -460945,7 +461097,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25562,
+   "position": 25570,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "length_over_mass_meets_gravity_in_the_digits",
@@ -460964,7 +461116,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25563,
+   "position": 25571,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_relations_cannot_express_the_uncertainty_they_inherit",
@@ -460983,7 +461135,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25564,
+   "position": 25572,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_acoustic_and_planck_frequencies_are_forty_orders_apart_not_eighteen",
@@ -461002,7 +461154,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25565,
+   "position": 25573,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "this_file_decides_arithmetic_on_digits_and_not_a_physical_theory",
@@ -461021,7 +461173,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25566,
+   "position": 25574,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_planck_energy_derives_from_the_mass_and_the_defined_constants",
@@ -461040,7 +461192,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25567,
+   "position": 25575,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_collider_sits_between_fourteen_and_fifteen_orders_below_the_planck_energy",
@@ -461059,7 +461211,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25568,
+   "position": 25576,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "this_deposits_seven_dimensions_are_index_positions_and_not_directions",
@@ -461078,7 +461230,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25569,
+   "position": 25577,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_anomaly_free_groups_share_a_dimension_and_it_is_perfect",
@@ -461097,7 +461249,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25570,
+   "position": 25578,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_critical_dimensions_are_their_transverse_counts_plus_two",
@@ -461116,7 +461268,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25571,
+   "position": 25579,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_decidable_part_is_finished_and_the_theory_is_not",
@@ -461135,7 +461287,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25572,
+   "position": 25580,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_single_leaf_folds_to_itself",
@@ -461154,7 +461306,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25573,
+   "position": 25581,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_two_leaf_root_is_also_a_one_leaf_root",
@@ -461173,7 +461325,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25574,
+   "position": 25582,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_forged_leaf_set_is_not_the_original",
@@ -461192,7 +461344,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25575,
+   "position": 25583,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_empty_sentinel_is_also_a_one_leaf_root",
@@ -461211,7 +461363,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25576,
+   "position": 25584,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "distinct_pairs_still_give_distinct_roots",
@@ -461230,7 +461382,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25577,
+   "position": 25585,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "tagging_separates_a_leaf_from_a_node",
@@ -461249,7 +461401,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25578,
+   "position": 25586,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_tagged_fold_refuses_the_forged_leaf",
@@ -461268,7 +461420,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25579,
+   "position": 25587,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_unescaped_separator_makes_the_pairing_non_injective",
@@ -461287,7 +461439,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25580,
+   "position": 25588,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "novelty_is_claimed_only_where_a_search_was_performed",
@@ -461306,7 +461458,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25581,
+   "position": 25589,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "this_deposit_claims_no_novelty_today",
@@ -461325,7 +461477,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25582,
+   "position": 25590,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_restated_sources_are_named_and_claim_nothing",
@@ -461344,7 +461496,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25583,
+   "position": 25591,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "an_unsearched_source_claims_nothing",
@@ -461363,7 +461515,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25584,
+   "position": 25592,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_source_is_classified",
@@ -461382,7 +461534,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25585,
+   "position": 25593,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_kinds_cover_every_source",
@@ -461401,7 +461553,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25586,
+   "position": 25594,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "some_sources_are_unsearched",
@@ -461420,7 +461572,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25587,
+   "position": 25595,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "zero_claims_is_not_full_attribution",
@@ -461439,7 +461591,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25588,
+   "position": 25596,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "novelty_is_claimed_of_no_source",
@@ -461458,7 +461610,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25589,
+   "position": 25597,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reserved_six_are_where_the_rendering_puts_them",
@@ -461477,7 +461629,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25590,
+   "position": 25598,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_program_field_is_forty_two_bits_not_forty_eight",
@@ -461496,7 +461648,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25591,
+   "position": 25599,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_three_fields_and_the_reserved_six_are_the_whole_uuid",
@@ -461515,7 +461667,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25592,
+   "position": 25600,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_widths_are_what_the_layout_says",
@@ -461534,7 +461686,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25593,
+   "position": 25601,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_reserved_bit_is_in_the_middle_group",
@@ -461553,7 +461705,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25594,
+   "position": 25602,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "neither_the_check_nor_the_message_gives_up_a_bit",
@@ -461572,7 +461724,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25595,
+   "position": 25603,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_position_belongs_to_exactly_one_field",
@@ -461591,7 +461743,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25596,
+   "position": 25604,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "nothing_outside_the_uuid_is_claimed",
@@ -461610,7 +461762,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25597,
+   "position": 25605,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "each_field_is_ascending_and_repeats_nothing",
@@ -461629,7 +461781,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25598,
+   "position": 25606,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_check_is_the_deposit_s_own_fnv",
@@ -461648,7 +461800,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25599,
+   "position": 25607,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_payload_outruns_the_check",
@@ -461667,7 +461819,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25600,
+   "position": 25608,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_map_from_four_onto_three_separates_them_all",
@@ -461686,7 +461838,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25601,
+   "position": 25609,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "four_values_can_be_separated_by_four",
@@ -461705,7 +461857,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25602,
+   "position": 25610,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fields_read_back_exactly",
@@ -461724,7 +461876,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25603,
+   "position": 25611,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_check_field_carries_the_check",
@@ -461743,7 +461895,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25604,
+   "position": 25612,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reserved_six_survive_any_payload",
@@ -461762,7 +461914,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25605,
+   "position": 25613,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_flip_reaches_every_payload_position",
@@ -461781,7 +461933,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25606,
+   "position": 25614,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "flipping_any_program_bit_moves_the_check",
@@ -461800,7 +461952,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25607,
+   "position": 25615,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "flipping_any_message_bit_moves_the_check",
@@ -461819,7 +461971,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25608,
+   "position": 25616,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "an_untouched_container_reads_intact",
@@ -461838,7 +461990,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25609,
+   "position": 25617,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_damaged_container_is_refused_at_every_program_position",
@@ -461857,7 +462009,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25610,
+   "position": 25618,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_surface_code_physical_count_is_two_d_squared_minus_two_d_plus_one",
@@ -461876,7 +462028,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25611,
+   "position": 25619,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_distance_d_code_corrects_the_floor_of_d_minus_one_over_two",
@@ -461895,7 +462047,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25612,
+   "position": 25620,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "distance_one_corrects_nothing_and_distance_three_corrects_one",
@@ -461914,7 +462066,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25613,
+   "position": 25621,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "shors_nine_qubit_code_is_three_by_three_distance_three_correcting_one",
@@ -461933,7 +462085,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25614,
+   "position": 25622,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_pauli_group_order_is_two_to_the_two_n_plus_two",
@@ -461952,7 +462104,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25615,
+   "position": 25623,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_surface_count_is_quadratic_not_linear_in_the_distance",
@@ -461971,7 +462123,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25616,
+   "position": 25624,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_higher_distance_costs_more_qubits_and_corrects_no_fewer",
@@ -461990,7 +462142,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25617,
+   "position": 25625,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_counts_at_distance_nine_and_their_finite_bound",
@@ -462009,7 +462161,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25618,
+   "position": 25626,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_served_constants_satisfy_the_relations_qpu_states",
@@ -462028,7 +462180,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25619,
+   "position": 25627,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fourteen_is_two_sevens_on_both_sides",
@@ -462047,7 +462199,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25620,
+   "position": 25628,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "hexbit_times_rays_is_what_this_deposit_reads",
@@ -462066,7 +462218,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25621,
+   "position": 25629,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "thirty_two_is_derived_there_and_declared_here",
@@ -462085,7 +462237,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25622,
+   "position": 25630,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_capacity_law_holds_at_thirty_two_and_at_one_hundred_twenty_two",
@@ -462104,7 +462256,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25623,
+   "position": 25631,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_constants_that_do_not_meet",
@@ -462123,7 +462275,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25624,
+   "position": 25632,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "seven_appears_twice_for_unrelated_reasons",
@@ -462142,7 +462294,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25625,
+   "position": 25633,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "both_sides_grow_by_doubling",
@@ -462161,7 +462313,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25626,
+   "position": 25634,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_served_constants_are_the_ones_the_definitions_derive",
@@ -462180,7 +462332,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25627,
+   "position": 25635,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "register_relation_32_bits_from_two_definitions",
@@ -462199,7 +462351,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25628,
+   "position": 25636,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "register_relation_14_faces_is_the_coil_and_the_qaoa_parameters_of_the_rays",
@@ -462218,7 +462370,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25629,
+   "position": 25637,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "register_relation_128_the_mint_of_the_rays",
@@ -462237,7 +462389,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25630,
+   "position": 25638,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "register_relation_28_the_plane_is_a_binomial_two_ways",
@@ -462256,7 +462408,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25631,
+   "position": 25639,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "register_relation_256_the_mint_of_the_vertices",
@@ -462275,7 +462427,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25632,
+   "position": 25640,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "register_relations_16_and_10_meet_at_the_hexbit",
@@ -462294,7 +462446,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25633,
+   "position": 25641,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "register_relation_4294967296_the_amplitudes",
@@ -462313,7 +462465,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25634,
+   "position": 25642,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fourteen_states_every_ray_reads_back_what_it_wrote",
@@ -462332,7 +462484,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25635,
+   "position": 25643,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fourteen_states_the_mirror_coin_is_an_involution",
@@ -462351,7 +462503,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25636,
+   "position": 25644,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fourteen_states_are_the_served_faces",
@@ -462370,7 +462522,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25637,
+   "position": 25645,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "radix_one_is_refuted_as_a_ray",
@@ -462389,7 +462541,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25638,
+   "position": 25646,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fourteen_states_a_ray_has_as_many_digits_as_bits_in_whole_rays",
@@ -462408,7 +462560,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25639,
+   "position": 25647,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fourteen_states_the_mirror_coin_keeps_the_digit_count",
@@ -462427,7 +462579,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25640,
+   "position": 25648,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fourteen_states_the_factor_product_survives_every_ray",
@@ -462446,7 +462598,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25641,
+   "position": 25649,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_mirror_coin_does_not_distribute_over_a_product",
@@ -462465,7 +462617,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25642,
+   "position": 25650,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_seal_exponent_is_an_rsa_permutation_of_the_residues_mod_ninety_one",
@@ -462484,7 +462636,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25643,
+   "position": 25651,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fold_mod_eight_is_where_the_seal_misses_one_tamper_in_eight",
@@ -462503,7 +462655,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25644,
+   "position": 25652,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fixed_version_eight_and_the_decided_nibble_agree_on_eleven_residues_in_ninety_one",
@@ -462522,7 +462674,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25645,
+   "position": 25653,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_free_register_is_one_hundred_twenty_two_on_both_sides",
@@ -462541,7 +462693,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25646,
+   "position": 25654,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "one_coin_sits_sixty_seven_bits_below_the_iso_post_quantum_floor_under_grover",
@@ -462560,7 +462712,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25647,
+   "position": 25655,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "shor_on_ninety_one_splits_from_qpus_base_and_from_fifty_three_others",
@@ -462579,7 +462731,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25648,
+   "position": 25656,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_sigma_trapdoor_is_fermats_difference_of_squares",
@@ -462598,7 +462750,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25649,
+   "position": 25657,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_wrong_witness_decodes_nothing_because_a_semiprime_has_one_split",
@@ -462617,7 +462769,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25650,
+   "position": 25658,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "an_impossible_integer_with_twin_primes_is_opened_blind_in_one_reflection",
@@ -462636,7 +462788,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25651,
+   "position": 25659,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes",
@@ -462655,7 +462807,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25652,
+   "position": 25660,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back",
@@ -462674,7 +462826,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25653,
+   "position": 25661,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "qpus_gl2_is_the_general_linear_group_over_two_elements_not_over_a_field_of_two_to_the_n",
@@ -462693,7 +462845,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25654,
+   "position": 25662,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_prime_exponent_is_necessary_for_a_mersenne_prime_and_eleven_shows_it_is_not_sufficient",
@@ -462712,7 +462864,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25655,
+   "position": 25663,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_seal_modulus_is_the_thirteenth_triangular_number_and_the_gates_of_a_thirteen_qubit_qft",
@@ -462731,7 +462883,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25656,
+   "position": 25664,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "qpus_grover_count_carries_pi_as_zu_chongzhis_three_hundred_fifty_five_over_one_hundred_thirteen",
@@ -462750,7 +462902,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25657,
+   "position": 25665,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_eight_scales_reach_two_to_the_thirty_seven_and_the_thousand_bit_piece_is_one_more_for_no_reason",
@@ -462769,7 +462921,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25658,
+   "position": 25666,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_transcribed_fold_step_reproduces_qpus_output",
@@ -462788,7 +462940,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25659,
+   "position": 25667,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fold_state_is_four_sixteen_bit_limbs_so_sixty_four_bits",
@@ -462807,7 +462959,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25660,
+   "position": 25668,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_coin_depends_only_on_the_state_so_distinct_texts_share_it",
@@ -462826,7 +462978,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25661,
+   "position": 25669,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_narrow_fold_reaches_few_of_the_layouts_addresses",
@@ -462845,7 +462997,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25662,
+   "position": 25670,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "two_independent_fields_reach_every_address_so_the_fold_is_the_cap",
@@ -462864,7 +463016,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25663,
+   "position": 25671,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "more_texts_than_states_force_a_coin_collision",
@@ -462883,7 +463035,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25664,
+   "position": 25672,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_real_fold_is_sixty_four_bits_against_the_hundred_twenty_two_bit_layout",
@@ -462902,7 +463054,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25665,
+   "position": 25673,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_search_floor_is_the_fold_width_not_the_layout_width",
@@ -462921,7 +463073,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25666,
+   "position": 25674,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_variant_nibble_is_always_eight_through_eleven",
@@ -462940,7 +463092,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25667,
+   "position": 25675,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_gateway_bits_are_always_the_pattern_two",
@@ -462959,7 +463111,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25668,
+   "position": 25676,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reassembly_fixes_the_variant_to_eight_gateway_still_two",
@@ -462978,7 +463130,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25669,
+   "position": 25677,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_ftl_gateway_check_is_a_tautology",
@@ -462997,7 +463149,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25670,
+   "position": 25678,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_gateway_bits_take_one_value_so_carry_zero_entropy",
@@ -463016,7 +463168,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25671,
+   "position": 25679,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_free_two_bit_field_takes_four_values_the_gateway_takes_one",
@@ -463035,7 +463187,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25672,
+   "position": 25680,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "teleportation_sends_one_of_four_the_gateway_is_fixed_to_one",
@@ -463054,7 +463206,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25673,
+   "position": 25681,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_ftl_premise_fails_the_named_carrier_carries_nothing",
@@ -463073,7 +463225,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25674,
+   "position": 25682,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "perms_of_four_is_factorial",
@@ -463092,7 +463244,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25675,
+   "position": 25683,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "receipt_is_order_invariant",
@@ -463111,7 +463263,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25676,
+   "position": 25684,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "receipt_order_invariant_on_the_orbit",
@@ -463130,7 +463282,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25677,
+   "position": 25685,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "naive_fold_is_not_order_invariant",
@@ -463149,7 +463301,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25678,
+   "position": 25686,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "superposition_collapses_to_one",
@@ -463168,7 +463320,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25679,
+   "position": 25687,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_invariance_is_canonicalisation_not_physics",
@@ -463187,7 +463339,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25680,
+   "position": 25688,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_receipt_is_not_injective",
@@ -463206,7 +463358,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25681,
+   "position": 25689,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_uncanonicalised_fold_gives_many_answers",
@@ -463225,7 +463377,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25682,
+   "position": 25690,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_ghz_x_support_is_exactly_the_even_parity_strings",
@@ -463244,7 +463396,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25683,
+   "position": 25691,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "it_is_half_of_the_eight",
@@ -463263,7 +463415,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25684,
+   "position": 25692,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_classical_mixture_reaches_the_parity_ghz_never_does",
@@ -463282,7 +463434,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25685,
+   "position": 25693,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_sent_preparation_is_a_bell_pair",
@@ -463301,7 +463453,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25686,
+   "position": 25694,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "alice_zero_bob_plus_quarter_correlates_root_two_over_two",
@@ -463320,7 +463472,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25687,
+   "position": 25695,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "alice_zero_bob_minus_quarter_correlates_root_two_over_two",
@@ -463339,7 +463491,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25688,
+   "position": 25696,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "alice_half_bob_plus_quarter_correlates_root_two_over_two",
@@ -463358,7 +463510,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25689,
+   "position": 25697,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "alice_half_bob_minus_quarter_anticorrelates_root_two_over_two",
@@ -463377,7 +463529,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25690,
+   "position": 25698,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_sent_circuits_reach_s_two_root_two",
@@ -463396,7 +463548,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25691,
+   "position": 25699,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "bob_at_angle_zero_correlates_fully_not_root_two_over_two",
@@ -463415,7 +463567,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25692,
+   "position": 25700,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "without_the_entangler_the_correlation_vanishes",
@@ -463434,7 +463586,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25693,
+   "position": 25701,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_deterministic_local_strategy_gives_chsh_plus_or_minus_two",
@@ -463453,7 +463605,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25694,
+   "position": 25702,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_classical_strategy_at_s_two_is_not_above_classical",
@@ -463472,7 +463624,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25695,
+   "position": 25703,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "one_count_above_s_two_is_above_classical",
@@ -463491,7 +463643,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25696,
+   "position": 25704,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "one_count_below_s_two_is_not_above_classical",
@@ -463510,7 +463662,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25697,
+   "position": 25705,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "uniform_noise_is_not_above_classical",
@@ -463529,7 +463681,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25698,
+   "position": 25706,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "ideal_counts_at_ten_thousand_shots_are_above_classical",
@@ -463548,7 +463700,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25699,
+   "position": 25707,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "register_bit_zero_is_alice_and_bit_one_is_bob",
@@ -463567,7 +463719,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25700,
+   "position": 25708,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_one_count_control_is_four_hundred_ninety_nine_agreements_short_of_five_hundred",
@@ -463586,7 +463738,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25701,
+   "position": 25709,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "one_way_measurement_applies_h_rz_for_every_angle_and_both_outcomes",
@@ -463605,7 +463757,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25702,
+   "position": 25710,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "one_way_without_the_cluster_bond_does_not_apply_the_gate",
@@ -463624,7 +463776,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25703,
+   "position": 25711,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "ising_anyon_braids_satisfy_the_braid_relation",
@@ -463643,7 +463795,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25704,
+   "position": 25712,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "ising_anyon_braids_generate_exactly_the_twenty_four_clifford_classes",
@@ -463662,7 +463814,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25705,
+   "position": 25713,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_balanced_beam_splitter_gives_a_full_depth_hong_ou_mandel_dip",
@@ -463681,7 +463833,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25706,
+   "position": 25714,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "distinguishable_photons_coincide_half_the_time",
@@ -463700,7 +463852,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25707,
+   "position": 25715,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_adiabatic_gap_is_smallest_exactly_at_the_midpoint_at_every_resolution",
@@ -463719,7 +463871,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25708,
+   "position": 25716,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one",
@@ -463738,7 +463890,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25709,
+   "position": 25717,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_zero_of_the_124_qubit_sum",
@@ -463757,7 +463909,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25710,
+   "position": 25718,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_one_of_the_124_qubit_sum",
@@ -463776,7 +463928,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25711,
+   "position": 25719,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_two_of_the_124_qubit_sum",
@@ -463795,7 +463947,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25712,
+   "position": 25720,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_three_of_the_124_qubit_sum",
@@ -463814,7 +463966,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25713,
+   "position": 25721,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_four_of_the_124_qubit_sum",
@@ -463833,7 +463985,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25714,
+   "position": 25722,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_five_of_the_124_qubit_sum",
@@ -463852,7 +464004,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25715,
+   "position": 25723,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_six_of_the_124_qubit_sum",
@@ -463871,7 +464023,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25716,
+   "position": 25724,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_seven_of_the_124_qubit_sum",
@@ -463890,7 +464042,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25717,
+   "position": 25725,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_zero_of_the_128_qubit_octave",
@@ -463909,7 +464061,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25718,
+   "position": 25726,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_one_of_the_128_qubit_octave",
@@ -463928,7 +464080,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25719,
+   "position": 25727,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_two_of_the_128_qubit_octave",
@@ -463947,7 +464099,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25720,
+   "position": 25728,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_three_of_the_128_qubit_octave",
@@ -463966,7 +464118,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25721,
+   "position": 25729,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_four_of_the_128_qubit_octave",
@@ -463985,7 +464137,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25722,
+   "position": 25730,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_five_of_the_128_qubit_octave",
@@ -464004,7 +464156,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25723,
+   "position": 25731,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_six_of_the_128_qubit_octave",
@@ -464023,7 +464175,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25724,
+   "position": 25732,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "particle_seven_of_the_128_qubit_octave",
@@ -464042,7 +464194,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25725,
+   "position": 25733,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third",
@@ -464061,7 +464213,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25726,
+   "position": 25734,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_classical_answer_is_root_two_times_an_odd_eighth_of_the_circle",
@@ -464080,7 +464232,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25727,
+   "position": 25735,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "octave_two_qubits_has_no_mermin_lead",
@@ -464099,7 +464251,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25728,
+   "position": 25736,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "octave_four_qubits_quantum_eight_against_classical_four",
@@ -464118,7 +464270,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25729,
+   "position": 25737,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "octave_eight_qubits_quantum_128_against_classical_16",
@@ -464137,7 +464289,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25730,
+   "position": 25738,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "octave_sixteen_qubits_the_lead_is_two_to_the_seventh",
@@ -464156,7 +464308,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25731,
+   "position": 25739,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "octave_thirty_two_qubits_the_lead_is_two_to_the_fifteenth",
@@ -464175,7 +464327,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25732,
+   "position": 25740,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "octave_sixty_four_qubits_the_lead_is_two_to_the_thirty_first",
@@ -464194,7 +464346,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25733,
+   "position": 25741,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "superdense_coding_sends_two_classical_bits_through_one_qubit",
@@ -464213,7 +464365,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25734,
+   "position": 25742,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "without_the_shared_pair_one_qubit_carries_only_one_bit",
@@ -464232,7 +464384,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25735,
+   "position": 25743,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_bit_flip_code_corrects_every_single_bit_flip_on_every_state",
@@ -464251,7 +464403,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25736,
+   "position": 25744,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "two_bit_flips_turn_the_correction_into_a_logical_error",
@@ -464270,7 +464422,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25737,
+   "position": 25745,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_phase_flip_code_corrects_every_single_phase_flip_on_every_state",
@@ -464289,7 +464441,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25738,
+   "position": 25746,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_toffoli_gate_is_reversible_and_computes_and_which_no_affine_circuit_can",
@@ -464308,7 +464460,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25739,
+   "position": 25747,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_swap_test_reads_the_squared_overlap_on_every_pair_in_range",
@@ -464327,7 +464479,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25740,
+   "position": 25748,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_compilers_cnot_and_swap_rewrites_are_exact_and_dropping_a_gate_breaks_them",
@@ -464346,7 +464498,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25741,
+   "position": 25749,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "tsirelsons_eight_is_the_square_of_the_circuits_s",
@@ -464365,7 +464517,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25742,
+   "position": 25750,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_group_generated_by_h_and_s_has_exactly_twenty_four_classes",
@@ -464384,7 +464536,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25743,
+   "position": 25751,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "t_has_order_exactly_eight_and_does_not_commute_with_h",
@@ -464403,7 +464555,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25744,
+   "position": 25752,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "simons_measured_strings_for_period_eleven_are_exactly_two_of_four",
@@ -464422,7 +464574,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25745,
+   "position": 25753,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "one_query_recovers_every_three_bit_hidden_string",
@@ -464441,7 +464593,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25746,
+   "position": 25754,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "one_query_separates_every_balanced_from_every_constant_function",
@@ -464460,7 +464612,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25747,
+   "position": 25755,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "one_grover_iteration_finds_every_marked_item_of_four_with_certainty",
@@ -464479,7 +464631,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25748,
+   "position": 25756,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "linearity_forbids_perfect_cloning_and_the_optimal_copy_has_fidelity_five_sixths",
@@ -464498,7 +464650,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25749,
+   "position": 25757,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first",
@@ -464517,7 +464669,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25750,
+   "position": 25758,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "at_odd_widths_the_classical_phase_stands_on_odd_eighths_and_the_bound_is_two_to_the_half_of_n_minus_one",
@@ -464536,7 +464688,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25751,
+   "position": 25759,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_generator_of_the_124_qubit_cluster_is_z_x_z_on_its_neighbours",
@@ -464555,7 +464707,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25752,
+   "position": 25760,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "generators_zero_to_sixty_one_have_exactly_the_z_x_z_bit_pattern",
@@ -464574,7 +464726,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25753,
+   "position": 25761,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "generators_sixty_two_to_one_twenty_three_have_exactly_the_z_x_z_bit_pattern",
@@ -464593,7 +464745,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25754,
+   "position": 25762,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "generators_zero_to_sixty_one_commute_with_all_124",
@@ -464612,7 +464764,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25755,
+   "position": 25763,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "generators_sixty_two_to_one_twenty_three_commute_with_all_124",
@@ -464631,7 +464783,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25756,
+   "position": 25764,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "without_the_chain_or_with_a_ring_the_linear_cluster_form_fails",
@@ -464650,7 +464802,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25757,
+   "position": 25765,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "turning_a_signal_on_never_lowers_the_score",
@@ -464669,7 +464821,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25758,
+   "position": 25766,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_signal_strictly_raises_the_score",
@@ -464688,7 +464840,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25759,
+   "position": 25767,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_score_runs_from_zero_to_eleven",
@@ -464707,7 +464859,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25760,
+   "position": 25768,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_ranking_holds_nine_distinguishable_states_as_one",
@@ -464726,7 +464878,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25761,
+   "position": 25769,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "only_the_top_and_the_bottom_identify_their_evidence",
@@ -464745,7 +464897,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25762,
+   "position": 25770,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "distinct_powers_would_separate_every_state",
@@ -464764,7 +464916,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25763,
+   "position": 25771,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_heaviest_signals_outweigh_all_the_others",
@@ -464783,7 +464935,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25764,
+   "position": 25772,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_high_score_orders_attention_and_settles_nothing",
@@ -464802,7 +464954,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25765,
+   "position": 25773,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_is_the_six_units",
@@ -464821,7 +464973,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25766,
+   "position": 25774,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_order_visits_every_ray_exactly_once",
@@ -464840,7 +464992,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25767,
+   "position": 25775,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reversed_order_is_also_a_permutation",
@@ -464859,7 +465011,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25768,
+   "position": 25776,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_senses_are_not_the_same_walk",
@@ -464878,7 +465030,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25769,
+   "position": 25777,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversing_the_sense_twice_is_the_identity",
@@ -464897,7 +465049,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25770,
+   "position": 25778,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "inverting_twice_is_the_identity",
@@ -464916,7 +465068,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25771,
+   "position": 25779,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_trace_and_its_inversion_agree_nowhere",
@@ -464935,7 +465087,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25772,
+   "position": 25780,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_low_bit_sees_what_the_residue_cannot",
@@ -464954,7 +465106,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25773,
+   "position": 25781,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_by_seven_reads_more_than_the_seven",
@@ -464973,7 +465125,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25774,
+   "position": 25782,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "four_digits_stay_unread_and_are_counted",
@@ -464992,7 +465144,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25775,
+   "position": 25783,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_wrap_is_what_makes_it_a_torus",
@@ -465011,7 +465163,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25776,
+   "position": 25784,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_distance_is_symmetric_and_zero_only_on_itself",
@@ -465030,7 +465182,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25777,
+   "position": 25785,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_triangle_inequality_holds_on_every_triple",
@@ -465049,7 +465201,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25778,
+   "position": 25786,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "exhaustion_never_reaches_its_own_bound",
@@ -465068,7 +465220,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25779,
+   "position": 25787,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_successor_of_every_bound_lies_outside",
@@ -465087,7 +465239,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25780,
+   "position": 25788,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_the_domain_leaves_the_same_hole",
@@ -465106,7 +465258,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25781,
+   "position": 25789,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_successor_leaves_every_domain_and_the_predecessor_returns",
@@ -465125,7 +465277,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25782,
+   "position": 25790,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_predecessor_returns_every_successor",
@@ -465144,7 +465296,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25783,
+   "position": 25791,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "exhaustion_never_reaches_its_own_bound_for_every_n",
@@ -465163,7 +465315,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25784,
+   "position": 25792,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_successor_of_every_bound_lies_outside_for_every_n",
@@ -465182,7 +465334,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25785,
+   "position": 25793,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_the_domain_leaves_the_same_hole_for_every_n",
@@ -465201,7 +465353,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25786,
+   "position": 25794,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_successor_returns_every_positive_predecessor",
@@ -465220,7 +465372,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25787,
+   "position": 25795,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "exhaustion_reaches_everything_below_its_bound_for_every_n",
@@ -465239,7 +465391,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25788,
+   "position": 25796,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_predecessor_of_every_positive_bound_lies_inside",
@@ -465258,7 +465410,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25789,
+   "position": 25797,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_the_domain_keeps_the_half_inside_for_every_n",
@@ -465277,7 +465429,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25790,
+   "position": 25798,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_residue_has_an_additive_inverse",
@@ -465296,7 +465448,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25791,
+   "position": 25799,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "negation_is_an_involution_with_zero_its_own_inverse",
@@ -465315,7 +465467,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25792,
+   "position": 25800,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_mod_three_classes_partition_the_ring_into_three_threes",
@@ -465334,7 +465486,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25793,
+   "position": 25801,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_tetrahedra_meet_the_cube_at_its_own_counts",
@@ -465353,7 +465505,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25794,
+   "position": 25802,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_triad_lands_on_three_hues_a_third_of_the_circle_apart",
@@ -465372,7 +465524,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25795,
+   "position": 25803,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_nine_hues_are_distinct_and_evenly_spaced",
@@ -465391,7 +465543,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25796,
+   "position": 25804,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_units_are_closed_have_an_identity_and_every_one_has_an_inverse",
@@ -465410,7 +465562,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25797,
+   "position": 25805,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "zero_has_no_multiplicative_inverse",
@@ -465429,7 +465581,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25798,
+   "position": 25806,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_board_is_sixty_four_evenly_split_and_every_knight_leap_flips_the_colour",
@@ -465448,7 +465600,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25799,
+   "position": 25807,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_mover_loses_exactly_at_the_multiples_of_four",
@@ -465467,7 +465619,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25800,
+   "position": 25808,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "twelve_fifths_overshoot_seven_octaves_and_by_how_much",
@@ -465486,7 +465638,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25801,
+   "position": 25809,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_hue_on_an_odd_wheel_has_an_exact_complement",
@@ -465505,7 +465657,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25802,
+   "position": 25810,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_inverse_map_applied_twice_is_the_identity_on_the_units",
@@ -465524,7 +465676,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25803,
+   "position": 25811,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_field_of_order_four_has_four_elements",
@@ -465543,7 +465695,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25804,
+   "position": 25812,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_euclid_form_gives_the_first_three_perfect_numbers",
@@ -465562,7 +465714,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25805,
+   "position": 25813,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_odd_prime_to_fifty_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four",
@@ -465581,7 +465733,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25806,
+   "position": 25814,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "pascal_is_odd_exactly_where_the_index_is_a_submask",
@@ -465600,7 +465752,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25807,
+   "position": 25815,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_live_cells_of_row_n_number_two_to_the_popcount",
@@ -465619,7 +465771,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25808,
+   "position": 25816,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_graph_on_four_vertices_sums_its_degrees_to_twice_its_edges",
@@ -465638,7 +465790,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25809,
+   "position": 25817,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_grundy_value_of_the_subtraction_game_is_the_remainder_mod_four",
@@ -465657,7 +465809,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25810,
+   "position": 25818,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_beat_relation_is_the_successor_in_the_trinity",
@@ -465676,7 +465828,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25811,
+   "position": 25819,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_digit_and_its_balance_close_both_the_ring_and_the_circle",
@@ -465695,7 +465847,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25812,
+   "position": 25820,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_map_from_more_pigeons_than_holes_repeats",
@@ -465714,7 +465866,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25813,
+   "position": 25821,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_partition_numbers_to_eight_are_the_ones_the_ledger_stated",
@@ -465733,7 +465885,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25814,
+   "position": 25822,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_doubling_orbit_is_the_unit_group_and_two_generates_it",
@@ -465752,7 +465904,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25815,
+   "position": 25823,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_digit_sum_collapse_and_the_residue_are_the_same_map",
@@ -465771,7 +465923,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25816,
+   "position": 25824,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_step_is_the_circle_divided_by_the_base_and_nine_steps_close_it",
@@ -465790,7 +465942,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25817,
+   "position": 25825,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_units_are_exactly_the_residues_coprime_to_the_base",
@@ -465809,7 +465961,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25818,
+   "position": 25826,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_triad_is_the_multiples_of_three_and_the_nilpotents",
@@ -465828,7 +465980,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25819,
+   "position": 25827,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_unit_group_sums_to_zero_and_its_product_is_the_reflection_of_one",
@@ -465847,7 +465999,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25820,
+   "position": 25828,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_step_base_factors_as_two_to_the_fourth_times_three_cubed",
@@ -465866,7 +466018,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25821,
+   "position": 25829,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_tens_complement_fixes_exactly_the_centre",
@@ -465885,7 +466037,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25822,
+   "position": 25830,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_balancing_complement_permutes_the_units",
@@ -465904,7 +466056,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25823,
+   "position": 25831,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_cube_mod_nine_is_zero_one_or_eight",
@@ -465923,7 +466075,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25824,
+   "position": 25832,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_is_multiplication_by_two_and_the_reduction_commutes",
@@ -465942,7 +466094,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25825,
+   "position": 25833,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_primitive_roots_are_exactly_two_and_five",
@@ -465961,7 +466113,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25826,
+   "position": 25834,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_unit_is_a_power_of_two_for_exactly_one_exponent",
@@ -465980,7 +466132,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25827,
+   "position": 25835,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_index_carries_multiplication_to_addition_mod_six",
@@ -465999,7 +466151,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25828,
+   "position": 25836,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_even_position_ever_survives",
@@ -466018,7 +466170,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25829,
+   "position": 25837,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "in_a_magic_square_the_centre_is_five_and_the_corners_are_even",
@@ -466037,7 +466189,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25830,
+   "position": 25838,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_pisano_period_mod_nine_is_twenty_four_and_four_times_the_doubling_order",
@@ -466056,7 +466208,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25831,
+   "position": 25839,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "each_stern_row_sums_to_a_power_of_three",
@@ -466075,7 +466227,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25832,
+   "position": 25840,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_euclid_triple_is_primitive_exactly_when_its_seeds_are_coprime_and_opposite",
@@ -466094,7 +466246,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25833,
+   "position": 25841,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_product_of_two_sums_of_squares_is_a_sum_of_squares",
@@ -466113,7 +466265,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25834,
+   "position": 25842,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "minus_one_is_a_square_mod_p_exactly_when_p_is_one_mod_four",
@@ -466132,7 +466284,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25835,
+   "position": 25843,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "two_is_a_square_mod_p_exactly_when_p_is_one_or_seven_mod_eight",
@@ -466151,7 +466303,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25836,
+   "position": 25844,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reciprocity_holds_for_every_pair_of_odd_primes_below_thirty",
@@ -466170,7 +466322,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25837,
+   "position": 25845,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_nine_point_wheel_the_dashboard_draws_closes_the_circle",
@@ -466189,7 +466341,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25838,
+   "position": 25846,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_units_plus_one_distinguished_element_number_seven",
@@ -466208,7 +466360,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25839,
+   "position": 25847,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_digital_root_carries_both_sum_and_product",
@@ -466227,7 +466379,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25840,
+   "position": 25848,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_six_units_fall_into_three_pairs_that_sum_to_nine",
@@ -466246,7 +466398,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25841,
+   "position": 25849,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "three_generates_the_units_mod_seven_and_they_number_six",
@@ -466265,7 +466417,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25842,
+   "position": 25850,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_unit_groups_are_cyclic_of_order_six_and_correspond_by_index",
@@ -466284,7 +466436,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25843,
+   "position": 25851,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_nines_check_fires_exactly_when_the_error_is_not_a_multiple_of_nine",
@@ -466303,7 +466455,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25844,
+   "position": 25852,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_nines_check_cannot_see_a_transposition_and_the_elevens_check_can",
@@ -466322,7 +466474,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25845,
+   "position": 25853,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "five_is_the_reflection_fixed_point_and_the_inverse_of_two",
@@ -466341,7 +466493,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25846,
+   "position": 25854,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_nonzero_residues_vanish_exactly_for_an_odd_modulus",
@@ -466360,7 +466512,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25847,
+   "position": 25855,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_unit_multiplication_table_is_a_latin_square",
@@ -466379,7 +466531,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25848,
+   "position": 25856,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_additive_generators_are_exactly_the_multiplicative_units",
@@ -466398,7 +466550,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25849,
+   "position": 25857,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_axis_is_closed_under_addition_and_under_multiplication_by_the_ring",
@@ -466417,7 +466569,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25850,
+   "position": 25858,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_ring_of_residues_is_a_field_exactly_at_a_prime_modulus",
@@ -466436,7 +466588,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25851,
+   "position": 25859,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "squaring_maps_the_six_units_onto_a_closed_set_of_three",
@@ -466455,7 +466607,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25852,
+   "position": 25860,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "five_six_one_is_composite_and_fools_fermat_for_every_base",
@@ -466474,7 +466626,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25853,
+   "position": 25861,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cassinis_identity_alternates_by_one_either_side_of_the_square",
@@ -466493,7 +466645,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25854,
+   "position": 25862,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "each_binomial_row_sums_to_a_power_of_two_and_splits_evenly",
@@ -466512,7 +466664,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25855,
+   "position": 25863,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_to_the_p_returns_a_modulo_every_prime_in_range",
@@ -466531,7 +466683,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25856,
+   "position": 25864,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_start_below_a_thousand_reaches_one_within_two_hundred_steps",
@@ -466550,7 +466702,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25857,
+   "position": 25865,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_number_of_divisors_is_odd_exactly_for_a_perfect_square",
@@ -466569,7 +466721,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25858,
+   "position": 25866,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "euclids_formula_always_produces_a_right_triangle",
@@ -466588,7 +466740,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25859,
+   "position": 25867,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reduction_to_coprime_moduli_is_a_bijection_over_one_period",
@@ -466607,7 +466759,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25860,
+   "position": 25868,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_derangements_follow_the_subfactorial_recurrence",
@@ -466626,7 +466778,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25861,
+   "position": 25869,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_lucas_square_sits_four_either_side_of_five_fibonacci_squares",
@@ -466645,7 +466797,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25862,
+   "position": 25870,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_digit_sum_agrees_with_the_value_modulo_three_and_modulo_nine",
@@ -466664,7 +466816,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25863,
+   "position": 25871,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_partitions_obey_eulers_pentagonal_recurrence",
@@ -466683,7 +466835,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25864,
+   "position": 25872,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_derangements_are_n_times_the_previous_with_one_alternating_correction",
@@ -466702,7 +466854,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25865,
+   "position": 25873,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_first_n_fibonacci_numbers_sum_to_the_term_two_further_on_less_one",
@@ -466721,7 +466873,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25866,
+   "position": 25874,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_first_n_naturals_squares_and_cubes_have_their_closed_forms",
@@ -466740,7 +466892,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25867,
+   "position": 25875,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "eight_triangular_numbers_plus_one_is_the_odd_square",
@@ -466759,7 +466911,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25868,
+   "position": 25876,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_josephus_survivor_is_twice_the_remainder_above_a_power_of_two_plus_one",
@@ -466778,7 +466930,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25869,
+   "position": 25877,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_euclid_perfect_number_is_a_triangular_number",
@@ -466797,7 +466949,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25870,
+   "position": 25878,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "units_sum_zero",
@@ -466816,7 +466968,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25871,
+   "position": 25879,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "self_inverse_1_8",
@@ -466835,7 +466987,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25872,
+   "position": 25880,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "triad_nilpotent",
@@ -466854,7 +467006,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25873,
+   "position": 25881,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "triad_sum_zero",
@@ -466873,7 +467025,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25874,
+   "position": 25882,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "units_product_neg1",
@@ -466892,7 +467044,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25875,
+   "position": 25883,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "order_of_2_is_6",
@@ -466911,7 +467063,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25876,
+   "position": 25884,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "sum_1_to_9_zero",
@@ -466930,7 +467082,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25877,
+   "position": 25885,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_digitroot_period6",
@@ -466949,7 +467101,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25878,
+   "position": 25886,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "unit_exp_id_k6",
@@ -466968,7 +467120,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25879,
+   "position": 25887,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "unit_exp_id_k12",
@@ -466987,7 +467139,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25880,
+   "position": 25888,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "unit_exp_id_k18",
@@ -467006,7 +467158,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25881,
+   "position": 25889,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "powperm_k5",
@@ -467025,7 +467177,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25882,
+   "position": 25890,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "powperm_k7",
@@ -467044,7 +467196,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25883,
+   "position": 25891,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "qr_u1",
@@ -467063,7 +467215,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25884,
+   "position": 25892,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "qr_u4",
@@ -467082,7 +467234,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25885,
+   "position": 25893,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "universal_reflection_involution",
@@ -467101,7 +467253,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25886,
+   "position": 25894,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "universal_centre_is_five",
@@ -467120,7 +467272,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25887,
+   "position": 25895,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "universal_pairs_sum_to_ten",
@@ -467139,7 +467291,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25888,
+   "position": 25896,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "universal_reflection_reverses_the_domain",
@@ -467158,7 +467310,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25889,
+   "position": 25897,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "universal_reflection_is_not_an_involution_above_ten",
@@ -467177,7 +467329,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25890,
+   "position": 25898,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "universal_z9_reflection_permutes_the_units",
@@ -467196,7 +467348,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25891,
+   "position": 25899,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "universal_millennium_reflection_escapes_the_units",
@@ -467215,7 +467367,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25892,
+   "position": 25900,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "universal_reflection_is_the_vortex_reflection_shifted",
@@ -467234,7 +467386,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25893,
+   "position": 25901,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_chimera_annealer_qubit_count_is_eight_m_squared",
@@ -467253,7 +467405,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25894,
+   "position": 25902,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_pegasus_annealer_count_is_twenty_four_m_times_m_minus_one",
@@ -467272,7 +467424,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25895,
+   "position": 25903,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_qft_gate_count_is_the_triangular_number",
@@ -467291,7 +467443,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25896,
+   "position": 25904,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_qft_swaps_depth_and_states",
@@ -467310,7 +467462,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25897,
+   "position": 25905,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "archimedes_twenty_two_over_seven_bounds_pi_above_and_the_floor_is_three",
@@ -467329,7 +467481,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25898,
+   "position": 25906,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "zu_chongzhis_three_fifty_five_over_one_thirteen_brackets_pi_to_six_places",
@@ -467348,7 +467500,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25899,
+   "position": 25907,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_turn_is_three_hundred_sixty_degrees_and_the_half_turn_one_eighty",
@@ -467367,7 +467519,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25900,
+   "position": 25908,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "these_are_exact_counts_and_rational_convergents_not_pi_itself",
@@ -467386,7 +467538,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25901,
+   "position": 25909,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "squares_is_closed_under_quadruple",
@@ -467405,7 +467557,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25902,
+   "position": 25910,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cubes_is_closed_under_negate",
@@ -467424,7 +467576,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25903,
+   "position": 25911,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "selfinv_is_closed_under_negate",
@@ -467443,7 +467595,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25904,
+   "position": 25912,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cubes_is_closed_under_cube",
@@ -467462,7 +467614,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25905,
+   "position": 25913,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "squares_is_closed_under_septuple",
@@ -467481,7 +467633,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25906,
+   "position": 25914,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cubes_is_closed_under_octuple",
@@ -467500,7 +467652,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25907,
+   "position": 25915,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "selfinv_is_closed_under_octuple",
@@ -467519,7 +467671,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25908,
+   "position": 25916,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cube_is_involutive_on_cubes",
@@ -467538,7 +467690,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25909,
+   "position": 25917,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "double_collapses_reflfixed_to_one_value",
@@ -467557,7 +467709,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25910,
+   "position": 25918,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "triple_collapses_reflfixed_to_one_value",
@@ -467576,7 +467728,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25911,
+   "position": 25919,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "negate_collapses_reflfixed_to_one_value",
@@ -467595,7 +467747,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25912,
+   "position": 25920,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "quintuple_collapses_reflfixed_to_one_value",
@@ -467614,7 +467766,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25913,
+   "position": 25921,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "sextuple_collapses_reflfixed_to_one_value",
@@ -467633,7 +467785,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25914,
+   "position": 25922,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "septuple_collapses_reflfixed_to_one_value",
@@ -467652,7 +467804,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25915,
+   "position": 25923,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "octuple_collapses_reflfixed_to_one_value",
@@ -467671,7 +467823,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25916,
+   "position": 25924,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_preserves_digit_sum",
@@ -467690,7 +467842,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25917,
+   "position": 25925,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_is_invariant_under_reversal",
@@ -467709,7 +467861,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25918,
+   "position": 25926,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_ledger_reversal_cases",
@@ -467728,7 +467880,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25919,
+   "position": 25927,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_is_not_the_identity",
@@ -467747,7 +467899,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25920,
+   "position": 25928,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "palindromes_are_the_fixed_points",
@@ -467766,7 +467918,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25921,
+   "position": 25929,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "emirps_exist_below_one_hundred",
@@ -467785,7 +467937,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25922,
+   "position": 25930,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_does_not_preserve_primality",
@@ -467804,7 +467956,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25923,
+   "position": 25931,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_is_involutive_exactly_off_the_trailing_zeros",
@@ -467823,7 +467975,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25924,
+   "position": 25932,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "foldl_add_start",
@@ -467842,7 +467994,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25925,
+   "position": 25933,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them",
@@ -467861,7 +468013,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25926,
+   "position": 25934,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_number_is_below_ten_to_its_own_successor",
@@ -467880,7 +468032,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25927,
+   "position": 25935,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n",
@@ -467899,7 +468051,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25928,
+   "position": 25936,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "folding_by_ten_keeps_the_residue_of_the_digit_sum",
@@ -467918,7 +468070,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25929,
+   "position": 25937,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_keeps_the_residue_mod_nine_for_every_n",
@@ -467937,7 +468089,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25930,
+   "position": 25938,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digitsF_zero",
@@ -467956,7 +468108,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25931,
+   "position": 25939,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_digit_is_below_ten",
@@ -467975,7 +468127,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25932,
+   "position": 25940,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_digits_rebuild_the_number_when_the_fuel_covers_them",
@@ -467994,7 +468146,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25933,
+   "position": 25941,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_number_is_rebuilt_from_its_digits_for_every_n",
@@ -468013,7 +468165,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25934,
+   "position": 25942,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_sum_is_the_same_read_backwards",
@@ -468032,7 +468184,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25935,
+   "position": 25943,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_top_digit_is_nonzero",
@@ -468051,7 +468203,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25936,
+   "position": 25944,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_leaves_no_trailing_zero",
@@ -468070,7 +468222,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25937,
+   "position": 25945,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reading_a_list_back_from_the_top",
@@ -468089,7 +468241,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25938,
+   "position": 25946,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_digits_of_the_reversal_are_the_reversed_digits",
@@ -468108,7 +468260,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25939,
+   "position": 25947,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_is_involutive_off_the_trailing_zeros_for_every_n",
@@ -468127,7 +468279,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25940,
+   "position": 25948,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_is_involutive_exactly_off_the_trailing_zeros_for_every_n",
@@ -468146,7 +468298,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25941,
+   "position": 25949,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "more_fuel_changes_no_digit",
@@ -468165,7 +468317,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25942,
+   "position": 25950,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_trailing_zero_is_a_leading_zero_of_the_digits",
@@ -468184,7 +468336,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25943,
+   "position": 25951,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_preserves_the_digit_sum_for_every_n",
@@ -468203,7 +468355,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25944,
+   "position": 25952,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fixed_points_of_reversal_are_the_palindromes_for_every_n",
@@ -468222,7 +468374,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25945,
+   "position": 25953,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "claims_exactly_what_arises_without_formality",
@@ -468241,7 +468393,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25946,
+   "position": 25954,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_claimed_are_copyright_moral_rights_and_the_database",
@@ -468260,7 +468412,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25947,
+   "position": 25955,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_claimed_set_is_exactly_those_three_and_the_unregistered_mark",
@@ -468279,7 +468431,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25948,
+   "position": 25956,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_unclaimed_are_the_registry_the_excluded_and_the_unownable",
@@ -468298,7 +468450,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25949,
+   "position": 25957,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_right_that_needs_a_registry_act_is_claimed",
@@ -468317,7 +468469,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25950,
+   "position": 25958,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_excluded_subject_matter_is_claimed",
@@ -468336,7 +468488,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25951,
+   "position": 25959,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "nothing_incapable_of_ownership_is_claimed",
@@ -468355,7 +468507,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25952,
+   "position": 25960,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_enumeration_is_complete_and_unduplicated",
@@ -468374,7 +468526,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25953,
+   "position": 25961,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_cube_root_is_the_floor",
@@ -468393,7 +468545,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25954,
+   "position": 25962,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_cube_root_is_not_one_short",
@@ -468412,7 +468564,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25955,
+   "position": 25963,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_square_root_is_the_floor_and_not_one_short",
@@ -468431,7 +468583,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25956,
+   "position": 25964,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_prime_generator_is_complete",
@@ -468450,7 +468602,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25957,
+   "position": 25965,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_first_round_constant_is_that_cube_root_fraction",
@@ -468469,7 +468621,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25958,
+   "position": 25966,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_first_initial_value_is_that_square_root_fraction",
@@ -468488,7 +468640,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25959,
+   "position": 25967,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_cube_and_the_square_do_not_agree",
@@ -468507,7 +468659,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25960,
+   "position": 25968,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_ring_is_the_same_around_every_hub",
@@ -468526,7 +468678,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25961,
+   "position": 25969,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_ring_separates_no_two_subjects",
@@ -468545,7 +468697,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25962,
+   "position": 25970,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_varying_reading_separates_every_pair",
@@ -468564,7 +468716,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25963,
+   "position": 25971,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_ring_takes_one_value_and_the_control_takes_three",
@@ -468583,7 +468735,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25964,
+   "position": 25972,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_label_of_the_ring_narrows_the_subject",
@@ -468602,7 +468754,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25965,
+   "position": 25973,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_label_of_the_varying_reading_names_one_subject",
@@ -468621,7 +468773,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25966,
+   "position": 25974,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_printed_balance_holds_only_when_the_soil_is_zero",
@@ -468640,7 +468792,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25967,
+   "position": 25975,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_intended_update_is_injective_in_the_soil",
@@ -468659,7 +468811,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25968,
+   "position": 25976,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cassini_at_even_indices",
@@ -468678,7 +468830,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25969,
+   "position": 25977,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cassini_at_odd_indices",
@@ -468697,7 +468849,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25970,
+   "position": 25978,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cassini_deviation_is_exactly_one",
@@ -468716,7 +468868,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25971,
+   "position": 25979,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "lucas_mod_two_is_the_and_rule",
@@ -468735,7 +468887,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25972,
+   "position": 25980,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "pascal_has_both_parities",
@@ -468754,7 +468906,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25973,
+   "position": 25981,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "sums_of_two_squares_are_closed",
@@ -468773,7 +468925,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25974,
+   "position": 25982,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "three_five_eight_are_consecutive",
@@ -468792,7 +468944,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25975,
+   "position": 25983,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "pisano_twentyfour_is_four_sixes",
@@ -468811,7 +468963,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25976,
+   "position": 25984,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "thue_morse_doubling_recurrence",
@@ -468830,7 +468982,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25977,
+   "position": 25985,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_preserves_the_parity_of_the_bits",
@@ -468849,7 +469001,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25978,
+   "position": 25986,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_odd_step_sets_exactly_one_further_bit",
@@ -468868,7 +469020,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25979,
+   "position": 25987,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_sequence_takes_both_values",
@@ -468887,7 +469039,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25980,
+   "position": 25988,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cassinis_identity_for_every_m",
@@ -468906,7 +469058,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25981,
+   "position": 25989,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_bit_sum_over_one_more_position_adds_that_bit",
@@ -468925,7 +469077,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25982,
+   "position": 25990,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_shifts_every_bit_down_by_one",
@@ -468944,7 +469096,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25983,
+   "position": 25991,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_bits_of_a_number_are_its_low_bit_then_the_bits_of_its_half",
@@ -468963,7 +469115,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25984,
+   "position": 25992,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "bits_above_the_number_add_nothing",
@@ -468982,7 +469134,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25985,
+   "position": 25993,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_number_is_below_two_to_its_own_power",
@@ -469001,7 +469153,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25986,
+   "position": 25994,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_number_is_below_two_to_its_own_successor",
@@ -469020,7 +469172,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25987,
+   "position": 25995,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_preserves_the_bit_count_for_every_n",
@@ -469039,7 +469191,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25988,
+   "position": 25996,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_odd_step_sets_exactly_one_further_bit_for_every_n",
@@ -469058,7 +469210,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25989,
+   "position": 25997,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "thue_morse_doubling_recurrence_for_every_n",
@@ -469077,7 +469229,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25990,
+   "position": 25998,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_removes_exactly_the_low_bit_for_every_n",
@@ -469096,7 +469248,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25991,
+   "position": 25999,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_thue_morse_halving_recurrence_for_every_n",
@@ -469115,7 +469267,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25992,
+   "position": 26000,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_shifts_every_bit_up_by_one",
@@ -469134,7 +469286,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25993,
+   "position": 26001,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_residue_below_the_next_power_adds_one_bit",
@@ -469153,7 +469305,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25994,
+   "position": 26002,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_low_bits_rebuild_the_number_below_every_power",
@@ -469172,7 +469324,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25995,
+   "position": 26003,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_number_is_rebuilt_from_its_bits_for_every_n",
@@ -469191,7 +469343,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25996,
+   "position": 26004,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_file_settles_exactly_what_it_declares",
@@ -469210,7 +469362,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25997,
+   "position": 26005,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_file_declares_more_than_it_holds",
@@ -469229,7 +469381,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25998,
+   "position": 26006,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_parts_sum_to_the_whole_and_each_part_is_recoverable",
@@ -469248,7 +469400,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 25999,
+   "position": 26007,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_file_settles_nothing",
@@ -469267,7 +469419,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26000,
+   "position": 26008,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_counts_are_not_one_number_repeated",
@@ -469286,7 +469438,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26001,
+   "position": 26009,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "each_file_is_counted_once",
@@ -469305,7 +469457,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26002,
+   "position": 26010,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_proof_styles_partition_the_theorems",
@@ -469324,7 +469476,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26003,
+   "position": 26011,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_declaration_in_these_files_closes_by_rfl",
@@ -469343,7 +469495,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26004,
+   "position": 26012,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_verify_path_is_the_exponent",
@@ -469362,7 +469514,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26005,
+   "position": 26013,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_gap_widens_with_every_doubling",
@@ -469381,7 +469533,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26006,
+   "position": 26014,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_constant_factor_accounts_for_the_gap",
@@ -469400,7 +469552,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26007,
+   "position": 26015,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_measured_ratio_exceeds_the_counted_gap",
@@ -469419,7 +469571,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26008,
+   "position": 26016,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "verification_grows_it_is_not_constant",
@@ -469438,7 +469590,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26009,
+   "position": 26017,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_microseconds_return_from_the_nanoseconds_at_every_count",
@@ -469457,7 +469609,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26010,
+   "position": 26018,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_verify_in_nanoseconds_reads_back_its_microseconds",
@@ -469476,7 +469628,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26011,
+   "position": 26019,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_advantage_is_the_count_not_the_operation",
@@ -469495,7 +469647,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26012,
+   "position": 26020,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_break_even_is_the_ratio_of_verifications",
@@ -469514,7 +469666,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26013,
+   "position": 26021,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_width_is_the_ceiling_of_128_bits_over_the_symbol",
@@ -469533,7 +469685,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26014,
+   "position": 26022,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "hexbits_are_slower_and_the_ratio_multiplies_back",
@@ -469552,7 +469704,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26015,
+   "position": 26023,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_nanoseconds_return_from_the_microseconds_at_every_whole_count",
@@ -469571,7 +469723,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26016,
+   "position": 26024,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_cross_formula_is_the_product_mod_256",
@@ -469590,7 +469742,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26017,
+   "position": 26025,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_high_term_never_reaches_the_wrap",
@@ -469609,7 +469761,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26018,
+   "position": 26026,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "only_the_low_digit_of_the_cross_term_survives_the_shift",
@@ -469628,7 +469780,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26019,
+   "position": 26027,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_cross_term_fits_before_its_own_wrap",
@@ -469647,7 +469799,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26020,
+   "position": 26028,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_sum_before_the_wrap_is_below_twice_the_modulus",
@@ -469666,7 +469818,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26021,
+   "position": 26029,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_cross_formula_is_symmetric_in_its_factors",
@@ -469685,7 +469837,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26022,
+   "position": 26030,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_wrap_commutes_with_the_next_multiply_by_the_prime",
@@ -469704,7 +469856,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26023,
+   "position": 26031,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "dropping_the_cross_term_is_refuted",
@@ -469723,7 +469875,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26024,
+   "position": 26032,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "temperature_falls_with_the_batch_when_a_part_is_shared",
@@ -469742,7 +469894,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26025,
+   "position": 26033,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "temperature_is_flat_when_nothing_is_shared",
@@ -469761,7 +469913,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26026,
+   "position": 26034,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fall_is_exactly_the_shared_part_spread_over_the_batch",
@@ -469780,7 +469932,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26027,
+   "position": 26035,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "time_falls_with_the_lanes",
@@ -469799,7 +469951,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26028,
+   "position": 26036,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "time_saturates_when_the_lanes_reach_the_batch",
@@ -469818,7 +469970,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26029,
+   "position": 26037,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_hex_fold_is_order_free",
@@ -469837,7 +469989,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26030,
+   "position": 26038,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_measured_temperature_fell_tenfold_and_then_rose",
@@ -469856,7 +470008,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26031,
+   "position": 26039,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_tables_fold_order_free_and_apart",
@@ -469875,7 +470027,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26032,
+   "position": 26040,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_singles_are_exactly_the_non_units",
@@ -469894,7 +470046,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26033,
+   "position": 26041,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_pairs_are_exactly_the_units_in_order",
@@ -469913,7 +470065,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26034,
+   "position": 26042,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "each_pair_is_two_consecutive_units",
@@ -469932,7 +470084,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26035,
+   "position": 26043,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_token_is_a_multiple_of_three",
@@ -469951,7 +470103,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26036,
+   "position": 26044,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_tokens_are_three_times_these",
@@ -469970,7 +470122,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26037,
+   "position": 26045,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "addition_and_multiplication_stay_inside",
@@ -469989,7 +470141,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26038,
+   "position": 26046,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "subtraction_stays_inside",
@@ -470008,7 +470160,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26039,
+   "position": 26047,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "division_is_the_operation_that_leaves",
@@ -470027,7 +470179,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26040,
+   "position": 26048,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_roots_are_the_singles",
@@ -470046,7 +470198,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26041,
+   "position": 26049,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_root_is_a_single",
@@ -470065,7 +470217,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26042,
+   "position": 26050,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_coin_step_and_the_coins_are_inverse",
@@ -470084,7 +470236,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26043,
+   "position": 26051,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "paying_and_refunding_coins_on_the_last_pair_round_trips",
@@ -470103,7 +470255,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26044,
+   "position": 26052,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_exhaustible_tokens_are_those_six_divides",
@@ -470122,7 +470274,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26045,
+   "position": 26053,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_rest_halt_on_the_generator",
@@ -470141,7 +470293,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26046,
+   "position": 26054,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_token_is_void_bound_or_halts_on_three",
@@ -470160,7 +470312,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26047,
+   "position": 26055,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one",
@@ -470179,7 +470331,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26048,
+   "position": 26056,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_seal_divides_into_payments_and_multiplies_back",
@@ -470198,7 +470350,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26049,
+   "position": 26057,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "sixty_four_is_where_the_doubling_returns",
@@ -470217,7 +470369,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26050,
+   "position": 26058,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_turns_once_per_budget",
@@ -470236,7 +470388,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26051,
+   "position": 26059,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_coin_step_and_the_coins_are_inverse_for_every_c",
@@ -470255,7 +470407,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26052,
+   "position": 26060,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_coins_return_from_the_coin_step_for_every_multiple_of_three",
@@ -470274,7 +470426,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26053,
+   "position": 26061,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "paying_and_refunding_round_trips_for_every_count",
@@ -470293,7 +470445,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26054,
+   "position": 26062,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_single_qubit_clifford_group_has_order_twenty_four",
@@ -470312,7 +470464,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26055,
+   "position": 26063,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_symplectic_group_order_at_each_rank",
@@ -470331,7 +470483,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26056,
+   "position": 26064,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_two_qubit_clifford_group_has_order_eleven_thousand_five_hundred_twenty",
@@ -470350,7 +470502,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26057,
+   "position": 26065,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fibonacci_anyon_fusion_is_the_fibonacci_number",
@@ -470369,7 +470521,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26058,
+   "position": 26066,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "ising_anyon_fusion_is_two_to_the_m_minus_one_and_differs_from_fibonacci",
@@ -470388,7 +470540,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26059,
+   "position": 26067,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fifteen_to_one_magic_code_is_fifteen_one_three",
@@ -470407,7 +470559,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26060,
+   "position": 26068,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "qaoa_resource_counts_over_the_layers",
@@ -470426,7 +470578,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26061,
+   "position": 26069,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "these_are_exact_orders_and_counts_decided_over_a_finite_domain",
@@ -470445,7 +470597,159 @@
   },
   {
    "@type": "ListItem",
-   "position": 26062,
+   "position": 26070,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_toffoli_is_exactly_a_circuit_of_seven_t_gates",
+    "description": "(List.range 8).all (fun i => run sevenT (basis i) == gen (fun j => if j == toffoliOf i then (2, 0, 0, 0) else (0, 0, 0, 0))) ∧ tGates sevenT = 7",
+    "identifier": "lean_tcountwall_the_toffoli_is_exactly_a_circuit_of_seven_t_gates",
+    "receipt": "7a0dfd2d-d9c8-810d-a313-8c4abfeac4e5",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_tcountwall_the_toffoli_is_exactly_a_circuit_of_seven_t_gates",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "TCountWall"
+    },
+    "wing": "the floor",
+    "source": "t_count_wall.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 26071,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_schoolbook_shor_construction_has_t_count_twenty_eight_n_cubed",
+    "description": "(List.range' 1 64).all (fun n => shorT n == 28 * n ^ 3) ∧ shorT 1000 = 28000000000",
+    "identifier": "lean_tcountwall_the_schoolbook_shor_construction_has_t_count_twenty_eight_n_cubed",
+    "receipt": "e6b7ffa9-a3d8-8a39-ab00-7a455e47ab27",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_tcountwall_the_schoolbook_shor_construction_has_t_count_twenty_eight_n_cubed",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "TCountWall"
+    },
+    "wing": "the floor",
+    "source": "t_count_wall.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 26072,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "a_thousand_bit_shor_circuit_fits_in_seventeen_uuids_of_particles",
+    "description": "shorQubits 1000 = 2003 ∧ 2003 ≤ 17 * 122 ∧ ¬ (2003 ≤ 16 * 122)",
+    "identifier": "lean_tcountwall_a_thousand_bit_shor_circuit_fits_in_seventeen_uuids_of_particles",
+    "receipt": "27bd0d05-a6a6-803a-ac8e-bc8017736a7e",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_tcountwall_a_thousand_bit_shor_circuit_fits_in_seventeen_uuids_of_particles",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "TCountWall"
+    },
+    "wing": "the floor",
+    "source": "t_count_wall.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 26073,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_pauli_path_worst_case_passes_ten_to_the_eighty_at_three_bits",
+    "description": "shorT 2 = 224 ∧ worstTerms (shorT 2) < 10 ^ 80 ∧ shorT 3 = 756 ∧ worstTerms (shorT 3) > 10 ^ 80",
+    "identifier": "lean_tcountwall_the_pauli_path_worst_case_passes_ten_to_the_eighty_at_three_bits",
+    "receipt": "4a4b27f1-68eb-8a0e-988b-f5372471e71e",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_tcountwall_the_pauli_path_worst_case_passes_ten_to_the_eighty_at_three_bits",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "TCountWall"
+    },
+    "wing": "the floor",
+    "source": "t_count_wall.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 26074,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_floors_modulus_two_to_the_999_plus_one_has_exactly_a_thousand_bits",
+    "description": "2 ^ 999 ≤ 2 ^ 999 + 1 ∧ 2 ^ 999 + 1 < 2 ^ 1000 ∧ shorT 1000 = 7 * 4 * 1000 ^ 3",
+    "identifier": "lean_tcountwall_the_floors_modulus_two_to_the_999_plus_one_has_exactly_a_thousand_bits",
+    "receipt": "485ac139-235c-853c-844e-d3f9567703bb",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_tcountwall_the_floors_modulus_two_to_the_999_plus_one_has_exactly_a_thousand_bits",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "TCountWall"
+    },
+    "wing": "the floor",
+    "source": "t_count_wall.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 26075,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "the_bound_depends_on_the_t_count_and_not_on_the_width",
+    "description": "(List.range 9).all (fun t => cost t 2 == cost t 2003 && cost (t + 1) 2003 == 2 * cost t 2003) ∧ cost 0 2003 = 1",
+    "identifier": "lean_tcountwall_the_bound_depends_on_the_t_count_and_not_on_the_width",
+    "receipt": "8679077f-79c6-8c19-a9ad-ab0c3af61881",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_tcountwall_the_bound_depends_on_the_t_count_and_not_on_the_width",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "TCountWall"
+    },
+    "wing": "the floor",
+    "source": "t_count_wall.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 26076,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "a_constant_factor_saving_leaves_the_t_count_cubic",
+    "description": "(List.range' 1 64).all (fun n => shorT n / 2 * 2 == shorT n && shorT n / 4 * 4 == shorT n) ∧ shorT 1000 / 4 > 10 ^ 9 ∧ shorT 1000 / 2 > 10 ^ 9",
+    "identifier": "lean_tcountwall_a_constant_factor_saving_leaves_the_t_count_cubic",
+    "receipt": "a825e054-080a-829c-b70f-ecad5e1c04c6",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_tcountwall_a_constant_factor_saving_leaves_the_t_count_cubic",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "TCountWall"
+    },
+    "wing": "the floor",
+    "source": "t_count_wall.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 26077,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "name": "a_one_bit_instance_is_within_reach_and_the_thousand_bit_one_is_not",
+    "description": "shorT 1 = 28 ∧ worstTerms (shorT 1) < 10 ^ 9 ∧ shorT 1000 = shorT 1 * 10 ^ 9",
+    "identifier": "lean_tcountwall_a_one_bit_instance_is_within_reach_and_the_thousand_bit_one_is_not",
+    "receipt": "a10154db-4b4d-85e1-921f-9bd6841348e7",
+    "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_tcountwall_a_one_bit_instance_is_within_reach_and_the_thousand_bit_one_is_not",
+    "about": {
+     "@type": "DefinedTerm",
+     "name": "TCountWall"
+    },
+    "wing": "the floor",
+    "source": "t_count_wall.lean",
+    "proof": "by exhaustion"
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 26078,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_mirror_and_the_doubling_agree_at_no_residue",
@@ -470464,7 +470768,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26063,
+   "position": 26079,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "confirming_a_witness_is_uniform_while_finding_one_is_not",
@@ -470483,7 +470787,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26064,
+   "position": 26080,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_start_ever_crosses_between_the_units_and_the_non_units",
@@ -470502,7 +470806,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26065,
+   "position": 26081,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_origin_is_reached_at_every_step_exactly_by_the_origin",
@@ -470521,7 +470825,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26066,
+   "position": 26082,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "generating_the_same_set_is_exactly_being_of_the_same_kind",
@@ -470540,7 +470844,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26067,
+   "position": 26083,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_is_antipodal_and_each_opposite_pair_sums_to_nine",
@@ -470559,7 +470863,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26068,
+   "position": 26084,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_has_no_doubling_closed_part_but_nothing_and_itself",
@@ -470578,7 +470882,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26069,
+   "position": 26085,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_pairing_is_one_ordering_of_seven_out_of_all_of_them",
@@ -470597,7 +470901,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26070,
+   "position": 26086,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_thousand_bit_case_is_one_hundred_twenty_five_octaves",
@@ -470616,7 +470920,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26071,
+   "position": 26087,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_binary_units_tile_the_thousand_exactly",
@@ -470635,7 +470939,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26072,
+   "position": 26088,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_thousand_is_the_cube_octave_times_pentagram_cubed",
@@ -470654,7 +470958,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26073,
+   "position": 26089,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_thousand_carries_residue_one_mod_nine",
@@ -470673,7 +470977,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26074,
+   "position": 26090,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_thousand_bit_case_overflows_the_width_thirty_two_ceiling",
@@ -470692,7 +470996,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26075,
+   "position": 26091,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_minimal_register_for_the_thousand_is_width_thirty_three",
@@ -470711,7 +471015,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26076,
+   "position": 26092,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_thousand_fills_between_ninety_seven_and_ninety_eight_percent_of_its_register",
@@ -470730,7 +471034,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26077,
+   "position": 26093,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_thousand_bit_structure_is_decided_not_a_quantum_machine",
@@ -470749,7 +471053,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26078,
+   "position": 26094,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_returns_in_six_two_or_one",
@@ -470768,7 +471072,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26079,
+   "position": 26095,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_long_loop_is_the_span_and_the_short_one_is_the_triad_pair",
@@ -470787,7 +471091,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26080,
+   "position": 26096,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "both_loops_complete_three_hundred_and_sixty_degrees",
@@ -470806,7 +471110,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26081,
+   "position": 26097,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "three_steps_of_the_long_loop_are_one_step_of_the_short",
@@ -470825,7 +471129,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26082,
+   "position": 26098,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbits_are_disjoint_and_cover_the_ring",
@@ -470844,7 +471148,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26083,
+   "position": 26099,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reflection_leaves_four_loops_on_the_same_ring",
@@ -470863,7 +471167,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26084,
+   "position": 26100,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_orbit_fails_to_return_under_either_map",
@@ -470882,7 +471186,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26085,
+   "position": 26101,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_genus_is_the_definition_applied_to_the_count",
@@ -470901,7 +471205,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26086,
+   "position": 26102,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_input_receives_one_of_the_five_verdicts",
@@ -470920,7 +471224,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26087,
+   "position": 26103,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_five_classes_do_not_overlap",
@@ -470939,7 +471243,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26088,
+   "position": 26104,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_source_going_silent_never_cleans_the_verdict",
@@ -470958,7 +471262,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26089,
+   "position": 26105,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_clean_verdict_is_reachable_only_from_complete_evidence",
@@ -470977,7 +471281,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26090,
+   "position": 26106,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_relevant_hit_outranks_any_amount_of_silence",
@@ -470996,7 +471300,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26091,
+   "position": 26107,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "all_five_verdicts_occur",
@@ -471015,7 +471319,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26092,
+   "position": 26108,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "too_few_terms_precedes_every_other_test",
@@ -471034,7 +471338,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26093,
+   "position": 26109,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_rule_is_decided_and_the_search_quality_is_not",
@@ -471053,7 +471357,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26094,
+   "position": 26110,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_register_at_each_width",
@@ -471072,7 +471376,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26095,
+   "position": 26111,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_grover_exponent_at_each_width",
@@ -471091,7 +471395,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26096,
+   "position": 26112,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_iso_floor_is_cleared_exactly_from_width_sixteen",
@@ -471110,7 +471414,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26097,
+   "position": 26113,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "clearing_the_floor_is_two_hundred_fifty_six_free_bits",
@@ -471129,7 +471433,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26098,
+   "position": 26114,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_uuid_is_width_four_and_sits_sixty_seven_below",
@@ -471148,7 +471452,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26099,
+   "position": 26115,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_register_grows_strictly_with_the_width",
@@ -471167,7 +471471,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26100,
+   "position": 26116,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "clearing_the_floor_needs_a_cost_exponent_of_at_least_256",
@@ -471186,7 +471490,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26101,
+   "position": 26117,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_cost_exponent_is_more_than_the_square_root_exponent_at_every_width",
@@ -471205,7 +471509,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26102,
+   "position": 26118,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_uuid_width_is_one_fact_in_two_units",
@@ -471224,7 +471528,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26103,
+   "position": 26119,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "bytes_to_bits_and_back_is_the_identity",
@@ -471243,7 +471547,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26104,
+   "position": 26120,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_key_doubles_the_identifier_and_the_signature_doubles_the_key",
@@ -471262,7 +471566,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26105,
+   "position": 26121,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_doubling_survives_the_conversion",
@@ -471281,7 +471585,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26106,
+   "position": 26122,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_key_and_the_signature_together_are_six_identifiers",
@@ -471300,7 +471604,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26107,
+   "position": 26123,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_other_width_converts_to_this_container",
@@ -471319,7 +471623,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26108,
+   "position": 26124,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_constants_are_instances_of_the_law_and_not_the_law",
@@ -471338,7 +471642,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26109,
+   "position": 26125,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_binding_is_consistency_and_not_derivation",
@@ -471357,7 +471661,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26110,
+   "position": 26126,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_payload_and_the_check_exhaust_the_free_bits",
@@ -471376,7 +471680,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26111,
+   "position": 26127,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_check_is_exactly_what_the_payload_does_not_take",
@@ -471395,7 +471699,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26112,
+   "position": 26128,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "splitting_a_width_is_undone_by_either_part",
@@ -471414,7 +471718,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26113,
+   "position": 26129,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reserving_and_freeing_are_inverse_at_every_width",
@@ -471433,7 +471737,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26114,
+   "position": 26130,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "one_more_bit_doubles_the_space_at_every_width",
@@ -471452,7 +471756,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26115,
+   "position": 26131,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_space_recovers_the_width_it_came_from",
@@ -471471,7 +471775,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26116,
+   "position": 26132,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_unit_conversion_is_a_bijection_on_multiples_of_eight",
@@ -471490,7 +471794,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26117,
+   "position": 26133,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_laws_separate_widths_rather_than_collapsing_them",
@@ -471509,7 +471813,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26118,
+   "position": 26134,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fitting_is_the_order_and_not_fitting_is_its_negation",
@@ -471528,7 +471832,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26119,
+   "position": 26135,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_gap_is_what_is_left_and_adding_it_back_returns",
@@ -471547,7 +471851,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26120,
+   "position": 26136,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_identifier_holds_neither_the_key_nor_the_signature",
@@ -471566,7 +471870,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26121,
+   "position": 26137,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_conversion_carries_the_containment",
@@ -471585,7 +471889,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26122,
+   "position": 26138,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_gap_between_payload_and_check_is_their_difference",
@@ -471604,7 +471908,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26123,
+   "position": 26139,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "a_gap_in_bits_is_a_factor_in_space",
@@ -471623,7 +471927,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26124,
+   "position": 26140,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_laws_separate_the_order_rather_than_collapsing_it",
@@ -471642,7 +471946,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26125,
+   "position": 26141,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "truncation_reports_no_gap_where_the_order_reverses",
@@ -471661,7 +471965,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26126,
+   "position": 26142,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "units_are_six",
@@ -471680,7 +471984,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26127,
+   "position": 26143,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "units_count",
@@ -471699,7 +472003,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26128,
+   "position": 26144,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "hasinv_units",
@@ -471718,7 +472022,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26129,
+   "position": 26145,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "hasinv_triad_not",
@@ -471737,7 +472041,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26130,
+   "position": 26146,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "selfinv_exactly_one_and_eight",
@@ -471756,7 +472060,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26131,
+   "position": 26147,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "euler_units_pow_six",
@@ -471775,7 +472079,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26132,
+   "position": 26148,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "invpow_is_u_to_the_fifth",
@@ -471794,7 +472098,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26133,
+   "position": 26149,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "powsum_zero_at_six",
@@ -471813,7 +472117,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26134,
+   "position": 26150,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "powsum_zero_at_one",
@@ -471832,7 +472136,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26135,
+   "position": 26151,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "mulperm_iff_unit",
@@ -471851,7 +472155,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26136,
+   "position": 26152,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "addgen_iff_coprime",
@@ -471870,7 +472174,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26137,
+   "position": 26153,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "selfneg_only_zero",
@@ -471889,7 +472193,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26138,
+   "position": 26154,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_is_the_six",
@@ -471908,7 +472212,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26139,
+   "position": 26155,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_closes",
@@ -471927,7 +472231,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26140,
+   "position": 26156,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_distinct",
@@ -471946,7 +472250,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26141,
+   "position": 26157,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_covers_units",
@@ -471965,7 +472269,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26142,
+   "position": 26158,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_step_is_read_back_by_its_log",
@@ -471984,7 +472288,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26143,
+   "position": 26159,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "triad_never_reaches_one",
@@ -472003,7 +472307,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26144,
+   "position": 26160,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "triad_squares_vanish",
@@ -472022,7 +472326,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26145,
+   "position": 26161,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "add_group",
@@ -472041,7 +472345,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26146,
+   "position": 26162,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "neg_involution",
@@ -472060,7 +472364,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26147,
+   "position": 26163,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_repeats_every_six",
@@ -472079,7 +472383,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26148,
+   "position": 26164,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_is_its_exponent_mod_six",
@@ -472098,7 +472402,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26149,
+   "position": 26165,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_step_is_read_back_by_its_log_for_every_k",
@@ -472117,7 +472421,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26150,
+   "position": 26166,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "squares_land_exactly_in_zero_one_four_seven",
@@ -472136,7 +472440,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26151,
+   "position": 26167,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "five_is_not_a_square_mod_nine",
@@ -472155,7 +472459,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26152,
+   "position": 26168,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "cubes_land_exactly_in_zero_one_eight",
@@ -472174,7 +472478,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26153,
+   "position": 26169,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "primitive_roots_are_exactly_two_and_five",
@@ -472193,7 +472497,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26154,
+   "position": 26170,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "primitive_root_iff_generates_the_units",
@@ -472212,7 +472516,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26155,
+   "position": 26171,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_has_period_six",
@@ -472231,7 +472535,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26156,
+   "position": 26172,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_period_smaller_than_six",
@@ -472250,7 +472554,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26157,
+   "position": 26173,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_agrees_with_the_residue",
@@ -472269,7 +472573,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26158,
+   "position": 26174,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_is_the_digit_sum_residue",
@@ -472288,7 +472592,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26159,
+   "position": 26175,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_cannot_change_the_digital_root",
@@ -472307,7 +472611,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26160,
+   "position": 26176,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_digital_roots_have_period_six",
@@ -472326,7 +472630,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26161,
+   "position": 26177,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orders_of_the_units_are_exact",
@@ -472345,7 +472649,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26162,
+   "position": 26178,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_unit_table_is_a_latin_square",
@@ -472364,7 +472668,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26163,
+   "position": 26179,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_never_meets_the_triad",
@@ -472383,7 +472687,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26164,
+   "position": 26180,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reflected_orbit_covers_the_whole_triad",
@@ -472402,7 +472706,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26165,
+   "position": 26181,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reflection_splits_the_orbit_in_half",
@@ -472421,7 +472725,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26166,
+   "position": 26182,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_crossing_pairs_are_one_four_seven",
@@ -472440,7 +472744,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26167,
+   "position": 26183,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reflection_is_injective_on_the_orbit",
@@ -472459,7 +472763,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26168,
+   "position": 26184,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_alone_reaches_only_the_units",
@@ -472478,7 +472782,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26169,
+   "position": 26185,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reflection_alone_reaches_only_two",
@@ -472497,7 +472801,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26170,
+   "position": 26186,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_and_reflection_together_reach_every_residue",
@@ -472516,7 +472820,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26171,
+   "position": 26187,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "every_residue_is_reachable_from_one",
@@ -472535,7 +472839,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26172,
+   "position": 26188,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_diameter_is_exactly_four",
@@ -472554,7 +472858,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26173,
+   "position": 26189,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_frontier_grows_by_two_each_round",
@@ -472573,7 +472877,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26174,
+   "position": 26190,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "product_of_the_units_is_minus_one",
@@ -472592,7 +472896,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26175,
+   "position": 26191,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "pisano_period_mod_nine_is_twenty_four",
@@ -472611,7 +472915,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26176,
+   "position": 26192,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "no_proper_divisor_of_twenty_four_is_a_period",
@@ -472630,7 +472934,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26177,
+   "position": 26193,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fibonacci_recurrence_holds",
@@ -472649,7 +472953,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26178,
+   "position": 26194,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "consecutive_fibonacci_are_coprime",
@@ -472668,7 +472972,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26179,
+   "position": 26195,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "three_five_eight_are_consecutive_fibonacci",
@@ -472687,7 +472991,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26180,
+   "position": 26196,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "units_and_triad_partition_the_ring",
@@ -472706,7 +473010,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26181,
+   "position": 26197,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "both_parts_sum_to_zero",
@@ -472725,7 +473029,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26182,
+   "position": 26198,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "doubling_has_period_six_for_every_k",
@@ -472744,7 +473048,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26183,
+   "position": 26199,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "orbit_digital_roots_have_period_six_for_every_k",
@@ -472763,7 +473067,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26184,
+   "position": 26200,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_doubling_orbit_is_read_from_the_exponent_mod_six",
@@ -472782,7 +473086,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26185,
+   "position": 26201,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_orbit_never_meets_the_triad_for_every_k",
@@ -472801,7 +473105,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26186,
+   "position": 26202,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "fibonacci_residues_mod_nine_repeat_every_twenty_four_steps",
@@ -472820,7 +473124,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26187,
+   "position": 26203,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "pisano_period_mod_nine_is_twenty_four_for_every_k",
@@ -472839,7 +473143,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26188,
+   "position": 26204,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument",
@@ -472858,7 +473162,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26189,
+   "position": 26205,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "consecutive_fibonacci_numbers_are_coprime",
@@ -472877,7 +473181,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26190,
+   "position": 26206,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "consecutive_fibonacci_are_coprime_for_every_n",
@@ -472896,7 +473200,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26191,
+   "position": 26207,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_agrees_with_the_residue_for_every_n",
@@ -472915,7 +473219,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26192,
+   "position": 26208,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "digital_root_is_the_digit_sum_residue_for_every_n",
@@ -472934,7 +473238,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26193,
+   "position": 26209,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_undoes_doubling_at_every_step",
@@ -472953,7 +473257,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26194,
+   "position": 26210,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_has_period_six_for_every_k",
@@ -472972,7 +473276,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26195,
+   "position": 26211,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "halving_orbit_digital_roots_have_period_six_for_every_k",
@@ -472991,7 +473295,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26196,
+   "position": 26212,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k",
@@ -473010,7 +473314,7 @@
   },
   {
    "@type": "ListItem",
-   "position": 26197,
+   "position": 26213,
    "item": {
     "@type": "ScholarlyArticle",
     "name": "reversal_cannot_change_the_digital_root_for_every_n",

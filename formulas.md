@@ -6,10 +6,10 @@ description: Every formula this deposit decides, as a schema.org ItemList, filte
 
 # Formulas
 
-26197 formulas, each the proposition the Lean 4 kernel accepted, character for character.
-25987 decided by exhaustion over a finite domain,
+26213 formulas, each the proposition the Lean 4 kernel accepted, character for character.
+26003 decided by exhaustion over a finite domain,
 210 proved for every value,
-26197 carrying a live ledger key.
+26213 carrying a live ledger key.
 
 The data is **[public/formulas.jsonld](/formulas.jsonld)** — one schema.org `ItemList` of
 `ScholarlyArticle`, the same structured data every theorem page carries. This page renders that file
