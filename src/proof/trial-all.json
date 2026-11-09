@@ -171598,5 +171598,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "e037d2bb-d19b-8a9a-8b66-85a14d8b7e87"
+  },
+  {
+    "key": "lean_qpufold_the_transcribed_fold_step_reproduces_qpus_output",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "33f70f24-dfa3-8e81-948b-b9798994bb70"
+  },
+  {
+    "key": "lean_qpufold_the_fold_state_is_four_sixteen_bit_limbs_so_sixty_four_bits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "42f70eaa-eab5-86ce-b1de-51b260260713"
+  },
+  {
+    "key": "lean_qpufold_the_coin_depends_only_on_the_state_so_distinct_texts_share_it",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f9b415f5-3cdc-8c3d-ad4e-e499972bdd9e"
+  },
+  {
+    "key": "lean_qpufold_a_narrow_fold_reaches_few_of_the_layouts_addresses",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ba7a41f8-9112-84ab-9bd1-fa02ba52c14a"
+  },
+  {
+    "key": "lean_qpufold_two_independent_fields_reach_every_address_so_the_fold_is_the_cap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "45a6b14e-7b38-8086-8d2a-2d14830b6a4f"
+  },
+  {
+    "key": "lean_qpufold_more_texts_than_states_force_a_coin_collision",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0627b471-b8c0-84d6-80fa-78f4ad41640e"
+  },
+  {
+    "key": "lean_qpufold_the_real_fold_is_sixty_four_bits_against_the_hundred_twenty_two_bit_layout",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dd520b70-7d08-8b22-8936-0f97a326f4f5"
+  },
+  {
+    "key": "lean_qpufold_the_search_floor_is_the_fold_width_not_the_layout_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "af6a8c7d-9084-8b32-bfd0-a1af4659aab3"
   }
 ]
