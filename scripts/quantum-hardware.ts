@@ -13,7 +13,7 @@
 // backend configuration fields, and the result encoding. An answer this file cannot decode is written as UNDECODED
 // with its raw shape — never guessed into counts.
 import { mkdirSync, writeFileSync } from 'node:fs'
-import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, chshVerdict, countsOf, type Counts } from '../src/quantum/hardware.ts'
+import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, chshVerdict, countsOf, type MeasurementCounts } from '../src/quantum/hardware.ts'
 
 const HW = ACCEPTED_HARDWARE.find((h) => h.name === 'ibm-quantum')!
 const OUT = 'evidence/quantum-hardware'
@@ -98,7 +98,7 @@ if (perSetting.length !== SETTINGS.length || perSetting.some((v: number[] | null
   console.log(JSON.stringify({ status: 'UNDECODED', job: jobId, note: `raw shape written to ${OUT}/latest.json` }))
   process.exit(1)
 }
-const counts: Counts[] = perSetting.map((v: number[]) => countsOf(v))
+const counts: MeasurementCounts[] = perSetting.map((v: number[]) => countsOf(v))
 const verdict = chshVerdict(counts)
 const receipt = { ...base, status: verdict.exceedsClassical ? 'QUANTUM_HARDWARE' : 'NOT_ABOVE_CLASSICAL', S: verdict.S, exceedsClassical: verdict.exceedsClassical, counts, shots: verdict.shots, qubits: pair }
 writeFileSync(`${OUT}/${jobId}.json`, JSON.stringify(receipt, null, 1) + '\n')

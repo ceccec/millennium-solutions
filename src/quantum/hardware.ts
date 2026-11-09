@@ -18,7 +18,8 @@
 // and spends the depositor's QPU minutes, so accepted hardware is its own registry and that decision stays visible.
 // No fetch is reachable from this module; the run lives in scripts/quantum-hardware.ts.
 
-export type QuantumHardware = {
+/** an ISO/IEC 4879 §3.4.10 quantum computer this deposit accepts runs on — somebody else's tangible device */
+export type AcceptedQuantumComputer = {
   name: string
   /** Whose system it is. Every one belongs to somebody else. */
   attribution: string
@@ -34,7 +35,7 @@ export type QuantumHardware = {
   notFor: string
 }
 
-export const ACCEPTED_HARDWARE: readonly QuantumHardware[] = [
+export const ACCEPTED_HARDWARE: readonly AcceptedQuantumComputer[] = [
   {
     name: 'ibm-quantum',
     attribution: 'IBM Quantum Platform (quantum.cloud.ibm.com), Qiskit Runtime REST API, under IBM\'s terms of use',
@@ -50,13 +51,16 @@ export const ACCEPTED_HARDWARE: readonly QuantumHardware[] = [
 // Native gates only (rz, sx, cz), because the provider runs circuits as written for its device. The same gate list is
 // emitted as OpenQASM 3 and simulated by the test, so the circuit that is sent is the circuit that was checked.
 
-export type Gate = { g: 'rz'; q: 0 | 1; angle: number } | { g: 'sx'; q: 0 | 1 } | { g: 'cz' }
+/** ISO/IEC 4879 §3.4.2 quantum gate, in the device's native set */
+export type QuantumGate = { g: 'rz'; q: 0 | 1; angle: number } | { g: 'sx'; q: 0 | 1 } | { g: 'cz' }
+/** ISO/IEC 4879 §3.4.5 quantum circuit: a sequence of quantum gates (measurement is appended by toQasm) */
+export type QuantumCircuit = readonly QuantumGate[]
 
 const PI = Math.PI
 /** H, up to global phase: RZ(π/2)·SX·RZ(π/2). */
-const h = (q: 0 | 1): Gate[] => [{ g: 'rz', q, angle: PI / 2 }, { g: 'sx', q }, { g: 'rz', q, angle: PI / 2 }]
+const h = (q: 0 | 1): QuantumGate[] => [{ g: 'rz', q, angle: PI / 2 }, { g: 'sx', q }, { g: 'rz', q, angle: PI / 2 }]
 /** RY(φ), up to global phase, applied left to right: RZ(−π), SX, RZ(π − φ), SX. */
-const ry = (q: 0 | 1, phi: number): Gate[] => [{ g: 'rz', q, angle: -PI }, { g: 'sx', q }, { g: 'rz', q, angle: PI - phi }, { g: 'sx', q }]
+const ry = (q: 0 | 1, phi: number): QuantumGate[] => [{ g: 'rz', q, angle: -PI }, { g: 'sx', q }, { g: 'rz', q, angle: PI - phi }, { g: 'sx', q }]
 
 /** The four CHSH settings: Alice measures along 0 or π/2 in the XZ plane, Bob along π/4 or −π/4. Sign −1 on the last. */
 export const SETTINGS = [
@@ -67,10 +71,10 @@ export const SETTINGS = [
 ] as const
 
 /** Bell pair (H, then CX as H·CZ·H), then each side rotated so a Z measurement reads its setting's axis. */
-export const chshGates = (s: { a: number; b: number }): Gate[] => [...h(0), ...h(1), { g: 'cz' }, ...h(1), ...ry(0, -s.a), ...ry(1, -s.b)]
+export const chshGates = (s: { a: number; b: number }): QuantumCircuit => [...h(0), ...h(1), { g: 'cz' }, ...h(1), ...ry(0, -s.a), ...ry(1, -s.b)]
 
 /** OpenQASM 3 on two physical qubits. c[0] is Alice (p), c[1] is Bob (q). */
-export const toQasm = (gates: readonly Gate[], p: number, q: number): string => {
+export const toQasm = (gates: QuantumCircuit, p: number, q: number): string => {
   const at = (i: 0 | 1) => `$${i === 0 ? p : q}`
   const body = gates.map((x) => (x.g === 'cz' ? `cz ${at(0)}, ${at(1)};` : x.g === 'sx' ? `sx ${at(x.q)};` : `rz(${x.angle}) ${at(x.q)};`))
   return ['OPENQASM 3.0;', 'include "stdgates.inc";', 'bit[2] c;', ...body, `c[0] = measure ${at(0)};`, `c[1] = measure ${at(1)};`].join(' ')
@@ -81,9 +85,10 @@ export const toQasm = (gates: readonly Gate[], p: number, q: number): string => 
 // S > 2  ⇔  Σ sign_i · D_i · Π_{j≠i} N_j  >  2 · Π N_j, which BigInt decides with no rounding anywhere. The same rule,
 // its one-count controls on both sides of 2, and the classical bound itself are sealed in src/proof/quantum_hardware.lean.
 
-export type Counts = { n00: number; n01: number; n10: number; n11: number }
+/** ISO/IEC 4879 §3.2.16 quantum measurement, as the counts of its four two-bit outcomes */
+export type MeasurementCounts = { n00: number; n01: number; n10: number; n11: number }
 
-export const chshVerdict = (counts: readonly Counts[]): { S: number; exceedsClassical: boolean; shots: number[] } => {
+export const chshVerdict = (counts: readonly MeasurementCounts[]): { S: number; exceedsClassical: boolean; shots: number[] } => {
   if (counts.length !== SETTINGS.length) throw new Error(`CHSH needs ${SETTINGS.length} settings, got ${counts.length}`)
   const D = counts.map((c) => BigInt(c.n00 + c.n11 - c.n01 - c.n10))
   const N = counts.map((c) => BigInt(c.n00 + c.n01 + c.n10 + c.n11))
@@ -104,7 +109,7 @@ const add = (a: C, b: C): C => [a[0] + b[0], a[1] + b[1]]
 const ONE_GATE: Record<'sx', [C, C, C, C]> = { sx: [[0.5, 0.5], [0.5, -0.5], [0.5, -0.5], [0.5, 0.5]] }
 
 /** Probabilities of c = 00, 01, 10, 11 as [p(a=0,b=0), p(a=0,b=1), p(a=1,b=0), p(a=1,b=1)]. Index bit 0 = qubit 0. */
-export const simulate = (gates: readonly Gate[]): [number, number, number, number] => {
+export const simulate = (gates: QuantumCircuit): [number, number, number, number] => {
   let s: C[] = [[1, 0], [0, 0], [0, 0], [0, 0]]
   for (const x of gates) {
     if (x.g === 'cz') { s = s.map((v, i) => (i === 3 ? [-v[0], -v[1]] : v)); continue }
@@ -203,9 +208,9 @@ export const cluster = (n: number): { n: number; stabilizers: string[]; isCluste
   return { n, stabilizers, isCluster: stabilizers.every((s, j) => s === want(j)), commute }
 }
 
-/** Counts from per-shot register values, bit 0 = c[0] (Alice), bit 1 = c[1] (Bob). */
-export const countsOf = (values: readonly number[]): Counts => {
+/** Measurement counts from per-shot register values, bit 0 = c[0] (Alice), bit 1 = c[1] (Bob). */
+export const countsOf = (values: readonly number[]): MeasurementCounts => {
   const c = { n00: 0, n01: 0, n10: 0, n11: 0 }
-  for (const v of values) c[`n${v & 1}${(v >> 1) & 1}` as keyof Counts]++
+  for (const v of values) c[`n${v & 1}${(v >> 1) & 1}` as keyof MeasurementCounts]++
   return c
 }

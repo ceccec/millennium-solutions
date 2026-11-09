@@ -5,11 +5,12 @@
 // device verdict is the receipt scripts/quantum-hardware.ts wrote from the provider's job, or the plain fact that no
 // run exists yet. This loader only reshapes them for the page; it mints no claim.
 import { existsSync, readFileSync } from 'node:fs'
-import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, simulate, mermin, cluster, type QuantumHardware } from '../../src/quantum/hardware.ts'
+import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, simulate, mermin, cluster, type AcceptedQuantumComputer } from '../../src/quantum/hardware.ts'
 import { leanTheorems, ledger } from '../../src/api/index.ts'
+import { TERMS } from '../../src/quantum/terminology.ts'
 
 export interface HardwareData {
-  accepted: readonly QuantumHardware[]
+  accepted: readonly AcceptedQuantumComputer[]
   settings: { a: string; b: string; sign: number; qasm: string; idealE: number }[]
   idealS: number
   run: Record<string, unknown> | null
@@ -19,6 +20,8 @@ export interface HardwareData {
   octaves: { n: number; quantum: number; classical: number; lead: number; sealed: boolean }[]
   /** the 124-qubit linear cluster: its stabilizers propagated through every CZ */
   cluster124: { generators: number; isCluster: boolean; commute: boolean; middle: string }
+  /** every ISO/IEC 4879 clause realised here, with its coin; a Lean realisation is checked against the kernel's records */
+  terms: { clause: string; term: string; realisedBy: string; coin: string; leanOk: boolean }[]
 }
 
 const MODEL_FILES = ['quantum_circuits.lean', 'quantum_models.lean', 'quantum_textbooks.lean', 'quantum_octaves.lean', 'quantum_octave_128.lean', 'quantum_octave_124.lean', 'quantum_uuid_cluster.lean', 'quantum_hardware.lean']
@@ -52,6 +55,14 @@ export default {
         return { n, quantum: log2(m.quantum), classical: log2(m.classical), lead: log2(m.lead), sealed: true }
       }),
       cluster124: (() => { const c = cluster(124); return { generators: c.stabilizers.length, isCluster: c.isCluster, commute: c.commute, middle: c.stabilizers[62].replace(/^I+|I+$/g, '') } })(),
+      terms: (() => {
+        const files = new Set((leanTheorems() as { file: string }[]).map((t) => t.file))
+        return TERMS.map((t) => ({
+          clause: t.clause, term: t.term, coin: t.coin,
+          realisedBy: t.realisedBy.map((r) => (r.kind === 'lean' ? r.name : `${r.name}${r.kind === 'function' ? '()' : ''}`)).join(', '),
+          leanOk: t.realisedBy.every((r) => r.kind !== 'lean' || files.has(r.name)),
+        }))
+      })(),
     }
   },
 }

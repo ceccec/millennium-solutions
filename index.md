@@ -215,6 +215,8 @@ Every quantum computing model ISO/IEC 4879 names is decided at its known optimum
 
 The **124-qubit cluster state** — the UUID minus its version hex digit — has 124 stabilizers, propagated through every CZ by a Pauli tableau: each is Z·X·Z on its neighbourhood and they all commute. Stabilizer states are exactly what a classical computer describes in polynomial time (Gottesman–Knill), which is why 128 qubits fit here — and why only a device's measured counts, never this computation, make "hardware" true.
 
+**Terminology.** The types are named by the standard's terms (`QuantumGate` §3.4.2, `QuantumCircuit` §3.4.5, `MeasurementCounts` §3.2.16, `AcceptedQuantumComputer` §3.4.10), and the 23 ISO/IEC 4879 clauses realised here are listed once in `src/quantum/terminology.ts`, each with what realises it and its coin — the content address of its clause and term — on [/hardware](/hardware).
+
 ## 1 · What is proved
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".

@@ -8,6 +8,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { leanTheorems, ledger, domainOf } from '../api/index.ts'
 import { ACCEPTED_HARDWARE, mermin, cluster } from './hardware.ts'
+import { TERMS } from './terminology.ts'
 
 /** theorem → [ISO/IEC 4879 clause or role, bound] */
 const BOUNDS: Record<string, [string, string]> = {
@@ -71,5 +72,9 @@ export const hardwareSection = (): string => {
     + `and ${c.commute ? 'they all commute' : 'they do NOT all commute'}. Stabilizer states are exactly what a classical `
     + `computer describes in polynomial time (Gottesman–Knill), which is why 128 qubits fit here — and why only a device's `
     + `measured counts, never this computation, make "hardware" true.\n\n`
+  md += `**Terminology.** The types are named by the standard's terms (\`QuantumGate\` §3.4.2, \`QuantumCircuit\` §3.4.5, `
+    + `\`MeasurementCounts\` §3.2.16, \`AcceptedQuantumComputer\` §3.4.10), and the ${TERMS.length} ISO/IEC 4879 clauses `
+    + `realised here are listed once in \`src/quantum/terminology.ts\`, each with what realises it and its coin — the content `
+    + `address of its clause and term — on [/hardware](/hardware).\n\n`
   return md
 }

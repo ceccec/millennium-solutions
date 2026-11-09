@@ -97,6 +97,15 @@ The Bell test doubles: on n qubits the GHZ state reaches Mermin's value 2ⁿ⁻�
 
 At 2 qubits there is no Mermin lead — that octave's Bell test is CHSH, above. **The 124-qubit cluster** (|+⟩ on every qubit, CZ on every neighbour) has {{ data.cluster124.generators }} stabilizers, propagated through every CZ by a Pauli tableau — sealed in `quantum_uuid_cluster.lean`, beside a no-chain and a ring control: each is <code>{{ data.cluster124.middle }}</code> on its neighbourhood ({{ data.cluster124.isCluster ? 'all of them' : 'NOT all' }}), and they {{ data.cluster124.commute ? 'all commute' : 'do NOT all commute' }} — the state the one-way model computes on.
 
+## The terminology, as coins
+
+The types are named by the standard's own terms — `QuantumGate` §3.4.2, `QuantumCircuit` §3.4.5, `MeasurementCounts` §3.2.16, `AcceptedQuantumComputer` §3.4.10 — and every ISO/IEC 4879 clause realised here is listed once, in `src/quantum/terminology.ts`, with what realises it and its coin: the content address of the clause number and term, which any reader recomputes with no key.
+
+<table>
+<thead><tr><th>Clause</th><th>Term</th><th>Realised by</th><th>Coin</th></tr></thead>
+<tbody><tr v-for="t in data.terms" :key="t.clause"><td>§{{ t.clause }}</td><td>{{ t.term }}</td><td><code>{{ t.realisedBy }}</code>{{ t.leanOk ? '' : ' — a named Lean file is missing' }}</td><td><code>{{ t.coin.slice(0, 8) }}</code></td></tr></tbody>
+</table>
+
 ## The textbooks, cross-verified
 
 qpu seals each textbook law's characteristic number as integers (`Qpu/Textbook.lean`). Each one is derived again here, independently, from the operators that produce it — and each matches:
