@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,189 of them across 122 files and
-8 wings; 25,979 close by exhaustion over a stated finite domain, 210 are proved
+(\texttt{npm run latex-gate}). There are 26,197 of them across 123 files and
+8 wings; 25,987 close by exhaustion over a stated finite domain, 210 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2376,6 +2376,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{a\_classical\_mixture\_reaches\_the\_parity\_ghz\_never\_does}]
 \[ \left|\{\, n \in \{0,\dots,7\} \mid \mathrm{par3}\mathopen{}\left(n\right) = 1 \,\}\right| = 4 \land \forall n \in \{\, n \in \{0,\dots,7\} \mid \mathrm{par3}\mathopen{}\left(n\right) = 1 \,\},\; \lnot n \in \mathrm{ghzXSupport} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\paragraph{\texttt{quantum\_software.lean}}
+
+\begin{theorem}[\texttt{superdense\_coding\_sends\_two\_classical\_bits\_through\_one\_qubit}]
+\[ \forall m \in \{0,\dots,3\},\; \left|\mathrm{support}\mathopen{}\left(\mathrm{decode}\mathopen{}\left(\mathrm{encode}\mathopen{}\left(m,\,\mathrm{bell}\right)\right)\right)\right| = 1 \land \sum \mathrm{Int.natAbs}[\mathrm{decode}\mathopen{}\left(\mathrm{encode}\mathopen{}\left(m,\,\mathrm{bell}\right)\right)] = 2 \land \left|\operatorname{dedup}\left(\{\, \mathrm{support}\mathopen{}\left(\mathrm{decode}\mathopen{}\left(\mathrm{encode}\mathopen{}\left(m,\,\mathrm{bell}\right)\right)\right) \mid m \in \{0,\dots,3\} \,\}\right)\right| = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{without\_the\_shared\_pair\_one\_qubit\_carries\_only\_one\_bit}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{sq}\mathopen{}\left(\mathrm{decode}\mathopen{}\left(\mathrm{encode}\mathopen{}\left(m,\,[1,\,0,\,0,\,0]\right)\right)\right) \mid m \in \{0,\dots,3\} \,\}\right)\right| = 2 \land \left|\operatorname{dedup}\left(\{\, \mathrm{sq}\mathopen{}\left(\mathrm{decode}\mathopen{}\left(\mathrm{encode}\mathopen{}\left(m,\,\mathrm{bell}\right)\right)\right) \mid m \in \{0,\dots,3\} \,\}\right)\right| = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_bit\_flip\_code\_corrects\_every\_single\_bit\_flip\_on\_every\_state}]
+\[ \forall a \in \mathrm{range5},\; \forall b \in \mathrm{range5},\; \forall e \in \{0,\dots,3\},\; \mathrm{bitFix}\mathopen{}\left(\mathrm{bitErr}\mathopen{}\left(e,\,\mathrm{bitCode}\mathopen{}\left(a,\,b\right)\right)\right) = \mathrm{bitCode}\mathopen{}\left(a,\,b\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{two\_bit\_flips\_turn\_the\_correction\_into\_a\_logical\_error}]
+\[ \forall a \in \mathrm{range5},\; \forall b \in \mathrm{range5},\; \mathrm{bitFix}\mathopen{}\left(X\mathopen{}\left(0,\,X\mathopen{}\left(1,\,\mathrm{bitCode}\mathopen{}\left(a,\,b\right)\right)\right)\right) = \mathrm{bitCode}\mathopen{}\left(b,\,a\right) \land \mathrm{bitFix}\mathopen{}\left(X\mathopen{}\left(0,\,X\mathopen{}\left(1,\,\mathrm{bitCode}\mathopen{}\left(1,\,2\right)\right)\right)\right) \neq \mathrm{bitCode}\mathopen{}\left(1,\,2\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_phase\_flip\_code\_corrects\_every\_single\_phase\_flip\_on\_every\_state}]
+\[ \forall a \in \mathrm{range5},\; \forall b \in \mathrm{range5},\; \forall e \in \{0,\dots,3\},\; \mathrm{phaseFix}\mathopen{}\left(\mathrm{phaseErr}\mathopen{}\left(e,\,\mathrm{phaseCode}\mathopen{}\left(a,\,b\right)\right)\right) = \mathrm{phaseCode}\mathopen{}\left(a,\,b\right) \land \mathrm{bitFix}\mathopen{}\left(Z\mathopen{}\left(0,\,\mathrm{bitCode}\mathopen{}\left(1,\,2\right)\right)\right) \neq \mathrm{bitCode}\mathopen{}\left(1,\,2\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_toffoli\_gate\_is\_reversible\_and\_computes\_and\_which\_no\_affine\_circuit\_can}]
+\[ \forall i \in \{0,\dots,7\},\; \mathrm{CCX}\mathopen{}\left(0,\,1,\,2,\,\mathrm{CCX}\mathopen{}\left(0,\,1,\,2,\,\mathrm{basis}\mathopen{}\left(8,\,i\right)\right)\right) = \mathrm{basis}\mathopen{}\left(8,\,i\right) \land \forall a \in \{0,\dots,1\},\; \forall b \in \{0,\dots,1\},\; \mathrm{CCX}\mathopen{}\left(0,\,1,\,2,\,\mathrm{basis}\mathopen{}\left(8,\,a + 2 \cdot b\right)\right) = \mathrm{basis}\mathopen{}\left(8,\,a + 2 \cdot b + 4 \cdot a \cdot b\right) \land \forall c \in \{0,\dots,7\},\; \lnot \forall a \in \{0,\dots,1\},\; \forall b \in \{0,\dots,1\},\; \mathrm{bit}\mathopen{}\left(c,\,0\right) + \mathrm{bit}\mathopen{}\left(c,\,1\right) \cdot a + \mathrm{bit}\mathopen{}\left(c,\,2\right) \cdot b \bmod 2 = a \cdot b \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,024 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_swap\_test\_reads\_the\_squared\_overlap\_on\_every\_pair\_in\_range}]
+\texttt{range5.all (fun p0 => range5.all (fun p1 => range5.all (fun f0 => range5.all (fun f1 => let n := (p0 * p0 + p1 * p1) * (f0 * f0 + f1 * f1) let o := p0 * f0 + p1 * f1 weight (swapTest (pair p0 p1 f0 f1)) 0 == 2 * (n + o * o) \&\& weight (swapTest (pair p0 p1 f0 f1)) 1 == 2 * (n - o * o))))) ∧ weight (swapTest (pair 1 2 1 2)) 1 = 0 ∧ weight (swapTest (pair 1 0 0 1)) 0 = weight (swapTest (pair 1 0 0 1)) 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_compilers\_cnot\_and\_swap\_rewrites\_are\_exact\_and\_dropping\_a\_gate\_breaks\_them}]
+\[ \forall i \in \{0,\dots,3\},\; H\mathopen{}\left(1,\,\mathrm{CZ}\mathopen{}\left(0,\,1,\,H\mathopen{}\left(1,\,\mathrm{basis}\mathopen{}\left(4,\,i\right)\right)\right)\right) = \mathrm{scale}\mathopen{}\left(2,\,\mathrm{CX}\mathopen{}\left(0,\,1,\,\mathrm{basis}\mathopen{}\left(4,\,i\right)\right)\right) \land \forall i \in \{0,\dots,3\},\; \mathrm{CX}\mathopen{}\left(0,\,1,\,\mathrm{CX}\mathopen{}\left(1,\,0,\,\mathrm{CX}\mathopen{}\left(0,\,1,\,\mathrm{basis}\mathopen{}\left(4,\,i\right)\right)\right)\right) = \mathrm{basis}\mathopen{}\left(4,\,\mathrm{swapIdx}\mathopen{}\left(i,\,0,\,1\right)\right) \land \exists i \in \{0,\dots,3\} : \mathrm{CZ}\mathopen{}\left(0,\,1,\,H\mathopen{}\left(1,\,\mathrm{basis}\mathopen{}\left(4,\,i\right)\right)\right) \neq \mathrm{scale}\mathopen{}\left(2,\,\mathrm{CX}\mathopen{}\left(0,\,1,\,\mathrm{basis}\mathopen{}\left(4,\,i\right)\right)\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
 

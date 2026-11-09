@@ -150124,5 +150124,45 @@
     "key": "lean_qpufold_the_search_floor_is_the_fold_width_not_the_layout_width",
     "name": "lean qpu_fold.lean: the_search_floor_is_the_fold_width_not_the_layout_width — 32 * 2 = 64 ∧ 61 * 2 = 122 ∧ 2 ^ 32 * 2 ^ 32 = 2 ^ 64 ∧ 2 ^ 32 < 2 ^ 61 ∧ 2 ^ 61 < 2 ^ 122 ∧ 2 ^ 64 < 2 ^ 122 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "af6a8c7d-9084-8b32-bfd0-a1af4659aab3"
+  },
+  {
+    "key": "lean_quantumsoftware_superdense_coding_sends_two_classical_bits_through_one_qubit",
+    "name": "lean quantum_software.lean: superdense_coding_sends_two_classical_bits_through_one_qubit — (List.range 4).all (fun m => (support (decode (encode m bell))).length == 1 && ((decode (encode m bell)).map Int.natAbs).foldl (· + ·) 0 == 2) ∧ ((List.range 4).map (fun m => support (decode (encode m bell)))).eraseDups.length = 4 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5b5cd483-8cf1-8278-9ff5-f92397af7792"
+  },
+  {
+    "key": "lean_quantumsoftware_without_the_shared_pair_one_qubit_carries_only_one_bit",
+    "name": "lean quantum_software.lean: without_the_shared_pair_one_qubit_carries_only_one_bit — ((List.range 4).map (fun m => sq (decode (encode m [1, 0, 0, 0])))).eraseDups.length = 2 ∧ ((List.range 4).map (fun m => sq (decode (encode m bell)))).eraseDups.length = 4 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b0d33f75-900f-8203-8b9d-aff74d56baae"
+  },
+  {
+    "key": "lean_quantumsoftware_the_bit_flip_code_corrects_every_single_bit_flip_on_every_state",
+    "name": "lean quantum_software.lean: the_bit_flip_code_corrects_every_single_bit_flip_on_every_state — range5.all (fun a => range5.all (fun b => (List.range 4).all (fun e => bitFix (bitErr e (bitCode a b)) == bitCode a b))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5408dd41-1aff-84b1-8e76-8183459d8e3c"
+  },
+  {
+    "key": "lean_quantumsoftware_two_bit_flips_turn_the_correction_into_a_logical_error",
+    "name": "lean quantum_software.lean: two_bit_flips_turn_the_correction_into_a_logical_error — range5.all (fun a => range5.all (fun b => bitFix (X 0 (X 1 (bitCode a b))) == bitCode b a)) ∧ bitFix (X 0 (X 1 (bitCode 1 2))) != bitCode 1 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bb414d4d-e502-823e-9db4-c2d7c64b9da7"
+  },
+  {
+    "key": "lean_quantumsoftware_the_phase_flip_code_corrects_every_single_phase_flip_on_every_state",
+    "name": "lean quantum_software.lean: the_phase_flip_code_corrects_every_single_phase_flip_on_every_state — range5.all (fun a => range5.all (fun b => (List.range 4).all (fun e => phaseFix (phaseErr e (phaseCode a b)) == phaseCode a b))) ∧ bitFix (Z 0 (bitCode 1 2)) != bitCode 1 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "35bda5b6-d997-8005-bb7b-6a234603c46c"
+  },
+  {
+    "key": "lean_quantumsoftware_the_toffoli_gate_is_reversible_and_computes_and_which_no_affine_circuit_can",
+    "name": "lean quantum_software.lean: the_toffoli_gate_is_reversible_and_computes_and_which_no_affine_circuit_can — (List.range 8).all (fun i => CCX 0 1 2 (CCX 0 1 2 (basis 8 i)) == basis 8 i) ∧ (List.range 2).all (fun a => (List.range 2).all (fun b => CCX 0 1 2 (basis 8 (a + 2 * b)) == basis 8 (a + 2 * b + 4 * (a * b)))) ∧ (List.range 8).all (fun c => !… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8441e7a6-e603-855f-be29-56908754dc2b"
+  },
+  {
+    "key": "lean_quantumsoftware_the_swap_test_reads_the_squared_overlap_on_every_pair_in_range",
+    "name": "lean quantum_software.lean: the_swap_test_reads_the_squared_overlap_on_every_pair_in_range — range5.all (fun p0 => range5.all (fun p1 => range5.all (fun f0 => range5.all (fun f1 => let n := (p0 * p0 + p1 * p1) * (f0 * f0 + f1 * f1) let o := p0 * f0 + p1 * f1 weight (swapTest (pair p0 p1 f0 f1)) 0 == 2 * (n + o * o) && weight (swapT… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a90cec74-3501-89e4-be9a-40ceb5b2892b"
+  },
+  {
+    "key": "lean_quantumsoftware_a_compilers_cnot_and_swap_rewrites_are_exact_and_dropping_a_gate_breaks_them",
+    "name": "lean quantum_software.lean: a_compilers_cnot_and_swap_rewrites_are_exact_and_dropping_a_gate_breaks_them — (List.range 4).all (fun i => H 1 (CZ 0 1 (H 1 (basis 4 i))) == scale 2 (CX 0 1 (basis 4 i))) ∧ (List.range 4).all (fun i => CX 0 1 (CX 1 0 (CX 0 1 (basis 4 i))) == basis 4 (swapIdx i 0 1)) ∧ (List.range 4).any (fun i => CZ 0 1 (H 1 (basis 4… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a37c2279-2a5a-8e11-a804-4aced1f12fb5"
   }
 ]
