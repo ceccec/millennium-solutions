@@ -165,20 +165,20 @@ const newest = (file: string, seen = new Set<string>()): number => {
   if (seen.has(file)) return 0
   seen.add(file)
   let t = 0
-  try { t = statSync(`src/proof/${leanPathOf(file)}`).mtimeMs } catch { return Date.now() }   // unreadable: always rebuild
-  for (const m of readFileSync(`src/proof/${leanPathOf(file)}`, 'utf8').matchAll(/^import\s+(\w+)/gm))
+  try { t = statSync(`${leanPathOf(file)}`).mtimeMs } catch { return Date.now() }   // unreadable: always rebuild
+  for (const m of readFileSync(`${leanPathOf(file)}`, 'utf8').matchAll(/^import\s+(\w+)/gm))
     t = Math.max(t, newest(m[1].toLowerCase() + '.lean', seen))
   return t
 }
 let built = 0, reused = 0
 for (const m of mods) {
   const file = m.toLowerCase() + '.lean'
-  const olean = `src/proof/${leanPathOf(m)}.olean`
+  const olean = `${leanPathOf(m)}.olean`
   let fresh = false
   if (!FULL) { try { fresh = statSync(olean).mtimeMs > newest(file) } catch { fresh = false } }
   if (fresh) { reused++; continue }
-  try { execSync(`lean -o ${olean} src/proof/${leanPathOf(file)}`, { stdio: 'pipe', env: ENV }); built++ }
-  catch { console.error(`✗ lean-agree: the kernel rejects src/proof/${leanPathOf(file)} — fix that before comparing constants`); process.exit(1) }
+  try { execSync(`lean -o ${olean} ${leanPathOf(file)}`, { stdio: 'pipe', env: ENV }); built++ }
+  catch { console.error(`✗ lean-agree: the kernel rejects ${leanPathOf(file)} — fix that before comparing constants`); process.exit(1) }
 }
 // ONE LINE PER VALUE, OR THE PAIRING IS WRONG. The verdicts are matched to PAIRS by line index, and a bare
 // `#eval` hands its value to Lean's PRETTY PRINTER, which wraps a long list across several lines — so the

@@ -24,7 +24,7 @@
 --
 -- WHY THIS FILE EXISTS, AND WHAT IT REFUSES TO SAY.
 --
--- src/proof/quantum/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
+-- src/quantum/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
 -- CRYPTOGRAPHIC surface, which is the part a reader is most likely to quote and least likely to check. The
 -- method is the one that file set: the service's numbers are recorded as its own declarations, and the kernel
 -- decides what follows from them — never that the service is right, never that this deposit is.

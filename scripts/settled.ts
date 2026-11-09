@@ -31,7 +31,7 @@ type Row = { file: string; mod: string; ns: string; declared: number; byDecide: 
 // picked up without anybody remembering to add it here, and a removed one stops being asserted about.
 const rows: Row[] = []
 for (const f of leanFiles()) {
-  const src = readFileSync(`${DIR}/${leanPathOf(f)}`, 'utf8')
+  const src = readFileSync(`${leanPathOf(f)}`, 'utf8')
   const decl = src.match(/^\s*def\s+settledHere\s*:\s*Nat\s*:=\s*(\d+)/m)
   if (!decl) continue
   const ns = src.match(/^namespace\s+([A-Za-z_0-9.]+)/m)

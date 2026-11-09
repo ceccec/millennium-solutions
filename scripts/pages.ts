@@ -89,7 +89,7 @@ const measuredFactor = (decimal: string): Factorisation => {
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const leanFiles = leanFilesShared()
-const leanSrc = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${leanPathOf(f)}`, 'utf8')]))
+const leanSrc = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`${leanPathOf(f)}`, 'utf8')]))
 // ONE READER. Four regexes here parsed src/proof independently of the one in src/api — a whole-theorem
 // match, a by-decide match, a per-file count and a domain ranking — each able to drift from the others and
 // from the kernel. They are all the shared reader now.

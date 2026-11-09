@@ -91,29 +91,29 @@ export interface LeanTheorem { name: string; file: string; tactic: string; state
  *  knows a basename can sit in a subdir, and every consumer still sees 'qpu.lean'. A basename is unique tree-wide. */
 /** subdirectories of src/proof that are NOT sealed proofs and stay outside the enumeration, exactly as the old
  *  flat readdirSync excluded them: fixtures/ holds controls like axiom-control.lean (deliberately unsealed). */
-const LEAN_IGNORE_DIRS = new Set(['fixtures'])
+const LEAN_IGNORE_DIRS = new Set(['fixtures', 'node_modules'])
+/** The roots a .lean can live under. Each domain keeps its own proofs beside its code — src/crypto/*.lean and
+ *  src/quantum/*.lean sit with their .ts families — while every other domain's proofs stay in src/proof. The
+ *  identity is still the BASENAME (t.file, the ledger key's namespace), so a file is found wherever it lives. */
+export const LEAN_ROOTS = ['src/proof', 'src/crypto', 'src/quantum']
 const leanPathMap = (): Map<string, string> => {
   const out = new Map<string, string>()
-  const walk = (rel: string): void => {
-    for (const e of readdirSync(rel ? `${PROOF_DIR}/${rel}` : PROOF_DIR, { withFileTypes: true })) {
-      const r = rel ? `${rel}/${e.name}` : e.name
-      if (e.isDirectory()) { if (!LEAN_IGNORE_DIRS.has(e.name)) walk(r) }
+  const walk = (dir: string): void => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      const p = `${dir}/${e.name}`
+      if (e.isDirectory()) { if (!LEAN_IGNORE_DIRS.has(e.name)) walk(p) }
       else if (e.name.endsWith('.lean')) {
         const had = out.get(e.name)
-        if (had) throw new Error(`two proof files share the basename ${e.name}: ${had} and ${r}`)
-        out.set(e.name, r)
+        if (had) throw new Error(`two proof files share the basename ${e.name}: ${had} and ${p}`)
+        out.set(e.name, p)   // the file's FULL repository-relative path
       }
     }
   }
-  if (existsSync(PROOF_DIR)) walk('')
+  for (const r of LEAN_ROOTS) if (existsSync(r)) walk(r)
   return out
 }
-/** path of a proof file relative to src/proof (subdir included), by basename */
-export const leanPathOf = (file: string): string => leanPathMap().get(file) ?? file
-/** the src/proof directories that hold a .lean, relative to src/proof ('.' for the root) — joined for LEAN_PATH
- *  so `import Qpu` resolves wherever qpu.lean lives once the files are grouped into subdirs */
-export const leanPathDirs = (): string[] => [...new Set([...leanPathMap().values()].map((p) =>
-  p.includes('/') ? p.slice(0, p.lastIndexOf('/')) : '.'))].sort()
+/** the repository-relative path of a proof file, by basename — src/crypto/roots.lean, src/quantum/qpu.lean, src/proof/z9.lean */
+export const leanPathOf = (file: string): string => leanPathMap().get(file) ?? `${PROOF_DIR}/${file}`
 export const leanFiles = (): string[] => [...leanPathMap().keys()].sort()
 
 /** ── A GENERATED LEAN FILE IS EXACTLY WHAT ITS GENERATOR WRITES, OR IT IS DRIFT ──────────────────────────
@@ -123,7 +123,7 @@ export const leanFiles = (): string[] => [...leanPathMap().keys()].sort()
  *  and a difference refuses, NAMING the file and its first differing line. With `emit` the file is written
  *  and, when `kernel` is set, put to the kernel at once, refusing on any error line. */
 export const generatedLean = (file: string, text: string, o: { emit: boolean; kernel?: boolean; label: string; summary?: string }): void => {
-  const p = `${PROOF_DIR}/${leanPathOf(file)}`
+  const p = leanPathOf(file)
   if (!o.emit) {
     const onDisk = existsSync(p) ? readFileSync(p, 'utf8') : ''
     if (onDisk === text) { console.log(`\n✓ ${o.label}: ${o.summary ? o.summary + ' · ' : ''}${p} is exactly what this script generates`); return }
@@ -140,7 +140,7 @@ export const generatedLean = (file: string, text: string, o: { emit: boolean; ke
   if (!o.kernel) { console.log(`\n✓ ${o.label}: ${o.summary ? o.summary + ' ' : ''}written to ${p} — run npm run lean to put it to the kernel`); return }
   console.log(`\nwrote ${p} — putting it to the kernel:`)
   let out = ''
-  try { out = String(execSync(`cd ${PROOF_DIR} && LEAN_PATH=${leanPathDirs().join(':')} lean ${leanPathOf(file)}`, { encoding: 'utf8', stdio: 'pipe' })) }
+  try { out = String(execSync(`LEAN_PATH=${PROOF_DIR} lean ${leanPathOf(file)}`, { encoding: 'utf8', stdio: 'pipe' })) }
   catch (e) { out = String((e as { stdout?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '') }
   const errors = out.split('\n').filter((l) => /error:/.test(l))
   if (errors.length) { console.log('  ✗ refused:\n' + errors.slice(0, 8).map((l) => '    ' + l).join('\n')); process.exit(1) }
@@ -165,7 +165,7 @@ export const enumeratedNames = (): Set<string> => {
 export const isComputedKey = (key: string, names: Set<string> = enumeratedNames()): boolean =>
   key.startsWith('lean_imagined_') && names.has(key.replace('lean_imagined_', ''))
 
-export const leanSource = (file: string): string => readFileSync(`${PROOF_DIR}/${leanPathOf(file)}`, 'utf8')
+export const leanSource = (file: string): string => readFileSync(leanPathOf(file), 'utf8')
 
 /** Every theorem on disk, with the file that carries it and the tactic that closed it. ONE parse of the
  *  `theorem` syntax, so a change to how proofs are written is a change in one place. */
@@ -205,7 +205,7 @@ let leanCache: { stamp: string; out: LeanTheorem[] } | null = null
 // of the whole directory on every lookup, forever, against a case that does not exist.
 let bakedStamp: string | null = null
 const leanStamp = (): string => bakedStamp ??=
-  leanFiles().map((f) => { const st = statSync(`${PROOF_DIR}/${leanPathOf(f)}`); return `${f}:${st.size}:${st.mtimeMs}` }).join('|')
+  leanFiles().map((f) => { const st = statSync(leanPathOf(f)); return `${f}:${st.size}:${st.mtimeMs}` }).join('|')
 
 /** Drop the baked corpus root. For a process that writes a .lean file and then reads theorems back — none
  *  does today — call this between the write and the read, or the read answers from before the write. */

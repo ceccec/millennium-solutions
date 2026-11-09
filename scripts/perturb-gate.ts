@@ -90,7 +90,7 @@ const compileAsync = async (path: string): Promise<number[]> => {
 }
 
 for (const f of files) {
-  const src = readFileSync(`${DIR}/${leanPathOf(f)}`, 'utf8')
+  const src = readFileSync(`${leanPathOf(f)}`, 'utf8')
   const lines = src.split('\n')
   const defs = lines.map((l, i) => ({ m: l.match(DEF), i })).filter((x) => x.m) as { m: RegExpMatchArray; i: number }[]
   // Every theorem with the line it starts on, so an error line maps to the declaration containing it.

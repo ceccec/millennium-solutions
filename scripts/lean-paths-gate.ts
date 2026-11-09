@@ -25,9 +25,9 @@ for (const f of leanFiles()) {
   for (const m of leanSource(f).matchAll(PATH_RE)) {
     const p = m[1]
     if (existsSync(p) || EXTERNAL.test(p) || HISTORICAL.has(p)) continue
-    // a src/proof .lean that moved into a domain subdir resolves by basename — name the new path as the fix
-    const base = p.startsWith('src/proof/') ? p.slice('src/proof/'.length) : ''
-    const hint = base && leanPathOf(base) !== base ? ` → now src/proof/${leanPathOf(base)}` : ''
+    // a .lean that moved (into a domain folder) still resolves by basename — name its current path as the fix
+    const resolved = leanPathOf(p.slice(p.lastIndexOf('/') + 1))
+    const hint = resolved !== p && existsSync(resolved) ? ` → now ${resolved}` : ''
     dangling.push({ file: f, path: p, hint })
   }
 }

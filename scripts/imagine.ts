@@ -435,7 +435,7 @@ const t3 = t1.filter((c) => (byKind.get(c.kind) ?? []).some((o) => !o.holds))
 // duplication machine with a progress bar.
 function reflAlias(): [RegExp, string][] {
   const bodies = [...new Set(leanFiles()
-    .flatMap((f) => [...readFileSync('src/proof/' + leanPathOf(f), 'utf8').matchAll(/^def refl \(d : Nat\) : Nat := ([^\n]+?)\s*(?:--.*)?$/gm)]
+    .flatMap((f) => [...readFileSync(leanPathOf(f), 'utf8').matchAll(/^def refl \(d : Nat\) : Nat := ([^\n]+?)\s*(?:--.*)?$/gm)]
       .map((m) => m[1]!.replace(/\s+/g, ''))))]
   return bodies.length === 1 ? [[/\brefl\b/g, `m9(${bodies[0]})`]] : []
 }
@@ -457,7 +457,7 @@ const ALIAS: [RegExp, string][] = [
 // a plausible number.
 const MINE = /^imagined(_\d+)?\.lean$/
 let said = leanFiles().filter((f) => !MINE.test(f))
-  .map((f) => readFileSync('src/proof/' + leanPathOf(f), 'utf8')).join('\n').replace(/\s+/g, '')
+  .map((f) => readFileSync(leanPathOf(f), 'utf8')).join('\n').replace(/\s+/g, '')
 for (const [re, to] of ALIAS) said = said.replace(re, to)
 const setOf = new Map(SETS.map((S) => [S.id, S.lean.replace(/\s+/g, '')]))
 // DERIVED FROM THE MAP TABLE, FOR THE REASON THE MAP TABLE IS ITSELF DERIVED. This was a typed record keyed
@@ -484,7 +484,7 @@ const nameOf = (chunk: string) => chunk.match(/^\s*([A-Za-z_][A-Za-z0-9_'.]*)/)?
 const chunks = said.split('theorem')
 // every theorem name the corpus actually declares — the set a carrier has to be in
 const liveThmNames = new Set(leanFiles()
-  .flatMap((f) => [...readFileSync('src/proof/' + leanPathOf(f), 'utf8').matchAll(/^theorem\s+([A-Za-z_0-9']+)/gm)].map((m) => m[1]!)))
+  .flatMap((f) => [...readFileSync(leanPathOf(f), 'utf8').matchAll(/^theorem\s+([A-Za-z_0-9']+)/gm)].map((m) => m[1]!)))
 const coveredBy = new Map<string, string>()
 const t2 = t3.filter((c) => {
   const flat = c.prop.replace(/\s+/g, '')
@@ -577,7 +577,7 @@ const SEALED = (() => {
 })()
 if (t2.length > 0 && !flag('--grow')) {
   const already = new Set(leanFiles().filter(MINE.test.bind(MINE))
-    .flatMap((f) => [...readFileSync('src/proof/' + leanPathOf(f), 'utf8').matchAll(/^theorem\s+([A-Za-z_0-9]+)/gm)].map((m) => m[1]!)))
+    .flatMap((f) => [...readFileSync(leanPathOf(f), 'utf8').matchAll(/^theorem\s+([A-Za-z_0-9]+)/gm)].map((m) => m[1]!)))
   const added = t2.filter((c) => !already.has(c.key)).length
   if (added > 0) {
     console.error(`\n✗ imagine: this run would add ${added} proposition(s) the corpus does not have, on top of ${already.size}.`)
@@ -689,7 +689,7 @@ try {
   const fresh = shards.map((_, n) => shardName(n)).filter((name) => {
     const hit = cached[name]
     return !(hit?.ok && hit.format === LEAN_CACHE_FORMAT
-      && hit.hash === createHash('sha256').update(readFileSync('src/proof/' + leanPathOf(name), 'utf8')).digest('hex'))
+      && hit.hash === createHash('sha256').update(readFileSync(leanPathOf(name), 'utf8')).digest('hex'))
   })
   if (fresh.length < shards.length)
     console.log(`  · ${shards.length - fresh.length} shard(s) unchanged — the kernel's verdict on those exact bytes is on record`)

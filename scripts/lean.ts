@@ -52,7 +52,7 @@ const files = arg ? [arg.replace(/^.*\//, '')] : leanFiles()
 // grouped into src/proof/<domain>/ subdirs), so a file is read through leanPathOf(basename); the OLEAN stays
 // flat at src/proof/<Module>.olean, which keeps LEAN_PATH=src/proof and every `import Qpu` resolving unchanged.
 const all = leanFiles()
-const imported = new Set(all.flatMap((f) => [...readFileSync(`${DIR}/${leanPathOf(f)}`, 'utf8').matchAll(/^import\s+([A-Za-z_0-9.]+)/gm)].map((m) => m[1])))
+const imported = new Set(all.flatMap((f) => [...readFileSync(`${leanPathOf(f)}`, 'utf8').matchAll(/^import\s+([A-Za-z_0-9.]+)/gm)].map((m) => m[1])))
 // AND THE OLEANS ARE CACHED TOO. Rebuilding one is a full elaboration of that file, so doing it
 // unconditionally on every run cost more than the verification it exists to support — the warm run was slower
 // than the cold one until this was keyed on the same content hash. Keyed on the SOURCE bytes: if the file has
@@ -74,7 +74,7 @@ const imported = new Set(all.flatMap((f) => [...readFileSync(`${DIR}/${leanPathO
 const srcOf = (mod: string) => all.find((f) => f.toLowerCase() === mod.toLowerCase() + '.lean')
 const importsOfModule = (mod: string): string[] => {
   const f = srcOf(mod)
-  return f ? [...readFileSync(`${DIR}/${leanPathOf(f)}`, 'utf8').matchAll(/^import\s+([A-Za-z_0-9.]+)/gm)].map((m) => m[1]).filter(srcOf) : []
+  return f ? [...readFileSync(`${leanPathOf(f)}`, 'utf8').matchAll(/^import\s+([A-Za-z_0-9.]+)/gm)].map((m) => m[1]).filter(srcOf) : []
 }
 const buildOrder: string[] = []
 const placed = new Set<string>()
@@ -92,7 +92,7 @@ for (const mod of buildOrder) {
   if (!src) continue
   const olean = `${DIR}/${mod}.olean`
   const key = 'olean:' + mod
-  const h = sha(readFileSync(`${DIR}/${leanPathOf(src)}`, 'utf8'))
+  const h = sha(readFileSync(`${leanPathOf(src)}`, 'utf8'))
   if (!FULL && existsSync(olean) && cache[key]?.hash === h) continue
   // A SWALLOWED DEPENDENCY FAILURE IS REPORTED AS THE WRONG FILE'S FAULT. The bare catch here said
   // "reported below", and what got reported below was ledgerclaims.lean failing to find a module — a file
@@ -108,7 +108,7 @@ for (const mod of buildOrder) {
   // stderr keeps stdout byte-identical, so the deterministic report is untouched.
   const t0 = Date.now()
   process.stderr.write(`  · building ${mod}.olean …\n`)
-  try { execSync(`lean -o ${olean} ${DIR}/${leanPathOf(src)}`, { stdio: 'pipe', env: ENV })
+  try { execSync(`lean -o ${olean} ${leanPathOf(src)}`, { stdio: 'pipe', env: ENV })
         process.stderr.write(`  · built ${mod}.olean in ${((Date.now() - t0) / 1000).toFixed(1)}s\n`)
         cache[key] = { hash: h, format: CACHE_FORMAT, ok: true, line: '', theorems: 0 } } catch (e) {
     const msg = String((e as { stderr?: Buffer }).stderr ?? (e as Error).message ?? '').trim().split('\n').slice(0, 3).join(' · ')
@@ -136,7 +136,7 @@ let next = 0
 
 let done = 0
 const verify = async (f: string, at: number) => {
-  const path = `${DIR}/${leanPathOf(f)}`
+  const path = `${leanPathOf(f)}`
   const vt0 = Date.now()
   const src = readFileSync(path, 'utf8')
   const names = [...src.matchAll(/^theorem ([A-Za-z_0-9]+)/gm)].map((m) => m[1])

@@ -21,8 +21,8 @@ const handleOf = (seed: string): string => toUuid(seed).replace(/-/g, '').slice(
 const files = leanFiles()   // recursive — the Lean sources are grouped into src/proof/<domain>/ subdirs
 const index = new Map<string, string[]>()
 for (const f of files) {
-  const h = handleOf(readFileSync(join(ROOT, 'src/proof', leanPathOf(f)), 'utf8'))
-  index.set(h, [...(index.get(h) ?? []), 'src/proof/' + leanPathOf(f)])
+  const h = handleOf(readFileSync(join(ROOT, leanPathOf(f)), 'utf8'))
+  index.set(h, [...(index.get(h) ?? []), leanPathOf(f)])
 }
 
 if (process.argv.includes('--index')) {

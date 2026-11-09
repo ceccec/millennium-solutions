@@ -75,7 +75,7 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 const anchorCache = new Map<string, string[]>()
 const anchorsOf = (file: string): string[] => {
   if (!anchorCache.has(file)) {
-    const line = readFileSync(`src/proof/${leanPathOf(file)}`, 'utf8').split('\n').find((l) => /^--\s*prior_art_domain:/.test(l)) ?? ''
+    const line = readFileSync(`${leanPathOf(file)}`, 'utf8').split('\n').find((l) => /^--\s*prior_art_domain:/.test(l)) ?? ''
     anchorCache.set(file, /number theory|modular|ℤ\/9|Z\/9|unit group|residue|digital root|sequences|group theory/i.test(line)
       ? NUMBER_THEORY : domainOf(file).filter((w) => w.length >= 5))
   }
@@ -84,7 +84,7 @@ const anchorsOf = (file: string): string[] => {
 const domainCache = new Map<string, string[]>()
 const domainOf = (file: string) => {
   if (!domainCache.has(file)) {
-    const line = readFileSync(`src/proof/${leanPathOf(file)}`, 'utf8').split('\n').find((l) => /^--\s*prior_art_domain:/.test(l)) ?? ''
+    const line = readFileSync(`${leanPathOf(file)}`, 'utf8').split('\n').find((l) => /^--\s*prior_art_domain:/.test(l)) ?? ''
     domainCache.set(file, termsOf(line.replace(/^--\s*prior_art_domain:\s*/, '').replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, '_')).filter((w) => !GENERIC.has(w)).slice(0, 4))
   }
   return domainCache.get(file)!
