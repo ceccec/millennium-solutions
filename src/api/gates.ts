@@ -168,6 +168,7 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   // computes, and it runs in `npm run gates` now — the dated condition its entry named was met, so the entry went.
   'online-verify-e2e-test': 'a network check of the online verifiers through the MCP client. It runs in .github/workflows/net-tests.yml, where the network is required, and is listed in src/ci-only.ts by decision',
   'run-suite-security-test': 'an MCP-client check that every unlisted run_suite name is refused. It runs in .github/workflows/net-tests.yml, and is listed in src/ci-only.ts by decision',
+  textbooks: 'decodes qpu\'s Qpu/Textbook.lean from its checkout OUTSIDE this repository (QPU_DIR, default ~/github/uuidna/qpu) — the reason xrepo stands here: on any clone without that sibling it answers NOT MEASURED, and a chain that ran it would turn an absent neighbour into a failed build about this tree. Its receipt, evidence/textbooks/latest.json, names the qpu commit it read, so the /textbooks page is dated by its subject; gates-fire holds its control, and the MCP suite `textbooks` runs it on demand',
   probe: 'the control harness, not a gate: it takes a file, a theorem and a mutation as arguments, so no chain can run it bare; gates-fire holds its control — a mutation that never reaches the theorem must be refused',
 }
 

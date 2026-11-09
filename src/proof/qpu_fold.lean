@@ -127,9 +127,12 @@ theorem more_texts_than_states_force_a_coin_collision :
 -- ── 7 · THE REAL FOLD IS SIXTY-FOUR BITS AGAINST A HUNDRED-TWENTY-TWO-BIT LAYOUT ──────────────────────────
 -- The numbers the model stands in for: 2^64 coins at most, 2^122 addresses, a gap of 58 bits, and 2^122 − 2^64
 -- addresses that no content reaches. 2^64 · 2^58 = 2^122 states the gap as a factor, not an impression.
+-- AS A LAW, NOT A READ-BACK: for EVERY fold width w a 122-bit layout can hold, the gap factor is 2^(122−w),
+-- and the inverse holds at every instance — a fold narrower than the layout leaves addresses unreached exactly
+-- when w < 122, and only the full width w = 122 leaves none. qpu's 64 is one instance of the 123 decided.
 theorem the_real_fold_is_sixty_four_bits_against_the_hundred_twenty_two_bit_layout :
-  2 ^ 64 < 2 ^ 122 ∧ 2 ^ 64 * 2 ^ 58 = 2 ^ 122 ∧ 122 - 64 = 58
-  ∧ 2 ^ 122 - 2 ^ 64 > 0 ∧ mask * mask * mask * mask = 2 ^ 64 := by decide
+  (List.range 123).all (fun w => 2 ^ w * 2 ^ (122 - w) == 2 ^ 122 && (decide (w < 122) == decide (2 ^ w < 2 ^ 122)))
+  ∧ 2 ^ 64 * 2 ^ 58 = 2 ^ 122 ∧ 2 ^ 122 - 2 ^ 64 > 0 ∧ mask * mask * mask * mask = 2 ^ 64 := by decide
 
 -- ── 8 · THE SEARCH FLOOR IS THE FOLD WIDTH, NOT THE LAYOUT WIDTH ──────────────────────────────────────────
 -- A Grover preimage or a birthday collision costs about the square root of the search space. qpu's README takes

@@ -78,6 +78,20 @@ const CONTROLS: Control[] = [
     what: 'a reader that returns no formulas — a catalogue of nothing, which would publish as an achievement',
     mutate: (s) => s.replace('export const leanTheorems', 'export const leanTheoremsUnreachable') },
 
+  // ── ISO-AUDIT AND TEXTBOOKS, CONTROLLED ────────────────────────────────────────────────────────────────
+  // leads.ts named both uncontrolled the day they landed, and the pre-push court held v9.8.7 on it. iso-audit
+  // reads the BUILT, folded and meshed site — run alone after a rebuild it counted 47,077 dead locale links and
+  // one dead sitemap.json, none of them real — so its command carries both prerequisites, and its control is the
+  // artefact defect itself: a published page that no longer declares its language (WCAG 3.1.1). textbooks decodes
+  // qpu's checkout; its control is a decoder that reads every sentence as stating its statement's numbers, which
+  // its own built-in mismatch must catch.
+  { gate: 'iso-audit (page loses its language)', cmd: `${PREREQ} && node scripts/sitemap-mesh.ts && node scripts/iso-audit.ts`, file: '.vitepress/dist/hardware.html',
+    what: 'a published page with no lang attribute — a screen reader no longer knows what language to speak',
+    mutate: (s) => s.replace('<html lang="en" dir="ltr">', '<html dir="ltr">') },
+  { gate: 'textbooks (decoder cannot tell sentence from statement)', cmd: 'node scripts/textbooks.ts', file: 'scripts/textbooks.ts',
+    what: 'a decoder that reports every sentence as stating its numbers, so a mismatch can never be flagged',
+    mutate: (s) => s.replace('statesNumbers: b.size === 0 || shared.length > 0', 'statesNumbers: true') },
+
   // discoveries REPORTS rather than gates, and is recorded as such in src/api/gates.ts — but it still
   // refuses when its signals collapse, and a refusal nobody has shown can fire is a refusal that protects
   // nothing. Flatten the weights and every candidate scores alike: the queue can no longer tell its own
