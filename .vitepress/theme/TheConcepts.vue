@@ -76,7 +76,7 @@ const cards = CONCEPTS.map((c) => ({ ...c, segs: linkify(c.text) }))
   <div class="the-concepts">
     <article v-for="c in cards" :key="c.src" class="the-card">
       <header class="the-head">
-        <h3>{{ c.title }}</h3>
+        <h2>{{ c.title }}</h2>
         <a class="the-src" :href="repoHref(c.src)" target="_blank" rel="noopener" title="view source on GitHub"><code>{{ c.src }}</code></a>
       </header>
       <pre class="the-body"><template v-for="(s, i) in c.segs" :key="i"><a v-if="s.href" :href="s.href" target="_blank" rel="noopener">{{ s.t }}</a><template v-else>{{ s.t }}</template></template></pre>
@@ -102,7 +102,7 @@ const cards = CONCEPTS.map((c) => ({ ...c, segs: linkify(c.text) }))
   display: flex; align-items: baseline; justify-content: space-between;
   gap: 1rem; flex-wrap: wrap; margin-bottom: .5rem;
 }
-.the-head h3 { margin: 0; border: 0; padding: 0; font-size: 1.05rem; letter-spacing: .01em; }
+.the-head h2 { margin: 0; border: 0; padding: 0; line-height: 28px; font-size: 1.05rem; letter-spacing: .01em; }
 .the-head code { font-size: .78rem; color: var(--vp-c-text-2); }
 .the-card pre {
   margin: 0; overflow-x: auto;

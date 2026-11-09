@@ -34,7 +34,7 @@ const octaves = Math.floor(theorems.length / 8)
     <!-- dashboard header: ledger vitals + the theorem-computed palette -->
     <header data-slot="dashboard-header" class="head">
       <div>
-        <h3>The harness — input, computed output</h3>
+        <h2>The harness — input, computed output</h2>
         <p class="muted">Type a statement; the theorems compute the verdict, the address, the reeducation and the seven-dimension audit. Colours are computed by theorems. Integrity, not truth.</p>
       </div>
       <div class="vitals">
@@ -49,7 +49,7 @@ const octaves = Math.floor(theorems.length / 8)
 
     <!-- input -->
     <section data-slot="card" class="card input-card">
-      <div data-slot="card-header"><h4 data-slot="card-title">Input</h4><p data-slot="card-description" class="muted">Any statement — a claim, a message, a name.</p></div>
+      <div data-slot="card-header"><h3 data-slot="card-title">Input</h3><p data-slot="card-description" class="muted">Any statement — a claim, a message, a name.</p></div>
       <div data-slot="card-content">
         <textarea v-model="input" rows="3" spellcheck="false" aria-label="statement"></textarea>
       </div>
@@ -58,7 +58,7 @@ const octaves = Math.floor(theorems.length / 8)
     <!-- outputs, computed live -->
     <div class="grid">
       <section data-slot="card" class="card" :class="verdict.binary ? 'ok' : 'drain'">
-        <div data-slot="card-header"><h4 data-slot="card-title">Gate verdict</h4></div>
+        <div data-slot="card-header"><h3 data-slot="card-title">Gate verdict</h3></div>
         <div data-slot="card-content">
           <div class="verdict">{{ verdict.binary ? '1 · passes' : '0 · drained' }}</div>
           <p v-if="verdict.hit" class="hit">tripped on: <code>{{ verdict.hit }}</code></p>
@@ -68,19 +68,19 @@ const octaves = Math.floor(theorems.length / 8)
       </section>
 
       <section data-slot="card" class="card">
-        <div data-slot="card-header"><h4 data-slot="card-title">Content-address</h4><p data-slot="card-description" class="muted">deterministic · digital root {{ droot }}</p></div>
+        <div data-slot="card-header"><h3 data-slot="card-title">Content-address</h3><p data-slot="card-description" class="muted">deterministic · digital root {{ droot }}</p></div>
         <div data-slot="card-content"><code class="addr">{{ address }}</code></div>
         <div data-slot="card-footer"><small class="muted">integrity, not truth</small></div>
       </section>
 
       <section data-slot="card" class="card">
-        <div data-slot="card-header"><h4 data-slot="card-title">Reeducated</h4><p data-slot="card-description" class="muted">{{ reeduced.passed ? 'passes' : 'unresolved' }} · {{ reeduced.steps.length }} step(s)</p></div>
+        <div data-slot="card-header"><h3 data-slot="card-title">Reeducated</h3><p data-slot="card-description" class="muted">{{ reeduced.passed ? 'passes' : 'unresolved' }} · {{ reeduced.steps.length }} step(s)</p></div>
         <div data-slot="card-content"><p class="reeduced">{{ reeduced.text }}</p></div>
         <div data-slot="card-footer"><small class="muted">bounded until it holds</small></div>
       </section>
 
       <section data-slot="card" class="card">
-        <div data-slot="card-header"><h4 data-slot="card-title">Seven-dimension audit</h4></div>
+        <div data-slot="card-header"><h3 data-slot="card-title">Seven-dimension audit</h3></div>
         <div data-slot="card-content">
           <div class="verdict">{{ audit.auditableInAll ? 'auditable in all 7' : 'a dimension objects' }}</div>
           <code class="addr small">root {{ audit.root }}</code>
@@ -96,7 +96,7 @@ const octaves = Math.floor(theorems.length / 8)
 <style scoped>
 .harness { margin: 1.5rem 0; }
 .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
-.head h3 { margin: 0 0 .2rem; }
+.head h2 { margin: 0 0 .2rem; border: 0; padding: 0; font-size: 20px; line-height: 28px; }
 .muted { color: var(--vp-c-text-2); font-size: .85rem; margin: 0; }
 .vitals { display: flex; gap: .6rem; }
 .vital { border: 1px solid var(--vp-c-divider); border-radius: 10px; padding: .5rem .8rem; text-align: center; background: var(--vp-c-bg-soft); min-width: 74px; }

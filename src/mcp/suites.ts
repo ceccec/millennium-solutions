@@ -12,4 +12,8 @@ export const SUITES: Record<string, string[]> = {
   'answer-doi': ['node', 'scripts/answer-doi-test.ts'],
   'answer-tool': ['node', 'scripts/answer-tool-test.ts'],
   'fallbacks': ['node', 'scripts/fallbacks-test.ts'],
+  // the built site against every machine-checkable ISO requirement (needs .vitepress/dist; NOT MEASURED, exit 2, without it)
+  'iso-audit': ['node', 'scripts/iso-audit.ts'],
+  // qpu's textbooks decoded into human particles (needs qpu's checkout; NOT MEASURED, exit 2, without it)
+  'textbooks': ['node', 'scripts/textbooks.ts'],
 }

@@ -345,3 +345,9 @@
   .thm-tex { display: none !important; }
   .thm-math { font-size: 10.5pt !important; padding: 0 !important; break-inside: avoid; }
 }
+
+/* WCAG 2.0 1.4.3 (ISO/IEC 40500): the default theme's muted --vp-c-text-3 measured 2.87–3.37:1 on its own backgrounds,
+   under the 4.5:1 normal text needs. These are the nearest greys to the defaults that clear 4.5:1 on bg, bg-alt and
+   bg-soft — computed by scripts/iso-audit.ts's contrast formula, light 4.52–4.88:1, dark 4.53–5.10:1. */
+:root { --vp-c-text-3: #717171; }
+.dark { --vp-c-text-3: #888888; }

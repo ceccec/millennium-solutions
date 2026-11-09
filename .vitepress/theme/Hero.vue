@@ -47,7 +47,7 @@ onUnmounted(() => { if (raf) cancelAnimationFrame(raf) })
       <div class="vh-title">The ℤ/9 Vortex Framework</div>
       <p>recomputable proof of concept — the figure is the math, drawn live (not a video)</p>
       <label class="combo">combinations
-        <input type="range" min="0" max="42" v-model.number="combos" />
+        <input type="range" min="0" max="42" v-model.number="combos" aria-label="combinations" />
         <span>{{ combos }} / 42</span>
       </label>
     </div>

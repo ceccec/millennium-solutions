@@ -25,7 +25,7 @@ const teleport = () => { beam.value++ }
   <div class="tp">
     <label class="src">
       message at the origin
-      <input v-model="text" spellcheck="false" @keyup.enter="teleport" />
+      <input v-model="text" spellcheck="false" aria-label="message to teleport" @keyup.enter="teleport" />
     </label>
 
     <div class="rig">

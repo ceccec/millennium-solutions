@@ -84,7 +84,7 @@ const W = 760, H = 340
     </div>
 
     <div class="spine" v-if="spine.length">
-      <h3>The genesis spine</h3>
+      <h2>The genesis spine</h2>
       <ol class="beads">
         <li v-for="(t, i) in spine" :key="t.key">
           <a :href="withBase('/theorem/' + t.key)" :title="t.name"><span class="bead">{{ spineNums[i] ?? '·' }}</span></a>
@@ -94,7 +94,7 @@ const W = 760, H = 340
     </div>
 
     <div class="fieldwrap">
-      <h3>The forensic field — every theorem exposed</h3>
+      <h2 class="field-title">The forensic field — every theorem exposed</h2>
       <p class="cap">All {{ theorems.length }} theorems wired onto one hue double-torus, each placed by its own receipt and coloured by its organ. Exposing all at once is the forensic tool: the whole ledger is one field, and nothing hides.</p>
       <svg class="field" :viewBox="'0 0 ' + W + ' ' + H" preserveAspectRatio="xMidYMid meet" role="img" aria-label="all theorems on a double torus">
         <ellipse :cx="W / 2 - 89" :cy="H / 2" rx="150" ry="118" class="ring" />
@@ -131,7 +131,8 @@ const W = 760, H = 340
 .vital .n small { font-size: .9rem; font-weight: 600; opacity: .7; }
 .vital .l { display: block; font-size: .8rem; color: var(--vp-c-text-2); margin-top: .2rem; }
 .spine { margin: 1.75rem 0; }
-.spine h3 { margin-bottom: .6rem; }
+.spine h2 { margin-bottom: .6rem; border: 0; padding: 0; font-size: 20px; line-height: 28px; }
+.field-title { border: 0; padding: 0; font-size: 20px; line-height: 28px; margin: 0 0 .6rem; }
 .beads { display: flex; flex-wrap: wrap; gap: .6rem; padding: 0; list-style: none; align-items: center; }
 .beads .bead { display: inline-flex; align-items: center; justify-content: center; min-width: 3rem; height: 3rem; padding: 0 .6rem; border-radius: 999px; border: 2px solid var(--vp-c-brand-1); color: var(--vp-c-brand-1); font-weight: 700; font-variant-numeric: tabular-nums; transition: background .15s, color .15s; }
 .beads a:hover .bead { background: var(--vp-c-brand-1); color: var(--vp-c-bg); }

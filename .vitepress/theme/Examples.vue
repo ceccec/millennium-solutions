@@ -50,43 +50,43 @@ const billFree = billUuidna({ commercial: false, recomputeOps: 100000, verifyOps
       the page and it recomputes. A content-address proves <strong>integrity, not truth</strong>.</p>
 
     <section>
-      <h3>1 · Content address <a :href="withBase('/theorem/a_content_address_is_a_pointer_not_the_payload')">theorem ↗</a></h3>
+      <h2>1 · Content address <a :href="withBase('/theorem/a_content_address_is_a_pointer_not_the_payload')">theorem ↗</a></h2>
       <p>Type anything — its content-address recomputes deterministically. A pointer, not the payload.</p>
-      <p><input v-model="seed" class="in" /> → <code>{{ addr }}</code></p>
+      <p><input v-model="seed" class="in" aria-label="text to address" /> → <code>{{ addr }}</code></p>
     </section>
 
     <section>
-      <h3>2 · Message codec <a :href="withBase('/theorem/yes_a_uuid_imprints_a_bounded_cryptographic_receipt_efficiency_is_the_skill_the_rule_decides')">theorem ↗</a></h3>
+      <h2>2 · Message codec <a :href="withBase('/theorem/yes_a_uuid_imprints_a_bounded_cryptographic_receipt_efficiency_is_the_skill_the_rule_decides')">theorem ↗</a></h2>
       <p>A bounded message (≤ {{ CAPACITY }} bits) rides <em>inside</em> one uuid and reads back exactly.</p>
       <p>imprint(<code>{{ msg }}</code>) = <code>{{ carrier }}</code> → readImprint = <code>{{ decoded }}</code> · <strong>{{ decoded === msg ? '✓ exact' : '✗' }}</strong></p>
     </section>
 
     <section>
-      <h3>3 · Text chain <a :href="withBase('/theorem/uuidna_carries_arbitrary_text_of_any_length_across_a_uuid_chain_round_tripping')">theorem ↗</a></h3>
+      <h2>3 · Text chain <a :href="withBase('/theorem/uuidna_carries_arbitrary_text_of_any_length_across_a_uuid_chain_round_tripping')">theorem ↗</a></h2>
       <p>Arbitrary text spans a chain of uuids, round-tripping exactly.</p>
       <p>“{{ text }}” → <strong>{{ chain.length }}</strong> uuid carriers → <strong>{{ textBack === text ? '✓ recovered exactly' : '✗' }}</strong></p>
     </section>
 
     <section>
-      <h3>4 · Holographic proof <a :href="withBase('/theorem/uuidna_hologram_fractals_a_merkle_proof_verifies_the_whole_from_a_tiny_part_logarithmically')">theorem ↗</a></h3>
+      <h2>4 · Holographic proof <a :href="withBase('/theorem/uuidna_hologram_fractals_a_merkle_proof_verifies_the_whole_from_a_tiny_part_logarithmically')">theorem ↗</a></h2>
       <p>One leaf verifies against the whole root from a logarithmic audit path; a forged leaf fails.</p>
       <p>64 leaves, root <code>{{ trunc(root) }}</code> · proof for leaf 37 = <strong>{{ proof.length }}</strong> hashes · verifies <strong>{{ proofOk ? '✓' : '✗' }}</strong> · forgery <strong>{{ forgeOk ? '✗ (bad)' : '✓ rejected' }}</strong></p>
     </section>
 
     <section>
-      <h3>5 · Strict minting <a :href="withBase('/theorem/strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage')">theorem ↗</a></h3>
+      <h2>5 · Strict minting <a :href="withBase('/theorem/strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage')">theorem ↗</a></h2>
       <p>Canonical: the same logical value always mints the same address.</p>
       <p>strictUuidna(<code>3</code>) = <code>{{ trunc(mintNum) }}</code> · strictUuidna(<code>'3'</code>) = <code>{{ trunc(mintStr) }}</code> · <strong>{{ mintNum === mintStr ? '✓ same' : '✗' }}</strong></p>
     </section>
 
     <section>
-      <h3>6 · Independent domain control <a :href="withBase('/theorem/uuidna_domain_control_is_verified_independently_by_a_published_challenge_not_by_anyones_word')">theorem ↗</a></h3>
+      <h2>6 · Independent domain control <a :href="withBase('/theorem/uuidna_domain_control_is_verified_independently_by_a_published_challenge_not_by_anyones_word')">theorem ↗</a></h2>
       <p>Publish this token at <code>uuidna.org</code>; anyone recomputes and checks — control by publication, not by anyone's word.</p>
       <p>challenge(<code>uuidna.org</code>) = <code>{{ orgToken }}</code></p>
     </section>
 
     <section>
-      <h3>7 · Measured billing <a :href="withBase('/theorem/the_correct_uuidna_billing_is_the_measured_bit_difference_not_a_flat_per_formula_rate')">theorem ↗</a></h3>
+      <h2>7 · Measured billing <a :href="withBase('/theorem/the_correct_uuidna_billing_is_the_measured_bit_difference_not_a_flat_per_formula_rate')">theorem ↗</a></h2>
       <p>The value is the <em>measured</em> bit-difference (O(N) recompute − O(1) verify); the two coins are the conserved invariant.</p>
       <p>commercial, 100000 recompute vs 1 verify → <strong>{{ bill.bitsSaved }}</strong> bits, <strong>{{ bill.coins }}</strong> coins · non-commercial → <strong>{{ billFree.free ? 'free' : '' }}</strong></p>
     </section>
@@ -97,8 +97,8 @@ const billFree = billUuidna({ commercial: false, recomputeOps: 100000, verifyOps
 .examples { margin: 1rem 0; }
 .examples .lead { color: var(--vp-c-text-2); }
 .examples section { border: 1px solid var(--vp-c-divider); border-radius: 10px; padding: .5rem 1rem; margin: .8rem 0; }
-.examples h3 { margin: .3rem 0 .4rem; font-size: 1.02rem; }
-.examples h3 a { font-size: .78rem; font-weight: 500; }
+.examples h2 { margin: .3rem 0 .4rem; border: 0; padding: 0; line-height: 28px; font-size: 1.02rem; }
+.examples h2 a { font-size: .78rem; font-weight: 500; }
 .examples code { font-size: .82em; word-break: break-all; }
 .examples p { margin: .35rem 0; font-size: .92rem; }
 .examples .in { width: 16rem; max-width: 100%; padding: .25rem .5rem; border: 1px solid var(--vp-c-divider); border-radius: 6px; background: var(--vp-c-bg); color: var(--vp-c-text-1); }
