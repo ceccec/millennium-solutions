@@ -150164,5 +150164,85 @@
     "key": "lean_quantumsoftware_a_compilers_cnot_and_swap_rewrites_are_exact_and_dropping_a_gate_breaks_them",
     "name": "lean quantum_software.lean: a_compilers_cnot_and_swap_rewrites_are_exact_and_dropping_a_gate_breaks_them — (List.range 4).all (fun i => H 1 (CZ 0 1 (H 1 (basis 4 i))) == scale 2 (CX 0 1 (basis 4 i))) ∧ (List.range 4).all (fun i => CX 0 1 (CX 1 0 (CX 0 1 (basis 4 i))) == basis 4 (swapIdx i 0 1)) ∧ (List.range 4).any (fun i => CZ 0 1 (H 1 (basis 4… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "a37c2279-2a5a-8e11-a804-4aced1f12fb5"
+  },
+  {
+    "key": "lean_paulipaths_hadamard_swaps_x_and_z_and_negates_y",
+    "name": "lean pauli_paths.lean: hadamard_swaps_x_and_z_and_negates_y — (conj2 H2 X2 == scale2 (2, 0, 0, 0) Z2 && conj2 H2 Z2 == scale2 (2, 0, 0, 0) X2 && conj2 H2 Y2 == scale2 (-2, 0, 0, 0) Y2 && mul2 H2 H2 == scale2 (2, 0, 0, 0) I2) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a76cc76a-eedb-8f3b-bc49-ae42920d4ad3"
+  },
+  {
+    "key": "lean_paulipaths_the_phase_gate_turns_x_into_minus_y_and_y_into_x",
+    "name": "lean pauli_paths.lean: the_phase_gate_turns_x_into_minus_y_and_y_into_x — (conj2 S2 X2 == neg2 Y2 && conj2 S2 Y2 == X2 && conj2 S2 Z2 == Z2) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1a4545b7-8bc4-81cb-8bdb-6faaecc5bb9a"
+  },
+  {
+    "key": "lean_paulipaths_the_t_gate_splits_x_and_y_into_two_paulis_over_root_two",
+    "name": "lean pauli_paths.lean: the_t_gate_splits_x_and_y_into_two_paulis_over_root_two — (scale2 root2 (conj2 T2 X2) == add2 X2 (neg2 Y2) && scale2 root2 (conj2 T2 Y2) == add2 X2 Y2 && conj2 T2 Z2 == Z2) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f665aedb-e18b-8138-aa1b-e2206004cac7"
+  },
+  {
+    "key": "lean_paulipaths_the_inverse_t_gate_splits_them_the_other_way",
+    "name": "lean pauli_paths.lean: the_inverse_t_gate_splits_them_the_other_way — (scale2 root2 (mul2 T2 (mul2 X2 (dag2 T2))) == add2 X2 Y2 && scale2 root2 (mul2 T2 (mul2 Y2 (dag2 T2))) == add2 (neg2 X2) Y2 && mul2 T2 (dag2 T2) == I2) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f82169da-f403-8c31-9005-5488642e67c1"
+  },
+  {
+    "key": "lean_paulipaths_the_cnot_tableau_rule_is_the_matrix_conjugation_on_all_sixteen_paulis",
+    "name": "lean pauli_paths.lean: the_cnot_tableau_rule_is_the_matrix_conjugation_on_all_sixteen_paulis — bits4.all (fun b => eq4 (mul4 CX4 (mul4 (kron (pauli b.1 b.2.1) (pauli b.2.2.1 b.2.2.2)) CX4)) (cxRule b.1 b.2.1 b.2.2.1 b.2.2.2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e23c7279-bb6c-8546-8731-b7e17fe5a633"
+  },
+  {
+    "key": "lean_paulipaths_the_cz_rule_is_the_matrix_conjugation_on_all_sixteen_paulis",
+    "name": "lean pauli_paths.lean: the_cz_rule_is_the_matrix_conjugation_on_all_sixteen_paulis — bits4.all (fun b => eq4 (mul4 CZ4 (mul4 (kron (pauli b.1 b.2.1) (pauli b.2.2.1 b.2.2.2)) CZ4)) (czRule b.1 b.2.1 b.2.2.1 b.2.2.2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d24f9e1d-c9b0-8261-a71e-a3b80d50c3db"
+  },
+  {
+    "key": "lean_paulipaths_a_clifford_gate_keeps_one_term_and_t_makes_at_most_two",
+    "name": "lean pauli_paths.lean: a_clifford_gate_keeps_one_term_and_t_makes_at_most_two — [X2, Y2, Z2].all (fun p => terms (conj2 H2 p) == 1 && terms (conj2 S2 p) == 1) ∧ [X2, Y2].all (fun p => terms (scale2 root2 (conj2 T2 p)) == 2) ∧ terms (conj2 T2 Z2) = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6d37173f-2d02-83c4-a833-95889d876e04"
+  },
+  {
+    "key": "lean_paulipaths_the_sign_flipped_t_rule_breaks_the_pauli_product_and_the_true_rule_keeps_it",
+    "name": "lean pauli_paths.lean: the_sign_flipped_t_rule_breaks_the_pauli_product_and_the_true_rule_keeps_it — (mul2 (scale2 root2 (conj2 T2 X2)) (scale2 root2 (conj2 T2 Y2)) == scale2 (zmul (2, 0, 0, 0) zi) Z2 && mul2 wrongTX wrongTY == scale2 (zmul (-2, 0, 0, 0) zi) Z2 && mul2 X2 Y2 == scale2 zi Z2) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5fc261d1-d8eb-85e1-a646-3803517c44ea"
+  },
+  {
+    "key": "lean_tcountwall_the_toffoli_is_exactly_a_circuit_of_seven_t_gates",
+    "name": "lean t_count_wall.lean: the_toffoli_is_exactly_a_circuit_of_seven_t_gates — (List.range 8).all (fun i => run sevenT (basis i) == gen (fun j => if j == toffoliOf i then (2, 0, 0, 0) else (0, 0, 0, 0))) ∧ tGates sevenT = 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7a0dfd2d-d9c8-810d-a313-8c4abfeac4e5"
+  },
+  {
+    "key": "lean_tcountwall_the_schoolbook_shor_construction_has_t_count_twenty_eight_n_cubed",
+    "name": "lean t_count_wall.lean: the_schoolbook_shor_construction_has_t_count_twenty_eight_n_cubed — (List.range' 1 64).all (fun n => shorT n == 28 * n ^ 3) ∧ shorT 1000 = 28000000000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e6b7ffa9-a3d8-8a39-ab00-7a455e47ab27"
+  },
+  {
+    "key": "lean_tcountwall_a_thousand_bit_shor_circuit_fits_in_seventeen_uuids_of_particles",
+    "name": "lean t_count_wall.lean: a_thousand_bit_shor_circuit_fits_in_seventeen_uuids_of_particles — shorQubits 1000 = 2003 ∧ 2003 ≤ 17 * 122 ∧ ¬ (2003 ≤ 16 * 122) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "27bd0d05-a6a6-803a-ac8e-bc8017736a7e"
+  },
+  {
+    "key": "lean_tcountwall_the_pauli_path_worst_case_passes_ten_to_the_eighty_at_three_bits",
+    "name": "lean t_count_wall.lean: the_pauli_path_worst_case_passes_ten_to_the_eighty_at_three_bits — shorT 2 = 224 ∧ worstTerms (shorT 2) < 10 ^ 80 ∧ shorT 3 = 756 ∧ worstTerms (shorT 3) > 10 ^ 80 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4a4b27f1-68eb-8a0e-988b-f5372471e71e"
+  },
+  {
+    "key": "lean_tcountwall_the_floors_modulus_two_to_the_999_plus_one_has_exactly_a_thousand_bits",
+    "name": "lean t_count_wall.lean: the_floors_modulus_two_to_the_999_plus_one_has_exactly_a_thousand_bits — 2 ^ 999 ≤ 2 ^ 999 + 1 ∧ 2 ^ 999 + 1 < 2 ^ 1000 ∧ shorT 1000 = 7 * 4 * 1000 ^ 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "485ac139-235c-853c-844e-d3f9567703bb"
+  },
+  {
+    "key": "lean_tcountwall_the_bound_depends_on_the_t_count_and_not_on_the_width",
+    "name": "lean t_count_wall.lean: the_bound_depends_on_the_t_count_and_not_on_the_width — (List.range 9).all (fun t => cost t 2 == cost t 2003 && cost (t + 1) 2003 == 2 * cost t 2003) ∧ cost 0 2003 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8679077f-79c6-8c19-a9ad-ab0c3af61881"
+  },
+  {
+    "key": "lean_tcountwall_a_constant_factor_saving_leaves_the_t_count_cubic",
+    "name": "lean t_count_wall.lean: a_constant_factor_saving_leaves_the_t_count_cubic — (List.range' 1 64).all (fun n => shorT n / 2 * 2 == shorT n && shorT n / 4 * 4 == shorT n) ∧ shorT 1000 / 4 > 10 ^ 9 ∧ shorT 1000 / 2 > 10 ^ 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a825e054-080a-829c-b70f-ecad5e1c04c6"
+  },
+  {
+    "key": "lean_tcountwall_a_one_bit_instance_is_within_reach_and_the_thousand_bit_one_is_not",
+    "name": "lean t_count_wall.lean: a_one_bit_instance_is_within_reach_and_the_thousand_bit_one_is_not — shorT 1 = 28 ∧ worstTerms (shorT 1) < 10 ^ 9 ∧ shorT 1000 = shorT 1 * 10 ^ 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a10154db-4b4d-85e1-921f-9bd6841348e7"
   }
 ]

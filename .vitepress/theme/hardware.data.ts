@@ -9,6 +9,8 @@ import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, simulate, mermin, clust
 import { leanTheorems, ledger } from '../../src/api/index.ts'
 import { TERMS, QPU_VOCABULARY, SKILLS, unresolvedTools } from '../../src/quantum/terminology.ts'
 import * as HARDWARE from '../../src/quantum/hardware.ts'
+import { expectation, q2str, particles, FREE_BITS, type Gate } from '../../src/quantum/paulipath.ts'
+import { toUuid } from '../../src/0/index.ts'
 
 export interface HardwareData {
   accepted: readonly AcceptedQuantumComputer[]
@@ -29,9 +31,15 @@ export interface HardwareData {
   skills: { family: string; members: number; coin: string; esco: string }[]
   /** every tool a coin names that does not resolve — and the resolver's control: on an empty tree it must find some */
   unresolved: string[]; resolverSees: boolean
+  /** UUID particles interacting: one GHZ chain across every free bit of a stream of UUIDs, with k T gates spread across
+   *  them — computed by Pauli paths at build time and set beside the closed form cos(kπ/4); a row that disagrees says so */
+  uuidSpace: { uuids: number; particles: number; crossing: number; freeBits: number; rows: { k: number; value: string; closed: string; peakTerms: number }[] }
+  /** the T-count wall for a thousand-bit modulus, from the formulas t_count_wall.lean decides: the named construction's
+   *  T-count 28n³, Beauregard's 2n + 3 qubits, and how many UUIDs' particles hold them */
+  tWall: { n: number; tCount: string; qubits: number; uuids: number; wallBits: number }
 }
 
-const MODEL_FILES = ['quantum_circuits.lean', 'quantum_models.lean', 'quantum_textbooks.lean', 'quantum_octaves.lean', 'quantum_octave_128.lean', 'quantum_octave_124.lean', 'quantum_uuid_cluster.lean', 'quantum_hardware.lean']
+const MODEL_FILES = ['t_count_wall.lean', 'pauli_paths.lean', 'quantum_software.lean', 'quantum_circuits.lean', 'quantum_models.lean', 'quantum_textbooks.lean', 'quantum_octaves.lean', 'quantum_octave_128.lean', 'quantum_octave_124.lean', 'quantum_uuid_cluster.lean', 'quantum_hardware.lean']
 const log2 = (v: bigint) => v.toString(2).length - 1
 
 declare const data: HardwareData
@@ -61,6 +69,24 @@ export default {
         const m = mermin(n)
         return { n, quantum: log2(m.quantum), classical: log2(m.classical), lead: log2(m.lead), sealed: true }
       }),
+      uuidSpace: (() => {
+        const stream = Array.from({ length: 10 }, (_, i) => toUuid(`stream ${i}`)), all = stream.flatMap(particles)
+        const chain: Gate[] = [{ g: 'h', q: all[0] }, ...all.slice(1).map((q, i): Gate => ({ g: 'cx', q: all[i], t: q }))]
+        const closed = ['1', '(1√2)/2', '0', '(-1√2)/2', '-1', '(-1√2)/2', '0', '(1√2)/2']
+        const rows = Array.from({ length: 8 }, (_, k) => {
+          const circuit = [...chain, ...Array.from({ length: k }, (_, j): Gate => ({ g: 't', q: all[Math.floor(((j + 0.5) * all.length) / k)] }))]
+          const { value, peakTerms } = expectation(circuit, new Map(all.map((q) => [q, 1])))
+          return { k, value: q2str(value), closed: closed[k], peakTerms }
+        })
+        return { uuids: stream.length, particles: all.length, crossing: stream.length - 1, freeBits: FREE_BITS.length, rows }
+      })(),
+      tWall: (() => {
+        const shorT = (n: bigint) => 7n * (2n * n) * n * (2n * n), n = 1000n, qubits = Number(2n * n + 3n)
+        // the smallest bit length whose worst case 2^T passes 10^80: compare T with log2(10^80) without a float
+        let wallBits = 1
+        while ((1n << shorT(BigInt(wallBits))) <= 10n ** 80n) wallBits++
+        return { n: Number(n), tCount: shorT(n).toLocaleString('en-US'), qubits, uuids: Math.ceil(qubits / FREE_BITS.length), wallBits }
+      })(),
       cluster124: (() => { const c = cluster(124); return { generators: c.stabilizers.length, isCluster: c.isCluster, commute: c.commute, middle: c.stabilizers[62].replace(/^I+|I+$/g, '') } })(),
       terms: (() => {
         const files = new Set((leanTheorems() as { file: string }[]).map((t) => t.file))

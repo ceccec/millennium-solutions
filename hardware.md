@@ -99,6 +99,31 @@ The ISO/IEC 4879 terms beyond the computing models, decided in `quantum_software
 | Swap test | §3.4.9 quantum algorithm, §3.3.10 state fidelity | the ancilla weights are 2(‖ψ‖²‖φ‖² ± ⟨ψ,φ⟩²) for all 625 real pairs in range, so P(0) = (1 + \|⟨ψ\|φ⟩\|²)/2 | identical states never read 1; orthogonal ones read 0 and 1 equally | Buhrman, Cleve, Watrous, de Wolf 2001 |
 | Compiler rewrites | §3.4.21 quantum programming | CNOT = (I⊗H)·CZ·(I⊗H) and SWAP = three alternating CNOTs, exact on every basis state | drop the second H — a transpiler bug — and the result differs | Nielsen, Chuang §4.2–4.3 |
 
+## UUID particles interacting — any circuit, at any width
+
+Every free bit of every UUID is a qubit: the **particle** (uuid, bit), addressed by uuid·128 + bit. A version-4 UUID leaves {{ data.uuidSpace.freeBits }} free bits, so the address space is the whole UUID space — 2¹²² UUIDs × {{ data.uuidSpace.freeBits }} particles — and a two-qubit gate between particles of different UUIDs is how they interact. `src/quantum/paulipath.ts` computes the exact expectation of any circuit over the universal gate set (H, S, CNOT, CZ, the Paulis and T) by carrying the observable backwards as sparse Pauli strings: a Clifford gate maps one to one, so width costs nothing; a T gate can split one into two, so the cost is about 2^(T-count), linear in the particles touched — never in the width. Every rule it applies is decided against the matrices in ℤ[ω] in `pauli_paths.lean`, beside a refuted control.
+
+Computed for this page at build time: one GHZ chain across all {{ data.uuidSpace.particles }} particles of {{ data.uuidSpace.uuids }} UUIDs ({{ data.uuidSpace.crossing }} of its CNOTs cross a UUID boundary), then k T gates spread across the UUIDs, measured as X on every particle:
+
+<table>
+<thead><tr><th>T gates</th><th>⟨X⋯X⟩, exact</th><th>closed form cos(kπ/4)</th><th>agree</th><th>peak terms</th></tr></thead>
+<tbody><tr v-for="r in data.uuidSpace.rows" :key="r.k"><td>{{ r.k }}</td><td>{{ r.value }}</td><td>{{ r.closed }}</td><td>{{ r.value === r.closed ? 'yes' : 'NO' }}</td><td>{{ r.peakTerms }}</td></tr></tbody>
+</table>
+
+Any stream, any circuit: `npm run quantum:octave -- --stream 1000 --ghz --t 6` (122,000 particles), or `--stream 2 --circuit "h u0.0 cx u0.0,u1.121 t u1.121" --observable "X u0.0 X u1.121"`. This is a classical computation of the ideal circuit — it reaches any width, but not an unlimited T-count; a physical §3.4.8 processor is what removes that last bound.
+
+## The T-count wall — where a physical processor is needed
+
+`t_count_wall.lean` locates that bound for Shor's algorithm. It decides **cost, not a factoring**: the Toffoli gate is exactly a circuit of seven T gates (checked in ℤ[ω] on all eight inputs), and one named construction — schoolbook modular exponentiation with Cuccaro adders — needs 28n³ T gates for an n-bit modulus, an undercount since its modular reduction is left out. For the thousand-bit modulus qpu_crypto.lean leaves unfactored (n = {{ data.tWall.n }}):
+
+| | |
+|---|---|
+| Qubits (Beauregard, 2n + 3) | {{ data.tWall.qubits }} — the particles of {{ data.tWall.uuids }} UUIDs, so width is **not** the obstacle |
+| T gates (28n³) | {{ data.tWall.tCount }} |
+| Pauli-path worst case | 2^T terms — already past 10⁸⁰ at n = {{ data.tWall.wallBits }} |
+
+A better construction divides the T-count by a constant and leaves it cubic, so the wall moves but stays. Nothing here factors a thousand-bit integer or claims a quantum speedup; it says where the classical computation ends and why a device's own counts are the only way past it.
+
 ## Scaled in octaves, up to the UUID width
 
 The Bell test doubles: on n qubits the GHZ state reaches Mermin's value 2ⁿ⁻¹ while every classical assignment stops at 2^(n/2) — values as in [arXiv:0905.0151](https://ar5iv.labs.arxiv.org/html/0905.0151) §2. Each octave is a Lean theorem; the 128-qubit octave and 124 — the UUID minus its version hex digit — are each split into eight UUID particles, sealed on their own and recombined. Any other width is computed by the literal port of the same definitions in `src/quantum/hardware.ts` (`npm run quantum:octave -- --qubits N` or `-- --uuid U`).

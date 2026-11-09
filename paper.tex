@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,197 of them across 123 files and
-8 wings; 25,987 close by exhaustion over a stated finite domain, 210 are proved
+(\texttt{npm run latex-gate}). There are 26,213 of them across 125 files and
+8 wings; 26,003 close by exhaustion over a stated finite domain, 210 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2081,6 +2081,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\paragraph{\texttt{pauli\_paths.lean}}
+
+\begin{theorem}[\texttt{hadamard\_swaps\_x\_and\_z\_and\_negates\_y}]
+\[ \mathrm{conj2}\mathopen{}\left(\mathrm{H2},\,\mathrm{X2}\right) = \mathrm{scale2}\mathopen{}\left(\left(2,\,0,\,0,\,0\right),\,\mathrm{Z2}\right) \land \mathrm{conj2}\mathopen{}\left(\mathrm{H2},\,\mathrm{Z2}\right) = \mathrm{scale2}\mathopen{}\left(\left(2,\,0,\,0,\,0\right),\,\mathrm{X2}\right) \land \mathrm{conj2}\mathopen{}\left(\mathrm{H2},\,\mathrm{Y2}\right) = \mathrm{scale2}\mathopen{}\left(\left(-2,\,0,\,0,\,0\right),\,\mathrm{Y2}\right) \land \mathrm{mul2}\mathopen{}\left(\mathrm{H2},\,\mathrm{H2}\right) = \mathrm{scale2}\mathopen{}\left(\left(2,\,0,\,0,\,0\right),\,\mathrm{I2}\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_phase\_gate\_turns\_x\_into\_minus\_y\_and\_y\_into\_x}]
+\[ \mathrm{conj2}\mathopen{}\left(\mathrm{S2},\,\mathrm{X2}\right) = \mathrm{neg2}\mathopen{}\left(\mathrm{Y2}\right) \land \mathrm{conj2}\mathopen{}\left(\mathrm{S2},\,\mathrm{Y2}\right) = \mathrm{X2} \land \mathrm{conj2}\mathopen{}\left(\mathrm{S2},\,\mathrm{Z2}\right) = \mathrm{Z2} = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_t\_gate\_splits\_x\_and\_y\_into\_two\_paulis\_over\_root\_two}]
+\[ \mathrm{scale2}\mathopen{}\left(\mathrm{root2},\,\mathrm{conj2}\mathopen{}\left(\mathrm{T2},\,\mathrm{X2}\right)\right) = \mathrm{add2}\mathopen{}\left(\mathrm{X2},\,\mathrm{neg2}\mathopen{}\left(\mathrm{Y2}\right)\right) \land \mathrm{scale2}\mathopen{}\left(\mathrm{root2},\,\mathrm{conj2}\mathopen{}\left(\mathrm{T2},\,\mathrm{Y2}\right)\right) = \mathrm{add2}\mathopen{}\left(\mathrm{X2},\,\mathrm{Y2}\right) \land \mathrm{conj2}\mathopen{}\left(\mathrm{T2},\,\mathrm{Z2}\right) = \mathrm{Z2} = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_inverse\_t\_gate\_splits\_them\_the\_other\_way}]
+\[ \mathrm{scale2}\mathopen{}\left(\mathrm{root2},\,\mathrm{mul2}\mathopen{}\left(\mathrm{T2},\,\mathrm{mul2}\mathopen{}\left(\mathrm{X2},\,\mathrm{dag2}\mathopen{}\left(\mathrm{T2}\right)\right)\right)\right) = \mathrm{add2}\mathopen{}\left(\mathrm{X2},\,\mathrm{Y2}\right) \land \mathrm{scale2}\mathopen{}\left(\mathrm{root2},\,\mathrm{mul2}\mathopen{}\left(\mathrm{T2},\,\mathrm{mul2}\mathopen{}\left(\mathrm{Y2},\,\mathrm{dag2}\mathopen{}\left(\mathrm{T2}\right)\right)\right)\right) = \mathrm{add2}\mathopen{}\left(\mathrm{neg2}\mathopen{}\left(\mathrm{X2}\right),\,\mathrm{Y2}\right) \land \mathrm{mul2}\mathopen{}\left(\mathrm{T2},\,\mathrm{dag2}\mathopen{}\left(\mathrm{T2}\right)\right) = \mathrm{I2} = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cnot\_tableau\_rule\_is\_the\_matrix\_conjugation\_on\_all\_sixteen\_paulis}]
+\[ \forall b \in \mathrm{bits4},\; \mathrm{eq4}\mathopen{}\left(\mathrm{mul4}\mathopen{}\left(\mathrm{CX4},\,\mathrm{mul4}\mathopen{}\left(\mathrm{kron}\mathopen{}\left(\mathrm{pauli}\mathopen{}\left(b_{1},\,b_{2}_{1}\right),\,\mathrm{pauli}\mathopen{}\left(b_{2}_{2}_{1},\,b_{2}_{2}_{2}\right)\right),\,\mathrm{CX4}\right)\right),\,\mathrm{cxRule}\mathopen{}\left(b_{1},\,b_{2}_{1},\,b_{2}_{2}_{1},\,b_{2}_{2}_{2}\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cz\_rule\_is\_the\_matrix\_conjugation\_on\_all\_sixteen\_paulis}]
+\[ \forall b \in \mathrm{bits4},\; \mathrm{eq4}\mathopen{}\left(\mathrm{mul4}\mathopen{}\left(\mathrm{CZ4},\,\mathrm{mul4}\mathopen{}\left(\mathrm{kron}\mathopen{}\left(\mathrm{pauli}\mathopen{}\left(b_{1},\,b_{2}_{1}\right),\,\mathrm{pauli}\mathopen{}\left(b_{2}_{2}_{1},\,b_{2}_{2}_{2}\right)\right),\,\mathrm{CZ4}\right)\right),\,\mathrm{czRule}\mathopen{}\left(b_{1},\,b_{2}_{1},\,b_{2}_{2}_{1},\,b_{2}_{2}_{2}\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_clifford\_gate\_keeps\_one\_term\_and\_t\_makes\_at\_most\_two}]
+\[ \forall p \in [\mathrm{X2},\,\mathrm{Y2},\,\mathrm{Z2}],\; \mathrm{terms}\mathopen{}\left(\mathrm{conj2}\mathopen{}\left(\mathrm{H2},\,p\right)\right) = 1 \land \mathrm{terms}\mathopen{}\left(\mathrm{conj2}\mathopen{}\left(\mathrm{S2},\,p\right)\right) = 1 \land \forall p \in [\mathrm{X2},\,\mathrm{Y2}],\; \mathrm{terms}\mathopen{}\left(\mathrm{scale2}\mathopen{}\left(\mathrm{root2},\,\mathrm{conj2}\mathopen{}\left(\mathrm{T2},\,p\right)\right)\right) = 2 \land \mathrm{terms}\mathopen{}\left(\mathrm{conj2}\mathopen{}\left(\mathrm{T2},\,\mathrm{Z2}\right)\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sign\_flipped\_t\_rule\_breaks\_the\_pauli\_product\_and\_the\_true\_rule\_keeps\_it}]
+\[ \mathrm{mul2}\mathopen{}\left(\mathrm{scale2}\mathopen{}\left(\mathrm{root2},\,\mathrm{conj2}\mathopen{}\left(\mathrm{T2},\,\mathrm{X2}\right)\right),\,\mathrm{scale2}\mathopen{}\left(\mathrm{root2},\,\mathrm{conj2}\mathopen{}\left(\mathrm{T2},\,\mathrm{Y2}\right)\right)\right) = \mathrm{scale2}\mathopen{}\left(\mathrm{zmul}\mathopen{}\left(\left(2,\,0,\,0,\,0\right),\,\mathrm{zi}\right),\,\mathrm{Z2}\right) \land \mathrm{mul2}\mathopen{}\left(\mathrm{wrongTX},\,\mathrm{wrongTY}\right) = \mathrm{scale2}\mathopen{}\left(\mathrm{zmul}\mathopen{}\left(\left(-2,\,0,\,0,\,0\right),\,\mathrm{zi}\right),\,\mathrm{Z2}\right) \land \mathrm{mul2}\mathopen{}\left(\mathrm{X2},\,\mathrm{Y2}\right) = \mathrm{scale2}\mathopen{}\left(\mathrm{zi},\,\mathrm{Z2}\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{phenomena.lean}}
 
 \begin{theorem}[\texttt{every\_phenomenon\_is\_definitional\_or\_credited}]
@@ -2755,6 +2797,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \forall \mathrm{nn} \in \{1,\dots,3\},\; \mathrm{clifford}\mathopen{}\left(\mathrm{nn}\right) = 2^{2 \cdot \mathrm{nn}} \cdot \mathrm{symp}\mathopen{}\left(\mathrm{nn}\right) \land \forall n \in \{1,\dots,10\},\; 0 < \mathrm{fib}\mathopen{}\left(n + 1\right) \land \mathrm{clifford}\mathopen{}\left(2\right) = 11520 \land \mathrm{symp}\mathopen{}\left(3\right) = 1451520 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\paragraph{\texttt{t\_count\_wall.lean}}
+
+\begin{theorem}[\texttt{the\_toffoli\_is\_exactly\_a\_circuit\_of\_seven\_t\_gates}]
+\[ \forall i \in \{0,\dots,7\},\; \mathrm{run}\mathopen{}\left(\mathrm{sevenT},\,\mathrm{basis}\mathopen{}\left(i\right)\right) = \mathrm{gen}\mathopen{}\left(j \mapsto \begin{cases}\left(2,\,0,\,0,\,0\right) & \text{if } j = \mathrm{toffoliOf}\mathopen{}\left(i\right)\\ \left(0,\,0,\,0,\,0\right) & \text{otherwise}\end{cases}\right) \land \mathrm{tGates}\mathopen{}\left(\mathrm{sevenT}\right) = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_schoolbook\_shor\_construction\_has\_t\_count\_twenty\_eight\_n\_cubed}]
+\[ \forall n \in \{1,\dots,64\},\; \mathrm{shorT}\mathopen{}\left(n\right) = 28 \cdot n^{3} \land \mathrm{shorT}\mathopen{}\left(1000\right) = 28000000000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_thousand\_bit\_shor\_circuit\_fits\_in\_seventeen\_uuids\_of\_particles}]
+\[ \mathrm{shorQubits}\mathopen{}\left(1000\right) = 2003 \land 2003 \le 17 \cdot 122 \land \lnot 2003 \le 16 \cdot 122 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_pauli\_path\_worst\_case\_passes\_ten\_to\_the\_eighty\_at\_three\_bits}]
+\[ \mathrm{shorT}\mathopen{}\left(2\right) = 224 \land \mathrm{worstTerms}\mathopen{}\left(\mathrm{shorT}\mathopen{}\left(2\right)\right) < 10^{80} \land \mathrm{shorT}\mathopen{}\left(3\right) = 756 \land \mathrm{worstTerms}\mathopen{}\left(\mathrm{shorT}\mathopen{}\left(3\right)\right) > 10^{80} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_floors\_modulus\_two\_to\_the\_999\_plus\_one\_has\_exactly\_a\_thousand\_bits}]
+\[ 2^{999} \le 2^{999} + 1 \land 2^{999} + 1 < 2^{1000} \land \mathrm{shorT}\mathopen{}\left(1000\right) = 7 \cdot 4 \cdot 1000^{3} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_bound\_depends\_on\_the\_t\_count\_and\_not\_on\_the\_width}]
+\[ \forall t \in \{0,\dots,8\},\; \mathrm{cost}\mathopen{}\left(t,\,2\right) = \mathrm{cost}\mathopen{}\left(t,\,2003\right) \land \mathrm{cost}\mathopen{}\left(t + 1,\,2003\right) = 2 \cdot \mathrm{cost}\mathopen{}\left(t,\,2003\right) \land \mathrm{cost}\mathopen{}\left(0,\,2003\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_constant\_factor\_saving\_leaves\_the\_t\_count\_cubic}]
+\[ \forall n \in \{1,\dots,64\},\; \frac{\mathrm{shorT}\mathopen{}\left(n\right)}{2} \cdot 2 = \mathrm{shorT}\mathopen{}\left(n\right) \land \frac{\mathrm{shorT}\mathopen{}\left(n\right)}{4} \cdot 4 = \mathrm{shorT}\mathopen{}\left(n\right) \land \frac{\mathrm{shorT}\mathopen{}\left(1000\right)}{4} > 10^{9} \land \frac{\mathrm{shorT}\mathopen{}\left(1000\right)}{2} > 10^{9} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_one\_bit\_instance\_is\_within\_reach\_and\_the\_thousand\_bit\_one\_is\_not}]
+\[ \mathrm{shorT}\mathopen{}\left(1\right) = 28 \land \mathrm{worstTerms}\mathopen{}\left(\mathrm{shorT}\mathopen{}\left(1\right)\right) < 10^{9} \land \mathrm{shorT}\mathopen{}\left(1000\right) = \mathrm{shorT}\mathopen{}\left(1\right) \cdot 10^{9} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{theology.lean}}
 

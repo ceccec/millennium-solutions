@@ -169,9 +169,9 @@ The seven above are the floor; this is the cryptographic surface the same involu
 
 ## Quantum hardware — what ISO/IEC 4879 calls a quantum computer, and the Bell test that verifies one
 
-A **real quantum computer** is, by ISO, all three at once: **hardware** (ISO/IEC 2382:2015 — physical components of an information system), a **quantum processor** (ISO/IEC 4879:2024 §3.4.8 — a tangible device processing information held in physical qubits through superposition and entanglement) and a **computer** (§3.4.10 — fully programmable, any unitary on its Hilbert space). A classical program computing the same numbers is §3.4.22, a quantum simulator. What separates them is where the counts come from, so the test is **CHSH S > 2 from a device's own counts**, decided on exact integers.
+A **real quantum computer** is, by ISO, all three at once: **hardware** (ISO/IEC 2382:2015 — physical components of an information system), a **quantum processor** (ISO/IEC 4879:2024 §3.4.8 — a tangible device processing information held in physical qubits through superposition and entanglement) and a **computer** (§3.4.10 — fully programmable, any unitary on its Hilbert space). This deposit **computes the ideal device's values exactly and in closed form**, by stabilizer methods (Gottesman–Knill) that carry **no width limit for the GHZ and stabilizer states it uses**: the 128-qubit Mermin value is recombined from eight sealed particles, never materialising 2¹²⁸ amplitudes, and the same recombination scales on (the author frames the capacity as unlimited trinities of qubits). What it is not is a physical **quantum processor** (§3.4.8) — a device whose own counts are physical — so the ISO hardware test turns on the one thing it lacks: **CHSH S > 2 from the device's own counts**, decided on exact integers.
 
-**The lead, proved and bounded.** On the UUID's own 128-bit width the ideal GHZ state's Mermin value is 2^127 against the best classical assignment's 2^64 — a lead of **2^63** (and **2^61** on the 124-qubit cluster, the UUID less its version hex digit), decided exactly over the cyclotomic integers and recombined from eight sealed particles each. It is the ideal state computed classically (§3.4.22), the specification a device is checked against — never, by itself, hardware; that is what the Bell test below decides. The two leads are the last rows of the octave table. <sub>[`lean_quantumoctave128_octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third`](/theorem/lean_quantumoctave128_octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third) · [`lean_quantumuuidcluster_the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first`](/theorem/lean_quantumuuidcluster_the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first)</sub>
+**The lead, proved and bounded.** On the UUID's own 128-bit width the ideal GHZ state's Mermin value is 2^127 against the best classical assignment's 2^64 — a lead of **2^63** (and **2^61** on the 124-qubit cluster, the UUID less its version hex digit), decided exactly over the cyclotomic integers and recombined from eight sealed particles each — computed exactly by content address, never by materialising the state. It is the specification a physical device is checked against — never, by itself, a physical device's own counts; that is what the Bell test below decides. The two leads are the last rows of the octave table. <sub>[`lean_quantumoctave128_octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third`](/theorem/lean_quantumoctave128_octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third) · [`lean_quantumuuidcluster_the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first`](/theorem/lean_quantumuuidcluster_the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first)</sub>
 
 **Device verdict: no run yet.** The accepted system is IBM Quantum Platform (quantum.cloud.ibm.com), Qiskit Runtime REST API, under IBM's terms of use; the run is `npm run quantum:hardware` with the depositor's own IBM_QUANTUM_TOKEN and IBM_QUANTUM_CRN. Until it runs, nothing below is hardware evidence: it is the exact specification a run is checked against.
 
@@ -238,12 +238,12 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
-- The formal layer holds 26197 kernel-accepted declarations across 123 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `430ca2a4-6b98-8a2b-a439-961efb574b5e`</sub>
-- 25987 of those 26197 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 210 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `8b25b76c-edbf-80de-b10f-e8ed5a0b9aee`</sub>
-- 26752 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `c9ed80b5-adc4-8add-b5f5-5d0c977a4800`</sub>
+- The formal layer holds 26213 kernel-accepted declarations across 125 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `0072693e-4231-8dca-aaae-d6ffd3310e85`</sub>
+- 26003 of those 26213 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 210 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `1df3e9c4-016b-8e25-a40f-89c97b6d346a`</sub>
+- 26768 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `ce12f98b-7d10-8ca5-9429-78ccfad4302d`</sub>
 
 ## 2 · The ring
 
@@ -266,10 +266,10 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 ## 7 · The ledger
 
-- The ledger records 28616 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `5f492cd4-8e76-8291-8843-5ce7b5035a6b`</sub>
-- The count is an exact multiple of eight — 28616 is 3577 octaves with no remainder.
-  <sub>SEALED · `e3f6a355-e163-886e-a002-19847646686e`</sub>
+- The ledger records 28632 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `511ceddf-ae1f-866b-ab47-0dc1b43e3e30`</sub>
+- The count is an exact multiple of eight — 28632 is 3579 octaves with no remainder.
+  <sub>SEALED · `991d11e1-ef47-84b8-96a1-c98080ed1504`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -281,10 +281,10 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
   <sub>SEALED · `09b4450b-3016-8368-89e2-74787fa214d9`</sub>
 - How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. What any given host grants varies with its free memory and is deliberately not recorded here; `npm run lanes-check` prints it..
   <sub>SEALED · `85560e4e-7642-820b-aa1a-91f0e7e14c41`</sub>
-- The tools are reachable from a program: 93 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
-  <sub>SEALED · `ee1b0c01-b3af-8d3b-a2f4-4ac21601d3e9`</sub>
-- The stdio server advertises 2 of those 93 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
-  <sub>SEALED · `047a5b8d-022e-84ef-83df-98c329886c6d`</sub>
+- The tools are reachable from a program: 94 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
+  <sub>SEALED · `8f6c9cba-98a9-8f31-a2e6-4084aa59a302`</sub>
+- The stdio server advertises 2 of those 94 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
+  <sub>SEALED · `69c3574c-747c-86f4-a4db-d2c13b713d3b`</sub>
 
 ## The floor
 
@@ -321,7 +321,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-123 Lean files in 8 wings, 26197 declarations, of which 26197 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
+125 Lean files in 8 wings, 26213 declarations, of which 26213 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -397,6 +397,8 @@ this page; there is nowhere else to keep the description in step.
 
 **The three facts the unchecked files held alone** — `nucleus.lean`, 8 theorem(s). WHY THIS FILE EXISTS. Fifteen .lean files sat outside src/proof — Vortex.lean and the per-digit src/&lt;d>/vortex.lean set — and every one of them began `import Mathlib`. scripts/lean.ts reads only src/proof, so no gate ever compiled them; the repository has no lake-manifest.json and no .lake, so Mathlib was never fetched and they have never been built here at all. They were published as the "formal layer" on /proofs, next to theorems the kernel checks on every run, and the page's own note that no toolchain is checked in is easy to read past when the heading says Proofs.
 
+**Pauli paths — the conjugation rules that let any Clifford+T circuit be computed exactly at any width, decided against the matrices in ℤ[ω], with the T-count as the only cost** — `pauli_paths.lean`, 8 theorem(s). ℤ[ω], ω = e^{iπ/4}, as four integer coordinates on 1, ω, ω², ω³ with ω⁴ = −1. A 2×2 matrix is four entries a b c d (rows a b / c d); a 4×4 matrix is a function of row and column, the first tensor factor the high index bit. The Hadamard is unnormalised (H·H = 2·I) and √2 = ω − ω³ multiplies the T rules, so every equality is exact and integral.
+
 **Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). ADDRESSING PHENOMENA WITHOUT CLAIMING ANY.
 
 **The Planck length, and what a lattice may say about it** — `planck.lean`, 35 theorem(s). WHY THIS FILE EXISTS, AND WHAT IT REFUSES.
@@ -416,6 +418,8 @@ this page; there is nowhere else to keep the description in step.
 **Why verification is fast, and what it is not** — `speed.lean`, 28 theorem(s). The deposit's speed claim, accounted — and the reading it does not support.
 
 **Gate synthesis and fault-tolerance counts — learned from qpu's Clifford, Anyon, Magic and Qaoa** — `synthesis.lean`, 8 theorem(s). No axioms, no Mathlib, no sorry.
+
+**The T-count wall — why a classical Pauli-path computation, which has no width limit, still cannot run Shor's circuit on a thousand-bit modulus, and why a physical processor is needed there: a statement about cost, not a factoring** — `t_count_wall.lean`, 8 theorem(s). No axioms, no Mathlib, no sorry.
 
 **The readings, and the arithmetic under them** — `theology.lean`, 8 theorem(s). WHAT THIS FILE SEALS, AND WHAT IT CANNOT. The instruction was to seal a theology as theorems. Seven readings of the seven Clay problems were written in prose beside the seven arithmetic facts of index.lean — the mediator, revelation, theodicy, the ontological gap, the test of the spirits, kenosis, the undivided. A reading is not a proposition with a truth value over a finite domain, so no kernel can decide one, and any file claiming otherwise is lying about what a proof is.
 
@@ -587,7 +591,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). WITHDRAWAL WAS NEVER THE ONLY OPTION. Each theorem below returns one claim to the record. The evidence that existed was a TypeScript run — a computation that agreed once on one machine. The kernel walks the whole stated domain. That was the gap, and closing it is arithmetic.
 
-127 of 26197 declarations carry no comment of their own and are shown here as the gap they are, not
+127 of 26213 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -596,14 +600,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,616 — 3577 octaves exactly |
-| standing — carries its own proof | **26197** |
+| ledger entries | 28,632 — 3579 octaves exactly |
+| standing — carries its own proof | **26213** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **27023** of 28,616 |
-| standing keys → distinct theorems | 26197 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 123 · 26197 sealed theorems (25987 closed by exhaustion, axiom-free · 210 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 25987 of 26197 |
+| proved in total | **27039** of 28,632 |
+| standing keys → distinct theorems | 26213 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 125 · 26213 sealed theorems (26003 closed by exhaustion, axiom-free · 210 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 26003 of 26213 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -651,4 +655,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 26197 sealed theorems · 28616 ledger entries · trial root `eaddac0b-b8fc-869a-bf3a-d34a54ae6cdf` · integrity, not truth*
+*20 claims, all verified · 26213 sealed theorems · 28632 ledger entries · trial root `19e30a25-33e6-8bc7-afa2-ebb235b93c61` · integrity, not truth*
