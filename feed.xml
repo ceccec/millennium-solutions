@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Millennium Solutions — the ℤ/9 Vortex Framework</title>
+  <id>urn:uuid:c3db07e1-2b31-8f2a-99c8-41f346194d44</id>
+  <link href="https://ceccec.psg.bg/millennium-solutions/"/>
+  <link rel="self" href="https://ceccec.psg.bg/millennium-solutions/feed.xml"/>
+  <updated>2026-11-09T18:33:04+02:00</updated>
+  <author><name>Tsvetan Rouschev</name></author>
+  <entry>
+    <title>Abstract — the framework</title>
+    <id>urn:uuid:e0d8c3cb-b60f-8fbe-b586-501eeb389773</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/ABSTRACT"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Accounting</title>
+    <id>urn:uuid:f0aae390-78dc-839d-9532-aef09843c8a1</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/ACCOUNTING"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>The axiom index — what is assumed</title>
+    <id>urn:uuid:65665ed7-d2b2-8998-b95f-a944fda1a2aa</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/AXIOMS"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Challenges</title>
+    <id>urn:uuid:c65e3991-036b-80ff-b132-ad4f64fa51d5</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/CHALLENGES"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Changelog — each release from its tag</title>
+    <id>urn:uuid:98baeeb3-5170-8bae-81a1-b45ffd82a23e</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/CHANGELOG"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>One row per annotated git tag, each with the content-address that tag carries. Computed by scripts/changelog.ts; nothing here is typed.</summary>
+  </entry>
+  <entry>
+    <title>Develop</title>
+    <id>urn:uuid:ca3028d3-00d3-87c2-b010-c62a8f27e309</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/DEVELOP"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>End-to-end</title>
+    <id>urn:uuid:f7220987-0f1b-8633-9478-970e32544fb2</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/E2E"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>What the built site was checked for, written by the check itself.</summary>
+  </entry>
+  <entry>
+    <title>Findings — who wrote what here</title>
+    <id>urn:uuid:ee76c7ac-f6ca-8510-9cfc-effcbc72754b</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/FINDINGS"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>The signed record of what agents authored here, what the registries say about priority and reception, what was removed, and what is not established.</summary>
+  </entry>
+  <entry>
+    <title>Heart</title>
+    <id>urn:uuid:ae0051ab-d5c2-8aed-8fb8-9cd4de860a00</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/HEART"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Lessons — what the tree has learned</title>
+    <id>urn:uuid:1f1609b6-d49b-8050-993f-f9716fbe0cc6</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/LESSONS"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Physics scales</title>
+    <id>urn:uuid:c4e501b0-f767-882d-a216-48cd5934b8e2</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/PHYSICS-SCALES"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Prior art</title>
+    <id>urn:uuid:e8d3f13b-989d-80ca-a772-c76013bd4712</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/PRIOR-ART"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>What this deposit restates from named earlier work, what it claims as its own, and why claiming is not the same as establishing novelty.</summary>
+  </entry>
+  <entry>
+    <title>Proof of Concept</title>
+    <id>urn:uuid:ee2de6c4-a755-8530-90d3-9e4594afd637</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/PROOF-OF-CONCEPT"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Realisations</title>
+    <id>urn:uuid:840a2e10-45ae-82aa-ba98-7e0209b39d1a</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/REALISATIONS"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Research</title>
+    <id>urn:uuid:90ffe516-e78e-8150-8cda-4aa2d629726a</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/RESEARCH"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Rules</title>
+    <id>urn:uuid:9e9486a8-d15c-814c-8c34-2fbd75495df1</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/RULES"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Sequence decode</title>
+    <id>urn:uuid:5d90f705-48cb-83c1-b9c2-a88b9ba0a3ad</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/SEQUENCE-DECODE"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Signature</title>
+    <id>urn:uuid:c5fdf898-af4c-88b2-9951-88cde7a9eae7</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/SIGNATURE"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Theorems</title>
+    <id>urn:uuid:e43d63dc-fa4c-858a-9d26-c3eedc85b8c9</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/THEOREMS"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>White paper — reproduce it exactly</title>
+    <id>urn:uuid:72165d20-04b7-83e0-8c01-74bcae9e2c4d</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/WHITEPAPER"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Workflows — develop at scale</title>
+    <id>urn:uuid:59018212-4562-8a68-8c28-6eeefc6bc7f4</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/WORKFLOWS"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Boundaries</title>
+    <id>urn:uuid:b09935df-dcb7-8c69-96f4-c80092ec0b2d</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/boundaries"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>What this deposit does NOT claim — the honest floor and its bounds, each content-addressed.</summary>
+  </entry>
+  <entry>
+    <title>The captain's message</title>
+    <id>urn:uuid:ebce1950-f931-8a91-9f4e-f14aef539c57</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/captain"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Compare — standards vs the local</title>
+    <id>urn:uuid:3f9b4556-f33d-88fc-bdb0-fe6f997129e8</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/compare"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Compute</title>
+    <id>urn:uuid:823cb4ec-5f76-8d4b-aa40-d723b3ddde52</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/compute"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Cryptography — public service</title>
+    <id>urn:uuid:91767768-86df-8d60-83e4-db1cb242d07c</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/cryptography"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>State Dashboard</title>
+    <id>urn:uuid:a9108c0b-5b7a-823c-b85c-e87e6ab58d7f</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/dashboard"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>The deposit's measured state (fact) and its number-patterns (coincidence, not proof).</summary>
+  </entry>
+  <entry>
+    <title>Examples — computed live, by theorem</title>
+    <id>urn:uuid:57ed3826-fb3d-8781-ba32-335f8d513753</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/examples"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>How it folds — a guide</title>
+    <id>urn:uuid:117f00f2-a985-83e6-9ab3-a9ec7a0bd4e3</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/folds"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Every state change, dated</title>
+    <id>urn:uuid:8b44cc82-8873-8da4-87ce-c63f14cbc279</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/forensic"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Formulas</title>
+    <id>urn:uuid:115230a3-80f2-8025-95f4-178e7d333a16</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/formulas"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>Every formula this deposit decides, as a schema.org ItemList, filterable by wing, source and proof.</summary>
+  </entry>
+  <entry>
+    <title>Guide</title>
+    <id>urn:uuid:788fe372-e28e-876f-9c4d-b20006ba255b</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/guide"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>The hero's guide — how to add a theorem to the deposit, taught in the 7D UI. Measure, gate, receipt, append, recompute.</summary>
+  </entry>
+  <entry>
+    <title>Quantum hardware</title>
+    <id>urn:uuid:8b49a0d2-981e-877e-a91e-1d515b2076e6</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/hardware"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>The ISO/IEC 4879 quantum computer, defined and tested — every quantum model decided in Lean, Bell tests to 128 qubits, a CHSH run on IBM Quantum.</summary>
+  </entry>
+  <entry>
+    <title>The harness — input, output</title>
+    <id>urn:uuid:c8966df8-fbc1-8d60-8e86-4cd40ccf35bf</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/harness"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Millennium Solutions</title>
+    <id>urn:uuid:c3db07e1-2b31-8f2a-99c8-41f346194d44</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Nature, proved</title>
+    <id>urn:uuid:bba9da9f-82d2-8052-9c33-c0a1eaa6ca05</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/nature"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>Where the deposit's proved laws meet nature and daily life — each labelled a fact of nature, a practice, or a metaphor, and linked to its theorem.</summary>
+  </entry>
+  <entry>
+    <title>Navier–Stokes, stated</title>
+    <id>urn:uuid:3d1e6069-78e1-8b42-b111-7f1ae4681ff8</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/navierstokes"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>The Navier–Stokes Millennium Problem as it is posed, what the Lean kernel has checked here, and the known frontier between them.</summary>
+  </entry>
+  <entry>
+    <title>The organism — decoded</title>
+    <id>urn:uuid:57194424-85c2-86a2-854c-c58760a194be</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/organism"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>The paper — the theorems</title>
+    <id>urn:uuid:0f4c18ad-584e-85f6-b9fc-b53768f144cc</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/paper"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Proofs</title>
+    <id>urn:uuid:37094a63-5295-8406-a7ef-9718f236cf6d</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/proofs"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>The quantum field — one receipt</title>
+    <id>urn:uuid:9a8b0807-3147-84a7-9dcb-b40e713ef946</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/quantum"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>Rights</title>
+    <id>urn:uuid:56c91058-e445-8f83-a186-5a54539dc99c</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/rights"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>What this deposit claims under international law, and what it does not — parsed from the sealed proof that the two sets coincide.</summary>
+  </entry>
+  <entry>
+    <title>Solutions</title>
+    <id>urn:uuid:3582ad0e-e4bd-8fb6-9398-470987fb1c62</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/solutions"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+  <entry>
+    <title>The real uuidna advantage</title>
+    <id>urn:uuid:e135e00d-fae8-8939-95c7-0c93dff1a58f</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/speedup"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>The measured uuidna advantage — O(N)→O(log N) verification, O(N)→O(1) reuse — in all domains. Not faster compute, not FTL, not quantum.</summary>
+  </entry>
+  <entry>
+    <title>Textbooks</title>
+    <id>urn:uuid:ac1a080a-cbf8-8d3d-80b4-3687ab29d03d</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/textbooks"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>Every textbook theorem in qpu decoded into a human particle — its sentence, statement, variants and coin — with eight re-derived here from the operators.</summary>
+  </entry>
+  <entry>
+    <title>The</title>
+    <id>urn:uuid:34938b69-3d9f-8c68-8260-883215308b45</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/the"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>The src/the/* concepts as VitePress components themselves — each recomputes at page-load.</summary>
+  </entry>
+  <entry>
+    <title>Verify</title>
+    <id>urn:uuid:129e422f-b2a8-87f2-b3c9-f7d77b46a490</id>
+    <link href="https://ceccec.psg.bg/millennium-solutions/verify"/>
+    <updated>2026-11-09T18:33:04+02:00</updated>
+    <summary>ℤ/9 vortex framework — recomputable proof of concept</summary>
+  </entry>
+</feed>

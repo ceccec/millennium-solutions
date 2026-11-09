@@ -1,0 +1,11 @@
+{
+  "greeting": "uuidna is ready. A recomputable ℤ/9 deposit: every fact re-checks from src/ by exhaustion. Integrity, not truth.",
+  "confirm": "re-check everything: `npm run verify` (re-runs every theorem, re-gates every name, checks the chain).",
+  "version": "0.2.9",
+  "theorems": 28632,
+  "octaves": 3579,
+  "octaveExact": true,
+  "seal": "fda61ce4-90b5-8c3a-a306-0df10c520e24",
+  "live": "https://ceccec.psg.bg/millennium-solutions/",
+  "repo": "https://github.com/ceccec/millennium-solutions"
+}

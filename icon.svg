@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Millennium ℤ/9 vortex">
+  <rect width="512" height="512" rx="96" fill="#1b1b1f"/>
+  <g fill="none" stroke="#3451b2" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <!-- nonagon (ℤ/9) -->
+    <polygon points="256,64 379,109 452,216 434,344 335,428 205,436 100,368 62,246 118,128 256,64" stroke="#5672cd"/>
+    <!-- doubling circuit 1-2-4-8-7-5 as a star chord path -->
+    <path d="M256,96 L406,236 L150,300 L360,360 L120,180 L392,300 Z" stroke="#3451b2" opacity="0.85"/>
+  </g>
+  <!-- center 5: the fixed point -->
+  <circle cx="256" cy="256" r="40" fill="#3451b2"/>
+  <text x="256" y="256" text-anchor="middle" dominant-baseline="central" font-family="Georgia, serif" font-size="52" font-weight="bold" fill="#ffffff">5</text>
+</svg>
