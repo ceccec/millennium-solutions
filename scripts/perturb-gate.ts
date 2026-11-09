@@ -35,7 +35,8 @@
  *  sweep and not a gate. `--file energy.lean` is the intended use.
  *
  *  usage:  node scripts/perturb-gate.ts [--file planck.lean] [--list] */
-import { readFileSync, writeFileSync, mkdtempSync, rmSync, readdirSync } from 'node:fs'
+import { readFileSync, writeFileSync, mkdtempSync, rmSync } from 'node:fs'
+import { leanFiles, leanPathOf } from '../src/api/index.ts'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 import { laneBudget } from '../src/api/lanes.ts'
@@ -56,7 +57,7 @@ const DEF = /^def ([a-zA-Z_][a-zA-Z0-9_]*) *: *Nat *:= *(\d+) *(--.*)?$/
 const THM = /^theorem ([a-zA-Z_][a-zA-Z0-9_']*)/
 
 const only = arg('--file')
-const files = readdirSync(DIR).filter((f) => f.endsWith('.lean')).filter((f) => !only || f === only).sort()
+const files = leanFiles().filter((f) => !only || f === only)
 const work = mkdtempSync(join(tmpdir(), 'perturb-'))
 
 type Row = { file: string; thm: string; noticed: string[]; probes: number }
@@ -89,7 +90,7 @@ const compileAsync = async (path: string): Promise<number[]> => {
 }
 
 for (const f of files) {
-  const src = readFileSync(`${DIR}/${f}`, 'utf8')
+  const src = readFileSync(`${DIR}/${leanPathOf(f)}`, 'utf8')
   const lines = src.split('\n')
   const defs = lines.map((l, i) => ({ m: l.match(DEF), i })).filter((x) => x.m) as { m: RegExpMatchArray; i: number }[]
   // Every theorem with the line it starts on, so an error line maps to the declaration containing it.

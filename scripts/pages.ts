@@ -52,7 +52,7 @@ const ADVANTAGE = advantage()
 const SPLIT = split()
 import { orbit, live as __live } from '../src/api/index.ts'
 import { factor, millerRabin, type Factorisation } from '../src/crypto/factor/index.ts'
-import { leanFiles as leanFilesShared } from '../src/api/index.ts'
+import { leanFiles as leanFilesShared, leanPathOf } from '../src/api/index.ts'
 
 // A FACTOR-ROUTE COIN IS A RE-FACTORED COIN — the sealed output of factor() on one input, content-addressed by the
 // input together with the factor source, so a changed input, bound, or algorithm mints a fresh one. A build REUSES the
@@ -89,7 +89,7 @@ const measuredFactor = (decimal: string): Factorisation => {
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const leanFiles = leanFilesShared()
-const leanSrc = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${f}`, 'utf8')]))
+const leanSrc = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${leanPathOf(f)}`, 'utf8')]))
 // ONE READER. Four regexes here parsed src/proof independently of the one in src/api — a whole-theorem
 // match, a by-decide match, a per-file count and a domain ranking — each able to drift from the others and
 // from the kernel. They are all the shared reader now.

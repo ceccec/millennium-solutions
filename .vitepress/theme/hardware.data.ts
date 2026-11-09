@@ -49,7 +49,7 @@ const RUN = 'evidence/quantum-hardware/latest.json'
 const angle = (x: number) => (x === 0 ? '0' : `${x < 0 ? '−' : ''}π/${Math.round(Math.PI / Math.abs(x))}`)
 
 export default {
-  watch: ['../../src/quantum/hardware/hardware.ts', `../../${RUN}`, ...MODEL_FILES.map((f) => `../../src/proof/${f}`)],
+  watch: ['../../src/quantum/hardware/hardware.ts', `../../${RUN}`, ...MODEL_FILES.map((f) => `../../src/proof/quantum/${f}`)],
   load(): HardwareData {
     const settings = SETTINGS.map((s) => {
       const [p00, p01, p10, p11] = simulate(chshGates(s))

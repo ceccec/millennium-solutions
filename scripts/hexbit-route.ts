@@ -9,19 +9,20 @@
 //
 // Each file returned is checked: its content address is recomputed from its bytes and must carry the same handle, or the
 // route is refused. The index covers src/proof/*.lean, the deposit's Lean sources.
-import { readFileSync, readdirSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { join, dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { toUuid } from '../src/0/index.ts'
+import { leanFiles, leanPathOf } from '../src/api/index.ts'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const handleOf = (seed: string): string => toUuid(seed).replace(/-/g, '').slice(0, 8)
 
-const files = readdirSync(join(ROOT, 'src/proof')).filter((f) => f.endsWith('.lean')).sort()
+const files = leanFiles()   // recursive — the Lean sources are grouped into src/proof/<domain>/ subdirs
 const index = new Map<string, string[]>()
 for (const f of files) {
-  const h = handleOf(readFileSync(join(ROOT, 'src/proof', f), 'utf8'))
-  index.set(h, [...(index.get(h) ?? []), 'src/proof/' + f])
+  const h = handleOf(readFileSync(join(ROOT, 'src/proof', leanPathOf(f)), 'utf8'))
+  index.set(h, [...(index.get(h) ?? []), 'src/proof/' + leanPathOf(f)])
 }
 
 if (process.argv.includes('--index')) {

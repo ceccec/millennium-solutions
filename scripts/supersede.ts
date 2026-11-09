@@ -18,6 +18,7 @@
 // spelling, token overlap or resemblance: scripts/carry.ts records what heuristic name-matching cost here,
 // and three of its twelve candidates were wrong.
 import { execSync } from 'node:child_process'
+import { leanPathOf } from '../src/api/index.ts'
 import { existsSync, readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { ledger as ledgerRows, carrierOf, leanFiles } from '../src/api/index.ts'
 
@@ -73,7 +74,7 @@ for (const f of execSync('git ls-tree --name-only HEAD src/proof/', { encoding: 
   { // maxBuffer RAISED FROM ITS 1 MB DEFAULT. This read HEAD's generated Lean back through a pipe, which was
     // fine while the generator wrote one small file and threw at the first commit where it wrote seven
     // multi-megabyte shards — as a crash dumping a megabyte of Lean into the error, not as a clear limit.
-    const src = execSync(`git show HEAD:src/proof/${f}`, { encoding: 'utf8', maxBuffer: 512 * 1024 * 1024 }); heads.push(src)
+    const src = execSync(`git show HEAD:src/proof/${leanPathOf(f)}`, { encoding: 'utf8', maxBuffer: 512 * 1024 * 1024 }); heads.push(src)
     for (const [n, p] of parse(src)) before.set(n, p) }
 
 // THE WHOLE CORPUS, not only this generator's own files. Scoped to the shards, the question being asked was
@@ -84,7 +85,7 @@ for (const f of execSync('git ls-tree --name-only HEAD src/proof/', { encoding: 
 // by hand is proved.
 const after = new Map<string, string>()
 for (const f of leanFiles())
-  for (const [n, p] of parse(readFileSync('src/proof/' + f, 'utf8'))) after.set(n, p)
+  for (const [n, p] of parse(readFileSync('src/proof/' + leanPathOf(f), 'utf8'))) after.set(n, p)
 
 // A STATEMENT PROVED TWICE UNDER TWO NEW NAMES CANNOT NAME A CARRIER. If the same proposition appears more
 // than once in the new corpus there is no single theorem that carries the old key, and guessing one would put

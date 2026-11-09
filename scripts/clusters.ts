@@ -33,6 +33,7 @@
 //   node scripts/clusters.ts            report
 //   node scripts/clusters.ts --write    write the drafts
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs'
+import { leanPathOf } from '../src/api/index.ts'
 import { execFileSync } from 'node:child_process'
 import { leanTheorems, type LeanTheorem } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
@@ -51,7 +52,7 @@ const REMOVED = (JSON.parse(readFileSync('src/proof/revoked.json', 'utf8')) as u
 const REMOVED_ON = git('log', '--diff-filter=A', '--format=%cs', '--', 'src/proof/revoked.json').split('\n').pop() ?? ''
 const pl = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`
 const sentence = (t: string) => { const x = t.trim(); if (!x) return ''; const y = x.charAt(0).toUpperCase() + x.slice(1); return /[.!?]$/.test(y) ? y : y + '.' }
-const src = (f: string) => readFileSync(`src/proof/${f}`, 'utf8')
+const src = (f: string) => readFileSync(`src/proof/${leanPathOf(f)}`, 'utf8')
 const front = (f: string, k: string) => {
   const lines = src(f).split('\n'), i = lines.findIndex((l) => new RegExp(`^--\\s*${k}:`).test(l))
   if (i < 0) return ''
@@ -201,7 +202,7 @@ function deposition(c: Cluster) {
   const decided = c.sealed.filter((t) => t.tactic === 'by decide').length, proved = c.sealed.length - decided
   const note = front(c.file, 'prior_art_note'), kind = front(c.file, 'prior_art')
   const credits = creditedIn(c.file)
-  const files = ['src/proof/' + c.file, ...closureOf(c.file).map((f) => 'src/proof/' + f)]
+  const files = ['src/proof/' + leanPathOf(c.file), ...closureOf(c.file).map((f) => 'src/proof/' + leanPathOf(f))]
   const code = (t: string) => t.replace(/`([^`]+)`/g, '<code>$1</code>')
   const lede = [
     `${pl(c.sealed.length, 'machine-checked theorem', 'machine-checked theorems')} from the Lean 4 source file <code>src/proof/${c.file}</code>, `
@@ -255,7 +256,7 @@ function deposition(c: Cluster) {
     related_identifiers: [
       { identifier: CONCEPT_DOI, relation: 'isPartOf', scheme: 'doi' },
       { identifier: AT(`src/proof/${c.file}`), relation: 'isSupplementTo', scheme: 'url' },
-      ...importsOf(c.file).map((f) => ({ identifier: AT(`src/proof/${f}`), relation: 'references', scheme: 'url' })),
+      ...importsOf(c.file).map((f) => ({ identifier: AT(`src/proof/${leanPathOf(f)}`), relation: 'references', scheme: 'url' })),
       ...c.sealed.map((t) => ({ identifier: `${SITE}/theorem/${keyOf(t)}`, relation: 'hasPart', scheme: 'url' })),
     ],
     notes: `cluster ${c.file} · ${c.sealed.length} sealed · joint address ${j.root} · figures as of commit ${HEAD.slice(0, 12)} (${HEAD_DATE}) · `

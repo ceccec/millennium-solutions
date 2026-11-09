@@ -18,7 +18,7 @@
 // is what scripts/quantum-hardware.ts asks IBM's for.
 //
 // NO FLOAT ANYWHERE. Every coefficient is (a + b√2)/2^m with BigInt a, b: T contributes 1/√2 and nothing else this gate set
-// does leaves ℤ[1/√2]. Per particle 1 is X, 2 is Z, 3 is Y (the tableau's (x, z) bits). src/proof/pauli_paths.lean decides
+// does leaves ℤ[1/√2]. Per particle 1 is X, 2 is Z, 3 is Y (the tableau's (x, z) bits). src/proof/quantum/pauli_paths.lean decides
 // every rule below against the 2×2 and 4×4 matrices in ℤ[ω], and the T-split cost law.
 
 /** (a + b√2) / 2^m */

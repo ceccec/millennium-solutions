@@ -31,7 +31,7 @@ const status = !ghz && !coin ? 'NOT MEASURED' : (ghz && JSON.stringify(ghz.value
 console.log(JSON.stringify({
   status,
   attribution: 'qpu.uuidna.com (a third party, read-only connector): corroboration only, never proof',
-  verdictSource: 'src/proof/interference.lean, theorem ghz_cancels_exactly_on_odd_parity',
+  verdictSource: 'src/proof/quantum/interference.lean, theorem ghz_cancels_exactly_on_odd_parity',
   expected: { ghz: expectedGhz, coinWeight: expectedCoinWeight },
   qpu: { ghz: ghz ?? null, coin: coin ?? null },
   reason: status === 'NOT MEASURED' ? 'qpu did not return X-basis amplitudes under a ghz or coin key' : status,

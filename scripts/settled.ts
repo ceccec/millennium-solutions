@@ -18,7 +18,8 @@
 //
 // Only the measured column is written here. That is what makes the equality a check rather than a restatement:
 // add a `by decide` theorem to fnv.lean without bumping its count and this file stops compiling.
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { leanFiles, leanPathOf } from '../src/api/index.ts'
 
 const DIR = 'src/proof'
 const OUT = `${DIR}/settled.lean`
@@ -29,8 +30,8 @@ type Row = { file: string; mod: string; ns: string; declared: number; byDecide: 
 // the files are DERIVED, not listed: whichever files declare a count are the ones checked, so a new one is
 // picked up without anybody remembering to add it here, and a removed one stops being asserted about.
 const rows: Row[] = []
-for (const f of readdirSync(DIR).filter((x) => x.endsWith('.lean')).sort()) {
-  const src = readFileSync(`${DIR}/${f}`, 'utf8')
+for (const f of leanFiles()) {
+  const src = readFileSync(`${DIR}/${leanPathOf(f)}`, 'utf8')
   const decl = src.match(/^\s*def\s+settledHere\s*:\s*Nat\s*:=\s*(\d+)/m)
   if (!decl) continue
   const ns = src.match(/^namespace\s+([A-Za-z_0-9.]+)/m)

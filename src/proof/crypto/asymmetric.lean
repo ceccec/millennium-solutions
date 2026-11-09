@@ -6,7 +6,7 @@ set_option maxRecDepth 8000000
 -- prior_art_note: Ed25519 — Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe and Bo-Yin Yang,
 --   2011; standardised as RFC 8032 (Josefsson and Liusvaara, 2017). SHA-512 is FIPS 180-4 (NIST). The
 --   curve, the signature scheme and the hash are all theirs and none is this deposit's. The implementation
---   in src/0/ed25519.ts is checked against their published vectors by scripts/crypto-kat.ts, which is where
+--   in src/crypto/sign/ed25519.ts is checked against their published vectors by scripts/crypto-kat.ts, which is where
 --   the assurance for the PRIMITIVE lives — not here. Nothing below decides that Ed25519 is secure, and a
 --   file that appeared to would be claiming a result nobody has.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
@@ -131,7 +131,7 @@ theorem the_tag_moves_with_the_payload :
   (List.range 11).all (fun p => tagOf 1 p != tagOf 1 (p + 1)) := by decide
 
 -- ── THE FIELD THE IMPLEMENTATION RESTS ON, AND THE ONE FACT IT BRANCHES ON ───────────────────────────────
--- src/0/ed25519.ts recovers x from y by raising to (p+3)/8 and multiplying by a square root of −1 when that
+-- src/crypto/sign/ed25519.ts recovers x from y by raising to (p+3)/8 and multiplying by a square root of −1 when that
 -- misses. That rule is not general: it is valid exactly for a prime ≡ 5 (mod 8), and for p ≡ 3 (mod 4) the
 -- rule is the different (p+1)/4 with no fallback. The implementation therefore depends on an arithmetic
 -- property of this specific prime, and depending on it silently is how a curve implementation ports itself

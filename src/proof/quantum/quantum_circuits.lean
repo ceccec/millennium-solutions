@@ -5,7 +5,7 @@
 --   ring of cyclotomic integers ℤ[ω], ω = e^{iπ/4}, ω⁴ = −1, and √2 = ω − ω³ in it; the native gate set rz, sx, cz of
 --   superconducting processors (IBM Quantum's published basis) and the H = RZ·SX·RZ, CX = H·CZ·H identities.
 -- prior_art_note: NONE OF THE PHYSICS OR THE ALGEBRA IS THIS DEPOSIT'S. What is decided here is only that the gate list
---   src/quantum/hardware.ts `chshGates` sends — transcribed below gate for gate — prepares a Bell pair and gives the four
+--   src/quantum/hardware/hardware.ts `chshGates` sends — transcribed below gate for gate — prepares a Bell pair and gives the four
 --   CHSH correlations ±√2/2, so S = 2√2 for an ideal device, in exact arithmetic with no float anywhere.
 -- prior_art_search: not performed — every law is named above and none is claimed as new.
 -- prior_art_pool: named

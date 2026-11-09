@@ -106,7 +106,7 @@ theorem the_hash_keeps_one_value_and_a_coil_needs_all_of_them :
 -- ── 6 · BUT ORDER-INVARIANCE IS AN IDENTITY, AND IT IS WHAT A HASH CAN HAVE ────────────────────────────────
 -- This is the half that is not a refusal. A hash read over a CANONICALISED input agrees at every point of the
 -- permutation space, which is a cross formula in the full sense — and it is the one this deposit's receipt
--- rests on. src/proof/quantum.lean decides it over every permutation and names the mechanism: a sort.
+-- rests on. src/proof/quantum/quantum.lean decides it over every permutation and names the mechanism: a sort.
 -- Here it is stated as what it is — an identity of the STRUCTURE, never of the values.
 def perms3 : List (List Nat) :=
   [[1, 2, 4], [1, 4, 2], [2, 1, 4], [2, 4, 1], [4, 1, 2], [4, 2, 1]]

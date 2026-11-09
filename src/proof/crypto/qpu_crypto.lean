@@ -24,7 +24,7 @@
 --
 -- WHY THIS FILE EXISTS, AND WHAT IT REFUSES TO SAY.
 --
--- src/proof/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
+-- src/proof/quantum/qpu.lean decides what qpu.uuidna.com's REGISTER constants imply. This file does the same for its
 -- CRYPTOGRAPHIC surface, which is the part a reader is most likely to quote and least likely to check. The
 -- method is the one that file set: the service's numbers are recorded as its own declarations, and the kernel
 -- decides what follows from them — never that the service is right, never that this deposit is.
@@ -206,7 +206,7 @@ theorem the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes :
   ∧ (2 ^ 37 + 1) * (2 ^ 74 - 2 ^ 37 + 1) = 2 ^ 111 + 1
   ∧ 2 ^ 37 + 1 = 3 * 1777 * 25781083 := by decide
 
--- MEASURED 2026-11-08 with src/factor/index.ts on the decimal of 2^999 + 1: status PARTIAL, fourteen factors
+-- MEASURED 2026-11-08 with src/crypto/factor/index.ts on the decimal of 2^999 + 1: status PARTIAL, fourteen factors
 -- found below the trial bound (3 four times, then 19 … 97377658867), and a 244-digit cofactor that Pollard rho
 -- did not split in 500 000 steps, reported composite by a witness. The route does not factor the integer and
 -- does not say it does. What the kernel adds is that the account is an IDENTITY: the fourteen factors times the

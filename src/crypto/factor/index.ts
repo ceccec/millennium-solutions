@@ -202,7 +202,7 @@ export const sealedProofFor = (digits: string): SealedFactorisation | null => {
     what: 'PARTIAL, decided not guessed: fourteen factors times a 244-digit cofactor equal the integer exactly, no found '
       + 'prime divides the cofactor, and 2 is a Fermat witness that the cofactor is still composite — so it is explicitly '
       + 'NOT a factorisation. The algebraic split (a³ + 1) and the four threes (lifting-the-exponent) are decided too.',
-    sealedIn: 'src/proof/qpu_crypto.lean',
+    sealedIn: 'src/proof/crypto/qpu_crypto.lean',
   }
   return null
 }

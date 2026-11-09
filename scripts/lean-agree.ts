@@ -15,6 +15,7 @@
 // The triad is normalised mod 9 before comparing: the runtime writes {3,6,9} and the proofs write {3,6,0},
 // which is the same class named by its residue — stated here rather than hidden in a lenient comparison.
 import { BASE, units, triad, vortexOrbit, SEEDS } from '../src/0/index.ts'
+import { leanPathOf } from '../src/api/index.ts'
 import { precedes, staleTail } from '../src/api/gates.ts'
 import { unreflect } from '../src/honesty/index.ts'
 import { FIELDS, encode as encodeContainer } from '../src/crypto/container/program.ts'
@@ -164,20 +165,20 @@ const newest = (file: string, seen = new Set<string>()): number => {
   if (seen.has(file)) return 0
   seen.add(file)
   let t = 0
-  try { t = statSync(`src/proof/${file}`).mtimeMs } catch { return Date.now() }   // unreadable: always rebuild
-  for (const m of readFileSync(`src/proof/${file}`, 'utf8').matchAll(/^import\s+(\w+)/gm))
+  try { t = statSync(`src/proof/${leanPathOf(file)}`).mtimeMs } catch { return Date.now() }   // unreadable: always rebuild
+  for (const m of readFileSync(`src/proof/${leanPathOf(file)}`, 'utf8').matchAll(/^import\s+(\w+)/gm))
     t = Math.max(t, newest(m[1].toLowerCase() + '.lean', seen))
   return t
 }
 let built = 0, reused = 0
 for (const m of mods) {
   const file = m.toLowerCase() + '.lean'
-  const olean = `src/proof/${m}.olean`
+  const olean = `src/proof/${leanPathOf(m)}.olean`
   let fresh = false
   if (!FULL) { try { fresh = statSync(olean).mtimeMs > newest(file) } catch { fresh = false } }
   if (fresh) { reused++; continue }
-  try { execSync(`lean -o ${olean} src/proof/${file}`, { stdio: 'pipe', env: ENV }); built++ }
-  catch { console.error(`✗ lean-agree: the kernel rejects src/proof/${file} — fix that before comparing constants`); process.exit(1) }
+  try { execSync(`lean -o ${olean} src/proof/${leanPathOf(file)}`, { stdio: 'pipe', env: ENV }); built++ }
+  catch { console.error(`✗ lean-agree: the kernel rejects src/proof/${leanPathOf(file)} — fix that before comparing constants`); process.exit(1) }
 }
 // ONE LINE PER VALUE, OR THE PAIRING IS WRONG. The verdicts are matched to PAIRS by line index, and a bare
 // `#eval` hands its value to Lean's PRETTY PRINTER, which wraps a long list across several lines — so the

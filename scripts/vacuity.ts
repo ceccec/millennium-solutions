@@ -18,6 +18,7 @@
  *      node scripts/vacuity.ts --list   also name the theorems whose domain could not be read
  */
 import { writeFileSync, mkdtempSync, readFileSync, existsSync } from 'node:fs'
+import { leanPathOf } from '../src/api/index.ts'
 import { createHash } from 'node:crypto'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
@@ -124,7 +125,7 @@ const CACHE = '.vacuity-cache.json'
 type Verdict = { hash: string; empty: string[]; unchecked: [string, string][]; insensitive: string[]; untested: [string, string][]; tried?: number }
 const cache: Record<string, Verdict> = existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, 'utf8')) : {}
 const hashOf = (file: string): string =>
-  createHash('sha256').update(readFileSync(`src/proof/${file}`)).digest('hex').slice(0, 16)
+  createHash('sha256').update(readFileSync(`src/proof/${leanPathOf(file)}`)).digest('hex').slice(0, 16)
 const lanes = async <A>(items: A[], run: (a: A) => Promise<void>): Promise<void> => {
   let next = 0
   await Promise.all(Array.from({ length: Math.min(LANES, items.length || 1) }, async () => {
@@ -139,7 +140,7 @@ const byFile = new Map<string, { t: T; dom: string }[]>()
 for (const r of readable) byFile.set(r.t.file, [...(byFile.get(r.t.file) ?? []), r])
 
 await lanes([...byFile.entries()], async ([file, rows]) => {
-  const src = readFileSync(`src/proof/${file}`, 'utf8')
+  const src = readFileSync(`src/proof/${leanPathOf(file)}`, 'utf8')
   const head = [...src.matchAll(/^(?:import\s+\S+|set_option\s+\S+\s+\S+)$/gm)].map((x) => x[0]).join('\n')
   const ns = src.match(/^namespace\s+(\S+)/m)?.[1]
   const opens = [...src.matchAll(/^open\s+.+$/gm)].map((x) => x[0]).join('\n')
@@ -244,7 +245,7 @@ await lanes([...byFile2.entries()], async ([file, rows]) => {
     for (const [n, why] of hit.untested) { const t = rows.find((r) => r.name === n); if (t) untested.push({ t, why }) }
     return
   }
-  const src = readFileSync(`src/proof/${file}`, 'utf8')
+  const src = readFileSync(`src/proof/${leanPathOf(file)}`, 'utf8')
   const head = [...src.matchAll(/^(?:import\s+\S+|set_option\s+\S+\s+\S+)$/gm)].map((x) => x[0]).join('\n')
   const ns = src.match(/^namespace\s+(\S+)/m)?.[1]
   const opens = [...src.matchAll(/^open\s+.+$/gm)].map((x) => x[0]).join('\n')
