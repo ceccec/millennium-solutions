@@ -14,6 +14,10 @@ const THEME_COLOR = `hsl(${A432_HEART_HUE} 68% 45%)`
 // Config computed from the ledger: the site metadata reflects the LIVE count of decidable theorems,
 // recomputed from src/proof/discovered.json at build — the config is derived by the theorems, not typed.
 const THEOREMS: number = (() => { try { return JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')).length } catch { return 0 } })()
+// ONE keyword list for the JSON-LD and the meta tag, which had drifted into two copies of the same terms.
+const KEYWORDS = ['ℤ/9', 'vortex', 'Pliska rosette', 'Clay Millennium Problems', 'Lean 4', 'recomputable', THEOREMS + ' decidable theorems',
+  'ISO/IEC 4879', 'quantum computer', 'quantum hardware', 'Bell test', 'CHSH', 'Tsirelson bound', 'Mermin inequality', 'GHZ state',
+  'cluster state', 'IBM Quantum', '128 qubits']
 
 // 7D UI from locale: the interface chrome is SOURCED from the fused locale table.
 // Root locale = en; the other six are ready in the table for per-locale content dirs.
@@ -60,7 +64,7 @@ const LD = {
   url: SITE,
   identifier: 'https://doi.org/10.5281/zenodo.21819217',
   programmingLanguage: ['TypeScript', 'Lean 4'],
-  keywords: ['ℤ/9', 'vortex', 'Pliska rosette', 'Clay Millennium Problems', 'Lean 4', 'recomputable', THEOREMS + ' decidable theorems'],
+  keywords: KEYWORDS,
   // structured-data count computed from the ledger, not a typed literal
   mainEntity: { '@type': 'Collection', name: 'decidable theorems (ℤ/9, recomputable)', size: THEOREMS },
 }
@@ -97,7 +101,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:image', content: OG_IMAGE }],
     ['meta', { name: 'author', content: 'Tsvetan Rouschev' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
-    ['meta', { name: 'keywords', content: 'uuidna, ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, ' + THEOREMS + ' decidable theorems' }],
+    ['meta', { name: 'keywords', content: ['uuidna', ...KEYWORDS].join(', ') }],
     // uuidna brand + Creative Commons license + brand tracks (author's declared .org non-profit / .com commercial)
     ['meta', { name: 'application-name', content: 'uuidna' }],
     ['meta', { property: 'og:see_also', content: 'https://uuidna.org' }],

@@ -16,6 +16,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
 import { escapeLt } from '../src/html/index.ts'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
 import { MILLENNIUM, claySection, thousandBitSection } from '../src/millennium/index.ts'
+import { hardwareSection } from '../src/quantum/hardware-section.ts'
 import { all as leanDocs } from './leandoc.ts'
 import { analytics } from './analytics.ts'
 import { queue } from '../src/prove/index.ts'
@@ -365,6 +366,7 @@ const body = (site: boolean) => {
   // the homepage, before anything else this page says.
   md += claySection()
   md += thousandBitSection()
+  md += hardwareSection()
   for (const s of sections) {
     md += `## ${s}\n\n`
     for (const r of rows.filter((x) => x.section === s)) {
@@ -499,6 +501,10 @@ const body = (site: boolean) => {
 const header = `# Millennium Solutions — the ℤ/9 Vortex Framework
 
 **Author:** Tsvetan Rouschev · License: CC BY-NC-ND 4.0 · DOI [10.5281/zenodo.21819217](https://doi.org/10.5281/zenodo.21819217)
+
+Machine-checked Lean 4 theorems, content-addressed UUIDs and a recomputable ledger: the seven Clay Millennium
+problems' involutions, a thousand-bit cryptographic surface, and the ISO/IEC 4879 quantum computer — every quantum
+computing model decided exactly, the Bell test scaled to 128 qubits, and a CHSH run on real IBM Quantum hardware.
 
 \`\`\`bash
 npm install @ceccec/millennium-solutions

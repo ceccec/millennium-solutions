@@ -1,5 +1,6 @@
 ---
 title: Quantum hardware
+description: The ISO/IEC 4879 quantum computer defined and tested — every quantum computing model decided exactly in Lean, the Bell test scaled to 128 qubits, and a CHSH run on IBM Quantum.
 ---
 
 <script setup>

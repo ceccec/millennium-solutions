@@ -2,6 +2,10 @@
 
 **Author:** Tsvetan Rouschev · License: CC BY-NC-ND 4.0 · DOI [10.5281/zenodo.21819217](https://doi.org/10.5281/zenodo.21819217)
 
+Machine-checked Lean 4 theorems, content-addressed UUIDs and a recomputable ledger: the seven Clay Millennium
+problems' involutions, a thousand-bit cryptographic surface, and the ISO/IEC 4879 quantum computer — every quantum
+computing model decided exactly, the Bell test scaled to 128 qubits, and a CHSH run on real IBM Quantum hardware.
+
 ```bash
 npm install @ceccec/millennium-solutions
 ```
@@ -156,6 +160,50 @@ The seven above are the floor; this is the cryptographic surface the same involu
   <sub>[`lean_qpucrypto_the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes`](/theorem/lean_qpucrypto_the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes) · receipt `a27fc1e7-abce…`</sub>
 - **`this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back`** · `by decide`, 1 cases — the factor route returns PARTIAL on 2^999 + 1 — fourteen factors and a 244-digit cofactor Pollard rho did not split; the kernel adds only that the account is an identity and that 2 is a Fermat witness against the cofactor. It does not factor the integer and does not say it does.
   <sub>[`lean_qpucrypto_this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back`](/theorem/lean_qpucrypto_this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back) · receipt `215f8bbc-e55e…`</sub>
+
+## Quantum hardware — what ISO/IEC 4879 calls a quantum computer, and the Bell test that verifies one
+
+A **real quantum computer** is, by ISO, all three at once: **hardware** (ISO/IEC 2382:2015 — physical components of an information system), a **quantum processor** (ISO/IEC 4879:2024 §3.4.8 — a tangible device processing information held in physical qubits through superposition and entanglement) and a **computer** (§3.4.10 — fully programmable, any unitary on its Hilbert space). A classical program computing the same numbers is §3.4.22, a quantum simulator. What separates them is where the counts come from, so the test is **CHSH S > 2 from a device's own counts**, decided on exact integers.
+
+**Device verdict: no run yet.** The accepted system is IBM Quantum Platform (quantum.cloud.ibm.com), Qiskit Runtime REST API, under IBM's terms of use; the run is `npm run quantum:hardware` with the depositor's own IBM_QUANTUM_TOKEN and IBM_QUANTUM_CRN. Until it runs, nothing below is hardware evidence: it is the exact specification a run is checked against.
+
+Every quantum computing model ISO/IEC 4879 names is decided at its known optimum, each beside a control and each cross-checked against a public source (linked on [/hardware](/hardware)):
+
+- **§3.4.13 circuit-based** · `the_sent_circuits_reach_s_two_root_two` · decided by exhaustion — the CHSH gates sent to IBM Quantum give S = 2√2 exactly — Tsirelson's maximum — for an ideal device, in ℤ[ω] with no float; it is the specification a run is checked against, not a run.
+  <sub>[`lean_quantumcircuits_the_sent_circuits_reach_s_two_root_two`](/theorem/lean_quantumcircuits_the_sent_circuits_reach_s_two_root_two) · receipt `4688e005-e75d…`</sub>
+- **the classical line** · `every_deterministic_local_strategy_gives_chsh_plus_or_minus_two` · decided by exhaustion — every classical strategy gives S = ±2, so a device must cross 2 strictly; it says nothing about any device until its counts arrive.
+  <sub>[`lean_quantumhardware_every_deterministic_local_strategy_gives_chsh_plus_or_minus_two`](/theorem/lean_quantumhardware_every_deterministic_local_strategy_gives_chsh_plus_or_minus_two) · receipt `6f5bb0ee-7cb2…`</sub>
+- **the verdict rule** · `one_count_above_s_two_is_above_classical` · decided by exhaustion — a device's counts are judged on exact integers — one count past S = 2 is seen, one count short is refused (its control).
+  <sub>[`lean_quantumhardware_one_count_above_s_two_is_above_classical`](/theorem/lean_quantumhardware_one_count_above_s_two_is_above_classical) · receipt `98565f45-367c…`</sub>
+- **§3.4.14 one-way** · `one_way_measurement_applies_h_rz_for_every_angle_and_both_outcomes` · decided by exhaustion over 16 cases — measuring a cluster qubit applies J(θ) = H·diag(1, e^{iθ}) to its neighbour with an X^m byproduct, every π/4 angle and both outcomes.
+  <sub>[`lean_quantummodels_one_way_measurement_applies_h_rz_for_every_angle_and_both_outcomes`](/theorem/lean_quantummodels_one_way_measurement_applies_h_rz_for_every_angle_and_both_outcomes) · receipt `769136b1-2e36…`</sub>
+- **§3.4.16 topological** · `ising_anyon_braids_generate_exactly_the_twenty_four_clifford_classes` · decided by exhaustion — Ising braids generate exactly 24 classes up to phase, closed — the single-qubit Clifford group — so braiding alone is not universal.
+  <sub>[`lean_quantummodels_ising_anyon_braids_generate_exactly_the_twenty_four_clifford_classes`](/theorem/lean_quantummodels_ising_anyon_braids_generate_exactly_the_twenty_four_clifford_classes) · receipt `953f132c-e01e…`</sub>
+- **§3.5.8 boson sampling** · `every_balanced_beam_splitter_gives_a_full_depth_hong_ou_mandel_dip` · decided by exhaustion over 64 cases — every balanced beam splitter on the π/4 phase grid is unitary with permanent 0 — the full Hong–Ou–Mandel dip; distinguishable photons coincide half the time.
+  <sub>[`lean_quantummodels_every_balanced_beam_splitter_gives_a_full_depth_hong_ou_mandel_dip`](/theorem/lean_quantummodels_every_balanced_beam_splitter_gives_a_full_depth_hong_ou_mandel_dip) · receipt `f6d41c2d-7720…`</sub>
+- **§3.4.15 adiabatic** · `the_adiabatic_gap_is_smallest_exactly_at_the_midpoint_at_every_resolution` · proved for every value — for every rational schedule point the one-qubit gap is never below √2 and reaches it at the midpoint — proved for every value, not sampled.
+  <sub>[`lean_quantummodels_the_adiabatic_gap_is_smallest_exactly_at_the_midpoint_at_every_resolution`](/theorem/lean_quantummodels_the_adiabatic_gap_is_smallest_exactly_at_the_midpoint_at_every_resolution) · receipt `f6e9816c-c2b7…`</sub>
+- **§3.4.31 annealer** · `the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one` · decided by exhaustion — the frustrated triangle's whole spectrum: ground state −1 six-fold, only all-up and all-down at +3.
+  <sub>[`lean_quantummodels_the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one`](/theorem/lean_quantummodels_the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one) · receipt `5ad73761-1088…`</sub>
+- **128 qubits** · `octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third` · rewritten from sealed theorems, then decided — on the UUID width the GHZ state's Mermin value is 2¹²⁷ against the classical 2⁶⁴ — a lead of 2⁶³ — recombined from eight sealed particles; exact classical computation of the ideal state, not a device result.
+  <sub>[`lean_quantumoctave128_octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third`](/theorem/lean_quantumoctave128_octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third) · receipt `6dbff2e6-728f…`</sub>
+- **textbook cross-check** · `the_group_generated_by_h_and_s_has_exactly_twenty_four_classes` · decided by exhaustion — qpu's Eastin–Knill 24 derived from ⟨H, S⟩ itself; quantum_textbooks.lean re-derives every qpu textbook number this way except Holevo's entropy, and each matches.
+  <sub>[`lean_quantumtextbooks_the_group_generated_by_h_and_s_has_exactly_twenty_four_classes`](/theorem/lean_quantumtextbooks_the_group_generated_by_h_and_s_has_exactly_twenty_four_classes) · receipt `a3100a06-cbc5…`</sub>
+
+**Scaled in octaves.** Mermin's GHZ test doubles with the qubits — the quantum value 2ⁿ⁻¹ against the classical 2^(n/2) (arXiv:0905.0151 §2), computed here by the literal Node port of the Lean (`npm run quantum:octave`):
+
+| qubits | quantum | classical | lead |
+|---:|---:|---:|---:|
+| 2 | 2^1 | 2^1 | 2^0 |
+| 4 | 2^3 | 2^2 | 2^1 |
+| 8 | 2^7 | 2^4 | 2^3 |
+| 16 | 2^15 | 2^8 | 2^7 |
+| 32 | 2^31 | 2^16 | 2^15 |
+| 64 | 2^63 | 2^32 | 2^31 |
+| 124 (128 − one hex digit) | 2^123 | 2^62 | 2^61 |
+| 128 | 2^127 | 2^64 | 2^63 |
+
+The **124-qubit cluster state** — the UUID minus its version hex digit — has 124 stabilizers, propagated through every CZ by a Pauli tableau: each is Z·X·Z on its neighbourhood and they all commute. Stabilizer states are exactly what a classical computer describes in polynomial time (Gottesman–Knill), which is why 128 qubits fit here — and why only a device's measured counts, never this computation, make "hardware" true.
 
 ## 1 · What is proved
 
