@@ -150084,5 +150084,45 @@
     "key": "lean_quantumuuidcluster_the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first",
     "name": "lean quantum_uuid_cluster.lean: the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first — (2 ^ 4 = 16 ∧ 128 - 4 = 124 ∧ 128 - 4 - 2 = 122) ∧ particleSum 0 + particleSum 1 + particleSum 2 + particleSum 3 + particleSum 4 + particleSum 5 + particleSum 6 + particleSum 7 = 2 * 2 ^ 123 ∧ reach 124 = [0, 2, 4, 6] ∧ 2 ^ (124 / 2) * 2 ^ … — proved by the Lean kernel for every value (by\n  refine), standard axioms only — checked by lean.ts",
     "receipt": "e037d2bb-d19b-8a9a-8b66-85a14d8b7e87"
+  },
+  {
+    "key": "lean_qpufold_the_transcribed_fold_step_reproduces_qpus_output",
+    "name": "lean qpu_fold.lean: the_transcribed_fold_step_reproduces_qpus_output — xor16 8997 97 = 9028 ∧ xor16 255 255 = 0 ∧ xor16 1234 0 = 1234 ∧ t0 8997 97 % mask = 60556 ∧ t1 8997 33826 97 % mask = 34305 ∧ t2 8997 33826 40164 97 % mask = 56396 ∧ newH3 8997 33826 40164 52210 97 = 44899 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "33f70f24-dfa3-8e81-948b-b9798994bb70"
+  },
+  {
+    "key": "lean_qpufold_the_fold_state_is_four_sixteen_bit_limbs_so_sixty_four_bits",
+    "name": "lean qpu_fold.lean: the_fold_state_is_four_sixteen_bit_limbs_so_sixty_four_bits — mask = 2 ^ 16 ∧ mask * mask * mask * mask = 2 ^ 64 ∧ 4 * 16 = 64 ∧ 64 / 4 = 16 ∧ (t0 8997 97 % mask) + (t1 8997 33826 97 % mask) * 2 ^ 16 + (t2 8997 33826 40164 97 % mask) * 2 ^ 32 + (newH3 8997 33826 40164 52210 97) * 2 ^ 48 < 2 ^ 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "42f70eaa-eab5-86ce-b1de-51b260260713"
+  },
+  {
+    "key": "lean_qpufold_the_coin_depends_only_on_the_state_so_distinct_texts_share_it",
+    "name": "lean qpu_fold.lean: the_coin_depends_only_on_the_state_so_distinct_texts_share_it — (List.range 40).all (fun t => coin t == coin (stateOf t)) ∧ coin 3 = coin (3 + 2 ^ W) ∧ (3 : Nat) ≠ 3 + 2 ^ W ∧ (List.range 40).all (fun a => (List.range 40).all (fun b => !(stateOf a == stateOf b) || coin a == coin b)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f9b415f5-3cdc-8c3d-ad4e-e499972bdd9e"
+  },
+  {
+    "key": "lean_qpufold_a_narrow_fold_reaches_few_of_the_layouts_addresses",
+    "name": "lean qpu_fold.lean: a_narrow_fold_reaches_few_of_the_layouts_addresses — ((List.range (2 ^ Pbits)).filter (fun v => (List.range (2 ^ W)).any (fun s => coinOf s == v))).length = 2 ^ W ∧ (List.range (2 ^ Pbits)).length = 2 ^ Pbits ∧ 2 ^ Pbits - 2 ^ W = 240 ∧ 2 ^ W < 2 ^ Pbits — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ba7a41f8-9112-84ab-9bd1-fa02ba52c14a"
+  },
+  {
+    "key": "lean_qpufold_two_independent_fields_reach_every_address_so_the_fold_is_the_cap",
+    "name": "lean qpu_fold.lean: two_independent_fields_reach_every_address_so_the_fold_is_the_cap — ((List.range (2 ^ Pbits)).filter (fun v => (List.range (2 ^ W)).any (fun a => (List.range (2 ^ W)).any (fun b => pairFill a b == v)))).length = 2 ^ Pbits ∧ 2 * W = Pbits — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "45a6b14e-7b38-8086-8d2a-2d14830b6a4f"
+  },
+  {
+    "key": "lean_qpufold_more_texts_than_states_force_a_coin_collision",
+    "name": "lean qpu_fold.lean: more_texts_than_states_force_a_coin_collision — (List.range (2 ^ W + 1)).any (fun i => (List.range (2 ^ W + 1)).any (fun j => i < j && stateOf i == stateOf j)) ∧ (List.range (2 ^ W)).all (fun i => (List.range (2 ^ W)).all (fun j => !(i < j) || stateOf i != stateOf j)) ∧ (List.range (2 ^ … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0627b471-b8c0-84d6-80fa-78f4ad41640e"
+  },
+  {
+    "key": "lean_qpufold_the_real_fold_is_sixty_four_bits_against_the_hundred_twenty_two_bit_layout",
+    "name": "lean qpu_fold.lean: the_real_fold_is_sixty_four_bits_against_the_hundred_twenty_two_bit_layout — 2 ^ 64 < 2 ^ 122 ∧ 2 ^ 64 * 2 ^ 58 = 2 ^ 122 ∧ 122 - 64 = 58 ∧ 2 ^ 122 - 2 ^ 64 > 0 ∧ mask * mask * mask * mask = 2 ^ 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dd520b70-7d08-8b22-8936-0f97a326f4f5"
+  },
+  {
+    "key": "lean_qpufold_the_search_floor_is_the_fold_width_not_the_layout_width",
+    "name": "lean qpu_fold.lean: the_search_floor_is_the_fold_width_not_the_layout_width — 32 * 2 = 64 ∧ 61 * 2 = 122 ∧ 2 ^ 32 * 2 ^ 32 = 2 ^ 64 ∧ 2 ^ 32 < 2 ^ 61 ∧ 2 ^ 61 < 2 ^ 122 ∧ 2 ^ 64 < 2 ^ 122 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "af6a8c7d-9084-8b32-bfd0-a1af4659aab3"
   }
 ]

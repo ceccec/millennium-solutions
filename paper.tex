@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,181 of them across 121 files and
-8 wings; 25,971 close by exhaustion over a stated finite domain, 210 are proved
+(\texttt{npm run latex-gate}). There are 26,189 of them across 122 files and
+8 wings; 25,979 close by exhaustion over a stated finite domain, 210 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -4556,6 +4556,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \mathrm{scaleCapacity}[\{1,\dots,8\}] = [64,\,2048,\,49152,\,1048576,\,20971520,\,402653184,\,7516192768,\,137438953472] \land \mathrm{scaleCapacity}\mathopen{}\left(8\right) = 2^{37} \land 16^{8} = 2^{32} \land 4 \cdot 8 = \mathrm{Qpu.bits} \land 2^{37} + 1 = 3 \cdot 1777 \cdot 25781083 \land \frac{999}{27} = 37 \land 4 \cdot 8 + 5 = 37 \land \forall s \in \{1,\dots,8\},\; \mathrm{scaleCapacity}\mathopen{}\left(s\right) = 2^{4 \cdot s} \cdot \mathrm{Qpu.hexbit} \cdot s \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 512 cases. \hfill$\square$
+
+\paragraph{\texttt{qpu\_fold.lean}}
+
+\begin{theorem}[\texttt{the\_transcribed\_fold\_step\_reproduces\_qpus\_output}]
+\[ \mathrm{xor16}\mathopen{}\left(8997,\,97\right) = 9028 \land \mathrm{xor16}\mathopen{}\left(255,\,255\right) = 0 \land \mathrm{xor16}\mathopen{}\left(1234,\,0\right) = 1234 \land \mathrm{t0}\mathopen{}\left(8997,\,97\right) \bmod \mathrm{mask} = 60556 \land \mathrm{t1}\mathopen{}\left(8997,\,33826,\,97\right) \bmod \mathrm{mask} = 34305 \land \mathrm{t2}\mathopen{}\left(8997,\,33826,\,40164,\,97\right) \bmod \mathrm{mask} = 56396 \land \mathrm{newH3}\mathopen{}\left(8997,\,33826,\,40164,\,52210,\,97\right) = 44899 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fold\_state\_is\_four\_sixteen\_bit\_limbs\_so\_sixty\_four\_bits}]
+\[ \mathrm{mask} = 2^{16} \land \mathrm{mask} \cdot \mathrm{mask} \cdot \mathrm{mask} \cdot \mathrm{mask} = 2^{64} \land 4 \cdot 16 = 64 \land \frac{64}{4} = 16 \land \mathrm{t0}\mathopen{}\left(8997,\,97\right) \bmod \mathrm{mask} + \mathrm{t1}\mathopen{}\left(8997,\,33826,\,97\right) \bmod \mathrm{mask} \cdot 2^{16} + \mathrm{t2}\mathopen{}\left(8997,\,33826,\,40164,\,97\right) \bmod \mathrm{mask} \cdot 2^{32} + \mathrm{newH3}\mathopen{}\left(8997,\,33826,\,40164,\,52210,\,97\right) \cdot 2^{48} < 2^{64} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_coin\_depends\_only\_on\_the\_state\_so\_distinct\_texts\_share\_it}]
+\[ \forall t \in \{0,\dots,39\},\; \mathrm{coin}\mathopen{}\left(t\right) = \mathrm{coin}\mathopen{}\left(\mathrm{stateOf}\mathopen{}\left(t\right)\right) \land \mathrm{coin}\mathopen{}\left(3\right) = \mathrm{coin}\mathopen{}\left(3 + 2^{W}\right) \land \left(3 : \mathbb{N}\right) \neq 3 + 2^{W} \land \forall a \in \{0,\dots,39\},\; \forall b \in \{0,\dots,39\},\; \lnot \mathrm{stateOf}\mathopen{}\left(a\right) = \mathrm{stateOf}\mathopen{}\left(b\right) \lor \mathrm{coin}\mathopen{}\left(a\right) = \mathrm{coin}\mathopen{}\left(b\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_narrow\_fold\_reaches\_few\_of\_the\_layouts\_addresses}]
+\[ \left|\{\, v \in \{0,\dots,2^{\mathrm{Pbits}}-1\} \mid \exists s \in \{0,\dots,2^{W}-1\} : \mathrm{coinOf}\mathopen{}\left(s\right) = v \,\}\right| = 2^{W} \land \left|\{0,\dots,2^{\mathrm{Pbits}}-1\}\right| = 2^{\mathrm{Pbits}} \land 2^{\mathrm{Pbits}} - 2^{W} = 240 \land 2^{W} < 2^{\mathrm{Pbits}} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{two\_independent\_fields\_reach\_every\_address\_so\_the\_fold\_is\_the\_cap}]
+\[ \left|\{\, v \in \{0,\dots,2^{\mathrm{Pbits}}-1\} \mid \exists a \in \{0,\dots,2^{W}-1\} : \exists b \in \{0,\dots,2^{W}-1\} : \mathrm{pairFill}\mathopen{}\left(a,\,b\right) = v \,\}\right| = 2^{\mathrm{Pbits}} \land 2 \cdot W = \mathrm{Pbits} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{more\_texts\_than\_states\_force\_a\_coin\_collision}]
+\[ \exists i \in \{0,\dots,2^{W} + 1-1\} : \exists j \in \{0,\dots,2^{W} + 1-1\} : i < j \land \mathrm{stateOf}\mathopen{}\left(i\right) = \mathrm{stateOf}\mathopen{}\left(j\right) \land \forall i \in \{0,\dots,2^{W}-1\},\; \forall j \in \{0,\dots,2^{W}-1\},\; \lnot i < j \lor \mathrm{stateOf}\mathopen{}\left(i\right) \neq \mathrm{stateOf}\mathopen{}\left(j\right) \land \left|\{0,\dots,2^{W} + 1-1\}\right| = 2^{W} + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_real\_fold\_is\_sixty\_four\_bits\_against\_the\_hundred\_twenty\_two\_bit\_layout}]
+\[ 2^{64} < 2^{122} \land 2^{64} \cdot 2^{58} = 2^{122} \land 122 - 64 = 58 \land 2^{122} - 2^{64} > 0 \land \mathrm{mask} \cdot \mathrm{mask} \cdot \mathrm{mask} \cdot \mathrm{mask} = 2^{64} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_search\_floor\_is\_the\_fold\_width\_not\_the\_layout\_width}]
+\[ 32 \cdot 2 = 64 \land 61 \cdot 2 = 122 \land 2^{32} \cdot 2^{32} = 2^{64} \land 2^{32} < 2^{61} \land 2^{61} < 2^{122} \land 2^{64} < 2^{122} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{qpu\_gateway.lean}}
 

@@ -170974,5 +170974,629 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "1f8c76c6-acdf-8590-95eb-60bd60367edb"
+  },
+  {
+    "key": "lean_qec_the_surface_code_physical_count_is_two_d_squared_minus_two_d_plus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2f5a9e47-88be-81ee-b176-22af11b0a9ce"
+  },
+  {
+    "key": "lean_qec_a_distance_d_code_corrects_the_floor_of_d_minus_one_over_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "850a2e71-e603-86ad-b0cf-72a15ef31470"
+  },
+  {
+    "key": "lean_qec_distance_one_corrects_nothing_and_distance_three_corrects_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2a40933b-9a3d-8f90-886a-a774ae248313"
+  },
+  {
+    "key": "lean_qec_shors_nine_qubit_code_is_three_by_three_distance_three_correcting_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "56934b0c-f9c6-8be2-bc54-079e3b9fcd99"
+  },
+  {
+    "key": "lean_qec_the_pauli_group_order_is_two_to_the_two_n_plus_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8081d489-50d4-820c-93be-bd4ae0ead537"
+  },
+  {
+    "key": "lean_qec_the_surface_count_is_quadratic_not_linear_in_the_distance",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c1485e96-3455-880f-b19b-8ee56aee2506"
+  },
+  {
+    "key": "lean_qec_a_higher_distance_costs_more_qubits_and_corrects_no_fewer",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5ea2b3b7-8b31-854e-887d-b9dcda7396e1"
+  },
+  {
+    "key": "lean_qec_the_counts_at_distance_nine_and_their_finite_bound",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "94df7814-6a9b-8175-91fc-29a84d7fda95"
+  },
+  {
+    "key": "lean_synthesis_the_single_qubit_clifford_group_has_order_twenty_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d020524d-9854-8f40-96fd-2c2b0dd9f301"
+  },
+  {
+    "key": "lean_synthesis_the_symplectic_group_order_at_each_rank",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8f6ec87e-58e7-8f6b-bd2a-8d7929502ea9"
+  },
+  {
+    "key": "lean_synthesis_the_two_qubit_clifford_group_has_order_eleven_thousand_five_hundred_twenty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2251b51d-3eb6-80e8-94c8-935933a6808e"
+  },
+  {
+    "key": "lean_synthesis_fibonacci_anyon_fusion_is_the_fibonacci_number",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d88a129e-299e-8253-8d39-331bafd2d227"
+  },
+  {
+    "key": "lean_synthesis_ising_anyon_fusion_is_two_to_the_m_minus_one_and_differs_from_fibonacci",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d5d458e8-1805-8a13-aa51-0339ef3def8d"
+  },
+  {
+    "key": "lean_synthesis_the_fifteen_to_one_magic_code_is_fifteen_one_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7886acdc-5b54-89b9-b414-9871622fbc3e"
+  },
+  {
+    "key": "lean_synthesis_qaoa_resource_counts_over_the_layers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "618c7a94-a77f-85e2-88b2-d303de952704"
+  },
+  {
+    "key": "lean_synthesis_these_are_exact_orders_and_counts_decided_over_a_finite_domain",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4d407f23-69c3-87d2-ba25-2c1a0750966a"
+  },
+  {
+    "key": "lean_resources_the_chimera_annealer_qubit_count_is_eight_m_squared",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6341e55b-e8e9-89d4-8d9c-86df76c9218a"
+  },
+  {
+    "key": "lean_resources_the_pegasus_annealer_count_is_twenty_four_m_times_m_minus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9f843d7d-8ff1-8811-bc89-2f35d471c70e"
+  },
+  {
+    "key": "lean_resources_the_qft_gate_count_is_the_triangular_number",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b1349979-7935-87f6-8691-97ff7771672c"
+  },
+  {
+    "key": "lean_resources_the_qft_swaps_depth_and_states",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ce12b693-0614-887e-930b-030b907227d1"
+  },
+  {
+    "key": "lean_resources_archimedes_twenty_two_over_seven_bounds_pi_above_and_the_floor_is_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ec31e290-c514-88be-9a70-184fc62d860c"
+  },
+  {
+    "key": "lean_resources_zu_chongzhis_three_fifty_five_over_one_thirteen_brackets_pi_to_six_places",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1e43cac7-ff77-848f-992f-230420530cf6"
+  },
+  {
+    "key": "lean_resources_the_turn_is_three_hundred_sixty_degrees_and_the_half_turn_one_eighty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "097b1d2b-8b94-8f99-b029-8f53b00cb1b3"
+  },
+  {
+    "key": "lean_resources_these_are_exact_counts_and_rational_convergents_not_pi_itself",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1ebfd2f4-000b-8f6a-abd4-eb7c3ad7f076"
+  },
+  {
+    "key": "lean_combinatorics_the_factorial_counts_the_orderings",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9ecd10ea-f751-8a27-b3dd-6c8249b14dfd"
+  },
+  {
+    "key": "lean_combinatorics_the_binomial_coefficients_follow_pascals_rule",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ea786f87-603d-85b2-828f-3f30db7bc51e"
+  },
+  {
+    "key": "lean_combinatorics_the_binomial_is_symmetric",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7a026991-51ed-8536-ad98-9ed8cbca9c36"
+  },
+  {
+    "key": "lean_combinatorics_the_triangular_numbers_are_the_handshake_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "feb4da67-debf-88ec-ae86-3254b90eee3d"
+  },
+  {
+    "key": "lean_combinatorics_ramsey_two_n_is_n_and_two_people_make_one_pair",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0bb8f2b9-74ab-83d1-8458-eabf585cc85b"
+  },
+  {
+    "key": "lean_combinatorics_the_factorial_outgrows_the_power_of_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "74f6f6a2-86da-8873-9dcc-ff54debdbe3c"
+  },
+  {
+    "key": "lean_combinatorics_the_binomial_row_sums_to_two_to_the_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "07959ae0-e8d2-8729-8521-167556c9a8e2"
+  },
+  {
+    "key": "lean_combinatorics_these_are_exact_counts_decided_not_a_physical_machine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "03e80abe-991e-8c25-a3bc-1fbf431001e7"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_bit_case_is_one_hundred_twenty_five_octaves",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d9b1d5f8-5e70-861c-9190-b842d849a1f0"
+  },
+  {
+    "key": "lean_thousandbit_the_binary_units_tile_the_thousand_exactly",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8e10d5d0-4fd5-8270-bd9a-fbe92e54dafd"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_is_the_cube_octave_times_pentagram_cubed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6c535031-7658-894f-9d12-f18103af15a2"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_carries_residue_one_mod_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bb60beff-feee-8f49-af32-8fdf48844a97"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_bit_case_overflows_the_width_thirty_two_ceiling",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fb28d220-8bc2-878c-93bb-87754b1f7cd6"
+  },
+  {
+    "key": "lean_thousandbit_the_minimal_register_for_the_thousand_is_width_thirty_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e00c13fe-c68a-8e49-8004-4b456917e12a"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_fills_between_ninety_seven_and_ninety_eight_percent_of_its_register",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2283c459-1a73-8ab3-8878-c69f8884fc75"
+  },
+  {
+    "key": "lean_thousandbit_the_thousand_bit_structure_is_decided_not_a_quantum_machine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "54965178-f8b9-8feb-8dfc-9a5dfb6e0ae3"
+  },
+  {
+    "key": "lean_quantumhardware_every_deterministic_local_strategy_gives_chsh_plus_or_minus_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6f5bb0ee-7cb2-80ab-b027-a20966141ba6"
+  },
+  {
+    "key": "lean_quantumhardware_the_classical_strategy_at_s_two_is_not_above_classical",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e4044e10-ff4b-802d-a960-d3a967589da5"
+  },
+  {
+    "key": "lean_quantumhardware_one_count_above_s_two_is_above_classical",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "98565f45-367c-8dc5-8a1a-0959a2e133b2"
+  },
+  {
+    "key": "lean_quantumhardware_one_count_below_s_two_is_not_above_classical",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8f9b9743-75f7-8de1-94cd-1cde4e981c38"
+  },
+  {
+    "key": "lean_quantumhardware_uniform_noise_is_not_above_classical",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "94dd7798-c93b-8e54-be0c-cc704a01fe64"
+  },
+  {
+    "key": "lean_quantumhardware_ideal_counts_at_ten_thousand_shots_are_above_classical",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a6013c39-32bb-83ac-994f-1d80b864b501"
+  },
+  {
+    "key": "lean_quantumhardware_register_bit_zero_is_alice_and_bit_one_is_bob",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f245f123-5e0c-890d-949c-445c1e42ffe2"
+  },
+  {
+    "key": "lean_quantumhardware_the_one_count_control_is_four_hundred_ninety_nine_agreements_short_of_five_hundred",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "923841a0-97d3-834b-b376-265a7eb49c43"
+  },
+  {
+    "key": "lean_quantumcircuits_the_sent_preparation_is_a_bell_pair",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "da2dc76d-7b59-86e4-b216-0e0e66a191b7"
+  },
+  {
+    "key": "lean_quantumcircuits_alice_zero_bob_plus_quarter_correlates_root_two_over_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3c70945e-a70b-8e54-98ab-4205a929fcd5"
+  },
+  {
+    "key": "lean_quantumcircuits_alice_zero_bob_minus_quarter_correlates_root_two_over_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "84c1cfd1-8be9-82e7-bf66-7aa8e84ca7d2"
+  },
+  {
+    "key": "lean_quantumcircuits_alice_half_bob_plus_quarter_correlates_root_two_over_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7f5e5a33-69c9-8f16-87ca-eeee366977a3"
+  },
+  {
+    "key": "lean_quantumcircuits_alice_half_bob_minus_quarter_anticorrelates_root_two_over_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "352c5e78-715b-8102-a100-4efcd3b62440"
+  },
+  {
+    "key": "lean_quantumcircuits_the_sent_circuits_reach_s_two_root_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4688e005-e75d-8aea-a014-e7f725c28c96"
+  },
+  {
+    "key": "lean_quantumcircuits_bob_at_angle_zero_correlates_fully_not_root_two_over_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1e25ee29-0fb6-8ad8-901c-fdc646d661f7"
+  },
+  {
+    "key": "lean_quantumcircuits_without_the_entangler_the_correlation_vanishes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5947cb2c-eefc-8844-b0bf-b5e428b02aae"
+  },
+  {
+    "key": "lean_quantummodels_one_way_measurement_applies_h_rz_for_every_angle_and_both_outcomes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "769136b1-2e36-8a13-b4a6-0580adfa92ae"
+  },
+  {
+    "key": "lean_quantummodels_one_way_without_the_cluster_bond_does_not_apply_the_gate",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c6462474-585b-8741-9141-a4e423e9f642"
+  },
+  {
+    "key": "lean_quantummodels_ising_anyon_braids_satisfy_the_braid_relation",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e13c5091-6b94-86d4-ac4f-f80342b379e1"
+  },
+  {
+    "key": "lean_quantummodels_ising_anyon_braids_generate_exactly_the_twenty_four_clifford_classes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "953f132c-e01e-8320-987c-86e32fa27965"
+  },
+  {
+    "key": "lean_quantummodels_every_balanced_beam_splitter_gives_a_full_depth_hong_ou_mandel_dip",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f6d41c2d-7720-8a74-a782-b24909bf5dac"
+  },
+  {
+    "key": "lean_quantummodels_distinguishable_photons_coincide_half_the_time",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6f6a9450-5c5a-8af3-8c68-1785dfc1b6b0"
+  },
+  {
+    "key": "lean_quantummodels_the_adiabatic_gap_is_smallest_exactly_at_the_midpoint_at_every_resolution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f6e9816c-c2b7-8ba2-b9b2-e63ba4655471"
+  },
+  {
+    "key": "lean_quantummodels_the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5ad73761-1088-8e58-b0a6-60d48636a945"
+  },
+  {
+    "key": "lean_quantumtextbooks_tsirelsons_eight_is_the_square_of_the_circuits_s",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c4a4eaea-f8b3-8813-a45e-ec4887c48e5f"
+  },
+  {
+    "key": "lean_quantumtextbooks_the_group_generated_by_h_and_s_has_exactly_twenty_four_classes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a3100a06-cbc5-8c18-a930-806f58db84e6"
+  },
+  {
+    "key": "lean_quantumtextbooks_t_has_order_exactly_eight_and_does_not_commute_with_h",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "85a515d0-90c7-8f4e-a1d0-8b51481536fb"
+  },
+  {
+    "key": "lean_quantumtextbooks_simons_measured_strings_for_period_eleven_are_exactly_two_of_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dc623d89-3587-8611-8ee6-fda99a4c9a7a"
+  },
+  {
+    "key": "lean_quantumtextbooks_one_query_recovers_every_three_bit_hidden_string",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9b6e62c2-ae50-8d26-afdf-4d26fbae0717"
+  },
+  {
+    "key": "lean_quantumtextbooks_one_query_separates_every_balanced_from_every_constant_function",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "78f72585-25b5-804d-935d-ba04f3d73ea1"
+  },
+  {
+    "key": "lean_quantumtextbooks_one_grover_iteration_finds_every_marked_item_of_four_with_certainty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a1ec3176-e55d-87ea-854e-2d568a244645"
+  },
+  {
+    "key": "lean_quantumtextbooks_linearity_forbids_perfect_cloning_and_the_optimal_copy_has_fidelity_five_sixths",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f9710402-2c58-8a3d-8904-49a009e6b6e5"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_zero_of_the_128_qubit_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "63a59442-75de-86a6-b91d-00f196f6ebd0"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_one_of_the_128_qubit_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7927486f-2fdb-8fd8-a419-7102cd1ae3e7"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_two_of_the_128_qubit_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ed4e972b-cdbe-8fad-ae1b-803a55fea38d"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_three_of_the_128_qubit_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f57cb061-1a23-8fb9-9882-89efbdea8390"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_four_of_the_128_qubit_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8ee6ddd3-f251-8ecc-9486-ee3fb1267386"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_five_of_the_128_qubit_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0f062ce6-fd9e-8ded-891a-fddc0a730af2"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_six_of_the_128_qubit_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4d71e764-6ffa-87ee-9dbf-0ea0758e1757"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_seven_of_the_128_qubit_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bb6d83a4-c2b5-88bf-9663-1f24f93096af"
+  },
+  {
+    "key": "lean_quantumoctaves_every_classical_answer_is_root_two_times_an_odd_eighth_of_the_circle",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "203c8974-68af-8406-b4aa-aba3e57a2baa"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_two_qubits_has_no_mermin_lead",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5b2e033a-87bd-8131-b20b-dce1a3ca0e6b"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_four_qubits_quantum_eight_against_classical_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2fe170c8-c71b-8898-98ce-d76bd04684a4"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_eight_qubits_quantum_128_against_classical_16",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0c3f6a6b-bd95-8715-a347-c80a1ed4bbe9"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_sixteen_qubits_the_lead_is_two_to_the_seventh",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6f72b857-08ff-83ce-96f5-dd6341809aa0"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_thirty_two_qubits_the_lead_is_two_to_the_fifteenth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6db05559-a0a8-8ae6-b55d-bf7314d22dc8"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_sixty_four_qubits_the_lead_is_two_to_the_thirty_first",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "27f1eaf6-a361-8299-9976-21a2f9724f41"
+  },
+  {
+    "key": "lean_quantumoctave128_octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6dbff2e6-728f-84e2-a251-b33073eef0d2"
+  },
+  {
+    "key": "lean_quantumoctave124_particle_zero_of_the_124_qubit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d026f5a5-a073-883b-bc5f-1c649460e2a4"
+  },
+  {
+    "key": "lean_quantumoctave124_particle_one_of_the_124_qubit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "25840d76-485f-872e-a0b8-b188137ca6a5"
+  },
+  {
+    "key": "lean_quantumoctave124_particle_two_of_the_124_qubit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9e9ac5e9-6627-86ea-851c-04d529aa2e53"
+  },
+  {
+    "key": "lean_quantumoctave124_particle_three_of_the_124_qubit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0b1f0ae3-3a80-8282-8cc4-79661565a4b6"
+  },
+  {
+    "key": "lean_quantumoctave124_particle_four_of_the_124_qubit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "487b4f06-e20d-8293-8b34-d7b2d4513067"
+  },
+  {
+    "key": "lean_quantumoctave124_particle_five_of_the_124_qubit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "184d5582-d5c8-88a6-b588-b961e7f4cda0"
+  },
+  {
+    "key": "lean_quantumoctave124_particle_six_of_the_124_qubit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "feb7a8bc-b826-869f-9b81-45d149cb6a20"
+  },
+  {
+    "key": "lean_quantumoctave124_particle_seven_of_the_124_qubit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d09a7b84-1faf-8d96-afc8-64fbabb03421"
+  },
+  {
+    "key": "lean_quantumuuidcluster_at_odd_widths_the_classical_phase_stands_on_odd_eighths_and_the_bound_is_two_to_the_half_of_n_minus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9fcb4a5e-b397-8719-b2ce-b7c7f6e1b962"
+  },
+  {
+    "key": "lean_quantumuuidcluster_every_generator_of_the_124_qubit_cluster_is_z_x_z_on_its_neighbours",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6d9b30fa-2137-8ed5-a887-3d768c6bf10a"
+  },
+  {
+    "key": "lean_quantumuuidcluster_generators_zero_to_sixty_one_have_exactly_the_z_x_z_bit_pattern",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bb21eca5-87b2-8028-8df9-2ef30f02749e"
+  },
+  {
+    "key": "lean_quantumuuidcluster_generators_sixty_two_to_one_twenty_three_have_exactly_the_z_x_z_bit_pattern",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0829f1db-9667-8ec4-8352-4699427e3883"
+  },
+  {
+    "key": "lean_quantumuuidcluster_generators_zero_to_sixty_one_commute_with_all_124",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4f31f688-92b1-8948-84b8-f64910ae0cab"
+  },
+  {
+    "key": "lean_quantumuuidcluster_generators_sixty_two_to_one_twenty_three_commute_with_all_124",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dccffaa9-8b13-86d7-8d1a-985335b703a7"
+  },
+  {
+    "key": "lean_quantumuuidcluster_without_the_chain_or_with_a_ring_the_linear_cluster_form_fails",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8db4de29-4ec5-8fd4-bf71-f47ef2afc6b9"
+  },
+  {
+    "key": "lean_quantumuuidcluster_the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e037d2bb-d19b-8a9a-8b66-85a14d8b7e87"
   }
 ]
