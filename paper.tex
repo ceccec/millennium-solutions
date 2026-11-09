@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,149 of them across 117 files and
-8 wings; 25,941 close by exhaustion over a stated finite domain, 208 are proved
+(\texttt{npm run latex-gate}). There are 26,165 of them across 119 files and
+8 wings; 25,956 close by exhaustion over a stated finite domain, 209 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -130316,6 +130316,91 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \forall e \in \mathrm{triangle},\; e \ge -1 = \mathrm{true} \land \left|\{\, e \in \mathrm{triangle} \mid e = -1 \,\}\right| = 6 \land \left|\{\, e \in \mathrm{triangle} \mid e = 3 \,\}\right| = 2 \land \left|\mathrm{triangle}\right| = 8 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{quantum\_octave\_128.lean}}
+
+\begin{theorem}[\texttt{particle\_zero\_of\_the\_128\_qubit\_octave}]
+\[ \mathrm{particleReal}\mathopen{}\left(0\right) = \mathrm{true} \land \mathrm{particleSum}\mathopen{}\left(0\right) = 3525990486864069858 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{particle\_one\_of\_the\_128\_qubit\_octave}]
+\[ \mathrm{particleReal}\mathopen{}\left(1\right) = \mathrm{true} \land \mathrm{particleSum}\mathopen{}\left(1\right) = 337654250015596702913742461840 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{particle\_two\_of\_the\_128\_qubit\_octave}]
+\[ \mathrm{particleReal}\mathopen{}\left(2\right) = \mathrm{true} \land \mathrm{particleSum}\mathopen{}\left(2\right) = 411324807959075400680218172572805400 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{particle\_three\_of\_the\_128\_qubit\_octave}]
+\[ \mathrm{particleReal}\mathopen{}\left(3\right) = \mathrm{true} \land \mathrm{particleSum}\mathopen{}\left(3\right) = 145778712272927823445748804366324216880 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{particle\_four\_of\_the\_128\_qubit\_octave}]
+\[ \mathrm{particleReal}\mathopen{}\left(4\right) = \mathrm{true} \land \mathrm{particleSum}\mathopen{}\left(4\right) = 192812936693211996284838821959307547180 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{particle\_five\_of\_the\_128\_qubit\_octave}]
+\[ \mathrm{particleReal}\mathopen{}\left(5\right) = \mathrm{true} \land \mathrm{particleSum}\mathopen{}\left(5\right) = 1279389515917225289300042767401030000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{particle\_six\_of\_the\_128\_qubit\_octave}]
+\[ \mathrm{particleReal}\mathopen{}\left(6\right) = \mathrm{true} \land \mathrm{particleSum}\mathopen{}\left(6\right) = 3293268092833471993876167655640 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{particle\_seven\_of\_the\_128\_qubit\_octave}]
+\[ \mathrm{particleReal}\mathopen{}\left(7\right) = \mathrm{true} \land \mathrm{particleSum}\mathopen{}\left(7\right) = 190212032889388424658 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{octave\_one\_twenty\_eight\_qubits\_the\_uuid\_width\_leads\_by\_two\_to\_the\_sixty\_third}]
+\[ \mathrm{covered} = \mathrm{true} \land \mathrm{particleSum}\mathopen{}\left(0\right) + \mathrm{particleSum}\mathopen{}\left(1\right) + \mathrm{particleSum}\mathopen{}\left(2\right) + \mathrm{particleSum}\mathopen{}\left(3\right) + \mathrm{particleSum}\mathopen{}\left(4\right) + \mathrm{particleSum}\mathopen{}\left(5\right) + \mathrm{particleSum}\mathopen{}\left(6\right) + \mathrm{particleSum}\mathopen{}\left(7\right) = 2 \cdot 2^{127} \land \mathrm{reach}\mathopen{}\left(128\right) = [0,\,2,\,4,\,6] \land 2^{\frac{128}{2}} \cdot 2^{63} = 2^{128 - 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  refine} --- exhausting 4 cases. \hfill$\square$
+
+\paragraph{\texttt{quantum\_octaves.lean}}
+
+\begin{theorem}[\texttt{every\_classical\_answer\_is\_root\_two\_times\_an\_odd\_eighth\_of\_the\_circle}]
+\[ \mathrm{zmul}\mathopen{}\left(\mathrm{root2}\mathopen{}\left(1\right),\,\mathrm{wpow}\mathopen{}\left(1\right)\right) = \left(1,\,0,\,1,\,0\right) \land \mathrm{zmul}\mathopen{}\left(\mathrm{root2}\mathopen{}\left(1\right),\,\mathrm{wpow}\mathopen{}\left(3\right)\right) = \left(-1,\,0,\,1,\,0\right) \land \mathrm{zmul}\mathopen{}\left(\mathrm{root2}\mathopen{}\left(1\right),\,\mathrm{wpow}\mathopen{}\left(5\right)\right) = \left(-1,\,0,\,-1,\,0\right) \land \mathrm{zmul}\mathopen{}\left(\mathrm{root2}\mathopen{}\left(1\right),\,\mathrm{wpow}\mathopen{}\left(7\right)\right) = \left(1,\,0,\,-1,\,0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{octave\_two\_qubits\_has\_no\_mermin\_lead}]
+\[ \mathrm{expectationsReal}\mathopen{}\left(2\right) = \mathrm{true} \land \mathrm{twiceQuantum}\mathopen{}\left(2\right) = 2 \cdot 2^{1} \land \mathrm{reach}\mathopen{}\left(2\right) = [0,\,2,\,4,\,6] \land 2^{\frac{2}{2}} = 2^{2 - 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{octave\_four\_qubits\_quantum\_eight\_against\_classical\_four}]
+\[ \mathrm{expectationsReal}\mathopen{}\left(4\right) = \mathrm{true} \land \mathrm{twiceQuantum}\mathopen{}\left(4\right) = 2 \cdot 2^{3} \land \mathrm{reach}\mathopen{}\left(4\right) = [0,\,2,\,4,\,6] \land 2^{\frac{4}{2}} < 2^{4 - 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{octave\_eight\_qubits\_quantum\_128\_against\_classical\_16}]
+\[ \mathrm{expectationsReal}\mathopen{}\left(8\right) = \mathrm{true} \land \mathrm{twiceQuantum}\mathopen{}\left(8\right) = 2 \cdot 2^{7} \land \mathrm{reach}\mathopen{}\left(8\right) = [0,\,2,\,4,\,6] \land 2^{\frac{8}{2}} \cdot 2^{3} = 2^{8 - 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{octave\_sixteen\_qubits\_the\_lead\_is\_two\_to\_the\_seventh}]
+\[ \mathrm{expectationsReal}\mathopen{}\left(16\right) = \mathrm{true} \land \mathrm{twiceQuantum}\mathopen{}\left(16\right) = 2 \cdot 2^{15} \land \mathrm{reach}\mathopen{}\left(16\right) = [0,\,2,\,4,\,6] \land 2^{\frac{16}{2}} \cdot 2^{7} = 2^{16 - 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{octave\_thirty\_two\_qubits\_the\_lead\_is\_two\_to\_the\_fifteenth}]
+\[ \mathrm{expectationsReal}\mathopen{}\left(32\right) = \mathrm{true} \land \mathrm{twiceQuantum}\mathopen{}\left(32\right) = 2 \cdot 2^{31} \land \mathrm{reach}\mathopen{}\left(32\right) = [0,\,2,\,4,\,6] \land 2^{\frac{32}{2}} \cdot 2^{15} = 2^{32 - 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{octave\_sixty\_four\_qubits\_the\_lead\_is\_two\_to\_the\_thirty\_first}]
+\[ \mathrm{expectationsReal}\mathopen{}\left(64\right) = \mathrm{true} \land \mathrm{twiceQuantum}\mathopen{}\left(64\right) = 2 \cdot 2^{63} \land \mathrm{reach}\mathopen{}\left(64\right) = [0,\,2,\,4,\,6] \land 2^{\frac{64}{2}} \cdot 2^{31} = 2^{64 - 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
 \paragraph{\texttt{quantum\_textbooks.lean}}
 

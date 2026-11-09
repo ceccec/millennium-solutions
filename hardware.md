@@ -85,6 +85,17 @@ ISO/IEC 4879 names the quantum computing models. Each is decided here at its kno
 | Adiabatic | §3.4.15 | for every rational schedule point the gap is never below its midpoint value and reaches it there, g_min = √2 — proved for every value, not sampled | — | [Adiabatic quantum computation](https://en.wikipedia.org/wiki/Adiabatic_quantum_computation) |
 | Quantum annealer | §3.4.31 | the frustrated triangle's whole spectrum: ground state −1 six-fold, only all-up and all-down at +3 | — | [Geometrical frustration](https://en.wikipedia.org/wiki/Geometrical_frustration) |
 
+## Scaled in octaves, up to the UUID width
+
+The Bell test doubles: on n qubits the GHZ state reaches Mermin's value 2ⁿ⁻¹ while every classical assignment stops at 2^(n/2) — values as in [arXiv:0905.0151](https://ar5iv.labs.arxiv.org/html/0905.0151) §2. Each octave is a Lean theorem; the 128-qubit octave is split into eight UUID particles, each sealed on its own, and recombined from them. Any other width — 124, the UUID minus its version hex digit — is computed by the same method in `src/quantum/hardware.ts` (`npm run quantum:octave -- --qubits N` or `-- --uuid U`).
+
+<table>
+<thead><tr><th>Qubits</th><th>Quantum</th><th>Classical</th><th>Lead</th><th>Kernel</th></tr></thead>
+<tbody><tr v-for="o in data.octaves" :key="o.n"><td>{{ o.n }}</td><td>2<sup>{{ o.quantum }}</sup></td><td>2<sup>{{ o.classical }}</sup></td><td>2<sup>{{ o.lead }}</sup></td><td>{{ o.sealed ? 'sealed' : 'same method, any width' }}</td></tr></tbody>
+</table>
+
+At 2 qubits there is no Mermin lead — that octave's Bell test is CHSH, above. **The 124-qubit cluster** (|+⟩ on every qubit, CZ on every neighbour) has {{ data.cluster124.generators }} stabilizers, propagated through every CZ by a Pauli tableau: each is <code>{{ data.cluster124.middle }}</code> on its neighbourhood ({{ data.cluster124.isCluster ? 'all of them' : 'NOT all' }}), and they {{ data.cluster124.commute ? 'all commute' : 'do NOT all commute' }} — the state the one-way model computes on.
+
 ## The textbooks, cross-verified
 
 qpu seals each textbook law's characteristic number as integers (`Qpu/Textbook.lean`). Each one is derived again here, independently, from the operators that produce it — and each matches:

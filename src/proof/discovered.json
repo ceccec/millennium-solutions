@@ -149924,5 +149924,85 @@
     "key": "lean_quantumtextbooks_linearity_forbids_perfect_cloning_and_the_optimal_copy_has_fidelity_five_sixths",
     "name": "lean quantum_textbooks.lean: linearity_forbids_perfect_cloning_and_the_optimal_copy_has_fidelity_five_sixths — ((1 : Int) * 1 - 0 * 1 ≠ 0) ∧ 4 + 1 + 1 = 6 ∧ 4 + 1 = 5 ∧ 5 < 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "f9710402-2c58-8a3d-8904-49a009e6b6e5"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_zero_of_the_128_qubit_octave",
+    "name": "lean quantum_octave_128.lean: particle_zero_of_the_128_qubit_octave — particleReal 0 = true ∧ particleSum 0 = 3525990486864069858 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "63a59442-75de-86a6-b91d-00f196f6ebd0"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_one_of_the_128_qubit_octave",
+    "name": "lean quantum_octave_128.lean: particle_one_of_the_128_qubit_octave — particleReal 1 = true ∧ particleSum 1 = 337654250015596702913742461840 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7927486f-2fdb-8fd8-a419-7102cd1ae3e7"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_two_of_the_128_qubit_octave",
+    "name": "lean quantum_octave_128.lean: particle_two_of_the_128_qubit_octave — particleReal 2 = true ∧ particleSum 2 = 411324807959075400680218172572805400 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ed4e972b-cdbe-8fad-ae1b-803a55fea38d"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_three_of_the_128_qubit_octave",
+    "name": "lean quantum_octave_128.lean: particle_three_of_the_128_qubit_octave — particleReal 3 = true ∧ particleSum 3 = 145778712272927823445748804366324216880 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f57cb061-1a23-8fb9-9882-89efbdea8390"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_four_of_the_128_qubit_octave",
+    "name": "lean quantum_octave_128.lean: particle_four_of_the_128_qubit_octave — particleReal 4 = true ∧ particleSum 4 = 192812936693211996284838821959307547180 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8ee6ddd3-f251-8ecc-9486-ee3fb1267386"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_five_of_the_128_qubit_octave",
+    "name": "lean quantum_octave_128.lean: particle_five_of_the_128_qubit_octave — particleReal 5 = true ∧ particleSum 5 = 1279389515917225289300042767401030000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0f062ce6-fd9e-8ded-891a-fddc0a730af2"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_six_of_the_128_qubit_octave",
+    "name": "lean quantum_octave_128.lean: particle_six_of_the_128_qubit_octave — particleReal 6 = true ∧ particleSum 6 = 3293268092833471993876167655640 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4d71e764-6ffa-87ee-9dbf-0ea0758e1757"
+  },
+  {
+    "key": "lean_quantumoctave128_particle_seven_of_the_128_qubit_octave",
+    "name": "lean quantum_octave_128.lean: particle_seven_of_the_128_qubit_octave — particleReal 7 = true ∧ particleSum 7 = 190212032889388424658 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bb6d83a4-c2b5-88bf-9663-1f24f93096af"
+  },
+  {
+    "key": "lean_quantumoctaves_every_classical_answer_is_root_two_times_an_odd_eighth_of_the_circle",
+    "name": "lean quantum_octaves.lean: every_classical_answer_is_root_two_times_an_odd_eighth_of_the_circle — zmul (root2 1) (wpow 1) = (1, 0, 1, 0) ∧ zmul (root2 1) (wpow 3) = (-1, 0, 1, 0) ∧ zmul (root2 1) (wpow 5) = (-1, 0, -1, 0) ∧ zmul (root2 1) (wpow 7) = (1, 0, -1, 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "203c8974-68af-8406-b4aa-aba3e57a2baa"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_two_qubits_has_no_mermin_lead",
+    "name": "lean quantum_octaves.lean: octave_two_qubits_has_no_mermin_lead — expectationsReal 2 = true ∧ twiceQuantum 2 = 2 * 2 ^ 1 ∧ reach 2 = [0, 2, 4, 6] ∧ 2 ^ (2 / 2) = 2 ^ (2 - 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5b2e033a-87bd-8131-b20b-dce1a3ca0e6b"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_four_qubits_quantum_eight_against_classical_four",
+    "name": "lean quantum_octaves.lean: octave_four_qubits_quantum_eight_against_classical_four — expectationsReal 4 = true ∧ twiceQuantum 4 = 2 * 2 ^ 3 ∧ reach 4 = [0, 2, 4, 6] ∧ 2 ^ (4 / 2) < 2 ^ (4 - 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2fe170c8-c71b-8898-98ce-d76bd04684a4"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_eight_qubits_quantum_128_against_classical_16",
+    "name": "lean quantum_octaves.lean: octave_eight_qubits_quantum_128_against_classical_16 — expectationsReal 8 = true ∧ twiceQuantum 8 = 2 * 2 ^ 7 ∧ reach 8 = [0, 2, 4, 6] ∧ 2 ^ (8 / 2) * 2 ^ 3 = 2 ^ (8 - 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0c3f6a6b-bd95-8715-a347-c80a1ed4bbe9"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_sixteen_qubits_the_lead_is_two_to_the_seventh",
+    "name": "lean quantum_octaves.lean: octave_sixteen_qubits_the_lead_is_two_to_the_seventh — expectationsReal 16 = true ∧ twiceQuantum 16 = 2 * 2 ^ 15 ∧ reach 16 = [0, 2, 4, 6] ∧ 2 ^ (16 / 2) * 2 ^ 7 = 2 ^ (16 - 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6f72b857-08ff-83ce-96f5-dd6341809aa0"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_thirty_two_qubits_the_lead_is_two_to_the_fifteenth",
+    "name": "lean quantum_octaves.lean: octave_thirty_two_qubits_the_lead_is_two_to_the_fifteenth — expectationsReal 32 = true ∧ twiceQuantum 32 = 2 * 2 ^ 31 ∧ reach 32 = [0, 2, 4, 6] ∧ 2 ^ (32 / 2) * 2 ^ 15 = 2 ^ (32 - 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6db05559-a0a8-8ae6-b55d-bf7314d22dc8"
+  },
+  {
+    "key": "lean_quantumoctaves_octave_sixty_four_qubits_the_lead_is_two_to_the_thirty_first",
+    "name": "lean quantum_octaves.lean: octave_sixty_four_qubits_the_lead_is_two_to_the_thirty_first — expectationsReal 64 = true ∧ twiceQuantum 64 = 2 * 2 ^ 63 ∧ reach 64 = [0, 2, 4, 6] ∧ 2 ^ (64 / 2) * 2 ^ 31 = 2 ^ (64 - 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "27f1eaf6-a361-8299-9976-21a2f9724f41"
+  },
+  {
+    "key": "lean_quantumoctave128_octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third",
+    "name": "lean quantum_octave_128.lean: octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third — covered = true ∧ particleSum 0 + particleSum 1 + particleSum 2 + particleSum 3 + particleSum 4 + particleSum 5 + particleSum 6 + particleSum 7 = 2 * 2 ^ 127 ∧ reach 128 = [0, 2, 4, 6] ∧ 2 ^ (128 / 2) * 2 ^ 63 = 2 ^ (128 - 1) — proved by the Lean kernel for every value (by\n  refine), standard axioms only — checked by lean.ts",
+    "receipt": "6dbff2e6-728f-84e2-a251-b33073eef0d2"
   }
 ]

@@ -122,6 +122,87 @@ export const simulate = (gates: readonly Gate[]): [number, number, number, numbe
   return [p[0], p[2], p[1], p[3]]
 }
 
+// ── ANY WIDTH: the octave proofs, ported ────────────────────────────────────────────────────────────────────────
+// src/proof/quantum_octaves.lean and quantum_octave_128.lean seal the octaves 2 … 128. The same two computations run
+// here for ANY n — no cap — so a width taken from a UUID (124 = 128 minus the version hex digit, 122 minus the variant
+// bits too) is answered by the method the kernel checked at the octaves, not by a formula typed beside it.
+
+/** The qubits a UUID's free fields carry: all 128 bits, minus the version nibble (one hex digit), minus the 2 variant
+ *  bits. Read from the UUID's own fields, so a nil or non-RFC UUID says so instead of being counted. */
+export const qubitsOf = (uuid: string): { bits: 128; version: number; variantRfc: boolean; minusVersionHex: number; free: number } => {
+  const hex = uuid.replace(/-/g, '').toLowerCase()
+  if (!/^[0-9a-f]{32}$/.test(hex)) throw new Error(`not a UUID: ${uuid}`)
+  const version = parseInt(hex[12], 16), variantRfc = (parseInt(hex[16], 16) & 0b1100) === 0b1000
+  return { bits: 128, version, variantRfc, minusVersionHex: 128 - 4, free: 128 - 4 - (variantRfc ? 2 : 0) }
+}
+
+// THE LITERAL PORT. Each definition below is quantum_circuits.lean / quantum_octaves.lean transcribed one for one — the
+// same name, the same arithmetic in ℤ[ω] (a + bω + cω² + dω³, ω⁴ = −1), BigInt where Lean has Int — so a width the
+// kernel did not see is answered by the very definitions it checked at the octaves.
+
+export type Zw = readonly [bigint, bigint, bigint, bigint]
+export const zadd = (x: Zw, y: Zw): Zw => [x[0] + y[0], x[1] + y[1], x[2] + y[2], x[3] + y[3]]
+export const zmul = ([a, b, c, d]: Zw, [e, f, g, h]: Zw): Zw =>
+  [a * e - b * h - c * g - d * f, a * f + b * e - c * h - d * g, a * g + b * f + c * e - d * h, a * h + b * g + c * f + d * e]
+export const wpow = (k: number): Zw =>
+  ([[1n, 0n, 0n, 0n], [0n, 1n, 0n, 0n], [0n, 0n, 1n, 0n], [0n, 0n, 0n, 1n], [-1n, 0n, 0n, 0n], [0n, -1n, 0n, 0n], [0n, 0n, -1n, 0n], [0n, 0n, 0n, -1n]] as Zw[])[k % 8]
+/** Lean `row`: Pascal's row n, built row by row */
+export const row = (n: number): bigint[] => { let r = [1n]; for (let i = 0; i < n; i++) r = [0n, ...r].map((v, j) => v + (r[j] ?? 0n)); return r }
+/** Lean `re4`: Re(iᵏ) */
+export const re4 = (k: number): bigint => [1n, 0n, -1n, 0n][k % 4]
+/** Lean `phases`: the GHZ phases of a string with k Y's among n Paulis, carried qubit by qubit — up and down */
+export const phases = (k: number, n: number): [Zw, Zw] => {
+  let acc: [Zw, Zw] = [[1n, 0n, 0n, 0n], [1n, 0n, 0n, 0n]]
+  for (let j = 0; j < n; j++) if (j < k) acc = [zmul(acc[0], wpow(2)), zmul(acc[1], wpow(6))]
+  return acc
+}
+/** Lean `twiceExpect`: up phase + down phase = 2 × the string's GHZ expectation */
+export const twiceExpect = (k: number, n: number): Zw => zadd(...phases(k, n))
+/** Lean `twiceQuantum`: Σ_k C(n, k) · Re(iᵏ) · 2⟨string_k⟩ */
+export const twiceQuantum = (n: number): bigint => { const r = row(n); let acc = 0n; for (let k = 0; k <= n; k++) acc += r[k] * re4(k) * twiceExpect(k, n)[0]; return acc }
+/** Lean `reach`: the eighths of the ring the classical phase can stand on after n parties */
+export const reach = (n: number): number[] => {
+  let r = [0]
+  for (let i = 0; i < n; i++) { const prev = r; r = [0, 1, 2, 3, 4, 5, 6, 7].filter((x) => prev.some((s) => [1, 3, 5, 7].some((e) => (s + e) % 8 === x))) }
+  return r
+}
+/** Lean `expectationsReal`: every string's expectation is real, Re(iᵏ) */
+export const expectationsReal = (n: number): boolean => {
+  for (let k = 0; k <= n; k++) { const t = twiceExpect(k, n); if (t[0] !== 2n * re4(k) || t[1] !== 0n || t[2] !== 0n || t[3] !== 0n) return false }
+  return true
+}
+
+/** Mermin on the n-qubit GHZ state, for any n, composed from the literal port above: quantum = twiceQuantum / 2, and the
+ *  classical maximum 2^(n/2) when the phase can stand on eighth 0 of the ring (Re = 1), else 2^((n−1)/2) (Re = √2/2). */
+export const mermin = (n: number): { n: number; quantum: bigint; classical: bigint; lead: bigint; reach: number[]; real: boolean } => {
+  if (!Number.isInteger(n) || n < 1) throw new Error(`n must be a positive integer, got ${n}`)
+  const r = reach(n), quantum = twiceQuantum(n) / 2n
+  const classical = r.includes(0) ? 1n << BigInt(n / 2) : 1n << BigInt((n - 1) / 2)
+  return { n, quantum, classical, lead: quantum / classical, reach: r, real: expectationsReal(n) }
+}
+
+/** The linear cluster state on n qubits — |+⟩ⁿ, then CZ on each neighbouring pair — by its stabilizers, propagated
+ *  through every CZ with a Pauli tableau (Gottesman–Knill), so n = 124 costs n² bit operations, not 2¹²⁴ amplitudes.
+ *  Returns each generator as a Pauli string and whether all are the cluster's K_j = Z_{j−1} X_j Z_{j+1} with sign +. */
+export const cluster = (n: number): { n: number; stabilizers: string[]; isCluster: boolean; commute: boolean } => {
+  if (!Number.isInteger(n) || n < 2) throw new Error(`a cluster needs at least 2 qubits, got ${n}`)
+  const gens = Array.from({ length: n }, (_, j) => ({ x: Array.from({ length: n }, (_, q) => q === j), z: Array<boolean>(n).fill(false), sign: false }))
+  for (let a = 0; a + 1 < n; a++) {
+    const b = a + 1
+    for (const g of gens) {
+      g.sign = g.sign !== (g.x[a] && g.x[b] && (g.z[a] !== g.z[b]))
+      g.z[a] = g.z[a] !== g.x[b]
+      g.z[b] = g.z[b] !== g.x[a]
+    }
+  }
+  const str = (g: (typeof gens)[number]) => (g.sign ? '-' : '') + g.x.map((x, q) => (x ? (g.z[q] ? 'Y' : 'X') : g.z[q] ? 'Z' : 'I')).join('')
+  const want = (j: number) => Array.from({ length: n }, (_, q) => (q === j ? 'X' : Math.abs(q - j) === 1 ? 'Z' : 'I')).join('')
+  const stabilizers = gens.map(str)
+  const symp = (p: (typeof gens)[number], q: (typeof gens)[number]) => p.x.reduce((acc, _, i) => acc !== ((p.x[i] && q.z[i]) !== (p.z[i] && q.x[i])), false)
+  const commute = gens.every((p) => gens.every((q) => !symp(p, q)))
+  return { n, stabilizers, isCluster: stabilizers.every((s, j) => s === want(j)), commute }
+}
+
 /** Counts from per-shot register values, bit 0 = c[0] (Alice), bit 1 = c[1] (Bob). */
 export const countsOf = (values: readonly number[]): Counts => {
   const c = { n00: 0, n01: 0, n10: 0, n11: 0 }

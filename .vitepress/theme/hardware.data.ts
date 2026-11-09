@@ -5,7 +5,7 @@
 // device verdict is the receipt scripts/quantum-hardware.ts wrote from the provider's job, or the plain fact that no
 // run exists yet. This loader only reshapes them for the page; it mints no claim.
 import { existsSync, readFileSync } from 'node:fs'
-import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, simulate, type QuantumHardware } from '../../src/quantum/hardware.ts'
+import { ACCEPTED_HARDWARE, SETTINGS, chshGates, toQasm, simulate, mermin, cluster, type QuantumHardware } from '../../src/quantum/hardware.ts'
 import { leanTheorems, ledger } from '../../src/api/index.ts'
 
 export interface HardwareData {
@@ -15,9 +15,14 @@ export interface HardwareData {
   run: Record<string, unknown> | null
   /** every theorem of the exact model files, with its live ledger receipt — read from the kernel's records, not typed */
   models: { file: string; name: string; receipt: string }[]
+  /** Mermin at each octave and at 124 (128 minus the version hex digit), as exponents of 2 — computed by hardware.ts */
+  octaves: { n: number; quantum: number; classical: number; lead: number; sealed: boolean }[]
+  /** the 124-qubit linear cluster: its stabilizers propagated through every CZ */
+  cluster124: { generators: number; isCluster: boolean; commute: boolean; middle: string }
 }
 
-const MODEL_FILES = ['quantum_circuits.lean', 'quantum_models.lean', 'quantum_textbooks.lean', 'quantum_hardware.lean']
+const MODEL_FILES = ['quantum_circuits.lean', 'quantum_models.lean', 'quantum_textbooks.lean', 'quantum_octaves.lean', 'quantum_octave_128.lean', 'quantum_hardware.lean']
+const log2 = (v: bigint) => v.toString(2).length - 1
 
 declare const data: HardwareData
 export { data }
@@ -42,6 +47,11 @@ export default {
         return (leanTheorems() as { name: string; file: string }[]).filter((t) => MODEL_FILES.includes(t.file))
           .map((t) => ({ file: t.file, name: t.name, receipt: live.find((e) => e.key.endsWith('_' + t.name))?.receipt ?? 'not sealed' }))
       })(),
+      octaves: [2, 4, 8, 16, 32, 64, 124, 128].map((n) => {
+        const m = mermin(n)
+        return { n, quantum: log2(m.quantum), classical: log2(m.classical), lead: log2(m.lead), sealed: n !== 124 }
+      }),
+      cluster124: (() => { const c = cluster(124); return { generators: c.stabilizers.length, isCluster: c.isCluster, commute: c.commute, middle: c.stabilizers[62].replace(/^I+|I+$/g, '') } })(),
     }
   },
 }
