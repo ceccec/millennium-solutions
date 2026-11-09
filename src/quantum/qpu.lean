@@ -46,6 +46,12 @@ def bits     : Nat := 32
 def qubits   : Nat := 3
 def levels   : Nat := 2
 
+-- EACH CONSTANT ABOVE IS LINKED TO THE QUANTUM PROGRAM THAT DERIVES IT, by a coin — toUuid of the unit's own
+-- declaration, recomputable by anyone — in src/quantum/qpu-coins.ts. scripts/qpu-register-gate.ts checks every
+-- coin resolves, and asks the served unit (served→source) whether the values still match, so the integers below
+-- are a resolvable address into the quantum programs rather than a date and a hand. The clay* section further on
+-- derives these same constants from the ported definitions, so the kernel decides the link too.
+
 -- ── 1 · qpu's OWN TWO RELATIONS HOLD ON ITS OWN NUMBERS ───────────────────────────────────────────────────
 -- Its Lean states `theorem around : faces = coins * rays` and `theorem cube : bits = vertices * hexbit`.
 -- Decided here on the served values, which is the only part of its report this tree can check: if the
