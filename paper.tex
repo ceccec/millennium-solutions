@@ -4590,9 +4590,9 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_real\_fold\_is\_sixty\_four\_bits\_against\_the\_hundred\_twenty\_two\_bit\_layout}]
-\[ 2^{64} < 2^{122} \land 2^{64} \cdot 2^{58} = 2^{122} \land 122 - 64 = 58 \land 2^{122} - 2^{64} > 0 \land \mathrm{mask} \cdot \mathrm{mask} \cdot \mathrm{mask} \cdot \mathrm{mask} = 2^{64} \]
+\[ \forall w \in \{0,\dots,122\},\; 2^{w} \cdot 2^{122 - w} = 2^{122} \land \mathrm{decide}\mathopen{}\left(w < 122\right) = \mathrm{decide}\mathopen{}\left(2^{w} < 2^{122}\right) \land 2^{64} \cdot 2^{58} = 2^{122} \land 2^{122} - 2^{64} > 0 \land \mathrm{mask} \cdot \mathrm{mask} \cdot \mathrm{mask} \cdot \mathrm{mask} = 2^{64} \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 123 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_search\_floor\_is\_the\_fold\_width\_not\_the\_layout\_width}]
 \[ 32 \cdot 2 = 64 \land 61 \cdot 2 = 122 \land 2^{32} \cdot 2^{32} = 2^{64} \land 2^{32} < 2^{61} \land 2^{61} < 2^{122} \land 2^{64} < 2^{122} \]

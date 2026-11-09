@@ -462887,7 +462887,7 @@
    "item": {
     "@type": "ScholarlyArticle",
     "name": "the_real_fold_is_sixty_four_bits_against_the_hundred_twenty_two_bit_layout",
-    "description": "2 ^ 64 < 2 ^ 122 ∧ 2 ^ 64 * 2 ^ 58 = 2 ^ 122 ∧ 122 - 64 = 58 ∧ 2 ^ 122 - 2 ^ 64 > 0 ∧ mask * mask * mask * mask = 2 ^ 64",
+    "description": "(List.range 123).all (fun w => 2 ^ w * 2 ^ (122 - w) == 2 ^ 122 && (decide (w < 122) == decide (2 ^ w < 2 ^ 122))) ∧ 2 ^ 64 * 2 ^ 58 = 2 ^ 122 ∧ 2 ^ 122 - 2 ^ 64 > 0 ∧ mask * mask * mask * mask = 2 ^ 64",
     "identifier": "lean_qpufold_the_real_fold_is_sixty_four_bits_against_the_hundred_twenty_two_bit_layout",
     "receipt": "dd520b70-7d08-8b22-8936-0f97a326f4f5",
     "url": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_qpufold_the_real_fold_is_sixty_four_bits_against_the_hundred_twenty_two_bit_layout",
