@@ -16,6 +16,8 @@
 import { sha512, hex, unhex } from '../src/0/sha512.ts'
 import { publicKey, sign, verify, PUBLIC_KEY_BYTES, SIGNATURE_BYTES } from '../src/0/ed25519.ts'
 import { encode, decode, signContainer, verifyContainer, PROGRAM_BITS, MESSAGE_BITS, CHECK_BITS } from '../src/0/program.ts'
+import { factor, millerRabin } from '../src/factor/index.ts'
+import { verifyFactors } from '../src/factor/verify.ts'
 
 let bad = 0
 const check = (ok: boolean, what: string, detail = '') => {
@@ -93,9 +95,45 @@ console.log('\nthe container — checksum, program, message:')
     'the key is 32 bytes and the signature 64 — neither fits in the 16-byte uuid, so both travel beside it')
 }
 
+// ── factoring — the tool GENERATES its own vectors, decodes them, and verifies ──────────────────────────────
+// A factoriser checked only against stored answers is a factoriser checked against its author. So the test MAKES
+// its integers: it grows primes from fixed seeds and multiplies them, then factors the product and checks the
+// pieces ARE those primes — the originals are in memory, so the decode is verified against them, nothing stored.
+// The DEFAULT integer carries no primes in this file: finding its factors cold and the multiply-back on the
+// integer is the real test. And 2^999 + 1 is the saved, sealed case — PARTIAL, because its 244-digit cofactor is
+// proved composite (not factored), exactly as src/proof/qpu_crypto.lean decides it. Deterministic, so it repeats.
+console.log('\nfactoring — generated from primes, decoded back, and a default integer found cold:')
+{
+  const nextPrime = (from: bigint): bigint => { let p = from | 1n; while (millerRabin(p) !== 'PRIME') p += 2n; return p }
+  const asc = (a: bigint, b: bigint) => (a < b ? -1 : a > b ? 1 : 0)
+  // both seeds above the 10^6 trial bound, so trial division misses the primes and Pollard rho must find them
+  const SEEDS: [bigint, bigint][] = [[2_000_003n, 5_000_011n], [10_000_019n, 70_000_027n], [1_500_000_001n, 3_000_000_019n]]
+  for (const [sa, sb] of SEEDS) {
+    const p = nextPrime(sa), q = nextPrime(sb), N = p * q
+    const f = factor(N.toString())
+    const got = (f.status === 'FACTORED' ? f.factors.map(BigInt) : []).sort(asc)
+    const want = [p, q].sort(asc)
+    check(f.status === 'FACTORED' && got.length === 2 && got[0] === want[0] && got[1] === want[1],
+      `generated ${p} × ${q}: decoded back to its primes (both > 10^6, so rho found them)`, f.status)
+    check(verifyFactors(N.toString(), [p.toString(), q.toString()]).status === 'VERIFIED',
+      'the verifier confirms the original primes on the integer')
+  }
+  // THE DEFAULT INTEGER — no primes written here; finding them and the multiply-back is the real test
+  const DEFAULT = '10000037000033'
+  const d = factor(DEFAULT)
+  const prod = d.status === 'FACTORED' ? d.factors.reduce((a, x) => a * BigInt(x), 1n) : 0n
+  check(d.status === 'FACTORED' && prod.toString() === DEFAULT, `the default integer ${DEFAULT} is found cold and multiplies back`, d.status)
+  check(d.status === 'FACTORED' && verifyFactors(DEFAULT, d.factors).status === 'VERIFIED', 'the verifier confirms the factors found cold')
+  // THE SAVED CASE — 2^999 + 1, sealed PARTIAL in qpu_crypto.lean
+  const s = factor((2n ** 999n + 1n).toString())
+  check(s.status === 'PARTIAL' && s.factors.length === 14,
+    '2^999 + 1 returns the sealed PARTIAL — 14 factors and a cofactor proved composite, not a factorisation', s.status)
+}
+
 console.log(bad
   ? `\n✗ crypto-kat: ${bad} check(s) failed — a primitive here does not do what its name says`
   : '\n✓ crypto-kat: SHA-512 and Ed25519 agree with FIPS 180-4 and RFC 8032, refuse every forgery put to them,'
-    + '\n  and the container round-trips, catches all 122 single-bit flips, and carries its signature beside it.'
-    + '\n  Honest: this is an implementation of published standards, not a new scheme, and it is not constant-time.')
+    + '\n  the container round-trips and catches all 122 single-bit flips, and the factoriser decodes its own generated'
+    + '\n  primes, finds the default integer cold, and returns the sealed PARTIAL on 2^999 + 1.'
+    + '\n  Honest: these are implementations of published standards (and an honest partial factoriser), not new schemes, and not constant-time.')
 process.exit(bad ? 1 : 0)

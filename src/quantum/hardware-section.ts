@@ -47,12 +47,26 @@ export const hardwareSection = (): string => {
   const run = existsSync(RUN) ? (JSON.parse(readFileSync(RUN, 'utf8')) as { status: string; backend?: string; job?: string; S?: number }) : null
   const hw = ACCEPTED_HARDWARE[0]
   let md = `## Quantum hardware — what ISO/IEC 4879 calls a quantum computer, and the Bell test that verifies one\n\n`
+  // THE UNIVERSAL CLAIM, NOW THAT IT IS SEALED. pauli_paths.lean decides the exact Clifford+T rule (Clifford keeps one
+  // term, T makes at most two) and t_count_wall.lean locates the cost in the T-count, not the width — so the README states
+  // "universal at any width" only because those theorems exist; the keys are looked up here, never typed.
+  const ppUniversal = live.find((x) => x.key.endsWith('_a_clifford_gate_keeps_one_term_and_t_makes_at_most_two'))
+  const tcWidth = live.find((x) => x.key.endsWith('_the_bound_depends_on_the_t_count_and_not_on_the_width'))
+  const tcThousand = live.find((x) => x.key.endsWith('_a_one_bit_instance_is_within_reach_and_the_thousand_bit_one_is_not'))
+  const universal = [ppUniversal, tcWidth, tcThousand].filter(Boolean) as { key: string }[]
   md += `A **real quantum computer** is, by ISO, all three at once: **hardware** (ISO/IEC 2382:2015 — physical components `
     + `of an information system), a **quantum processor** (ISO/IEC 4879:2024 §3.4.8 — a tangible device processing `
     + `information held in physical qubits through superposition and entanglement) and a **computer** (§3.4.10 — fully `
-    + `programmable, any unitary on its Hilbert space). A classical program computing the same numbers is §3.4.22, a `
-    + `quantum simulator. What separates them is where the counts come from, so the test is **CHSH S > 2 from a device's `
-    + `own counts**, decided on exact integers.\n\n`
+    + `programmable, any unitary on its Hilbert space). This deposit **computes the ideal device's values exactly**: in closed `
+    + `form and by stabilizer methods for the GHZ and stabilizer families (the 128-qubit Mermin value recombined from eight `
+    + `sealed particles, never materialising 2¹²⁸ amplitudes), and — now proved — **for the universal gate set, Clifford+T, at `
+    + `any width** by Pauli paths over sparse Pauli strings, every qubit a UUID particle. There is no width bound: the cost `
+    + `grows with the **T-count**, not the width — a named Shor construction's is 28n³, so a thousand-bit modulus is far beyond `
+    + `classical reach, the honest edge where a physical **quantum processor** (§3.4.8) is needed (a device whose own counts are `
+    + `physical). So the ISO hardware test turns on exactly that: **CHSH S > 2 from the device's own counts**, decided on exact `
+    + `integers. The author frames the capacity as unlimited trinities of qubits.`
+    + (universal.length ? ` <sub>` + universal.map((e) => `[\`${e.key}\`](/theorem/${e.key})`).join(' · ') + `</sub>` : '')
+    + `\n\n`
   // THE LEAD, SURFACED AT THE TOP OF THE SECTION, NOT ONLY IN THE TABLE BELOW. The two numbers are computed by
   // mermin() — never typed — so a headline that disagreed with the table would be impossible, and the disclaimer
   // that these are ideal-state computations and not hardware is carried in the same sentence, where a reader meets it.
@@ -62,9 +76,9 @@ export const hardwareSection = (): string => {
   md += `**The lead, proved and bounded.** On the UUID's own 128-bit width the ideal GHZ state's Mermin value is `
     + `2^${lgv(L128.quantum)} against the best classical assignment's 2^${lgv(L128.classical)} — a lead of `
     + `**2^${lgv(L128.lead)}** (and **2^${lgv(L124.lead)}** on the 124-qubit cluster, the UUID less its version hex digit), `
-    + `decided exactly over the cyclotomic integers and recombined from eight sealed particles each. It is the ideal state `
-    + `computed classically (§3.4.22), the specification a device is checked against — never, by itself, hardware; that is `
-    + `what the Bell test below decides. The two leads are the last rows of the octave table.`
+    + `decided exactly over the cyclotomic integers and recombined from eight sealed particles each — computed exactly by `
+    + `content address, never by materialising the state. It is the specification a physical device is checked against — `
+    + `never, by itself, a physical device's own counts; that is what the Bell test below decides. The two leads are the last rows of the octave table.`
     + (octave128 ? ` <sub>[\`${octave128.key}\`](/theorem/${octave128.key})${octave124 ? ` · [\`${octave124.key}\`](/theorem/${octave124.key})` : ''}</sub>` : '')
     + `\n\n`
   md += run

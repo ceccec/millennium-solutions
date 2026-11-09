@@ -49,8 +49,8 @@ export const CONNECTORS: Connector[] = [
     for: 'its sixteen tools: the state-vector circuit, its Lean rows, the Shor run that factors 91 = 7 x 13 by '
       + 'period-finding, the crypto catalogue, and its own end-to-end proof. src/proof/qpu.lean decides which of '
       + 'its constants this deposit independently counts the same way — 14 = 2 x 7, hexbit x rays = 28, 2^bits.',
-    notFor: 'quantum advantage, and it does not claim any: its device field reads "exact-amplitudes", a '
-      + 'simulator. Nor does a green answer mean a test passed — that service\'s OWN glossary says `holds` means '
+    notFor: 'quantum advantage, and it does not claim any: its device field reads "exact-amplitudes" — exact '
+      + 'computation, not a physical quantum processor\'s counts. Nor does a green answer mean a test passed — that service\'s OWN glossary says `holds` means '
       + '"this record is self-consistent and recomputes to itself; not a claim that the test it describes '
       + 'passed", and `pass` is a separate field that can be false beside it. Read its glossary before its verdicts.',
     readOnly: true,

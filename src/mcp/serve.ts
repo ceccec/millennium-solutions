@@ -25,8 +25,9 @@
  *  here reads the ledger, compiles Lean, shells out or opens a socket. A caller wanting the other nineteen
  *  clones the repository, and `list_tools` says so per tool instead of failing when they try. */
 import { toUuid, merkleFold, merge } from '../0/index.ts'
-import { factorWitnessed } from '../factor/index.ts'
+import { factorWitnessed, sealedProofFor } from '../factor/index.ts'
 import { verifyFactors } from '../factor/verify.ts'
+import { generate as generateTrapdoor } from '../factor/generate.ts'
 import { mirror as digitMirror } from '../mirror/index.ts'
 import { decide as policyDecide } from '../policy/index.ts'
 import { handle, resolve, HANDLE_HEX } from '../handle/index.ts'
@@ -214,8 +215,26 @@ const H: Record<string, (a: any) => string> = {
   // THE PRODUCTION FACTOR, SERVED FROM EVERY INSTALL. Declared core and refused by this entry until 2026-11-02 ("it takes
   // n") — the one tool a stranger most needs was the one an install did not reach. Pure BigInt over the caller's integer in
   // any binary variant, with its fourteen-state witness (src/factor/index.ts).
-  factor: (a) => JSON.stringify(factorWitnessed(String(a?.n ?? ''))),
+  factor: (a) => {
+    // THE FACTORS SURFACE AS PROOF. For an integer this deposit decides in the kernel, the answer carries the sealed
+    // theorem that decides it — its live ledger key and receipt looked up from the loaded ledger (never typed), so a
+    // caller sees the factorisation is coin-backed, not only that it multiplied back. The honest PARTIAL stays PARTIAL.
+    const result = factorWitnessed(String(a?.n ?? ''))
+    const sealed = result.n ? sealedProofFor(result.n) : null
+    if (!sealed) return JSON.stringify(result)
+    const theorems = sealed.theorems.map((t) => {
+      const e = ROWS?.find((r) => !r.revoked && r.key.endsWith('_' + t))
+      return e ? { theorem: t, key: e.key, receipt: e.receipt } : { theorem: t, key: null as string | null, receipt: null as string | null }
+    })
+    const proof = ROWS
+      ? { status: 'SEALED' as const, what: sealed.what, sealedIn: sealed.sealedIn, theorems }
+      : { status: 'SEALED_LEDGER_ABSENT' as const, what: sealed.what, sealedIn: sealed.sealedIn, theorems,
+          note: 'decided in qpu_crypto.lean; load the ledger (dist/data/discovered.json) for the live key and receipt' }
+    return JSON.stringify({ ...result, proof })
+  },
   factor_verify: (a) => JSON.stringify(verifyFactors(String(a?.n ?? ''), Array.isArray(a?.factors) ? (a.factors as unknown[]).map(String) : [])),
+  // THE CREATE DOOR to factor's decode door: mint a semiprime trapdoor over a uuid. Pure, served from every install.
+  generate: (a) => JSON.stringify(generateTrapdoor({ uuid: a?.uuid != null ? String(a.uuid) : undefined, bits: a?.bits != null ? Number(a.bits) : undefined })),
   digit_mirror: (a) => JSON.stringify(digitMirror(String(a?.n ?? ''))),
   policy: (a) => JSON.stringify(policyDecide(String(a?.request ?? ''))),
   api_lattice: () => {

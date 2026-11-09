@@ -164,7 +164,6 @@ const splitWithRho = (m: bigint, primes: bigint[], open: bigint[]): void => {
 // would each turn one named state red. Nothing physical is claimed; the register is the served unit's and the arithmetic
 // is this tree's.
 export const RAYS: readonly number[] = [1, 2, 3, 4, 5, 6, 7]
-const GLYPHS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 /** n in radix 2^k, as a list of digit values (most significant first). Pure, any width. */
 export const renderDigits = (n: bigint, k: number): number[] => {
   const b = 1n << BigInt(k), out: number[] = []
@@ -186,6 +185,28 @@ export type Witness = {
   agree: boolean
   failures: string[]
 }
+// ── SEALED FACTORISATIONS — the integers whose factorisation this deposit decides in the Lean kernel, named by the
+// theorem that decides them. THE THEOREM NAME ONLY, and the value as the same expression the Lean def uses (never an
+// opaque typed constant): the live ledger key and receipt are looked up at serve time (src/mcp/serve.ts) from the
+// ledger, so this list cannot drift from the seal. Source: src/proof/qpu_crypto.lean. The witness above proves the
+// arithmetic survives a change of representation; this is the separate thing — the kernel-decided PROOF, coin-backed.
+export type SealedFactorisation = { theorems: readonly string[]; what: string; sealedIn: string }
+export const sealedProofFor = (digits: string): SealedFactorisation | null => {
+  let n: bigint
+  try { n = BigInt(digits) } catch { return null }
+  if (n === 2n ** 999n + 1n) return {                                   // def thousand : Nat := 2 ^ 999 + 1
+    theorems: [
+      'this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back',
+      'the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes',
+    ],
+    what: 'PARTIAL, decided not guessed: fourteen factors times a 244-digit cofactor equal the integer exactly, no found '
+      + 'prime divides the cofactor, and 2 is a Fermat witness that the cofactor is still composite — so it is explicitly '
+      + 'NOT a factorisation. The algebraic split (a³ + 1) and the four threes (lifting-the-exponent) are decided too.',
+    sealedIn: 'src/proof/qpu_crypto.lean',
+  }
+  return null
+}
+
 /** The factorisation of any binary variant of an integer, with its fourteen-state witness. */
 export const factorWitnessed = (input: string): (Factorisation & { n?: string; witness?: Witness }) => {
   const digits = parseInteger(input)

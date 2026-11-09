@@ -8,6 +8,7 @@ import { execSync, execFileSync, spawn, spawnSync } from 'node:child_process'
 import { readFileSync, existsSync, readdirSync, appendFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { factor, factorWitnessed, parseInteger } from '../src/factor/index.ts'
+import { generate as generateTrapdoor } from '../src/factor/generate.ts'
 import { understand, searchDocs } from '../src/understand/index.ts'
 import { split as shareSplit, join as shareJoin } from '../src/split/index.ts'
 import { verifyFactors } from '../src/factor/verify.ts'
@@ -429,6 +430,7 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   },
   policy: (a) => JSON.stringify(policyDecide(String(a?.request ?? ''))),
   factor: (a) => JSON.stringify(factorWitnessed(String(a?.n ?? ''))),
+  generate: (a) => JSON.stringify(generateTrapdoor({ uuid: a?.uuid != null ? String(a.uuid) : undefined, bits: a?.bits != null ? Number(a.bits) : undefined })),
   apis_guru_cross: () => { try { return execFileSync('node', ['scripts/apis-guru-cross.ts'], { encoding: 'utf8', timeout: 120_000, maxBuffer: 8 << 20 }) }
     catch (e) { const x = e as { stdout?: Buffer | string }; return String(x.stdout ?? JSON.stringify({ status: 'FAILED', why: String(e).slice(0, 300) })) } },
   api_adapters: () => { try { return execFileSync('node', ['scripts/api-adapters.ts'], { encoding: 'utf8', timeout: 600_000, maxBuffer: 8 << 20 }) }
