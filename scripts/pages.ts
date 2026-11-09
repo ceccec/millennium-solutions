@@ -51,7 +51,7 @@ const CENSUS = census()
 const ADVANTAGE = advantage()
 const SPLIT = split()
 import { orbit, live as __live } from '../src/api/index.ts'
-import { factor, millerRabin, type Factorisation } from '../src/factor/index.ts'
+import { factor, millerRabin, type Factorisation } from '../src/crypto/factor/index.ts'
 import { leanFiles as leanFilesShared } from '../src/api/index.ts'
 
 // A FACTOR-ROUTE COIN IS A RE-FACTORED COIN — the sealed output of factor() on one input, content-addressed by the
@@ -62,7 +62,7 @@ import { leanFiles as leanFilesShared } from '../src/api/index.ts'
 // address) or FACTOR_AUDIT=1 is set. Re-factoring is sometimes needed to cover what multiplication cannot: whether a
 // PARTIAL is still unsplit, whether an unimaginable input is now factorable. The coin is the fast path; the re-factor
 // is the control that keeps it honest. The thousand-bit inputs cost ~30s of Pollard rho to mint and milliseconds to reuse.
-const FACTOR_SRC = readFileSync('src/factor/index.ts', 'utf8')
+const FACTOR_SRC = readFileSync('src/crypto/factor/index.ts', 'utf8')
 const FACTOR_AUDIT = process.env.FACTOR_AUDIT === '1'
 const factorCoinOk = (n: bigint, r: Factorisation): boolean => {
   if (r.status === 'REFUSED') return n < 2n

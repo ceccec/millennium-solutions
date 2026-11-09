@@ -32,7 +32,7 @@ import { execFile } from 'node:child_process'
 import { randomBytes } from 'node:crypto'
 import { TOOLS, LISTED, WRITES, run, version } from './mcp.ts'
 import { dispatch, type Route } from '../src/route/index.ts'
-import { factor } from '../src/factor/index.ts'
+import { factor } from '../src/crypto/factor/index.ts'
 
 // Every path this server answers, as data. A request matches a whole path or it is refused with the list below.
 const ROUTES: Route[] = [

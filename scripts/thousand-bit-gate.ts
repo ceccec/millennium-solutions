@@ -8,7 +8,7 @@
 //   2 · the factors found, multiplied by the cofactor, give the integer exactly (the decomposition is an identity)
 //   3 · the cofactor the route reports as composite is composite by a witness this script recomputes
 // A PARTIAL answer is RED: it is an honest account, and the gate does not accept an account in place of a factorisation.
-import { factor, millerRabin } from '../src/factor/index.ts'
+import { factor, millerRabin } from '../src/crypto/factor/index.ts'
 import { randomBytes } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 

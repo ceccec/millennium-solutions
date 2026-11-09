@@ -181,7 +181,7 @@ const CONTROLS: Control[] = [
     what: 'a suite runner that no longer refuses an unlisted name — a shell reachable through the MCP client',
     mutate: (s) => s.replace('if (!(suite in SUITES)) {', 'if (false && !(suite in SUITES)) {') },
 
-  { gate: 'thousand-bit-gate (trial division never runs)', cmd: 'node scripts/thousand-bit-gate.ts --control', file: 'src/factor/index.ts',
+  { gate: 'thousand-bit-gate (trial division never runs)', cmd: 'node scripts/thousand-bit-gate.ts --control', file: 'src/crypto/factor/index.ts',
     what: 'a factor route that cannot factor 91 — a control that would then pass nothing it is meant to pass',
     mutate: (s) => s.replace('for (; d <= TRIAL_BOUND && d * d <= n; d += 2n) divide(d)', 'for (; d <= 1n; d += 2n) divide(d)') },
 
@@ -819,7 +819,7 @@ const CONTROLS: Control[] = [
   // proves nothing — a broken implementation is perfectly self-consistent. The control breaks the curve
   // constant `d`, which leaves every internal operation coherent and moves the whole group: the published
   // RFC 8032 public keys stop reproducing, which is exactly what a vector is for.
-  { gate: 'crypto-kat', cmd: 'node scripts/crypto-kat.ts', file: 'src/0/ed25519.ts',
+  { gate: 'crypto-kat', cmd: 'node scripts/crypto-kat.ts', file: 'src/crypto/sign/ed25519.ts',
     what: 'a curve whose published test vectors no longer reproduce — self-consistent and not Ed25519',
     mutate: (s) => s.replace('const D = -121665n * inv(121666n) % P', 'const D = -121664n * inv(121666n) % P') },
 

@@ -17,8 +17,8 @@
 import { BASE, units, triad, vortexOrbit, SEEDS } from '../src/0/index.ts'
 import { precedes, staleTail } from '../src/api/gates.ts'
 import { unreflect } from '../src/honesty/index.ts'
-import { FIELDS, encode as encodeContainer } from '../src/0/program.ts'
-import { P as ED_P, L as ED_L } from '../src/0/ed25519.ts'
+import { FIELDS, encode as encodeContainer } from '../src/crypto/container/program.ts'
+import { P as ED_P, L as ED_L } from '../src/crypto/sign/ed25519.ts'
 import { vortexOrder, vortexOrderReversed } from '../src/7/rays.ts'
 import { refused } from '../src/honesty/claims.ts'
 import { execSync } from 'node:child_process'
@@ -100,7 +100,7 @@ const PAIRS = [
     expr: '(Program.encodeBits Program.P0 Program.M0).map (fun b => if b then 1 else 0)' },
 
   // THE CURVE'S FIELD, compared as the residues the implementation actually branches on rather than as a
-  // 78-digit number nobody reads. src/0/ed25519.ts recovers x by raising to (p+3)/8, which is the rule for
+  // 78-digit number nobody reads. src/crypto/sign/ed25519.ts recovers x by raising to (p+3)/8, which is the rule for
   // a prime ≡ 5 (mod 8) and for no other; a port to another field would change these and nothing else here
   // would notice. `4L < p < 8L` pins the cofactor by bracket, so the 8 cannot be edited to anything.
   { what: 'the curve field',    mod: 'Asymmetric', raw: true,

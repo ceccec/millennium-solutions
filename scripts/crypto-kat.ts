@@ -13,11 +13,11 @@
 // A run that proved only the first and reported "verified" would be the overclaim this tree exists to stop,
 // so the negative cases are checked as hard as the positive ones: an altered message, an altered signature
 // and another party's key must each be REFUSED.
-import { sha512, hex, unhex } from '../src/0/sha512.ts'
-import { publicKey, sign, verify, PUBLIC_KEY_BYTES, SIGNATURE_BYTES } from '../src/0/ed25519.ts'
-import { encode, decode, signContainer, verifyContainer, PROGRAM_BITS, MESSAGE_BITS, CHECK_BITS } from '../src/0/program.ts'
-import { factor, millerRabin } from '../src/factor/index.ts'
-import { verifyFactors } from '../src/factor/verify.ts'
+import { sha512, hex, unhex } from '../src/crypto/hash/sha512.ts'
+import { publicKey, sign, verify, PUBLIC_KEY_BYTES, SIGNATURE_BYTES } from '../src/crypto/sign/ed25519.ts'
+import { encode, decode, signContainer, verifyContainer, PROGRAM_BITS, MESSAGE_BITS, CHECK_BITS } from '../src/crypto/container/program.ts'
+import { factor, millerRabin } from '../src/crypto/factor/index.ts'
+import { verifyFactors } from '../src/crypto/factor/verify.ts'
 
 let bad = 0
 const check = (ok: boolean, what: string, detail = '') => {

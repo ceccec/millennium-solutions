@@ -26,7 +26,7 @@
 // three groups of the rendering and the two structural fields begin two of them. A layout that assumed 48
 // would produce uuids that are not uuids.
 
-import { publicKey, sign, verify } from './ed25519.ts'
+import { publicKey, sign, verify } from '../sign/ed25519.ts'
 
 // ── THE LAYOUT IS DERIVED FROM THE RENDERING, NOT TYPED ──────────────────────────────────────────────────
 // `[48, 49, 50, 51, 64, 65]` is the right answer and it is the wrong way to write it: those six positions

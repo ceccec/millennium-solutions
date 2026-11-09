@@ -21,7 +21,7 @@
 //     it is for here; it is NOT fit for a key held on a machine an attacker can measure.
 //   · verification checks the equation and rejects non-canonical encodings; it does not implement the
 //     stricter cofactorless checks some libraries add.
-import { sha512 } from './sha512.ts'
+import { sha512 } from '../hash/sha512.ts'
 
 export const P = (1n << 255n) - 19n                                       // the field prime, 2^255 - 19
 export const L = (1n << 252n) + 27742317777372353535851937790883648493n   // the prime order of the base point

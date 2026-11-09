@@ -25,9 +25,9 @@
  *  here reads the ledger, compiles Lean, shells out or opens a socket. A caller wanting the other nineteen
  *  clones the repository, and `list_tools` says so per tool instead of failing when they try. */
 import { toUuid, merkleFold, merge } from '../0/index.ts'
-import { factorWitnessed, sealedProofFor } from '../factor/index.ts'
-import { verifyFactors } from '../factor/verify.ts'
-import { generate as generateTrapdoor } from '../factor/generate.ts'
+import { factorWitnessed, sealedProofFor } from '../crypto/factor/index.ts'
+import { verifyFactors } from '../crypto/factor/verify.ts'
+import { generate as generateTrapdoor } from '../crypto/factor/generate.ts'
 import { mirror as digitMirror } from '../mirror/index.ts'
 import { decide as policyDecide } from '../policy/index.ts'
 import { handle, resolve, HANDLE_HEX } from '../handle/index.ts'

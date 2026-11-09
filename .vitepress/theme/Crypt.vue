@@ -4,7 +4,7 @@
 // (convergent). Honest: pure JS is not constant-time; secrecy is ChaCha20-Poly1305 + your passphrase entropy;
 // integrity is the fold; the content-address never carries the secret. Integrity, not truth.
 import { ref, computed } from 'vue'
-import { encrypt, decrypt, verifyEnvelope, type Sealed } from '../../src/0/crypt.ts'
+import { encrypt, decrypt, verifyEnvelope, type Sealed } from '../../src/crypto/cipher/crypt.ts'
 
 const message = ref('beat to windward at 30° — the captain sails')
 const passphrase = ref('the gold string is 60 degrees')
