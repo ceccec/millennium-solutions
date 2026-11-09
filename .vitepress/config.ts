@@ -294,6 +294,7 @@ export default defineConfig({
           { text: 'Signature', link: '/SIGNATURE' },
           { text: 'Cryptography', link: '/cryptography' },
           { text: 'Quantum hardware', link: '/hardware' },
+          { text: 'Textbooks', link: '/textbooks' },
           { text: "Captain's message", link: '/captain' },
         ],
       },
