@@ -149764,5 +149764,45 @@
     "key": "lean_thousandbit_the_thousand_bit_structure_is_decided_not_a_quantum_machine",
     "name": "lean thousandbit.lean: the_thousand_bit_structure_is_decided_not_a_quantum_machine — 10 ^ 3 = 1000 ∧ 1000 % 8 = 0 ∧ 1000 % 9 = 1 ∧ 990 < 1000 ∧ 1000 ≤ 1021 ∧ 2 ^ 3 * 5 ^ 3 = 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "54965178-f8b9-8feb-8dfc-9a5dfb6e0ae3"
+  },
+  {
+    "key": "lean_quantumhardware_every_deterministic_local_strategy_gives_chsh_plus_or_minus_two",
+    "name": "lean quantum_hardware.lean: every_deterministic_local_strategy_gives_chsh_plus_or_minus_two — [1, -1].all (fun a0 : Int => [1, -1].all (fun a1 : Int => [1, -1].all (fun b0 : Int => [1, -1].all (fun b1 : Int => let s := a0 * b0 + a0 * b1 + a1 * b0 - a1 * b1; s == 2 || s == -2)))) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6f5bb0ee-7cb2-80ab-b027-a20966141ba6"
+  },
+  {
+    "key": "lean_quantumhardware_the_classical_strategy_at_s_two_is_not_above_classical",
+    "name": "lean quantum_hardware.lean: the_classical_strategy_at_s_two_is_not_above_classical — aboveClassical 1000 1000 1000 1000 1000 1000 1000 1000 = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e4044e10-ff4b-802d-a960-d3a967589da5"
+  },
+  {
+    "key": "lean_quantumhardware_one_count_above_s_two_is_above_classical",
+    "name": "lean quantum_hardware.lean: one_count_above_s_two_is_above_classical — aboveClassical 1000 1000 1000 1000 1000 1000 998 1000 = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "98565f45-367c-8dc5-8a1a-0959a2e133b2"
+  },
+  {
+    "key": "lean_quantumhardware_one_count_below_s_two_is_not_above_classical",
+    "name": "lean quantum_hardware.lean: one_count_below_s_two_is_not_above_classical — aboveClassical 998 1000 1000 1000 1000 1000 1000 1000 = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8f9b9743-75f7-8de1-94cd-1cde4e981c38"
+  },
+  {
+    "key": "lean_quantumhardware_uniform_noise_is_not_above_classical",
+    "name": "lean quantum_hardware.lean: uniform_noise_is_not_above_classical — aboveClassical 0 1000 0 1000 0 1000 0 1000 = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "94dd7798-c93b-8e54-be0c-cc704a01fe64"
+  },
+  {
+    "key": "lean_quantumhardware_ideal_counts_at_ten_thousand_shots_are_above_classical",
+    "name": "lean quantum_hardware.lean: ideal_counts_at_ten_thousand_shots_are_above_classical — 4268 + 732 + 732 + 4268 = 10000 ∧ 4268 + 4268 - 732 - 732 = 7072 ∧ aboveClassical 7072 10000 7072 10000 7072 10000 (-7072) 10000 = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a6013c39-32bb-83ac-994f-1d80b864b501"
+  },
+  {
+    "key": "lean_quantumhardware_register_bit_zero_is_alice_and_bit_one_is_bob",
+    "name": "lean quantum_hardware.lean: register_bit_zero_is_alice_and_bit_one_is_bob — (List.range 4).map (fun v => (v % 2, v / 2 % 2)) = [(0, 0), (1, 0), (0, 1), (1, 1)] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f245f123-5e0c-890d-949c-445c1e42ffe2"
+  },
+  {
+    "key": "lean_quantumhardware_the_one_count_control_is_four_hundred_ninety_nine_agreements_short_of_five_hundred",
+    "name": "lean quantum_hardware.lean: the_one_count_control_is_four_hundred_ninety_nine_agreements_short_of_five_hundred — (499 + 500 - 1 - 0 : Int) = 998 ∧ (499 + 1 + 0 + 500 : Int) = 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "923841a0-97d3-834b-b376-265a7eb49c43"
   }
 ]

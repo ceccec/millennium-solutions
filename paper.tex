@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,117 of them across 113 files and
-8 wings; 25,910 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,125 of them across 114 files and
+8 wings; 25,918 close by exhaustion over a stated finite domain, 207 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -130189,6 +130189,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \mathrm{mergeStr}\mathopen{}\left([1,\,\mathrm{sep},\,2],\,[3]\right) = \mathrm{mergeStr}\mathopen{}\left([1],\,[2,\,\mathrm{sep},\,3]\right) \land [1,\,\mathrm{sep},\,2] \neq \left([1] : \mathrm{List}\mathopen{}\left(\mathrm{Nat}\right)\right) \land \left([3] : \mathrm{List}\mathopen{}\left(\mathrm{Nat}\right)\right) \neq [2,\,\mathrm{sep},\,3] \land \forall a \in \{0,\dots,11\},\; \forall b \in \{0,\dots,11\},\; \forall c \in \{0,\dots,11\},\; b = c \lor \mathrm{mergeStr}\mathopen{}\left([a],\,[b]\right) \neq \mathrm{mergeStr}\mathopen{}\left([a],\,[c]\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,728 cases. \hfill$\square$
+
+\paragraph{\texttt{quantum\_hardware.lean}}
+
+\begin{theorem}[\texttt{every\_deterministic\_local\_strategy\_gives\_chsh\_plus\_or\_minus\_two}]
+\texttt{[1, -1].all (fun a0 : Int => [1, -1].all (fun a1 : Int => [1, -1].all (fun b0 : Int => [1, -1].all (fun b1 : Int => let s := a0 * b0 + a0 * b1 + a1 * b0 - a1 * b1; s == 2 || s == -2)))) = true}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_classical\_strategy\_at\_s\_two\_is\_not\_above\_classical}]
+\[ \mathrm{aboveClassical}\mathopen{}\left(1000,\,1000,\,1000,\,1000,\,1000,\,1000,\,1000,\,1000\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_count\_above\_s\_two\_is\_above\_classical}]
+\[ \mathrm{aboveClassical}\mathopen{}\left(1000,\,1000,\,1000,\,1000,\,1000,\,1000,\,998,\,1000\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_count\_below\_s\_two\_is\_not\_above\_classical}]
+\[ \mathrm{aboveClassical}\mathopen{}\left(998,\,1000,\,1000,\,1000,\,1000,\,1000,\,1000,\,1000\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{uniform\_noise\_is\_not\_above\_classical}]
+\[ \mathrm{aboveClassical}\mathopen{}\left(0,\,1000,\,0,\,1000,\,0,\,1000,\,0,\,1000\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{ideal\_counts\_at\_ten\_thousand\_shots\_are\_above\_classical}]
+\[ 4268 + 732 + 732 + 4268 = 10000 \land 4268 + 4268 - 732 - 732 = 7072 \land \mathrm{aboveClassical}\mathopen{}\left(7072,\,10000,\,7072,\,10000,\,7072,\,10000,\,-7072,\,10000\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{register\_bit\_zero\_is\_alice\_and\_bit\_one\_is\_bob}]
+\[ \{\, \left(v \bmod 2,\,\frac{v}{2} \bmod 2\right) \mid v \in \{0,\dots,3\} \,\} = [\left(0,\,0\right),\,\left(1,\,0\right),\,\left(0,\,1\right),\,\left(1,\,1\right)] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_one\_count\_control\_is\_four\_hundred\_ninety\_nine\_agreements\_short\_of\_five\_hundred}]
+\[ \left(499 + 500 - 1 - 0 : \mathbb{Z}\right) = 998 \land \left(499 + 1 + 0 + 500 : \mathbb{Z}\right) = 1000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{reflection.lean}}
 

@@ -208,6 +208,7 @@
     "gate:packages": "node scripts/package-gates.ts",
     "test:online-verify": "node scripts/online-verify-e2e-test.ts",
     "test:run-suite-security": "node scripts/run-suite-security-test.ts",
+    "quantum:hardware": "node scripts/quantum-hardware.ts",
     "cern:lean": "node scripts/cern-lean.ts",
     "push:green": "node scripts/push-when-green.ts",
     "dataset:court": "node scripts/dataset-court.ts"
