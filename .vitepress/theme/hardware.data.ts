@@ -21,7 +21,7 @@ export interface HardwareData {
   cluster124: { generators: number; isCluster: boolean; commute: boolean; middle: string }
 }
 
-const MODEL_FILES = ['quantum_circuits.lean', 'quantum_models.lean', 'quantum_textbooks.lean', 'quantum_octaves.lean', 'quantum_octave_128.lean', 'quantum_hardware.lean']
+const MODEL_FILES = ['quantum_circuits.lean', 'quantum_models.lean', 'quantum_textbooks.lean', 'quantum_octaves.lean', 'quantum_octave_128.lean', 'quantum_octave_124.lean', 'quantum_uuid_cluster.lean', 'quantum_hardware.lean']
 const log2 = (v: bigint) => v.toString(2).length - 1
 
 declare const data: HardwareData
@@ -49,7 +49,7 @@ export default {
       })(),
       octaves: [2, 4, 8, 16, 32, 64, 124, 128].map((n) => {
         const m = mermin(n)
-        return { n, quantum: log2(m.quantum), classical: log2(m.classical), lead: log2(m.lead), sealed: n !== 124 }
+        return { n, quantum: log2(m.quantum), classical: log2(m.classical), lead: log2(m.lead), sealed: true }
       }),
       cluster124: (() => { const c = cluster(124); return { generators: c.stabilizers.length, isCluster: c.isCluster, commute: c.commute, middle: c.stabilizers[62].replace(/^I+|I+$/g, '') } })(),
     }

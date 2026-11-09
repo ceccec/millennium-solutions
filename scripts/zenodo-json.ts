@@ -33,7 +33,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { flag } from '../src/cli/index.ts'
-import { ledger, theoremCount, leanFiles } from '../src/api/index.ts'
+import { ledger, theoremCount, leanFiles, leanTheorems } from '../src/api/index.ts'
 import { kinds, KIND } from '../src/publication/index.ts'
 
 const OUT = '.zenodo.json'
@@ -94,10 +94,19 @@ const related = [
 // of itself, which is a record claiming to supersede itself.
 if (!related.some((r) => r.identifier === DOI)) related.unshift({ identifier: DOI, relation: 'isVersionOf', scheme: 'doi' })
 
+// THE QUANTUM SENTENCE, COUNTED: the theorems in the quantum_*.lean files and the device receipt, if one exists — so the
+// record says "no device run" until scripts/quantum-hardware.ts writes one, and says what it returned once it has.
+const quantum = (leanTheorems() as { file: string }[]).filter((t) => t.file.startsWith('quantum_')).length
+const deviceRun: { status?: string; backend?: string } | null =
+  existsSync('evidence/quantum-hardware/latest.json') ? JSON.parse(readFileSync('evidence/quantum-hardware/latest.json', 'utf8')) : null
+const quantumSentence = `${quantum} of them decide every quantum computing model ISO/IEC 4879:2024 names, exactly, and scale `
+  + `Mermin's GHZ test to 128 qubits; ${deviceRun ? `a run on ${deviceRun.backend} returned ${deviceRun.status}` : 'no run on real quantum hardware is recorded yet'}. `
+
 const computed =
   `${OPEN} As of ${VERSION}: ${theoremCount()} theorems across ${leanFiles().length} Lean 4 files, each closed by `
   + `exhaustion over a stated finite domain, sorry-free and axiom-free; an append-only ledger of ${rows.length} entries, `
   + `${live.length} standing, across ${families.length} domain families, with a receipt chain recomputed on every build. `
+  + quantumSentence
   + `Prior art, over the ${kinds().size} source(s) carrying a classification: ${novelty}`
   + `${leanFiles().length > kinds().size ? `; ${leanFiles().length - kinds().size} further source(s) carry no prior-art row at all, which is a gap in the classification and is counted rather than folded into "unclassified"` : ''}. `
   + `An unsearched source asserts no novelty — that is NOT MEASURED, not a finding of nothing. Every figure in this paragraph is recomputed by scripts/zenodo-json.ts from the tree it `

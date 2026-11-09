@@ -20,6 +20,8 @@ const BOUNDS: Record<string, [string, string]> = {
   the_adiabatic_gap_is_smallest_exactly_at_the_midpoint_at_every_resolution: ['§3.4.15 adiabatic', 'for every rational schedule point the one-qubit gap is never below √2 and reaches it at the midpoint — proved for every value, not sampled'],
   the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one: ['§3.4.31 annealer', 'the frustrated triangle\'s whole spectrum: ground state −1 six-fold, only all-up and all-down at +3'],
   octave_one_twenty_eight_qubits_the_uuid_width_leads_by_two_to_the_sixty_third: ['128 qubits', 'on the UUID width the GHZ state\'s Mermin value is 2¹²⁷ against the classical 2⁶⁴ — a lead of 2⁶³ — recombined from eight sealed particles; exact classical computation of the ideal state, not a device result'],
+  the_124_qubit_ghz_state_leads_every_classical_assignment_by_two_to_the_sixty_first: ['124 qubits', 'the UUID less its version hex digit: the GHZ state\'s Mermin value 2¹²³ against the classical 2⁶², a lead of 2⁶¹, recombined from eight sealed particles; the ideal state, not a device result'],
+  every_generator_of_the_124_qubit_cluster_is_z_x_z_on_its_neighbours: ['124-qubit cluster', 'all 124 generators carried through the whole CZ chain become Z·X·Z on their neighbours; sealed particles prove the exact bit pattern, commutation and independence, beside a no-chain and a ring control'],
   the_group_generated_by_h_and_s_has_exactly_twenty_four_classes: ['textbook cross-check', 'qpu\'s Eastin–Knill 24 derived from ⟨H, S⟩ itself; quantum_textbooks.lean re-derives every qpu textbook number this way except Holevo\'s entropy, and each matches'],
 }
 

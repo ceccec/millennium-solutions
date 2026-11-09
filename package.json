@@ -1,7 +1,7 @@
 {
   "name": "@ceccec/millennium-solutions",
   "version": "0.1.1",
-  "description": "Verifiable, recomputable ℤ/9 vortex framework in ONE package — content-addressing, audit ledger, exact arithmetic, and the honesty toolkit. Facts only.",
+  "description": "Verifiable, recomputable ℤ/9 vortex framework in ONE package — content-addressing, audit ledger, exact arithmetic, the honesty toolkit, and the ISO/IEC 4879 quantum computer: every quantum model decided in Lean, Bell tests to 128 qubits, a CHSH run for IBM Quantum. Facts only.",
   "author": {
     "name": "Tsvetan Rouschev",
     "email": "ceccec@psg.bg",
@@ -245,7 +245,13 @@
     "exact-arithmetic",
     "verifiable",
     "recomputable",
-    "lean4"
+    "lean4",
+    "quantum-computing",
+    "iso-iec-4879",
+    "bell-test",
+    "chsh",
+    "mermin-inequality",
+    "cluster-state"
   ],
   "bin": {
     "millennium-mcp": "./dist/mcp.bin.js"
