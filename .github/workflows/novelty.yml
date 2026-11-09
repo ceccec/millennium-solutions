@@ -1,7 +1,7 @@
 # NOVELTY — the per-theorem prior-art search, weekly, resuming where the last run stopped.
 #
 # It ran by hand until 2026-09-20, which is why it had reached 32 of 924 theorems: a record that only grows
-# when somebody remembers is a record that does not grow. src/proof/novelty.json is what priorart.lean's
+# when somebody remembers is a record that does not grow. src/ledger/novelty.json is what priorart.lean's
 # kind 2 rests on — "these searches, on this date, returned nothing" — so the gap was in the evidence under
 # the deposit's central claim, not in a convenience.
 #
