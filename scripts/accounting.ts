@@ -33,7 +33,12 @@ const tags = cap('git tag').split('\n').filter(Boolean).length
 const latest = releasedBefore()
 // the same exclusion for the tag that last moved the ledger: a describe from that commit would pick a tag at HEAD on the runner
 const excludeAtHead = cap('git tag --points-at HEAD').split('\n').filter(Boolean).map((t) => `--exclude='${t}'`).join(' ')
-const ledgerTag = cap(`git describe --tags --abbrev=0 ${excludeAtHead} $(git log -1 --format=%H -- src/proof/discovered.json)`, latest)
+// AND WHILE THE LEDGER IS UNCOMMITTED, ITS LAST CHANGE IS THE COMMIT ABOUT TO BE MADE. Read from `git log` alone, a page
+// generated before sealing named the tag before the PREVIOUS ledger commit (v9.8.6) and the same page checked after the
+// commit named v9.8.8 — so every octave sealed made this page stale, and the push refused v9.8.9 on it. The commit that
+// will carry the change has HEAD as its parent, so the release before it is `latest`: a fixed point either side.
+const ledgerDirty = cap('git status --porcelain -- src/proof/discovered.json') !== ''
+const ledgerTag = ledgerDirty ? latest : cap(`git describe --tags --abbrev=0 ${excludeAtHead} $(git log -1 --format=%H -- src/proof/discovered.json)`, latest)
 // tracked PLUS what `git add -A` is about to track: the chain regenerates this page and then commits new files it made in
 // the same run (a constants snapshot under a new handle), so a count of tracked files alone moved by 2 across the commit it
 // rode in, and the pre-push regeneration refused the push (2026-11-03). Counting the not-ignored set is stable across that commit.
