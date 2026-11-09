@@ -82,8 +82,25 @@ ISO/IEC 4879 names the quantum computing models. Each is decided here at its kno
 | One-way (measurement-based) | §3.4.14 | measuring a cluster qubit applies J(θ) = H·diag(1, e^{iθ}) to its neighbour with an X^m byproduct — all 8 angles, both outcomes | without the cluster bond the gate does not arrive | [One-way quantum computer](https://en.wikipedia.org/wiki/One-way_quantum_computer) |
 | Topological (Ising anyons) | §3.4.16 | the braids satisfy the braid relation and generate exactly 24 classes up to phase, closed — the whole single-qubit Clifford group, so not universal | the equal-up-to-phase test refuses σ₁ ∝ 1 | [Clifford group](https://en.wikipedia.org/wiki/Clifford_group), [Topological quantum computer](https://en.wikipedia.org/wiki/Topological_quantum_computer) |
 | Boson sampling | §3.5.8 | every balanced beam splitter (all 64 phase pairs) is unitary with permanent 0 — a full-depth Hong–Ou–Mandel dip | distinguishable photons coincide half the time | [Hong–Ou–Mandel effect](https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect), [Boson sampling](https://en.wikipedia.org/wiki/Boson_sampling) |
-| Adiabatic | §3.4.15 | at every grid resolution up to 100 the schedule's gap is smallest exactly at the midpoint, g_min = √2 — the continuum is the limit, not decided | — | [Adiabatic quantum computation](https://en.wikipedia.org/wiki/Adiabatic_quantum_computation) |
+| Adiabatic | §3.4.15 | for every rational schedule point the gap is never below its midpoint value and reaches it there, g_min = √2 — proved for every value, not sampled | — | [Adiabatic quantum computation](https://en.wikipedia.org/wiki/Adiabatic_quantum_computation) |
 | Quantum annealer | §3.4.31 | the frustrated triangle's whole spectrum: ground state −1 six-fold, only all-up and all-down at +3 | — | [Geometrical frustration](https://en.wikipedia.org/wiki/Geometrical_frustration) |
+
+## The textbooks, cross-verified
+
+qpu seals each textbook law's characteristic number as integers (`Qpu/Textbook.lean`). Each one is derived again here, independently, from the operators that produce it — and each matches:
+
+| qpu's number | Derived here from |
+|---|---|
+| Tsirelson: 8 > 4 | the sent circuits' S = 2√2, squared exactly |
+| Eastin–Knill: 24 | the closure of ⟨H, S⟩: exactly 24 classes up to phase |
+| Solovay–Kitaev: T of order 8 | T⁸ = 1, no lower power ∝ 1, and HT ≠ TH up to any phase |
+| Simon: 2 of 4 | the strings y with y·s = 0 for s = 11: exactly 00 and 11 |
+| Bernstein–Vazirani: 1 < 3 | one phase query reads every 3-bit hidden string (all 64 pairs) |
+| Deutsch–Jozsa: 5 > 1 | one query separates all 70 balanced from both constant functions, over all 256 |
+| Grover at N = 4: 90° | one iteration puts the whole amplitude on every marked item |
+| No-cloning: 5 < 6 | linearity forbids a perfect copy; the optimal cloner's copy has fidelity 5/6 |
+
+Holevo's 1 bit is an entropy, outside ℤ[ω], and stands on qpu's own seal.
 
 This is §3.4.22 by definition: a classical program computing what each model's ideal device would. It is the specification a device run is checked against, never evidence that a device computed it.
 

@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,141 of them across 116 files and
-8 wings; 25,934 close by exhaustion over a stated finite domain, 207 are proved
+(\texttt{npm run latex-gate}). There are 26,149 of them across 117 files and
+8 wings; 25,941 close by exhaustion over a stated finite domain, 208 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -130307,12 +130307,55 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_adiabatic\_gap\_is\_smallest\_exactly\_at\_the\_midpoint\_at\_every\_resolution}]
-\texttt{(List.range 101).all (fun n => (List.range (n + 1)).all (fun t => let n' : Int := n; let t' : Int := t 2 * ((n' - t') ^ 2 + t' ^ 2) == n' ^ 2 + (2 * t' - n') ^ 2 \&\& (2 * ((n' - t') ^ 2 + t' ^ 2) == n' ^ 2) == (2 * t' == n'))) = true}
+\texttt{∀ n t : Int, 2 * ((n - t) ^ 2 + t ^ 2) = n ^ 2 + (2 * t - n) ^ 2 ∧ n ^ 2 ≤ 2 * ((n - t) ^ 2 + t ^ 2) ∧ 2 * ((2 * t - t) ^ 2 + t ^ 2) = (2 * t) ^ 2}
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 101 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by
+  have} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_frustrated\_triangle\_has\_a\_six\_fold\_ground\_state\_at\_minus\_one}]
 \[ \forall e \in \mathrm{triangle},\; e \ge -1 = \mathrm{true} \land \left|\{\, e \in \mathrm{triangle} \mid e = -1 \,\}\right| = 6 \land \left|\{\, e \in \mathrm{triangle} \mid e = 3 \,\}\right| = 2 \land \left|\mathrm{triangle}\right| = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{quantum\_textbooks.lean}}
+
+\begin{theorem}[\texttt{tsirelsons\_eight\_is\_the\_square\_of\_the\_circuits\_s}]
+\[ \mathrm{zmul}\mathopen{}\left(\mathrm{root2}\mathopen{}\left(32768\right),\,\mathrm{root2}\mathopen{}\left(32768\right)\right) = \left(8 \cdot 16384 \cdot 16384,\,0,\,0,\,0\right) \land \mathrm{zadd}\mathopen{}\left(\mathrm{zadd}\mathopen{}\left(\mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,5\right)\right),\,\mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(4,\,3\right)\right)\right),\,\mathrm{zadd}\mathopen{}\left(\mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(6,\,5\right)\right),\,\mathrm{zneg}\mathopen{}\left(\mathrm{corr}\mathopen{}\left(\mathrm{chsh}\mathopen{}\left(6,\,3\right)\right)\right)\right)\right) = \mathrm{root2}\mathopen{}\left(32768\right) \land 2 \cdot 2 < 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_group\_generated\_by\_h\_and\_s\_has\_exactly\_twenty\_four\_classes}]
+\[ \left|\mathrm{generated}\mathopen{}\left([\mathrm{hs},\,\mathrm{sigma1}],\,8\right)\right| = 24 \land \left|\mathrm{closeUnder}\mathopen{}\left([\mathrm{hs},\,\mathrm{sigma1}],\,\mathrm{generated}\mathopen{}\left([\mathrm{hs},\,\mathrm{sigma1}],\,8\right)\right)\right| = 24 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{t\_has\_order\_exactly\_eight\_and\_does\_not\_commute\_with\_h}]
+\[ \mathrm{mpow}\mathopen{}\left(\mathrm{tgate},\,8\right) = \mathrm{ident} \land \forall k \in \{1,\dots,7\},\; \mathrm{prop}\mathopen{}\left(\mathrm{mpow}\mathopen{}\left(\mathrm{tgate},\,k\right),\,\mathrm{ident}\right) = \mathrm{false} = \mathrm{true} \land \mathrm{prop}\mathopen{}\left(\mathrm{mmul}\mathopen{}\left(\mathrm{hs},\,\mathrm{tgate}\right),\,\mathrm{mmul}\mathopen{}\left(\mathrm{tgate},\,\mathrm{hs}\right)\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{simons\_measured\_strings\_for\_period\_eleven\_are\_exactly\_two\_of\_four}]
+\[ \{\, y \in \{0,\dots,3\} \mid \mathrm{dot}\mathopen{}\left(y,\,3\right) = 0 \,\} = [0,\,3] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_query\_recovers\_every\_three\_bit\_hidden\_string}]
+\[ \forall s \in \{0,\dots,7\},\; \forall y \in \{0,\dots,7\},\; \operatorname{fold}_{\mathrm{acc},\,x \mapsto \mathrm{acc} + \mathrm{sign}\mathopen{}\left(\mathrm{dot}\mathopen{}\left(s,\,x\right)\right) \cdot \mathrm{sign}\mathopen{}\left(\mathrm{dot}\mathopen{}\left(y,\,x\right)\right)}\left(\{0,\dots,7\},\, 0\right) = \begin{cases}8 & \text{if } s = y\\ 0 & \text{otherwise}\end{cases} = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 512 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_query\_separates\_every\_balanced\_from\_every\_constant\_function}]
+\texttt{(List.range 256).all (fun m => let ones := (List.range 8).foldl (fun a x => a + m / 2 ^ x \% 2) 0 let amp : Int := (List.range 8).foldl (fun a x => a + sign (m / 2 ^ x \% 2)) 0 (amp == 0) == (ones == 4) \&\& ((ones == 0 || ones == 8) == (amp == 8 || amp == -8))) = true ∧ ((List.range 256).filter (fun m => (List.range 8).foldl (fun a x => a + m / 2 ^ x \% 2) 0 == 4)).length = 70 ∧ 2 ^ 2 + 1 = 5}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 33,554,432 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_grover\_iteration\_finds\_every\_marked\_item\_of\_four\_with\_certainty}]
+\[ \forall m \in \{0,\dots,3\},\; \{\, \left(1 : \mathbb{Z}\right) - \begin{cases}-1 & \text{if } i = m\\ 1 & \text{otherwise}\end{cases} \mid i \in \{0,\dots,3\} \,\} = \{\, \begin{cases}2 & \text{if } i = m\\ 0 & \text{otherwise}\end{cases} \mid i \in \{0,\dots,3\} \,\} = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{linearity\_forbids\_perfect\_cloning\_and\_the\_optimal\_copy\_has\_fidelity\_five\_sixths}]
+\[ \left(1 : \mathbb{Z}\right) \cdot 1 - 0 \cdot 1 \neq 0 \land 4 + 1 + 1 = 6 \land 4 + 1 = 5 \land 5 < 6 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

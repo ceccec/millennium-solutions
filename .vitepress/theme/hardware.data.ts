@@ -17,7 +17,7 @@ export interface HardwareData {
   models: { file: string; name: string; receipt: string }[]
 }
 
-const MODEL_FILES = ['quantum_circuits.lean', 'quantum_models.lean', 'quantum_hardware.lean']
+const MODEL_FILES = ['quantum_circuits.lean', 'quantum_models.lean', 'quantum_textbooks.lean', 'quantum_hardware.lean']
 
 declare const data: HardwareData
 export { data }

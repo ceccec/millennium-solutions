@@ -149884,5 +149884,45 @@
     "key": "lean_quantummodels_the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one",
     "name": "lean quantum_models.lean: the_frustrated_triangle_has_a_six_fold_ground_state_at_minus_one — triangle.all (fun e => e ≥ -1) = true ∧ (triangle.filter (fun e => e == -1)).length = 6 ∧ (triangle.filter (fun e => e == 3)).length = 2 ∧ triangle.length = 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "5ad73761-1088-8e58-b0a6-60d48636a945"
+  },
+  {
+    "key": "lean_quantumtextbooks_tsirelsons_eight_is_the_square_of_the_circuits_s",
+    "name": "lean quantum_textbooks.lean: tsirelsons_eight_is_the_square_of_the_circuits_s — zmul (root2 32768) (root2 32768) = (8 * 16384 * 16384, 0, 0, 0) ∧ zadd (zadd (corr (chsh 4 5)) (corr (chsh 4 3))) (zadd (corr (chsh 6 5)) (zneg (corr (chsh 6 3)))) = root2 32768 ∧ 2 * 2 < 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c4a4eaea-f8b3-8813-a45e-ec4887c48e5f"
+  },
+  {
+    "key": "lean_quantumtextbooks_the_group_generated_by_h_and_s_has_exactly_twenty_four_classes",
+    "name": "lean quantum_textbooks.lean: the_group_generated_by_h_and_s_has_exactly_twenty_four_classes — (generated [hs, sigma1] 8).length = 24 ∧ (closeUnder [hs, sigma1] (generated [hs, sigma1] 8)).length = 24 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a3100a06-cbc5-8c18-a930-806f58db84e6"
+  },
+  {
+    "key": "lean_quantumtextbooks_t_has_order_exactly_eight_and_does_not_commute_with_h",
+    "name": "lean quantum_textbooks.lean: t_has_order_exactly_eight_and_does_not_commute_with_h — mpow tgate 8 = ident ∧ (List.range' 1 7).all (fun k => prop (mpow tgate k) ident == false) = true ∧ prop (mmul hs tgate) (mmul tgate hs) = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "85a515d0-90c7-8f4e-a1d0-8b51481536fb"
+  },
+  {
+    "key": "lean_quantumtextbooks_simons_measured_strings_for_period_eleven_are_exactly_two_of_four",
+    "name": "lean quantum_textbooks.lean: simons_measured_strings_for_period_eleven_are_exactly_two_of_four — (List.range 4).filter (fun y => dot y 3 == 0) = [0, 3] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dc623d89-3587-8611-8ee6-fda99a4c9a7a"
+  },
+  {
+    "key": "lean_quantumtextbooks_one_query_recovers_every_three_bit_hidden_string",
+    "name": "lean quantum_textbooks.lean: one_query_recovers_every_three_bit_hidden_string — (List.range 8).all (fun s => (List.range 8).all (fun y => ((List.range 8).foldl (fun acc x => acc + sign (dot s x) * sign (dot y x)) 0) == (if s == y then 8 else 0))) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9b6e62c2-ae50-8d26-afdf-4d26fbae0717"
+  },
+  {
+    "key": "lean_quantumtextbooks_one_query_separates_every_balanced_from_every_constant_function",
+    "name": "lean quantum_textbooks.lean: one_query_separates_every_balanced_from_every_constant_function — (List.range 256).all (fun m => let ones := (List.range 8).foldl (fun a x => a + m / 2 ^ x % 2) 0 let amp : Int := (List.range 8).foldl (fun a x => a + sign (m / 2 ^ x % 2)) 0 (amp == 0) == (ones == 4) && ((ones == 0 || ones == 8) == (amp ==… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "78f72585-25b5-804d-935d-ba04f3d73ea1"
+  },
+  {
+    "key": "lean_quantumtextbooks_one_grover_iteration_finds_every_marked_item_of_four_with_certainty",
+    "name": "lean quantum_textbooks.lean: one_grover_iteration_finds_every_marked_item_of_four_with_certainty — (List.range 4).all (fun m => (List.range 4).map (fun i => (1 : Int) - (if i == m then -1 else 1)) == (List.range 4).map (fun i => if i == m then 2 else 0)) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a1ec3176-e55d-87ea-854e-2d568a244645"
+  },
+  {
+    "key": "lean_quantumtextbooks_linearity_forbids_perfect_cloning_and_the_optimal_copy_has_fidelity_five_sixths",
+    "name": "lean quantum_textbooks.lean: linearity_forbids_perfect_cloning_and_the_optimal_copy_has_fidelity_five_sixths — ((1 : Int) * 1 - 0 * 1 ≠ 0) ∧ 4 + 1 + 1 = 6 ∧ 4 + 1 = 5 ∧ 5 < 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f9710402-2c58-8a3d-8904-49a009e6b6e5"
   }
 ]

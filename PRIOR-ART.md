@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,141 machine-checked declarations, **26,094** restate work that already has an author and
+Of 26,149 machine-checked declarations, **26,102** restate work that already has an author and
 **47** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **26,094** |
+| attributed to named earlier work | **26,102** |
 | unclassified — no search performed, status unknown | **47** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 7
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 109 sources, 26,094 theorems
+## Restated from named earlier work — 110 sources, 26,102 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -138,6 +138,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>quantum_circuits.lean</code></td><td>8</td><td>the CHSH inequality (Clauser, Horne, Shimony, Holt, 1969) and Tsirelson's bound 2√2 (1980); the ring of cyclotomic integers ℤ[ω], ω = e^{iπ/4}, ω⁴ = −1, and √2 = ω − ω³ in it; the native gate set rz, sx, cz of superconducting processors (IBM Quantum's published basis) and the H = RZ·SX·RZ, CX = H·CZ·H identities.</td><td>NONE OF THE PHYSICS OR THE ALGEBRA IS THIS DEPOSIT'S. What is decided here is only that the gate list src/quantum/hardware.ts `chshGates` sends — transcribed below gate for gate — prepares a Bell pair and gives the four CHSH correlations ±√2/2, so S = 2√2 for an ideal device, in exact arithmetic with no float anywhere.</td></tr>
 <tr><td><code>quantum_hardware.lean</code></td><td>8</td><td>the CHSH inequality (Clauser, Horne, Shimony, Holt, 1969) — no local classical strategy gives |S| &gt; 2 for S = E(a,b) + E(a,b') + E(a',b) − E(a',b'); Tsirelson's bound 2√2 (1980) for quantum strategies; ISO/IEC 4879:2024 §3.4.8 and §3.4.10 (quantum processor, quantum computer) and ISO/IEC 2382:2015 (hardware).</td><td>NONE OF THE PHYSICS OR THE INEQUALITY IS THIS DEPOSIT'S. What is decided here is only the integer form of the verdict src/quantum/hardware.ts `chshVerdict` applies to a device's counts, so that the rule a run on IBM Quantum is judged by is the kernel's, not a float comparison.</td></tr>
 <tr><td><code>quantum_models.lean</code></td><td>8</td><td>ISO/IEC 4879:2024 — circuit-based §3.4.13 (decided in quantum_circuits.lean), one-way §3.4.14, adiabatic §3.4.15, topological §3.4.16, the quantum annealer §3.4.31 and boson sampling §3.5.8; measurement-based computation and gate teleportation on a cluster state (Raussendorf, Briegel, 2001); Ising anyons, whose braids give the Clifford gates and are not universal alone (Kitaev 2003; Bravyi, Kitaev 2005); the Hong–Ou–Mandel dip (1987) and the permanent as the amplitude of boson sampling (Aaronson, Arkhipov, 2011); the adiabatic theorem's gap condition (Farhi, Goldstone, Gutmann, Sipser, 2000); the frustrated antiferromagnetic triangle.</td><td>NONE OF THE PHYSICS IS THIS DEPOSIT'S. Each theorem decides one small, exact instance of a named model in ℤ[ω] (ω = e^{iπ/4}) or in the integers. That is §3.4.22 by definition — a classical program computing what a model's ideal device would — and never evidence that any device computes it.</td></tr>
+<tr><td><code>quantum_textbooks.lean</code></td><td>8</td><td>Tsirelson's bound (1980); the single-qubit Clifford group ⟨H, S⟩ of order 24 modulo phase and the Eastin–Knill theorem (2009); the T gate of order 8 and Solovay–Kitaev (1997); Simon's algorithm (1994); Bernstein–Vazirani (1993); Deutsch–Jozsa (1992); Grover's search (1996), certain after one iteration at N = 4; the no-cloning theorem (Wootters, Zurek; Dieks, 1982) and the optimal universal cloner of fidelity 5/6 (Bužek, Hillery, 1996).</td><td>NONE OF THE PHYSICS IS THIS DEPOSIT'S, AND THE NUMBERS ARE qpu's. ~/github/uuidna/qpu src/quantum/processing/unit/lean/Qpu/Textbook.lean seals each law's characteristic number as integers — textbook_tsirelson (8 &gt; 4), textbook_eastin_knill (24), textbook_solovay_kitaev (2³ = 8), textbook_simon (2 of 4), textbook_bernstein_vazirani (1 &lt; 3), textbook_deutsch_jozsa (5 &gt; 1), textbook_grover_one_iteration (90°), textbook_no_cloning (5 &lt; 6) — and derives them in its TypeScript (chshValue, cliffordOrder, htUniversality, …). What is decided here is the same number DERIVED in the kernel from the operators themselves, in ℤ[ω] or ℤ, so each of qpu's numbers is cross-verified by an independent route.</td></tr>
 <tr><td><code>ranking.lean</code></td><td>8</td><td>additive scoring over binary criteria — a weighted sum, the simplest form of multi-criteria decision analysis; and the pigeonhole counting that says a sum over few weights cannot separate many subsets.</td><td>NEITHER IS THIS DEPOSIT'S. A weighted sum of indicators is the oldest scoring rule there is, and counting how many subsets share a total is pigeonhole. What is this deposit's is that ITS OWN queue — which decides where the next prior-art search goes — is put to both, and that the second answer is unflattering and recorded anyway.</td></tr>
 <tr><td><code>rays.lean</code></td><td>13</td><td>cyclic groups and primitive roots</td><td>that 3 is a primitive root modulo 7 and that (ℤ/7)* is cyclic of order six is Gauss and is elementary number theory; the involution x ↦ ¬x on bit words is Boolean algebra. Neither is this deposit's. What is decided here is only that THIS deposit's ray order is that orbit and that its trace is that involution — the facts a reader would otherwise have to take from a comment.</td></tr>
 <tr><td><code>reach.lean</code></td><td>12</td><td>elementary set theory — the naturals are not exhausted by any finite list</td><td>that no finite set contains every natural number is Euclid's argument in form and is as old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN bounds, and the statement of where that decision stops.</td></tr>
@@ -174,6 +175,7 @@ which is a contribution of verification, not of discovery.
 - **Fermat's difference-of-squares factorisation (1643); RSA (Rivest, Shamir, Adleman, 1977) on the textbook modulus 91 = 7 · 13 with φ(91) = 72; the classical half of Shor's reduction (1994) — an even period r with a^(r/2) ≢ −1 (mod N) gives the factors gcd(a^(r/2) ± 1, N); Grover's square-root search cost (1996) and the birthday bound; the lifting-the-exponent lemma, v_3(2^n + 1) = v_3(3) + v_3(n) for odd n, and the algebraic split a^3 + 1 = (a + 1)(a^2 − a + 1); Fermat's little theorem as a compositeness witness; RFC 9562's version and variant fields; the 128-quantum-bit floor that qpu.uuidna.com reads from the Classic McEliece ISO page; the order of the general linear group over two elements, |GL(n, 2)| = ∏ (2^n − 2^i); Mersenne primes and the composite 2^11 − 1 = 23 · 89; triangular numbers T(q) = q(q + 1)/2 = C(q + 1, 2); and Zu Chongzhi's rational π = 355/113 (5th century), which qpu's own Grover.lean names as pi_zu.** — 16 theorems, in `qpu_crypto.lean`
 - **GHZ states and the X-basis parity witness (Greenberger, Horne, Zeilinger 1989)** — 2 theorems, in `interference.lean`
 - **ISO/IEC 4879:2024 — circuit-based §3.4.13 (decided in quantum_circuits.lean), one-way §3.4.14, adiabatic §3.4.15, topological §3.4.16, the quantum annealer §3.4.31 and boson sampling §3.5.8; measurement-based computation and gate teleportation on a cluster state (Raussendorf, Briegel, 2001); Ising anyons, whose braids give the Clifford gates and are not universal alone (Kitaev 2003; Bravyi, Kitaev 2005); the Hong–Ou–Mandel dip (1987) and the permanent as the amplitude of boson sampling (Aaronson, Arkhipov, 2011); the adiabatic theorem's gap condition (Farhi, Goldstone, Gutmann, Sipser, 2000); the frustrated antiferromagnetic triangle.** — 8 theorems, in `quantum_models.lean`
+- **Tsirelson's bound (1980); the single-qubit Clifford group ⟨H, S⟩ of order 24 modulo phase and the Eastin–Knill theorem (2009); the T gate of order 8 and Solovay–Kitaev (1997); Simon's algorithm (1994); Bernstein–Vazirani (1993); Deutsch–Jozsa (1992); Grover's search (1996), certain after one iteration at N = 4; the no-cloning theorem (Wootters, Zurek; Dieks, 1982) and the optimal universal cloner of fidelity 5/6 (Bužek, Hillery, 1996).** — 8 theorems, in `quantum_textbooks.lean`
 - **additive scoring over binary criteria — a weighted sum, the simplest form of multi-criteria decision analysis; and the pigeonhole counting that says a sum over few weights cannot separate many subsets.** — 8 theorems, in `ranking.lean`
 - **an involution on a finite set decomposes into fixed points and transpositions — the cycle structure of an order-2 permutation. The tens-complement d ↦ 10 − d. 2 × 90° = 3 × 60° = 180°.** — 8 theorems, in `mirror.lean`
 - **canonical forms and order-invariant commitments** — 11 theorems, in `quantum.lean`
@@ -283,5 +285,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `f05b9852-2811-845b-a7c8-b1843239673f` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `b9b49abc-7ff6-880a-9ccb-1b79e10f5618` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.
