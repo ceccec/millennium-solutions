@@ -73,7 +73,7 @@ export type ClayFusion = {
   problem: string
   formal: { file: string; name: string; declared: boolean } | null
   formalGap: string | null
-  adjacentTheorem: { name: string; key: string | null; receipt: string | null; cases: number; bound: string; decidedBy: string | null } | null
+  adjacentTheorem: { name: string; key: string | null; receipt: string | null; cases: number; claim: string; gap: string; bound: string; decidedBy: string | null } | null
   outlet: string | null
   external: { citation: string; why: string; arxiv?: string; titleHead?: string } | null
 }
