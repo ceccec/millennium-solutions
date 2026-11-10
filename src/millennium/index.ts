@@ -3,8 +3,11 @@
 // no way to say which of its theorems sit at the Millennium floor without the bounds being retyped into a
 // second place — and a retyped bound is a bound that can drift from the one the theorem page shows.
 //
-// The `bound` is the load-bearing field. It states what the theorem actually establishes and, explicitly,
-// what it does NOT: none of these is the conjecture, and provenHere = 0.
+// Two load-bearing fields. `claim` states what the theorem establishes — the ℤ/9 fact it decides, claimed
+// in full. `gap` names what stays OPEN between that fact and the Clay conjecture: not a disclaimer of what
+// "is not claimed" but the open lead itself, the distance a reader can see and nobody here has closed. The
+// gap is open mathematics — these ARE the Millennium Problems — so naming it is the honest act; closing it is
+// the problem. `bound` carries both in one sentence, for the surfaces that render a single line. provenHere = 0.
 // ── THE KEYS ARE THE THEOREMS' NAMES, AND THE THEOREMS NO LONGER BORROW THE PROBLEMS' ────────────────────
 // Each of these seven theorems used to be named for the Clay problem it sits beside — `riemann_…`,
 // `hodge_…`, `poincare_…` — while deciding ℤ/9 arithmetic that settles nothing about any of them. The name
@@ -14,47 +17,61 @@
 //
 // WHAT THIS TABLE IS NOW: a correspondence the author draws between a problem and a fact about this ring.
 // It is his pairing, not a property of the theorem, and no theorem here claims the problem it sits beside.
-export const MILLENNIUM: Record<string, { problem: string; name: string; bound: string; outlet: string; outletName: string; outlet2?: string; outlet2Name?: string }> = {
+export const MILLENNIUM: Record<string, { problem: string; name: string; claim: string; gap: string; bound: string; outlet: string; outletName: string; outlet2?: string; outlet2Name?: string }> = {
   the_tens_complement_is_an_involution_with_one_fixed_point: {
     problem: 'Riemann Hypothesis',
     name: "Riemann — the reflection's symmetry and its one computed heart",
-    bound: 'the functional-equation symmetry axis and its ½-analogue centre (the heart, computed as the reflection’s unique fixed point) — not where the ζ-zeros lie',
+    claim: 'the functional-equation symmetry axis and its ½-analogue centre — the heart, computed as the reflection’s unique fixed point',
+    gap: 'where the ζ-zeros actually lie, which this ℤ/9 reflection does not reach — the Riemann Hypothesis itself',
+    bound: 'the functional-equation symmetry axis and its ½-analogue centre — the heart, computed as the reflection’s unique fixed point; the open gap: where the ζ-zeros actually lie, which this ℤ/9 reflection does not reach',
     outlet: 'https://www.claymath.org/millennium/riemann-hypothesis/',
     outletName: 'Clay Mathematics Institute — Riemann Hypothesis' },
   each_unit_has_exactly_one_inverse_and_each_non_unit_none: {
     problem: 'P versus NP',
     name: 'P vs NP — a unique inverse, verification in one step',
-    bound: 'each unit has exactly one inverse (verify in one multiply), non-units none — a cheap-verification fact, not a separation of the classes',
+    claim: 'each unit has exactly one inverse (verify in one multiply), non-units none — a cheap-verification fact',
+    gap: 'the separation of the complexity classes P and NP',
+    bound: 'each unit has exactly one inverse (verify in one multiply), non-units none — a cheap-verification fact; the open gap: the separation of the complexity classes P and NP',
     outlet: 'https://www.claymath.org/millennium/p-vs-np/',
     outletName: 'Clay Mathematics Institute — P vs NP' },
   the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps: {
     problem: 'Navier–Stokes Existence & Smoothness',
     name: 'Navier–Stokes — the doubling flow is bounded for all time',
-    bound: 'every iterate stays inside a bounded 6-cycle forever (no blowup) — bounded evolution, not global existence & smoothness',
+    claim: 'every iterate stays inside a bounded 6-cycle forever — bounded evolution, no blowup',
+    gap: 'global existence & smoothness for the Navier–Stokes PDE',
+    bound: 'every iterate stays inside a bounded 6-cycle forever (no blowup) — bounded evolution; the open gap: global existence & smoothness for the Navier–Stokes PDE',
     outlet: 'https://www.claymath.org/millennium/navier-stokes-equation/',
     outletName: 'Clay Mathematics Institute — Navier–Stokes Equation' },
   the_doubling_orbit_first_returns_to_one_at_six: {
     problem: 'Yang–Mills Existence & Mass Gap',
     name: 'Yang–Mills — a discrete spectral gap (order exactly 6)',
-    bound: 'the doubling has order exactly 6 — a discrete gap in the cyclic spectrum, not the Yang–Mills mass gap',
+    claim: 'the doubling has order exactly 6 — a discrete gap in the cyclic spectrum',
+    gap: 'the Yang–Mills mass gap',
+    bound: 'the doubling has order exactly 6 — a discrete gap in the cyclic spectrum; the open gap: the Yang–Mills mass gap',
     outlet: 'https://www.claymath.org/millennium/yang-mills-the-maths-gap/',
     outletName: 'Clay Mathematics Institute — Yang–Mills & the Mass Gap' },
   the_span_is_exactly_the_units_of_the_ring: {
     problem: 'Hodge Conjecture',
     name: 'Hodge — the algebraic span equals the units',
-    bound: 'the doubling span (algebraic generation from 2) is exactly the units, non-units outside — generation/containment, not rational (p,p) ⇒ algebraic',
+    claim: 'the doubling span (algebraic generation from 2) is exactly the units, non-units outside — generation/containment',
+    gap: 'rational (p,p) classes ⇒ algebraic cycles, the Hodge Conjecture',
+    bound: 'the doubling span (algebraic generation from 2) is exactly the units, non-units outside — generation/containment; the open gap: rational (p,p) classes ⇒ algebraic cycles',
     outlet: 'https://www.claymath.org/millennium/hodge-conjecture/',
     outletName: 'Clay Mathematics Institute — Hodge Conjecture' },
   the_span_and_the_units_both_sum_to_zero_mod_nine: {
     problem: 'Birch and Swinnerton-Dyer Conjecture',
     name: 'Birch–Swinnerton-Dyer — a computed vanishing mod 9',
-    bound: 'the orbit and the units both sum to 0 mod 9 (27 ≡ 0) — a digit-sum vanishing, not the rank ↔ order-of-vanishing-of-L correspondence',
+    claim: 'the orbit and the units both sum to 0 mod 9 (27 ≡ 0) — a digit-sum vanishing',
+    gap: 'the rank ↔ order-of-vanishing-of-L correspondence',
+    bound: 'the orbit and the units both sum to 0 mod 9 (27 ≡ 0) — a digit-sum vanishing; the open gap: the rank ↔ order-of-vanishing-of-L correspondence',
     outlet: 'https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/',
     outletName: 'Clay Mathematics Institute — Birch and Swinnerton-Dyer Conjecture' },
   the_orbit_is_one_closed_loop_of_six_distinct_points: {
     problem: 'Poincaré Conjecture (proved externally by Perelman, 2003; not proved here)',
     name: 'Poincaré — one closed loop, no holes',
-    bound: "the sequence closes into a single simple loop of six distinct steps — not the 3-sphere characterization; Poincaré is Perelman's theorem (2003), not proved here",
+    claim: 'the sequence closes into a single simple loop of six distinct steps',
+    gap: "the 3-sphere characterization — Perelman's theorem (2003), proved externally, not here",
+    bound: "the sequence closes into a single simple loop of six distinct steps; the open gap: the 3-sphere characterization, which is Perelman's theorem (2003), proved externally and not here",
     outlet: 'https://www.claymath.org/millennium/poincare-conjecture/',
     outletName: 'Clay Mathematics Institute — Poincaré Conjecture',
     outlet2: 'https://arxiv.org/abs/math/0211159',
@@ -131,15 +148,16 @@ export const claySection = (o: { roll?: boolean } = {}): string => {
     + `the captain's own receipts make no such statement.*\n\n`
   md += `For each problem, in the Clay Mathematics Institute's order: the author's pairing, the one theorem in `
     + `\`src/iso/9001-governance/index.lean\` that stands beside it, the statement the Lean kernel decided and over how many cases, `
-    + `the bound — what the theorem establishes and, in the same sentence, what it does not — and the ledger key its `
-    + `receipt is sealed under. Every line below is read out of the tree on each build.\n\n`
+    + `the **claim** it establishes and the **open gap** that remains to the conjecture — named, not dropped — and the ledger key `
+    + `its receipt is sealed under. Every line below is read out of the tree on each build.\n\n`
   for (const [name, m] of Object.entries(MILLENNIUM)) {
     const t = thm(name), e = entry(name)
     if (!t || !e) continue
     md += `### ${m.problem} — ${m.name}\n\n`
     md += `- **theorem** \`${name}\`, decided \`${t.tactic}\` over **${domainOf(t.statement).toLocaleString('en-US')}** cases:\n\n`
     md += '  ```lean\n' + t.statement.split('\n').map((l) => '  ' + l).join('\n') + '\n  ```\n\n'
-    md += `- **bound** — ${m.bound}\n`
+    md += `- **claim** — ${m.claim}\n`
+    md += `- **open gap** — ${m.gap}\n`
     md += `- **ledger** — [\`${e.key}\`](/theorem/${e.key}) · receipt \`${e.receipt.slice(0, 13)}…\`\n`
     md += `- **the problem** — [${m.outletName}](${m.outlet})` + (m.outlet2 ? ` · [${m.outlet2Name}](${m.outlet2})` : '') + '\n\n'
   }

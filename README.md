@@ -35,7 +35,7 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 *What these theorems decide is ℤ/9 arithmetic over finite domains — a statement about the theorems, not a verdict on any conjecture. Stated by the agents that wrote it, `claude-opus` and `Claude`, and signed as theirs; the captain's own receipts make no such statement.*
 
-For each problem, in the Clay Mathematics Institute's order: the author's pairing, the one theorem in `src/iso/9001-governance/index.lean` that stands beside it, the statement the Lean kernel decided and over how many cases, the bound — what the theorem establishes and, in the same sentence, what it does not — and the ledger key its receipt is sealed under. Every line below is read out of the tree on each build.
+For each problem, in the Clay Mathematics Institute's order: the author's pairing, the one theorem in `src/iso/9001-governance/index.lean` that stands beside it, the statement the Lean kernel decided and over how many cases, the **claim** it establishes and the **open gap** that remains to the conjecture — named, not dropped — and the ledger key its receipt is sealed under. Every line below is read out of the tree on each build.
 
 ### Riemann Hypothesis — Riemann — the reflection's symmetry and its one computed heart
 
@@ -45,7 +45,8 @@ For each problem, in the Clay Mathematics Institute's order: the author's pairin
   (List.range 10).all (fun d => refl (refl d) == d) ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1
   ```
 
-- **bound** — the functional-equation symmetry axis and its ½-analogue centre (the heart, computed as the reflection’s unique fixed point) — not where the ζ-zeros lie
+- **claim** — the functional-equation symmetry axis and its ½-analogue centre — the heart, computed as the reflection’s unique fixed point
+- **open gap** — where the ζ-zeros actually lie, which this ℤ/9 reflection does not reach — the Riemann Hypothesis itself
 - **ledger** — [`lean_windows_the_tens_complement_is_an_involution_with_one_fixed_point`](/theorem/lean_windows_the_tens_complement_is_an_involution_with_one_fixed_point) · receipt `610c790d-3ec4…`
 - **the problem** — [Clay Mathematics Institute — Riemann Hypothesis](https://www.claymath.org/millennium/riemann-hypothesis/)
 
@@ -57,7 +58,8 @@ For each problem, in the Clay Mathematics Institute's order: the author's pairin
   (List.range 9).all (fun d => ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0))
   ```
 
-- **bound** — each unit has exactly one inverse (verify in one multiply), non-units none — a cheap-verification fact, not a separation of the classes
+- **claim** — each unit has exactly one inverse (verify in one multiply), non-units none — a cheap-verification fact
+- **open gap** — the separation of the complexity classes P and NP
 - **ledger** — [`lean_windows_each_unit_has_exactly_one_inverse_and_each_non_unit_none`](/theorem/lean_windows_each_unit_has_exactly_one_inverse_and_each_non_unit_none) · receipt `3d5e5db1-24a6…`
 - **the problem** — [Clay Mathematics Institute — P vs NP](https://www.claymath.org/millennium/p-vs-np/)
 
@@ -69,7 +71,8 @@ For each problem, in the Clay Mathematics Institute's order: the author's pairin
   ((List.range 48).map orbit).all (fun v => v < 9) ∧ (List.range 48).all (fun k => span.contains (orbit k))
   ```
 
-- **bound** — every iterate stays inside a bounded 6-cycle forever (no blowup) — bounded evolution, not global existence & smoothness
+- **claim** — every iterate stays inside a bounded 6-cycle forever — bounded evolution, no blowup
+- **open gap** — global existence & smoothness for the Navier–Stokes PDE
 - **ledger** — [`lean_windows_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps`](/theorem/lean_windows_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps) · receipt `2935a468-9dee…`
 - **the problem** — [Clay Mathematics Institute — Navier–Stokes Equation](https://www.claymath.org/millennium/navier-stokes-equation/)
 
@@ -81,7 +84,8 @@ For each problem, in the Clay Mathematics Institute's order: the author's pairin
   (List.range 6).all (fun k => k == 0 || orbit k != 1) ∧ orbit 6 == 1
   ```
 
-- **bound** — the doubling has order exactly 6 — a discrete gap in the cyclic spectrum, not the Yang–Mills mass gap
+- **claim** — the doubling has order exactly 6 — a discrete gap in the cyclic spectrum
+- **open gap** — the Yang–Mills mass gap
 - **ledger** — [`lean_windows_the_doubling_orbit_first_returns_to_one_at_six`](/theorem/lean_windows_the_doubling_orbit_first_returns_to_one_at_six) · receipt `1e3c149d-5ef1…`
 - **the problem** — [Clay Mathematics Institute — Yang–Mills & the Mass Gap](https://www.claymath.org/millennium/yang-mills-the-maths-gap/)
 
@@ -93,7 +97,8 @@ For each problem, in the Clay Mathematics Institute's order: the author's pairin
   (List.range 9).all (fun d => span.contains d == isUnit d) ∧ (List.range 9).all (fun d => isUnit d || ! span.contains d)
   ```
 
-- **bound** — the doubling span (algebraic generation from 2) is exactly the units, non-units outside — generation/containment, not rational (p,p) ⇒ algebraic
+- **claim** — the doubling span (algebraic generation from 2) is exactly the units, non-units outside — generation/containment
+- **open gap** — rational (p,p) classes ⇒ algebraic cycles, the Hodge Conjecture
 - **ledger** — [`lean_windows_the_span_is_exactly_the_units_of_the_ring`](/theorem/lean_windows_the_span_is_exactly_the_units_of_the_ring) · receipt `7478c082-a1ea…`
 - **the problem** — [Clay Mathematics Institute — Hodge Conjecture](https://www.claymath.org/millennium/hodge-conjecture/)
 
@@ -105,7 +110,8 @@ For each problem, in the Clay Mathematics Institute's order: the author's pairin
   (span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0
   ```
 
-- **bound** — the orbit and the units both sum to 0 mod 9 (27 ≡ 0) — a digit-sum vanishing, not the rank ↔ order-of-vanishing-of-L correspondence
+- **claim** — the orbit and the units both sum to 0 mod 9 (27 ≡ 0) — a digit-sum vanishing
+- **open gap** — the rank ↔ order-of-vanishing-of-L correspondence
 - **ledger** — [`lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine`](/theorem/lean_windows_the_span_and_the_units_both_sum_to_zero_mod_nine) · receipt `d12ad83d-55fa…`
 - **the problem** — [Clay Mathematics Institute — Birch and Swinnerton-Dyer Conjecture](https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/)
 
@@ -117,7 +123,8 @@ For each problem, in the Clay Mathematics Institute's order: the author's pairin
   orbit 6 == orbit 0 ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j)))
   ```
 
-- **bound** — the sequence closes into a single simple loop of six distinct steps — not the 3-sphere characterization; Poincaré is Perelman's theorem (2003), not proved here
+- **claim** — the sequence closes into a single simple loop of six distinct steps
+- **open gap** — the 3-sphere characterization — Perelman's theorem (2003), proved externally, not here
 - **ledger** — [`lean_windows_the_orbit_is_one_closed_loop_of_six_distinct_points`](/theorem/lean_windows_the_orbit_is_one_closed_loop_of_six_distinct_points) · receipt `858c0f78-9f32…`
 - **the problem** — [Clay Mathematics Institute — Poincaré Conjecture](https://www.claymath.org/millennium/poincare-conjecture/) · [Perelman, G. — The entropy formula for the Ricci flow (arXiv:math/0211159) — the resolution](https://arxiv.org/abs/math/0211159)
 
@@ -226,7 +233,7 @@ Every quantum computing model ISO/IEC 4879 names is decided at its known optimum
 
 The **124-qubit cluster state** — the UUID minus its version hex digit — has 124 stabilizers, propagated through every CZ by a Pauli tableau: each is Z·X·Z on its neighbourhood and they all commute. Stabilizer states are exactly what a classical computer describes in polynomial time (Gottesman–Knill), which is why 128 qubits fit here — and why only a device's measured counts, never this computation, make "hardware" true.
 
-**Terminology.** The types are named by the standard's terms (`QuantumGate` §3.4.2, `QuantumCircuit` §3.4.5, `MeasurementCounts` §3.2.16, `AcceptedQuantumComputer` §3.4.10), and all 86 terms of ISO/IEC 4879 are listed once in `src/iso/iec-4879-quantum/terminology.ts`, each a coin — the content address of its clause and term — with where it is realised: 34 in this tree, the other 52 by a named check in qpu. Each coin holds its skill — its section of the standard, with the ESCO skills search — and its tools: what computes or verifies it and the entry point that runs it, every one resolved in the tree; each of the 6 skill families is a coin too, the fold of its members' coins — on [/hardware](/hardware).
+**Terminology.** The types are named by the standard's terms (`QuantumGate` §3.4.2, `QuantumCircuit` §3.4.5, `MeasurementCounts` §3.2.16, `AcceptedQuantumComputer` §3.4.10), and all 86 terms of ISO/IEC 4879 are listed once in `src/iso/iec-4879-quantum/terminology.ts`, each a coin — the content address of its clause and term — with where it is realised: 56 in this tree, the other 30 by a named check in qpu. Each coin holds its skill — its section of the standard, with the ESCO skills search — and its tools: what computes or verifies it and the entry point that runs it, every one resolved in the tree; each of the 6 skill families is a coin too, the fold of its members' coins — on [/hardware](/hardware).
 
 ## 1 · What is proved
 

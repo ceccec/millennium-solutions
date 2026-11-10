@@ -92,6 +92,8 @@ export const fuse = (p: ClayProblem): ClayFusion => {
       key: live?.key ?? null,
       receipt: live?.receipt ?? null,
       cases: domainOf(thm.statement),
+      claim: m.claim,
+      gap: m.gap,
       bound: m.bound,
       decidedBy: thm.tactic,
     } : null,

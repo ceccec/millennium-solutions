@@ -85,7 +85,7 @@ const desc = computed(() => isLean.value
 <p>The Clay problem <strong>{{ $params.problem }}</strong>, to the honest floor. The statement below is a true fact <em>computed</em> from the ℤ/9 doubling sequence — genuinely <em>adjacent</em> to the problem, and <strong>not</strong> the conjecture.</p>
 <pre class="lean-proof"><code itemprop="text">{{ $params.lean }}</code></pre>
 <p>Verified sorry-free by <code>lean src/iso/9001-governance/index.lean</code>; <code>#print axioms {{ $params.key }}</code> → <em>does not depend on any axioms</em>. No Mathlib, no <code>native_decide</code>, no <code>sorry</code>.</p>
-<p><strong>Honest bound.</strong> {{ $params.bound }}.</p>
+<p><strong>The claim, and the open gap.</strong> {{ $params.bound }}.</p>
 <h2>References — qualified outlets</h2>
 <ul>
 <li><strong>The problem:</strong> <a :href="$params.outlet" target="_blank" rel="noopener">{{ $params.outletName }}</a> — the authoritative statement.</li>

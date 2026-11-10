@@ -287,7 +287,7 @@ for (const w of wings) {
       const mil = MILLENNIUM[t.name]
       if (mil) {
         o += `<p class="thm-millennium"><strong>Millennium floor — ${esc(mil.problem)}.</strong> `
-        o += `Adjacent to the problem, and <strong>not</strong> the conjecture: ${esc(mil.bound)}. `
+        o += `Adjacent to the problem — the claim, and the open gap to the conjecture: ${esc(mil.bound)}. `
         o += `Proved here: <strong>0</strong>. The authoritative statement is <a href="${mil.outlet}">${esc(mil.outletName)}</a>.</p>\n`
       }
       // ONLY the theorem's OWN comment. leandoc also reports a comment inherited from the enclosing

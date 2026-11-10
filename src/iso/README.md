@@ -13,6 +13,15 @@ quantum computing — vocabulary & models.
 - `resources.lean`
 - `synthesis.lean`
 
+## ISO/IEC 18033 — `src/iso/iec-18033-cryptography/` (5)
+encryption algorithms — the σ-reflection run as a create/decode key.
+
+- `asymmetric.lean`
+- `fnv.lean`
+- `program.lean`
+- `qpu_crypto.lean`
+- `roots.lean`
+
 ## ISO 80000-5 / 80000-10 — `src/iso/80000-physics/` (5)
 quantities and units — physics.
 

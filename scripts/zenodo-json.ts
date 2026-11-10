@@ -38,6 +38,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { flag } from '../src/cli/index.ts'
 import { ledger, theoremCount, leanFiles, leanTheorems } from '../src/api/index.ts'
 import { kinds, KIND } from '../src/publication/index.ts'
+import { MILLENNIUM } from '../src/millennium/index.ts'
 
 const OUT = '.zenodo.json'
 const OPEN = '<!--computed-->'
@@ -71,27 +72,35 @@ const byKind = new Map<string, number>()
 for (const [, k] of kinds()) byKind.set(k, (byKind.get(k) ?? 0) + 1)
 const novelty = [...byKind.entries()].sort().map(([k, n]) => `${n} ${KIND[k] ?? 'unclassified'}`).join('; ')
 
-const prov: { records?: { id: string; concept: string }[] } =
+const prov: { records?: { id: string; concept: string; published: string; title: string }[] } =
   existsSync('src/ledger/provenance.json') ? JSON.parse(readFileSync('src/ledger/provenance.json', 'utf8')) : {}
 const cites: { tracked?: { citing?: { doi: string }[] }[] } =
   existsSync('src/ledger/citations.json') ? JSON.parse(readFileSync('src/ledger/citations.json', 'utf8')) : {}
 
 const bare = (d: string) => String(d).replace(/^https?:\/\/doi\.org\//, '')
 type Related = { identifier: string; relation: string; scheme: string }
-const related = [
-  ...new Map<string, Related>([
-    ...(prov.records ?? []).map((r): [string, Related] => [`10.5281/zenodo.${r.id}`, { identifier: `10.5281/zenodo.${r.id}`, relation: 'isVersionOf', scheme: 'doi' }]),
-    ...(cites.tracked ?? []).flatMap((t) => (t.citing ?? []).map((c): [string, Related] => [bare(c.doi), { identifier: bare(c.doi), relation: 'isCitedBy', scheme: 'doi' }])),
-  ]).values(),
+
+// THE INITIAL PUBLICATION, NOT THE WHOLE CHAIN — on the author's order (2026-11-10). This used to emit one
+// `isVersionOf` line per deposit, 230 of them, which is a second hand-shipped copy of a list Zenodo already
+// keeps itself: a concept DOI groups its versions on the registry's side, so re-listing every release here
+// added no fact a reader could not get from the concept, and each line was an outbound DOI this record must
+// resolve. What the concept does NOT carry is which deposit came FIRST, and that is the one version-chain
+// fact worth stating: the INITIAL publication, as the proof of precedence. It is the earliest record in
+// src/ledger/provenance.json — derived here, by date then id, never typed — and this deposit declares itself
+// a new version of it.
+const initial = [...(prov.records ?? [])].sort((a, b) =>
+  a.published.localeCompare(b.published) || (Number(a.id) - Number(b.id)))[0]
+// THE CONCEPT DOI STAYS, AND STAYS AS `isVersionOf`: `.zenodo.json` is one of the files zenodo-gate
+// cross-checks for it, and the file this metadata describes IS a version of that concept. Third-party
+// citations stay too — uptake is not the self version-chain, and the registry does not supply it.
+const raw: Related[] = [
+  { identifier: DOI, relation: 'isVersionOf', scheme: 'doi' },
+  ...(initial ? [{ identifier: `10.5281/zenodo.${initial.id}`, relation: 'isNewVersionOf', scheme: 'doi' }] : []),
+  ...(cites.tracked ?? []).flatMap((t) => (t.citing ?? []).map((c): Related =>
+    ({ identifier: bare(c.doi), relation: 'isCitedBy', scheme: 'doi' }))),
   { identifier: 'https://github.com/ceccec/millennium-solutions', relation: 'isSupplementTo', scheme: 'url' },
 ]
-// THE CONCEPT DOI STAYS, AND STAYS AS `isVersionOf`. The first version filtered it out on the reasoning
-// that a record should not relate to itself — and zenodo-gate refused, correctly: `.zenodo.json` is one of
-// the three files it cross-checks for the concept DOI, so removing it silently broke the only check that
-// catches a deposition citing a publication it does not belong to. The file this metadata describes is a
-// VERSION of that concept, which is what isVersionOf says; the hand-written original said isNewVersionOf
-// of itself, which is a record claiming to supersede itself.
-if (!related.some((r) => r.identifier === DOI)) related.unshift({ identifier: DOI, relation: 'isVersionOf', scheme: 'doi' })
+const related = [...new Map(raw.map((r) => [r.identifier, r])).values()]
 
 // THE QUANTUM SENTENCE, COUNTED: the theorems in the quantum_*.lean files and the device receipt, if one exists — so the
 // record says "no device run" until scripts/quantum-hardware.ts writes one, and says what it returned once it has.
@@ -118,12 +127,38 @@ const authored = prior ? prior.split(OPEN)[0].trimEnd() : ABSTRACT
 if (!prior) console.log(`  ○ ${OUT} was absent — the author's description falls back to the CITATION.cff abstract. Nothing was invented for it.`)
 if (!authored) throw new Error('no authored description and no abstract to fall back on — this generator will not write one')
 
+// ── SUBJECTS & REFERENCES, DERIVED FROM THE TREE ─────────────────────────────────────────────────────────
+// The record stated what the deposit CONTAINS (the computed block) but not what it is ABOUT in terms an
+// indexer resolves. Both are read from the tree on every build, never typed:
+//   subjects    — the seven Clay problems this framework draws its correspondence to, each the Clay
+//                 Institute's own page, from the one table that pairs them (src/millennium). High-level, not
+//                 the 26k-theorem granularity: scripts/zenodo-sync puts per-theorem subjects in the
+//                 per-theorem records, where each term is one theorem's URL.
+//   references  — the ISO standards the proofs formalise, from src/iso's own classification record, and the
+//                 author's two earliest deposits, from the provenance chain (the prior art this descends from).
+type Subject = { term: string; identifier: string; scheme: string }
+const subjects = [...new Map(Object.values(MILLENNIUM).flatMap((m): [string, Subject][] => {
+  const rows: [string, Subject][] = [[m.outlet, { term: `${m.problem.replace(/\s*\(.*\)$/, '')} — Clay Millennium Problem`, identifier: m.outlet, scheme: 'url' }]]
+  if (m.outlet2 && m.outlet2Name) rows.push([m.outlet2, { term: m.outlet2Name, identifier: m.outlet2, scheme: 'url' }])
+  return rows
+})).values()]
+
+const isoReadme = existsSync('src/iso/README.md') ? readFileSync('src/iso/README.md', 'utf8') : ''
+const isoRefs = [...isoReadme.matchAll(/^##\s+(ISO[^—\n]+?)\s+—\s+`src\/iso\/[^\n]*\n([^\n]+)/gm)]
+  .map((m) => `${m[1].trim()} — ${m[2].trim().replace(/\.$/, '')}.`)
+const priorArt = [...(prov.records ?? [])]
+  .sort((a, b) => a.published.localeCompare(b.published) || (Number(a.id) - Number(b.id)))
+  .slice(0, 2)
+  .map((r) => `Rouschev, T. (${String(r.published).slice(0, 4)}). ${r.title}. Zenodo. https://doi.org/10.5281/zenodo.${r.id}`)
+const references = [...isoRefs, ...priorArt]
+
 const out = {
   upload_type: 'publication',
   publication_type: 'preprint',
   title: TITLE,
   creators: [{ name: `${FAMILY}, ${GIVEN}`, orcid: ORCID, affiliation: AFFIL }],
   description: `${authored}\n\n${computed}`,
+  language: 'eng',
   // KEYWORDS ARE NOT A PLACE TO PUT EVERYTHING THE TREE CONTAINS. The first version unioned the ledger's
   // 61 domain families into this field and produced 67 keywords, most of them internal slugs — `demand2`,
   // `z9plus`, `mechanical`. Those are directory names. A record whose keywords are a repository's folder
@@ -131,6 +166,8 @@ const out = {
   // answers. Per-theorem granularity belongs in `subjects`, where each term carries a resolvable URL, and
   // scripts/zenodo-sync.ts puts it there. The authored list stands.
   keywords: (cff.match(/^keywords:\n((?:\s+-\s.*\n?)+)/m)?.[1] ?? '').split('\n').map((l) => l.replace(/^\s*-\s*/, '').trim()).filter(Boolean),
+  subjects,
+  references,
   license: LICENSE,
   access_right: 'open',
   related_identifiers: related,
