@@ -118,6 +118,29 @@ const HERE: Readonly<Record<string, Realisation[]>> = {
   '3.5.7': [L('quantum_textbooks.lean')],
   '3.5.8': [L('quantum_models.lean')],
   '3.6.1': [L('quantum_software.lean')],                          // superdense coding: two bits through one qubit
+  // ── developed here, not left to qpu: each links a clause to a theorem that already realises it ────────────
+  '3.1.1': [L('quantum_models.lean')],                           // one exact instance of every model the standard names
+  '3.1.9': [L('quantum_textbooks.lean')],                        // Grover, Simon and Deutsch–Jozsa, each decided
+  '3.2.9': [T('Zw'), L('quantum_circuits.lean')],               // the computational basis states the circuits are written over
+  '3.2.11': [L('quantum_models.lean')],                          // the Hamiltonian operator H(s) of the adiabatic model
+  '3.2.13': [L('quantum_models.lean')],                          // the frustrated triangle's ground state — an eigenstate of H
+  '3.2.15': [L('quantum_models.lean')],                          // its six-fold degenerate ground state — an eigenspace
+  '3.2.17': [L('quantum_circuits.lean')],                        // the Bell-basis measurements the CHSH circuits read
+  '3.3.11': [L('quantum_textbooks.lean')],                       // the optimal clone's fidelity is five-sixths
+  '3.4.1': [L('quantum_circuits.lean')],                         // the CHSH circuits processing quantum information to 2√2
+  '3.4.11': [L('quantum_hardware.lean')],                        // a device's counts decided above the classical bound
+  '3.4.12': [L('synthesis.lean')],                               // the 15-to-1 magic-state code and fault-tolerance counts
+  '3.4.18': [L('qec.lean')],                                     // the code distance and what it corrects — the threshold
+  '3.4.19': [L('qec.lean')],                                     // a distance-d code corrects ⌊(d−1)/2⌋ errors
+  '3.4.20': [L('qec.lean')],                                     // the surface and Shor code parameters on a device
+  '3.4.23': [L('quantum_models.lean')],                          // the simulator models, one instance each
+  '3.4.25': [L('quantum_models.lean')],                          // the adiabatic/Ising evolution — an analogue simulator
+  '3.4.27': [L('quantum_models.lean')],                          // the one-way (cluster-state) measurement model
+  '3.4.28': [L('quantum_models.lean')],                          // the adiabatic gap, smallest at the midpoint
+  '3.4.32': [L('resources.lean')],                               // the Chimera and Pegasus coupler topologies, counted
+  '3.5.1': [L('quantum_models.lean')],                           // the Ising/adiabatic simulation
+  '3.5.3': [L('quantum_models.lean')],                           // boson sampling — the Hong–Ou–Mandel dip
+  '3.5.4': [L('synthesis.lean')],                                // QAOA resource counts over the layers
 }
 
 /** the coin of a clause: the content address of the standard's own clause number and term */
