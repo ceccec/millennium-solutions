@@ -37,7 +37,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { flag } from '../src/cli/index.ts'
 import { ledger, theoremCount, leanFiles, leanTheorems } from '../src/api/index.ts'
-import { kinds, KIND } from '../src/publication/index.ts'
+import { kinds, KIND, isoReferences } from '../src/publication/index.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
 
 const OUT = '.zenodo.json'
@@ -143,14 +143,9 @@ const subjects = [...new Map(Object.values(MILLENNIUM).flatMap((m): [string, Sub
   return rows
 })).values()]
 
-const isoReadme = existsSync('src/iso/README.md') ? readFileSync('src/iso/README.md', 'utf8') : ''
-const isoRefs = [...isoReadme.matchAll(/^##\s+(ISO[^—\n]+?)\s+—\s+`src\/iso\/[^\n]*\n([^\n]+)/gm)]
-  .map((m) => `${m[1].trim()} — ${m[2].trim().replace(/\.$/, '')}.`)
-const priorArt = [...(prov.records ?? [])]
-  .sort((a, b) => a.published.localeCompare(b.published) || (Number(a.id) - Number(b.id)))
-  .slice(0, 2)
-  .map((r) => `Rouschev, T. (${String(r.published).slice(0, 4)}). ${r.title}. Zenodo. https://doi.org/10.5281/zenodo.${r.id}`)
-const references = [...isoRefs, ...priorArt]
+// the ISO standards src/iso formalises + the author's two earliest deposits, derived once in src/publication
+// (the same list the README and homepage now render as their ISO 690 reference section)
+const references = isoReferences()
 
 const out = {
   upload_type: 'publication',

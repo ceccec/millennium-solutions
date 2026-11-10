@@ -18,7 +18,7 @@
 // `cases > 1` — "exhausting N cases" — from a single-case declaration, which it calls "by evaluation; no
 // domain is walked". That distinction is honest and it is the deposit's own, and it was missing from my
 // deposition prose, which told every record it had walked its whole domain. 112 of 336 had not.
-import { readFileSync } from 'node:fs'
+import { readFileSync, existsSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { domainOf, leanSource, leanPathOf, frontmatter, type LeanTheorem } from '../api/index.ts'
 import { toUuid } from '../0/index.ts'
@@ -75,6 +75,39 @@ export const CONCEPT_DOI = (() => {
   if (!m) throw new Error('CITATION.cff states no concept DOI — every deposition needs something to be part of')
   return m[1]
 })()
+
+// ── ISO 690 REFERENCES, DERIVED ONCE ─────────────────────────────────────────────────────────────────────
+// The bibliographic apparatus every publication here owes under ISO 690: the standards the proofs formalise
+// and the prior art the deposit descends from. Both are read from the tree, never typed — the ISO standards
+// from src/iso's own classification record (its `##` section headers), the prior art from the two earliest
+// records in the provenance chain. scripts/zenodo-json.ts carried this inline and the README/homepage carried
+// none; this is the single source both now draw from, so a reference cannot read one way in the record and
+// another on the page.
+export const isoReferences = (): string[] => {
+  const isoReadme = existsSync('src/iso/README.md') ? readFileSync('src/iso/README.md', 'utf8') : ''
+  const iso = [...isoReadme.matchAll(/^##\s+(ISO[^—\n]+?)\s+—\s+`src\/iso\/[^\n]*\n([^\n]+)/gm)]
+    .map((m) => `${m[1].trim()} — ${m[2].trim().replace(/\.$/, '')}.`)
+  const prov: { records?: { id: string; published: string; title: string }[] } =
+    existsSync('src/ledger/provenance.json') ? JSON.parse(readFileSync('src/ledger/provenance.json', 'utf8')) : {}
+  const priorArt = [...(prov.records ?? [])]
+    .sort((a, b) => a.published.localeCompare(b.published) || (Number(a.id) - Number(b.id)))
+    .slice(0, 2)
+    .map((r) => `Rouschev, T. (${String(r.published).slice(0, 4)}). ${r.title}. Zenodo. https://doi.org/10.5281/zenodo.${r.id}`)
+  return [...iso, ...priorArt]
+}
+
+/** The References section as markdown — a numbered ISO 690 reference list, the same strings the Zenodo record carries. */
+export const referencesSection = (): string => {
+  const refs = isoReferences()
+  if (!refs.length) return ''
+  let md = `## References\n\n`
+  md += `The standards these proofs formalise and the prior art this deposit descends from, as a numbered reference `
+    + `list per ISO 690 — the same references the Zenodo record carries. The ISO standards are the subjects \`src/iso\` `
+    + `groups the proofs under; the two deposits are the author's earliest, from the provenance chain. Read from the `
+    + `tree on every build.\n\n`
+  refs.forEach((r, i) => { md += `${i + 1}. ${r}\n` })
+  return md + '\n'
+}
 
 export const humanise = (n: string) => n.replace(/_/g, ' ')
 

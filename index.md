@@ -660,6 +660,22 @@ greater length, the definitions it does. [The quantum field](/quantum) renders q
 dimensions with every coordinate read from a theorem. [Prior art](/PRIOR-ART) records, per source file,
 whether the work restates someone earlier. [The paper](/paper) typesets every statement.
 
+## References
+
+The standards these proofs formalise and the prior art this deposit descends from, as a numbered reference list per ISO 690 — the same references the Zenodo record carries. The ISO standards are the subjects `src/iso` groups the proofs under; the two deposits are the author's earliest, from the provenance chain. Read from the tree on every build.
+
+1. ISO/IEC 4879:2024 — quantum computing — vocabulary & models.
+2. ISO/IEC 18033 — encryption algorithms — the σ-reflection run as a create/decode key.
+3. ISO 80000-5 / 80000-10 — quantities and units — physics.
+4. ISO 22739:2024 — blockchain and distributed ledger.
+5. ISO/IEC 9834-8 — UUID / object identifiers & addressing.
+6. ISO 690 / ISO 26324 — bibliographic references & DOI.
+7. ISO/IEC 2382:2015 — information technology — vocabulary.
+8. ISO 9001 — quality management — the floor (governance).
+9. ISO 80000-2 — quantities and units — mathematics.
+10. Rouschev, T. (2026). All Seven Clay Millennium Problems Sealed via Universal σ-Involution. Zenodo. https://doi.org/10.5281/zenodo.21781603
+11. Rouschev, T. (2026). Millennium Solutions - The ℤ/9 Vortex Framework. Zenodo. https://doi.org/10.5281/zenodo.21819217
+
 ---
 
 *20 claims, all verified · 26213 sealed theorems · 28632 ledger entries · trial root `19e30a25-33e6-8bc7-afa2-ebb235b93c61` · integrity, not truth*
