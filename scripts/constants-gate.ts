@@ -1,9 +1,11 @@
 /** ── GENERATED PROSE MUST AGREE WITH ITS GENERATOR ─────────────────────────────────────────────────────────
  *
  *  README.md, index.md and paper.md carry 37 of the 39 full UUIDs in this repository's prose — trial roots,
- *  content-addresses, receipt tips. Every one is computed by scripts/pages.ts at build time and stored
- *  nowhere else, so there is no artefact to check them against. What CAN be checked is that the committed
- *  text is what the generator produces: run it, and require nothing to move.
+ *  content-addresses, receipt tips. README.md and index.md are computed by scripts/pages.ts; paper.md by
+ *  scripts/paper.ts. They are stored nowhere else, so there is no artefact to check them against. What CAN be
+ *  checked is that the committed text is what its generator produces: run it, and require nothing to move.
+ *  paper.md was listed here from the start but only pages.ts was ever run, so it was never actually checked
+ *  and drifted; the generator of every file in the list now runs.
  *
  *  WHAT THIS GATE DOES NOT DO, stated because the first version of it pretended otherwise. I sent three
  *  fabricated constants to peer repositories today — a SHA-256 label over FNV-1a code, a pinned test vector
@@ -35,16 +37,23 @@ const before = new Map(GENERATED.map((f) => [f, readFileSync(f, 'utf8')]))
 // no other process can see this gate's output in place of the committed text, and the gate cannot change them as a side effect.
 // THE OUTPUT FOLDER IS A HEXBIT FOLDER UNDER evidence/, WHICH GIT TRACKS (never an ignored cache): its name is the first eight hex digits of the content address of the inputs
 // (the generator and the committed text). Same inputs, same folder, so a run can be reproduced and the folder is its own receipt.
-const inputs = readFileSync('scripts/pages.ts', 'utf8') + before.get('README.md') + before.get('index.md')
+// README.md and index.md come from pages.ts; paper.md comes from paper.ts. Both are run into a directory of
+// this gate's own (PAGES_OUT / PAPER_OUT) so the committed files are never rewritten here. paper.md was in the
+// list above but NOTHING regenerated it — only pages.ts ran, and paper.md is not a pages.ts output — so it
+// drifted unseen (its Millennium section kept an old wording after src/millennium changed). The generator of
+// every checked file now runs.
+const inputs = readFileSync('scripts/pages.ts', 'utf8') + readFileSync('scripts/paper.ts', 'utf8')
+  + GENERATED.map((f) => before.get(f)).join('')
 const handle = toUuid(inputs).replace(/-/g, '').slice(0, 8)
 const gen = `evidence/constants/${handle}`
 mkdirSync(gen, { recursive: true })
 execSync('node scripts/pages.ts', { stdio: 'ignore', env: { ...process.env, PAGES_OUT: gen } })
-const generated = new Map(['README.md', 'index.md'].map((f) => [f, readFileSync(`${gen}/${f}`, 'utf8')]))
-const unexpected = ['README.md', 'index.md'].filter((f) => generated.get(f) !== before.get(f))
+execSync('node scripts/paper.ts', { stdio: 'ignore', env: { ...process.env, PAPER_OUT: gen } })
+const generated = new Map(GENERATED.map((f) => [f, readFileSync(`${gen}/${f}`, 'utf8')]))
+const unexpected = GENERATED.filter((f) => generated.get(f) !== before.get(f))
 
 if (unexpected.length) {
-  console.log(`  ✗ ${unexpected.join(', ')} disagree(s) with scripts/pages.ts`)
+  console.log(`  ✗ ${unexpected.join(', ')} disagree(s) with their generator (README.md/index.md ← pages.ts, paper.md ← paper.ts)`)
   console.log(`      The committed text is not what the generator produces. Either a value was edited by hand`)
   console.log(`      — every constant in these files is computed, so a hand-written one is fabricated — or the`)
   // THE REMEDIATION NAMED A SCRIPT THAT DOES NOT EXIST. There is no `pages` entry in package.json — the
@@ -52,9 +61,9 @@ if (unexpected.length) {
   // left the operator no better off. Worse, the advice was unnecessary: this gate has ALREADY run
   // scripts/pages.ts a few lines above, so the files on disk are the regenerated ones by the time it speaks.
   // What is left to do is read the diff and commit it, and that is what it now says.
-  console.log(`      This gate has already re-run scripts/pages.ts, so the files on disk are now the`)
-  console.log(`      generated ones — read the diff and commit it, or find the hand-edited value in it.`)
+  console.log(`      This gate has already re-run both generators into ${gen}/ — copy the regenerated file over`)
+  console.log(`      the committed one and commit it, or find the hand-edited value in the diff.`)
   process.exit(1)
 }
 const n = Number(execSync(`grep -oE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' ${GENERATED.join(' ')} | wc -l`).toString().trim())
-console.log(`✓ constants-gate: ${n} generated constant(s) across ${GENERATED.length} files reproduce from scripts/pages.ts`)
+console.log(`✓ constants-gate: ${n} generated constant(s) across ${GENERATED.length} files reproduce from their generators (pages.ts, paper.ts)`)

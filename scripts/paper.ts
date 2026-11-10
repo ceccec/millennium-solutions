@@ -319,7 +319,10 @@ o += '[src/proof/](https://github.com/ceccec/millennium-solutions/tree/main/src/
 o += 'page carrying the same statement. A content-address proves integrity, not truth.\n\n'
 o += '</div>\n'
 
-writeFileSync('paper.md', o)
+// PAPER_OUT lets a checker (constants-gate) generate into a directory of its own, so it never rewrites the
+// committed paper.md — the same contract pages.ts honours for README.md and index.md through PAGES_OUT.
+const PAPER_OUT = process.env.PAPER_OUT ? process.env.PAPER_OUT.replace(/\/?$/, '/') : ''
+writeFileSync(PAPER_OUT + 'paper.md', o)
 console.log(`✓ paper: ${n(theorems.length)} declarations (${n(byDecide + proofs)} theorems: ${n(byDecide)} by exhaustion + ${n(proofs)} proved for every value; ${rflOnly.length} rfl, never theorems) · ${docs.length} sources · ${wings.length} wings · median ${n(median)} cases, top theorem ${topShare.toFixed(2)}% of the total · seal ${seal.slice(0, 13)}… → paper.md`)
 
 
@@ -368,6 +371,6 @@ tex += `\\section*{Availability}\n`
 tex += `Source: \\url{https://github.com/ceccec/millennium-solutions}. Deposit: \\url{https://doi.org/10.5281/zenodo.21819217}.\n`
 tex += `Every statement here recomputes from the repository with \\texttt{npm run lean}.\n\n`
 tex += `\\end{document}\n`
-writeFileSync('paper.tex', tex)
+writeFileSync(PAPER_OUT + 'paper.tex', tex)
 console.log(`✓ paper.tex: ${n(theorems.length)} theorems in ${wings.length} wings, LaTeX generated from the Lean and`
   + ` round-trip checked; preamble and abstract preserved from the hand-written file. Not compiled here — no TeX toolchain.`)
