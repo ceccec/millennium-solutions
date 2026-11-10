@@ -88,6 +88,14 @@ const CONTROLS: Control[] = [
   { gate: 'iso-audit (page loses its language)', cmd: `${PREREQ} && node scripts/sitemap-mesh.ts && node scripts/iso-audit.ts`, file: '.vitepress/dist/hardware.html',
     what: 'a published page with no lang attribute — a screen reader no longer knows what language to speak',
     mutate: (s) => s.replace('<html lang="en" dir="ltr">', '<html dir="ltr">') },
+  // quantum-hardware-gate re-derives a device receipt's CHSH verdict from its own counts, so a receipt whose S
+  // no longer matches its counts — a fabrication — refuses. The control is SYNTHETIC and NOT in evidence/; its
+  // counts are quantum_hardware.lean's own kernel-verified ABOVE-classical counts (it affirms the Bell
+  // violation, never caps it). Editing one outcome's counts changes the S they decide while the receipt still
+  // claims the old one, which is exactly the fabrication the gate exists to catch.
+  { gate: 'quantum-hardware-gate (S no longer matches its counts)', cmd: 'HW_RECEIPT=scripts/quantum-hardware-gate.control.json node scripts/quantum-hardware-gate.ts', file: 'scripts/quantum-hardware-gate.control.json',
+    what: 'a device receipt whose counts are edited so they no longer give the S it still claims',
+    mutate: (s) => s.replace('{ "n00": 4268, "n01": 732, "n10": 732, "n11": 4268 }', '{ "n00": 2500, "n01": 2500, "n10": 2500, "n11": 2500 }') },
   { gate: 'textbooks (decoder cannot tell sentence from statement)', cmd: 'node scripts/textbooks.ts', file: 'scripts/textbooks.ts',
     what: 'a decoder that reports every sentence as stating its numbers, so a mismatch can never be flagged',
     mutate: (s) => s.replace('statesNumbers: b.size === 0 || shared.length > 0', 'statesNumbers: true') },

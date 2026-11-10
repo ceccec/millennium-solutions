@@ -1,0 +1,14 @@
+{
+ "note": "gates-fire control for scripts/quantum-hardware-gate.ts — SYNTHETIC, NOT a device run, and NOT in evidence/, so no page or record reads it (hardware-section.ts and zenodo-json.ts read only evidence/quantum-hardware/latest.json). Its counts are the ideal above-classical counts of quantum_hardware.lean's `ideal_counts_at_ten_thousand_shots_are_above_classical` theorem — kernel-verified S > 2 — so it AFFIRMS the Bell violation, never caps it. The gate checks that the stated verdict is the one those counts give; gates-fire edits one count, and the gate must then refuse because the claimed S no longer matches.",
+ "status": "QUANTUM_HARDWARE",
+ "backend": "SYNTHETIC-IDEAL-CHSH-NOT-A-DEVICE",
+ "job": "CONTROL",
+ "S": 2.8288,
+ "exceedsClassical": true,
+ "counts": [
+  { "n00": 4268, "n01": 732, "n10": 732, "n11": 4268 },
+  { "n00": 4268, "n01": 732, "n10": 732, "n11": 4268 },
+  { "n00": 4268, "n01": 732, "n10": 732, "n11": 4268 },
+  { "n00": 732, "n01": 4268, "n10": 4268, "n11": 732 }
+ ]
+}
