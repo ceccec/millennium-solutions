@@ -24,6 +24,7 @@ import QuantumField from './QuantumField.vue'
 import TheoremField from './TheoremField.vue'
 import Harness from './Harness.vue'
 import ClayLeads from './ClayLeads.vue'
+import References from './References.vue'
 import './custom.css'
 
 export default {
@@ -33,7 +34,9 @@ export default {
   // Funding sits under every page; Sponsor takes the aside slot VitePress reserves for carbonAds — served
   // from this repo rather than from a third-party ad network, for the reasons in Sponsor.vue.
   Layout: () => h(DefaultTheme.Layout, null, {
-    'layout-bottom': () => h(Funding),
+    // References (the deposit's ISO 690 bibliography) then Funding, both under every page — each page is a
+    // publication and states the standards it formalises and the prior art it descends from.
+    'layout-bottom': () => [h(References), h(Funding)],
     'aside-bottom': () => h(Sponsor),
   }),
   // THE A432 TOKENS WERE INERT ON EVERY PAGE. custom.css gates the whole shadcn-style token block behind
@@ -48,6 +51,7 @@ export default {
   enhanceApp({ app }) {
     if (typeof document !== 'undefined') document.documentElement.setAttribute('data-a432', '')
     app.component('Funding', Funding)
+    app.component('References', References)
     app.component('Sponsor', Sponsor)
     app.component('Hero', Hero)
     app.component('NextObserver', NextObserver)
