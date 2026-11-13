@@ -63,7 +63,14 @@ const main = async () => {
     // Payload MCP that now answers at /api/mcp words its refusal differently.
     // an HTTP status is carried as a bare number, the named states as strings — both are the served unit not answering
     const servedRefused = /"status":\s*("(REFUSED|UNPARSED|UNREACHABLE|TIMEOUT)"|\d{3}\b)/.test(text) && !/"status":\s*"ANSWERED"/.test(text)
-    if (servedRefused && (!total || !passed)) {
+    // THE CONNECTOR IS MARKED DOWN (src/mcp/connectors.ts): `connect` returns NOT MEASURED without calling the
+    // served endpoint or the source at all. That is SKIPPED here, like a moved door — not a defect in this tree,
+    // and not a failure of a court that never needed the connector (the verdicts are the tree's own Lean). It is
+    // distinct from a verdict the connector REFUSED, which would still be read.
+    const connectorDown = /"status":\s*"NOT MEASURED"/.test(text) && /"down":\s*\{/.test(text)
+    if (connectorDown) {
+      lines.push({ court: 'qpu court', verdict: 'SKIPPED', detail: `the qpu connector is marked down (src/mcp/connectors.ts) — both its served endpoint and its source entry are broken, so it was not called. Not a defect here; the tree's Lean holds the verdicts. The commit is NOT cleared by the court` })
+    } else if (servedRefused && (!total || !passed)) {
       const via = /"via":\s*"([^"]+)"/.exec(text)?.[1]
       const why = /"fallback":\s*\{[^}]*"why":\s*"((?:[^"\\]|\\.)*)"/.exec(text)?.[1]
       lines.push({ court: 'qpu court', verdict: 'SKIPPED', detail: `the unit serves no \`audit\` door today${via ? ` (asked at its source ${via} too)` : ''}${why ? ` — its source: ${why.slice(0, 200)}` : ''} — a moved door, not a defect here. The commit is NOT cleared by the court` })

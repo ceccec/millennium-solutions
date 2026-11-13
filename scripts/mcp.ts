@@ -194,6 +194,10 @@ export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     }
     const c = CONNECTOR(String(a.connector))
     if (!c) throw new Error(`unknown connector: ${String(a.connector)} — call connect with no arguments for the list`)
+    // DOWN — both paths unreachable, so the connector is not called at all (no served fetch, no source clone):
+    // NOT MEASURED with the recorded reason, never a pass and never the deposit's own failure. The tree's Lean
+    // holds the verdicts; the connector was corroboration, and its novelty (Lean/TeX) is read directly elsewhere.
+    if (c.down) return JSON.stringify({ connector: c.name, tool: a?.tool ?? null, status: 'NOT MEASURED', down: c.down, note: `the ${c.name} connector is down and was not called — ${c.down.why}` }, null, 1)
     const body = a?.tool
       ? { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: String(a.tool), arguments: a.arguments ?? {} } }
       : { jsonrpc: '2.0', id: 1, method: 'tools/list' }

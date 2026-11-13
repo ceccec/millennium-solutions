@@ -35,6 +35,13 @@ export type Connector = {
    *  and imported as a module (the qpu package's exports point at TypeScript sources, so a checkout is runnable as is).
    *  An answer from it says so (`via`) beside the served refusal, so the served surface's gap stays visible. */
   source?: { github: string; ref: string; entry: string }
+  /** DOWN — both the served endpoint and the source entry are currently unreachable, so `connect` does NOT
+   *  call it: it returns NOT MEASURED with this reason instead of hammering two broken paths on every wave.
+   *  NOT MEASURED, never a pass and never read as the deposit's own failure — the verdicts here come from the
+   *  tree's Lean (interference.lean, qpu_crypto.lean, qpu.lean), which never needed the connector. The unit's
+   *  novelty is its Lean and TeX, read directly from the qpu checkout (scripts/textbooks.ts), not through this
+   *  MCP connector. Remove this field when the unit is reachable again. */
+  down?: { since: string; why: string }
 }
 
 export const CONNECTORS: Connector[] = [
@@ -55,6 +62,7 @@ export const CONNECTORS: Connector[] = [
       + 'passed", and `pass` is a separate field that can be false beside it. Read its glossary before its verdicts.',
     readOnly: true,
     source: { github: 'uuidna/qpu', ref: 'main', entry: 'src/quantum/processing/mcp.ts' },
+    down: { since: '2026-11-13', why: 'the served endpoint answers HTTP 503 (Cloudflare 1105, temporarily unavailable) and the source entry src/quantum/processing/mcp.ts no longer imports from uuidna/qpu@main (the MCP handler moved) — both connector paths are broken. The unit is NOT gone: its novelty is its Lean and TeX, read directly from the qpu checkout by scripts/textbooks.ts, not through this MCP connector. The deposit\'s own verdicts are its Lean (interference.lean, qpu_crypto.lean, qpu.lean); the connector was only corroboration.' },
   },
 ]
 
