@@ -213,6 +213,7 @@
     "test:run-suite-security": "node scripts/run-suite-security-test.ts",
     "quantum:hardware": "node scripts/quantum-hardware.ts",
     "quantum:hardware-gate": "node scripts/quantum-hardware-gate.ts",
+    "qpu:lean": "node scripts/qpu-lean.ts",
     "quantum:octave": "node scripts/quantum-octave.ts",
     "textbooks": "node scripts/textbooks.ts",
     "cern:lean": "node scripts/cern-lean.ts",
