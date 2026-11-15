@@ -18,6 +18,12 @@ export const TITLE_CAP = 60
 // declaration's own, set where the heading is derived in theorem/[key].paths.ts, plus the suffix.
 export const DECLARATION_CAP = 72 + SITE_SUFFIX.length
 
+// The meta description's search-result line: Google truncates a snippet around 160 characters. Declared here
+// with the title caps so the one place that owns "what a search result shows" owns this too — scripts/seo.ts
+// judges the rendered page against it, and scripts/seo-source.ts judges a page's frontmatter against it at
+// commit time, before any build, so an over-long description is caught when written, not when shipped.
+export const DESC_CAP = 160
+
 /** The rendered <title> for a page titled `t` — the same string .vitepress/config.ts emits. */
 export const serpTitle = (t: string): string => (t ? t + SITE_SUFFIX : SITE_NAME)
 

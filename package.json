@@ -217,6 +217,7 @@
     "trinity-gate": "node scripts/trinity-gate.ts",
     "reconcile": "node scripts/reconcile.ts",
     "reconcile:check": "node scripts/reconcile.ts --check",
+    "seo:source": "node scripts/seo-source.ts",
     "quantum:octave": "node scripts/quantum-octave.ts",
     "textbooks": "node scripts/textbooks.ts",
     "cern:lean": "node scripts/cern-lean.ts",

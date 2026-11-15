@@ -5,7 +5,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { TITLE_CAP, DECLARATION_CAP } from '../src/7/serp.ts'
+import { TITLE_CAP, DECLARATION_CAP, DESC_CAP } from '../src/7/serp.ts'
 
 const DIST = '.vitepress/dist'
 if (!existsSync(DIST)) { console.error('seo: no dist/ — run `npm run docs:build` first.'); process.exit(1) }
@@ -102,7 +102,7 @@ for (const p of pages) {
   const cjk = (title.match(/[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]/g) ?? []).length
   const weighted = title.length + cjk * 2
   if (weighted && weighted < 10) warns.push('title <10 (thin)')
-  if (desc.length > 160) warns.push('description ' + desc.length + '>160 (SERP truncates)')
+  if (desc.length > DESC_CAP) warns.push('description ' + desc.length + '>' + DESC_CAP + ' (SERP truncates)')
   if (desc.length && desc.length < 50) warns.push('description <50 (thin)')
   // advisory: hreflang in head is optional (sitemap alternates also valid) but improves multilingual SERP
   if (!/rel="alternate"[^>]*hreflang/i.test(head)) warns.push('no hreflang in head (multilingual-SEO opportunity; sitemap/HTTP-header also valid)')

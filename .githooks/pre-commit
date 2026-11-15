@@ -3,6 +3,9 @@
 # (2) chain-of-custody is intact and the intention constructive (forensics), (3) the whole theorem
 # suite + discovery ledger re-verifies. Any fails → the commit is blocked at the boundary.
 node scripts/precommit.ts || exit 1
+# A page description past the search-result line (DESC_CAP) halts the ship at seo.ts, after an 18-min build.
+# It is decidable from the frontmatter with no build, so it is caught here, when the page is written.
+node scripts/seo-source.ts || { echo "✗ pre-commit: a page description exceeds the search-result limit — shorten the frontmatter \`description:\` (run: npm run seo:source)"; exit 1; }
 node scripts/forensics.ts || { echo "✗ pre-commit: forensics — chain-of-custody tamper or destructive intention at the boundary — run: npm run forensics"; exit 1; }
 node scripts/lean-claims.ts >/dev/null 2>&1 || { echo "✗ pre-commit: theorem suite / ledger re-verification FAILED — run: npm run lean-claims"; exit 1; }
 # PARALLEL, FAIL FAST: anti-fake, constants, the MCP gate and hardcode run at once; the court runs only after they pass.
