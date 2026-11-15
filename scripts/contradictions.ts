@@ -406,7 +406,7 @@ if (choiceElsewhere.length)
 
 const unnamed = leanFiles().filter((f) => !front.includes(f))
 if (unnamed.length)
-  fail(`${unnamed.length} Lean source(s) are named nowhere on the front pages: ${unnamed.join(', ')} — proved and unmentioned`)
+  fail(`${unnamed.length} Lean source(s) are named nowhere on the front pages: ${unnamed.join(', ')} — proved and unmentioned. The front pages are generated; run \`npm run reconcile\` to regenerate them from the ledger`)
 
 for (const [claim, shown, evidence] of PROVED)
   if (!shown.test(front))

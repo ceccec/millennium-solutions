@@ -171790,5 +171790,149 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "a10154db-4b4d-85e1-921f-9bd6841348e7"
+  },
+  {
+    "key": "lean_trinity_turn_cubed_is_identity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8dc992a6-3dd2-8594-b0a0-d1adeb96922d"
+  },
+  {
+    "key": "lean_trinity_turn_fixes_no_corner",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "77279760-2acb-8803-9b9c-c44657d5c87c"
+  },
+  {
+    "key": "lean_trinity_turn_is_not_an_involution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e3807572-095f-829f-b7bf-a21c8bb489f0"
+  },
+  {
+    "key": "lean_trinity_reverse_turn_inverts_the_turn",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "57042fd4-5bd0-8803-bcff-5c808d732f0d"
+  },
+  {
+    "key": "lean_trinity_the_three_turns_are_a_three_cycle",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "90ff8c08-0e73-8e34-9fe9-fc617a413681"
+  },
+  {
+    "key": "lean_trinity_valence_flip_is_an_involution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6a14760d-9a3f-8cf0-9797-6b3dc3721878"
+  },
+  {
+    "key": "lean_trinity_valence_flips_every_corner",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2287b59d-cb08-8eb3-ac1e-0cc7fe251a40"
+  },
+  {
+    "key": "lean_trinity_the_group_has_six_elements",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0e934376-75bd-8711-9117-94dae6f143f7"
+  },
+  {
+    "key": "lean_trinity_the_flip_commutes_with_the_turn",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9ae8a631-668e-86ff-9df0-ba9b20634c53"
+  },
+  {
+    "key": "lean_trinity_three_turns_and_three_flips_partition_it",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9949cf27-35d8-86ec-b3e5-905ef54fbcbb"
+  },
+  {
+    "key": "lean_trinity_exactly_one_nonidentity_element_is_its_own_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fb13ec06-ed54-84f3-afc7-1c01fbd0f295"
+  },
+  {
+    "key": "lean_trinity_one_element_generates_all_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "359da85e-5ef6-8f15-881c-5440b6713582"
+  },
+  {
+    "key": "lean_trinity_feel_takes_exactly_two_values",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c0b96f06-81ec-86f6-aa55-849b452cb382"
+  },
+  {
+    "key": "lean_trinity_the_turn_preserves_what_is_felt",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2f38f61a-6020-84e3-8f7b-d0ea78cafd2b"
+  },
+  {
+    "key": "lean_trinity_the_whole_turn_orbit_feels_the_same",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c9c89e57-e5dd-8caa-ab2b-ca96b502f76f"
+  },
+  {
+    "key": "lean_trinity_feeling_has_no_story_yet",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2055a659-047d-86d2-8c29-1ac67a3e8f46"
+  },
+  {
+    "key": "lean_trinity_only_the_flip_changes_what_is_felt",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "76375115-f0e2-877c-9aef-a229b1bab877"
+  },
+  {
+    "key": "lean_trinity_feeling_returns_after_two_flips",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "06fb0364-a5ac-8c3c-b776-82567c52da82"
+  },
+  {
+    "key": "lean_trinity_three_feel_pleasant_and_three_unpleasant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d905a4c4-5d7b-8000-8692-f0476901049d"
+  },
+  {
+    "key": "lean_trinity_the_felt_signal_and_the_corner_are_independent",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "edad3f57-64a4-8046-b809-5b42d7adbb8a"
+  },
+  {
+    "key": "lean_trinity_the_observer_is_the_unique_fixed_point",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4e83b453-71b1-8f52-82b5-23808910db05"
+  },
+  {
+    "key": "lean_trinity_negation_has_no_fixed_point",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6bce7d14-49d4-8bda-a449-c78fde5dcc66"
+  },
+  {
+    "key": "lean_trinity_predicates_outnumber_states",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f1bc4cb6-80bc-8a50-935f-33e789ba2390"
+  },
+  {
+    "key": "lean_trinity_the_diagonal_predicate_escapes_the_self_model",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a58ecff4-d65f-83a3-be68-41035e50b018"
   }
 ]

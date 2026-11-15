@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,213 machine-checked declarations, **26,166** restate work that already has an author and
+Of 26,237 machine-checked declarations, **26,190** restate work that already has an author and
 **47** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/iso/690-record/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/iso/690-record/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,14 +27,14 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **26,166** |
+| attributed to named earlier work | **26,190** |
 | unclassified — no search performed, status unknown | **47** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
 that everything here already has an author. It is not that. **47** theorems have had no prior-art
-search at all, so their status is unknown rather than conceded — and of the 41 distinct years the
-attributions carry, **32** predate the DOI system (2000); the earliest is 628. "Every
+search at all, so their status is unknown rather than conceded — and of the 43 distinct years the
+attributions carry, **34** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
 looked.** It is a statement about work not done, not about work found.
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 7
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 118 sources, 26,166 theorems
+## Restated from named earlier work — 119 sources, 26,190 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -165,6 +165,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>t_count_wall.lean</code></td><td>8</td><td>the seven-T Toffoli decomposition (Nielsen, Chuang, Quantum Computation and Quantum Information, Fig. 4.9; its T-count of 7 shown optimal by Amy, Maslov, Mosca, Roetteler 2013); the Cuccaro ripple-carry adder of 2n Toffolis (Cuccaro, Draper, Kutin, Moulton 2004); schoolbook modular exponentiation for Shor's algorithm as 2n controlled modular multiplications of n controlled additions each (Vedral, Barenco, Ekert 1996); Beauregard's 2n + 3-qubit circuit (Beauregard 2003); and the Pauli-path cost of non-Clifford gates, at most doubling per T (src/iso/iec-4879-quantum/pauli_paths.lean).</td><td>none of this is new and none of it is a factoring. What is decided HERE is the COST: the seven-T Toffoli checked exactly against the Toffoli gate in ℤ[ω]; the T-count of one NAMED construction as a function of the bit length n — 28n³, an UNDERCOUNT for that construction because its modular reduction is left out, so the wall it shows is if anything lower than the true one; the Pauli-path worst case 2^T beside it; and the two facts that place the wall. The width is not it — 2n + 3 qubits fit in a handful of UUIDs' particles. The T-count is: at n = 1000 it is 28·10⁹, and the worst-case term bound passes 10⁸⁰ already at n = 3. Better constructions (windowed arithmetic) lower the count by constant factors and keep it polynomial in n, so the bound stays exponential in a polynomial of n. This decides no factoring, claims no quantum speedup, and leaves qpu_crypto.lean's floor exactly where it stands: the deposit does not factor a thousand-bit integer.</td></tr>
 <tr><td><code>theology.lean</code></td><td>8</td><td>elementary number theory — the unit group of ℤ/9, the doubling map, and the ten's complement</td><td>the structure is the same standard one index.lean credits: U(9) = {1,2,4,5,7,8}, the non-units {0,3,6}, and the doubling orbit 1 → 2 → 4 → 8 → 7 → 5 → 1 of order six because 2 has multiplicative order six mod 9. Textbook abstract algebra, not this deposit's. The permutation count 7! = 5040 is likewise classical. What is NOT prior art is which facts were chosen and why — and that choosing is not a mathematical act, which is the whole subject of this file.</td></tr>
 <tr><td><code>thousandbit.lean</code></td><td>8</td><td>elementary arithmetic of the integer 1000 (its factorisation 2^3·5^3 = 10^3, its residues mod 8 and mod 9), and the register-capacity formula reg(w) = 32w − w − 2 — qpu's uuidQubits, already sealed over the widths [4, 8, 16, 32] in src/iso/iec-9834-8-identifiers/width.lean. This file applies that capacity to the one case the sealed width ladder does not reach: a 1000-bit integer (2^1000 − 1), the thousand-bit challenge's own size.</td><td>the arithmetic of 1000 is elementary and the capacity formula is qpu's, decided here before. What is new is only the APPLICATION to the 1000-bit case: that it is 125 octaves exactly yet 2^3·5^3 (so the octave is only the 2^3 and the 5^3 is the pentagram cubed), that it carries residue 1 mod 9 (not a whole number of nonets), and that it OVERFLOWS the sealed width ladder — reg(32) = 990 &lt; 1000 ≤ 1021 = reg(33) — filling 97.94% of the minimal register that holds it. These are the answers to "how many octaves" and "what % utilisation", decided as coins rather than computed by hand. The honest bound: register-capacity utilisation of the address column, not a physical quantum computer — get_qc reads isQuantumComputer:false, and no stage of a machine is reached by this arithmetic.</td></tr>
+<tr><td><code>trinity.lean</code></td><td>24</td><td>finite group theory, Cantor's diagonal argument, and the psychology of emotion</td><td>THE ALGEBRA IS STANDARD AND NAMED. A turn of order three and a flip of order two that commute generate the cyclic group C₃ × C₂ ≅ C₆ (ℤ/6) — elementary abstract algebra, in every text. That a rotation of the plane moves every vertex of a triangle but fixes its centre is elementary geometry. That no function from a finite set onto all predicates of that set can exist — the diagonal escapes — is Cantor (1891), with Lawvere's fixed-point form (1969); its engine, that boolean negation has no fixed point, is a two-case check. The reading of the three corners as feeling (the body's affect), thought (appraisal: Lazarus, Scherer) and emotion (the named episode: Barrett's constructionism) is a MODEL, not proved here; only the algebra and the two structural theorems are decided by the kernel, and the file says so at each step.</td></tr>
 <tr><td><code>turns.lean</code></td><td>8</td><td>the cycle decomposition of a permutation into disjoint cycles; the order of 2 in (ℤ/9)* being 6, which is Euler's theorem for this modulus. The Euler characteristic χ = 2 − 2g of an orientable closed surface of genus g.</td><td>NONE OF IT IS THIS DEPOSIT'S. Cycle decomposition is the first structure theorem for permutations, the order of 2 mod 9 is Euler, and χ = 2 − 2g is Euler again. What is this deposit's is the accounting: that doubling leaves exactly TWO non-trivial loops on this ring, that their step angles are 60° and 180°, and that both close at 360° — and theorem 8, which says plainly that the surface is an interpretation of the cycle structure and not a theorem about it.</td></tr>
 <tr><td><code>verdict.lean</code></td><td>8</td><td>the classification of a test outcome under partial information — the distinction between a negative result and an absent one, which is ordinary experimental practice and older than statistics. Monotonicity of a decision rule in its evidence.</td><td>NEITHER IS THIS DEPOSIT'S. "Absence of evidence is not evidence of absence" is a commonplace, and requiring a decision rule to be total and exclusive is what a classification IS. What is this deposit's is that ITS OWN verdict rule — the one standing behind every novelty claim it makes — is decided by the kernel rather than left as a line of TypeScript nobody checks.</td></tr>
 <tr><td><code>width.lean</code></td><td>8</td><td>the UUID 128-bit layout and its version/variant reservation (RFC 9562); qpu.uuidna.com's register formula 32·w − w − 2 and its four hexbit widths 4 / 8 / 16 / 32; the birthday/Grover square-root exponent; the ISO 128-bit post-quantum floor qpu reads from the Classic McEliece ISO page; and the 2^n cost of a classical state-vector over n qubits.</td><td>none of this mathematics is new. The register formula and the widths are qpu's; the square root and the ISO floor are standard. What is decided here is only that the floor is a FUNCTION of the width — a dial — so the 128-bit UUID (width 4) sitting 67 bits below it is one instance and a wider identifier clears it; and that the SAME dial is the exponent of the simulation cost, so capacity and the cost of simulating it rise together. The capability gap (quantum speedup) is untouched: a wider register is a bigger classical simulation, never a faster one.</td></tr>
@@ -221,6 +222,7 @@ which is a contribution of verification, not of discovery.
 - **elementary set theory — the naturals are not exhausted by any finite list** — 12 theorems, in `reach.lean`
 - **extensional equality of functions over a finite domain; the pigeonhole principle; the fibre of a map. All three are elementary and none is this deposit's.** — 11 theorems, in `extension.lean`
 - **extensional equality of predicates over a finite set — that two definitions picking out the same elements are the same subset. Elementary set theory and modular arithmetic.** — 50 theorems, in `coils.lean`
+- **finite group theory, Cantor's diagonal argument, and the psychology of emotion** — 24 theorems, in `trinity.lean`
 - **hash trees and membership proofs** — 52 theorems, in `ledgerclaims.lean`, `merkle.lean`, `speed.lean`
 - **identifier formats and error-detecting codes** — 21 theorems, in `program.lean`
 - **identifier formats and length-prefixed encodings** — 9 theorems, in `imprint.lean`
@@ -300,5 +302,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `92adfd64-f890-8db3-a180-8974830ab42b` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `2b5e3e70-d47b-820e-9e9f-829f83c09259` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

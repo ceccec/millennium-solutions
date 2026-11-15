@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **26,213** report the same thing:
+axiom fails the build rather than earning a footnote. All **26,237** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **1,091** definitions, and every one of them is a choice. A theorem about
+theorems rest on **1,109** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 1,091 definitions
+## What IS assumed: the 1,109 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -1484,12 +1484,12 @@ def tm (n : Nat) : Nat := popcount n % 2
 ### `settled.lean` — 6 definition(s), 8 theorem(s)
 
 ```lean
-def files : List String := ["address.lean", "asymmetric.lean", "elementary.lean", "families.lean", "fnv.lean", "imprint.lean", "instruments.lean", "merkle.lean", "program.lean", "quantum.lean", "rays.lean", "reversal.lean", "rights.lean", "roots.lean", "z9.lean"]
-def declared : List Nat := [Address.settledHere, Asymmetric.settledHere, Elementary.settledHere, Families.settledHere, Fnv.settledHere, Imprint.settledHere, Instruments.settledHere, Merkle.settledHere, Program.settledHere, Quantum.settledHere, Rays.settledHere, Reversal.settledHere, Rights.settledHere, Roots.settledHere, Z9.settledHere]
-def measured : List Nat := [28, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 21]
-def theorems : List Nat := [33, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24]
-def byRfl : List Nat := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-def byOther : List Nat := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]
+def files : List String := ["address.lean", "asymmetric.lean", "elementary.lean", "families.lean", "fnv.lean", "imprint.lean", "instruments.lean", "merkle.lean", "program.lean", "quantum.lean", "rays.lean", "reversal.lean", "rights.lean", "roots.lean", "trinity.lean", "z9.lean"]
+def declared : List Nat := [Address.settledHere, Asymmetric.settledHere, Elementary.settledHere, Families.settledHere, Fnv.settledHere, Imprint.settledHere, Instruments.settledHere, Merkle.settledHere, Program.settledHere, Quantum.settledHere, Rays.settledHere, Reversal.settledHere, Rights.settledHere, Roots.settledHere, Trinity.settledHere, Z9.settledHere]
+def measured : List Nat := [28, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 24, 21]
+def theorems : List Nat := [33, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24, 24]
+def byRfl : List Nat := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+def byOther : List Nat := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 3]
 ```
 
 ### `speed.lean` — 20 definition(s), 28 theorem(s)
@@ -1588,6 +1588,29 @@ def pairing : List Nat := [0, 1, 2, 3, 4, 5, 6]
 def fact : Nat → Nat
 ```
 
+### `trinity.lean` — 18 definition(s), 24 theorem(s)
+
+```lean
+def corners : List Nat := [0, 1, 2]
+def turnC (x : Nat) : Nat := (x + 1) % 3   -- ρ: feeling → thought → emotion → feeling
+def backC (x : Nat) : Nat := (x + 2) % 3   -- ρ⁻¹: the loop runs backward too (worry tightens the chest)
+def flipV (p : Nat) : Nat := (p + 1) % 2
+def elems : List Nat := [0, 1, 2, 3, 4, 5]
+def cx (e : Nat) : Nat := e / 2
+def vp (e : Nat) : Nat := e % 2
+def feel (e : Nat) : Nat := vp e
+def turn (e : Nat) : Nat := 2 * ((cx e + 1) % 3) + vp e        -- the turn, lifted to the whole group
+def flip (e : Nat) : Nat := 2 * cx e + (vp e + 1) % 2          -- the valence flip, lifted
+def gop (a b : Nat) : Nat := 2 * ((cx a + cx b) % 3) + (vp a + vp b) % 2   -- the group operation (componentwise)
+def gid : Nat := 0
+def gpow (g k : Nat) : Nat := (List.range k).foldl (fun acc _ => gop acc g) gid
+def withCentre : List Nat := [0, 1, 2, 3]
+def turnO (x : Nat) : Nat := if x == 3 then 3 else (x + 1) % 3
+def selfModel : List (List Bool) := [[true, false, true], [true, true, false], [false, false, true]]
+def diagonal (m : List (List Bool)) : List Bool :=
+def settledHere : Nat := 24
+```
+
 ### `turns.lean` — 6 definition(s), 8 theorem(s)
 
 ```lean
@@ -1659,6 +1682,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**26,213** declarations, **0** axiom dependencies, **1,091** definitions they rest on.
+**26,237** declarations, **0** axiom dependencies, **1,109** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

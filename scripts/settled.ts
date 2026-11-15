@@ -192,7 +192,7 @@ end Settled
 const EMIT = process.argv.includes('--emit')
 const onDisk = existsSync(OUT) ? readFileSync(OUT, 'utf8') : ''
 if (!EMIT && onDisk !== lean) {
-  console.log(`✗ settled: ${OUT} is not what the tree generates — run \`npm run settled:emit\``)
+  console.log(`✗ settled: ${OUT} is not what the tree generates — run \`npm run reconcile\` (or just \`npm run settled:emit\`)`)
   if (!onDisk) console.log('    the file is missing entirely')
   else {
     const a = onDisk.split('\n'), b = lean.split('\n')
