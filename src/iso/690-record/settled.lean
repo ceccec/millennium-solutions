@@ -13,7 +13,7 @@
 -- prior_art_own: the agreement between each file's declared count and its measured contents
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
--- 15 source files declare `settledHere` — the count of declarations that file closes by exhaustion.
+-- 16 source files declare `settledHere` — the count of declarations that file closes by exhaustion.
 -- Until this file existed each was followed by `theorem …_settles_its_range : settledHere = N := rfl`, a
 -- constant compared to itself. seal-lean refused to seal every one of them as "a declaration, not algebra",
 -- so the numbers a reader quotes were hand-maintained with nothing checking them and a tautology standing
@@ -41,18 +41,19 @@ import Rays
 import Reversal
 import Rights
 import Roots
+import Trinity
 import Z9
 
 namespace Settled
 
-def files    : List String := ["address.lean", "asymmetric.lean", "elementary.lean", "families.lean", "fnv.lean", "imprint.lean", "instruments.lean", "merkle.lean", "program.lean", "quantum.lean", "rays.lean", "reversal.lean", "rights.lean", "roots.lean", "z9.lean"]
-def declared : List Nat := [Address.settledHere, Asymmetric.settledHere, Elementary.settledHere, Families.settledHere, Fnv.settledHere, Imprint.settledHere, Instruments.settledHere, Merkle.settledHere, Program.settledHere, Quantum.settledHere, Rays.settledHere, Reversal.settledHere, Rights.settledHere, Roots.settledHere, Z9.settledHere]
+def files    : List String := ["address.lean", "asymmetric.lean", "elementary.lean", "families.lean", "fnv.lean", "imprint.lean", "instruments.lean", "merkle.lean", "program.lean", "quantum.lean", "rays.lean", "reversal.lean", "rights.lean", "roots.lean", "trinity.lean", "z9.lean"]
+def declared : List Nat := [Address.settledHere, Asymmetric.settledHere, Elementary.settledHere, Families.settledHere, Fnv.settledHere, Imprint.settledHere, Instruments.settledHere, Merkle.settledHere, Program.settledHere, Quantum.settledHere, Rays.settledHere, Reversal.settledHere, Rights.settledHere, Roots.settledHere, Trinity.settledHere, Z9.settledHere]
 
 -- measured by scripts/settled.ts from the tree: `by decide` theorems, then all theorems, per file
-def measured  : List Nat := [28, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 21]
-def theorems  : List Nat := [33, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24]
-def byRfl     : List Nat := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-def byOther   : List Nat := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3]
+def measured  : List Nat := [28, 11, 32, 42, 12, 9, 28, 16, 21, 11, 13, 8, 8, 7, 24, 21]
+def theorems  : List Nat := [33, 11, 40, 63, 14, 9, 28, 16, 21, 11, 13, 29, 8, 7, 24, 24]
+def byRfl     : List Nat := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+def byOther   : List Nat := [5, 0, 8, 21, 2, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 3]
 
 -- ── 1 · EVERY FILE SETTLES EXACTLY WHAT IT DECLARES ───────────────────────────────────────────────────────
 -- The drift check, row by row. The left side is the constant in the source file; the right side is the count
@@ -61,7 +62,7 @@ theorem every_file_settles_exactly_what_it_declares :
   (declared.zip measured).all (fun p => p.1 == p.2)
   ∧ declared.length == measured.length
   ∧ declared.length == files.length
-  ∧ declared.length == 15 := by decide
+  ∧ declared.length == 16 := by decide
 
 -- ── 2 · AND NO FILE DECLARES MORE THAN IT HOLDS ───────────────────────────────────────────────────────────
 -- The exhaustive theorems are a SUBSET of the theorems, so the declared count is bounded above by the total
@@ -76,7 +77,7 @@ theorem no_file_declares_more_than_it_holds :
 -- any one file's count leaves exactly the rest — so no row can be quietly absorbed into another.
 theorem the_parts_sum_to_the_whole_and_each_part_is_recoverable :
   declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0
-  ∧ declared.foldl (· + ·) 0 == 267
+  ∧ declared.foldl (· + ·) 0 == 291
   ∧ (List.range declared.length).all (fun i =>
       declared.foldl (· + ·) 0 - declared.getD i 0
         == ((List.range declared.length).filter (fun j => j != i)).foldl
@@ -95,7 +96,7 @@ theorem no_file_settles_nothing :
 -- constant column would read as green.
 theorem the_counts_are_not_one_number_repeated :
   1 < declared.eraseDups.length
-  ∧ declared.eraseDups.length == 11
+  ∧ declared.eraseDups.length == 12
   ∧ (declared.foldl (fun a b => if a < b then b else a) 0)
       > (declared.foldl (fun a b => if b < a then b else a) 1000) := by decide
 
@@ -104,7 +105,7 @@ theorem the_counts_are_not_one_number_repeated :
 -- distinct, so the sum above is over fifteen files and not fourteen files and a repeat.
 theorem each_file_is_counted_once :
   files.eraseDups.length == files.length
-  ∧ files.length == 15 := by decide
+  ∧ files.length == 16 := by decide
 
 -- ── 7 · THE TWO PROOF STYLES PARTITION THE THEOREMS, AND NEITHER IS A DECLARATION ─────────────────────────
 -- What is not closed by exhaustion is closed by a tactic block over a ∀ — a THEOREM, proved for every value.
@@ -119,7 +120,7 @@ theorem the_two_proof_styles_partition_the_theorems :
 -- THE THEOREM THAT FALSIFIES A SENTENCE THIS DEPOSIT WAS PUBLISHING. scripts/pages.ts wrote, on the README
 -- and the index, "the remaining N close by rfl and are declarations", computing N as the total less the
 -- by-decide count — which treats every proof that is not an exhaustion as an rfl declaration. They are not:
--- they are ∀-quantified theorems. Among the 15 that declare a count the rfl total is zero, so the
+-- they are ∀-quantified theorems. Among the 16 that declare a count the rfl total is zero, so the
 -- sentence named a population that does not exist — every genuine rfl declaration that used to live in them
 -- was a `settledHere = N` tautology, and each one is gone. What that
 -- subtraction actually counts is byOther, and THAT is the conjunct below: the quantity pages.ts labelled rfl

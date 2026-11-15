@@ -296,6 +296,7 @@ export default defineConfig({
           { text: 'Quantum hardware', link: '/hardware' },
           { text: 'Textbooks', link: '/textbooks' },
           { text: 'QPU theorems', link: '/qpu' },
+          { text: 'Trinity', link: '/trinity' },
           { text: "Captain's message", link: '/captain' },
         ],
       },

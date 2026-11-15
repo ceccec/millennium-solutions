@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,213 of them across 125 files and
-8 wings; 26,003 close by exhaustion over a stated finite domain, 210 are proved
+(\texttt{npm run latex-gate}). There are 26,237 of them across 126 files and
+9 wings; 26,027 close by exhaustion over a stated finite domain, 210 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -131043,7 +131043,7 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \paragraph{\texttt{settled.lean}}
 
 \begin{theorem}[\texttt{every\_file\_settles\_exactly\_what\_it\_declares}]
-\texttt{(declared.zip measured).all (fun p => p.1 == p.2) ∧ declared.length == measured.length ∧ declared.length == files.length ∧ declared.length == 15}
+\texttt{(declared.zip measured).all (fun p => p.1 == p.2) ∧ declared.length == measured.length ∧ declared.length == files.length ∧ declared.length == 16}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -131053,7 +131053,7 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_parts\_sum\_to\_the\_whole\_and\_each\_part\_is\_recoverable}]
-\texttt{declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 267 ∧ (List.range declared.length).all (fun i => declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j => j != i)).foldl (fun a j => a + declared.getD j 0) 0)}
+\texttt{declared.foldl (· + ·) 0 == measured.foldl (· + ·) 0 ∧ declared.foldl (· + ·) 0 == 291 ∧ (List.range declared.length).all (fun i => declared.foldl (· + ·) 0 - declared.getD i 0 == ((List.range declared.length).filter (fun j => j != i)).foldl (fun a j => a + declared.getD j 0) 0)}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -131063,12 +131063,12 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_counts\_are\_not\_one\_number\_repeated}]
-\[ 1 < \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| \land \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| = 11 \land \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } a < b\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 0\right) > \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } b < a\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 1000\right) \]
+\[ 1 < \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| \land \left|\operatorname{dedup}\left(\mathrm{declared}\right)\right| = 12 \land \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } a < b\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 0\right) > \operatorname{fold}_{a,\,b \mapsto \begin{cases}b & \text{if } b < a\\ a & \text{otherwise}\end{cases}}\left(\mathrm{declared},\, 1000\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{each\_file\_is\_counted\_once}]
-\[ \left|\operatorname{dedup}\left(\mathrm{files}\right)\right| = \left|\mathrm{files}\right| \land \left|\mathrm{files}\right| = 15 \]
+\[ \left|\operatorname{dedup}\left(\mathrm{files}\right)\right| = \left|\mathrm{files}\right| \land \left|\mathrm{files}\right| = 16 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -131604,6 +131604,130 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \exists d \in \{0,\dots,8\} : d \cdot d \bmod 9 = 4 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\subsection{the mind}
+
+\paragraph{\texttt{trinity.lean}}
+
+\begin{theorem}[\texttt{turn\_cubed\_is\_identity}]
+\[ \forall x \in \mathrm{corners},\; \mathrm{turnC}\mathopen{}\left(\mathrm{turnC}\mathopen{}\left(\mathrm{turnC}\mathopen{}\left(x\right)\right)\right) = x \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{turn\_fixes\_no\_corner}]
+\[ \forall x \in \mathrm{corners},\; \mathrm{turnC}\mathopen{}\left(x\right) \neq x \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{turn\_is\_not\_an\_involution}]
+\[ \lnot \forall x \in \mathrm{corners},\; \mathrm{turnC}\mathopen{}\left(\mathrm{turnC}\mathopen{}\left(x\right)\right) = x \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reverse\_turn\_inverts\_the\_turn}]
+\[ \forall x \in \mathrm{corners},\; \mathrm{turnC}\mathopen{}\left(\mathrm{backC}\mathopen{}\left(x\right)\right) = x \land \mathrm{backC}\mathopen{}\left(\mathrm{turnC}\mathopen{}\left(x\right)\right) = x \land \mathrm{turnC}\mathopen{}\left(\mathrm{turnC}\mathopen{}\left(x\right)\right) = \mathrm{backC}\mathopen{}\left(x\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_three\_turns\_are\_a\_three\_cycle}]
+\[ \mathrm{turnC}[\mathrm{corners}] = [1,\,2,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{valence\_flip\_is\_an\_involution}]
+\[ \forall p \in [0,\,1],\; \mathrm{flipV}\mathopen{}\left(\mathrm{flipV}\mathopen{}\left(p\right)\right) = p \land \mathrm{flipV}\mathopen{}\left(p\right) \neq p \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{valence\_flips\_every\_corner}]
+\[ \forall \mathrm{\_} \in \mathrm{corners},\; \forall p \in [0,\,1],\; \mathrm{flipV}\mathopen{}\left(p\right) \neq p \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_group\_has\_six\_elements}]
+\[ \left|\operatorname{dedup}\left(\mathrm{elems}\right)\right| = 6 \land \forall a \in \mathrm{elems},\; \forall b \in \mathrm{elems},\; \mathrm{gop}\mathopen{}\left(a,\,b\right) \in \mathrm{elems} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_flip\_commutes\_with\_the\_turn}]
+\[ \forall e \in \mathrm{elems},\; \mathrm{turn}\mathopen{}\left(\mathrm{flip}\mathopen{}\left(e\right)\right) = \mathrm{flip}\mathopen{}\left(\mathrm{turn}\mathopen{}\left(e\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{three\_turns\_and\_three\_flips\_partition\_it}]
+\[ \{\, e \in \mathrm{elems} \mid \mathrm{vp}\mathopen{}\left(e\right) = 0 \,\} = [0,\,2,\,4] \land \{\, e \in \mathrm{elems} \mid \mathrm{vp}\mathopen{}\left(e\right) = 1 \,\} = [1,\,3,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{exactly\_one\_nonidentity\_element\_is\_its\_own\_inverse}]
+\[ \{\, e \in \mathrm{elems} \mid e \neq \mathrm{gid} \land \mathrm{gop}\mathopen{}\left(e,\,e\right) = \mathrm{gid} \,\} = [1] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_element\_generates\_all\_six}]
+\[ \left|\operatorname{dedup}\left(\mathrm{gpow}\mathopen{}\left(3\right)[\{0,\dots,5\}]\right)\right| = 6 \land \mathrm{gpow}\mathopen{}\left(3,\,6\right) = \mathrm{gid} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{feel\_takes\_exactly\_two\_values}]
+\[ \operatorname{dedup}\left(\mathrm{feel}[\mathrm{elems}]\right) = [0,\,1] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_turn\_preserves\_what\_is\_felt}]
+\[ \forall e \in \mathrm{elems},\; \mathrm{feel}\mathopen{}\left(\mathrm{turn}\mathopen{}\left(e\right)\right) = \mathrm{feel}\mathopen{}\left(e\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_whole\_turn\_orbit\_feels\_the\_same}]
+\[ \forall e \in \mathrm{elems},\; \mathrm{feel}\mathopen{}\left(\mathrm{turn}\mathopen{}\left(e\right)\right) = \mathrm{feel}\mathopen{}\left(e\right) \land \mathrm{feel}\mathopen{}\left(\mathrm{turn}\mathopen{}\left(\mathrm{turn}\mathopen{}\left(e\right)\right)\right) = \mathrm{feel}\mathopen{}\left(e\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{feeling\_has\_no\_story\_yet}]
+\[ \forall p \in [0,\,1],\; \forall c \in \mathrm{corners},\; \mathrm{feel}\mathopen{}\left(2 \cdot c + p\right) = p \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{only\_the\_flip\_changes\_what\_is\_felt}]
+\[ \forall e \in \mathrm{elems},\; \mathrm{feel}\mathopen{}\left(\mathrm{flip}\mathopen{}\left(e\right)\right) \neq \mathrm{feel}\mathopen{}\left(e\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{feeling\_returns\_after\_two\_flips}]
+\[ \forall e \in \mathrm{elems},\; \mathrm{feel}\mathopen{}\left(\mathrm{flip}\mathopen{}\left(\mathrm{flip}\mathopen{}\left(e\right)\right)\right) = \mathrm{feel}\mathopen{}\left(e\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{three\_feel\_pleasant\_and\_three\_unpleasant}]
+\[ \left|\{\, e \in \mathrm{elems} \mid \mathrm{feel}\mathopen{}\left(e\right) = 0 \,\}\right| = 3 \land \left|\{\, e \in \mathrm{elems} \mid \mathrm{feel}\mathopen{}\left(e\right) = 1 \,\}\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_felt\_signal\_and\_the\_corner\_are\_independent}]
+\[ \left|\operatorname{dedup}\left(\{\, 3 \cdot \mathrm{feel}\mathopen{}\left(e\right) + \mathrm{cx}\mathopen{}\left(e\right) \mid e \in \mathrm{elems} \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_observer\_is\_the\_unique\_fixed\_point}]
+\[ \{\, x \in \mathrm{withCentre} \mid \mathrm{turnO}\mathopen{}\left(x\right) = x \,\} = [3] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{negation\_has\_no\_fixed\_point}]
+\[ \lnot \exists b \in [\mathrm{true},\,\mathrm{false}] : \lnot b = b \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{predicates\_outnumber\_states}]
+\texttt{((List.range 8).drop 1).all (fun n => 2 ^ n > n)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_diagonal\_predicate\_escapes\_the\_self\_model}]
+\texttt{(List.range selfModel.length).all (fun i => (selfModel.getD i []) != diagonal selfModel)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \section*{Availability}
 Source: \url{https://github.com/ceccec/millennium-solutions}. Deposit: \url{https://doi.org/10.5281/zenodo.21819217}.

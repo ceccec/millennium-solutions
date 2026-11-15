@@ -100,6 +100,14 @@ const CONTROLS: Control[] = [
     what: 'a decoder that reports every sentence as stating its numbers, so a mismatch can never be flagged',
     mutate: (s) => s.replace('statesNumbers: b.size === 0 || shared.length > 0', 'statesNumbers: true') },
 
+  // trinity-gate re-derives the trinity's algebra (C₃×C₂≅C₆) and the two observer theorems independently of
+  // trinity.lean, each beside a control that must come out the OTHER way. Breaking the turn's modulus (3 → 4)
+  // makes ρ³ ≠ id and the group stop being C₆ — the kind of defect the gate exists to catch — so the gate must
+  // refuse once the modulus is wrong.
+  { gate: 'trinity-gate (the turn stops closing in three)', cmd: 'node scripts/trinity-gate.ts', file: 'scripts/trinity-gate.ts',
+    what: 'the trinity turn given the wrong modulus, so ρ³ no longer returns to the start and the group is no longer C₆',
+    mutate: (s) => s.replace('const turnC = (x: number) => (x + 1) % 3', 'const turnC = (x: number) => (x + 1) % 4') },
+
   // discoveries REPORTS rather than gates, and is recorded as such in src/api/gates.ts — but it still
   // refuses when its signals collapse, and a refusal nobody has shown can fire is a refusal that protects
   // nothing. Flatten the weights and every candidate scores alike: the queue can no longer tell its own

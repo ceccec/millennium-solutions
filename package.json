@@ -214,6 +214,7 @@
     "quantum:hardware": "node scripts/quantum-hardware.ts",
     "quantum:hardware-gate": "node scripts/quantum-hardware-gate.ts",
     "qpu:lean": "node scripts/qpu-lean.ts",
+    "trinity-gate": "node scripts/trinity-gate.ts",
     "quantum:octave": "node scripts/quantum-octave.ts",
     "textbooks": "node scripts/textbooks.ts",
     "cern:lean": "node scripts/cern-lean.ts",
