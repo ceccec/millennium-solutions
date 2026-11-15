@@ -225,6 +225,17 @@ if (process.argv.includes('--seal') && fresh.length) {
   writeFileSync(LEDGER, JSON.stringify(ledger, null, 2) + '\n')
   console.log(`✓ sealed ${fresh.length} · ledger ${ledger.length} · chain tip ${prev.slice(0, 13)}…`)
   console.log(`  octave: ${ledger.length} = ${(ledger.length / 8).toFixed(3)} × 8 → ${ledger.length % 8 === 0 ? 'EXACT' : 'remainder ' + (ledger.length % 8)}`)
+  // THE SEAL IS THE EVENT THAT MAKES EVERY LEDGER-DERIVED FILE STALE — the front pages' theorem counts, the
+  // per-theorem depositions, settled.lean, llms.txt, covered.json and the rest. So the seal regenerates them,
+  // rather than leaving a human to run that sequence by hand before each commit (which was its own gap: the
+  // pre-commit chain only gates, it does not generate). The seal is recorded above whatever happens next; a
+  // reconcile that cannot finish is reported and left for `npm run reconcile`, never an un-seal.
+  try {
+    console.log('→ reconcile: regenerating every derived file so the seal leaves a consistent tree')
+    execSync('node scripts/reconcile.ts', { stdio: 'inherit' })
+  } catch {
+    console.error('⚠ the seal is recorded, but reconcile did not finish — run `npm run reconcile` before committing')
+  }
 } else if (fresh.length) {
   for (const t of fresh.slice(0, 5)) console.log(`    ${t.key}`)
   console.log(`    … run with --seal`)
