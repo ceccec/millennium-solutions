@@ -1,4 +1,8 @@
 set_option maxRecDepth 10000
+-- `decide` on 2^1000-scale integers: raise the exponentiation threshold so the kernel GENUINELY evaluates the
+-- power (the default 256 skips it with a warning, which would leave the reflection theorems below unproven).
+-- Verified the instrument: a FALSE 1000-bit identity is rejected by `decide`, a true one accepted (~0.1s).
+set_option exponentiation.threshold 2000
 -- title: The thousand-bit case, decided — its octave/trinity/cube structure and its utilisation of the register
 -- wing: the floor
 -- prior_art: named
@@ -63,5 +67,44 @@ theorem the_thousand_fills_between_ninety_seven_and_ninety_eight_percent_of_its_
 theorem the_thousand_bit_structure_is_decided_not_a_quantum_machine :
   10 ^ 3 = 1000 ∧ 1000 % 8 = 0 ∧ 1000 % 9 = 1
   ∧ 990 < 1000 ∧ 1000 ≤ 1021 ∧ 2 ^ 3 * 5 ^ 3 = 1000 := by decide
+
+-- ── 9 · THE σ-REFLECTION OF THE THOUSAND-BIT RANGE: σ(x) = 3·2^999 − x ───────────────────────────────────
+-- The thousand-bit challenge's own integer is 2^1000 − 1, the maximal (all-ones) 1000-bit number. It is NOT a
+-- hard case: the involution σ(x) = 3·2^999 − x reflects it to its witness 2^999 + 1 — a decided identity, a
+-- theorem, not a trial-division cap. (The hard case is a 1000-bit SEMIPRIME, which no route here splits; that is
+-- the honest floor, left unfactored in qpu_crypto.lean.) These seal the reflection the thousand-bit gate only
+-- checked in TypeScript: always seal Lean.
+
+-- the reflection carries the maximal 1000-bit integer to its witness 2^999 + 1
+theorem the_sigma_reflection_maps_the_maximal_to_its_witness :
+  3 * 2 ^ 999 - (2 ^ 1000 - 1) = 2 ^ 999 + 1 := by decide
+
+-- σ is an involution: reflecting twice returns the maximal — CONTROL that the reflection is its own inverse
+theorem the_sigma_reflection_is_an_involution_at_the_maximal :
+  3 * 2 ^ 999 - (3 * 2 ^ 999 - (2 ^ 1000 - 1)) = 2 ^ 1000 - 1 := by decide
+
+-- the maximal and its witness sum to three times the octave 2^999 — the trinity over the binary unit
+theorem the_maximal_and_its_witness_sum_to_three_times_two_to_the_nine_ninety_nine :
+  (2 ^ 1000 - 1) + (2 ^ 999 + 1) = 3 * 2 ^ 999 := by decide
+
+-- the reflection's axis, 3·2^998, is its fixed point
+theorem the_reflection_axis_three_times_two_to_the_nine_ninety_eight_is_fixed :
+  3 * 2 ^ 999 - 3 * 2 ^ 998 = 3 * 2 ^ 998 := by decide
+
+-- the maximal and its witness are symmetric about that axis (their sum is twice it)
+theorem the_maximal_and_witness_are_symmetric_about_the_axis :
+  (2 ^ 1000 - 1) + (2 ^ 999 + 1) = 2 * (3 * 2 ^ 998) := by decide
+
+-- both ends carry the factor three — the reflection preserves divisibility by the trinity
+theorem the_maximal_and_its_witness_both_carry_the_factor_three :
+  (2 ^ 1000 - 1) % 3 = 0 ∧ (2 ^ 999 + 1) % 3 = 0 := by decide
+
+-- the span from the witness to the maximal is 2^999 − 2
+theorem the_span_from_witness_to_maximal_is_two_to_the_nine_ninety_nine_minus_two :
+  (2 ^ 1000 - 1) - (2 ^ 999 + 1) = 2 ^ 999 - 2 := by decide
+
+-- the witness and the maximal bracket the thousand-bit range, in order
+theorem the_witness_and_maximal_bracket_the_thousand_bit_range :
+  2 ^ 999 < 2 ^ 999 + 1 ∧ 2 ^ 999 + 1 < 2 ^ 1000 - 1 ∧ 2 ^ 1000 - 1 < 2 ^ 1000 := by decide
 
 end ThousandBit

@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,237 of them across 126 files and
-9 wings; 26,027 close by exhaustion over a stated finite domain, 210 are proved
+(\texttt{npm run latex-gate}). There are 26,245 of them across 126 files and
+9 wings; 26,035 close by exhaustion over a stated finite domain, 210 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2921,6 +2921,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_thousand\_bit\_structure\_is\_decided\_not\_a\_quantum\_machine}]
 \[ 10^{3} = 1000 \land 1000 \bmod 8 = 0 \land 1000 \bmod 9 = 1 \land 990 < 1000 \land 1000 \le 1021 \land 2^{3} \cdot 5^{3} = 1000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sigma\_reflection\_maps\_the\_maximal\_to\_its\_witness}]
+\[ 3 \cdot 2^{999} - 2^{1000} - 1 = 2^{999} + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sigma\_reflection\_is\_an\_involution\_at\_the\_maximal}]
+\[ 3 \cdot 2^{999} - 3 \cdot 2^{999} - 2^{1000} - 1 = 2^{1000} - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_maximal\_and\_its\_witness\_sum\_to\_three\_times\_two\_to\_the\_nine\_ninety\_nine}]
+\[ 2^{1000} - 1 + 2^{999} + 1 = 3 \cdot 2^{999} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_reflection\_axis\_three\_times\_two\_to\_the\_nine\_ninety\_eight\_is\_fixed}]
+\[ 3 \cdot 2^{999} - 3 \cdot 2^{998} = 3 \cdot 2^{998} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_maximal\_and\_witness\_are\_symmetric\_about\_the\_axis}]
+\[ 2^{1000} - 1 + 2^{999} + 1 = 2 \cdot 3 \cdot 2^{998} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_maximal\_and\_its\_witness\_both\_carry\_the\_factor\_three}]
+\[ 2^{1000} - 1 \bmod 3 = 0 \land 2^{999} + 1 \bmod 3 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_span\_from\_witness\_to\_maximal\_is\_two\_to\_the\_nine\_ninety\_nine\_minus\_two}]
+\[ 2^{1000} - 1 - 2^{999} + 1 = 2^{999} - 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_witness\_and\_maximal\_bracket\_the\_thousand\_bit\_range}]
+\[ 2^{999} < 2^{999} + 1 \land 2^{999} + 1 < 2^{1000} - 1 \land 2^{1000} - 1 < 2^{1000} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

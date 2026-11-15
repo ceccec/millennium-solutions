@@ -245,12 +245,12 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
-- The formal layer holds 26237 kernel-accepted declarations across 126 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `35effefc-aa06-87d9-b115-c8f9342ed0db`</sub>
-- 26027 of those 26237 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 210 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `6edc7577-9611-8e26-bdcc-c98442eed0ec`</sub>
-- 26792 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `0fd175a4-a765-8998-a06d-2b288955db59`</sub>
+- The formal layer holds 26245 kernel-accepted declarations across 126 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `9ddd7384-5277-8b9e-b284-f318142288c4`</sub>
+- 26035 of those 26245 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 210 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `edf909fa-4d75-8aad-ba3c-8f547a4abcb5`</sub>
+- 26800 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `0699a2c3-4932-89db-ad2a-e14c8f016aa4`</sub>
 
 ## 2 · The ring
 
@@ -273,10 +273,10 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 ## 7 · The ledger
 
-- The ledger records 28656 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `be6aa83b-4844-89ea-99a1-fc50fd905322`</sub>
-- The count is an exact multiple of eight — 28656 is 3582 octaves with no remainder.
-  <sub>SEALED · `ee36df28-0978-80d7-940d-b513ccd52f0e`</sub>
+- The ledger records 28664 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `fcbb10fe-fec5-842c-acdf-d88f292e7497`</sub>
+- The count is an exact multiple of eight — 28664 is 3583 octaves with no remainder.
+  <sub>SEALED · `65c0b4d1-55ef-835a-93ba-d40d35fc5eea`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -328,7 +328,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-126 Lean files in 9 wings, 26237 declarations, of which 26237 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
+126 Lean files in 9 wings, 26245 declarations, of which 26245 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -430,7 +430,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The readings, and the arithmetic under them** — `theology.lean`, 8 theorem(s). WHAT THIS FILE SEALS, AND WHAT IT CANNOT. The instruction was to seal a theology as theorems. Seven readings of the seven Clay problems were written in prose beside the seven arithmetic facts of index.lean — the mediator, revelation, theodicy, the ontological gap, the test of the spirits, kenosis, the undivided. A reading is not a proposition with a truth value over a finite domain, so no kernel can decide one, and any file claiming otherwise is lying about what a proof is.
 
-**The thousand-bit case, decided — its octave/trinity/cube structure and its utilisation of the register** — `thousandbit.lean`, 8 theorem(s). No axioms, no Mathlib, no sorry.
+**The thousand-bit case, decided — its octave/trinity/cube structure and its utilisation of the register** — `thousandbit.lean`, 16 theorem(s). `decide` on 2^1000-scale integers: raise the exponentiation threshold so the kernel GENUINELY evaluates the power (the default 256 skips it with a warning, which would leave the reflection theorems below unproven). Verified the instrument: a FALSE 1000-bit identity is rejected by `decide`, a true one accepted (~0.1s).
 
 ### the ring
 
@@ -602,7 +602,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The trinity and its observer** — `trinity.lean`, 24 theorem(s). The trinity turns: feeling feeds thought, thought shapes emotion, emotion changes the body, which is new feeling. Three turns return to the start — ρ³ = id — a DIFFERENT symmetry from the Clay maps, which are involutions (σ² = id). An involution flips and returns in two steps; the trinity rotates and returns in three, and a rotation has no fixed corner. The valence flip (pleasant ↔ unpleasant) acts on every corner at once and commutes with the turn, so the two symmetries combine into one six-element group, C₃ × C₂ ≅ C₆: three turns and three flipped turns, with exactly ONE involution — not the dihedral S₃, where three reflections would each be their own inverse.
 
-127 of 26237 declarations carry no comment of their own and are shown here as the gap they are, not
+127 of 26245 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -611,14 +611,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,656 — 3582 octaves exactly |
-| standing — carries its own proof | **26237** |
+| ledger entries | 28,664 — 3583 octaves exactly |
+| standing — carries its own proof | **26245** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **27063** of 28,656 |
-| standing keys → distinct theorems | 26237 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 126 · 26237 sealed theorems (26027 closed by exhaustion, axiom-free · 210 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 26027 of 26237 |
+| proved in total | **27071** of 28,664 |
+| standing keys → distinct theorems | 26245 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 126 · 26245 sealed theorems (26035 closed by exhaustion, axiom-free · 210 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 26035 of 26245 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -666,4 +666,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 26237 sealed theorems · 28656 ledger entries · trial root `3b858775-99d5-882b-8632-0113e603b5d2` · integrity, not truth*
+*20 claims, all verified · 26245 sealed theorems · 28664 ledger entries · trial root `b0f034d5-180b-84c5-b7bd-60ee53eab1a3` · integrity, not truth*

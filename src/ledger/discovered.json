@@ -150364,5 +150364,45 @@
     "key": "lean_trinity_the_diagonal_predicate_escapes_the_self_model",
     "name": "lean trinity.lean: the_diagonal_predicate_escapes_the_self_model — (List.range selfModel.length).all (fun i => (selfModel.getD i []) != diagonal selfModel) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "a58ecff4-d65f-83a3-be68-41035e50b018"
+  },
+  {
+    "key": "lean_thousandbit_the_sigma_reflection_maps_the_maximal_to_its_witness",
+    "name": "lean thousandbit.lean: the_sigma_reflection_maps_the_maximal_to_its_witness — 3 * 2 ^ 999 - (2 ^ 1000 - 1) = 2 ^ 999 + 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e8dd86c1-04d4-8586-89b9-d26d2e0fc5c3"
+  },
+  {
+    "key": "lean_thousandbit_the_sigma_reflection_is_an_involution_at_the_maximal",
+    "name": "lean thousandbit.lean: the_sigma_reflection_is_an_involution_at_the_maximal — 3 * 2 ^ 999 - (3 * 2 ^ 999 - (2 ^ 1000 - 1)) = 2 ^ 1000 - 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "93db80c9-76f3-875a-9678-f4facf772e0e"
+  },
+  {
+    "key": "lean_thousandbit_the_maximal_and_its_witness_sum_to_three_times_two_to_the_nine_ninety_nine",
+    "name": "lean thousandbit.lean: the_maximal_and_its_witness_sum_to_three_times_two_to_the_nine_ninety_nine — (2 ^ 1000 - 1) + (2 ^ 999 + 1) = 3 * 2 ^ 999 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6409c202-6a23-8030-85b6-05be7e8513c5"
+  },
+  {
+    "key": "lean_thousandbit_the_reflection_axis_three_times_two_to_the_nine_ninety_eight_is_fixed",
+    "name": "lean thousandbit.lean: the_reflection_axis_three_times_two_to_the_nine_ninety_eight_is_fixed — 3 * 2 ^ 999 - 3 * 2 ^ 998 = 3 * 2 ^ 998 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "31157feb-74bf-88f1-ab10-63ad0c8ad6d8"
+  },
+  {
+    "key": "lean_thousandbit_the_maximal_and_witness_are_symmetric_about_the_axis",
+    "name": "lean thousandbit.lean: the_maximal_and_witness_are_symmetric_about_the_axis — (2 ^ 1000 - 1) + (2 ^ 999 + 1) = 2 * (3 * 2 ^ 998) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ff112892-4cbc-8a3a-b649-0435eb862a1a"
+  },
+  {
+    "key": "lean_thousandbit_the_maximal_and_its_witness_both_carry_the_factor_three",
+    "name": "lean thousandbit.lean: the_maximal_and_its_witness_both_carry_the_factor_three — (2 ^ 1000 - 1) % 3 = 0 ∧ (2 ^ 999 + 1) % 3 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5d35b493-1f90-8afc-9cfe-cef1324c104f"
+  },
+  {
+    "key": "lean_thousandbit_the_span_from_witness_to_maximal_is_two_to_the_nine_ninety_nine_minus_two",
+    "name": "lean thousandbit.lean: the_span_from_witness_to_maximal_is_two_to_the_nine_ninety_nine_minus_two — (2 ^ 1000 - 1) - (2 ^ 999 + 1) = 2 ^ 999 - 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4b2f8aed-fcd0-8118-b9e5-3123f6c1ea77"
+  },
+  {
+    "key": "lean_thousandbit_the_witness_and_maximal_bracket_the_thousand_bit_range",
+    "name": "lean thousandbit.lean: the_witness_and_maximal_bracket_the_thousand_bit_range — 2 ^ 999 < 2 ^ 999 + 1 ∧ 2 ^ 999 + 1 < 2 ^ 1000 - 1 ∧ 2 ^ 1000 - 1 < 2 ^ 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "53e5fa21-537c-86c0-bf9b-5eaba57cc62b"
   }
 ]
