@@ -16,7 +16,12 @@ import { readFileSync, existsSync } from 'node:fs'
 // by hand with a planted ledger row and it refused, naming the remainder.
 // leads-closed RUNS leads.ts and refuses on its summary; push-when-green runs the push gate and then pushes — both
 // are chains over other scripts, and the second is the outward act itself. Neither is a gate to control by mutation.
-export const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'control-probe', 'leads', 'wire', 'metrics', 'release', 'leads-closed', 'push-when-green'])
+// `reconcile` joins META: it RUNS the ~20 ledger-derived generators (settled, pages, paper, …), so probing it
+// probes its children. Its --check refuses on a stale COMMITTED tree, and a control that mutates a working-tree
+// file would make that file dirty — which --check deliberately ignores, because an in-progress edit is not a
+// stale commit — so the mutation would fire for the wrong reason or not at all, the 1-in-39 mistake again. Its
+// subject is the committed tree; it is exercised by committing a stale file (the catch-test), not by mutation.
+export const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'control-probe', 'leads', 'wire', 'metrics', 'release', 'leads-closed', 'push-when-green', 'reconcile'])
 /** Scripts whose subject is a remote nobody here may perturb. */
 // `release-live` joins NETWORK: its refusal is ABSENT, a fact about npm's registry and Zenodo's, and no
 // mutation of any file in this tree can produce it. It is exercised by ARGUMENT instead —

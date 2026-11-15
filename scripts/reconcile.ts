@@ -31,10 +31,14 @@ const check = argv.has('--check')
 const seal = argv.has('--seal')
 
 // The generator block of `release`, in its order, plus settled (which release omits). Each entry is one
-// generator that writes a committed derived file from the ledger or the Lean sources. Pure checks in the
-// release chain (contradictions, latex-gate, forensic-audit, …) are NOT here: reconcile regenerates, the
-// court verifies. If release gains or reorders a generator, this list is what to update — named here, once.
+// generator that writes a committed derived file from the ledger or the Lean sources. PURE checks in the
+// release chain (contradictions, latex-gate, …) are NOT here: reconcile regenerates, the court verifies. A
+// gate that ALSO writes a committed file IS here, because its output drifts like any other — forensic-audit
+// writes forensic.md + docs/forensic-audit.json (the ledger counts in them went stale at 28632 while the tree
+// held 28656, uncaught through four commits until --check flagged what reconcile could not fix). If release
+// gains or reorders a generator, this list is what to update — named here, once.
 const STEPS: [string, string][] = [
+  ['forensic.md + docs/forensic-audit.json', 'node scripts/forensic-audit.ts'],
   ['settled.lean', 'node scripts/settled.ts --emit'],
   ['priorart.lean', 'node scripts/priorart-gen.ts'],
   ['AXIOMS.md', 'node scripts/axiom-index.ts'],

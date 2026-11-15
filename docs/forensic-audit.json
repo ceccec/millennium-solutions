@@ -1,5 +1,5 @@
 {
-  "produced": "91cc5a3dc",
+  "produced": "865bc5be5",
   "method": "recomputed from git history of src/ledger/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,10 +7,10 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 28632,
+    "entries": 28656,
     "carried": 826,
     "withdrawn": 1593,
-    "standing": 26213
+    "standing": 26237
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -63,5 +63,5 @@
     ]
   ],
   "totalStateChangingCommits": 1,
-  "address": "b0cd1264-84b9-8c15-a8b2-1c73a8f3c2a6"
+  "address": "315bbc3c-d7de-8799-acc2-6062022b7d09"
 }

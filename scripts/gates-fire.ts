@@ -108,6 +108,13 @@ const CONTROLS: Control[] = [
     what: 'the trinity turn given the wrong modulus, so ρ³ no longer returns to the start and the group is no longer C₆',
     mutate: (s) => s.replace('const turnC = (x: number) => (x + 1) % 3', 'const turnC = (x: number) => (x + 1) % 4') },
 
+  // seo-source reads each page's frontmatter description against DESC_CAP (src/7/serp.ts) with no build, so an
+  // over-long description is caught at commit instead of halting the ship at seo.ts after an 18-minute build.
+  // Pushing one page's description past the search-result line is exactly the defect it exists to catch.
+  { gate: 'seo-source (a page description over the search-result line)', cmd: 'node scripts/seo-source.ts', file: 'trinity.md',
+    what: 'a page whose frontmatter description runs well past the 160-char search-result line seo.ts refuses the ship on',
+    mutate: (s) => s.replace(/^description: .*/m, 'description: ' + 'A'.repeat(200)) },
+
   // discoveries REPORTS rather than gates, and is recorded as such in src/api/gates.ts — but it still
   // refuses when its signals collapse, and a refusal nobody has shown can fire is a refusal that protects
   // nothing. Flatten the weights and every candidate scores alike: the queue can no longer tell its own
