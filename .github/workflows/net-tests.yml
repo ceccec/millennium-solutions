@@ -25,10 +25,15 @@ jobs:
       # INCONCLUSIVE with no cause printed (2026-11-03). The tool is installed here, where the suite that needs it runs.
       - name: pdftotext (poppler), for the PDF cases
         run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils && pdftotext -v 2>&1 | head -1
-      - name: Network suites, each must PASS
+      - name: Network suites, each must PASS — through the MCP server (thin client)
+        # CI runs each suite the way pre-commit-court does: as a `run_suite` call to the dev MCP server via
+        # scripts/mcp-call.ts, not by invoking scripts/suite-run.ts itself. The server is the one place that
+        # knows the suite allowlist and how to run it; CI is a thin client that initialises, calls the tool,
+        # and reads the same {status, suite} JSON the suite emits. A suite added or renamed in src/mcp/suites.ts
+        # is reached here with no second list to keep in step.
         run: |
           for s in net-tools-test answer-doi answer-tool fallbacks; do
-            out=$(node scripts/suite-run.ts "$s")
+            out=$(node scripts/mcp-call.ts run_suite "{\"suite\":\"$s\"}")
             echo "$out" | tee -a "$GITHUB_STEP_SUMMARY"
             echo "$out" | node -e 'const j=JSON.parse(require("fs").readFileSync(0,"utf8")); if (j.status!=="PASS") { console.error("suite "+j.suite+" is "+j.status); process.exit(1) }'
           done
