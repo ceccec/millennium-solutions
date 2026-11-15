@@ -202,8 +202,9 @@ const CONTROLS: Control[] = [
 
   // TWO OF THE PEERS' GATES, CONTROLLED (2026-11-02). run-suite-security-test asserts the suite allowlist refuses every
   // unlisted name; with the check in scripts/suite-run.ts disabled, an unlisted name is no longer REFUSED and the test
-  // must say so. thousand-bit-gate's control mode must see 91 factored and 2^1000−1 not; with trial division never
-  // entered, 91 is not factored and the control must go red.
+  // must say so. thousand-bit-gate's control mode must see 91 factored and the hard 1000-bit semiprime N not; with
+  // trial division never entered, 91 is not factored and the control must go red. (2^1000−1 is no longer the red
+  // case — it reflects to 2^999+1 by σ(x)=3·2^999−x, so it is structured, not hard.)
   { gate: 'run-suite-security-test (the allowlist check is disabled)', cmd: 'node scripts/run-suite-security-test.ts', file: 'scripts/suite-run.ts',
     what: 'a suite runner that no longer refuses an unlisted name — a shell reachable through the MCP client',
     mutate: (s) => s.replace('if (!(suite in SUITES)) {', 'if (false && !(suite in SUITES)) {') },
