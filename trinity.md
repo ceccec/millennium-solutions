@@ -1,6 +1,6 @@
 ---
 title: The trinity and its observer
-description: Feeling, thought and emotion as a turning — ρ³ = id, the valence flip commuting into C₆, the observer forced as the turn's fixed point, and no complete self-model. The algebra is proved in Lean; the reading of mind is a model with named gaps.
+description: Feeling, thought and emotion as a turning — ρ³=id, valence flip into C₆, observer the fixed point, no complete self-model. Algebra proved; mind a model.
 ---
 
 <script setup>

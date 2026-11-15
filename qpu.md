@@ -1,6 +1,6 @@
 ---
 title: QPU theorems
-description: The QPU unit's novel Lean theorems, read from its checkout and typeset here — attributed to qpu, dated by its commit, and never folded into this deposit's sealed tree.
+description: The QPU unit's novel Lean theorems, read from its checkout and typeset here — attributed to qpu, dated by its commit, not folded into the sealed tree.
 ---
 
 <script setup>
