@@ -7,4 +7,10 @@ node scripts/forensics.ts || { echo "✗ pre-commit: forensics — chain-of-cust
 node scripts/lean-claims.ts >/dev/null 2>&1 || { echo "✗ pre-commit: theorem suite / ledger re-verification FAILED — run: npm run lean-claims"; exit 1; }
 # PARALLEL, FAIL FAST: anti-fake, constants, the MCP gate and hardcode run at once; the court runs only after they pass.
 node scripts/gate-parallel.ts --commit || { echo "✗ pre-commit: refused — see the stream named above"; exit 1; }
-echo "✓ pre-commit: gate + forensics (chain-of-custody + intention) + all theorems + ledger re-verify"
+# (4) FRESHNESS NET — every ledger-derived file is a fixed point of its generator. The gates above check the
+# front pages and settled.lean; this catches the quiet ones they do not — the per-theorem depositions,
+# llms.txt, covered.json, trial-all.json — so none can be committed stale by any path. seal-lean --seal
+# regenerates them, so this rarely fires; when it does, the tree was changed without reconciling. Runs last,
+# so it only pays for its generators on a commit the other gates already cleared.
+node scripts/reconcile.ts --check || { echo "✗ pre-commit: ledger-derived files are stale — run: npm run reconcile, then recommit"; exit 1; }
+echo "✓ pre-commit: gate + forensics (chain-of-custody + intention) + all theorems + ledger re-verify + derived files reconciled"
