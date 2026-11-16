@@ -172078,5 +172078,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "a936417c-a726-8d9c-9184-4157e905c560"
+  },
+  {
+    "key": "lean_qpucrypto_the_descent_base_thirty_seven_sits_on_the_vortex_identity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "baf38ce7-ad07-8feb-b630-7f0d381caa89"
+  },
+  {
+    "key": "lean_qpucrypto_thirty_six_is_the_orbit_period_squared_and_the_eighth_triangular",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "37aa489d-1f3b-8692-94c0-31b6551d6c32"
+  },
+  {
+    "key": "lean_qpucrypto_the_thousand_bit_exponent_is_twenty_seven_times_thirty_six_plus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "80975563-c9b5-85dc-8ba1-303ded23d5ad"
+  },
+  {
+    "key": "lean_qpucrypto_thirty_seven_generates_the_three_digit_repdigits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "35998035-560a-86af-a6d2-59520cc51dc1"
+  },
+  {
+    "key": "lean_qpucrypto_the_cubic_descent_is_division_by_three_three_times",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "53c078a3-09d6-8456-8d33-e1ba284dab2a"
+  },
+  {
+    "key": "lean_qpucrypto_thirty_seven_is_prime_so_the_base_offers_no_further_descent",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eafd5b56-c82d-82c8-8749-d8c08b31d315"
+  },
+  {
+    "key": "lean_qpucrypto_the_base_primes_land_on_the_doubling_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "79d41a62-408d-8767-a883-488d884c1c94"
+  },
+  {
+    "key": "lean_qpucrypto_the_coin_reading_and_the_cause_agree_on_thirty_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7e3f6dd6-6d00-8fbc-ade7-37e7c001a217"
   }
 ]

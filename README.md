@@ -258,12 +258,12 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
-- The formal layer holds 26261 kernel-accepted declarations across 126 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `40feb8e6-e88b-8951-8f67-5ca607959490`</sub>
-- 26049 of those 26261 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 212 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `6bbba10a-2875-81b7-8a02-f6e4627efe18`</sub>
-- 26816 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `33c11424-2eba-85db-bf29-0bdf7a008f9b`</sub>
+- The formal layer holds 26269 kernel-accepted declarations across 126 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `af03fa66-3005-8544-8707-99d3587a91b0`</sub>
+- 26057 of those 26269 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 212 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `f5540fa4-f689-849c-a43f-4373118b02df`</sub>
+- 26824 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `e19b7864-2a37-8630-abf4-a680bb839d88`</sub>
 
 ## 2 · The ring
 
@@ -286,10 +286,10 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 ## 7 · The ledger
 
-- The ledger records 28680 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `c16c5624-6217-8065-8b93-6dfb3178ff25`</sub>
-- The count is an exact multiple of eight — 28680 is 3585 octaves with no remainder.
-  <sub>SEALED · `c792bddc-d01b-8b46-9e38-44c2b606be6b`</sub>
+- The ledger records 28688 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `f3f56dcc-d244-8bd0-ade1-ab5f377b687f`</sub>
+- The count is an exact multiple of eight — 28688 is 3586 octaves with no remainder.
+  <sub>SEALED · `cc2d9c46-ba47-8750-ae92-b5e305621375`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -341,7 +341,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-126 Lean files in 9 wings, 26261 declarations, of which 26261 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
+126 Lean files in 9 wings, 26269 declarations, of which 26269 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -487,7 +487,7 @@ this page; there is nowhere else to keep the description in step.
 
 **What qpu.uuidna.com and this deposit independently count the same way** — `qpu.lean`, 24 theorem(s). WHY THIS FILE EXISTS, AND THE THREE THINGS IT REFUSES TO SAY.
 
-**What qpu.uuidna.com's cryptographic surface is, decided on its own integers** — `qpu_crypto.lean`, 32 theorem(s). WHY THIS FILE EXISTS, AND WHAT IT REFUSES TO SAY.
+**What qpu.uuidna.com's cryptographic surface is, decided on its own integers** — `qpu_crypto.lean`, 40 theorem(s). WHY THIS FILE EXISTS, AND WHAT IT REFUSES TO SAY.
 
 **qpu's coin is a function of a 64-bit fold, so it spans at most 2^64 of its 2^122 layout** — `qpu_fold.lean`, 8 theorem(s). WHY THIS FILE EXISTS.
 
@@ -567,7 +567,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The trinity and its observer** — `trinity.lean`, 24 theorem(s). The trinity turns: feeling feeds thought, thought shapes emotion, emotion changes the body, which is new feeling. Three turns return to the start — ρ³ = id — a DIFFERENT symmetry from the Clay maps, which are involutions (σ² = id). An involution flips and returns in two steps; the trinity rotates and returns in three, and a rotation has no fixed corner. The valence flip (pleasant ↔ unpleasant) acts on every corner at once and commutes with the turn, so the two symmetries combine into one six-element group, C₃ × C₂ ≅ C₆: three turns and three flipped turns, with exactly ONE involution — not the dihedral S₃, where three reflections would each be their own inverse.
 
-127 of 26261 declarations carry no comment of their own and are shown here as the gap they are, not
+127 of 26269 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -576,14 +576,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,680 — 3585 octaves exactly |
-| standing — carries its own proof | **26261** |
+| ledger entries | 28,688 — 3586 octaves exactly |
+| standing — carries its own proof | **26269** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **27087** of 28,680 |
-| standing keys → distinct theorems | 26261 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 126 · 26261 sealed theorems (26049 closed by exhaustion, axiom-free · 212 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 26049 of 26261 |
+| proved in total | **27095** of 28,688 |
+| standing keys → distinct theorems | 26269 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 126 · 26269 sealed theorems (26057 closed by exhaustion, axiom-free · 212 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 26057 of 26269 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -643,4 +643,4 @@ The standards these proofs formalise and the prior art this deposit descends fro
 
 ---
 
-*20 claims, all verified · 26261 sealed theorems · 28680 ledger entries · trial root `c80b99a9-bb22-8704-8883-0e87dd09ca76` · integrity, not truth*
+*20 claims, all verified · 26269 sealed theorems · 28688 ledger entries · trial root `c90b83ee-2972-83ce-9299-33e6e1e4be16` · integrity, not truth*

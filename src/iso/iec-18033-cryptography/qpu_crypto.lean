@@ -405,4 +405,44 @@ theorem the_cubic_descent_reaches_the_thirty_seven_bit_base :
 theorem the_descent_halts_because_the_base_carries_no_more_threes :
   37 % 3 ≠ 0 ∧ 1777 % 3 ≠ 0 ∧ 25781083 % 3 ≠ 0 := by decide
 
+-- ── 10 · THE VORTEX RESIDUE OF THE DESCENT BASE 37 — OBSERVATIONS, NOT MECHANISMS ─────────────────────────
+-- Section 9 proved WHY the cubic descent stops at 37: it is 999/27, coprime to three. This section records what
+-- 37 LOOKS LIKE in the ℤ/9 vortex, as observations — each true by decide, none of them the cause. The distinction
+-- is the honest floor: 37 = 36 + 1 lands on the ring's identity (digit root 1), and 36 is the doubling orbit's
+-- period squared and the eighth triangular number — but that is a RESIDUE reading, not the reason the descent
+-- halts. The last theorem states that the coin reading (36 + 1) and the cause (999/27) agree on 37 WITHOUT
+-- claiming the first explains the second; conflating the two would be the overclaim this file is built to refuse.
+
+-- 37 sits on the vortex identity: digit root 1 — a nine-void (36) plus one
+theorem the_descent_base_thirty_seven_sits_on_the_vortex_identity :
+  37 % 9 = 1 ∧ 37 = 4 * 9 + 1 ∧ 37 = 36 + 1 := by decide
+
+-- 36 is the doubling orbit's period squared and the eighth triangular number, and it is a nine-void
+theorem thirty_six_is_the_orbit_period_squared_and_the_eighth_triangular :
+  36 = 6 * 6 ∧ 2 * 36 = 8 * 9 ∧ 36 % 9 = 0 := by decide
+
+-- the thousand-bit exponent is twenty-seven times (36 + 1)
+theorem the_thousand_bit_exponent_is_twenty_seven_times_thirty_six_plus_one :
+  999 = 27 * (36 + 1) ∧ 999 = 27 * 37 ∧ 999 = 27 * 36 + 27 := by decide
+
+-- 37 generates the three-digit repdigits: ddd = d·111 = d·3·37 for every digit
+theorem thirty_seven_generates_the_three_digit_repdigits :
+  111 = 3 * 37 ∧ (List.range' 1 9).all (fun d => d * 111 == d * 3 * 37) := by decide
+
+-- the cubic descent is division by three, three times, and then it cannot divide again
+theorem the_cubic_descent_is_division_by_three_three_times :
+  999 / 3 = 333 ∧ 333 / 3 = 111 ∧ 111 / 3 = 37 ∧ 37 % 3 ≠ 0 := by decide
+
+-- 37 is prime, so the exponent offers no further cubic descent
+theorem thirty_seven_is_prime_so_the_base_offers_no_further_descent :
+  (List.range' 2 35).all (fun d => 37 % d ≠ 0) ∧ 37 % 3 ≠ 0 := by decide
+
+-- the base primes of 2^37 + 1 land on the doubling orbit (residues 4 and 7); the stripped factor is the triad 3
+theorem the_base_primes_land_on_the_doubling_orbit :
+  2 ^ 37 + 1 = 3 * 1777 * 25781083 ∧ 1777 % 9 = 4 ∧ 25781083 % 9 = 7 ∧ 3 % 9 = 3 := by decide
+
+-- the coin reading 36 + 1 and the cause 999/27 agree on 37 — both true, the first does not explain the second
+theorem the_coin_reading_and_the_cause_agree_on_thirty_seven :
+  37 = 36 + 1 ∧ 37 = 999 / 27 ∧ (36 + 1) * 27 = 999 := by decide
+
 end QpuCrypto

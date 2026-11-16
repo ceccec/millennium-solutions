@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,261 of them across 126 files and
-9 wings; 26,049 close by exhaustion over a stated finite domain, 212 are proved
+(\texttt{npm run latex-gate}). There are 26,269 of them across 126 files and
+9 wings; 26,057 close by exhaustion over a stated finite domain, 212 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -4802,6 +4802,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_descent\_halts\_because\_the\_base\_carries\_no\_more\_threes}]
 \[ 37 \bmod 3 \neq 0 \land 1777 \bmod 3 \neq 0 \land 25781083 \bmod 3 \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_descent\_base\_thirty\_seven\_sits\_on\_the\_vortex\_identity}]
+\[ 37 \bmod 9 = 1 \land 37 = 4 \cdot 9 + 1 \land 37 = 36 + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{thirty\_six\_is\_the\_orbit\_period\_squared\_and\_the\_eighth\_triangular}]
+\[ 36 = 6 \cdot 6 \land 2 \cdot 36 = 8 \cdot 9 \land 36 \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_thousand\_bit\_exponent\_is\_twenty\_seven\_times\_thirty\_six\_plus\_one}]
+\[ 999 = 27 \cdot 36 + 1 \land 999 = 27 \cdot 37 \land 999 = 27 \cdot 36 + 27 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{thirty\_seven\_generates\_the\_three\_digit\_repdigits}]
+\[ 111 = 3 \cdot 37 \land \forall d \in \{1,\dots,9\},\; d \cdot 111 = d \cdot 3 \cdot 37 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cubic\_descent\_is\_division\_by\_three\_three\_times}]
+\[ \frac{999}{3} = 333 \land \frac{333}{3} = 111 \land \frac{111}{3} = 37 \land 37 \bmod 3 \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{thirty\_seven\_is\_prime\_so\_the\_base\_offers\_no\_further\_descent}]
+\[ \forall d \in \{2,\dots,36\},\; 37 \bmod d \neq 0 \land 37 \bmod 3 \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 35 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_base\_primes\_land\_on\_the\_doubling\_orbit}]
+\[ 2^{37} + 1 = 3 \cdot 1777 \cdot 25781083 \land 1777 \bmod 9 = 4 \land 25781083 \bmod 9 = 7 \land 3 \bmod 9 = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_coin\_reading\_and\_the\_cause\_agree\_on\_thirty\_seven}]
+\[ 37 = 36 + 1 \land 37 = \frac{999}{27} \land 36 + 1 \cdot 27 = 999 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
