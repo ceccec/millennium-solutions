@@ -5,6 +5,9 @@ description: Feeling, thought and emotion as a turning — ρ³=id, valence flip
 
 <script setup>
 import { data } from './.vitepress/theme/trinity.data.ts'
+// Markdown headings inside v-for slugify the TEMPLATE (`g.section`), so every section shared id="g-section"
+// and ISO/IEC 40500 4.1.1 failed. Emit the heading as HTML with an id taken from the rendered section title.
+const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 </script>
 
 # The trinity and its observer
@@ -58,7 +61,7 @@ Whether experience divides into exactly three, or whether mixed states (bittersw
 
 <section v-for="g in data.groups" :key="g.section">
 
-### {{ g.section }}
+<h3 :id="slug(g.section)" tabindex="-1">{{ g.section }} <a class="header-anchor" :href="'#' + slug(g.section)" :aria-label="'Permalink to ' + g.section">&#8203;</a></h3>
 
 <div v-for="t in g.theorems" :key="t.name" class="trinity-thm" :class="{ control: t.control }">
 <p><code>{{ t.name }}</code><span v-if="t.control" class="trinity-ctl"> · control</span></p>

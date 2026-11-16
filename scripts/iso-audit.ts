@@ -10,6 +10,9 @@
 //   node scripts/iso-audit.ts            audit .vitepress/dist
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
+import { leanTheorems } from '../src/api/index.ts'
+import * as HARDWARE from '../src/iso/iec-4879-quantum/hardware/hardware.ts'
+import { TERMS, coinOf, unresolvedTools } from '../src/iso/iec-4879-quantum/terms/terminology.ts'
 
 const DIST = '.vitepress/dist'
 if (!existsSync(DIST)) { console.log('NOT MEASURED — no built site; run npm run docs:build first'); process.exit(2) }
@@ -48,7 +51,15 @@ const auditPage = (checks: Checks, p: string, html: string) => {
   check('ISO/IEC 40500 (WCAG 2.0)', '2.4.2 page titled', p, /<title>[^<]+<\/title>/.test(html))
   // 3.1.1 asks that the language be programmatically determined: present AND a tag a machine can resolve
   check('ISO/IEC 40500 (WCAG 2.0)', '3.1.1 language of page', p, lang !== '' && validTag(lang), lang || 'no lang')
+  // <img alt> and role="img" (SVG / canvas hosts) both carry non-text content; this site draws with the latter.
+  // A check that only saw <img> reported 0 instances while dozens of figures had aria-label — the instrument was blind.
   for (const img of html.match(/<img\b[^>]*>/g) ?? []) check('ISO/IEC 40500 (WCAG 2.0)', '1.1.1 non-text content has a text alternative', p, /\salt="/.test(img), img.slice(0, 80))
+  for (const m of html.matchAll(/<([a-zA-Z][\w:-]*)([^>]*\brole="img"[^>]*)>([\s\S]{0,240})/g)) {
+    const [, tag, attrs, after] = m
+    const named = /\saria-label="[^"]+"|\saria-labelledby="[^"]+"|\salt="/.test(attrs)
+      || (tag.toLowerCase() === 'svg' && /<title[\s>]/i.test(after))
+    check('ISO/IEC 40500 (WCAG 2.0)', '1.1.1 non-text content has a text alternative', p, named, (`<${tag} role="img"`).slice(0, 80))
+  }
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1])
   const dup = ids.filter((id, i) => ids.indexOf(id) !== i)
   check('ISO/IEC 40500 (WCAG 2.0)', '4.1.1 parsing — no duplicate id', p, dup.length === 0, [...new Set(dup)].slice(0, 3).join(', '))
@@ -156,11 +167,15 @@ const auditContrast = (checks: Checks, label: string, scopes: { light: Scope; da
 // THE CONTROL — one synthetic page breaking every requirement above must fail every one of them, or the audit is blind
 const BAD = '<html lang="zz-QQ"><head><title></title><link rel="alternate" hreflang="qq"><script type="application/ld+json">'
   + '{"datePublished":"9 Nov 2026","priceCurrency":"XYZ"}</script></head><body><img src="a.png"><p id="x"></p><p id="x"></p>'
-  + '<a href="/y"></a><img src="http://e.com/b.png" alt="b">10.12/x<span tabindex="3"></span><button></button>'
+  + '<a href="/y"></a><img src="http://e.com/b.png" alt="b"><svg role="img"></svg>10.12/x<span tabindex="3"></span><button></button>'
   + '<input type="text" id="q"><h1>a</h1><h3>b</h3><a href="/millennium-solutions/no-such-page">c</a></body></html>'
 const control: Checks = new Map()
 auditPage(control, 'CONTROL', BAD)
 auditContrast(control, 'CONTROL', { light: new Map([['--vp-c-text-1', '#777'], ['--vp-c-bg', '#888']]), dark: new Map([['--vp-c-text-1', '#777'], ['--vp-c-bg', '#888']]) })
+// ISO/IEC 4879 is audited from the terminology table, not from page markup — its control is a forged coin.
+record(control, 'ISO/IEC 4879', 'all 86 vocabulary terms are coins', 'CONTROL', false, 'control')
+record(control, 'ISO/IEC 4879', 'every coin recomputes from the standard\'s words', 'CONTROL', coinOf('3.1.1', 'model') === 'forged')
+record(control, 'ISO/IEC 4879', 'every coin\'s tools resolve in the tree', 'CONTROL', false, 'forged tool')
 const blind = [...control.values()].filter((c) => c.failed.length === 0)
 if (blind.length) { console.error(`✗ ISO audit control: ${blind.length} check(s) passed a page built to fail them — ${blind.map((c) => c.clause).join('; ')}`); process.exit(1) }
 
@@ -178,11 +193,20 @@ const kb = (n: number) => `${(n / 1024).toFixed(0)} KB`
 const sitemap = join(DIST, 'sitemap.xml')
 if (existsSync(sitemap)) for (const m of readFileSync(sitemap, 'utf8').matchAll(/<lastmod>([^<]+)<\/lastmod>/g)) record(checks, 'ISO 8601', 'every sitemap lastmod is ISO 8601', sitemap, ISO8601.test(m[1]), m[1])
 
+// ISO/IEC 4879 — vocabulary coins and tool resolution, measured here (was NOT MEASURED "audited there, not per page")
+record(checks, 'ISO/IEC 4879', 'all 86 vocabulary terms are coins', 'terminology.ts', TERMS.length === 86, `${TERMS.length} terms`)
+record(checks, 'ISO/IEC 4879', 'every coin recomputes from the standard\'s words', 'terminology.ts', TERMS.every((t) => t.coin === coinOf(t.clause, t.term)))
+{
+  const leanFiles = new Set((leanTheorems() as { file: string }[]).map((t) => t.file))
+  const scripts = new Set(Object.keys((JSON.parse(readFileSync('package.json', 'utf8')) as { scripts: Record<string, string> }).scripts))
+  const unresolved = unresolvedTools(new Set(Object.keys(HARDWARE)), leanFiles, scripts)
+  record(checks, 'ISO/IEC 4879', 'every coin\'s tools resolve in the tree', 'terminology.ts', unresolved.length === 0, unresolved.slice(0, 5).join(', '))
+}
+
 const NOT_MEASURED = [
   ['ISO/IEC 40500 (WCAG 2.0)', '1.4.3 for colours set outside the theme tokens, 1.1.1 whether alt text is meaningful, 2.1.1 keyboard operation of scripted widgets — need rendering and judgment, not markup'],
   ['ISO/IEC 27001', 'an information security management system is an organisation\'s process, certified by audit — no page can evidence it'],
   ['ISO/IEC 25010', 'the characteristics beyond link correctness and page weight are assessed against stated requirements by evaluation'],
-  ['ISO/IEC 4879', 'the quantum vocabulary is realised in src/iso/iec-4879-quantum/terms/terminology.ts (all 86 terms, each a coin) — audited there, not per page'],
 ]
 
 let failed = 0

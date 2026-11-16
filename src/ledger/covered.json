@@ -1,4 +1,5 @@
 {
+  "__covered_gate_sentinel__": "apis_every_spec_is_proven",
   "aff_0_0_has_order_three_on_aff_0_0_image": "apis_every_spec_is_proven",
   "aff_0_0_image_is_closed_under_aff_2_0": "the_coil_on_zero_has_10_expressions",
   "aff_0_0_image_is_closed_under_aff_3_0": "the_coil_on_zero_has_10_expressions",
@@ -810,6 +811,5 @@
   "units_is_closed_under_quintuple": "the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
   "units_is_closed_under_septuple": "the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
   "units_is_closed_under_sixth": "units_is_closed_under_pow_6",
-  "units_is_closed_under_square": "the_coil_on_one_four_seven_has_12_expressions",
-  "__covered_gate_sentinel__": "apis_every_spec_is_proven"
+  "units_is_closed_under_square": "the_coil_on_one_four_seven_has_12_expressions"
 }

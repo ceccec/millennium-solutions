@@ -1,10 +1,24 @@
 import { defineConfig } from 'vitepress'
 import { readFileSync , existsSync } from 'node:fs'
+import { execSync } from 'node:child_process'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale'
 import { serpTitle, fit } from '../src/7/serp.ts'
 import { theoremKeys } from '../src/publication/record.ts'
 import { CSP } from '../src/0/csp.ts'
 import { A432_STEP } from '../src/0/index.ts'
+
+// ISO 8601 dates for JSON-LD / sitemap — derived from git, never typed. Root commit = datePublished;
+// HEAD = dateModified. The ISO audit checks these against the ISO 8601 grammar.
+const gitDay = (rev: string): string => {
+  try { return execSync(`git log -1 --format=%cs ${rev}`, { encoding: 'utf8' }).trim() } catch { return '' }
+}
+const DATE_MODIFIED = gitDay('HEAD')
+const DATE_PUBLISHED = (() => {
+  try {
+    const root = execSync('git rev-list --max-parents=0 HEAD', { encoding: 'utf8' }).trim().split('\n')[0]
+    return (root && gitDay(root)) || DATE_MODIFIED
+  } catch { return DATE_MODIFIED }
+})()
 
 // The theme accent is COMPUTED, not a typed hex: the ℤ/9 heart is d=5 (the reflection fixed point),
 // and the a432 hue map sends each digit d to d·(A432_STEP)° — so the home hue is 5·40 = 200°. The
@@ -66,6 +80,10 @@ const LD = {
   identifier: 'https://doi.org/10.5281/zenodo.21819217',
   programmingLanguage: ['TypeScript', 'Lean 4'],
   keywords: KEYWORDS,
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
+  // free research track under CC BY-NC-ND 4.0 — EUR is the author's jurisdiction (BG); commercial via uuidna.com
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: 'free for public interest and independent research (CC BY-NC-ND 4.0)' },
   // structured-data count computed from the ledger, not a typed literal
   mainEntity: { '@type': 'Collection', name: 'decidable theorems (ℤ/9, recomputable)', size: THEOREMS },
 }
@@ -86,8 +104,8 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://ceccec.psg.bg/millennium-solutions/',
     transformItems: (items) => [
-      ...items.filter((i) => !/theorem\/_template/.test(i.url)),
-      ...[...THEOREM_KEYS].map((k) => ({ url: `theorem/${k}.html` })),
+      ...items.filter((i) => !/theorem\/_template/.test(i.url)).map((i) => ({ ...i, lastmod: DATE_MODIFIED })),
+      ...[...THEOREM_KEYS].map((k) => ({ url: `theorem/${k}.html`, lastmod: DATE_MODIFIED })),
     ],
   },
   // A link to /theorem/<key> is live when <key> has a stamped page; any other dead link still fails the build.

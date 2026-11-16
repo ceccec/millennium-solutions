@@ -3,10 +3,14 @@
 // fact that computes true — grouped by the type its KEY reflects (the label is translatable surface, the key is
 // the identity). What is NOT an organ never enters the ledger: it goes to trial (the honesty gate drains a boast,
 // forensics names a non-theorem). This page reads src/ledger/discovered.json directly, so it updates every build.
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import ledger from '../../src/ledger/discovered.json'
 import { withoutFloor } from '../../src/honesty/index'
+// The forensic field draws one circle per ledger entry (~28k). SSR of that SVG was ~3 MB of page HTML
+// (ISO/IEC 25010 page weight). Paint the dots only after mount — the rings and the organ lists stay in the HTML.
+const fieldLive = ref(false)
+onMounted(() => { fieldLive.value = true })
 // names as SHOWN: the sealed names of revoked entries carried the removed Clay floor; the ledger keeps them as sealed.
 const theorems = (ledger as { key: string; name: string; receipt: string }[]).map((t) => ({ ...t, name: withoutFloor(t.name) }))
 
@@ -99,7 +103,7 @@ const W = 760, H = 340
       <svg class="field" :viewBox="'0 0 ' + W + ' ' + H" preserveAspectRatio="xMidYMid meet" role="img" aria-label="all theorems on a double torus">
         <ellipse :cx="W / 2 - 89" :cy="H / 2" rx="150" ry="118" class="ring" />
         <ellipse :cx="W / 2 + 89" :cy="H / 2" rx="150" ry="118" class="ring" />
-        <circle v-for="d in field" :key="d.key" :cx="d.x" :cy="d.y" :r="d.body ? 1.5 : 2.4"
+        <circle v-for="d in (fieldLive ? field : [])" :key="d.key" :cx="d.x" :cy="d.y" :r="d.body ? 1.5 : 2.4"
           :fill="d.body ? 'var(--vp-c-text-3)' : 'hsl(' + d.hue + ' 70% 55%)'"
           :opacity="d.body ? 0.35 : 0.85" />
       </svg>

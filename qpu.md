@@ -5,6 +5,9 @@ description: The QPU unit's novel Lean theorems, read from its checkout and type
 
 <script setup>
 import { data } from './.vitepress/theme/qpu.data.ts'
+// Markdown headings inside v-for slugify the TEMPLATE (`g.file.replace…`), so every section shared one id
+// and ISO/IEC 40500 4.1.1 failed. Emit the heading as HTML with an id taken from the rendered file name.
+const slug = (file) => file.replace(/\.lean$/i, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 </script>
 
 # QPU theorems
@@ -19,7 +22,7 @@ Read from qpu commit `{{ data.qpuCommit.slice(0, 9) }}` on {{ data.measured }}: 
 
 <section v-for="g in data.lean" :key="g.file">
 
-## {{ g.file.replace(/\.lean$/, '') }}
+<h2 :id="slug(g.file)" tabindex="-1">{{ g.file.replace(/\.lean$/, '') }} <a class="header-anchor" :href="'#' + slug(g.file)" :aria-label="'Permalink to ' + g.file.replace(/\.lean$/, '')">&#8203;</a></h2>
 
 <div v-for="t in g.theorems" :key="t.name" class="qpu-thm">
 <p><code>{{ t.name }}</code><span v-if="t.doc" class="qpu-doc"> — {{ t.doc }}</span></p>
