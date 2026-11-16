@@ -10,7 +10,7 @@ Every other gate here checks a **source**: the Lean compiles, the ledger chains,
 This checks the **artefact a reader opens**, and this page is its output — so it cannot describe a check
 that did not run.
 
-Last run: **9 of 9 passed**.
+Last run: **10 of 10 passed**.
 
 | check | result | measured |
 | --- | :---: | --- |
@@ -19,10 +19,11 @@ Last run: **9 of 9 passed**.
 | the data file parses as JSON-LD | ✓ | parses |
 | it declares the schema.org context | ✓ | ["https://schema.org",{"wing":"https://schema.org/genre","source":"https://schem |
 | it is an ItemList | ✓ | ItemList |
-| numberOfItems matches what the list holds | ✓ | declared 26245, holds 26245 |
-| the page and the data agree on the count | ✓ | page says 26245, data holds 26245 |
-| every linked theorem page is built | ✓ | 1503 links, 0 dead |
-| every item carries the three facets the widget filters by | ✓ | 26245 of 26245 complete |
+| numberOfItems matches what the list holds | ✓ | declared 26357, holds 26357 |
+| the page and the data agree on the count | ✓ | page says 26357, data holds 26357 |
+| the catalogue holds every theorem the kernel holds now | ✓ | data holds 26357, kernel holds 26357 |
+| every linked theorem page is built | ✓ | 1615 links, 0 dead |
+| every item carries the three facets the widget filters by | ✓ | 26357 of 26357 complete |
 
 ## What this cannot tell you
 
