@@ -122,6 +122,15 @@ if (!process.argv.includes('--skip-gates')) {
     process.exit(1)
   }
 }
+// GATES ONLY — the gates above, against this tree, and nothing after them: no stage, no commit, no tag. The
+// counterpart of --skip-gates, so the ship's own gates can be run (and timed, `npm run chain:time`) without
+// shipping. Given with --skip-gates it has run nothing, and says so rather than falling through to a tag.
+if (process.argv.includes('--gates-only')) {
+  console.log(process.argv.includes('--skip-gates')
+    ? 'release: --gates-only with --skip-gates — nothing ran, nothing staged, committed or tagged'
+    : 'release: --gates-only — the gates pass against this tree; nothing staged, committed or tagged')
+  process.exit(0)
+}
 
 // Useless work drains tokens: refuse to mint a new version for identical content.
 try {

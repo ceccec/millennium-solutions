@@ -28,6 +28,14 @@ run('node scripts/wholeness.ts')     // wholeness: the aura is computationally w
 run('node scripts/lean-claims.ts')   // re-verify: every recorded discovery still holds
 run('node scripts/seo.ts')           // seo self-audit: every built page carries OG · canonical · JSON-LD
 
+// GATES ONLY — every gate the ship runs (the eight above, then release.ts's own chain), and stop before release:
+// nothing staged, committed, tagged or pushed. `npm run chain:time` runs this under the timer.
+if (process.argv.includes('--gates-only')) {
+  run('node scripts/release.ts ' + next + ' --gates-only')
+  console.log('orchestrate: --gates-only — every gate the ship runs passed; nothing released')
+  process.exit(0)
+}
+
 // 3) release (content-address · commit · sign · tag). release.ts may SKIP on no-delta.
 run('node scripts/release.ts ' + next)
 
