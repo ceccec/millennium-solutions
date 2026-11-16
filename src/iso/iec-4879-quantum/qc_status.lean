@@ -77,4 +77,68 @@ theorem software_completion_is_necessary_not_sufficient :
   (verdict = true ↔ (gaps.filter isWorld).all isClosed = true)
   ∧ ((gaps.filter (fun g => !isWorld g)).all isClosed = true ∧ verdict = false) := by decide
 
+-- ── 2 · THE STATUS IS A VALUE, NOT A BOOLEAN — complete | incomplete | refuted ────────────────────────────
+-- `isQuantumComputer: false` is the wrong TYPE. A boolean collapses "incomplete" (gaps open, can still close)
+-- and "refuted" (disproven) into one `false` a reader hears as "no". The honest field is a STATUS with three
+-- values. Its boolean projection is lossy — it cannot tell refuted from incomplete — which is exactly why
+-- `false` is not correct. The current deposit: no disproof holds and a world gap is open → the value is
+-- `incomplete`, not `false`.
+inductive Status where
+  | refuted
+  | incomplete
+  | complete
+  deriving DecidableEq
+
+-- the status from (a disproof holds, every gap closed): a disproof makes it refuted; else all-closed is
+-- complete; otherwise incomplete.
+def statusOf (disproven allClosed : Bool) : Status :=
+  if disproven then .refuted else if allClosed then .complete else .incomplete
+
+-- the lossy boolean a true/false field would carry: only `complete` reads true.
+def toBool : Status → Bool
+  | .complete => true
+  | _ => false
+
+-- the three cases of the status function, decided.
+theorem the_status_function_covers_its_three_cases :
+  statusOf false false = Status.incomplete
+  ∧ statusOf false true = Status.complete
+  ∧ statusOf true false = Status.refuted
+  ∧ statusOf true true = Status.refuted := by decide
+
+-- the current status is INCOMPLETE — no disproof holds and a world gap is open (verdict false).
+theorem the_current_status_is_incomplete :
+  statusOf false verdict = Status.incomplete ∧ verdict = false := by decide
+
+-- the three states are pairwise distinct — a distinction a boolean cannot carry.
+theorem the_three_states_are_distinct :
+  Status.refuted ≠ Status.incomplete ∧ Status.incomplete ≠ Status.complete
+  ∧ Status.refuted ≠ Status.complete := by decide
+
+-- WHY `false` is not correct: the boolean collapses refuted and incomplete into one value.
+theorem the_boolean_collapses_refuted_and_incomplete :
+  toBool Status.refuted = false ∧ toBool Status.incomplete = false
+  ∧ Status.refuted ≠ Status.incomplete := by decide
+
+-- only `complete` reads true; the boolean misnames every other state as `false`.
+theorem only_complete_reads_true :
+  toBool Status.complete = true ∧ toBool Status.incomplete = false
+  ∧ toBool Status.refuted = false := by decide
+
+-- complete exactly when every gap is closed.
+theorem complete_exactly_when_every_gap_closed :
+  (statusOf false (gaps.all isClosed) = Status.complete) ↔ (gaps.all isClosed = true) := by decide
+
+-- closing every software gap still reads incomplete — the world gaps keep it below complete.
+theorem software_complete_still_reads_incomplete :
+  (gaps.filter (fun g => !isWorld g)).all isClosed = true
+  ∧ statusOf false verdict = Status.incomplete := by decide
+
+-- capstone: the honest value is `incomplete`, it is not `complete`, and its boolean shadow is `false` — the
+-- lossy projection the field wrongly shows as the whole truth.
+theorem the_honest_value_is_incomplete_not_a_false_boolean :
+  statusOf false verdict = Status.incomplete
+  ∧ statusOf false verdict ≠ Status.complete
+  ∧ toBool (statusOf false verdict) = false := by decide
+
 end QcStatus

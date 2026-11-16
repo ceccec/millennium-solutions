@@ -172414,5 +172414,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "8bfda375-5a73-8838-8d7b-410e3afc074e"
+  },
+  {
+    "key": "lean_qcstatus_the_status_function_covers_its_three_cases",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a093b643-c5cf-8cf4-8e2b-56b22c251447"
+  },
+  {
+    "key": "lean_qcstatus_the_current_status_is_incomplete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "13c4ced4-bf4a-8793-ab34-9cb98d36fefa"
+  },
+  {
+    "key": "lean_qcstatus_the_three_states_are_distinct",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "318e09de-d1ca-8687-90e2-26086320ba17"
+  },
+  {
+    "key": "lean_qcstatus_the_boolean_collapses_refuted_and_incomplete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7ca8c005-a1d5-88b5-b1e6-b3675c8a6330"
+  },
+  {
+    "key": "lean_qcstatus_only_complete_reads_true",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cb4f57f9-3f50-8520-84fe-817b5aac8c35"
+  },
+  {
+    "key": "lean_qcstatus_complete_exactly_when_every_gap_closed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d1047cf5-22d2-8a41-a9f1-50cfcb01f032"
+  },
+  {
+    "key": "lean_qcstatus_software_complete_still_reads_incomplete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c1540941-567f-8fa7-abe2-a26b03b81e71"
+  },
+  {
+    "key": "lean_qcstatus_the_honest_value_is_incomplete_not_a_false_boolean",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "03d2fb6a-7fba-84f6-8d54-790c9628f700"
   }
 ]

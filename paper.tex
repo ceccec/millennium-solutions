@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,317 of them across 127 files and
-9 wings; 26,097 close by exhaustion over a stated finite domain, 220 are proved
+(\texttt{npm run latex-gate}). There are 26,325 of them across 127 files and
+9 wings; 26,105 close by exhaustion over a stated finite domain, 220 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1100,6 +1100,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{software\_completion\_is\_necessary\_not\_sufficient}]
 \[ \mathrm{verdict} = \mathrm{true} \leftrightarrow \forall x \in \{\, x \in \mathrm{gaps} \mid \mathrm{isWorld}\mathopen{}\left(x\right) \,\},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{true} \land \forall x \in \{\, g \in \mathrm{gaps} \mid \lnot \mathrm{isWorld}\mathopen{}\left(g\right) \,\},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{true} \land \mathrm{verdict} = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_status\_function\_covers\_its\_three\_cases}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{false}\right) = \mathrm{Status.incomplete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{true}\right) = \mathrm{Status.complete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{true},\,\mathrm{false}\right) = \mathrm{Status.refuted} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{true},\,\mathrm{true}\right) = \mathrm{Status.refuted} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_current\_status\_is\_incomplete}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{verdict}\right) = \mathrm{Status.incomplete} \land \mathrm{verdict} = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_three\_states\_are\_distinct}]
+\[ \mathrm{Status.refuted} \neq \mathrm{Status.incomplete} \land \mathrm{Status.incomplete} \neq \mathrm{Status.complete} \land \mathrm{Status.refuted} \neq \mathrm{Status.complete} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_boolean\_collapses\_refuted\_and\_incomplete}]
+\[ \mathrm{toBool}\mathopen{}\left(\mathrm{Status.refuted}\right) = \mathrm{false} \land \mathrm{toBool}\mathopen{}\left(\mathrm{Status.incomplete}\right) = \mathrm{false} \land \mathrm{Status.refuted} \neq \mathrm{Status.incomplete} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{only\_complete\_reads\_true}]
+\[ \mathrm{toBool}\mathopen{}\left(\mathrm{Status.complete}\right) = \mathrm{true} \land \mathrm{toBool}\mathopen{}\left(\mathrm{Status.incomplete}\right) = \mathrm{false} \land \mathrm{toBool}\mathopen{}\left(\mathrm{Status.refuted}\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{complete\_exactly\_when\_every\_gap\_closed}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{gaps},\; \mathrm{isClosed}\mathopen{}\left(x\right)\right) = \mathrm{Status.complete} \leftrightarrow \forall x \in \mathrm{gaps},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{software\_complete\_still\_reads\_incomplete}]
+\[ \forall x \in \{\, g \in \mathrm{gaps} \mid \lnot \mathrm{isWorld}\mathopen{}\left(g\right) \,\},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{true} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{verdict}\right) = \mathrm{Status.incomplete} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_honest\_value\_is\_incomplete\_not\_a\_false\_boolean}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{verdict}\right) = \mathrm{Status.incomplete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{verdict}\right) \neq \mathrm{Status.complete} \land \mathrm{toBool}\mathopen{}\left(\mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{verdict}\right)\right) = \mathrm{false} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
