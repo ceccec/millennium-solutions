@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **26,245** report the same thing:
+axiom fails the build rather than earning a footnote. All **26,253** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **1,109** definitions, and every one of them is a choice. A theorem about
+theorems rest on **1,114** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 1,109 definitions
+## What IS assumed: the 1,114 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -1051,7 +1051,7 @@ def mirrorNat (fuel n : Nat) : Nat :=
 def bitLen (fuel n : Nat) : Nat := (digitsIn 2 fuel n).length
 ```
 
-### `qpu_crypto.lean` — 43 definition(s), 16 theorem(s)
+### `qpu_crypto.lean` — 48 definition(s), 24 theorem(s)
 
 ```lean
 def sealModulus : Nat := Qpu.rays * (Qpu.faces - 1)
@@ -1097,6 +1097,11 @@ def triangular (q : Nat) : Nat := q * (q + 1) / 2
 def milu : Nat × Nat := (Qpu.clayPlane * (Qpu.faces - 1) - Qpu.qubits * Qpu.qubits, Qpu.clayPlane * Qpu.hexbit + 1)
 def groverIters (num den k : Nat) : Nat := num * 2 ^ k / (4 * den)
 def scaleCapacity (s : Nat) : Nat := 16 ^ s * (4 * s)
+def reflCentre (n : Nat) : Nat := 3 * 2 ^ (n - 1)
+def reflSigma (n x : Nat) : Nat := reflCentre n - x
+def reflMaximal (n : Nat) : Nat := 2 ^ n - 1
+def reflWitness (n : Nat) : Nat := 2 ^ (n - 1) + 1
+def reflWidths : List Nat := [2, 4, 8, 16, 32, 64, 128]
 ```
 
 ### `qpu_fold.lean` — 14 definition(s), 8 theorem(s)
@@ -1682,6 +1687,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**26,245** declarations, **0** axiom dependencies, **1,109** definitions they rest on.
+**26,253** declarations, **0** axiom dependencies, **1,114** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

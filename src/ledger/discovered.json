@@ -150404,5 +150404,45 @@
     "key": "lean_thousandbit_the_witness_and_maximal_bracket_the_thousand_bit_range",
     "name": "lean thousandbit.lean: the_witness_and_maximal_bracket_the_thousand_bit_range — 2 ^ 999 < 2 ^ 999 + 1 ∧ 2 ^ 999 + 1 < 2 ^ 1000 - 1 ∧ 2 ^ 1000 - 1 < 2 ^ 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "53e5fa21-537c-86c0-bf9b-5eaba57cc62b"
+  },
+  {
+    "key": "lean_qpucrypto_the_reflection_carries_the_maximal_to_its_witness_at_every_octave_width",
+    "name": "lean qpu_crypto.lean: the_reflection_carries_the_maximal_to_its_witness_at_every_octave_width — reflWidths.all (fun n => reflSigma n (reflMaximal n) == reflWitness n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ece413e8-b2e0-86c4-8f6b-6abec5809c05"
+  },
+  {
+    "key": "lean_qpucrypto_the_reflection_is_an_involution_at_every_octave_width",
+    "name": "lean qpu_crypto.lean: the_reflection_is_an_involution_at_every_octave_width — reflWidths.all (fun n => reflSigma n (reflSigma n (reflMaximal n)) == reflMaximal n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "af2b2747-bcc3-81c4-a3b4-70abab3a7346"
+  },
+  {
+    "key": "lean_qpucrypto_the_reflection_constant_is_the_maximal_plus_its_witness_at_every_octave_width",
+    "name": "lean qpu_crypto.lean: the_reflection_constant_is_the_maximal_plus_its_witness_at_every_octave_width — reflWidths.all (fun n => reflMaximal n + reflWitness n == reflCentre n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9124cfa7-2c3b-8b56-a102-b51e3a38ef94"
+  },
+  {
+    "key": "lean_qpucrypto_the_four_bit_reflection_witness_is_two_cubed_plus_one",
+    "name": "lean qpu_crypto.lean: the_four_bit_reflection_witness_is_two_cubed_plus_one — reflSigma 4 (reflMaximal 4) = 2 ^ 3 + 1 ∧ reflWitness 4 = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4abfda77-40da-8cfd-90fa-b09792ff9ddf"
+  },
+  {
+    "key": "lean_qpucrypto_the_thousand_bit_reflection_witness_is_two_to_the_nine_ninety_nine_plus_one",
+    "name": "lean qpu_crypto.lean: the_thousand_bit_reflection_witness_is_two_to_the_nine_ninety_nine_plus_one — reflSigma 1000 (reflMaximal 1000) = 2 ^ 999 + 1 ∧ reflWitness 1000 = 2 ^ 999 + 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "86512a22-46bb-87a5-a0ab-ff0c294dbb02"
+  },
+  {
+    "key": "lean_qpucrypto_the_cubic_descent_splits_the_witness_at_the_small_and_thousand_bit_scales",
+    "name": "lean qpu_crypto.lean: the_cubic_descent_splits_the_witness_at_the_small_and_thousand_bit_scales — (2 + 1) * (2 ^ 2 - 2 + 1) = 2 ^ 3 + 1 ∧ (2 ^ 333 + 1) * (2 ^ 666 - 2 ^ 333 + 1) = 2 ^ 999 + 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e4b8b0c9-e931-88af-8946-705fa1b80ab9"
+  },
+  {
+    "key": "lean_qpucrypto_fermats_centre_reflects_the_factors_the_way_sigma_reflects_the_maximal",
+    "name": "lean qpu_crypto.lean: fermats_centre_reflects_the_factors_the_way_sigma_reflects_the_maximal — witness 5 13 = 9 ∧ 2 * witness 5 13 - 5 = 13 ∧ 2 * witness 5 13 - 13 = 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d941b195-db01-8f7f-80c3-4154883f5bcb"
+  },
+  {
+    "key": "lean_qpucrypto_the_reflection_witness_is_structure_not_the_hard_floor",
+    "name": "lean qpu_crypto.lean: the_reflection_witness_is_structure_not_the_hard_floor — reflWitness 1000 % 3 = 0 ∧ reflSigma 1000 (reflMaximal 1000) = 2 ^ 999 + 1 ∧ reflWitness 4 = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "226c1a93-2c19-8908-be0e-2f14700e8ce5"
   }
 ]

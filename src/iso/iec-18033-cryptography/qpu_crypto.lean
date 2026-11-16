@@ -18,8 +18,10 @@
 --   each construction is, on the same integers, and exactly where each one stops.
 -- prior_art_search: not performed — every law is named above and none is claimed as new.
 -- prior_art_pool: bounded
--- prior_art_own: the pairing of each construction with its law, the refuted controls beside each pairing, and the
---   multiply-back of this deposit's own factor route on the thousand-bit integer
+-- prior_art_own: the pairing of each construction with its law, the refuted controls beside each pairing, the
+--   multiply-back of this deposit's own factor route on the thousand-bit integer, and the σ-reflection shown to be
+--   one scale-invariant rule — the same reflect-about-a-centre as the Fermat trapdoor — with the 4-bit (2^3 + 1)
+--   and thousand-bit (2^999 + 1) cases as its instances
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- WHY THIS FILE EXISTS, AND WHAT IT REFUSES TO SAY.
@@ -291,5 +293,59 @@ theorem the_eight_scales_reach_two_to_the_thirty_seven_and_the_thousand_bit_piec
   ∧ scaleCapacity 8 = 2 ^ 37 ∧ 16 ^ 8 = 2 ^ 32 ∧ 4 * 8 = Qpu.bits
   ∧ 2 ^ 37 + 1 = 3 * 1777 * 25781083 ∧ 999 / 27 = 37 ∧ 4 * 8 + 5 = 37
   ∧ (List.range' 1 8).all (fun s => scaleCapacity s == 2 ^ (4 * s) * Qpu.hexbit * s) := by decide
+
+-- ── 8 · THE σ-REFLECTION IS ONE RULE AT EVERY WIDTH — AND IT IS FERMAT'S CENTRE, NOT A HARDNESS ────────────
+-- src/iso/80000-2-mathematics/thousandbit.lean seals the σ-reflection σ(x) = 3·2^999 − x at the thousand-bit
+-- width alone: it carries the all-ones 2^1000 − 1 to its witness 2^999 + 1. That is not special to a thousand
+-- bits. The SAME rule σ_n(x) = 3·2^(n-1) − x carries 2^n − 1 to 2^(n-1) + 1 at EVERY width n, decided here over
+-- the Bell octave [2 … 128]: the 4-bit case is 2^3 + 1 = 9 and the thousand-bit case is 2^999 + 1 — one rule,
+-- scaled, not two results. Three things are developed and none is dropped:
+--   · the centre it reflects about, 3·2^(n-2), is the MIDPOINT of the maximal and its witness — and that is the
+--     same "reflect about the centre" §5's Fermat trapdoor uses to factor N about (p + q)/2 (and for (5, 13)
+--     that centre is `witness 5 13` = 9, the very 4-bit witness);
+--   · the algebraic descent a^3 + 1 = (a + 1)(a^2 − a + 1) factors the witness at both scales — 2^3 + 1 = 3·3
+--     and 2^999 + 1 = (2^333 + 1)(2^666 − 2^333 + 1) — the cyclotomic split §6 names, written out;
+--   · it is STRUCTURE, never hardness. A witness 2^k + 1 carries the factor three (lifting-the-exponent), so it
+--     is NOT the unknown hard semiprime §5 leaves unfactored. Deciding a reflection is not factoring one.
+-- All eight are `by decide`, nothing is retired, and the thousand-bit theorems in 80000-2 stand untouched.
+def reflCentre  (n : Nat) : Nat := 3 * 2 ^ (n - 1)
+def reflSigma   (n x : Nat) : Nat := reflCentre n - x
+def reflMaximal (n : Nat) : Nat := 2 ^ n - 1
+def reflWitness (n : Nat) : Nat := 2 ^ (n - 1) + 1
+def reflWidths : List Nat := [2, 4, 8, 16, 32, 64, 128]
+
+-- the reflection carries the all-ones number to its witness at every octave width — one rule, every scale
+theorem the_reflection_carries_the_maximal_to_its_witness_at_every_octave_width :
+  reflWidths.all (fun n => reflSigma n (reflMaximal n) == reflWitness n) := by decide
+
+-- reflecting twice returns the maximal — σ is its own inverse at every width (the control: it is an involution)
+theorem the_reflection_is_an_involution_at_every_octave_width :
+  reflWidths.all (fun n => reflSigma n (reflSigma n (reflMaximal n)) == reflMaximal n) := by decide
+
+-- σ(x) = C − x with C = reflCentre = maximal + witness; the midpoint it reflects about is C/2 = 3·2^(n-2), the
+-- same "reflect about the midpoint" §5's Fermat trapdoor uses on (p + q)/2
+theorem the_reflection_constant_is_the_maximal_plus_its_witness_at_every_octave_width :
+  reflWidths.all (fun n => reflMaximal n + reflWitness n == reflCentre n) := by decide
+
+-- the small instance: at four bits the witness is 2^3 + 1 = 9
+theorem the_four_bit_reflection_witness_is_two_cubed_plus_one :
+  reflSigma 4 (reflMaximal 4) = 2 ^ 3 + 1 ∧ reflWitness 4 = 9 := by decide
+
+-- the thousand-bit instance: the same rule gives 2^999 + 1, the integer 80000-2's thousandbit.lean seals
+theorem the_thousand_bit_reflection_witness_is_two_to_the_nine_ninety_nine_plus_one :
+  reflSigma 1000 (reflMaximal 1000) = 2 ^ 999 + 1 ∧ reflWitness 1000 = 2 ^ 999 + 1 := by decide
+
+-- the cubic descent a^3 + 1 = (a + 1)(a^2 − a + 1) splits the witness at both scales — the cyclotomic factor
+theorem the_cubic_descent_splits_the_witness_at_the_small_and_thousand_bit_scales :
+  (2 + 1) * (2 ^ 2 - 2 + 1) = 2 ^ 3 + 1
+  ∧ (2 ^ 333 + 1) * (2 ^ 666 - 2 ^ 333 + 1) = 2 ^ 999 + 1 := by decide
+
+-- Fermat's centre (p + q)/2 reflects the two factors the way σ reflects the maximal — the same operation
+theorem fermats_centre_reflects_the_factors_the_way_sigma_reflects_the_maximal :
+  witness 5 13 = 9 ∧ 2 * witness 5 13 - 5 = 13 ∧ 2 * witness 5 13 - 13 = 5 := by decide
+
+-- the honest floor: the witness is STRUCTURE — 2^999 + 1 carries the factor three, it is not the hard semiprime
+theorem the_reflection_witness_is_structure_not_the_hard_floor :
+  reflWitness 1000 % 3 = 0 ∧ reflSigma 1000 (reflMaximal 1000) = 2 ^ 999 + 1 ∧ reflWitness 4 = 9 := by decide
 
 end QpuCrypto
