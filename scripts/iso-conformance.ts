@@ -61,7 +61,7 @@ const reqs: Req[] = [
       ? `FULLY FACTORED & PROVED: ${ecm.provedBelowBound.length} primes proved below 3.3e24 + ${ecm.provedByAprCl.length} proved by PARI/GP isprime (APR-CL, ${ecm.provedByAprClDigits.join(',')}-digit), remainder 1, multiplies back to 2^999+1 (evidence/factor/2pow999plus1.json)`
       : `LIVE factor → ${f.status}: ${(f.factors ?? []).length} algebraic factors and a ${f.cofactorDigits}-digit ${f.cofactorPrimality ?? 'cofactor'}`,
     path: ecm && ecm.status === 'FULLY_PROVED'
-      ? 'complete — every factor proved prime (deposit deterministic test below 3.3e24; APR-CL above it)'
+      ? 'complete — every factor proved prime (deposit test below 3.3e24; APR-CL above it); the two large primes carry standalone ECPP certificates (evidence/factor/primecerts.json) anyone can re-verify with primecertisvalid'
       : 'route the cofactor to ECM / GNFS, or Shor on real quantum hardware — every split extends the account' },
   { clause: '4879 3.4.10', what: 'quantum computer (physical device)', kind: 'measured', state: 'open',
     evidence: `the CHSH device JUDGE is BUILT and sealed (${chsh.count} theorems, receipts ${chsh.receipts.join(', ')}…): S>2 decided on exact integers, false-positive impossible by construction`,

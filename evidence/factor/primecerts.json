@@ -1,0 +1,23 @@
+{
+  "n": "2^999+1",
+  "what": "standalone ECPP certificates for the two large prime factors",
+  "method": "PARI/GP primecert (one-time generation) → primecertisvalid (cheap re-verification); cached by the prime handle",
+  "efficiency": "generation paid once and committed; the pipeline only verifies by handle, never regenerates — the 304 involution (serve-by-address, not recompute)",
+  "certs": [
+    {
+      "prime": "1270593144646505233013326197403",
+      "digits": 31,
+      "handle": "2caafff6",
+      "cert": "evidence/factor/cert-31d.txt",
+      "bytes": 228
+    },
+    {
+      "prime": "356259709855840347814184579423977577883939818854919827419470712293459180335618566367184158250790959263766858787438019506310967435347190178144994691161",
+      "digits": 150,
+      "handle": "3fe7280c",
+      "cert": "evidence/factor/cert-150d.txt",
+      "bytes": 8866
+    }
+  ],
+  "reproduce": "gp: primecertisvalid(read(\"<cert>\")) == 1 and read(\"<cert>\")[1][1] == <prime>"
+}
