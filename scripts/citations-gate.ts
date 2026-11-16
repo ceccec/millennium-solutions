@@ -48,6 +48,8 @@ const DECLARED = new Set([
   'RFC 8032',                     // Ed25519 — the signature scheme, and the §7.1 vectors crypto-kat checks against
   'RFC 4122',                     // the 2005 UUID spec RFC 9562 obsoletes, named where the layout's history matters
   'RFC 6962',                     // Certificate Transparency §2.1 — the leaf/node domain separation (0x00/0x01) merkleFold was missing, cited where that repair is recorded
+  'RFC-9562',                     // RFC 9562 again, hyphenated where clock.ts derives the register's bit accounting from it
+  'RFC 7232',                     // HTTP/1.1 Conditional Requests — 304 Not Modified, the serve-by-validator sdk_correspondence and PRIOR-ART cite (obsoleted by RFC 9110, 2022)
 ])
 
 // WHOLE CITATIONS, NOT A PREFIX PLUS AN OPTIONAL TAIL. The first version matched an instrument name, then
