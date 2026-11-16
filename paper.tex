@@ -340,7 +340,7 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_coil\_splits\_into\_version\_and\_variant}]
-\[ \mathrm{version} + \mathrm{variant} = \mathrm{reserved} \land \mathrm{version} = 4 \land \mathrm{variant} = 2 \land \mathrm{reserved} = 6 \]
+\[ \forall v \in \{0,\dots,\mathrm{reserved} + 1-1\},\; v + \mathrm{reserved} - v = \mathrm{reserved} \land \mathrm{reserved} - \mathrm{reserved} - v = v \land \mathrm{freeOf}\mathopen{}\left(\mathrm{reserved} - v\right) = \mathrm{freeOf}\mathopen{}\left(\mathrm{reserved}\right) + v \land \mathrm{version} + \mathrm{variant} = \mathrm{reserved} \land \mathrm{version} = 4 \land \mathrm{variant} = 2 \land \mathrm{reserved} = 6 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -375,7 +375,7 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_free\_hex\_handles\_are\_thirty\_of\_thirty\_two}]
-\[ \frac{\mathrm{container}}{4} = 32 \land \frac{\mathrm{version}}{4} = 1 \land \frac{\mathrm{container}}{4} - \frac{\mathrm{version}}{4} + 1 = 30 \]
+\[ \forall n \in \{0,\dots,\frac{\mathrm{container}}{4} + 1-1\},\; \frac{4 \cdot n}{4} = n \land n - 2 + 2 = n = \mathrm{decide}\mathopen{}\left(2 \le n\right) \land \frac{\mathrm{container}}{4} = 32 \land \frac{\mathrm{version}}{4} = 1 \land \frac{\mathrm{container}}{4} - \frac{\mathrm{version}}{4} + 1 = 30 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1266,9 +1266,9 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \paragraph{\texttt{sdk\_correspondence.lean}}
 
 \begin{theorem}[\texttt{verify\_is\_one\_step}]
-\[ \mathrm{verifyCost} = 1 \]
+\[ \mathrm{verifyCost} = 1 \land \forall n \in \{0,\dots,63\},\; \mathrm{decide}\mathopen{}\left(1 \le n\right) = \mathrm{recomputeCost}\mathopen{}\left(n\right) - \mathrm{verifyCost} + \mathrm{verifyCost} = \mathrm{recomputeCost}\mathopen{}\left(n\right) \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{recompute\_is\_n\_steps}]
 \texttt{∀ n, recomputeCost n = n}

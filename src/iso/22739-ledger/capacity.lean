@@ -164,8 +164,13 @@ def version : Nat := 4        -- the version nibble — reclaimable by cross-mix
 def variant : Nat := 2        -- the RFC 9562 variant — the floor a legal UUID cannot reclaim
 
 -- the coil is two parts, and they sum to the six already spent.
+-- AS A LAW, NOT A READ-BACK: for EVERY split of the reserved register into a version part v and a variant part
+-- reserved − v, the parts sum back to the register, either part recovers the other, and reclaiming the v version
+-- bits frees exactly v — freeOf (reserved − v) = freeOf reserved + v. RFC 9562's 4 + 2 is one of the seven decided.
 theorem the_coil_splits_into_version_and_variant :
-  version + variant = reserved ∧ version = 4 ∧ variant = 2 ∧ reserved = 6 := by decide
+  (List.range (reserved + 1)).all (fun v => v + (reserved - v) == reserved && reserved - (reserved - v) == v
+    && freeOf (reserved - v) == freeOf reserved + v)
+  ∧ version + variant = reserved ∧ version = 4 ∧ variant = 2 ∧ reserved = 6 := by decide
 
 -- reserve only the variant and the free register is 126 — four more than at the full coil, the version reclaimed.
 theorem the_variant_floor_frees_one_hundred_twenty_six :
@@ -199,7 +204,11 @@ theorem the_split_is_recoverable_at_either_floor :
   ∧ freeOf variant + variant = container ∧ freeOf reserved + reserved = container := by decide
 
 -- read as hex handles: 32 nibbles, less the one the version fills and the one the variant touches = 30 free.
+-- AS A LAW: at EVERY register of n whole nibbles up to the container's 32, a width of 4n bits reads back as n
+-- handles, and the two reserved handles subtract and restore (n − 2 + 2 = n) exactly when there are two to take
+-- (2 ≤ n) — below that the subtraction truncates and nothing is restored. 128 bits is the instance n = 32.
 theorem the_free_hex_handles_are_thirty_of_thirty_two :
-  container / 4 = 32 ∧ version / 4 = 1 ∧ container / 4 - (version / 4 + 1) = 30 := by decide
+  (List.range (container / 4 + 1)).all (fun n => 4 * n / 4 == n && (n - 2 + 2 == n) == decide (2 ≤ n))
+  ∧ container / 4 = 32 ∧ version / 4 = 1 ∧ container / 4 - (version / 4 + 1) = 30 := by decide
 
 end Capacity

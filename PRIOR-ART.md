@@ -6,8 +6,8 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,357 machine-checked declarations, **26,270** restate work that already has an author and
-**87** are about this deposit's own construction. Each source file declares which it is, in its own
+Of 26,357 machine-checked declarations, **26,310** restate work that already has an author and
+**47** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/iso/690-record/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/iso/690-record/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
@@ -27,12 +27,12 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **26,270** |
-| unclassified — no search performed, status unknown | **87** |
+| attributed to named earlier work | **26,310** |
+| unclassified — no search performed, status unknown | **47** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
-that everything here already has an author. It is not that. **87** theorems have had no prior-art
+that everything here already has an author. It is not that. **47** theorems have had no prior-art
 search at all, so their status is unknown rather than conceded — and of the 43 distinct years the
 attributions carry, **34** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
@@ -42,12 +42,12 @@ looked.** It is a statement about work not done, not about work found.
 caveat cannot be separated by an edit.
 
 A source may claim novelty only if it names a prior-art search that was actually performed — what was
-searched, where, and when. An earlier version of this page claimed novelty for 8 sources and
-87 theorems on the strength of their own self-description, with nobody having looked. Asserting
+searched, where, and when. An earlier version of this page claimed novelty for 7 sources and
+47 theorems on the strength of their own self-description, with nobody having looked. Asserting
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 120 sources, 26,270 theorems
+## Restated from named earlier work — 121 sources, 26,310 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -131,6 +131,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>planck.lean</code></td><td>35</td><td>the CODATA recommended values, and the SI's 2019 definition of the seven base constants</td><td>NONE OF THE PHYSICS IS THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The Planck units are Max Planck, 1899. The numerical values below are digit sequences published by CODATA and served by NIST at physics.nist.gov/cgi-bin/cuu — the Planck length 1.616255(18)e-35 m, the Planck time 5.391247(60)e-44 s, the Planck mass 2.176434(24)e-8 kg, and the Newtonian constant of gravitation 6.67430(15)e-11 m^3 kg^-1 s^-2, each read from that service on 2026-09-20. No measurement is performed here and none is asserted. What is decided below is arithmetic on those digit sequences: a quotient, a list length, a residue, and an exhaustion over 2,197 products.</td></tr>
 <tr><td><code>preimage.lean</code></td><td>8</td><td>the second-preimage weakness of unpadded Merkle trees, and the standard remedy of domain separation between leaf and internal hashes (Certificate Transparency, RFC 6962 §2.1, uses 0x00 for leaves and 0x01 for nodes). Also the Kelsey–Schneier style length-extension family.</td><td>NOT THIS DEPOSIT'S AND WELL KNOWN. That a Merkle tree without domain separation lets an internal node be presented as a leaf is textbook, and RFC 6962 fixes it with one prefix byte. What is this deposit's is the finding: that ITS OWN fold has the weakness, in a specific shape, and that the shape is decided here rather than asserted.</td></tr>
 <tr><td><code>program.lean</code></td><td>21</td><td>identifier formats and error-detecting codes</td><td>the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC 4122, 2005); FNV-1a, used here as the check function, is Glenn Fowler, Landon Curt Noll and Phong Vo, 1991, and is credited in fnv.lean where it is ported. A checksum placed in one field of an identifier over the remaining fields is ordinary practice and no priority is claimed for it. What is decided here is only that THIS deposit's layout is the partition it says it is.</td></tr>
+<tr><td><code>qc_status.lean</code></td><td>40</td><td>D. P. DiVincenzo, "The Physical Implementation of Quantum Computation", Fortschr. Phys. 48, 771 (2000), arXiv:quant-ph/0002077 — whether a physical system is a quantum computer, stated as a list of criteria each met or unmet</td><td>the criteria-list shape of a quantum-computer verdict is DiVincenzo's. What this file decides is list logic about THIS deposit's gap taxonomy — software gaps closed, two world gaps open, the verdict dominated by the world gaps — and no external work precedes those facts about this table.</td></tr>
 <tr><td><code>qec.lean</code></td><td>8</td><td>the rotated surface code and its parameters [[2d² − 2d + 1, 1, d]] (Kitaev 1997; Bombín &amp; Martín-Delgado 2007); Shor's nine-qubit code [[9, 1, 3]] as a 3×3 concatenation (Shor 1995); the stabilizer formalism and the order of the n-qubit Pauli group with phases, 2^(2n+2) (Gottesman 1997). Read from qpu.uuidna.com's Surfacecode.lean and Stabilizer.lean (~/github/uuidna/qpu) on 2026-11-08 and ported here.</td><td>none of this is new and none of it is this deposit's — the codes are standard and the values are qpu's. qpu states them as rfl certificates on single inputs; what is decided HERE is the same parameters as a FUNCTION of the distance, over a range, by exhaustion, each with a control — and the honest bound that these are the codes' COUNTS, decided over a finite domain, not a physically fault-tolerant device. The ISO audit's fault-tolerance score measures error correction on physical qubits; deciding this arithmetic provides none.</td></tr>
 <tr><td><code>qpu.lean</code></td><td>24</td><td>the constants on the left are qpu.uuidna.com's, read from the served JSON-LD on 2026-09-28. They are that service's declarations about its own unit and none of them is this deposit's. The arithmetic relating them is elementary multiplication and powers of two, older than both.</td><td>NEITHER SIDE IS BEING CREDITED WITH THE OTHER'S WORK. qpu states faces = coins * rays and bits = vertices * hexbit in its own Lean; this deposit states DIMENSIONS = 2 * N and DIGITS_READ = 4 * N in rays.lean. What is decided here is only WHICH of those land on the same integers, and which do not.</td></tr>
 <tr><td><code>qpu_crypto.lean</code></td><td>64</td><td>Fermat's difference-of-squares factorisation (1643); RSA (Rivest, Shamir, Adleman, 1977) on the textbook modulus 91 = 7 · 13 with φ(91) = 72; the classical half of Shor's reduction (1994) — an even period r with a^(r/2) ≢ −1 (mod N) gives the factors gcd(a^(r/2) ± 1, N); Grover's square-root search cost (1996) and the birthday bound; the lifting-the-exponent lemma, v_3(2^n + 1) = v_3(3) + v_3(n) for odd n, and the algebraic split a^3 + 1 = (a + 1)(a^2 − a + 1); Fermat's little theorem as a compositeness witness; RFC 9562's version and variant fields; the 128-quantum-bit floor that qpu.uuidna.com reads from the Classic McEliece ISO page; the order of the general linear group over two elements, |GL(n, 2)| = ∏ (2^n − 2^i); Mersenne primes and the composite 2^11 − 1 = 23 · 89; triangular numbers T(q) = q(q + 1)/2 = C(q + 1, 2); and Zu Chongzhi's rational π = 355/113 (5th century), which qpu's own Grover.lean names as pi_zu.</td><td>NONE OF THE MATHEMATICS IS THIS DEPOSIT'S, AND NONE OF IT IS qpu's. qpu.uuidna.com's seal, σ-trapdoor, Shor run and thousand-bit surface are that service's constructions, read from ~/github/uuidna/qpu on 2026-11-08 (src/quantum/uuid/index.ts `version`, `seal`, `uuidQubits`; src/quantum/processing/algorithms.ts `createImpossible`, `decodeImpossible`; src/iso/iec-4879-quantum/CRYPTO.md; the root README.md, committed at d0f1dd01, lines 49–81 for the scale table and the Grover comparison). What is decided here is only which NAMED LAW each construction is, on the same integers, and exactly where each one stops.</td></tr>
@@ -182,6 +183,7 @@ which is a contribution of verification, not of discovery.
 - **Cantor's diagonal argument again, turned on a vocabulary rather than a set; the observation that no finite list of definable predicates over a finite domain exhausts the predicates.** — 8 theorems, in `closure.lean`
 - **Cantor's diagonal argument, and the elementary fact that a diagonal over a domain of n points separates a list of at most n. Modular reduction 9 ≡ 0 (mod 9) and the tens-complement 10 − d.** — 8 theorems, in `domain.lean`
 - **D-Wave Chimera and Pegasus annealer qubit counts (vertices·m², vertices·n·m·(m−1)); the quantum Fourier transform's resource counts over q qubits — gate count q(q+1)/2 (a triangular number), swaps ⌊q/2⌋, depth 2q−1, dimension 2^q; and the classical rational convergents of π — Archimedes' 22/7 (upper bound) and Zu Chongzhi's 355/113 (5th century). Read from qpu.uuidna.com's Annealing.lean, Qft.lean and Pi.lean (~/github/uuidna/qpu) on 2026-11-08 and ported here.** — 8 theorems, in `resources.lean`
+- **D. P. DiVincenzo, "The Physical Implementation of Quantum Computation", Fortschr. Phys. 48, 771 (2000), arXiv:quant-ph/0002077 — whether a physical system is a quantum computer, stated as a list of criteria each met or unmet** — 40 theorems, in `qc_status.lean`
 - **FNV-1a (Fowler, Noll, Vo, 1991), a 64-bit non-cryptographic hash; the pigeonhole principle (Dirichlet, 1834); the birthday bound, that a collision among values drawn from a space of size 2^n appears near 2^(n/2) draws; and Grover search (Grover, 1996), whose preimage cost on a space of size N is about √N. qpu's own README states the coin's Grover cost as 2^61 by taking the search space to be the 122-bit layout.** — 8 theorems, in `qpu_fold.lean`
 - **Fermat's difference-of-squares factorisation (1643); RSA (Rivest, Shamir, Adleman, 1977) on the textbook modulus 91 = 7 · 13 with φ(91) = 72; the classical half of Shor's reduction (1994) — an even period r with a^(r/2) ≢ −1 (mod N) gives the factors gcd(a^(r/2) ± 1, N); Grover's square-root search cost (1996) and the birthday bound; the lifting-the-exponent lemma, v_3(2^n + 1) = v_3(3) + v_3(n) for odd n, and the algebraic split a^3 + 1 = (a + 1)(a^2 − a + 1); Fermat's little theorem as a compositeness witness; RFC 9562's version and variant fields; the 128-quantum-bit floor that qpu.uuidna.com reads from the Classic McEliece ISO page; the order of the general linear group over two elements, |GL(n, 2)| = ∏ (2^n − 2^i); Mersenne primes and the composite 2^11 − 1 = 23 · 89; triangular numbers T(q) = q(q + 1)/2 = C(q + 1, 2); and Zu Chongzhi's rational π = 355/113 (5th century), which qpu's own Grover.lean names as pi_zu.** — 64 theorems, in `qpu_crypto.lean`
 - **GHZ states and the X-basis parity witness (Greenberger, Horne, Zeilinger 1989)** — 2 theorems, in `interference.lean`
@@ -275,7 +277,7 @@ is worth saying precisely, because it is both smaller than a discovery claim and
 Author and year are given rather than a resolver identifier. Asserting a DOI for someone else's paper without
 verifying it would be a fabricated citation, and this is the worst document in the deposit to put one in.
 
-## This deposit's own construction — 8 sources, 87 theorems, none claimed
+## This deposit's own construction — 7 sources, 47 theorems, none claimed
 
 The ℤ/9 vortex framework, its ledger, its receipts, and the enumeration its own generators proposed. These are
 **unclassified**: no prior-art search has been performed for them, so nothing is claimed about them either
@@ -292,7 +294,6 @@ refuses a `none-known` declaration that does not carry one.
 <tr><td><code>lanes.lean</code></td><td>8</td><td>NONE OF THE ARITHMETIC IS THIS DEPOSIT'S. min, ⌊a/b⌋ and truncating subtraction on the naturals are older than anyone could name. What is this deposit's is not the arithmetic: it is that the rule deciding how much of a machine a verification may take is DECIDED by the kernel rather than trusted because it has not yet swapped.</td></tr>
 <tr><td><code>leads.lean</code></td><td>0</td><td>—</td></tr>
 <tr><td><code>priorart.lean</code></td><td>9</td><td>THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per artefact is long established and formalised: W3C PROV-O, the DataCite metadata schema, Dublin Core Metadata Terms, PREMIS for archived digital objects, the Open Provenance Model, and the software citation principles' credit-and-attribution requirement. Nothing about keeping an attribution table is new, and this deposit does not suggest otherwise.</td></tr>
-<tr><td><code>qc_status.lean</code></td><td>40</td><td>—</td></tr>
 <tr><td><code>settled.lean</code></td><td>8</td><td>THE ARITHMETIC IS NAMED, NOT CLAIMED. What is this deposit's is only the subject: that these particular files' self-declared counts agree with their own contents. The statement is about this tree and asserts nothing about anybody else's work.</td></tr>
 </tbody></table>
 
@@ -305,5 +306,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `1c605adb-1394-8bb5-8ac3-2ddbd7971c22` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `6c6e4a25-79f4-87b6-b0f7-01121821997c` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

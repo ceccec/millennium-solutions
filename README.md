@@ -611,7 +611,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The trinity and its observer** — `trinity.lean`, 24 theorem(s). The trinity turns: feeling feeds thought, thought shapes emotion, emotion changes the body, which is new feeling. Three turns return to the start — ρ³ = id — a DIFFERENT symmetry from the Clay maps, which are involutions (σ² = id). An involution flips and returns in two steps; the trinity rotates and returns in three, and a rotation has no fixed corner. The valence flip (pleasant ↔ unpleasant) acts on every corner at once and commutes with the turn, so the two symmetries combine into one six-element group, C₃ × C₂ ≅ C₆: three turns and three flipped turns, with exactly ONE involution — not the dihedral S₃, where three reflections would each be their own inverse.
 
-137 of 26357 declarations carry no comment of their own and are shown here as the gap they are, not
+135 of 26357 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself

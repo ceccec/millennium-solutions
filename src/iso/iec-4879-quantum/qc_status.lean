@@ -1,5 +1,12 @@
 -- title: The quantum-computer status as a gap taxonomy — incomplete, not false; software-complete is not true
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_domain: D. P. DiVincenzo, "The Physical Implementation of Quantum Computation", Fortschr. Phys. 48,
+--   771 (2000), arXiv:quant-ph/0002077 — whether a physical system is a quantum computer, stated as a list of
+--   criteria each met or unmet
+-- prior_art_note: the criteria-list shape of a quantum-computer verdict is DiVincenzo's. What this file decides is
+--   list logic about THIS deposit's gap taxonomy — software gaps closed, two world gaps open, the verdict dominated
+--   by the world gaps — and no external work precedes those facts about this table.
+-- prior_art_search: not performed — the precedent is named above rather than searched for.
 --
 -- The qpu `get_qc` tool returns a status, not a bare boolean: a list of gaps, each OPEN or CLOSED with the
 -- condition that closes it (src ~/github/uuidna/qpu/src/quantum/uuid/programs/get_qc/index.ts). This file

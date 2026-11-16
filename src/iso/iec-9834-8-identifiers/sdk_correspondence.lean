@@ -12,7 +12,12 @@ namespace SdkCorrespondence
 def verifyCost : Nat := 1
 def recomputeCost (n : Nat) : Nat := n
 
-theorem verify_is_one_step : verifyCost = 1 := by decide
+-- AS A LAW: verify is one step, and it is the inverse of the advantage at EVERY state that holds a fact —
+-- recompute − verify + verify = recompute exactly when 1 ≤ n; at the empty state there is nothing to verify
+-- and the round trip does not close.
+theorem verify_is_one_step :
+  verifyCost = 1 ∧ (List.range 64).all (fun n =>
+    decide (1 ≤ n) == (recomputeCost n - verifyCost + verifyCost == recomputeCost n)) := by decide
 
 theorem recompute_is_n_steps : ∀ n, recomputeCost n = n := by intro n; rfl
 
