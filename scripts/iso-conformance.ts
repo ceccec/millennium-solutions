@@ -10,7 +10,7 @@ import { writeFileSync, existsSync, readFileSync } from 'node:fs'
 import { factor } from '../src/iso/iec-18033-cryptography/factor/index.ts'
 
 // the ECM-extended factor record (scripts/factor-999.ts), if present — peeled primes beyond the rho route.
-let ecm: { ecmPrimes: string[]; ecmPrimeDigits: number[]; remainingDigits: number; remainingComposite: boolean } | null = null
+let ecm: { status: string; provedPrimes: string[]; probablePrimes: string[]; probablePrimeDigits: number[]; remaining: string } | null = null
 try { if (existsSync('evidence/factor/2pow999plus1.json')) ecm = JSON.parse(readFileSync('evidence/factor/2pow999plus1.json', 'utf8')) } catch { ecm = null }
 
 type Row = { key: string; name?: string; receipt: string; revoked?: boolean }
@@ -55,11 +55,14 @@ const reqs: Req[] = [
     evidence: 'dictionary-then-verified, sealed', path: 'none needed — complete' },
   { clause: '9001', what: 'process pipeline', kind: 'computed', state: 'complete',
     evidence: 'stages in order, sealed', path: 'none needed — complete' },
-  { clause: '(mathematics)', what: 'factor 2^999+1', kind: 'computed', state: 'open',
-    evidence: ecm
-      ? `LIVE factor → ${f.status}: ${(f.factors ?? []).length} algebraic factors; GMP-ECM peeled ${ecm.ecmPrimes.length} primes (${ecm.ecmPrimeDigits.join(',')}-digit) → a ${ecm.remainingDigits}-digit ${ecm.remainingComposite ? 'composite' : 'prime'} remains (evidence/factor/2pow999plus1.json)`
+  { clause: '(mathematics)', what: 'factor 2^999+1', kind: 'computed',
+    state: ecm && ecm.status === 'FULLY_FACTORED' ? 'sourced' : 'open',
+    evidence: ecm && ecm.status === 'FULLY_FACTORED'
+      ? `FULLY FACTORED by ECM: ${ecm.provedPrimes.length} proved primes + ${ecm.probablePrimes.length} probable (${ecm.probablePrimeDigits.join(',')}-digit), remainder 1, multiplies back to 2^999+1 (evidence/factor/2pow999plus1.json)`
       : `LIVE factor → ${f.status}: ${(f.factors ?? []).length} algebraic factors and a ${f.cofactorDigits}-digit ${f.cofactorPrimality ?? 'cofactor'}`,
-    path: 'ECM has peeled four primes; push ECM/GNFS deeper on the remaining cofactor, or Shor on real quantum hardware — every split extends the account (it multiplies back)' },
+    path: ecm && ecm.status === 'FULLY_FACTORED'
+      ? 'factored into primes; the two largest (31- and 150-digit) are strong probable primes — an ECPP certificate upgrades them from probable to proved'
+      : 'route the cofactor to ECM / GNFS, or Shor on real quantum hardware — every split extends the account' },
   { clause: '4879 3.4.10', what: 'quantum computer (physical device)', kind: 'measured', state: 'open',
     evidence: `the CHSH device JUDGE is BUILT and sealed (${chsh.count} theorems, receipts ${chsh.receipts.join(', ')}…): S>2 decided on exact integers, false-positive impossible by construction`,
     path: 'run CHSH on a Bell pair on IBM Quantum (depositor credentials) → feed the device counts to the sealed verdict → it decides S>2; the judge already exists — harness at /chsh-run' },

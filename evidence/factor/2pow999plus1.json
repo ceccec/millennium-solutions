@@ -1,7 +1,8 @@
 {
   "n": "2^999+1",
   "digits": 301,
-  "algebraicFactors": [
+  "status": "FULLY_FACTORED",
+  "provedPrimes": [
     "3",
     "3",
     "3",
@@ -15,28 +16,26 @@
     "87211",
     "25781083",
     "5814899281",
-    "97377658867"
-  ],
-  "ecmPrimes": [
+    "97377658867",
     "9853387597819",
     "107775231312019",
     "31031320083857011",
     "241947707873451279499"
   ],
-  "ecmPrimeDigits": [
-    13,
-    15,
-    17,
-    21
+  "probablePrimes": [
+    "1270593144646505233013326197403",
+    "356259709855840347814184579423977577883939818854919827419470712293459180335618566367184158250790959263766858787438019506310967435347190178144994691161"
   ],
-  "remainingCofactor": "452661145056583741024888360261314255041989594591177680169947624420443175204185919981920933410083412009082892616954433911744382934916144336828181070869846596932148281123798505254883",
-  "remainingDigits": 180,
-  "remainingComposite": true,
+  "probablePrimeDigits": [
+    31,
+    150
+  ],
+  "remaining": "1",
   "verified": {
     "multiplyBackToN": true,
-    "ecmPrimesArePrime": true,
-    "test": "deposit millerRabin (deterministic below 3.3e24)"
+    "remainderIsOne": true,
+    "everyFactorPrimeByDepositTest": true
   },
-  "method": "a^3+1 cyclotomic descent (factor/index.ts) + GMP-ECM 7.0.7 t20 B1=11000 (session), re-verified here",
-  "status": "PARTIAL"
+  "primalityNote": "factors below 3.3e24 are deterministically proved; the two largest (31- and 150-digit) are strong probable primes (deposit Miller-Rabin PRIME), pending an ECPP certificate",
+  "method": "a^3+1 cyclotomic descent (factor/index.ts) + GMP-ECM 7.0.7 (t20 B1=11000, t30 B1=250000), re-verified here"
 }

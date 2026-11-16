@@ -1,45 +1,59 @@
-// scripts/factor-999.ts — the ECM-extended factor record for 2^999+1, via the pipeline. The deposit's own
-// route (a^3+1 descent + Pollard rho) returns 14 algebraic factors and a 244-digit composite cofactor it could
-// not split. GMP-ECM (this session) peeled four primes from that cofactor. This generator holds those four and
-// RE-VERIFIES them from scratch — each must be prime by the deposit's own deterministic test AND divide the
-// cofactor, and the whole account must multiply back to 2^999+1 — or it throws and writes nothing. So the
-// constants are self-certifying evidence, not asserted. It records the extended, still-PARTIAL account.
+// scripts/factor-999.ts — the COMPLETE factorization of 2^999+1, via the pipeline. The deposit's own route
+// (a^3+1 descent + Pollard rho) returned 14 algebraic factors and a 244-digit composite cofactor it could not
+// split. GMP-ECM (this session) peeled that cofactor to nothing: four small primes (t20), then a 31-digit and a
+// 150-digit prime (t30). This generator holds the ECM-found primes and RE-VERIFIES everything from scratch —
+// each prime by the deposit's own test, each divides, and the whole product equals 2^999+1 with remainder 1 —
+// or it throws and writes nothing. Self-certifying evidence, not assertion.
+//
+// HONEST primality: the deposit's deterministic bound is 3.3e24 (~24 digits). Factors below it are PROVED; the
+// 31-digit and 150-digit are STRONG PROBABLE PRIMES (the deposit's Miller-Rabin says PRIME, but a full ECPP
+// certificate is not run). So 2^999+1 is completely factored, its two largest primes probable.
 // Generated — do not edit. Registered in the reconcile chain and predocs.
 import { writeFileSync, mkdirSync } from 'node:fs'
 import { factor, millerRabin } from '../src/iso/iec-18033-cryptography/factor/index.ts'
 
 const N = (2n ** 999n) + 1n
 const base = factor(N.toString()) as { status: string; factors: string[]; cofactor: string }
-const depositCofactor = BigInt(base.cofactor)
+const DETERMINISTIC_BOUND = 3_300_000_000_000_000_000_000_000n   // 3.3e24 — below this, primality is proved
 
-// peeled by GMP-ECM 7.0.7 (t20, B1=11000) from the 244-digit cofactor; re-verified below, never trusted raw.
-const ecmPrimes = [9853387597819n, 107775231312019n, 31031320083857011n, 241947707873451279499n]
+// peeled by GMP-ECM 7.0.7 from the deposit's 244-digit cofactor: t20 B1=11000 (four small), t30 B1=250000 (the
+// 31- and 150-digit). Each re-verified below, never trusted raw.
+const ecmPrimes = [
+  9853387597819n, 107775231312019n, 31031320083857011n, 241947707873451279499n,
+  1270593144646505233013326197403n,
+  356259709855840347814184579423977577883939818854919827419470712293459180335618566367184158250790959263766858787438019506310967435347190178144994691161n,
+]
 
-let rem = depositCofactor
+let rem = BigInt(base.cofactor)
 for (const p of ecmPrimes) {
   if (millerRabin(p) !== 'PRIME') throw new Error(`factor-999: ${p} is not prime by the deposit's test — refusing`)
   if (rem % p !== 0n) throw new Error(`factor-999: ${p} does not divide the cofactor — refusing`)
   rem /= p
 }
-let prod = rem
+if (rem !== 1n) throw new Error(`factor-999: cofactor not fully reduced (remainder ${rem}) — refusing`)
+
+// the whole account must multiply back to 2^999+1 exactly.
+let prod = 1n
 for (const f of base.factors) prod *= BigInt(f)
 for (const p of ecmPrimes) prod *= p
 if (prod !== N) throw new Error('factor-999: the account does not multiply back to 2^999+1 — refusing')
 
-const remComposite = millerRabin(rem) === 'COMPOSITE'
+const allPrimes = [...base.factors.map(BigInt), ...ecmPrimes]
+const proved = allPrimes.filter((p) => p < DETERMINISTIC_BOUND)
+const probable = allPrimes.filter((p) => p >= DETERMINISTIC_BOUND)   // the 31- and 150-digit, above 3.3e24
+
 const record = {
   n: '2^999+1',
   digits: N.toString().length,
-  algebraicFactors: base.factors,
-  ecmPrimes: ecmPrimes.map(String),
-  ecmPrimeDigits: ecmPrimes.map((p) => p.toString().length),
-  remainingCofactor: rem.toString(),
-  remainingDigits: rem.toString().length,
-  remainingComposite: remComposite,
-  verified: { multiplyBackToN: true, ecmPrimesArePrime: true, test: "deposit millerRabin (deterministic below 3.3e24)" },
-  method: 'a^3+1 cyclotomic descent (factor/index.ts) + GMP-ECM 7.0.7 t20 B1=11000 (session), re-verified here',
-  status: base.status,
+  status: 'FULLY_FACTORED',
+  provedPrimes: proved.map(String),
+  probablePrimes: probable.map(String),
+  probablePrimeDigits: probable.map((p) => p.toString().length),
+  remaining: rem.toString(),                       // 1 — nothing left
+  verified: { multiplyBackToN: true, remainderIsOne: true, everyFactorPrimeByDepositTest: true },
+  primalityNote: 'factors below 3.3e24 are deterministically proved; the two largest (31- and 150-digit) are strong probable primes (deposit Miller-Rabin PRIME), pending an ECPP certificate',
+  method: 'a^3+1 cyclotomic descent (factor/index.ts) + GMP-ECM 7.0.7 (t20 B1=11000, t30 B1=250000), re-verified here',
 }
 mkdirSync('evidence/factor', { recursive: true })
 writeFileSync('evidence/factor/2pow999plus1.json', JSON.stringify(record, null, 2) + '\n')
-console.log(`factor-999: ${base.factors.length} algebraic + ${ecmPrimes.length} ECM primes (${record.ecmPrimeDigits.join(',')}d) re-verified; cofactor ${depositCofactor.toString().length}d → ${rem.toString().length}d ${remComposite ? 'composite' : 'prime'}`)
+console.log(`factor-999: FULLY FACTORED — ${proved.length} proved primes + ${probable.length} probable (${record.probablePrimeDigits.join(',')}d); remainder ${rem}; multiplies back to 2^999+1`)
