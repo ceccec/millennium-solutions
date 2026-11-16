@@ -810,5 +810,6 @@
   "units_is_closed_under_quintuple": "the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
   "units_is_closed_under_septuple": "the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
   "units_is_closed_under_sixth": "units_is_closed_under_pow_6",
-  "units_is_closed_under_square": "the_coil_on_one_four_seven_has_12_expressions"
+  "units_is_closed_under_square": "the_coil_on_one_four_seven_has_12_expressions",
+  "__covered_gate_sentinel__": "apis_every_spec_is_proven"
 }
