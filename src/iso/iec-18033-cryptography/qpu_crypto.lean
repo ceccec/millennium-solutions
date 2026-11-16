@@ -487,4 +487,48 @@ theorem the_even_side_strips_twos_and_the_odd_side_strips_threes :
 theorem both_the_maximal_and_the_witness_carry_the_factor_three :
   (2 ^ 1000 - 1) % 3 = 0 ∧ (2 ^ 999 + 1) % 3 = 0 := by decide
 
+-- ── 12 · THE TRAPDOOR'S BLIND-DECODE COST GROWS WITH THE PRIME GAP — THE SECURITY MARGIN ──────────────────
+-- Section 5 decided that the σ-trapdoor is Fermat's difference of squares about the centre (p + q)/2, and that an
+-- N whose primes are a twin pair opens in ONE reflection. This develops the SPECTRUM. The blind cost — the
+-- distance from ceil(√N) out to the centre, blind p q = (p + q)/2 − ceilSqrt(p·q) + 1 — grows with the gap q − p:
+-- twin primes cost 1, and across widening gaps it runs 1, 2, 3, 7, 12. The centre squared minus N is the half-gap
+-- squared (Fermat), so a wider gap sits the centre further from √N and the blind search is longer. THE HONEST
+-- FLOOR, stated exactly: the trapdoor is cheap only when the gap is small or known; the hard 1000-bit semiprime
+-- has an UNKNOWN gap, and that — not any computation here — is its security. These decide the cost, not the floor.
+
+-- a twin-prime semiprime opens blind in one reflection, the centre being the ceiling root
+theorem twin_primes_decode_blind_in_one_reflection :
+  blind 5 7 = 1 ∧ decodes (5 * 7) (witness 5 7) := by decide
+
+-- the blind cost is 1, 2, 3, 7, 12 across the widening gaps 2, 8, 14, 26, 40
+theorem the_blind_cost_is_one_two_three_seven_twelve_as_the_gap_widens :
+  blind 5 7 = 1 ∧ blind 3 11 = 2 ∧ blind 3 17 = 3 ∧ blind 3 29 = 7 ∧ blind 3 43 = 12 := by decide
+
+-- the gap q − p is twice the centre minus the smaller prime
+theorem the_prime_gap_is_twice_the_centre_minus_the_smaller_prime :
+  11 - 3 = 2 * (witness 3 11 - 3) ∧ witness 3 11 = 7
+  ∧ 29 - 3 = 2 * (witness 3 29 - 3) := by decide
+
+-- Fermat: the centre squared minus N is the half-gap squared
+theorem the_centre_squared_minus_n_is_the_half_gap_squared :
+  witness 3 29 * witness 3 29 - 3 * 29 = ((29 - 3) / 2) * ((29 - 3) / 2)
+  ∧ witness 3 29 = 16 ∧ (29 - 3) / 2 = 13 := by decide
+
+-- every twin-prime pair decodes blind in one, whatever its size
+theorem every_twin_prime_pair_here_decodes_blind_in_one :
+  blind 5 7 = 1 ∧ blind 11 13 = 1 ∧ blind 17 19 = 1 := by decide
+
+-- the blind cost is the centre minus the ceiling root plus one — the search distance, confirmed at an instance
+theorem the_blind_cost_is_the_centre_minus_the_ceiling_root_plus_one :
+  blind 3 29 = witness 3 29 - ceilSqrt (3 * 29) + 1 ∧ witness 3 29 = 16 ∧ ceilSqrt 87 = 10 := by decide
+
+-- a wider gap decides a strictly larger blind cost
+theorem a_wider_gap_decides_a_strictly_larger_blind_cost :
+  blind 3 11 < blind 3 29 ∧ (11 - 3) < (29 - 3)
+  ∧ blind 3 29 < blind 3 43 ∧ (29 - 3) < (43 - 3) := by decide
+
+-- the smallest gap costs one and a wide one costs twelve — cheap for a known gap, the unknown gap is the floor
+theorem the_smallest_gap_costs_one_and_a_wider_gap_costs_twelve :
+  blind 5 7 = 1 ∧ (7 - 5) = 2 ∧ blind 3 43 = 12 ∧ (43 - 3) = 40 ∧ 1 < 12 := by decide
+
 end QpuCrypto

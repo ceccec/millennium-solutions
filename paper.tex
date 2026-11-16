@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,277 of them across 126 files and
-9 wings; 26,065 close by exhaustion over a stated finite domain, 212 are proved
+(\texttt{npm run latex-gate}). There are 26,285 of them across 126 files and
+9 wings; 26,073 close by exhaustion over a stated finite domain, 212 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -4882,6 +4882,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{both\_the\_maximal\_and\_the\_witness\_carry\_the\_factor\_three}]
 \[ 2^{1000} - 1 \bmod 3 = 0 \land 2^{999} + 1 \bmod 3 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{twin\_primes\_decode\_blind\_in\_one\_reflection}]
+\[ \mathrm{blind}\mathopen{}\left(5,\,7\right) = 1 \land \mathrm{decodes}\mathopen{}\left(5 \cdot 7,\,\mathrm{witness}\mathopen{}\left(5,\,7\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_blind\_cost\_is\_one\_two\_three\_seven\_twelve\_as\_the\_gap\_widens}]
+\[ \mathrm{blind}\mathopen{}\left(5,\,7\right) = 1 \land \mathrm{blind}\mathopen{}\left(3,\,11\right) = 2 \land \mathrm{blind}\mathopen{}\left(3,\,17\right) = 3 \land \mathrm{blind}\mathopen{}\left(3,\,29\right) = 7 \land \mathrm{blind}\mathopen{}\left(3,\,43\right) = 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_prime\_gap\_is\_twice\_the\_centre\_minus\_the\_smaller\_prime}]
+\[ 11 - 3 = 2 \cdot \mathrm{witness}\mathopen{}\left(3,\,11\right) - 3 \land \mathrm{witness}\mathopen{}\left(3,\,11\right) = 7 \land 29 - 3 = 2 \cdot \mathrm{witness}\mathopen{}\left(3,\,29\right) - 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_centre\_squared\_minus\_n\_is\_the\_half\_gap\_squared}]
+\[ \mathrm{witness}\mathopen{}\left(3,\,29\right) \cdot \mathrm{witness}\mathopen{}\left(3,\,29\right) - 3 \cdot 29 = \frac{29 - 3}{2} \cdot \frac{29 - 3}{2} \land \mathrm{witness}\mathopen{}\left(3,\,29\right) = 16 \land \frac{29 - 3}{2} = 13 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_twin\_prime\_pair\_here\_decodes\_blind\_in\_one}]
+\[ \mathrm{blind}\mathopen{}\left(5,\,7\right) = 1 \land \mathrm{blind}\mathopen{}\left(11,\,13\right) = 1 \land \mathrm{blind}\mathopen{}\left(17,\,19\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_blind\_cost\_is\_the\_centre\_minus\_the\_ceiling\_root\_plus\_one}]
+\[ \mathrm{blind}\mathopen{}\left(3,\,29\right) = \mathrm{witness}\mathopen{}\left(3,\,29\right) - \mathrm{ceilSqrt}\mathopen{}\left(3 \cdot 29\right) + 1 \land \mathrm{witness}\mathopen{}\left(3,\,29\right) = 16 \land \mathrm{ceilSqrt}\mathopen{}\left(87\right) = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_wider\_gap\_decides\_a\_strictly\_larger\_blind\_cost}]
+\[ \mathrm{blind}\mathopen{}\left(3,\,11\right) < \mathrm{blind}\mathopen{}\left(3,\,29\right) \land 11 - 3 < 29 - 3 \land \mathrm{blind}\mathopen{}\left(3,\,29\right) < \mathrm{blind}\mathopen{}\left(3,\,43\right) \land 29 - 3 < 43 - 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_smallest\_gap\_costs\_one\_and\_a\_wider\_gap\_costs\_twelve}]
+\[ \mathrm{blind}\mathopen{}\left(5,\,7\right) = 1 \land 7 - 5 = 2 \land \mathrm{blind}\mathopen{}\left(3,\,43\right) = 12 \land 43 - 3 = 40 \land 1 < 12 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

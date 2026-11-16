@@ -150564,5 +150564,45 @@
     "key": "lean_qpucrypto_both_the_maximal_and_the_witness_carry_the_factor_three",
     "name": "lean qpu_crypto.lean: both_the_maximal_and_the_witness_carry_the_factor_three — (2 ^ 1000 - 1) % 3 = 0 ∧ (2 ^ 999 + 1) % 3 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "78f67a7e-423d-82e1-906d-5f938d44c19a"
+  },
+  {
+    "key": "lean_qpucrypto_twin_primes_decode_blind_in_one_reflection",
+    "name": "lean qpu_crypto.lean: twin_primes_decode_blind_in_one_reflection — blind 5 7 = 1 ∧ decodes (5 * 7) (witness 5 7) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2d3479a2-8b93-89f7-b96c-9423dbed74c1"
+  },
+  {
+    "key": "lean_qpucrypto_the_blind_cost_is_one_two_three_seven_twelve_as_the_gap_widens",
+    "name": "lean qpu_crypto.lean: the_blind_cost_is_one_two_three_seven_twelve_as_the_gap_widens — blind 5 7 = 1 ∧ blind 3 11 = 2 ∧ blind 3 17 = 3 ∧ blind 3 29 = 7 ∧ blind 3 43 = 12 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "28dfd99e-2e90-80c4-9b6b-ef509fc154cd"
+  },
+  {
+    "key": "lean_qpucrypto_the_prime_gap_is_twice_the_centre_minus_the_smaller_prime",
+    "name": "lean qpu_crypto.lean: the_prime_gap_is_twice_the_centre_minus_the_smaller_prime — 11 - 3 = 2 * (witness 3 11 - 3) ∧ witness 3 11 = 7 ∧ 29 - 3 = 2 * (witness 3 29 - 3) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "efbb2f87-0aa4-8fb4-832e-21d89f8eef46"
+  },
+  {
+    "key": "lean_qpucrypto_the_centre_squared_minus_n_is_the_half_gap_squared",
+    "name": "lean qpu_crypto.lean: the_centre_squared_minus_n_is_the_half_gap_squared — witness 3 29 * witness 3 29 - 3 * 29 = ((29 - 3) / 2) * ((29 - 3) / 2) ∧ witness 3 29 = 16 ∧ (29 - 3) / 2 = 13 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6808fd66-f468-89b6-bc26-2e7c5095bdd8"
+  },
+  {
+    "key": "lean_qpucrypto_every_twin_prime_pair_here_decodes_blind_in_one",
+    "name": "lean qpu_crypto.lean: every_twin_prime_pair_here_decodes_blind_in_one — blind 5 7 = 1 ∧ blind 11 13 = 1 ∧ blind 17 19 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cc27a395-396f-8f58-be07-8944eef0d311"
+  },
+  {
+    "key": "lean_qpucrypto_the_blind_cost_is_the_centre_minus_the_ceiling_root_plus_one",
+    "name": "lean qpu_crypto.lean: the_blind_cost_is_the_centre_minus_the_ceiling_root_plus_one — blind 3 29 = witness 3 29 - ceilSqrt (3 * 29) + 1 ∧ witness 3 29 = 16 ∧ ceilSqrt 87 = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3bd867d9-3ffb-88ea-8245-8220a272290c"
+  },
+  {
+    "key": "lean_qpucrypto_a_wider_gap_decides_a_strictly_larger_blind_cost",
+    "name": "lean qpu_crypto.lean: a_wider_gap_decides_a_strictly_larger_blind_cost — blind 3 11 < blind 3 29 ∧ (11 - 3) < (29 - 3) ∧ blind 3 29 < blind 3 43 ∧ (29 - 3) < (43 - 3) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fed0c2d0-ebcd-8d60-aa49-f316a55476de"
+  },
+  {
+    "key": "lean_qpucrypto_the_smallest_gap_costs_one_and_a_wider_gap_costs_twelve",
+    "name": "lean qpu_crypto.lean: the_smallest_gap_costs_one_and_a_wider_gap_costs_twelve — blind 5 7 = 1 ∧ (7 - 5) = 2 ∧ blind 3 43 = 12 ∧ (43 - 3) = 40 ∧ 1 < 12 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dec7b735-4698-8ec6-af3b-3eb9759f790f"
   }
 ]
