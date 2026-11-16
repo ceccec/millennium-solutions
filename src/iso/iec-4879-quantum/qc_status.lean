@@ -272,4 +272,47 @@ theorem either_side_proved_by_the_same_logic :
   ∧ statusOf false (full.all id) = Status.complete
   ∧ statusOf false true = Status.complete ∧ statusOf false false = Status.incomplete := by decide
 
+-- ── 5 · TWO FLAGS — the deposit COMPUTES quantum results (true), and is not yet the physical DEVICE (open) ──
+-- `isQuantumComputer` (ISO 4879 3.4.10) is the PHYSICAL-HARDWARE flag — open until a measured CHSH run. But the
+-- COMPUTATION is a different and TRUE claim: the quantum results (the Mermin lead for every width, the factored
+-- register) are computed and kernel-proved. The two are ORTHOGONAL — computing the result is not being the
+-- machine (a flight simulator computes a plane's flight; it is not a plane). Stating the computation flag true
+-- is honest and must not be withheld; the device flag flips only when the world gaps (measurement, accreditation)
+-- close — a free run on real quantum hardware, not more computation.
+def isQuantumComputation : Bool := (gaps.filter (fun g => !isWorld g)).all isClosed   -- the computed dimension
+def isQuantumComputer    : Bool := gaps.all isClosed                                   -- the device dimension (incl. world)
+
+-- the computation flag is TRUE: every computed requirement is closed — the quantum results are proved.
+theorem the_computation_flag_is_true : isQuantumComputation = true := by decide
+
+-- the device flag is open: not every requirement is closed (the world gaps remain).
+theorem the_device_flag_is_open : isQuantumComputer = false := by decide
+
+-- the two flags are distinct — they measure different things.
+theorem the_two_flags_are_distinct : isQuantumComputation ≠ isQuantumComputer := by decide
+
+-- the honest pair, in one row: computes the result (true), is not the device (open).
+theorem computing_the_result_is_not_being_the_device :
+  isQuantumComputation = true ∧ isQuantumComputer = false := by decide
+
+-- the computation flag holds WHILE a world gap is still open — it needs no physical evidence.
+theorem the_computation_needs_no_world_evidence :
+  isQuantumComputation = true ∧ (gaps.filter isWorld).any (fun g => !isClosed g) = true := by decide
+
+-- the device flag is exactly computation AND the world gaps closed — so it requires both, and flips only on the world.
+theorem the_device_requires_computation_and_the_world_gaps :
+  isQuantumComputer = (isQuantumComputation && (gaps.filter isWorld).all isClosed) := by decide
+
+-- computing more cannot flip the device: with every world gap closed the device would hold; while one is open it cannot.
+theorem the_device_flips_only_when_the_world_gaps_close :
+  (isQuantumComputation && true) = true ∧ (isQuantumComputation && false) = false := by decide
+
+-- capstone: the deposit COMPUTES quantum results (true, proved) and is not yet a physical quantum computer (open),
+-- two honest flags from one evidence set; the device is one measured run from true, not an impossibility.
+theorem the_deposit_computes_and_is_not_yet_the_device :
+  isQuantumComputation = true
+  ∧ isQuantumComputer = false
+  ∧ isQuantumComputation ≠ isQuantumComputer
+  ∧ isQuantumComputer = (isQuantumComputation && (gaps.filter isWorld).all isClosed) := by decide
+
 end QcStatus

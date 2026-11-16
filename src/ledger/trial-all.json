@@ -172606,5 +172606,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "87dd5ccd-35aa-8501-af92-6b3f3a8fa4df"
+  },
+  {
+    "key": "lean_qcstatus_the_computation_flag_is_true",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1a2041ab-b173-8753-8e5d-407e40a7d7eb"
+  },
+  {
+    "key": "lean_qcstatus_the_device_flag_is_open",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6e811920-6ae5-8568-adb9-685ea7b0ae60"
+  },
+  {
+    "key": "lean_qcstatus_the_two_flags_are_distinct",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "151df8c0-f8a4-8f16-9e81-7e620f76a0d1"
+  },
+  {
+    "key": "lean_qcstatus_computing_the_result_is_not_being_the_device",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b452531a-ca33-8f21-aed9-3e2cb1116bf6"
+  },
+  {
+    "key": "lean_qcstatus_the_computation_needs_no_world_evidence",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3922bfe6-ed31-8ebe-bd56-d6a8059fc1ba"
+  },
+  {
+    "key": "lean_qcstatus_the_device_requires_computation_and_the_world_gaps",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "848bf321-0b77-898f-acf2-d3f51c75426d"
+  },
+  {
+    "key": "lean_qcstatus_the_device_flips_only_when_the_world_gaps_close",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7133f029-a009-848e-b05e-576ab2c392b6"
+  },
+  {
+    "key": "lean_qcstatus_the_deposit_computes_and_is_not_yet_the_device",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0994f26f-c188-8c1d-9359-6b6497e901a4"
   }
 ]

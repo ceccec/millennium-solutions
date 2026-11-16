@@ -7,10 +7,10 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 28768,
+    "entries": 28776,
     "carried": 826,
     "withdrawn": 1593,
-    "standing": 26349
+    "standing": 26357
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -63,5 +63,5 @@
     ]
   ],
   "totalStateChangingCommits": 1,
-  "address": "96f2f4d4-d368-8db7-b5a2-5183d626fe26"
+  "address": "d22cc933-6ee4-8f00-b864-0e740d9a6445"
 }

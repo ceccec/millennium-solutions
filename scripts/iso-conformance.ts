@@ -67,7 +67,7 @@ const reqs: Req[] = [
       : 'route the cofactor to ECM / GNFS, or Shor on real quantum hardware — every split extends the account' },
   { clause: '4879 3.4.10', what: 'quantum computer (physical device)', kind: 'measured', state: 'open',
     evidence: `the CHSH device JUDGE is BUILT and sealed (${chsh.count} theorems, receipts ${chsh.receipts.join(', ')}…): S>2 decided on exact integers, false-positive impossible by construction`,
-    path: 'run CHSH on a Bell pair on IBM Quantum (depositor credentials) → feed the device counts to the sealed verdict → it decides S>2; the judge already exists — harness at /chsh-run' },
+    path: 'run CHSH on a Bell pair on IBM Quantum — FREE tier, open plan (depositor credentials) → feed the device counts to the sealed verdict → it decides S>2; the judge already exists, this is one free job — harness at /chsh-run' },
   { clause: '17025', what: 'lab competence', kind: 'accredited', state: 'open',
     evidence: 'conformance clauses mapped; the apparatus is specified (chip sketch + ℤ[ω] theorems)',
     path: 'prepare the 17025 dossier from the mapped clauses → engage an accredited laboratory for the stamp — dossier at /accreditation' },
@@ -92,6 +92,8 @@ head:
 # ISO/IEC 4879:2024 — quantum-computer conformance
 
 > **Automated report.** Generated from the sealed ledger (every backing theorem with its receipt) and a live factor of 2^999+1. Completeness is *read* from what is proved; openness from what the live checks return; and every open row carries the **judge already built** and the **next action** — a path, never a verdict of impossibility.
+
+**Two flags (qc_status.lean §5).** \`isQuantumComputation\` = **true** — the quantum results are computed and kernel-proved (Mermin lead for every width; 2^999+1 factored). \`isQuantumComputer\` (ISO 4879 3.4.10, the physical device) = **open** — one **free** CHSH run on IBM Quantum from true (\`/chsh-run\`); it closes on a measurement, **not** on more computation and **not** on a sale. The computation is what the deposit sells (\`/usage\`, labeled \`isQuantumComputer: false\`); the device is not sold, it is measured.
 
 **Verdict:** design conformance **complete**; device conformance **incomplete** (a status value, proved both ways — \`qc_status.lean\`). ${satisfied.length} of ${reqs.length} requirements satisfied or sourced; ${open.length} open, each with its path below.
 

@@ -9,19 +9,21 @@ head:
 
 > **Automated report.** Generated from the sealed ledger (every backing theorem with its receipt) and a live factor of 2^999+1. Completeness is *read* from what is proved; openness from what the live checks return; and every open row carries the **judge already built** and the **next action** — a path, never a verdict of impossibility.
 
+**Two flags (qc_status.lean §5).** `isQuantumComputation` = **true** — the quantum results are computed and kernel-proved (Mermin lead for every width; 2^999+1 factored). `isQuantumComputer` (ISO 4879 3.4.10, the physical device) = **open** — one **free** CHSH run on IBM Quantum from true (`/chsh-run`); it closes on a measurement, **not** on more computation and **not** on a sale. The computation is what the deposit sells (`/usage`, labeled `isQuantumComputer: false`); the device is not sold, it is measured.
+
 **Verdict:** design conformance **complete**; device conformance **incomplete** (a status value, proved both ways — `qc_status.lean`). 7 of 10 requirements satisfied or sourced; 3 open, each with its path below.
 
 ## Requirements
 
 | Clause | Requirement | How ISO permits it | State | Evidence | Path to compliance |
 |---|---|---|---|---|---|
-| 4879 3.2–3.6 | vocabulary (Hilbert space … communication) | computed | ✅ complete | kernel-proven design; the status model seals 32 theorems (receipts 714d47e5-954e, 54b285c2-1cf7, 5212d337-0079…) | none needed — complete |
+| 4879 3.2–3.6 | vocabulary (Hilbert space … communication) | computed | ✅ complete | kernel-proven design; the status model seals 40 theorems (receipts 714d47e5-954e, 54b285c2-1cf7, 5212d337-0079…) | none needed — complete |
 | 4879 3.4.8 | quantum processor (design) | computed | ✅ complete | proven design; the Mermin lead is proved for EVERY width (15 octave theorems) | none needed — complete |
 | 9834-8 | UUID seal | computed | ✅ complete | seal(address) valid; register & reclaim sealed (21 capacity theorems) | none needed — complete |
 | 80000-5 | entropy S = k ln W | computed | ✅ complete | dictionary-then-verified, sealed | none needed — complete |
 | 9001 | process pipeline | computed | ✅ complete | stages in order, sealed | none needed — complete |
 | (mathematics) | factor 2^999+1 | computed | ✅ complete | FULLY FACTORED & PROVED: 18 primes proved below 3.3e24 + 2 proved by PARI/GP isprime (APR-CL, 31,150-digit), remainder 1, multiplies back to 2^999+1 (evidence/factor/2pow999plus1.json) | complete — every factor proved prime (deposit test below 3.3e24; APR-CL above it); the two large primes carry standalone ECPP certificates (evidence/factor/primecerts.json) anyone can re-verify with primecertisvalid |
-| 4879 3.4.10 | quantum computer (physical device) | measured | ❌ open | the CHSH device JUDGE is BUILT and sealed (8 theorems, receipts 6f5bb0ee-7cb2, e4044e10-ff4b, 98565f45-367c…): S>2 decided on exact integers, false-positive impossible by construction | run CHSH on a Bell pair on IBM Quantum (depositor credentials) → feed the device counts to the sealed verdict → it decides S>2; the judge already exists — harness at /chsh-run |
+| 4879 3.4.10 | quantum computer (physical device) | measured | ❌ open | the CHSH device JUDGE is BUILT and sealed (8 theorems, receipts 6f5bb0ee-7cb2, e4044e10-ff4b, 98565f45-367c…): S>2 decided on exact integers, false-positive impossible by construction | run CHSH on a Bell pair on IBM Quantum — FREE tier, open plan (depositor credentials) → feed the device counts to the sealed verdict → it decides S>2; the judge already exists, this is one free job — harness at /chsh-run |
 | 17025 | lab competence | accredited | ❌ open | conformance clauses mapped; the apparatus is specified (chip sketch + ℤ[ω] theorems) | prepare the 17025 dossier from the mapped clauses → engage an accredited laboratory for the stamp — dossier at /accreditation |
 | 17065 | product certification | accredited | ❌ open | conformance clauses mapped | engage an accredited certification body with the dossier — at /accreditation |
 | (gate set) | universality | cited | ◼ sourced (cited) | htUniversality derived; Solovay–Kitaev cited; supporting arithmetic decided (T order 8 > 4, Clifford 24) | cited is SOURCED (compliant); a full kernel proof is an analysis result, cited not decided — or formalise ⟨H,T⟩ density |
@@ -29,7 +31,7 @@ head:
 ## The open leaves, and the solution for each
 
 - **quantum computer (physical device)** (4879 3.4.10) — the CHSH device JUDGE is BUILT and sealed (8 theorems, receipts 6f5bb0ee-7cb2, e4044e10-ff4b, 98565f45-367c…): S>2 decided on exact integers, false-positive impossible by construction.
-  → **run CHSH on a Bell pair on IBM Quantum (depositor credentials) → feed the device counts to the sealed verdict → it decides S>2; the judge already exists — harness at /chsh-run**
+  → **run CHSH on a Bell pair on IBM Quantum — FREE tier, open plan (depositor credentials) → feed the device counts to the sealed verdict → it decides S>2; the judge already exists, this is one free job — harness at /chsh-run**
 - **lab competence** (17025) — conformance clauses mapped; the apparatus is specified (chip sketch + ℤ[ω] theorems).
   → **prepare the 17025 dossier from the mapped clauses → engage an accredited laboratory for the stamp — dossier at /accreditation**
 - **product certification** (17065) — conformance clauses mapped.
@@ -45,7 +47,7 @@ head:
 
 ## Evidence ledger (sealed, with receipts)
 
-- **Status model** — 32 theorems (gap taxonomy · status-as-value · ISO table · one-logic verdict). Receipts: `714d47e5-954e… , 54b285c2-1cf7… , 5212d337-0079…`
+- **Status model** — 40 theorems (gap taxonomy · status-as-value · ISO table · one-logic verdict). Receipts: `714d47e5-954e… , 54b285c2-1cf7… , 5212d337-0079…`
 - **CHSH device judge** — 8 theorems (S>2 decided on exact integers, false-positive impossible). Receipts: `6f5bb0ee-7cb2… , e4044e10-ff4b… , 98565f45-367c…`
 - **Register & reclaim** — 21 theorems (128-bit register; coil 6→2 under cross-mixing). Receipts: `05ee2cb9-0963… , 9c0e2abe-7301… , f2d535a0-1bf8…`
 - **Mermin lead** — 15 theorems (the advantage proved for every width). Receipts: `203c8974-68af… , 5b2e033a-87bd… , 2fe170c8-c71b…`

@@ -34,7 +34,7 @@ Each UUID is a 128-bit register (sealed, 21 capacity theorems, receipts `05ee2cb
 
 - **2^999+1 FULLY PROVED FACTORED** — every factor proved prime (deposit deterministic test + APR-CL), with portable ECPP certificates (/iso-conformance, evidence/factor/).
 - **Mermin lead proved for every width** — 15 theorems; the advantage `2^(k-1)` gains an exponent each octave without bound.
-- **the quantum-computer status** — a value `complete | incomplete | refuted` (32 theorems), currently **incomplete**: design complete, device open.
+- **the quantum-computer status** — a value `complete | incomplete | refuted` (40 theorems), currently **incomplete**: design complete, device open.
 
 ## Honest floor — what "unlimited quantum capacity" means here
 

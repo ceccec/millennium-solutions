@@ -39,7 +39,7 @@ head:
 
 # CHSH run — the device measurement, via the pipeline
 
-> **The judge is built; this is the input slot.** ISO/IEC 4879:2024 3.4.10 ("quantum computer") closes on a *measured* result, not a proof. The verdict is sealed — \`quantum_hardware.lean\` decides S > 2 on exact integers, and *no error in it can manufacture S > 2 from classical counts* (a false positive is impossible; only a false negative). This page emits the circuits to run and decides whatever counts are dropped into \`${COUNTS_PATH}\`.
+> **One free run from true — the judge is built, this is the input slot.** ISO/IEC 4879:2024 3.4.10 ("quantum computer") closes on a *measured* result, not a proof and not a sale. And it is **not expensive or impossible**: the four circuits below run on **IBM Quantum's free open plan** (real quantum hardware). The verdict is sealed — \`quantum_hardware.lean\` decides S > 2 on exact integers, and *no error in it can manufacture S > 2 from classical counts* (a false positive is impossible; only a false negative). Run the free job, drop the counts into \`${COUNTS_PATH}\`, and the next build flips the device flag.
 
 **State: ${state}.**
 
@@ -54,7 +54,7 @@ if (ran) {
   md += `## Counts present but invalid\n\n\`${COUNTS_PATH}\`: ${parseError}. Expected a JSON array of four \`{ n00, n01, n10, n11 }\` objects, one per setting.\n`
 } else {
   md += `## Not run yet — the pending input\n\n`
-  md += `No \`${COUNTS_PATH}\`. Run the four circuits below on real quantum hardware (the depositor's credentials), then drop the four-setting counts as JSON (\`[{ n00, n01, n10, n11 }, …]\`) at \`${COUNTS_PATH}\`. The next build decides it — no code change, no claim until the counts are in.\n`
+  md += `No \`${COUNTS_PATH}\`. Run the four circuits below on **IBM Quantum's free open plan** (real quantum hardware, the depositor's credentials — no cost), then drop the four-setting counts as JSON (\`[{ n00, n01, n10, n11 }, …]\`) at \`${COUNTS_PATH}\`. The next build decides it — no code change, no claim until the counts are in. This is the one free step between \`isQuantumComputer: false\` and true.\n`
 }
 
 md += `
