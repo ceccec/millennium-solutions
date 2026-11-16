@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,269 of them across 126 files and
-9 wings; 26,057 close by exhaustion over a stated finite domain, 212 are proved
+(\texttt{npm run latex-gate}). There are 26,277 of them across 126 files and
+9 wings; 26,065 close by exhaustion over a stated finite domain, 212 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -4842,6 +4842,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_coin\_reading\_and\_the\_cause\_agree\_on\_thirty\_seven}]
 \[ 37 = 36 + 1 \land 37 = \frac{999}{27} \land 36 + 1 \cdot 27 = 999 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_maximal\_splits\_by\_difference\_of\_squares}]
+\[ 2^{1000} - 1 = 2^{500} - 1 \cdot 2^{500} + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_difference\_of\_squares\_descent\_runs\_from\_the\_thousand\_toward\_its\_core}]
+\[ 2^{500} - 1 = 2^{250} - 1 \cdot 2^{250} + 1 \land 2^{250} - 1 = 2^{125} - 1 \cdot 2^{125} + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_difference\_of\_squares\_descent\_halts\_at\_the\_odd\_core\_one\_twenty\_five}]
+\[ 1000 = 8 \cdot 125 \land 125 = 5^{3} \land 125 \bmod 2 = 1 \land 1000 \bmod 2 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_thousand\_is\_two\_cubed\_times\_five\_cubed}]
+\[ 1000 = 2^{3} \cdot 5^{3} \land 2^{3} = 8 \land 5^{3} = 125 \land 10^{3} = 1000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_mersenne\_divides\_the\_maximal\_when\_its\_exponent\_divides\_the\_width}]
+\[ 2^{1000} - 1 \bmod 2^{8} - 1 = 0 \land 2^{1000} - 1 \bmod 2^{40} - 1 = 0 \land 2^{1000} - 1 \bmod 2^{125} - 1 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_maximal\_exponent\_is\_even\_and\_the\_witness\_exponent\_is\_odd}]
+\[ 1000 \bmod 2 = 0 \land 999 \bmod 2 = 1 \land 1000 = 999 + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_even\_side\_strips\_twos\_and\_the\_odd\_side\_strips\_threes}]
+\[ 1000 = 2^{3} \cdot 125 \land 999 = 3^{3} \cdot 37 \land 125 \bmod 2 = 1 \land 37 \bmod 3 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{both\_the\_maximal\_and\_the\_witness\_carry\_the\_factor\_three}]
+\[ 2^{1000} - 1 \bmod 3 = 0 \land 2^{999} + 1 \bmod 3 = 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

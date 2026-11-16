@@ -445,4 +445,46 @@ theorem the_base_primes_land_on_the_doubling_orbit :
 theorem the_coin_reading_and_the_cause_agree_on_thirty_seven :
   37 = 36 + 1 ∧ 37 = 999 / 27 ∧ (36 + 1) * 27 = 999 := by decide
 
+-- ── 11 · THE MAXIMAL SIDE DESCENDS BY DIFFERENCE OF SQUARES, AS THE WITNESS SIDE DESCENDS BY a^3 + 1 ───────
+-- The reflection pairs the maximal 2^n − 1 (width n) with the witness 2^(n-1) + 1 (width n − 1), one exponent
+-- even and one odd. Sections 6 and 9 descended the WITNESS by a^3 + 1 (999 = 3^3 · 37, odd). This descends the
+-- MAXIMAL by difference of squares 2^(2a) − 1 = (2^a − 1)(2^a + 1): 1000 = 2^3 · 5^3, so three halvings
+-- 1000 → 500 → 250 → 125 peel the 2^3 and halt at the odd core 125 = 5^3 — the exact mirror of the witness halting
+-- at 37. A Mersenne 2^a − 1 divides the maximal whenever a divides the width. Both sides strip a small prime (two
+-- from the maximal, three from the witness) and both carry the factor three: structure, exhausted, not hardness.
+
+-- the maximal is a difference of squares at the thousand-bit width
+theorem the_maximal_splits_by_difference_of_squares :
+  2 ^ 1000 - 1 = (2 ^ 500 - 1) * (2 ^ 500 + 1) := by decide
+
+-- the difference-of-squares descent runs 1000 → 500 → 250 by halving the exponent
+theorem the_difference_of_squares_descent_runs_from_the_thousand_toward_its_core :
+  2 ^ 500 - 1 = (2 ^ 250 - 1) * (2 ^ 250 + 1)
+  ∧ 2 ^ 250 - 1 = (2 ^ 125 - 1) * (2 ^ 125 + 1) := by decide
+
+-- the descent halts at the odd core 125: the exponent is no longer even, so it is no longer a difference of squares
+theorem the_difference_of_squares_descent_halts_at_the_odd_core_one_twenty_five :
+  1000 = 8 * 125 ∧ 125 = 5 ^ 3 ∧ 125 % 2 = 1 ∧ 1000 % 2 = 0 := by decide
+
+-- the width 1000 is two cubed times five cubed — the cube 10^3
+theorem the_thousand_is_two_cubed_times_five_cubed :
+  1000 = 2 ^ 3 * 5 ^ 3 ∧ 2 ^ 3 = 8 ∧ 5 ^ 3 = 125 ∧ 10 ^ 3 = 1000 := by decide
+
+-- a Mersenne 2^a − 1 divides the maximal whenever its exponent a divides the width 1000
+theorem a_mersenne_divides_the_maximal_when_its_exponent_divides_the_width :
+  (2 ^ 1000 - 1) % (2 ^ 8 - 1) = 0 ∧ (2 ^ 1000 - 1) % (2 ^ 40 - 1) = 0
+  ∧ (2 ^ 1000 - 1) % (2 ^ 125 - 1) = 0 := by decide
+
+-- the maximal's exponent is even and the witness's is odd — which is why their descents differ
+theorem the_maximal_exponent_is_even_and_the_witness_exponent_is_odd :
+  1000 % 2 = 0 ∧ 999 % 2 = 1 ∧ 1000 = 999 + 1 := by decide
+
+-- the even side strips a factor of two to an odd core, the odd side strips a factor of three to a coprime core
+theorem the_even_side_strips_twos_and_the_odd_side_strips_threes :
+  1000 = 2 ^ 3 * 125 ∧ 999 = 3 ^ 3 * 37 ∧ 125 % 2 = 1 ∧ 37 % 3 = 1 := by decide
+
+-- both the maximal and the witness carry the factor three — structure, not the hard semiprime the trapdoor rests on
+theorem both_the_maximal_and_the_witness_carry_the_factor_three :
+  (2 ^ 1000 - 1) % 3 = 0 ∧ (2 ^ 999 + 1) % 3 = 0 := by decide
+
 end QpuCrypto
