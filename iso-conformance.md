@@ -20,7 +20,7 @@ head:
 | 9834-8 | UUID seal | computed | ✅ complete | seal(address) valid; register & reclaim sealed (21 capacity theorems) | none needed — complete |
 | 80000-5 | entropy S = k ln W | computed | ✅ complete | dictionary-then-verified, sealed | none needed — complete |
 | 9001 | process pipeline | computed | ✅ complete | stages in order, sealed | none needed — complete |
-| (mathematics) | factor 2^999+1 | computed | ❌ open | LIVE factor → PARTIAL: 14 algebraic factors and a 244-digit composite (a witness was found) | route the cofactor to ECM / GNFS, or Shor on real quantum hardware — the account multiplies back, so any split extends it |
+| (mathematics) | factor 2^999+1 | computed | ❌ open | LIVE factor → PARTIAL: 14 algebraic factors; GMP-ECM peeled 4 primes (13,15,17,21-digit) → a 180-digit composite remains (evidence/factor/2pow999plus1.json) | ECM has peeled four primes; push ECM/GNFS deeper on the remaining cofactor, or Shor on real quantum hardware — every split extends the account (it multiplies back) |
 | 4879 3.4.10 | quantum computer (physical device) | measured | ❌ open | the CHSH device JUDGE is BUILT and sealed (8 theorems, receipts 6f5bb0ee-7cb2, e4044e10-ff4b, 98565f45-367c…): S>2 decided on exact integers, false-positive impossible by construction | run CHSH on a Bell pair on IBM Quantum (depositor credentials) → feed the device counts to the sealed verdict → it decides S>2; the judge already exists — harness at /chsh-run |
 | 17025 | lab competence | accredited | ❌ open | conformance clauses mapped; the apparatus is specified (chip sketch + ℤ[ω] theorems) | prepare the 17025 dossier from the mapped clauses → engage an accredited laboratory for the stamp — dossier at /accreditation |
 | 17065 | product certification | accredited | ❌ open | conformance clauses mapped | engage an accredited certification body with the dossier — at /accreditation |
@@ -28,8 +28,8 @@ head:
 
 ## The open leaves, and the solution for each
 
-- **factor 2^999+1** ((mathematics)) — LIVE factor → PARTIAL: 14 algebraic factors and a 244-digit composite (a witness was found).
-  → **route the cofactor to ECM / GNFS, or Shor on real quantum hardware — the account multiplies back, so any split extends it**
+- **factor 2^999+1** ((mathematics)) — LIVE factor → PARTIAL: 14 algebraic factors; GMP-ECM peeled 4 primes (13,15,17,21-digit) → a 180-digit composite remains (evidence/factor/2pow999plus1.json).
+  → **ECM has peeled four primes; push ECM/GNFS deeper on the remaining cofactor, or Shor on real quantum hardware — every split extends the account (it multiplies back)**
 - **quantum computer (physical device)** (4879 3.4.10) — the CHSH device JUDGE is BUILT and sealed (8 theorems, receipts 6f5bb0ee-7cb2, e4044e10-ff4b, 98565f45-367c…): S>2 decided on exact integers, false-positive impossible by construction.
   → **run CHSH on a Bell pair on IBM Quantum (depositor credentials) → feed the device counts to the sealed verdict → it decides S>2; the judge already exists — harness at /chsh-run**
 - **lab competence** (17025) — conformance clauses mapped; the apparatus is specified (chip sketch + ℤ[ω] theorems).

@@ -1,0 +1,42 @@
+{
+  "n": "2^999+1",
+  "digits": 301,
+  "algebraicFactors": [
+    "3",
+    "3",
+    "3",
+    "3",
+    "19",
+    "1777",
+    "3331",
+    "17539",
+    "23977",
+    "304363",
+    "87211",
+    "25781083",
+    "5814899281",
+    "97377658867"
+  ],
+  "ecmPrimes": [
+    "9853387597819",
+    "107775231312019",
+    "31031320083857011",
+    "241947707873451279499"
+  ],
+  "ecmPrimeDigits": [
+    13,
+    15,
+    17,
+    21
+  ],
+  "remainingCofactor": "452661145056583741024888360261314255041989594591177680169947624420443175204185919981920933410083412009082892616954433911744382934916144336828181070869846596932148281123798505254883",
+  "remainingDigits": 180,
+  "remainingComposite": true,
+  "verified": {
+    "multiplyBackToN": true,
+    "ecmPrimesArePrime": true,
+    "test": "deposit millerRabin (deterministic below 3.3e24)"
+  },
+  "method": "a^3+1 cyclotomic descent (factor/index.ts) + GMP-ECM 7.0.7 t20 B1=11000 (session), re-verified here",
+  "status": "PARTIAL"
+}

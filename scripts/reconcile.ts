@@ -48,6 +48,7 @@ const STEPS: [string, string][] = [
   ['gaps', 'node scripts/gaps.ts'],
   ['dashboard.md', 'node scripts/dashboard.ts'],
   ['clock.md', 'node scripts/clock.ts'],
+  ['evidence/factor/2pow999plus1.json', 'node scripts/factor-999.ts'],
   ['iso-conformance.md', 'node scripts/iso-conformance.ts'],
   ['chsh-run.md', 'node scripts/chsh-harness.ts'],
   ['accreditation.md', 'node scripts/accreditation-dossier.ts'],
