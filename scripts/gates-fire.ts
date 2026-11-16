@@ -36,7 +36,9 @@ const run = (cmd: string): { ok: boolean; out: string } => {
 // and only then checks its citations, so a mutated run leaves those two files behind — restoring the script
 // does not restore its output. A control that cleans up its input but not its consequences is a control that
 // dirties the tree, which this file's own leftover check then reports as a failure. Correctly.
-type Control = { gate: string; cmd: string; what: string; file: string; mutate: (s: string) => string; restore?: string }
+// `requires`: a file the gate's CLEAN run needs (e.g. the built site) — absent, the control is skipped like an absent
+// `file`, instead of testing a gate that cannot pass and reporting it as failing on a clean tree.
+type Control = { gate: string; cmd: string; what: string; file: string; mutate: (s: string) => string; restore?: string; requires?: string }
 
 // ORDER MATTERS FOR SOME GATES, and running one alone is not the same as running it in the chain.
 // sitemap-mesh reported 14202 broken links and failed at HEAD — which looked like a pre-existing broken gate
@@ -61,6 +63,13 @@ const CONTROLS: Control[] = [
   { gate: 'e2e (page stops referencing its data)', cmd: 'node scripts/e2e.ts', file: '.vitepress/dist/formulas.html',
     what: 'a published page that embeds nothing and references nothing — a reader arrives at an empty list',
     mutate: (s) => s.replace(/formulas\.jsonld/g, 'formulas-that-do-not-exist.jsonld') },
+  // THE STALE DEPLOY, ISOLATED: the kernel gains a theorem the built catalogue does not hold, while page and data
+  // still agree with each other — the exact shape that shipped 26245 against 26357 and passed check 3. Mutating
+  // the built list instead would also trip the page-versus-data check and prove nothing about this one.
+  { gate: 'e2e (the kernel moved past the built catalogue)', cmd: 'node scripts/e2e.ts', file: 'src/iso/22739-ledger/capacity.lean',
+    requires: '.vitepress/dist/formulas.jsonld',
+    what: 'a deploy one release behind — a theorem the kernel holds and the published catalogue does not',
+    mutate: (s) => s.replace('\nend Capacity', '\ntheorem e2e_control_the_kernel_moved_ahead : 1 + 1 = 2 := by decide\n\nend Capacity') },
 
   // release-live IS NOT CONTROLLED HERE AND IS NAMED RATHER THAN FAKED — the discipline this file already
   // applies to latex-gate, ci-drift and axiom-index. Its refusal is ABSENT, a fact about npm's registry,
@@ -932,6 +941,7 @@ let checked = 0
 console.log('gates-fire — each gate must reject its negative control:\n')
 for (const c of CONTROLS) {
   if (!existsSync(c.file)) { console.log(`  ? ${c.gate.padEnd(17)} ${c.file} absent — cannot control`); continue }
+  if (c.requires && !existsSync(c.requires)) { console.log(`  ? ${c.gate.padEnd(17)} ${c.requires} absent — its clean run cannot pass, so it cannot be controlled`); continue }
   const backup = `/tmp/gf_${process.pid}_${c.file.replace(/[\/.]/g, '_')}`
   copyFileSync(c.file, backup)
   // ABSOLUTE, so a mark that somehow reaches another tree cannot resolve to that tree's file of the same name.

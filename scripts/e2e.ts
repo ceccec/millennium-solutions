@@ -16,6 +16,7 @@
  *  that the data parses, that the counts agree and that every address it offers a reader resolves. Behaviour
  *  in a browser was confirmed by hand and is recorded as confirmed by hand, not as covered here. */
 import { readFileSync, existsSync, writeFileSync, readdirSync } from 'node:fs'
+import { leanTheorems } from '../src/api/index.ts'
 
 const DIST = '.vitepress/dist'
 /** ── A BUILD-VARYING NUMBER CANNOT BE COMMITTED ────────────────────────────────────────────────────────────
@@ -65,6 +66,18 @@ add('numberOfItems matches what the list holds', list?.numberOfItems === items.l
 const stated = Number((page.match(/>(\d[\d,]*) formulas/) ?? page.match(/(\d[\d,]*) formulas/) ?? [])[1]?.replace(/,/g, '') ?? NaN)
 add('the page and the data agree on the count', Number.isNaN(stated) || stated === items.length,
   Number.isNaN(stated) ? 'the page states no count to compare' : `page says ${stated}, data holds ${items.length}`)
+
+// ── 3b · THE CATALOGUE HOLDS WHAT THE KERNEL HOLDS NOW, NOT WHAT IT HELD LAST RELEASE ────────────────────
+// Measured 2026-11-16: page and data agreed at 26245 while the kernel held 26357. formulas.ts ran in `gates`,
+// AFTER the build, so every deploy carried the previous catalogue — and check 3 passed, because both halves
+// were stale together. The reference here is the kernel's own list, read from the Lean sources; a theorem the
+// built catalogue lacks is named by its file, so the refusal points at what moved.
+const listed = new Set(items.map((x: { item?: { source?: string; name?: string } }) => `${x.item?.source}:${x.item?.name}`))
+const kernel = leanTheorems() as { file: string; name: string }[]
+const unlisted = kernel.filter((t) => !listed.has(`${t.file}:${t.name}`))
+add('the catalogue holds every theorem the kernel holds now', unlisted.length === 0 && items.length === kernel.length,
+  `data holds ${items.length}, kernel holds ${kernel.length}` +
+  (unlisted.length ? ` — not in the built catalogue: ${unlisted.slice(0, 3).map((t) => `${t.file}:${t.name}`).join(', ')}` : ''))
 
 // ── 4 · EVERY ADDRESS THE PAGE OFFERS A READER RESOLVES ──────────────────────────────────────────────────
 // A link to a theorem page that was never built is a dead end a reader finds and no gate does.

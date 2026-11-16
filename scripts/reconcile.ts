@@ -43,6 +43,9 @@ const STEPS: [string, string][] = [
   ['priorart.lean', 'node scripts/priorart-gen.ts'],
   ['AXIOMS.md', 'node scripts/axiom-index.ts'],
   ['covered.json', 'node scripts/imagine.ts'],
+  // the formula catalogue — absent from this list, so a catalogue one release behind (26245 against the kernel's
+  // 26357) passed every commit and shipped; it now opens predocs:build, ahead of the site that renders it
+  ['formulas.md + public/formulas.jsonld', 'node scripts/formulas.ts'],
   ['analytics', 'node scripts/analytics.ts'],
   ['README.md + index.md', 'node scripts/pages.ts'],
   ['gaps', 'node scripts/gaps.ts'],

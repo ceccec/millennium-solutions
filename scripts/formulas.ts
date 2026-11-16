@@ -15,13 +15,15 @@
  *  WHAT THIS REMOVED: 545 KB of generated markup, a duplicate HTML escaper canon-gate had already refused,
  *  and every field name invented here rather than taken from a vocabulary someone else maintains. */
 import { writeFileSync, mkdirSync } from 'node:fs'
-import { leanTheorems, leanFiles, leanSource, ledger as __ledger, live as __live, isEnumeratedFile } from '../src/api/index.ts'
+import { leanTheorems, leanFiles, leanSource, ledger as __ledger, live as __live, isEnumeratedFile, keyBySuffix } from '../src/api/index.ts'
 import { SITE, CONCEPT_DOI } from '../src/publication/index.ts'
 
 const T = leanTheorems() as any[]
 const LIVE = new Set((__live(__ledger()) as { key: string }[]).map((e) => e.key))
 const wingOf = new Map((leanFiles() as string[]).map((f) => [f, leanSource(f).match(/^--\s*wing:\s*(.+)$/m)?.[1]?.trim() ?? 'unfiled']))
-const keyOf = (t: { name: string }) => [...LIVE].find((k) => k.endsWith('_' + t.name)) ?? null
+// indexed once, not scanned per theorem — the per-name `[...LIVE].find` was ~56 s of the ship (see keyBySuffix)
+const KEY_BY_NAME = keyBySuffix(LIVE)
+const keyOf = (t: { name: string }) => KEY_BY_NAME.get(t.name) ?? null
 // The ledger's receipt for each key, so ONE component can serve both the formula list and the ledger list
 // that AllTheorems.vue used to render from a bundled copy of discovered.json.
 const receiptOf = new Map((__ledger() as { key: string; receipt: string }[]).map((e) => [e.key, e.receipt]))

@@ -415,6 +415,23 @@ const nameIndex = (thms: LeanTheorem[]): Map<string, { t: LeanTheorem; i: number
   nameCache = { stamp, by }
   return by
 }
+
+/** THE OTHER DIRECTION, INDEXED THE SAME WAY: name → the first key ending in `_<name>`, for every name at once.
+ *  The scripts asked it one name at a time — `[...keys].find((k) => k.endsWith('_' + name))` — which copies and
+ *  scans the whole key set per name: measured 2026-11-16 over 26357 names it was ~700M comparisons, and formulas.ts
+ *  spent ~56 s of the ship's gate path on it (chain-timer). The answer is identical: a key ends with `_name`
+ *  exactly when `name` is the text after one of its underscores, and the first key in iteration order is kept,
+ *  as `find` keeps it. Build it once per key set; look up with `.get(name)`. */
+export const keyBySuffix = (keys: Iterable<string>): Map<string, string> => {
+  const by = new Map<string, string>()
+  for (const k of keys) {
+    for (let i = k.indexOf('_'); i !== -1; i = k.indexOf('_', i + 1)) {
+      const s = k.slice(i + 1)
+      if (!by.has(s)) by.set(s, k)
+    }
+  }
+  return by
+}
 const namedIn = (rest: string, thms: LeanTheorem[]): LeanTheorem[] => {
   const by = nameIndex(thms)
   const hits: { t: LeanTheorem; i: number }[] = []
