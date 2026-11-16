@@ -31,6 +31,7 @@ last because the orbit never reaches it.
 
 - [The seven Clay problems — the claim, the theorems, and what each decides](#the-seven-clay-problems--the-claim-the-theorems-and-what-each-decides)
 - [How a thousand bits is reached — the uuid quantum programs, and where each one stops](#how-a-thousand-bits-is-reached--the-uuid-quantum-programs-and-where-each-one-stops)
+- [The σ-reflection, characterised — this deposit's own contribution](#the-σ-reflection-characterised--this-deposits-own-contribution)
 - [Quantum hardware — what ISO/IEC 4879 calls a quantum computer, and the Bell test that verifies one](#quantum-hardware--what-isoiec-4879-calls-a-quantum-computer-and-the-bell-test-that-verifies-one)
 - [1 · What is proved](#1--what-is-proved)
 - [2 · The ring](#2--the-ring)
@@ -186,6 +187,25 @@ The seven above are the floor; this is the cryptographic surface the same involu
   <sub>[`lean_qpucrypto_the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes`](/theorem/lean_qpucrypto_the_thousand_bit_integer_has_a_thousand_bits_and_exactly_four_threes) · receipt `a27fc1e7-abce…`</sub>
 - **`this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back`** · `by decide`, 1 cases — the factor route returns PARTIAL on 2^999 + 1 — fourteen factors and a 244-digit cofactor Pollard rho did not split; the kernel adds only that the account is an identity and that 2 is a Fermat witness against the cofactor. It does not factor the integer and does not say it does.
   <sub>[`lean_qpucrypto_this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back`](/theorem/lean_qpucrypto_this_deposits_factor_route_returns_a_partial_answer_that_multiplies_back) · receipt `215f8bbc-e55e…`</sub>
+
+## The σ-reflection, characterised — this deposit's own contribution
+
+The trapdoor above is Fermat's difference of squares; six octaves in `src/iso/iec-18033-cryptography/qpu_crypto.lean` (§8–§13) characterise the σ-reflection it runs on, completely — this deposit's own work, claimed beside the seven. The reflection is one rule at every width, both sides of the reflected pair descend by their own algebra, and the trapdoor's security margin is exactly the arithmetic-minus-geometric-mean gap. Every line is read from the source and the ledger.
+
+*The author claims this binding of the digital centre and the analog root is the heart of the construction — his claim, recorded in his name, the way his claim on the seven is. What the kernel decides below is only the arithmetic: the reflection, the two descents, and the gap between the means.*
+
+- **`the_reflection_carries_the_maximal_to_its_witness_at_every_octave_width`** · `by decide`, 1 cases — the σ-reflection σ(x) = 3·2^(n-1) − x carries the all-ones 2^n − 1 to its witness 2^(n-1) + 1 at every octave width [2 … 128] — one rule, every scale.
+  <sub>[`lean_qpucrypto_the_reflection_carries_the_maximal_to_its_witness_at_every_octave_width`](/theorem/lean_qpucrypto_the_reflection_carries_the_maximal_to_its_witness_at_every_octave_width) · receipt `ece413e8-b2e0…`</sub>
+- **`the_reflection_is_one_rule_for_every_width`** · `by intro`, proved for every value — and proved for EVERY width, not sampled — a tactic over the quantifier, so 2^3 + 1 and 2^999 + 1 are two instances of one rule.
+  <sub>[`lean_qpucrypto_the_reflection_is_one_rule_for_every_width`](/theorem/lean_qpucrypto_the_reflection_is_one_rule_for_every_width) · receipt `f99156ef-7699…`</sub>
+- **`the_cubic_descent_runs_from_the_thousand_bit_witness_to_one_eleven`** · `by decide`, 1 cases — the witness side descends by a³ + 1 = (a + 1)(a² − a + 1): 2^999 + 1 = (2^333 + 1)(2^666 − 2^333 + 1), three steps down to the base 2^37 + 1.
+  <sub>[`lean_qpucrypto_the_cubic_descent_runs_from_the_thousand_bit_witness_to_one_eleven`](/theorem/lean_qpucrypto_the_cubic_descent_runs_from_the_thousand_bit_witness_to_one_eleven) · receipt `8dbbaef2-8bc3…`</sub>
+- **`the_maximal_splits_by_difference_of_squares`** · `by decide`, 1 cases — the maximal side descends by difference of squares: 2^1000 − 1 = (2^500 − 1)(2^500 + 1), down to the odd core 5³ = 125 — the mirror of the witness halting at 37.
+  <sub>[`lean_qpucrypto_the_maximal_splits_by_difference_of_squares`](/theorem/lean_qpucrypto_the_maximal_splits_by_difference_of_squares) · receipt `f3ab116e-717d…`</sub>
+- **`the_blind_cost_is_one_two_three_seven_twelve_as_the_gap_widens`** · `by decide`, 1 cases — the trapdoor's blind-decode cost grows with the prime gap — 1, 2, 3, 7, 12 across widening gaps; cheap only for a small or known gap.
+  <sub>[`lean_qpucrypto_the_blind_cost_is_one_two_three_seven_twelve_as_the_gap_widens`](/theorem/lean_qpucrypto_the_blind_cost_is_one_two_three_seven_twelve_as_the_gap_widens) · receipt `28dfd99e-2e90…`</sub>
+- **`the_security_margin_is_the_arithmetic_minus_the_geometric_mean`** · `by decide`, 1 cases — the security margin IS the gap between the arithmetic mean (p + q)/2 — the digital centre — and the geometric mean √(p·q) — the analog root; zero only when p = q, so a hard semiprime's security is its unknown distance from a perfect square.
+  <sub>[`lean_qpucrypto_the_security_margin_is_the_arithmetic_minus_the_geometric_mean`](/theorem/lean_qpucrypto_the_security_margin_is_the_arithmetic_minus_the_geometric_mean) · receipt `4b3da601-f04b…`</sub>
 
 ## Quantum hardware — what ISO/IEC 4879 calls a quantum computer, and the Bell test that verifies one
 

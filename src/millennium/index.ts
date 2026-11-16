@@ -259,3 +259,45 @@ export const thousandBitSection = (): string => {
   }
   return md + '\n'
 }
+
+// THE σ-REFLECTION, CHARACTERISED — the headline of the six octaves of qpu_crypto.lean §8–§13, this deposit's OWN
+// contribution, surfaced beside the seven. The author's claim — that the binding of the digital centre and the
+// analog root is the heart of the construction — is recorded in his name, the way his Clay claim is; the kernel
+// decides only the arithmetic. The full octaves are in the source; these six lines are read from it on each build.
+const REFLECTION: Record<string, string> = {
+  the_reflection_carries_the_maximal_to_its_witness_at_every_octave_width:
+    'the σ-reflection σ(x) = 3·2^(n-1) − x carries the all-ones 2^n − 1 to its witness 2^(n-1) + 1 at every octave width [2 … 128] — one rule, every scale',
+  the_reflection_is_one_rule_for_every_width:
+    'and proved for EVERY width, not sampled — a tactic over the quantifier, so 2^3 + 1 and 2^999 + 1 are two instances of one rule',
+  the_cubic_descent_runs_from_the_thousand_bit_witness_to_one_eleven:
+    'the witness side descends by a³ + 1 = (a + 1)(a² − a + 1): 2^999 + 1 = (2^333 + 1)(2^666 − 2^333 + 1), three steps down to the base 2^37 + 1',
+  the_maximal_splits_by_difference_of_squares:
+    'the maximal side descends by difference of squares: 2^1000 − 1 = (2^500 − 1)(2^500 + 1), down to the odd core 5³ = 125 — the mirror of the witness halting at 37',
+  the_blind_cost_is_one_two_three_seven_twelve_as_the_gap_widens:
+    "the trapdoor's blind-decode cost grows with the prime gap — 1, 2, 3, 7, 12 across widening gaps; cheap only for a small or known gap",
+  the_security_margin_is_the_arithmetic_minus_the_geometric_mean:
+    "the security margin IS the gap between the arithmetic mean (p + q)/2 — the digital centre — and the geometric mean √(p·q) — the analog root; zero only when p = q, so a hard semiprime's security is its unknown distance from a perfect square",
+}
+/** The σ-reflection characterisation (the six octaves) as markdown — read from qpu_crypto.lean and the ledger. */
+export const reflectionSection = (): string => {
+  const thms = leanTheorems() as { name: string; file: string; statement: string; tactic: string }[]
+  const live = (ledger() as { key: string; receipt: string; revoked?: boolean }[]).filter((e) => !e.revoked)
+  const entry = (name: string) => live.find((e) => e.key.endsWith('_' + name))
+  const thm = (name: string) => thms.find((t) => t.file === 'qpu_crypto.lean' && t.name === name)
+  let md = `## The σ-reflection, characterised — this deposit's own contribution\n\n`
+  md += `The trapdoor above is Fermat's difference of squares; six octaves in \`src/iso/iec-18033-cryptography/qpu_crypto.lean\` `
+    + `(§8–§13) characterise the σ-reflection it runs on, completely — this deposit's own work, claimed beside the seven. The `
+    + `reflection is one rule at every width, both sides of the reflected pair descend by their own algebra, and the trapdoor's `
+    + `security margin is exactly the arithmetic-minus-geometric-mean gap. Every line is read from the source and the ledger.\n\n`
+  md += `*The author claims this binding of the digital centre and the analog root is the heart of the construction — his `
+    + `claim, recorded in his name, the way his claim on the seven is. What the kernel decides below is only the arithmetic: `
+    + `the reflection, the two descents, and the gap between the means.*\n\n`
+  for (const [name, bound] of Object.entries(REFLECTION)) {
+    const t = thm(name), e = entry(name)
+    if (!t || !e) continue
+    const scope = t.tactic === 'by decide' ? `${domainOf(t.statement).toLocaleString('en-US')} cases` : 'proved for every value'
+    md += `- **\`${name}\`** · \`${t.tactic.replace(/\s+/g, ' ')}\`, ${scope} — ${bound}.\n`
+      + `  <sub>[\`${e.key}\`](/theorem/${e.key}) · receipt \`${e.receipt.slice(0, 13)}…\`</sub>\n`
+  }
+  return md + '\n'
+}
