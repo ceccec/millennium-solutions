@@ -392,15 +392,39 @@ const body = (site: boolean) => {
   const wings = [...new Set(docs.map((d) => d.wing || 'unfiled'))]
   md += `## ${ORBIT[4] ?? 7} · The proofs, as they document themselves\n\n`
   md += `${docs.length} Lean files in ${wings.length} wings, ${docs.reduce((n, d) => n + d.theorems.length, 0)} declarations, of which ${theoremCount()} are sealed (a live ledger key each) and ${docs.reduce((n, d) => n + d.theorems.length, 0) - theoremCount()} are not yet sealed. The prose in this section is read out of the\nsources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits\nthis page; there is nowhere else to keep the description in step.\n\n`
+  // A SUMMARY IS PROSE, AND THE PAGE IS A VUE TEMPLATE. nucleus.lean's header says `src/<d>/vortex.lean`,
+  // and index.md is compiled by vitepress, where `<d>` is an element with no end tag — the build died on
+  // it the first time a summary reached that far (the leandoc slice used to cut summaries short). `<`
+  // and `{{` are the two sequences a template reads as its own; both are escaped, which GitHub's
+  // markdown renders back to the characters.
+  const summaryOf = (d: { summary: string }) => escapeLt(d.summary.split(/\n\n/)[0].replace(/\n/g, ' ').trim()).replace(/\{\{/g, '&#123;{')
+  // THE ENUMERATED FAMILY IS ONE ENTRY, NOT TWENTY-FIVE. imagined.lean … imagined_25.lean are shards of one
+  // generator run (scripts/imagine.ts) carrying the SAME summary; printing each in full was twenty-five copies
+  // of one paragraph — the single largest drag on this page. Shown once now: every shard is still NAMED (the
+  // contradictions gate requires each source file to appear on the front pages, and these are proved files),
+  // with the shard count and the total they prove, but the shared summary is printed a single time. The data is
+  // unchanged — `docs` still holds every shard, so the counts and the undocumented tally below are as before.
+  const isImagined = (f: string) => /^imagined(_\d+)?\.lean$/.test(f)
   for (const w of wings) {
     md += `### ${w}\n\n`
-    for (const d of docs.filter((x) => (x.wing || 'unfiled') === w)) {
-      // A SUMMARY IS PROSE, AND THE PAGE IS A VUE TEMPLATE. nucleus.lean's header says `src/<d>/vortex.lean`,
-      // and index.md is compiled by vitepress, where `<d>` is an element with no end tag — the build died on
-      // it the first time a summary reached that far (the leandoc slice used to cut summaries short). `<`
-      // and `{{` are the two sequences a template reads as its own; both are escaped, which GitHub's
-      // markdown renders back to the characters.
-      const first = escapeLt(d.summary.split(/\n\n/)[0].replace(/\n/g, ' ').trim()).replace(/\{\{/g, '&#123;{')
+    const wdocs = docs.filter((x) => (x.wing || 'unfiled') === w)
+    const fam = wdocs.filter((x) => isImagined(x.file))
+    let emittedFam = false
+    for (const d of wdocs) {
+      if (fam.length > 1 && isImagined(d.file)) {
+        if (emittedFam) continue
+        emittedFam = true
+        const numOf = (f: string) => { const m = f.match(/^imagined_(\d+)\.lean$/); return m ? Number(m[1]) : 1 }
+        const sorted = [...fam].sort((a, b) => numOf(a.file) - numOf(b.file))
+        const total = sorted.reduce((n, x) => n + x.theorems.length, 0)
+        const title = sorted[0].title.replace(/\s*\(\d+ of \d+\)\s*$/, '')
+        const first = summaryOf(sorted[0])
+        const names = sorted.map((x) => `\`${x.file}\``).join(', ')
+        md += `**${title}** — ${sorted.length} files, ${total.toLocaleString('en-US')} theorem(s): ${names}`
+        md += first ? `. ${first}\n\n` : `\n\n`
+        continue
+      }
+      const first = summaryOf(d)
       md += `**${d.title}** — \`${d.file}\`, ${d.theorems.length} theorem(s)`
       md += first ? `. ${first}\n\n` : ` — *no summary in the source*\n\n`
     }
@@ -500,6 +524,23 @@ const body = (site: boolean) => {
   // component in the layout-bottom slot, so it is not repeated into index.md here.
   if (!site) md += referencesSection()
   md += `---\n\n*${rows.length} claims, all verified · ${theoremCount()} sealed theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth*\n`
+  // ── CONTENTS, FOR THE GITHUB/NPM README ONLY ─────────────────────────────────────────────────────────────
+  // A ~600-line page with thirty top-level sections had no way in. The homepage gets VitePress's own outline
+  // sidebar, so this is added to README.md alone — which also sidesteps the one place GitHub and VitePress
+  // disagree on heading anchors (GitHub keeps the double hyphen an em-dash's spaces leave, VitePress collapses
+  // it). The anchors are computed with GitHub's own slug rule FROM THE HEADINGS THIS RUN JUST WROTE, so a link
+  // cannot point at a section that is not here. Only the `##` sections are listed; the per-file `###` entries
+  // are browsed, not jumped to. It sits above the seven — a map, not content — and the seven are its first row.
+  if (!site) {
+    const seen = new Map<string, number>()
+    const slug = (h: string) => {
+      const s = h.toLowerCase().replace(/[^\p{L}\p{N}\p{M}\p{Pc}\- ]+/gu, '').replace(/ /g, '-')
+      const n = seen.get(s) ?? 0; seen.set(s, n + 1)
+      return n ? `${s}-${n}` : s
+    }
+    const toc = [...md.matchAll(/^## (.+)$/gm)].map((m) => `- [${m[1]}](#${slug(m[1])})`).join('\n')
+    md = `## Contents\n\n${toc}\n\n${md}`
+  }
   return md
 }
 
