@@ -37,6 +37,6 @@
     "smallPrimesDeterministic": true,
     "largePrimesAprCl": true
   },
-  "primalityNote": "every factor is proved prime: those below 3.3e24 by the deposit's deterministic test, the 31- and 150-digit by PARI/GP isprime (APR-CL, rigorous) — no probable primes remain",
-  "method": "a^3+1 cyclotomic descent (factor/index.ts) + GMP-ECM 7.0.7 (t20 B1=11000, t30 B1=250000) for the factors; PARI/GP isprime (APR-CL) proves the two large primes"
+  "primalityNote": "every factor is proved prime: below 3.3e24 by the deposit's deterministic test, the 31- and 150-digit by PARI/GP isprime (APR-CL, rigorous) — no probable primes remain",
+  "method": "divide the GMP-ECM primes out, factor the 58-digit algebraic remainder (factor/index.ts, FACTORED, no dead rho), re-verify each prime and the multiply-back; PARI/GP APR-CL proves the two large primes"
 }
