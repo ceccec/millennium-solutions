@@ -100,7 +100,7 @@ const LEAN_IGNORE_DIRS = new Set(['fixtures', 'node_modules'])
  *  standard they formalise under src/iso/<standard>/ — so there is no "proof" catch-all folder. The identity
  *  is still the BASENAME (t.file, the ledger key's namespace), so a file is found wherever it lives. */
 export const LEAN_ROOTS = ['src']
-const leanPathMap = (): Map<string, string> => {
+const walkLeanPaths = (): Map<string, string> => {
   const out = new Map<string, string>()
   const walk = (dir: string): void => {
     for (const e of readdirSync(dir, { withFileTypes: true })) {
@@ -116,8 +116,20 @@ const leanPathMap = (): Map<string, string> => {
   for (const r of LEAN_ROOTS) if (existsSync(r)) walk(r)
   return out
 }
+// BAKED WITH THE CORPUS, on the same measured ground as leanStamp below: nothing reads the corpus after writing
+// it in one process. This walked src/ on EVERY call, and leanStamp alone calls leanPathOf once per file — 129
+// walks to compute one stamp; readdirSync was 4.2 s of pages.ts's 12.8 s (cpu profile, 2026-11-16). A basename
+// the baked map does not hold gets ONE fresh walk before the src/<file> fallback, so a file written after the
+// bake is still found and a lookup is never slower than before; invalidateLeanCorpus() drops it with the rest.
+let bakedPaths: Map<string, string> | null = null
+const leanPathMap = (): Map<string, string> => bakedPaths ??= walkLeanPaths()
 /** the repository-relative path of a proof file, by basename — src/iso/iec-18033-cryptography/roots.lean, src/iso/iec-4879-quantum/qpu.lean, src/iso/80000-2-mathematics/z9.lean */
-export const leanPathOf = (file: string): string => leanPathMap().get(file) ?? `src/${file}`
+export const leanPathOf = (file: string): string => {
+  const hit = leanPathMap().get(file)
+  if (hit) return hit
+  bakedPaths = walkLeanPaths()
+  return bakedPaths.get(file) ?? `src/${file}`
+}
 export const leanFiles = (): string[] => [...leanPathMap().keys()].sort()
 
 /** ── A GENERATED LEAN FILE IS EXACTLY WHAT ITS GENERATOR WRITES, OR IT IS DRIFT ──────────────────────────
@@ -214,7 +226,7 @@ const leanStamp = (): string => bakedStamp ??=
 
 /** Drop the baked corpus root. For a process that writes a .lean file and then reads theorems back — none
  *  does today — call this between the write and the read, or the read answers from before the write. */
-export const invalidateLeanCorpus = (): void => { bakedStamp = null; leanCache = null; nameCache = null }
+export const invalidateLeanCorpus = (): void => { bakedStamp = null; leanCache = null; nameCache = null; bakedPaths = null }
 
 export const leanTheorems = (): LeanTheorem[] => {
   const stamp = leanStamp()
@@ -591,9 +603,12 @@ import { units as runtimeUnits, triad as runtimeTriad, vortexOrbit as runtimeOrb
 // on the same mtime+size key the ledger cache uses, so a script that writes the ledger and reads it back
 // still sees its own append.
 let _provenCache: { key: string; names: Set<string> } | null = null
-const provenNames = (): Set<string> => {
+const ledgerFileKey = (): string => {
   const st = existsSync(LEDGER_PATH) ? statSync(LEDGER_PATH) : null
-  const ck = st ? `${st.mtimeMs}:${st.size}` : 'none'
+  return st ? `${st.mtimeMs}:${st.size}` : 'none'
+}
+const provenNames = (): Set<string> => {
+  const ck = ledgerFileKey()
   if (_provenCache && _provenCache.key === ck) return _provenCache.names
   const thms = leanTheorems()
   const names = new Set<string>()
@@ -602,8 +617,20 @@ const provenNames = (): Set<string> => {
   return names
 }
 
+// THE LIVE-KEY SET, ON provenNames' FILE KEY. provenLive asked `liveKeys().has(key)` once per key, and liveKeys()
+// builds a set of every live key on each call — 2.2 s of pages.ts's 12.8 s (cpu profile, 2026-11-16). Keyed on the
+// ledger file's mtime+size like provenNames, so a script that appends and reads back sees its own append, and the
+// two halves of provenLive now always read the same ledger.
+let _liveSetCache: { key: string; set: Set<string> } | null = null
+const liveKeySet = (): Set<string> => {
+  const ck = ledgerFileKey()
+  if (_liveSetCache && _liveSetCache.key === ck) return _liveSetCache.set
+  _liveSetCache = { key: ck, set: liveKeys() }
+  return _liveSetCache.set
+}
+
 const provenLive = (key: string): boolean => {
-  if (liveKeys().has(key)) return true
+  if (liveKeySet().has(key)) return true
   const want = theoremOfKey(key, leanTheorems())
   return want ? provenNames().has(want.name) : false
 }
