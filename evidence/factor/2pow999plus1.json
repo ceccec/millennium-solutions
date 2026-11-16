@@ -1,8 +1,8 @@
 {
   "n": "2^999+1",
   "digits": 301,
-  "status": "FULLY_FACTORED",
-  "provedPrimes": [
+  "status": "FULLY_PROVED",
+  "provedBelowBound": [
     "3",
     "3",
     "3",
@@ -22,11 +22,11 @@
     "31031320083857011",
     "241947707873451279499"
   ],
-  "probablePrimes": [
+  "provedByAprCl": [
     "1270593144646505233013326197403",
     "356259709855840347814184579423977577883939818854919827419470712293459180335618566367184158250790959263766858787438019506310967435347190178144994691161"
   ],
-  "probablePrimeDigits": [
+  "provedByAprClDigits": [
     31,
     150
   ],
@@ -34,8 +34,9 @@
   "verified": {
     "multiplyBackToN": true,
     "remainderIsOne": true,
-    "everyFactorPrimeByDepositTest": true
+    "smallPrimesDeterministic": true,
+    "largePrimesAprCl": true
   },
-  "primalityNote": "factors below 3.3e24 are deterministically proved; the two largest (31- and 150-digit) are strong probable primes (deposit Miller-Rabin PRIME), pending an ECPP certificate",
-  "method": "a^3+1 cyclotomic descent (factor/index.ts) + GMP-ECM 7.0.7 (t20 B1=11000, t30 B1=250000), re-verified here"
+  "primalityNote": "every factor is proved prime: those below 3.3e24 by the deposit's deterministic test, the 31- and 150-digit by PARI/GP isprime (APR-CL, rigorous) — no probable primes remain",
+  "method": "a^3+1 cyclotomic descent (factor/index.ts) + GMP-ECM 7.0.7 (t20 B1=11000, t30 B1=250000) for the factors; PARI/GP isprime (APR-CL) proves the two large primes"
 }
