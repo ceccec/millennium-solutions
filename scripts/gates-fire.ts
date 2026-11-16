@@ -70,6 +70,11 @@ const CONTROLS: Control[] = [
     requires: '.vitepress/dist/formulas.jsonld',
     what: 'a deploy one release behind — a theorem the kernel holds and the published catalogue does not',
     mutate: (s) => s.replace('\nend Capacity', '\ntheorem e2e_control_the_kernel_moved_ahead : 1 + 1 = 2 := by decide\n\nend Capacity') },
+  // DEPLOY PATH — the refuse that v9.9.6 missed: unquoted YAML titles with `:` break VitePress. Full
+  // deploy-path is pre-commit/pre-push; the control uses --matter-only so gates-fire does not rebuild the site.
+  { gate: 'deploy-path (unquoted YAML title with a colon)', cmd: 'node scripts/deploy-path.ts --matter-only', file: 'paper/interference.md',
+    what: 'an unquoted frontmatter title containing `:` — the VitePress YAML break that left v9.9.6 undeployed',
+    mutate: (s) => s.replace(/^title: "([^"]+)"/m, 'title: $1') },
 
   // release-live IS NOT CONTROLLED HERE AND IS NAMED RATHER THAN FAKED — the discipline this file already
   // applies to latex-gate, ci-drift and axiom-index. Its refusal is ABSENT, a fact about npm's registry,

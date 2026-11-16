@@ -42,6 +42,11 @@ if (matterBad.length) {
   for (const b of matterBad.slice(0, 12)) console.log(`    ${b}`)
   process.exit(1)
 }
+// --matter-only: the gates-fire control exercises this refuse without a full docs:build.
+if (process.argv.includes('--matter-only')) {
+  console.log('✓ deploy-e2e --matter-only: frontmatter titles are deploy-safe')
+  process.exit(0)
+}
 
 // Same prelude deploy.ts runs before the build.
 run('node scripts/dashboard.ts')

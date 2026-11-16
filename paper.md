@@ -8,7 +8,7 @@ aside: false
 <div class="paper-masthead">
 <h1 class="paper-title">The collected theorems of the ℤ/9 vortex framework</h1>
 <div class="paper-byline">Rouschev, T. · <em>Millennium Solutions</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a> · CC BY-NC-ND 4.0</div>
-<div class="paper-addr">26,133 theorems by exhaustion + 224 proved for every value + 0 rfl declarations · 128 sources · content-address <code>6fad7ad7-dc3c-8127-8c79-233c64ecd9cb</code></div>
+<div class="paper-addr">26,133 theorems by exhaustion + 224 proved for every value + 0 rfl declarations · 128 sources · content-address <code>62ea869f-ff10-8d6e-b981-2ce7f062f327</code></div>
 </div>
 
 <h2 class="paper-h">Abstract</h2>
