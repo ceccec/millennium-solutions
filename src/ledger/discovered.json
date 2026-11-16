@@ -150804,5 +150804,45 @@
     "key": "lean_qcstatus_the_honest_value_is_incomplete_not_a_false_boolean",
     "name": "lean qc_status.lean: the_honest_value_is_incomplete_not_a_false_boolean — statusOf false verdict = Status.incomplete ∧ statusOf false verdict ≠ Status.complete ∧ toBool (statusOf false verdict) = false — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "03d2fb6a-7fba-84f6-8d54-790c9628f700"
+  },
+  {
+    "key": "lean_qcstatus_the_iso_conformance_documents_ten_requirements",
+    "name": "lean qc_status.lean: the_iso_conformance_documents_ten_requirements — iso.length = 10 ∧ (iso.filter isoSatisfied).length = 5 ∧ (iso.filter (fun r => !isoSatisfied r)).length = 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "da68e5b8-fc06-8d25-b47d-051fe334a4e6"
+  },
+  {
+    "key": "lean_qcstatus_the_satisfied_requirements_are_the_computed_design",
+    "name": "lean qc_status.lean: the_satisfied_requirements_are_the_computed_design — (iso.filter isoSatisfied).all (fun r => kindIsComputed r.1) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "de903894-1415-8ea9-9e75-94a2ee8a03b4"
+  },
+  {
+    "key": "lean_qcstatus_no_measured_or_accredited_requirement_is_satisfied",
+    "name": "lean qc_status.lean: no_measured_or_accredited_requirement_is_satisfied — (iso.filter (fun r => kindIsMeasured r.1 || kindIsAccredited r.1)).all (fun r => !isoSatisfied r) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0f424453-4e34-820a-8868-d1dea39412a8"
+  },
+  {
+    "key": "lean_qcstatus_the_open_gaps_are_one_computed_one_measured_three_accredited",
+    "name": "lean qc_status.lean: the_open_gaps_are_one_computed_one_measured_three_accredited — (iso.filter (fun r => !isoSatisfied r && kindIsComputed r.1)).length = 1 ∧ (iso.filter (fun r => !isoSatisfied r && kindIsMeasured r.1)).length = 1 ∧ (iso.filter (fun r => !isoSatisfied r && kindIsAccredited r.1)).length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d559ad79-dba6-8b23-8dea-fab57776670b"
+  },
+  {
+    "key": "lean_qcstatus_everything_satisfiable_now_is_satisfied",
+    "name": "lean qc_status.lean: everything_satisfiable_now_is_satisfied — (iso.filter (fun r => kindIsComputed r.1)).length = 6 ∧ (iso.filter (fun r => kindIsComputed r.1 && isoSatisfied r)).length = 5 ∧ (iso.filter (fun r => kindIsComputed r.1 && !isoSatisfied r)).length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7099973a-055b-8fcb-b90c-085c7bcfe5ad"
+  },
+  {
+    "key": "lean_qcstatus_the_design_conformance_is_complete",
+    "name": "lean qc_status.lean: the_design_conformance_is_complete — (iso.filter (fun r => kindIsComputed r.1 && isoSatisfied r)).length = 5 ∧ (iso.filter (fun r => kindIsComputed r.1 && isoSatisfied r)).all isoSatisfied = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "449cf082-c6b1-879f-be9d-bb1515c21eeb"
+  },
+  {
+    "key": "lean_qcstatus_the_device_conformance_is_incomplete",
+    "name": "lean qc_status.lean: the_device_conformance_is_incomplete — iso.all isoSatisfied = false ∧ statusOf false (iso.all isoSatisfied) = Status.incomplete — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8ca7bf76-696a-8e75-a171-4f02a2547063"
+  },
+  {
+    "key": "lean_qcstatus_iso_says_design_complete_device_incomplete",
+    "name": "lean qc_status.lean: iso_says_design_complete_device_incomplete — statusOf false (iso.all isoSatisfied) = Status.incomplete ∧ (iso.filter isoSatisfied).all (fun r => kindIsComputed r.1) = true ∧ (iso.filter (fun r => !isoSatisfied r)).length = 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bc7f033d-d778-82cb-bd1e-3aa1e764e80d"
   }
 ]

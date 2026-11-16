@@ -172462,5 +172462,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "03d2fb6a-7fba-84f6-8d54-790c9628f700"
+  },
+  {
+    "key": "lean_qcstatus_the_iso_conformance_documents_ten_requirements",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "da68e5b8-fc06-8d25-b47d-051fe334a4e6"
+  },
+  {
+    "key": "lean_qcstatus_the_satisfied_requirements_are_the_computed_design",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "de903894-1415-8ea9-9e75-94a2ee8a03b4"
+  },
+  {
+    "key": "lean_qcstatus_no_measured_or_accredited_requirement_is_satisfied",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0f424453-4e34-820a-8868-d1dea39412a8"
+  },
+  {
+    "key": "lean_qcstatus_the_open_gaps_are_one_computed_one_measured_three_accredited",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d559ad79-dba6-8b23-8dea-fab57776670b"
+  },
+  {
+    "key": "lean_qcstatus_everything_satisfiable_now_is_satisfied",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7099973a-055b-8fcb-b90c-085c7bcfe5ad"
+  },
+  {
+    "key": "lean_qcstatus_the_design_conformance_is_complete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "449cf082-c6b1-879f-be9d-bb1515c21eeb"
+  },
+  {
+    "key": "lean_qcstatus_the_device_conformance_is_incomplete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8ca7bf76-696a-8e75-a171-4f02a2547063"
+  },
+  {
+    "key": "lean_qcstatus_iso_says_design_complete_device_incomplete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bc7f033d-d778-82cb-bd1e-3aa1e764e80d"
   }
 ]

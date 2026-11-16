@@ -18,13 +18,13 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 28744 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 28752 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (26325)
+### lean (26333)
 
-This family has **26325** members, enumerated over a derived vocabulary and each decided by the kernel on every run. They are counted here rather than listed: the statement of each follows from its name, and the laws they instantiate are in `src/iso/80000-2-mathematics/group.lean`. The first 200 are shown; every one is in `src/ledger/discovered.json` with its receipt.
+This family has **26333** members, enumerated over a derived vocabulary and each decided by the kernel on every run. They are counted here rather than listed: the statement of each follows from its name, and the laws they instantiate are in `src/iso/80000-2-mathematics/group.lean`. The first 200 are shown; every one is in `src/ledger/discovered.json` with its receipt.
 
 - `lean_address_raw_bytes_of_a` — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - `lean_address_to_uuid_bytes_of_a` — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1889,4 +1889,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `237221c6-f813-8328-8554-0058c90d332d`. Integrity, not truth.
+Page content-address: `b47558ee-d47e-8a14-90ff-2a7e2e215e8a`. Integrity, not truth.

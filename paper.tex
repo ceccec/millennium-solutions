@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,325 of them across 127 files and
-9 wings; 26,105 close by exhaustion over a stated finite domain, 220 are proved
+(\texttt{npm run latex-gate}). There are 26,333 of them across 127 files and
+9 wings; 26,113 close by exhaustion over a stated finite domain, 220 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1140,6 +1140,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_honest\_value\_is\_incomplete\_not\_a\_false\_boolean}]
 \[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{verdict}\right) = \mathrm{Status.incomplete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{verdict}\right) \neq \mathrm{Status.complete} \land \mathrm{toBool}\mathopen{}\left(\mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{verdict}\right)\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_iso\_conformance\_documents\_ten\_requirements}]
+\[ \left|\mathrm{iso}\right| = 10 \land \left|\{\, x \in \mathrm{iso} \mid \mathrm{isoSatisfied}\mathopen{}\left(x\right) \,\}\right| = 5 \land \left|\{\, r \in \mathrm{iso} \mid \lnot \mathrm{isoSatisfied}\mathopen{}\left(r\right) \,\}\right| = 5 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_satisfied\_requirements\_are\_the\_computed\_design}]
+\[ \forall r \in \{\, x \in \mathrm{iso} \mid \mathrm{isoSatisfied}\mathopen{}\left(x\right) \,\},\; \mathrm{kindIsComputed}\mathopen{}\left(r_{1}\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_measured\_or\_accredited\_requirement\_is\_satisfied}]
+\[ \forall r \in \{\, r \in \mathrm{iso} \mid \mathrm{kindIsMeasured}\mathopen{}\left(r_{1}\right) \lor \mathrm{kindIsAccredited}\mathopen{}\left(r_{1}\right) \,\},\; \lnot \mathrm{isoSatisfied}\mathopen{}\left(r\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_open\_gaps\_are\_one\_computed\_one\_measured\_three\_accredited}]
+\[ \left|\{\, r \in \mathrm{iso} \mid \lnot \mathrm{isoSatisfied}\mathopen{}\left(r\right) \land \mathrm{kindIsComputed}\mathopen{}\left(r_{1}\right) \,\}\right| = 1 \land \left|\{\, r \in \mathrm{iso} \mid \lnot \mathrm{isoSatisfied}\mathopen{}\left(r\right) \land \mathrm{kindIsMeasured}\mathopen{}\left(r_{1}\right) \,\}\right| = 1 \land \left|\{\, r \in \mathrm{iso} \mid \lnot \mathrm{isoSatisfied}\mathopen{}\left(r\right) \land \mathrm{kindIsAccredited}\mathopen{}\left(r_{1}\right) \,\}\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{everything\_satisfiable\_now\_is\_satisfied}]
+\[ \left|\{\, r \in \mathrm{iso} \mid \mathrm{kindIsComputed}\mathopen{}\left(r_{1}\right) \,\}\right| = 6 \land \left|\{\, r \in \mathrm{iso} \mid \mathrm{kindIsComputed}\mathopen{}\left(r_{1}\right) \land \mathrm{isoSatisfied}\mathopen{}\left(r\right) \,\}\right| = 5 \land \left|\{\, r \in \mathrm{iso} \mid \mathrm{kindIsComputed}\mathopen{}\left(r_{1}\right) \land \lnot \mathrm{isoSatisfied}\mathopen{}\left(r\right) \,\}\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_design\_conformance\_is\_complete}]
+\[ \left|\{\, r \in \mathrm{iso} \mid \mathrm{kindIsComputed}\mathopen{}\left(r_{1}\right) \land \mathrm{isoSatisfied}\mathopen{}\left(r\right) \,\}\right| = 5 \land \forall x \in \{\, r \in \mathrm{iso} \mid \mathrm{kindIsComputed}\mathopen{}\left(r_{1}\right) \land \mathrm{isoSatisfied}\mathopen{}\left(r\right) \,\},\; \mathrm{isoSatisfied}\mathopen{}\left(x\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_device\_conformance\_is\_incomplete}]
+\[ \forall x \in \mathrm{iso},\; \mathrm{isoSatisfied}\mathopen{}\left(x\right) = \mathrm{false} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{iso},\; \mathrm{isoSatisfied}\mathopen{}\left(x\right)\right) = \mathrm{Status.incomplete} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{iso\_says\_design\_complete\_device\_incomplete}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{iso},\; \mathrm{isoSatisfied}\mathopen{}\left(x\right)\right) = \mathrm{Status.incomplete} \land \forall r \in \{\, x \in \mathrm{iso} \mid \mathrm{isoSatisfied}\mathopen{}\left(x\right) \,\},\; \mathrm{kindIsComputed}\mathopen{}\left(r_{1}\right) = \mathrm{true} \land \left|\{\, r \in \mathrm{iso} \mid \lnot \mathrm{isoSatisfied}\mathopen{}\left(r\right) \,\}\right| = 5 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
