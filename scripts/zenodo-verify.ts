@@ -20,15 +20,27 @@ if (!doi) { console.error('✗ zenodo-verify: CITATION.cff states no concept DOI
 const id = doi.split('.').pop()
 
 const url = `https://zenodo.org/oai2d?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:zenodo.org:${id}`
+// A record is not harvestable the instant it is published — Zenodo indexes it, and the OAI endpoint answers
+// `idDoesNotExist` until it has. That is LAG, not absence, so poll through it with backoff before judging; a
+// network drop is retried the same way. Only after the poll is exhausted do we read the verdict below.
+const MAX = 5
 let body = ''
-try {
-  const r = await fetch(url, { signal: AbortSignal.timeout(20_000) })
-  if (!r.ok) throw new Error(`HTTP ${r.status}`)
-  body = await r.text()
-} catch (e) {
-  console.log(`○ zenodo-verify: NOT CHECKED — could not reach zenodo.org (${(e as Error).message}).`)
-  console.log('  this does not mean the record is absent; it means it was not confirmed on this run.')
-  process.exit(0)
+for (let attempt = 1; attempt <= MAX; attempt++) {
+  try {
+    const r = await fetch(url, { signal: AbortSignal.timeout(20_000), headers: { 'User-Agent': 'millennium-solutions/zenodo-verify (+https://github.com/ceccec/millennium-solutions)' } })
+    if (!r.ok) throw new Error(`HTTP ${r.status}`)
+    body = await r.text()
+  } catch (e) {
+    if (attempt >= MAX) {
+      console.log(`○ zenodo-verify: NOT CHECKED — could not reach zenodo.org after ${MAX} tries (${(e as Error).message}).`)
+      console.log('  this does not mean the record is absent; it means it was not confirmed on this run.')
+      process.exit(0)
+    }
+    await new Promise((r) => setTimeout(r, 3000 * attempt)); continue
+  }
+  // indexing lag right after publish — give it time, then re-read.
+  if (/<error code="idDoesNotExist"/.test(body) && attempt < MAX) { await new Promise((r) => setTimeout(r, 5000 * attempt)); continue }
+  break
 }
 
 const err = (body.match(/<error code="([^"]+)"/) ?? [])[1]

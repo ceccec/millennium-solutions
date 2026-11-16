@@ -52,25 +52,61 @@ console.log(`  ${pending.length} deposition(s) not yet minted, ${Object.keys(min
 if (!SANDBOX && !LIVE) { console.log(`  would mint ${Math.min(LIMIT, pending.length)} against ${HOST}`); process.exit(0) }
 if (!token) { console.error(`  ✗ no token at ${tokenPath} — create it there; this script never asks for one and never prints it`); process.exit(1) }
 
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+// Transient failures — rate limits (429), Zenodo 5xx, and network drops/timeouts — are not refusals: retry them
+// with exponential backoff (honouring Retry-After on a 429) so one flaky moment does not abort a deposition
+// mid-flight. A 4xx other than 429 IS a real refusal (bad token, missing scope, bad request): never retried,
+// surfaced at once. The token never enters a log line, here or on a retry.
+const retriableFetch = async (url: string, init: RequestInit, label: string): Promise<Response> => {
+  const MAX = 5
+  for (let attempt = 1; ; attempt++) {
+    let r: Response
+    try {
+      r = await fetch(url, { ...init, signal: AbortSignal.timeout(60_000) })
+    } catch (e) {
+      if (attempt >= MAX) throw new Error(`${label}: network/timeout after ${MAX} tries — ${(e as Error).message}`)
+      await sleep(2000 * 2 ** (attempt - 1)); continue
+    }
+    if (r.ok || (r.status >= 400 && r.status < 500 && r.status !== 429)) return r  // success, or a permanent refusal
+    if (attempt >= MAX) return r  // transient exhausted — let the caller read the status/body and fail readably
+    const ra = Number(r.headers.get('retry-after'))
+    console.error(`    … ${label}: ${r.status}, retry ${attempt}/${MAX - 1}`)
+    await sleep(Number.isFinite(ra) && ra > 0 ? ra * 1000 : 2000 * 2 ** (attempt - 1))
+  }
+}
+
 const api = async (path: string, init: RequestInit = {}) => {
-  const r = await fetch(`${HOST}/api${path}`, {
+  // A REQUEST WITH NO USER-AGENT IS REFUSED BEFORE ZENODO EVER SEES IT: Node's fetch sends none and Zenodo's
+  // edge answers an unreadable HTML "403 — unusual traffic" page instead of `{"status":403,...}`. Identifying
+  // the client turns an unreadable block into a refusal that names the real problem (token scope vs down).
+  const r = await retriableFetch(`${HOST}/api${path}`, {
     ...init,
-    // A REQUEST WITH NO USER-AGENT IS REFUSED BEFORE ZENODO EVER SEES IT. Node's fetch sends none, and
-    // Zenodo's edge answers an HTML "403 Forbidden — unusual traffic" page: not an API error, not JSON,
-    // and nothing a reader can act on. Measured side by side on the same token and endpoint — without a
-    // User-Agent, that HTML page; with one, `{"status": 403, "message": "Permission denied."}`, which is
-    // the real answer and names the real problem. Identifying the client turns an unreadable block into a
-    // readable refusal, which is the difference between "Zenodo is down" and "this token lacks the scope".
     headers: {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
       'User-Agent': `${PKG_NAME}/${PKG_VERSION} (+${REPO})`,
       ...(init.headers ?? {}),
     },
-  })
+  }, `api ${path}`)
   const body = await r.text()
   if (!r.ok) throw new Error(`${r.status} ${r.statusText} — ${body.slice(0, 300)}`)
   return body ? JSON.parse(body) : {}
+}
+
+// After publish, a record is not instantly harvestable — Zenodo indexes it. Poll the record page until it
+// answers, so a reported "minted" means "visible", not merely "accepted". Honest on timeout: returns false
+// (not yet visible), never fakes it — the caller says so and points at zenodo-verify.
+const confirmVisible = async (recordHtml: string | undefined, doi: string): Promise<boolean> => {
+  const url = recordHtml || `https://doi.org/${doi}`
+  for (let attempt = 1; attempt <= 6; attempt++) {
+    try {
+      const r = await fetch(url, { signal: AbortSignal.timeout(20_000), headers: { 'User-Agent': `${PKG_NAME}/${PKG_VERSION} (+${REPO})` } })
+      if (r.ok) return true
+    } catch { /* indexing lag — keep polling */ }
+    await sleep(5000 * attempt)
+  }
+  return false
 }
 
 let done = 0
@@ -79,9 +115,10 @@ for (const key of pending.slice(0, LIMIT)) {
   // Every file the proof needs, not just the one that declares it: a record whose Lean does not compile
   // for the person who downloaded it is a citation with nothing behind it.
   const files: string[] = Array.isArray(meta.files) ? meta.files : []
+  let dep: { id?: number; links?: { bucket?: string } } = {}
   try {
-    const dep = await api('/deposit/depositions', { method: 'POST', body: '{}' })
-    const bucket: string = dep.links.bucket
+    dep = await api('/deposit/depositions', { method: 'POST', body: '{}' })
+    const bucket: string = dep.links!.bucket!
     // The typeset statement travels with the proof: a deposited record should be readable as mathematics,
     // not only compilable as Lean. Synthesised here from the same translator latex-gate round-trips.
     const thm = leanTheorems().find((x) => 'lean_' + x.name === key || key.endsWith('_' + x.name))
@@ -104,7 +141,7 @@ for (const key of pending.slice(0, LIMIT)) {
     ]
     for (const [name, content] of payload) {
       if (!content) continue
-      const r = await fetch(`${bucket}/${name}`, { method: 'PUT', headers: { Authorization: `Bearer ${token}`, 'User-Agent': `${PKG_NAME}/${PKG_VERSION} (+${REPO})` }, body: content })
+      const r = await retriableFetch(`${bucket}/${name}`, { method: 'PUT', headers: { Authorization: `Bearer ${token}`, 'User-Agent': `${PKG_NAME}/${PKG_VERSION} (+${REPO})` }, body: content }, `file ${name}`)
       if (!r.ok) throw new Error(`file ${name}: ${r.status} ${await r.text()}`)
     }
     // STRIP LOCAL BOOKKEEPING. `files` records which sources the proof needs so this script knows what to
@@ -114,11 +151,18 @@ for (const key of pending.slice(0, LIMIT)) {
     await api(`/deposit/depositions/${dep.id}`, { method: 'PUT', body: JSON.stringify({ metadata }) })
     const pub = await api(`/deposit/depositions/${dep.id}/actions/publish`, { method: 'POST' })
     minted[key] = pub.doi
-    writeFileSync(MAP, JSON.stringify(minted, null, 2) + '\n')
-    console.log(`  ✓ ${key} → ${pub.doi} (${payload.length} files)  ${pub.links?.record_html ?? ''}`)
+    writeFileSync(MAP, JSON.stringify(minted, null, 2) + '\n')   // persist the DOI BEFORE the visibility wait: once published it is permanent, and a crash mid-wait must never re-publish it
+    const visible = await confirmVisible(pub.links?.record_html, pub.doi)
+    console.log(`  ✓ ${key} → ${pub.doi} (${payload.length} files) — ${visible ? 'visible' : 'published, not yet visible (Zenodo indexing lag; re-run zenodo-verify to confirm)'}  ${pub.links?.record_html ?? ''}`)
     done++
   } catch (e) {
     console.error(`  ✗ ${key}: ${(e as Error).message}`)
+    // Discard an UNPUBLISHED draft so a retry does not orphan it. A published record is never deleted, and
+    // minted[key] is set only after publish — so this removes a half-built draft, never a real record.
+    if (dep.id && !minted[key]) {
+      try { await api(`/deposit/depositions/${dep.id}`, { method: 'DELETE' }); console.error(`    (discarded unpublished draft ${dep.id})`) }
+      catch (d) { console.error(`    (could not discard draft ${dep.id}: ${(d as Error).message} — remove it in the Zenodo UI)`) }
+    }
     break
   }
   await new Promise((r) => setTimeout(r, 1200)) // Zenodo asks for courtesy; this is not a race
