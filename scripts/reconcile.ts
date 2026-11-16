@@ -54,6 +54,7 @@ const STEPS: [string, string][] = [
   ['chsh-run.md', 'node scripts/chsh-harness.ts'],
   ['accreditation.md', 'node scripts/accreditation-dossier.ts'],
   ['sdk.md', 'node scripts/sdk.ts'],
+  ['usage.md', 'node scripts/usage.ts'],
   ['boundaries', 'node scripts/boundaries.ts'],
   ['rights.md', 'node scripts/rights.ts'],
   ['notice', 'node scripts/notice.ts'],
