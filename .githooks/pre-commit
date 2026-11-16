@@ -16,4 +16,4 @@ node scripts/gate-parallel.ts --commit || { echo "✗ pre-commit: refused — se
 # regenerates them, so this rarely fires; when it does, the tree was changed without reconciling. Runs last,
 # so it only pays for its generators on a commit the other gates already cleared.
 node scripts/reconcile.ts --check || { echo "✗ pre-commit: ledger-derived files are stale — run: npm run reconcile, then recommit"; exit 1; }
-echo "✓ pre-commit: gate + forensics (chain-of-custody + intention) + all theorems + ledger re-verify + derived files reconciled"
+echo "✓ pre-commit: gate + forensics + theorems + reconcile + deploy-e2e (build+e2e+deploy gates)"

@@ -225,7 +225,9 @@
     "cern:lean": "node scripts/cern-lean.ts",
     "push:green": "node scripts/push-when-green.ts",
     "dataset:court": "node scripts/dataset-court.ts",
-    "iso-audit": "node scripts/iso-audit.ts"
+    "iso-audit": "node scripts/iso-audit.ts",
+    "payload-sync": "node scripts/payload-sync.ts",
+    "deploy:e2e": "node scripts/deploy-path.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

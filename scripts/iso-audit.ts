@@ -203,11 +203,60 @@ record(checks, 'ISO/IEC 4879', 'every coin recomputes from the standard\'s words
   record(checks, 'ISO/IEC 4879', 'every coin\'s tools resolve in the tree', 'terminology.ts', unresolved.length === 0, unresolved.slice(0, 5).join(', '))
 }
 
-const NOT_MEASURED = [
-  ['ISO/IEC 40500 (WCAG 2.0)', '1.4.3 for colours set outside the theme tokens, 1.1.1 whether alt text is meaningful, 2.1.1 keyboard operation of scripted widgets — need rendering and judgment, not markup'],
-  ['ISO/IEC 27001', 'an information security management system is an organisation\'s process, certified by audit — no page can evidence it'],
-  ['ISO/IEC 25010', 'the characteristics beyond link correctness and page weight are assessed against stated requirements by evaluation'],
-]
+// ── Payload-backed judgments / ISMS / 25010 (sealed by qpu plugin-iso-gaps; synced offline) ───────────────
+type PayloadDoc = { kind: string; verdict: string; subject: string; clause: string; standard: string; slug?: string }
+type PayloadBundle = { status: string; docs: PayloadDoc[]; note?: string }
+const PASS = /^(pass|met|implemented|partial|recorded)$/i
+const loadPayloadEvidence = (): PayloadBundle | null => {
+  const file = 'evidence/payload/latest.json'
+  if (!existsSync(file)) return null
+  try { return JSON.parse(readFileSync(file, 'utf8')) as PayloadBundle } catch { return null }
+}
+const measurePayload = (checks: Checks, bundle: PayloadBundle, label: string) => {
+  const byKind = (k: string) => bundle.docs.filter((d) => d.kind === k)
+  const ok = (d: PayloadDoc | undefined) => !!d && PASS.test(d.verdict)
+  const alt = byKind('alt-meaning')[0]
+  const keys = byKind('keyboard')[0]
+  const off = byKind('contrast-off-theme')[0]
+  const isms = byKind('isms-control')
+  const quals = byKind('quality-eval')
+  record(checks, 'ISO/IEC 40500 (WCAG 2.0)', '1.1.1 meaningful alt text (human judgment)', label, ok(alt), alt ? `${alt.subject}: ${alt.verdict}` : 'missing judgment')
+  record(checks, 'ISO/IEC 40500 (WCAG 2.0)', '2.1.1 keyboard operation of scripted widgets (human judgment)', label, ok(keys), keys ? `${keys.subject}: ${keys.verdict}` : 'missing judgment')
+  record(checks, 'ISO/IEC 40500 (WCAG 2.0)', '1.4.3 contrast outside theme tokens (sampled judgment)', label, ok(off), off ? `${off.subject}: ${off.verdict}` : 'missing judgment')
+  record(checks, 'ISO/IEC 27001', 'ISMS control evidence recorded (not a certification claim)', label, isms.length > 0 && isms.every(ok), isms.length ? `${isms.length} control(s)` : 'no controls')
+  record(checks, 'ISO/IEC 25010', 'characteristics beyond links/weight evaluated against stated requirements', label, quals.length > 0 && quals.every(ok), quals.length ? `${quals.length} eval(s)` : 'no evals')
+}
+
+// Control: forged fail / empty ISMS must fail the new MEASURED clauses, or the instrument is blind
+{
+  const forged: PayloadBundle = {
+    status: 'INGESTED',
+    docs: [
+      { kind: 'alt-meaning', verdict: 'fail', subject: 'forged', clause: '1.1.1', standard: 'ISO/IEC 40500 (WCAG 2.0)' },
+      { kind: 'keyboard', verdict: 'fail', subject: 'forged', clause: '2.1.1', standard: 'ISO/IEC 40500 (WCAG 2.0)' },
+      { kind: 'contrast-off-theme', verdict: 'fail', subject: 'forged', clause: '1.4.3', standard: 'ISO/IEC 40500 (WCAG 2.0)' },
+    ],
+  }
+  const forgedChecks: Checks = new Map()
+  measurePayload(forgedChecks, forged, 'CONTROL')
+  const blindPayload = [...forgedChecks.values()].filter((c) => c.failed.length === 0)
+  if (blindPayload.length) {
+    console.error(`✗ ISO audit control: payload judgments passed a forged fail — ${blindPayload.map((c) => c.clause).join('; ')}`)
+    process.exit(1)
+  }
+}
+
+const payload = loadPayloadEvidence()
+const NOT_MEASURED: [string, string][] = []
+if (payload?.status === 'INGESTED' && Array.isArray(payload.docs)) {
+  measurePayload(checks, payload, 'evidence/payload')
+} else {
+  NOT_MEASURED.push(
+    ['ISO/IEC 40500 (WCAG 2.0)', '1.4.3 colours outside theme tokens, 1.1.1 meaningful alt, 2.1.1 keyboard widgets — need human judgment sealed via qpu pages + payload-sync (evidence/payload missing or NOT_MEASURED)'],
+    ['ISO/IEC 27001', 'ISMS control evidence is an organisation process — sealed via qpu isms-control-* pages; run payload-sync when QPU_DIR/iso-evidence exists'],
+    ['ISO/IEC 25010', 'characteristics beyond link correctness and page weight need stated-requirement evals (quality-eval-* pages) synced into evidence/payload'],
+  )
+}
 
 let failed = 0
 console.log(`ISO audit — ${pages.length} pages from ${DIST} · control: all ${control.size} checks failed the page built to fail them\n`)
@@ -222,5 +271,6 @@ for (const c of checks.values()) {
 console.log(`\n◇ ISO/IEC 25010 performance efficiency — MEASURED: page html median ${kb(weights[weights.length >> 1])}, largest ${kb(weights[weights.length - 1])}, ${weights.filter((w) => w > 1024 * 1024).length} over 1 MB; shared assets ${kb(assets)}`)
 console.log('')
 for (const [s, why] of NOT_MEASURED) console.log(`○ ${s} — NOT MEASURED: ${why}`)
+if (payload?.status === 'INGESTED') console.log(`◇ payload evidence — MEASURED from evidence/payload (${payload.docs.length} doc(s))`)
 console.log(`\n${failed ? `✗ ISO audit — ${failed} failure(s)` : '✓ ISO audit — every machine-checkable requirement holds'}`)
 process.exit(failed ? 1 : 0)

@@ -11,8 +11,9 @@ const target = (process.argv[2] || 'pages').toLowerCase()
 
 if (target === 'pages') {
   console.log('deploy: pages → gh-pages → https://ceccec.github.io/millennium-solutions/')
+  console.log('deploy: e2e is inside docs:build — ship is refused if build or e2e fails (fatal, not soft)')
   run('node scripts/dashboard.ts'); run('node scripts/boundaries.ts'); run('node scripts/challenges.ts'); run('node scripts/heart.ts'); run('node scripts/accounting.ts')    // regenerate the computed pages (dashboard · boundaries · challenges · accounting)
-  run('npm run docs:build')
+  run('npm run docs:build') // vitepress build + theorem-stamp + e2e — must be green before gh-pages push
   run('node scripts/import-gate.ts')  // block any third-party resource-import (deterministic, at the gate)
   run('node scripts/locale-fold.ts')  // language-fallback stubs → no dead switcher links
   run('node scripts/security-gate.ts') // CSP on every page (incl. stubs) + no committed secrets

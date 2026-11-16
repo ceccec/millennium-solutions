@@ -36,7 +36,8 @@
 // seal-lean.ts chains receipt = toUuid(previous → key), on the KEY, so no receipt covers statement text and
 // a statement can be edited without any receipt changing. The kernel re-checking it on every run is what
 // stands in for that, and it is not the same guarantee.
-import { writeFileSync, readFileSync } from 'node:fs'
+import { writeFileSync, readFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs'
+import { join } from 'node:path'
 import { all as leanDocs } from './leandoc.ts'
 import { live, theoremOfKey, leanTheorems, leanPathOf } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
@@ -114,25 +115,23 @@ const bucketName = (i: number) =>
 const hueOfWing = (w: string) => (wings.indexOf(w) * 40 + 200) % 360
 
 const figure1 = (): string => {
+  // Histogram of counts per domain-size bucket (not one SVG node per theorem — that was a 4 MB figure).
   const cols = BUCKETS.length - 1
-  const perRow = 9, cell = 7, gap = 1.6, colW = perRow * (cell + gap) + 22
-  const bucketed: (typeof theorems)[] = Array.from({ length: cols }, () => [])
-  for (const t of theorems) bucketed[bucketOf(t.cases)].push(t)
-  const maxRows = Math.max(...bucketed.map((b) => Math.ceil(b.length / perRow)))
-  const H = maxRows * (cell + gap) + 62, W = cols * colW + 10
-  let s = `<svg viewBox="0 0 ${Math.round(W)} ${Math.round(H)}" role="img" class="fig" xmlns="http://www.w3.org/2000/svg" aria-label="every theorem placed by the size of the domain its proof exhausted">`
-  s += `<title>Figure 1 — all ${theorems.length} declarations by domain size</title>`
-  bucketed.forEach((b, i) => {
-    const x0 = i * colW + 6
-    b.forEach((t, j) => {
-      const cx = x0 + (j % perRow) * (cell + gap)
-      const cy = H - 40 - Math.floor(j / perRow) * (cell + gap) - cell
-      s += `<rect x="${cx.toFixed(1)}" y="${cy.toFixed(1)}" width="${cell}" height="${cell}" rx="1.2" fill="hsl(${hueOfWing(t.wing)} 62% 52%)"><title>${esc(t.name)} — ${n(t.cases)} cases</title></rect>`
-    })
-    s += `<text x="${(x0 + perRow * (cell + gap) / 2 - 2).toFixed(1)}" y="${H - 28}" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">${bucketName(i)}</text>`
-    s += `<text x="${(x0 + perRow * (cell + gap) / 2 - 2).toFixed(1)}" y="${H - 13}" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">${b.length}</text>`
+  const counts = Array.from({ length: cols }, () => 0)
+  for (const t of theorems) counts[bucketOf(t.cases)]++
+  const max = Math.max(1, ...counts)
+  const barW = 36, gap = 10, H = 220, W = cols * (barW + gap) + 24
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" class="fig" xmlns="http://www.w3.org/2000/svg" aria-label="how many theorems fall in each domain-size bucket">`
+  s += `<title>Figure 1 — ${theorems.length} declarations by domain size (counts)</title>`
+  counts.forEach((c, i) => {
+    const h = Math.max(c ? 2 : 0, (c / max) * 150)
+    const x = 12 + i * (barW + gap)
+    const y = H - 48 - h
+    s += `<rect x="${x}" y="${y.toFixed(1)}" width="${barW}" height="${h.toFixed(1)}" rx="2" fill="hsl(210 62% 52%)"><title>${bucketName(i)}: ${n(c)}</title></rect>`
+    s += `<text x="${x + barW / 2}" y="${H - 28}" font-size="11" text-anchor="middle" fill="currentColor" opacity="0.8">${bucketName(i)}</text>`
+    s += `<text x="${x + barW / 2}" y="${H - 12}" font-size="11" text-anchor="middle" fill="currentColor" opacity="0.55">${n(c)}</text>`
   })
-  s += `<text x="6" y="13" font-size="12" fill="currentColor" opacity="0.65">cases the kernel exhausted, per theorem (log₁₀ buckets) — one square is one theorem</text>`
+  s += `<text x="12" y="16" font-size="12" fill="currentColor" opacity="0.65">theorems per log₁₀ domain-size bucket</text>`
   return s + '</svg>'
 }
 
@@ -154,10 +153,13 @@ const figure2 = (): string => {
   return s + '</svg>'
 }
 
+/** YAML double-quoted scalar — titles carry `:` and `—`, which break VitePress frontmatter unquoted. */
+const yamlTitle = (s: string): string => '"' + s.replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"'
+
 // ── the document ─────────────────────────────────────────────────────────────────────────────────────────
 const seal = merkleFold(theorems.map((t) => toUuid(t.name + '\n' + t.statement)))
 
-let o = '---\ntitle: The paper — the theorems\naside: false\n---\n\n'
+let o = `---\ntitle: ${yamlTitle('The paper — the theorems')}\naside: false\n---\n\n`
 o += '<div class="paper paper-collected" itemscope itemtype="https://schema.org/ScholarlyArticle">\n\n'
 o += '<div class="paper-masthead">\n'
 // AN <h1>, NOT A <div>. This rendered the page title as a styled div, so paper.html carried ZERO h1
@@ -181,11 +183,7 @@ o += `**one theorem carries ${topShare.toFixed(3)}% of it**. The median theorem 
 o += `**${n(noExhaustion)}** of ${n(theorems.length)} walk a single point — a check by evaluation, not by exhaustion. `
 o += `The honest summary is a distribution, not a sum, so it is drawn below rather than reported as one number.\n\n`
 
-o += '<figure class="paper-fig">\n' + figure1() + '\n'
-o += `<figcaption><strong>Figure 1.</strong> All ${n(theorems.length)} declarations, one square each, placed by the size of the domain its proof exhausted (log₁₀ buckets). Colour is the wing. The right-hand tail is a single theorem; the mass is at nine cases.</figcaption>\n</figure>\n\n`
-
-o += '<figure class="paper-fig">\n' + figure2() + '\n'
-o += `<figcaption><strong>Figure 2.</strong> Theorems per wing — counts, because summing case-counts across wings would draw the one large domain again.</figcaption>\n</figure>\n\n`
+o += `The distribution figures (every theorem as one mark, and theorems per wing) live on their own page so this index stays under a megabyte: [Figure 1 & 2 — domain sizes](/paper/distribution).\n\n`
 
 o += '<h2 class="paper-h">Method</h2>\n\n'
 o += `Each theorem is a proposition over a finite domain, discharged by exhaustion: the kernel evaluates the proposition `
@@ -207,111 +205,157 @@ o += `when the source comment is that theorem's own: **${n(ownDoc)}** of ${n(the
 o += `belongs to the enclosing section is not repeated under each theorem it precedes, because it is context for the `
 o += `section and not a statement about any one of them. Integrity, not truth.\n\n`
 
+// ── SPLIT: one VitePress page per Lean file (ISO/IEC 25010 page weight). The index stays navigable;
+// section bodies live under paper/<slug>.md. qpu plugin-iso-gaps mirrors the same split when a `paper`
+// Payload page is published (req.context.isoGapsSplitting) and seals evidence for payload-sync.
+/** section slug from a lean file — never `index` (that steals /paper/ from paper.md and breaks the sitemap mesh) */
+const sectionSlug = (file: string): string => {
+  const raw = file.replace(/\.lean$/, '').replace(/[^\w.-]+/g, '-')
+  return raw === 'index' ? 'lean-index' : raw
+}
+const imagSlugOf = (w: string) =>
+  w && w !== 'unassigned' ? `imagined-${String(w).replace(/[^\w.-]+/g, '-')}` : 'imagined'
+
 o += '<h2 class="paper-h">Contents</h2>\n\n'
+o += 'Each Lean source is its own page — the collected paper is an index, not an 11&nbsp;MB monolith.\n\n'
 for (const w of wings) {
   const inWing = docs.filter((d) => d.wing === w)
   o += `**${wingLabel(w)}** — ${inWing.reduce((s, d) => s + d.theorems.length, 0)} theorems\n`
-  for (const d of inWing) o += `- [${d.title}](#${d.file.replace('.lean', '')}) · \`${d.file}\` · ${d.theorems.length}\n`
+  const enumerated = inWing.filter((d) => /^imagined(_\d+)?\.lean$/.test(d.file))
+  if (enumerated.length) {
+    const imagSlug = imagSlugOf(w)
+    const count = enumerated.reduce((a, d) => a + d.theorems.length, 0)
+    o += `- [The enumerated family](/paper/${imagSlug}) · \`imagined*.lean\` · ${count} (summarised)\n`
+  }
+  for (const d of inWing.filter((d) => !/^imagined(_\d+)?\.lean$/.test(d.file))) {
+    const slug = sectionSlug(d.file)
+    o += `- [${d.title}](/paper/${slug}) · \`${d.file}\` · ${d.theorems.length}\n`
+  }
   o += '\n'
 }
 
+const PAPER_DIR = 'paper'
+mkdirSync(PAPER_DIR, { recursive: true })
+const written = new Set<string>()
 let k = 0
+const sectionBody = (d: (typeof docs)[number], startK: number): { md: string; nextK: number } => {
+  let body = ''
+  let localK = startK
+  body += `<p class="paper-src"><code>${leanPathOf(d.file)}</code> · namespace <code>${d.namespace}</code> · ${d.theorems.length} theorems · wing <code>${esc(wingLabel(d.wing))}</code></p>\n\n`
+  if (d.summary) body += escapeAngles(d.summary) + '\n\n'
+  if (d.defs.length) {
+    body += '<p class="paper-h">Definitions</p>\n\n<pre class="thm-statement paper-defs"><code>'
+    body += d.defs.map((f) => esc(`${f.name} := ${f.value}`)).join('\n')
+    body += '</code></pre>\n\n'
+  }
+  for (const t of d.theorems) {
+    localK++
+    const key = sealedKey.get(at(d.file, t.name))
+    const anchor = 'thm-' + d.file.replace('.lean', '') + '-' + t.name
+    body += `<div class="thm" id="${anchor}">\n`
+    body += `<p class="thm-label"><strong>Theorem ${localK}</strong> (<code>${t.name}</code>)`
+    body += key ? `<a class="thm-cite" href="${BASE}theorem/${key}.html">sealed</a>` : '<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>'
+    body += '.</p>\n'
+    const mml = toMathML(t.statement)
+    const ltx = toLatex(t.statement)
+    if (mml) body += `<div class="thm-math" role="math" aria-label="the statement, typeset">${mml}</div>\n`
+    body += `<pre class="thm-statement"><code>${esc(t.statement)}</code></pre>\n`
+    if (ltx) body += `<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>${esc(ltx)}</code></pre></details>\n`
+    body += '</div>\n'
+    const mil = MILLENNIUM[t.name]
+    if (mil) {
+      body += `<p class="thm-millennium"><strong>Millennium floor — ${esc(mil.problem)}.</strong> `
+      body += `Adjacent to the problem — the claim, and the open gap to the conjecture: ${esc(mil.bound)}. `
+      body += `Proved here: <strong>0</strong>. The authoritative statement is <a href="${mil.outlet}">${esc(mil.outletName)}</a>.</p>\n`
+    }
+    if (t.docFrom === 'own' && t.doc) body += `<p class="thm-remark">${esc(t.doc.replace(/\s+/g, ' ').trim())}</p>\n`
+    body += `<p class="thm-proof"><em>Proof.</em> <code>${t.tactic}</code>`
+    body += t.cases > 1 ? ` — exhausting ${n(t.cases)} cases.` : ' — by evaluation; no domain is walked.'
+    body += ' <span class="qed">□</span></p>\n\n'
+  }
+  return { md: body, nextK: localK }
+}
+
 for (const w of wings) {
-  o += `\n<h2 class="paper-h paper-wing">${esc(wingLabel(w))}</h2>\n\n`
-  // ── THE ENUMERATED FAMILY IS SUMMARISED, NOT INLINED ────────────────────────────────────────────────
-  // This printed every theorem of every file, which was right at 1,256 of them and produced a 52 MB single
-  // markdown page at 25,941. VitePress has to parse and render that as ONE page, and it aborted out of
-  // memory on a 12 GB heap — here and on the runner. The page count was never the problem; this file was.
-  //
-  // 24,742 of those theorems are instances scripts/imagine.ts enumerates over a derived vocabulary, and an
-  // instance is a function of its key: the name gives the map, the relation and the set. Printing all of
-  // them is transcribing the output of a program into a document nobody can open. Their eight structural
-  // laws are in src/iso/80000-2-mathematics/group.lean and ARE printed, in full, below — which is the part a reader needs.
-  // Nothing is withdrawn: every one is sealed, decided by the kernel on every run, and addressable.
   const enumerated = docs.filter((x) => x.wing === w && /^imagined(_\d+)?\.lean$/.test(x.file))
   if (enumerated.length) {
     const count = enumerated.reduce((a, d) => a + d.theorems.length, 0)
-    o += `\n### The enumerated family {#imagined}\n\n`
-    o += `<p class="paper-src"><code>src/iso/80000-2-mathematics/imagined*.lean</code> · ${enumerated.length} modules · ${n(count)} theorems</p>\n\n`
-    o += `These are proposed by \`scripts/imagine.ts\`, which enumerates every statement its vocabulary can `
-    o += `express over ℤ/9, keeps the ones true by exhaustion, discards every one that also holds for all its `
-    o += `siblings, and puts what is left to the kernel. Each is sealed and decided on every run. They are `
-    o += `**summarised rather than transcribed**: each is an instance whose statement follows from its name — `
-    o += `the map, the relation and the set — and the laws they are instances of are stated once, in `
-    o += `\`src/iso/80000-2-mathematics/group.lean\`, printed in full in this paper. A document that reprinted ${n(count)} `
-    o += `instances of eight laws would be ${n(count)} restatements of what those eight say.\n\n`
-    o += `<p class="paper-src">Three, as written:</p>\n\n<pre class="thm-statement"><code>`
-    o += enumerated[0]!.theorems.slice(0, 3).map((t) => esc(`${t.name} : ${t.statement}`)).join('\n\n')
-    o += `</code></pre>\n\n`
+    const slug = imagSlugOf(w)
+    let section = '---\n'
+    section += `title: ${yamlTitle(`The enumerated family — ${wingLabel(w)}`)}\n`
+    section += 'aside: false\n---\n\n'
+    section += `<div class="paper paper-section">\n\n`
+    section += `<p class="paper-src"><a href="/paper">← collected paper</a> · <code>src/iso/80000-2-mathematics/imagined*.lean</code> · ${enumerated.length} modules · ${n(count)} theorems</p>\n\n`
+    section += `These are proposed by \`scripts/imagine.ts\` and **summarised rather than transcribed**: each is an instance whose statement follows from its name, and the laws they are instances of are stated once in \`group.lean\`.\n\n`
+    section += `<p class="paper-src">Three, as written:</p>\n\n<pre class="thm-statement"><code>`
+    section += enumerated[0]!.theorems.slice(0, 3).map((t) => esc(`${t.name} : ${t.statement}`)).join('\n\n')
+    section += `</code></pre>\n\n</div>\n`
+    writeFileSync(join(PAPER_DIR, `${slug}.md`), section)
+    written.add(`${slug}.md`)
   }
   for (const d of docs.filter((x) => x.wing === w && !/^imagined(_\d+)?\.lean$/.test(x.file))) {
-    o += `\n### ${d.title} {#${d.file.replace('.lean', '')}}\n\n`
-    o += `<p class="paper-src"><code>${leanPathOf(d.file)}</code> · namespace <code>${d.namespace}</code> · ${d.theorems.length} theorems</p>\n\n`
-    // THE FILE HEADER WENT OUT RAW, AND ANY ANGLE BRACKET IN IT WAS AN HTML TAG. Every other prose here is
-    // escaped; this one line was not, so a header mentioning `src/<d>/vortex.lean` emitted an unclosed <d>
-    // element and the VitePress build died — in a DIFFERENT file, hundreds of lines later, where the parser
-    // finally gave up. Nothing pointed at the source. Angle brackets are the deposit's own vocabulary here
-    // (⟨2⟩, a path template, a type), so the fix is to escape rather than to ask authors to avoid them.
-    // Only the brackets: the summary is markdown and its emphasis and code spans are meant to render.
-    if (d.summary) o += escapeAngles(d.summary) + '\n\n'
-    if (d.defs.length) {
-      o += '<p class="paper-h">Definitions</p>\n\n<pre class="thm-statement paper-defs"><code>'
-      o += d.defs.map((f) => esc(`${f.name} := ${f.value}`)).join('\n')
-      o += '</code></pre>\n\n'
-    }
-    for (const t of d.theorems) {
-      k++
-      const key = sealedKey.get(at(d.file, t.name))
-      const anchor = 'thm-' + d.file.replace('.lean', '') + '-' + t.name
-      o += `<div class="thm" id="${anchor}">\n`
-      o += `<p class="thm-label"><strong>Theorem ${k}</strong> (<code>${t.name}</code>)`
-      o += key ? `<a class="thm-cite" href="${BASE}theorem/${key}.html">sealed</a>` : '<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>'
-      o += '.</p>\n'
-      // THE TYPESET FORM IS A READING AID; THE LEAN IS THE THEOREM. Both are shown, in that order and
-      // labelled, because the kernel checked the Lean and not this rendering. A statement the grammar
-      // does not cover shows the Lean alone rather than a partial rendering — see src/latex.
-      const mml = toMathML(t.statement)
-      const ltx = toLatex(t.statement)
-      if (mml) o += `<div class="thm-math" role="math" aria-label="the statement, typeset">${mml}</div>\n`
-      // THE LEAN IS ALWAYS VISIBLE. It was inside a <details> and the printed page then carried only the
-      // translation: a <details> cannot be forced open by CSS, so paper showed the rendering and hid the
-      // thing the kernel actually checked — the exact inversion this module is written to prevent. Only
-      // the LaTeX, which is a copy-paste convenience, is behind a disclosure.
-      o += `<pre class="thm-statement"><code>${esc(t.statement)}</code></pre>\n`
-      if (ltx) o += `<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>${esc(ltx)}</code></pre></details>\n`
-      o += '</div>\n'
-      // WHICH THEOREMS SIT AT THE MILLENNIUM FLOOR, and what they do not say. These seven are the closest
-      // this framework comes to a Clay problem, which makes them the place an overclaim would do the most
-      // damage — so the bound is printed WITH the theorem rather than left to a page the reader may never
-      // open. The wording is the shared one the theorem page shows; it is not restated here, so the two
-      // cannot drift apart.
-      const mil = MILLENNIUM[t.name]
-      if (mil) {
-        o += `<p class="thm-millennium"><strong>Millennium floor — ${esc(mil.problem)}.</strong> `
-        o += `Adjacent to the problem — the claim, and the open gap to the conjecture: ${esc(mil.bound)}. `
-        o += `Proved here: <strong>0</strong>. The authoritative statement is <a href="${mil.outlet}">${esc(mil.outletName)}</a>.</p>\n`
-      }
-      // ONLY the theorem's OWN comment. leandoc also reports a comment inherited from the enclosing
-      // section (docFrom 'section'), and printing that under each theorem attributed one theorem's remark
-      // to its neighbours: `merkle_settles_its_range`, whose statement is `settledHere = 7`, was captioned
-      // with a note about merge being order-sensitive. An inherited sentence is section context, not a
-      // remark about this theorem, so it is not printed as one.
-      if (t.docFrom === 'own' && t.doc) o += `<p class="thm-remark">${esc(t.doc.replace(/\s+/g, ' ').trim())}</p>\n`
-      o += `<p class="thm-proof"><em>Proof.</em> <code>${t.tactic}</code>`
-      o += t.cases > 1 ? ` — exhausting ${n(t.cases)} cases.` : ' — by evaluation; no domain is walked.'
-      o += ' <span class="qed">□</span></p>\n\n'
-    }
+    const slug = sectionSlug(d.file)
+    const { md, nextK } = sectionBody(d, k)
+    k = nextK
+    let section = '---\n'
+    section += `title: ${yamlTitle(d.title)}\n`
+    section += 'aside: false\n---\n\n'
+    section += `<div class="paper paper-section">\n\n`
+    section += `<p><a href="/paper">← collected paper</a></p>\n\n`
+    section += `## \`${d.file}\`\n\n`
+    section += md
+    section += '</div>\n'
+    writeFileSync(join(PAPER_DIR, `${slug}.md`), section)
+    written.add(`${slug}.md`)
   }
 }
+{
+  let dist = `---\ntitle: ${yamlTitle('Domain sizes — figures')}\naside: false\n---\n\n`
+  dist += '<div class="paper paper-section">\n\n<p><a href="/paper">← collected paper</a></p>\n\n'
+  dist += '<figure class="paper-fig">\n' + figure1() + '\n'
+  dist += `<figcaption><strong>Figure 1.</strong> Counts of the ${n(theorems.length)} declarations in each log₁₀ domain-size bucket (histogram — not one mark per theorem).</figcaption>\n</figure>\n\n`
+  dist += '<figure class="paper-fig">\n' + figure2() + '\n'
+  dist += `<figcaption><strong>Figure 2.</strong> Theorems per wing — counts, because summing case-counts across wings would draw the one large domain again.</figcaption>\n</figure>\n\n`
+  dist += '</div>\n'
+  writeFileSync(join(PAPER_DIR, 'distribution.md'), dist)
+  written.add('distribution.md')
 
-// An index: a 98-page document had no way to find a theorem by name. Derived from what was printed, so it
-// cannot list a theorem the paper does not contain, and the duplicated name appears twice with its file —
-// the honest rendering of two theorems that share a name.
-o += '\n<h2 class="paper-h">Index of theorems</h2>\n\n<div class="paper-index">\n'
-for (const e of docs.flatMap((d) => d.theorems.map((t) => ({ name: t.name, file: d.file })))
-  .sort((a, b) => a.name.localeCompare(b.name) || a.file.localeCompare(b.file)))
-  o += `<a href="#thm-${e.file.replace('.lean', '')}-${e.name}"><code>${e.name}</code> <span>${e.file}</span></a>\n`
-o += '</div>\n\n'
+  // Chunked indexes — keep each page under ~1 MB of markdown (~4k link rows).
+  const allIndex = docs
+    .flatMap((d) => d.theorems.map((t) => ({ name: t.name, file: d.file })))
+    .sort((a, b) => a.name.localeCompare(b.name) || a.file.localeCompare(b.file))
+  const CHUNK = 2500
+  const chunks = Math.max(1, Math.ceil(allIndex.length / CHUNK))
+  let hub = `---\ntitle: ${yamlTitle('Index of theorems')}\naside: false\n---\n\n`
+  hub += '<div class="paper paper-section">\n\n<p><a href="/paper">← collected paper</a></p>\n\n'
+  hub += `Every printed theorem by name (${n(theorems.length)}), in ${chunks} part(s):\n\n`
+  for (let i = 0; i < chunks; i++) {
+    const rows = allIndex.slice(i * CHUNK, (i + 1) * CHUNK)
+    const slug = `theorem-index-${i + 1}`
+    const from = rows[0]?.name ?? ''
+    const to = rows[rows.length - 1]?.name ?? ''
+    hub += `- [Part ${i + 1}](/paper/${slug}) · \`${from}\` … \`${to}\` · ${n(rows.length)}\n`
+    let page = `---\ntitle: ${yamlTitle(`Theorems · part ${i + 1}`)}\naside: false\n---\n\n`
+    page += `<div class="paper paper-section">\n\n<p><a href="/paper/theorem-index">← theorem index</a> · <a href="/paper">collected paper</a></p>\n\n`
+    page += '<div class="paper-index">\n'
+    for (const e of rows) {
+      const s = e.file.replace(/\.lean$/, '')
+      page += `<a href="/paper/${s}#thm-${s}-${e.name}"><code>${e.name}</code> <span>${e.file}</span></a>\n`
+    }
+    page += '</div>\n\n</div>\n'
+    writeFileSync(join(PAPER_DIR, `${slug}.md`), page)
+    written.add(`${slug}.md`)
+  }
+  hub += '\n</div>\n'
+  writeFileSync(join(PAPER_DIR, 'theorem-index.md'), hub)
+  written.add('theorem-index.md')
+}
+for (const f of readdirSync(PAPER_DIR)) {
+  if (f.endsWith('.md') && !written.has(f)) unlinkSync(join(PAPER_DIR, f))
+}
+
+o += `\n<h2 class="paper-h">Index of theorems</h2>\n\n`
+o += `Every printed theorem by name: [index of theorems](/paper/theorem-index) (${n(theorems.length)} entries, letter-bucketed).\n\n`
 
 o += '\n<h2 class="paper-h">Verification</h2>\n\n'
 o += 'Clone the repository and run `node scripts/lean.ts` to re-check every statement above against the Lean 4 kernel, '
@@ -324,7 +368,7 @@ o += '</div>\n'
 // committed paper.md — the same contract pages.ts honours for README.md and index.md through PAGES_OUT.
 const PAPER_OUT = process.env.PAPER_OUT ? process.env.PAPER_OUT.replace(/\/?$/, '/') : ''
 writeFileSync(PAPER_OUT + 'paper.md', o)
-console.log(`✓ paper: ${n(theorems.length)} declarations (${n(byDecide + proofs)} theorems: ${n(byDecide)} by exhaustion + ${n(proofs)} proved for every value; ${rflOnly.length} rfl, never theorems) · ${docs.length} sources · ${wings.length} wings · median ${n(median)} cases, top theorem ${topShare.toFixed(2)}% of the total · seal ${seal.slice(0, 13)}… → paper.md`)
+console.log(`✓ paper: ${n(theorems.length)} declarations (${n(byDecide + proofs)} theorems: ${n(byDecide)} by exhaustion + ${n(proofs)} proved for every value; ${rflOnly.length} rfl, never theorems) · ${docs.length} sources · ${wings.length} wings · median ${n(median)} cases, top theorem ${topShare.toFixed(2)}% of the total · seal ${seal.slice(0, 13)}… → paper.md + ${written.size} section page(s) under ${PAPER_DIR}/`)
 
 
 // ── THE SAME PAPER IN LaTeX, generated ──────────────────────────────────────────────────────────────────

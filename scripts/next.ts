@@ -60,17 +60,15 @@ if (message === 'forensics' || message === 'lineage') {
   process.exit(0)
 }
 
-// AUTOMATE — next is the full loop. After a delta is committed+tagged, push main and the tag to origin.
-// Errors are ADDRESSED IN THE GAME: surfaced (never swallowed), and non-fatal — the commit+tag stand
-// locally, so a push/deploy failure is reported and retryable, it does not lose the shipped work.
+// AUTOMATE — next is the full loop. DEPLOY + E2E ARE FATAL AND FIRST: no tag, no push, no "shipped"
+// without a green `docs:build` (includes e2e) and a green `deploy:pages`. A tag without a live site is
+// not a release — v9.9.6 proved that. Failures surface and abort; they are never swallowed as non-fatal.
 const firstLine = (e: unknown) => { const m = e instanceof Error ? e.message : String(e); return m.split('\n')[0] }
 const pushAll = () => {
-  try {
-    execSync('git push origin main', { stdio: 'inherit' })
-    const tag = execSync('git describe --tags --abbrev=0', { encoding: 'utf8' }).trim()
-    execSync('git push origin ' + tag, { stdio: 'inherit' })
-    cutRelease(tag)
-  } catch (e) { console.log('  push error (addressed · non-fatal — commit+tag are local, retry `git push --tags`): ' + firstLine(e)) }
+  execSync('git push origin main', { stdio: 'inherit' })
+  const tag = execSync('git describe --tags --abbrev=0', { encoding: 'utf8' }).trim()
+  execSync('git push origin ' + tag, { stdio: 'inherit' })
+  cutRelease(tag)
 }
 // THE GITHUB RELEASE IS WHAT PUBLISHES, NOT THE TAG. Zenodo archives a release on `release: published`, and
 // publish.yml puts the tag's number on npm on the same event. Only release.yml cut releases, and it cuts one
@@ -78,16 +76,18 @@ const pushAll = () => {
 // Cut with the depositor's own gh login, the event starts both workflows (an Actions-token release starts none).
 const cutRelease = (tag: string) => {
   try { execSync('gh release view ' + tag, { stdio: 'ignore' }); console.log(`  · GitHub release ${tag} already exists`); return } catch { /* absent: cut it */ }
-  try {
-    const notes = execSync(`git for-each-ref '--format=%(contents)' refs/tags/${tag}`, { encoding: 'utf8' })
-    writeFileSync('/tmp/next-release-notes.txt', notes)
-    execSync(`gh release create ${tag} --title ${tag} --notes-file /tmp/next-release-notes.txt --verify-tag`, { stdio: 'inherit' })
-  } catch (e) { console.log(`  release error (addressed · non-fatal — the tag is pushed, retry \`gh release create ${tag} --verify-tag\`): ` + firstLine(e)) }
+  const notes = execSync(`git for-each-ref '--format=%(contents)' refs/tags/${tag}`, { encoding: 'utf8' })
+  writeFileSync('/tmp/next-release-notes.txt', notes)
+  execSync(`gh release create ${tag} --title ${tag} --notes-file /tmp/next-release-notes.txt --verify-tag`, { stdio: 'inherit' })
 }
-// deploy the live site as part of the game — the fresh-facts wave ships the site too, not only the tag.
+/** deploy e2e — FATAL. docs:build already runs e2e; deploy rebuilds and publishes. Must pass before ship. */
 const deployPages = () => {
-  try { execSync('npm run deploy:pages', { stdio: 'inherit' }) }
-  catch (e) { console.log('  deploy error (addressed · non-fatal — release stands, retry `npm run deploy:pages`): ' + firstLine(e)) }
+  execSync('npm run deploy:pages', { stdio: 'inherit' })
+}
+/** prove the full deploy path (build + e2e + deploy gates) BEFORE any tag — ship without this is invalid. */
+const deployE2eFirst = () => {
+  console.log('next — deploy-e2e first; no tag without green deploy path:')
+  execSync('npm run deploy:e2e', { stdio: 'inherit' })
 }
 
 // ── message mode: the binary decides whether it stays ──────────────────────────
@@ -137,10 +137,11 @@ if (message) {
     console.log('next — a wave: discovered & saved ' + fresh.length + ' provable fact(s), each sending the next:')
     for (const c of fresh) console.log('  ✓ ' + c.name)
     console.log('  ledger now ' + ledger.length + ' recorded → ' + LEDGER + ' · wave tip ' + prev.slice(0, 13) + '…')
-    // ship the discoveries, push, AND deploy the live site — the full loop in one `next`.
+    // deploy e2e FIRST — then release/tag, then deploy publish, then push. No tag without green e2e.
+    deployE2eFirst()
     execSync('npm run release', { stdio: 'inherit' })
-    pushAll()
     deployPages()
+    pushAll()
     process.exit(0)
   }
   console.log('next — forward is exhausted: no new provable fact in the candidate space (' + known.size + ' recorded). the search comes about — invert or reverse.')
@@ -209,6 +210,8 @@ if (address === lastAddr) {
   process.exit(revOk ? 0 : 1)
 }
 console.log('next — a real delta is present (' + address.slice(0, 13) + '… ≠ ' + lastTag + '). shipping the truly-next:')
+// DEPLOY E2E FIRST — abort before orchestrate tags if the site/e2e is red. Tag-without-deploy is invalid.
+deployE2eFirst()
 execSync('npm run orchestrate', { stdio: 'inherit' })
 deployPages()
 pushAll()

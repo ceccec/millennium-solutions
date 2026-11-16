@@ -19,8 +19,9 @@ const next = 'v' + _maj + '.' + _min + '.' + _pat
 console.log('orchestrate: ' + last + ' → ' + next)
 
 // 2) gates — abort the whole orchestration if any fails.
+// docs:build INCLUDES e2e (package.json: vitepress build && theorem-stamp && e2e). No tag without it green.
 run('node scripts/gaps.ts')          // coverage: every report() module fused, every page linked
-run('npm run docs:build')             // the site actually builds
+run('npm run docs:build')             // site build + e2e — FATAL before any tag
 run('node scripts/receipt-audit.ts') // evidence: agent-statement receipts cross-checked + complete
 run('node scripts/forensics.ts')     // chain-of-custody: ledger receipts tamper-evident; intention from deeds
 run('node scripts/seal.ts')          // consistency: every citation live in the ledger
@@ -37,6 +38,7 @@ if (process.argv.includes('--gates-only')) {
 }
 
 // 3) release (content-address · commit · sign · tag). release.ts may SKIP on no-delta.
+// Tagging is allowed only after docs:build+e2e above. Deploy publish is next.ts's job and is also fatal.
 run('node scripts/release.ts ' + next)
 
 // 4) only claim success if the tag was actually created (self-honest: no false "orchestrated").

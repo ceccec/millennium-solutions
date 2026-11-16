@@ -1,4 +1,4 @@
 #!/bin/sh
-# HARD ENFORCE on every push: the repository's Lean is checked for fake proofs and the MCP gate must pass, in parallel.
+# HARD ENFORCE on every push: parallel gates including deploy-e2e (build + e2e + deploy path) — no push while deploy is red.
 node scripts/gate-parallel.ts --push || { echo "✗ pre-push: refused — see the stream named above"; exit 1; }
-echo "✓ pre-push: no fake proofs in the repository, and the MCP gate passes"
+echo "✓ pre-push: gates + deploy-e2e green — safe to push"

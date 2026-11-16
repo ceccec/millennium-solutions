@@ -15,7 +15,8 @@
 //   THE DEFINITIONS USED — every `def` and `abbrev` in src/proof, with its body. These are the primitives.
 //     A theorem about `fall` is a theorem about the digital root only because `fall` is defined to be it;
 //     read the definition or the theorem means nothing. That is the honest base of the research.
-import { writeFileSync, readFileSync, existsSync } from 'node:fs'
+import { writeFileSync, readFileSync, existsSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs'
+import { join } from 'node:path'
 import { execSync } from 'node:child_process'
 import { leanTheorems, leanFiles, leanSource, leanPathOf } from '../src/api/index.ts'
 
@@ -151,17 +152,34 @@ o += `\`#guard_msgs\`, which turns the axiom footprint into an executable regres
 o += `checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.\n\n`
 
 o += `## What IS assumed: the ${n(defs.length)} definitions\n\n`
-o += `Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full\n`
-o += `because a reader checking a theorem must be able to read the definition it is about, and because a\n`
-o += `deposit that reports its axiom count and hides its definition count is reporting the flattering half.\n\n`
+o += `Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed per Lean\n`
+o += `file under \`AXIOMS/\` (ISO/IEC 25010 page weight: the index is not a 1.5&nbsp;MB monolith). A reader\n`
+o += `checking a theorem must be able to read the definition it is about, and a deposit that reports its\n`
+o += `axiom count and hides its definition count is reporting the flattering half.\n\n`
+
 const byFile = new Map<string, Def[]>()
 for (const d of defs) byFile.set(d.file, [...(byFile.get(d.file) ?? []), d])
+const AX_DIR = 'AXIOMS'
+mkdirSync(AX_DIR, { recursive: true })
+const written = new Set<string>()
+o += `| File | Definitions | Theorems |\n| --- | ---: | ---: |\n`
 for (const [file, ds] of [...byFile].sort()) {
   const uses = T.filter((t) => t.file === file).length
-  o += `### \`${file}\` — ${ds.length} definition(s), ${uses} theorem(s)\n\n`
-  o += '```lean\n' + ds.map((d) => `${d.kind} ${d.name}${d.body ? ' ' + d.body : ''}`).join('\n') + '\n```\n\n'
+  // never slug `index` — that steals /AXIOMS/ from AXIOMS.md and breaks the sitemap mesh
+  const raw = file.replace(/\.lean$/, '').replace(/[^\w.-]+/g, '-')
+  const slug = raw === 'index' ? 'lean-index' : raw
+  o += `| [\`${file}\`](/AXIOMS/${slug}) | ${ds.length} | ${uses} |\n`
+  let section = `---\ntitle: "Definitions in ${file.replace(/"/g, '\\"')}"\n---\n\n`
+  section += `[← axiom index](/AXIOMS)\n\n`
+  section += `## \`${file}\` — ${ds.length} definition(s), ${uses} theorem(s)\n\n`
+  section += '```lean\n' + ds.map((d) => `${d.kind} ${d.name}${d.body ? ' ' + d.body : ''}`).join('\n') + '\n```\n'
+  writeFileSync(join(AX_DIR, `${slug}.md`), section)
+  written.add(`${slug}.md`)
 }
-o += `---\n\n**${n(T.length)}** declarations, **0** axiom dependencies, **${n(defs.length)}** definitions they rest on.\n`
+for (const f of readdirSync(AX_DIR)) {
+  if (f.endsWith('.md') && !written.has(f)) unlinkSync(join(AX_DIR, f))
+}
+o += `\n---\n\n**${n(T.length)}** declarations, **0** axiom dependencies, **${n(defs.length)}** definitions they rest on.\n`
 o += `A content-address proves integrity, not truth, and an axiom index proves neither: it states what was\n`
 o += `assumed, so a reader can disagree with the assumptions rather than guess at them.\n`
 
@@ -169,5 +187,5 @@ writeFileSync('AXIOMS.md', o)
 console.log(bad
   ? `\n✗ axiom-index: ${bad} finding(s)`
   : `\n✓ axiom-index: ${n(T.length)} declarations depend on 0 of Lean's 3 axioms — verified against a control that `
-    + `carries all three — and rest on ${n(defs.length)} definitions, every one listed → AXIOMS.md`)
+    + `carries all three — and rest on ${n(defs.length)} definitions across ${written.size} file page(s) → AXIOMS.md + ${AX_DIR}/`)
 process.exit(bad ? 1 : 0)
