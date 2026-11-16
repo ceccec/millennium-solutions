@@ -27,6 +27,12 @@ export const DESC_CAP = 160
 /** The rendered <title> for a page titled `t` — the same string .vitepress/config.ts emits. */
 export const serpTitle = (t: string): string => (t ? t + SITE_SUFFIX : SITE_NAME)
 
+// THE DESCRIPTION IS THE LINE A SEARCH RESULT SHOWS, so it is written to fit one: cut on a word boundary, the
+// full statement still on the page. Moved here from .vitepress/config.ts so the stamped theorem pages
+// (src/publication/record.ts) and the VitePress pages trim the same way.
+export const fit = (t: string, n = 155): string => t.length <= n ? t
+  : t.slice(0, t.lastIndexOf(' ', n) > 0 ? t.lastIndexOf(' ', n) : n).replace(/[,;:—-]$/, '') + '…'
+
 /** Does a page's own title survive the suffix without the search result truncating it? */
 export const fitsSerp = (t: string, cap: number = TITLE_CAP): boolean => serpTitle(t).length <= cap
 

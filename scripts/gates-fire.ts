@@ -648,6 +648,12 @@ const CONTROLS: Control[] = [
     what: 'a sealed theorem whose public page has lost its microdata',
     mutate: (s) => s.replace(/itemprop="identifier"/g, 'itemprop="removed-by-control"') },
 
+  // THE ONE TEMPLATE, CONTROLLED: every theorem page is stamped into its empty page slot, so a template that has
+  // lost the slot would stamp 4,041 pages with no theorem in them — the stamper must refuse instead.
+  { gate: 'theorem-stamp', cmd: 'node scripts/theorem-stamp.ts', file: '.vitepress/dist/theorem/_template.html',
+    what: 'a theorem template with no page slot — every stamped page would be empty of its theorem',
+    mutate: (s) => s.replace('data-slot="page"', 'data-slot="removed-by-control"') },
+
   { gate: 'receipt-audit', cmd: 'node scripts/receipt-audit.ts', file: 'src/receipts/a1d33966-7bbd-84ca-902b-49e315af60e0.json',
     what: 'a receipt whose uuid no longer addresses its own message',
     mutate: (s) => { const r = JSON.parse(s); r.message = r.message + ' (altered by control)'; return JSON.stringify(r, null, 2) + '\n' } },

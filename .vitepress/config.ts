@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
 import { readFileSync , existsSync } from 'node:fs'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale'
-import { serpTitle } from '../src/7/serp.ts'
+import { serpTitle, fit } from '../src/7/serp.ts'
+import { theoremKeys } from '../src/publication/record.ts'
 import { CSP } from '../src/0/csp.ts'
 import { A432_STEP } from '../src/0/index.ts'
 
@@ -69,20 +70,31 @@ const LD = {
   mainEntity: { '@type': 'Collection', name: 'decidable theorems (ℤ/9, recomputable)', size: THEOREMS },
 }
 
-// THE DESCRIPTION IS THE LINE A SEARCH RESULT SHOWS, so it is written to fit one. The per-theorem text is
-// accurate and runs to about 280 characters, which every search engine cuts mid-word; 2,888 pages shipped
-// that way. VitePress emits <meta name="description"> from pageData.description itself, so the trim belongs
-// at the assignment — trimming further downstream changed the og tag and left the meta untouched, which is
-// how the first attempt at this reported no change at all. Cut on a word boundary, with the full statement
-// still on the page where it has always been.
-const fit = (t: string, n = 155): string => t.length <= n ? t
-  : t.slice(0, t.lastIndexOf(' ', n) > 0 ? t.lastIndexOf(' ', n) : n).replace(/[,;:—-]$/, '') + '…'
+// THE DESCRIPTION IS THE LINE A SEARCH RESULT SHOWS, so it is written to fit one — `fit` (src/7/serp.ts),
+// shared with the stamped theorem pages. VitePress emits <meta name="description"> from pageData.description
+// itself, so the trim belongs at the assignment.
+
+// THE THEOREM PAGES ARE STAMPED, NOT BUILT HERE (scripts/theorem-stamp.ts): VitePress renders one of them,
+// theorem/_template.md, and the stamper writes the rest from their records. These are the keys that have a page.
+const THEOREM_KEYS = new Set(theoremKeys())
 
 export default defineConfig({
   title: L.title,
   description: L.description,
   base: '/millennium-solutions/', // GitHub project Pages; set '/' for a custom root domain
-  sitemap: { hostname: 'https://ceccec.psg.bg/millennium-solutions/' }, // trinity sitemap: the full site map
+  // trinity sitemap: the full site map — the stamped theorem pages added, the template left out (it is noindex)
+  sitemap: {
+    hostname: 'https://ceccec.psg.bg/millennium-solutions/',
+    transformItems: (items) => [
+      ...items.filter((i) => !/theorem\/_template/.test(i.url)),
+      ...[...THEOREM_KEYS].map((k) => ({ url: `theorem/${k}.html` })),
+    ],
+  },
+  // A link to /theorem/<key> is live when <key> has a stamped page; any other dead link still fails the build.
+  ignoreDeadLinks: [(url: string) => {
+    const m = /(?:^|\/)theorem\/([^/?#]+?)(?:\.html)?(?:[?#].*)?$/.exec(url)
+    return !!m && THEOREM_KEYS.has(m[1])
+  }],
 
   // PWA — installable, offline (service worker registered in theme/index.ts).
   head: [
@@ -112,43 +124,8 @@ export default defineConfig({
   ],
 
   transformPageData(pageData) {
-    // Each object is the hero of its own page: a dynamic /theorem/<key> page takes its OG title and
-    // description from its own params — the theorem's name, and how it was achieved.
-    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string; problem?: string; outletName?: string; revoked?: boolean; reason?: string; supersededBy?: string; jsonld?: string } }).params
-    if (p?.key) {
-      // PER-THEOREM STRUCTURED DATA, injected here because a template cannot do it: Vue refuses to render a
-      // <script> tag, so `<component :is="'script'">` built cleanly and emitted nothing — 2425 pages kept
-      // carrying one identical site-level blob that described the repository and said nothing about the
-      // theorem on the page. transformPageData runs at build time, which is also the only place that helps
-      // a search engine. Built in src/publication from the same values as the prose body and the Zenodo
-      // record, so the three cannot disagree.
-      if (p.jsonld) (pageData.frontmatter.head ??= []).push(['script', { type: 'application/ld+json' }, p.jsonld])
-      // THE TITLE IS THE DECLARATION, NOT THE WHOLE RECORD. `p.name` is the ledger's name — file, theorem,
-      // up to 240 characters of Lean statement and the tactic that closed it — and assigning it here put
-      // titles of up to 700 characters on 2,828 pages, against the 60 this repository enforces elsewhere.
-      // A search result showed a truncated `(List.range 6).all (fun i =>` and nothing a reader could use.
-      // The full record is still the <h1>'s subtitle and the statement is still on the page in its own
-      // <pre>; the ledger name is untouched, because it is append-only and the defect was in the display.
-      pageData.title = p.short || p.name
-      // A WITHDRAWN ENTRY MUST NOT BE DESCRIBED AS STANDING. The OG/meta description is what a search result
-      // and a shared link show — the one line most people ever read — so it is the last place a stale claim
-      // may survive. An entry that no longer holds says so here first.
-      // A page that ranks for a fact the deposit HAS PROVED must not tell the searcher it cannot be cited.
-      // These are the deposit's highest-traffic pages: every one was withdrawn for lacking a Lean proof, and
-      // the proofs now exist. The description is what a search result shows, so it is the first place the
-      // correction has to land.
-      pageData.description = fit(p.revoked && p.supersededBy
-        ? 'CARRIED — withdrawn on its own evidence for lacking a proof, and now carried by the Lean theorem ' + p.supersededBy + ', machine-checked sorry-free and axiom-free over its whole domain. Integrity, not truth.'
-        : p.revoked
-        ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit and must not be cited. Its receipt (' + p.receipt + ') remains in the append-only record so the chain still verifies, but the statement is not re-verified on every build. Integrity, not truth.'
-        : p.key.startsWith('lean_')
-        // Established by the Lean kernel, not by enumeration in discover.ts. Saying "computed by exhaustion"
-        // of a machine-checked proof misdescribes the strongest evidence in the deposit as the weaker kind.
-        ? 'A Lean 4 theorem, machine-checked sorry-free and axiom-free by the kernel over its whole domain — not sampled, and not a TypeScript test that agreed once (content-address ' + p.receipt + '). A standing theorem of the ℤ/9 ledger. Integrity, not truth.'
-        : p.problem
-        ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free (content-address ' + p.receipt + '). Adjacent to the Clay problem “' + p.problem + '” — and NOT the conjecture. Reference: ' + p.outletName + '. Integrity, not truth.'
-        : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth.')
-    }
+    // A THEOREM PAGE IS STAMPED (scripts/theorem-stamp.ts), and its head is built with its record by theoremHead in
+    // src/publication/record.ts — the per-theorem branch that stood here moved there with its text unchanged.
     const clean = pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '.html')
     const url = SITE + clean
     const title = serpTitle(pageData.title)

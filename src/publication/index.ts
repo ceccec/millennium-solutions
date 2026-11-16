@@ -281,11 +281,19 @@ export const structuredData = (t: LeanTheorem, opts: { novelty: string; files: s
 const tokensOf = (text: string): Set<string> => new Set(text.match(/[A-Za-z_][A-Za-z0-9_']*/g) ?? [])
 
 /** Every `def` in these files, as name → its source text, in declaration order. */
+// per file, memoised on (source text, file label) — the record builder parses the same closure for every theorem
+const declMemo = new Map<string, Map<string, { name: string; file: string; text: string }[]>>()
 const declarationsIn = (files: readonly string[]): { name: string; file: string; text: string }[] => {
   const out: { name: string; file: string; text: string }[] = []
   for (const f of files) {
     let src = ''
     try { src = leanSource(f.replace(/^src\/proof\//, '')) } catch { continue }
+    const byFile = declMemo.get(src) ?? new Map<string, { name: string; file: string; text: string }[]>()
+    declMemo.set(src, byFile)
+    const cached = byFile.get(f)
+    if (cached) { out.push(...cached); continue }
+    const mine: { name: string; file: string; text: string }[] = []
+    byFile.set(f, mine)
     const lines = src.split('\n')
     for (let i = 0; i < lines.length; i++) {
       const m = /^(?:private\s+)?(?:def|abbrev)\s+([A-Za-z_][A-Za-z0-9_']*)\b/.exec(lines[i])
@@ -297,8 +305,9 @@ const declarationsIn = (files: readonly string[]): { name: string; file: string;
         if (/^(?:private\s+)?(?:def|abbrev|theorem|lemma|namespace|end|set_option|open|import|--)/.test(lines[j])) break
         body.push(lines[j])
       }
-      out.push({ name: m[1], file: f, text: body.join('\n') })
+      mine.push({ name: m[1], file: f, text: body.join('\n') })
     }
+    out.push(...mine)
   }
   return out
 }
@@ -484,9 +493,14 @@ export const KIND: Record<string, string> = {
   '2': 'a named prior-art search was performed and found nothing',
 }
 /** file -> its row in the table, so a deposition quotes the ledger rather than a guess. */
-export const kinds = (): Map<string, string> =>
-  new Map([...leanSource('priorart.lean').matchAll(/\(\s*\d+,\s*(\d+),\s*(?:true|false)\)\s*--\s*(\S+\.lean)/g)]
-    .map((m) => [m[2], m[1]] as [string, string]))
+const kindsMemo = new Map<string, Map<string, string>>()
+export const kinds = (): Map<string, string> => {
+  const src = leanSource('priorart.lean')
+  let k = kindsMemo.get(src)
+  if (!k) kindsMemo.set(src, k = new Map([...src.matchAll(/\(\s*\d+,\s*(\d+),\s*(?:true|false)\)\s*--\s*(\S+\.lean)/g)]
+    .map((m) => [m[2], m[1]] as [string, string])))
+  return k
+}
 /** THE FILES A PRIORITY DEPOSIT MAY BE MINTED FOR — and the search is the gate, not the kind.
  *
  *  This was `kind === '1'` alone: every file declaring `prior_art: unclassified` entered the queue as "this
@@ -526,9 +540,16 @@ export const closureOf = (file: string, seen = new Set<string>()): string[] => {
  *  exactly merkaba.lean: its own construction throughout, with one declaration whose third conjunct
  *  4 + 4 - 6 = 2 is the Euler characteristic. The register now carries the exception where the exception
  *  is, and a credited theorem says so in its own deposition instead of inheriting the file's status. */
+// Memoised on the source text it parses (a pure function of it): the record builder asks once per theorem,
+// and re-splitting the same file 4,041 times was 14 s on its own.
+const creditMemo = new Map<string, Map<string, string>>()
 export const creditedIn = (file: string): Map<string, string> => {
+  const src = leanSource(file)
+  const memo = creditMemo.get(src)
+  if (memo) return memo
   const out = new Map<string, string>()
-  const lines = leanSource(file).split('\n')
+  creditMemo.set(src, out)
+  const lines = src.split('\n')
   for (let i = 0; i < lines.length; i++) {
     const m = lines[i].match(/^--\s*prior_art_theorem:\s*(\w+)\s*[—-]\s*(.*)$/)
     if (!m) continue

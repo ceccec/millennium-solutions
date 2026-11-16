@@ -43,6 +43,7 @@ import { toUuid, merkleFold } from '../src/0/index.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
 import { toLatex, toMathML } from '../src/latex/index.ts'
 import { escapeAngles, escapeHtml } from '../src/html/index.ts'
+import { BASE } from '../src/publication/record.ts' // raw HTML is not base-rewritten by VitePress: a theorem link carries the base itself
 
 const docs = leanDocs()
 const T = leanTheorems()
@@ -264,7 +265,7 @@ for (const w of wings) {
       const anchor = 'thm-' + d.file.replace('.lean', '') + '-' + t.name
       o += `<div class="thm" id="${anchor}">\n`
       o += `<p class="thm-label"><strong>Theorem ${k}</strong> (<code>${t.name}</code>)`
-      o += key ? `<a class="thm-cite" href="/theorem/${key}">sealed</a>` : '<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>'
+      o += key ? `<a class="thm-cite" href="${BASE}theorem/${key}.html">sealed</a>` : '<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>'
       o += '.</p>\n'
       // THE TYPESET FORM IS A READING AID; THE LEAN IS THE THEOREM. Both are shown, in that order and
       // labelled, because the kernel checked the Lean and not this rendering. A statement the grammar

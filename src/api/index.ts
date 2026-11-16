@@ -182,7 +182,21 @@ export const enumeratedNames = (): Set<string> => {
 export const isComputedKey = (key: string, names: Set<string> = enumeratedNames()): boolean =>
   key.startsWith('lean_imagined_') && names.has(key.replace('lean_imagined_', ''))
 
-export const leanSource = (file: string): string => readFileSync(leanPathOf(file), 'utf8')
+// READ ONCE PER VERSION OF THE FILE. The theorem-record builder read the same proof files once per theorem —
+// creditedIn, closureOf and definitionsFor each call this — and readFileSync was 57 s of its 104 s (cpu
+// profile, 2026-11-16). Keyed on mtime+size like ledger(), not baked: generators here write a .lean file and
+// read it back in one process, and a stat per call is what keeps that read fresh.
+const sourceCache = new Map<string, { key: string; src: string }>()
+export const leanSource = (file: string): string => {
+  const p = leanPathOf(file)
+  const st = statSync(p)
+  const key = `${st.mtimeMs}:${st.size}`
+  const hit = sourceCache.get(p)
+  if (hit && hit.key === key) return hit.src
+  const src = readFileSync(p, 'utf8')
+  sourceCache.set(p, { key, src })
+  return src
+}
 
 /** Every theorem on disk, with the file that carries it and the tactic that closed it. ONE parse of the
  *  `theorem` syntax, so a change to how proofs are written is a change in one place. */

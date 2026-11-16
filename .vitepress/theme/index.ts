@@ -48,7 +48,12 @@ export default {
   // It is set here, on the client, rather than by removing the gate from the CSS: the attribute is what lets
   // a page opt OUT of the orchestration, and deleting it would take that with it. The guard is for the
   // server pass, where there is no document.
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
+    // A THEOREM PAGE IS STAMPED STATIC HTML with no client chunk of its own (scripts/theorem-stamp.ts): the
+    // router would load a page module that does not exist and show its 404. Go there by a full load instead.
+    router.onBeforeRouteChange = (to: string) => {
+      if (typeof window !== 'undefined' && /\/theorem\/(?!_template)[^/]+/.test(to)) { window.location.href = to; return false }
+    }
     if (typeof document !== 'undefined') document.documentElement.setAttribute('data-a432', '')
     app.component('Funding', Funding)
     app.component('References', References)

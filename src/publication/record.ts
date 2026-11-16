@@ -1,4 +1,9 @@
-// Dynamic route: one page per theorem (a stable, referrer-able URL /theorem/<key>), from ONE template.
+// THE THEOREM RECORDS: one page per theorem (a stable, referrer-able URL /theorem/<key>), from ONE template.
+// This was VitePress's dynamic-route loader (theorem/[key].paths.ts), and VitePress rendered and bundled every
+// route — 4,041 pages and 8,082 JS chunks, the slowest step of the ship (chain-timer, 2026-11-16). It is now the
+// record builder: theoremRoutes() returns each page's params, theoremHead() its <head>, and scripts/theorem-stamp.ts
+// renders them into the one template VitePress builds (theorem/_template.md). The same records are what a tenant
+// host fills the template with at the edge, so the page a reader gets does not depend on where it was rendered.
 // Two sources feed the same template:
 //   • src/proof/discovered.json — the ℤ/9 discovery ledger (computed by exhaustion), and
 //   • the seven Millennium-floor theorems in src/iso/9001-governance/index.lean — each carrying its Lean proof in
@@ -6,14 +11,15 @@
 // Each page also carries the hues of its SURROUNDING theorems so its hero background is computed by the
 // neighbourhood — the mesh, seen locally. The Lean proof text is READ FROM index.lean (single source), and
 // every receipt is the content-address of the exact statement (reproducible by anyone via toUuid).
-import { readdirSync, readFileSync } from 'node:fs'
-import { toUuid } from '../src/0/index.ts'
-import { leanTheorems, theoremOfKey, domainOf, enumeratedNames, isComputedKey, leanPathOf } from '../src/api/index.ts'
-import { publicationHtml, structuredData, NOVELTY, kinds, closureOf, creditedIn } from '../src/publication/index.ts'
-import { treeOf } from '../src/iso/iec-4879-quantum/tree.ts'
-import { MILLENNIUM } from '../src/millennium/index.ts'
-import { toLatex, toMathML } from '../src/latex/index.ts'
-import { withoutFloor } from '../src/honesty/index.ts'
+import { readFileSync } from 'node:fs'
+import { toUuid } from '../0/index.ts'
+import { leanTheorems, theoremOfKey, domainOf, enumeratedNames, isComputedKey, leanPathOf } from '../api/index.ts'
+import { publicationHtml, structuredData, NOVELTY, kinds, closureOf, creditedIn, SITE } from './index.ts'
+import { treeOf } from '../iso/iec-4879-quantum/tree.ts'
+import { MILLENNIUM } from '../millennium/index.ts'
+import { toLatex, toMathML } from '../latex/index.ts'
+import { withoutFloor } from '../honesty/index.ts'
+import { serpTitle, fit } from '../7/serp.ts'
 
 // EVERY Lean-backed page carries its own formula, not only the seven. The seven Millennium pages had a
 // typeset statement and every other theorem in src/proof had prose about a proof the reader could not see, so
@@ -94,8 +100,18 @@ const extractLean = (key: string): string => {
 const shortHeading = (name: string): string =>
   (/lean [^:]+: ([^—]+)/.exec(name)?.[1] ?? name).trim().slice(0, 72)
 
-export default {
-  paths() {
+export type TheoremParams = Record<string, unknown> & { key: string; name: string; receipt: string; short: string }
+
+// THE KEYS THAT HAVE A PAGE — one list for the stamper, the sitemap and the dead-link check, cheap enough for
+// .vitepress/config.ts to call: the non-computed ledger keys, then the seven. theoremRoutes() filters by it.
+export const theoremKeys = (): string[] => {
+  const names = enumeratedNames()
+  const ledger: { key: string }[] = JSON.parse(readFileSync('src/ledger/discovered.json', 'utf8'))
+  return [...ledger.map((e) => e.key).filter((k) => !isComputedKey(k, names)), ...Object.keys(MILLENNIUM)]
+}
+
+export const theoremRoutes = (): TheoremParams[] => {
+  {
     // 1 · the discovery ledger — unchanged
     const ledger: { key: string; name: string; receipt: string; revoked?: boolean; reason?: string; supersededBy?: string }[] =
       JSON.parse(readFileSync('src/ledger/discovered.json', 'utf8'))
@@ -125,15 +141,14 @@ export default {
     // time the vocabulary moved, which is the defect this tree keeps finding.
     // the walk lives in src/api — one owner, so this builder, the gate that checks it and the feed
     // that advertises it cannot disagree about which keys exist.
-    const names = enumeratedNames()
-    const isComputed = (key: string) => isComputedKey(key, names)
+    const paged = new Set(theoremKeys())
     const discovered = ledger.map((e, i) => ({
       params: {
         // THE NAME AS SHOWN, NOT AS SEALED (2026-09-14): 1,017 revoked names were sealed carrying the Clay floor the author
         // ordered removed. The ledger is append-only, so they stay as sealed; the page shows them without it and says so.
         // THE HEADING, SHORT ENOUGH TO BE A HEADING. The ledger name carries the file, the declaration, up
         // to 240 characters of Lean statement and the tactic that closed it — everything a record needs and
-        // far too much for an <h1>. VitePress derives <title> from the heading, so 2,828 theorem pages
+        // far too much for an <h1>. VitePress derives <title> from the heading, so 2,828 theorem pages had
         // shipped titles over the 60-character limit this repository enforces elsewhere, the longest of them
         // 700. On a phone the heading was a wall of `(List.range 6).all (fun i => …)` where a title belongs.
         //
@@ -174,7 +189,7 @@ export default {
       // filtered AFTER the map so each entry keeps its LEDGER index: withHues reads a row's neighbours by
       // position, and filtering first renumbered them — the page would have shown the colours of a different
       // row and nothing would have said so.
-      .filter((p) => !isComputed(p.params.key))
+      .filter((p) => paged.has(p.params.key))
 
     // 2 · the seven Millennium-floor theorems — Lean proof (from index.lean) + qualified outlet, one template
     const seven = Object.keys(MILLENNIUM).map((key) => {
@@ -193,6 +208,49 @@ export default {
       },
     }))
 
-    return [...discovered, ...millennium]
-  },
+    // A "carried by" link is drawn only where the carrying theorem HAS a page: 270 of the keys a withdrawn row
+    // points at are computed instances with none, and the old template linked them anyway — root-relative and
+    // without the base, so no gate that checks /millennium-solutions/ links ever saw the dead end.
+    const routes = [...discovered, ...millennium].map((p) => p.params as TheoremParams)
+    for (const p of routes) p.supersededHasPage = !!p.supersededBy && paged.has(String(p.supersededBy))
+    return routes
+  }
+}
+
+// ── THE HEAD OF A THEOREM PAGE ─────────────────────────────────────────────────────────────────────────────
+// Moved from .vitepress/config.ts transformPageData, which built it when VitePress rendered the page; the page
+// is stamped now, so the head is built here, beside the params it is built from. Same text, same order.
+// SITE carries no trailing slash (src/publication strips it); ROOT is the site URL a path is appended to, BASE its path
+export const ROOT = SITE + '/'
+export const BASE = new URL(ROOT).pathname
+export type TheoremHead = { title: string; description: string; url: string; meta: [string, string, string][]; links: [string, string, string][]; jsonld: string }
+export const theoremHead = (p: TheoremParams): TheoremHead => {
+  // THE TITLE IS THE DECLARATION, NOT THE WHOLE RECORD (see shortHeading above): `p.name` is the ledger's
+  // name, up to 700 characters; the heading is the short form, and the full record is the <h1>'s subtitle.
+  const pageTitle = String(p.short || p.name)
+  // A WITHDRAWN ENTRY MUST NOT BE DESCRIBED AS STANDING, and a page that ranks for a fact the deposit HAS proved
+  // must not tell the searcher it cannot be cited: the description is the one line most people ever read.
+  const description = fit(p.revoked && p.supersededBy
+    ? 'CARRIED — withdrawn on its own evidence for lacking a proof, and now carried by the Lean theorem ' + p.supersededBy + ', machine-checked sorry-free and axiom-free over its whole domain. Integrity, not truth.'
+    : p.revoked
+    ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit and must not be cited. Its receipt (' + p.receipt + ') remains in the append-only record so the chain still verifies, but the statement is not re-verified on every build. Integrity, not truth.'
+    : p.key.startsWith('lean_')
+    ? 'A Lean 4 theorem, machine-checked sorry-free and axiom-free by the kernel over its whole domain — not sampled, and not a TypeScript test that agreed once (content-address ' + p.receipt + '). A standing theorem of the ℤ/9 ledger. Integrity, not truth.'
+    : p.problem
+    ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free (content-address ' + p.receipt + '). Adjacent to the Clay problem “' + p.problem + '” — and NOT the conjecture. Reference: ' + p.outletName + '. Integrity, not truth.'
+    : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth.')
+  const url = ROOT + 'theorem/' + p.key + '.html'
+  const title = serpTitle(pageTitle)
+  return {
+    title, description, url,
+    meta: [
+      ['name', 'description', description],
+      ['property', 'og:title', title], ['property', 'og:description', description],
+      ['property', 'og:url', url], ['property', 'og:locale', 'en_US'],
+      ['name', 'twitter:title', title], ['name', 'twitter:description', description],
+    ],
+    // a theorem page exists only at root, so it announces en + x-default and no locale variants
+    links: [['canonical', '', url], ['alternate', 'en', url], ['alternate', 'x-default', url]],
+    jsonld: String(p.jsonld || ''),
+  }
 }

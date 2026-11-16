@@ -5,6 +5,7 @@
 // the same sentence, what it does not), and the ledger receipt. Nothing is typed in this component — it all
 // comes from the build-time loader, which reads the sealed sources.
 import { data } from './clay.data.ts'
+import { withBase } from 'vitepress'
 const claim = data.author.text.replace(/\n/g, ' ')
 </script>
 
@@ -34,7 +35,7 @@ const claim = data.author.text.replace(/\n/g, ' ')
       <pre class="stmt"><code>{{ p.statement }}</code></pre>
       <p class="bound"><span class="tag">bound</span> {{ p.bound }}</p>
       <p class="links">
-        <a :href="`/theorem/${p.key}`"><code>{{ p.key }}</code></a>
+        <a :href="withBase(`/theorem/${p.key}.html`)"><code>{{ p.key }}</code></a>
         <span class="receipt">receipt {{ p.receipt }}</span>
         <a :href="p.outlet" target="_blank" rel="noopener" class="clay-link">{{ p.outletName }}</a>
       </p>

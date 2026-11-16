@@ -5,6 +5,7 @@
 // infinite compression: the bits are conserved (a chain scales linearly), no secrecy, pigeonhole holds.
 // It runs the SAME functions the build seals. Integrity, not magic.
 import { ref, computed, watch } from 'vue'
+import { withBase } from 'vitepress'
 import { CAPACITY, imprintTextChain, readImprintTextChain } from '../../src/0/imprint.ts'
 
 const text = ref('60,72,90 · step 40 · the heart is 5')
@@ -65,7 +66,7 @@ const teleport = () => { beam.value++ }
       uuid and re-forms exactly, but the container is larger — never a bandwidth win); (2) <b>content-addressing</b> — send the
       128-bit address to reference a payload of any size, but the destination recovers it <b>only if already reconstructible
       there</b> (recall, not transport — zero new information crosses;
-      <a href="/theorem/a_content_address_is_a_pointer_not_the_payload">the address is a pointer, not the payload</a>).
+      <a :href="withBase('/theorem/a_content_address_is_a_pointer_not_the_payload.html')">the address is a pointer, not the payload</a>).
       <b>Not</b> faster-than-light, <b>not</b> quantum teleportation (classical, no qubits, no entanglement), <b>not</b> secrecy,
       <b>not</b> compression. Integrity, not magic.
     </p>
