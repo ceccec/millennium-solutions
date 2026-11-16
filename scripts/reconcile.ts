@@ -53,6 +53,7 @@ const STEPS: [string, string][] = [
   ['iso-conformance.md', 'node scripts/iso-conformance.ts'],
   ['chsh-run.md', 'node scripts/chsh-harness.ts'],
   ['accreditation.md', 'node scripts/accreditation-dossier.ts'],
+  ['sdk.md', 'node scripts/sdk.ts'],
   ['boundaries', 'node scripts/boundaries.ts'],
   ['rights.md', 'node scripts/rights.ts'],
   ['notice', 'node scripts/notice.ts'],

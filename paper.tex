@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,341 of them across 127 files and
-9 wings; 26,121 close by exhaustion over a stated finite domain, 220 are proved
+(\texttt{npm run latex-gate}). There are 26,349 of them across 128 files and
+9 wings; 26,125 close by exhaustion over a stated finite domain, 224 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1222,6 +1222,51 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{current},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.incomplete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{full},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.complete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{true}\right) = \mathrm{Status.complete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{false}\right) = \mathrm{Status.incomplete} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{sdk\_correspondence.lean}}
+
+\begin{theorem}[\texttt{verify\_is\_one\_step}]
+\[ \mathrm{verifyCost} = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{recompute\_is\_n\_steps}]
+\texttt{∀ n, recomputeCost n = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{verify\_beats\_recompute\_from\_two}]
+\texttt{∀ n, 2 ≤ n → verifyCost < recomputeCost n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_advantage\_is\_n\_minus\_one}]
+\texttt{∀ n, 1 ≤ n → recomputeCost n - verifyCost = n - 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_six\_primitives\_are\_zero\_to\_five}]
+\[ \left|\mathrm{corr}\right| = 6 \land \{\, r_{1} \mid r \in \mathrm{corr} \,\} = [0,\,1,\,2,\,3,\,4,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_correspondence\_is\_a\_bijection}]
+\[ \{\, r_{2}_{1} \mid r \in \mathrm{corr} \,\} = [0,\,1,\,2,\,3,\,4,\,5] \land \forall r \in \mathrm{corr},\; r_{1} = r_{2}_{1} = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_six\_shapes\_are\_covered\_once}]
+\[ \{\, r_{2}_{2} \mid r \in \mathrm{corr} \,\} = [\mathrm{Shape.address},\,\mathrm{Shape.merkle},\,\mathrm{Shape.cache},\,\mathrm{Shape.involution},\,\mathrm{Shape.guid},\,\mathrm{Shape.verify}] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_legs\_share\_shape\_and\_efficiency}]
+\texttt{corr.length = 6 ∧ corr.map (fun r => r.2.2) = [Shape.address, Shape.merkle, Shape.cache, Shape.involution, Shape.guid, Shape.verify] ∧ (∀ n, 2 ≤ n → verifyCost < recomputeCost n)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  refine} --- by evaluation; no domain is walked. \hfill$\square$
 
 \subsection{the floor}
 

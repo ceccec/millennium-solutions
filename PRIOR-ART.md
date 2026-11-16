@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,341 machine-checked declarations, **26,262** restate work that already has an author and
+Of 26,349 machine-checked declarations, **26,270** restate work that already has an author and
 **79** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/iso/690-record/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/iso/690-record/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **26,262** |
+| attributed to named earlier work | **26,270** |
 | unclassified — no search performed, status unknown | **79** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 8
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 119 sources, 26,262 theorems
+## Restated from named earlier work — 120 sources, 26,270 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -157,6 +157,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>reversal.lean</code></td><td>29</td><td>elementary arithmetic</td><td>digit reversal and digit sums; casting out nines, in use by the 12th century</td></tr>
 <tr><td><code>rights.lean</code></td><td>8</td><td>copyright law — rights arising without formality</td><td>this file already NAMED its prior art in prose while the attribution table recorded none. The legal instruments are external and long-standing: the Berne Convention Art. 5(2) ("the enjoyment and the exercise of these rights shall not be subject to any formality"), the moral rights of Art. 6bis, and the sui generis database right of Directive 96/9/EC. `claims_exactly_what_arises_without_formality` and `the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them. Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's; the audit of its own position against the law is.</td></tr>
 <tr><td><code>roots.lean</code></td><td>7</td><td>cryptographic hash standards and integer root extraction</td><td>SHA-512 and its constants are FIPS 180-4 (NIST, 2015): K[t] is the first 64 bits of the fractional part of the cube root of the t-th prime (§4.2.3) and H[i] the same of the square root (§5.3.5). Newton's method for integer roots is classical. Neither is this deposit's. What is decided here is only that THIS deposit's derivation computes those definitions and not something near them.</td></tr>
+<tr><td><code>sdk_correspondence.lean</code></td><td>8</td><td>content-addressable storage and Merkle trees (R. Merkle, 1979/1987); ZFS (Bonwick, Ahrens et al., 2005) — block checksums, copy-on-write snapshots, dedup; HTTP 304 Not Modified (RFC 7232) as serve-by-validator</td><td>ZFS's checksum-addressed Merkle block tree, copy-on-write and dedup are the SAME content-address shape this deposit builds in software (toUuid, merkleFold, the handle cache, the 304 involution). This file decides the shared EFFICIENCY (verify in one step vs recompute in n) and the bijection of the primitives — never any ZFS internal, which is documented in /sdk as architecture, not asserted here.</td></tr>
 <tr><td><code>separation.lean</code></td><td>8</td><td>the separation of points by a family of functions — the notion behind a separating family, a faithful functor, and the Stone–Weierstrass hypothesis. Also elementary cancellation in ℕ.</td><td>NEITHER IDEA IS THIS DEPOSIT'S. "A family of maps is worth having when it tells two points apart" is as old as the definition of a separating family, and `x = x + y → y = 0` is cancellation, which predates notation. What is this deposit's is neither: it is that the test is run by the kernel, on a specific ring of labels published on a specific day, with a control that fires.</td></tr>
 <tr><td><code>sequences.lean</code></td><td>28</td><td>integer sequences and identities</td><td>Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654</td></tr>
 <tr><td><code>speed.lean</code></td><td>28</td><td>hash trees and membership proofs</td><td>the structural claim is Merkle's and is credited here as merkle.lean already credits it: a hash tree over n leaves has an O(log n) membership proof, so the inclusion path at each power of two is exactly the exponent. Ralph Merkle, 1979 (thesis); CRYPTO 1987. `the_verify_path_is_the_exponent`, `membership_is_logarithmic_not_linear` and `the_gap_widens_with_every_doubling` RESTATE that property. This file was classified `unbounded` — "the subject is this deposit's own verification cost" — which was</td></tr>
@@ -194,6 +195,7 @@ which is a contribution of verification, not of discovery.
 - **canonical forms and order-invariant commitments** — 11 theorems, in `quantum.lean`
 - **combinatorial game theory** — 28 theorems, in `nim.lean`
 - **content addressing by cryptographic hash — SHA-256 digests as immutable identifiers** — 33 theorems, in `address.lean`
+- **content-addressable storage and Merkle trees (R. Merkle, 1979/1987); ZFS (Bonwick, Ahrens et al., 2005) — block checksums, copy-on-write snapshots, dedup; HTTP 304 Not Modified (RFC 7232) as serve-by-validator** — 8 theorems, in `sdk_correspondence.lean`
 - **copyright law — rights arising without formality** — 8 theorems, in `rights.lean`
 - **cryptographic hash standards and integer root extraction** — 7 theorems, in `roots.lean`
 - **cyclic groups and primitive roots** — 13 theorems, in `rays.lean`
@@ -303,5 +305,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `9c854525-91ba-8ee0-9ebe-78103e13df90` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `1c605adb-1394-8bb5-8ac3-2ddbd7971c22` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

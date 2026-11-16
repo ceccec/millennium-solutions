@@ -150884,5 +150884,45 @@
     "key": "lean_qcstatus_either_side_proved_by_the_same_logic",
     "name": "lean qc_status.lean: either_side_proved_by_the_same_logic — statusOf false (current.all id) = Status.incomplete ∧ statusOf false (full.all id) = Status.complete ∧ statusOf false true = Status.complete ∧ statusOf false false = Status.incomplete — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "fbd37b95-736c-8c51-b0c4-da89d5c7c88b"
+  },
+  {
+    "key": "lean_sdkcorrespondence_verify_is_one_step",
+    "name": "lean sdk_correspondence.lean: verify_is_one_step — verifyCost = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "06d8923a-470b-8407-846a-cdf13d309d60"
+  },
+  {
+    "key": "lean_sdkcorrespondence_the_six_primitives_are_zero_to_five",
+    "name": "lean sdk_correspondence.lean: the_six_primitives_are_zero_to_five — corr.length = 6 ∧ corr.map (fun r => r.1) = [0, 1, 2, 3, 4, 5] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f3365bad-fbc7-875e-9a31-f0a57d952592"
+  },
+  {
+    "key": "lean_sdkcorrespondence_the_correspondence_is_a_bijection",
+    "name": "lean sdk_correspondence.lean: the_correspondence_is_a_bijection — corr.map (fun r => r.2.1) = [0, 1, 2, 3, 4, 5] ∧ corr.all (fun r => r.1 == r.2.1) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6b152f60-5726-84da-bc1a-2b4b09c817a0"
+  },
+  {
+    "key": "lean_sdkcorrespondence_all_six_shapes_are_covered_once",
+    "name": "lean sdk_correspondence.lean: all_six_shapes_are_covered_once — corr.map (fun r => r.2.2) = [Shape.address, Shape.merkle, Shape.cache, Shape.involution, Shape.guid, Shape.verify] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "88e0777f-26c3-83b8-aae1-6d3f94bf157b"
+  },
+  {
+    "key": "lean_sdkcorrespondence_recompute_is_n_steps",
+    "name": "lean sdk_correspondence.lean: recompute_is_n_steps — ∀ n, recomputeCost n = n — proved by the Lean kernel for every value (by intro), standard axioms only — checked by lean.ts",
+    "receipt": "b764fc55-b7b0-8b39-9414-a398c8319b45"
+  },
+  {
+    "key": "lean_sdkcorrespondence_verify_beats_recompute_from_two",
+    "name": "lean sdk_correspondence.lean: verify_beats_recompute_from_two — ∀ n, 2 ≤ n → verifyCost < recomputeCost n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "bb3bc7cd-ffbc-8abb-acdb-9abce9206e2b"
+  },
+  {
+    "key": "lean_sdkcorrespondence_the_advantage_is_n_minus_one",
+    "name": "lean sdk_correspondence.lean: the_advantage_is_n_minus_one — ∀ n, 1 ≤ n → recomputeCost n - verifyCost = n - 1 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "677c466f-2dd9-8aa5-b53a-594f7664603d"
+  },
+  {
+    "key": "lean_sdkcorrespondence_the_two_legs_share_shape_and_efficiency",
+    "name": "lean sdk_correspondence.lean: the_two_legs_share_shape_and_efficiency — corr.length = 6 ∧ corr.map (fun r => r.2.2) = [Shape.address, Shape.merkle, Shape.cache, Shape.involution, Shape.guid, Shape.verify] ∧ (∀ n, 2 ≤ n → verifyCost < recomputeCost n) — proved by the Lean kernel for every value (by\n  refine), standard axioms only — checked by lean.ts",
+    "receipt": "87dd5ccd-35aa-8501-af92-6b3f3a8fa4df"
   }
 ]
