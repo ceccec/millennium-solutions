@@ -48,6 +48,7 @@ const STEPS: [string, string][] = [
   ['gaps', 'node scripts/gaps.ts'],
   ['dashboard.md', 'node scripts/dashboard.ts'],
   ['clock.md', 'node scripts/clock.ts'],
+  ['iso-conformance.md', 'node scripts/iso-conformance.ts'],
   ['boundaries', 'node scripts/boundaries.ts'],
   ['rights.md', 'node scripts/rights.ts'],
   ['notice', 'node scripts/notice.ts'],
