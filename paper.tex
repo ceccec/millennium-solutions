@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,309 of them across 126 files and
-9 wings; 26,089 close by exhaustion over a stated finite domain, 220 are proved
+(\texttt{npm run latex-gate}). There are 26,317 of them across 127 files and
+9 wings; 26,097 close by exhaustion over a stated finite domain, 220 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1060,6 +1060,48 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \forall d \in \{1,\dots,9\},\; \mathrm{diamond}\mathopen{}\left(\mathrm{diamond}\mathopen{}\left(d\right)\right) = d = \mathrm{true} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\paragraph{\texttt{qc\_status.lean}}
+
+\begin{theorem}[\texttt{the\_status\_has\_ten\_gaps\_two\_of\_them\_world}]
+\[ \left|\mathrm{gaps}\right| = 10 \land \left|\{\, x \in \mathrm{gaps} \mid \mathrm{isWorld}\mathopen{}\left(x\right) \,\}\right| = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_software\_gap\_is\_closeable\_by\_code}]
+\[ \left|\{\, g \in \mathrm{gaps} \mid \lnot \mathrm{isWorld}\mathopen{}\left(g\right) \,\}\right| = 8 \land \forall x \in \{\, g \in \mathrm{gaps} \mid \lnot \mathrm{isWorld}\mathopen{}\left(g\right) \,\},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_world\_gap\_is\_closed\_here}]
+\[ \forall g \in \{\, x \in \mathrm{gaps} \mid \mathrm{isWorld}\mathopen{}\left(x\right) \,\},\; \lnot \mathrm{isClosed}\mathopen{}\left(g\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_verdict\_conjunction\_is\_open}]
+\[ \mathrm{verdict} = \mathrm{false} \land \forall x \in \mathrm{gaps},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{closing\_every\_software\_gap\_leaves\_the\_verdict\_open}]
+\[ \forall x \in \{\, g \in \mathrm{gaps} \mid \lnot \mathrm{isWorld}\mathopen{}\left(g\right) \,\},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{true} \land \mathrm{verdict} = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_world\_gaps\_dominate\_the\_verdict}]
+\[ \mathrm{verdict} = \forall x \in \{\, x \in \mathrm{gaps} \mid \mathrm{isWorld}\mathopen{}\left(x\right) \,\},\; \mathrm{isClosed}\mathopen{}\left(x\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_status\_is\_incomplete\_not\_refused}]
+\[ \exists g \in \mathrm{gaps} : \lnot \mathrm{isClosed}\mathopen{}\left(g\right) = \mathrm{true} \land \forall x \in \{\, g \in \mathrm{gaps} \mid \lnot \mathrm{isWorld}\mathopen{}\left(g\right) \,\},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{true} \land \forall x \in \mathrm{gaps},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{software\_completion\_is\_necessary\_not\_sufficient}]
+\[ \mathrm{verdict} = \mathrm{true} \leftrightarrow \forall x \in \{\, x \in \mathrm{gaps} \mid \mathrm{isWorld}\mathopen{}\left(x\right) \,\},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{true} \land \forall x \in \{\, g \in \mathrm{gaps} \mid \lnot \mathrm{isWorld}\mathopen{}\left(g\right) \,\},\; \mathrm{isClosed}\mathopen{}\left(x\right) = \mathrm{true} \land \mathrm{verdict} = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \subsection{the floor}
 

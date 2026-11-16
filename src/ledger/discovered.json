@@ -150724,5 +150724,45 @@
     "key": "lean_capacity_the_free_hex_handles_are_thirty_of_thirty_two",
     "name": "lean capacity.lean: the_free_hex_handles_are_thirty_of_thirty_two — container / 4 = 32 ∧ version / 4 = 1 ∧ container / 4 - (version / 4 + 1) = 30 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "b14b35ea-9f46-86e7-b475-b82c4fa403da"
+  },
+  {
+    "key": "lean_qcstatus_the_status_has_ten_gaps_two_of_them_world",
+    "name": "lean qc_status.lean: the_status_has_ten_gaps_two_of_them_world — gaps.length = 10 ∧ (gaps.filter isWorld).length = 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "714d47e5-954e-80c6-9881-f043ed70f945"
+  },
+  {
+    "key": "lean_qcstatus_every_software_gap_is_closeable_by_code",
+    "name": "lean qc_status.lean: every_software_gap_is_closeable_by_code — (gaps.filter (fun g => !isWorld g)).length = 8 ∧ (gaps.filter (fun g => !isWorld g)).all isClosed = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "54b285c2-1cf7-80c4-a5ad-be391ca10fc4"
+  },
+  {
+    "key": "lean_qcstatus_no_world_gap_is_closed_here",
+    "name": "lean qc_status.lean: no_world_gap_is_closed_here — (gaps.filter isWorld).all (fun g => !isClosed g) = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5212d337-0079-8cec-ac8a-103bb413338e"
+  },
+  {
+    "key": "lean_qcstatus_the_verdict_conjunction_is_open",
+    "name": "lean qc_status.lean: the_verdict_conjunction_is_open — verdict = false ∧ gaps.all isClosed = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "503ff16c-aa7b-8891-bb54-1ed456ed098e"
+  },
+  {
+    "key": "lean_qcstatus_closing_every_software_gap_leaves_the_verdict_open",
+    "name": "lean qc_status.lean: closing_every_software_gap_leaves_the_verdict_open — (gaps.filter (fun g => !isWorld g)).all isClosed = true ∧ verdict = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "18f2070d-e2ec-8dc4-a2f5-2204b3142f0c"
+  },
+  {
+    "key": "lean_qcstatus_the_world_gaps_dominate_the_verdict",
+    "name": "lean qc_status.lean: the_world_gaps_dominate_the_verdict — verdict = (gaps.filter isWorld).all isClosed — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f59fc354-b07b-8908-995f-f669f96acad0"
+  },
+  {
+    "key": "lean_qcstatus_the_status_is_incomplete_not_refused",
+    "name": "lean qc_status.lean: the_status_is_incomplete_not_refused — (gaps.any (fun g => !isClosed g) = true) ∧ ((gaps.filter (fun g => !isWorld g)).all isClosed = true) ∧ (gaps.all isClosed = false) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fe16b3cc-2854-8b28-862d-d538f4a84b4a"
+  },
+  {
+    "key": "lean_qcstatus_software_completion_is_necessary_not_sufficient",
+    "name": "lean qc_status.lean: software_completion_is_necessary_not_sufficient — (verdict = true ↔ (gaps.filter isWorld).all isClosed = true) ∧ ((gaps.filter (fun g => !isWorld g)).all isClosed = true ∧ verdict = false) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8bfda375-5a73-8838-8d7b-410e3afc074e"
   }
 ]

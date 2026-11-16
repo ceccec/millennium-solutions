@@ -5,9 +5,9 @@
 
 ## What this is
 
-A machine-checked mathematical deposit: 26309 theorems across 126 Lean 4 source
+A machine-checked mathematical deposit: 26317 theorems across 127 Lean 4 source
 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free, with a
-28728-entry append-only ledger whose receipt chain is recomputed on every build.
+28736-entry append-only ledger whose receipt chain is recomputed on every build.
 
 Author: Tsvetan Rouschev (ORCID https://orcid.org/0009-0000-7312-9778). Licence: **CC BY-NC-ND 4.0**. Concept DOI: 10.5281/zenodo.21819217.
 
@@ -68,7 +68,7 @@ Independently verifiable by a third party, without trusting the depositor — cl
   them. The git author field on every commit here is the repository owner, including for commits made by
   automated sessions acting on their behalf, so that field distinguishes nothing.
 - **It does not establish intent**, in any direction, about anyone.
-- **It does not establish novelty.** 125 of 126 source files record
+- **It does not establish novelty.** 126 of 127 source files record
   named prior art with the earlier author credited, and this deposit's own `priorart.lean` decides that
   novelty is claimed of no SOURCE. That is a measurement of this tree. It is not a limit on what the author
   claims, which is his to state and is recorded in his name: “captain claims all claimable by prior art precedence” — `src/receipts/5f56bdc7-2b2f-844d-b4a0-458dbd9b09e2.json`, signed `agent: "captain"`.
@@ -105,5 +105,5 @@ Machine-readable provenance for every claim is at `/forensic`, and per-theorem r
 statement and LaTeX are under `.zenodo/theorems/`.
 
 ---
-Ledger 28728 entries · 26309 standing · chain recomputed on every build.
-Notice content-address `a8c98ae6-7c44-838b-9c98-21e404db5391`.
+Ledger 28736 entries · 26317 standing · chain recomputed on every build.
+Notice content-address `1a849ab6-112c-824f-8ef8-fe1af1e6cdb3`.

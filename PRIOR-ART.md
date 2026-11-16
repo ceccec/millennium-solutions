@@ -6,8 +6,8 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,309 machine-checked declarations, **26,262** restate work that already has an author and
-**47** are about this deposit's own construction. Each source file declares which it is, in its own
+Of 26,317 machine-checked declarations, **26,262** restate work that already has an author and
+**55** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/iso/690-record/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/iso/690-record/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
@@ -28,11 +28,11 @@ fact about the world, and this deposit does not assert it.
 | | theorems |
 |---|---|
 | attributed to named earlier work | **26,262** |
-| unclassified — no search performed, status unknown | **47** |
+| unclassified — no search performed, status unknown | **55** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
-that everything here already has an author. It is not that. **47** theorems have had no prior-art
+that everything here already has an author. It is not that. **55** theorems have had no prior-art
 search at all, so their status is unknown rather than conceded — and of the 43 distinct years the
 attributions carry, **34** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
@@ -42,8 +42,8 @@ looked.** It is a statement about work not done, not about work found.
 caveat cannot be separated by an edit.
 
 A source may claim novelty only if it names a prior-art search that was actually performed — what was
-searched, where, and when. An earlier version of this page claimed novelty for 7 sources and
-47 theorems on the strength of their own self-description, with nobody having looked. Asserting
+searched, where, and when. An earlier version of this page claimed novelty for 8 sources and
+55 theorems on the strength of their own self-description, with nobody having looked. Asserting
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
@@ -273,7 +273,7 @@ is worth saying precisely, because it is both smaller than a discovery claim and
 Author and year are given rather than a resolver identifier. Asserting a DOI for someone else's paper without
 verifying it would be a fabricated citation, and this is the worst document in the deposit to put one in.
 
-## This deposit's own construction — 7 sources, 47 theorems, none claimed
+## This deposit's own construction — 8 sources, 55 theorems, none claimed
 
 The ℤ/9 vortex framework, its ledger, its receipts, and the enumeration its own generators proposed. These are
 **unclassified**: no prior-art search has been performed for them, so nothing is claimed about them either
@@ -290,6 +290,7 @@ refuses a `none-known` declaration that does not carry one.
 <tr><td><code>lanes.lean</code></td><td>8</td><td>NONE OF THE ARITHMETIC IS THIS DEPOSIT'S. min, ⌊a/b⌋ and truncating subtraction on the naturals are older than anyone could name. What is this deposit's is not the arithmetic: it is that the rule deciding how much of a machine a verification may take is DECIDED by the kernel rather than trusted because it has not yet swapped.</td></tr>
 <tr><td><code>leads.lean</code></td><td>0</td><td>—</td></tr>
 <tr><td><code>priorart.lean</code></td><td>9</td><td>THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per artefact is long established and formalised: W3C PROV-O, the DataCite metadata schema, Dublin Core Metadata Terms, PREMIS for archived digital objects, the Open Provenance Model, and the software citation principles' credit-and-attribution requirement. Nothing about keeping an attribution table is new, and this deposit does not suggest otherwise.</td></tr>
+<tr><td><code>qc_status.lean</code></td><td>8</td><td>—</td></tr>
 <tr><td><code>settled.lean</code></td><td>8</td><td>THE ARITHMETIC IS NAMED, NOT CLAIMED. What is this deposit's is only the subject: that these particular files' self-declared counts agree with their own contents. The statement is about this tree and asserts nothing about anybody else's work.</td></tr>
 </tbody></table>
 
@@ -302,5 +303,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `2b5e3e70-d47b-820e-9e9f-829f83c09259` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `9c854525-91ba-8ee0-9ebe-78103e13df90` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

@@ -172366,5 +172366,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "b14b35ea-9f46-86e7-b475-b82c4fa403da"
+  },
+  {
+    "key": "lean_qcstatus_the_status_has_ten_gaps_two_of_them_world",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "714d47e5-954e-80c6-9881-f043ed70f945"
+  },
+  {
+    "key": "lean_qcstatus_every_software_gap_is_closeable_by_code",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "54b285c2-1cf7-80c4-a5ad-be391ca10fc4"
+  },
+  {
+    "key": "lean_qcstatus_no_world_gap_is_closed_here",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5212d337-0079-8cec-ac8a-103bb413338e"
+  },
+  {
+    "key": "lean_qcstatus_the_verdict_conjunction_is_open",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "503ff16c-aa7b-8891-bb54-1ed456ed098e"
+  },
+  {
+    "key": "lean_qcstatus_closing_every_software_gap_leaves_the_verdict_open",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "18f2070d-e2ec-8dc4-a2f5-2204b3142f0c"
+  },
+  {
+    "key": "lean_qcstatus_the_world_gaps_dominate_the_verdict",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f59fc354-b07b-8908-995f-f669f96acad0"
+  },
+  {
+    "key": "lean_qcstatus_the_status_is_incomplete_not_refused",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fe16b3cc-2854-8b28-862d-d538f4a84b4a"
+  },
+  {
+    "key": "lean_qcstatus_software_completion_is_necessary_not_sufficient",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8bfda375-5a73-8838-8d7b-410e3afc074e"
   }
 ]
