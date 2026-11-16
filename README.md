@@ -32,6 +32,7 @@ last because the orbit never reaches it.
 - [The seven Clay problems — the claim, the theorems, and what each decides](#the-seven-clay-problems--the-claim-the-theorems-and-what-each-decides)
 - [How a thousand bits is reached — the uuid quantum programs, and where each one stops](#how-a-thousand-bits-is-reached--the-uuid-quantum-programs-and-where-each-one-stops)
 - [The σ-reflection, characterised — this deposit's own contribution](#the-σ-reflection-characterised--this-deposits-own-contribution)
+- [Cross-verified against external authorities](#cross-verified-against-external-authorities)
 - [Quantum hardware — what ISO/IEC 4879 calls a quantum computer, and the Bell test that verifies one](#quantum-hardware--what-isoiec-4879-calls-a-quantum-computer-and-the-bell-test-that-verifies-one)
 - [1 · What is proved](#1--what-is-proved)
 - [2 · The ring](#2--the-ring)
@@ -206,6 +207,19 @@ The trapdoor above is Fermat's difference of squares; six octaves in `src/iso/ie
   <sub>[`lean_qpucrypto_the_blind_cost_is_one_two_three_seven_twelve_as_the_gap_widens`](/theorem/lean_qpucrypto_the_blind_cost_is_one_two_three_seven_twelve_as_the_gap_widens) · receipt `28dfd99e-2e90…`</sub>
 - **`the_security_margin_is_the_arithmetic_minus_the_geometric_mean`** · `by decide`, 1 cases — the security margin IS the gap between the arithmetic mean (p + q)/2 — the digital centre — and the geometric mean √(p·q) — the analog root; zero only when p = q, so a hard semiprime's security is its unknown distance from a perfect square.
   <sub>[`lean_qpucrypto_the_security_margin_is_the_arithmetic_minus_the_geometric_mean`](/theorem/lean_qpucrypto_the_security_margin_is_the_arithmetic_minus_the_geometric_mean) · receipt `4b3da601-f04b…`</sub>
+
+## Cross-verified against external authorities
+
+The ℤ/9 mathematics is self-contained — the kernel is its authority, and a `by decide` proof needs no outside source. Where the deposit touches EXTERNAL reality it is anchored to the standard that defines it and cross-checked on every build. Two facts are PROVEN in Lean below; the cross-checks beside them are RE-RUN each build and are measurements, not kernel theorems: the SHA-512 and Ed25519 primitives are held to the published FIPS 180-4 and RFC 8032 vectors (`npm run crypto-kat`) and refuse every forgery; the CERN counts below are a DATED measurement, re-measurable against the live portal, which grows; and the trial (`npm run verify`) holds the record to zero DRAINED — a citation to a theorem that is not sealed fails the build.
+
+- **`the_square_root_is_the_floor_and_not_one_short`** · `by decide`, 1 cases — NIST FIPS 180-4: the SHA-512 initial-hash words are the fractional parts of the square roots of the first primes, computed from the standard's own recipe and proven the exact floor — derived, not copied literals.
+  <sub>[`lean_roots_the_square_root_is_the_floor_and_not_one_short`](/theorem/lean_roots_the_square_root_is_the_floor_and_not_one_short) · receipt `73292676-fefa…`</sub>
+- **`the_cube_root_is_the_floor`** · `by decide`, 1 cases — and the round constants K[t] are the cube-root fractions, likewise derived from FIPS and proven — the constant table reproduced, not trusted.
+  <sub>[`lean_roots_the_cube_root_is_the_floor`](/theorem/lean_roots_the_cube_root_is_the_floor) · receipt `60dc4761-9a49…`</sub>
+- **`records_are_numeric_plus_slug`** · `by decide`, 1 cases — CERN Open Data: the portal's measured records partition exactly into numeric ids and slug aliases — arithmetic over the corpus the harvest counted, decided.
+  <sub>[`lean_cern_records_are_numeric_plus_slug`](/theorem/lean_cern_records_are_numeric_plus_slug) · receipt `1ef787d9-f481…`</sub>
+- **`oai_harvest_is_complete`** · `by decide`, 1 cases — and the OAI-PMH harvest is complete, its union summing over its parts — the enumeration checked by its own arithmetic, the API/sitemap/OAI discrepancies named rather than laundered.
+  <sub>[`lean_cern_oai_harvest_is_complete`](/theorem/lean_cern_oai_harvest_is_complete) · receipt `883de117-ad54…`</sub>
 
 ## Quantum hardware — what ISO/IEC 4879 calls a quantum computer, and the Bell test that verifies one
 

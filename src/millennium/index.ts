@@ -301,3 +301,38 @@ export const reflectionSection = (): string => {
   }
   return md + '\n'
 }
+
+// CROSS-VERIFIED AGAINST EXTERNAL AUTHORITIES — the parts that touch outside reality, anchored to the standard
+// that defines them. Two are PROVEN in Lean (surfaced below); the runtime cross-checks are stated as RULES, never
+// as a hardcoded figure (the live CERN count grows, so typing it would stale), so no volatile number is minted here.
+const CROSS_VERIFIED: { file: string; name: string; bound: string }[] = [
+  { file: 'roots.lean', name: 'the_square_root_is_the_floor_and_not_one_short',
+    bound: "NIST FIPS 180-4: the SHA-512 initial-hash words are the fractional parts of the square roots of the first primes, computed from the standard's own recipe and proven the exact floor — derived, not copied literals" },
+  { file: 'roots.lean', name: 'the_cube_root_is_the_floor',
+    bound: 'and the round constants K[t] are the cube-root fractions, likewise derived from FIPS and proven — the constant table reproduced, not trusted' },
+  { file: 'cern.lean', name: 'records_are_numeric_plus_slug',
+    bound: "CERN Open Data: the portal's measured records partition exactly into numeric ids and slug aliases — arithmetic over the corpus the harvest counted, decided" },
+  { file: 'cern.lean', name: 'oai_harvest_is_complete',
+    bound: 'and the OAI-PMH harvest is complete, its union summing over its parts — the enumeration checked by its own arithmetic, the API/sitemap/OAI discrepancies named rather than laundered' },
+]
+/** The external-authority cross-checks — two proven in Lean, the runtime checks stated as rules. */
+export const crossVerifiedSection = (): string => {
+  const thms = leanTheorems() as { name: string; file: string; statement: string; tactic: string }[]
+  const live = (ledger() as { key: string; receipt: string; revoked?: boolean }[]).filter((e) => !e.revoked)
+  const entry = (name: string) => live.find((e) => e.key.endsWith('_' + name))
+  let md = `## Cross-verified against external authorities\n\n`
+  md += `The ℤ/9 mathematics is self-contained — the kernel is its authority, and a \`by decide\` proof needs no outside `
+    + `source. Where the deposit touches EXTERNAL reality it is anchored to the standard that defines it and cross-checked `
+    + `on every build. Two facts are PROVEN in Lean below; the cross-checks beside them are RE-RUN each build and are `
+    + `measurements, not kernel theorems: the SHA-512 and Ed25519 primitives are held to the published FIPS 180-4 and `
+    + `RFC 8032 vectors (\`npm run crypto-kat\`) and refuse every forgery; the CERN counts below are a DATED measurement, `
+    + `re-measurable against the live portal, which grows; and the trial (\`npm run verify\`) holds the record to zero `
+    + `DRAINED — a citation to a theorem that is not sealed fails the build.\n\n`
+  for (const { file, name, bound } of CROSS_VERIFIED) {
+    const t = thms.find((x) => x.file === file && x.name === name), e = entry(name)
+    if (!t || !e) continue
+    md += `- **\`${name}\`** · \`${t.tactic.replace(/\s+/g, ' ')}\`, ${domainOf(t.statement).toLocaleString('en-US')} cases — ${bound}.\n`
+      + `  <sub>[\`${e.key}\`](/theorem/${e.key}) · receipt \`${e.receipt.slice(0, 13)}…\`</sub>\n`
+  }
+  return md + '\n'
+}

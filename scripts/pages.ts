@@ -15,7 +15,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
 import { escapeLt } from '../src/html/index.ts'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
-import { MILLENNIUM, claySection, thousandBitSection, reflectionSection } from '../src/millennium/index.ts'
+import { MILLENNIUM, claySection, thousandBitSection, reflectionSection, crossVerifiedSection } from '../src/millennium/index.ts'
 import { hardwareSection } from '../src/iso/iec-4879-quantum/hardware/hardware-section.ts'
 import { referencesSection } from '../src/publication/index.ts'
 import { all as leanDocs } from './leandoc.ts'
@@ -368,6 +368,7 @@ const body = (site: boolean) => {
   md += claySection()
   md += thousandBitSection()
   md += reflectionSection()
+  md += crossVerifiedSection()
   md += hardwareSection()
   for (const s of sections) {
     md += `## ${s}\n\n`
