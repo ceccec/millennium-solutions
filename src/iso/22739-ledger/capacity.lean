@@ -150,4 +150,56 @@ theorem the_bound_is_a_ceiling_on_difficulty_and_not_a_measurement :
   ∧ 2 ^ (free / 2) < 2 ^ (container / 2)
   ∧ free / 2 < free := by decide
 
+-- ── 9 · THE RECLAIM — THE COIL SPLITS, AND ONLY THE VARIANT IS IRREDUCIBLE ────────────────────────────────
+-- The six reserved bits are not one lump: FOUR are the version nibble and TWO are the variant. RFC 9562 must
+-- read the variant to parse the field at all, but ANY version nibble still parses (0 and >8 are custom/unused),
+-- so a construction that CROSS-ENCRYPTS the version — one UUID consistent with mixed versions — could carry
+-- payload in those four bits. WHETHER SUCH A CONSTRUCTION EXISTS AND IS SOUND IS NOT DECIDED HERE: that is an
+-- architecture claim, and section 8's rule holds — judgements are not typed into theorems. What is decided is
+-- the bit arithmetic of the two floors. Reserve six and 122 are free; reserve only the two-bit variant and 126
+-- are — the instance of freeOf at r = 2, already inside the range decided above. The variant is the coin a UUID
+-- cannot spend; the four version bits are reclaimable in principle. (This also reads the deposit's own line:
+-- the six-bit coil is the factor 64 of theorem 3; cross-mixing drops the floor to the factor 4 below.)
+def version : Nat := 4        -- the version nibble — reclaimable by cross-mixing a UUID's version field
+def variant : Nat := 2        -- the RFC 9562 variant — the floor a legal UUID cannot reclaim
+
+-- the coil is two parts, and they sum to the six already spent.
+theorem the_coil_splits_into_version_and_variant :
+  version + variant = reserved ∧ version = 4 ∧ variant = 2 ∧ reserved = 6 := by decide
+
+-- reserve only the variant and the free register is 126 — four more than at the full coil, the version reclaimed.
+theorem the_variant_floor_frees_one_hundred_twenty_six :
+  freeOf variant = 126 ∧ freeOf reserved = free ∧ freeOf variant - freeOf reserved = version
+  ∧ freeOf variant - free = version ∧ free = 122 := by decide
+
+-- the four reclaimed bits multiply the addressable space by 2^4 = 16.
+theorem the_reclaim_multiplies_the_space_by_two_to_the_version :
+  2 ^ freeOf variant = 2 ^ version * 2 ^ free ∧ 2 ^ freeOf variant / 2 ^ free = 2 ^ version
+  ∧ 2 ^ version = 16 := by decide
+
+-- at the variant floor the nominal 2^128 overstates the real by 2^2 = 4 — not the 64 of the full coil.
+theorem the_floor_overstatement_is_two_to_the_variant_not_the_reserved :
+  2 ^ container / 2 ^ freeOf variant = 2 ^ variant ∧ 2 ^ variant = 4
+  ∧ 2 ^ container = 4 * 2 ^ freeOf variant := by decide
+
+-- stated as the overclaim itself: at the variant floor it is three addresses asserted per real one (2^2 − 1).
+theorem the_floor_overclaim_is_three_addresses_per_real_one :
+  2 ^ container - 2 ^ freeOf variant = (2 ^ variant - 1) * 2 ^ freeOf variant
+  ∧ 2 ^ variant - 1 = 3 := by decide
+
+-- the forgery (birthday) bound rises with the reclaim: 2^61 at the full coil, 2^63 at the variant floor.
+theorem the_birthday_bound_rises_to_sixty_three_at_the_variant_floor :
+  free / 2 = 61 ∧ freeOf variant / 2 = 63 ∧ freeOf variant / 2 - free / 2 = version / 2
+  ∧ version / 2 = 2 := by decide
+
+-- the split is recoverable from either side — spend and reclaim are inverse, so neither floor is an independent
+-- number (the involution the reflection has on digits, here on the bit account: what is freed, re-spent, returns).
+theorem the_split_is_recoverable_at_either_floor :
+  container - freeOf variant = variant ∧ container - freeOf reserved = reserved
+  ∧ freeOf variant + variant = container ∧ freeOf reserved + reserved = container := by decide
+
+-- read as hex handles: 32 nibbles, less the one the version fills and the one the variant touches = 30 free.
+theorem the_free_hex_handles_are_thirty_of_thirty_two :
+  container / 4 = 32 ∧ version / 4 = 1 ∧ container / 4 - (version / 4 + 1) = 30 := by decide
+
 end Capacity

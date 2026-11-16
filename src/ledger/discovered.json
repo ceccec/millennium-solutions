@@ -150684,5 +150684,45 @@
     "key": "lean_quantumoctaves_the_quantum_strictly_exceeds_the_classical_from_four_qubits_up",
     "name": "lean quantum_octaves.lean: the_quantum_strictly_exceeds_the_classical_from_four_qubits_up — ∀ k, 2 ≤ k → 2 ^ k < 2 ^ (2 * k - 1) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
     "receipt": "14554484-a5df-8a93-9328-f7dddd256ffc"
+  },
+  {
+    "key": "lean_capacity_the_coil_splits_into_version_and_variant",
+    "name": "lean capacity.lean: the_coil_splits_into_version_and_variant — version + variant = reserved ∧ version = 4 ∧ variant = 2 ∧ reserved = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "47f7715f-24a7-8f32-88d2-c8662884ce68"
+  },
+  {
+    "key": "lean_capacity_the_variant_floor_frees_one_hundred_twenty_six",
+    "name": "lean capacity.lean: the_variant_floor_frees_one_hundred_twenty_six — freeOf variant = 126 ∧ freeOf reserved = free ∧ freeOf variant - freeOf reserved = version ∧ freeOf variant - free = version ∧ free = 122 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6a033286-0527-8011-8446-7a12f88c9710"
+  },
+  {
+    "key": "lean_capacity_the_reclaim_multiplies_the_space_by_two_to_the_version",
+    "name": "lean capacity.lean: the_reclaim_multiplies_the_space_by_two_to_the_version — 2 ^ freeOf variant = 2 ^ version * 2 ^ free ∧ 2 ^ freeOf variant / 2 ^ free = 2 ^ version ∧ 2 ^ version = 16 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "202dfbcd-3858-81c6-97f0-c5c4f88ed67a"
+  },
+  {
+    "key": "lean_capacity_the_floor_overstatement_is_two_to_the_variant_not_the_reserved",
+    "name": "lean capacity.lean: the_floor_overstatement_is_two_to_the_variant_not_the_reserved — 2 ^ container / 2 ^ freeOf variant = 2 ^ variant ∧ 2 ^ variant = 4 ∧ 2 ^ container = 4 * 2 ^ freeOf variant — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e37c8b4d-c2de-880d-9f34-4174ecf91898"
+  },
+  {
+    "key": "lean_capacity_the_floor_overclaim_is_three_addresses_per_real_one",
+    "name": "lean capacity.lean: the_floor_overclaim_is_three_addresses_per_real_one — 2 ^ container - 2 ^ freeOf variant = (2 ^ variant - 1) * 2 ^ freeOf variant ∧ 2 ^ variant - 1 = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6c69767e-ca21-816e-b1ab-67dc47dd8606"
+  },
+  {
+    "key": "lean_capacity_the_birthday_bound_rises_to_sixty_three_at_the_variant_floor",
+    "name": "lean capacity.lean: the_birthday_bound_rises_to_sixty_three_at_the_variant_floor — free / 2 = 61 ∧ freeOf variant / 2 = 63 ∧ freeOf variant / 2 - free / 2 = version / 2 ∧ version / 2 = 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f3a3984a-32c1-853f-9ba8-0ddeafb50769"
+  },
+  {
+    "key": "lean_capacity_the_split_is_recoverable_at_either_floor",
+    "name": "lean capacity.lean: the_split_is_recoverable_at_either_floor — container - freeOf variant = variant ∧ container - freeOf reserved = reserved ∧ freeOf variant + variant = container ∧ freeOf reserved + reserved = container — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ecd79bef-048a-8a53-9806-d86846f11412"
+  },
+  {
+    "key": "lean_capacity_the_free_hex_handles_are_thirty_of_thirty_two",
+    "name": "lean capacity.lean: the_free_hex_handles_are_thirty_of_thirty_two — container / 4 = 32 ∧ version / 4 = 1 ∧ container / 4 - (version / 4 + 1) = 30 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b14b35ea-9f46-86e7-b475-b82c4fa403da"
   }
 ]

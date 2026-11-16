@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,301 of them across 126 files and
-9 wings; 26,081 close by exhaustion over a stated finite domain, 220 are proved
+(\texttt{npm run latex-gate}). There are 26,309 of them across 126 files and
+9 wings; 26,089 close by exhaustion over a stated finite domain, 220 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -336,6 +336,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_bound\_is\_a\_ceiling\_on\_difficulty\_and\_not\_a\_measurement}]
 \[ \forall r \in \mathrm{reservations},\; \frac{\mathrm{freeOf}\mathopen{}\left(r\right)}{2} < \mathrm{freeOf}\mathopen{}\left(r\right) = 1 \le \mathrm{freeOf}\mathopen{}\left(r\right) \land \frac{\mathrm{freeOf}\mathopen{}\left(r\right)}{2} \le \frac{\mathrm{container}}{2} \land 2^{\frac{\mathrm{free}}{2}} < 2^{\mathrm{free}} \land 2^{\frac{\mathrm{free}}{2}} < 2^{\frac{\mathrm{container}}{2}} \land \frac{\mathrm{free}}{2} < \mathrm{free} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_coil\_splits\_into\_version\_and\_variant}]
+\[ \mathrm{version} + \mathrm{variant} = \mathrm{reserved} \land \mathrm{version} = 4 \land \mathrm{variant} = 2 \land \mathrm{reserved} = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_variant\_floor\_frees\_one\_hundred\_twenty\_six}]
+\[ \mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right) = 126 \land \mathrm{freeOf}\mathopen{}\left(\mathrm{reserved}\right) = \mathrm{free} \land \mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right) - \mathrm{freeOf}\mathopen{}\left(\mathrm{reserved}\right) = \mathrm{version} \land \mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right) - \mathrm{free} = \mathrm{version} \land \mathrm{free} = 122 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_reclaim\_multiplies\_the\_space\_by\_two\_to\_the\_version}]
+\[ 2^{\mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right)} = 2^{\mathrm{version}} \cdot 2^{\mathrm{free}} \land \frac{2^{\mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right)}}{2^{\mathrm{free}}} = 2^{\mathrm{version}} \land 2^{\mathrm{version}} = 16 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_floor\_overstatement\_is\_two\_to\_the\_variant\_not\_the\_reserved}]
+\[ \frac{2^{\mathrm{container}}}{2^{\mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right)}} = 2^{\mathrm{variant}} \land 2^{\mathrm{variant}} = 4 \land 2^{\mathrm{container}} = 4 \cdot 2^{\mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right)} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_floor\_overclaim\_is\_three\_addresses\_per\_real\_one}]
+\[ 2^{\mathrm{container}} - 2^{\mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right)} = 2^{\mathrm{variant}} - 1 \cdot 2^{\mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right)} \land 2^{\mathrm{variant}} - 1 = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_birthday\_bound\_rises\_to\_sixty\_three\_at\_the\_variant\_floor}]
+\[ \frac{\mathrm{free}}{2} = 61 \land \frac{\mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right)}{2} = 63 \land \frac{\mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right)}{2} - \frac{\mathrm{free}}{2} = \frac{\mathrm{version}}{2} \land \frac{\mathrm{version}}{2} = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_split\_is\_recoverable\_at\_either\_floor}]
+\[ \mathrm{container} - \mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right) = \mathrm{variant} \land \mathrm{container} - \mathrm{freeOf}\mathopen{}\left(\mathrm{reserved}\right) = \mathrm{reserved} \land \mathrm{freeOf}\mathopen{}\left(\mathrm{variant}\right) + \mathrm{variant} = \mathrm{container} \land \mathrm{freeOf}\mathopen{}\left(\mathrm{reserved}\right) + \mathrm{reserved} = \mathrm{container} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_free\_hex\_handles\_are\_thirty\_of\_thirty\_two}]
+\[ \frac{\mathrm{container}}{4} = 32 \land \frac{\mathrm{version}}{4} = 1 \land \frac{\mathrm{container}}{4} - \frac{\mathrm{version}}{4} + 1 = 30 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

@@ -172318,5 +172318,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "14554484-a5df-8a93-9328-f7dddd256ffc"
+  },
+  {
+    "key": "lean_capacity_the_coil_splits_into_version_and_variant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "47f7715f-24a7-8f32-88d2-c8662884ce68"
+  },
+  {
+    "key": "lean_capacity_the_variant_floor_frees_one_hundred_twenty_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6a033286-0527-8011-8446-7a12f88c9710"
+  },
+  {
+    "key": "lean_capacity_the_reclaim_multiplies_the_space_by_two_to_the_version",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "202dfbcd-3858-81c6-97f0-c5c4f88ed67a"
+  },
+  {
+    "key": "lean_capacity_the_floor_overstatement_is_two_to_the_variant_not_the_reserved",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e37c8b4d-c2de-880d-9f34-4174ecf91898"
+  },
+  {
+    "key": "lean_capacity_the_floor_overclaim_is_three_addresses_per_real_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6c69767e-ca21-816e-b1ab-67dc47dd8606"
+  },
+  {
+    "key": "lean_capacity_the_birthday_bound_rises_to_sixty_three_at_the_variant_floor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f3a3984a-32c1-853f-9ba8-0ddeafb50769"
+  },
+  {
+    "key": "lean_capacity_the_split_is_recoverable_at_either_floor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ecd79bef-048a-8a53-9806-d86846f11412"
+  },
+  {
+    "key": "lean_capacity_the_free_hex_handles_are_thirty_of_thirty_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b14b35ea-9f46-86e7-b475-b82c4fa403da"
   }
 ]

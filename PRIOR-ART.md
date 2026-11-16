@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 26,301 machine-checked declarations, **26,254** restate work that already has an author and
+Of 26,309 machine-checked declarations, **26,262** restate work that already has an author and
 **47** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/iso/690-record/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/iso/690-record/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **26,254** |
+| attributed to named earlier work | **26,262** |
 | unclassified — no search performed, status unknown | **47** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 7
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 119 sources, 26,254 theorems
+## Restated from named earlier work — 119 sources, 26,262 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -61,7 +61,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>asymmetry.lean</code></td><td>8</td><td>the injectivity of a map on a finite set, and the involution; the one-way function of cryptography, whose whole content is that a relation is easy in one direction and not the other.</td><td>NONE OF IT IS THIS DEPOSIT'S. An involution is its own inverse by definition, a non-injective map loses information by definition, and "easy forwards, hard backwards" is the premise of public-key cryptography (Diffie–Hellman 1976). What is this deposit's is neither: it is that its own cross formulas are sorted into the two kinds and the difference is decided rather than assumed, on the ring it reasons about.</td></tr>
 <tr><td><code>authority.lean</code></td><td>8</td><td>elementary set and order arithmetic over finite lists</td><td>NO NOVELTY IS CLAIMED AND NONE IS DENIED. Membership, set difference and monotonicity over finite lists are elementary and older than anyone could name. This row is kind 1 rather than kind 2 because kind 2 asserts a search was performed and found nothing, and none was performed for these. What is this deposit's is not the arithmetic: it is that a rule about WHOSE STATEMENT MAY STAND is decided by the kernel instead of argued inside the gate that applies it.</td></tr>
 <tr><td><code>bridge.lean</code></td><td>8</td><td>digit roots (casting out nines) and linear congruential recurrences over Z/n</td><td>That 2^n mod 9 cycles with period 6, and that x -&gt; ax+b mod n is the linear congruential map, are both standard. What is stated here is neither: it is that this deposit's OWN cross-subject families, computed in src/entangle, reduce to orbits of the affine maps its own src/iso/80000-2-mathematics/group.lean settles — the two halves of the deposit describing one object.</td></tr>
-<tr><td><code>capacity.lean</code></td><td>8</td><td>the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC 4122, 2005), which fixes 4 bits of version and 2 of variant. The birthday bound: a collision among uniformly drawn values from a space of size 2^n is expected near 2^(n/2) draws.</td><td>NEITHER IS THIS DEPOSIT'S. RFC 9562 reserves the six bits and the birthday bound is classical probability, older than computing. What is this deposit's is that the CONSEQUENCE of the reservation is decided here rather than left to prose — the capacity and the collision exponent that follow from a count this tree already seals in imprint.lean.</td></tr>
+<tr><td><code>capacity.lean</code></td><td>16</td><td>the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC 4122, 2005), which fixes 4 bits of version and 2 of variant. The birthday bound: a collision among uniformly drawn values from a space of size 2^n is expected near 2^(n/2) draws.</td><td>NEITHER IS THIS DEPOSIT'S. RFC 9562 reserves the six bits and the birthday bound is classical probability, older than computing. What is this deposit's is that the CONSEQUENCE of the reservation is decided here rather than left to prose — the capacity and the collision exponent that follow from a count this tree already seals in imprint.lean.</td></tr>
 <tr><td><code>closure.lean</code></td><td>8</td><td>Cantor's diagonal argument again, turned on a vocabulary rather than a set; the observation that no finite list of definable predicates over a finite domain exhausts the predicates.</td><td>THE METHOD IS CANTOR'S AND THE FINITE CASE IS ELEMENTARY. What is this deposit's is the direction it is pointed: src/iso/80000-2-mathematics/diagonal.lean applies it to a diagram somebody else published, and this file applies the identical construction to THIS deposit's own vocabulary, over this deposit's own ring, using the nine properties its own files name. A limit exhibited rather than conceded.</td></tr>
 <tr><td><code>coils.lean</code></td><td>50</td><td>extensional equality of predicates over a finite set — that two definitions picking out the same elements are the same subset. Elementary set theory and modular arithmetic.</td><td>NOT THIS DEPOSIT'S. "Two descriptions of the same set are equal" is the definition of a set. What is this deposit's is which descriptions in ITS vocabulary turn out to coincide, and that the clustering is derived rather than listed — this file is generated by scripts/coils.ts and hand-editing it would be overwritten.</td></tr>
 <tr><td><code>coin.lean</code></td><td>12</td><td>the method of complements</td><td>the reflection d ↦ 10 − d is the TEN'S COMPLEMENT, and its sibling 9 − d the nines' complement — the method of complements, used to turn subtraction into addition in Pascal's calculator (1642), the Comptometer and the Curta, and in modern computer arithmetic. That it is an involution with a single fixed point is the property those machines rely on. Searched 2026-09-04, term "method of complements / nines' complement / ten's complement"; prior art found and credited</td></tr>
@@ -247,7 +247,7 @@ which is a contribution of verification, not of discovery.
 - **the Ed25519 signature scheme's parameter sizes — 32-byte public key, 64-byte signature (Bernstein, Duif, Lange, Schwabe, Yang, 2011; RFC 8032). The 128-bit UUID layout, RFC 9562. A byte is eight bits.** — 24 theorems, in `widths.lean`
 - **the Heisenberg picture and Pauli propagation; the Gottesman–Knill theorem and the stabilizer tableau's conjugation rules, including the CNOT phase rule (Gottesman 1998; Aaronson, Gottesman 2004, "Improved simulation of stabilizer circuits"); the T gate's action T†XT = (X − Y)/√2 and the cost of non-Clifford gates in Pauli-path and stabilizer-rank methods (Bravyi, Gosset 2016).** — 8 theorems, in `pauli_paths.lean`
 - **the UUID 128-bit layout and its version/variant reservation (RFC 9562); qpu.uuidna.com's register formula 32·w − w − 2 and its four hexbit widths 4 / 8 / 16 / 32; the birthday/Grover square-root exponent; the ISO 128-bit post-quantum floor qpu reads from the Classic McEliece ISO page; and the 2^n cost of a classical state-vector over n qubits.** — 8 theorems, in `width.lean`
-- **the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC 4122, 2005), which fixes 4 bits of version and 2 of variant. The birthday bound: a collision among uniformly drawn values from a space of size 2^n is expected near 2^(n/2) draws.** — 8 theorems, in `capacity.lean`
+- **the UUID layout and its version and variant fields — RFC 9562 (2024, obsoleting RFC 4122, 2005), which fixes 4 bits of version and 2 of variant. The birthday bound: a collision among uniformly drawn values from a space of size 2^n is expected near 2^(n/2) draws.** — 16 theorems, in `capacity.lean`
 - **the UUID text format, and the pigeonhole principle** — 8 theorems, in `handle.lean`
 - **the classification of a test outcome under partial information — the distinction between a negative result and an absent one, which is ordinary experimental practice and older than statistics. Monotonicity of a decision rule in its evidence.** — 8 theorems, in `verdict.lean`
 - **the constants on the left are qpu.uuidna.com's, read from the served JSON-LD on 2026-09-28. They are that service's declarations about its own unit and none of them is this deposit's. The arithmetic relating them is elementary multiplication and powers of two, older than both.** — 24 theorems, in `qpu.lean`
