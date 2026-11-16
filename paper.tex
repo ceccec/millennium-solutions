@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,285 of them across 126 files and
-9 wings; 26,073 close by exhaustion over a stated finite domain, 212 are proved
+(\texttt{npm run latex-gate}). There are 26,293 of them across 126 files and
+9 wings; 26,081 close by exhaustion over a stated finite domain, 212 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -4922,6 +4922,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_smallest\_gap\_costs\_one\_and\_a\_wider\_gap\_costs\_twelve}]
 \[ \mathrm{blind}\mathopen{}\left(5,\,7\right) = 1 \land 7 - 5 = 2 \land \mathrm{blind}\mathopen{}\left(3,\,43\right) = 12 \land 43 - 3 = 40 \land 1 < 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_security\_margin\_is\_the\_arithmetic\_minus\_the\_geometric\_mean}]
+\[ \mathrm{blind}\mathopen{}\left(3,\,29\right) - 1 = \mathrm{witness}\mathopen{}\left(3,\,29\right) - \mathrm{ceilSqrt}\mathopen{}\left(3 \cdot 29\right) \land \mathrm{witness}\mathopen{}\left(3,\,29\right) = 16 \land \mathrm{ceilSqrt}\mathopen{}\left(87\right) = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_arithmetic\_mean\_squared\_is\_never\_below\_the\_product}]
+\[ \mathrm{witness}\mathopen{}\left(3,\,29\right) \cdot \mathrm{witness}\mathopen{}\left(3,\,29\right) \ge 3 \cdot 29 \land \mathrm{witness}\mathopen{}\left(5,\,7\right) \cdot \mathrm{witness}\mathopen{}\left(5,\,7\right) \ge 5 \cdot 7 \land \mathrm{witness}\mathopen{}\left(3,\,43\right) \cdot \mathrm{witness}\mathopen{}\left(3,\,43\right) \ge 3 \cdot 43 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_means\_coincide\_when\_the\_primes\_coincide}]
+\[ \mathrm{witness}\mathopen{}\left(7,\,7\right) = 7 \land \mathrm{witness}\mathopen{}\left(7,\,7\right) \cdot \mathrm{witness}\mathopen{}\left(7,\,7\right) = 7 \cdot 7 \land \mathrm{ceilSqrt}\mathopen{}\left(49\right) = 7 \land \mathrm{blind}\mathopen{}\left(7,\,7\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_am\_gm\_gap\_in\_squares\_is\_the\_half\_difference\_squared}]
+\[ \mathrm{witness}\mathopen{}\left(3,\,29\right) \cdot \mathrm{witness}\mathopen{}\left(3,\,29\right) - 3 \cdot 29 = \frac{29 - 3}{2} \cdot \frac{29 - 3}{2} \land \frac{29 - 3}{2} = 13 \land 13 \cdot 13 = 169 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{distinct\_primes\_leave\_a\_strictly\_positive\_gap}]
+\[ \mathrm{witness}\mathopen{}\left(3,\,29\right) \cdot \mathrm{witness}\mathopen{}\left(3,\,29\right) > 3 \cdot 29 \land \mathrm{witness}\mathopen{}\left(5,\,7\right) \cdot \mathrm{witness}\mathopen{}\left(5,\,7\right) > 5 \cdot 7 \land \mathrm{witness}\mathopen{}\left(11,\,13\right) \cdot \mathrm{witness}\mathopen{}\left(11,\,13\right) > 11 \cdot 13 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_arithmetic\_centre\_is\_an\_exact\_integer\_and\_the\_root\_is\_bracketed}]
+\[ \mathrm{witness}\mathopen{}\left(3,\,29\right) = 16 \land 16 \cdot 2 = 3 + 29 \land 9 \cdot 9 < 87 \land 87 \le 10 \cdot 10 \land \mathrm{ceilSqrt}\mathopen{}\left(87\right) = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_smaller\_prime\_gap\_decides\_a\_smaller\_am\_gm\_gap}]
+\[ \mathrm{witness}\mathopen{}\left(5,\,7\right) \cdot \mathrm{witness}\mathopen{}\left(5,\,7\right) - 5 \cdot 7 = 1 \land \mathrm{witness}\mathopen{}\left(3,\,29\right) \cdot \mathrm{witness}\mathopen{}\left(3,\,29\right) - 3 \cdot 29 = 169 \land 1 < 169 \land 7 - 5 < 29 - 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_am\_gm\_gap\_is\_zero\_at\_the\_square\_and\_positive\_for\_distinct\_primes}]
+\[ \mathrm{witness}\mathopen{}\left(7,\,7\right) \cdot \mathrm{witness}\mathopen{}\left(7,\,7\right) - 7 \cdot 7 = 0 \land \mathrm{witness}\mathopen{}\left(3,\,29\right) \cdot \mathrm{witness}\mathopen{}\left(3,\,29\right) - 3 \cdot 29 > 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

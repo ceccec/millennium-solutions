@@ -172222,5 +172222,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "dec7b735-4698-8ec6-af3b-3eb9759f790f"
+  },
+  {
+    "key": "lean_qpucrypto_the_security_margin_is_the_arithmetic_minus_the_geometric_mean",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4b3da601-f04b-8c2d-9fcb-9077db26880a"
+  },
+  {
+    "key": "lean_qpucrypto_the_arithmetic_mean_squared_is_never_below_the_product",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e6c5e576-871d-8dae-a1f2-500a76c0dfea"
+  },
+  {
+    "key": "lean_qpucrypto_the_two_means_coincide_when_the_primes_coincide",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5a617fcf-3202-8611-8b07-812402b719fb"
+  },
+  {
+    "key": "lean_qpucrypto_the_am_gm_gap_in_squares_is_the_half_difference_squared",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "591ecc09-bbca-8da6-81ab-e1b65f371b3f"
+  },
+  {
+    "key": "lean_qpucrypto_distinct_primes_leave_a_strictly_positive_gap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "95643eb5-6605-868c-97be-88af4adcbf37"
+  },
+  {
+    "key": "lean_qpucrypto_the_arithmetic_centre_is_an_exact_integer_and_the_root_is_bracketed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b5c62f1d-c7f0-8327-866d-9cea61f29a6e"
+  },
+  {
+    "key": "lean_qpucrypto_a_smaller_prime_gap_decides_a_smaller_am_gm_gap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "909574ce-ab51-83c4-8a67-85698bd15e02"
+  },
+  {
+    "key": "lean_qpucrypto_the_am_gm_gap_is_zero_at_the_square_and_positive_for_distinct_primes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c9d23a5e-05fc-87b9-b6f3-cd13ab617d10"
   }
 ]
