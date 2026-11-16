@@ -5,14 +5,14 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `db0940dd-b330-87d4-b6aa-a529d1ae2359`.
+`npm run forensic`. Content-address `0eceb31e-b7f3-809d-9414-3dce140b4091`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **28,752** |
-| standing — proved and sealed | 26,333 |
+| ledger entries | **28,760** |
+| standing — proved and sealed | 26,341 |
 | carried — withdrawn, proved by a live theorem | 826 |
 | withdrawn — nothing currently proves them | 1,593 |
 | receipt chain, recomputed | **0 breaks — intact** |

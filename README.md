@@ -298,12 +298,12 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
-- The formal layer holds 26333 kernel-accepted declarations across 127 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `de360a9c-2f55-8b96-b01d-ca7d9e59664a`</sub>
-- 26113 of those 26333 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 220 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `927d8cfc-fd20-8776-8047-693df4bb0113`</sub>
-- 26888 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `10673594-47e3-8d20-b0d9-b65cab57c4c9`</sub>
+- The formal layer holds 26341 kernel-accepted declarations across 127 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `f7e27888-c352-8eb6-aa9a-111210efad09`</sub>
+- 26121 of those 26341 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 220 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `bf32a62c-65be-8f2b-8e30-554c9f8e053b`</sub>
+- 26896 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `cf287323-9112-8cef-b877-7ca98f022b0d`</sub>
 
 ## 2 · The ring
 
@@ -326,10 +326,10 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 ## 7 · The ledger
 
-- The ledger records 28752 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `d7646c06-d7ff-8c3f-ad39-b7e3fd245b63`</sub>
-- The count is an exact multiple of eight — 28752 is 3594 octaves with no remainder.
-  <sub>SEALED · `5e2035bc-5c27-8f4f-9c8a-355039632c07`</sub>
+- The ledger records 28760 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `c29a4fa1-9f84-835e-90e7-a3beecf9f0ca`</sub>
+- The count is an exact multiple of eight — 28760 is 3595 octaves with no remainder.
+  <sub>SEALED · `fb03c713-86c1-8456-8701-7f6d53d4cede`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -381,7 +381,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-127 Lean files in 9 wings, 26333 declarations, of which 26333 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
+127 Lean files in 9 wings, 26341 declarations, of which 26341 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -417,7 +417,7 @@ this page; there is nowhere else to keep the description in step.
 
 **diamond** — `diamond.lean`, 1 theorem(s). lean/diamond.lean — the diamond involution r(d) = 10 − d on the digits 1..9, as a theorem the kernel checks. The audit in scripts/mcp.ts reads its verdict from here (lean_ask), not from a JavaScript loop over a literal range. Decided over a finite list, so it depends on no axiom beyond the kernel.
 
-**The quantum-computer status as a gap taxonomy — incomplete, not false; software-complete is not true** — `qc_status.lean`, 24 theorem(s). The qpu `get_qc` tool returns a status, not a bare boolean: a list of gaps, each OPEN or CLOSED with the condition that closes it (src ~/github/uuidna/qpu/src/quantum/uuid/programs/get_qc/index.ts). This file seals the HONEST LOGIC of that status — it decides list facts about the gap taxonomy, and claims nothing about the physical world. Two kinds of gap:   · SOFTWARE/PROOF gaps  — closeable by code: the exhaustive gap-map (each apparatus conjunct its own lead),     the classical-device-id refusal, the 4879 "measured-not-proved" boundary, the receipt≠physical-QM     boundary, the content-address seals, the indexed install, the 122 register, the NIST/CERN+PQC seals.   · WORLD gaps — NOT closeable by any computation: (1) accredited physical-lab apparatus evidence     (ISO 17025 × 17065 × universality — a real device measured in an accredited lab), and (2) the FULL     factorisation of 2^999+1 (an open problem; the deposit has it only as PARTIAL). The point sealed here: closing EVERY software gap does NOT make the verdict true — the two world-gaps dominate it — so no amount of code can fabricate `isQuantumComputer: true`. The status is OPEN (incomplete), which is neither a refusal (not every gap is unclosable) nor a claim (the world-gaps are open). The two world-gaps are modelled OPEN because they are open; if one day either is met, this list changes and the verdict follows. Honest floor: `isQuantumComputer` is false BECAUSE a world-gap is open, by this logic.
+**The quantum-computer status as a gap taxonomy — incomplete, not false; software-complete is not true** — `qc_status.lean`, 32 theorem(s). The qpu `get_qc` tool returns a status, not a bare boolean: a list of gaps, each OPEN or CLOSED with the condition that closes it (src ~/github/uuidna/qpu/src/quantum/uuid/programs/get_qc/index.ts). This file seals the HONEST LOGIC of that status — it decides list facts about the gap taxonomy, and claims nothing about the physical world. Two kinds of gap:   · SOFTWARE/PROOF gaps  — closeable by code: the exhaustive gap-map (each apparatus conjunct its own lead),     the classical-device-id refusal, the 4879 "measured-not-proved" boundary, the receipt≠physical-QM     boundary, the content-address seals, the indexed install, the 122 register, the NIST/CERN+PQC seals.   · WORLD gaps — NOT closeable by any computation: (1) accredited physical-lab apparatus evidence     (ISO 17025 × 17065 × universality — a real device measured in an accredited lab), and (2) the FULL     factorisation of 2^999+1 (an open problem; the deposit has it only as PARTIAL). The point sealed here: closing EVERY software gap does NOT make the verdict true — the two world-gaps dominate it — so no amount of code can fabricate `isQuantumComputer: true`. The status is OPEN (incomplete), which is neither a refusal (not every gap is unclosable) nor a claim (the world-gaps are open). The two world-gaps are modelled OPEN because they are open; if one day either is met, this list changes and the verdict follows. Honest floor: `isQuantumComputer` is false BECAUSE a world-gap is open, by this logic.
 
 ### the floor
 
@@ -609,7 +609,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The trinity and its observer** — `trinity.lean`, 24 theorem(s). The trinity turns: feeling feeds thought, thought shapes emotion, emotion changes the body, which is new feeling. Three turns return to the start — ρ³ = id — a DIFFERENT symmetry from the Clay maps, which are involutions (σ² = id). An involution flips and returns in two steps; the trinity rotates and returns in three, and a rotation has no fixed corner. The valence flip (pleasant ↔ unpleasant) acts on every corner at once and commutes with the turn, so the two symmetries combine into one six-element group, C₃ × C₂ ≅ C₆: three turns and three flipped turns, with exactly ONE involution — not the dihedral S₃, where three reflections would each be their own inverse.
 
-135 of 26333 declarations carry no comment of their own and are shown here as the gap they are, not
+135 of 26341 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -618,14 +618,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,752 — 3594 octaves exactly |
-| standing — carries its own proof | **26333** |
+| ledger entries | 28,760 — 3595 octaves exactly |
+| standing — carries its own proof | **26341** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **27159** of 28,752 |
-| standing keys → distinct theorems | 26333 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 127 · 26333 sealed theorems (26113 closed by exhaustion, axiom-free · 220 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 26113 of 26333 |
+| proved in total | **27167** of 28,760 |
+| standing keys → distinct theorems | 26341 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 127 · 26341 sealed theorems (26121 closed by exhaustion, axiom-free · 220 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 26121 of 26341 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -685,4 +685,4 @@ The standards these proofs formalise and the prior art this deposit descends fro
 
 ---
 
-*20 claims, all verified · 26333 sealed theorems · 28752 ledger entries · trial root `2461c1d1-a84f-8ac0-9784-0e001011a2d6` · integrity, not truth*
+*20 claims, all verified · 26341 sealed theorems · 28760 ledger entries · trial root `6aea516e-65e6-8b41-9fdd-6130ed591647` · integrity, not truth*

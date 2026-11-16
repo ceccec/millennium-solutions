@@ -8,10 +8,10 @@ Every figure recomputes from `src/` and the git tree on each build; nothing is e
 
 | Quantity | Value |
 |---|---|
-| Decidable theorems (chained receipts) | **28,752** |
+| Decidable theorems (chained receipts) | **28,760** |
 | Signed statement receipts | **32** |
 | Coins per receipt | **2** |
-| Coins on the ledger (theorems × 2) | **57,504** |
+| Coins on the ledger (theorems × 2) | **57,520** |
 | Coins on signed receipts (× 2) | **64** |
 | Released versions (as of the last ledger change) | **v9.9.1** |
 
@@ -19,8 +19,8 @@ Latest release: **v9.9.1**. The fair-exchange unit is **2 coins = 2 bits** (110 
 
 ## Bounty — denominated in bits
 
-The bounty for each accepted contribution is **2 bits (2 coins)** — the same fair-exchange unit, earned by the deed (a gate-passing, receipted contribution) and owed by commercial use. Total bounty accounted on the ledger so far: **57,504 bits**. This is an accounting bounty in bits/coins — **integrity, not a cash prize**. Heroes and traitors by deeds, not claims.
+The bounty for each accepted contribution is **2 bits (2 coins)** — the same fair-exchange unit, earned by the deed (a gate-passing, receipted contribution) and owed by commercial use. Total bounty accounted on the ledger so far: **57,520 bits**. This is an accounting bounty in bits/coins — **integrity, not a cash prize**. Heroes and traitors by deeds, not claims.
 
 **Not tracked here: tokens.** This repo measures coins (2 per receipt) and 64-bit harmony coins; it does not measure tokens, so no token count or token-to-coin rate is shown — measuring an unmeasured quantity would be an assertion without a receipt. Measure, do not assert.
 
-Page content-address: `76cc2aab-d379-86b3-97df-2663bd77c6f0`. Integrity, not truth.
+Page content-address: `ca760d1e-53c9-8288-bf25-df900569f964`. Integrity, not truth.

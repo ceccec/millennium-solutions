@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,333 of them across 127 files and
-9 wings; 26,113 close by exhaustion over a stated finite domain, 220 are proved
+(\texttt{npm run latex-gate}). There are 26,341 of them across 127 files and
+9 wings; 26,121 close by exhaustion over a stated finite domain, 220 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1180,6 +1180,46 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{iso\_says\_design\_complete\_device\_incomplete}]
 \[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{iso},\; \mathrm{isoSatisfied}\mathopen{}\left(x\right)\right) = \mathrm{Status.incomplete} \land \forall r \in \{\, x \in \mathrm{iso} \mid \mathrm{isoSatisfied}\mathopen{}\left(x\right) \,\},\; \mathrm{kindIsComputed}\mathopen{}\left(r_{1}\right) = \mathrm{true} \land \left|\{\, r \in \mathrm{iso} \mid \lnot \mathrm{isoSatisfied}\mathopen{}\left(r\right) \,\}\right| = 5 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_verdict\_has\_four\_cases}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{true}\right) = \mathrm{Status.complete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{false}\right) = \mathrm{Status.incomplete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{true},\,\mathrm{true}\right) = \mathrm{Status.refuted} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{true},\,\mathrm{false}\right) = \mathrm{Status.refuted} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{complete\_needs\_all\_evidence\_present}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{true}\right) = \mathrm{Status.complete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{false}\right) \neq \mathrm{Status.complete} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{incomplete\_needs\_some\_evidence\_absent}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{false}\right) = \mathrm{Status.incomplete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{true}\right) \neq \mathrm{Status.incomplete} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{current\_evidence\_proves\_incomplete}]
+\[ \forall x \in \mathrm{current},\; \mathrm{id}\mathopen{}\left(x\right) = \mathrm{false} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{current},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.incomplete} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{full\_evidence\_proves\_complete}]
+\[ \forall x \in \mathrm{full},\; \mathrm{id}\mathopen{}\left(x\right) = \mathrm{true} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{full},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.complete} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{neither\_pole\_is\_a\_default}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{current},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.incomplete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{full},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.complete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{current},\; \mathrm{id}\mathopen{}\left(x\right)\right) \neq \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{full},\; \mathrm{id}\mathopen{}\left(x\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{closing\_the\_gaps\_flips\_incomplete\_to\_complete}]
+\[ \forall x \in \mathrm{current},\; \mathrm{id}\mathopen{}\left(x\right) = \mathrm{false} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{current},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.incomplete} \land \forall x \in \mathrm{full},\; \mathrm{id}\mathopen{}\left(x\right) = \mathrm{true} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{full},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.complete} \land \mathrm{current} \neq \mathrm{full} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{either\_side\_proved\_by\_the\_same\_logic}]
+\[ \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{current},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.incomplete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\forall x \in \mathrm{full},\; \mathrm{id}\mathopen{}\left(x\right)\right) = \mathrm{Status.complete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{true}\right) = \mathrm{Status.complete} \land \mathrm{statusOf}\mathopen{}\left(\mathrm{false},\,\mathrm{false}\right) = \mathrm{Status.incomplete} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

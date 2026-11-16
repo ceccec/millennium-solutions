@@ -172510,5 +172510,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "bc7f033d-d778-82cb-bd1e-3aa1e764e80d"
+  },
+  {
+    "key": "lean_qcstatus_the_verdict_has_four_cases",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8aa6d068-8365-80b3-8c24-0e781bb4c6d9"
+  },
+  {
+    "key": "lean_qcstatus_complete_needs_all_evidence_present",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6a04cf11-80ca-8532-9434-d78a3b435207"
+  },
+  {
+    "key": "lean_qcstatus_incomplete_needs_some_evidence_absent",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "275ba924-9f35-81ae-a858-b2fb54335dc4"
+  },
+  {
+    "key": "lean_qcstatus_current_evidence_proves_incomplete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bdf50837-1511-8643-9704-3aa028f125b7"
+  },
+  {
+    "key": "lean_qcstatus_full_evidence_proves_complete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "59d344b0-3070-86f5-a5b2-129daaaab3bd"
+  },
+  {
+    "key": "lean_qcstatus_neither_pole_is_a_default",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2b4e5ab1-5124-8f49-81da-9f708e1ac6c1"
+  },
+  {
+    "key": "lean_qcstatus_closing_the_gaps_flips_incomplete_to_complete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "937d98f2-f2ad-89f8-8b11-4ccee655ed0e"
+  },
+  {
+    "key": "lean_qcstatus_either_side_proved_by_the_same_logic",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fbd37b95-736c-8c51-b0c4-da89d5c7c88b"
   }
 ]

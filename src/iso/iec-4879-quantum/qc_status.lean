@@ -221,4 +221,55 @@ theorem iso_says_design_complete_device_incomplete :
   ∧ (iso.filter isoSatisfied).all (fun r => kindIsComputed r.1) = true
   ∧ (iso.filter (fun r => !isoSatisfied r)).length = 5 := by decide
 
+-- ── 4 · EITHER VERDICT IS PROVED BY ONE LOGIC — incomplete is not a default ───────────────────────────────
+-- The gap states in §1/§3 are inputs; this proves the VERDICT symmetric and evidence-driven. `statusOf` (§2)
+-- is one function of (disproven, every-requirement-present). "complete" and "incomplete" are its two non-
+-- refuted outputs — each holds only on its evidence, neither is assumed. The current deposit's evidence is
+-- PARTIAL (the five computed design rows present; measurement, accreditation, factoring absent), and that
+-- partial evidence PROVES `incomplete` by the same function that would prove `complete` on full evidence.
+-- Evidence = the presence bit of each of the ten §3 requirements.
+def current : List Bool := [true, true, true, true, true, false, false, false, false, false]
+def full    : List Bool := [true, true, true, true, true, true, true, true, true, true]
+
+-- the verdict's four cases, decided — one rule, no default branch.
+theorem the_verdict_has_four_cases :
+  statusOf false true = Status.complete ∧ statusOf false false = Status.incomplete
+  ∧ statusOf true true = Status.refuted ∧ statusOf true false = Status.refuted := by decide
+
+-- complete must be proved: it holds exactly when all evidence is present, and never otherwise.
+theorem complete_needs_all_evidence_present :
+  statusOf false true = Status.complete ∧ statusOf false false ≠ Status.complete := by decide
+
+-- incomplete must be proved too, by the SAME function: exactly when some evidence is absent.
+theorem incomplete_needs_some_evidence_absent :
+  statusOf false false = Status.incomplete ∧ statusOf false true ≠ Status.incomplete := by decide
+
+-- the current evidence is partial, and it PROVES incomplete — not a default: design present, the rest absent.
+theorem current_evidence_proves_incomplete :
+  current.all id = false ∧ statusOf false (current.all id) = Status.incomplete := by decide
+
+-- full evidence PROVES complete — the same function, the other pole.
+theorem full_evidence_proves_complete :
+  full.all id = true ∧ statusOf false (full.all id) = Status.complete := by decide
+
+-- neither pole is a default: one function, the current evidence gives incomplete, full gives complete, distinct.
+theorem neither_pole_is_a_default :
+  statusOf false (current.all id) = Status.incomplete
+  ∧ statusOf false (full.all id) = Status.complete
+  ∧ statusOf false (current.all id) ≠ statusOf false (full.all id) := by decide
+
+-- the evidence moves the verdict both ways: close the five absent bits (current → full) and incomplete flips to
+-- complete — proof on either side, by one rule, nothing assumed.
+theorem closing_the_gaps_flips_incomplete_to_complete :
+  (current.all id = false ∧ statusOf false (current.all id) = Status.incomplete)
+  ∧ (full.all id = true ∧ statusOf false (full.all id) = Status.complete)
+  ∧ current ≠ full := by decide
+
+-- capstone: complete and incomplete follow ONE logic; incomplete is as proved on the current evidence as
+-- complete is on full — the same statusOf, each requiring its evidence, neither defaulted.
+theorem either_side_proved_by_the_same_logic :
+  statusOf false (current.all id) = Status.incomplete
+  ∧ statusOf false (full.all id) = Status.complete
+  ∧ statusOf false true = Status.complete ∧ statusOf false false = Status.incomplete := by decide
+
 end QcStatus

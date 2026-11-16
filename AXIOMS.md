@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **26,333** report the same thing:
+axiom fails the build rather than earning a footnote. All **26,341** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **1,127** definitions, and every one of them is a choice. A theorem about
+theorems rest on **1,129** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 1,127 definitions
+## What IS assumed: the 1,129 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -1005,7 +1005,7 @@ def flipBit (bs : List Bool) (i : Nat) : List Bool :=
 def settledHere : Nat := 21
 ```
 
-### `qc_status.lean` — 11 definition(s), 24 theorem(s)
+### `qc_status.lean` — 13 definition(s), 32 theorem(s)
 
 ```lean
 def gaps : List (Bool × Bool) :=
@@ -1019,6 +1019,8 @@ def kindIsMeasured : Kind → Bool | .measured => true | _ => false
 def kindIsAccredited : Kind → Bool | .accredited => true | _ => false
 def iso : List (Kind × Bool) :=
 def isoSatisfied : (Kind × Bool) → Bool := fun r => r.2
+def current : List Bool := [true, true, true, true, true, false, false, false, false, false]
+def full : List Bool := [true, true, true, true, true, true, true, true, true, true]
 ```
 
 ### `qec.lean` — 3 definition(s), 8 theorem(s)
@@ -1705,6 +1707,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**26,333** declarations, **0** axiom dependencies, **1,127** definitions they rest on.
+**26,341** declarations, **0** axiom dependencies, **1,129** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.
