@@ -37,8 +37,8 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { flag } from '../src/cli/index.ts'
 import { ledger, theoremCount, leanFiles, leanTheorems } from '../src/api/index.ts'
-import { kinds, KIND, isoReferences } from '../src/publication/index.ts'
-import { MILLENNIUM } from '../src/millennium/index.ts'
+import { kinds, KIND, isoReferences, SITE } from '../src/publication/index.ts'
+import { MILLENNIUM, clayClaimsHtml } from '../src/millennium/index.ts'
 
 const OUT = '.zenodo.json'
 const OPEN = '<!--computed-->'
@@ -118,7 +118,11 @@ const computed =
   + `Prior art, over the ${kinds().size} source(s) carrying a classification: ${novelty}`
   + `${leanFiles().length > kinds().size ? `; ${leanFiles().length - kinds().size} further source(s) carry no prior-art row at all, which is a gap in the classification and is counted rather than folded into "unclassified"` : ''}. `
   + `An unsearched source asserts no novelty — that is NOT MEASURED, not a finding of nothing. Every figure in this paragraph is recomputed by scripts/zenodo-json.ts from the tree it `
-  + `describes; none of it is typed. ${CLOSE}`
+  + `describes; none of it is typed.\n\n`
+  // THE SEVEN CLAIMS, so the citable record presents what the README does: each problem's claim, its open gap,
+  // and the sealed theorem's key and receipt — read from MILLENNIUM and the ledger, never typed here.
+  + clayClaimsHtml(SITE)
+  + `\n${CLOSE}`
 
 // THE AUTHOR'S PARAGRAPH, CARRIED THROUGH. Everything before the marker is his and is copied byte for byte.
 const previous: { description?: string } = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {}

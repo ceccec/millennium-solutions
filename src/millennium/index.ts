@@ -133,6 +133,37 @@ const provenanceMd = (roll: boolean): string => {
 }
 
 /** The whole of it, as markdown — the same text on the README, the homepage and /solutions. */
+// THE SEVEN CLAIMS AS ZENODO-SAFE HTML — the same MILLENNIUM pairing and the same ledger receipts
+// claySection renders for the README, so the citable record carries the claim AND the open gap rather than a
+// prose summary with a bare subject link. Links are absolute, because the record is read off-site: the
+// theorem pages at `base`, the problems at the Clay Institute. The honest frame leads every time: what is
+// decided is ℤ/9 arithmetic, the claim of a solution is the author's in his name, and each row names the gap
+// that stays open to the conjecture. Reads MILLENNIUM and the ledger, exactly as claySection does, so the two
+// cannot state a different claim, gap or receipt for the same problem. [[statement-is-conclusion-only]]
+export const clayClaimsHtml = (base: string): string => {
+  const thms = leanTheorems() as { name: string; file: string }[]
+  const live = (ledger() as { key: string; receipt: string; revoked?: boolean }[]).filter((e) => !e.revoked)
+  const entry = (name: string) => live.find((e) => e.key.endsWith('_' + name))
+  const has = (name: string) => thms.some((t) => t.file === 'index.lean' && t.name === name)
+  const url = base.replace(/\/+$/, '')
+  const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  const items: string[] = []
+  for (const [name, m] of Object.entries(MILLENNIUM)) {
+    const e = entry(name)
+    if (!has(name) || !e) continue
+    items.push(
+      `<li><strong>${esc(m.problem.replace(/\s*\(.*\)$/, ''))}</strong> — claim: ${esc(m.claim)}; `
+      + `open gap: ${esc(m.gap)}. Sealed as <a href="${url}/theorem/${e.key}">${esc(e.key)}</a> `
+      + `(receipt ${esc(e.receipt.slice(0, 13))}…). <a href="${esc(m.outlet)}">${esc(m.outletName)}</a>.</li>`)
+  }
+  if (!items.length) return ''
+  return `<p><strong>The seven Clay Millennium problems — the author's pairing, each with the ℤ/9 fact its `
+    + `adjacent theorem decides and the open gap that remains to the conjecture.</strong> What these theorems `
+    + `decide is ℤ/9 arithmetic over finite domains, a statement about the theorems and not a verdict on any `
+    + `conjecture; the claim that the seven are solved through the involution each is stated across is the `
+    + `author's, recorded in his name.</p><ul>${items.join('')}</ul>`
+}
+
 export const claySection = (o: { roll?: boolean } = {}): string => {
   const thms = leanTheorems() as { name: string; file: string; statement: string; tactic: string }[]
   const rows = ledger() as { key: string; receipt: string; revoked?: boolean }[]
