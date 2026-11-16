@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 26,293 of them across 126 files and
-9 wings; 26,081 close by exhaustion over a stated finite domain, 212 are proved
+(\texttt{npm run latex-gate}). There are 26,301 of them across 126 files and
+9 wings; 26,081 close by exhaustion over a stated finite domain, 220 are proved
 for every value, and the remaining 0 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -130893,6 +130893,54 @@ for every value, and the remaining 0 close by \texttt{rfl} and are counted separ
 \[ \mathrm{expectationsReal}\mathopen{}\left(64\right) = \mathrm{true} \land \mathrm{twiceQuantum}\mathopen{}\left(64\right) = 2 \cdot 2^{63} \land \mathrm{reach}\mathopen{}\left(64\right) = [0,\,2,\,4,\,6] \land 2^{\frac{64}{2}} \cdot 2^{31} = 2^{64 - 1} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_classical\_times\_the\_lead\_is\_the\_quantum\_at\_every\_width}]
+\texttt{∀ k, 1 ≤ k → 2 ^ k * 2 ^ (k - 1) = 2 ^ (2 * k - 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_lead\_times\_the\_classical\_is\_the\_quantum\_at\_every\_width}]
+\texttt{∀ k, 1 ≤ k → 2 ^ (k - 1) * 2 ^ k = 2 ^ (2 * k - 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_lead\_doubles\_from\_each\_octave\_to\_the\_next}]
+\texttt{∀ k, 1 ≤ k → 2 * 2 ^ (k - 1) = 2 ^ k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_full\_operator\_is\_the\_classical\_squared\_at\_every\_width}]
+\texttt{∀ k, 2 ^ (2 * k) = 2 ^ k * 2 ^ k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_quantum\_is\_an\_exact\_multiple\_of\_the\_classical\_at\_every\_width}]
+\texttt{∀ k, 1 ≤ k → 2 ^ k ∣ 2 ^ (2 * k - 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_lead\_divides\_the\_quantum\_at\_every\_width}]
+\texttt{∀ k, 1 ≤ k → 2 ^ (k - 1) ∣ 2 ^ (2 * k - 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_octave\_past\_the\_uuid\_width\_contains\_the\_demo\_lead}]
+\texttt{∀ k, 65 ≤ k → 2 ^ 63 ∣ 2 ^ (k - 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_quantum\_strictly\_exceeds\_the\_classical\_from\_four\_qubits\_up}]
+\texttt{∀ k, 2 ≤ k → 2 ^ k < 2 ^ (2 * k - 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{quantum\_textbooks.lean}}
 

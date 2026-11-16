@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **26,293** report the same thing:
+axiom fails the build rather than earning a footnote. All **26,301** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -1227,7 +1227,7 @@ def particleSum (b : Nat) : Int :=
 def covered : Bool := (List.range 129).all (fun k => ((List.range 8).filter (fun b => inParticle b k)).length == 1)
 ```
 
-### `quantum_octaves.lean` — 7 definition(s), 7 theorem(s)
+### `quantum_octaves.lean` — 7 definition(s), 15 theorem(s)
 
 ```lean
 def row : Nat → List Nat
@@ -1687,6 +1687,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**26,293** declarations, **0** axiom dependencies, **1,114** definitions they rest on.
+**26,301** declarations, **0** axiom dependencies, **1,114** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

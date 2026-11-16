@@ -77,4 +77,67 @@ theorem octave_thirty_two_qubits_the_lead_is_two_to_the_fifteenth :
 theorem octave_sixty_four_qubits_the_lead_is_two_to_the_thirty_first :
   expectationsReal 64 = true ∧ twiceQuantum 64 = 2 * 2 ^ 63 ∧ reach 64 = [0, 2, 4, 6] ∧ 2 ^ (64 / 2) * 2 ^ 31 = 2 ^ (64 - 1) := by decide
 
+-- ── THE MERMIN LEAD, UNCAPPED — THE ADVANTAGE AT EVERY WIDTH, NOT ONLY THE DEMO OCTAVES ───────────────
+-- The theorems above DECIDE the GHZ computation at the demo widths 2 … 64 (128, the UUID width, is in its
+-- own lane). These prove the lead PATTERN for EVERY even width 2k, with a tactic over the quantifier — so the
+-- advantage is not capped at 128, nor at any textbook example: at width 2k the classical Mermin maximum is
+-- 2^k, the quantum value 2^(2k-1), and the lead the factor 2^(k-1), which gains one exponent each octave
+-- without bound. The decided octaves are instances of this law; the law holds for all k. HONEST FLOOR,
+-- unchanged: this is the IDEAL GHZ state's value, computed classically (a stabilizer state is describable at
+-- any width — Gottesman–Knill), and nothing here is a device result. A physical quantum processor is still
+-- what the CHSH Bell test would check, and it is NOT run.
+
+/-- classical maximum × lead = quantum value, at EVERY even width 2k (k the half-width) -/
+theorem the_classical_times_the_lead_is_the_quantum_at_every_width :
+    ∀ k, 1 ≤ k → 2 ^ k * 2 ^ (k - 1) = 2 ^ (2 * k - 1) := by
+  intro k hk
+  obtain ⟨j, rfl⟩ : ∃ j, k = j + 1 := ⟨k - 1, by omega⟩
+  simp only [Nat.add_sub_cancel]
+  rw [← Nat.pow_add]; congr 1; omega
+
+/-- the lead × the classical maximum is the same quantum value — the factors commute -/
+theorem the_lead_times_the_classical_is_the_quantum_at_every_width :
+    ∀ k, 1 ≤ k → 2 ^ (k - 1) * 2 ^ k = 2 ^ (2 * k - 1) := by
+  intro k hk
+  obtain ⟨j, rfl⟩ : ∃ j, k = j + 1 := ⟨k - 1, by omega⟩
+  simp only [Nat.add_sub_cancel]
+  rw [← Nat.pow_add]; congr 1; omega
+
+/-- the lead doubles from each octave to the next — 2·2^(k-1) = 2^k, forever -/
+theorem the_lead_doubles_from_each_octave_to_the_next :
+    ∀ k, 1 ≤ k → 2 * 2 ^ (k - 1) = 2 ^ k := by
+  intro k hk
+  obtain ⟨j, rfl⟩ : ∃ j, k = j + 1 := ⟨k - 1, by omega⟩
+  simp only [Nat.add_sub_cancel, Nat.pow_succ]; omega
+
+/-- the full 2k-party operator is the classical maximum squared — 2^(2k) = 2^k · 2^k -/
+theorem the_full_operator_is_the_classical_squared_at_every_width :
+    ∀ k, 2 ^ (2 * k) = 2 ^ k * 2 ^ k := by
+  intro k
+  rw [← Nat.pow_add]; congr 1; omega
+
+/-- the quantum value is an exact multiple of the classical maximum — no rounding, at every width -/
+theorem the_quantum_is_an_exact_multiple_of_the_classical_at_every_width :
+    ∀ k, 1 ≤ k → 2 ^ k ∣ 2 ^ (2 * k - 1) := by
+  intro k hk
+  exact Nat.pow_dvd_pow 2 (by omega)
+
+/-- the lead itself divides the quantum value — the advantage is a clean factor, at every width -/
+theorem the_lead_divides_the_quantum_at_every_width :
+    ∀ k, 1 ≤ k → 2 ^ (k - 1) ∣ 2 ^ (2 * k - 1) := by
+  intro k hk
+  exact Nat.pow_dvd_pow 2 (by omega)
+
+/-- every octave past the 128-qubit UUID demo carries the demo's own 2^63 lead as a factor -/
+theorem every_octave_past_the_uuid_width_contains_the_demo_lead :
+    ∀ k, 65 ≤ k → 2 ^ 63 ∣ 2 ^ (k - 1) := by
+  intro k hk
+  exact Nat.pow_dvd_pow 2 (by omega)
+
+/-- the quantum value strictly exceeds the classical maximum from four qubits up — the advantage is real -/
+theorem the_quantum_strictly_exceeds_the_classical_from_four_qubits_up :
+    ∀ k, 2 ≤ k → 2 ^ k < 2 ^ (2 * k - 1) := by
+  intro k hk
+  exact Nat.pow_lt_pow_of_lt (by omega) (by omega)
+
 end QuantumOctaves

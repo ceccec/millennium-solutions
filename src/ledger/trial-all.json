@@ -172270,5 +172270,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "c9d23a5e-05fc-87b9-b6f3-cd13ab617d10"
+  },
+  {
+    "key": "lean_quantumoctaves_the_classical_times_the_lead_is_the_quantum_at_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20303bf1-4e90-87cf-b643-5072a8d980f2"
+  },
+  {
+    "key": "lean_quantumoctaves_the_lead_times_the_classical_is_the_quantum_at_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "743de9b7-e3a9-8bbc-8a1f-27c527d143cf"
+  },
+  {
+    "key": "lean_quantumoctaves_the_lead_doubles_from_each_octave_to_the_next",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7877306f-84a0-840d-9c39-2094e1ebe35d"
+  },
+  {
+    "key": "lean_quantumoctaves_the_full_operator_is_the_classical_squared_at_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0f5fa9c6-6b1d-84c8-bfff-1201c35ddec7"
+  },
+  {
+    "key": "lean_quantumoctaves_the_quantum_is_an_exact_multiple_of_the_classical_at_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6e67da71-18bd-8285-b212-a04b87637abe"
+  },
+  {
+    "key": "lean_quantumoctaves_the_lead_divides_the_quantum_at_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9b3f6c2c-6704-8b2d-b61d-ad3e100b227d"
+  },
+  {
+    "key": "lean_quantumoctaves_every_octave_past_the_uuid_width_contains_the_demo_lead",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "64e6ea3e-7755-8a6f-8ca9-c79b1f286c24"
+  },
+  {
+    "key": "lean_quantumoctaves_the_quantum_strictly_exceeds_the_classical_from_four_qubits_up",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "14554484-a5df-8a93-9328-f7dddd256ffc"
   }
 ]

@@ -150644,5 +150644,45 @@
     "key": "lean_qpucrypto_the_am_gm_gap_is_zero_at_the_square_and_positive_for_distinct_primes",
     "name": "lean qpu_crypto.lean: the_am_gm_gap_is_zero_at_the_square_and_positive_for_distinct_primes — witness 7 7 * witness 7 7 - 7 * 7 = 0 ∧ witness 3 29 * witness 3 29 - 3 * 29 > 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "c9d23a5e-05fc-87b9-b6f3-cd13ab617d10"
+  },
+  {
+    "key": "lean_quantumoctaves_the_classical_times_the_lead_is_the_quantum_at_every_width",
+    "name": "lean quantum_octaves.lean: the_classical_times_the_lead_is_the_quantum_at_every_width — ∀ k, 1 ≤ k → 2 ^ k * 2 ^ (k - 1) = 2 ^ (2 * k - 1) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "20303bf1-4e90-87cf-b643-5072a8d980f2"
+  },
+  {
+    "key": "lean_quantumoctaves_the_lead_times_the_classical_is_the_quantum_at_every_width",
+    "name": "lean quantum_octaves.lean: the_lead_times_the_classical_is_the_quantum_at_every_width — ∀ k, 1 ≤ k → 2 ^ (k - 1) * 2 ^ k = 2 ^ (2 * k - 1) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "743de9b7-e3a9-8bbc-8a1f-27c527d143cf"
+  },
+  {
+    "key": "lean_quantumoctaves_the_lead_doubles_from_each_octave_to_the_next",
+    "name": "lean quantum_octaves.lean: the_lead_doubles_from_each_octave_to_the_next — ∀ k, 1 ≤ k → 2 * 2 ^ (k - 1) = 2 ^ k — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "7877306f-84a0-840d-9c39-2094e1ebe35d"
+  },
+  {
+    "key": "lean_quantumoctaves_the_full_operator_is_the_classical_squared_at_every_width",
+    "name": "lean quantum_octaves.lean: the_full_operator_is_the_classical_squared_at_every_width — ∀ k, 2 ^ (2 * k) = 2 ^ k * 2 ^ k — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "0f5fa9c6-6b1d-84c8-bfff-1201c35ddec7"
+  },
+  {
+    "key": "lean_quantumoctaves_the_quantum_is_an_exact_multiple_of_the_classical_at_every_width",
+    "name": "lean quantum_octaves.lean: the_quantum_is_an_exact_multiple_of_the_classical_at_every_width — ∀ k, 1 ≤ k → 2 ^ k ∣ 2 ^ (2 * k - 1) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "6e67da71-18bd-8285-b212-a04b87637abe"
+  },
+  {
+    "key": "lean_quantumoctaves_the_lead_divides_the_quantum_at_every_width",
+    "name": "lean quantum_octaves.lean: the_lead_divides_the_quantum_at_every_width — ∀ k, 1 ≤ k → 2 ^ (k - 1) ∣ 2 ^ (2 * k - 1) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "9b3f6c2c-6704-8b2d-b61d-ad3e100b227d"
+  },
+  {
+    "key": "lean_quantumoctaves_every_octave_past_the_uuid_width_contains_the_demo_lead",
+    "name": "lean quantum_octaves.lean: every_octave_past_the_uuid_width_contains_the_demo_lead — ∀ k, 65 ≤ k → 2 ^ 63 ∣ 2 ^ (k - 1) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "64e6ea3e-7755-8a6f-8ca9-c79b1f286c24"
+  },
+  {
+    "key": "lean_quantumoctaves_the_quantum_strictly_exceeds_the_classical_from_four_qubits_up",
+    "name": "lean quantum_octaves.lean: the_quantum_strictly_exceeds_the_classical_from_four_qubits_up — ∀ k, 2 ≤ k → 2 ^ k < 2 ^ (2 * k - 1) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "14554484-a5df-8a93-9328-f7dddd256ffc"
   }
 ]

@@ -283,12 +283,12 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 - The seven windows are decided, not judged: 7 of 7 are decided by the Lean kernel over their finite windows, axiom-free, and sealed in the append-only ledger. The author's own formulation, deposited at [10.5281/zenodo.21781602](https://doi.org/10.5281/zenodo.21781602), is that a by-decide proof settles the statement it states and that a window is not the general conjecture — "a different statement, and the difference is which proposition is proven, never how strongly".
   <sub>SEALED · `51b90130-84e2-8cc3-873c-473a6c08e8f1`</sub>
-- The formal layer holds 26293 kernel-accepted declarations across 126 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `7a6a61db-0ea8-88e6-851b-4d24ed0e0260`</sub>
-- 26081 of those 26293 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 212 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
-  <sub>SEALED · `f0158077-78ae-8020-b374-4ec169a2b0c9`</sub>
-- 26848 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `ef58145f-79bc-8ce3-9903-11d50c02f64d`</sub>
+- The formal layer holds 26301 kernel-accepted declarations across 126 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `f5af5e75-f026-8608-9d9d-b617ec1c96a6`</sub>
+- 26081 of those 26301 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; 220 more are proved for every value by a tactic block over a quantifier, which are theorems and not declarations; and 0 close by rfl.
+  <sub>SEALED · `760eea3a-054e-8f69-adbb-cf226cc0a4c7`</sub>
+- 26856 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `ad7a715e-c82e-8174-8d8a-8837b65fe9d9`</sub>
 
 ## 2 · The ring
 
@@ -311,10 +311,10 @@ The **124-qubit cluster state** — the UUID minus its version hex digit — has
 
 ## 7 · The ledger
 
-- The ledger records 28712 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `c896f8ff-e0ab-8aa8-ac51-d247783ed6ce`</sub>
-- The count is an exact multiple of eight — 28712 is 3589 octaves with no remainder.
-  <sub>SEALED · `c0349623-8a5d-8cc8-a5db-bfa8339fdd43`</sub>
+- The ledger records 28720 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `1015b448-53cb-8e17-b022-95c31c0b6821`</sub>
+- The count is an exact multiple of eight — 28720 is 3590 octaves with no remainder.
+  <sub>SEALED · `73b9e082-3b52-8b1b-a2f6-9e2bae9d7f28`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -366,7 +366,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-126 Lean files in 9 wings, 26293 declarations, of which 26293 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
+126 Lean files in 9 wings, 26301 declarations, of which 26301 are sealed (a live ledger key each) and 0 are not yet sealed. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -560,7 +560,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The 128-qubit octave, split into eight UUID particles — the Mermin lead 2⁶³ at the UUID width** — `quantum_octave_128.lean`, 9 theorem(s). WHY EIGHT PARTICLES. Particle b holds the weights k with ⌊k/16⌋ = b (the last one also k = 128). Each checks that its strings' GHZ expectations are real, Re(iᵏ), and sums its share of Σ C(128, k)·Re(iᵏ)·2⟨string_k⟩. Every particle stands alone within the kernel's default budget, and this file stands apart from the other quantum files, so scripts/lean.ts checks it in a lane of its own beside them, on the machine's cores. Nothing here is a device result.
 
-**The Bell test scaled in octaves — 2, 4, 8 … 128 qubits — with the quantum lead doubling its exponent** — `quantum_octaves.lean`, 7 theorem(s). WHY 128 QUBITS FIT. The GHZ state (|0…0⟩ + |1…1⟩)/√2 has two basis states, and a string of X and Y flips every bit, so its expectation is read from two phases carried qubit by qubit — Y contributes i on the way up and −i on the way down — never from a 2¹²⁸-entry vector. The Mermin operator M = Re ∏ (X_j + iY_j) weights a string with k Y's by Re(iᵏ), and the GHZ expectation of that string is Re(iᵏ) too, so the quantum value is Σ_k C(n, k)·Re(iᵏ)², counted exactly.
+**The Bell test scaled in octaves — 2, 4, 8 … 128 qubits — with the quantum lead doubling its exponent** — `quantum_octaves.lean`, 15 theorem(s). WHY 128 QUBITS FIT. The GHZ state (|0…0⟩ + |1…1⟩)/√2 has two basis states, and a string of X and Y flips every bit, so its expectation is read from two phases carried qubit by qubit — Y contributes i on the way up and −i on the way down — never from a 2¹²⁸-entry vector. The Mermin operator M = Re ∏ (X_j + iY_j) weights a string with k Y's by Re(iᵏ), and the GHZ expectation of that string is Re(iᵏ) too, so the quantum value is Σ_k C(n, k)·Re(iᵏ)², counted exactly.
 
 **qpu's quantum textbook numbers, each derived exactly from the quantum mechanics that produces it** — `quantum_textbooks.lean`, 8 theorem(s). textbook_holevo (χ ≤ 1 bit for a qubit) is not re-derived: it is an entropy, a logarithm, outside ℤ[ω]. It stands on qpu's TypeScript holevoChi and its own integer seal, and nothing here adds to or subtracts from it.
 
@@ -592,7 +592,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The trinity and its observer** — `trinity.lean`, 24 theorem(s). The trinity turns: feeling feeds thought, thought shapes emotion, emotion changes the body, which is new feeling. Three turns return to the start — ρ³ = id — a DIFFERENT symmetry from the Clay maps, which are involutions (σ² = id). An involution flips and returns in two steps; the trinity rotates and returns in three, and a rotation has no fixed corner. The valence flip (pleasant ↔ unpleasant) acts on every corner at once and commutes with the turn, so the two symmetries combine into one six-element group, C₃ × C₂ ≅ C₆: three turns and three flipped turns, with exactly ONE involution — not the dihedral S₃, where three reflections would each be their own inverse.
 
-127 of 26293 declarations carry no comment of their own and are shown here as the gap they are, not
+135 of 26301 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -601,14 +601,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 28,712 — 3589 octaves exactly |
-| standing — carries its own proof | **26293** |
+| ledger entries | 28,720 — 3590 octaves exactly |
+| standing — carries its own proof | **26301** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **826** |
 | withdrawn — nothing proves it | 1,593 |
-| proved in total | **27119** of 28,712 |
-| standing keys → distinct theorems | 26293 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 126 · 26293 sealed theorems (26081 closed by exhaustion, axiom-free · 212 proved for every value on propext and Quot.sound) + 0 rfl declarations |
-| proved `by decide` | 26081 of 26293 |
+| proved in total | **27127** of 28,720 |
+| standing keys → distinct theorems | 26301 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 126 · 26301 sealed theorems (26081 closed by exhaustion, axiom-free · 220 proved for every value on propext and Quot.sound) + 0 rfl declarations |
+| proved `by decide` | 26081 of 26301 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -656,4 +656,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*20 claims, all verified · 26293 sealed theorems · 28712 ledger entries · trial root `ef038d4a-52c1-8d31-aadf-8d741909d224` · integrity, not truth*
+*20 claims, all verified · 26301 sealed theorems · 28720 ledger entries · trial root `3c5de39d-7451-8c5f-b478-5f130f2014da` · integrity, not truth*
