@@ -1,0 +1,7 @@
+#!/bin/sh
+# AFTER A RECEIPT IS SEALED, GIVE THE DISK BACK. A commit that changed the ledger appended receipts; once that is
+# done, collect the stale temp dirs this repo's scripts left and — under the disk floor — the npm content cache.
+# A steward, never a gate: a post-commit hook cannot refuse, and cache-clean always exits 0.
+if git diff-tree --no-commit-id --name-only -r HEAD | grep -qx 'src/ledger/discovered.json'; then
+  node scripts/cache-clean.ts || true
+fi

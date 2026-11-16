@@ -33,6 +33,8 @@ if (message === '--status' || message === 'status') {
   console.log('  version:          ' + ver)
   console.log('  ledger:           ' + led.length + ' decidable facts, re-verified each build')
   console.log('  chain-of-custody: ' + (newBreaks === 0 ? 'intact' : newBreaks + ' NEW break(s) — legal trial') + ' · tamper-seal ' + seal.slice(0, 13) + '…')
+  // the disk the ship writes to — measured 2026-11-16 at 99% mid-build; the post-commit steward reports the same line after each seal
+  try { execSync('node scripts/cache-clean.ts --report', { stdio: 'inherit' }) } catch { /* a report, never a verdict */ }
   process.exit(newBreaks === 0 ? 0 : 1)
 }
 

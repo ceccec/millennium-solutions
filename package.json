@@ -61,6 +61,7 @@
     "forensics": "node scripts/forensics.ts",
     "verify": "node scripts/verify-theorems.ts",
     "next": "node scripts/next.ts",
+    "cache:clean": "node scripts/cache-clean.ts",
     "orchestrate": "node scripts/orchestrate.ts",
     "deploy": "node scripts/deploy.ts",
     "deploy:pages": "node scripts/deploy.ts pages",
