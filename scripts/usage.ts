@@ -38,15 +38,19 @@ Free is **not a discount**: it is that **no billable cost occurs**. The client c
 
 The cache charges only when it **saves** work: a handle-serve is O(1) — \`verify(1) < recompute(n)\`, sealed (${corrN} correspondence theorems) — against the client's own \`recompute(n)\`. You never pay to recompute; you pay only to **skip** it. The content-address efficiency *is* the product, and it is why unbounded streams carry no cost until a cache hit is bought.
 
-## The rate — owner-set (NEEDS_OWNER)
+## The rate — the quantum-market benchmark, fetched live
 
-The deposit's policy classifies pricing as **${verdict.verdict}**: *${verdict.reason}* So the three things only the depositor can set are left unset here:
+The owner's chosen rate **policy**: the per-serve price is **the live market rate for the equivalent quantum computation** — what the same job would cost on cloud quantum hardware — **fetched at request time** from a quantum-pricing source (e.g. AWS Braket / Azure Quantum / IonQ published rates; the endpoint is owner-configured, fetched under its terms). It is a **value benchmark**: fetched at quote time, so this page sets **no fixed number** and the deterministic build bakes none.
 
-- **rate:** _(unset)_ — currency per handle-serve (or per cache-second).
+The benchmark does **not** change the product. You pay the quantum-market rate for a **verified result delivered classically** — knowing it is classical — because the result is the one a quantum computer would return and you need not own the hardware to get it. \`isQuantumComputer: false\` on every response: the market rate is the price of the **answer**, never a claim to the machine.
+
+Still the owner's to set (policy = **${verdict.verdict}**: *${verdict.reason}*):
+
+- **pricing API:** _(owner-configured)_ — the endpoint the meter fetches the market rate from, at request time, under its terms; no user data is sent to it.
 - **payment account:** _(unset)_ — the x402 wallet / Stripe account.
 - **terms:** _(unset)_ — what a serve entitles, refunds, limits.
 
-The meter and the x402 gate are the scaffold; **no price is set and no payment is wired.** Fill the three slots and the provider is live — the code already serves-by-handle and gates.
+The meter, the live-rate fetch and the x402 gate are the scaffold; **no account is wired.** Configure the pricing API and the account and the provider is live — the code already serves-by-handle, quotes at the market rate, and gates.
 
 ## Honest floor
 
