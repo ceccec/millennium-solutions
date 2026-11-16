@@ -172030,5 +172030,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "226c1a93-2c19-8908-be0e-2f14700e8ce5"
+  },
+  {
+    "key": "lean_qpucrypto_the_small_witness_carries_exactly_two_threes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bacd1a58-b943-8084-b5a0-b5db4ad7e3e9"
+  },
+  {
+    "key": "lean_qpucrypto_the_thousand_bit_witness_carries_exactly_four_threes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6e799f17-6c30-830f-ae62-e1d05627c466"
+  },
+  {
+    "key": "lean_qpucrypto_the_lifting_the_exponent_count_matches_at_both_scales",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4c1740cf-a3a6-8198-bbe4-68e41bea6d48"
+  },
+  {
+    "key": "lean_qpucrypto_the_cubic_descent_runs_from_the_thousand_bit_witness_to_one_eleven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8dbbaef2-8bc3-8f4b-8b2a-02195b34c141"
+  },
+  {
+    "key": "lean_qpucrypto_the_cubic_descent_reaches_the_thirty_seven_bit_base",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "23e4841b-0584-8e89-be98-e56cf48fc29a"
+  },
+  {
+    "key": "lean_qpucrypto_the_descent_halts_because_the_base_carries_no_more_threes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3e0528a8-5428-8c6c-800d-08c018f8f59b"
+  },
+  {
+    "key": "lean_qpucrypto_the_reflection_is_one_rule_for_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f99156ef-7699-8d85-8e1a-172798da3bd5"
+  },
+  {
+    "key": "lean_qpucrypto_the_reflection_constant_is_the_sum_for_every_width",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a936417c-a726-8d9c-9184-4157e905c560"
   }
 ]

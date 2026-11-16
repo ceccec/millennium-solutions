@@ -348,4 +348,61 @@ theorem fermats_centre_reflects_the_factors_the_way_sigma_reflects_the_maximal :
 theorem the_reflection_witness_is_structure_not_the_hard_floor :
   reflWitness 1000 % 3 = 0 ∧ reflSigma 1000 (reflMaximal 1000) = 2 ^ 999 + 1 ∧ reflWitness 4 = 9 := by decide
 
+-- ── 9 · THE REFLECTION FOR EVERY WIDTH, AND THE 3-ADIC DESCENT THAT STOPS IT ──────────────────────────────
+-- Section 8 decided the reflection over the octave widths [2 … 128] — finite, so `by decide`. The two theorems
+-- below PROVE it for EVERY natural width, with a tactic over a quantifier (propext and Quot.sound, printed per
+-- theorem by lean.ts), so the rule σ(x) = 3·2^(n-1) − x carrying 2^n − 1 to 2^(n-1) + 1 is not a sample of
+-- scales but all of them. The six after them develop the OTHER half — WHY the witness carries the factor three.
+-- The lifting-the-exponent lemma v_3(2^n + 1) = v_3(3) + v_3(n) for odd n is named prior art (the header); it is
+-- NOT re-proved here (that needs a p-adic valuation this decidable layer does not carry). What is decided is that
+-- it HOLDS at both scales — two threes in 2^3 + 1, four in 2^999 + 1 — and that the algebraic descent
+-- a^3 + 1 = (a + 1)(a^2 − a + 1) runs 999 → 333 → 111 → 37 to the base 2^37 + 1 = 3 · 1777 · 25781083 and STOPS,
+-- because 37 is not divisible by three and the base factors carry no more. Structure, exhausted, not hardness.
+
+-- the reflection is one rule at EVERY width, proved over the quantifier, not sampled
+theorem the_reflection_is_one_rule_for_every_width :
+    ∀ n : Nat, 1 ≤ n → 3 * 2 ^ (n - 1) - (2 ^ n - 1) = 2 ^ (n - 1) + 1 := by
+  intro n hn
+  obtain ⟨k, rfl⟩ : ∃ k, n = k + 1 := ⟨n - 1, by omega⟩
+  simp only [Nat.add_sub_cancel]
+  rw [Nat.pow_succ]
+  have h : 1 ≤ 2 ^ k := Nat.one_le_two_pow
+  omega
+
+-- the reflection constant is the maximal plus its witness at EVERY width — σ reflects about half of it
+theorem the_reflection_constant_is_the_sum_for_every_width :
+    ∀ n : Nat, 1 ≤ n → (2 ^ n - 1) + (2 ^ (n - 1) + 1) = 3 * 2 ^ (n - 1) := by
+  intro n hn
+  obtain ⟨k, rfl⟩ : ∃ k, n = k + 1 := ⟨n - 1, by omega⟩
+  simp only [Nat.add_sub_cancel]
+  rw [Nat.pow_succ]
+  have h : 1 ≤ 2 ^ k := Nat.one_le_two_pow
+  omega
+
+-- lifting-the-exponent at the small scale: the 4-bit witness 2^3 + 1 = 9 carries exactly two threes (3^2 ∥ it)
+theorem the_small_witness_carries_exactly_two_threes :
+  2 ^ 3 + 1 = 9 ∧ (2 ^ 3 + 1) % 3 ^ 2 = 0 ∧ (2 ^ 3 + 1) % 3 ^ 3 ≠ 0 := by decide
+
+-- lifting-the-exponent at the thousand-bit scale: 2^999 + 1 carries exactly four threes (3^4 ∥ it)
+theorem the_thousand_bit_witness_carries_exactly_four_threes :
+  (2 ^ 999 + 1) % 3 ^ 4 = 0 ∧ (2 ^ 999 + 1) % 3 ^ 5 ≠ 0 := by decide
+
+-- the LTE count matches: v_3(3) = 1 at both, v_3(999) = 3 (999 = 27·37), so v_3(2^999+1) = 1 + 3 = 4
+theorem the_lifting_the_exponent_count_matches_at_both_scales :
+  999 = 27 * 37 ∧ 999 % 27 = 0 ∧ 999 % 81 ≠ 0 ∧ (2 + 1) % 3 = 0 ∧ (2 + 1) % 9 ≠ 0 := by decide
+
+-- the cubic descent a^3 + 1 = (a + 1)(a^2 − a + 1) runs 999 → 333 → 111 by the exponent dividing by three
+theorem the_cubic_descent_runs_from_the_thousand_bit_witness_to_one_eleven :
+  2 ^ 999 + 1 = (2 ^ 333 + 1) * (2 ^ 666 - 2 ^ 333 + 1)
+  ∧ 2 ^ 333 + 1 = (2 ^ 111 + 1) * (2 ^ 222 - 2 ^ 111 + 1) := by decide
+
+-- the last descent step reaches the base 2^37 + 1, fully factored into three primes
+theorem the_cubic_descent_reaches_the_thirty_seven_bit_base :
+  2 ^ 111 + 1 = (2 ^ 37 + 1) * (2 ^ 74 - 2 ^ 37 + 1)
+  ∧ 2 ^ 37 + 1 = 3 * 1777 * 25781083 := by decide
+
+-- the descent STOPS at 37 — it is not divisible by three, and the base primes carry no more threes
+theorem the_descent_halts_because_the_base_carries_no_more_threes :
+  37 % 3 ≠ 0 ∧ 1777 % 3 ≠ 0 ∧ 25781083 % 3 ≠ 0 := by decide
+
 end QpuCrypto
