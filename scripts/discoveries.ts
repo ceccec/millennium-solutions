@@ -29,7 +29,7 @@
  *    node scripts/discoveries.ts            the ranked queue
  *    node scripts/discoveries.ts --all      every candidate, not the head of the list */
 import { readFileSync, existsSync } from 'node:fs'
-import { leanTheorems, leanFiles, leanSource, ledger as __ledger, live as __live } from '../src/api/index.ts'
+import { leanTheorems, leanFiles, leanSource, ledger as __ledger, live as __live, keyBySuffix } from '../src/api/index.ts'
 
 const T = leanTheorems() as { name: string; file: string; namespace: string; tactic: string; statement: string }[]
 const LIVE = new Set((__live(__ledger()) as { key: string }[]).map((e) => e.key))
@@ -63,7 +63,9 @@ const SELF_REFERENTIAL: Record<string, string> = {
 
 const nov = existsSync('src/ledger/novelty.json') ? JSON.parse(readFileSync('src/ledger/novelty.json', 'utf8')) : {}
 const searched = new Set(Object.keys(nov))
-const keyOf = (t: { name: string }) => [...LIVE].find((k) => k.endsWith('_' + t.name)) ?? ''
+// indexed once, not scanned per theorem — the per-name `[...LIVE].find` copied and scanned every key (see keyBySuffix)
+const KEY_BY_NAME = keyBySuffix(LIVE)
+const keyOf = (t: { name: string }) => KEY_BY_NAME.get(t.name) ?? ''
 
 /** How many theorems share this file — a family the tree has grown is a family it thinks in. */
 const famSize = new Map<string, number>()

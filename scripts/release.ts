@@ -4,7 +4,7 @@ import { execSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { merkleGravity } from '../src/the/apple/index.ts'
-import { live, leanTheorems, publishedTags, semverOf, byVersion } from '../src/api/index.ts'
+import { live, leanTheorems, publishedTags, semverOf, byVersion, keyBySuffix } from '../src/api/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 
 // Version: explicit arg wins; otherwise DERIVE the next patch from the latest tag.
@@ -71,7 +71,9 @@ console.log('content-addressed:', files.length, 'files → root', address)
   const L = __ledger() as { key: string; name: string; receipt: string; revoked?: boolean; supersededBy?: string }[]
   const liveKeys = new Set((live(L) as { key: string }[]).map((e) => e.key))
   const T = (leanTheorems() as { name: string; tactic: string }[]).filter((t) => t.tactic !== 'rfl')
-  const unsealed = T.filter((t) => ![...liveKeys].some((k) => k.endsWith('_' + t.name)))
+  // indexed once — `![...liveKeys].some(k => k.endsWith('_' + name))` per theorem copied and scanned every key (see keyBySuffix)
+  const sealedNames = keyBySuffix(liveKeys)
+  const unsealed = T.filter((t) => !sealedNames.has(t.name))
   const byKey = new Map(L.map((e) => [e.key, e]))
   const dangling = L.filter((e) => {
     if (!e.revoked || !e.supersededBy) return false
