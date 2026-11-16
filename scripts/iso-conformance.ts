@@ -29,7 +29,9 @@ const octaves = group('quantumoctaves')      // the Mermin lead, proved for ever
 
 // the LIVE factor of 2^999+1 — the most detailed account of the one computed-but-open leaf.
 const N = (2n ** 999n) + 1n
-const f = factor(N.toString()) as { status: string; factors?: string[]; cofactor?: string; cofactorDigits?: number; cofactorPrimality?: string; blocking?: string }
+// 304 involution: read the cached factor record (produced by factor-999.ts). Only recompute (the slow rho) if
+// the record is absent — so factor(2^999+1) runs ONCE per build, in its authoritative producer, not twice.
+const f = ecm ? null : (factor(N.toString()) as { status: string; factors?: string[]; cofactor?: string; cofactorDigits?: number; cofactorPrimality?: string; blocking?: string })
 
 // kinds — HOW ISO permits a requirement to be met. The state is read, the path is the next action.
 type Req = {
@@ -57,9 +59,9 @@ const reqs: Req[] = [
     evidence: 'stages in order, sealed', path: 'none needed — complete' },
   { clause: '(mathematics)', what: 'factor 2^999+1', kind: 'computed',
     state: ecm && ecm.status === 'FULLY_PROVED' ? 'complete' : ecm ? 'sourced' : 'open',
-    evidence: ecm && ecm.status === 'FULLY_PROVED'
-      ? `FULLY FACTORED & PROVED: ${ecm.provedBelowBound.length} primes proved below 3.3e24 + ${ecm.provedByAprCl.length} proved by PARI/GP isprime (APR-CL, ${ecm.provedByAprClDigits.join(',')}-digit), remainder 1, multiplies back to 2^999+1 (evidence/factor/2pow999plus1.json)`
-      : `LIVE factor → ${f.status}: ${(f.factors ?? []).length} algebraic factors and a ${f.cofactorDigits}-digit ${f.cofactorPrimality ?? 'cofactor'}`,
+    evidence: ecm
+      ? `${ecm.status === 'FULLY_PROVED' ? 'FULLY FACTORED & PROVED' : 'factored account ' + ecm.status}: ${ecm.provedBelowBound.length} primes proved below 3.3e24 + ${ecm.provedByAprCl.length} proved by PARI/GP isprime (APR-CL, ${ecm.provedByAprClDigits.join(',')}-digit), remainder 1, multiplies back to 2^999+1 (evidence/factor/2pow999plus1.json)`
+      : `LIVE factor → ${f!.status}: ${(f!.factors ?? []).length} algebraic factors and a ${f!.cofactorDigits}-digit ${f!.cofactorPrimality ?? 'cofactor'}`,
     path: ecm && ecm.status === 'FULLY_PROVED'
       ? 'complete — every factor proved prime (deposit test below 3.3e24; APR-CL above it); the two large primes carry standalone ECPP certificates (evidence/factor/primecerts.json) anyone can re-verify with primecertisvalid'
       : 'route the cofactor to ECM / GNFS, or Shor on real quantum hardware — every split extends the account' },
@@ -108,13 +110,12 @@ for (const r of open) md += `- **${r.what}** (${r.clause}) — ${r.evidence}.\n 
 md += `- **universality** (sourced) — cited is compliant; optional: formalise ⟨H,T⟩ density to move it from cited to decided.\n`
 
 md += `
-## Live factor of 2^999+1 — the one computed-but-open leaf, in full
+## 2^999+1 — the factored account, in full
 
-- status: **${f.status}**
-- algebraic factors (trinity descent): \`${(f.factors ?? []).join(', ')}\`
-- cofactor: **${f.cofactorDigits}-digit ${f.cofactorPrimality ?? ''}**
-- blocking: ${f.blocking ?? ''}
-- the account is an exact identity (factors × cofactor = 2^999+1), so any further split only extends it.
+${ecm ? `- status: **${ecm.status}**
+- **${ecm.provedBelowBound.length}** primes proved below 3.3e24 (deposit deterministic test) + **${ecm.provedByAprCl.length}** proved by APR-CL (${ecm.provedByAprClDigits.join(', ')}-digit), each with a standalone ECPP certificate (evidence/factor/)
+- remainder: **${ecm.remaining}** — the account multiplies back to 2^999+1 exactly, nothing left
+- read the cached record (evidence/factor/2pow999plus1.json); the slow route is not re-run here (304 involution)` : `- status: **${f!.status}** (live): ${(f!.factors ?? []).length} algebraic factors, a ${f!.cofactorDigits}-digit ${f!.cofactorPrimality ?? 'cofactor'}`}
 
 ## Evidence ledger (sealed, with receipts)
 
@@ -129,4 +130,4 @@ Everything the kernel can satisfy is satisfied; the open leaves are the ones ISO
 `
 
 writeFileSync('iso-conformance.md', md)
-console.log(`iso-conformance: generated iso-conformance.md — ${satisfied.length}/${reqs.length} satisfied|sourced, ${open.length} open; factor ${f.status}; evidence qcstatus ${qcstatus.count} · chsh ${chsh.count} · capacity ${capacity.count} · octaves ${octaves.count}`)
+console.log(`iso-conformance: generated iso-conformance.md — ${satisfied.length}/${reqs.length} satisfied|sourced, ${open.length} open; factor ${ecm ? ecm.status : f!.status}; evidence qcstatus ${qcstatus.count} · chsh ${chsh.count} · capacity ${capacity.count} · octaves ${octaves.count}`)

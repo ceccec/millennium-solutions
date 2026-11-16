@@ -36,13 +36,12 @@ head:
   → **engage an accredited certification body with the dossier — at /accreditation**
 - **universality** (sourced) — cited is compliant; optional: formalise ⟨H,T⟩ density to move it from cited to decided.
 
-## Live factor of 2^999+1 — the one computed-but-open leaf, in full
+## 2^999+1 — the factored account, in full
 
-- status: **PARTIAL**
-- algebraic factors (trinity descent): `3, 3, 3, 3, 19, 1777, 3331, 17539, 23977, 304363, 87211, 25781083, 5814899281, 97377658867`
-- cofactor: **244-digit composite (a witness was found)**
-- blocking: the cofactor has no factor below 65536 and Pollard rho did not split it within 366587 steps (the register's capacity over this width); no method in this tree factors it
-- the account is an exact identity (factors × cofactor = 2^999+1), so any further split only extends it.
+- status: **FULLY_PROVED**
+- **18** primes proved below 3.3e24 (deposit deterministic test) + **2** proved by APR-CL (31, 150-digit), each with a standalone ECPP certificate (evidence/factor/)
+- remainder: **1** — the account multiplies back to 2^999+1 exactly, nothing left
+- read the cached record (evidence/factor/2pow999plus1.json); the slow route is not re-run here (304 involution)
 
 ## Evidence ledger (sealed, with receipts)
 
